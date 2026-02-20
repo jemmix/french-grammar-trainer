@@ -86,6 +86,8 @@ Three question types:
 ### 3.3 Content Quality
 - Clear, pedagogical explanations for every choice
 - Wrong answers must be plausible mistakes (not absurd)
+- **No duplicate or near-duplicate choices** within a question — each option must test a genuinely different confusion point. Questions may have 2-5 choices; 2 is fine when more would require padding
+- Automated validation script (`npm run validate-content`) enforces uniqueness
 - Varied, natural contexts (daily life, work, travel, etc.)
 - Progressive difficulty within each section
 
