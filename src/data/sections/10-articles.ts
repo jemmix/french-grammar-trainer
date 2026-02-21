@@ -1084,7 +1084,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « ___ soleil se couche à l'ouest. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« ___ soleil se couche à l'ouest. »",
       answer: "Le",
       explanation: "« Soleil » est masculin singulier et commence par une consonne → article défini « le ». Le soleil est unique et connu de tous.",
       wrongAnswers: [
@@ -1099,7 +1100,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « ___ lune éclaire la nuit. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« ___ lune éclaire la nuit. »",
       answer: "La",
       explanation: "« Lune » est féminin singulier et commence par une consonne → « la lune ». La lune est unique.",
       wrongAnswers: [
@@ -1114,7 +1116,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « ___ été, nous allons à la plage. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« ___ été, nous allons à la plage. »",
       answer: "L'",
       explanation: "« Été » est masculin et commence par une voyelle → élision : « l'été ». Ici, valeur générale (chaque été).",
       wrongAnswers: [
@@ -1129,7 +1132,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « ___ enfants sont à l'école. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« ___ enfants sont à l'école. »",
       answer: "Les",
       explanation: "« Enfants » est pluriel → article défini pluriel « les ». On parle d'enfants identifiés.",
       wrongAnswers: [
@@ -1144,7 +1148,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « J'aime ___ cinéma français. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« J'aime ___ cinéma français. »",
       answer: "le",
       explanation: "Verbe de goût (aimer) + nom masculin singulier → article défini « le ». On parle du cinéma français en général.",
       wrongAnswers: [
@@ -1159,7 +1164,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « ___ hôtel est complet ce soir. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« ___ hôtel est complet ce soir. »",
       answer: "L'",
       explanation: "« Hôtel » commence par un « h » muet → élision obligatoire : « l'hôtel ».",
       wrongAnswers: [
@@ -1174,7 +1180,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « ___ hamster de Julie s'est échappé. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« ___ hamster de Julie s'est échappé. »",
       answer: "Le",
       explanation: "« Hamster » a un « h » aspiré → pas d'élision : « le hamster ». « De Julie » identifie un hamster précis.",
       wrongAnswers: [
@@ -1189,7 +1196,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « ___ mer est calme ce matin. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« ___ mer est calme ce matin. »",
       answer: "La",
       explanation: "« Mer » est féminin singulier, commence par une consonne → « la mer ». On parle de la mer que l'on voit.",
       wrongAnswers: [
@@ -1204,7 +1212,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « Nous adorons ___ montagne. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« Nous adorons ___ montagne. »",
       answer: "la",
       explanation: "Verbe de goût (adorer) + nom féminin singulier → article défini « la montagne » (en général).",
       wrongAnswers: [
@@ -1219,7 +1228,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « ___ univers est infini. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« ___ univers est infini. »",
       answer: "L'",
       explanation: "« Univers » est masculin et commence par une voyelle → élision : « l'univers ». Valeur générale (l'univers est unique).",
       wrongAnswers: [
@@ -1234,7 +1244,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « Il préfère ___ thé vert. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« Il préfère ___ thé vert. »",
       answer: "le",
       explanation: "Verbe de goût (préférer) + nom masculin singulier → article défini « le thé vert » (en général).",
       wrongAnswers: [
@@ -1249,7 +1260,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « ___ fleurs du jardin sont magnifiques. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« ___ fleurs du jardin sont magnifiques. »",
       answer: "Les",
       explanation: "« Du jardin » identifie des fleurs spécifiques → article défini pluriel « les fleurs ».",
       wrongAnswers: [
@@ -1264,7 +1276,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « Elle se maquille ___ yeux chaque matin. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« Elle se maquille ___ yeux chaque matin. »",
       answer: "les",
       explanation: "Verbe pronominal + partie du corps → article défini pluriel : « se maquiller les yeux ».",
       wrongAnswers: [
@@ -1279,7 +1292,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « ___ Canada est un pays bilingue. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« ___ Canada est un pays bilingue. »",
       answer: "Le",
       explanation: "Les noms de pays masculins singuliers prennent « le » : « le Canada ».",
       wrongAnswers: [
@@ -1294,7 +1308,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « ___ Allemagne a gagné le match. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« ___ Allemagne a gagné le match. »",
       answer: "L'",
       explanation: "« Allemagne » est féminin et commence par une voyelle → élision : « l'Allemagne ».",
       wrongAnswers: [
@@ -1309,7 +1324,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « ___ vendredi, je finis plus tôt. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« ___ vendredi, je finis plus tôt. »",
       answer: "Le",
       explanation: "L'article défini + jour de la semaine exprime une habitude : « le vendredi » = chaque vendredi.",
       wrongAnswers: [
@@ -1324,7 +1340,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « ___ hérisson est un animal protégé. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« ___ hérisson est un animal protégé. »",
       answer: "Le",
       explanation: "« Hérisson » a un « h » aspiré → pas d'élision : « le hérisson ». Valeur générale (l'espèce).",
       wrongAnswers: [
@@ -1339,7 +1356,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « ___ océan Atlantique sépare l'Europe de l'Amérique. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« ___ océan Atlantique sépare l'Europe de l'Amérique. »",
       answer: "L'",
       explanation: "« Océan » est masculin et commence par une voyelle → élision : « l'océan ». Nom propre géographique → article défini.",
       wrongAnswers: [
@@ -1354,7 +1372,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « Il a mal à ___ gorge depuis hier. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« Il a mal à ___ gorge depuis hier. »",
       answer: "la",
       explanation: "Avec « avoir mal à » + partie du corps → article défini : « la gorge » (féminin).",
       wrongAnswers: [
@@ -1369,7 +1388,8 @@ const section: Section = {
       type: "input",
       ruleId: "10-01",
       generatedBy: "opus",
-      prompt: "Complétez avec l'article défini qui convient : « ___ Portugal est un beau pays. »",
+      prompt: "Complétez avec l'article défini qui convient",
+      phrase: "« ___ Portugal est un beau pays. »",
       answer: "Le",
       explanation: "« Portugal » est masculin singulier → « le Portugal ». Les noms de pays masculins prennent « le ».",
       wrongAnswers: [

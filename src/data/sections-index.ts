@@ -1,7 +1,7 @@
 import type { SectionMeta } from "./types";
 
 export const sectionsIndex: SectionMeta[] = [
-  { id: "01-present-indicatif", title: "Le présent de l'indicatif", description: "Conjugaison régulière et irrégulière, verbes pronominaux, emplois du présent", questionCount: 0 },
+  { id: "01-present-indicatif", title: "Le présent de l'indicatif", description: "Conjugaison régulière et irrégulière, verbes pronominaux, emplois du présent", questionCount: 50 },
   { id: "02-passe-compose", title: "Le passé composé", description: "Formation avec avoir/être, accord du participe passé, choix de l'auxiliaire", questionCount: 0 },
   { id: "03-imparfait", title: "L'imparfait", description: "Formation, emplois, opposition passé composé/imparfait", questionCount: 0 },
   { id: "04-plus-que-parfait", title: "Le plus-que-parfait", description: "Formation, emplois, concordance des temps", questionCount: 0 },

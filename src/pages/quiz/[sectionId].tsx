@@ -12,9 +12,11 @@ import type {
 } from "~/data/types";
 
 // Static imports for available sections
+import presentIndicatifSection from "~/data/sections/01-present-indicatif";
 import articlesSection from "~/data/sections/10-articles";
 
 const sectionMap: Record<string, Section> = {
+  "01-present-indicatif": presentIndicatifSection,
   "10-articles": articlesSection,
 };
 
@@ -388,28 +390,14 @@ function McqQuestionView({
 // Input Question View
 // ===========================================================================
 
-/** Split an input question prompt into instruction + sentence with blank parts */
-function parseInputPrompt(prompt: string): {
-  instruction: string;
-  before: string;
-  after: string;
-} {
-  // Prompts follow: "Instruction : « before ___ after »"
-  const guiIdx = prompt.indexOf("«");
-  if (guiIdx === -1) {
-    // Fallback: treat entire prompt as instruction, blank is the whole sentence
-    return { instruction: prompt, before: "", after: "" };
-  }
-  const instruction = prompt.slice(0, guiIdx).replace(/\s*:\s*$/, "").trim();
-  const sentence = prompt.slice(guiIdx + 1).replace(/»\s*$/, "").trim();
-  const blankIdx = sentence.indexOf("___");
-  if (blankIdx === -1) {
-    return { instruction, before: sentence, after: "" };
-  }
+/** Extract before/after blank from a phrase like "« Je ___ avec mes amis. »" */
+function parsePhrase(phrase: string): { before: string; after: string } {
+  const content = phrase.replace(/^«\s*/, "").replace(/\s*»$/, "");
+  const blankIdx = content.indexOf("___");
+  if (blankIdx === -1) return { before: content, after: "" };
   return {
-    instruction,
-    before: sentence.slice(0, blankIdx),
-    after: sentence.slice(blankIdx + 3),
+    before: content.slice(0, blankIdx),
+    after: content.slice(blankIdx + 3),
   };
 }
 
@@ -431,7 +419,7 @@ function InputQuestionView({
   const inputRef = useRef<HTMLInputElement>(null);
   const nextButtonRef = useRef<HTMLButtonElement>(null);
 
-  const { instruction, before, after } = parseInputPrompt(question.prompt);
+  const { before, after } = parsePhrase(question.phrase);
 
   // Reset state when question changes
   useEffect(() => {
@@ -497,7 +485,7 @@ function InputQuestionView({
           </span>
         </div>
         <p className="text-base text-ardoise leading-relaxed">
-          {instruction}
+          {question.prompt}
         </p>
       </div>
 
