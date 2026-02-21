@@ -4,12 +4,31 @@ export interface Choice {
   explanation: string;
 }
 
-export interface Question {
+export interface WrongAnswer {
+  text: string;
+  explanation: string;
+}
+
+interface BaseQuestion {
   id: string;
   ruleId: string;
   prompt: string;
+  generatedBy: string;
+}
+
+export interface MultipleChoiceQuestion extends BaseQuestion {
+  type: "mcq";
   choices: Choice[];
 }
+
+export interface InputQuestion extends BaseQuestion {
+  type: "input";
+  answer: string;
+  explanation: string;
+  wrongAnswers: WrongAnswer[];
+}
+
+export type Question = MultipleChoiceQuestion | InputQuestion;
 
 export interface Rule {
   id: string;

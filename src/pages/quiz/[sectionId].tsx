@@ -1,8 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useCallback, useEffect, useMemo, useState } from "react";
-import type { Choice, Question, Section } from "~/data/types";
+import { useCallback, useEffect, useRef, useState } from "react";
+import type {
+  Choice,
+  InputQuestion,
+  MultipleChoiceQuestion,
+  Question,
+  Section,
+  WrongAnswer,
+} from "~/data/types";
 
 // Static imports for available sections
 import articlesSection from "~/data/sections/10-articles";
@@ -24,6 +31,97 @@ function shuffleArray<T>(array: T[]): T[] {
   return shuffled;
 }
 
+// Levenshtein distance — only need to check if distance is exactly 1
+function levenshteinDistance(a: string, b: string): number {
+  const la = a.length;
+  const lb = b.length;
+  if (Math.abs(la - lb) > 1) return 2; // early exit — can't be distance 1
+
+  const prev = Array.from({ length: lb + 1 }, (_, i) => i);
+  const curr = new Array<number>(lb + 1);
+
+  for (let i = 1; i <= la; i++) {
+    curr[0] = i;
+    for (let j = 1; j <= lb; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      curr[j] = Math.min(
+        prev[j]! + 1,
+        curr[j - 1]! + 1,
+        prev[j - 1]! + cost,
+      );
+    }
+    for (let j = 0; j <= lb; j++) prev[j] = curr[j]!;
+  }
+  return prev[lb]!;
+}
+
+type InputResultKind =
+  | "exact"          // correct, exact match
+  | "case-warning"   // correct but wrong case
+  | "wrong-prepared" // matches a prepared wrong answer
+  | "typo-correct"   // typo of the correct answer
+  | "typo-wrong"     // typo of a prepared wrong answer
+  | "unknown";       // no match at all
+
+interface InputResult {
+  kind: InputResultKind;
+  isCorrect: boolean;
+  matchedAnswer?: string;
+  explanation?: string;
+  wrongExplanation?: string;
+}
+
+function evaluateInput(userInput: string, question: InputQuestion): InputResult {
+  const trimmed = userInput.trim();
+  const answer = question.answer;
+
+  // 1. Exact match
+  if (trimmed === answer) {
+    return { kind: "exact", isCorrect: true };
+  }
+
+  // 2. Case-insensitive correct
+  if (trimmed.toLowerCase() === answer.toLowerCase()) {
+    return { kind: "case-warning", isCorrect: true, matchedAnswer: answer };
+  }
+
+  // 3. Exact match against prepared wrong answers (case-insensitive)
+  for (const wrong of question.wrongAnswers) {
+    if (trimmed.toLowerCase() === wrong.text.toLowerCase()) {
+      return {
+        kind: "wrong-prepared",
+        isCorrect: false,
+        matchedAnswer: wrong.text,
+        wrongExplanation: wrong.explanation,
+      };
+    }
+  }
+
+  // 4. Typo of correct answer (Levenshtein distance 1, case-insensitive)
+  if (levenshteinDistance(trimmed.toLowerCase(), answer.toLowerCase()) === 1) {
+    return {
+      kind: "typo-correct",
+      isCorrect: false,
+      matchedAnswer: answer,
+    };
+  }
+
+  // 5. Typo of a prepared wrong answer (Levenshtein distance 1, case-insensitive)
+  for (const wrong of question.wrongAnswers) {
+    if (levenshteinDistance(trimmed.toLowerCase(), wrong.text.toLowerCase()) === 1) {
+      return {
+        kind: "typo-wrong",
+        isCorrect: false,
+        matchedAnswer: wrong.text,
+        wrongExplanation: wrong.explanation,
+      };
+    }
+  }
+
+  // 6. No match
+  return { kind: "unknown", isCorrect: false };
+}
+
 export default function QuizPage() {
   const router = useRouter();
   const { sectionId } = router.query;
@@ -42,11 +140,10 @@ export default function QuizPage() {
     if (section) {
       const shuffled = shuffleArray(section.questions);
       const selected = shuffled.slice(0, Math.min(QUESTIONS_PER_QUIZ, shuffled.length));
-      // Also shuffle choices within each question
-      const withShuffledChoices = selected.map((q) => ({
-        ...q,
-        choices: shuffleArray(q.choices),
-      }));
+      // Also shuffle choices within MCQ questions
+      const withShuffledChoices = selected.map((q) =>
+        q.type === "mcq" ? { ...q, choices: shuffleArray(q.choices) } : q,
+      );
       setQuizQuestions(withShuffledChoices);
     }
   }, [section]);
@@ -54,9 +151,9 @@ export default function QuizPage() {
   const currentQuestion = quizQuestions[currentIndex];
   const totalQuestions = quizQuestions.length;
 
-  const handleSelect = useCallback(
+  const handleMcqSelect = useCallback(
     (index: number) => {
-      if (answered || !currentQuestion) return;
+      if (answered || !currentQuestion || currentQuestion.type !== "mcq") return;
       setSelectedChoiceIndex(index);
       setAnswered(true);
       const isCorrect = currentQuestion.choices[index]?.correct ?? false;
@@ -64,6 +161,16 @@ export default function QuizPage() {
       setAnswers((a) => [...a, { correct: isCorrect, question: currentQuestion }]);
     },
     [answered, currentQuestion],
+  );
+
+  const handleInputAnswer = useCallback(
+    (isCorrect: boolean) => {
+      if (!currentQuestion) return;
+      setAnswered(true);
+      if (isCorrect) setScore((s) => s + 1);
+      setAnswers((a) => [...a, { correct: isCorrect, question: currentQuestion }]);
+    },
+    [currentQuestion],
   );
 
   const handleNext = useCallback(() => {
@@ -80,10 +187,9 @@ export default function QuizPage() {
     if (section) {
       const shuffled = shuffleArray(section.questions);
       const selected = shuffled.slice(0, Math.min(QUESTIONS_PER_QUIZ, shuffled.length));
-      const withShuffledChoices = selected.map((q) => ({
-        ...q,
-        choices: shuffleArray(q.choices),
-      }));
+      const withShuffledChoices = selected.map((q) =>
+        q.type === "mcq" ? { ...q, choices: shuffleArray(q.choices) } : q,
+      );
       setQuizQuestions(withShuffledChoices);
       setCurrentIndex(0);
       setSelectedChoiceIndex(null);
@@ -94,23 +200,27 @@ export default function QuizPage() {
     }
   }, [section]);
 
-  // Keyboard shortcuts
+  // Keyboard shortcuts for MCQ questions and advancing
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
+      // Enter to advance (but only when not inside the input field for input questions)
       if (e.key === "Enter" && answered && !finished) {
+        // Don't hijack Enter from the input question's own submit
+        const target = e.target as HTMLElement;
+        if (target.tagName === "INPUT") return;
         handleNext();
         return;
       }
-      if (!answered && currentQuestion) {
+      if (!answered && currentQuestion?.type === "mcq") {
         const num = parseInt(e.key);
         if (num >= 1 && num <= currentQuestion.choices.length) {
-          handleSelect(num - 1);
+          handleMcqSelect(num - 1);
         }
       }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [answered, finished, currentQuestion, handleNext, handleSelect]);
+  }, [answered, finished, currentQuestion, handleNext, handleMcqSelect]);
 
   if (!section) {
     return (
@@ -183,25 +293,35 @@ export default function QuizPage() {
               sectionTitle={section.title}
               onRestart={handleRestart}
             />
-          ) : (
-            currentQuestion && (
-              <QuestionView
-                question={currentQuestion}
-                selectedChoiceIndex={selectedChoiceIndex}
-                answered={answered}
-                onSelect={handleSelect}
-                onNext={handleNext}
-                questionNum={currentIndex + 1}
-              />
-            )
-          )}
+          ) : currentQuestion?.type === "mcq" ? (
+            <McqQuestionView
+              question={currentQuestion}
+              selectedChoiceIndex={selectedChoiceIndex}
+              answered={answered}
+              onSelect={handleMcqSelect}
+              onNext={handleNext}
+              questionNum={currentIndex + 1}
+            />
+          ) : currentQuestion?.type === "input" ? (
+            <InputQuestionView
+              question={currentQuestion}
+              answered={answered}
+              onAnswer={handleInputAnswer}
+              onNext={handleNext}
+              questionNum={currentIndex + 1}
+            />
+          ) : null}
         </main>
       </div>
     </>
   );
 }
 
-function QuestionView({
+// ===========================================================================
+// MCQ Question View (unchanged logic, renamed from QuestionView)
+// ===========================================================================
+
+function McqQuestionView({
   question,
   selectedChoiceIndex,
   answered,
@@ -209,16 +329,13 @@ function QuestionView({
   onNext,
   questionNum,
 }: {
-  question: Question;
+  question: MultipleChoiceQuestion;
   selectedChoiceIndex: number | null;
   answered: boolean;
   onSelect: (index: number) => void;
   onNext: () => void;
   questionNum: number;
 }) {
-  // Find the rule title for context
-  const ruleId = question.ruleId;
-
   return (
     <div className="animate-scale-in" key={question.id}>
       {/* Question prompt */}
@@ -248,7 +365,7 @@ function QuestionView({
       {/* Explanation + Next */}
       {answered && selectedChoiceIndex !== null && (
         <div className="animate-slide-up">
-          <ExplanationPanel
+          <McqExplanationPanel
             choice={question.choices[selectedChoiceIndex]!}
             correctChoice={question.choices.find((c) => c.correct)!}
             wasCorrect={question.choices[selectedChoiceIndex]!.correct}
@@ -266,6 +383,357 @@ function QuestionView({
     </div>
   );
 }
+
+// ===========================================================================
+// Input Question View
+// ===========================================================================
+
+/** Split an input question prompt into instruction + sentence with blank parts */
+function parseInputPrompt(prompt: string): {
+  instruction: string;
+  before: string;
+  after: string;
+} {
+  // Prompts follow: "Instruction : « before ___ after »"
+  const guiIdx = prompt.indexOf("«");
+  if (guiIdx === -1) {
+    // Fallback: treat entire prompt as instruction, blank is the whole sentence
+    return { instruction: prompt, before: "", after: "" };
+  }
+  const instruction = prompt.slice(0, guiIdx).replace(/\s*:\s*$/, "").trim();
+  const sentence = prompt.slice(guiIdx + 1).replace(/»\s*$/, "").trim();
+  const blankIdx = sentence.indexOf("___");
+  if (blankIdx === -1) {
+    return { instruction, before: sentence, after: "" };
+  }
+  return {
+    instruction,
+    before: sentence.slice(0, blankIdx),
+    after: sentence.slice(blankIdx + 3),
+  };
+}
+
+function InputQuestionView({
+  question,
+  answered,
+  onAnswer,
+  onNext,
+  questionNum,
+}: {
+  question: InputQuestion;
+  answered: boolean;
+  onAnswer: (isCorrect: boolean) => void;
+  onNext: () => void;
+  questionNum: number;
+}) {
+  const [userInput, setUserInput] = useState("");
+  const [result, setResult] = useState<InputResult | null>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const nextButtonRef = useRef<HTMLButtonElement>(null);
+
+  const { instruction, before, after } = parseInputPrompt(question.prompt);
+
+  // Reset state when question changes
+  useEffect(() => {
+    setUserInput("");
+    setResult(null);
+    const timer = setTimeout(() => inputRef.current?.focus(), 350);
+    return () => clearTimeout(timer);
+  }, [question.id]);
+
+  // Focus next button after answering
+  useEffect(() => {
+    if (result) {
+      const timer = setTimeout(() => nextButtonRef.current?.focus(), 100);
+      return () => clearTimeout(timer);
+    }
+  }, [result]);
+
+  const handleSubmit = useCallback(() => {
+    if (answered || !userInput.trim()) return;
+    const res = evaluateInput(userInput, question);
+    setResult(res);
+    onAnswer(res.isCorrect);
+  }, [answered, userInput, question, onAnswer]);
+
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        if (!answered) {
+          handleSubmit();
+        } else {
+          onNext();
+        }
+      }
+    },
+    [answered, handleSubmit, onNext],
+  );
+
+  // Underline color for the inline input
+  let underlineColor = "border-craie";
+  if (result) {
+    if (result.kind === "exact") underlineColor = "border-correct";
+    else if (result.kind === "case-warning") underlineColor = "border-warning";
+    else underlineColor = "border-incorrect";
+  }
+
+  // Measure input width to fit content
+  const inputWidth = Math.max(userInput.length, 3);
+
+  return (
+    <div className="animate-scale-in" key={question.id}>
+      {/* Instruction line */}
+      <div className="mb-6">
+        <div className="flex items-center gap-3 mb-3">
+          <p className="text-xs font-medium text-ardoise uppercase tracking-wider">
+            Question {questionNum}
+          </p>
+          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tricolore-bleu/8 text-tricolore-bleu text-[10px] font-semibold uppercase tracking-wider">
+            <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+            </svg>
+            saisie
+          </span>
+        </div>
+        <p className="text-base text-ardoise leading-relaxed">
+          {instruction}
+        </p>
+      </div>
+
+      {/* Sentence with inline input */}
+      <div className="mb-8 py-6 px-5 rounded-xl bg-tricolore-blanc border border-craie">
+        <p className="text-xl md:text-2xl font-medium text-encre leading-relaxed inline">
+          <span>«&nbsp;{before}</span>
+          <span className="inline-flex items-baseline mx-0.5">
+            <span className="relative">
+              <input
+                ref={inputRef}
+                type="text"
+                value={userInput}
+                onChange={(e) => !answered && setUserInput(e.target.value)}
+                onKeyDown={handleKeyDown}
+                disabled={answered}
+                placeholder="…"
+                autoComplete="off"
+                autoCapitalize="off"
+                spellCheck={false}
+                style={{ width: `${inputWidth + 1.5}ch` }}
+                className={`
+                  text-xl md:text-2xl font-semibold text-tricolore-bleu
+                  bg-transparent outline-none text-center
+                  border-b-2 ${underlineColor}
+                  ${!answered ? "focus:border-tricolore-bleu" : ""}
+                  placeholder:text-craie placeholder:font-light
+                  transition-colors duration-300
+                  py-0.5 px-1 min-w-[3ch]
+                  ${answered ? "cursor-default" : ""}
+                `}
+              />
+            </span>
+          </span>
+          <span>{after}&nbsp;»</span>
+        </p>
+      </div>
+
+      {/* Submit button */}
+      {!answered && (
+        <div className="mb-8">
+          <button
+            onClick={handleSubmit}
+            disabled={!userInput.trim()}
+            className={`
+              px-8 py-3 rounded-xl font-medium transition-all duration-200 cursor-pointer
+              ${userInput.trim()
+                ? "bg-tricolore-bleu text-white hover:bg-encre-light shadow-sm"
+                : "bg-craie text-ardoise cursor-not-allowed"
+              }
+            `}
+          >
+            Valider
+            <span className={`ml-2 text-sm ${userInput.trim() ? "text-white/40" : "text-ardoise/40"}`}>Entrée ↵</span>
+          </button>
+        </div>
+      )}
+
+      {/* Result feedback */}
+      {answered && result && (
+        <div className="animate-slide-up">
+          <InputFeedbackPanel
+            result={result}
+            question={question}
+            userInput={userInput.trim()}
+          />
+
+          <button
+            ref={nextButtonRef}
+            onClick={onNext}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                onNext();
+              }
+            }}
+            className="mt-6 w-full sm:w-auto px-8 py-3 bg-tricolore-bleu text-white font-medium rounded-xl hover:bg-encre-light transition-colors duration-200 cursor-pointer"
+          >
+            Question suivante
+            <span className="ml-2 text-white/50 text-sm">Entrée ↵</span>
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ===========================================================================
+// Input Feedback Panel
+// ===========================================================================
+
+function InputFeedbackPanel({
+  result,
+  question,
+  userInput,
+}: {
+  result: InputResult;
+  question: InputQuestion;
+  userInput: string;
+}) {
+  switch (result.kind) {
+    // ---- Exact correct ----
+    case "exact":
+      return (
+        <div className="rounded-xl border p-5 bg-correct-bg border-correct-border">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-6 h-6 rounded-full bg-correct flex items-center justify-center">
+              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span className="font-semibold text-correct">Bonne réponse !</span>
+          </div>
+          <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
+        </div>
+      );
+
+    // ---- Correct but wrong case ----
+    case "case-warning":
+      return (
+        <div className="rounded-xl border p-5 bg-warning-bg border-warning-border">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-6 h-6 rounded-full bg-warning flex items-center justify-center">
+              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span className="font-semibold text-warning">Bonne réponse !</span>
+          </div>
+          <div className="flex items-start gap-2 mb-3 px-3 py-2 rounded-lg bg-warning/5 border border-warning/15">
+            <svg className="w-4 h-4 text-warning shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p className="text-sm text-encre">
+              Attention à la casse : la bonne écriture est <strong>« {result.matchedAnswer} »</strong>, pas « {userInput} ».
+            </p>
+          </div>
+          <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
+        </div>
+      );
+
+    // ---- Prepared wrong answer ----
+    case "wrong-prepared":
+      return (
+        <div className="rounded-xl border p-5 bg-incorrect-bg border-incorrect-border">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-6 h-6 rounded-full bg-incorrect flex items-center justify-center">
+              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </div>
+            <span className="font-semibold text-incorrect">Mauvaise réponse</span>
+          </div>
+          <p className="text-sm text-encre leading-relaxed">{result.wrongExplanation}</p>
+          <div className="mt-4 pt-4 border-t border-incorrect-border/50">
+            <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-1">
+              La bonne réponse : {question.answer}
+            </p>
+            <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
+          </div>
+        </div>
+      );
+
+    // ---- Typo of correct answer ----
+    case "typo-correct":
+      return (
+        <div className="rounded-xl border p-5 bg-warning-bg border-warning-border">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-6 h-6 rounded-full bg-warning flex items-center justify-center">
+              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              </svg>
+            </div>
+            <span className="font-semibold text-warning">Presque !</span>
+          </div>
+          <p className="text-sm text-encre leading-relaxed mb-3">
+            Vous vouliez probablement dire <strong>« {result.matchedAnswer} »</strong> — c&apos;est la bonne réponse, mais l&apos;orthographe compte !
+          </p>
+          <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
+        </div>
+      );
+
+    // ---- Typo of wrong answer ----
+    case "typo-wrong":
+      return (
+        <div className="rounded-xl border p-5 bg-warning-bg border-warning-border">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-6 h-6 rounded-full bg-warning flex items-center justify-center">
+              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              </svg>
+            </div>
+            <span className="font-semibold text-warning">Presque, mais non</span>
+          </div>
+          <p className="text-sm text-encre leading-relaxed mb-3">
+            Vous vouliez probablement dire <strong>« {result.matchedAnswer} »</strong> — c&apos;est incorrect.
+          </p>
+          <p className="text-sm text-encre leading-relaxed">{result.wrongExplanation}</p>
+          <div className="mt-4 pt-4 border-t border-warning-border/50">
+            <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-1">
+              La bonne réponse : {question.answer}
+            </p>
+            <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
+          </div>
+        </div>
+      );
+
+    // ---- Unknown answer ----
+    case "unknown":
+      return (
+        <div className="rounded-xl border p-5 bg-incorrect-bg border-incorrect-border">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-6 h-6 rounded-full bg-ardoise flex items-center justify-center">
+              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01" />
+              </svg>
+            </div>
+            <span className="font-semibold text-ardoise">Réponse inattendue</span>
+          </div>
+          <p className="text-sm text-encre leading-relaxed mb-1">
+            « {userInput} » ne correspond à aucune réponse prévue.
+          </p>
+          <div className="mt-4 pt-4 border-t border-incorrect-border/50">
+            <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-1">
+              La bonne réponse : {question.answer}
+            </p>
+            <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
+          </div>
+        </div>
+      );
+  }
+}
+
+// ===========================================================================
+// MCQ Components (unchanged)
+// ===========================================================================
 
 function ChoiceButton({
   choice,
@@ -341,7 +809,7 @@ function ChoiceButton({
   );
 }
 
-function ExplanationPanel({
+function McqExplanationPanel({
   choice,
   correctChoice,
   wasCorrect,
@@ -393,6 +861,10 @@ function ExplanationPanel({
     </div>
   );
 }
+
+// ===========================================================================
+// Score Summary
+// ===========================================================================
 
 function ScoreSummary({
   score,
@@ -463,9 +935,14 @@ function ScoreSummary({
                   </svg>
                 )}
               </span>
-              <p className="text-sm text-encre leading-relaxed">
-                {answer.question.prompt}
-              </p>
+              <div className="flex items-center gap-2">
+                {answer.question.type === "input" && (
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-tricolore-bleu/40 shrink-0" title="Question à saisie" />
+                )}
+                <p className="text-sm text-encre leading-relaxed">
+                  {answer.question.prompt}
+                </p>
+              </div>
             </div>
           ))}
         </div>

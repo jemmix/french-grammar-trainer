@@ -2,7 +2,7 @@
 
 ## Overview
 
-Web app for French grammar training at B1 level. All UI and content in French. Multiple-choice questions (4-5 choices) with explanations for every answer. Stateless — no database, no authentication.
+Web app for French grammar training at B1 level. All UI and content in French. Two question types: multiple-choice (80%) and user-input (20%), both with explanations for every answer. Stateless — no database, no authentication.
 
 **Tech stack:** T3 (Next.js + TypeScript + tRPC + Tailwind CSS)
 
@@ -12,9 +12,11 @@ Web app for French grammar training at B1 level. All UI and content in French. M
 
 ### 1.1 Content Data Structure
 - Define TypeScript types for the data model:
-  - `Section`: id, title, description, list of rules
-  - `Rule`: id, sectionId, title, explanation
-  - `Question`: id, ruleId, prompt, choices (4-5), correct answer index, per-choice explanations
+  - `Section`: id, title, description, list of rules, list of questions
+  - `Rule`: id, sectionId, title
+  - `Question`: discriminated union (`MultipleChoiceQuestion | InputQuestion`)
+    - `MultipleChoiceQuestion` (`type: "mcq"`): id, ruleId, prompt, generatedBy, choices (4-5 with per-choice explanations)
+    - `InputQuestion` (`type: "input"`): id, ruleId, prompt, generatedBy, answer, explanation, wrongAnswers (5 prepared wrong responses)
 - Store all content as static JSON files in `src/data/`
 - One JSON file per section (28 files), each containing its rules and questions
 - Create an index file (`sections-index.json`) listing all sections with metadata
@@ -78,10 +80,19 @@ Each section contains:
 - Each question has 4-5 choices with individual explanations
 
 ### 3.2 Question Formats
-Three question types:
+Two delivery modes:
+
+**Multiple-choice (MCQ)** — `type: "mcq"`, ~80% of content:
 1. **Fill in the blank** — "Hier, je ___ au cinéma." → suis allé / ai allé / allais / irai
 2. **Identify the correct sentence** — "Quelle phrase est correcte ?" → 4-5 sentences, only one correct
 3. **Transform** — "Mettez à l'imparfait : 'Je mange'" → Je mangeais / Je mangais / Je mangerais / Je mangai
+
+**User-input** — `type: "input"`, ~20% of content:
+- Prompt with a blank, user types the answer in an inline text field
+- Correct answer stored as `answer`, with `explanation` for why it's correct
+- 5 prepared `wrongAnswers`, each with its own explanation
+- Matching logic: exact match → correct; case-insensitive match → correct with case warning; prepared wrong answer match → incorrect with explanation; Levenshtein distance 1 → typo detection (counted as incorrect); no match → "unexpected answer" fallback
+- Each question tracks `generatedBy` (model that produced it)
 
 ### 3.3 Content Quality
 - Clear, pedagogical explanations for every choice

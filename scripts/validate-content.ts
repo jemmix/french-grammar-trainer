@@ -1,10 +1,19 @@
 /**
  * Validates question content for quality issues:
+ *
+ * MCQ questions:
  * - Exact duplicate choice texts within a question
  * - Near-duplicate choices (multiple forms of the same determiner family)
  * - Questions with fewer than 2 choices
  * - Questions with no correct answer
  * - Questions with multiple correct answers
+ *
+ * Input questions:
+ * - Missing or empty answer
+ * - Missing or empty explanation
+ * - Fewer than 2 wrong answers
+ * - Duplicate wrong answers
+ * - Empty wrong answer explanations
  *
  * Run: npx tsx scripts/validate-content.ts
  * Or:  npm run validate-content
@@ -46,12 +55,30 @@ interface Choice {
   explanation: string;
 }
 
-interface Question {
+interface WrongAnswer {
+  text: string;
+  explanation: string;
+}
+
+interface McqQuestion {
   id: string;
+  type: "mcq";
   ruleId: string;
   prompt: string;
   choices: Choice[];
 }
+
+interface InputQuestion {
+  id: string;
+  type: "input";
+  ruleId: string;
+  prompt: string;
+  answer: string;
+  explanation: string;
+  wrongAnswers: WrongAnswer[];
+}
+
+type Question = McqQuestion | InputQuestion;
 
 interface Section {
   id: string;
@@ -72,54 +99,107 @@ function warn(questionId: string, msg: string) {
   warnCount++;
 }
 
+function validateMcq(q: McqQuestion) {
+  // Check minimum choices
+  if (q.choices.length < 2) {
+    error(q.id, `Only ${q.choices.length} choice(s) — need at least 2`);
+  }
+
+  // Check correct answer count
+  const correctCount = q.choices.filter((c) => c.correct).length;
+  if (correctCount === 0) {
+    error(q.id, "No correct answer marked");
+  } else if (correctCount > 1) {
+    error(q.id, `${correctCount} correct answers marked — should be exactly 1`);
+  }
+
+  // Check exact duplicates (case-insensitive)
+  const seen = new Map<string, number>();
+  for (let i = 0; i < q.choices.length; i++) {
+    const normalized = q.choices[i]!.text.toLowerCase().trim();
+    if (seen.has(normalized)) {
+      error(q.id, `Exact duplicate choice: "${q.choices[i]!.text}" (indices ${seen.get(normalized)} and ${i})`);
+    }
+    seen.set(normalized, i);
+  }
+
+  // Check near-duplicates (same determiner family)
+  const familyCounts = new Map<string, string[]>();
+  for (const choice of q.choices) {
+    const families = getFamilies(choice.text);
+    for (const family of families) {
+      const existing = familyCounts.get(family) ?? [];
+      existing.push(choice.text);
+      familyCounts.set(family, existing);
+    }
+  }
+  for (const [family, members] of familyCounts) {
+    if (members.length > 2) {
+      error(q.id, `${members.length} choices from same family "${family}": ${members.join(", ")} — max 2 allowed`);
+    }
+  }
+
+  // Check empty explanations
+  for (const choice of q.choices) {
+    if (!choice.explanation.trim()) {
+      warn(q.id, `Empty explanation for choice "${choice.text}"`);
+    }
+  }
+}
+
+function validateInput(q: InputQuestion) {
+  // Check answer exists
+  if (!q.answer || !q.answer.trim()) {
+    error(q.id, "Missing or empty answer");
+  }
+
+  // Check explanation exists
+  if (!q.explanation || !q.explanation.trim()) {
+    error(q.id, "Missing or empty explanation");
+  }
+
+  // Check minimum wrong answers
+  if (q.wrongAnswers.length < 2) {
+    error(q.id, `Only ${q.wrongAnswers.length} wrong answer(s) — need at least 2`);
+  }
+
+  // Check for duplicate wrong answers (case-insensitive)
+  const seen = new Map<string, number>();
+  for (let i = 0; i < q.wrongAnswers.length; i++) {
+    const normalized = q.wrongAnswers[i]!.text.toLowerCase().trim();
+    if (seen.has(normalized)) {
+      error(q.id, `Duplicate wrong answer: "${q.wrongAnswers[i]!.text}" (indices ${seen.get(normalized)} and ${i})`);
+    }
+    seen.set(normalized, i);
+  }
+
+  // Check wrong answer that matches the correct answer
+  for (const wa of q.wrongAnswers) {
+    if (wa.text.toLowerCase().trim() === q.answer.toLowerCase().trim()) {
+      error(q.id, `Wrong answer "${wa.text}" matches the correct answer`);
+    }
+  }
+
+  // Check empty wrong answer explanations
+  for (const wa of q.wrongAnswers) {
+    if (!wa.explanation.trim()) {
+      warn(q.id, `Empty explanation for wrong answer "${wa.text}"`);
+    }
+  }
+}
+
 async function validateSection(section: Section) {
-  console.log(`\nSection: ${section.title} (${section.questions.length} questions)`);
+  const mcqCount = section.questions.filter((q) => q.type === "mcq").length;
+  const inputCount = section.questions.filter((q) => q.type === "input").length;
+  console.log(`\nSection: ${section.title} (${section.questions.length} questions — ${mcqCount} MCQ, ${inputCount} input)`);
 
   for (const q of section.questions) {
-    // Check minimum choices
-    if (q.choices.length < 2) {
-      error(q.id, `Only ${q.choices.length} choice(s) — need at least 2`);
-    }
-
-    // Check correct answer count
-    const correctCount = q.choices.filter((c) => c.correct).length;
-    if (correctCount === 0) {
-      error(q.id, "No correct answer marked");
-    } else if (correctCount > 1) {
-      error(q.id, `${correctCount} correct answers marked — should be exactly 1`);
-    }
-
-    // Check exact duplicates (case-insensitive)
-    const seen = new Map<string, number>();
-    for (let i = 0; i < q.choices.length; i++) {
-      const normalized = q.choices[i]!.text.toLowerCase().trim();
-      if (seen.has(normalized)) {
-        error(q.id, `Exact duplicate choice: "${q.choices[i]!.text}" (indices ${seen.get(normalized)} and ${i})`);
-      }
-      seen.set(normalized, i);
-    }
-
-    // Check near-duplicates (same determiner family)
-    const familyCounts = new Map<string, string[]>();
-    for (const choice of q.choices) {
-      const families = getFamilies(choice.text);
-      for (const family of families) {
-        const existing = familyCounts.get(family) ?? [];
-        existing.push(choice.text);
-        familyCounts.set(family, existing);
-      }
-    }
-    for (const [family, members] of familyCounts) {
-      if (members.length > 2) {
-        error(q.id, `${members.length} choices from same family "${family}": ${members.join(", ")} — max 2 allowed`);
-      }
-    }
-
-    // Check empty explanations
-    for (const choice of q.choices) {
-      if (!choice.explanation.trim()) {
-        warn(q.id, `Empty explanation for choice "${choice.text}"`);
-      }
+    if (q.type === "mcq") {
+      validateMcq(q);
+    } else if (q.type === "input") {
+      validateInput(q);
+    } else {
+      error((q as { id: string }).id, `Unknown question type: ${(q as { type: string }).type}`);
     }
   }
 }

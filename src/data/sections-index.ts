@@ -10,7 +10,7 @@ export const sectionsIndex: SectionMeta[] = [
   { id: "07-subjonctif-present", title: "Le subjonctif présent", description: "Formation, emplois après les verbes de volonté, sentiment, doute", questionCount: 0 },
   { id: "08-subjonctif-passe", title: "Le subjonctif passé", description: "Formation, emplois, opposition indicatif/subjonctif", questionCount: 0 },
   { id: "09-imperatif", title: "L'impératif", description: "Formation, place des pronoms, verbes pronominaux", questionCount: 0 },
-  { id: "10-articles", title: "Les articles", description: "Articles définis, indéfinis, partitifs — emplois et distinctions", questionCount: 50 },
+  { id: "10-articles", title: "Les articles", description: "Articles définis, indéfinis, partitifs — emplois et distinctions", questionCount: 100 },
   { id: "11-pronoms-cod-coi", title: "Les pronoms personnels (COD, COI)", description: "Identification, place dans la phrase, double pronominalisation", questionCount: 0 },
   { id: "12-pronoms-relatifs", title: "Les pronoms relatifs", description: "Qui, que, dont, où, lequel, ce qui/ce que/ce dont", questionCount: 0 },
   { id: "13-demonstratifs-possessifs", title: "Les pronoms démonstratifs et possessifs", description: "Celui/celle, le mien/la mienne, c'est vs il est", questionCount: 0 },
