@@ -9,6 +9,7 @@
 - **Course material / ToC changes**: Commit and push without asking — these are safe to land unattended
 - **Code changes**: Commit and push liberally — user reviews post factum
 - **CLAUDE.md**: Update liberally to reflect user preferences and vibes as they emerge
+- **TODO.md**: Note bugs, UX gaps, content quality issues, and ideas liberally — don't wait for the user to ask. Anything worth remembering for later goes here.
 
 ## Content Quality Rules
 
@@ -27,7 +28,9 @@
   - ~One choice that's **left-field plausible** — a different grammar construct entirely that a learner might confuse with the right answer (e.g. a partitive, a possessive, a contraction)
 
 ### User-input questions (`type: "input"`)
-- Prompt format: `"Instruction : « before ___ after »"` — the `___` becomes an inline text input in the UI
-- Provide exactly **5 prepared wrong answers**, each with its own explanation
-- Wrong answers should cover the most likely mistakes (wrong gender, wrong elision, wrong article type, adjacent grammar constructs)
+- Two separate fields: `prompt` (brief instruction, e.g. "Conjuguez le verbe au présent") and `phrase` (sentence with blank, e.g. `"« Je ___ avec mes amis. »"`)
+- The `___` in `phrase` becomes an inline text input in the UI
+- Provide **5–10 prepared wrong answers**, each with its own explanation; minimum 4 to pass validation
+- Wrong answers should cover the most likely mistakes (wrong person/number, wrong tense, wrong article type, adjacent grammar constructs)
+- Wrong answers must never duplicate the correct `answer`
 - The correct `answer` field should use proper capitalization (matching is case-insensitive but case warnings are shown)
