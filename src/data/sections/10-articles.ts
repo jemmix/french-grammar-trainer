@@ -34,6 +34,7 @@ const section: Section = {
       prompt: "Complétez : « ___ soleil brille aujourd'hui. »",
       choices: [
         { text: "Le", correct: true, explanation: "« Soleil » est masculin singulier et commence par une consonne → article défini « le ». On parle du soleil en général (il n'y en a qu'un)." },
+        { text: "La", correct: false, explanation: "« La » est l'article défini féminin. « Soleil » est un nom masculin → « le soleil »." },
         { text: "Un", correct: false, explanation: "« Un » est un article indéfini. On utilise l'article défini car le soleil est unique et connu de tous." },
         { text: "Du", correct: false, explanation: "« Du » est un article partitif (de + le). On ne dit pas « du soleil brille » — il faut un article défini comme sujet." },
       ],
@@ -46,6 +47,7 @@ const section: Section = {
         { text: "L'", correct: true, explanation: "« École » est féminin et commence par une voyelle → l'article défini s'élide en « l' »." },
         { text: "La", correct: false, explanation: "On n'utilise pas « la » devant un mot commençant par une voyelle. Il faut élider : « l'école »." },
         { text: "Une", correct: false, explanation: "L'article indéfini « une » ne convient pas ici car on parle d'une école précise (celle du quartier)." },
+        { text: "De l'", correct: false, explanation: "« De l' » est un partitif. Ici « école » est le sujet de la phrase → article défini « l' »." },
       ],
     },
     {
@@ -54,8 +56,9 @@ const section: Section = {
       prompt: "Complétez : « ___ enfants jouent dans le parc. »",
       choices: [
         { text: "Les", correct: true, explanation: "« Enfants » est pluriel → article défini pluriel « les ». On parle d'enfants identifiés (ceux du parc)." },
+        { text: "Le", correct: false, explanation: "« Le » est singulier. « Enfants » est au pluriel → il faut « les »." },
         { text: "Des", correct: false, explanation: "« Des » (indéfini) serait possible dans un autre contexte, mais ici on parle d'enfants précis que l'on observe." },
-        { text: "Ses", correct: false, explanation: "« Ses » est un possessif. Sans possesseur mentionné, l'article défini « les » est correct." },
+        { text: "Ses", correct: false, explanation: "« Ses » est un possessif. Sans possesseur mentionné dans la phrase, l'article défini « les » est correct." },
       ],
     },
     {
@@ -64,9 +67,9 @@ const section: Section = {
       prompt: "Complétez : « J'adore ___ musique classique. »",
       choices: [
         { text: "la", correct: true, explanation: "Avec les verbes de goût (adorer, aimer, détester, préférer), on utilise l'article défini pour exprimer une préférence générale : « la musique classique » en général." },
+        { text: "les", correct: false, explanation: "« Les » est pluriel. « Musique » est singulier : « la musique classique »." },
         { text: "de la", correct: false, explanation: "L'article partitif « de la » s'utilise pour une quantité indéterminée. Avec « adorer », on exprime un goût général → article défini." },
         { text: "une", correct: false, explanation: "L'article indéfini « une » ne convient pas pour exprimer un goût général." },
-        { text: "les", correct: false, explanation: "« Les » est pluriel. « Musique » est singulier : « la musique classique »." },
       ],
     },
     {
@@ -75,8 +78,8 @@ const section: Section = {
       prompt: "Complétez : « ___ lundi, je commence à 8 heures. »",
       choices: [
         { text: "Le", correct: true, explanation: "L'article défini devant un jour de la semaine indique une habitude : « le lundi » = tous les lundis." },
-        { text: "Un", correct: false, explanation: "« Un lundi » désignerait un lundi particulier mais indéterminé. Ici, le contexte indique une habitude → « le »." },
         { text: "Les", correct: false, explanation: "Pour exprimer l'habitude avec un jour, on utilise le singulier « le lundi », pas « les lundis » (bien que les deux soient possibles, « le » est la forme standard)." },
+        { text: "Un", correct: false, explanation: "« Un lundi » désignerait un lundi particulier mais indéterminé. Ici, le contexte indique une habitude → « le »." },
         { text: "Chaque", correct: false, explanation: "« Chaque lundi » est correct en soi, mais la consigne demande un article. L'article défini « le » exprime l'habitude." },
       ],
     },
@@ -86,8 +89,9 @@ const section: Section = {
       prompt: "Complétez : « ___ homme est un animal social. »",
       choices: [
         { text: "L'", correct: true, explanation: "Ici « l'homme » a une valeur générale : l'humanité, l'être humain en général. Article défini élidé devant « h » muet." },
-        { text: "Un", correct: false, explanation: "« Un homme » désignerait un individu particulier. Le sens ici est général (l'espèce humaine) → article défini." },
         { text: "Le", correct: false, explanation: "« Homme » commence par un « h » muet → il faut élider : « l'homme », pas « le homme »." },
+        { text: "Un", correct: false, explanation: "« Un homme » désignerait un individu particulier. Le sens ici est général (l'espèce humaine) → article défini." },
+        { text: "Du", correct: false, explanation: "« Du » est un partitif. On ne dit pas « du homme » — c'est l'article défini élidé « l' » qui convient." },
       ],
     },
     {
@@ -96,8 +100,9 @@ const section: Section = {
       prompt: "Complétez : « ___ mer Méditerranée est magnifique en été. »",
       choices: [
         { text: "La", correct: true, explanation: "« Mer » est féminin singulier. La mer Méditerranée est un nom propre géographique qui prend l'article défini." },
-        { text: "Le", correct: false, explanation: "« Le » est masculin. « Mer » est un nom féminin → « la mer »." },
+        { text: "Le", correct: false, explanation: "« Le » est l'article défini masculin. « Mer » est un nom féminin → « la mer »." },
         { text: "Une", correct: false, explanation: "Il n'y a qu'une seule mer Méditerranée. On utilise l'article défini pour les noms géographiques uniques." },
+        { text: "De la", correct: false, explanation: "« De la » est un partitif. Ici « mer » est le sujet → article défini « la »." },
       ],
     },
     {
@@ -108,6 +113,7 @@ const section: Section = {
         { text: "L'", correct: true, explanation: "« Hiver » commence par un « h » muet → élision obligatoire : « l'hiver ». On parle d'un hiver précis (le dernier)." },
         { text: "Le", correct: false, explanation: "« Hiver » a un « h » muet → il faut élider. On dit « l'hiver », pas « le hiver »." },
         { text: "Un", correct: false, explanation: "« Dernier » rend l'hiver spécifique → article défini. « Un hiver » serait indéterminé." },
+        { text: "Cet", correct: false, explanation: "« Cet » est un démonstratif, pas un article. Avec « dernier », l'article défini « l' » convient." },
       ],
     },
     {
@@ -116,6 +122,7 @@ const section: Section = {
       prompt: "Complétez : « ___ prix de l'essence augmente chaque année. »",
       choices: [
         { text: "Le", correct: true, explanation: "« Prix » est masculin singulier et commence par une consonne → « le prix ». On parle du prix en général." },
+        { text: "L'", correct: false, explanation: "« Prix » commence par une consonne (le « p »). Pas d'élision → « le prix »." },
         { text: "Un", correct: false, explanation: "On parle du prix de l'essence en général, pas d'un prix parmi d'autres → article défini." },
         { text: "Du", correct: false, explanation: "« Du » est un article partitif. Ici, « prix » est le sujet de la phrase → article défini « le »." },
       ],
@@ -126,8 +133,9 @@ const section: Section = {
       prompt: "Complétez : « ___ fleuve qui traverse Paris s'appelle la Seine. »",
       choices: [
         { text: "Le", correct: true, explanation: "« Fleuve » est masculin singulier. La relative « qui traverse Paris » identifie un fleuve précis → article défini." },
+        { text: "La", correct: false, explanation: "« Fleuve » est masculin → « le fleuve », pas « la fleuve »." },
         { text: "Un", correct: false, explanation: "Le fleuve est identifié par la relative (« qui traverse Paris »). Il n'y en a qu'un → article défini." },
-        { text: "Ce", correct: false, explanation: "« Ce » est un démonstratif, pas un article. Le contexte demande l'article défini « le »." },
+        { text: "Ce", correct: false, explanation: "« Ce » est un démonstratif, pas un article. L'article défini « le » est la forme attendue ici." },
       ],
     },
     {
@@ -158,8 +166,8 @@ const section: Section = {
       prompt: "Complétez : « ___ français est une langue romane. »",
       choices: [
         { text: "Le", correct: true, explanation: "Devant le nom d'une langue, on utilise l'article défini : « le français », « l'anglais », « le chinois »." },
+        { text: "La", correct: false, explanation: "« Français » (la langue) est masculin → « le français ». « La » est féminin." },
         { text: "Un", correct: false, explanation: "Les noms de langues prennent l'article défini en français : « le français »." },
-        { text: "Du", correct: false, explanation: "« Du français » serait un partitif. Pour nommer une langue, on utilise l'article défini." },
         { text: "En", correct: false, explanation: "« En français » signifie « dans la langue française ». Ici, on parle de la langue comme sujet → « le français »." },
       ],
     },
@@ -169,6 +177,7 @@ const section: Section = {
       prompt: "Complétez : « Il déteste ___ sport. »",
       choices: [
         { text: "le", correct: true, explanation: "Avec « détester » (verbe de goût), on utilise l'article défini pour une opinion générale : « le sport »." },
+        { text: "les", correct: false, explanation: "« Les sports » est pluriel, mais « sport » est ici au singulier avec valeur générale → « le sport »." },
         { text: "du", correct: false, explanation: "Le partitif « du » ne s'utilise pas avec les verbes de goût (aimer, détester, adorer, préférer). → « le sport »." },
         { text: "un", correct: false, explanation: "L'article indéfini « un sport » désignerait un sport particulier. Ici, c'est le sport en général → « le »." },
       ],
@@ -181,6 +190,7 @@ const section: Section = {
         { text: "La", correct: true, explanation: "« Tour Eiffel » est un nom propre féminin (une tour). Les monuments célèbres prennent l'article défini." },
         { text: "Le", correct: false, explanation: "« Tour » est féminin quand il désigne une construction → « la Tour Eiffel »." },
         { text: "Une", correct: false, explanation: "La Tour Eiffel est unique et célèbre → article défini, pas indéfini." },
+        { text: "Cette", correct: false, explanation: "« Cette » est un démonstratif. Le nom propre « Tour Eiffel » prend l'article défini « la »." },
       ],
     },
     {
@@ -189,6 +199,7 @@ const section: Section = {
       prompt: "Complétez : « ___ patience est une vertu. »",
       choices: [
         { text: "La", correct: true, explanation: "« Patience » est un nom abstrait féminin. En français, les noms abstraits pris dans un sens général prennent l'article défini." },
+        { text: "Le", correct: false, explanation: "« Patience » est féminin → « la patience », pas « le patience »." },
         { text: "Une", correct: false, explanation: "On parle de la patience en général (concept), pas d'une patience particulière → article défini." },
         { text: "De la", correct: false, explanation: "« De la patience » est un partitif (quantité). Ici, on définit la patience comme concept → article défini." },
       ],
@@ -199,8 +210,9 @@ const section: Section = {
       prompt: "Complétez : « Je vais à ___ boulangerie du coin. »",
       choices: [
         { text: "la", correct: true, explanation: "« Boulangerie » est féminin singulier. « Du coin » la rend spécifique → article défini « la »." },
-        { text: "une", correct: false, explanation: "« Du coin » identifie une boulangerie précise. L'article défini est requis." },
         { text: "l'", correct: false, explanation: "« Boulangerie » commence par une consonne → pas d'élision. On dit « la boulangerie »." },
+        { text: "une", correct: false, explanation: "« Du coin » identifie une boulangerie précise. L'article défini est requis." },
+        { text: "sa", correct: false, explanation: "« Sa boulangerie » indiquerait qu'elle lui appartient. Ici, c'est juste la boulangerie du quartier → « la »." },
       ],
     },
     {
@@ -211,6 +223,7 @@ const section: Section = {
         { text: "L'", correct: true, explanation: "« Amour » commence par une voyelle → élision : « l'amour ». Sens général (l'amour comme concept)." },
         { text: "Le", correct: false, explanation: "« Amour » commence par une voyelle → il faut élider. On dit « l'amour », pas « le amour »." },
         { text: "Un", correct: false, explanation: "On parle de l'amour en général (valeur universelle), pas d'un amour particulier → article défini." },
+        { text: "De l'", correct: false, explanation: "« De l'amour » est un partitif (une quantité d'amour). Ici, c'est le concept général → article défini." },
       ],
     },
     {
@@ -219,6 +232,7 @@ const section: Section = {
       prompt: "Complétez : « ___ mardi 15 mars, nous avons une réunion. »",
       choices: [
         { text: "Le", correct: true, explanation: "L'article défini devant un jour + date précise identifie un jour spécifique : « le mardi 15 mars »." },
+        { text: "Les", correct: false, explanation: "« Les » est pluriel. On parle d'un seul mardi précis → « le mardi 15 mars »." },
         { text: "Un", correct: false, explanation: "La date (15 mars) rend le jour spécifique → article défini « le », pas indéfini." },
         { text: "Ce", correct: false, explanation: "« Ce mardi » est possible, mais la consigne demande un article. L'article défini convient devant jour + date." },
       ],
@@ -231,6 +245,7 @@ const section: Section = {
         { text: "La", correct: true, explanation: "« Liberté » est féminin. Dans une énumération de concepts avec articles définis, chaque nom garde son article : « la liberté, l'égalité... »" },
         { text: "L'", correct: false, explanation: "« Liberté » commence par une consonne (le « l ») → pas d'élision. On dit « la liberté »." },
         { text: "Une", correct: false, explanation: "On parle de la liberté comme valeur universelle de la République → article défini." },
+        { text: "De la", correct: false, explanation: "« De la liberté » est un partitif. Ici, « liberté » est le sujet → article défini « la »." },
       ],
     },
     {
@@ -250,6 +265,7 @@ const section: Section = {
       prompt: "Complétez : « ___ Alpes sont à la frontière entre la France et l'Italie. »",
       choices: [
         { text: "Les", correct: true, explanation: "« Alpes » est un nom propre pluriel (chaîne de montagnes). Les noms géographiques pluriels prennent « les »." },
+        { text: "Le", correct: false, explanation: "« Alpes » est pluriel → « les Alpes », pas « le Alpes »." },
         { text: "Des", correct: false, explanation: "Les noms propres géographiques prennent l'article défini, pas l'indéfini → « les Alpes »." },
         { text: "Aux", correct: false, explanation: "« Aux » est un article contracté (à + les). Ici il n'y a pas de préposition « à » → « les Alpes »." },
       ],
@@ -284,6 +300,7 @@ const section: Section = {
         { text: "L'", correct: true, explanation: "« Histoire » est féminin et commence par un « h » muet → « l'histoire ». « De France » rend le sujet spécifique." },
         { text: "La", correct: false, explanation: "« Histoire » a un « h » muet → élision obligatoire : « l'histoire », pas « la histoire »." },
         { text: "Une", correct: false, explanation: "« De France » rend le sujet spécifique et unique → article défini « l' »." },
+        { text: "Cette", correct: false, explanation: "« Cette » est un démonstratif. La consigne demande un article → « l'histoire »." },
       ],
     },
     {
@@ -294,6 +311,7 @@ const section: Section = {
         { text: "Le", correct: true, explanation: "« Hibou » a un « h » aspiré → pas d'élision : « le hibou ». Valeur générale (l'espèce)." },
         { text: "L'", correct: false, explanation: "« Hibou » a un « h » aspiré. On ne fait pas l'élision → « le hibou », pas « l'hibou »." },
         { text: "Un", correct: false, explanation: "On parle du hibou en tant qu'espèce (valeur générale) → article défini : « le hibou »." },
+        { text: "Du", correct: false, explanation: "« Du » est un partitif. On ne dit pas « du hibou est un oiseau » → article défini « le »." },
       ],
     },
     {
@@ -302,6 +320,7 @@ const section: Section = {
       prompt: "Complétez : « ___ haricots sont verts et bien frais. »",
       choices: [
         { text: "Les", correct: true, explanation: "« Haricot » a un « h » aspiré → pas d'élision ni de liaison. Pluriel → « les haricots » (prononcé sans liaison)." },
+        { text: "Le", correct: false, explanation: "« Haricots » est pluriel → « les haricots », pas « le haricots »." },
         { text: "Des", correct: false, explanation: "On parle de haricots spécifiques (ceux qu'on observe) → article défini « les »." },
         { text: "Ses", correct: false, explanation: "« Ses » est un possessif. Sans possesseur mentionné, c'est l'article défini « les » qui convient." },
       ],
@@ -323,6 +342,7 @@ const section: Section = {
       prompt: "Complétez : « Nous préférons ___ thé au café. »",
       choices: [
         { text: "le", correct: true, explanation: "Avec « préférer » (verbe de goût), on utilise l'article défini : « le thé ». On compare deux catégories en général." },
+        { text: "les", correct: false, explanation: "« Thé » est singulier ici (la boisson en général) → « le thé », pas « les thés »." },
         { text: "du", correct: false, explanation: "Le partitif ne s'utilise pas avec les verbes de goût pour une préférence générale → « le thé »." },
         { text: "un", correct: false, explanation: "On parle du thé en général (vs le café en général) → article défini « le »." },
       ],
@@ -333,8 +353,8 @@ const section: Section = {
       prompt: "Complétez : « ___ samedi, les magasins ferment à 20 heures. »",
       choices: [
         { text: "Le", correct: true, explanation: "« Le samedi » avec article défini exprime une habitude : tous les samedis." },
-        { text: "Un", correct: false, explanation: "« Un samedi » désignerait un samedi particulier mais indéterminé. Pour l'habitude → « le samedi »." },
         { text: "Les", correct: false, explanation: "Pour l'habitude avec un jour, la forme standard est « le + jour au singulier » : « le samedi »." },
+        { text: "Un", correct: false, explanation: "« Un samedi » désignerait un samedi particulier mais indéterminé. Pour l'habitude → « le samedi »." },
         { text: "Chaque", correct: false, explanation: "« Chaque » n'est pas un article. La consigne demande un article → « le samedi » (habitude)." },
       ],
     },
@@ -344,6 +364,7 @@ const section: Section = {
       prompt: "Complétez : « Elle se lave ___ mains avant de manger. »",
       choices: [
         { text: "les", correct: true, explanation: "Avec un verbe pronominal + partie du corps, on utilise l'article défini : « se laver les mains » (pas « ses mains »)." },
+        { text: "la", correct: false, explanation: "On a deux mains → pluriel : « les mains », pas « la main »." },
         { text: "ses", correct: false, explanation: "En français, avec un verbe pronominal, on utilise l'article défini pour les parties du corps : « se laver les mains »." },
         { text: "des", correct: false, explanation: "On utilise l'article défini (pas indéfini) pour les parties du corps avec un verbe pronominal." },
       ],
@@ -365,6 +386,7 @@ const section: Section = {
       prompt: "Complétez : « ___ États-Unis sont une grande puissance. »",
       choices: [
         { text: "Les", correct: true, explanation: "« États-Unis » est un nom propre pluriel → article défini pluriel « les »." },
+        { text: "Le", correct: false, explanation: "« États-Unis » est pluriel → « les États-Unis », pas « le États-Unis »." },
         { text: "Des", correct: false, explanation: "Les noms de pays prennent l'article défini → « les États-Unis »." },
         { text: "Aux", correct: false, explanation: "« Aux États-Unis » s'utilise avec une préposition (aller aux). Comme sujet → « les États-Unis »." },
       ],
@@ -375,6 +397,7 @@ const section: Section = {
       prompt: "Complétez : « Il a mal à ___ tête depuis ce matin. »",
       choices: [
         { text: "la", correct: true, explanation: "Dans l'expression « avoir mal à » + partie du corps, on utilise l'article défini : « avoir mal à la tête »." },
+        { text: "le", correct: false, explanation: "« Tête » est féminin → « la tête », pas « le tête »." },
         { text: "sa", correct: false, explanation: "Avec « avoir mal à », on utilise l'article défini, pas le possessif : « avoir mal à la tête » (pas « à sa tête »)." },
         { text: "une", correct: false, explanation: "Pour les parties du corps avec « avoir mal à », c'est l'article défini : « la tête »." },
       ],
@@ -385,6 +408,7 @@ const section: Section = {
       prompt: "Complétez : « ___ chats de ma voisine sont très mignons. »",
       choices: [
         { text: "Les", correct: true, explanation: "« De ma voisine » identifie des chats spécifiques → article défini pluriel « les »." },
+        { text: "Le", correct: false, explanation: "« Chats » est pluriel → « les chats », pas « le chats »." },
         { text: "Des", correct: false, explanation: "Les chats sont identifiés (ceux de la voisine) → article défini « les », pas indéfini « des »." },
         { text: "Mes", correct: false, explanation: "Ce ne sont pas les chats du locuteur, mais ceux de la voisine → « les chats de ma voisine »." },
       ],
@@ -395,6 +419,7 @@ const section: Section = {
       prompt: "Complétez : « ___ vie est belle quand on est optimiste. »",
       choices: [
         { text: "La", correct: true, explanation: "« Vie » est féminin. Valeur générale (la vie en tant que concept) → article défini « la »." },
+        { text: "Le", correct: false, explanation: "« Vie » est féminin → « la vie », pas « le vie »." },
         { text: "Une", correct: false, explanation: "On parle de la vie en général, comme concept universel → article défini « la »." },
         { text: "De la", correct: false, explanation: "« De la » est un partitif. Ici « vie » est le sujet de la phrase avec valeur générale → « la vie »." },
       ],
@@ -405,6 +430,7 @@ const section: Section = {
       prompt: "Complétez : « Je prends ___ bus tous les matins. »",
       choices: [
         { text: "le", correct: true, explanation: "On parle d'un bus habituel, connu du locuteur (son bus quotidien) → article défini « le bus »." },
+        { text: "l'", correct: false, explanation: "« Bus » commence par une consonne → pas d'élision. On dit « le bus », pas « l'bus »." },
         { text: "un", correct: false, explanation: "Le contexte (« tous les matins ») indique que c'est un bus habituel et identifié → « le bus »." },
         { text: "du", correct: false, explanation: "« Du » est un article partitif. On ne prend pas « du bus » — on prend « le bus »." },
       ],
@@ -415,6 +441,7 @@ const section: Section = {
       prompt: "Complétez : « ___ printemps est ma saison préférée. »",
       choices: [
         { text: "Le", correct: true, explanation: "« Printemps » est masculin singulier, commence par une consonne → « le printemps ». On parle de la saison en général." },
+        { text: "La", correct: false, explanation: "« Printemps » est masculin → « le printemps », pas « la printemps »." },
         { text: "Un", correct: false, explanation: "On parle du printemps comme saison en général → article défini : « le printemps »." },
         { text: "Au", correct: false, explanation: "« Au printemps » s'utilise avec la préposition « à » (au printemps, je jardine). Comme sujet → « le printemps »." },
       ],
@@ -425,8 +452,9 @@ const section: Section = {
       prompt: "Complétez : « ___ directeur de l'entreprise a démissionné. »",
       choices: [
         { text: "Le", correct: true, explanation: "« De l'entreprise » identifie un directeur spécifique → article défini « le directeur »." },
+        { text: "L'", correct: false, explanation: "« Directeur » commence par une consonne → pas d'élision. On dit « le directeur »." },
         { text: "Un", correct: false, explanation: "Le complément « de l'entreprise » rend le directeur unique et identifié → article défini." },
-        { text: "Ce", correct: false, explanation: "« Ce » est un démonstratif, pas un article. L'article défini « le » est la forme attendue ici." },
+        { text: "Son", correct: false, explanation: "« Son directeur » impliquerait un possesseur déjà mentionné. Ici → « le directeur de l'entreprise »." },
       ],
     },
     {
@@ -437,6 +465,7 @@ const section: Section = {
         { text: "L'", correct: true, explanation: "« Italie » est féminin et commence par une voyelle → élision : « l'Italie »." },
         { text: "La", correct: false, explanation: "« Italie » commence par une voyelle → élision obligatoire : « l'Italie », pas « la Italie »." },
         { text: "Une", correct: false, explanation: "Les noms de pays prennent l'article défini → « l'Italie », pas « une Italie »." },
+        { text: "En", correct: false, explanation: "« En Italie » s'utilise avec une préposition (aller en Italie). Comme sujet → « l'Italie est connue »." },
       ],
     },
     {
@@ -458,6 +487,7 @@ const section: Section = {
         { text: "La", correct: true, explanation: "« Loire » est féminin (les rivières et fleuves français sont souvent féminins). Nom propre géographique → article défini." },
         { text: "Le", correct: false, explanation: "« Loire » est féminin → « la Loire ». (Quelques fleuves sont masculins : le Rhône, le Rhin.)" },
         { text: "Une", correct: false, explanation: "Les noms de fleuves prennent l'article défini → « la Loire »." },
+        { text: "De la", correct: false, explanation: "« De la Loire » serait un complément. Ici, « Loire » est le sujet → article défini « la »." },
       ],
     },
     {
@@ -466,6 +496,7 @@ const section: Section = {
       prompt: "Complétez : « J'ai ouvert ___ fenêtre parce qu'il fait chaud. »",
       choices: [
         { text: "la", correct: true, explanation: "Le contexte implique une fenêtre spécifique (celle de la pièce où on se trouve) → article défini « la fenêtre »." },
+        { text: "le", correct: false, explanation: "« Fenêtre » est féminin → « la fenêtre », pas « le fenêtre »." },
         { text: "une", correct: false, explanation: "Bien que « une fenêtre » soit grammaticalement possible, le contexte (action dans sa propre pièce) favorise l'article défini." },
         { text: "de la", correct: false, explanation: "« De la » est un partitif. On n'ouvre pas « de la fenêtre » — on ouvre « la fenêtre »." },
       ],
@@ -476,6 +507,7 @@ const section: Section = {
       prompt: "Complétez : « ___ bonheur ne s'achète pas. »",
       choices: [
         { text: "Le", correct: true, explanation: "« Bonheur » est un nom abstrait masculin. Valeur générale (vérité universelle) → article défini : « le bonheur »." },
+        { text: "L'", correct: false, explanation: "« Bonheur » commence par une consonne → pas d'élision. On dit « le bonheur »." },
         { text: "Un", correct: false, explanation: "Pour une vérité générale sur un concept, on utilise l'article défini → « le bonheur »." },
         { text: "Du", correct: false, explanation: "« Du bonheur » est partitif (un peu de bonheur). Ici, c'est une affirmation générale → « le bonheur »." },
       ],
@@ -487,7 +519,8 @@ const section: Section = {
       choices: [
         { text: "L'", correct: true, explanation: "« Araignée » est féminin et commence par une voyelle → élision : « l'araignée ». On parle d'une araignée identifiée." },
         { text: "La", correct: false, explanation: "« Araignée » commence par une voyelle → élision obligatoire : « l'araignée »." },
-        { text: "Une", correct: false, explanation: "Le contexte (« dans le jardin ») identifie l'araignée → article défini. « Une » serait possible pour une première mention indéterminée." },
+        { text: "Une", correct: false, explanation: "Le contexte (« dans le jardin ») identifie l'araignée → article défini. « Une » serait possible pour une première mention." },
+        { text: "Cette", correct: false, explanation: "« Cette » est un démonstratif, pas un article. L'article défini « l' » est attendu ici." },
       ],
     },
     {
@@ -496,6 +529,7 @@ const section: Section = {
       prompt: "Complétez : « ___ riz est un aliment de base en Asie. »",
       choices: [
         { text: "Le", correct: true, explanation: "Valeur générale : « le riz » en tant qu'aliment, catégorie → article défini." },
+        { text: "L'", correct: false, explanation: "« Riz » commence par une consonne → pas d'élision. On dit « le riz »." },
         { text: "Du", correct: false, explanation: "« Du riz » est partitif (une quantité). Ici, on parle du riz en tant que catégorie → « le riz »." },
         { text: "Un", correct: false, explanation: "On parle du riz en général, pas d'un type de riz → article défini « le »." },
       ],
@@ -506,6 +540,7 @@ const section: Section = {
       prompt: "Complétez : « Ferme ___ porte, s'il te plaît. »",
       choices: [
         { text: "la", correct: true, explanation: "On parle d'une porte spécifique (celle de la pièce) → article défini. Impératif + article défini est naturel ici." },
+        { text: "le", correct: false, explanation: "« Porte » est féminin → « la porte », pas « le porte »." },
         { text: "une", correct: false, explanation: "L'interlocuteur sait quelle porte fermer → article défini « la porte »." },
         { text: "cette", correct: false, explanation: "« Cette porte » (démonstratif) est possible, mais la consigne demande un article → « la porte »." },
       ],
@@ -527,6 +562,7 @@ const section: Section = {
       prompt: "Complétez : « ___ professeur a expliqué la leçon. »",
       choices: [
         { text: "Le", correct: true, explanation: "On parle d'un professeur identifié (celui de la classe) → article défini « le professeur »." },
+        { text: "La", correct: false, explanation: "« Professeur » est masculin dans ce contexte → « le professeur ». (« La professeure » existe, mais le contexte est masculin ici.)" },
         { text: "Un", correct: false, explanation: "Le contexte (« la leçon » = cours défini) implique un professeur connu → article défini." },
         { text: "Du", correct: false, explanation: "« Du » est un partitif. On ne dit pas « du professeur a expliqué » — c'est l'article défini « le » qui convient." },
       ],
@@ -539,6 +575,7 @@ const section: Section = {
         { text: "L'", correct: true, explanation: "« Île » est féminin et commence par une voyelle → « l'île ». Nom propre géographique → article défini." },
         { text: "La", correct: false, explanation: "« Île » commence par une voyelle → élision obligatoire : « l'île », pas « la île »." },
         { text: "Une", correct: false, explanation: "L'île de la Cité est un lieu unique et précis → article défini « l' »." },
+        { text: "Cette", correct: false, explanation: "« Cette » est un démonstratif. Les noms géographiques prennent l'article défini → « l'île »." },
       ],
     },
   ],
