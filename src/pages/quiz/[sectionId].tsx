@@ -11,6 +11,7 @@ import type {
 } from "~/data/types";
 
 import { sectionMap } from "~/data/sections-index";
+import type { Rule } from "~/data/types";
 
 const QUESTIONS_PER_QUIZ = 20;
 
@@ -295,6 +296,7 @@ export default function QuizPage() {
               onSelect={handleMcqSelect}
               onNext={handleNext}
               questionNum={currentIndex + 1}
+              rule={section.rules.find((r) => r.id === currentQuestion.ruleId)}
             />
           ) : currentQuestion?.type === "input" ? (
             <InputQuestionView
@@ -303,6 +305,7 @@ export default function QuizPage() {
               onAnswer={handleInputAnswer}
               onNext={handleNext}
               questionNum={currentIndex + 1}
+              rule={section.rules.find((r) => r.id === currentQuestion.ruleId)}
             />
           ) : null}
         </main>
@@ -322,6 +325,7 @@ function McqQuestionView({
   onSelect,
   onNext,
   questionNum,
+  rule,
 }: {
   question: MultipleChoiceQuestion;
   selectedChoiceIndex: number | null;
@@ -329,14 +333,28 @@ function McqQuestionView({
   onSelect: (index: number) => void;
   onNext: () => void;
   questionNum: number;
+  rule?: Rule;
 }) {
   return (
     <div className="animate-scale-in" key={question.id}>
       {/* Question prompt */}
       <div className="mb-8">
-        <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-3">
-          Question {questionNum}
-        </p>
+        <div className="flex items-center justify-between mb-3">
+          <p className="text-xs font-medium text-ardoise uppercase tracking-wider">
+            Question {questionNum}
+          </p>
+          <Link
+            href={`/question/${question.id}`}
+            className="flex items-center gap-1.5 text-[11px] text-ardoise/60 hover:text-tricolore-bleu transition-colors"
+            title={rule ? `${rule.title} — ${question.id}` : question.id}
+          >
+            <span className="hidden sm:inline">{rule?.title ? `${rule.title} · ` : ""}</span>
+            <code className="font-mono">{question.id}</code>
+            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </Link>
+        </div>
         <p className="text-xl md:text-2xl font-medium text-encre leading-relaxed">
           {question.prompt}
         </p>
@@ -399,12 +417,14 @@ function InputQuestionView({
   onAnswer,
   onNext,
   questionNum,
+  rule,
 }: {
   question: InputQuestion;
   answered: boolean;
   onAnswer: (isCorrect: boolean) => void;
   onNext: () => void;
   questionNum: number;
+  rule?: Rule;
 }) {
   const [userInput, setUserInput] = useState("");
   const [result, setResult] = useState<InputResult | null>(null);
@@ -465,16 +485,29 @@ function InputQuestionView({
     <div className="animate-scale-in" key={question.id}>
       {/* Instruction line */}
       <div className="mb-6">
-        <div className="flex items-center gap-3 mb-3">
-          <p className="text-xs font-medium text-ardoise uppercase tracking-wider">
-            Question {questionNum}
-          </p>
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-3">
+            <p className="text-xs font-medium text-ardoise uppercase tracking-wider">
+              Question {questionNum}
+            </p>
           <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tricolore-bleu/8 text-tricolore-bleu text-[10px] font-semibold uppercase tracking-wider">
             <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
             </svg>
             saisie
           </span>
+          </div>
+          <Link
+            href={`/question/${question.id}`}
+            className="flex items-center gap-1.5 text-[11px] text-ardoise/60 hover:text-tricolore-bleu transition-colors"
+            title={rule ? `${rule.title} — ${question.id}` : question.id}
+          >
+            <span className="hidden sm:inline">{rule?.title ? `${rule.title} · ` : ""}</span>
+            <code className="font-mono">{question.id}</code>
+            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </Link>
         </div>
         <p className="text-base text-ardoise leading-relaxed">
           {question.prompt}
@@ -915,13 +948,20 @@ function ScoreSummary({
                   </svg>
                 )}
               </span>
-              <div className="flex items-center gap-2">
+              <div className="flex-1 flex items-center gap-2">
                 {answer.question.type === "input" && (
                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-tricolore-bleu/40 shrink-0" title="Question à saisie" />
                 )}
-                <p className="text-sm text-encre leading-relaxed">
+                <p className="text-sm text-encre leading-relaxed flex-1">
                   {answer.question.prompt}
                 </p>
+                <Link
+                  href={`/question/${answer.question.id}`}
+                  className="shrink-0 text-[10px] font-mono text-ardoise/50 hover:text-tricolore-bleu transition-colors"
+                  title={`Voir ${answer.question.id}`}
+                >
+                  {answer.question.id}
+                </Link>
               </div>
             </div>
           ))}
