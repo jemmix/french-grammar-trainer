@@ -10,7 +10,7 @@
 - **Code changes**: Commit and push liberally — user reviews post factum
 - **Skill changes** (`.claude/skills/**`): Commit and push liberally — treat like code changes
 - **CLAUDE.md**: Update liberally to reflect user preferences and vibes as they emerge
-- **TODO.md**: Note bugs, UX gaps, content quality issues, and ideas liberally — don't wait for the user to ask. Anything worth remembering for later goes here.
+- **TODO.md**: Note bugs, UX gaps, content quality issues, and ideas liberally — don't wait for the user to ask. Anything worth remembering for later goes here. **Commit and push TODO.md immediately after every update** — don't batch it with other work.
 
 ## Question Generation Workflow
 
