@@ -1,7 +1,7 @@
 import type { Section } from "../types";
 
 // Generated from: questions/04-01.txt, questions/04-02.txt, questions/04-03.txt, questions/04-04.txt, questions/04-05.txt, questions/04-06.txt, questions/04-07.txt, questions/04-08.txt, questions/04-09.txt, questions/04-10.txt, questions/04-11.txt, questions/04-12.txt, questions/04-13.txt, questions/04-14.txt, questions/04-15.txt, questions/04-16.txt, questions/04-17.txt, questions/04-18.txt, questions/04-19.txt, questions/04-20.txt
-// Total: 400 MCQ + 99 INPUT = 499 questions
+// Total: 400 MCQ + 100 INPUT = 500 questions
 
 const section: Section = {
   id: "04",
@@ -4507,6 +4507,23 @@ const section: Section = {
         { text: "croire", explanation: "« Croire » est l'infinitif, non le participe passé. Le plus-que-parfait requiert le participe passé « cru »." },
         { text: "croyaient", explanation: "« Croyaient » est l'imparfait, non le participe passé. Il ne peut pas compléter la structure « avaient toujours ___ »." },
         { text: "ont cru", explanation: "« Ont cru » est une forme conjuguée au passé composé, non un participe isolé. La structure « avaient toujours ___ » attend uniquement le participe passé." },
+      ],
+    },
+    {
+      id: "04-13-025",
+      type: "input",
+      ruleId: "04-13",
+      generatedBy: "haiku",
+      prompt: "Conjuguez le verbe au plus-que-parfait avec la négation « ne...pas encore ».",
+      phrase: "« Quand nous sommes partis, les autres n'avaient pas encore ___ de décision. »",
+      answer: "pris",
+      explanation: "« N'avaient pas encore pris » est le plus-que-parfait négatif avec « pas encore » placé entre l'auxiliaire (avaient) et le participe passé (pris). Le participe passé de « prendre » est « pris » ; l'action n'était pas accomplie au moment du départ.",
+      wrongAnswers: [
+        { text: "prendre", explanation: "« Prendre » est l'infinitif, non le participe passé. Le plus-que-parfait requiert le participe passé « pris »." },
+        { text: "prenait", explanation: "« Prenait » est l'imparfait, non le participe passé. Il ne peut pas compléter la structure « n'avaient pas encore ___ »." },
+        { text: "prise", explanation: "« Prise » (forme féminine) est incorrect ici : avec « avoir », le participe s'accorde seulement avec un COD antéposé. « Décision » suit le verbe, donc pas d'accord — la forme correcte est « pris »." },
+        { text: "a pris", explanation: "« A pris » est une forme conjuguée au passé composé, non un participe isolé. La structure « n'avaient pas encore ___ » attend uniquement le participe passé." },
+        { text: "ont pris", explanation: "« Ont pris » est également une forme conjuguée (passé composé pluriel), non un participe isolé. La réponse attendue est uniquement le participe passé « pris »." },
       ],
     },
     {
