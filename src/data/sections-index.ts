@@ -1,9 +1,10 @@
 import type { Section, SectionMeta } from "./types";
 import section01 from "./sections/01-present-indicatif";
+import section02 from "./sections/02-passe-compose";
 import section10 from "./sections/10-articles";
 
 // Add compiled section files here — counts and availability are derived automatically.
-const _loadedSections: Section[] = [section01, section10];
+const _loadedSections: Section[] = [section01, section02, section10];
 
 export const sectionMap: Record<string, Section> = Object.fromEntries(
   _loadedSections.map((s) => [s.id, s]),
