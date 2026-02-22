@@ -66,6 +66,8 @@ INPUT questions have **5–10 wrong answers**. Aim for 5; add more (up to 10) wh
 
 INPUT wrong answers should cover the most likely learner errors: wrong person/number, wrong tense (imparfait, futur, conditionnel), wrong auxiliary, wrong participle form, wrong agreement.
 
+**CRITICAL — single blank only**: The PHRASE must contain **exactly one `___`**. Multi-blank questions (e.g. two gaps for two different verbs) are not supported by the validator and will fail. If a rule naturally involves two verbs (e.g. PQP vs PC in two clauses), fill in all but one verb directly in the PHRASE text, leaving exactly one `___` for the student to complete. Example: instead of « Quand il ___ (partir), elle ___ (arriver). » write « Quand il était parti, elle ___ (arriver). » and test only the second blank.
+
 **PROMPT field**: write only the brief instruction — do NOT include "Instruction :" as a prefix. Example: `Conjuguez le verbe en -ir au présent de l'indicatif`.
 
 ## General Content Rules
