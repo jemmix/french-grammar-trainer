@@ -7,18 +7,10 @@ import type {
   InputQuestion,
   MultipleChoiceQuestion,
   Question,
-  Section,
   WrongAnswer,
 } from "~/data/types";
 
-// Static imports for available sections
-import presentIndicatifSection from "~/data/sections/01-present-indicatif";
-import articlesSection from "~/data/sections/10-articles";
-
-const sectionMap: Record<string, Section> = {
-  "01-present-indicatif": presentIndicatifSection,
-  "10-articles": articlesSection,
-};
+import { sectionMap } from "~/data/sections-index";
 
 const QUESTIONS_PER_QUIZ = 20;
 
