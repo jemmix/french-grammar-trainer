@@ -104,8 +104,13 @@ function validateMcq(q: ParsedMcqQuestion) {
 function validateInput(q: ParsedInputQuestion) {
   if (!q.id) { error("?", "INPUT question has no ID"); return; }
   if (!q.prompt.trim()) error(q.id, "Empty PROMPT");
-  if (!q.phrase.trim()) error(q.id, "Empty PHRASE");
-  else if (!q.phrase.includes("___")) warn(q.id, "PHRASE does not contain ___ blank");
+  if (!q.phrase.trim()) {
+    error(q.id, "Empty PHRASE");
+  } else {
+    const placeholders = q.phrase.match(/_{2,}/g)?.length ?? 0;
+    if (placeholders === 0) error(q.id, "PHRASE has no placeholder (need 2+ consecutive underscores)");
+    else if (placeholders > 1) error(q.id, `PHRASE has ${placeholders} placeholders — must have exactly 1`);
+  }
 
   if (!q.right.text.trim()) error(q.id, "Missing RIGHT ANSWER");
   if (!q.right.explanation.trim()) warn(q.id, "Empty explanation for right answer");

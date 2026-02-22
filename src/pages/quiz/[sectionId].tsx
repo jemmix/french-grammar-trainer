@@ -404,14 +404,15 @@ function McqQuestionView({
 // Input Question View
 // ===========================================================================
 
-/** Extract before/after blank from a phrase like "« Je ___ avec mes amis. »" */
+/** Extract before/after blank from a phrase like "« Je ___ avec mes amis. »"
+ *  Accepts any run of 2+ underscores as the placeholder. */
 function parsePhrase(phrase: string): { before: string; after: string } {
   const content = phrase.replace(/^«\s*/, "").replace(/\s*»$/, "");
-  const blankIdx = content.indexOf("___");
-  if (blankIdx === -1) return { before: content, after: "" };
+  const match = content.match(/_{2,}/);
+  if (!match || match.index === undefined) return { before: content, after: "" };
   return {
-    before: content.slice(0, blankIdx),
-    after: content.slice(blankIdx + 3),
+    before: content.slice(0, match.index),
+    after: content.slice(match.index + match[0].length),
   };
 }
 

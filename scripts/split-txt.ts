@@ -75,8 +75,13 @@ function validateQuestion(q: ParsedQuestion): string[] {
     }
   } else {
     const inp = q as ParsedInputQuestion;
-    if (!inp.phrase.trim()) errors.push("Empty PHRASE");
-    else if (!inp.phrase.includes("___")) errors.push("PHRASE does not contain ___ blank");
+    if (!inp.phrase.trim()) {
+      errors.push("Empty PHRASE");
+    } else {
+      const placeholders = inp.phrase.match(/_{2,}/g)?.length ?? 0;
+      if (placeholders === 0) errors.push("PHRASE has no placeholder (need 2+ consecutive underscores)");
+      else if (placeholders > 1) errors.push(`PHRASE has ${placeholders} placeholders — must have exactly 1`);
+    }
     if (!inp.right.text.trim()) errors.push("Missing RIGHT ANSWER");
 
     if (inp.wrongs.length < 4) {

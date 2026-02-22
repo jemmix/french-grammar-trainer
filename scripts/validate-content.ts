@@ -73,6 +73,7 @@ interface InputQuestion {
   type: "input";
   ruleId: string;
   prompt: string;
+  phrase: string;
   answer: string;
   explanation: string;
   wrongAnswers: WrongAnswer[];
@@ -148,6 +149,15 @@ function validateMcq(q: McqQuestion) {
 }
 
 function validateInput(q: InputQuestion) {
+  // Check phrase has exactly one placeholder (2+ consecutive underscores)
+  if (!q.phrase || !q.phrase.trim()) {
+    error(q.id, "Missing or empty phrase");
+  } else {
+    const placeholders = q.phrase.match(/_{2,}/g)?.length ?? 0;
+    if (placeholders === 0) error(q.id, "phrase has no placeholder (need 2+ consecutive underscores)");
+    else if (placeholders > 1) error(q.id, `phrase has ${placeholders} placeholders — must have exactly 1`);
+  }
+
   // Check answer exists
   if (!q.answer || !q.answer.trim()) {
     error(q.id, "Missing or empty answer");
