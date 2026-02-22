@@ -25,7 +25,8 @@
 3. **Fix** — manually correct failed questions, save as `gen/<rule-id>-fixed.txt` (remove `VALIDATION ERROR:` lines)
 4. **Merge** — `npm run merge-txt -- --output questions/<rule-id>.txt gen/<rule-id>-passed.txt [gen/<rule-id>-fixed.txt]` (later files override earlier for duplicate IDs)
 5. **Compile** — `npm run convert-txt -- --section-id ... --section-title ... --section-desc ... --output src/data/sections/<section-id>.ts questions/<rule-id>.txt ...`
-6. **Commit** — `git add questions/ src/data/sections/ .gitignore`, commit and push (temp files in `gen/` are never tracked)
+6. **Register** — add the new section to `src/data/sections-index.ts`: import the compiled file, add a metadata entry to `_meta`, and add the section to `_loadedSections`
+7. **Commit** — `git add questions/ src/data/sections/ .gitignore`, commit and push (temp files in `gen/` are never tracked)
 
 ## Content Quality Rules
 
