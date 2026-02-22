@@ -343,17 +343,21 @@ function McqQuestionView({
           <p className="text-xs font-medium text-ardoise uppercase tracking-wider">
             Question {questionNum}
           </p>
-          <Link
-            href={`/question/${question.id}`}
-            className="flex items-center gap-1.5 text-[11px] text-ardoise/60 hover:text-tricolore-bleu transition-colors"
-            title={rule ? `${rule.title} — ${question.id}` : question.id}
-          >
+          <div className="flex items-center gap-1.5 text-[11px] text-ardoise/60">
             <span className="hidden sm:inline">{rule?.title ? `${rule.title} · ` : ""}</span>
-            <code className="font-mono">{question.id}</code>
-            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </Link>
+            <Link
+              href={`/question/${question.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 font-mono hover:text-tricolore-bleu transition-colors"
+              title="Ouvrir dans l'inspecteur"
+            >
+              {question.id}
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </Link>
+          </div>
         </div>
         <p className="text-xl md:text-2xl font-medium text-encre leading-relaxed">
           {question.prompt}
@@ -497,17 +501,21 @@ function InputQuestionView({
             saisie
           </span>
           </div>
-          <Link
-            href={`/question/${question.id}`}
-            className="flex items-center gap-1.5 text-[11px] text-ardoise/60 hover:text-tricolore-bleu transition-colors"
-            title={rule ? `${rule.title} — ${question.id}` : question.id}
-          >
+          <div className="flex items-center gap-1.5 text-[11px] text-ardoise/60">
             <span className="hidden sm:inline">{rule?.title ? `${rule.title} · ` : ""}</span>
-            <code className="font-mono">{question.id}</code>
-            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </Link>
+            <Link
+              href={`/question/${question.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 font-mono hover:text-tricolore-bleu transition-colors"
+              title="Ouvrir dans l'inspecteur"
+            >
+              {question.id}
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </Link>
+          </div>
         </div>
         <p className="text-base text-ardoise leading-relaxed">
           {question.prompt}
