@@ -82,6 +82,8 @@ INPUT wrong answers should cover the most likely learner errors: wrong person/nu
 
 The user passes: `<rule-id> <rule title> <output-filename>`
 
-For example: `02-01 "Formation du passé composé avec avoir" 02-01.txt`
+The output file should be written to the `gen/` subdirectory (which is gitignored), e.g. `gen/02-01.txt`.
+
+For example: `02-01 "Formation du passé composé avec avoir" gen/02-01.txt`
 
 Generate all 25 questions covering the grammar rule thoroughly, then write the complete file.

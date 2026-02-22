@@ -1,6 +1,6 @@
 import type { Section } from "../types";
 
-// Generated from: 01-01-passed.txt, 01-01-fixed.txt, 01-02-passed.txt, 01-03-passed.txt, 01-03-fixed.txt
+// Generated from: questions/01-01.txt, questions/01-02.txt, questions/01-03.txt
 // Total: 60 MCQ + 15 INPUT = 75 questions
 
 const section: Section = {
@@ -9,9 +9,7 @@ const section: Section = {
   description: "Conjugaison et emplois du présent de l'indicatif",
   rules: [
     { id: "01-01", sectionId: "01-present-indicatif", title: "Conjugaison des verbes réguliers en -er (parler, manger, commencer, etc.)" },
-    { id: "01-01", sectionId: "01-present-indicatif", title: "Conjugaison des verbes réguliers en -er (parler, manger, commencer, etc.)" },
     { id: "01-02", sectionId: "01-present-indicatif", title: "Conjugaison des verbes réguliers en -ir (finir, choisir, réussir, etc.)" },
-    { id: "01-03", sectionId: "01-present-indicatif", title: "Conjugaison des verbes réguliers en -re (attendre, vendre, répondre, etc.)" },
     { id: "01-03", sectionId: "01-present-indicatif", title: "Conjugaison des verbes réguliers en -re (attendre, vendre, répondre, etc.)" },
   ],
   questions: [
