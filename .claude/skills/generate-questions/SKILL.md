@@ -75,6 +75,8 @@ INPUT wrong answers should cover the most likely learner errors: wrong person/nu
 - Vary subjects (je, tu, il, elle, nous, vous, ils, elles) across questions
 - Vary verbs and contexts — do not repeat the same verb more than 3–4 times across the file
 - RIGHT ANSWER should use proper capitalisation (matching is case-insensitive but the UI shows a case warning)
+- **WRONG ANSWERs must never duplicate the RIGHT ANSWER** — each WRONG ANSWER must be a distinct string from the RIGHT ANSWER. Before writing `END QUESTION`, re-read all WRONG ANSWER lines and confirm none matches the RIGHT ANSWER. If you find a duplicate, replace it with a genuinely different plausible mistake.
+- **All answers must produce grammatically well-formed French when slotted into the sentence** — mentally reconstruct the full sentence (PHRASE or PROMPT with `___` replaced by each answer) and verify it is valid French. The answer itself may look fine in isolation but still produce an error in context. For example: the phrase « Je ___ » with answer « arrive » yields « Je arrive », which is wrong — elision requires « j'arrive », so the phrase should be « J'___ » or the answer should be « suis arrivé » etc. Every WRONG ANSWER must also be a real French form (not an invented non-word), just wrong for this context.
 
 ## ARGUMENTS
 
