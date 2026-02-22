@@ -3,10 +3,11 @@ import section01 from "./sections/01-present-indicatif";
 import section02 from "./sections/02-passe-compose";
 import section03 from "./sections/03-imparfait";
 import section04 from "./sections/04-plus-que-parfait";
+import section05 from "./sections/05-futur-simple-et-anterieur";
 import section10 from "./sections/10-articles";
 
 // Add compiled section files here — counts and availability are derived automatically.
-const _loadedSections: Section[] = [section01, section02, section03, section04, section10];
+const _loadedSections: Section[] = [section01, section02, section03, section04, section05, section10];
 
 export const sectionMap: Record<string, Section> = Object.fromEntries(
   _loadedSections.map((s) => [s.id, s]),
@@ -19,7 +20,7 @@ const _meta: Omit<SectionMeta, "questionCount">[] = [
   { id: "02-passe-compose", title: "Le passé composé", description: "Formation avec avoir/être, accord du participe passé, choix de l'auxiliaire" },
   { id: "03-imparfait", title: "L'imparfait", description: "Formation, emplois, opposition passé composé/imparfait" },
   { id: "04-plus-que-parfait", title: "Le plus-que-parfait", description: "Formation, emplois, concordance des temps" },
-  { id: "05-futur", title: "Le futur simple et le futur antérieur", description: "Formation régulière et irrégulière, emplois, antériorité" },
+  { id: "05-futur-simple-et-anterieur", title: "Le futur simple et le futur antérieur", description: "Formation régulière et irrégulière, emplois, antériorité" },
   { id: "06-conditionnel", title: "Le conditionnel présent et passé", description: "Politesse, hypothèse, information non confirmée, regret" },
   { id: "07-subjonctif-present", title: "Le subjonctif présent", description: "Formation, emplois après les verbes de volonté, sentiment, doute" },
   { id: "08-subjonctif-passe", title: "Le subjonctif passé", description: "Formation, emplois, opposition indicatif/subjonctif" },
