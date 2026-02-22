@@ -18,6 +18,8 @@
 
 - **Differentiate yellow feedback blurbs** — "yellow" currently covers two distinct situations that deserve different messages: (1) case mismatch (answer is correct but capitalisation differs, e.g. "L'eau" vs "l'eau") should say something like "Bonne réponse — attention à la majuscule" ; (2) near-miss / typo (answer is wrong but close to correct) should say something like "Presque ! Vérifiez l'orthographe". Right now they likely show the same generic blurb.
 
+- Make input boxes less jumpy: initial width somewhat matching expected response, expand in wider steps?
+
 ## Nonsensical questions
 
 http://localhost:3000/question/02-20-006
