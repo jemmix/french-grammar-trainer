@@ -12,11 +12,5 @@
 
 ## UI / UX
 
-- **Show section context on quiz page** — currently there is no indication of which grammar rule or tense is being tested except the URL bar. A learner jumping straight into a quiz from a link has no idea whether to expect présent, passé composé, etc. Consider showing the section title and/or rule title on the quiz screen.
-
 - Make input boxes less jumpy: initial width somewhat matching expected response, expand in wider steps?
-
-## Nonsensical questions
-
-http://localhost:3000/question/02-20-006
 

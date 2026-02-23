@@ -484,7 +484,7 @@ function InputQuestionView({
   }
 
   // Measure input width to fit content
-  const inputWidth = Math.max(userInput.length, 3);
+  const inputWidth = Math.max(userInput.length, question.answer.length, 3);
 
   return (
     <div className="animate-scale-in" key={question.id}>

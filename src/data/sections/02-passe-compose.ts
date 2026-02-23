@@ -6672,7 +6672,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-20",
       generatedBy: "haiku",
-      prompt: "Identifiez le verbe qui crée une incohérence dans ce passage au passé composé :",
+      prompt: "Identifiez le verbe qui crée une incohérence dans ce passage au passé composé : « Samedi soir, nous avons organisé une fête pour nos amis. Ils arrivent à vingt heures et nous avons servi des tapas et du champagne. »",
       choices: [
         { text: "arrivent", correct: true, explanation: "« Arrivent » est au présent, ce qui contraste avec « avons organisé » et « avons servi » au passé composé. Devrait être « sont arrivés »." },
         { text: "organisé", correct: false, explanation: "« Avons organisé » est correctement au passé composé." },

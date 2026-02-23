@@ -543,7 +543,7 @@ function InputReview({ question }: { question: InputQuestion }) {
     else underlineColor = "border-incorrect";
   }
 
-  const inputWidth = Math.max(userInput.length, 3);
+  const inputWidth = Math.max(userInput.length, question.answer.length, 3);
 
   return (
     <div className="space-y-6">
