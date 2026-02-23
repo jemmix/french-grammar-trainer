@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -20,6 +21,19 @@ interface QuestionContext {
   question: Question;
   section: Section;
   rule: Rule;
+}
+
+/** Replaces runs of 2+ underscores with a styled inline blank element. */
+function renderWithBlanks(text: string): (string | JSX.Element)[] {
+  return text.split(/(_{2,})/).map((part, i) =>
+    /^_{2,}$/.test(part) ? (
+      <span
+        key={i}
+        className="inline-block min-w-[4.5ch] mx-0.5 px-2 py-0.5 align-baseline rounded-[3px] bg-tricolore-bleu/[.07] border-b-2 border-tricolore-bleu/40"
+        aria-label="blanc"
+      />
+    ) : part
+  );
 }
 
 function findQuestion(questionId: string): QuestionContext | null {
@@ -410,7 +424,7 @@ function McqReview({ question }: { question: MultipleChoiceQuestion }) {
       <div className="py-5 px-5 rounded-xl bg-tricolore-blanc border border-craie">
         <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-3">Énoncé</p>
         <p className="text-xl md:text-2xl font-medium text-encre leading-relaxed">
-          {question.prompt}
+          {renderWithBlanks(question.prompt)}
         </p>
       </div>
 
