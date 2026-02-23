@@ -1,7 +1,7 @@
 import type { Section } from "../types";
 
 // Generated from: questions/07-01.txt, questions/07-02.txt, questions/07-03.txt, questions/07-04.txt, questions/07-05.txt, questions/07-06.txt, questions/07-07.txt, questions/07-08.txt, questions/07-09.txt, questions/07-10.txt, questions/07-11.txt, questions/07-12.txt, questions/07-13.txt, questions/07-14.txt, questions/07-15.txt, questions/07-16.txt, questions/07-17.txt, questions/07-18.txt, questions/07-19.txt, questions/07-20.txt
-// Total: 396 MCQ + 100 INPUT = 496 questions
+// Total: 400 MCQ + 100 INPUT = 500 questions
 
 const section: Section = {
   id: "07-subjonctif-present",
@@ -6878,6 +6878,58 @@ const section: Section = {
         { text: "passes par", correct: false, explanation: "Bien que « passes » soit correct, ajouter « par » rendrait la phrase maladroite. La forme simple « passes » est la bonne réponse." },
         { text: "passeras", correct: false, explanation: "« Passeras » est le futur simple. Après « préférer que », on utilise le subjonctif présent, pas le futur." },
         { text: "passerais", correct: false, explanation: "« Passerais » est le conditionnel présent. Après « préférer que », on utilise le subjonctif, pas le conditionnel." },
+      ],
+    },
+    {
+      id: "07-20-022",
+      type: "mcq",
+      ruleId: "07-20",
+      generatedBy: "haiku",
+      prompt: "« Je crains qu'il ___ trop tard pour changer les choses. »",
+      choices: [
+        { text: "soit", correct: true, explanation: "« Craindre que » est un verbe d'émotion/crainte qui déclenche le subjonctif. « Être » au subjonctif à la 3e personne du singulier est « soit »." },
+        { text: "est", correct: false, explanation: "C'est l'indicatif présent. Après « craindre que », le subjonctif est obligatoire." },
+        { text: "serait", correct: false, explanation: "C'est le conditionnel. Après « craindre que », on emploie le subjonctif, pas le conditionnel." },
+        { text: "sera", correct: false, explanation: "C'est l'indicatif futur. Après « craindre que », on utilise le subjonctif présent." },
+      ],
+    },
+    {
+      id: "07-20-023",
+      type: "mcq",
+      ruleId: "07-20",
+      generatedBy: "haiku",
+      prompt: "« Nous partons tôt afin que tout le monde ___ à l'heure. »",
+      choices: [
+        { text: "arrive", correct: true, explanation: "« Afin que » est une conjonction de but qui déclenche le subjonctif. « Arriver » au subjonctif à la 3e personne du singulier est « arrive »." },
+        { text: "arrivera", correct: false, explanation: "C'est l'indicatif futur. Après « afin que », on utilise le subjonctif pour exprimer le but." },
+        { text: "arriverait", correct: false, explanation: "C'est le conditionnel. « Afin que » demande le subjonctif, pas le conditionnel." },
+        { text: "arrivait", correct: false, explanation: "C'est l'imparfait. Après « afin que », c'est le subjonctif présent qui s'impose." },
+      ],
+    },
+    {
+      id: "07-20-024",
+      type: "mcq",
+      ruleId: "07-20",
+      generatedBy: "haiku",
+      prompt: "« Il a réussi l'examen sans qu'on lui ___ la moindre aide. »",
+      choices: [
+        { text: "donne", correct: true, explanation: "« Sans que » est une conjonction de manière qui déclenche le subjonctif. « Donner » au subjonctif à la 3e personne du singulier est « donne »." },
+        { text: "donne pas", correct: false, explanation: "Après « sans que », la négation ne s'ajoute pas. La forme correcte est simplement « donne » au subjonctif." },
+        { text: "donnait", correct: false, explanation: "C'est l'imparfait de l'indicatif. Après « sans que », le subjonctif est obligatoire." },
+        { text: "a donné", correct: false, explanation: "C'est le passé composé de l'indicatif. Après « sans que », on utilise le subjonctif." },
+      ],
+    },
+    {
+      id: "07-20-025",
+      type: "mcq",
+      ruleId: "07-20",
+      generatedBy: "haiku",
+      prompt: "« Il est important que les enfants ___ suffisamment d'eau chaque jour. »",
+      choices: [
+        { text: "boivent", correct: true, explanation: "« Il est important que » est une expression de nécessité qui déclenche le subjonctif. « Boire » au subjonctif à la 3e personne du pluriel est « boivent »." },
+        { text: "boiront", correct: false, explanation: "C'est l'indicatif futur. Après « il est important que », le subjonctif est obligatoire." },
+        { text: "boiraient", correct: false, explanation: "C'est le conditionnel. Après « il est important que », on emploie le subjonctif présent." },
+        { text: "boivent de l'eau", correct: false, explanation: "Bien que le verbe soit correct, répéter « de l'eau » crée une redondance avec le complément déjà présent dans la phrase." },
       ],
     },
   ],
