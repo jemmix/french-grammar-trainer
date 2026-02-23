@@ -4,8 +4,6 @@
 
 - **Nonsensical questions** — some generated questions are internally incoherent: e.g. an input question with PROMPT "Conjuguez le verbe au présent" but neither the PROMPT nor the PHRASE names which verb to conjugate, leaving the blank completely undefined. These pass all structural checks. Possible mitigations: add a prompt instruction like "the verb to conjugate must appear explicitly in the sentence or prompt"; add a heuristic validator that flags INPUT questions whose PHRASE contains a bare `___` with no adjacent verb-form context; or add a post-generation LLM review step that reads each question and checks for self-consistency.
 
-- **Haiku duplicates right answer as wrong answer** — when Haiku runs out of distinct wrong-answer ideas mid-question, it repeats the right answer with a confused explanation ("C'est la bonne réponse !"). The `split-txt` validator catches it, but it should be prevented upstream. Options: add an explicit "never repeat RIGHT ANSWER as a WRONG ANSWER" rule to SKILL.md; add a self-check step at END QUESTION; emit a clearer error in the validator. See discussion in session notes.
-
 - **Grammar-check generated answers** — no validation that answers are grammatically plausible French (e.g. a generated wrong answer like "je arrive" would pass validation). Could run answers through a grammar API, a local spaCy/Lefff model, or a cheap LLM call to flag obviously broken forms before committing content.
 
 ## Content scale
@@ -15,8 +13,6 @@
 ## UI / UX
 
 - **Show section context on quiz page** — currently there is no indication of which grammar rule or tense is being tested except the URL bar. A learner jumping straight into a quiz from a link has no idea whether to expect présent, passé composé, etc. Consider showing the section title and/or rule title on the quiz screen.
-
-- **Differentiate yellow feedback blurbs** — "yellow" currently covers two distinct situations that deserve different messages: (1) case mismatch (answer is correct but capitalisation differs, e.g. "L'eau" vs "l'eau") should say something like "Bonne réponse — attention à la majuscule" ; (2) near-miss / typo (answer is wrong but close to correct) should say something like "Presque ! Vérifiez l'orthographe". Right now they likely show the same generic blurb.
 
 - Make input boxes less jumpy: initial width somewhat matching expected response, expand in wider steps?
 
