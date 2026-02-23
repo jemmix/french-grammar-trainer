@@ -4,10 +4,11 @@ import section02 from "./sections/02-passe-compose";
 import section03 from "./sections/03-imparfait";
 import section04 from "./sections/04-plus-que-parfait";
 import section05 from "./sections/05-futur-simple-et-anterieur";
+import section06 from "./sections/06-conditionnel";
 import section10 from "./sections/10-articles";
 
 // Add compiled section files here — counts and availability are derived automatically.
-const _loadedSections: Section[] = [section01, section02, section03, section04, section05, section10];
+const _loadedSections: Section[] = [section01, section02, section03, section04, section05, section06, section10];
 
 export const sectionMap: Record<string, Section> = Object.fromEntries(
   _loadedSections.map((s) => [s.id, s]),
