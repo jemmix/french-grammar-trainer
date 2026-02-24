@@ -19,6 +19,9 @@
 - `questions/<rule-id>.txt` — canonical merged source files, one per rule (committed)
 - `src/data/sections/<section-id>.ts` — compiled TypeScript, generated from `questions/` (committed)
 
+### Subagent type for generation
+Always use **`general-purpose`** subagents (not `Bash`) for question generation. General-purpose agents have the Write tool and write files directly. Bash agents lack the Write tool — if used, the generated content stays trapped in the agent transcript, forcing the parent to read that transcript into context and re-write the file, doubling token cost and risking context compaction.
+
 ### Steps
 1. **Generate** — run `/generate-questions` in parallel Haiku sub-agents (one per rule), writing raw files to `gen/<rule-id>.txt`
 2. **Split** — `npm run split-txt -- gen/<rule-id>.txt ...` → produces `gen/<rule-id>-passed.txt` + `gen/<rule-id>-failed.txt`
