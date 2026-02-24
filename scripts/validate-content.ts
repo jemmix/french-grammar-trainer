@@ -198,7 +198,12 @@ function validateInput(q: InputQuestion) {
   }
 }
 
-async function validateSection(section: Section) {
+async function validateSection(section: Section, filename: string) {
+  const expectedId = filename.replace(/\.ts$/, "");
+  if (section.id !== expectedId) {
+    error(section.id || "(missing id)", `Section id "${section.id}" does not match filename "${filename}" (expected id: "${expectedId}")`);
+  }
+
   const mcqCount = section.questions.filter((q) => q.type === "mcq").length;
   const inputCount = section.questions.filter((q) => q.type === "input").length;
   console.log(`\nSection: ${section.title} (${section.questions.length} questions — ${mcqCount} MCQ, ${inputCount} input)`);
@@ -222,7 +227,7 @@ async function main() {
 
   for (const file of files) {
     const mod = (await import(join(sectionsDir, file))) as { default: Section };
-    await validateSection(mod.default);
+    await validateSection(mod.default, file);
   }
 
   console.log(`\n${"=".repeat(50)}`);
