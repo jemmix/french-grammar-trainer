@@ -1,29 +1,44 @@
-# Create T3 App
+# Grammaire Française B1
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+An interactive French grammar trainer targeting B1 level. Practice conjugations, tenses, articles, pronouns, and more through multiple-choice and free-input exercises.
 
-## What's next? How do I make an app with this?
+## Features
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- 12+ grammar sections covering present indicative through relative pronouns
+- Mixed question types: MCQ (80%) and user-input fill-in-the-blank (20%)
+- Immediate feedback with explanations for wrong answers
+- Clean French-themed UI
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Stack
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
+- [Next.js](https://nextjs.org) (Pages Router)
 - [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- TypeScript
 
-## Learn More
+## Development
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+```bash
+npm install
+npm run dev
+```
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Content Pipeline
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+Grammar questions live in `questions/<rule-id>.txt` (plain text, version-controlled) and are compiled to TypeScript in `src/data/sections/`. See `CLAUDE.md` for the full generation workflow.
 
-## How do I deploy this?
+## Sections
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+| # | Section |
+|---|---------|
+| 1 | Présent de l'indicatif |
+| 2 | Passé composé |
+| 3 | Imparfait |
+| 4 | Plus-que-parfait |
+| 5 | Futur simple et antérieur |
+| 6 | Conditionnel |
+| 7 | Subjonctif présent |
+| 8 | Subjonctif passé |
+| 9 | Impératif |
+| 10 | Les articles |
+| 11 | Pronoms COD/COI |
+| 12 | Pronoms relatifs |
