@@ -1,8 +1,14 @@
+import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { sectionsIndex } from "~/data/sections-index";
 
 export default function Home() {
+  const [revealed, setRevealed] = useState(false);
+  const availableSections = sectionsIndex.filter((s) => s.questionCount > 0);
+  const hiddenCount = sectionsIndex.length - availableSections.length;
+  const visibleSections = revealed ? sectionsIndex : availableSections;
+
   return (
     <>
       <Head>
@@ -38,7 +44,7 @@ export default function Home() {
         {/* Section Grid */}
         <main className="mx-auto max-w-6xl px-6 py-10 md:py-14">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-            {sectionsIndex.map((section, i) => {
+            {visibleSections.map((section, i) => {
               const available = section.questionCount > 0;
               const sectionNum = section.id.split("-")[0];
 
@@ -53,11 +59,11 @@ export default function Home() {
                       href={`/quiz/${section.id}`}
                       className="group block h-full rounded-xl border border-craie bg-tricolore-blanc p-6 transition-all duration-200 hover:border-tricolore-bleu/30 hover:shadow-lg hover:shadow-tricolore-bleu/5 hover:-translate-y-0.5"
                     >
-                      <SectionCardContent sectionNum={sectionNum} section={section} available />
+                      <SectionCardContent sectionNum={sectionNum} section={section} available showCount={revealed} />
                     </Link>
                   ) : (
                     <div className="block h-full rounded-xl border border-craie/60 bg-papier-warm p-6 opacity-55">
-                      <SectionCardContent sectionNum={sectionNum} section={section} available={false} />
+                      <SectionCardContent sectionNum={sectionNum} section={section} available={false} showCount={revealed} />
                     </div>
                   )}
                 </div>
@@ -69,6 +75,18 @@ export default function Home() {
         {/* Footer */}
         <footer className="border-t border-craie py-8 text-center text-sm text-ardoise">
           <p>Grammaire Française B1 — Entraînement interactif</p>
+          {hiddenCount > 0 && (
+            <button
+              onClick={() => setRevealed((r) => !r)}
+              className="mt-4 inline-flex items-center gap-3 text-xs text-ardoise/35 hover:text-ardoise/65 transition-colors duration-300 group cursor-pointer"
+            >
+              <span className="block h-px w-6 bg-current transition-[width] duration-300 group-hover:w-10" />
+              <span className="tracking-wide">
+                {revealed ? "réduire" : `+${hiddenCount} sections à venir`}
+              </span>
+              <span className="block h-px w-6 bg-current transition-[width] duration-300 group-hover:w-10" />
+            </button>
+          )}
         </footer>
       </div>
     </>
@@ -79,10 +97,12 @@ function SectionCardContent({
   sectionNum,
   section,
   available,
+  showCount,
 }: {
   sectionNum: string | undefined;
   section: { title: string; description: string; questionCount: number };
   available: boolean;
+  showCount: boolean;
 }) {
   return (
     <>
@@ -90,15 +110,17 @@ function SectionCardContent({
         <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-tricolore-bleu/8 text-sm font-semibold text-tricolore-bleu shrink-0">
           {sectionNum}
         </span>
-        {available ? (
-          <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-correct-bg text-correct border border-correct-border">
-            {section.questionCount} questions
-          </span>
-        ) : (
-          <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-papier-warm text-ardoise border border-craie">
-            Bientôt
-          </span>
-        )}
+        <span
+          className={`text-xs font-medium px-2.5 py-1 rounded-full transition-opacity duration-500 ${
+            showCount ? "opacity-100" : "opacity-0 pointer-events-none"
+          } ${
+            available
+              ? "bg-correct-bg text-correct border border-correct-border"
+              : "bg-papier-warm text-ardoise border border-craie"
+          }`}
+        >
+          {available ? `${section.questionCount} questions` : "Bientôt"}
+        </span>
       </div>
       <h2 className="text-base font-semibold text-encre leading-snug mb-2">
         {section.title}
