@@ -39,7 +39,7 @@ function parseArgs(): { section: number; ruleFrom: number; ruleTo: number; concu
   let dryRun = false;
 
   for (let i = 0; i < args.length; i++) {
-    const a = args[i];
+    const a = args[i]!; // safe: loop condition guarantees i < args.length
     if (a === "--dry-run") {
       dryRun = true;
     } else if (a === "--concurrency" || a === "-c") {
@@ -64,10 +64,11 @@ function parseArgs(): { section: number; ruleFrom: number; ruleTo: number; concu
   const m = range.match(/^(\d+)-(\d+):(\d+)-(\d+)$/);
   if (!m) die(`Invalid range "${range}" — expected format: 11-01:11-20`);
 
-  const section  = parseInt(m[1], 10);
-  const ruleFrom = parseInt(m[2], 10);
-  const secTo    = parseInt(m[3], 10);
-  const ruleTo   = parseInt(m[4], 10);
+  // m[1]–m[4] are guaranteed by the regex having exactly 4 capture groups
+  const section  = parseInt(m[1]!, 10);
+  const ruleFrom = parseInt(m[2]!, 10);
+  const secTo    = parseInt(m[3]!, 10);
+  const ruleTo   = parseInt(m[4]!, 10);
 
   if (section !== secTo) die("Range must be within a single section (e.g. 11-01:11-20, not 11-01:12-05)");
   if (ruleFrom > ruleTo)  die(`Start rule (${ruleFrom}) must be ≤ end rule (${ruleTo})`);
@@ -114,10 +115,10 @@ function parseToC(section: number, ruleFrom: number, ruleTo: number): RuleInfo[]
     const m = line.match(/^(\d+)\.\s+(.+)/);
     if (!m) continue;
 
-    const num = parseInt(m[1], 10);
+    const num = parseInt(m[1]!, 10); // safe: regex guarantees group 1 exists
     if (num < ruleFrom || num > ruleTo) continue;
 
-    const title = m[2].replace(/\*\*([^*]+)\*\*/g, "$1");
+    const title = m[2]!.replace(/\*\*([^*]+)\*\*/g, "$1"); // safe: regex guarantees group 2 exists
     const sec2  = String(section).padStart(2, "0");
     const rule2 = String(num).padStart(2, "0");
     rules.push({ ruleId: `${sec2}-${rule2}`, title });
