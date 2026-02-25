@@ -6,20 +6,21 @@
  * Rule titles are read from TABLE_OF_CONTENTS.md — no manual input needed.
  *
  * Usage:
- *   npx tsx scripts/generate-section.ts <range> [--concurrency N]
+ *   npx tsx scripts/generate-section.ts <range> [--concurrency N] [--dry-run]
  *
  * Range format: <sec>-<from>:<sec>-<to>   (both endpoints inclusive)
  *
  * Examples:
  *   npx tsx scripts/generate-section.ts 11-01:11-20
  *   npx tsx scripts/generate-section.ts 11-01:11-05 --concurrency 5
+ *   npx tsx scripts/generate-section.ts 11-01:11-03 --dry-run
  *
- * Output: gen/<rule-id>.txt for each rule in the range.
- * Run `npm run split-txt` on the results when done.
+ * Output files : gen/<rule-id>.txt  (one per rule)
+ * Log file     : gen/generate-section-logs/<timestamp>_<range>.log
  */
 
 import { spawn } from "child_process";
-import { readFileSync, existsSync, mkdirSync } from "fs";
+import { readFileSync, existsSync, mkdirSync, createWriteStream, WriteStream } from "fs";
 import { join } from "path";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -48,7 +49,7 @@ function parseArgs(): { section: number; ruleFrom: number; ruleTo: number; concu
     } else if (!a.startsWith("-") && range === undefined) {
       range = a;
     } else {
-      die(`Unexpected argument: ${a}\nUsage: generate-section.ts <range> [--concurrency N]`);
+      die(`Unexpected argument: ${a}\nUsage: generate-section.ts <range> [--concurrency N] [--dry-run]`);
     }
   }
 
@@ -79,6 +80,19 @@ function die(msg: string): never {
   process.exit(1);
 }
 
+// ── Shell-safe command display ────────────────────────────────────────────────
+// Uses single-quote wrapping so the displayed command is copy-paste safe.
+
+function shellEscape(arg: string): string {
+  if (!/[\s"'`$\\!|&;<>(){}*?#~]/.test(arg)) return arg;
+  // Wrap in single quotes; escape internal single quotes as '\''
+  return `'${arg.replace(/'/g, "'\\''")}'`;
+}
+
+function formatCmd(args: string[]): string {
+  return args.map(shellEscape).join(" ");
+}
+
 // ── TOC parsing ───────────────────────────────────────────────────────────────
 
 function parseToC(section: number, ruleFrom: number, ruleTo: number): RuleInfo[] {
@@ -95,19 +109,15 @@ function parseToC(section: number, ruleFrom: number, ruleTo: number): RuleInfo[]
       if (sectionHeader.test(line)) inSection = true;
       continue;
     }
-    // Stop at next section or horizontal rule
     if (line.startsWith("###") || line.trimEnd() === "---") break;
 
-    // Match "1. Title" or "10. Title"
     const m = line.match(/^(\d+)\.\s+(.+)/);
     if (!m) continue;
 
     const num = parseInt(m[1], 10);
     if (num < ruleFrom || num > ruleTo) continue;
 
-    // Strip markdown bold markers (**text**)
     const title = m[2].replace(/\*\*([^*]+)\*\*/g, "$1");
-
     const sec2  = String(section).padStart(2, "0");
     const rule2 = String(num).padStart(2, "0");
     rules.push({ ruleId: `${sec2}-${rule2}`, title });
@@ -120,85 +130,150 @@ function parseToC(section: number, ruleFrom: number, ruleTo: number): RuleInfo[]
   return rules;
 }
 
-// ── Worker ────────────────────────────────────────────────────────────────────
+// ── Display (progress bar + terminal output) ──────────────────────────────────
 
-async function generateRule(rule: RuleInfo, dryRun = false): Promise<void> {
-  const outFile = join("gen", `${rule.ruleId}.txt`);
-  const prompt  = `/generate-questions ${rule.ruleId} "${rule.title}" ${outFile}`;
+class Display {
+  private static BAR_WIDTH = 28;
+  private currentBar = "";
 
-  const claudeArgs = [
-    "--print",
-    "--model",        "haiku",
-    "--allowedTools=Write",
-    prompt,
-  ];
-
-  const cmdDisplay = ["claude", ...claudeArgs]
-    .map((a) => (a.includes(" ") ? `"${a}"` : a))
-    .join(" ");
-
-  if (dryRun) {
-    console.log(`[${rule.ruleId}] DRY RUN:\n  ${cmdDisplay}\n`);
-    return;
+  /** Print a message above the progress bar. Also writes to log. */
+  log(msg: string, log: WriteStream) {
+    const clear = " ".repeat(this.currentBar.length);
+    process.stdout.write(`\r${clear}\r${msg}\n`);
+    log.write(`${msg}\n`);
+    if (this.currentBar) process.stdout.write(this.currentBar);
   }
 
-  console.log(`[${rule.ruleId}] ▶  ${rule.title}`);
+  /** Re-render the progress bar in-place. */
+  progress(done: number, total: number, running: string[]) {
+    const w      = Display.BAR_WIDTH;
+    const filled = total > 0 ? Math.round((done / total) * w) : 0;
+    const bar    = "█".repeat(filled) + "░".repeat(w - filled);
+    const pct    = total > 0 ? Math.round((done / total) * 100) : 0;
+    const run    = running.length > 0 ? `  · ${running.join(", ")}` : "";
+    this.currentBar = `[${bar}] ${done}/${total} (${pct}%)${run}`;
+    process.stdout.write(`\r${this.currentBar}`);
+  }
+
+  /** Call once all work is done to leave the cursor on a clean line. */
+  finish() {
+    process.stdout.write("\n");
+  }
+}
+
+// ── Worker ────────────────────────────────────────────────────────────────────
+
+async function generateRule(
+  rule: RuleInfo,
+  display: Display,
+  log: WriteStream,
+  progress: () => void,
+  dryRun: boolean,
+): Promise<boolean> {
+  const outFile    = join("gen", `${rule.ruleId}.txt`);
+  const prompt     = `/generate-questions ${rule.ruleId} "${rule.title}" ${outFile}`;
+  const claudeArgs = ["--print", "--model", "haiku", "--allowedTools=Write", prompt];
+
+  if (dryRun) {
+    display.log(`[${rule.ruleId}] DRY RUN: ${formatCmd(["claude", ...claudeArgs])}`, log);
+    return true;
+  }
+
   const t0 = Date.now();
 
   const exitCode = await new Promise<number>((resolve) => {
     const child = spawn("claude", claudeArgs, {
       cwd:   process.cwd(),
       env:   { ...process.env },
-      stdio: ["ignore", "pipe", "pipe"], // stdin closed; stdout/stderr streamed
+      stdio: ["ignore", "pipe", "pipe"], // stdin closed; stdout/stderr to log only
     });
 
-    // Prefix each output line with the rule ID so concurrent jobs are readable
-    const prefix = (tag: string) => (chunk: Buffer) => {
+    // Child output goes to log file only — keeps terminal clean for progress bar
+    const toLog = (tag: string) => (chunk: Buffer) => {
       for (const line of chunk.toString().split("\n")) {
-        if (line.trim()) console.log(`[${rule.ruleId}${tag}] ${line}`);
+        if (line.trim()) log.write(`[${rule.ruleId}${tag}] ${line}\n`);
       }
     };
-    child.stdout.on("data", prefix(""));
-    child.stderr.on("data", prefix(" ERR"));
+    child.stdout.on("data", toLog(""));
+    child.stderr.on("data", toLog(" ERR"));
 
     const timer = setTimeout(() => { child.kill(); }, 5 * 60 * 1000);
     child.on("close", (code) => { clearTimeout(timer); resolve(code ?? 1); });
   });
 
+  const elapsed = ((Date.now() - t0) / 1000).toFixed(2);
+
   if (exitCode !== 0) {
-    const elapsed = ((Date.now() - t0) / 1000).toFixed(1);
-    console.error(`[${rule.ruleId}] ✗  FAILED (${elapsed}s): exit code ${exitCode}`);
-    return;
+    display.log(`[${rule.ruleId}] ✗  failed in ${elapsed}s (exit ${exitCode})`, log);
+    progress();
+    return false;
   }
 
-  const elapsed = ((Date.now() - t0) / 1000).toFixed(1);
-
   if (!existsSync(outFile)) {
-    console.error(`[${rule.ruleId}] ✗  FAILED (${elapsed}s): file not written by claude`);
-    return;
+    display.log(`[${rule.ruleId}] ✗  failed in ${elapsed}s (file not written)`, log);
+    progress();
+    return false;
   }
 
   const content       = readFileSync(outFile, "utf-8");
   const questionCount = (content.match(/^BEGIN QUESTION/mg) ?? []).length;
-  console.log(`[${rule.ruleId}] ✓  ${elapsed}s — ${questionCount} questions → ${outFile}`);
+  display.log(`[${rule.ruleId}] ✓  finished in ${elapsed}s — ${questionCount} questions`, log);
+  progress();
+  return true;
 }
 
 // ── Concurrency pool ──────────────────────────────────────────────────────────
 
 async function runPool(
-  items: RuleInfo[],
+  rules: RuleInfo[],
   concurrency: number,
-  worker: (item: RuleInfo) => Promise<void>,
-  dryRun = false,
-): Promise<void> {
-  const queue = [...items];
+  display: Display,
+  log: WriteStream,
+  dryRun: boolean,
+): Promise<boolean[]> {
+  const total   = rules.length;
+  let done      = 0;
+  const running = new Set<string>();
+  const results: boolean[] = [];
+
+  const runningIds = () => [...running].sort();
+
+  const progress = () => {
+    display.progress(done, total, runningIds());
+  };
+
+  // Show initial empty bar (skip in dry-run to keep output clean)
+  if (!dryRun) display.progress(0, total, []);
+
+  // In dry-run the progress callback isn't invoked, so don't add to running set
+  if (dryRun) {
+    for (const rule of rules) {
+      await generateRule(rule, display, log, () => {}, true);
+    }
+    return results;
+  }
+
+  const queue = [...rules];
+
   async function drain(): Promise<void> {
-    const item = queue.shift();
-    if (!item) return;
-    await worker(item, dryRun);
+    const rule = queue.shift();
+    if (!rule) return;
+
+    running.add(rule.ruleId);
+    progress();
+
+    const ok = await generateRule(rule, display, log, () => {
+      running.delete(rule.ruleId);
+      done++;
+      progress();
+    }, dryRun);
+
+    results.push(ok);
     return drain();
   }
-  await Promise.all(Array.from({ length: Math.min(concurrency, items.length) }, drain));
+
+  await Promise.all(Array.from({ length: Math.min(concurrency, rules.length) }, drain));
+  return results;
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
@@ -210,35 +285,55 @@ async function main() {
   const sec2  = String(section).padStart(2, "0");
   const from2 = String(ruleFrom).padStart(2, "0");
   const to2   = String(ruleTo).padStart(2, "0");
-  console.log(
-    `\nGenerating ${rules.length} rule(s): ${sec2}-${from2} → ${sec2}-${to2}` +
-    ` (concurrency: ${concurrency}, model: haiku)\n`,
-  );
+  const range = `${sec2}-${from2}_${sec2}-${to2}`;
 
-  // Ensure gen/ directory exists
+  // Set up log file
   mkdirSync("gen", { recursive: true });
+  mkdirSync(join("gen", "generate-section-logs"), { recursive: true });
+  const ts      = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
+  const logPath = join("gen", "generate-section-logs", `${ts}_${range}.log`);
+  const log     = createWriteStream(logPath, { encoding: "utf-8" });
 
-  const t0 = Date.now();
-  await runPool(rules, concurrency, generateRule, dryRun);
-  if (dryRun) return;
+  const display = new Display();
+
+  const header =
+    `Generating ${rules.length} rule(s): ${sec2}-${from2} → ${sec2}-${to2}` +
+    ` (concurrency: ${concurrency}, model: haiku)` +
+    (dryRun ? "  [DRY RUN]" : `\nLog: ${logPath}`);
+
+  display.log(header, log);
+
+  const t0      = Date.now();
+  const results = await runPool(rules, concurrency, display, log, dryRun);
+
+  display.finish();
+
+  if (dryRun) { log.end(); return; }
+
   const totalElapsed = ((Date.now() - t0) / 1000).toFixed(1);
+  const ok           = results.filter(Boolean).length;
 
-  // Summary
-  console.log("\n─── Summary ──────────────────────────────────────────────────");
-  let ok = 0;
-  for (const rule of rules) {
-    const outFile = join("gen", `${rule.ruleId}.txt`);
-    if (existsSync(outFile)) {
-      const content       = readFileSync(outFile, "utf-8");
-      const questionCount = (content.match(/^BEGIN QUESTION/mg) ?? []).length;
-      console.log(`  ✓ ${rule.ruleId}: ${questionCount} questions`);
-      ok++;
-    } else {
-      console.log(`  ✗ ${rule.ruleId}: missing`);
-    }
+  // Summary to terminal + log
+  const summaryLines = [
+    "",
+    "─── Summary ──────────────────────────────────────────────────",
+    ...rules.map((rule, i) => {
+      const outFile = join("gen", `${rule.ruleId}.txt`);
+      if (existsSync(outFile)) {
+        const q = (readFileSync(outFile, "utf-8").match(/^BEGIN QUESTION/mg) ?? []).length;
+        return `  ✓ ${rule.ruleId}: ${q} questions`;
+      }
+      return `  ✗ ${rule.ruleId}: missing`;
+    }),
+    `\n${ok}/${rules.length} succeeded in ${totalElapsed}s total`,
+  ];
+
+  for (const line of summaryLines) {
+    process.stdout.write(`${line}\n`);
+    log.write(`${line}\n`);
   }
-  console.log(`\n${ok}/${rules.length} succeeded in ${totalElapsed}s total\n`);
 
+  log.end();
   if (ok < rules.length) process.exit(1);
 }
 
