@@ -10,9 +10,10 @@ import section08 from "./sections/08-subjonctif-passe";
 import section09 from "./sections/09-imperatif";
 import section10 from "./sections/10-articles";
 import section11 from "./sections/11-pronoms-cod-coi";
+import section12 from "./sections/12-pronoms-relatifs";
 
 // Add compiled section files here — counts and availability are derived automatically.
-const _loadedSections: Section[] = [section01, section02, section03, section04, section05, section06, section07, section08, section09, section10, section11];
+const _loadedSections: Section[] = [section01, section02, section03, section04, section05, section06, section07, section08, section09, section10, section11, section12];
 
 export const sectionMap: Record<string, Section> = Object.fromEntries(
   _loadedSections.map((s) => [s.id, s]),
