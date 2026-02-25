@@ -161,26 +161,53 @@ function splitFile(filePath: string) {
   }
 
   const parsed = parseTxtFile(content);
-  const { header, blocks } = extractBlocks(content);
+  const { blocks } = extractBlocks(content);
 
-  if (blocks.length !== parsed.questions.length) {
-    console.error(
-      `ERROR [${filePath}]: Block count (${blocks.length}) doesn't match parsed question count (${parsed.questions.length}). Check for parse errors.`,
-    );
-    if (parsed.parseErrors.length > 0) {
-      for (const e of parsed.parseErrors) console.error(`  Parse error: ${e}`);
+  // Index parsed questions by ID for O(1) lookup
+  const questionById = new Map<string, ParsedQuestion>();
+  for (const q of parsed.questions) questionById.set(q.id, q);
+
+  // Partition parse errors: those naming a specific question ID vs file-level
+  const parseErrorById = new Map<string, string[]>();
+  const fileLevelErrors: string[] = [];
+  for (const e of parsed.parseErrors) {
+    const m = e.match(/question ID "([^"]+)"/);
+    if (m) {
+      const id = m[1]!;
+      const arr = parseErrorById.get(id);
+      if (arr) arr.push(e);
+      else parseErrorById.set(id, [e]);
+    } else {
+      fileLevelErrors.push(e);
     }
-    return;
   }
 
   const passedBlocks: string[] = [];
   const failedEntries: { block: string; errors: string[] }[] = [];
 
-  for (let i = 0; i < parsed.questions.length; i++) {
-    const q = parsed.questions[i]!;
-    const block = blocks[i]!;
-    const errors = validateQuestion(q);
+  for (const block of blocks) {
+    const idMatch = block.match(/^ID:\s*(.+)$/m);
+    const id = idMatch ? idMatch[1]!.trim() : "";
 
+    // Block has a parser-reported error (e.g. unknown TYPE like MCC)
+    const pErrors = parseErrorById.get(id) ?? [];
+    if (pErrors.length > 0) {
+      failedEntries.push({ block, errors: pErrors.map((e) => `Parse error: ${e}`) });
+      continue;
+    }
+
+    // Block produced no parsed question for another reason (missing/duplicate ID, etc.)
+    const q = questionById.get(id);
+    if (!q) {
+      const reason = id
+        ? `Parse error: question "${id}" could not be parsed`
+        : "Parse error: question block has no ID";
+      failedEntries.push({ block, errors: [reason] });
+      continue;
+    }
+
+    // Normal content validation
+    const errors = validateQuestion(q);
     if (errors.length === 0) {
       passedBlocks.push(block);
     } else {
@@ -188,23 +215,23 @@ function splitFile(filePath: string) {
     }
   }
 
-  const passedMcq = passedBlocks.filter((b) => b.includes("TYPE: MCQ")).length;
+  const passedMcq   = passedBlocks.filter((b) => b.includes("TYPE: MCQ")).length;
   const passedInput = passedBlocks.filter((b) => b.includes("TYPE: INPUT")).length;
-  const failedMcq = failedEntries.filter(({ block: b }) => b.includes("TYPE: MCQ")).length;
+  const failedMcq   = failedEntries.filter(({ block: b }) => b.includes("TYPE: MCQ")).length;
   const failedInput = failedEntries.filter(({ block: b }) => b.includes("TYPE: INPUT")).length;
 
-  const ext = extname(filePath);
+  const ext  = extname(filePath);
   const base = basename(filePath, ext);
-  const dir = dirname(filePath);
+  const dir  = dirname(filePath);
 
   // Write passed file
-  const passedPath = join(dir, `${base}-passed${ext}`);
-  const passedHeader = buildHeader(parsed, passedMcq, passedInput);
+  const passedPath    = join(dir, `${base}-passed${ext}`);
+  const passedHeader  = buildHeader(parsed, passedMcq, passedInput);
   const passedContent = passedHeader + "\n\n" + passedBlocks.join("\n\n") + "\n";
   writeFileSync(passedPath, passedContent, "utf-8");
 
   // Write failed file (with error annotations)
-  const failedPath = join(dir, `${base}-failed${ext}`);
+  const failedPath   = join(dir, `${base}-failed${ext}`);
   const failedHeader = buildHeader(parsed, failedMcq, failedInput);
   const failedBlocksAnnotated = failedEntries.map(({ block, errors }) => {
     const annotations = errors.map((e) => `VALIDATION ERROR: ${e}`).join("\n");
@@ -223,6 +250,11 @@ function splitFile(filePath: string) {
   console.log(`\n${filePath}`);
   console.log(`  Passed : ${passedBlocks.length} questions (${passedMcq} MCQ, ${passedInput} INPUT) → ${passedPath}`);
   console.log(`  Failed : ${failedEntries.length} questions (${failedMcq} MCQ, ${failedInput} INPUT) → ${failedPath}`);
+
+  if (fileLevelErrors.length > 0) {
+    console.log(`  File-level parse errors:`);
+    for (const e of fileLevelErrors) console.log(`    ${e}`);
+  }
 
   if (failedEntries.length > 0) {
     console.log(`  Failures:`);
