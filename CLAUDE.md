@@ -23,7 +23,11 @@
 Always use **`general-purpose`** subagents (not `Bash`) for question generation. General-purpose agents have the Write tool and write files directly. Bash agents lack the Write tool — if used, the generated content stays trapped in the agent transcript, forcing the parent to read that transcript into context and re-write the file, doubling token cost and risking context compaction.
 
 ### Steps
-1. **Generate** — run `/generate-questions` in parallel Haiku sub-agents (one per rule), writing raw files to `gen/<rule-id>.txt`
+1. **Generate** — run the generation script in a **separate terminal** (not as a sub-agent):
+   ```
+   npx tsx scripts/generate-section.ts <sec>-01:<sec>-20
+   ```
+   The script reads rule titles from `TABLE_OF_CONTENTS.md`, launches parallel Haiku instances (default concurrency: 10), and writes raw files to `gen/<rule-id>.txt`. Use `--dry-run` to preview commands. Logs go to `gen/generate-section-logs/`.
 2. **Split** — `npm run split-txt -- gen/<rule-id>.txt ...` → produces `gen/<rule-id>-passed.txt` + `gen/<rule-id>-failed.txt`
 3. **Fix** — manually correct failed questions, save as `gen/<rule-id>-fixed.txt` (remove `VALIDATION ERROR:` lines)
 4. **Merge** — `npm run merge-txt -- --output questions/<rule-id>.txt gen/<rule-id>-passed.txt [gen/<rule-id>-fixed.txt]` (later files override earlier for duplicate IDs)

@@ -138,10 +138,9 @@ class Display {
 
   /** Print a message above the progress bar. Also writes to log. */
   log(msg: string, log: WriteStream) {
-    const clear = " ".repeat(this.currentBar.length);
-    process.stdout.write(`\r${clear}\r${msg}\n`);
+    process.stdout.write(`\r\x1b[2K${msg}\n`);
     log.write(`${msg}\n`);
-    if (this.currentBar) process.stdout.write(this.currentBar);
+    if (this.currentBar) process.stdout.write(`${this.currentBar}\x1b[K`);
   }
 
   /** Re-render the progress bar in-place. */
@@ -152,12 +151,12 @@ class Display {
     const pct    = total > 0 ? Math.round((done / total) * 100) : 0;
     const run    = running.length > 0 ? `  · ${running.join(", ")}` : "";
     this.currentBar = `[${bar}] ${done}/${total} (${pct}%)${run}`;
-    process.stdout.write(`\r${this.currentBar}`);
+    process.stdout.write(`\r${this.currentBar}\x1b[K`);
   }
 
   /** Call once all work is done to leave the cursor on a clean line. */
   finish() {
-    process.stdout.write("\n");
+    process.stdout.write(`\r\x1b[2K`);
   }
 }
 
