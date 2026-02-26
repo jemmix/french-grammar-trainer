@@ -196,14 +196,6 @@ export default function MyDataPage() {
     }
   }, [deleting, logout, router]);
 
-  if (isLoading || !isLoggedIn) {
-    return (
-      <div className="min-h-screen bg-papier flex items-center justify-center">
-        <div className="text-ardoise">Chargement...</div>
-      </div>
-    );
-  }
-
   const attemptedSections = useMemo(
     () =>
       sectionsIndex
@@ -220,6 +212,14 @@ export default function MyDataPage() {
   );
 
   const totalAttemptedRules = attemptedSections.reduce((sum, s) => sum + s.attemptedRules.length, 0);
+
+  if (isLoading || !isLoggedIn) {
+    return (
+      <div className="min-h-screen bg-papier flex items-center justify-center">
+        <div className="text-ardoise">Chargement...</div>
+      </div>
+    );
+  }
 
   return (
     <>
