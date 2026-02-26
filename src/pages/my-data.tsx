@@ -1,9 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
-import { ProgressRing } from "~/components/progress-ring";
 import { sectionsIndex, sectionMap } from "~/data/sections-index";
 import { getTier } from "~/lib/constants";
 import { getRuleSlotIndex } from "~/lib/user-record";
@@ -141,7 +140,6 @@ export default function MyDataPage() {
 
   const [blobData, setBlobData] = useState<BlobData | null>(null);
   const [blobLoading, setBlobLoading] = useState(true);
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [deleting, setDeleting] = useState(false);
 
@@ -166,18 +164,6 @@ export default function MyDataPage() {
       .finally(() => setBlobLoading(false));
   }, [isLoggedIn, isLoading]);
 
-  const toggleSection = useCallback((sectionId: string) => {
-    setExpandedSections((prev) => {
-      const next = new Set(prev);
-      if (next.has(sectionId)) {
-        next.delete(sectionId);
-      } else {
-        next.add(sectionId);
-      }
-      return next;
-    });
-  }, []);
-
   const handleExport = useCallback(() => {
     if (!userId || !blobData) return;
     const { data, filename } = buildExportData({ userId, blobData, getRulePower, getSectionPower, getGlobalPower });
@@ -195,23 +181,6 @@ export default function MyDataPage() {
       setDeleting(false);
     }
   }, [deleting, logout, router]);
-
-  const attemptedSections = useMemo(
-    () =>
-      sectionsIndex
-        .map((meta) => {
-          const section = sectionMap[meta.id];
-          if (!section) return null;
-          const power = getSectionPower(meta.id);
-          if (power === 0) return null;
-          const attemptedRules = section.rules.filter((r) => getRulePower(r.id) > 0);
-          return { meta, section, power, attemptedRules };
-        })
-        .filter((s): s is NonNullable<typeof s> => s !== null),
-    [getSectionPower, getRulePower],
-  );
-
-  const totalAttemptedRules = attemptedSections.reduce((sum, s) => sum + s.attemptedRules.length, 0);
 
   if (isLoading || !isLoggedIn) {
     return (
@@ -258,85 +227,6 @@ export default function MyDataPage() {
                 Cet identifiant est dérivé de votre activité de manière irréversible. Il ne permet pas de vous identifier.
               </p>
             </div>
-          </section>
-
-          {/* ── Progress overview (friendly, tier-based) ─────────── */}
-          <section className="mb-10">
-            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider mb-3">Progression</h2>
-
-            {attemptedSections.length === 0 ? (
-              <p className="text-sm text-ardoise py-4 text-center">
-                Aucune progression enregistrée. Commencez à pratiquer !
-              </p>
-            ) : (
-              <>
-                <p className="text-sm text-ardoise mb-4">
-                  {attemptedSections.length} section{attemptedSections.length > 1 ? "s" : ""} pratiquée{attemptedSections.length > 1 ? "s" : ""},
-                  {" "}{totalAttemptedRules} règle{totalAttemptedRules > 1 ? "s" : ""} au total
-                </p>
-
-                <div className="space-y-3">
-                  {attemptedSections.map(({ meta, section, power, attemptedRules }) => {
-                    const tier = getTier(power, true);
-                    const isExpanded = expandedSections.has(meta.id);
-
-                    return (
-                      <div key={meta.id} className="bg-tricolore-blanc border border-craie rounded-xl overflow-hidden">
-                        <button
-                          onClick={() => toggleSection(meta.id)}
-                          className="w-full text-left px-5 py-4 flex items-center gap-4 hover:bg-papier-warm transition-colors cursor-pointer"
-                        >
-                          <ProgressRing power={power} attempted={true} size={32} />
-                          <div className="flex-1 min-w-0">
-                            <p className="text-sm font-medium text-encre truncate">{meta.title}</p>
-                            <p className="text-xs text-ardoise mt-0.5">
-                              {tier?.label ?? "Débutant"} · {attemptedRules.length}/20 règles pratiquées
-                            </p>
-                          </div>
-                          <svg
-                            className={`w-4 h-4 text-ardoise shrink-0 transition-transform ${isExpanded ? "rotate-180" : ""}`}
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                          </svg>
-                        </button>
-
-                        {isExpanded && (
-                          <div className="border-t border-craie">
-                            <table className="w-full text-xs">
-                              <thead>
-                                <tr className="bg-papier-warm border-b border-craie">
-                                  <th className="text-left px-5 py-2 font-medium text-ardoise">Règle</th>
-                                  <th className="text-right px-5 py-2 font-medium text-ardoise">Niveau</th>
-                                </tr>
-                              </thead>
-                              <tbody className="divide-y divide-craie/60">
-                                {section.rules.map((rule) => {
-                                  const rulePower = getRulePower(rule.id);
-                                  if (rulePower === 0) return null;
-                                  const ruleTier = getTier(rulePower, true);
-                                  return (
-                                    <tr key={rule.id}>
-                                      <td className="px-5 py-2.5 text-encre leading-snug">
-                                        <span className="font-mono text-ardoise/50 mr-2">{rule.id}</span>
-                                        {rule.title}
-                                      </td>
-                                      <td className="px-5 py-2.5 text-right text-ardoise whitespace-nowrap">
-                                        {ruleTier?.label ?? "Débutant"}
-                                      </td>
-                                    </tr>
-                                  );
-                                })}
-                              </tbody>
-                            </table>
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              </>
-            )}
           </section>
 
           {/* ── Raw blob (full transparency takeout view) ────────── */}
