@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
 import { sectionsIndex, sectionMap } from "~/data/sections-index";
 import { getTier } from "~/lib/constants";
@@ -142,10 +142,12 @@ export default function MyDataPage() {
   const [blobLoading, setBlobLoading] = useState(true);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  // Prevents the logout-triggered isLoggedIn=false from racing to redirect home
+  const navigatingToGoodbye = useRef(false);
 
-  // Redirect to home if not logged in
+  // Redirect to home if not logged in (skip when deletion is in flight)
   useEffect(() => {
-    if (!isLoading && !isLoggedIn) {
+    if (!isLoading && !isLoggedIn && !navigatingToGoodbye.current) {
       void router.push("/");
     }
   }, [isLoading, isLoggedIn, router]);
@@ -173,11 +175,13 @@ export default function MyDataPage() {
   const handleDelete = useCallback(async () => {
     if (deleting) return;
     setDeleting(true);
+    navigatingToGoodbye.current = true;
     try {
       await fetch("/api/progress", { method: "DELETE" });
       await logout();
       await router.push("/goodbye");
     } catch {
+      navigatingToGoodbye.current = false;
       setDeleting(false);
     }
   }, [deleting, logout, router]);
