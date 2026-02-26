@@ -4,6 +4,23 @@ export const HEADER_SIZE = 11;
 export const RULE_SLOTS = 560;
 export const BLOB_SIZE = 1131; // 11 + 560 * 2
 
+export interface RecordHeader {
+  version: number;     // uint8  — always 1
+  createdAt: number;   // uint32 — unix seconds
+  lastActiveAt: number; // uint32 — unix seconds
+  ruleSlots: number;   // uint16 — always 560
+}
+
+export function decodeHeader(data: Uint8Array): RecordHeader {
+  const view = new DataView(data.buffer, data.byteOffset, data.byteLength);
+  return {
+    version: view.getUint8(0),
+    createdAt: view.getUint32(1, false),
+    lastActiveAt: view.getUint32(5, false),
+    ruleSlots: view.getUint16(9, false),
+  };
+}
+
 /**
  * Converts a rule ID like "01-01" to a slot index 0–559.
  * Returns -1 if the ID is malformed.

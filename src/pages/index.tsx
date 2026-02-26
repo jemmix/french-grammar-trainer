@@ -193,7 +193,13 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="border-t border-craie py-8 text-center text-sm text-ardoise">
-          <p>Grammaire Française B1 — Entraînement interactif</p>
+          <p>
+            Grammaire Française B1 — Entraînement interactif
+            <span className="mx-2 opacity-30">·</span>
+            <Link href="/privacy" className="hover:text-encre transition-colors">
+              Confidentialité
+            </Link>
+          </p>
           {hiddenCount > 0 && (
             <button
               onClick={() => setRevealed((r) => !r)}

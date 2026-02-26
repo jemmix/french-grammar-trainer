@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { sqliteStore } from "~/lib/sqlite-store";
 import {
   createEmptyPowers,
+  decodeHeader,
   decodeRecord,
   encodeRecord,
   recordAnswerInPlace,
@@ -41,8 +42,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       res.status(204).end();
       return;
     }
+    const header = decodeHeader(data);
     const powers = decodeRecord(data);
-    res.json({ powers: Array.from(powers) });
+    res.json({ ...header, powers: Array.from(powers) });
     return;
   }
 
