@@ -19,10 +19,10 @@ export default function GoodbyePage() {
           <h1 className="text-3xl font-bold text-encre mb-4">Au revoir !</h1>
 
           <p className="text-ardoise leading-relaxed mb-2">
-            Vos données ont été supprimées.
+            Vos données seront supprimées sous peu.
           </p>
           <p className="text-ardoise leading-relaxed mb-8">
-            Vous êtes toujours le bienvenu — l&apos;application reste entièrement disponible en mode anonyme.
+            Vous pouvez continuer à pratiquer en mode anonyme, ou vous reconnecter pour créer un nouveau profil vierge et reprendre le suivi de vos progrès.
           </p>
 
           <Link
