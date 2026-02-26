@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
 import type { Question } from "~/data/types";
@@ -8,13 +7,22 @@ import { sectionMap } from "~/data/sections-index";
 import { McqQuestionView } from "~/components/quiz/mcq-question-view";
 import { InputQuestionView } from "~/components/quiz/input-question-view";
 import { ScoreSummary } from "~/components/quiz/score-summary";
-import { shuffleArray, QUESTIONS_PER_QUIZ } from "~/lib/quiz-helpers";
+import { pickLearnQuestions } from "~/lib/question-picker";
 
-export default function QuizPage() {
-  const router = useRouter();
-  const { sectionId } = router.query;
-  const section = typeof sectionId === "string" ? sectionMap[sectionId] : undefined;
-  const { recordAnswer, flush } = useProgress();
+function getAllRulesMap(): Map<string, { title: string }> {
+  const map = new Map<string, { title: string }>();
+  for (const section of Object.values(sectionMap)) {
+    for (const rule of section.rules) {
+      map.set(rule.id, { title: rule.title });
+    }
+  }
+  return map;
+}
+
+const allRulesMap = getAllRulesMap();
+
+export default function LearnPage() {
+  const { recordAnswer, flush, getRulePower, getSectionPower, isLoading } = useProgress();
 
   const [quizQuestions, setQuizQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,18 +31,32 @@ export default function QuizPage() {
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
   const [answers, setAnswers] = useState<{ correct: boolean; question: Question }[]>([]);
+  const [initialized, setInitialized] = useState(false);
 
-  // Initialize quiz with shuffled questions
+  const allSections = Object.values(sectionMap);
+
+  const initQuiz = useCallback(() => {
+    const picked = pickLearnQuestions({
+      sections: allSections,
+      getRulePower,
+      getSectionPower,
+    });
+    setQuizQuestions(picked);
+    setCurrentIndex(0);
+    setSelectedChoiceIndex(null);
+    setAnswered(false);
+    setScore(0);
+    setFinished(false);
+    setAnswers([]);
+    setInitialized(true);
+  }, [allSections, getRulePower, getSectionPower]);
+
+  // Wait for progress to load before picking questions
   useEffect(() => {
-    if (section) {
-      const shuffled = shuffleArray(section.questions);
-      const selected = shuffled.slice(0, Math.min(QUESTIONS_PER_QUIZ, shuffled.length));
-      const withShuffledChoices = selected.map((q) =>
-        q.type === "mcq" ? { ...q, choices: shuffleArray(q.choices) } : q,
-      );
-      setQuizQuestions(withShuffledChoices);
+    if (!isLoading && !initialized) {
+      initQuiz();
     }
-  }, [section]);
+  }, [isLoading, initialized, initQuiz]);
 
   const currentQuestion = quizQuestions[currentIndex];
   const totalQuestions = quizQuestions.length;
@@ -74,28 +96,15 @@ export default function QuizPage() {
   }, [currentIndex, totalQuestions]);
 
   const handleRestart = useCallback(() => {
-    if (section) {
-      const shuffled = shuffleArray(section.questions);
-      const selected = shuffled.slice(0, Math.min(QUESTIONS_PER_QUIZ, shuffled.length));
-      const withShuffledChoices = selected.map((q) =>
-        q.type === "mcq" ? { ...q, choices: shuffleArray(q.choices) } : q,
-      );
-      setQuizQuestions(withShuffledChoices);
-      setCurrentIndex(0);
-      setSelectedChoiceIndex(null);
-      setAnswered(false);
-      setScore(0);
-      setFinished(false);
-      setAnswers([]);
-    }
-  }, [section]);
+    initQuiz();
+  }, [initQuiz]);
 
   // Flush progress to server when quiz finishes
   useEffect(() => {
     if (finished) void flush();
   }, [finished, flush]);
 
-  // Keyboard shortcuts for MCQ questions and advancing
+  // Keyboard shortcuts
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Enter" && answered && !finished) {
@@ -115,20 +124,7 @@ export default function QuizPage() {
     return () => window.removeEventListener("keydown", handler);
   }, [answered, finished, currentQuestion, handleNext, handleMcqSelect]);
 
-  if (!section) {
-    return (
-      <div className="min-h-screen bg-papier flex items-center justify-center">
-        <div className="text-center animate-fade-in">
-          <p className="text-ardoise text-lg mb-4">Section introuvable</p>
-          <Link href="/" className="text-tricolore-bleu font-medium hover:underline">
-            Retour à l&apos;accueil
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  if (quizQuestions.length === 0) {
+  if (isLoading || !initialized || quizQuestions.length === 0) {
     return (
       <div className="min-h-screen bg-papier flex items-center justify-center">
         <div className="text-ardoise">Chargement...</div>
@@ -137,11 +133,12 @@ export default function QuizPage() {
   }
 
   const progress = finished ? 100 : (currentIndex / totalQuestions) * 100;
+  const currentRule = currentQuestion ? allRulesMap.get(currentQuestion.ruleId) : undefined;
 
   return (
     <>
       <Head>
-        <title>{section.title} — Grammaire Française B1</title>
+        <title>Apprentissage libre — Grammaire Française B1</title>
       </Head>
 
       <div className="min-h-screen bg-papier">
@@ -183,7 +180,7 @@ export default function QuizPage() {
               score={score}
               total={totalQuestions}
               answers={answers}
-              quizTitle={section.title}
+              quizTitle="Apprentissage libre"
               onRestart={handleRestart}
             />
           ) : currentQuestion?.type === "mcq" ? (
@@ -194,7 +191,7 @@ export default function QuizPage() {
               onSelect={handleMcqSelect}
               onNext={handleNext}
               questionNum={currentIndex + 1}
-              rule={section.rules.find((r) => r.id === currentQuestion.ruleId)}
+              rule={currentRule ? { id: currentQuestion.ruleId, sectionId: "", title: currentRule.title } : undefined}
             />
           ) : currentQuestion?.type === "input" ? (
             <InputQuestionView
@@ -203,7 +200,7 @@ export default function QuizPage() {
               onAnswer={handleInputAnswer}
               onNext={handleNext}
               questionNum={currentIndex + 1}
-              rule={section.rules.find((r) => r.id === currentQuestion.ruleId)}
+              rule={currentRule ? { id: currentQuestion.ruleId, sectionId: "", title: currentRule.title } : undefined}
             />
           ) : null}
         </main>

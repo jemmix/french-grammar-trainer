@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { createHash } from "node:crypto";
+import { mangleUserId } from "~/lib/auth";
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (process.env.NODE_ENV !== "development") {
     res.status(404).end();
     return;
@@ -10,7 +10,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     res.status(405).end();
     return;
   }
-  const userId = createHash("sha256").update("dev-google-sub-0").digest("hex");
+  const userId = await mangleUserId("0");
   res.setHeader(
     "Set-Cookie",
     `fgt-session=${userId}; HttpOnly; SameSite=Lax; Path=/`,

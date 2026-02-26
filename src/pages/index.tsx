@@ -12,7 +12,6 @@ export default function Home() {
     isLoggedIn,
     isLoading,
     userId,
-    login,
     logout,
     getSectionPower,
     getGlobalPower,
@@ -64,11 +63,17 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Dev login/logout */}
+              {/* Auth controls */}
               {process.env.NODE_ENV === "development" && (
                 <div className="shrink-0 flex flex-col items-end gap-1 pt-1">
                   {isLoggedIn ? (
                     <>
+                      <Link
+                        href="/my-data"
+                        className="text-xs text-ardoise hover:text-encre transition-colors"
+                      >
+                        Mes données
+                      </Link>
                       <button
                         onClick={() => void logout()}
                         className="text-xs text-ardoise hover:text-encre transition-colors cursor-pointer"
@@ -82,12 +87,12 @@ export default function Home() {
                       )}
                     </>
                   ) : (
-                    <button
-                      onClick={() => void login()}
-                      className="text-xs text-tricolore-bleu hover:text-encre transition-colors cursor-pointer"
+                    <Link
+                      href="/login"
+                      className="text-xs text-tricolore-bleu hover:text-encre transition-colors"
                     >
-                      Se connecter (dev)
-                    </button>
+                      Se connecter
+                    </Link>
                   )}
                 </div>
               )}
@@ -117,6 +122,31 @@ export default function Home() {
               )}
             </div>
           )}
+
+          {/* Apprendre librement CTA */}
+          <div className="mb-8">
+            <Link
+              href="/quiz/learn"
+              className="group flex items-center justify-between px-6 py-5 rounded-xl border border-tricolore-bleu/20 bg-tricolore-blanc hover:border-tricolore-bleu/40 hover:shadow-lg hover:shadow-tricolore-bleu/5 hover:-translate-y-0.5 transition-all duration-200"
+            >
+              <div>
+                <p className="font-semibold text-encre text-base mb-0.5">
+                  Apprendre librement
+                </p>
+                <p className="text-sm text-ardoise">
+                  {isLoggedIn
+                    ? "20 questions adaptées à votre niveau"
+                    : "20 questions de tous les sujets"}
+                </p>
+              </div>
+              <div className="flex items-center gap-2 text-tricolore-bleu font-medium text-sm">
+                Commencer
+                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </Link>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {visibleSections.map((section, i) => {
