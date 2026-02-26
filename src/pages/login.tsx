@@ -113,7 +113,9 @@ export default function LoginPage() {
             Avant de vous connecter, veuillez prendre connaissance de notre politique de confidentialité.
           </p>
 
-          <div className="bg-tricolore-blanc border border-craie rounded-xl p-6 mb-6">
+          <div className="bg-tricolore-blanc border border-craie rounded-xl overflow-hidden mb-6">
+            <div className="h-0.5 bg-gradient-to-r from-tricolore-bleu via-papier-warm to-tricolore-rouge" />
+            <div className="p-6">
             <h2 className="text-sm font-semibold text-encre uppercase tracking-wider mb-4">Vos données, en bref</h2>
             <ul className="space-y-3">
               {[
@@ -133,6 +135,7 @@ export default function LoginPage() {
                 </li>
               ))}
             </ul>
+            </div>
           </div>
 
           {/* "Don't show again" checkbox */}

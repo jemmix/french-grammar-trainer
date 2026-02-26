@@ -33,7 +33,10 @@ export default function PrivacyPage() {
           <div className="space-y-8 text-encre">
 
             <section>
-              <h2 className="text-lg font-semibold text-encre mb-3">Ce que nous collectons</h2>
+              <h2 className="text-lg font-semibold text-encre mb-3 flex items-baseline gap-2.5">
+                <span className="text-sm font-mono text-tricolore-bleu/30 tabular-nums shrink-0">01</span>
+                <span>Ce que nous collectons</span>
+              </h2>
               <p className="text-sm text-ardoise leading-relaxed">
                 Nous ne collectons aucune donnée personnelle identifiable. Nous ne stockons pas votre adresse e-mail, votre nom, votre photo de profil, ni aucune autre information permettant de vous identifier directement.
               </p>
@@ -44,7 +47,10 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-encre mb-3">Comment nous stockons vos données</h2>
+              <h2 className="text-lg font-semibold text-encre mb-3 flex items-baseline gap-2.5">
+                <span className="text-sm font-mono text-tricolore-bleu/30 tabular-nums shrink-0">02</span>
+                <span>Comment nous stockons vos données</span>
+              </h2>
               <p className="text-sm text-ardoise leading-relaxed">
                 Lors de la connexion, nous dérivons un identifiant anonyme depuis votre compte à l&apos;aide d&apos;une fonction à sens unique (Argon2id). Cet identifiant ne permet pas de remonter jusqu&apos;à votre compte d&apos;origine — même pour nous.
               </p>
@@ -54,8 +60,9 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-encre mb-3">
-                Cookie <code className="text-xs font-mono bg-craie/30 px-1.5 py-0.5 rounded">privacy-acknowledged</code>
+              <h2 className="text-lg font-semibold text-encre mb-3 flex items-baseline gap-2.5">
+                <span className="text-sm font-mono text-tricolore-bleu/30 tabular-nums shrink-0">03</span>
+                <span>Cookie <code className="text-xs font-mono bg-craie/30 px-1.5 py-0.5 rounded">privacy-acknowledged</code></span>
               </h2>
               <p className="text-sm text-ardoise leading-relaxed">
                 Si vous cochez « Ne plus afficher ce message » lors de la connexion, un cookie est placé dans votre navigateur pour mémoriser ce choix. Ce cookie ne contient aucune donnée personnelle — uniquement la valeur <code className="text-xs font-mono">1</code>. Il expire après 10 ans et n&apos;est jamais transmis à un tiers.
@@ -66,8 +73,9 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-encre mb-3">
-                Cookie de session <code className="text-xs font-mono bg-craie/30 px-1.5 py-0.5 rounded">fgt-session</code>
+              <h2 className="text-lg font-semibold text-encre mb-3 flex items-baseline gap-2.5">
+                <span className="text-sm font-mono text-tricolore-bleu/30 tabular-nums shrink-0">04</span>
+                <span>Cookie de session <code className="text-xs font-mono bg-craie/30 px-1.5 py-0.5 rounded">fgt-session</code></span>
               </h2>
               <p className="text-sm text-ardoise leading-relaxed">
                 Lors de la connexion, un cookie HttpOnly est créé contenant votre identifiant anonyme. Ce cookie permet au serveur de retrouver votre progression lors de vos prochaines visites. Il ne contient aucune donnée personnelle et n&apos;est jamais transmis à un tiers.
@@ -78,14 +86,20 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-encre mb-3">Mode anonyme</h2>
+              <h2 className="text-lg font-semibold text-encre mb-3 flex items-baseline gap-2.5">
+                <span className="text-sm font-mono text-tricolore-bleu/30 tabular-nums shrink-0">05</span>
+                <span>Mode anonyme</span>
+              </h2>
               <p className="text-sm text-ardoise leading-relaxed">
                 L&apos;application est entièrement utilisable sans compte. Dans ce cas, aucune donnée n&apos;est envoyée ni stockée côté serveur, aucun cookie de session n&apos;est créé, et votre progression n&apos;est pas conservée entre les sessions.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-encre mb-3">Export et suppression de vos données</h2>
+              <h2 className="text-lg font-semibold text-encre mb-3 flex items-baseline gap-2.5">
+                <span className="text-sm font-mono text-tricolore-bleu/30 tabular-nums shrink-0">06</span>
+                <span>Export et suppression de vos données</span>
+              </h2>
               <p className="text-sm text-ardoise leading-relaxed">
                 Les utilisateurs connectés peuvent consulter l&apos;intégralité de leurs données, les exporter en JSON, et supprimer leur compte depuis la page{" "}
                 <Link href="/my-data" className="text-tricolore-bleu hover:underline">

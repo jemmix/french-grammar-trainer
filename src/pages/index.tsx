@@ -102,48 +102,38 @@ export default function Home() {
 
         {/* Section Grid */}
         <main className="mx-auto max-w-6xl px-6 py-10 md:py-14">
-          {/* Global progress banner */}
-          {isLoggedIn && !isLoading && (
-            <div className="mb-8">
-              {globalPower > 0 && globalTier ? (
-                <div className="flex items-center gap-3 px-5 py-4 rounded-xl border border-craie bg-tricolore-blanc">
-                  <ProgressRing power={globalPower} attempted={true} size={40} />
-                  <div>
-                    <p className="text-sm font-semibold text-encre">
-                      {globalTier.label}
-                    </p>
-                    <p className="text-xs text-ardoise">{globalTier.promo}</p>
-                  </div>
-                </div>
-              ) : (
-                <p className="text-sm text-ardoise text-center py-3">
-                  Commencez à pratiquer pour suivre vos progrès !
-                </p>
-              )}
-            </div>
-          )}
-
-          {/* Apprendre librement CTA */}
+          {/* Progress + Learn CTA (unified) */}
           <div className="mb-8">
             <Link
               href="/quiz/learn"
-              className="group flex items-center justify-between px-6 py-5 rounded-xl border border-tricolore-bleu/20 bg-tricolore-blanc hover:border-tricolore-bleu/40 hover:shadow-lg hover:shadow-tricolore-bleu/5 hover:-translate-y-0.5 transition-all duration-200"
+              className="group block sm:flex sm:items-center sm:gap-5 px-6 py-5 rounded-xl border border-craie bg-tricolore-blanc hover:border-tricolore-bleu/30 hover:shadow-lg hover:shadow-tricolore-bleu/5 hover:-translate-y-0.5 transition-all duration-200"
             >
-              <div>
-                <p className="font-semibold text-encre text-base mb-0.5">
-                  Apprendre librement
-                </p>
-                <p className="text-sm text-ardoise">
-                  {isLoggedIn
-                    ? "20 questions adaptées à votre niveau"
-                    : "20 questions de tous les sujets"}
-                </p>
-              </div>
-              <div className="flex items-center gap-2 text-tricolore-bleu font-medium text-sm">
-                Commencer
-                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
+              {isLoggedIn && !isLoading && globalPower > 0 && globalTier && (
+                <div className="flex items-center gap-3 mb-3 pb-3 sm:mb-0 sm:pb-0 border-b sm:border-b-0 sm:border-r border-craie/60 sm:pr-5 shrink-0">
+                  <ProgressRing power={globalPower} attempted={true} size={40} />
+                  <div>
+                    <p className="text-sm font-semibold text-encre">{globalTier.label}</p>
+                    <p className="text-xs text-ardoise">{globalTier.promo}</p>
+                  </div>
+                </div>
+              )}
+              <div className="flex items-center justify-between gap-4 flex-1 min-w-0">
+                <div className="min-w-0">
+                  <p className="font-semibold text-encre text-base mb-0.5">
+                    Apprendre librement
+                  </p>
+                  <p className="text-sm text-ardoise">
+                    {isLoggedIn
+                      ? "20 questions adaptées à votre niveau"
+                      : "20 questions de tous les sujets"}
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 text-tricolore-bleu font-medium text-sm shrink-0">
+                  Commencer
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </div>
               </div>
             </Link>
           </div>
@@ -236,29 +226,29 @@ function SectionCardContent({
   return (
     <>
       <div className="flex items-start justify-between gap-3 mb-3">
-        <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-tricolore-bleu/8 text-sm font-semibold text-tricolore-bleu shrink-0">
-          {sectionNum}
-        </span>
-        <div className="flex items-center gap-2">
-          {ringPower !== undefined && (
-            <ProgressRing
-              power={ringPower}
-              attempted={ringAttempted ?? false}
-              size={28}
-            />
-          )}
-          <span
-            className={`text-xs font-medium px-2.5 py-1 rounded-full transition-opacity duration-500 ${
-              showCount ? "opacity-100" : "opacity-0 pointer-events-none"
-            } ${
-              available
-                ? "bg-correct-bg text-correct border border-correct-border"
-                : "bg-papier-warm text-ardoise border border-craie"
-            }`}
-          >
-            {available ? `${section.questionCount} questions` : "Bientôt"}
+        {ringPower !== undefined ? (
+          <div className="relative shrink-0 w-9 h-9">
+            <ProgressRing power={ringPower} attempted={ringAttempted ?? false} size={36} />
+            <span className="absolute inset-0 flex items-center justify-center text-[11px] font-bold text-encre">
+              {sectionNum}
+            </span>
+          </div>
+        ) : (
+          <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-tricolore-bleu/8 text-sm font-semibold text-tricolore-bleu shrink-0">
+            {sectionNum}
           </span>
-        </div>
+        )}
+        <span
+          className={`text-xs font-medium px-2.5 py-1 rounded-full transition-opacity duration-500 ${
+            showCount ? "opacity-100" : "opacity-0 pointer-events-none"
+          } ${
+            available
+              ? "bg-correct-bg text-correct border border-correct-border"
+              : "bg-papier-warm text-ardoise border border-craie"
+          }`}
+        >
+          {available ? `${section.questionCount} questions` : "Bientôt"}
+        </span>
       </div>
       <h2 className="text-base font-semibold text-encre leading-snug mb-2">
         {section.title}

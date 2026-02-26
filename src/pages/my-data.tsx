@@ -224,9 +224,9 @@ export default function MyDataPage() {
 
           {/* ── Identity ────────────────────────────────────────── */}
           <section className="mb-10">
-            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider mb-3">Mon identifiant</h2>
+            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-3">Mon identifiant</h2>
             <div className="bg-tricolore-blanc border border-craie rounded-xl p-5">
-              <p className="font-mono text-xs text-encre break-all mb-2">{userId}</p>
+              <p className="font-mono text-[11px] text-encre break-all select-all bg-papier-warm rounded-lg px-3 py-2 border border-craie/60 mb-3">{userId}</p>
               <p className="text-xs text-ardoise leading-relaxed">
                 Cet identifiant est dérivé de votre activité de manière irréversible. Il ne permet pas de vous identifier.
               </p>
@@ -235,7 +235,7 @@ export default function MyDataPage() {
 
           {/* ── Raw blob (full transparency takeout view) ────────── */}
           <section className="mb-10">
-            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider mb-1">Données brutes stockées</h2>
+            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-1">Données brutes stockées</h2>
             <p className="text-xs text-ardoise mb-3 leading-relaxed">
               Contenu exact de l&apos;entrée K/V dans la base de données.
               Toutes les informations nécessaires pour reconstruire le blob à l&apos;identique.
@@ -360,7 +360,7 @@ export default function MyDataPage() {
 
           {/* ── JSON export ─────────────────────────────────────── */}
           <section className="mb-10">
-            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider mb-3">Export JSON</h2>
+            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-3">Export JSON</h2>
             <div className="bg-tricolore-blanc border border-craie rounded-xl p-5">
               <p className="text-sm text-ardoise mb-4">
                 Téléchargez toutes vos données — en-tête + les 560 entiers uint16 bruts + niveaux décodés.
@@ -380,7 +380,7 @@ export default function MyDataPage() {
 
           {/* ── Account removal ────────────────────────────────── */}
           <section>
-            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider mb-3">Suppression du compte</h2>
+            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-3">Suppression du compte</h2>
             <div className="bg-tricolore-blanc border border-craie rounded-xl p-5">
               {!showDeleteConfirm ? (
                 <>
