@@ -57,6 +57,18 @@ export default function LoginPage() {
     await router.push("/");
   }, [loggingIn, acknowledge, login, router]);
 
+  const handleDenied = useCallback(async () => {
+    if (loggingIn) return;
+    setLoggingIn(true);
+    const res = await fetch("/api/auth/dev-login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sub: "1" }),
+    });
+    const data = await res.json() as { userId?: string };
+    await router.push(`/denied${data.userId ? `?userId=${data.userId}` : ""}`);
+  }, [loggingIn, router]);
+
   // Loading / auto-login in progress → show spinner, no form
   if (!mounted || isLoading || (cookiePresent && !isLoggedIn)) {
     return (
@@ -151,6 +163,20 @@ export default function LoginPage() {
             >
               Rester anonyme →
             </Link>
+          </div>
+
+          {/* Dev-mode: test denied flow */}
+          <div className="mt-6 pt-6 border-t border-craie">
+            <p className="text-[10px] uppercase tracking-widest text-ardoise/35 mb-3 text-center">
+              Mode développement
+            </p>
+            <button
+              onClick={() => void handleDenied()}
+              disabled={loggingIn}
+              className="w-full px-6 py-2.5 text-center border border-craie/60 text-ardoise/50 font-medium rounded-xl hover:bg-papier-warm hover:text-ardoise transition-colors text-sm disabled:opacity-40 cursor-pointer"
+            >
+              Simuler un accès refusé →
+            </button>
           </div>
 
           {/* Footer link */}

@@ -10,7 +10,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(405).end();
     return;
   }
-  const userId = await mangleUserId("0");
+  const body = req.body as { sub?: unknown } | undefined;
+  const sub = typeof body?.sub === "string" ? body.sub : "0";
+  const userId = await mangleUserId(sub);
+
+  // Any sub other than "0" is treated as a denied user (no session created)
+  if (sub !== "0") {
+    res.json({ ok: false, denied: true, userId });
+    return;
+  }
+
   res.setHeader(
     "Set-Cookie",
     `fgt-session=${userId}; HttpOnly; SameSite=Lax; Path=/`,
