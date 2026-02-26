@@ -20,67 +20,104 @@ All user state is packed into a single binary blob. Dense layout: fixed-size slo
 │   lastActiveAt: uint32   (4)  — unix secs   │
 │   ruleSlots:    uint16   (2)  — always 560  │
 ├─────────────────────────────────────────────┤
-│ Rule Slots (3 bytes × 560 = 1680 bytes)     │
-│   power:          uint16 (2)  — EWMA×65535  │
-│   answeredCount:  uint8  (1)  — 0-255       │
+│ Rule Slots (2 bytes × 560 = 1120 bytes)     │
+│   power:          uint16 (2)  — EWMA level  │
 └─────────────────────────────────────────────┘
 
-Uncompressed total: 11 + 1680 = 1691 bytes ≈ 1.7 KB
+Uncompressed total: 11 + 1120 = 1131 bytes ≈ 1.1 KB
 ```
 
-**Slot index** is computed directly from rule ID: `(sectionIdx × 20) + ruleIdx`. Unattempted rules are all-zeros.
+**Slot index** is computed directly from rule ID: `(sectionIdx × 20) + ruleIdx`.
 
-### 1.2 Rule Slot Fields
+**Sentinel:** `power = 0` means "never attempted". Any answered rule has `power ≥ 1`. The EWMA update enforces this with a floor clamp (§1.3).
 
-| Field | Size | Description |
-|-------|------|-------------|
-| `power` | uint16 | Cumulative EWMA of correctness, scaled to 0–65535. `stored / 65535` gives a float in [0, 1]. |
-| `answeredCount` | uint8 | Lifetime attempts, capped at 255. Used for confidence ramp and display ("pratiqué 42 fois"). |
+### 1.2 Rule Slot
 
-No bitmask, no timestamps per rule. The EWMA is cumulative — each new answer updates the running value without needing history.
+A single `uint16` per rule. That's it.
 
-### 1.3 Recording an Answer
+| Value | Meaning |
+|-------|---------|
+| `0` | Never attempted (unstarted) |
+| `1–65535` | EWMA power level. `value / 65535` gives a float in [0.0000, 1.0]. |
+
+No answer count, no timestamps, no bitmask. The EWMA captures everything needed for progress tracking and question selection.
+
+### 1.3 Recording an Answer — Integer EWMA with 15/16 Decay
+
+The decay factor is **15/16**, chosen so the entire update is pure integer arithmetic (shifts and adds, no multiply, no divide, no floats):
 
 ```typescript
-function recordAnswer(slot: RuleSlot, correct: boolean): void {
-  const DECAY = 0.88;
-  const MAX_POWER = 65535;
+function recordAnswer(power: number, correct: boolean): number {
+  // EWMA: new = old * 15/16 + result * (65535/16)
+  // Equivalent: new = old - (old >> 4) + (correct ? 4095 : 0)
+  let next: number = power - (power >> 4) + (correct ? 4095 : 0);
 
-  // EWMA update: newPower = oldPower × decay + result × (1 - decay)
-  const oldPower = slot.power / MAX_POWER;
-  const newPower = oldPower * DECAY + (correct ? 1 : 0) * (1 - DECAY);
-  slot.power = Math.round(newPower * MAX_POWER);
-  slot.answeredCount = Math.min(255, slot.answeredCount + 1);
+  // Clamp to valid range: [0, 65535], then floor at 1 (0 = unstarted sentinel)
+  next = Math.max(0, Math.min(65535, next));
+  if (next < 1) next = 1;
+
+  return next;
 }
 ```
 
-**EWMA convergence with decay = 0.88:**
+All arithmetic stays in signed int32 range (max intermediate value is ~69630, well within int32). The `Math.max(0, ...)` guard handles hypothetical underflow; `Math.min(65535, ...)` handles overflow. The final `< 1` floor ensures an answered rule never reads as "unstarted".
 
-| Streak of correct answers | Raw power | With confidence ramp (§2.1) |
-|---------------------------|-----------|---------------------------|
-| 5 | 0.472 | 0.236 |
-| 10 | 0.721 | 0.721 |
-| 15 | 0.856 | 0.856 |
-| 20 | 0.929 | 0.929 |
-| 25 | 0.965 | 0.965 (mastered) |
+**Why 15/16?**
+- `old >> 4` is the same as `old * 1/16` (truncated) — pure bit shift
+- `65535 >> 4 = 4095` — the correct-answer contribution
+- No floating point anywhere in the hot path
+- Decay of 6.25% per answer gives a steady, not-too-fast progression
 
-Formula: `P(n) = 1 − 0.88^n` for all-correct from zero.
+### 1.4 Convergence Analysis
 
-**Recovery from a slump** (10 correct after reaching power=0.3):
+**Formula:** `P(n) = 1 − (15/16)^n` for all-correct starting from zero.
 
-| Answer # | Power |
-|-----------|-------|
+**From zero, all correct:**
+
+| Answers | Power (float) | Tier |
+|---------|---------------|------|
+| 1 | 0.063 | Débutant |
+| 3 | 0.176 | Débutant |
+| 5 | 0.275 | En progrès |
+| 10 | 0.474 | Intermédiaire |
+| 15 | 0.618 | Avancé |
+| 20 | 0.724 | Avancé |
+| 25 | 0.798 | Avancé |
+| 30 | 0.858 | Très avancé |
+| 40 | 0.926 | Très avancé |
+| 47 | 0.952 | Maîtrisé ! |
+
+~47 consecutive correct answers to reach mastery from scratch. Demanding but achievable.
+
+**Recovery from a slump** (starting from power = 0.3, all correct):
+
+| Answers | Power |
+|---------|-------|
 | Start | 0.300 |
-| +5 correct | 0.618 |
-| +10 correct | 0.800 |
-| +15 correct | 0.898 |
-| +20 correct | 0.945 |
+| +5 | 0.521 |
+| +10 | 0.668 |
+| +15 | 0.770 |
+| +20 | 0.841 |
+| +30 | 0.926 |
+| +38 | 0.953 |
 
-The EWMA naturally blends old performance with new, giving recency bias (each old answer's influence decays by 12% per new answer) while still reflecting cumulative learning.
+~38 correct answers to recover from 0.3 to mastery. The EWMA naturally blends old performance with new — each old answer's influence decays by 1/16 per new answer.
 
-### 1.4 Compression
+**Wrong-answer impact** (starting from mastery at 0.95):
 
-The 1691-byte blob is compressed with **LZ4** before storage. LZ4 is chosen for:
+| Wrong answers | Power |
+|---------------|-------|
+| 1 | 0.891 |
+| 2 | 0.835 |
+| 3 | 0.783 |
+| 5 | 0.689 |
+| 10 | 0.474 |
+
+A single wrong answer drops from Maîtrisé to Très avancé. 5 wrong answers in a row drop to Avancé. The system is responsive without being punitive.
+
+### 1.5 Compression
+
+The 1131-byte blob is compressed with **LZ4** before storage. LZ4 is chosen for:
 - Very fast decompression (~4 GB/s) — important for page loads
 - Reasonable compression on small data
 - Available as `lz4js` (pure JS, ~5 KB gzipped) — no native deps
@@ -89,35 +126,38 @@ The 1691-byte blob is compressed with **LZ4** before storage. LZ4 is chosen for:
 
 | User state | Uncompressed | LZ4 compressed (est.) |
 |------------|-------------|----------------------|
-| Brand new (all zeros) | 1691 B | ~30–50 B |
-| 50 rules attempted | 1691 B | ~200–400 B |
-| All 560 rules active | 1691 B | ~800–1200 B |
+| Brand new (all zeros) | 1131 B | ~25–40 B |
+| 50 rules attempted | 1131 B | ~150–300 B |
+| All 560 rules active | 1131 B | ~600–900 B |
 
-LZ4 excels at the common case (mostly zeros). Even the worst case stays under 1.5 KB. If we ever need to migrate to a storage backend sensitive to object size, the data is already negligible.
+LZ4 excels at the common case (mostly zeros). Even worst case stays under 1 KB. If we ever migrate to a size-sensitive storage backend, the data is negligible.
 
 ---
 
 ## 2. Power Level Computation
 
-### 2.1 Display Power (with confidence ramp)
+### 2.1 Display Power
 
-The stored EWMA is the "raw" power. For display and question-picker purposes, we apply a confidence ramp to prevent premature tier labels:
+The stored uint16 converts directly to display power:
 
 ```typescript
-function getDisplayPower(slot: RuleSlot): number {
-  if (slot.answeredCount === 0) return 0;
-  const rawPower = slot.power / 65535;
-  const confidence = Math.min(1, slot.answeredCount / 10);
-  return rawPower * confidence;
+function getDisplayPower(power: number): number {
+  // 0 = unstarted (not the same as "zero power")
+  if (power === 0) return 0;
+  return power / 65535;
+}
+
+function isAttempted(power: number): boolean {
+  return power !== 0;
 }
 ```
 
-This means a learner who got 2/2 correct has displayPower ≈ 0.22 × 0.2 = 0.044 — solidly "Débutant", not "mastered".
+No confidence ramp. The EWMA's natural climb from zero (0.063 after one correct answer, 0.176 after three) handles the "not enough data" case — nobody reaches a high tier with just a few answers.
 
 ### 2.2 Per-Section Power Level
 
 ```
-sectionPower = mean(displayPower(rule) for rule in section.rules if answeredCount > 0)
+sectionPower = mean(displayPower(rule) for rule in section.rules if isAttempted(rule))
 ```
 
 If no rules attempted: section is "not started" (distinct from zero power).
@@ -125,7 +165,7 @@ If no rules attempted: section is "not started" (distinct from zero power).
 ### 2.3 Global Power Level
 
 ```
-globalPower = mean(displayPower(rule) for all rules if answeredCount > 0)
+globalPower = mean(displayPower(rule) for all rules if isAttempted(rule))
 ```
 
 ### 2.4 Display Tiers (Opaque)
@@ -190,8 +230,8 @@ Value:  LZ4-compressed blob (typically <1 KB)
 
 ```
 UserRecord (in-memory)
-  ↕ encode/decode (binary, 1691 bytes)
-  ↕ compress/decompress (LZ4, ~50–1200 bytes)
+  ↕ encode/decode (binary, 1131 bytes)
+  ↕ compress/decompress (LZ4, ~25–900 bytes)
   ↕ store get/put (raw bytes)
 ```
 
@@ -224,7 +264,7 @@ Account removal. Deletes the K/V entry entirely. Returns `200 { ok: true }`. Req
 
 ### 4.4 `GET /api/progress/export`
 
-Returns the user's full record as pretty-printed JSON for data takeout. Described in §10.
+Returns the user's full record as pretty-printed JSON for data takeout. Described in §9.
 
 ### 4.5 User ID Resolution
 
@@ -319,8 +359,8 @@ export const authOptions: NextAuthOptions = {
 
 1. We don't store your email, name, or any personally identifiable information
 2. We derive an irreversible identifier from your Google account — we cannot trace it back to you
-3. We store only cumulative progress data: per-rule power level (a single number) and attempt count for each grammar rule
-4. Total stored data: under 2 KB
+3. We store only cumulative progress data: a single power level number for each grammar rule
+4. Total stored data: under 1.2 KB
 5. A stateless mode is available if you prefer not to store any data with us
 6. A single cookie (`privacy-acknowledged`) remembers your acknowledgment so you won't see this again
 
@@ -387,15 +427,15 @@ interface ProgressContextValue {
   isLoading: boolean;
   // These return 0 and behave as no-ops when logged out:
   recordAnswer: (ruleId: string, correct: boolean) => void;
-  getRulePower: (ruleId: string) => number;
+  getRulePower: (ruleId: string) => number;   // 0 = unstarted or logged out
+  isRuleAttempted: (ruleId: string) => boolean;
   getSectionPower: (sectionId: string) => number;
   getGlobalPower: () => number;
-  getRuleAnswerCount: (ruleId: string) => number;
   flush: () => Promise<void>;
 }
 ```
 
-When logged out, `getRulePower` etc. return 0 and `recordAnswer` is a no-op. Components don't need to check login state — they just render based on the values (all zeros = no progress shown).
+When logged out, `getRulePower` returns 0, `isRuleAttempted` returns false, and `recordAnswer` is a no-op. Components don't need to check login state — they just render based on the values (all zeros = no progress shown).
 
 ### 6.2 Answer Buffering
 
@@ -432,7 +472,7 @@ weight(rule) = (1 - displayPower(rule))² + 0.05
 
 - Squaring amplifies preference for weak rules
 - `+0.05` floor ensures mastered rules still appear occasionally
-- Unattempted rules (answeredCount = 0): weight = `0.50`
+- Unattempted rules (power = 0): weight = `0.50`
 
 **Stateless fallback:** When not logged in, all weights are equal → uniform random selection (current behavior).
 
@@ -575,8 +615,8 @@ A page at `/my-data` (accessible only when logged in) showing:
 ### 9.2 Data Takeout
 
 - All progress data displayed in a readable format:
-  - Per-section summary: tier label, number of rules attempted, total answers
-  - Per-rule detail: tier label, answer count
+  - Per-section summary: tier label, number of rules attempted
+  - Per-rule detail: tier label
 - **"Télécharger mes données (JSON)"** button → triggers download of a pretty-printed JSON file containing:
   ```json
   {
@@ -594,7 +634,6 @@ A page at `/my-data` (accessible only when logged in) showing:
             "id": "01-01",
             "title": "...",
             "tier": "Maîtrisé !",
-            "answeredCount": 47,
             "powerLevel": 0.97
           }
         ]
@@ -617,10 +656,10 @@ A page at `/my-data` (accessible only when logged in) showing:
 ## 10. Implementation Phases
 
 ### Phase 1: Core Data Layer
-1. Define `UserRecord` types and `RuleSlot` interface
+1. Define `UserRecord` types (header + uint16 array)
 2. Implement binary codec (encode/decode/createEmpty)
 3. Implement LZ4 compress/decompress wrapper
-4. Implement `computeDisplayPower`, `getSectionPower`, `getGlobalPower`
+4. Implement `recordAnswer` (integer EWMA), `getDisplayPower`, `getSectionPower`, `getGlobalPower`
 5. Implement `UserStore` interface + `SqliteUserStore`
 6. Create API routes (`GET/POST/DELETE /api/progress`, `GET /api/progress/export`)
 7. Add dependencies: `better-sqlite3`, `lz4js`
@@ -732,11 +771,11 @@ data/
 ```typescript
 // src/lib/constants.ts
 export const PROGRESS = {
-  // EWMA
-  DECAY_FACTOR: 0.88,           // Per-answer decay (12% recency bias)
-  CONFIDENCE_RAMP: 10,          // Answers needed for full confidence
+  // EWMA (15/16 decay — all integer math via bit shifts)
+  DECAY_SHIFT: 4,               // >> 4 = divide by 16
+  CORRECT_BUMP: 4095,           // 65535 >> 4 — added on correct answer
+  MAX_POWER: 65535,             // uint16 max
   MASTERY_THRESHOLD: 0.95,      // Display power considered "mastered"
-  MAX_POWER: 65535,             // uint16 max (EWMA storage scale)
   RULE_SLOTS: 560,              // 28 sections × 20 rules
   RULES_PER_SECTION: 20,
 
@@ -757,11 +796,9 @@ export const PROGRESS = {
 
   // Sync
   FLUSH_INTERVAL_MS: 30_000,
-
-  // Allow list — pulled at build time, no runtime constants needed
 } as const;
 
-// Display tiers
+// Display tiers (ordered high → low for lookup)
 export const TIERS = [
   { min: 0.95, label: 'Maîtrisé !',     color: 'yellow-400',  promo: 'Bravo, vous maîtrisez ce sujet !' },
   { min: 0.80, label: 'Très avancé',     color: 'emerald-400', promo: 'La maîtrise approche !' },
