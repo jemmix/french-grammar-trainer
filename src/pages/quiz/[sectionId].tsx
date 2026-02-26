@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useProgress } from "~/contexts/progress-context";
 import type {
   Choice,
   InputQuestion,
@@ -135,6 +136,7 @@ export default function QuizPage() {
   const router = useRouter();
   const { sectionId } = router.query;
   const section = typeof sectionId === "string" ? sectionMap[sectionId] : undefined;
+  const { recordAnswer, flush } = useProgress();
 
   const [quizQuestions, setQuizQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -168,8 +170,9 @@ export default function QuizPage() {
       const isCorrect = currentQuestion.choices[index]?.correct ?? false;
       if (isCorrect) setScore((s) => s + 1);
       setAnswers((a) => [...a, { correct: isCorrect, question: currentQuestion }]);
+      recordAnswer(currentQuestion.ruleId, isCorrect);
     },
-    [answered, currentQuestion],
+    [answered, currentQuestion, recordAnswer],
   );
 
   const handleInputAnswer = useCallback(
@@ -178,8 +181,9 @@ export default function QuizPage() {
       setAnswered(true);
       if (isCorrect) setScore((s) => s + 1);
       setAnswers((a) => [...a, { correct: isCorrect, question: currentQuestion }]);
+      recordAnswer(currentQuestion.ruleId, isCorrect);
     },
-    [currentQuestion],
+    [currentQuestion, recordAnswer],
   );
 
   const handleNext = useCallback(() => {
@@ -208,6 +212,11 @@ export default function QuizPage() {
       setAnswers([]);
     }
   }, [section]);
+
+  // Flush progress to server when quiz finishes
+  useEffect(() => {
+    if (finished) void flush();
+  }, [finished, flush]);
 
   // Keyboard shortcuts for MCQ questions and advancing
   useEffect(() => {

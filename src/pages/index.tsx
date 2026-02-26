@@ -2,12 +2,28 @@ import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { sectionsIndex } from "~/data/sections-index";
+import { useProgress } from "~/contexts/progress-context";
+import { ProgressRing } from "~/components/progress-ring";
+import { getTier } from "~/lib/constants";
 
 export default function Home() {
   const [revealed, setRevealed] = useState(false);
+  const {
+    isLoggedIn,
+    isLoading,
+    userId,
+    login,
+    logout,
+    getSectionPower,
+    getGlobalPower,
+  } = useProgress();
+
   const availableSections = sectionsIndex.filter((s) => s.questionCount > 0);
   const hiddenCount = sectionsIndex.length - availableSections.length;
   const visibleSections = revealed ? sectionsIndex : availableSections;
+
+  const globalPower = isLoggedIn && !isLoading ? getGlobalPower() : 0;
+  const globalTier = getTier(globalPower, globalPower > 0);
 
   return (
     <>
@@ -27,32 +43,87 @@ export default function Home() {
         {/* Header */}
         <header className="border-b border-craie bg-tricolore-blanc">
           <div className="mx-auto max-w-6xl px-6 py-8 md:py-12">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="flex gap-0.5">
-                <div className="w-1.5 h-8 rounded-full bg-tricolore-bleu" />
-                <div className="w-1.5 h-8 rounded-full bg-craie" />
-                <div className="w-1.5 h-8 rounded-full bg-tricolore-rouge" />
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="flex gap-0.5">
+                    <div className="w-1.5 h-8 rounded-full bg-tricolore-bleu" />
+                    <div className="w-1.5 h-8 rounded-full bg-craie" />
+                    <div className="w-1.5 h-8 rounded-full bg-tricolore-rouge" />
+                  </div>
+                  <p className="text-sm font-medium tracking-widest uppercase text-ardoise">
+                    Niveau B1
+                  </p>
+                </div>
+                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-encre">
+                  Grammaire Française
+                </h1>
+                <p className="mt-3 text-lg text-ardoise max-w-2xl">
+                  Maîtrisez les règles essentielles de la grammaire française à travers
+                  des exercices interactifs. Choisissez une section pour commencer.
+                </p>
               </div>
-              <p className="text-sm font-medium tracking-widest uppercase text-ardoise">
-                Niveau B1
-              </p>
+
+              {/* Dev login/logout */}
+              {process.env.NODE_ENV === "development" && (
+                <div className="shrink-0 flex flex-col items-end gap-1 pt-1">
+                  {isLoggedIn ? (
+                    <>
+                      <button
+                        onClick={() => void logout()}
+                        className="text-xs text-ardoise hover:text-encre transition-colors cursor-pointer"
+                      >
+                        Se déconnecter
+                      </button>
+                      {userId && (
+                        <span className="text-[10px] font-mono text-ardoise/40">
+                          {userId.slice(0, 8)}…
+                        </span>
+                      )}
+                    </>
+                  ) : (
+                    <button
+                      onClick={() => void login()}
+                      className="text-xs text-tricolore-bleu hover:text-encre transition-colors cursor-pointer"
+                    >
+                      Se connecter (dev)
+                    </button>
+                  )}
+                </div>
+              )}
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-encre">
-              Grammaire Française
-            </h1>
-            <p className="mt-3 text-lg text-ardoise max-w-2xl">
-              Maîtrisez les règles essentielles de la grammaire française à travers
-              des exercices interactifs. Choisissez une section pour commencer.
-            </p>
           </div>
         </header>
 
         {/* Section Grid */}
         <main className="mx-auto max-w-6xl px-6 py-10 md:py-14">
+          {/* Global progress banner */}
+          {isLoggedIn && !isLoading && (
+            <div className="mb-8">
+              {globalPower > 0 && globalTier ? (
+                <div className="flex items-center gap-3 px-5 py-4 rounded-xl border border-craie bg-tricolore-blanc">
+                  <ProgressRing power={globalPower} attempted={true} size={40} />
+                  <div>
+                    <p className="text-sm font-semibold text-encre">
+                      {globalTier.label}
+                    </p>
+                    <p className="text-xs text-ardoise">{globalTier.promo}</p>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-sm text-ardoise text-center py-3">
+                  Commencez à pratiquer pour suivre vos progrès !
+                </p>
+              )}
+            </div>
+          )}
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {visibleSections.map((section, i) => {
               const available = section.questionCount > 0;
               const sectionNum = section.id.split("-")[0];
+              const sectionPower = isLoggedIn ? getSectionPower(section.id) : undefined;
+              const sectionAttempted = sectionPower !== undefined && sectionPower > 0;
 
               return (
                 <div
@@ -65,11 +136,23 @@ export default function Home() {
                       href={`/quiz/${section.id}`}
                       className="group block h-full rounded-xl border border-craie bg-tricolore-blanc p-6 transition-all duration-200 hover:border-tricolore-bleu/30 hover:shadow-lg hover:shadow-tricolore-bleu/5 hover:-translate-y-0.5"
                     >
-                      <SectionCardContent sectionNum={sectionNum} section={section} available showCount={revealed} />
+                      <SectionCardContent
+                        sectionNum={sectionNum}
+                        section={section}
+                        available
+                        showCount={revealed}
+                        ringPower={sectionPower}
+                        ringAttempted={sectionAttempted}
+                      />
                     </Link>
                   ) : (
                     <div className="block h-full rounded-xl border border-craie/60 bg-papier-warm p-6 opacity-55">
-                      <SectionCardContent sectionNum={sectionNum} section={section} available={false} showCount={revealed} />
+                      <SectionCardContent
+                        sectionNum={sectionNum}
+                        section={section}
+                        available={false}
+                        showCount={revealed}
+                      />
                     </div>
                   )}
                 </div>
@@ -104,11 +187,15 @@ function SectionCardContent({
   section,
   available,
   showCount,
+  ringPower,
+  ringAttempted,
 }: {
   sectionNum: string | undefined;
   section: { title: string; description: string; questionCount: number };
   available: boolean;
   showCount: boolean;
+  ringPower?: number;
+  ringAttempted?: boolean;
 }) {
   return (
     <>
@@ -116,17 +203,26 @@ function SectionCardContent({
         <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-tricolore-bleu/8 text-sm font-semibold text-tricolore-bleu shrink-0">
           {sectionNum}
         </span>
-        <span
-          className={`text-xs font-medium px-2.5 py-1 rounded-full transition-opacity duration-500 ${
-            showCount ? "opacity-100" : "opacity-0 pointer-events-none"
-          } ${
-            available
-              ? "bg-correct-bg text-correct border border-correct-border"
-              : "bg-papier-warm text-ardoise border border-craie"
-          }`}
-        >
-          {available ? `${section.questionCount} questions` : "Bientôt"}
-        </span>
+        <div className="flex items-center gap-2">
+          {ringPower !== undefined && (
+            <ProgressRing
+              power={ringPower}
+              attempted={ringAttempted ?? false}
+              size={28}
+            />
+          )}
+          <span
+            className={`text-xs font-medium px-2.5 py-1 rounded-full transition-opacity duration-500 ${
+              showCount ? "opacity-100" : "opacity-0 pointer-events-none"
+            } ${
+              available
+                ? "bg-correct-bg text-correct border border-correct-border"
+                : "bg-papier-warm text-ardoise border border-craie"
+            }`}
+          >
+            {available ? `${section.questionCount} questions` : "Bientôt"}
+          </span>
+        </div>
       </div>
       <h2 className="text-base font-semibold text-encre leading-snug mb-2">
         {section.title}
