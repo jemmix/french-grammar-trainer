@@ -6,13 +6,13 @@
  * Rule titles are read from TABLE_OF_CONTENTS.md — no manual input needed.
  *
  * Usage:
- *   npx tsx scripts/generate-section.ts <range> [--concurrency N] [--dry-run]
+ *   npx tsx scripts/generate-section.ts <range> [--lang fr|en] [--concurrency N] [--dry-run]
  *
  * Range format: <sec>-<from>:<sec>-<to>   (both endpoints inclusive)
  *
  * Examples:
  *   npx tsx scripts/generate-section.ts 11-01:11-20
- *   npx tsx scripts/generate-section.ts 11-01:11-05 --concurrency 5
+ *   npx tsx scripts/generate-section.ts 11-01:11-05 --lang en --concurrency 5
  *   npx tsx scripts/generate-section.ts 11-01:11-03 --dry-run
  *
  * Output files : gen/<rule-id>.txt  (one per rule)
@@ -32,11 +32,12 @@ interface RuleInfo {
 
 // ── CLI args ──────────────────────────────────────────────────────────────────
 
-function parseArgs(): { section: number; ruleFrom: number; ruleTo: number; concurrency: number; dryRun: boolean } {
+function parseArgs(): { section: number; ruleFrom: number; ruleTo: number; concurrency: number; dryRun: boolean; lang: string } {
   const args = process.argv.slice(2);
   let range: string | undefined;
   let concurrency = 10;
   let dryRun = false;
+  let lang = "fr";
 
   for (let i = 0; i < args.length; i++) {
     const a = args[i]!; // safe: loop condition guarantees i < args.length
@@ -46,17 +47,19 @@ function parseArgs(): { section: number; ruleFrom: number; ruleTo: number; concu
       const n = parseInt(args[++i] ?? "", 10);
       if (isNaN(n) || n < 1) die("--concurrency must be a positive integer");
       concurrency = n;
+    } else if (a === "--lang") {
+      lang = args[++i] ?? "fr";
     } else if (!a.startsWith("-") && range === undefined) {
       range = a;
     } else {
-      die(`Unexpected argument: ${a}\nUsage: generate-section.ts <range> [--concurrency N] [--dry-run]`);
+      die(`Unexpected argument: ${a}\nUsage: generate-section.ts <range> [--lang fr|en] [--concurrency N] [--dry-run]`);
     }
   }
 
   if (!range) {
     die(
       "Missing range argument.\n" +
-      "Usage: npx tsx scripts/generate-section.ts <range> [--concurrency N]\n" +
+      "Usage: npx tsx scripts/generate-section.ts <range> [--lang fr|en] [--concurrency N]\n" +
       "Example: npx tsx scripts/generate-section.ts 11-01:11-20 --concurrency 5",
     );
   }
@@ -73,7 +76,7 @@ function parseArgs(): { section: number; ruleFrom: number; ruleTo: number; concu
   if (section !== secTo) die("Range must be within a single section (e.g. 11-01:11-20, not 11-01:12-05)");
   if (ruleFrom > ruleTo)  die(`Start rule (${ruleFrom}) must be ≤ end rule (${ruleTo})`);
 
-  return { section, ruleFrom, ruleTo, concurrency, dryRun };
+  return { section, ruleFrom, ruleTo, concurrency, dryRun, lang };
 }
 
 function die(msg: string): never {
@@ -96,8 +99,8 @@ function formatCmd(args: string[]): string {
 
 // ── TOC parsing ───────────────────────────────────────────────────────────────
 
-function parseToC(section: number, ruleFrom: number, ruleTo: number): RuleInfo[] {
-  const tocPath = join(process.cwd(), "TABLE_OF_CONTENTS.md");
+function parseToC(section: number, ruleFrom: number, ruleTo: number, lang: string): RuleInfo[] {
+  const tocPath = join(process.cwd(), "content", lang, "TABLE_OF_CONTENTS.md");
   if (!existsSync(tocPath)) die(`TABLE_OF_CONTENTS.md not found at ${tocPath}`);
 
   const lines = readFileSync(tocPath, "utf-8").split("\n");
@@ -125,7 +128,7 @@ function parseToC(section: number, ruleFrom: number, ruleTo: number): RuleInfo[]
   }
 
   if (rules.length === 0) {
-    die(`No rules found for section ${section}, rules ${ruleFrom}–${ruleTo} in TABLE_OF_CONTENTS.md`);
+    die(`No rules found for section ${section}, rules ${ruleFrom}–${ruleTo} in content/${lang}/TABLE_OF_CONTENTS.md`);
   }
 
   return rules;
@@ -279,8 +282,8 @@ async function runPool(
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
-  const { section, ruleFrom, ruleTo, concurrency, dryRun } = parseArgs();
-  const rules = parseToC(section, ruleFrom, ruleTo);
+  const { section, ruleFrom, ruleTo, concurrency, dryRun, lang } = parseArgs();
+  const rules = parseToC(section, ruleFrom, ruleTo, lang);
 
   const sec2  = String(section).padStart(2, "0");
   const from2 = String(ruleFrom).padStart(2, "0");

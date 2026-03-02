@@ -1,9 +1,9 @@
 # French Grammar Trainer — Project Guidelines
 
 ## Language Policy
-- **App interface & grammar content**: Everything in French (UI text, questions, explanations, section titles)
+- **App interface & grammar content**: In the target language of the deployment (`NEXT_PUBLIC_LANG`, default `fr`)
 - **Code, comments, commit messages, docs (PLAN.md, README, etc.)**: English
-- **TABLE_OF_CONTENTS.md and other course material files**: French (course material, not app docs)
+- **`content/{lang}/TABLE_OF_CONTENTS.md` and other course material files**: In the target language
 
 ## Workflow
 - **Course material / ToC changes**: Commit and push without asking — these are safe to land unattended
@@ -16,8 +16,9 @@
 
 ### Directory layout
 - `gen/` — **gitignored** scratch directory for all temp files during generation
-- `questions/<rule-id>.txt` — canonical merged source files, one per rule (committed)
-- `src/data/sections/<section-id>.ts` — compiled TypeScript, generated from `questions/` (committed)
+- `questions/{lang}/<rule-id>.txt` — canonical merged source files, one per rule (committed)
+- `src/data/{lang}/<section-id>.ts` — compiled TypeScript, generated from `questions/{lang}/` (committed)
+- `content/{lang}/TABLE_OF_CONTENTS.md` — course outline, one per language (committed)
 
 ### Subagent type for generation
 Always use **`general-purpose`** subagents (not `Bash`) for question generation. General-purpose agents have the Write tool and write files directly. Bash agents lack the Write tool — if used, the generated content stays trapped in the agent transcript, forcing the parent to read that transcript into context and re-write the file, doubling token cost and risking context compaction.
@@ -25,15 +26,15 @@ Always use **`general-purpose`** subagents (not `Bash`) for question generation.
 ### Steps
 1. **Generate** — run the generation script in a **separate terminal** (not as a sub-agent):
    ```
-   npx tsx scripts/generate-section.ts <sec>-01:<sec>-20
+   npx tsx scripts/generate-section.ts <sec>-01:<sec>-20 [--lang fr]
    ```
-   The script reads rule titles from `TABLE_OF_CONTENTS.md`, launches parallel Haiku instances (default concurrency: 10), and writes raw files to `gen/<rule-id>.txt`. Use `--dry-run` to preview commands. Logs go to `gen/generate-section-logs/`.
+   The script reads rule titles from `content/{lang}/TABLE_OF_CONTENTS.md`, launches parallel Haiku instances (default concurrency: 10), and writes raw files to `gen/<rule-id>.txt`. Use `--dry-run` to preview commands. Logs go to `gen/generate-section-logs/`.
 2. **Split** — `npm run split-txt -- gen/<rule-id>.txt ...` → produces `gen/<rule-id>-passed.txt` + `gen/<rule-id>-failed.txt`
 3. **Fix** — manually correct failed questions, save as `gen/<rule-id>-fixed.txt` (remove `VALIDATION ERROR:` lines)
-4. **Merge** — `npm run merge-txt -- --output questions/<rule-id>.txt gen/<rule-id>-passed.txt [gen/<rule-id>-fixed.txt]` (later files override earlier for duplicate IDs)
-5. **Compile** — `npm run convert-txt -- --section-id ... --section-title ... --section-desc ... --output src/data/sections/<section-id>.ts questions/<rule-id>.txt ...`
-6. **Register** — add the new section to `src/data/sections-index.ts`: import the compiled file, add a metadata entry to `_meta`, and add the section to `_loadedSections`
-7. **Commit** — `git add questions/ src/data/sections/ .gitignore`, commit and push (temp files in `gen/` are never tracked)
+4. **Merge** — `npm run merge-txt -- --output questions/{lang}/<rule-id>.txt gen/<rule-id>-passed.txt [gen/<rule-id>-fixed.txt]` (later files override earlier for duplicate IDs)
+5. **Compile** — `npm run convert-txt -- --section-id ... --section-title ... --section-desc ... --output src/data/{lang}/<section-id>.ts questions/{lang}/<rule-id>.txt ...`
+6. **Register** — add the new section to `src/data/sections-index.ts`: import the compiled file (from `./fr/` or `./en/`), add a metadata entry to `_meta`, and add the section to `_loadedSections`
+7. **Commit** — `git add questions/ src/data/ .gitignore`, commit and push (temp files in `gen/` are never tracked)
 
 ## Content Quality Rules
 

@@ -9,7 +9,7 @@
  *     --section-id "01-present-indicatif" \
  *     --section-title "Le présent de l'indicatif" \
  *     --section-desc "Formation et emplois du présent de l'indicatif" \
- *     --output src/data/sections/01-present-indicatif.ts \
+ *     --output src/data/fr/01-present-indicatif.ts \
  *     01-01.txt 01-02.txt ...
  *
  * If --output is omitted, the TypeScript is printed to stdout.
@@ -254,7 +254,7 @@ function main() {
         '    --section-id "01-present-indicatif" \\',
         '    --section-title "Le présent de l\'indicatif" \\',
         '    --section-desc "Formation et emplois du présent de l\'indicatif" \\',
-        "    --output src/data/sections/01-present-indicatif.ts \\",
+        "    --output src/data/fr/01-present-indicatif.ts \\",
         "    01-01.txt 01-02.txt",
       ].join("\n"),
     );

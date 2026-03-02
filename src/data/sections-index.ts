@@ -1,16 +1,19 @@
 import type { Section, SectionMeta } from "./types";
-import section01 from "./sections/01-present-indicatif";
-import section02 from "./sections/02-passe-compose";
-import section03 from "./sections/03-imparfait";
-import section04 from "./sections/04-plus-que-parfait";
-import section05 from "./sections/05-futur-simple-et-anterieur";
-import section06 from "./sections/06-conditionnel";
-import section07 from "./sections/07-subjonctif-present";
-import section08 from "./sections/08-subjonctif-passe";
-import section09 from "./sections/09-imperatif";
-import section10 from "./sections/10-articles";
-import section11 from "./sections/11-pronoms-cod-coi";
-import section12 from "./sections/12-pronoms-relatifs";
+// Section data lives in per-language directories (src/data/{lang}/).
+// When a second language is added, convert these to conditional imports
+// gated on process.env.NEXT_PUBLIC_LANG.
+import section01 from "./fr/01-present-indicatif";
+import section02 from "./fr/02-passe-compose";
+import section03 from "./fr/03-imparfait";
+import section04 from "./fr/04-plus-que-parfait";
+import section05 from "./fr/05-futur-simple-et-anterieur";
+import section06 from "./fr/06-conditionnel";
+import section07 from "./fr/07-subjonctif-present";
+import section08 from "./fr/08-subjonctif-passe";
+import section09 from "./fr/09-imperatif";
+import section10 from "./fr/10-articles";
+import section11 from "./fr/11-pronoms-cod-coi";
+import section12 from "./fr/12-pronoms-relatifs";
 
 // Add compiled section files here — counts and availability are derived automatically.
 const _loadedSections: Section[] = [section01, section02, section03, section04, section05, section06, section07, section08, section09, section10, section11, section12];
