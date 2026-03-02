@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { t } from "~/lang";
 
 export default function DeniedPage() {
   const router = useRouter();
@@ -10,7 +11,7 @@ export default function DeniedPage() {
   return (
     <>
       <Head>
-        <title>Accès limité — Grammaire Française B1</title>
+        <title>{t.denied.pageTitle} — {t.meta.appTitle}</title>
       </Head>
 
       <div className="min-h-screen bg-papier flex items-center justify-center px-6">
@@ -26,17 +27,16 @@ export default function DeniedPage() {
               <div className="w-1.5 h-8 rounded-full bg-tricolore-rouge" />
             </div>
 
-            <h1 className="text-2xl md:text-3xl font-bold text-encre mb-4">Accès limité</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-encre mb-4">{t.denied.heading}</h1>
 
             <p className="text-ardoise leading-relaxed mb-6">
-              L&apos;accès à cette application est actuellement sur invitation.
-              Si vous souhaitez y accéder, veuillez contacter l&apos;équipe.
+              {t.denied.body}
             </p>
 
             {userIdStr && (
               <div className="mb-6 p-4 rounded-xl bg-papier border border-craie text-left">
                 <p className="text-xs text-ardoise mb-2">
-                  Votre identifiant (à inclure dans votre demande d&apos;accès) :
+                  {t.denied.idLabel}
                 </p>
                 <p className="font-mono text-[11px] text-encre break-all select-all bg-papier-warm rounded-lg px-3 py-2 border border-craie/60">
                   {userIdStr}
@@ -51,7 +51,7 @@ export default function DeniedPage() {
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
-              Retour à l&apos;accueil
+              {t.shared.backToHome}
             </Link>
           </div>
         </div>

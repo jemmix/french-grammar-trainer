@@ -1,11 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
+import { t } from "~/lang";
 
 export default function GoodbyePage() {
   return (
     <>
       <Head>
-        <title>Au revoir — Grammaire Française B1</title>
+        <title>{t.goodbye.pageTitle} — {t.meta.appTitle}</title>
       </Head>
 
       <div className="min-h-screen bg-papier flex items-center justify-center px-6">
@@ -17,7 +18,7 @@ export default function GoodbyePage() {
               <div className="w-1.5 h-8 rounded-full bg-tricolore-rouge" />
             </div>
 
-            <h1 className="text-3xl font-bold text-encre mb-3">Au revoir !</h1>
+            <h1 className="text-3xl font-bold text-encre mb-3">{t.goodbye.heading}</h1>
 
             <div className="flex justify-center mb-5">
               <svg width="60" height="12" viewBox="0 0 60 12" className="text-craie" fill="none">
@@ -26,12 +27,10 @@ export default function GoodbyePage() {
             </div>
 
             <p className="text-ardoise leading-relaxed mb-2">
-              Vos données seront supprimées sous peu.
+              {t.goodbye.body1}
             </p>
             <p className="text-sm text-ardoise leading-relaxed mb-8">
-              Vous pouvez continuer à pratiquer en mode anonyme, ou vous
-              reconnecter pour créer un nouveau profil vierge et reprendre le
-              suivi de vos progrès.
+              {t.goodbye.body2}
             </p>
 
             <Link
@@ -41,7 +40,7 @@ export default function GoodbyePage() {
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
-              Retour à l&apos;accueil
+              {t.shared.backToHome}
             </Link>
           </div>
         </div>

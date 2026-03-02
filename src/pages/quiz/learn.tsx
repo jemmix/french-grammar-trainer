@@ -8,6 +8,7 @@ import { McqQuestionView } from "~/components/quiz/mcq-question-view";
 import { InputQuestionView } from "~/components/quiz/input-question-view";
 import { ScoreSummary } from "~/components/quiz/score-summary";
 import { pickLearnQuestions } from "~/lib/question-picker";
+import { t } from "~/lang";
 
 function getAllRulesMap(): Map<string, { title: string }> {
   const map = new Map<string, { title: string }>();
@@ -127,7 +128,7 @@ export default function LearnPage() {
   if (isLoading || !initialized || quizQuestions.length === 0) {
     return (
       <div className="min-h-screen bg-papier flex items-center justify-center">
-        <div className="text-ardoise">Chargement...</div>
+        <div className="text-ardoise">{t.shared.loading}</div>
       </div>
     );
   }
@@ -138,7 +139,7 @@ export default function LearnPage() {
   return (
     <>
       <Head>
-        <title>Apprentissage libre — Grammaire Française B1</title>
+        <title>{t.quiz.learnFreelyQuizTitle} — {t.meta.appTitle}</title>
       </Head>
 
       <div className="min-h-screen bg-papier">
@@ -152,7 +153,7 @@ export default function LearnPage() {
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
-              Sections
+              {t.shared.sections}
             </Link>
             {!finished && (
               <span className="text-sm font-medium text-encre tabular-nums">
@@ -161,7 +162,7 @@ export default function LearnPage() {
             )}
             {!finished && (
               <span className="text-sm font-semibold text-tricolore-bleu tabular-nums">
-                {score} pt{score !== 1 ? "s" : ""}
+                {t.quiz.points(score)}
               </span>
             )}
           </div>
@@ -180,7 +181,7 @@ export default function LearnPage() {
               score={score}
               total={totalQuestions}
               answers={answers}
-              quizTitle="Apprentissage libre"
+              quizTitle={t.quiz.learnFreelyQuizTitle}
               onRestart={handleRestart}
             />
           ) : currentQuestion?.type === "mcq" ? (

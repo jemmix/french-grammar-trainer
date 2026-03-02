@@ -4,8 +4,9 @@ import { useRouter } from "next/router";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
 import { sectionsIndex, sectionMap } from "~/data/sections-index";
-import { getTier } from "~/lib/constants";
+import { getTier } from "~/lib/tiers";
 import { getRuleSlotIndex } from "~/lib/user-record";
+import { t } from "~/lang";
 
 // ── Raw blob data as returned by GET /api/progress ──────────────────────────
 
@@ -86,7 +87,7 @@ function buildExportData(params: {
           return {
             id: rule.id,
             title: rule.title,
-            tier: ruleTier?.label ?? "Débutant",
+            tier: ruleTier?.label ?? t.tiers[5]!.label,
             power: rawPower, // raw uint16 integer — same value as blob.powers[slotIdx]
           };
         })
@@ -94,7 +95,7 @@ function buildExportData(params: {
 
       if (rules.length === 0) return null;
 
-      return { id: meta.id, title: meta.title, tier: tier?.label ?? "Débutant", rules };
+      return { id: meta.id, title: meta.title, tier: tier?.label ?? t.tiers[5]!.label, rules };
     })
     .filter((s): s is NonNullable<typeof s> => s !== null);
 
@@ -103,7 +104,7 @@ function buildExportData(params: {
     data: {
       exportedAt: now,
       userId,
-      format: "french-grammar-trainer-export-v1",
+      format: t.myData.exportFormat,
       // blob — everything needed to reconstruct the K/V entry exactly
       blob: {
         version: blobData.version,       // uint8  at offset 0
@@ -116,11 +117,11 @@ function buildExportData(params: {
       },
       // decoded — human-readable tier labels (only attempted rules included)
       decoded: {
-        globalTier: globalTier?.label ?? null,
+        globalTier: globalTier?.label ?? t.tiers[5]!.label,
         sections: decodedSections,
       },
     },
-    filename: `grammaire-francaise-export-${now.slice(0, 10)}.json`,
+    filename: t.myData.exportFilename(now.slice(0, 10)),
   };
 }
 
@@ -189,7 +190,7 @@ export default function MyDataPage() {
   if (isLoading || !isLoggedIn) {
     return (
       <div className="min-h-screen bg-papier flex items-center justify-center">
-        <div className="text-ardoise">Chargement...</div>
+        <div className="text-ardoise">{t.shared.loading}</div>
       </div>
     );
   }
@@ -197,7 +198,7 @@ export default function MyDataPage() {
   return (
     <>
       <Head>
-        <title>Mes données — Grammaire Française B1</title>
+        <title>{t.myData.pageTitle} — {t.meta.appTitle}</title>
       </Head>
 
       <div className="min-h-screen bg-papier">
@@ -210,7 +211,7 @@ export default function MyDataPage() {
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
-            Retour
+            {t.shared.back}
           </Link>
 
           <div className="flex items-center gap-3 mb-10">
@@ -219,34 +220,33 @@ export default function MyDataPage() {
               <div className="w-1 h-7 rounded-full bg-craie" />
               <div className="w-1 h-7 rounded-full bg-tricolore-rouge" />
             </div>
-            <h1 className="text-2xl md:text-3xl font-bold text-encre">Mes données</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-encre">{t.myData.heading}</h1>
           </div>
 
           {/* ── Identity ────────────────────────────────────────── */}
           <section className="mb-10">
-            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-3">Mon identifiant</h2>
+            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-3">{t.myData.identityTitle}</h2>
             <div className="bg-tricolore-blanc border border-craie rounded-xl p-5">
               <p className="font-mono text-[11px] text-encre break-all select-all bg-papier-warm rounded-lg px-3 py-2 border border-craie/60 mb-3">{userId}</p>
               <p className="text-xs text-ardoise leading-relaxed">
-                Cet identifiant est dérivé de votre activité de manière irréversible. Il ne permet pas de vous identifier.
+                {t.myData.identityDesc}
               </p>
             </div>
           </section>
 
           {/* ── Raw blob (full transparency takeout view) ────────── */}
           <section className="mb-10">
-            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-1">Données brutes stockées</h2>
+            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-1">{t.myData.rawDataTitle}</h2>
             <p className="text-xs text-ardoise mb-3 leading-relaxed">
-              Contenu exact de l&apos;entrée K/V dans la base de données.
-              Toutes les informations nécessaires pour reconstruire le blob à l&apos;identique.
+              {t.myData.rawDataDesc}
             </p>
 
             {blobLoading ? (
-              <p className="text-sm text-ardoise py-4">Chargement…</p>
+              <p className="text-sm text-ardoise py-4">{t.myData.blobLoading}</p>
             ) : !blobData ? (
               <div className="bg-tricolore-blanc border border-craie rounded-xl p-5">
                 <p className="text-sm text-ardoise">
-                  Aucune donnée stockée. Complétez un quiz pour créer votre profil.
+                  {t.myData.noData}
                 </p>
               </div>
             ) : (
@@ -254,15 +254,15 @@ export default function MyDataPage() {
                 {/* Header */}
                 <div className="bg-tricolore-blanc border border-craie rounded-xl overflow-hidden">
                   <div className="px-5 py-3 bg-papier-warm border-b border-craie">
-                    <p className="text-xs font-semibold text-encre">En-tête — 11 octets (offset 0)</p>
+                    <p className="text-xs font-semibold text-encre">{t.myData.headerSectionLabel}</p>
                   </div>
                   <table className="w-full text-xs font-mono">
                     <thead>
                       <tr className="border-b border-craie/60">
-                        <th className="text-left px-5 py-2 font-medium text-ardoise">Champ</th>
-                        <th className="text-left px-5 py-2 font-medium text-ardoise">Type</th>
-                        <th className="text-left px-5 py-2 font-medium text-ardoise">Offset</th>
-                        <th className="text-right px-5 py-2 font-medium text-ardoise">Valeur</th>
+                        <th className="text-left px-5 py-2 font-medium text-ardoise">{t.myData.tableField}</th>
+                        <th className="text-left px-5 py-2 font-medium text-ardoise">{t.myData.tableType}</th>
+                        <th className="text-left px-5 py-2 font-medium text-ardoise">{t.myData.tableOffset}</th>
+                        <th className="text-right px-5 py-2 font-medium text-ardoise">{t.myData.tableValue}</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-craie/60">
@@ -308,10 +308,10 @@ export default function MyDataPage() {
                 <div className="bg-tricolore-blanc border border-craie rounded-xl overflow-hidden">
                   <div className="px-5 py-3 bg-papier-warm border-b border-craie">
                     <p className="text-xs font-semibold text-encre">
-                      Slots de progression — {blobData.ruleSlots} × uint16 BE, 1120 octets (offset 11)
+                      {t.myData.slotsLabel(blobData.ruleSlots)}
                     </p>
                     <p className="text-[10px] text-ardoise mt-0.5">
-                      Index = (section − 1) × 20 + (règle − 1) · 0 = jamais pratiqué · [1, 65535] = niveau EWMA
+                      {t.myData.slotsDesc}
                     </p>
                   </div>
                   <div className="overflow-y-auto" style={{ maxHeight: "400px" }}>
@@ -319,7 +319,7 @@ export default function MyDataPage() {
                       <div key={sectionNum}>
                         <div className="px-5 py-1.5 bg-papier-warm/60 border-y border-craie/40 sticky top-0">
                           <span className="text-[10px] font-mono font-semibold text-ardoise">
-                            Section {String(sectionNum).padStart(2, "0")}
+                            {t.myData.sectionPrefix} {String(sectionNum).padStart(2, "0")}
                           </span>
                           {title && (
                             <span className="ml-2 text-[10px] text-ardoise/60">{title}</span>
@@ -360,10 +360,10 @@ export default function MyDataPage() {
 
           {/* ── JSON export ─────────────────────────────────────── */}
           <section className="mb-10">
-            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-3">Export JSON</h2>
+            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-3">{t.myData.jsonExportTitle}</h2>
             <div className="bg-tricolore-blanc border border-craie rounded-xl p-5">
               <p className="text-sm text-ardoise mb-4">
-                Téléchargez toutes vos données — en-tête + les 560 entiers uint16 bruts + niveaux décodés.
+                {t.myData.jsonExportDesc}
               </p>
               <button
                 onClick={handleExport}
@@ -373,25 +373,25 @@ export default function MyDataPage() {
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
-                Télécharger mes données (JSON)
+                {t.myData.downloadButton}
               </button>
             </div>
           </section>
 
           {/* ── Account removal ────────────────────────────────── */}
           <section>
-            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-3">Suppression du compte</h2>
+            <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-3">{t.myData.deleteTitle}</h2>
             <div className="bg-tricolore-blanc border border-craie rounded-xl p-5">
               {!showDeleteConfirm ? (
                 <>
                   <p className="text-sm text-ardoise mb-4">
-                    Supprimez toutes vos données de progression de manière permanente.
+                    {t.myData.deleteDesc}
                   </p>
                   <button
                     onClick={() => setShowDeleteConfirm(true)}
                     className="inline-flex items-center gap-2 px-5 py-2.5 border border-incorrect text-incorrect text-sm font-medium rounded-lg hover:bg-incorrect-bg transition-colors cursor-pointer"
                   >
-                    Supprimer mon compte
+                    {t.myData.deleteButton}
                   </button>
                 </>
               ) : (
@@ -401,7 +401,7 @@ export default function MyDataPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                     </svg>
                     <p className="text-sm text-encre leading-relaxed">
-                      <strong>Cette action est irréversible.</strong> Toutes vos données de progression seront supprimées définitivement.
+                      {t.myData.deleteWarning}
                     </p>
                   </div>
                   <div className="flex gap-3">
@@ -410,14 +410,14 @@ export default function MyDataPage() {
                       disabled={deleting}
                       className="px-5 py-2.5 bg-incorrect text-white text-sm font-medium rounded-lg hover:opacity-90 transition-opacity cursor-pointer disabled:opacity-60"
                     >
-                      {deleting ? "Suppression…" : "Confirmer la suppression"}
+                      {deleting ? t.myData.deletingLabel : t.myData.deleteConfirmButton}
                     </button>
                     <button
                       onClick={() => setShowDeleteConfirm(false)}
                       disabled={deleting}
                       className="px-5 py-2.5 border border-craie text-ardoise text-sm font-medium rounded-lg hover:bg-papier-warm transition-colors cursor-pointer"
                     >
-                      Annuler
+                      {t.myData.cancelButton}
                     </button>
                   </div>
                 </div>

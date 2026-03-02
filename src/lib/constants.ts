@@ -26,27 +26,13 @@ export const PROGRESS = {
   FLUSH_INTERVAL_MS: 30_000,
 } as const;
 
-// Display tiers (ordered high → low for lookup)
-export const TIERS = [
-  { min: 0.95, label: "Maîtrisé !",   color: "#facc15", promo: "Bravo, vous maîtrisez ce sujet !" },
-  { min: 0.80, label: "Très avancé",  color: "#34d399", promo: "La maîtrise approche !" },
-  { min: 0.60, label: "Avancé",       color: "#fb923c", promo: "Vous devenez solide !" },
-  { min: 0.40, label: "Intermédiaire", color: "#fbbf24", promo: "Niveau intermédiaire atteint !" },
-  { min: 0.20, label: "En progrès",   color: "#2dd4bf", promo: "Vous progressez, continuez !" },
-  { min: 0.00, label: "Débutant",     color: "#38bdf8", promo: "Première étape franchie !" },
+// Tier thresholds and colors — ordered high → low (same index order as t.tiers in lang bundles).
+// Labels and promo strings live in the lang bundle; getTier is in src/lib/tiers.ts.
+export const TIER_THRESHOLDS = [
+  { min: 0.95, color: "#facc15" },
+  { min: 0.80, color: "#34d399" },
+  { min: 0.60, color: "#fb923c" },
+  { min: 0.40, color: "#fbbf24" },
+  { min: 0.20, color: "#2dd4bf" },
+  { min: 0.00, color: "#38bdf8" },
 ] as const;
-
-export type Tier = (typeof TIERS)[number];
-
-export function getTier(
-  displayPower: number,
-  attempted: boolean,
-): { label: string; color: string; promo: string } | null {
-  if (!attempted) return null;
-  for (const tier of TIERS) {
-    if (displayPower >= tier.min) {
-      return { label: tier.label, color: tier.color, promo: tier.promo };
-    }
-  }
-  return { label: "Débutant", color: "#38bdf8", promo: "Première étape franchie !" };
-}

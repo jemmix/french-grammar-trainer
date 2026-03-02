@@ -12,6 +12,7 @@ import type {
   Section,
 } from "~/data/types";
 import { sectionMap } from "~/data/sections-index";
+import { t } from "~/lang";
 
 // ---------------------------------------------------------------------------
 // Question lookup helper
@@ -30,7 +31,7 @@ function renderWithBlanks(text: string): (string | JSX.Element)[] {
       <span
         key={i}
         className="inline-block min-w-[4.5ch] mx-0.5 px-2 py-0.5 align-baseline rounded-[3px] bg-tricolore-bleu/[.07] border-b-2 border-tricolore-bleu/40"
-        aria-label="blanc"
+        aria-label={t.blankAriaLabel}
       />
     ) : part
   );
@@ -160,9 +161,9 @@ export default function QuestionReviewPage() {
     return (
       <div className="min-h-screen bg-papier flex items-center justify-center">
         <div className="text-center animate-fade-in">
-          <p className="text-ardoise text-lg mb-4">Question introuvable</p>
+          <p className="text-ardoise text-lg mb-4">{t.questionReview.questionNotFound}</p>
           <Link href="/" className="text-tricolore-bleu font-medium hover:underline">
-            Retour à l&apos;accueil
+            {t.shared.backToHome}
           </Link>
         </div>
       </div>
@@ -176,7 +177,7 @@ export default function QuestionReviewPage() {
   return (
     <>
       <Head>
-        <title>{question.id} — Revue — Grammaire Française B1</title>
+        <title>{t.questionReview.pageTitle(question.id)}</title>
       </Head>
 
       <div className="min-h-screen bg-papier">
@@ -200,7 +201,7 @@ export default function QuestionReviewPage() {
                   <Link
                     href={`/question/${adjacent.prev}`}
                     className="p-1.5 rounded-lg text-ardoise hover:text-encre hover:bg-papier-warm transition-colors"
-                    title={`Question précédente (${adjacent.prev})`}
+                    title={t.questionReview.prevQuestionTitle(adjacent.prev)}
                   >
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -213,7 +214,7 @@ export default function QuestionReviewPage() {
                   <Link
                     href={`/question/${adjacent.next}`}
                     className="p-1.5 rounded-lg text-ardoise hover:text-encre hover:bg-papier-warm transition-colors"
-                    title={`Question suivante (${adjacent.next})`}
+                    title={t.questionReview.nextQuestionTitle(adjacent.next)}
                   >
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -256,14 +257,14 @@ export default function QuestionReviewPage() {
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
-                    QCM
+                    {t.questionReview.mcqBadge}
                   </>
                 ) : (
                   <>
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                     </svg>
-                    Saisie
+                    {t.questionReview.inputBadge}
                   </>
                 )}
               </span>
@@ -324,21 +325,21 @@ function CopyPermalinkButton() {
     <button
       onClick={handleCopy}
       className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-ardoise hover:text-encre hover:bg-papier-warm border border-craie transition-all duration-200 cursor-pointer"
-      title="Copier le lien permanent"
+      title={t.questionReview.copyPermalinkTitle}
     >
       {copied ? (
         <>
           <svg className="w-3.5 h-3.5 text-correct" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
-          <span className="text-correct">Copié</span>
+          <span className="text-correct">{t.questionReview.copied}</span>
         </>
       ) : (
         <>
           <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
           </svg>
-          Permalien
+          {t.questionReview.permalink}
         </>
       )}
     </button>
@@ -422,7 +423,7 @@ function McqReview({ question }: { question: MultipleChoiceQuestion }) {
     <div className="space-y-6">
       {/* Prompt */}
       <div className="py-5 px-5 rounded-xl bg-tricolore-blanc border border-craie">
-        <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-3">Énoncé</p>
+        <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-3">{t.questionReview.stmtLabel}</p>
         <p className="text-xl md:text-2xl font-medium text-encre leading-relaxed">
           {renderWithBlanks(question.prompt)}
         </p>
@@ -431,13 +432,13 @@ function McqReview({ question }: { question: MultipleChoiceQuestion }) {
       {/* Choices header */}
       <div className="flex items-center justify-between">
         <p className="text-xs font-medium text-ardoise uppercase tracking-wider">
-          Choix ({question.choices.length})
+          {t.questionReview.choicesLabel(question.choices.length)}
         </p>
         <button
           onClick={allExpanded ? collapseAll : expandAll}
           className="text-xs text-tricolore-bleu hover:underline cursor-pointer"
         >
-          {allExpanded ? "Tout replier" : "Tout déplier"}
+          {allExpanded ? t.questionReview.collapseAll : t.questionReview.expandAll}
         </button>
       </div>
 
@@ -563,13 +564,13 @@ function InputReview({ question }: { question: InputQuestion }) {
     <div className="space-y-6">
       {/* Prompt */}
       <div className="py-5 px-5 rounded-xl bg-tricolore-blanc border border-craie">
-        <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-3">Consigne</p>
+        <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-3">{t.questionReview.consigneLabel}</p>
         <p className="text-base text-encre leading-relaxed">{question.prompt}</p>
       </div>
 
       {/* Phrase with inline input */}
       <div className="py-6 px-5 rounded-xl bg-tricolore-blanc border border-craie">
-        <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-4">Tester la saisie</p>
+        <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-4">{t.questionReview.testInputLabel}</p>
         <p className="text-xl md:text-2xl font-medium text-encre leading-relaxed inline">
           <span>«&nbsp;{before}</span>
           <span className="inline-flex items-baseline mx-0.5">
@@ -614,16 +615,16 @@ function InputReview({ question }: { question: InputQuestion }) {
                   : "bg-craie text-ardoise cursor-not-allowed"
               }`}
             >
-              Valider
-              <span className={`ml-2 text-xs ${userInput.trim() ? "text-white/40" : "text-ardoise/40"}`}>Entrée ↵</span>
+              {t.questionReview.submitButton}
+              <span className={`ml-2 text-xs ${userInput.trim() ? "text-white/40" : "text-ardoise/40"}`}>{t.quiz.enterHint}</span>
             </button>
           ) : (
             <button
               onClick={handleReset}
               className="px-6 py-2.5 rounded-xl text-sm font-medium bg-papier-warm border border-craie text-encre hover:bg-craie/50 transition-colors cursor-pointer"
             >
-              Réessayer
-              <span className="ml-2 text-xs text-ardoise/40">Entrée ↵</span>
+              {t.questionReview.retryButton}
+              <span className="ml-2 text-xs text-ardoise/40">{t.quiz.enterHint}</span>
             </button>
           )}
         </div>
@@ -637,7 +638,7 @@ function InputReview({ question }: { question: InputQuestion }) {
       </div>
 
       {/* Correct answer panel */}
-      <Disclosure title="Bonne réponse" defaultOpen>
+      <Disclosure title={t.questionReview.correctAnswerDisclosure} defaultOpen>
         <div className="space-y-2">
           <p className="text-lg font-semibold text-correct">{question.answer}</p>
           <p className="text-sm text-encre/80 leading-relaxed">{question.explanation}</p>
@@ -645,7 +646,7 @@ function InputReview({ question }: { question: InputQuestion }) {
       </Disclosure>
 
       {/* All prepared wrong answers */}
-      <Disclosure title="Mauvaises réponses prévues" badge={`${question.wrongAnswers.length}`}>
+      <Disclosure title={t.questionReview.wrongAnswersDisclosure} badge={`${question.wrongAnswers.length}`}>
         <div className="space-y-4">
           {question.wrongAnswers.map((wa, i) => (
             <div key={i} className="flex gap-3">
@@ -664,7 +665,7 @@ function InputReview({ question }: { question: InputQuestion }) {
       </Disclosure>
 
       {/* Typo detection */}
-      <Disclosure title="Variantes typo (distance 1)">
+      <Disclosure title={t.questionReview.typoVariantsDisclosure}>
         <TypoVariantsPanel question={question} />
       </Disclosure>
     </div>
@@ -684,36 +685,37 @@ function InputResultBadge({
   question: InputQuestion;
   userInput: string;
 }) {
+  const labels = t.questionReview.inputResultLabels;
   const configs: Record<InputResultKind, { bg: string; border: string; icon: React.ReactNode; label: string }> = {
     "exact": {
       bg: "bg-correct-bg", border: "border-correct-border",
       icon: <svg className="w-3.5 h-3.5 text-correct" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>,
-      label: "Correspondance exacte",
+      label: labels.exact,
     },
     "case-warning": {
       bg: "bg-warning-bg", border: "border-warning-border",
       icon: <svg className="w-3.5 h-3.5 text-warning" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01" /></svg>,
-      label: `Correct mais mauvaise casse — attendu « ${question.answer} »`,
+      label: labels.caseWarning(question.answer),
     },
     "wrong-prepared": {
       bg: "bg-incorrect-bg", border: "border-incorrect-border",
       icon: <svg className="w-3.5 h-3.5 text-incorrect" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>,
-      label: `Mauvaise réponse prévue « ${result.matchedAnswer} »`,
+      label: labels.wrongPrepared(result.matchedAnswer ?? ""),
     },
     "typo-correct": {
       bg: "bg-incorrect-bg", border: "border-incorrect-border",
       icon: <svg className="w-3.5 h-3.5 text-incorrect" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>,
-      label: `Typo de la bonne réponse « ${result.matchedAnswer} »`,
+      label: labels.typoCorrect(result.matchedAnswer ?? ""),
     },
     "typo-wrong": {
       bg: "bg-incorrect-bg", border: "border-incorrect-border",
       icon: <svg className="w-3.5 h-3.5 text-incorrect" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>,
-      label: `Typo de « ${result.matchedAnswer} » (mauvaise réponse)`,
+      label: labels.typoWrong(result.matchedAnswer ?? ""),
     },
     "unknown": {
       bg: "bg-incorrect-bg", border: "border-incorrect-border",
       icon: <svg className="w-3.5 h-3.5 text-incorrect" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01" /></svg>,
-      label: `« ${userInput} » — aucune correspondance`,
+      label: labels.unknown(userInput),
     },
   };
 
@@ -743,8 +745,7 @@ function TypoVariantsPanel({ question }: { question: InputQuestion }) {
   return (
     <div className="space-y-4">
       <p className="text-xs text-ardoise leading-relaxed">
-        Le système détecte les saisies à distance de Levenshtein 1 de chaque réponse prévue.
-        Voici les chaînes cibles et leur longueur.
+        {t.questionReview.typoVariantsDesc}
       </p>
       <div className="space-y-2">
         {allTargets.map((target, i) => (
@@ -754,7 +755,7 @@ function TypoVariantsPanel({ question }: { question: InputQuestion }) {
               {target.text}
             </code>
             <span className="text-xs text-ardoise">
-              {target.text.length} car. — détecte les typos à ±1
+              {t.questionReview.typoDistanceLabel(target.text.length)}
             </span>
           </div>
         ))}

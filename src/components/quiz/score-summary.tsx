@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Question } from "~/data/types";
+import { t } from "~/lang";
 
 export function ScoreSummary({
   score,
@@ -18,12 +19,12 @@ export function ScoreSummary({
 
   const grade =
     percentage >= 90
-      ? { label: "Excellent !", color: "text-correct" }
+      ? { label: t.score.gradeExcellent, color: "text-correct" }
       : percentage >= 70
-        ? { label: "Bien !", color: "text-tricolore-bleu" }
+        ? { label: t.score.gradeBien, color: "text-tricolore-bleu" }
         : percentage >= 50
-          ? { label: "Peut mieux faire", color: "text-amber-600" }
-          : { label: "À retravailler", color: "text-incorrect" };
+          ? { label: t.score.gradeMoyenne, color: "text-amber-600" }
+          : { label: t.score.gradeRework, color: "text-incorrect" };
 
   return (
     <div className="animate-scale-in">
@@ -35,7 +36,7 @@ export function ScoreSummary({
           <div className="w-1 h-6 rounded-full bg-tricolore-rouge" />
         </div>
         <h1 className="text-2xl md:text-3xl font-bold text-encre mb-2">
-          Résultat — {quizTitle}
+          {t.score.resultTitle(quizTitle)}
         </h1>
         <div className="mt-6 mb-3">
           <span className="text-6xl md:text-7xl font-bold tabular-nums text-encre">
@@ -44,13 +45,13 @@ export function ScoreSummary({
           <span className="text-2xl text-ardoise font-medium"> / {total}</span>
         </div>
         <p className={`text-xl font-semibold ${grade.color}`}>{grade.label}</p>
-        <p className="text-ardoise mt-1">{percentage}% de bonnes réponses</p>
+        <p className="text-ardoise mt-1">{t.score.percentCorrect(percentage)}</p>
       </div>
 
       {/* Answer breakdown */}
       <div className="border border-craie rounded-xl bg-tricolore-blanc overflow-hidden mb-8">
         <div className="px-5 py-3 border-b border-craie bg-papier-warm">
-          <h2 className="text-sm font-semibold text-encre">Détail des réponses</h2>
+          <h2 className="text-sm font-semibold text-encre">{t.score.answerBreakdown}</h2>
         </div>
         <div className="divide-y divide-craie/60">
           {answers.map((answer, i) => (
@@ -72,7 +73,7 @@ export function ScoreSummary({
               </span>
               <div className="flex-1 flex items-center gap-2">
                 {answer.question.type === "input" && (
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-tricolore-bleu/40 shrink-0" title="Question à saisie" />
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-tricolore-bleu/40 shrink-0" title={t.score.inputQuestionTitle} />
                 )}
                 <p className="text-sm text-encre leading-relaxed flex-1">
                   {answer.question.prompt}
@@ -80,7 +81,7 @@ export function ScoreSummary({
                 <Link
                   href={`/question/${answer.question.id}`}
                   className="shrink-0 text-[10px] font-mono text-ardoise/50 hover:text-tricolore-bleu transition-colors"
-                  title={`Voir ${answer.question.id}`}
+                  title={t.score.questionLinkTitle(answer.question.id)}
                 >
                   {answer.question.id}
                 </Link>
@@ -96,13 +97,13 @@ export function ScoreSummary({
           onClick={onRestart}
           className="flex-1 px-6 py-3 bg-tricolore-bleu text-white font-medium rounded-xl hover:bg-encre-light transition-colors cursor-pointer"
         >
-          Recommencer
+          {t.score.restart}
         </button>
         <Link
           href="/"
           className="flex-1 px-6 py-3 text-center border border-craie text-encre font-medium rounded-xl hover:bg-papier-warm transition-colors"
         >
-          Choisir une autre section
+          {t.score.chooseDifferentSection}
         </Link>
       </div>
     </div>

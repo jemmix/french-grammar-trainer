@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
+import { t } from "~/lang";
 
 const PRIVACY_COOKIE = "privacy-acknowledged";
 const COOKIE_MAX_AGE = 315360000; // 10 years
@@ -73,7 +74,7 @@ export default function LoginPage() {
   if (!mounted || isLoading || (cookiePresent && !isLoggedIn)) {
     return (
       <div className="min-h-screen bg-papier flex items-center justify-center">
-        <div className="text-ardoise text-sm">Connexion…</div>
+        <div className="text-ardoise text-sm">{t.login.connectingState}</div>
       </div>
     );
   }
@@ -84,7 +85,7 @@ export default function LoginPage() {
   return (
     <>
       <Head>
-        <title>Se connecter — Grammaire Française B1</title>
+        <title>{t.login.pageTitle} — {t.meta.appTitle}</title>
       </Head>
 
       <div className="min-h-screen bg-papier">
@@ -97,7 +98,7 @@ export default function LoginPage() {
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
-            Retour
+            {t.shared.back}
           </Link>
 
           <div className="flex items-center gap-3 mb-6">
@@ -106,35 +107,29 @@ export default function LoginPage() {
               <div className="w-1 h-7 rounded-full bg-craie" />
               <div className="w-1 h-7 rounded-full bg-tricolore-rouge" />
             </div>
-            <h1 className="text-2xl md:text-3xl font-bold text-encre">Se connecter</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-encre">{t.login.heading}</h1>
           </div>
 
           <p className="text-ardoise mb-6 leading-relaxed">
-            Avant de vous connecter, veuillez prendre connaissance de notre politique de confidentialité.
+            {t.login.intro}
           </p>
 
           <div className="bg-tricolore-blanc border border-craie rounded-xl overflow-hidden mb-6">
             <div className="h-0.5 bg-gradient-to-r from-tricolore-bleu via-papier-warm to-tricolore-rouge" />
             <div className="p-6">
-            <h2 className="text-sm font-semibold text-encre uppercase tracking-wider mb-4">Vos données, en bref</h2>
-            <ul className="space-y-3">
-              {[
-                "Nous ne stockons pas votre adresse e-mail, votre nom, ni aucune donnée personnelle.",
-                "Nous dérivons un identifiant irréversible depuis votre compte — nous ne pouvons pas remonter jusqu'à vous.",
-                "Nous stockons uniquement votre progression : un niveau cumulé par règle de grammaire.",
-                "Volume total des données : moins de 1,2 Ko.",
-                "Un mode sans inscription est toujours disponible si vous préférez ne rien stocker.",
-              ].map((text, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-tricolore-bleu/10 flex items-center justify-center">
-                    <svg className="w-3 h-3 text-tricolore-bleu" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </span>
-                  <span className="text-sm text-encre leading-relaxed">{text}</span>
-                </li>
-              ))}
-            </ul>
+              <h2 className="text-sm font-semibold text-encre uppercase tracking-wider mb-4">{t.login.privacySummaryTitle}</h2>
+              <ul className="space-y-3">
+                {t.login.privacyBullets.map((text, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-tricolore-bleu/10 flex items-center justify-center">
+                      <svg className="w-3 h-3 text-tricolore-bleu" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    <span className="text-sm text-encre leading-relaxed">{text}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
@@ -147,7 +142,7 @@ export default function LoginPage() {
               className="w-4 h-4 rounded border-craie text-tricolore-bleu cursor-pointer"
             />
             <span className="text-sm text-ardoise group-hover:text-encre transition-colors">
-              Ne plus afficher ce message
+              {t.login.dontShowAgain}
             </span>
           </label>
 
@@ -158,35 +153,35 @@ export default function LoginPage() {
               disabled={loggingIn}
               className="w-full px-6 py-3 bg-tricolore-bleu text-white font-medium rounded-xl hover:bg-encre-light transition-colors cursor-pointer disabled:opacity-60"
             >
-              {loggingIn ? "Connexion…" : "Se connecter (dev)"}
+              {t.login.loginButton(loggingIn)}
             </button>
             <Link
               href="/"
               className="w-full px-6 py-3 text-center border border-craie text-ardoise font-medium rounded-xl hover:bg-papier-warm transition-colors text-sm"
             >
-              Rester anonyme →
+              {t.login.stayAnonymous}
             </Link>
           </div>
 
           {/* Dev-mode: test denied flow */}
           <div className="mt-6 pt-6 border-t border-craie">
             <p className="text-[10px] uppercase tracking-widest text-ardoise/35 mb-3 text-center">
-              Mode développement
+              {t.login.devModeLabel}
             </p>
             <button
               onClick={() => void handleDenied()}
               disabled={loggingIn}
               className="w-full px-6 py-2.5 text-center border border-craie/60 text-ardoise/50 font-medium rounded-xl hover:bg-papier-warm hover:text-ardoise transition-colors text-sm disabled:opacity-40 cursor-pointer"
             >
-              Simuler un accès refusé →
+              {t.login.simulateDenied}
             </button>
           </div>
 
           {/* Footer link */}
           <p className="mt-6 text-center text-xs text-ardoise/60">
-            En savoir plus →{" "}
+            {t.login.learnMorePrefix}{" "}
             <Link href="/privacy" className="hover:text-tricolore-bleu transition-colors underline">
-              Politique de confidentialité
+              {t.login.privacyPolicyLink}
             </Link>
           </p>
         </div>

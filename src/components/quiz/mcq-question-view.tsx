@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Choice, MultipleChoiceQuestion, Rule } from "~/data/types";
 import { renderWithBlanks } from "~/lib/quiz-helpers";
+import { t } from "~/lang";
 
 export function McqQuestionView({
   question,
@@ -25,7 +26,7 @@ export function McqQuestionView({
       <div className="mb-8">
         <div className="flex items-center justify-between mb-3">
           <p className="text-xs font-medium text-ardoise uppercase tracking-wider">
-            Question {questionNum}
+            {t.quiz.questionLabel(questionNum)}
           </p>
           <div className="flex items-center gap-1.5 text-[11px] text-ardoise/60">
             <span className="hidden sm:inline">{rule?.title ? `${rule.title} · ` : ""}</span>
@@ -34,7 +35,7 @@ export function McqQuestionView({
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 font-mono hover:text-tricolore-bleu transition-colors"
-              title="Ouvrir dans l'inspecteur"
+              title={t.quiz.openInspectorTitle}
             >
               {question.id}
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -75,8 +76,8 @@ export function McqQuestionView({
             onClick={onNext}
             className="mt-6 w-full sm:w-auto px-8 py-3 bg-tricolore-bleu text-white font-medium rounded-xl hover:bg-encre-light transition-colors duration-200 cursor-pointer"
           >
-            Question suivante
-            <span className="ml-2 text-white/50 text-sm">Entrée ↵</span>
+            {t.quiz.nextButton}
+            <span className="ml-2 text-white/50 text-sm">{t.quiz.enterHint}</span>
           </button>
         </div>
       )}
@@ -183,7 +184,7 @@ export function McqExplanationPanel({
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <span className="font-semibold text-correct">Bonne réponse !</span>
+            <span className="font-semibold text-correct">{t.quiz.correctAnswer}</span>
           </>
         ) : (
           <>
@@ -192,7 +193,7 @@ export function McqExplanationPanel({
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </div>
-            <span className="font-semibold text-incorrect">Mauvaise réponse</span>
+            <span className="font-semibold text-incorrect">{t.quiz.wrongAnswer}</span>
           </>
         )}
       </div>
@@ -202,7 +203,7 @@ export function McqExplanationPanel({
       {!wasCorrect && (
         <div className="mt-4 pt-4 border-t border-incorrect-border/50">
           <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-1">
-            La bonne réponse : {correctChoice.text}
+            {t.quiz.correctAnswerLabel} {correctChoice.text}
           </p>
           <p className="text-sm text-encre leading-relaxed">{correctChoice.explanation}</p>
         </div>

@@ -6,6 +6,7 @@ import {
   parsePhrase,
   type InputResult,
 } from "~/lib/quiz-helpers";
+import { t } from "~/lang";
 
 export function InputQuestionView({
   question,
@@ -84,13 +85,13 @@ export function InputQuestionView({
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-3">
             <p className="text-xs font-medium text-ardoise uppercase tracking-wider">
-              Question {questionNum}
+              {t.quiz.questionLabel(questionNum)}
             </p>
             <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tricolore-bleu/8 text-tricolore-bleu text-[10px] font-semibold uppercase tracking-wider">
               <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
               </svg>
-              saisie
+              {t.quiz.inputBadge}
             </span>
           </div>
           <div className="flex items-center gap-1.5 text-[11px] text-ardoise/60">
@@ -100,7 +101,7 @@ export function InputQuestionView({
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 font-mono hover:text-tricolore-bleu transition-colors"
-              title="Ouvrir dans l'inspecteur"
+              title={t.quiz.openInspectorTitle}
             >
               {question.id}
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -117,7 +118,7 @@ export function InputQuestionView({
       {/* Sentence with inline input */}
       <div className="mb-8 py-6 px-5 rounded-xl bg-tricolore-blanc border border-craie">
         <p className="text-xl md:text-2xl font-medium text-encre leading-relaxed inline">
-          <span>«&nbsp;{before}</span>
+          <span>«\u00a0{before}</span>
           <span className="inline-flex items-baseline mx-0.5">
             <span className="relative">
               <input
@@ -145,7 +146,7 @@ export function InputQuestionView({
               />
             </span>
           </span>
-          <span>{after}&nbsp;»</span>
+          <span>{after}\u00a0»</span>
         </p>
       </div>
 
@@ -163,8 +164,8 @@ export function InputQuestionView({
               }
             `}
           >
-            Valider
-            <span className={`ml-2 text-sm ${userInput.trim() ? "text-white/40" : "text-ardoise/40"}`}>Entrée ↵</span>
+            {t.quiz.submitButton}
+            <span className={`ml-2 text-sm ${userInput.trim() ? "text-white/40" : "text-ardoise/40"}`}>{t.quiz.enterHint}</span>
           </button>
         </div>
       )}
@@ -189,8 +190,8 @@ export function InputQuestionView({
             }}
             className="mt-6 w-full sm:w-auto px-8 py-3 bg-tricolore-bleu text-white font-medium rounded-xl hover:bg-encre-light transition-colors duration-200 cursor-pointer"
           >
-            Question suivante
-            <span className="ml-2 text-white/50 text-sm">Entrée ↵</span>
+            {t.quiz.nextButton}
+            <span className="ml-2 text-white/50 text-sm">{t.quiz.enterHint}</span>
           </button>
         </div>
       )}
@@ -218,7 +219,7 @@ export function InputFeedbackPanel({
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <span className="font-semibold text-correct">Bonne réponse !</span>
+            <span className="font-semibold text-correct">{t.quiz.correctAnswer}</span>
           </div>
           <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
         </div>
@@ -234,14 +235,14 @@ export function InputFeedbackPanel({
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <span className="font-semibold text-warning">Bonne réponse !</span>
+            <span className="font-semibold text-warning">{t.quiz.correctAnswer}</span>
           </div>
           <div className="flex items-start gap-2 mb-3 px-3 py-2 rounded-lg bg-warning/5 border border-warning/15">
             <svg className="w-4 h-4 text-warning shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
             <p className="text-sm text-encre">
-              Attention à la casse : la bonne écriture est <strong>« {result.matchedAnswer} »</strong>, pas « {userInput} ».
+              {t.quiz.caseWarningBefore} <strong>«\u00a0{result.matchedAnswer}\u00a0»</strong>, {t.quiz.caseWarningAfter} «\u00a0{userInput}\u00a0».
             </p>
           </div>
           <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
@@ -258,12 +259,12 @@ export function InputFeedbackPanel({
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </div>
-            <span className="font-semibold text-incorrect">Mauvaise réponse</span>
+            <span className="font-semibold text-incorrect">{t.quiz.wrongAnswer}</span>
           </div>
           <p className="text-sm text-encre leading-relaxed">{result.wrongExplanation}</p>
           <div className="mt-4 pt-4 border-t border-incorrect-border/50">
             <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-1">
-              La bonne réponse : {question.answer}
+              {t.quiz.correctAnswerLabel} {question.answer}
             </p>
             <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
           </div>
@@ -280,10 +281,10 @@ export function InputFeedbackPanel({
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
               </svg>
             </div>
-            <span className="font-semibold text-warning">Presque !</span>
+            <span className="font-semibold text-warning">{t.quiz.correctAnswer}</span>
           </div>
           <p className="text-sm text-encre leading-relaxed mb-3">
-            Vous vouliez probablement dire <strong>« {result.matchedAnswer} »</strong> — c&apos;est la bonne réponse, mais l&apos;orthographe compte !
+            {t.quiz.typoCorrectBefore} <strong>«\u00a0{result.matchedAnswer}\u00a0»</strong> {t.quiz.typoCorrectAfter}
           </p>
           <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
         </div>
@@ -299,15 +300,15 @@ export function InputFeedbackPanel({
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
               </svg>
             </div>
-            <span className="font-semibold text-warning">Presque, mais non</span>
+            <span className="font-semibold text-warning">{t.quiz.correctAnswer}</span>
           </div>
           <p className="text-sm text-encre leading-relaxed mb-3">
-            Vous vouliez probablement dire <strong>« {result.matchedAnswer} »</strong> — c&apos;est incorrect.
+            {t.quiz.typoWrongBefore} <strong>«\u00a0{result.matchedAnswer}\u00a0»</strong> {t.quiz.typoWrongAfter}
           </p>
           <p className="text-sm text-encre leading-relaxed">{result.wrongExplanation}</p>
           <div className="mt-4 pt-4 border-t border-warning-border/50">
             <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-1">
-              La bonne réponse : {question.answer}
+              {t.quiz.correctAnswerLabel} {question.answer}
             </p>
             <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
           </div>
@@ -324,14 +325,14 @@ export function InputFeedbackPanel({
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01" />
               </svg>
             </div>
-            <span className="font-semibold text-ardoise">Réponse inattendue</span>
+            <span className="font-semibold text-ardoise">{t.quiz.unexpectedAnswer}</span>
           </div>
           <p className="text-sm text-encre leading-relaxed mb-1">
-            « {userInput} » ne correspond à aucune réponse prévue.
+            {t.quiz.unexpectedDetails(userInput)}
           </p>
           <div className="mt-4 pt-4 border-t border-incorrect-border/50">
             <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-1">
-              La bonne réponse : {question.answer}
+              {t.quiz.correctAnswerLabel} {question.answer}
             </p>
             <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
           </div>

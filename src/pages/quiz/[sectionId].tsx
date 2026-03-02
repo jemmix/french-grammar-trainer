@@ -9,6 +9,7 @@ import { McqQuestionView } from "~/components/quiz/mcq-question-view";
 import { InputQuestionView } from "~/components/quiz/input-question-view";
 import { ScoreSummary } from "~/components/quiz/score-summary";
 import { shuffleArray, QUESTIONS_PER_QUIZ } from "~/lib/quiz-helpers";
+import { t } from "~/lang";
 
 export default function QuizPage() {
   const router = useRouter();
@@ -119,9 +120,9 @@ export default function QuizPage() {
     return (
       <div className="min-h-screen bg-papier flex items-center justify-center">
         <div className="text-center animate-fade-in">
-          <p className="text-ardoise text-lg mb-4">Section introuvable</p>
+          <p className="text-ardoise text-lg mb-4">{t.quiz.sectionNotFound}</p>
           <Link href="/" className="text-tricolore-bleu font-medium hover:underline">
-            Retour à l&apos;accueil
+            {t.shared.backToHome}
           </Link>
         </div>
       </div>
@@ -131,7 +132,7 @@ export default function QuizPage() {
   if (quizQuestions.length === 0) {
     return (
       <div className="min-h-screen bg-papier flex items-center justify-center">
-        <div className="text-ardoise">Chargement...</div>
+        <div className="text-ardoise">{t.shared.loading}</div>
       </div>
     );
   }
@@ -141,7 +142,7 @@ export default function QuizPage() {
   return (
     <>
       <Head>
-        <title>{section.title} — Grammaire Française B1</title>
+        <title>{section.title} — {t.meta.appTitle}</title>
       </Head>
 
       <div className="min-h-screen bg-papier">
@@ -155,7 +156,7 @@ export default function QuizPage() {
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
-              Sections
+              {t.shared.sections}
             </Link>
             {!finished && (
               <span className="text-sm font-medium text-encre tabular-nums">
@@ -164,7 +165,7 @@ export default function QuizPage() {
             )}
             {!finished && (
               <span className="text-sm font-semibold text-tricolore-bleu tabular-nums">
-                {score} pt{score !== 1 ? "s" : ""}
+                {t.quiz.points(score)}
               </span>
             )}
           </div>

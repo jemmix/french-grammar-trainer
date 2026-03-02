@@ -4,7 +4,8 @@ import Link from "next/link";
 import { sectionsIndex } from "~/data/sections-index";
 import { useProgress } from "~/contexts/progress-context";
 import { ProgressRing } from "~/components/progress-ring";
-import { getTier } from "~/lib/constants";
+import { getTier } from "~/lib/tiers";
+import { t } from "~/lang";
 
 export default function Home() {
   const [revealed, setRevealed] = useState(false);
@@ -27,8 +28,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Grammaire Française B1</title>
-        <meta name="description" content="Entraînement à la grammaire française niveau B1" />
+        <title>{t.meta.appTitle}</title>
+        <meta name="description" content={t.meta.description} />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -51,15 +52,14 @@ export default function Home() {
                     <div className="w-1.5 h-8 rounded-full bg-tricolore-rouge" />
                   </div>
                   <p className="text-sm font-medium tracking-widest uppercase text-ardoise">
-                    Niveau B1
+                    {t.meta.levelLabel}
                   </p>
                 </div>
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-encre">
-                  Grammaire Française
+                  {t.home.heading}
                 </h1>
                 <p className="mt-3 text-lg text-ardoise max-w-2xl">
-                  Maîtrisez les règles essentielles de la grammaire française à travers
-                  des exercices interactifs. Choisissez une section pour commencer.
+                  {t.home.subtitle}
                 </p>
               </div>
 
@@ -72,13 +72,13 @@ export default function Home() {
                         href="/my-data"
                         className="text-xs text-ardoise hover:text-encre transition-colors"
                       >
-                        Mes données
+                        {t.home.myDataLink}
                       </Link>
                       <button
                         onClick={() => void logout()}
                         className="text-xs text-ardoise hover:text-encre transition-colors cursor-pointer"
                       >
-                        Se déconnecter
+                        {t.home.logout}
                       </button>
                       {userId && (
                         <span className="text-[10px] font-mono text-ardoise/40">
@@ -91,7 +91,7 @@ export default function Home() {
                       href="/login"
                       className="text-xs text-tricolore-bleu hover:text-encre transition-colors"
                     >
-                      Se connecter
+                      {t.home.login}
                     </Link>
                   )}
                 </div>
@@ -120,16 +120,16 @@ export default function Home() {
               <div className="flex items-center justify-between gap-4 flex-1 min-w-0">
                 <div className="min-w-0">
                   <p className="font-semibold text-encre text-base mb-0.5">
-                    Apprendre librement
+                    {t.home.learnFreelyTitle}
                   </p>
                   <p className="text-sm text-ardoise">
                     {isLoggedIn
-                      ? "20 questions adaptées à votre niveau"
-                      : "20 questions de tous les sujets"}
+                      ? t.home.learnFreelySubLogged
+                      : t.home.learnFreelySubAnon}
                   </p>
                 </div>
                 <div className="flex items-center gap-2 text-tricolore-bleu font-medium text-sm shrink-0">
-                  Commencer
+                  {t.home.startButton}
                   <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -184,10 +184,10 @@ export default function Home() {
         {/* Footer */}
         <footer className="border-t border-craie py-8 text-center text-sm text-ardoise">
           <p>
-            Grammaire Française B1 — Entraînement interactif
+            {t.home.footerTagline}
             <span className="mx-2 opacity-30">·</span>
             <Link href="/privacy" className="hover:text-encre transition-colors">
-              Confidentialité
+              {t.home.privacyLink}
             </Link>
           </p>
           {hiddenCount > 0 && (
@@ -197,7 +197,7 @@ export default function Home() {
             >
               <span className="block h-px w-6 bg-current transition-[width] duration-300 group-hover:w-10" />
               <span className="tracking-wide">
-                {revealed ? "réduire" : `+${hiddenCount} sections à venir`}
+                {revealed ? t.home.hiddenCollapse : t.home.hiddenReveal(hiddenCount)}
               </span>
               <span className="block h-px w-6 bg-current transition-[width] duration-300 group-hover:w-10" />
             </button>
@@ -247,7 +247,7 @@ function SectionCardContent({
               : "bg-papier-warm text-ardoise border border-craie"
           }`}
         >
-          {available ? `${section.questionCount} questions` : "Bientôt"}
+          {available ? `${section.questionCount} questions` : t.home.comingSoon}
         </span>
       </div>
       <h2 className="text-base font-semibold text-encre leading-snug mb-2">
@@ -258,7 +258,7 @@ function SectionCardContent({
       </p>
       {available && (
         <div className="mt-4 flex items-center gap-1.5 text-sm font-medium text-tricolore-bleu opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          Commencer
+          {t.home.startButton}
           <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
