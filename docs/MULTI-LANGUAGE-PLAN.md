@@ -4,7 +4,8 @@
 
 Make the grammar trainer deployable for any language, selected at build time.
 Each deployment serves exactly one language — no runtime switching. English (B1)
-is the first addition. The French/Le Monde aesthetic stays for all languages.
+is the first addition. English means **American English** (spelling, vocabulary,
+and grammar conventions). The French/Le Monde aesthetic stays for all languages.
 
 ---
 
@@ -19,6 +20,11 @@ is the first addition. The French/Le Monde aesthetic stays for all languages.
 4. **Shared infrastructure, separate content**: progress blob format, API routes,
    auth, quiz engine, and components are language-neutral. Only string bundles,
    section data files, and table-of-contents files are per-language.
+5. **Per-language icons, shared aesthetic**: the tricolore favicon and flag motif
+   are French-specific. Each language gets its own icon set and accent colors.
+   Everything else (layout, typography, Le Monde feel) stays identical.
+6. **Automated completeness enforcement**: TypeScript's type system and a build-
+   time script guarantee that no string or asset is missing for any language.
 
 ---
 
@@ -146,8 +152,9 @@ language-aware. Scripts accept `--lang`.
 
 ### Phase 3 — English content: ToC and question generation
 
-1. **Write `content/en/TABLE_OF_CONTENTS.md`** — 28 sections of English B1
-   grammar, 20 rules each. Suggested topic list (aligned to CEFR B1):
+1. **Write `content/en/TABLE_OF_CONTENTS.md`** — 28 sections of American English
+   B1 grammar, 20 rules each. All content, examples, and spelling use American
+   English conventions. Suggested topic list (aligned to CEFR B1):
 
    ```
    01  Present Simple & Continuous
@@ -194,7 +201,83 @@ language-aware. Scripts accept `--lang`.
 **Commit checkpoint**: `NEXT_PUBLIC_LANG=en` produces a fully functional English
 grammar trainer.
 
-### Phase 4 — Loose ends and polish
+### Phase 4 — Per-language icons and branding accents
+
+The French tricolore is baked into the favicon (SVG flag), all PNG/ICO variants,
+the `site.webmanifest`, the homepage flag motif (three colored bars), the
+`::selection` background color, and the `theme-color` meta tag. For English this
+would look out of place — each language needs its own icon set and accent.
+
+**Current French-specific assets:**
+
+| Asset | Location | What's French |
+|-------|----------|---------------|
+| Favicon SVG | `public/favicon.svg` | Tricolore flag |
+| Favicon ICO/PNG (4 sizes) | `public/favicon*.{ico,png}`, `public/apple-touch-icon.png`, `public/android-chrome-*.png` | Generated from tricolore |
+| Web manifest | `public/site.webmanifest` | `name: "Grammaire Française B1"`, `theme_color: "#002654"` |
+| Homepage flag motif | `src/pages/index.tsx` | Three bars: `bg-tricolore-bleu`, `bg-craie`, `bg-tricolore-rouge` |
+| Selection color | `src/styles/globals.css` | `::selection { background: tricolore-bleu }` |
+| Theme-color meta | `src/pages/index.tsx` `<Head>` | `#002654` |
+| CSS color tokens | `src/styles/globals.css` `@theme` | `--color-tricolore-bleu/rouge/blanc` |
+
+**Target structure:**
+
+```
+public/
+  fr/
+    favicon.svg
+    favicon.ico
+    favicon-16x16.png
+    favicon-32x32.png
+    apple-touch-icon.png
+    android-chrome-192x192.png
+    android-chrome-512x512.png
+    site.webmanifest
+  en/
+    favicon.svg           # e.g. Union Jack or a book/pen motif
+    ... (same set)
+    site.webmanifest      # name: "English Grammar B1"
+```
+
+**Steps:**
+
+1. **Move favicons** into `public/{lang}/` subdirectories.
+
+2. **Make `<Head>` favicon links language-aware** — point at `/fr/favicon.svg`
+   etc. based on `NEXT_PUBLIC_LANG`. Since these are static `<link>` tags in
+   `<Head>`, they can reference `t.meta.faviconPrefix` or a simple
+   `/${lang}/` path prefix.
+
+3. **Add per-language accent colors** to the lang bundle:
+   ```ts
+   // in LangStrings
+   accent: {
+     primary: string;    // fr: "#002654" (bleu), en: TBD
+     secondary: string;  // fr: "#CE1126" (rouge), en: TBD
+     selection: string;  // used for ::selection
+     themeColor: string; // <meta name="theme-color">
+   }
+   ```
+   CSS custom properties (`--color-tricolore-bleu` etc.) get renamed to
+   generic names (`--color-accent-primary`, `--color-accent-secondary`) and
+   are set dynamically from the lang bundle in `_app.tsx` or `_document.tsx`
+   via inline `<style>`.
+
+4. **Replace the homepage flag motif** with a language-aware element. Options:
+   - An inline SVG per language (flag bars → different flag bars or an icon)
+   - A generic decorative element (e.g. a grammar-themed icon) shared by all
+     languages — simplest but loses the French charm
+   - Let the lang bundle supply the motif as a React component:
+     `t.brand.HeaderMotif` (a small SVG component)
+
+   Recommended: supply per-language SVG motifs in the lang bundle. The French
+   tricolore bars stay; English gets something appropriate (e.g. a pen nib, a
+   Union Jack accent, or a simple shield).
+
+5. **Design and generate English icon set** — create the `favicon.svg` and
+   generate all PNG sizes from it.
+
+### Phase 5 — Loose ends and polish
 
 1. **HTML `lang` attribute**: set `<html lang={lang}>` in `_document.tsx` based
    on `NEXT_PUBLIC_LANG`.
@@ -237,7 +320,160 @@ grammar trainer.
 | Scripts | No `--lang` flag | `--lang` flag on generate/convert |
 | `sections-index.ts` | Direct imports | Conditional per-language barrel |
 | Page titles | Hardcoded | From lang bundle |
+| Favicons & icons | `public/` (single set) | `public/{lang}/` per-language sets |
+| Accent colors | Tricolore CSS vars | Generic `--color-accent-*` from lang bundle |
+| Homepage motif | French flag bars | Per-language SVG motif |
 | `<html lang>` | Unset | Set from env var |
+
+---
+
+## Automated Completeness Enforcement
+
+### Problem
+
+With ~150 UI strings, 28 section metadata entries, 7+ icon files, and a manifest
+per language, it's easy for a new language to ship with missing strings or for an
+existing language to fall behind after a UI change. We need both compile-time and
+build-time checks.
+
+### Strategy 1 — TypeScript does most of the work (compile-time)
+
+The `LangStrings` type is the single source of truth. Every language bundle must
+satisfy it — a missing key is a type error. This is the strongest guarantee and
+costs nothing at runtime.
+
+```ts
+// src/lang/types.ts
+export interface LangStrings {
+  meta: {
+    title: string;          // "Grammaire Française B1"
+    description: string;
+    langCode: string;       // "fr"
+    langName: string;       // "Français"
+    level: string;          // "B1"
+  };
+  home: {
+    heading: string;
+    subtitle: string;
+    startButton: string;
+    // ... every key explicitly listed
+  };
+  quiz: { /* ... */ };
+  // ...
+}
+```
+
+Each bundle file (`fr.ts`, `en.ts`) uses `satisfies LangStrings` — the compiler
+rejects any missing or extra keys immediately:
+
+```ts
+// src/lang/fr.ts
+import type { LangStrings } from "./types";
+const fr = { /* ... */ } satisfies LangStrings;
+export default fr;
+```
+
+**What this catches automatically:**
+- Missing string keys in any language
+- Misspelled keys
+- Wrong value types (e.g. passing a number where a string is expected)
+- Structural mismatches (e.g. missing a sub-object like `quiz.feedback`)
+
+**What this does NOT catch:**
+- Empty strings (`""`) — technically valid TypeScript
+- Placeholder/untranslated values (e.g. leaving `"TODO"` in a string)
+- Missing icon files (not covered by TypeScript)
+- Missing section data files
+
+### Strategy 2 — Build-time completeness script (`scripts/check-lang.ts`)
+
+A script that runs in CI (and optionally in the pre-commit hook) to catch what
+TypeScript can't:
+
+```
+npx tsx scripts/check-lang.ts [--lang fr] [--lang en] [--all]
+```
+
+**Checks performed:**
+
+1. **No empty or placeholder strings** — scan every value in the lang bundle;
+   reject `""`, `"TODO"`, `"XXX"`, or any value that exactly matches a key from
+   another language (likely copy-paste that wasn't translated).
+
+2. **No untranslated duplicates** — for each key, compare the value across all
+   lang bundles. Flag any key where two languages have byte-identical values
+   (with an allowlist for legitimately identical strings like punctuation,
+   URLs, numbers). This catches forgotten copy-paste.
+
+3. **Icon file completeness** — for each language, verify that all expected files
+   exist under `public/{lang}/`:
+   ```
+   favicon.svg, favicon.ico, favicon-16x16.png, favicon-32x32.png,
+   apple-touch-icon.png, android-chrome-192x192.png,
+   android-chrome-512x512.png, site.webmanifest
+   ```
+
+4. **Manifest sanity** — parse each `site.webmanifest`, verify `name` and
+   `short_name` are non-empty and differ from other languages, verify icon paths
+   resolve to existing files.
+
+5. **Section data completeness** — for each language, verify:
+   - All 28 section data files exist in `src/data/{lang}/`
+   - Each section has a metadata entry in its barrel file
+   - Each section has exactly 20 rules
+   - Question count per section exceeds a minimum (e.g. ≥ 10)
+
+6. **ToC↔data consistency** — verify that `content/{lang}/TABLE_OF_CONTENTS.md`
+   lists the same 28 sections × 20 rules as the compiled data files.
+
+### Strategy 3 — Detecting hardcoded natural-language strings (lint-time)
+
+The trickiest part of the migration is finding *all* hardcoded French strings in
+JSX so none are missed. Approaches:
+
+**A. ESLint rule — flag raw string literals in JSX**
+
+Use or write an ESLint rule that flags any JSX text node or `string` prop that
+contains Unicode letters (not just `className`, `href`, etc.). Existing options:
+
+- `eslint-plugin-react/jsx-no-literals` — flags any string literal in JSX.
+  Too noisy on its own but can be tuned with `allowedStrings` and
+  `ignoreProps` to suppress `className`, `href`, `aria-*`, etc.
+- Custom rule wrapping the above, with a tighter heuristic: only flag strings
+  containing `[À-ÿa-zA-Z]{2,}` (i.e. actual words, not `"/"` or `"1"`).
+
+After the Phase 1 migration this rule would run clean. Any future hardcoded
+string addition would be caught immediately.
+
+**B. Grep-based pre-commit check**
+
+A simpler, coarser alternative: a script that greps `.tsx` files for string
+patterns that look like natural-language text (contains spaces, starts with
+uppercase, contains accented characters, etc.) and are NOT wrapped in `t.`.
+
+```bash
+# Rough heuristic: find quoted strings ≥ 3 words in TSX files
+rg '"[A-ZÀ-Ÿ][^"]*\s+[^"]*\s+[^"]*"' src/ --type tsx --glob '!src/lang/**'
+```
+
+This is a supplement, not a replacement for Strategy A. Good as a quick sanity
+check.
+
+**C. One-time migration audit with Claude**
+
+Before starting Phase 1, run an agent that reads every `.tsx` file and produces
+a catalog of all hardcoded French strings with their file:line locations. Use
+this as the checklist for extraction. After extraction, re-run to verify the
+count drops to zero.
+
+**Recommended combination:**
+
+| Check | When | Catches |
+|-------|------|---------|
+| `LangStrings` type + `satisfies` | Compile (tsc) | Missing keys, wrong types |
+| `scripts/check-lang.ts` | CI + pre-commit | Empty strings, duplicates, missing assets, section gaps |
+| `jsx-no-literals` ESLint rule | Lint (editor + CI) | Future hardcoded strings sneaking back in |
+| One-time audit agent | Before Phase 1 | Complete extraction checklist |
 
 ---
 
@@ -248,10 +484,11 @@ grammar trainer.
 | 1 — Extract strings | ~15 files, ~150 string sites, 3 new files | Medium |
 | 2 — Restructure dirs | Move files, update imports, update scripts | Small |
 | 3 — English content | Write ToC, generate 560 rules of questions | Large (mostly generation time) |
-| 4 — Polish | HTML lang, meta, CI, docs | Small |
+| 4 — Icons & branding | Per-language favicons, accent colors, motif | Small–Medium |
+| 5 — Polish | HTML lang, meta, CI, docs | Small |
 
-Phases 1–2 are prerequisites. Phase 3 is the big content push. Phase 4 is
-cleanup that can happen any time after phase 1.
+Phases 1–2 are prerequisites. Phase 3 is the big content push. Phase 4 can
+happen any time after phase 1. Phase 5 is cleanup.
 
 ---
 
