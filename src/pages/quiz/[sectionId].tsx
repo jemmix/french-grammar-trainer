@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
 import type { Question, RuleExplanation } from "~/data/types";
 import { sectionMap } from "~/data/sections-index";
@@ -31,9 +31,10 @@ export default function QuizPage() {
   const [showingInterstitial, setShowingInterstitial] = useState(false);
   const [interstitialExplanation, setInterstitialExplanation] = useState<RuleExplanation | null>(null);
   const [panelOpen, setPanelOpen] = useState(false);
+  const interstitialChecked = useRef(false);
 
-  // Determine weakest rule in section for interstitial
-  const initQuiz = useCallback(() => {
+  // Initialize quiz with shuffled questions (only depends on section identity)
+  useEffect(() => {
     if (!section) return;
     const shuffled = shuffleArray(section.questions);
     const selected = shuffled.slice(0, Math.min(QUESTIONS_PER_QUIZ, shuffled.length));
@@ -41,37 +42,36 @@ export default function QuizPage() {
       q.type === "mcq" ? { ...q, choices: shuffleArray(q.choices) } : q,
     );
     setQuizQuestions(withShuffledChoices);
+  }, [section]);
 
-    // Find weakest rule for interstitial
+  // Check interstitial once on mount (uses getRulePower at initial load only)
+  useEffect(() => {
+    if (!section || interstitialChecked.current) return;
+    interstitialChecked.current = true;
+
     const rulesWithQs = section.rules.filter((r) =>
       section.questions.some((q) => q.ruleId === r.id),
     );
-    if (rulesWithQs.length > 0) {
-      let weakestRule = rulesWithQs[0]!;
-      let weakestWeight = -1;
-      for (const rule of rulesWithQs) {
-        const power = getRulePower(rule.id);
-        const w = ruleWeight(power, power > 0);
-        if (w > weakestWeight) {
-          weakestWeight = w;
-          weakestRule = rule;
-        }
-      }
-      const power = getRulePower(weakestRule.id);
-      const explanation = getExplanation(section, weakestRule.id);
-      if (explanation && power < 0.20) {
-        setShowingInterstitial(true);
-        setInterstitialExplanation(explanation);
-      }
-    }
-  }, [section, getRulePower]);
+    if (rulesWithQs.length === 0) return;
 
-  // Initialize quiz with shuffled questions
-  useEffect(() => {
-    if (section) {
-      initQuiz();
+    let weakestRule = rulesWithQs[0]!;
+    let weakestWeight = -1;
+    for (const rule of rulesWithQs) {
+      const power = getRulePower(rule.id);
+      const w = ruleWeight(power, power > 0);
+      if (w > weakestWeight) {
+        weakestWeight = w;
+        weakestRule = rule;
+      }
     }
-  }, [section, initQuiz]);
+    const power = getRulePower(weakestRule.id);
+    const explanation = getExplanation(section, weakestRule.id);
+    if (explanation && power < 0.20) {
+      setShowingInterstitial(true);
+      setInterstitialExplanation(explanation);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [section]);
 
   const currentQuestion = quizQuestions[currentIndex];
   const totalQuestions = quizQuestions.length;
