@@ -78,7 +78,7 @@ export interface LangStrings {
     viewExplanation: string;             // "View explanation"
     closeExplanation: string;            // "Close"
     startPractice: string;               // "Start practice"
-    skipExplanation: string;             // "Skip"
+
     interstitialIntro: string;           // "Review this rule before practicing:"
     examples: string;                    // "Examples"
     openInspectorTitle: string;          // tooltip on question ID link

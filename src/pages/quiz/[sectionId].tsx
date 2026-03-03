@@ -198,7 +198,7 @@ export default function QuizPage() {
         <RuleExplanationInterstitial
           explanation={interstitialExplanation}
           onStart={() => setShowingInterstitial(false)}
-          onSkip={() => setShowingInterstitial(false)}
+
         />
       </>
     );

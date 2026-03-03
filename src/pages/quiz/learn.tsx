@@ -182,7 +182,7 @@ export default function LearnPage() {
         <RuleExplanationInterstitial
           explanation={interstitialExplanation}
           onStart={() => setShowingInterstitial(false)}
-          onSkip={() => setShowingInterstitial(false)}
+
         />
       </>
     );

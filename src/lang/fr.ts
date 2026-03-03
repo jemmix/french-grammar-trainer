@@ -53,7 +53,7 @@ const fr = {
     viewExplanation: "Voir l\u2019explication",
     closeExplanation: "Fermer",
     startPractice: "Commencer",
-    skipExplanation: "Passer",
+
     interstitialIntro: "Révisez cette règle avant de pratiquer\u00a0:",
     examples: "Exemples",
     openInspectorTitle: "Ouvrir dans l\u2019inspecteur",

@@ -53,7 +53,7 @@ const en = {
     viewExplanation: "View explanation",
     closeExplanation: "Close",
     startPractice: "Start practice",
-    skipExplanation: "Skip",
+
     interstitialIntro: "Review this rule before practicing:",
     examples: "Examples",
     openInspectorTitle: "Open in inspector",

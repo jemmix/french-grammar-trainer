@@ -5,11 +5,9 @@ import { RenderMiniMarkdown } from "./explanation-panel";
 export function RuleExplanationInterstitial({
   explanation,
   onStart,
-  onSkip,
 }: {
   explanation: RuleExplanation;
   onStart: () => void;
-  onSkip: () => void;
 }) {
   return (
     <div className="min-h-screen bg-papier flex items-center justify-center px-4 py-12 animate-fade-in">
@@ -51,21 +49,13 @@ export function RuleExplanationInterstitial({
             </ul>
           </div>
 
-          {/* Actions */}
-          <div className="flex flex-col items-center gap-3">
-            <button
-              onClick={onStart}
-              className="w-full py-3 px-6 rounded-lg bg-tricolore-bleu text-tricolore-blanc font-semibold text-base transition-all hover:bg-tricolore-bleu/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tricolore-bleu/50 focus-visible:ring-offset-2"
-            >
-              {t.quiz.startPractice}
-            </button>
-            <button
-              onClick={onSkip}
-              className="text-sm text-ardoise hover:text-encre transition-colors py-1"
-            >
-              {t.quiz.skipExplanation}
-            </button>
-          </div>
+          {/* Action */}
+          <button
+            onClick={onStart}
+            className="w-full py-3 px-6 rounded-lg bg-tricolore-bleu text-tricolore-blanc font-semibold text-base transition-all hover:bg-tricolore-bleu/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tricolore-bleu/50 focus-visible:ring-offset-2"
+          >
+            {t.quiz.startPractice}
+          </button>
         </div>
       </div>
     </div>

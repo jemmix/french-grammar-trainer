@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, type JSX } from "react";
+import { useEffect, type JSX } from "react";
 import type { RuleExplanation } from "~/data/types";
 import { t } from "~/lang";
 
@@ -33,8 +33,6 @@ export function ExplanationPanel({
   isOpen: boolean;
   onClose: () => void;
 }) {
-  const panelRef = useRef<HTMLDivElement>(null);
-
   // Close on Escape
   useEffect(() => {
     if (!isOpen) return;
@@ -45,103 +43,70 @@ export function ExplanationPanel({
     return () => window.removeEventListener("keydown", handler);
   }, [isOpen, onClose]);
 
-  // Close on click outside (backdrop)
-  const handleBackdropClick = useCallback(
-    (e: React.MouseEvent) => {
-      if (panelRef.current && !panelRef.current.contains(e.target as Node)) {
-        onClose();
-      }
-    },
-    [onClose],
-  );
-
   return (
-    <>
-      {/* Backdrop — mobile only */}
-      <div
-        className={`fixed inset-0 z-40 bg-encre/30 transition-opacity duration-300 lg:hidden ${
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-        onClick={handleBackdropClick}
-        aria-hidden="true"
-      />
-
-      {/* Desktop backdrop (subtle) */}
-      <div
-        className={`fixed inset-0 z-40 bg-encre/10 transition-opacity duration-300 hidden lg:block ${
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-        onClick={handleBackdropClick}
-        aria-hidden="true"
-      />
-
-      {/* Panel — bottom sheet on mobile, side panel on desktop */}
-      <div
-        ref={panelRef}
-        role="dialog"
-        aria-modal="true"
-        aria-label={explanation.title}
-        className={`
-          fixed z-50 bg-tricolore-blanc shadow-lg transition-transform duration-300 ease-out
-          /* Mobile: bottom sheet */
-          inset-x-0 bottom-0 max-h-[80vh] rounded-t-2xl
-          /* Desktop: right side panel */
-          lg:inset-y-0 lg:right-0 lg:left-auto lg:bottom-auto lg:max-h-none lg:rounded-t-none lg:rounded-l-2xl lg:w-[380px]
-          ${isOpen
-            ? "translate-y-0 lg:translate-y-0 lg:translate-x-0"
-            : "translate-y-full lg:translate-y-0 lg:translate-x-full"
-          }
-        `}
-      >
-        {/* Mobile drag indicator */}
-        <div className="flex justify-center pt-3 pb-1 lg:hidden">
-          <div className="w-10 h-1 rounded-full bg-craie" />
-        </div>
-
-        {/* Header */}
-        <div className="flex items-start justify-between px-5 pt-3 pb-2 lg:pt-5">
-          <h3 className="text-lg font-semibold text-encre leading-snug pr-4">
-            {explanation.title}
-          </h3>
-          <button
-            onClick={onClose}
-            className="shrink-0 p-1.5 -mr-1.5 rounded-lg text-ardoise hover:text-encre hover:bg-craie/50 transition-colors"
-            aria-label={t.quiz.closeExplanation}
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        {/* Scrollable content */}
-        <div className="overflow-y-auto px-5 pb-6 max-h-[calc(80vh-4rem)] lg:max-h-[calc(100vh-5rem)]">
-          {/* Body */}
-          <div className="text-[15px] text-encre/90 leading-relaxed mb-5">
-            <RenderMiniMarkdown text={explanation.body} />
-          </div>
-
-          {/* Examples */}
-          <h4 className="text-xs font-medium text-ardoise uppercase tracking-wider mb-3">
-            {t.quiz.examples}
-          </h4>
-          <ul className="space-y-2.5">
-            {explanation.examples.map((ex, i) => (
-              <li
-                key={i}
-                className="flex gap-2.5 text-sm text-encre/85 leading-relaxed"
-              >
-                <span className="text-tricolore-bleu/50 mt-0.5 shrink-0">
-                  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 16 16">
-                    <circle cx="8" cy="8" r="3" />
-                  </svg>
-                </span>
-                <span><RenderMiniMarkdown text={ex} /></span>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <div
+      role="complementary"
+      aria-label={explanation.title}
+      className={`
+        fixed z-50 bg-tricolore-blanc shadow-lg transition-transform duration-300 ease-out
+        /* Mobile: bottom sheet */
+        inset-x-0 bottom-0 max-h-[80vh] rounded-t-2xl
+        /* Desktop: right side panel */
+        lg:inset-y-0 lg:right-0 lg:left-auto lg:bottom-auto lg:max-h-none lg:rounded-t-none lg:rounded-l-2xl lg:w-[380px]
+        ${isOpen
+          ? "translate-y-0 lg:translate-y-0 lg:translate-x-0"
+          : "translate-y-full lg:translate-y-0 lg:translate-x-full"
+        }
+      `}
+    >
+      {/* Mobile drag indicator */}
+      <div className="flex justify-center pt-3 pb-1 lg:hidden">
+        <div className="w-10 h-1 rounded-full bg-craie" />
       </div>
-    </>
+
+      {/* Header */}
+      <div className="flex items-start justify-between px-5 pt-3 pb-2 lg:pt-5">
+        <h3 className="text-lg font-semibold text-encre leading-snug pr-4">
+          {explanation.title}
+        </h3>
+        <button
+          onClick={onClose}
+          className="shrink-0 p-1.5 -mr-1.5 rounded-lg text-ardoise hover:text-encre hover:bg-craie/50 transition-colors"
+          aria-label={t.quiz.closeExplanation}
+        >
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Scrollable content */}
+      <div className="overflow-y-auto px-5 pb-6 max-h-[calc(80vh-4rem)] lg:max-h-[calc(100vh-5rem)]">
+        {/* Body */}
+        <div className="text-[15px] text-encre/90 leading-relaxed mb-5">
+          <RenderMiniMarkdown text={explanation.body} />
+        </div>
+
+        {/* Examples */}
+        <h4 className="text-xs font-medium text-ardoise uppercase tracking-wider mb-3">
+          {t.quiz.examples}
+        </h4>
+        <ul className="space-y-2.5">
+          {explanation.examples.map((ex, i) => (
+            <li
+              key={i}
+              className="flex gap-2.5 text-sm text-encre/85 leading-relaxed"
+            >
+              <span className="text-tricolore-bleu/50 mt-0.5 shrink-0">
+                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 16 16">
+                  <circle cx="8" cy="8" r="3" />
+                </svg>
+              </span>
+              <span><RenderMiniMarkdown text={ex} /></span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }
