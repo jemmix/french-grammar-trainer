@@ -141,6 +141,13 @@ function renderMcq(q: ParsedMcqQuestion, generatedBy: string, indent = "    "): 
   ].join("\n");
 }
 
+/** Strip outer guillemets or double quotes from a phrase string. */
+function stripPhraseDelimiters(s: string): string {
+  return s
+    .replace(/^«\s*/, "").replace(/\s*»$/, "")
+    .replace(/^[\u201c"]\s*/, "").replace(/\s*[\u201d"]$/, "");
+}
+
 function renderInput(q: ParsedInputQuestion, generatedBy: string, indent = "    "): string {
   const i2 = indent + "  ";
   // Strip a literal "Instruction : " prefix the AI may have included verbatim from the template
@@ -149,6 +156,12 @@ function renderInput(q: ParsedInputQuestion, generatedBy: string, indent = "    
     .map((w) => `${i2}  { text: "${esc(w.text)}", explanation: "${esc(w.explanation)}" }`)
     .join(",\n");
 
+  // Split phrase at the ___ placeholder (strip any outer delimiters first)
+  const stripped = stripPhraseDelimiters(q.phrase);
+  const splitIdx = stripped.indexOf("___");
+  const before = splitIdx === -1 ? stripped : stripped.slice(0, splitIdx);
+  const after = splitIdx === -1 ? "" : stripped.slice(splitIdx + 3);
+
   return [
     `${indent}{`,
     `${i2}id: "${q.id}",`,
@@ -156,7 +169,7 @@ function renderInput(q: ParsedInputQuestion, generatedBy: string, indent = "    
     `${i2}ruleId: "${q.ruleId}",`,
     `${i2}generatedBy: "${esc(generatedBy)}",`,
     `${i2}prompt: "${esc(instruction)}",`,
-    `${i2}phrase: "${esc(q.phrase)}",`,
+    `${i2}phrase: { before: "${esc(before)}", after: "${esc(after)}" },`,
     `${i2}answer: "${esc(q.right.text)}",`,
     `${i2}explanation: "${esc(q.right.explanation)}",`,
     `${i2}wrongAnswers: [`,

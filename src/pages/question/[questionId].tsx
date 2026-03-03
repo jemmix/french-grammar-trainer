@@ -101,13 +101,6 @@ function evaluateInput(userInput: string, question: InputQuestion): InputResult 
   return { kind: "unknown", isCorrect: false };
 }
 
-/** Accepts any run of 2+ underscores as the placeholder. */
-function parsePhrase(phrase: string): { before: string; after: string } {
-  const content = phrase.replace(/^«\s*/, "").replace(/\s*»$/, "");
-  const match = content.match(/_{2,}/);
-  if (!match || match.index === undefined) return { before: content, after: "" };
-  return { before: content.slice(0, match.index), after: content.slice(match.index + match[0].length) };
-}
 
 // ---------------------------------------------------------------------------
 // Navigation helpers
@@ -527,7 +520,7 @@ function InputReview({ question }: { question: InputQuestion }) {
   const [result, setResult] = useState<InputResult | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const { before, after } = parsePhrase(question.phrase);
+  const { before, after } = question.phrase;
 
   const handleSubmit = useCallback(() => {
     if (!userInput.trim()) return;
@@ -572,7 +565,7 @@ function InputReview({ question }: { question: InputQuestion }) {
       <div className="py-6 px-5 rounded-xl bg-tricolore-blanc border border-craie">
         <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-4">{t.questionReview.testInputLabel}</p>
         <p className="text-xl md:text-2xl font-medium text-encre leading-relaxed inline">
-          <span>«&nbsp;{before}</span>
+          <span>{t.phraseOpen}{before}</span>
           <span className="inline-flex items-baseline mx-0.5">
             <span className="relative">
               <input
@@ -600,7 +593,7 @@ function InputReview({ question }: { question: InputQuestion }) {
               />
             </span>
           </span>
-          <span>{after}&nbsp;»</span>
+          <span>{after}{t.phraseClose}</span>
         </p>
 
         {/* Submit / Reset */}

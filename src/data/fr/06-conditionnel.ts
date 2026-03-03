@@ -296,7 +296,7 @@ const section: Section = {
       ruleId: "06-01",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel présent",
-      phrase: "« Si j'avais plus de temps, je ___ un livre intéressant. »",
+      phrase: { before: "Si j'avais plus de temps, je ", after: " un livre intéressant." },
       answer: "lirais",
       explanation: "Radical futur « lir- » + terminaison imparfait « -ais » (1ère pers. sing.). Le conditionnel présent est requis après la condition imparfait.",
       wrongAnswers: [
@@ -314,7 +314,7 @@ const section: Section = {
       ruleId: "06-01",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel présent",
-      phrase: "« Vous ___ venir nous voir si vous aviez l'occasion. »",
+      phrase: { before: "Vous ", after: " venir nous voir si vous aviez l'occasion." },
       answer: "pourriez",
       explanation: "Radical futur « pourr- » + terminaison imparfait « -iez » (2ème pers. pl.). Accord correct avec le sujet « vous ».",
       wrongAnswers: [
@@ -332,7 +332,7 @@ const section: Section = {
       ruleId: "06-01",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel présent",
-      phrase: "« Nous ___ un voyage inoubliable si nous avions plus d'argent. »",
+      phrase: { before: "Nous ", after: " un voyage inoubliable si nous avions plus d'argent." },
       answer: "ferions",
       explanation: "Radical futur « fer- » + terminaison imparfait « -ions » (1ère pers. pl.). « Faire » a un radical futur irrégulier.",
       wrongAnswers: [
@@ -350,7 +350,7 @@ const section: Section = {
       ruleId: "06-01",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel présent",
-      phrase: "« Je ___ aller à la plage avec toi si j'étais libre ce weekend. »",
+      phrase: { before: "Je ", after: " aller à la plage avec toi si j'étais libre ce weekend." },
       answer: "pourrais",
       explanation: "Radical futur « pourr- » + terminaison imparfait « -ais » (1ère pers. sing.). Suit la condition imparfait.",
       wrongAnswers: [
@@ -368,7 +368,7 @@ const section: Section = {
       ruleId: "06-01",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel présent",
-      phrase: "« Elle ___ un nouveau métier si elle avait le courage de changer. »",
+      phrase: { before: "Elle ", after: " un nouveau métier si elle avait le courage de changer." },
       answer: "apprendrait",
       explanation: "Radical futur « apprendr- » + terminaison imparfait « -ait » (3ème pers. sing.). Suit la condition imparfait.",
       wrongAnswers: [
@@ -620,7 +620,7 @@ const section: Section = {
       ruleId: "06-02",
       generatedBy: "sonnet",
       prompt: "Conjuguez « être » au conditionnel présent avec le sujet « tu »",
-      phrase: "« Si tu avais de l'argent, tu ___ heureux. »",
+      phrase: { before: "Si tu avais de l'argent, tu ", after: " heureux." },
       answer: "serais",
       explanation: "Le radical irrégulier « ser- » de « être » + la terminaison du conditionnel pour « tu » : « -ais ».",
       wrongAnswers: [
@@ -637,7 +637,7 @@ const section: Section = {
       ruleId: "06-02",
       generatedBy: "sonnet",
       prompt: "Conjuguez « aller » au conditionnel présent avec le sujet « nous »",
-      phrase: "« Si nous avions plus de temps, nous ___ à la plage. »",
+      phrase: { before: "Si nous avions plus de temps, nous ", after: " à la plage." },
       answer: "irions",
       explanation: "Le radical irrégulier « ir- » de « aller » + la terminaison du conditionnel pour « nous » : « -ions ».",
       wrongAnswers: [
@@ -654,7 +654,7 @@ const section: Section = {
       ruleId: "06-02",
       generatedBy: "sonnet",
       prompt: "Conjuguez « pouvoir » au conditionnel présent avec le sujet « elle »",
-      phrase: "« Si elle avait du courage, elle ___ faire ce grand changement. »",
+      phrase: { before: "Si elle avait du courage, elle ", after: " faire ce grand changement." },
       answer: "pourrait",
       explanation: "Le radical irrégulier « pourr- » de « pouvoir » + la terminaison du conditionnel pour « elle » : « -ait ».",
       wrongAnswers: [
@@ -671,7 +671,7 @@ const section: Section = {
       ruleId: "06-02",
       generatedBy: "sonnet",
       prompt: "Conjuguez « faire » au conditionnel passé avec le sujet « ils »",
-      phrase: "« Ils ___ mieux s'ils avaient écouté les conseils. »",
+      phrase: { before: "Ils ", after: " mieux s'ils avaient écouté les conseils." },
       answer: "auraient fait",
       explanation: "Le conditionnel passé se forme avec « avoir » au conditionnel (radical irrégulier « aur- ») + le participe passé « fait ». Pour « ils », c'est « auraient fait ».",
       wrongAnswers: [
@@ -714,7 +714,7 @@ const section: Section = {
       ruleId: "06-02",
       generatedBy: "sonnet",
       prompt: "Conjuguez « vouloir » au conditionnel présent avec le sujet « je »",
-      phrase: "« Je ___ bien t'aider, mais je n'en ai pas la capacité. »",
+      phrase: { before: "Je ", after: " bien t'aider, mais je n'en ai pas la capacité." },
       answer: "voudrais",
       explanation: "Le radical irrégulier « voudr- » de « vouloir » + la terminaison du conditionnel pour « je » : « -ais ».",
       wrongAnswers: [
@@ -991,7 +991,7 @@ const section: Section = {
       ruleId: "06-03",
       generatedBy: "sonnet",
       prompt: "Conjuguez au conditionnel présent pour demander quelque chose de manière polie",
-      phrase: "« ___ -vous un verre d'eau ? »",
+      phrase: { before: "", after: " -vous un verre d'eau ?" },
       answer: "Prendriez",
       explanation: "Le conditionnel « prendriez-vous » est la forme polie pour demander si quelqu'un veut quelque chose.",
       wrongAnswers: [
@@ -1008,7 +1008,7 @@ const section: Section = {
       ruleId: "06-03",
       generatedBy: "sonnet",
       prompt: "Conjuguez au conditionnel pour exprimer un désir poli",
-      phrase: "« J'___ te parler en privé. »",
+      phrase: { before: "J'", after: " te parler en privé." },
       answer: "aimerais",
       explanation: "Le conditionnel « aimerais » exprime poliment un désir d'avoir une conversation.",
       wrongAnswers: [
@@ -1025,7 +1025,7 @@ const section: Section = {
       ruleId: "06-03",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel pour formuler une demande polite",
-      phrase: "« ___ -vous venir à ma réunion demain ? »",
+      phrase: { before: "", after: " -vous venir à ma réunion demain ?" },
       answer: "Pourriez",
       explanation: "Le conditionnel « pourriez-vous » est la formule polie standard pour demander une présence.",
       wrongAnswers: [
@@ -1042,7 +1042,7 @@ const section: Section = {
       ruleId: "06-03",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe au conditionnel pour exprimer une suggestion polite",
-      phrase: "« Je ___ consulter un professionnel à votre place. »",
+      phrase: { before: "Je ", after: " consulter un professionnel à votre place." },
       answer: "ferais",
       explanation: "Le conditionnel « ferais » exprime poliment ce qu'on ferait à la place de quelqu'un d'autre.",
       wrongAnswers: [
@@ -1059,7 +1059,7 @@ const section: Section = {
       ruleId: "06-03",
       generatedBy: "sonnet",
       prompt: "Conjuguez au conditionnel pour refuser poliment quelque chose",
-      phrase: "« Je ne ___ malheureusement pas accepter cette proposition. »",
+      phrase: { before: "Je ne ", after: " malheureusement pas accepter cette proposition." },
       answer: "pourrais",
       explanation: "Le conditionnel « ne pourrais » exprime un refus poli et respectueux.",
       wrongAnswers: [
@@ -1336,7 +1336,7 @@ const section: Section = {
       ruleId: "06-04",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel pour exprimer un souhait polite",
-      phrase: "« Je ___ une chambre avec vue sur la mer, s'il vous plaît. »",
+      phrase: { before: "Je ", after: " une chambre avec vue sur la mer, s'il vous plaît." },
       answer: "voudrais",
       explanation: "Le conditionnel « voudrais » exprime poliment un désir ou une préférence.",
       wrongAnswers: [
@@ -1353,7 +1353,7 @@ const section: Section = {
       ruleId: "06-04",
       generatedBy: "sonnet",
       prompt: "Complétez au conditionnel pour exprimer un conseil ou une recommandation",
-      phrase: "« Tu ___ plus d'exercice pour rester en bonne santé. »",
+      phrase: { before: "Tu ", after: " plus d'exercice pour rester en bonne santé." },
       answer: "devrais faire",
       explanation: "Le conditionnel « devrais faire » exprime un conseil bienveillant et poli.",
       wrongAnswers: [
@@ -1370,7 +1370,7 @@ const section: Section = {
       ruleId: "06-04",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel pour exprimer un rêve ou un désir personnel",
-      phrase: "« Elle ___ en Afrique un jour pour découvrir la faune et la flore. »",
+      phrase: { before: "Elle ", after: " en Afrique un jour pour découvrir la faune et la flore." },
       answer: "aimerait voyager",
       explanation: "Le conditionnel « aimerait voyager » exprime un rêve ou un désir personnel.",
       wrongAnswers: [
@@ -1387,7 +1387,7 @@ const section: Section = {
       ruleId: "06-04",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel pour exprimer une possibilité hypothétique",
-      phrase: "« Nous ___ cette proposition si les conditions étaient meilleures. »",
+      phrase: { before: "Nous ", after: " cette proposition si les conditions étaient meilleures." },
       answer: "pourrions accepter",
       explanation: "Le conditionnel « pourrions accepter » exprime une possibilité hypothétique dans une situation imaginaire.",
       wrongAnswers: [
@@ -1404,7 +1404,7 @@ const section: Section = {
       ruleId: "06-04",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel pour exprimer une demande polite",
-      phrase: "« Vous ___ m'aider avec cette traduction difficile ? »",
+      phrase: { before: "Vous ", after: " m'aider avec cette traduction difficile ?" },
       answer: "pourriez",
       explanation: "Le conditionnel « pourriez » demande poliment un service ou une aide.",
       wrongAnswers: [
@@ -1681,7 +1681,7 @@ const section: Section = {
       ruleId: "06-05",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe « pouvoir » au conditionnel pour exprimer une suggestion.",
-      phrase: "« On ___ aller à la plage demain. »",
+      phrase: { before: "On ", after: " aller à la plage demain." },
       answer: "pourrait",
       explanation: "Le conditionnel « pourrait » avec « on » est la façon classique de formuler une suggestion.",
       wrongAnswers: [
@@ -1697,7 +1697,7 @@ const section: Section = {
       ruleId: "06-05",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe « devoir » au conditionnel pour exprimer une suggestion courtoise.",
-      phrase: "« Tu ___ parler avec tes parents de tes plans. »",
+      phrase: { before: "Tu ", after: " parler avec tes parents de tes plans." },
       answer: "devrais",
       explanation: "Le conditionnel « devrais » formule délicatement un conseil ou une suggestion.",
       wrongAnswers: [
@@ -1713,7 +1713,7 @@ const section: Section = {
       ruleId: "06-05",
       generatedBy: "sonnet",
       prompt: "Conjuguez « pouvoir » au conditionnel, 2e personne du pluriel.",
-      phrase: "« Vous ___ essayer ce nouveau restaurant italien. »",
+      phrase: { before: "Vous ", after: " essayer ce nouveau restaurant italien." },
       answer: "pourriez",
       explanation: "Le conditionnel « pourriez » (2e personne du pluriel) suggère poliment une expérience culinaire.",
       wrongAnswers: [
@@ -1729,7 +1729,7 @@ const section: Section = {
       ruleId: "06-05",
       generatedBy: "sonnet",
       prompt: "Mettez « devoir » au conditionnel pour exprimer un conseil.",
-      phrase: "« Nous ___ réviser nos notes avant l'examen. »",
+      phrase: { before: "Nous ", after: " réviser nos notes avant l'examen." },
       answer: "devrions",
       explanation: "Le conditionnel « devrions » formule poliment une suggestion d'étude collective.",
       wrongAnswers: [
@@ -1745,7 +1745,7 @@ const section: Section = {
       ruleId: "06-05",
       generatedBy: "sonnet",
       prompt: "Conjuguez « pouvoir » au conditionnel, 3e personne du pluriel.",
-      phrase: "« Elles ___ participer à ce projet interessant. »",
+      phrase: { before: "Elles ", after: " participer à ce projet interessant." },
       answer: "pourraient",
       explanation: "Le conditionnel « pourraient » formule poliment une suggestion d'engagement pour le groupe « elles ».",
       wrongAnswers: [
@@ -1995,7 +1995,7 @@ const section: Section = {
       ruleId: "06-06",
       generatedBy: "sonnet",
       prompt: "Complétez en utilisant le conditionnel pour rapporter l'information non confirmée",
-      phrase: "« Selon les témoins, il y ___ environ cinquante personnes dans la pièce. »",
+      phrase: { before: "Selon les témoins, il y ", after: " environ cinquante personnes dans la pièce." },
       answer: "aurait eu",
       explanation: "Le conditionnel passé « aurait eu » rapporte l'estimation des témoins comme non confirmée ou douteuse.",
       wrongAnswers: [
@@ -2012,7 +2012,7 @@ const section: Section = {
       ruleId: "06-06",
       generatedBy: "sonnet",
       prompt: "Complétez en utilisant le conditionnel pour exprimer une affirmation rapportée douteuse",
-      phrase: "« D'après la rumeur, le scandale ___ révélé le mois dernier. »",
+      phrase: { before: "D'après la rumeur, le scandale ", after: " révélé le mois dernier." },
       answer: "aurait été",
       explanation: "Le conditionnel passé à la voix passive rapporte le scandale comme non confirmé personnellement par le locuteur.",
       wrongAnswers: [
@@ -2029,7 +2029,7 @@ const section: Section = {
       ruleId: "06-06",
       generatedBy: "sonnet",
       prompt: "Complétez en utilisant le conditionnel pour rapporter une information incertaine",
-      phrase: "« On dit que le ministre ___ démissionner avant les élections. »",
+      phrase: { before: "On dit que le ministre ", after: " démissionner avant les élections." },
       answer: "aurait dû",
       explanation: "Le conditionnel passé « aurait dû » rapporte l'obligation ou l'intention rapportée comme non confirmée.",
       wrongAnswers: [
@@ -2046,7 +2046,7 @@ const section: Section = {
       ruleId: "06-06",
       generatedBy: "sonnet",
       prompt: "Complétez en utilisant le conditionnel pour exprimer une information non vérifiée",
-      phrase: "« Selon les sources policières, l'accident ___ causé quatre blessés graves. »",
+      phrase: { before: "Selon les sources policières, l'accident ", after: " causé quatre blessés graves." },
       answer: "aurait",
       explanation: "Le conditionnel passé « aurait » rapporte l'information policière comme non confirmée de façon indépendante.",
       wrongAnswers: [
@@ -2063,7 +2063,7 @@ const section: Section = {
       ruleId: "06-06",
       generatedBy: "sonnet",
       prompt: "Complétez en utilisant le conditionnel pour rapporter une affirmation non confirmée",
-      phrase: "« Il paraît que vous ___ reçu une invitation spéciale hier soir. »",
+      phrase: { before: "Il paraît que vous ", after: " reçu une invitation spéciale hier soir." },
       answer: "auriez",
       explanation: "Le conditionnel passé « auriez » rapporte l'affirmation comme non confirmée ou douteuse par le locuteur.",
       wrongAnswers: [
@@ -2366,7 +2366,7 @@ const section: Section = {
       ruleId: "06-07",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel pour exprimer l'imaginaire",
-      phrase: "« Si j'avais le pouvoir magique, je ___ le monde. »",
+      phrase: { before: "Si j'avais le pouvoir magique, je ", after: " le monde." },
       answer: "changerais",
       explanation: "Le conditionnel « changerais » exprime une action hypothétique : je changerais (hypothétiquement) le monde si j'avais ce pouvoir.",
       wrongAnswers: [
@@ -2383,7 +2383,7 @@ const section: Section = {
       ruleId: "06-07",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel pour exprimer l'imaginaire",
-      phrase: "« Tu ___ très heureux dans ma situation. »",
+      phrase: { before: "Tu ", after: " très heureux dans ma situation." },
       answer: "serais",
       explanation: "Le conditionnel « serais » exprime une hypothèse imaginaire : tu serais heureux (hypothétiquement) si tu étais à ma place.",
       wrongAnswers: [
@@ -2400,7 +2400,7 @@ const section: Section = {
       ruleId: "06-07",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel pour exprimer l'imaginaire",
-      phrase: "« Nous ___ explorer les planètes lointaines si c'était possible. »",
+      phrase: { before: "Nous ", after: " explorer les planètes lointaines si c'était possible." },
       answer: "pourrions",
       explanation: "Le conditionnel « pourrions » exprime une hypothèse imaginaire : nous pourrions (hypothétiquement) explorer les planètes si c'était possible.",
       wrongAnswers: [
@@ -2417,7 +2417,7 @@ const section: Section = {
       ruleId: "06-07",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel pour exprimer l'imaginaire",
-      phrase: "« Elles ___ des chanteuses célèbres si elles avaient poursuivi leur formation musicale. »",
+      phrase: { before: "Elles ", after: " des chanteuses célèbres si elles avaient poursuivi leur formation musicale." },
       answer: "seraient",
       explanation: "Le conditionnel « seraient » exprime une hypothèse imaginaire : elles seraient devenues chanteuses (hypothétiquement) si elles avaient continué.",
       wrongAnswers: [
@@ -2434,7 +2434,7 @@ const section: Section = {
       ruleId: "06-07",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel pour exprimer l'imaginaire",
-      phrase: "« Si j'étais riche, je ___ une grande villa au bord de la mer. »",
+      phrase: { before: "Si j'étais riche, je ", after: " une grande villa au bord de la mer." },
       answer: "construirais",
       explanation: "Le conditionnel « construirais » exprime une hypothèse imaginaire : je construirais (hypothétiquement) une villa si j'étais riche.",
       wrongAnswers: [
@@ -2711,7 +2711,7 @@ const section: Section = {
       ruleId: "06-08",
       generatedBy: "opus",
       prompt: "Conjuguez le verbe au conditionnel présent dans une hypothèse avec « si + imparfait »",
-      phrase: "« Si tu lui rendais visite, il ___ vraiment content. »",
+      phrase: { before: "Si tu lui rendais visite, il ", after: " vraiment content." },
       answer: "serait",
       explanation: "Le conditionnel présent « serait » exprime la conséquence hypothétique de « si tu lui rendais visite ».",
       wrongAnswers: [
@@ -2728,7 +2728,7 @@ const section: Section = {
       ruleId: "06-08",
       generatedBy: "opus",
       prompt: "Complétez en employant le conditionnel présent après une hypothèse au passé",
-      phrase: "« Si je gagnais à la loterie, je ___ le tour du monde. »",
+      phrase: { before: "Si je gagnais à la loterie, je ", after: " le tour du monde." },
       answer: "ferais",
       explanation: "Le conditionnel présent « ferais » s'emploie dans la conséquence après « si + imparfait ».",
       wrongAnswers: [
@@ -2745,7 +2745,7 @@ const section: Section = {
       ruleId: "06-08",
       generatedBy: "opus",
       prompt: "Utilisez le conditionnel présent pour exprimer la conséquence hypothétique",
-      phrase: "« Si mes enfants aimaient les légumes, je ___ beaucoup plus facilement. »",
+      phrase: { before: "Si mes enfants aimaient les légumes, je ", after: " beaucoup plus facilement." },
       answer: "cuisinerais",
       explanation: "Le conditionnel présent « cuisinerais » exprime ce qui se passerait si la condition était remplie.",
       wrongAnswers: [
@@ -2762,7 +2762,7 @@ const section: Section = {
       ruleId: "06-08",
       generatedBy: "opus",
       prompt: "Conjuguez au conditionnel présent dans la conséquence d'une hypothèse",
-      phrase: "« Si tu étudiais chaque jour, tu ___ certainement réussir tes examens. »",
+      phrase: { before: "Si tu étudiais chaque jour, tu ", after: " certainement réussir tes examens." },
       answer: "pourrais",
       explanation: "Le conditionnel présent « pourrais » convient pour exprimer le résultat hypothétique.",
       wrongAnswers: [
@@ -2779,7 +2779,7 @@ const section: Section = {
       ruleId: "06-08",
       generatedBy: "opus",
       prompt: "Remplissez le blanc avec le conditionnel présent après une condition au passé",
-      phrase: "« Si vous m'aviez écouté, vous ne ___ pas dans cette situation difficile. »",
+      phrase: { before: "Si vous m'aviez écouté, vous ne ", after: " pas dans cette situation difficile." },
       answer: "seriez",
       explanation: "Le conditionnel présent « seriez » exprime la conséquence hypothétique de ne pas avoir écouté.",
       wrongAnswers: [
@@ -3043,7 +3043,7 @@ const section: Section = {
       ruleId: "06-09",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel après « au cas où »",
-      phrase: "« Au cas où tu ___ , laisse-moi un message. »",
+      phrase: { before: "Au cas où tu ", after: " , laisse-moi un message." },
       answer: "m'appellerais",
       explanation: "Le conditionnel « m'appellerais » s'utilise après « au cas où » pour exprimer une hypothèse.",
       wrongAnswers: [
@@ -3059,7 +3059,7 @@ const section: Section = {
       ruleId: "06-09",
       generatedBy: "sonnet",
       prompt: "Complétez avec le conditionnel du verbe « avoir »",
-      phrase: "« Au cas où vous ___ des doutes, n'hésitez pas à demander. »",
+      phrase: { before: "Au cas où vous ", after: " des doutes, n'hésitez pas à demander." },
       answer: "auriez",
       explanation: "Le conditionnel « auriez » exprime l'hypothèse poliment après « au cas où ».",
       wrongAnswers: [
@@ -3076,7 +3076,7 @@ const section: Section = {
       ruleId: "06-09",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe « venir » au conditionnel",
-      phrase: "« Au cas où il ___ demain, prépare le dîner. »",
+      phrase: { before: "Au cas où il ", after: " demain, prépare le dîner." },
       answer: "viendrait",
       explanation: "Le conditionnel « viendrait » s'utilise après « au cas où » pour exprimer une hypothèse.",
       wrongAnswers: [
@@ -3093,7 +3093,7 @@ const section: Section = {
       ruleId: "06-09",
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le conditionnel du verbe « devoir »",
-      phrase: "« Au cas où je ___ annuler, je t'informerai à l'avance. »",
+      phrase: { before: "Au cas où je ", after: " annuler, je t'informerai à l'avance." },
       answer: "devrais",
       explanation: "Le conditionnel « devrais » exprime l'hypothèse après « au cas où ». C'est la structure correcte.",
       wrongAnswers: [
@@ -3110,7 +3110,7 @@ const section: Section = {
       ruleId: "06-09",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe « faire » au conditionnel",
-      phrase: "« Au cas où il ___ trop chaud, on ira à la plage. »",
+      phrase: { before: "Au cas où il ", after: " trop chaud, on ira à la plage." },
       answer: "ferait",
       explanation: "Le conditionnel « ferait » s'utilise après « au cas où » pour exprimer une hypothèse météorologique.",
       wrongAnswers: [
@@ -3400,7 +3400,7 @@ const section: Section = {
       ruleId: "06-10",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel pour exprimer un reproche atténué",
-      phrase: "« Tu ___ faire attention à tes affaires. »",
+      phrase: { before: "Tu ", after: " faire attention à tes affaires." },
       answer: "devrais",
       explanation: "Le conditionnel « devrais » adoucit le reproche en le rendant moins direct qu'un impératif comme « Fais attention ! ».",
       wrongAnswers: [
@@ -3418,7 +3418,7 @@ const section: Section = {
       ruleId: "06-10",
       generatedBy: "sonnet",
       prompt: "Complétez avec le conditionnel pour formuler un reproche doux",
-      phrase: "« Vous ___ mieux vérifier vos calculs avant de les présenter. »",
+      phrase: { before: "Vous ", after: " mieux vérifier vos calculs avant de les présenter." },
       answer: "pourriez",
       explanation: "Le conditionnel « pourriez » exprime une suggestion courtoise plutôt qu'un ordre direct, atténuant le reproche.",
       wrongAnswers: [
@@ -3436,7 +3436,7 @@ const section: Section = {
       ruleId: "06-10",
       generatedBy: "sonnet",
       prompt: "Conjuguez au conditionnel pour exprimer un conseil ou reproche atténué",
-      phrase: "« Il ___ prendre un peu plus de temps pour finir ce projet. »",
+      phrase: { before: "Il ", after: " prendre un peu plus de temps pour finir ce projet." },
       answer: "devrait",
       explanation: "Le conditionnel « devrait » exprime un conseil doux ou un reproche atténué plutôt qu'un ordre impérieux.",
       wrongAnswers: [
@@ -3454,7 +3454,7 @@ const section: Section = {
       ruleId: "06-10",
       generatedBy: "sonnet",
       prompt: "Mettez au conditionnel pour formuler un reproche ou suggestion douce",
-      phrase: "« Nous ___ nous montrer plus patients les uns envers les autres. »",
+      phrase: { before: "Nous ", after: " nous montrer plus patients les uns envers les autres." },
       answer: "pourrions",
       explanation: "Le conditionnel « pourrions » exprime une suggestion collective courtoise, un reproche atténué adressé au groupe.",
       wrongAnswers: [
@@ -3472,7 +3472,7 @@ const section: Section = {
       ruleId: "06-10",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel pour adoucir le reproche",
-      phrase: "« Vous n'___ pas vous absenter sans prévenir à l'avance. »",
+      phrase: { before: "Vous n'", after: " pas vous absenter sans prévenir à l'avance." },
       answer: "devriez",
       explanation: "Le conditionnel négatif « n'devriez pas » formule le reproche comme une suggestion courtoise plutôt qu'une interdiction sèche.",
       wrongAnswers: [
@@ -3750,7 +3750,7 @@ const section: Section = {
       ruleId: "06-11",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe « avoir » au conditionnel passé (première personne du singulier) et complétez la phrase.",
-      phrase: "« Si j'avais eu plus de temps, j'___ réussi. »",
+      phrase: { before: "Si j'avais eu plus de temps, j'", after: " réussi." },
       answer: "aurais",
       explanation: "Le conditionnel passé de avoir à la première personne du singulier est « aurais ». On obtient « aurais réussi » (conditionnel passé de réussir).",
       wrongAnswers: [
@@ -3767,7 +3767,7 @@ const section: Section = {
       ruleId: "06-11",
       generatedBy: "sonnet",
       prompt: "Complétez la phrase au conditionnel passé de « partir ».",
-      phrase: "« Tu ___ plus tôt si tu avais voulu. »",
+      phrase: { before: "Tu ", after: " plus tôt si tu avais voulu." },
       answer: "serais parti",
       explanation: "Partir requiert l'auxiliaire être au conditionnel : « serais ». Participe passé : « parti ». Conditionnel passé : « serais parti ».",
       wrongAnswers: [
@@ -3784,7 +3784,7 @@ const section: Section = {
       ruleId: "06-11",
       generatedBy: "sonnet",
       prompt: "Complétez la phrase au conditionnel passé de « vouloir ».",
-      phrase: "« Je ___ te voir, mais j'étais trop fatigué. »",
+      phrase: { before: "Je ", after: " te voir, mais j'étais trop fatigué." },
       answer: "aurais voulu",
       explanation: "Le conditionnel passé de vouloir à la première personne du singulier est « aurais voulu ». Cela signifie une action hypothétique qui aurait pu se produire dans le passé.",
       wrongAnswers: [
@@ -3801,7 +3801,7 @@ const section: Section = {
       ruleId: "06-11",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe « voir » au conditionnel passé (troisième personne du pluriel).",
-      phrase: "« Ils ___ le film s'ils avaient eu le temps. »",
+      phrase: { before: "Ils ", after: " le film s'ils avaient eu le temps." },
       answer: "auraient vu",
       explanation: "Le conditionnel passé de voir à la troisième personne du pluriel est « auraient vu ». Auxiliaire avoir au conditionnel (auraient) + participe passé (vu).",
       wrongAnswers: [
@@ -3818,7 +3818,7 @@ const section: Section = {
       ruleId: "06-11",
       generatedBy: "sonnet",
       prompt: "Complétez la phrase au conditionnel passé de « aller ».",
-      phrase: "« Nous ___ au concert si nous avions eu des places. »",
+      phrase: { before: "Nous ", after: " au concert si nous avions eu des places." },
       answer: "serions allés",
       explanation: "Le conditionnel passé de aller à la première personne du pluriel est « serions allés ». Auxiliaire être au conditionnel (serions) + participe passé avec accord (allés, car nous est pluriel).",
       wrongAnswers: [
@@ -4095,7 +4095,7 @@ const section: Section = {
       ruleId: "06-12",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe au conditionnel passé pour exprimer un regret.",
-      phrase: "« Si tu avais écouté mes conseils, tu ___ (avoir) moins de problèmes. »",
+      phrase: { before: "Si tu avais écouté mes conseils, tu ", after: " (avoir) moins de problèmes." },
       answer: "aurais eu",
       explanation: "Le conditionnel passé « aurais eu » avec le sujet « tu » exprime le regret de ne pas avoir écouté les conseils et le résultat hypothétique (moins de problèmes).",
       wrongAnswers: [
@@ -4116,7 +4116,7 @@ const section: Section = {
       ruleId: "06-12",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel passé pour exprimer un regret.",
-      phrase: "« Nous ___ (pouvoir) finir le projet si nous avions commencé plus tôt. »",
+      phrase: { before: "Nous ", after: " (pouvoir) finir le projet si nous avions commencé plus tôt." },
       answer: "aurions pu",
       explanation: "Le conditionnel passé « aurions pu » avec le sujet « nous » et le verbe « pouvoir » exprime le regret de ne pas avoir eu la possibilité de finir le projet.",
       wrongAnswers: [
@@ -4137,7 +4137,7 @@ const section: Section = {
       ruleId: "06-12",
       generatedBy: "sonnet",
       prompt: "Complétez avec le conditionnel passé pour exprimer un regret.",
-      phrase: "« Elle ___ (faire) de meilleures choix si elle avait écouté son instinct. »",
+      phrase: { before: "Elle ", after: " (faire) de meilleures choix si elle avait écouté son instinct." },
       answer: "aurait fait",
       explanation: "Le conditionnel passé « aurait fait » avec le verbe « faire » exprime le regret de ne pas avoir fait de meilleurs choix.",
       wrongAnswers: [
@@ -4158,7 +4158,7 @@ const section: Section = {
       ruleId: "06-12",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe au conditionnel passé pour exprimer un regret.",
-      phrase: "« Ils ___ (venir) à la fête s'ils avaient été libres ce soir-là. »",
+      phrase: { before: "Ils ", after: " (venir) à la fête s'ils avaient été libres ce soir-là." },
       answer: "seraient venus",
       explanation: "Le verbe « venir » se conjugue avec l'auxiliaire « être » au conditionnel passé. Avec le sujet masculin pluriel « ils », le participe passé s'accorde : « seraient venus ».",
       wrongAnswers: [
@@ -4175,7 +4175,7 @@ const section: Section = {
       ruleId: "06-12",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel passé pour exprimer un regret.",
-      phrase: "« Tu ___ (devoir) respecter les limites si tu avais compris l'importance. »",
+      phrase: { before: "Tu ", after: " (devoir) respecter les limites si tu avais compris l'importance." },
       answer: "aurais dû",
       explanation: "Le conditionnel passé « aurais dû » avec le sujet « tu » et le verbe « devoir » exprime le regret de ne pas avoir respecté les limites comme il aurait fallu.",
       wrongAnswers: [
@@ -4453,7 +4453,7 @@ const section: Section = {
       ruleId: "06-13",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel passé pour exprimer un reproche",
-      phrase: "« Tu ___ me prévenir avant de partir sans moi. »",
+      phrase: { before: "Tu ", after: " me prévenir avant de partir sans moi." },
       answer: "aurais dû",
       explanation: "Le conditionnel passé (aurais dû) exprime le reproche : tu n'as pas prévenu, mais tu aurais dû.",
       wrongAnswers: [
@@ -4470,7 +4470,7 @@ const section: Section = {
       ruleId: "06-13",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel passé pour exprimer un reproche",
-      phrase: "« Elle ___ suivre les instructions au lieu de faire comme elle voulait. »",
+      phrase: { before: "Elle ", after: " suivre les instructions au lieu de faire comme elle voulait." },
       answer: "aurait dû",
       explanation: "Le conditionnel passé (aurait dû) exprime le reproche : elle n'a pas suivi les instructions, mais elle aurait dû.",
       wrongAnswers: [
@@ -4487,7 +4487,7 @@ const section: Section = {
       ruleId: "06-13",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel passé pour exprimer un reproche",
-      phrase: "« Nous ___ être plus honnêtes dans notre communication. »",
+      phrase: { before: "Nous ", after: " être plus honnêtes dans notre communication." },
       answer: "aurions dû",
       explanation: "Le conditionnel passé (aurions dû) exprime le reproche : nous n'avons pas été honnêtes, mais nous aurions dû.",
       wrongAnswers: [
@@ -4504,7 +4504,7 @@ const section: Section = {
       ruleId: "06-13",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel passé pour exprimer un reproche",
-      phrase: "« Vous ___ vous excuser pour votre comportement impoli. »",
+      phrase: { before: "Vous ", after: " vous excuser pour votre comportement impoli." },
       answer: "auriez dû",
       explanation: "Le conditionnel passé (auriez dû) exprime le reproche : vous ne vous êtes pas excusés, mais vous auriez dû.",
       wrongAnswers: [
@@ -4521,7 +4521,7 @@ const section: Section = {
       ruleId: "06-13",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel passé pour exprimer un reproche",
-      phrase: "« Elles ___ demander de l'aide au lieu de souffrir en silence. »",
+      phrase: { before: "Elles ", after: " demander de l'aide au lieu de souffrir en silence." },
       answer: "auraient dû",
       explanation: "Le conditionnel passé (auraient dû) exprime le reproche : elles n'ont pas demandé d'aide, mais elles auraient dû.",
       wrongAnswers: [
@@ -4798,7 +4798,7 @@ const section: Section = {
       ruleId: "06-14",
       generatedBy: "sonnet",
       prompt: "Complétez la phrase avec le conditionnel passé du verbe entre parenthèses.",
-      phrase: "« Si j'avais étudié, je ___ (réussir) mon examen. »",
+      phrase: { before: "Si j'avais étudié, je ", after: " (réussir) mon examen." },
       answer: "aurais réussi",
       explanation: "Après « si » au plus-que-parfait, le verbe de la principale se conjugue au conditionnel passé. Ici, « aurais réussi » est la forme correcte du conditionnel passé du verbe « réussir ».",
       wrongAnswers: [
@@ -4815,7 +4815,7 @@ const section: Section = {
       ruleId: "06-14",
       generatedBy: "sonnet",
       prompt: "Complétez avec le conditionnel passé du verbe « aller ».",
-      phrase: "« Si tu m'avais invité, je ___ à ta fête. »",
+      phrase: { before: "Si tu m'avais invité, je ", after: " à ta fête." },
       answer: "serais allé",
       explanation: "Le verbe « aller » utilise l'auxiliaire « être » au conditionnel passé. La forme correcte est « serais allé » (ou « serais allée » si le sujet est féminin). Accord du participe passé selon le sujet.",
       wrongAnswers: [
@@ -4833,7 +4833,7 @@ const section: Section = {
       ruleId: "06-14",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe au conditionnel passé dans cette phrase hypothétique.",
-      phrase: "« Si elle avait lu le contrat, elle ne l'___ pas signé. »",
+      phrase: { before: "Si elle avait lu le contrat, elle ne l'", after: " pas signé." },
       answer: "aurait",
       explanation: "« Aurait signé » (conditionnel passé du verbe « signer ») est la forme correcte. Avec la négation « ne... pas », on obtient « ne l'aurait pas signé ». Ici, « aurait » complète l'espace blanc.",
       wrongAnswers: [
@@ -4851,7 +4851,7 @@ const section: Section = {
       ruleId: "06-14",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel passé pour compléter la structure hypothétique.",
-      phrase: "« Si j'avais parlé au directeur, il ___ (agir) autrement. »",
+      phrase: { before: "Si j'avais parlé au directeur, il ", after: " (agir) autrement." },
       answer: "aurait agi",
       explanation: "Le conditionnel passé du verbe « agir » avec le sujet « il » est « aurait agi ». C'est la forme appropriée dans une structure « si + plus-que-parfait → conditionnel passé ».",
       wrongAnswers: [
@@ -4870,7 +4870,7 @@ const section: Section = {
       ruleId: "06-14",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel passé selon la structure hypothétique.",
-      phrase: "« Si nous avions eu plus d'argent, nous ___ (acheter) une maison. »",
+      phrase: { before: "Si nous avions eu plus d'argent, nous ", after: " (acheter) une maison." },
       answer: "aurions acheté",
       explanation: "Le conditionnel passé avec le sujet « nous » du verbe « acheter » est « aurions acheté ». C'est la conséquence passée hypothétique après une condition au plus-que-parfait.",
       wrongAnswers: [
@@ -5108,7 +5108,7 @@ const section: Section = {
       ruleId: "06-15",
       generatedBy: "sonnet",
       prompt: "Complétez au conditionnel passé pour exprimer une information non confirmée.",
-      phrase: "« On dit qu'elle ___ ce poste important l'année dernière. »",
+      phrase: { before: "On dit qu'elle ", after: " ce poste important l'année dernière." },
       answer: "aurait occupé",
       explanation: "Le conditionnel passé (aurait occupé) rapporte une information de tiers sans l'affirmer. C'est ce qu'on a entendu sans certitude.",
       wrongAnswers: [
@@ -5125,7 +5125,7 @@ const section: Section = {
       ruleId: "06-15",
       generatedBy: "sonnet",
       prompt: "Employez le conditionnel passé pour reporter une information sans la confirmer.",
-      phrase: "« Les témoins prétendent qu'il ___ la scène avant l'arrivée de la police. »",
+      phrase: { before: "Les témoins prétendent qu'il ", after: " la scène avant l'arrivée de la police." },
       answer: "aurait quitté",
       explanation: "Le conditionnel passé (aurait quitté) rapporte la prétention des témoins sans l'affirmer. C'est un doute face à leur affirmation.",
       wrongAnswers: [
@@ -5142,7 +5142,7 @@ const section: Section = {
       ruleId: "06-15",
       generatedBy: "sonnet",
       prompt: "Complétez avec le conditionnel passé pour exprimer le doute sur une information rapportée.",
-      phrase: "« Selon la légende, ce chevalier ___ un dragon pour sauver le royaume. »",
+      phrase: { before: "Selon la légende, ce chevalier ", after: " un dragon pour sauver le royaume." },
       answer: "aurait vaincu",
       explanation: "Le conditionnel passé (aurait vaincu) rapporte une affirmation légendaire sans la confirmer historiquement. On doute du récit légendaire.",
       wrongAnswers: [
@@ -5159,7 +5159,7 @@ const section: Section = {
       ruleId: "06-15",
       generatedBy: "sonnet",
       prompt: "Employez le conditionnel passé pour rapporter une information sans la confirmer.",
-      phrase: "« On raconte qu'ils ___ une fortune caché dans les murs de la maison. »",
+      phrase: { before: "On raconte qu'ils ", after: " une fortune caché dans les murs de la maison." },
       answer: "auraient découvert",
       explanation: "Le conditionnel passé (auraient découvert) rapporte une histoire sans la confirmer. On doute que cela se soit vraiment produit.",
       wrongAnswers: [
@@ -5176,7 +5176,7 @@ const section: Section = {
       ruleId: "06-15",
       generatedBy: "sonnet",
       prompt: "Complétez au conditionnel passé pour exprimer une information rapportée non confirmée.",
-      phrase: "« Selon les archives historiques, ce document ___ durant le Moyen Âge. »",
+      phrase: { before: "Selon les archives historiques, ce document ", after: " durant le Moyen Âge." },
       answer: "aurait été rédigé",
       explanation: "Le conditionnel passé (aurait été rédigé) rapporte l'interprétation historique sans l'affirmer comme certitude absolue. C'est une conclusion savante provisoire.",
       wrongAnswers: [
@@ -5479,7 +5479,7 @@ const section: Section = {
       ruleId: "06-16",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel pour exprimer le futur dans le passé.",
-      phrase: "« Le professeur a expliqué que le cours ___ à dix heures. »",
+      phrase: { before: "Le professeur a expliqué que le cours ", after: " à dix heures." },
       answer: "commencerait",
       explanation: "Le conditionnel « commencerait » exprime une action future envisagée depuis le moment où le professeur a expliqué. C'est le futur dans le passé.",
       wrongAnswers: [
@@ -5496,7 +5496,7 @@ const section: Section = {
       ruleId: "06-16",
       generatedBy: "sonnet",
       prompt: "Complétez en utilisant le conditionnel pour exprimer le futur dans le passé.",
-      phrase: "« J'ai promis que je ___ tous les détails avant demain. »",
+      phrase: { before: "J'ai promis que je ", after: " tous les détails avant demain." },
       answer: "vérifierais",
       explanation: "Le conditionnel « vérifierais » exprime une promesse envisagée depuis le passé. J'ai promis que je vérifierais (envisagé au moment de la promesse).",
       wrongAnswers: [
@@ -5513,7 +5513,7 @@ const section: Section = {
       ruleId: "06-16",
       generatedBy: "sonnet",
       prompt: "Utilisez le conditionnel pour exprimer le futur dans le passé.",
-      phrase: "« Ils ont décidé que nous ___ ensemble le weekend. »",
+      phrase: { before: "Ils ont décidé que nous ", after: " ensemble le weekend." },
       answer: "nous reposerions",
       explanation: "Le conditionnel « nous reposerions » exprime une décision envisagée depuis le passé. Ils ont décidé que nous nous reposerions (envisagé au moment de la décision passée).",
       wrongAnswers: [
@@ -5530,7 +5530,7 @@ const section: Section = {
       ruleId: "06-16",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel pour exprimer le futur dans le passé.",
-      phrase: "« Vous aviez affirmé que vous ___ me contacter dans la semaine. »",
+      phrase: { before: "Vous aviez affirmé que vous ", after: " me contacter dans la semaine." },
       answer: "me contacteriez",
       explanation: "Le conditionnel « me contacteriez » exprime une intention ou une promesse envisagée depuis le passé. Vous aviez affirmé que vous me contacteriez (envisagé au moment de l'affirmation passée).",
       wrongAnswers: [
@@ -5547,7 +5547,7 @@ const section: Section = {
       ruleId: "06-16",
       generatedBy: "sonnet",
       prompt: "Utilisez le conditionnel pour exprimer le futur dans le passé.",
-      phrase: "« Elle a écrit que les travaux ___ terminés avant l'été. »",
+      phrase: { before: "Elle a écrit que les travaux ", after: " terminés avant l'été." },
       answer: "seraient",
       explanation: "Le conditionnel « seraient » exprime un calendrier ou une prévision envisagée depuis le passé. Elle a écrit que les travaux seraient terminés (envisagé au moment où elle a écrit).",
       wrongAnswers: [
@@ -5799,7 +5799,7 @@ const section: Section = {
       ruleId: "06-17",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au futur ou au conditionnel selon le contexte",
-      phrase: "« Elle ___ à Paris la semaine prochaine si elle obtient son visa. »",
+      phrase: { before: "Elle ", after: " à Paris la semaine prochaine si elle obtient son visa." },
       answer: "ira",
       explanation: "Le futur s'utilise après « si » présent pour exprimer une conséquence probable.",
       wrongAnswers: [
@@ -5816,7 +5816,7 @@ const section: Section = {
       ruleId: "06-17",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au futur ou au conditionnel selon le contexte",
-      phrase: "« Si je gagnais au loto, j'___ un tour du monde. »",
+      phrase: { before: "Si je gagnais au loto, j'", after: " un tour du monde." },
       answer: "aurais",
       explanation: "Le conditionnel s'utilise après « si » imparfait pour une condition hypothétique (aurais + participe futur impliqué).",
       wrongAnswers: [
@@ -5832,7 +5832,7 @@ const section: Section = {
       ruleId: "06-17",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au futur ou au conditionnel selon le contexte",
-      phrase: "« Il m'a promis qu'il m'___ dès qu'il arriverait. »",
+      phrase: { before: "Il m'a promis qu'il m'", after: " dès qu'il arriverait." },
       answer: "appellerait",
       explanation: "Le conditionnel en discours indirect passé transpose une action future par rapport au passé.",
       wrongAnswers: [
@@ -5848,7 +5848,7 @@ const section: Section = {
       ruleId: "06-17",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au futur ou au conditionnel selon le contexte",
-      phrase: "« Vous ___ mieux si vous dormiez plus. »",
+      phrase: { before: "Vous ", after: " mieux si vous dormiez plus." },
       answer: "iriez",
       explanation: "Le conditionnel s'utilise après « si » imparfait pour exprimer une condition hypothétique.",
       wrongAnswers: [
@@ -5903,7 +5903,7 @@ const section: Section = {
       ruleId: "06-17",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au futur ou au conditionnel selon le contexte",
-      phrase: "« Demain, nous ___ nos amis pour célébrer. »",
+      phrase: { before: "Demain, nous ", after: " nos amis pour célébrer." },
       answer: "inviterons",
       explanation: "Le futur s'utilise pour une action future programmée et certaine. « Demain » indique un projet concret.",
       wrongAnswers: [
@@ -6140,7 +6140,7 @@ const section: Section = {
       ruleId: "06-18",
       generatedBy: "sonnet",
       prompt: "Complétez au subjonctif présent après « vouloir que »",
-      phrase: "« Ma mère veut que je ___ mes études à l'université. »",
+      phrase: { before: "Ma mère veut que je ", after: " mes études à l'université." },
       answer: "poursuive",
       explanation: "Après « vouloir que », le subjonctif présent est obligatoire. « Poursuive » est la forme correcte du subjonctif à la 1re personne du singulier du verbe poursuivre, exprimant la volonté du sujet.",
       wrongAnswers: [
@@ -6157,7 +6157,7 @@ const section: Section = {
       ruleId: "06-18",
       generatedBy: "sonnet",
       prompt: "Complétez au subjonctif présent après « craindre que »",
-      phrase: "« Je crains que vous ne ___ déçu par les résultats. »",
+      phrase: { before: "Je crains que vous ne ", after: " déçu par les résultats." },
       answer: "soyez",
       explanation: "Après « craindre que », le subjonctif présent est obligatoire, souvent avec une négation « ne ». « Soyez » est la forme correcte du subjonctif à la 2e personne du pluriel du verbe être, exprimant la crainte du sujet.",
       wrongAnswers: [
@@ -6174,7 +6174,7 @@ const section: Section = {
       ruleId: "06-18",
       generatedBy: "sonnet",
       prompt: "Complétez au subjonctif présent après « à moins que »",
-      phrase: "« Je ne peux partir à moins que tu ne ___ avec moi. »",
+      phrase: { before: "Je ne peux partir à moins que tu ne ", after: " avec moi." },
       answer: "viennes",
       explanation: "Après « à moins que », le subjonctif présent est obligatoire, souvent avec une négation « ne ». « Viennes » est la forme correcte du subjonctif à la 2e personne du singulier du verbe venir, exprimant une condition négative.",
       wrongAnswers: [
@@ -6230,7 +6230,7 @@ const section: Section = {
       ruleId: "06-18",
       generatedBy: "sonnet",
       prompt: "Complétez au subjonctif présent après « bien que »",
-      phrase: "« Bien qu'il ___ difficile, il veut continuer. »",
+      phrase: { before: "Bien qu'il ", after: " difficile, il veut continuer." },
       answer: "soit",
       explanation: "Après « bien que », le subjonctif présent est obligatoire. « Soit » est la forme correcte du subjonctif à la 3e personne du singulier de « être ».",
       wrongAnswers: [
@@ -6247,7 +6247,7 @@ const section: Section = {
       ruleId: "06-18",
       generatedBy: "sonnet",
       prompt: "Complétez au subjonctif présent après « afin que »",
-      phrase: "« Elle travaille dur afin qu'elle ___ ses rêves. »",
+      phrase: { before: "Elle travaille dur afin qu'elle ", after: " ses rêves." },
       answer: "réalise",
       explanation: "Après « afin que », le subjonctif présent est obligatoire. « Réalise » est la forme correcte du subjonctif à la 3e personne du singulier de « réaliser ».",
       wrongAnswers: [
@@ -6524,7 +6524,7 @@ const section: Section = {
       ruleId: "06-19",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel présent dans une phrase négative",
-      phrase: "« Si j'avais plus d'argent, je ___ pas ici. »",
+      phrase: { before: "Si j'avais plus d'argent, je ", after: " pas ici." },
       answer: "ne serais",
       explanation: "Au conditionnel présent, « je ne serais pas ici » exprime une situation hypothétique négative. La structure correcte est « ne + verbe conjugué au conditionnel + pas ».",
       wrongAnswers: [
@@ -6541,7 +6541,7 @@ const section: Section = {
       ruleId: "06-19",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel passé dans une phrase négative",
-      phrase: "« S'il avait accepté notre offre, il ___ jamais regretté sa décision. »",
+      phrase: { before: "S'il avait accepté notre offre, il ", after: " jamais regretté sa décision." },
       answer: "n'aurait",
       explanation: "Au conditionnel passé, « n'aurait jamais regretté » exprime une conséquence négative hypothétique d'une action passée. La double négation « ne...jamais » est correcte.",
       wrongAnswers: [
@@ -6558,7 +6558,7 @@ const section: Section = {
       ruleId: "06-19",
       generatedBy: "sonnet",
       prompt: "Complétez avec la négation au conditionnel présent",
-      phrase: "« Vous ___ personne à cette fête, honnêtement. »",
+      phrase: { before: "Vous ", after: " personne à cette fête, honnêtement." },
       answer: "ne rencontreriez",
       explanation: "Au conditionnel présent, « vous ne rencontreriez personne » exprime une situation hypothétique négative. La double négation « ne...personne » est correcte pour la deuxième personne du pluriel.",
       wrongAnswers: [
@@ -6575,7 +6575,7 @@ const section: Section = {
       ruleId: "06-19",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel passé avec négation",
-      phrase: "« Si tu avais écouté mes conseils, tu ___ rien perdu. »",
+      phrase: { before: "Si tu avais écouté mes conseils, tu ", after: " rien perdu." },
       answer: "n'aurais",
       explanation: "Au conditionnel passé, « tu n'aurais rien perdu » exprime une perte hypothétiquement évitée. La double négation « ne...rien » avec l'auxiliaire au conditionnel passé est correcte.",
       wrongAnswers: [
@@ -6592,7 +6592,7 @@ const section: Section = {
       ruleId: "06-19",
       generatedBy: "sonnet",
       prompt: "Complétez la phrase avec la négation au conditionnel passé",
-      phrase: "« Sans ton intervention, on ___ jamais réussi ce projet. »",
+      phrase: { before: "Sans ton intervention, on ", after: " jamais réussi ce projet." },
       answer: "n'aurait",
       explanation: "Au conditionnel passé, « on n'aurait jamais réussi » exprime un succès hypothétiquement dépendant de l'intervention. Le sujet indéfini « on » prend l'auxiliaire au conditionnel passé avec « jamais ».",
       wrongAnswers: [
@@ -6869,7 +6869,7 @@ const section: Section = {
       ruleId: "06-20",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe entre parenthèses au conditionnel pour exprimer la politesse.",
-      phrase: "« Je vous ___ (demander) de nous accorder un peu plus de temps. »",
+      phrase: { before: "Je vous ", after: " (demander) de nous accorder un peu plus de temps." },
       answer: "demanderais",
       explanation: "Le conditionnel présent « demanderais » exprime une demande respectueuse et polie.",
       wrongAnswers: [
@@ -6886,7 +6886,7 @@ const section: Section = {
       ruleId: "06-20",
       generatedBy: "sonnet",
       prompt: "Complétez avec le conditionnel pour exprimer une hypothèse.",
-      phrase: "« Si tu travaillais plus régulièrement, tu ___ (réussir) ton examen. »",
+      phrase: { before: "Si tu travaillais plus régulièrement, tu ", after: " (réussir) ton examen." },
       answer: "réussirais",
       explanation: "Le conditionnel présent « réussirais » après « si + imparfait » exprime l'hypothèse irréelle du présent.",
       wrongAnswers: [
@@ -6903,7 +6903,7 @@ const section: Section = {
       ruleId: "06-20",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe au conditionnel passé pour exprimer le regret.",
-      phrase: "« Je n'___ (oublier) jamais cette opportunité manquée. »",
+      phrase: { before: "Je n'", after: " (oublier) jamais cette opportunité manquée." },
       answer: "aurais oublié",
       explanation: "Le conditionnel passé « aurais oublié » avec la négation exprime un regret sur une action passée.",
       wrongAnswers: [
@@ -6920,7 +6920,7 @@ const section: Section = {
       ruleId: "06-20",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au conditionnel pour rapporter une information incertaine.",
-      phrase: "« Selon les dernières nouvelles, le concert ___ (être annulé) la semaine prochaine. »",
+      phrase: { before: "Selon les dernières nouvelles, le concert ", after: " (être annulé) la semaine prochaine." },
       answer: "serait annulé",
       explanation: "Le conditionnel présent passif « serait annulé » indique que l'information vient de sources externes et n'est pas certaine.",
       wrongAnswers: [
@@ -6937,7 +6937,7 @@ const section: Section = {
       ruleId: "06-20",
       generatedBy: "sonnet",
       prompt: "Remplissez avec le verbe au conditionnel pour exprimer une demande polie.",
-      phrase: "« ___ (Avoir) vous l'amabilité de nous rejoindre ce soir ? »",
+      phrase: { before: "", after: " (Avoir) vous l'amabilité de nous rejoindre ce soir ?" },
       answer: "Auriez-vous",
       explanation: "Le conditionnel passé de « avoir » en inversion polie « Auriez-vous » crée une demande extrêmement courtoise et respectueuse.",
       wrongAnswers: [

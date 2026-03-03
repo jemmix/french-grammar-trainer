@@ -214,6 +214,10 @@ export interface LangStrings {
     TierStrings, // beginner   (≥ 0.00)
   ];
 
+  // ── Phrase delimiters (wrap the fill-in-the-blank sentence) ─────────────
+  phraseOpen: string;    // "«\u00a0" for FR, "\u201c" for EN
+  phraseClose: string;   // "\u00a0»" for FR, "\u201d" for EN
+
   // ── aria-label for fill-in-the-blank span ─────────────────────────────────
   blankAriaLabel: string;   // "blanc" / "blank"
 }

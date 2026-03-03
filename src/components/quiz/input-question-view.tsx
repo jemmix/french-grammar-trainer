@@ -3,7 +3,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import type { InputQuestion, Rule } from "~/data/types";
 import {
   evaluateInput,
-  parsePhrase,
   type InputResult,
 } from "~/lib/quiz-helpers";
 import { t } from "~/lang";
@@ -28,7 +27,7 @@ export function InputQuestionView({
   const inputRef = useRef<HTMLInputElement>(null);
   const nextButtonRef = useRef<HTMLButtonElement>(null);
 
-  const { before, after } = parsePhrase(question.phrase);
+  const { before, after } = question.phrase;
 
   // Reset state when question changes
   useEffect(() => {
@@ -118,7 +117,7 @@ export function InputQuestionView({
       {/* Sentence with inline input */}
       <div className="mb-8 py-6 px-5 rounded-xl bg-tricolore-blanc border border-craie">
         <p className="text-xl md:text-2xl font-medium text-encre leading-relaxed inline">
-          <span>«\u00a0{before}</span>
+          <span>{t.phraseOpen}{before}</span>
           <span className="inline-flex items-baseline mx-0.5">
             <span className="relative">
               <input
@@ -146,7 +145,7 @@ export function InputQuestionView({
               />
             </span>
           </span>
-          <span>{after}\u00a0»</span>
+          <span>{after}{t.phraseClose}</span>
         </p>
       </div>
 

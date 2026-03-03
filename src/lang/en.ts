@@ -241,6 +241,9 @@ const en = {
     { label: "Beginner",       promo: "First step taken!" },
   ] as const,
 
+  phraseOpen: "\u201c",
+  phraseClose: "\u201d",
+
   blankAriaLabel: "blank",
 } satisfies LangStrings;
 

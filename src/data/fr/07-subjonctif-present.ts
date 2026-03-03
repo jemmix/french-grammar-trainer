@@ -114,7 +114,7 @@ const section: Section = {
       ruleId: "07-01",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent (2e personne du singulier).",
-      phrase: "« Je ne crois pas que tu ___ tout ce qu'on te dit. »",
+      phrase: { before: "Je ne crois pas que tu ", after: " tout ce qu'on te dit." },
       answer: "croies",
       explanation: "Le subjonctif présent pour tu utilise le radical (croy-) + la terminaison -es.",
       wrongAnswers: [
@@ -313,7 +313,7 @@ const section: Section = {
       ruleId: "07-01",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent (3e personne du singulier).",
-      phrase: "« Le professeur veut que son élève ___ le texte intégralement. »",
+      phrase: { before: "Le professeur veut que son élève ", after: " le texte intégralement." },
       answer: "lise",
       explanation: "Le subjonctif présent pour il/elle utilise le radical de ils/elles (lis-) + la terminaison -e.",
       wrongAnswers: [
@@ -330,7 +330,7 @@ const section: Section = {
       ruleId: "07-01",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent (1re personne du pluriel).",
-      phrase: "« Il est rare que nous ___ unanimement sur cette question politique. »",
+      phrase: { before: "Il est rare que nous ", after: " unanimement sur cette question politique." },
       answer: "soyons d'accord",
       explanation: "Le subjonctif présent pour nous utilise le radical (soy-) + la terminaison -ons. L'accord vient avec le verbe.",
       wrongAnswers: [
@@ -347,7 +347,7 @@ const section: Section = {
       ruleId: "07-01",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent (3e personne du pluriel).",
-      phrase: "« Bien que mes amis ___ occupés, ils m'ont aidé. »",
+      phrase: { before: "Bien que mes amis ", after: " occupés, ils m'ont aidé." },
       answer: "soient",
       explanation: "Le subjonctif présent pour ils/elles utilise le radical (soy-) + la terminaison -ent.",
       wrongAnswers: [
@@ -364,7 +364,7 @@ const section: Section = {
       ruleId: "07-01",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent (2e personne du pluriel).",
-      phrase: "« Il est important que vous ___ vos engagements. »",
+      phrase: { before: "Il est important que vous ", after: " vos engagements." },
       answer: "teniez",
       explanation: "Le subjonctif présent pour vous utilise le radical (ten-) + la terminaison -iez.",
       wrongAnswers: [
@@ -641,7 +641,7 @@ const section: Section = {
       ruleId: "07-02",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « être » au subjonctif présent (2e personne du singulier)",
-      phrase: "« Je doute que tu ___ satisfait de cette décision. »",
+      phrase: { before: "Je doute que tu ", after: " satisfait de cette décision." },
       answer: "sois",
       explanation: "La forme correcte du subjonctif d'« être » pour « tu » est « sois ». C'est un verbe irrégulier qui ne suit pas le modèle régulier.",
       wrongAnswers: [
@@ -658,7 +658,7 @@ const section: Section = {
       ruleId: "07-02",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « avoir » au subjonctif présent (1ère personne du singulier)",
-      phrase: "« Il faut que j'___ confiance en moi. »",
+      phrase: { before: "Il faut que j'", after: " confiance en moi." },
       answer: "aie",
       explanation: "La forme correcte du subjonctif d'« avoir » pour « je » est « aie ». C'est un verbe irrégulier avec une forme particulière.",
       wrongAnswers: [
@@ -675,7 +675,7 @@ const section: Section = {
       ruleId: "07-02",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « aller » au subjonctif présent (1ère personne du pluriel)",
-      phrase: "« Pourvu que nous ___ loin pour cette randonnée ! »",
+      phrase: { before: "Pourvu que nous ", after: " loin pour cette randonnée !" },
       answer: "allions",
       explanation: "La forme correcte du subjonctif d'« aller » pour « nous » est « allions ». C'est un verbe irrégulier avec une conjugaison particulière.",
       wrongAnswers: [
@@ -692,7 +692,7 @@ const section: Section = {
       ruleId: "07-02",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « faire » au subjonctif présent (2e personne du pluriel)",
-      phrase: "« Je veux que vous ___ de votre mieux dans ce projet. »",
+      phrase: { before: "Je veux que vous ", after: " de votre mieux dans ce projet." },
       answer: "fassiez",
       explanation: "La forme correcte du subjonctif de « faire » pour « vous » est « fassiez ». C'est un verbe irrégulier avec une conjugaison particulière.",
       wrongAnswers: [
@@ -709,7 +709,7 @@ const section: Section = {
       ruleId: "07-02",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « être » au subjonctif présent (3e personne du pluriel)",
-      phrase: "« Je doute qu'ils ___ assez courageux pour cette mission. »",
+      phrase: { before: "Je doute qu'ils ", after: " assez courageux pour cette mission." },
       answer: "soient",
       explanation: "La forme correcte du subjonctif d'« être » pour « ils/elles » est « soient ». C'est un verbe très irrégulier avec cette conjugaison particulière.",
       wrongAnswers: [
@@ -973,7 +973,7 @@ const section: Section = {
       ruleId: "07-03",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « pouvoir » au subjonctif pour la 1ère personne du singulier.",
-      phrase: "« Je souhaite que je ___ vous aider. »",
+      phrase: { before: "Je souhaite que je ", after: " vous aider." },
       answer: "puisse",
       explanation: "« Puisse » est la 1ère personne du singulier du subjonctif du verbe « pouvoir ». C'est une forme irrégulière.",
       wrongAnswers: [
@@ -990,7 +990,7 @@ const section: Section = {
       ruleId: "07-03",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « savoir » au subjonctif pour la 3ème personne du singulier.",
-      phrase: "« Il faut qu'il ___ utiliser les temps correctement. »",
+      phrase: { before: "Il faut qu'il ", after: " utiliser les temps correctement." },
       answer: "sache",
       explanation: "« Sache » est la 3ème personne du singulier du subjonctif du verbe « savoir ». C'est une forme irrégulière.",
       wrongAnswers: [
@@ -1007,7 +1007,7 @@ const section: Section = {
       ruleId: "07-03",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « vouloir » au subjonctif pour la 2ème personne du pluriel.",
-      phrase: "« Nous voulons que vous ___ participer à cette réunion importante. »",
+      phrase: { before: "Nous voulons que vous ", after: " participer à cette réunion importante." },
       answer: "vouliez",
       explanation: "« Vouliez » est la 2ème personne du pluriel du subjonctif du verbe « vouloir ». C'est une forme irrégulière.",
       wrongAnswers: [
@@ -1024,7 +1024,7 @@ const section: Section = {
       ruleId: "07-03",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « pouvoir » au subjonctif pour la 3ème personne du pluriel.",
-      phrase: "« Il est possible qu'ils ___ trouver une solution ensemble. »",
+      phrase: { before: "Il est possible qu'ils ", after: " trouver une solution ensemble." },
       answer: "puissent",
       explanation: "« Puissent » est la 3ème personne du pluriel du subjonctif du verbe « pouvoir ». C'est une forme irrégulière.",
       wrongAnswers: [
@@ -1041,7 +1041,7 @@ const section: Section = {
       ruleId: "07-03",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « savoir » au subjonctif pour la 1ère personne du pluriel.",
-      phrase: "« Bien que nous ___ les conséquences, nous continuons quand même. »",
+      phrase: { before: "Bien que nous ", after: " les conséquences, nous continuons quand même." },
       answer: "sachions",
       explanation: "« Sachions » est la 1ère personne du pluriel du subjonctif du verbe « savoir ». C'est une forme irrégulière.",
       wrongAnswers: [
@@ -1266,7 +1266,7 @@ const section: Section = {
       ruleId: "07-04",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « boire » au subjonctif (sujet : « je »).",
-      phrase: "« Je doute qu'il faille que je ___ cette potion amère. »",
+      phrase: { before: "Je doute qu'il faille que je ", after: " cette potion amère." },
       answer: "boive",
       explanation: "Première personne du singulier du subjonctif de « boire ». Le radical change en « boiv- » pour toutes les personnes sauf nous et vous.",
       wrongAnswers: [
@@ -1283,7 +1283,7 @@ const section: Section = {
       ruleId: "07-04",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « prendre » au subjonctif (sujet : « nous »).",
-      phrase: "« Bien que nous ___ cette décision ensemble, certains la désapprouvent. »",
+      phrase: { before: "Bien que nous ", after: " cette décision ensemble, certains la désapprouvent." },
       answer: "prenions",
       explanation: "Première personne du pluriel du subjonctif de « prendre ». Le radical change en « pren- » pour nous et vous.",
       wrongAnswers: [
@@ -1300,7 +1300,7 @@ const section: Section = {
       ruleId: "07-04",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « revenir » au subjonctif (sujet : « tu »).",
-      phrase: "« Je suis ravi pourvu que tu ___ bientôt de ton voyage. »",
+      phrase: { before: "Je suis ravi pourvu que tu ", after: " bientôt de ton voyage." },
       answer: "reviennes",
       explanation: "Deuxième personne du singulier du subjonctif de « revenir ». Le radical change en « revien- » pour je, tu, il, elle, ils, elles.",
       wrongAnswers: [
@@ -1382,7 +1382,7 @@ const section: Section = {
       ruleId: "07-04",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « venir » au subjonctif (sujet : « vous »).",
-      phrase: "« Il est essentiel que vous ___ à cette réunion importante. »",
+      phrase: { before: "Il est essentiel que vous ", after: " à cette réunion importante." },
       answer: "veniez",
       explanation: "Deuxième personne du pluriel du subjonctif de « venir ». Le radical change en « ven- » pour nous et vous.",
       wrongAnswers: [
@@ -1399,7 +1399,7 @@ const section: Section = {
       ruleId: "07-04",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « comprendre » au subjonctif (sujet : « ils »).",
-      phrase: "« Pourvu qu'ils ___ enfin la gravité de cette situation ! »",
+      phrase: { before: "Pourvu qu'ils ", after: " enfin la gravité de cette situation !" },
       answer: "comprennent",
       explanation: "Troisième personne du pluriel du subjonctif de « comprendre ». Le radical change en « compren- » pour je, tu, il, elle, ils, elles.",
       wrongAnswers: [
@@ -1507,7 +1507,7 @@ const section: Section = {
       ruleId: "07-05",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après « souhaiter que ».",
-      phrase: "« Nous souhaitons que vous ___ cette opportunité. »",
+      phrase: { before: "Nous souhaitons que vous ", after: " cette opportunité." },
       answer: "profitiez",
       explanation: "Après « souhaiter que », on utilise le subjonctif. « Profitiez » est la 2e personne du pluriel du subjonctif présent du verbe « profiter ».",
       wrongAnswers: [
@@ -1524,7 +1524,7 @@ const section: Section = {
       ruleId: "07-05",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après « exiger que ».",
-      phrase: "« Le directeur exige que les employés ___ ponctuels. »",
+      phrase: { before: "Le directeur exige que les employés ", after: " ponctuels." },
       answer: "soient",
       explanation: "Après « exiger que », on utilise le subjonctif. « Soient » est la 3e personne du pluriel du subjonctif présent du verbe « être ».",
       wrongAnswers: [
@@ -1541,7 +1541,7 @@ const section: Section = {
       ruleId: "07-05",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après « demander que ».",
-      phrase: "« Je te demande que tu me ___ la vérité. »",
+      phrase: { before: "Je te demande que tu me ", after: " la vérité." },
       answer: "dises",
       explanation: "Après « demander que », on utilise le subjonctif. « Dises » est la 2e personne du singulier du subjonctif présent du verbe « dire ».",
       wrongAnswers: [
@@ -1558,7 +1558,7 @@ const section: Section = {
       ruleId: "07-05",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après « tenir à ce que ».",
-      phrase: "« Nous tenons à ce que vous ___ nos conseils. »",
+      phrase: { before: "Nous tenons à ce que vous ", after: " nos conseils." },
       answer: "suiviez",
       explanation: "Après « tenir à ce que », on utilise le subjonctif. « Suiviez » est la 2e personne du pluriel du subjonctif présent du verbe « suivre ».",
       wrongAnswers: [
@@ -1744,7 +1744,7 @@ const section: Section = {
       ruleId: "07-05",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après « vouloir que ».",
-      phrase: "« Je veux que tu ___ ton travail avant midi. »",
+      phrase: { before: "Je veux que tu ", after: " ton travail avant midi." },
       answer: "termines",
       explanation: "Après « vouloir que », on utilise le subjonctif. « Termines » est la 2e personne du singulier du subjonctif présent du verbe « terminer ».",
       wrongAnswers: [
@@ -2021,7 +2021,7 @@ const section: Section = {
       ruleId: "07-06",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après un verbe de sentiment.",
-      phrase: "« Je suis content que tu ___ réussir ton projet. »",
+      phrase: { before: "Je suis content que tu ", after: " réussir ton projet." },
       answer: "puisses",
       explanation: "Après « être content que », le subjonctif est obligatoire. « Puisses » est le subjonctif présent de « pouvoir » à la deuxième personne du singulier.",
       wrongAnswers: [
@@ -2038,7 +2038,7 @@ const section: Section = {
       ruleId: "07-06",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après un verbe de sentiment.",
-      phrase: "« Elle craint que nous ne ___ pas d'argent pour le voyage. »",
+      phrase: { before: "Elle craint que nous ne ", after: " pas d'argent pour le voyage." },
       answer: "ayons",
       explanation: "Après « craindre que », le subjonctif est obligatoire. « Ayons » est le subjonctif présent de « avoir » à la première personne du pluriel.",
       wrongAnswers: [
@@ -2055,7 +2055,7 @@ const section: Section = {
       ruleId: "07-06",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après un verbe de sentiment.",
-      phrase: "« Vous regrettez que je ___ dans cette ville. »",
+      phrase: { before: "Vous regrettez que je ", after: " dans cette ville." },
       answer: "vive",
       explanation: "Après « regretter que », le subjonctif est obligatoire. « Vive » est le subjonctif présent de « vivre » à la première personne du singulier.",
       wrongAnswers: [
@@ -2072,7 +2072,7 @@ const section: Section = {
       ruleId: "07-06",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après un verbe de sentiment.",
-      phrase: "« Nous sommes surpris que vous ne ___ pas la solution. »",
+      phrase: { before: "Nous sommes surpris que vous ne ", after: " pas la solution." },
       answer: "trouviez",
       explanation: "Après « être surpris que », le subjonctif est obligatoire. « Trouviez » est le subjonctif imparfait de « trouver » à la deuxième personne du pluriel (registre formel).",
       wrongAnswers: [
@@ -2089,7 +2089,7 @@ const section: Section = {
       ruleId: "07-06",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après un verbe de sentiment.",
-      phrase: "« J'ai peur que tu ne te ___ malade avant la compétition. »",
+      phrase: { before: "J'ai peur que tu ne te ", after: " malade avant la compétition." },
       answer: "sois",
       explanation: "Après « avoir peur que », le subjonctif est obligatoire. « Sois » est le subjonctif présent de « être » à la deuxième personne du singulier (passé composé : « tu te sois rendu malade »).",
       wrongAnswers: [
@@ -2288,7 +2288,7 @@ const section: Section = {
       ruleId: "07-07",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après « douter que »",
-      phrase: "« Je doute qu'il ___ la réunion ce soir. »",
+      phrase: { before: "Je doute qu'il ", after: " la réunion ce soir." },
       answer: "vienne",
       explanation: "Après « douter que », le subjonctif présent est obligatoire. « Vienne » est la troisième personne du singulier du subjonctif présent du verbe « venir ».",
       wrongAnswers: [
@@ -2305,7 +2305,7 @@ const section: Section = {
       ruleId: "07-07",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après « il se peut que »",
-      phrase: "« Il se peut qu'elle ___ malade demain. »",
+      phrase: { before: "Il se peut qu'elle ", after: " malade demain." },
       answer: "soit",
       explanation: "Après « il se peut que », le subjonctif présent est obligatoire. « Soit » est la troisième personne du singulier du subjonctif présent du verbe « être ».",
       wrongAnswers: [
@@ -2322,7 +2322,7 @@ const section: Section = {
       ruleId: "07-07",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après « ne pas être sûr que »",
-      phrase: "« Je ne suis pas sûr qu'il ___ la réponse. »",
+      phrase: { before: "Je ne suis pas sûr qu'il ", after: " la réponse." },
       answer: "sache",
       explanation: "Après « ne pas être sûr que », le subjonctif présent est obligatoire. « Sache » est la troisième personne du singulier du subjonctif présent du verbe « savoir ».",
       wrongAnswers: [
@@ -2339,7 +2339,7 @@ const section: Section = {
       ruleId: "07-07",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif ou à l'indicatif selon le contexte",
-      phrase: "« Nous ne doutons pas que vous ___ les meilleurs. »",
+      phrase: { before: "Nous ne doutons pas que vous ", after: " les meilleurs." },
       answer: "êtes",
       explanation: "Après « ne pas douter que » (affirmation de la négation), on emploie l'indicatif, non le subjonctif. « Êtes » est la deuxième personne du pluriel de l'indicatif présent du verbe « être ».",
       wrongAnswers: [
@@ -2434,7 +2434,7 @@ const section: Section = {
       ruleId: "07-07",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après « il est possible que »",
-      phrase: "« Il est possible qu'on ___ une solution. »",
+      phrase: { before: "Il est possible qu'on ", after: " une solution." },
       answer: "trouve",
       explanation: "Après « il est possible que », le subjonctif présent est obligatoire. « Trouve » est la troisième personne du singulier du subjonctif présent du verbe « trouver ».",
       wrongAnswers: [
@@ -2619,7 +2619,7 @@ const section: Section = {
       ruleId: "07-08",
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe au subjonctif après l'expression de nécessité.",
-      phrase: "« Il est nécessaire que nous ___ nos erreurs. »",
+      phrase: { before: "Il est nécessaire que nous ", after: " nos erreurs." },
       answer: "reconnaissions",
       explanation: "Après « il est nécessaire que », on utilise le subjonctif présent. « Reconnaissions » est la première personne du pluriel du subjonctif du verbe « reconnaître ».",
       wrongAnswers: [
@@ -2636,7 +2636,7 @@ const section: Section = {
       ruleId: "07-08",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après l'expression de nécessité.",
-      phrase: "« Il faut qu'il ___ tout le chemin. »",
+      phrase: { before: "Il faut qu'il ", after: " tout le chemin." },
       answer: "parcoure",
       explanation: "Après « il faut que », on utilise le subjonctif présent. « Parcoure » est la troisième personne du singulier du subjonctif du verbe « parcourir ».",
       wrongAnswers: [
@@ -2653,7 +2653,7 @@ const section: Section = {
       ruleId: "07-08",
       generatedBy: "haiku",
       prompt: "Remplissez le blanc avec le verbe au subjonctif.",
-      phrase: "« Il est essentiel que nous ___ avant 22 heures. »",
+      phrase: { before: "Il est essentiel que nous ", after: " avant 22 heures." },
       answer: "dormions",
       explanation: "Après « il est essentiel que », on utilise le subjonctif présent. « Dormions » est la première personne du pluriel du subjonctif du verbe « dormir ».",
       wrongAnswers: [
@@ -2761,7 +2761,7 @@ const section: Section = {
       ruleId: "07-08",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après l'expression de nécessité.",
-      phrase: "« Il faut que tu ___ la vérité. »",
+      phrase: { before: "Il faut que tu ", after: " la vérité." },
       answer: "dises",
       explanation: "Après « il faut que », on utilise le subjonctif présent. « Dises » est la deuxième personne du singulier du subjonctif du verbe « dire ».",
       wrongAnswers: [
@@ -2778,7 +2778,7 @@ const section: Section = {
       ruleId: "07-08",
       generatedBy: "haiku",
       prompt: "Remplissez le blanc avec le verbe au subjonctif.",
-      phrase: "« Il est important que vous ___ vos objectifs. »",
+      phrase: { before: "Il est important que vous ", after: " vos objectifs." },
       answer: "atteigniez",
       explanation: "Après « il est important que », on utilise le subjonctif présent. « Atteigniez » est la deuxième personne du pluriel du subjonctif du verbe « atteindre ».",
       wrongAnswers: [
@@ -3055,7 +3055,7 @@ const section: Section = {
       ruleId: "07-09",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé après l'expression de jugement.",
-      phrase: "« Il est étrange qu'elle n'_____ pas contacté ses amis. »",
+      phrase: { before: "Il est étrange qu'elle n'", after: "__ pas contacté ses amis." },
       answer: "ait",
       explanation: "Après « il est étrange que », le subjonctif passé composé s'utilise. « Ait » est la troisième personne singulier du subjonctif du verbe avoir.",
       wrongAnswers: [
@@ -3072,7 +3072,7 @@ const section: Section = {
       ruleId: "07-09",
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe au subjonctif après l'expression de jugement.",
-      phrase: "« Il vaut mieux qu'il _____ sa carrière maintenant. »",
+      phrase: { before: "Il vaut mieux qu'il ", after: "__ sa carrière maintenant." },
       answer: "commence",
       explanation: "Après « il vaut mieux qu' », le subjonctif présent s'utilise. « Commence » est la troisième personne singulier du subjonctif du verbe commencer.",
       wrongAnswers: [
@@ -3089,7 +3089,7 @@ const section: Section = {
       ruleId: "07-09",
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe au subjonctif présent.",
-      phrase: "« Il est dommage que vous ne _____ pas cette opportunité. »",
+      phrase: { before: "Il est dommage que vous ne ", after: "__ pas cette opportunité." },
       answer: "profitiez",
       explanation: "Après « il est dommage que », le subjonctif présent s'utilise. « Profitiez » est la deuxième personne pluriel du subjonctif du verbe profiter.",
       wrongAnswers: [
@@ -3106,7 +3106,7 @@ const section: Section = {
       ruleId: "07-09",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après l'expression de jugement.",
-      phrase: "« C'est incroyable que vous _____ réaliser ce projet en si peu de temps. »",
+      phrase: { before: "C'est incroyable que vous ", after: "__ réaliser ce projet en si peu de temps." },
       answer: "ayez pu",
       explanation: "Après « c'est incroyable que », le subjonctif passé composé s'utilise. « Ayez pu » est la deuxième personne pluriel du subjonctif passé du verbe pouvoir.",
       wrongAnswers: [
@@ -3123,7 +3123,7 @@ const section: Section = {
       ruleId: "07-09",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après l'expression de jugement.",
-      phrase: "« Il est normal que tu ___ tes responsabilités. »",
+      phrase: { before: "Il est normal que tu ", after: " tes responsabilités." },
       answer: "assumes",
       explanation: "Après « il est normal que », le subjonctif présent s'utilise. « Assumes » est la deuxième personne singulier du subjonctif du verbe assumer.",
       wrongAnswers: [
@@ -3387,7 +3387,7 @@ const section: Section = {
       ruleId: "07-10",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après « pour que ».",
-      phrase: "« Nous faisons ce travail pour que vous ___ des solutions. »",
+      phrase: { before: "Nous faisons ce travail pour que vous ", after: " des solutions." },
       answer: "trouviez",
       explanation: "Après « pour que » avec le sujet « vous » (deuxième personne du pluriel), on utilise le subjonctif : « trouviez ».",
       wrongAnswers: [
@@ -3404,7 +3404,7 @@ const section: Section = {
       ruleId: "07-10",
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif du verbe « venir » après « afin que ».",
-      phrase: "« J'envoie une invitation afin qu'il ___ à la fête. »",
+      phrase: { before: "J'envoie une invitation afin qu'il ", after: " à la fête." },
       answer: "vienne",
       explanation: "Après « afin que » avec le sujet « il » (troisième personne du singulier), on utilise le subjonctif : « vienne ».",
       wrongAnswers: [
@@ -3421,7 +3421,7 @@ const section: Section = {
       ruleId: "07-10",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « réussir » au subjonctif après « pour que ».",
-      phrase: "« On lui donne des cours de mathématiques pour qu'il ___ son examen. »",
+      phrase: { before: "On lui donne des cours de mathématiques pour qu'il ", after: " son examen." },
       answer: "réussisse",
       explanation: "Après « pour que » avec le sujet « il » (troisième personne du singulier), on utilise le subjonctif : « réussisse ».",
       wrongAnswers: [
@@ -3438,7 +3438,7 @@ const section: Section = {
       ruleId: "07-10",
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif du verbe « partir » après « afin que ».",
-      phrase: "« Nous ouvrons la fenêtre afin que l'air frais ___. »",
+      phrase: { before: "Nous ouvrons la fenêtre afin que l'air frais ", after: "." },
       answer: "entre",
       explanation: "Après « afin que » avec le sujet « l'air » (troisième personne du singulier), on utilise le subjonctif : « entre ».",
       wrongAnswers: [
@@ -3455,7 +3455,7 @@ const section: Section = {
       ruleId: "07-10",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « savoir » au subjonctif après « pour que ».",
-      phrase: "« Je te l'explique en détail pour que tu ___ exactement ce qui s'est passé. »",
+      phrase: { before: "Je te l'explique en détail pour que tu ", after: " exactement ce qui s'est passé." },
       answer: "saches",
       explanation: "Après « pour que » avec le sujet « tu » (deuxième personne du singulier), on utilise le subjonctif : « saches ».",
       wrongAnswers: [
@@ -3524,7 +3524,7 @@ const section: Section = {
       ruleId: "07-11",
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif présent du verbe « avoir ».",
-      phrase: "« Bien qu'il ___ des doutes, il a décidé de continuer. »",
+      phrase: { before: "Bien qu'il ", after: " des doutes, il a décidé de continuer." },
       answer: "ait",
       explanation: "« Ait » est le subjonctif présent de « avoir » à la 3e personne du singulier. Après « bien que », le subjonctif est obligatoire.",
       wrongAnswers: [
@@ -3541,7 +3541,7 @@ const section: Section = {
       ruleId: "07-11",
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif présent du verbe « venir ».",
-      phrase: "« Quoique tu ___ tard, tu es bienvenu. »",
+      phrase: { before: "Quoique tu ", after: " tard, tu es bienvenu." },
       answer: "viennes",
       explanation: "« Viennes » est le subjonctif présent de « venir » à la 2e personne du singulier. Après « quoique », le subjonctif est requis.",
       wrongAnswers: [
@@ -3558,7 +3558,7 @@ const section: Section = {
       ruleId: "07-11",
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif présent du verbe « pouvoir ».",
-      phrase: "« Bien que nous ___ nous tromper, nous avons confiance. »",
+      phrase: { before: "Bien que nous ", after: " nous tromper, nous avons confiance." },
       answer: "puissions",
       explanation: "« Puissions » est le subjonctif présent de « pouvoir » à la 1ère personne du pluriel. Après « bien que », le subjonctif est obligatoire.",
       wrongAnswers: [
@@ -3575,7 +3575,7 @@ const section: Section = {
       ruleId: "07-11",
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif présent du verbe « faire ».",
-      phrase: "« Quoique vous ___ une erreur, vous êtes une très bonne personne. »",
+      phrase: { before: "Quoique vous ", after: " une erreur, vous êtes une très bonne personne." },
       answer: "fassiez",
       explanation: "« Fassiez » est le subjonctif présent de « faire » à la 2e personne du pluriel. Après « quoique », le subjonctif est requis.",
       wrongAnswers: [
@@ -3592,7 +3592,7 @@ const section: Section = {
       ruleId: "07-11",
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif présent du verbe « aller ».",
-      phrase: "« Bien que tu ___ mal, tu devrais essayer de sourire. »",
+      phrase: { before: "Bien que tu ", after: " mal, tu devrais essayer de sourire." },
       answer: "ailles",
       explanation: "« Ailles » est le subjonctif présent de « aller » à la 2e personne du singulier. Après « bien que », le subjonctif est obligatoire.",
       wrongAnswers: [
@@ -4090,7 +4090,7 @@ const section: Section = {
       ruleId: "07-12",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après « avant que ».",
-      phrase: "« Avant qu'il ne ___ la maison, ils vont vérifier toutes les portes. »",
+      phrase: { before: "Avant qu'il ne ", after: " la maison, ils vont vérifier toutes les portes." },
       answer: "quitte",
       explanation: "Après « avant que », on utilise le subjonctif présent. « Quitte » (subjonctif présent 3e singulier de « quitter ») est correct.",
       wrongAnswers: [
@@ -4107,7 +4107,7 @@ const section: Section = {
       ruleId: "07-12",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'indicatif passé composé après « après que ».",
-      phrase: "« Après qu'elle ___ ses études, elle a trouvé un emploi. »",
+      phrase: { before: "Après qu'elle ", after: " ses études, elle a trouvé un emploi." },
       answer: "a terminé",
       explanation: "Après « après que », on utilise l'indicatif passé composé. « A terminé » (passé composé 3e singulier de « terminer ») est correct.",
       wrongAnswers: [
@@ -4124,7 +4124,7 @@ const section: Section = {
       ruleId: "07-12",
       generatedBy: "haiku",
       prompt: "Complétez avec la bonne forme du verbe (subjonctif ou indicatif).",
-      phrase: "« Avant que les invités n'___ , préparons le dîner. »",
+      phrase: { before: "Avant que les invités n'", after: " , préparons le dîner." },
       answer: "arrivent",
       explanation: "Après « avant que », on utilise le subjonctif présent. « Arrivent » (subjonctif présent 3e pluriel de « arriver ») est correct.",
       wrongAnswers: [
@@ -4141,7 +4141,7 @@ const section: Section = {
       ruleId: "07-12",
       generatedBy: "haiku",
       prompt: "Complétez avec la bonne forme du verbe (subjonctif ou indicatif).",
-      phrase: "« Après que vous ___ le travail, vous pourrez partir en vacances. »",
+      phrase: { before: "Après que vous ", after: " le travail, vous pourrez partir en vacances." },
       answer: "avez fini",
       explanation: "Après « après que », on utilise l'indicatif passé composé. « Avez fini » (passé composé 2e pluriel de « finir ») est correct.",
       wrongAnswers: [
@@ -4158,7 +4158,7 @@ const section: Section = {
       ruleId: "07-12",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après « avant que ».",
-      phrase: "« Avant qu'il ne ___ , tout le monde était calme dans la salle. »",
+      phrase: { before: "Avant qu'il ne ", after: " , tout le monde était calme dans la salle." },
       answer: "parte",
       explanation: "Après « avant que », on utilise le subjonctif présent. La 3e personne du singulier du subjonctif de « partir » est « parte ».",
       wrongAnswers: [
@@ -4409,7 +4409,7 @@ const section: Section = {
       ruleId: "07-13",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après « à moins que »",
-      phrase: "« À moins qu'il ___ malade, nous irons en excursion dimanche. »",
+      phrase: { before: "À moins qu'il ", after: " malade, nous irons en excursion dimanche." },
       answer: "ne soit",
       explanation: "Après « à moins que », on utilise le subjonctif présent du verbe « être ». Le sujet « il » demande la 3e personne du singulier : « ne soit ». Le ne explétif est optionnel mais très courant après « à moins que ».",
       wrongAnswers: [
@@ -4427,7 +4427,7 @@ const section: Section = {
       ruleId: "07-13",
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif après « sans que »",
-      phrase: "« Elle a quitté la fête sans que personne ne ___ rien remarqué. »",
+      phrase: { before: "Elle a quitté la fête sans que personne ne ", after: " rien remarqué." },
       answer: "s'en aperçoive",
       explanation: "Après « sans que », on utilise le subjonctif présent. Le sujet « personne » demande la 3e personne du singulier. « S'en apercevoir » signifie « s'en rendre compte ». Le ne est explicite (négation implicite).",
       wrongAnswers: [
@@ -4444,7 +4444,7 @@ const section: Section = {
       ruleId: "07-13",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après « de peur que »",
-      phrase: "« Nous restons silencieux de peur que le bruit ne ___ les enfants. »",
+      phrase: { before: "Nous restons silencieux de peur que le bruit ne ", after: " les enfants." },
       answer: "ne réveille",
       explanation: "Après « de peur que », on utilise le subjonctif présent du verbe « réveiller ». Le sujet « le bruit » demande la 3e personne du singulier. Le ne explétif est très courant et presque obligatoire après « de peur que ».",
       wrongAnswers: [
@@ -4462,7 +4462,7 @@ const section: Section = {
       ruleId: "07-13",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après « à moins que »",
-      phrase: "« À moins que vous ne ___ une meilleure proposition, nous accepterons cet accord. »",
+      phrase: { before: "À moins que vous ne ", after: " une meilleure proposition, nous accepterons cet accord." },
       answer: "fassiez",
       explanation: "Après « à moins que », on utilise le subjonctif présent du verbe « faire ». Le sujet « vous » demande la 2e personne du pluriel. Le ne explétif est optionnel mais courant. « Faire une proposition » signifie « proposer ».",
       wrongAnswers: [
@@ -4480,7 +4480,7 @@ const section: Section = {
       ruleId: "07-13",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après « sans que »",
-      phrase: "« Sans que je ___ d'où cela venait, le package a été livré à ma porte. »",
+      phrase: { before: "Sans que je ", after: " d'où cela venait, le package a été livré à ma porte." },
       answer: "sache",
       explanation: "Après « sans que », on utilise le subjonctif présent du verbe « savoir ». Le sujet « je » demande la 1re personne du singulier. « Savoir d'où » signifie « connaître l'origine ». Cette construction exprime une action qui se produit sans que le sujet ne soit informé.",
       wrongAnswers: [
@@ -4770,7 +4770,7 @@ const section: Section = {
       ruleId: "07-14",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après le superlatif.",
-      phrase: "« C'est le plus bel appartement que je ___ jamais visité. »",
+      phrase: { before: "C'est le plus bel appartement que je ", after: " jamais visité." },
       answer: "aie",
       explanation: "Après « le plus…que », le subjonctif est obligatoire. « Aie » est la première personne du subjonctif présent d'« avoir ».",
       wrongAnswers: [
@@ -4787,7 +4787,7 @@ const section: Section = {
       ruleId: "07-14",
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe au subjonctif après une structure superlative.",
-      phrase: "« Le moins agréable que j'___ entendu était son discours politique. »",
+      phrase: { before: "Le moins agréable que j'", after: " entendu était son discours politique." },
       answer: "aie",
       explanation: "Après « le moins…que », le subjonctif est obligatoire. « Aie » est la première personne du subjonctif présent d'« avoir ».",
       wrongAnswers: [
@@ -4804,7 +4804,7 @@ const section: Section = {
       ruleId: "07-14",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après le superlatif.",
-      phrase: "« C'est le seul film que nous ___ ensemble avant sa disparition. »",
+      phrase: { before: "C'est le seul film que nous ", after: " ensemble avant sa disparition." },
       answer: "ayons",
       explanation: "Après « le seul…que », le subjonctif est obligatoire. « Ayons » est la première personne du pluriel du subjonctif présent d'« avoir ».",
       wrongAnswers: [
@@ -4834,7 +4834,7 @@ const section: Section = {
       ruleId: "07-14",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après la structure superlative.",
-      phrase: "« La seule personne qui ___ comprendre cette théorie était mon professeur. »",
+      phrase: { before: "La seule personne qui ", after: " comprendre cette théorie était mon professeur." },
       answer: "puisse",
       explanation: "Après « la seule…qui », le subjonctif est obligatoire. « Puisse » est la troisième personne du subjonctif présent de « pouvoir ».",
       wrongAnswers: [
@@ -4851,7 +4851,7 @@ const section: Section = {
       ruleId: "07-14",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après le superlatif.",
-      phrase: "« C'est le dernier conseil qu'il me ___ avant de partir. »",
+      phrase: { before: "C'est le dernier conseil qu'il me ", after: " avant de partir." },
       answer: "donne",
       explanation: "Après « le dernier…que », le subjonctif est obligatoire. « Donne » est la troisième personne du subjonctif présent de « donner ».",
       wrongAnswers: [
@@ -5089,7 +5089,7 @@ const section: Section = {
       ruleId: "07-15",
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte du verbe « avoir » au temps approprié.",
-      phrase: "« Je suis sûr que tu ___ raison dans ce débat. »",
+      phrase: { before: "Je suis sûr que tu ", after: " raison dans ce débat." },
       answer: "as",
       explanation: "Après « être sûr que » affirmatif, on utilise l'indicatif. Le présent de l'indicatif 2ème personne du verbe « avoir » est « as ».",
       wrongAnswers: [
@@ -5106,7 +5106,7 @@ const section: Section = {
       ruleId: "07-15",
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte du verbe « pouvoir » au temps approprié.",
-      phrase: "« Ne penses-tu pas que nous ___ trouver une solution ? »",
+      phrase: { before: "Ne penses-tu pas que nous ", after: " trouver une solution ?" },
       answer: "puissions",
       explanation: "Après « ne pas penser que » interrogatif, on utilise le subjonctif. Le subjonctif présent 1ère personne pluriel du verbe « pouvoir » est « puissions ».",
       wrongAnswers: [
@@ -5123,7 +5123,7 @@ const section: Section = {
       ruleId: "07-15",
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte du verbe « aller » au temps approprié.",
-      phrase: "« J'estime que la situation ___ s'améliorer prochainement. »",
+      phrase: { before: "J'estime que la situation ", after: " s'améliorer prochainement." },
       answer: "va",
       explanation: "Après « estimer que » affirmatif, on utilise l'indicatif. Le présent de l'indicatif 3ème personne du verbe « aller » est « va ».",
       wrongAnswers: [
@@ -5140,7 +5140,7 @@ const section: Section = {
       ruleId: "07-15",
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte du verbe « être » au temps approprié.",
-      phrase: "« Trouvez-vous que ce projet ___ ambitieux mais réalisable ? »",
+      phrase: { before: "Trouvez-vous que ce projet ", after: " ambitieux mais réalisable ?" },
       answer: "soit",
       explanation: "Après « trouver que » interrogatif, on utilise le subjonctif. Le subjonctif présent 3ème personne du verbe « être » est « soit ».",
       wrongAnswers: [
@@ -5157,7 +5157,7 @@ const section: Section = {
       ruleId: "07-15",
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte du verbe « devoir » au temps approprié.",
-      phrase: "« Je ne crois pas que tu ___ renoncer à tes rêves. »",
+      phrase: { before: "Je ne crois pas que tu ", after: " renoncer à tes rêves." },
       answer: "doives",
       explanation: "Après « ne pas croire que », on utilise le subjonctif. Le subjonctif présent 2ème personne du verbe « devoir » est « doives ».",
       wrongAnswers: [
@@ -5421,7 +5421,7 @@ const section: Section = {
       ruleId: "07-16",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au mode et au temps appropriés après l'expression donnée.",
-      phrase: "« Il est probable que vous ___ cette proposition l'année prochaine. »",
+      phrase: { before: "Il est probable que vous ", after: " cette proposition l'année prochaine." },
       answer: "examinerez",
       explanation: "Après « il est probable que », on utilise l'indicatif futur pour exprimer un événement probable qui se produira.",
       wrongAnswers: [
@@ -5490,7 +5490,7 @@ const section: Section = {
       ruleId: "07-16",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au mode et au temps appropriés après l'expression donnée.",
-      phrase: "« Il est impossible que les travaux ___ avant l'automne prochain. »",
+      phrase: { before: "Il est impossible que les travaux ", after: " avant l'automne prochain." },
       answer: "se terminent",
       explanation: "Après « il est impossible que », on utilise le subjonctif présent pour exprimer l'impossibilité.",
       wrongAnswers: [
@@ -5507,7 +5507,7 @@ const section: Section = {
       ruleId: "07-16",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au mode et au temps appropriés après l'expression donnée.",
-      phrase: "« Il est clair que tu ___ l'erreur que tu as commise. »",
+      phrase: { before: "Il est clair que tu ", after: " l'erreur que tu as commise." },
       answer: "comprends",
       explanation: "Après « il est clair que », on utilise l'indicatif présent pour exprimer une certitude absolue.",
       wrongAnswers: [
@@ -5524,7 +5524,7 @@ const section: Section = {
       ruleId: "07-16",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au mode et au temps appropriés après l'expression donnée.",
-      phrase: "« Il se peut que nous ___ ensemble la semaine prochaine. »",
+      phrase: { before: "Il se peut que nous ", after: " ensemble la semaine prochaine." },
       answer: "nous voyions",
       explanation: "Après « il se peut que », on utilise le subjonctif présent pour exprimer une possibilité incertaine.",
       wrongAnswers: [
@@ -5541,7 +5541,7 @@ const section: Section = {
       ruleId: "07-16",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au mode et au temps appropriés après l'expression donnée.",
-      phrase: "« Il est sûr que ce projet ___ un grand succès. »",
+      phrase: { before: "Il est sûr que ce projet ", after: " un grand succès." },
       answer: "sera",
       explanation: "Après « il est sûr que », on utilise l'indicatif futur pour exprimer une certitude concernant l'avenir.",
       wrongAnswers: [
@@ -5818,7 +5818,7 @@ const section: Section = {
       ruleId: "07-17",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe pour compléter la phrase correctement.",
-      phrase: "« Je veux ___ les vacances avec ma famille. »",
+      phrase: { before: "Je veux ", after: " les vacances avec ma famille." },
       answer: "passer",
       explanation: "Même sujet (je) dans les deux clauses, donc l'infinitif sans « que » est correct.",
       wrongAnswers: [
@@ -5835,7 +5835,7 @@ const section: Section = {
       ruleId: "07-17",
       generatedBy: "haiku",
       prompt: "Complétez avec le bon temps et mode du verbe.",
-      phrase: "« Tu préfères ___ à la maison ou en restaurant ? »",
+      phrase: { before: "Tu préfères ", after: " à la maison ou en restaurant ?" },
       answer: "dîner",
       explanation: "Même sujet (tu) dans les deux clauses, donc l'infinitif est correct.",
       wrongAnswers: [
@@ -5852,7 +5852,7 @@ const section: Section = {
       ruleId: "07-17",
       generatedBy: "haiku",
       prompt: "Complétez le verbe avec la bonne forme.",
-      phrase: "« Ma mère insiste pour que je ___ mes études. »",
+      phrase: { before: "Ma mère insiste pour que je ", after: " mes études." },
       answer: "poursuive",
       explanation: "Les sujets sont différents (ma mère vs je), donc on utilise le subjonctif. Le verbe « poursuivre » se conjugue à la première personne du singulier du subjonctif : « poursuive ».",
       wrongAnswers: [
@@ -5869,7 +5869,7 @@ const section: Section = {
       ruleId: "07-17",
       generatedBy: "haiku",
       prompt: "Complétez avec le bon verbe au subjonctif ou à l'infinitif.",
-      phrase: "« Nous souhaitons ___ le projet avant la fin du mois. »",
+      phrase: { before: "Nous souhaitons ", after: " le projet avant la fin du mois." },
       answer: "terminer",
       explanation: "Même sujet (nous) dans les deux clauses, donc l'infinitif est correct.",
       wrongAnswers: [
@@ -5886,7 +5886,7 @@ const section: Section = {
       ruleId: "07-17",
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe approprié au subjonctif ou à l'infinitif.",
-      phrase: "« Ils aimeraient que nous ___ à leur mariage. »",
+      phrase: { before: "Ils aimeraient que nous ", after: " à leur mariage." },
       answer: "assistions",
       explanation: "Les sujets sont différents (ils vs nous), donc on utilise le subjonctif. Le verbe « assister » se conjugue à la première personne du pluriel du subjonctif : « assistions ».",
       wrongAnswers: [
@@ -6150,7 +6150,7 @@ const section: Section = {
       ruleId: "07-18",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après la négation de « penser ».",
-      phrase: "« Je ne pense pas qu'il ___ intelligent. »",
+      phrase: { before: "Je ne pense pas qu'il ", after: " intelligent." },
       answer: "soit",
       explanation: "Après « ne pas penser que », le subjonctif du verbe « être » est obligatoire. « Soit » est la 3e personne du singulier au subjonctif présent.",
       wrongAnswers: [
@@ -6167,7 +6167,7 @@ const section: Section = {
       ruleId: "07-18",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après la négation de « croire ».",
-      phrase: "« Elle ne croit pas qu'ils ___ capables de le faire. »",
+      phrase: { before: "Elle ne croit pas qu'ils ", after: " capables de le faire." },
       answer: "soient",
       explanation: "Après « ne pas croire que », le subjonctif du verbe « être » est de rigueur. « Soient » est la 3e personne du pluriel au subjonctif présent.",
       wrongAnswers: [
@@ -6184,7 +6184,7 @@ const section: Section = {
       ruleId: "07-18",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après la négation de « vouloir ».",
-      phrase: "« Nous ne voulons pas qu'elle ___ du mal. »",
+      phrase: { before: "Nous ne voulons pas qu'elle ", after: " du mal." },
       answer: "ait",
       explanation: "Après « ne pas vouloir que », le subjonctif du verbe « avoir » est obligatoire. « Ait » est la 3e personne du singulier au subjonctif présent.",
       wrongAnswers: [
@@ -6201,7 +6201,7 @@ const section: Section = {
       ruleId: "07-18",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après la négation de « souhaiter ».",
-      phrase: "« Je ne souhaite pas qu'on me ___ à la réunion. »",
+      phrase: { before: "Je ne souhaite pas qu'on me ", after: " à la réunion." },
       answer: "voie",
       explanation: "Après « ne pas souhaiter que », le subjonctif du verbe « voir » est de mise. « Voie » est la 3e personne du singulier au subjonctif présent.",
       wrongAnswers: [
@@ -6218,7 +6218,7 @@ const section: Section = {
       ruleId: "07-18",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé après la négation de « penser ».",
-      phrase: "« Je ne pense pas qu'elle ___ avant demain. »",
+      phrase: { before: "Je ne pense pas qu'elle ", after: " avant demain." },
       answer: "soit venue",
       explanation: "Après « ne pas penser que », le subjonctif passé du verbe « venir » est approprié pour un événement passé. « Soit venue » est la 3e personne du singulier au subjonctif passé.",
       wrongAnswers: [
@@ -6508,7 +6508,7 @@ const section: Section = {
       ruleId: "07-19",
       generatedBy: "haiku",
       prompt: "Complétez avec le ne explétif obligatoire après « avant que ».",
-      phrase: "« Je dois finir ce projet avant qu'il ___ . »",
+      phrase: { before: "Je dois finir ce projet avant qu'il ", after: " ." },
       answer: "ne soit trop tard",
       explanation: "Le ne explétif est obligatoire après « avant que ». Le subjonctif « soit » avec l'attribut « trop tard » est la forme correcte et formelle.",
       wrongAnswers: [
@@ -6525,7 +6525,7 @@ const section: Section = {
       ruleId: "07-19",
       generatedBy: "haiku",
       prompt: "Remplissez avec le ne explétif requis après « de peur que ».",
-      phrase: "« Je ne dis rien de peur qu'il ___ . »",
+      phrase: { before: "Je ne dis rien de peur qu'il ", after: " ." },
       answer: "ne se fâche",
       explanation: "Le ne explétif après « de peur que » est obligatoire. Le subjonctif présent « se fâche » à la 3e personne du singulier est la forme correcte.",
       wrongAnswers: [
@@ -6542,7 +6542,7 @@ const section: Section = {
       ruleId: "07-19",
       generatedBy: "haiku",
       prompt: "Complétez avec le ne explétif obligatoire après « à moins que ».",
-      phrase: "« Nous irons au concert à moins que vous ___ . »",
+      phrase: { before: "Nous irons au concert à moins que vous ", after: " ." },
       answer: "ne soyez trop fatigués",
       explanation: "Le ne explétif après « à moins que » est obligatoire. Le subjonctif présent « soyez » à la 2e personne du pluriel, avec l'attribut « trop fatigués », est correct.",
       wrongAnswers: [
@@ -6559,7 +6559,7 @@ const section: Section = {
       ruleId: "07-19",
       generatedBy: "haiku",
       prompt: "Remplissez avec le ne explétif requis après « de crainte que ».",
-      phrase: "« Elle s'en va de crainte que vous ___ . »",
+      phrase: { before: "Elle s'en va de crainte que vous ", after: " ." },
       answer: "ne lui fassiez des reproches",
       explanation: "Le ne explétif après « de crainte que » (équivalent de « de peur que ») est obligatoire. Le subjonctif « fassiez » à la 2e personne du pluriel convient. L'infinitif « faire » devient « faire des reproches ».",
       wrongAnswers: [
@@ -6576,7 +6576,7 @@ const section: Section = {
       ruleId: "07-19",
       generatedBy: "haiku",
       prompt: "Complétez avec le ne explétif et le subjonctif correct.",
-      phrase: "« Avant qu'elle ___ son avis, nous vous contacterons. »",
+      phrase: { before: "Avant qu'elle ", after: " son avis, nous vous contacterons." },
       answer: "ne change",
       explanation: "Le ne explétif après « avant que » est obligatoire. Le subjonctif présent « change » à la 3e personne du singulier est la forme correcte.",
       wrongAnswers: [
@@ -6593,7 +6593,7 @@ const section: Section = {
       ruleId: "07-20",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après « il faut que ».",
-      phrase: "« Il faut que vous ___ vos devoirs avant demain. »",
+      phrase: { before: "Il faut que vous ", after: " vos devoirs avant demain." },
       answer: "fassiez",
       explanation: "Après « il faut que », on emploie le subjonctif. « Faire » au subjonctif à la 2e personne du pluriel est « fassiez ».",
       wrongAnswers: [
@@ -6610,7 +6610,7 @@ const section: Section = {
       ruleId: "07-20",
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif du verbe « aller ».",
-      phrase: "« Je doute qu'il ___ réussir sans aide. »",
+      phrase: { before: "Je doute qu'il ", after: " réussir sans aide." },
       answer: "aille",
       explanation: "Après « douter que », on emploie le subjonctif. « Aller » au subjonctif à la 3e personne du singulier est « aille ».",
       wrongAnswers: [
@@ -6627,7 +6627,7 @@ const section: Section = {
       ruleId: "07-20",
       generatedBy: "haiku",
       prompt: "Remplissez le blanc avec le subjonctif du verbe « être ».",
-      phrase: "« Bien que nous ___ fatigués, nous avons continué. »",
+      phrase: { before: "Bien que nous ", after: " fatigués, nous avons continué." },
       answer: "soyons",
       explanation: "« Bien que » est une conjonction de concession qui déclenche le subjonctif. « Être » au subjonctif à la 1e personne du pluriel est « soyons ».",
       wrongAnswers: [
@@ -6644,7 +6644,7 @@ const section: Section = {
       ruleId: "07-20",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « pouvoir » au subjonctif.",
-      phrase: "« Pour que vous ___ réussir, il faut travailler dur. »",
+      phrase: { before: "Pour que vous ", after: " réussir, il faut travailler dur." },
       answer: "puissiez",
       explanation: "« Pour que » est une conjonction de but qui déclenche le subjonctif. « Pouvoir » au subjonctif à la 2e personne du pluriel est « puissiez ».",
       wrongAnswers: [
@@ -6661,7 +6661,7 @@ const section: Section = {
       ruleId: "07-20",
       generatedBy: "haiku",
       prompt: "Remplissez avec le verbe « prendre » au subjonctif.",
-      phrase: "« À moins que tu ne ___ une autre route, tu risques d'être en retard. »",
+      phrase: { before: "À moins que tu ne ", after: " une autre route, tu risques d'être en retard." },
       answer: "prennes",
       explanation: "« À moins que » est une conjonction d'exception qui déclenche le subjonctif. « Prendre » au subjonctif à la 2e personne du singulier est « prennes ». Le « ne » est explétif.",
       wrongAnswers: [

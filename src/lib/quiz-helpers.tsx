@@ -68,17 +68,6 @@ export function levenshteinDistance(a: string, b: string): number {
   return prev[lb]!;
 }
 
-/** Extract before/after blank from a phrase like "« Je ___ avec mes amis. »"
- *  Accepts any run of 2+ underscores as the placeholder. */
-export function parsePhrase(phrase: string): { before: string; after: string } {
-  const content = phrase.replace(/^«\s*/, "").replace(/\s*»$/, "");
-  const match = content.match(/_{2,}/);
-  if (!match || match.index === undefined) return { before: content, after: "" };
-  return {
-    before: content.slice(0, match.index),
-    after: content.slice(match.index + match[0]!.length),
-  };
-}
 
 export function evaluateInput(userInput: string, question: InputQuestion): InputResult {
   const trimmed = userInput.trim();

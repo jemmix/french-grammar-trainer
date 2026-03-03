@@ -23,7 +23,7 @@ export interface MultipleChoiceQuestion extends BaseQuestion {
 
 export interface InputQuestion extends BaseQuestion {
   type: "input";
-  phrase: string;   // sentence with ___ blank, e.g. "« Je ___ avec mes amis. »"
+  phrase: { before: string; after: string };
   answer: string;
   explanation: string;
   wrongAnswers: WrongAnswer[];

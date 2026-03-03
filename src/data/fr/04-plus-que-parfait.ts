@@ -296,7 +296,7 @@ const section: Section = {
       ruleId: "04-01",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe entre parenthèses au plus-que-parfait",
-      phrase: "« Quand le train est parti, nous ___ (arriver) depuis une heure. »",
+      phrase: { before: "Quand le train est parti, nous ", after: " (arriver) depuis une heure." },
       answer: "étions arrivés",
       explanation: "« Arriver » se conjugue avec l'auxiliaire être. Le plus-que-parfait avec nous : être à l'imparfait (étions) + participe passé (arrivés), accordé au masculin pluriel.",
       wrongAnswers: [
@@ -313,7 +313,7 @@ const section: Section = {
       ruleId: "04-01",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe entre parenthèses au plus-que-parfait",
-      phrase: "« Elle ignorait qu'il lui ___ (mentir) pendant des années. »",
+      phrase: { before: "Elle ignorait qu'il lui ", after: " (mentir) pendant des années." },
       answer: "avait menti",
       explanation: "Le plus-que-parfait de « mentir » avec il : auxiliaire avoir à l'imparfait (avait) + participe passé (menti).",
       wrongAnswers: [
@@ -330,7 +330,7 @@ const section: Section = {
       ruleId: "04-01",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe entre parenthèses au plus-que-parfait",
-      phrase: "« Je ne savais pas que tu ___ (se blesser) la veille. »",
+      phrase: { before: "Je ne savais pas que tu ", after: " (se blesser) la veille." },
       answer: "t'étais blessé",
       explanation: "« Se blesser » est un verbe pronominal qui prend être. Le plus-que-parfait avec tu : te + être à l'imparfait (étais) + participe passé (blessé). Le participe reste au masculin singulier si le sujet est masculin.",
       wrongAnswers: [
@@ -346,7 +346,7 @@ const section: Section = {
       ruleId: "04-01",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe entre parenthèses au plus-que-parfait",
-      phrase: "« Ils ont réalisé qu'ils ___ (oublier) leurs passeports à l'hôtel. »",
+      phrase: { before: "Ils ont réalisé qu'ils ", after: " (oublier) leurs passeports à l'hôtel." },
       answer: "avaient oublié",
       explanation: "Le plus-que-parfait de « oublier » avec ils : auxiliaire avoir à l'imparfait (avaient) + participe passé (oublié). Le participe passé avec avoir ne s'accorde pas avec le sujet.",
       wrongAnswers: [
@@ -363,7 +363,7 @@ const section: Section = {
       ruleId: "04-01",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe entre parenthèses au plus-que-parfait",
-      phrase: "« Avant de commencer, vous ___ (relire) les instructions. »",
+      phrase: { before: "Avant de commencer, vous ", after: " (relire) les instructions." },
       answer: "aviez relu",
       explanation: "Le plus-que-parfait de « relire » avec vous : auxiliaire avoir à l'imparfait (aviez) + participe passé (relu).",
       wrongAnswers: [
@@ -640,7 +640,7 @@ const section: Section = {
       ruleId: "04-02",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe « entrer » au plus-que-parfait. Choisissez le bon auxiliaire.",
-      phrase: "« Quand j'ai téléphoné, Paul ___ déjà entré dans la salle. »",
+      phrase: { before: "Quand j'ai téléphoné, Paul ", after: " déjà entré dans la salle." },
       answer: "était",
       explanation: "« Entrer » est un verbe de la maison d'être qui se conjugue toujours avec l'auxiliaire être au plus-que-parfait. Pour « il/Paul » (3e personne du singulier), l'imparfait d'être est « était ».",
       wrongAnswers: [
@@ -657,7 +657,7 @@ const section: Section = {
       ruleId: "04-02",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe « finir » au plus-que-parfait. Choisissez le bon auxiliaire.",
-      phrase: "« Ils ___ fini de dîner avant votre arrivée. »",
+      phrase: { before: "Ils ", after: " fini de dîner avant votre arrivée." },
       answer: "avaient",
       explanation: "« Finir » est un verbe transitif ordinaire qui prend l'auxiliaire avoir. Au plus-que-parfait à la 3e personne du pluriel (ils), l'imparfait d'avoir est « avaient ».",
       wrongAnswers: [
@@ -673,7 +673,7 @@ const section: Section = {
       ruleId: "04-02",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe pronominal « se souvenir » au plus-que-parfait.",
-      phrase: "« Elle ne ___ pas souvenue de la date. »",
+      phrase: { before: "Elle ne ", after: " pas souvenue de la date." },
       answer: "s'était",
       explanation: "« Se souvenir » est un verbe pronominal qui prend toujours l'auxiliaire être au plus-que-parfait. Pour « elle » (3e personne du singulier féminin), on dit « elle s'était souvenue ».",
       wrongAnswers: [
@@ -689,7 +689,7 @@ const section: Section = {
       ruleId: "04-02",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe « aller » au plus-que-parfait. Choisissez le bon auxiliaire.",
-      phrase: "« Nous ___ allés au cinéma la veille. »",
+      phrase: { before: "Nous ", after: " allés au cinéma la veille." },
       answer: "étions",
       explanation: "« Aller » est le verbe de mouvement par excellence, il prend toujours l'auxiliaire être. Au plus-que-parfait à la 1re personne du pluriel (nous), l'imparfait d'être est « étions ».",
       wrongAnswers: [
@@ -705,7 +705,7 @@ const section: Section = {
       ruleId: "04-02",
       generatedBy: "sonnet",
       prompt: "Choisissez l'auxiliaire correct pour « sortir » au plus-que-parfait selon le contexte.",
-      phrase: "« Le soir, il ___ sorti les poubelles avant de se coucher. »",
+      phrase: { before: "Le soir, il ", after: " sorti les poubelles avant de se coucher." },
       answer: "avait",
       explanation: "« Sortir » employé transitivement (avec un COD : « les poubelles ») prend l'auxiliaire avoir. On dit « il avait sorti les poubelles » car « les poubelles » est le complément d'objet direct.",
       wrongAnswers: [
@@ -984,7 +984,7 @@ const section: Section = {
       ruleId: "04-03",
       generatedBy: "sonnet",
       prompt: "Accordez le participe passé au plus-que-parfait.",
-      phrase: "« Quand nous sommes arrivés, les actrices ___ déjà. »",
+      phrase: { before: "Quand nous sommes arrivés, les actrices ", after: " déjà." },
       answer: "étaient parties",
       explanation: "« Partir » se conjugue avec être. Le sujet « les actrices » est féminin pluriel, donc le participe passé s'accorde au féminin pluriel : « parties ».",
       wrongAnswers: [
@@ -1001,7 +1001,7 @@ const section: Section = {
       ruleId: "04-03",
       generatedBy: "sonnet",
       prompt: "Complétez avec le plus-que-parfait en accordant correctement le participe passé.",
-      phrase: "« Les romans que Marie ___ étaient passionnants. »",
+      phrase: { before: "Les romans que Marie ", after: " étaient passionnants." },
       answer: "avait lus",
       explanation: "Le pronom relatif « que » représente « les romans », COD masculin pluriel placé avant le verbe « lire » conjugué avec avoir. Le participe s'accorde au masculin pluriel : « lus ».",
       wrongAnswers: [
@@ -1018,7 +1018,7 @@ const section: Section = {
       ruleId: "04-03",
       generatedBy: "sonnet",
       prompt: "Complétez avec le plus-que-parfait en accordant correctement le participe passé.",
-      phrase: "« La cliente ___ avant la fermeture du magasin. »",
+      phrase: { before: "La cliente ", after: " avant la fermeture du magasin." },
       answer: "était sortie",
       explanation: "« Sortir » se conjugue avec être. Le sujet « la cliente » est féminin singulier, donc le participe s'accorde au féminin singulier : « sortie ».",
       wrongAnswers: [
@@ -1035,7 +1035,7 @@ const section: Section = {
       ruleId: "04-03",
       generatedBy: "sonnet",
       prompt: "Complétez avec le plus-que-parfait en accordant correctement le participe passé.",
-      phrase: "« Elle leur ___ la vérité sans hésitation. »",
+      phrase: { before: "Elle leur ", after: " la vérité sans hésitation." },
       answer: "avait dit",
       explanation: "« Dire » se conjugue avec avoir. Le complément « leur » est un COI (complément d'objet indirect), non un COD. Sans COD antéposé, le participe reste invariable : « dit ».",
       wrongAnswers: [
@@ -1051,7 +1051,7 @@ const section: Section = {
       ruleId: "04-03",
       generatedBy: "sonnet",
       prompt: "Complétez avec le plus-que-parfait en accordant correctement le participe passé.",
-      phrase: "« Les lettres qu'il ___ contenaient de bonnes nouvelles. »",
+      phrase: { before: "Les lettres qu'il ", after: " contenaient de bonnes nouvelles." },
       answer: "avait reçues",
       explanation: "Le pronom relatif « que » représente « les lettres », COD féminin pluriel placé avant le verbe « recevoir » conjugué avec avoir. Le participe s'accorde au féminin pluriel : « reçues ».",
       wrongAnswers: [
@@ -1328,7 +1328,7 @@ const section: Section = {
       ruleId: "04-04",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe « se lever » au plus-que-parfait (sujet : « il »).",
-      phrase: "« Ce matin-là, il ___ très tôt. »",
+      phrase: { before: "Ce matin-là, il ", after: " très tôt." },
       answer: "s'était levé",
       explanation: "Plus-que-parfait de « se lever » : pronom réfléchi « se » (élision : s') + auxiliaire être à l'imparfait (était) + participe passé « levé ». Le sujet masculin singulier ne déclenche pas d'accord visible.",
       wrongAnswers: [
@@ -1345,7 +1345,7 @@ const section: Section = {
       ruleId: "04-04",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe « se souvenir » au plus-que-parfait (sujet : « elle »).",
-      phrase: "« Elle ___ de cette journée toute sa vie. »",
+      phrase: { before: "Elle ", after: " de cette journée toute sa vie." },
       answer: "s'était souvenue",
       explanation: "« Se souvenir » est essentiellement pronominal. Le plus-que-parfait est : elle s'était souvenue. Le sujet est féminin, et le participe d'un verbe pronominal essentiel s'accorde avec le sujet : souvenue.",
       wrongAnswers: [
@@ -1361,7 +1361,7 @@ const section: Section = {
       ruleId: "04-04",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe « s'habiller » au plus-que-parfait (sujet : « elles »).",
-      phrase: "« Elles ___ en vitesse avant de sortir. »",
+      phrase: { before: "Elles ", after: " en vitesse avant de sortir." },
       answer: "s'étaient habillées",
       explanation: "Plus-que-parfait de « s'habiller » à la 3e personne du pluriel féminin. Le pronom « se » est COD, donc le participe s'accorde avec le sujet « elles » : habillées (féminin pluriel).",
       wrongAnswers: [
@@ -1377,7 +1377,7 @@ const section: Section = {
       ruleId: "04-04",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe « se regarder » au plus-que-parfait (sujet : « ils »).",
-      phrase: "« Ils ___ en silence pendant un long moment. »",
+      phrase: { before: "Ils ", after: " en silence pendant un long moment." },
       answer: "s'étaient regardés",
       explanation: "« Se regarder » est réciproque. Le pronom « se » est COD (ils se regardaient l'un l'autre directement), donc le participe s'accorde avec le sujet masculin pluriel : regardés.",
       wrongAnswers: [
@@ -1393,7 +1393,7 @@ const section: Section = {
       ruleId: "04-04",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe « se rendre compte » au plus-que-parfait (sujet : « nous »).",
-      phrase: "« Nous ___ de l'erreur trop tard. »",
+      phrase: { before: "Nous ", after: " de l'erreur trop tard." },
       answer: "nous nous étions rendu compte",
       explanation: "Dans la locution « se rendre compte », « compte » est le COD du verbe placé après le participe. Le pronom réfléchi « nous » est donc COI, et le participe « rendu » reste invariable, quelle que soit la composition du groupe « nous ».",
       wrongAnswers: [
@@ -1669,7 +1669,7 @@ const section: Section = {
       ruleId: "04-05",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe « manger » au plus-que-parfait négatif (ne...pas) avec le sujet « il ».",
-      phrase: "« Avant d'arriver au restaurant, il ___ depuis le matin. »",
+      phrase: { before: "Avant d'arriver au restaurant, il ", after: " depuis le matin." },
       answer: "n'avait pas mangé",
       explanation: "La négation au plus-que-parfait se forme avec ne + auxiliaire à l'imparfait + pas + participe passé. Pour « manger » avec le sujet « il » : n' + avait + pas + mangé.",
       wrongAnswers: [
@@ -1686,7 +1686,7 @@ const section: Section = {
       ruleId: "04-05",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe « partir » au plus-que-parfait négatif (ne...pas) avec le sujet « elle ».",
-      phrase: "« Quand je suis arrivé, elle ___ encore. »",
+      phrase: { before: "Quand je suis arrivé, elle ", after: " encore." },
       answer: "n'était pas encore partie",
       explanation: "« Partir » se conjugue avec l'auxiliaire « être » au plus-que-parfait. La négation est : ne + était + pas encore + participe passé accordé au féminin (partie). On dit « n'était pas encore partie ».",
       wrongAnswers: [
@@ -1703,7 +1703,7 @@ const section: Section = {
       ruleId: "04-05",
       generatedBy: "sonnet",
       prompt: "Complétez avec la négation ne...jamais au plus-que-parfait du verbe « voir ».",
-      phrase: "« Nous ___ un spectacle aussi impressionnant avant cette soirée. »",
+      phrase: { before: "Nous ", after: " un spectacle aussi impressionnant avant cette soirée." },
       answer: "n'avions jamais vu",
       explanation: "Avec « ne...jamais » au plus-que-parfait, « jamais » se place entre l'auxiliaire à l'imparfait (avions) et le participe passé (vu). On dit « n'avions jamais vu ».",
       wrongAnswers: [
@@ -1720,7 +1720,7 @@ const section: Section = {
       ruleId: "04-05",
       generatedBy: "sonnet",
       prompt: "Complétez avec la négation ne...rien au plus-que-parfait du verbe « dire ».",
-      phrase: "« Ils ___ à la police lors de l'interrogatoire. »",
+      phrase: { before: "Ils ", after: " à la police lors de l'interrogatoire." },
       answer: "n'avaient rien dit",
       explanation: "Avec « ne...rien » au plus-que-parfait, « rien » se place entre l'auxiliaire à l'imparfait (avaient) et le participe passé (dit). On dit « n'avaient rien dit ».",
       wrongAnswers: [
@@ -1737,7 +1737,7 @@ const section: Section = {
       ruleId: "04-05",
       generatedBy: "sonnet",
       prompt: "Complétez avec la négation ne...personne au plus-que-parfait du verbe « inviter ».",
-      phrase: "« Pour ce dîner secret, tu ___ à part Marie. »",
+      phrase: { before: "Pour ce dîner secret, tu ", after: " à part Marie." },
       answer: "n'avais invité personne",
       explanation: "Avec « ne...personne », « personne » se place après le participe passé et ses compléments éventuels. La structure est : n'avais invité + personne. Le complément « à part Marie » suit « personne ».",
       wrongAnswers: [
@@ -2014,7 +2014,7 @@ const section: Section = {
       ruleId: "04-06",
       generatedBy: "sonnet",
       prompt: "Complétez avec la forme correcte du plus-que-parfait pour exprimer l'action antérieure.",
-      phrase: "« Quand il est entré dans la salle, le cours ___ déjà. »",
+      phrase: { before: "Quand il est entré dans la salle, le cours ", after: " déjà." },
       answer: "avait commencé",
       explanation: "Le cours a commencé avant l'entrée dans la salle. Le plus-que-parfait (avait commencé) exprime cette antériorité par rapport à l'événement au passé composé (est entré). « Déjà » renforce la valeur d'antériorité.",
       wrongAnswers: [
@@ -2031,7 +2031,7 @@ const section: Section = {
       ruleId: "04-06",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe entre parenthèses au plus-que-parfait pour exprimer l'antériorité.",
-      phrase: "« Elle a retrouvé les billets qu'elle ___ dans son manteau. (laisser) »",
+      phrase: { before: "Elle a retrouvé les billets qu'elle ", after: " dans son manteau. (laisser)" },
       answer: "avait laissés",
       explanation: "Le fait de laisser les billets est antérieur à la retrouvaille. Le plus-que-parfait (avait laissés) exprime cette antériorité. Le participe passé s'accorde avec le COD « les billets » qui précède le verbe.",
       wrongAnswers: [
@@ -2048,7 +2048,7 @@ const section: Section = {
       ruleId: "04-06",
       generatedBy: "sonnet",
       prompt: "Complétez la phrase avec la forme correcte du plus-que-parfait.",
-      phrase: "« Nous ___ à peine assis quand on a frappé à la porte. »",
+      phrase: { before: "Nous ", after: " à peine assis quand on a frappé à la porte." },
       answer: "nous étions",
       explanation: "Le fait de s'asseoir est antérieur à la frappe à la porte. Le plus-que-parfait pronominal (nous nous étions assis) marque cette antériorité. Ici, la réponse dans le blanc est « nous étions », le reste de la forme verbale (« assis ») étant déjà visible dans la phrase.",
       wrongAnswers: [
@@ -2064,7 +2064,7 @@ const section: Section = {
       ruleId: "04-06",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe entre parenthèses au plus-que-parfait.",
-      phrase: "« Il a remarqué que quelqu'un ___ dans son bureau. (entrer) »",
+      phrase: { before: "Il a remarqué que quelqu'un ", after: " dans son bureau. (entrer)" },
       answer: "était entré",
       explanation: "L'entrée dans le bureau s'est produite avant la remarque. Le plus-que-parfait (était entré) marque cette antériorité. « Entrer » se conjugue avec être au plus-que-parfait ; le participe s'accorde au masculin singulier (entré).",
       wrongAnswers: [
@@ -2080,7 +2080,7 @@ const section: Section = {
       ruleId: "04-06",
       generatedBy: "sonnet",
       prompt: "Complétez la phrase avec la forme correcte du plus-que-parfait.",
-      phrase: "« Les invités ___ quand nous avons compris que nous nous étions trompés de date. »",
+      phrase: { before: "Les invités ", after: " quand nous avons compris que nous nous étions trompés de date." },
       answer: "étaient déjà partis",
       explanation: "Le départ des invités est antérieur à la prise de conscience. Le plus-que-parfait (étaient déjà partis) marque cette antériorité par rapport à l'action principale au passé composé (avons compris). « Partir » se conjugue avec être ; le participe s'accorde au masculin pluriel (partis).",
       wrongAnswers: [
@@ -2356,7 +2356,7 @@ const section: Section = {
       ruleId: "04-07",
       generatedBy: "sonnet",
       prompt: "Complétez avec la forme correcte du plus-que-parfait pour exprimer l'action antérieure.",
-      phrase: "« Quand nous sommes arrivés à la fête, Paul ___ déjà. »",
+      phrase: { before: "Quand nous sommes arrivés à la fête, Paul ", after: " déjà." },
       answer: "était parti",
       explanation: "Le départ de Paul est antérieur à l'arrivée à la fête. Le plus-que-parfait (était parti) marque cette antériorité par rapport à l'événement au passé composé (sommes arrivés). « Partir » se conjugue avec être ; le participe s'accorde au masculin singulier (parti). « Déjà » renforce la valeur d'antériorité.",
       wrongAnswers: [
@@ -2373,7 +2373,7 @@ const section: Section = {
       ruleId: "04-07",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe entre parenthèses au plus-que-parfait pour exprimer l'antériorité.",
-      phrase: "« Lorsque le directeur est entré, les employés ___ de se disputer. (finir) »",
+      phrase: { before: "Lorsque le directeur est entré, les employés ", after: " de se disputer. (finir)" },
       answer: "avaient fini",
       explanation: "La fin de la dispute est antérieure à l'entrée du directeur. Le plus-que-parfait (avaient fini) exprime cette antériorité par rapport à l'événement au passé composé (est entré). Le verbe « finir » se conjugue avec avoir ; le participe passé (fini) est invariable ici.",
       wrongAnswers: [
@@ -2390,7 +2390,7 @@ const section: Section = {
       ruleId: "04-07",
       generatedBy: "sonnet",
       prompt: "Complétez avec la forme correcte du plus-que-parfait.",
-      phrase: "« Après qu'il ___ ses devoirs, il a eu le droit de jouer dehors. »",
+      phrase: { before: "Après qu'il ", after: " ses devoirs, il a eu le droit de jouer dehors." },
       answer: "avait fait",
       explanation: "La réalisation des devoirs est antérieure à la permission de jouer. Après « après que » en registre courant, le plus-que-parfait (avait fait) marque que l'action est accomplie avant celle de la principale au passé composé (a eu). Le verbe « faire » se conjugue avec avoir ; participe passé : fait.",
       wrongAnswers: [
@@ -2407,7 +2407,7 @@ const section: Section = {
       ruleId: "04-07",
       generatedBy: "sonnet",
       prompt: "Complétez avec la forme correcte du plus-que-parfait pour marquer l'antériorité avec « quand ».",
-      phrase: "« Quand il a cherché ses clés, il s'est rappelé qu'il les ___ chez son frère. »",
+      phrase: { before: "Quand il a cherché ses clés, il s'est rappelé qu'il les ", after: " chez son frère." },
       answer: "avait laissées",
       explanation: "Les clés ont été laissées chez le frère avant le moment de la recherche et du souvenir. Le plus-que-parfait (avait laissées) marque cette antériorité par rapport aux événements au passé composé (a cherché, s'est rappelé). Le COD « les » (= les clés, féminin pluriel) précède le verbe, donc le participe passé s'accorde : laissées.",
       wrongAnswers: [
@@ -2424,7 +2424,7 @@ const section: Section = {
       ruleId: "04-07",
       generatedBy: "sonnet",
       prompt: "Complétez avec la forme correcte du plus-que-parfait pour exprimer l'antériorité avec « lorsque ».",
-      phrase: "« Lorsque nous avons voulu réserver une table, le restaurant ___ complet depuis une semaine. »",
+      phrase: { before: "Lorsque nous avons voulu réserver une table, le restaurant ", after: " complet depuis une semaine." },
       answer: "était déjà",
       explanation: "Le fait que le restaurant soit complet est antérieur à la tentative de réservation. Le plus-que-parfait du verbe être (était, ici suivi de l'adjectif « complet ») marque cette antériorité : « était déjà complet » (était + déjà constituent la réponse dans le blanc, « complet » étant déjà visible). « Déjà » renforce la valeur d'antériorité.",
       wrongAnswers: [
@@ -2702,7 +2702,7 @@ const section: Section = {
       ruleId: "04-08",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe entre parenthèses au plus-que-parfait pour exprimer l'antériorité.",
-      phrase: "« Quand nous sommes arrivés à l'hôtel, la réception ___ (fermer) déjà. »",
+      phrase: { before: "Quand nous sommes arrivés à l'hôtel, la réception ", after: " (fermer) déjà." },
       answer: "avait déjà fermé",
       explanation: "La fermeture de la réception (plus-que-parfait) est antérieure à l'arrivée (passé composé). L'adverbe « déjà » renforce l'idée d'une action accomplie avant le moment de référence.",
       wrongAnswers: [
@@ -2719,7 +2719,7 @@ const section: Section = {
       ruleId: "04-08",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe entre parenthèses au temps approprié.",
-      phrase: "« Elle a reconnu l'homme que la police ___ (arrêter) la semaine précédente. »",
+      phrase: { before: "Elle a reconnu l'homme que la police ", after: " (arrêter) la semaine précédente." },
       answer: "avait arrêté",
       explanation: "L'arrestation (plus-que-parfait) est antérieure à la reconnaissance (passé composé). La semaine précédente indique un événement passé antérieur à la reconnaissance — le plus-que-parfait est obligatoire.",
       wrongAnswers: [
@@ -2736,7 +2736,7 @@ const section: Section = {
       ruleId: "04-08",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au plus-que-parfait pour exprimer ce qui n'avait pas encore eu lieu.",
-      phrase: "« Les médecins ont diagnostiqué une maladie qu'ils n'___ jamais vue auparavant. »",
+      phrase: { before: "Les médecins ont diagnostiqué une maladie qu'ils n'", after: " jamais vue auparavant." },
       answer: "avaient",
       explanation: "Le plus-que-parfait négatif « n'avaient jamais vue » indique que les médecins n'avaient aucune expérience préalable de cette maladie avant le diagnostic. « Avaient » est l'auxiliaire à l'imparfait (3e personne du pluriel) qui forme le plus-que-parfait.",
       wrongAnswers: [
@@ -2752,7 +2752,7 @@ const section: Section = {
       ruleId: "04-08",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe entre parenthèses au plus-que-parfait.",
-      phrase: "« Dès qu'il a lu le message, il a compris que quelque chose ___ (se passer). »",
+      phrase: { before: "Dès qu'il a lu le message, il a compris que quelque chose ", after: " (se passer)." },
       answer: "s'était passé",
       explanation: "L'événement (se passer) est antérieur même à la lecture du message — il fallait marquer cette double antériorité avec le plus-que-parfait. « S'était passé » est le plus-que-parfait de « se passer » (verbe pronominal + être à l'imparfait + participe passé).",
       wrongAnswers: [
@@ -2769,7 +2769,7 @@ const section: Section = {
       ruleId: "04-08",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe entre parenthèses au temps approprié.",
-      phrase: "« Le témoin s'est souvenu que l'accusé ___ (quitter) la salle avant l'incident. »",
+      phrase: { before: "Le témoin s'est souvenu que l'accusé ", after: " (quitter) la salle avant l'incident." },
       answer: "avait quitté",
       explanation: "Le départ de l'accusé (plus-que-parfait) est antérieur au souvenir du témoin (passé composé). « Avant l'incident » confirme que l'action est accomplie et antérieure au moment de référence du récit.",
       wrongAnswers: [
@@ -3049,7 +3049,7 @@ const section: Section = {
       ruleId: "04-09",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe « finir » au temps approprié (imparfait ou plus-que-parfait)",
-      phrase: "« Il ___ sa lecture quand le téléphone a sonné. »",
+      phrase: { before: "Il ", after: " sa lecture quand le téléphone a sonné." },
       answer: "finissait",
       explanation: "« Finissait » à l'imparfait décrit une action en cours (il était en train de finir sa lecture) lorsqu'un événement soudain l'a interrompu — c'est le contexte classique de l'imparfait de progression.",
       wrongAnswers: [
@@ -3065,7 +3065,7 @@ const section: Section = {
       ruleId: "04-09",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au plus-que-parfait pour exprimer l'action accomplie avant l'arrivée.",
-      phrase: "« La salle était vide : tous les participants ___ déjà avant mon arrivée. »",
+      phrase: { before: "La salle était vide : tous les participants ", after: " déjà avant mon arrivée." },
       answer: "étaient partis",
       explanation: "« Étaient partis » au plus-que-parfait indique que le départ des participants est une action accomplie avant l'arrivée. « Partir » se conjugue avec « être » ; le participe « partis » s'accorde avec le sujet masculin pluriel « les participants ».",
       wrongAnswers: [
@@ -3082,7 +3082,7 @@ const section: Section = {
       ruleId: "04-09",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au plus-que-parfait pour exprimer que l'action est accomplie avant le moment décrit.",
-      phrase: "« Elle ne savait pas que son frère ___ déjà la nouvelle avant elle. »",
+      phrase: { before: "Elle ne savait pas que son frère ", after: " déjà la nouvelle avant elle." },
       answer: "avait appris",
       explanation: "« Avait appris » au plus-que-parfait indique que l'apprentissage de la nouvelle par son frère est une action accomplie avant qu'elle ne le sache. L'état d'ignorance (savait) est à l'imparfait ; l'action antérieure (apprendre) est au plus-que-parfait.",
       wrongAnswers: [
@@ -3099,7 +3099,7 @@ const section: Section = {
       ruleId: "04-09",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au plus-que-parfait pour exprimer l'action accomplie qui explique l'état.",
-      phrase: "« Les joueurs avaient soif : ils ___ pendant plus d'une heure sans s'arrêter. »",
+      phrase: { before: "Les joueurs avaient soif : ils ", after: " pendant plus d'une heure sans s'arrêter." },
       answer: "avaient couru",
       explanation: "« Avaient couru » au plus-que-parfait indique que la course est une action accomplie et antérieure à l'état de soif. L'état (la soif) est à l'imparfait ; l'action qui l'explique (courir) est au plus-que-parfait.",
       wrongAnswers: [
@@ -3116,7 +3116,7 @@ const section: Section = {
       ruleId: "04-09",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe entre parenthèses au plus-que-parfait pour exprimer l'action accomplie antérieure à l'état décrit.",
-      phrase: "« Le musée était fermé ce jour-là : les conservateurs ___ (décider) de le fermer exceptionnellement pour des travaux urgents. »",
+      phrase: { before: "Le musée était fermé ce jour-là : les conservateurs ", after: " (décider) de le fermer exceptionnellement pour des travaux urgents." },
       answer: "avaient décidé",
       explanation: "« Avaient décidé » au plus-que-parfait indique que la décision est une action accomplie et antérieure à l'état (le musée était fermé). L'état de fermeture (imparfait) est la conséquence de la décision antérieure (plus-que-parfait).",
       wrongAnswers: [
@@ -3399,7 +3399,7 @@ const section: Section = {
       ruleId: "04-10",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au conditionnel passé pour compléter la phrase.",
-      phrase: "« Si j'avais étudié davantage, je ___ l'examen. »",
+      phrase: { before: "Si j'avais étudié davantage, je ", after: " l'examen." },
       answer: "aurais réussi",
       explanation: "Avec si + plus-que-parfait (avais étudié), la clause principale demande le conditionnel passé (aurais réussi).",
       wrongAnswers: [
@@ -3416,7 +3416,7 @@ const section: Section = {
       ruleId: "04-10",
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte du verbe au plus-que-parfait.",
-      phrase: "« Si nous ___ plus de courage, nous aurions tenté l'aventure. »",
+      phrase: { before: "Si nous ", after: " plus de courage, nous aurions tenté l'aventure." },
       answer: "avions eu",
       explanation: "La clause si demande le plus-que-parfait (avions eu) du verbe « avoir ».",
       wrongAnswers: [
@@ -3433,7 +3433,7 @@ const section: Section = {
       ruleId: "04-10",
       generatedBy: "haiku",
       prompt: "Choisissez entre le conditionnel passé et le plus-que-parfait pour compléter la phrase.",
-      phrase: "« Si tu avais vu le match, tu ___ compris pourquoi tout le monde en parle. »",
+      phrase: { before: "Si tu avais vu le match, tu ", after: " compris pourquoi tout le monde en parle." },
       answer: "aurais",
       explanation: "La clause principale demande le conditionnel passé : « aurais compris ». Le blanc appelle l'auxiliaire « aurais ».",
       wrongAnswers: [
@@ -3450,7 +3450,7 @@ const section: Section = {
       ruleId: "04-10",
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe « pouvoir » au conditionnel passé.",
-      phrase: "« Si vous aviez demandé de l'aide à temps, vous ___ résoudre ce problème. »",
+      phrase: { before: "Si vous aviez demandé de l'aide à temps, vous ", after: " résoudre ce problème." },
       answer: "auriez pu",
       explanation: "Après si + plus-que-parfait, la clause principale demande le conditionnel passé de « pouvoir » (auriez pu).",
       wrongAnswers: [
@@ -3467,7 +3467,7 @@ const section: Section = {
       ruleId: "04-10",
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe « venir » au plus-que-parfait pour la clause si.",
-      phrase: "« ___ plus tôt, tu aurais pu parler directement avec le directeur. »",
+      phrase: { before: "", after: " plus tôt, tu aurais pu parler directement avec le directeur." },
       answer: "Si tu étais venu",
       explanation: "La clause si au début de la phrase demande le plus-que-parfait de « venir » (étais venu) avec si (Si tu étais venu).",
       wrongAnswers: [
@@ -3744,7 +3744,7 @@ const section: Section = {
       ruleId: "04-11",
       generatedBy: "haiku",
       prompt: "Complétez avec la forme appropriée du plus-que-parfait pour exprimer un regret.",
-      phrase: "« Si seulement j'_____ ses appels ce jour-là ! »",
+      phrase: { before: "Si seulement j'", after: "__ ses appels ce jour-là !" },
       answer: "avais pris",
       explanation: "Le plus-que-parfait (avais pris) exprime le regret de ne pas avoir écouté les appels importants.",
       wrongAnswers: [
@@ -3762,7 +3762,7 @@ const section: Section = {
       ruleId: "04-11",
       generatedBy: "haiku",
       prompt: "Remplissez la phrase avec le plus-que-parfait pour exprimer un regret à propos d'une décision passée.",
-      phrase: "« Ah, si je ne _____ pas accepté ce contrat désastreux ! »",
+      phrase: { before: "Ah, si je ne ", after: "__ pas accepté ce contrat désastreux !" },
       answer: "avais",
       explanation: "Le plus-que-parfait (avais accepté) exprime le regret de la mauvaise décision prise autrefois.",
       wrongAnswers: [
@@ -3780,7 +3780,7 @@ const section: Section = {
       ruleId: "04-11",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au plus-que-parfait pour exprimer un regret passé.",
-      phrase: "« Si seulement nous _____ (organiser) ce voyage ensemble ! »",
+      phrase: { before: "Si seulement nous ", after: "__ (organiser) ce voyage ensemble !" },
       answer: "avions organisé",
       explanation: "Le plus-que-parfait (avions organisé) exprime le regret collectif que le voyage n'ait pas été planifié ensemble.",
       wrongAnswers: [
@@ -3798,7 +3798,7 @@ const section: Section = {
       ruleId: "04-11",
       generatedBy: "haiku",
       prompt: "Complétez avec le plus-que-parfait d'un verbe qui exprime le regret d'une action manquée.",
-      phrase: "« Ah, si elle _____ (venir) quand je l'avais invitée ! »",
+      phrase: { before: "Ah, si elle ", after: "__ (venir) quand je l'avais invitée !" },
       answer: "était venue",
       explanation: "Le plus-que-parfait (était venue) avec l'auxiliaire « être » exprime le regret qu'elle n'ait pas accepté l'invitation.",
       wrongAnswers: [
@@ -3816,7 +3816,7 @@ const section: Section = {
       ruleId: "04-11",
       generatedBy: "haiku",
       prompt: "Remplissez avec le plus-que-parfait pour exprimer un regret sur une parole non prononcée.",
-      phrase: "« Si seulement je _____ (dire) la vérité à ce moment-là ! »",
+      phrase: { before: "Si seulement je ", after: "__ (dire) la vérité à ce moment-là !" },
       answer: "avais dit",
       explanation: "Le plus-que-parfait (avais dit) exprime le regret profond de n'avoir pas été honnête quand cela importait.",
       wrongAnswers: [
@@ -4094,7 +4094,7 @@ const section: Section = {
       ruleId: "04-12",
       generatedBy: "haiku",
       prompt: "Complétez le discours indirect au passé avec le plus-que-parfait.",
-      phrase: "« Ils ont expliqué qu'ils ___ les instructions avant de commencer. »",
+      phrase: { before: "Ils ont expliqué qu'ils ", after: " les instructions avant de commencer." },
       answer: "avaient lu",
       explanation: "Avec un verbe introducteur au passé (ont expliqué), le passé composé « j'ai lu » devient plus-que-parfait « avaient lu ».",
       wrongAnswers: [
@@ -4113,7 +4113,7 @@ const section: Section = {
       ruleId: "04-12",
       generatedBy: "haiku",
       prompt: "Reportez la déclaration au passé avec le plus-que-parfait.",
-      phrase: "« Nous avons découvert que les étudiants ___ la matière avec enthousiasme. »",
+      phrase: { before: "Nous avons découvert que les étudiants ", after: " la matière avec enthousiasme." },
       answer: "avaient étudié",
       explanation: "Avec un verbe introducteur au passé (avons découvert), le passé composé « j'ai étudié » devient plus-que-parfait « avaient étudié ».",
       wrongAnswers: [
@@ -4132,7 +4132,7 @@ const section: Section = {
       ruleId: "04-12",
       generatedBy: "haiku",
       prompt: "Transformez le discours direct en discours indirect (verbe introducteur au passé).",
-      phrase: "« Mon collègue a dit : « J'ai terminé le rapport. » Transformez : « Mon collègue a dit qu'il ___ le rapport. » »",
+      phrase: { before: "Mon collègue a dit : « J'ai terminé le rapport. » Transformez : « Mon collègue a dit qu'il ", after: " le rapport. »" },
       answer: "avait terminé",
       explanation: "Avec un verbe introducteur au passé (a dit), le passé composé « j'ai terminé » se transforme en plus-que-parfait « avait terminé ».",
       wrongAnswers: [
@@ -4150,7 +4150,7 @@ const section: Section = {
       ruleId: "04-12",
       generatedBy: "haiku",
       prompt: "Changez le verbe introducteur du présent au passé et transformez.",
-      phrase: "« Il dit qu'il ___ cette chanson mille fois. » (Plus-que-parfait car verbe au passé)",
+      phrase: { before: "Il dit qu'il ", after: " cette chanson mille fois. » (Plus-que-parfait car verbe au passé)" },
       answer: "avait entendue",
       explanation: "Quand on change « dit » (présent) en « a dit » (passé), le passé composé « a entendue » devient plus-que-parfait « avait entendue ».",
       wrongAnswers: [
@@ -4168,7 +4168,7 @@ const section: Section = {
       ruleId: "04-12",
       generatedBy: "haiku",
       prompt: "Transformez en discours indirect avec un verbe introducteur au passé.",
-      phrase: "« Elle a assuré qu'elle ___ le message correctement. »",
+      phrase: { before: "Elle a assuré qu'elle ", after: " le message correctement." },
       answer: "avait compris",
       explanation: "Avec un verbe introducteur au passé (a assuré), le passé composé « j'ai compris » se transforme en plus-que-parfait « avait compris ».",
       wrongAnswers: [
@@ -4447,7 +4447,7 @@ const section: Section = {
       ruleId: "04-13",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au plus-que-parfait avec l'adverbe « déjà ».",
-      phrase: "« Quand j'ai commencé le cours, les étudiants ___ la première leçon. »",
+      phrase: { before: "Quand j'ai commencé le cours, les étudiants ", after: " la première leçon." },
       answer: "avaient déjà étudié",
       explanation: "« Avaient déjà étudié » au plus-que-parfait avec « déjà » placé entre l'auxiliaire et le participe exprime une action accomplie avant le début du cours. L'auxiliaire « avoir » à l'imparfait (avaient) + déjà + participe passé (étudié).",
       wrongAnswers: [
@@ -4464,7 +4464,7 @@ const section: Section = {
       ruleId: "04-13",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au plus-que-parfait avec la négation « jamais ».",
-      phrase: "« Avant ce jour, je n'avais jamais ___ un tel spectacle. »",
+      phrase: { before: "Avant ce jour, je n'avais jamais ", after: " un tel spectacle." },
       answer: "vu",
       explanation: "« N'avais jamais vu » est le plus-que-parfait négatif avec « jamais » placé entre l'auxiliaire (avais) et le participe passé (vu). L'adverbe « jamais » s'insère entre l'auxiliaire à l'imparfait et le participe.",
       wrongAnswers: [
@@ -4481,7 +4481,7 @@ const section: Section = {
       ruleId: "04-13",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au plus-que-parfait avec « pas encore ».",
-      phrase: "« Quand l'ambulance est arrivée, le médecin n'avait pas encore ___ le patient. »",
+      phrase: { before: "Quand l'ambulance est arrivée, le médecin n'avait pas encore ", after: " le patient." },
       answer: "examiné",
       explanation: "« N'avait pas encore examiné » est le plus-que-parfait négatif avec « pas encore » placé entre l'auxiliaire (avait) et le participe passé (examiné). L'action n'était pas accomplie au moment de l'arrivée de l'ambulance.",
       wrongAnswers: [
@@ -4498,7 +4498,7 @@ const section: Section = {
       ruleId: "04-13",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au plus-que-parfait avec l'adverbe « toujours ».",
-      phrase: "« Mes parents avaient toujours ___ que l'éducation était importante. »",
+      phrase: { before: "Mes parents avaient toujours ", after: " que l'éducation était importante." },
       answer: "cru",
       explanation: "« Avaient toujours cru » est le plus-que-parfait avec « toujours » placé entre l'auxiliaire (avaient) et le participe passé (cru). « Toujours » exprime une conviction persistante qui remontait dans le passé.",
       wrongAnswers: [
@@ -4515,7 +4515,7 @@ const section: Section = {
       ruleId: "04-13",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au plus-que-parfait avec la négation « ne...pas encore ».",
-      phrase: "« Quand nous sommes partis, les autres n'avaient pas encore ___ de décision. »",
+      phrase: { before: "Quand nous sommes partis, les autres n'avaient pas encore ", after: " de décision." },
       answer: "pris",
       explanation: "« N'avaient pas encore pris » est le plus-que-parfait négatif avec « pas encore » placé entre l'auxiliaire (avaient) et le participe passé (pris). Le participe passé de « prendre » est « pris » ; l'action n'était pas accomplie au moment du départ.",
       wrongAnswers: [
@@ -4792,7 +4792,7 @@ const section: Section = {
       ruleId: "04-14",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au plus-que-parfait.",
-      phrase: "« La veille, il ___ des courses au marché. »",
+      phrase: { before: "La veille, il ", after: " des courses au marché." },
       answer: "avait fait",
       explanation: "Le plus-que-parfait « avait fait » est requis avec le marqueur temporel « la veille » pour exprimer une action achevée la journée précédente.",
       wrongAnswers: [
@@ -4809,7 +4809,7 @@ const section: Section = {
       ruleId: "04-14",
       generatedBy: "haiku",
       prompt: "Complétez avec le plus-que-parfait.",
-      phrase: "« Quelques jours avant la réunion, elle ___ le dossier. »",
+      phrase: { before: "Quelques jours avant la réunion, elle ", after: " le dossier." },
       answer: "avait lu",
       explanation: "Le plus-que-parfait « avait lu » exprime que la lecture du dossier a eu lieu quelques jours avant la réunion. Le marqueur « quelques jours avant » souligne cette antériorité.",
       wrongAnswers: [
@@ -4826,7 +4826,7 @@ const section: Section = {
       ruleId: "04-14",
       generatedBy: "haiku",
       prompt: "Mettez le verbe au plus-que-parfait.",
-      phrase: "« Auparavant, ils ___ ensemble plusieurs fois. »",
+      phrase: { before: "Auparavant, ils ", after: " ensemble plusieurs fois." },
       answer: "s'étaient rencontrés",
       explanation: "Le plus-que-parfait « s'étaient rencontrés » exprime des rencontres antérieures à un moment du passé. Le marqueur « auparavant » (précédemment) souligne cette antériorité.",
       wrongAnswers: [
@@ -4843,7 +4843,7 @@ const section: Section = {
       ruleId: "04-14",
       generatedBy: "haiku",
       prompt: "Conjuguez au plus-que-parfait.",
-      phrase: "« Longtemps avant cet accident, il ___ des problèmes de santé. »",
+      phrase: { before: "Longtemps avant cet accident, il ", after: " des problèmes de santé." },
       answer: "avait eu",
       explanation: "Le plus-que-parfait « avait eu » exprime des problèmes de santé antérieurs à l'accident. Le marqueur « longtemps avant » souligne une antériorité lointaine.",
       wrongAnswers: [
@@ -4860,7 +4860,7 @@ const section: Section = {
       ruleId: "04-14",
       generatedBy: "haiku",
       prompt: "Complétez avec le plus-que-parfait.",
-      phrase: "« Avant de partir, nous ___ tout ce qu'il fallait. »",
+      phrase: { before: "Avant de partir, nous ", after: " tout ce qu'il fallait." },
       answer: "avions préparé",
       explanation: "Le plus-que-parfait « avions préparé » exprime que les préparatifs ont été complétés avant le départ. Le marqueur « avant de partir » souligne l'antériorité requise.",
       wrongAnswers: [
@@ -5137,7 +5137,7 @@ const section: Section = {
       ruleId: "04-15",
       generatedBy: "haiku",
       prompt: "Complétez avec le plus-que-parfait : après qu'elle avait fait une action.",
-      phrase: "« Après qu'elle ___ ses courses, elle est rentrée chez elle. »",
+      phrase: { before: "Après qu'elle ", after: " ses courses, elle est rentrée chez elle." },
       answer: "avait fait",
       explanation: "Le plus-que-parfait « avait fait » exprime que les courses se sont déroulées avant le retour. « Après que » exige le plus-que-parfait pour marquer l'antériorité.",
       wrongAnswers: [
@@ -5154,7 +5154,7 @@ const section: Section = {
       ruleId: "04-15",
       generatedBy: "haiku",
       prompt: "Complétez avec le plus-que-parfait : dès qu'une action s'est produite.",
-      phrase: "« Dès qu'il ___ arrivé, nous avons commencé le film. »",
+      phrase: { before: "Dès qu'il ", after: " arrivé, nous avons commencé le film." },
       answer: "était",
       explanation: "Le plus-que-parfait avec auxiliaire « être » : « était arrivé » exprime que l'arrivée s'est produite avant le commencement du film. « Dès que » demande le plus-que-parfait.",
       wrongAnswers: [
@@ -5171,7 +5171,7 @@ const section: Section = {
       ruleId: "04-15",
       generatedBy: "haiku",
       prompt: "Complétez avec le plus-que-parfait : une action terminée avant une autre.",
-      phrase: "« Une fois qu'elle ___ son travail, elle s'est reposée. »",
+      phrase: { before: "Une fois qu'elle ", after: " son travail, elle s'est reposée." },
       answer: "avait terminé",
       explanation: "Le plus-que-parfait « avait terminé » exprime que le travail s'est complètement déroulé avant le repos. « Une fois que » demande le plus-que-parfait pour marquer l'antériorité.",
       wrongAnswers: [
@@ -5188,7 +5188,7 @@ const section: Section = {
       ruleId: "04-15",
       generatedBy: "haiku",
       prompt: "Complétez avec le plus-que-parfait : quand une action s'est produite habituellement.",
-      phrase: "« Quand il ___ son café, il lisait le journal. »",
+      phrase: { before: "Quand il ", after: " son café, il lisait le journal." },
       answer: "avait bu",
       explanation: "Le plus-que-parfait « avait bu » dans la subordination avec l'imparfait du verbe principal décrit une séquence habituelle au passé : la boisson précède la lecture.",
       wrongAnswers: [
@@ -5205,7 +5205,7 @@ const section: Section = {
       ruleId: "04-15",
       generatedBy: "haiku",
       prompt: "Complétez avec le plus-que-parfait : construction à peine…que avec inversion.",
-      phrase: "« À peine ___ qu'elle a découvert la surprise. »",
+      phrase: { before: "À peine ", after: " qu'elle a découvert la surprise." },
       answer: "avait-elle ouvert la porte",
       explanation: "La construction « à peine + plus-que-parfait inversé + que » est idiomatique en français. L'inversion « avait-elle ouvert la porte » marque l'antériorité immédiate et l'effet dramatique.",
       wrongAnswers: [
@@ -5482,7 +5482,7 @@ const section: Section = {
       ruleId: "04-16",
       generatedBy: "haiku",
       prompt: "Complétez la phrase avec le plus-que-parfait pour exprimer le flashback : « Lorsqu'il ouvrit la porte, il vit que quelqu'un _____ tous les documents. »",
-      phrase: "« Lorsqu'il ouvrit la porte, il vit que quelqu'un _____ tous les documents. »",
+      phrase: { before: "Lorsqu'il ouvrit la porte, il vit que quelqu'un ", after: "__ tous les documents." },
       answer: "avait volé",
       explanation: "Le plus-que-parfait « avait volé » marque que le vol s'était produit avant l'ouverture de la porte, créant un flashback narratif qui explique la situation présente.",
       wrongAnswers: [
@@ -5501,7 +5501,7 @@ const section: Section = {
       ruleId: "04-16",
       generatedBy: "haiku",
       prompt: "Utilisez le plus-que-parfait pour exprimer que l'action est antérieure au moment du récit : « Elle se souvint qu'il _____ au mur depuis des années. »",
-      phrase: "« Elle se souvint qu'il _____ au mur depuis des années. »",
+      phrase: { before: "Elle se souvint qu'il ", after: "__ au mur depuis des années." },
       answer: "avait été accroché",
       explanation: "Le plus-que-parfait passif « avait été accroché » marque que l'accrochage s'était produit bien avant le moment du souvenir, établissant un flashback narratif.",
       wrongAnswers: [
@@ -5520,7 +5520,7 @@ const section: Section = {
       ruleId: "04-16",
       generatedBy: "haiku",
       prompt: "Mettez le verbe au plus-que-parfait pour exprimer l'antériorité dans le flashback : « Elle pensait aux lettres que Pierre _____ trois ans auparavant. »",
-      phrase: "« Elle pensait aux lettres que Pierre _____ trois ans auparavant. »",
+      phrase: { before: "Elle pensait aux lettres que Pierre ", after: "__ trois ans auparavant." },
       answer: "avait écrites",
       explanation: "Le plus-que-parfait « avait écrites » marque que l'écriture s'était produite bien avant le moment de la réflexion, établissant un clair effet de flashback narratif.",
       wrongAnswers: [
@@ -5539,7 +5539,7 @@ const section: Section = {
       ruleId: "04-16",
       generatedBy: "haiku",
       prompt: "Complétez avec le plus-que-parfait pour montrer le flashback narratif : « Lorsque les enfants entrèrent dans la salle, ils remarquèrent que quelqu'un _____ les ballons. »",
-      phrase: "« Lorsque les enfants entrèrent dans la salle, ils remarquèrent que quelqu'un _____ les ballons. »",
+      phrase: { before: "Lorsque les enfants entrèrent dans la salle, ils remarquèrent que quelqu'un ", after: "__ les ballons." },
       answer: "avait gonflé",
       explanation: "Le plus-que-parfait « avait gonflé » indique que le gonflage s'était produit avant l'entrée dans la salle, créant un flashback qui explique la situation présente.",
       wrongAnswers: [
@@ -5559,7 +5559,7 @@ const section: Section = {
       ruleId: "04-16",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au plus-que-parfait pour montrer le retour en arrière.",
-      phrase: "« Quand il arriva, il découvrit que sa sœur ___ la veille. »",
+      phrase: { before: "Quand il arriva, il découvrit que sa sœur ", after: " la veille." },
       answer: "avait appelé",
       explanation: "Le plus-que-parfait « avait appelé » marque que l'appel s'était produit avant l'arrivée, créant un effet de flashback qui explique une information nouvelle.",
       wrongAnswers: [
@@ -5825,7 +5825,7 @@ const section: Section = {
       ruleId: "04-17",
       generatedBy: "haiku",
       prompt: "Transformez en discours indirect : mettez le verbe de la subordonnée au temps correct.",
-      phrase: "« Je pense qu'il ___ déjà fini. »",
+      phrase: { before: "Je pense qu'il ", after: " déjà fini." },
       answer: "a",
       explanation: "Avec le verbe principal au présent « je pense », le verbe de la subordonnée au passé composé s'écrit « a fini » (passé composé).",
       wrongAnswers: [
@@ -5841,7 +5841,7 @@ const section: Section = {
       ruleId: "04-17",
       generatedBy: "haiku",
       prompt: "Transformez en discours indirect : mettez le verbe de la subordonnée au temps correct.",
-      phrase: "« Je pensais qu'il ___ déjà fini. »",
+      phrase: { before: "Je pensais qu'il ", after: " déjà fini." },
       answer: "avait",
       explanation: "Avec le verbe principal à l'imparfait « je pensais », le verbe de la subordonnée se met au plus-que-parfait « avait fini ».",
       wrongAnswers: [
@@ -5857,7 +5857,7 @@ const section: Section = {
       ruleId: "04-17",
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte du verbe au plus-que-parfait ou passé composé.",
-      phrase: "« Elle savait que vous ___ tous les détails. »",
+      phrase: { before: "Elle savait que vous ", after: " tous les détails." },
       answer: "aviez expliqué",
       explanation: "Avec le verbe principal à l'imparfait « elle savait », le verbe de la subordonnée se met au plus-que-parfait « aviez expliqué » pour indiquer l'antériorité.",
       wrongAnswers: [
@@ -5874,7 +5874,7 @@ const section: Section = {
       ruleId: "04-17",
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte du verbe au plus-que-parfait ou passé composé.",
-      phrase: "« Ils savent que vous ___ tous les détails. »",
+      phrase: { before: "Ils savent que vous ", after: " tous les détails." },
       answer: "avez expliqué",
       explanation: "Avec le verbe principal au présent « ils savent », le verbe de la subordonnée se met au passé composé « avez expliqué » pour indiquer l'antériorité.",
       wrongAnswers: [
@@ -5891,7 +5891,7 @@ const section: Section = {
       ruleId: "04-17",
       generatedBy: "haiku",
       prompt: "Mettez le verbe au temps correct selon la concordance des temps.",
-      phrase: "« Ma mère m'a dit qu'elle ___ ma grand-mère la semaine précédente. »",
+      phrase: { before: "Ma mère m'a dit qu'elle ", after: " ma grand-mère la semaine précédente." },
       answer: "avait vu",
       explanation: "Avec le verbe principal au passé composé « m'a dit », le verbe de la subordonnée se met au plus-que-parfait « avait vu » pour exprimer une action antérieure.",
       wrongAnswers: [
@@ -6181,7 +6181,7 @@ const section: Section = {
       ruleId: "04-18",
       generatedBy: "haiku",
       prompt: "Conjuguez au plus-que-parfait passif.",
-      phrase: "« La porte _____ ouverte par le gardien avant midi. »",
+      phrase: { before: "La porte ", after: "__ ouverte par le gardien avant midi." },
       answer: "avait été",
       explanation: "Plus-que-parfait passif féminin singulier (« la porte » est féminin) : « avait été » + « ouverte ». Exprime une action antérieure à midi.",
       wrongAnswers: [
@@ -6198,7 +6198,7 @@ const section: Section = {
       ruleId: "04-18",
       generatedBy: "haiku",
       prompt: "Conjuguez au plus-que-parfait passif.",
-      phrase: "« Les lettres _____ envoyées par la poste avant la fermeture du bureau. »",
+      phrase: { before: "Les lettres ", after: "__ envoyées par la poste avant la fermeture du bureau." },
       answer: "avaient été",
       explanation: "Plus-que-parfait passif pluriel féminin (« les lettres ») : « avaient été » + « envoyées ». Exprime une action antérieure.",
       wrongAnswers: [
@@ -6215,7 +6215,7 @@ const section: Section = {
       ruleId: "04-18",
       generatedBy: "haiku",
       prompt: "Conjuguez au plus-que-parfait passif.",
-      phrase: "« Le contrat _____ signé par les avocats avant la date limite. »",
+      phrase: { before: "Le contrat ", after: "__ signé par les avocats avant la date limite." },
       answer: "avait été",
       explanation: "Plus-que-parfait passif masculin singulier (« le contrat ») : « avait été » + « signé ». Indique une action antérieure.",
       wrongAnswers: [
@@ -6232,7 +6232,7 @@ const section: Section = {
       ruleId: "04-18",
       generatedBy: "haiku",
       prompt: "Conjuguez au plus-que-parfait passif.",
-      phrase: "« Les maisons _____ construites par les ouvriers avant l'hiver. »",
+      phrase: { before: "Les maisons ", after: "__ construites par les ouvriers avant l'hiver." },
       answer: "avaient été",
       explanation: "Plus-que-parfait passif pluriel féminin (« les maisons ») : « avaient été » + « construites ». Exprime une action antérieure.",
       wrongAnswers: [
@@ -6249,7 +6249,7 @@ const section: Section = {
       ruleId: "04-18",
       generatedBy: "haiku",
       prompt: "Conjuguez au plus-que-parfait passif.",
-      phrase: "« La réunion _____ annoncée par le président avant la fin du jour. »",
+      phrase: { before: "La réunion ", after: "__ annoncée par le président avant la fin du jour." },
       answer: "avait été",
       explanation: "Plus-que-parfait passif féminin singulier (« la réunion ») : « avait été » + « annoncée ». Exprime une action antérieure.",
       wrongAnswers: [
@@ -6530,7 +6530,7 @@ const section: Section = {
       ruleId: "04-19",
       generatedBy: "haiku",
       prompt: "Conjuguez au plus-que-parfait avec inversion après « à peine »",
-      phrase: "« À peine ___ qu'il a décidé de partir. »",
+      phrase: { before: "À peine ", after: " qu'il a décidé de partir." },
       answer: "avait-il compris",
       explanation: "« Avait-il compris » est le plus-que-parfait avec inversion sujet-verbe obligatoire après « à peine ». « Comprendre » utilise « avoir ».",
       wrongAnswers: [
@@ -6549,7 +6549,7 @@ const section: Section = {
       ruleId: "04-19",
       generatedBy: "haiku",
       prompt: "Complétez au plus-que-parfait avec inversion",
-      phrase: "« À peine ___-elle arrivée à la gare qu'elle a appelé un taxi. »",
+      phrase: { before: "À peine ", after: "-elle arrivée à la gare qu'elle a appelé un taxi." },
       answer: "était",
       explanation: "« Était-elle arrivée » est le plus-que-parfait avec inversion. « Arriver » (mouvement) utilise l'auxiliaire « être ». L'inversion est « était-elle ».",
       wrongAnswers: [
@@ -6568,7 +6568,7 @@ const section: Section = {
       ruleId: "04-19",
       generatedBy: "haiku",
       prompt: "Conjuguez « avoir » au plus-que-parfait avec inversion",
-      phrase: "« À peine ___-on fermé la porte qu'on a entendu un cri. »",
+      phrase: { before: "À peine ", after: "-on fermé la porte qu'on a entendu un cri." },
       answer: "avait",
       explanation: "« Avait-on fermé » est le plus-que-parfait avec inversion sujet-verbe. « Fermé » est le participe passé du verbe « fermer » qui prend « avoir ».",
       wrongAnswers: [
@@ -6587,7 +6587,7 @@ const section: Section = {
       ruleId: "04-19",
       generatedBy: "haiku",
       prompt: "Conjuguez « rentrer » au plus-que-parfait avec inversion",
-      phrase: "« À peine ___-ils qu'on leur a reproché leur retard. »",
+      phrase: { before: "À peine ", after: "-ils qu'on leur a reproché leur retard." },
       answer: "étaient-ils rentrés",
       explanation: "« Étaient-ils rentrés » est le plus-que-parfait avec inversion sujet-verbe. « Rentrer » (mouvement) prend « être ». Accord au masculin pluriel : « rentrés ».",
       wrongAnswers: [
@@ -6606,7 +6606,7 @@ const section: Section = {
       ruleId: "04-19",
       generatedBy: "haiku",
       prompt: "Choisissez la bonne forme du verbe « pouvoir »",
-      phrase: "« À peine ___-elle quitté son bureau qu'elle s'est rendu compte de son oubli. »",
+      phrase: { before: "À peine ", after: "-elle quitté son bureau qu'elle s'est rendu compte de son oubli." },
       answer: "avait",
       explanation: "« Avait-elle quitté » est le plus-que-parfait avec inversion. « Quitter » utilise l'auxiliaire « avoir ». L'inversion sujet-verbe est obligatoire.",
       wrongAnswers: [
@@ -6887,7 +6887,7 @@ const section: Section = {
       ruleId: "04-20",
       generatedBy: "haiku",
       prompt: "Choisissez le bon temps pour exprimer ce qui n'avait jamais eu lieu avant ce moment.",
-      phrase: "« Elle était assise dans son fauteuil quand elle a reçu la nouvelle. Avant ce jour, elle n'___ jamais connu une telle joie. »",
+      phrase: { before: "Elle était assise dans son fauteuil quand elle a reçu la nouvelle. Avant ce jour, elle n'", after: " jamais connu une telle joie." },
       answer: "avait",
       explanation: "Le plus-que-parfait négatif « n'avait jamais connu » indique que la joie était une expérience inédite jusqu'à ce moment. « Avait » est l'auxiliaire à l'imparfait (3e personne du singulier) qui, avec « jamais » et le participe « connu », forme le plus-que-parfait.",
       wrongAnswers: [
@@ -6904,7 +6904,7 @@ const section: Section = {
       ruleId: "04-20",
       generatedBy: "haiku",
       prompt: "Choisissez le bon temps pour l'action antérieure à l'événement principal du récit.",
-      phrase: "« Les enfants jouaient dans le jardin quand leur mère a apporté du gâteau. Elle ___ la recette à sa grand-mère. »",
+      phrase: { before: "Les enfants jouaient dans le jardin quand leur mère a apporté du gâteau. Elle ", after: " la recette à sa grand-mère." },
       answer: "avait appris",
       explanation: "« Avait appris » au plus-que-parfait indique que l'apprentissage de la recette est une action antérieure au moment du récit (l'apport du gâteau). C'est un flashback qui explique l'origine de la recette.",
       wrongAnswers: [
@@ -6921,7 +6921,7 @@ const section: Section = {
       ruleId: "04-20",
       generatedBy: "haiku",
       prompt: "Choisissez le bon temps pour l'action antérieure à la rencontre décrite.",
-      phrase: "« C'était un jour ordinaire. J'attendais à la gare quand j'ai rencontré mon ancien professeur. Son sourire m'a rappelé soudain tout ce que j'___ oublié. »",
+      phrase: { before: "C'était un jour ordinaire. J'attendais à la gare quand j'ai rencontré mon ancien professeur. Son sourire m'a rappelé soudain tout ce que j'", after: " oublié." },
       answer: "avais",
       explanation: "« Avais oublié » au plus-que-parfait montre que l'oubli est antérieur au souvenir provoqué par la rencontre. « Avais » est l'auxiliaire à l'imparfait (1re personne du singulier) qui forme le plus-que-parfait avec « oublié ».",
       wrongAnswers: [
@@ -6938,7 +6938,7 @@ const section: Section = {
       ruleId: "04-20",
       generatedBy: "haiku",
       prompt: "Choisissez le bon temps pour exprimer la cause antérieure à la chute.",
-      phrase: "« Il faisait chaud et les enfants jouaient sur la plage. Soudain, l'un d'eux est tombé et s'est mis à pleurer. Il ___ la cheville en trébuchant sur les rochers. »",
+      phrase: { before: "Il faisait chaud et les enfants jouaient sur la plage. Soudain, l'un d'eux est tombé et s'est mis à pleurer. Il ", after: " la cheville en trébuchant sur les rochers." },
       answer: "s'était tordu",
       explanation: "« S'était tordu » au plus-que-parfait explique la cause de la chute : c'est une action antérieure (la torsion de la cheville) qui explique pourquoi l'enfant est tombé. Le plus-que-parfait marque cette antériorité par rapport à « est tombé » au passé composé.",
       wrongAnswers: [
@@ -6955,7 +6955,7 @@ const section: Section = {
       ruleId: "04-20",
       generatedBy: "haiku",
       prompt: "Choisissez le bon temps pour l'action antérieure à la mort du père, exprimée dans un souvenir.",
-      phrase: "« Durant toute son enfance, Marie se promenait avec son père et écoutait ses conseils. Mais depuis qu'il est mort, elle n'___ jamais oublié ses leçons. »",
+      phrase: { before: "Durant toute son enfance, Marie se promenait avec son père et écoutait ses conseils. Mais depuis qu'il est mort, elle n'", after: " jamais oublié ses leçons." },
       answer: "avait",
       explanation: "« N'avait jamais oublié » au plus-que-parfait marque que, dans le passé (avant le moment narratif actuel), Marie n'avait à aucun moment oublié les leçons de son père. « Avait » est l'auxiliaire à l'imparfait (3e personne du singulier) formant le plus-que-parfait.",
       wrongAnswers: [
