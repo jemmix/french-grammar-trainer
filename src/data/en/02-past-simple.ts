@@ -1,6 +1,6 @@
 import type { Section } from "../types";
 
-// Generated from: questions/en/02-past-simple.txt
+// Generated from: questions/en/02-01.txt, questions/en/02-02.txt, questions/en/02-03.txt
 // Total: 60 MCQ + 15 INPUT = 75 questions
 
 const section: Section = {
@@ -8,14 +8,16 @@ const section: Section = {
   title: "Past Simple",
   description: "Regular and irregular verbs, negatives, questions, time expressions, used to",
   rules: [
-    { id: "TITLE", sectionId: "02-past-simple", title: "Past simple of regular verbs: affirmative (-ed ending)" },
+    { id: "02-01", sectionId: "02-past-simple", title: "Past simple of regular verbs: affirmative (-ed ending)" },
+    { id: "02-02", sectionId: "02-past-simple", title: "Past simple: spelling rules for -ed (double consonant, -e → -ed, -y → -ied)" },
+    { id: "02-03", sectionId: "02-past-simple", title: "Past simple: pronunciation of -ed (/t/, /d/, /ɪd/)" },
   ],
   questions: [
     {
       id: "02-01-001",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"She ___ to the park with her dog yesterday.\"",
       choices: [
         { text: "walked", correct: true, explanation: "\"Walk\" + -ed = \"walked.\" Regular verbs form the past simple by adding -ed. \"Yesterday\" signals a completed past action." },
@@ -28,7 +30,7 @@ const section: Section = {
       id: "02-01-002",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"The meeting ___ at nine o'clock this morning.\"",
       choices: [
         { text: "started", correct: true, explanation: "\"Start\" + -ed = \"started.\" The time expression \"this morning\" (a finished period) calls for the past simple." },
@@ -41,7 +43,7 @@ const section: Section = {
       id: "02-01-003",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"My parents ___ the kitchen last weekend.\"",
       choices: [
         { text: "cleaned", correct: true, explanation: "\"Clean\" + -ed = \"cleaned.\" \"Last weekend\" is a finished period, so the past simple is correct." },
@@ -54,7 +56,7 @@ const section: Section = {
       id: "02-01-004",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"She ___ her grandmother every Sunday when she was a child.\"",
       choices: [
         { text: "visited", correct: true, explanation: "\"Visit\" + -ed = \"visited.\" The phrase \"when she was a child\" describes a completed past period, so the past simple is used for repeated habits." },
@@ -67,7 +69,7 @@ const section: Section = {
       id: "02-01-005",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"He ___ me about the project yesterday.\"",
       choices: [
         { text: "called", correct: true, explanation: "\"Call\" + -ed = \"called.\" \"Yesterday\" tells us this is a completed past action." },
@@ -80,7 +82,7 @@ const section: Section = {
       id: "02-01-006",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"The children ___ to their teacher and left the room.\"",
       choices: [
         { text: "listened", correct: true, explanation: "\"Listen\" + -ed = \"listened.\" Both \"listened\" and \"left\" describe a sequence of completed past actions." },
@@ -93,7 +95,7 @@ const section: Section = {
       id: "02-01-007",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"We ___ all the details before starting the project.\"",
       choices: [
         { text: "discussed", correct: true, explanation: "\"Discuss\" + -ed = \"discussed.\" The action is complete — it happened before the project began." },
@@ -106,7 +108,7 @@ const section: Section = {
       id: "02-01-008",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"She ___ the instructions carefully before assembling the furniture.\"",
       choices: [
         { text: "followed", correct: true, explanation: "\"Follow\" + -ed = \"followed.\" The sequence \"before assembling\" tells us this is a completed past action." },
@@ -119,7 +121,7 @@ const section: Section = {
       id: "02-01-009",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"He ___ the door and walked inside.\"",
       choices: [
         { text: "opened", correct: true, explanation: "\"Open\" + -ed = \"opened.\" Both \"opened\" and \"walked\" describe a sequence of completed past actions." },
@@ -132,7 +134,7 @@ const section: Section = {
       id: "02-01-010",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"She ___ for the bus in the cold for twenty minutes.\"",
       choices: [
         { text: "waited", correct: true, explanation: "\"Wait\" + -ed = \"waited.\" The twenty minutes is a finished duration in the past." },
@@ -145,7 +147,7 @@ const section: Section = {
       id: "02-01-011",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"The team ___ hard for three months before the competition.\"",
       choices: [
         { text: "trained", correct: true, explanation: "\"Train\" + -ed = \"trained.\" The duration \"three months\" is entirely in the past (before the competition), so the past simple is used." },
@@ -158,7 +160,7 @@ const section: Section = {
       id: "02-01-012",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"He ___ the new policy to all the employees.\"",
       choices: [
         { text: "explained", correct: true, explanation: "\"Explain\" + -ed = \"explained.\" This describes a specific completed past action." },
@@ -171,7 +173,7 @@ const section: Section = {
       id: "02-01-013",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"The flight ___ two hours late due to bad weather.\"",
       choices: [
         { text: "landed", correct: true, explanation: "\"Land\" + -ed = \"landed.\" This is a specific completed past event." },
@@ -184,7 +186,7 @@ const section: Section = {
       id: "02-01-014",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"He ___ a letter to his old teacher last month.\"",
       choices: [
         { text: "mailed", correct: true, explanation: "\"Mail\" + -ed = \"mailed.\" \"Last month\" signals a specific finished period in the past." },
@@ -197,7 +199,7 @@ const section: Section = {
       id: "02-01-015",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Which sentence correctly uses the past simple of a regular verb?",
       choices: [
         { text: "\"She finished her homework before dinner.\"", correct: true, explanation: "\"Finish\" + -ed = \"finished.\" This is the correct past simple form describing a completed past action." },
@@ -210,7 +212,7 @@ const section: Section = {
       id: "02-01-016",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"The doctor ___ me feel much better after the appointment.\"",
       choices: [
         { text: "helped", correct: true, explanation: "\"Help\" + -ed = \"helped.\" The appointment is a finished past event." },
@@ -223,7 +225,7 @@ const section: Section = {
       id: "02-01-017",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"The teacher ___ each student a different question.\"",
       choices: [
         { text: "asked", correct: true, explanation: "\"Ask\" + -ed = \"asked.\" This describes a specific completed past event." },
@@ -236,7 +238,7 @@ const section: Section = {
       id: "02-01-018",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"The children ___ happily in the garden all afternoon.\"",
       choices: [
         { text: "played", correct: true, explanation: "\"Play\" ends in a vowel + y, so just add -ed: \"played.\" \"All afternoon\" describes a finished period in the past." },
@@ -249,7 +251,7 @@ const section: Section = {
       id: "02-01-019",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"We ___ the results of the test together.\"",
       choices: [
         { text: "checked", correct: true, explanation: "\"Check\" + -ed = \"checked.\" \"Check\" ends in a consonant cluster (-ck), so no doubling is needed — simply add -ed." },
@@ -262,7 +264,7 @@ const section: Section = {
       id: "02-01-020",
       type: "mcq",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "In the past simple, which is TRUE about the -ed form of regular verbs?",
       choices: [
         { text: "It is the same for all persons: \"I worked, you worked, she worked, they worked.\"", correct: true, explanation: "Unlike the present simple, the past simple of regular verbs does not change for person or number. \"Worked\" is used with I, you, he, she, it, we, and they." },
@@ -275,7 +277,7 @@ const section: Section = {
       id: "02-01-021",
       type: "input",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence in the past simple.",
       phrase: { before: "He ", after: " football with his friends on Saturday." },
       answer: "played",
@@ -292,7 +294,7 @@ const section: Section = {
       id: "02-01-022",
       type: "input",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence in the past simple.",
       phrase: { before: "She ", after: " all night on her presentation." },
       answer: "worked",
@@ -309,7 +311,7 @@ const section: Section = {
       id: "02-01-023",
       type: "input",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence in the past simple.",
       phrase: { before: "They ", after: " to see us every Christmas when we lived in the country." },
       answer: "visited",
@@ -326,7 +328,7 @@ const section: Section = {
       id: "02-01-024",
       type: "input",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence in the past simple.",
       phrase: { before: "The plane ", after: " on time, so we didn't miss our connection." },
       answer: "landed",
@@ -343,7 +345,7 @@ const section: Section = {
       id: "02-01-025",
       type: "input",
       ruleId: "02-01",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence in the past simple.",
       phrase: { before: "She ", after: " for a taxi because the buses had stopped running." },
       answer: "called",
@@ -360,7 +362,7 @@ const section: Section = {
       id: "02-02-001",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "What is the correct past simple of \"stop\"?",
       choices: [
         { text: "stopped", correct: true, explanation: "\"Stop\" is a one-syllable verb ending in consonant+vowel+consonant (p after o). Double the final consonant before adding -ed: \"stopped.\"" },
@@ -373,7 +375,7 @@ const section: Section = {
       id: "02-02-002",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "What is the correct past simple of \"dance\"?",
       choices: [
         { text: "danced", correct: true, explanation: "\"Dance\" ends in -e, so just add -d (not the full -ed): \"danced.\"" },
@@ -386,7 +388,7 @@ const section: Section = {
       id: "02-02-003",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "What is the correct past simple of \"study\"?",
       choices: [
         { text: "studied", correct: true, explanation: "\"Study\" ends in consonant (d) + y. Change the y to i and add -ed: \"studied.\"" },
@@ -399,7 +401,7 @@ const section: Section = {
       id: "02-02-004",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"She ___ hard for her exam all weekend.\"",
       choices: [
         { text: "studied", correct: true, explanation: "\"Study\" ends in consonant + y → change y to i and add -ed: \"studied.\"" },
@@ -412,7 +414,7 @@ const section: Section = {
       id: "02-02-005",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "What is the correct past simple of \"plan\"?",
       choices: [
         { text: "planned", correct: true, explanation: "\"Plan\" is a one-syllable CVC verb (consonant+vowel+consonant). Double the final n before -ed: \"planned.\"" },
@@ -425,7 +427,7 @@ const section: Section = {
       id: "02-02-006",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "What is the correct past simple of \"arrive\"?",
       choices: [
         { text: "arrived", correct: true, explanation: "\"Arrive\" ends in -e, so just add -d (not -ed): \"arrived.\"" },
@@ -438,7 +440,7 @@ const section: Section = {
       id: "02-02-007",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "What is the correct past simple of \"carry\"?",
       choices: [
         { text: "carried", correct: true, explanation: "\"Carry\" ends in consonant (r) + y. Change y to i and add -ed: \"carried.\"" },
@@ -451,7 +453,7 @@ const section: Section = {
       id: "02-02-008",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"He ___ his heavy bag across the station.\"",
       choices: [
         { text: "dragged", correct: true, explanation: "\"Drag\" is a one-syllable CVC verb (g after a). Double the final g before -ed: \"dragged.\"" },
@@ -464,7 +466,7 @@ const section: Section = {
       id: "02-02-009",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"The rain ___ after an hour and the sun came out.\"",
       choices: [
         { text: "stopped", correct: true, explanation: "\"Stop\" is a one-syllable CVC verb. Double the p before -ed: \"stopped.\"" },
@@ -477,7 +479,7 @@ const section: Section = {
       id: "02-02-010",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"He ___ to become a professional musician.\"",
       choices: [
         { text: "tried", correct: true, explanation: "\"Try\" ends in consonant + y. Change y to i and add -ed: \"tried.\"" },
@@ -490,7 +492,7 @@ const section: Section = {
       id: "02-02-011",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"She ___ her mother every Sunday.\"",
       choices: [
         { text: "phoned", correct: true, explanation: "\"Phone\" ends in -e, so just add -d: \"phoned.\"" },
@@ -503,7 +505,7 @@ const section: Section = {
       id: "02-02-012",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"They ___ apples from the tree in the garden.\"",
       choices: [
         { text: "dropped", correct: true, explanation: "\"Drop\" is a one-syllable CVC verb (p after o). Double the p before -ed: \"dropped.\"" },
@@ -516,7 +518,7 @@ const section: Section = {
       id: "02-02-013",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"She ___ a lot because the news was very upsetting.\"",
       choices: [
         { text: "cried", correct: true, explanation: "\"Cry\" ends in consonant + y. Change y to i and add -ed: \"cried.\"" },
@@ -529,7 +531,7 @@ const section: Section = {
       id: "02-02-014",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"He ___ for the scholarship and was accepted.\"",
       choices: [
         { text: "applied", correct: true, explanation: "\"Apply\" ends in consonant + y. Change y to i and add -ed: \"applied.\"" },
@@ -542,7 +544,7 @@ const section: Section = {
       id: "02-02-015",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"She ___ to Paris after graduating.\"",
       choices: [
         { text: "moved", correct: true, explanation: "\"Move\" ends in -e, so add only -d: \"moved.\"" },
@@ -555,7 +557,7 @@ const section: Section = {
       id: "02-02-016",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Which past simple form is INCORRECTLY spelled?",
       choices: [
         { text: "\"He droped his phone on the floor.\"", correct: true, explanation: "\"Drop\" is a one-syllable CVC verb — the p must be doubled: \"dropped,\" not \"droped.\"" },
@@ -568,7 +570,7 @@ const section: Section = {
       id: "02-02-017",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"She ___ the door carefully so as not to wake anyone.\"",
       choices: [
         { text: "closed", correct: true, explanation: "\"Close\" ends in -e, so add only -d: \"closed.\"" },
@@ -581,7 +583,7 @@ const section: Section = {
       id: "02-02-018",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"She ___ the document before closing the laptop.\"",
       choices: [
         { text: "saved", correct: true, explanation: "\"Save\" ends in -e, so add only -d: \"saved.\"" },
@@ -594,7 +596,7 @@ const section: Section = {
       id: "02-02-019",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Complete the sentence: \"The athlete ___ around the track four times.\"",
       choices: [
         { text: "jogged", correct: true, explanation: "\"Jog\" is a one-syllable CVC verb (g after o). Double the g before -ed: \"jogged.\"" },
@@ -607,7 +609,7 @@ const section: Section = {
       id: "02-02-020",
       type: "mcq",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Which statement about past simple spelling rules is TRUE?",
       choices: [
         { text: "When a one-syllable verb ends in a single vowel + consonant, double the final consonant: \"stop\" → \"stopped.\"", correct: true, explanation: "This is the consonant-doubling rule. It applies to one-syllable verbs (or final stressed syllables) that end in a single vowel followed by a single consonant." },
@@ -620,7 +622,7 @@ const section: Section = {
       id: "02-02-021",
       type: "input",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Write the correct past simple form of \"reply.\"",
       phrase: { before: "She ", after: " to all the messages that afternoon." },
       answer: "replied",
@@ -636,7 +638,7 @@ const section: Section = {
       id: "02-02-022",
       type: "input",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Write the correct past simple form of \"stop.\"",
       phrase: { before: "The car ", after: " at the red light." },
       answer: "stopped",
@@ -652,7 +654,7 @@ const section: Section = {
       id: "02-02-023",
       type: "input",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Write the correct past simple form of \"live.\"",
       phrase: { before: "They ", after: " in Paris for five years." },
       answer: "lived",
@@ -668,7 +670,7 @@ const section: Section = {
       id: "02-02-024",
       type: "input",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Write the correct past simple form of \"plan.\"",
       phrase: { before: "He ", after: " the trip very carefully." },
       answer: "planned",
@@ -684,7 +686,7 @@ const section: Section = {
       id: "02-02-025",
       type: "input",
       ruleId: "02-02",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Write the correct past simple form of \"worry.\"",
       phrase: { before: "She ", after: " about the exam all night." },
       answer: "worried",
@@ -700,7 +702,7 @@ const section: Section = {
       id: "02-03-001",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"walked\"?",
       choices: [
         { text: "/t/ — like the letter T", correct: true, explanation: "\"Walk\" ends in /k/, a voiceless consonant. After voiceless consonants (p, k, f, s, sh, ch), the -ed is pronounced /t/: \"walked\" = /wɔːkt/." },
@@ -713,7 +715,7 @@ const section: Section = {
       id: "02-03-002",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"wanted\"?",
       choices: [
         { text: "/ɪd/ — a separate syllable", correct: true, explanation: "\"Want\" ends in /t/. After a /t/ or /d/ sound, the -ed is pronounced as a separate syllable: /ɪd/. \"Wanted\" = /ˈwɒntɪd/ (two syllables)." },
@@ -726,7 +728,7 @@ const section: Section = {
       id: "02-03-003",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"played\"?",
       choices: [
         { text: "/d/ — like the letter D", correct: true, explanation: "\"Play\" ends in a vowel sound /eɪ/. After vowels and voiced consonants, the -ed is pronounced /d/: \"played\" = /pleɪd/." },
@@ -739,7 +741,7 @@ const section: Section = {
       id: "02-03-004",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"washed\"?",
       choices: [
         { text: "/t/ — like the letter T", correct: true, explanation: "\"Wash\" ends in /ʃ/ (the \"sh\" sound), a voiceless consonant. After voiceless consonants, the -ed is pronounced /t/: \"washed\" = /wɒʃt/." },
@@ -752,7 +754,7 @@ const section: Section = {
       id: "02-03-005",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Which verb has the -ed ending pronounced as /ɪd/?",
       choices: [
         { text: "needed", correct: true, explanation: "\"Need\" ends in /d/. After /t/ or /d/, the -ed becomes a separate syllable /ɪd/: \"needed\" = /ˈniːdɪd/." },
@@ -765,7 +767,7 @@ const section: Section = {
       id: "02-03-006",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Which verb has the -ed ending pronounced as /t/?",
       choices: [
         { text: "missed", correct: true, explanation: "\"Miss\" ends in /s/, a voiceless consonant → the -ed is pronounced /t/: \"missed\" = /mɪst/." },
@@ -778,7 +780,7 @@ const section: Section = {
       id: "02-03-007",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Which group of verbs ALL have the -ed pronounced as /d/?",
       choices: [
         { text: "called, arrived, rained", correct: true, explanation: "\"Called\" (call ends in /l/, voiced), \"arrived\" (arrive ends in /v/, voiced), \"rained\" (rain ends in /n/, voiced) — all voiced sounds → /d/." },
@@ -791,7 +793,7 @@ const section: Section = {
       id: "02-03-008",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Which group of verbs ALL have the -ed pronounced as /ɪd/?",
       choices: [
         { text: "waited, decided, planted", correct: true, explanation: "\"Waited\" (wait ends in /t/), \"decided\" (decide ends in /d/), \"planted\" (plant ends in /t/) — all end in /t/ or /d/ → all pronounced /ɪd/." },
@@ -804,7 +806,7 @@ const section: Section = {
       id: "02-03-009",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"laughed\"?",
       choices: [
         { text: "/t/ — like the letter T", correct: true, explanation: "\"Laugh\" ends in /f/, a voiceless consonant. After voiceless consonants, the -ed is pronounced /t/: \"laughed\" = /lɑːft/." },
@@ -817,7 +819,7 @@ const section: Section = {
       id: "02-03-010",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "The rule for when -ed is pronounced /ɪd/ is:",
       choices: [
         { text: "when the verb ends in a /t/ or /d/ sound", correct: true, explanation: "Adding another /t/ or /d/ sound directly to an existing /t/ or /d/ would be unnatural. Instead, the -ed becomes a separate syllable /ɪd/: \"wanted\" (/wɒntɪd/), \"needed\" (/niːdɪd/)." },
@@ -830,7 +832,7 @@ const section: Section = {
       id: "02-03-011",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Which word rhymes with \"walked\"?",
       choices: [
         { text: "talked", correct: true, explanation: "Both \"walked\" (/wɔːkt/) and \"talked\" (/tɔːkt/) have the -ed pronounced /t/ (after voiceless /k/). They rhyme perfectly." },
@@ -843,7 +845,7 @@ const section: Section = {
       id: "02-03-012",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Which word has the SAME -ed pronunciation as \"fixed\"?",
       choices: [
         { text: "kissed", correct: true, explanation: "\"Fixed\" (/fɪkst/): \"fix\" ends in /ks/, voiceless → /t/. \"Kissed\" (/kɪst/): \"kiss\" ends in /s/, voiceless → /t/. Both are /t/." },
@@ -856,7 +858,7 @@ const section: Section = {
       id: "02-03-013",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Which word has the SAME -ed pronunciation as \"started\"?",
       choices: [
         { text: "planted", correct: true, explanation: "\"Started\" (/ˈstɑːrtɪd/): \"start\" ends in /t/ → /ɪd/. \"Planted\" (/ˈplæntɪd/): \"plant\" ends in /t/ → /ɪd/. Both add a syllable." },
@@ -869,7 +871,7 @@ const section: Section = {
       id: "02-03-014",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "How many syllables does \"needed\" have?",
       choices: [
         { text: "Two — the -ed adds a syllable: need-ed.", correct: true, explanation: "\"Need\" ends in /d/, so the -ed is pronounced as a separate syllable /ɪd/: \"needed\" = /ˈniːdɪd/ (two syllables: need + ed)." },
@@ -882,7 +884,7 @@ const section: Section = {
       id: "02-03-015",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "How many syllables does \"played\" have?",
       choices: [
         { text: "One — the -ed does not add a syllable.", correct: true, explanation: "\"Play\" ends in the vowel /eɪ/ (voiced), so the -ed is pronounced /d/. No extra syllable is added: \"played\" = /pleɪd/ (one syllable)." },
@@ -895,7 +897,7 @@ const section: Section = {
       id: "02-03-016",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Which statement about -ed pronunciation is correct?",
       choices: [
         { text: "After /t/ or /d/, the -ed forms a new syllable pronounced /ɪd/.", correct: true, explanation: "Ending a word with two identical or very similar sounds (/t/+/t/ or /d/+/d/) would be awkward. Instead, a vowel /ɪ/ is inserted: \"start\" → \"started\" (/ˈstɑːrtɪd/)." },
@@ -908,7 +910,7 @@ const section: Section = {
       id: "02-03-017",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"pushed\"?",
       choices: [
         { text: "/t/ — like the letter T", correct: true, explanation: "\"Push\" ends in /ʃ/ (the \"sh\" sound), a voiceless consonant. After voiceless consonants, the -ed is pronounced /t/: \"pushed\" = /pʊʃt/." },
@@ -921,7 +923,7 @@ const section: Section = {
       id: "02-03-018",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Which verb, when made into past simple, would add a new syllable to the word?",
       choices: [
         { text: "visit → visited", correct: true, explanation: "\"Visit\" ends in /t/, so the -ed adds the syllable /ɪd/: \"vis-it\" (2 syllables) → \"vis-it-ed\" (3 syllables)." },
@@ -934,7 +936,7 @@ const section: Section = {
       id: "02-03-019",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"cleaned\"?",
       choices: [
         { text: "/d/ — like the letter D", correct: true, explanation: "\"Clean\" ends in /n/, a voiced consonant. After voiced sounds, the -ed is pronounced /d/: \"cleaned\" = /kliːnd/." },
@@ -947,7 +949,7 @@ const section: Section = {
       id: "02-03-020",
       type: "mcq",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "Which pair of verbs has DIFFERENT -ed pronunciations?",
       choices: [
         { text: "stopped and called", correct: true, explanation: "\"Stopped\" (/stɒpt/): \"stop\" ends in /p/, voiceless → /t/. \"Called\" (/kɔːld/): \"call\" ends in /l/, voiced → /d/. Different pronunciations." },
@@ -960,7 +962,7 @@ const section: Section = {
       id: "02-03-021",
       type: "input",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"looked\"? Type: t, d, or id",
       phrase: { before: "The -ed in \"looked\" is pronounced ", after: "." },
       answer: "t",
@@ -976,7 +978,7 @@ const section: Section = {
       id: "02-03-022",
       type: "input",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"needed\"? Type: t, d, or id",
       phrase: { before: "The -ed in \"needed\" is pronounced ", after: "." },
       answer: "id",
@@ -992,7 +994,7 @@ const section: Section = {
       id: "02-03-023",
       type: "input",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"rained\"? Type: t, d, or id",
       phrase: { before: "The -ed in \"rained\" is pronounced ", after: "." },
       answer: "d",
@@ -1008,7 +1010,7 @@ const section: Section = {
       id: "02-03-024",
       type: "input",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"watched\"? Type: t, d, or id",
       phrase: { before: "The -ed in \"watched\" is pronounced ", after: "." },
       answer: "t",
@@ -1024,7 +1026,7 @@ const section: Section = {
       id: "02-03-025",
       type: "input",
       ruleId: "02-03",
-      generatedBy: "",
+      generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"visited\"? Type: t, d, or id",
       phrase: { before: "The -ed in \"visited\" is pronounced ", after: "." },
       answer: "id",
