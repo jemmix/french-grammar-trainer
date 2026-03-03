@@ -1,7 +1,8 @@
 import type { Section, SectionMeta } from "../types";
 import section01 from "./01-present-simple-continuous";
+import section02 from "./02-past-simple";
 
-export const loadedSections: Section[] = [section01];
+export const loadedSections: Section[] = [section01, section02];
 
 export const meta: Omit<SectionMeta, "questionCount">[] = [
   { id: "01-present-simple-continuous", title: "Present Simple & Present Continuous", description: "Affirmative, negative, and question forms; spelling rules; habits vs. temporary actions" },
