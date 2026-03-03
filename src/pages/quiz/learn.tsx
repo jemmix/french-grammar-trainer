@@ -180,41 +180,66 @@ function LearnQuizRunner({
         </div>
       </div>
 
-      <main className="mx-auto max-w-3xl px-6 py-8 md:py-12">
-        {finished ? (
-          <ScoreSummary
-            score={score}
-            total={totalQuestions}
-            answers={answers}
-            quizTitle={t.quiz.learnFreelyQuizTitle}
-            onRestart={onRestart}
-          />
-        ) : currentQuestion?.type === "mcq" ? (
-          <McqQuestionView
-            question={currentQuestion}
-            selectedChoiceIndex={selectedChoiceIndex}
-            answered={answered}
-            onSelect={handleMcqSelect}
-            onNext={handleNext}
-            questionNum={currentIndex + 1}
-            rule={currentRule ? { id: currentQuestion.ruleId, sectionId: "", title: currentRule.title } : undefined}
-          />
-        ) : currentQuestion?.type === "input" ? (
-          <InputQuestionView
-            question={currentQuestion}
-            answered={answered}
-            onAnswer={handleInputAnswer}
-            onNext={handleNext}
-            questionNum={currentIndex + 1}
-            rule={currentRule ? { id: currentQuestion.ruleId, sectionId: "", title: currentRule.title } : undefined}
-          />
-        ) : null}
-      </main>
+      {/* Content row: quiz + sidebar */}
+      <div className="lg:flex lg:min-h-[calc(100vh-3.5rem)]">
+        <main className="flex-1 min-w-0 px-6 py-8 md:py-12">
+          <div className="mx-auto max-w-3xl">
+            {finished ? (
+              <ScoreSummary
+                score={score}
+                total={totalQuestions}
+                answers={answers}
+                quizTitle={t.quiz.learnFreelyQuizTitle}
+                onRestart={onRestart}
+              />
+            ) : currentQuestion?.type === "mcq" ? (
+              <McqQuestionView
+                question={currentQuestion}
+                selectedChoiceIndex={selectedChoiceIndex}
+                answered={answered}
+                onSelect={handleMcqSelect}
+                onNext={handleNext}
+                questionNum={currentIndex + 1}
+                rule={currentRule ? { id: currentQuestion.ruleId, sectionId: "", title: currentRule.title } : undefined}
+              />
+            ) : currentQuestion?.type === "input" ? (
+              <InputQuestionView
+                question={currentQuestion}
+                answered={answered}
+                onAnswer={handleInputAnswer}
+                onNext={handleNext}
+                questionNum={currentIndex + 1}
+                rule={currentRule ? { id: currentQuestion.ruleId, sectionId: "", title: currentRule.title } : undefined}
+              />
+            ) : null}
+          </div>
+        </main>
 
+        {/* Desktop sidebar */}
+        <div
+          className={`
+            hidden lg:block border-l border-craie bg-papier-warm
+            transition-[width] duration-300 ease-out shrink-0
+            ${panelOpen ? "w-[340px]" : "w-0 border-l-0 overflow-hidden"}
+          `}
+        >
+          <div className="w-[340px]">
+            <ExplanationPanel
+              explanation={currentExplanation}
+              isOpen={panelOpen}
+              onClose={() => setPanelOpen(false)}
+              mode="desktop"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile bottom sheet */}
       <ExplanationPanel
         explanation={currentExplanation}
         isOpen={panelOpen}
         onClose={() => setPanelOpen(false)}
+        mode="mobile"
       />
     </div>
   );
