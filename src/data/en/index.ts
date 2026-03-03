@@ -1,6 +1,14 @@
 import type { Section, SectionMeta } from "../types";
 import section01 from "./01-present-simple-continuous";
 import section02 from "./02-past-simple";
+import explanations01 from "./explanations/01-explanations";
+import explanations02 from "./explanations/02-explanations";
+
+// Attach explanations to sections here (not in generated section files, which
+// get overwritten by codegen). Explanations are hand-authored and live in
+// src/data/en/explanations/.
+section01.explanations = explanations01;
+section02.explanations = explanations02;
 
 export const loadedSections: Section[] = [section01, section02];
 

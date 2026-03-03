@@ -75,7 +75,13 @@ export interface LangStrings {
     typoWrongAfter: string;
     unexpectedAnswer: string;           // "Réponse inattendue"
     unexpectedDetails: (input: string) => string;
-    openInspectorTitle: string;         // tooltip on question ID link
+    viewExplanation: string;             // "View explanation"
+    closeExplanation: string;            // "Close"
+    startPractice: string;               // "Start practice"
+    skipExplanation: string;             // "Skip"
+    interstitialIntro: string;           // "Review this rule before practicing:"
+    examples: string;                    // "Examples"
+    openInspectorTitle: string;          // tooltip on question ID link
     sectionNotFound: string;
     points: (n: number) => string;      // "3 pts"
     learnFreelyQuizTitle: string;       // used as quizTitle in ScoreSummary

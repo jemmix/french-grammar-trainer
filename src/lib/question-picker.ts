@@ -33,16 +33,21 @@ function shuffleChoices(q: Question): Question {
   return { ...q, choices: shuffleArray(q.choices) };
 }
 
+export interface LearnPickResult {
+  questions: Question[];
+  focusRuleId: string | null;
+}
+
 export function pickLearnQuestions(params: {
   sections: Section[];
   getRulePower: (ruleId: string) => number;
   getSectionPower: (sectionId: string) => number;
-}): Question[] {
+}): LearnPickResult {
   const { sections, getRulePower, getSectionPower } = params;
 
   // Only sections that have questions loaded
   const loadedSections = sections.filter((s) => s.questions.length > 0);
-  if (loadedSections.length === 0) return [];
+  if (loadedSections.length === 0) return { questions: [], focusRuleId: null };
 
   const collected = new Set<string>(); // question IDs already picked
   const result: Question[] = [];
@@ -77,7 +82,7 @@ export function pickLearnQuestions(params: {
   if (focusSectionRules.length === 0) {
     // Degenerate fallback
     addQuestions(loadedSections.flatMap((s) => s.questions), PROGRESS.LEARN_TOTAL);
-    return shuffleArray(result);
+    return { questions: shuffleArray(result), focusRuleId: null };
   }
 
   // 2. Weighted-pick focus rule
@@ -222,5 +227,8 @@ export function pickLearnQuestions(params: {
   }
 
   // Final shuffle
-  return shuffleArray(result.slice(0, PROGRESS.LEARN_TOTAL));
+  return {
+    questions: shuffleArray(result.slice(0, PROGRESS.LEARN_TOTAL)),
+    focusRuleId: focusRule.id,
+  };
 }

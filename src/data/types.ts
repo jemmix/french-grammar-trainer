@@ -43,6 +43,14 @@ export interface Section {
   description: string;
   rules: Rule[];
   questions: Question[];
+  explanations?: RuleExplanation[];
+}
+
+export interface RuleExplanation {
+  ruleId: string;
+  title: string;
+  body: string;
+  examples: string[];
 }
 
 export interface SectionMeta {

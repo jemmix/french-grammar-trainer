@@ -1,13 +1,16 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
-import type { Question } from "~/data/types";
+import type { Question, RuleExplanation } from "~/data/types";
 import { sectionMap } from "~/data/sections-index";
 import { McqQuestionView } from "~/components/quiz/mcq-question-view";
 import { InputQuestionView } from "~/components/quiz/input-question-view";
 import { ScoreSummary } from "~/components/quiz/score-summary";
+import { RuleExplanationInterstitial } from "~/components/quiz/rule-explanation-interstitial";
+import { ExplanationPanel } from "~/components/quiz/explanation-panel";
 import { pickLearnQuestions } from "~/lib/question-picker";
+import { getExplanation } from "~/lib/explanation-helpers";
 import { t } from "~/lang";
 
 function getAllRulesMap(): Map<string, { title: string }> {
@@ -33,23 +36,41 @@ export default function LearnPage() {
   const [finished, setFinished] = useState(false);
   const [answers, setAnswers] = useState<{ correct: boolean; question: Question }[]>([]);
   const [initialized, setInitialized] = useState(false);
+  const [showingInterstitial, setShowingInterstitial] = useState(false);
+  const [interstitialExplanation, setInterstitialExplanation] = useState<RuleExplanation | null>(null);
+  const [panelOpen, setPanelOpen] = useState(false);
 
   const allSections = Object.values(sectionMap);
 
   const initQuiz = useCallback(() => {
-    const picked = pickLearnQuestions({
+    const result = pickLearnQuestions({
       sections: allSections,
       getRulePower,
       getSectionPower,
     });
-    setQuizQuestions(picked);
+    setQuizQuestions(result.questions);
     setCurrentIndex(0);
     setSelectedChoiceIndex(null);
     setAnswered(false);
     setScore(0);
     setFinished(false);
     setAnswers([]);
+    setPanelOpen(false);
     setInitialized(true);
+
+    // Check for interstitial on focus rule
+    if (result.focusRuleId) {
+      const power = getRulePower(result.focusRuleId);
+      // Find which section contains this rule
+      for (const section of allSections) {
+        const explanation = getExplanation(section, result.focusRuleId);
+        if (explanation && power < 0.20) {
+          setShowingInterstitial(true);
+          setInterstitialExplanation(explanation);
+          break;
+        }
+      }
+    }
   }, [allSections, getRulePower, getSectionPower]);
 
   // Wait for progress to load before picking questions
@@ -61,6 +82,21 @@ export default function LearnPage() {
 
   const currentQuestion = quizQuestions[currentIndex];
   const totalQuestions = quizQuestions.length;
+
+  // Current question's explanation (for side panel)
+  const currentExplanation = useMemo(() => {
+    if (!currentQuestion) return undefined;
+    for (const section of allSections) {
+      const explanation = getExplanation(section, currentQuestion.ruleId);
+      if (explanation) return explanation;
+    }
+    return undefined;
+  }, [currentQuestion, allSections]);
+
+  // Close panel when current question has no explanation
+  useEffect(() => {
+    if (!currentExplanation) setPanelOpen(false);
+  }, [currentExplanation]);
 
   const handleMcqSelect = useCallback(
     (index: number) => {
@@ -97,8 +133,10 @@ export default function LearnPage() {
   }, [currentIndex, totalQuestions]);
 
   const handleRestart = useCallback(() => {
-    initQuiz();
-  }, [initQuiz]);
+    setShowingInterstitial(false);
+    setInterstitialExplanation(null);
+    setInitialized(false);
+  }, []);
 
   // Flush progress to server when quiz finishes
   useEffect(() => {
@@ -108,6 +146,7 @@ export default function LearnPage() {
   // Keyboard shortcuts
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
+      if (showingInterstitial) return;
       if (e.key === "Enter" && answered && !finished) {
         const target = e.target as HTMLElement;
         if (target.tagName === "INPUT") return;
@@ -123,13 +162,29 @@ export default function LearnPage() {
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [answered, finished, currentQuestion, handleNext, handleMcqSelect]);
+  }, [answered, finished, currentQuestion, handleNext, handleMcqSelect, showingInterstitial]);
 
   if (isLoading || !initialized || quizQuestions.length === 0) {
     return (
       <div className="min-h-screen bg-papier flex items-center justify-center">
         <div className="text-ardoise">{t.shared.loading}</div>
       </div>
+    );
+  }
+
+  // Show interstitial before quiz starts
+  if (showingInterstitial && interstitialExplanation) {
+    return (
+      <>
+        <Head>
+          <title>{t.quiz.learnFreelyQuizTitle} — {t.meta.appTitle}</title>
+        </Head>
+        <RuleExplanationInterstitial
+          explanation={interstitialExplanation}
+          onStart={() => setShowingInterstitial(false)}
+          onSkip={() => setShowingInterstitial(false)}
+        />
+      </>
     );
   }
 
@@ -155,16 +210,34 @@ export default function LearnPage() {
               </svg>
               {t.shared.sections}
             </Link>
-            {!finished && (
-              <span className="text-sm font-medium text-encre tabular-nums">
-                {currentIndex + 1} / {totalQuestions}
-              </span>
-            )}
-            {!finished && (
-              <span className="text-sm font-semibold text-tricolore-bleu tabular-nums">
-                {t.quiz.points(score)}
-              </span>
-            )}
+            <div className="flex items-center gap-3">
+              {!finished && currentExplanation && (
+                <button
+                  onClick={() => setPanelOpen((o) => !o)}
+                  className={`p-1.5 rounded-lg transition-colors ${
+                    panelOpen
+                      ? "text-tricolore-bleu bg-tricolore-bleu/10"
+                      : "text-ardoise hover:text-encre hover:bg-craie/50"
+                  }`}
+                  title={t.quiz.viewExplanation}
+                  aria-label={t.quiz.viewExplanation}
+                >
+                  <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </button>
+              )}
+              {!finished && (
+                <span className="text-sm font-medium text-encre tabular-nums">
+                  {currentIndex + 1} / {totalQuestions}
+                </span>
+              )}
+              {!finished && (
+                <span className="text-sm font-semibold text-tricolore-bleu tabular-nums">
+                  {t.quiz.points(score)}
+                </span>
+              )}
+            </div>
           </div>
           {/* Progress bar */}
           <div className="h-0.5 bg-craie">
@@ -205,6 +278,15 @@ export default function LearnPage() {
             />
           ) : null}
         </main>
+
+        {/* Explanation side panel */}
+        {currentExplanation && (
+          <ExplanationPanel
+            explanation={currentExplanation}
+            isOpen={panelOpen}
+            onClose={() => setPanelOpen(false)}
+          />
+        )}
       </div>
     </>
   );
