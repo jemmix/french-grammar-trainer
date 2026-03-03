@@ -1,7 +1,8 @@
+"use client";
+
 import type { JSX } from "react";
-import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type {
   Choice,
@@ -11,18 +12,11 @@ import type {
   Rule,
   Section,
 } from "~/data/types";
-import { sectionMap } from "~/data/sections-index";
 import { t } from "~/lang";
 
 // ---------------------------------------------------------------------------
-// Question lookup helper
+// Helpers
 // ---------------------------------------------------------------------------
-
-interface QuestionContext {
-  question: Question;
-  section: Section;
-  rule: Rule;
-}
 
 /** Replaces runs of 2+ underscores with a styled inline blank element. */
 function renderWithBlanks(text: string): (string | JSX.Element)[] {
@@ -37,18 +31,6 @@ function renderWithBlanks(text: string): (string | JSX.Element)[] {
   );
 }
 
-function findQuestion(questionId: string): QuestionContext | null {
-  for (const section of Object.values(sectionMap)) {
-    const question = section.questions.find((q) => q.id === questionId);
-    if (question) {
-      const rule = section.rules.find((r) => r.id === question.ruleId);
-      if (rule) return { question, section, rule };
-    }
-  }
-  return null;
-}
-
-// Levenshtein distance (reused from quiz page)
 function levenshteinDistance(a: string, b: string): number {
   const la = a.length;
   const lb = b.length;
@@ -101,7 +83,6 @@ function evaluateInput(userInput: string, question: InputQuestion): InputResult 
   return { kind: "unknown", isCorrect: false };
 }
 
-
 // ---------------------------------------------------------------------------
 // Navigation helpers
 // ---------------------------------------------------------------------------
@@ -118,169 +99,150 @@ function findAdjacentQuestions(
 }
 
 // ===========================================================================
-// Main Page
+// Main client component
 // ===========================================================================
 
-export default function QuestionReviewPage() {
+export function QuestionReviewClient({
+  question,
+  section,
+  rule,
+}: {
+  question: Question;
+  section: Section;
+  rule: Rule;
+}) {
   const router = useRouter();
-  const { questionId } = router.query;
-
-  const ctx = useMemo(
-    () => (typeof questionId === "string" ? findQuestion(questionId) : null),
-    [questionId],
-  );
 
   const adjacent = useMemo(
-    () =>
-      ctx ? findAdjacentQuestions(ctx.question.id, ctx.section) : { prev: null, next: null },
-    [ctx],
+    () => findAdjacentQuestions(question.id, section),
+    [question.id, section],
   );
+
+  const ruleQuestions = section.questions.filter((q) => q.ruleId === rule.id);
+  const posInRule = ruleQuestions.findIndex((q) => q.id === question.id) + 1;
 
   // Keyboard nav: left/right arrows
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
       if (e.key === "ArrowLeft" && adjacent.prev) {
-        void router.push(`/question/${adjacent.prev}`);
+        router.push(`/question/${adjacent.prev}`);
       } else if (e.key === "ArrowRight" && adjacent.next) {
-        void router.push(`/question/${adjacent.next}`);
+        router.push(`/question/${adjacent.next}`);
       }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [adjacent, router]);
 
-  if (!ctx) {
-    return (
-      <div className="min-h-screen bg-papier flex items-center justify-center">
-        <div className="text-center animate-fade-in">
-          <p className="text-ardoise text-lg mb-4">{t.questionReview.questionNotFound}</p>
-          <Link href="/" className="text-tricolore-bleu font-medium hover:underline">
-            {t.shared.backToHome}
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  const { question, section, rule } = ctx;
-  const ruleQuestions = section.questions.filter((q) => q.ruleId === rule.id);
-  const posInRule = ruleQuestions.findIndex((q) => q.id === question.id) + 1;
-
   return (
-    <>
-      <Head>
-        <title>{t.questionReview.pageTitle(question.id)}</title>
-      </Head>
+    <div className="min-h-screen bg-papier">
+      {/* Top bar */}
+      <div className="sticky top-0 z-10 bg-tricolore-blanc/90 backdrop-blur-sm border-b border-craie">
+        <div className="mx-auto max-w-3xl px-6 py-3 flex items-center justify-between gap-4">
+          <Link
+            href={`/quiz/${section.id}`}
+            className="flex items-center gap-2 text-sm text-ardoise hover:text-encre transition-colors shrink-0"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            {section.title}
+          </Link>
 
-      <div className="min-h-screen bg-papier">
-        {/* ── Top bar ── */}
-        <div className="sticky top-0 z-10 bg-tricolore-blanc/90 backdrop-blur-sm border-b border-craie">
-          <div className="mx-auto max-w-3xl px-6 py-3 flex items-center justify-between gap-4">
-            <Link
-              href={`/quiz/${section.id}`}
-              className="flex items-center gap-2 text-sm text-ardoise hover:text-encre transition-colors shrink-0"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-              </svg>
-              {section.title}
-            </Link>
-
-            <div className="flex items-center gap-2">
-              {/* Prev / Next arrows */}
-              <div className="flex items-center gap-1">
-                {adjacent.prev ? (
-                  <Link
-                    href={`/question/${adjacent.prev}`}
-                    className="p-1.5 rounded-lg text-ardoise hover:text-encre hover:bg-papier-warm transition-colors"
-                    title={t.questionReview.prevQuestionTitle(adjacent.prev)}
-                  >
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </Link>
-                ) : (
-                  <span className="p-1.5 text-craie"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg></span>
-                )}
-                {adjacent.next ? (
-                  <Link
-                    href={`/question/${adjacent.next}`}
-                    className="p-1.5 rounded-lg text-ardoise hover:text-encre hover:bg-papier-warm transition-colors"
-                    title={t.questionReview.nextQuestionTitle(adjacent.next)}
-                  >
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                ) : (
-                  <span className="p-1.5 text-craie"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg></span>
-                )}
-              </div>
-
-              <CopyPermalinkButton />
+          <div className="flex items-center gap-2">
+            {/* Prev / Next arrows */}
+            <div className="flex items-center gap-1">
+              {adjacent.prev ? (
+                <Link
+                  href={`/question/${adjacent.prev}`}
+                  className="p-1.5 rounded-lg text-ardoise hover:text-encre hover:bg-papier-warm transition-colors"
+                  title={t.questionReview.prevQuestionTitle(adjacent.prev)}
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </Link>
+              ) : (
+                <span className="p-1.5 text-craie"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg></span>
+              )}
+              {adjacent.next ? (
+                <Link
+                  href={`/question/${adjacent.next}`}
+                  className="p-1.5 rounded-lg text-ardoise hover:text-encre hover:bg-papier-warm transition-colors"
+                  title={t.questionReview.nextQuestionTitle(adjacent.next)}
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              ) : (
+                <span className="p-1.5 text-craie"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg></span>
+              )}
             </div>
+
+            <CopyPermalinkButton />
+          </div>
+        </div>
+      </div>
+
+      <main className="mx-auto max-w-3xl px-6 py-8 md:py-12">
+        {/* Metadata header */}
+        <div className="animate-fade-in mb-10">
+          {/* Breadcrumb chips */}
+          <div className="flex flex-wrap items-center gap-2 mb-5">
+            <MetaChip label={section.title} />
+            <ChevronDot />
+            <MetaChip label={rule.title} />
+            <ChevronDot />
+            <MetaChip label={`${posInRule} / ${ruleQuestions.length}`} muted />
+          </div>
+
+          {/* ID + badges row */}
+          <div className="flex flex-wrap items-center gap-3">
+            <h1 className="text-2xl md:text-3xl font-bold text-encre tracking-tight font-mono">
+              {question.id}
+            </h1>
+            <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider ${
+              question.type === "mcq"
+                ? "bg-tricolore-bleu/8 text-tricolore-bleu"
+                : "bg-warning/10 text-warning"
+            }`}>
+              {question.type === "mcq" ? (
+                <>
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                  {t.questionReview.mcqBadge}
+                </>
+              ) : (
+                <>
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                  </svg>
+                  {t.questionReview.inputBadge}
+                </>
+              )}
+            </span>
+            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-papier-warm text-[11px] font-medium text-ardoise border border-craie">
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              {question.generatedBy}
+            </span>
           </div>
         </div>
 
-        <main className="mx-auto max-w-3xl px-6 py-8 md:py-12">
-          {/* ── Metadata header ── */}
-          <div className="animate-fade-in mb-10">
-            {/* Breadcrumb chips */}
-            <div className="flex flex-wrap items-center gap-2 mb-5">
-              <MetaChip label={section.title} />
-              <ChevronDot />
-              <MetaChip label={rule.title} />
-              <ChevronDot />
-              <MetaChip label={`${posInRule} / ${ruleQuestions.length}`} muted />
-            </div>
-
-            {/* ID + badges row */}
-            <div className="flex flex-wrap items-center gap-3">
-              <h1 className="text-2xl md:text-3xl font-bold text-encre tracking-tight font-mono">
-                {question.id}
-              </h1>
-              <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider ${
-                question.type === "mcq"
-                  ? "bg-tricolore-bleu/8 text-tricolore-bleu"
-                  : "bg-warning/10 text-warning"
-              }`}>
-                {question.type === "mcq" ? (
-                  <>
-                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                    </svg>
-                    {t.questionReview.mcqBadge}
-                  </>
-                ) : (
-                  <>
-                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                    </svg>
-                    {t.questionReview.inputBadge}
-                  </>
-                )}
-              </span>
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-papier-warm text-[11px] font-medium text-ardoise border border-craie">
-                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                {question.generatedBy}
-              </span>
-            </div>
-          </div>
-
-          {/* ── Question body ── */}
-          <div className="animate-scale-in">
-            {question.type === "mcq" ? (
-              <McqReview question={question} />
-            ) : (
-              <InputReview question={question} />
-            )}
-          </div>
-        </main>
-      </div>
-    </>
+        {/* Question body */}
+        <div className="animate-scale-in">
+          {question.type === "mcq" ? (
+            <McqReview question={question} />
+          ) : (
+            <InputReview question={question} />
+          )}
+        </div>
+      </main>
+    </div>
   );
 }
 

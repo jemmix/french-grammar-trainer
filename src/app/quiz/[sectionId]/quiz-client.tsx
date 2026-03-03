@@ -1,56 +1,61 @@
-import Head from "next/head";
+"use client";
+
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
 import type { Question, RuleExplanation, Section } from "~/data/types";
-import { sectionMap } from "~/data/sections-index";
 import { McqQuestionView } from "~/components/quiz/mcq-question-view";
 import { InputQuestionView } from "~/components/quiz/input-question-view";
 import { ScoreSummary } from "~/components/quiz/score-summary";
 import { RuleExplanationInterstitial } from "~/components/quiz/rule-explanation-interstitial";
 import { ExplanationPanel } from "~/components/quiz/explanation-panel";
-import { pickLearnQuestions } from "~/lib/question-picker";
+import { shuffleArray, QUESTIONS_PER_QUIZ } from "~/lib/quiz-helpers";
 import { getExplanation } from "~/lib/explanation-helpers";
+import { ruleWeight } from "~/lib/question-picker";
 import { t } from "~/lang";
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-function getAllRulesMap(): Map<string, { title: string }> {
-  const map = new Map<string, { title: string }>();
-  for (const section of Object.values(sectionMap)) {
-    for (const rule of section.rules) {
-      map.set(rule.id, { title: rule.title });
+function pickShuffledQuestions(section: Section): Question[] {
+  const shuffled = shuffleArray(section.questions);
+  const selected = shuffled.slice(0, Math.min(QUESTIONS_PER_QUIZ, shuffled.length));
+  return selected.map((q) =>
+    q.type === "mcq" ? { ...q, choices: shuffleArray(q.choices) } : q,
+  );
+}
+
+function findWeakestExplanation(
+  section: Section,
+  getRulePower: (ruleId: string) => number,
+): RuleExplanation | null {
+  const rulesWithQs = section.rules.filter((r) =>
+    section.questions.some((q) => q.ruleId === r.id),
+  );
+  if (rulesWithQs.length === 0) return null;
+
+  let weakestRule = rulesWithQs[0]!;
+  let weakestWeight = -1;
+  for (const rule of rulesWithQs) {
+    const power = getRulePower(rule.id);
+    const w = ruleWeight(power, power > 0);
+    if (w > weakestWeight) {
+      weakestWeight = w;
+      weakestRule = rule;
     }
   }
-  return map;
+  const power = getRulePower(weakestRule.id);
+  if (power >= 0.20) return null;
+  return getExplanation(section, weakestRule.id) ?? null;
 }
 
-const allRulesMap = getAllRulesMap();
+// ── Quiz runner (self-contained, no interstitial logic) ──────────────────────
 
-function findExplanationForRule(
-  allSections: Section[],
-  ruleId: string,
-): RuleExplanation | undefined {
-  for (const section of allSections) {
-    const explanation = getExplanation(section, ruleId);
-    if (explanation) return explanation;
-  }
-  return undefined;
-}
-
-// ── Quiz runner ──────────────────────────────────────────────────────────────
-
-function LearnQuizRunner({
-  initialQuestions,
-  onRestart,
-}: {
-  initialQuestions: Question[];
-  onRestart: () => void;
-}) {
+function SectionQuizRunner({ section }: { section: Section }) {
   const { recordAnswer, flush } = useProgress();
-  const allSections = useMemo(() => Object.values(sectionMap), []);
 
-  const [quizQuestions, setQuizQuestions] = useState(initialQuestions);
+  const [quizQuestions, setQuizQuestions] = useState<Question[]>(() =>
+    pickShuffledQuestions(section),
+  );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedChoiceIndex, setSelectedChoiceIndex] = useState<number | null>(null);
   const [answered, setAnswered] = useState(false);
@@ -64,10 +69,8 @@ function LearnQuizRunner({
 
   const currentExplanation = useMemo(() => {
     if (!currentQuestion) return undefined;
-    return findExplanationForRule(allSections, currentQuestion.ruleId);
-  }, [currentQuestion, allSections]);
-
-  const currentRule = currentQuestion ? allRulesMap.get(currentQuestion.ruleId) : undefined;
+    return getExplanation(section, currentQuestion.ruleId);
+  }, [section, currentQuestion]);
 
   const handleMcqSelect = useCallback(
     (index: number) => {
@@ -103,6 +106,17 @@ function LearnQuizRunner({
     }
   }, [currentIndex, totalQuestions]);
 
+  const handleRestart = useCallback(() => {
+    setQuizQuestions(pickShuffledQuestions(section));
+    setCurrentIndex(0);
+    setSelectedChoiceIndex(null);
+    setAnswered(false);
+    setScore(0);
+    setFinished(false);
+    setAnswers([]);
+    setPanelOpen(false);
+  }, [section]);
+
   useEffect(() => {
     if (finished) void flush();
   }, [finished, flush]);
@@ -125,6 +139,14 @@ function LearnQuizRunner({
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [answered, finished, currentQuestion, handleNext, handleMcqSelect]);
+
+  if (totalQuestions === 0) {
+    return (
+      <div className="min-h-screen bg-papier flex items-center justify-center">
+        <div className="text-ardoise">{t.shared.loading}</div>
+      </div>
+    );
+  }
 
   const progress = finished ? 100 : (currentIndex / totalQuestions) * 100;
 
@@ -182,6 +204,7 @@ function LearnQuizRunner({
 
       {/* Content row: quiz + sidebar */}
       <div className="lg:flex lg:min-h-[calc(100vh-3.5rem)]">
+        {/* Quiz content */}
         <main className="flex-1 min-w-0 px-6 py-8 md:py-12">
           <div className="mx-auto max-w-3xl">
             {finished ? (
@@ -189,8 +212,8 @@ function LearnQuizRunner({
                 score={score}
                 total={totalQuestions}
                 answers={answers}
-                quizTitle={t.quiz.learnFreelyQuizTitle}
-                onRestart={onRestart}
+                quizTitle={section.title}
+                onRestart={handleRestart}
               />
             ) : currentQuestion?.type === "mcq" ? (
               <McqQuestionView
@@ -200,7 +223,7 @@ function LearnQuizRunner({
                 onSelect={handleMcqSelect}
                 onNext={handleNext}
                 questionNum={currentIndex + 1}
-                rule={currentRule ? { id: currentQuestion.ruleId, sectionId: "", title: currentRule.title } : undefined}
+                rule={section.rules.find((r) => r.id === currentQuestion.ruleId)}
               />
             ) : currentQuestion?.type === "input" ? (
               <InputQuestionView
@@ -209,7 +232,7 @@ function LearnQuizRunner({
                 onAnswer={handleInputAnswer}
                 onNext={handleNext}
                 questionNum={currentIndex + 1}
-                rule={currentRule ? { id: currentQuestion.ruleId, sectionId: "", title: currentRule.title } : undefined}
+                rule={section.rules.find((r) => r.id === currentQuestion.ruleId)}
               />
             ) : null}
           </div>
@@ -245,70 +268,29 @@ function LearnQuizRunner({
   );
 }
 
-// ── Page component (phase router) ───────────────────────────────────────────
+// ── Exported client component (phase router) ─────────────────────────────────
 
 type Phase =
-  | { kind: "loading" }
-  | { kind: "interstitial"; explanation: RuleExplanation; questions: Question[] }
-  | { kind: "quiz"; questions: Question[] };
+  | { kind: "interstitial"; explanation: RuleExplanation }
+  | { kind: "quiz" };
 
-export default function LearnPage() {
-  const { getRulePower, getSectionPower, isLoading } = useProgress();
-  const allSections = useMemo(() => Object.values(sectionMap), []);
+export function QuizClient({ section }: { section: Section }) {
+  const { getRulePower } = useProgress();
 
-  const [phase, setPhase] = useState<Phase>({ kind: "loading" });
+  const [phase, setPhase] = useState<Phase>(() => {
+    const explanation = findWeakestExplanation(section, getRulePower);
+    if (explanation) return { kind: "interstitial", explanation };
+    return { kind: "quiz" };
+  });
 
-  // Pick questions once progress has loaded
-  useEffect(() => {
-    if (isLoading || phase.kind !== "loading") return;
+  if (phase.kind === "interstitial") {
+    return (
+      <RuleExplanationInterstitial
+        explanation={phase.explanation}
+        onStart={() => setPhase({ kind: "quiz" })}
+      />
+    );
+  }
 
-    const result = pickLearnQuestions({
-      sections: allSections,
-      getRulePower,
-      getSectionPower,
-    });
-
-    if (result.focusRuleId) {
-      const power = getRulePower(result.focusRuleId);
-      if (power < 0.20) {
-        const explanation = findExplanationForRule(allSections, result.focusRuleId);
-        if (explanation) {
-          setPhase({ kind: "interstitial", explanation, questions: result.questions });
-          return;
-        }
-      }
-    }
-
-    setPhase({ kind: "quiz", questions: result.questions });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLoading]);
-
-  const startNewRound = useCallback(() => {
-    setPhase({ kind: "loading" });
-  }, []);
-
-  return (
-    <>
-      <Head>
-        <title>{t.quiz.learnFreelyQuizTitle} — {t.meta.appTitle}</title>
-      </Head>
-
-      {phase.kind === "loading" ? (
-        <div className="min-h-screen bg-papier flex items-center justify-center">
-          <div className="text-ardoise">{t.shared.loading}</div>
-        </div>
-      ) : phase.kind === "interstitial" ? (
-        <RuleExplanationInterstitial
-          explanation={phase.explanation}
-          onStart={() => setPhase({ kind: "quiz", questions: phase.questions })}
-        />
-      ) : (
-        <LearnQuizRunner
-          key={phase.questions[0]?.id ?? ""}
-          initialQuestions={phase.questions}
-          onRestart={startNewRound}
-        />
-      )}
-    </>
-  );
+  return <SectionQuizRunner section={section} />;
 }

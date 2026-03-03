@@ -1,3 +1,5 @@
+"use client";
+
 import {
   createContext,
   useCallback,
@@ -39,21 +41,31 @@ interface ProgressApiResponse {
   powers: number[];
 }
 
-interface SessionResponse {
-  isLoggedIn: boolean;
-  userId?: string;
-}
-
 const ProgressContext = createContext<ProgressContextValue | null>(null);
 
-export function ProgressProvider({ children }: { children: React.ReactNode }) {
-  const [powers, setPowers] = useState<Uint16Array>(createEmptyPowers);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [userId, setUserId] = useState<string | null>(null);
+interface ProgressProviderProps {
+  children: React.ReactNode;
+  initialPowers?: number[];
+  initialUserId?: string | null;
+  initialIsLoggedIn?: boolean;
+}
+
+export function ProgressProvider({
+  children,
+  initialPowers,
+  initialUserId,
+  initialIsLoggedIn,
+}: ProgressProviderProps) {
+  const [powers, setPowers] = useState<Uint16Array>(() => {
+    if (initialPowers) return new Uint16Array(initialPowers);
+    return createEmptyPowers();
+  });
+  const [isLoggedIn, setIsLoggedIn] = useState(initialIsLoggedIn ?? false);
+  const [isLoading, setIsLoading] = useState(initialPowers === undefined && initialIsLoggedIn === undefined);
+  const [userId, setUserId] = useState<string | null>(initialUserId ?? null);
 
   const pendingAnswers = useRef<PendingAnswer[]>([]);
-  const isLoggedInRef = useRef(false);
+  const isLoggedInRef = useRef(isLoggedIn);
 
   // Keep ref in sync for beforeunload handler
   useEffect(() => {
@@ -99,13 +111,14 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener("beforeunload", handleUnload);
   }, []);
 
-  // On mount: check session and load progress
+  // On mount: check session if no initial data was provided
   useEffect(() => {
+    if (initialPowers !== undefined || initialIsLoggedIn !== undefined) return;
     const init = async () => {
       setIsLoading(true);
       try {
         const sr = await fetch("/api/session");
-        const sd = (await sr.json()) as SessionResponse;
+        const sd = (await sr.json()) as { isLoggedIn: boolean; userId?: string };
         if (sd.isLoggedIn && sd.userId) {
           setIsLoggedIn(true);
           setUserId(sd.userId);
@@ -124,6 +137,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       }
     };
     void init();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const recordAnswer = useCallback(
