@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import type { RuleExplanation } from "~/data/types";
 import { t } from "~/lang";
 import { RenderMiniMarkdown } from "./explanation-panel";
@@ -9,6 +10,14 @@ export function RuleExplanationInterstitial({
   explanation: RuleExplanation;
   onStart: () => void;
 }) {
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Enter") onStart();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [onStart]);
+
   return (
     <div className="min-h-screen bg-papier flex items-center justify-center px-4 py-12 animate-fade-in">
       <div className="w-full max-w-xl">
