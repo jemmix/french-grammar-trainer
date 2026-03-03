@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { Geist } from "next/font/google";
 import "~/styles/globals.css";
 import { ProgressProvider } from "~/contexts/progress-context";
 import { getSession, getProgressPowers } from "~/lib/server-session";
+import { signCookie, COOKIE_MAX_AGE_S } from "~/lib/session-cookie";
+import { env } from "~/env";
 import { t } from "~/lang";
 
 const geist = Geist({
@@ -33,6 +36,17 @@ export default async function RootLayout({
   const initialPowers = session.isLoggedIn
     ? getProgressPowers(session.userId)
     : undefined;
+
+  if (session.isLoggedIn && session.shouldRenew) {
+    const newCookie = signCookie(session.userId, env.COOKIE_SECRET);
+    (await cookies()).set("fgt-session", newCookie, {
+      httpOnly: true,
+      sameSite: "lax",
+      path: "/",
+      maxAge: COOKIE_MAX_AGE_S,
+      secure: process.env.NODE_ENV === "production",
+    });
+  }
 
   return (
     <html lang="fr">

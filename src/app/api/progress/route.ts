@@ -1,5 +1,8 @@
 import { type NextRequest, NextResponse } from "next/server";
+import { env } from "~/env";
 import { sqliteStore } from "~/lib/sqlite-store";
+import { verifyCookie } from "~/lib/session-cookie";
+import { isUserAllowed } from "~/lib/allow-list";
 import {
   createEmptyPowers,
   decodeHeader,
@@ -17,14 +20,21 @@ interface PostBody {
   answers: AnswerItem[];
 }
 
-function getUserId(req: NextRequest): string | null {
+async function getUserId(req: NextRequest): Promise<string | null> {
   const val = req.cookies.get("fgt-session")?.value;
-  if (val && /^[0-9a-f]{64}$/.test(val)) return val;
-  return null;
+  if (!val) return null;
+
+  const verified = verifyCookie(val, env.COOKIE_SECRET);
+  if (!verified) return null;
+
+  const allowed = await isUserAllowed(verified.userId);
+  if (!allowed) return null;
+
+  return verified.userId;
 }
 
-export function GET(req: NextRequest) {
-  const userId = getUserId(req);
+export async function GET(req: NextRequest) {
+  const userId = await getUserId(req);
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -38,7 +48,7 @@ export function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  const userId = getUserId(req);
+  const userId = await getUserId(req);
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -57,8 +67,8 @@ export async function POST(req: NextRequest) {
   return NextResponse.json({ ok: true });
 }
 
-export function DELETE(req: NextRequest) {
-  const userId = getUserId(req);
+export async function DELETE(req: NextRequest) {
+  const userId = await getUserId(req);
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

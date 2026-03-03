@@ -8,6 +8,8 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
+    COOKIE_SECRET: z.string().min(32),
+    ALLOW_LIST_DEV_MODE: z.enum(["0", "1"]).optional(),
   },
 
   /**
@@ -26,6 +28,8 @@ export const env = createEnv({
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_LANG: process.env.NEXT_PUBLIC_LANG,
+    COOKIE_SECRET: process.env.COOKIE_SECRET,
+    ALLOW_LIST_DEV_MODE: process.env.ALLOW_LIST_DEV_MODE,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
