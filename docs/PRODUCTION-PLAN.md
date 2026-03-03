@@ -75,7 +75,34 @@ What's missing: real auth, cloud storage, allow-list enforcement, deployment con
 - Add LZ4 compression (install `lz4js`) in the codec pipeline
 - Environment-based store selection: SQLite in dev, R2 in prod
 
-**What I need from you:**
+**Local testing with MinIO:**
+
+MinIO is an S3-compatible object store that runs locally via Docker. Since R2 uses the S3 API and we use `@aws-sdk/client-s3`, the exact same code works against MinIO locally and R2 in production — just a different endpoint URL.
+
+```bash
+# Start MinIO (persists data in ./minio-data, gitignored)
+docker run -d --name fgt-minio \
+  -p 9000:9000 -p 9001:9001 \
+  -e MINIO_ROOT_USER=minioadmin \
+  -e MINIO_ROOT_PASSWORD=minioadmin \
+  -v ./minio-data:/data \
+  minio/minio server /data --console-address ":9001"
+
+# Create the bucket (one-time, via MinIO web console at http://localhost:9001
+# or via the mc CLI: mc alias set local http://localhost:9000 minioadmin minioadmin && mc mb local/fgt-users)
+```
+
+Local `.env.local` for MinIO:
+```
+R2_ENDPOINT=http://localhost:9000
+R2_ACCESS_KEY_ID=minioadmin
+R2_SECRET_ACCESS_KEY=minioadmin
+R2_BUCKET_NAME=fgt-users
+```
+
+No `R2_ACCOUNT_ID` needed locally. The store code detects `localhost` or uses a flag to skip the Cloudflare-specific account ID prefix.
+
+**What I need from you (for production):**
 - A **Cloudflare account** (free tier is fine — R2 gives 10 GB free storage, 10M reads/month, 1M writes/month — we'll use a fraction of that)
 - Create an **R2 bucket** (e.g. `fgt-users`)
 - Create an **R2 API token** with read/write access to that bucket
@@ -123,11 +150,11 @@ What's missing: real auth, cloud storage, allow-list enforcement, deployment con
 | `NEXTAUTH_URL` | Vercel only | Your production URL, e.g. `https://french-grammar.vercel.app` |
 | `HMAC_KEY` | Vercel + `.env.local` | `openssl rand -hex 32` |
 | `ALLOW_LIST_GIST_URL` | Vercel + `.env.local` | Raw URL of your GitHub Gist |
-| `R2_ACCOUNT_ID` | Vercel only | Cloudflare dashboard |
-| `R2_ACCESS_KEY_ID` | Vercel only | Cloudflare R2 API token |
-| `R2_SECRET_ACCESS_KEY` | Vercel only | Cloudflare R2 API token |
-| `R2_BUCKET_NAME` | Vercel only | Whatever you named the bucket |
-| `R2_ENDPOINT` | Vercel only | `https://<account-id>.r2.cloudflarestorage.com` |
+| `R2_ACCOUNT_ID` | Vercel only | Cloudflare dashboard (not needed locally) |
+| `R2_ACCESS_KEY_ID` | Vercel + `.env.local` | Cloudflare R2 API token (locally: `minioadmin`) |
+| `R2_SECRET_ACCESS_KEY` | Vercel + `.env.local` | Cloudflare R2 API token (locally: `minioadmin`) |
+| `R2_BUCKET_NAME` | Vercel + `.env.local` | Whatever you named the bucket |
+| `R2_ENDPOINT` | Vercel + `.env.local` | R2: `https://<account-id>.r2.cloudflarestorage.com`, local: `http://localhost:9000` |
 | `NEXT_PUBLIC_LANG` | Vercel (optional) | `fr` (default) or `en` |
 
 ---
@@ -144,7 +171,7 @@ WP3 (R2 Storage)    ←  needs Cloudflare credentials
 WP4 (Vercel Deploy) ←  needs Vercel account + all env vars above
 ```
 
-WP1 and WP3 are independent — I can work on both in parallel once you provide credentials. WP2 depends on WP1 (allow-list runs inside the next-auth callback). WP4 is the final integration step.
+WP1 and WP3 are independent — I can work on both in parallel. WP2 depends on WP1 (allow-list runs inside the next-auth callback). WP4 is the final integration step.
 
 **What I can do right now without any credentials:**
 - Scaffold all the code for WP1–WP3 with env var placeholders
@@ -152,10 +179,11 @@ WP1 and WP3 are independent — I can work on both in parallel once you provide 
 - Create the R2 store implementation
 - Wire next-auth into the existing pages
 - Write the build-time gist fetch script
+- **Fully test R2 storage locally** using MinIO (Docker) — no Cloudflare account needed
 
-**What blocks deployment:**
+**What blocks deployment (but not local dev/testing):**
 - You creating the Google OAuth client, Cloudflare R2 bucket, GitHub Gist, and Vercel project
-- You providing the env var values
+- You providing the production env var values
 
 ---
 
