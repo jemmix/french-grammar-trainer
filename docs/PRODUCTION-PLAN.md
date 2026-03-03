@@ -65,19 +65,19 @@ What's missing: real auth, cloud storage, allow-list enforcement, deployment con
 
 ---
 
-### WP3: Cloudflare R2 Storage
+### WP3: S3-Compatible Object Storage
 
-**What it does:** Replace SQLite with Cloudflare R2 for production user data storage.
+**What it does:** Replace SQLite with S3-compatible object storage for production user data. Any S3-compatible provider works (Cloudflare R2, AWS S3, MinIO, etc.).
 
 **Code changes:**
 - Install `@aws-sdk/client-s3`
-- Create `src/lib/r2-store.ts` implementing the existing `UserStore` interface
+- Create `src/lib/s3-store.ts` implementing the existing `UserStore` interface
 - Add LZ4 compression (install `lz4js`) in the codec pipeline
-- Environment-based store selection: SQLite in dev, R2 in prod
+- Environment-based store selection: SQLite in dev, S3 in prod
 
 **Local testing with MinIO:**
 
-MinIO is an S3-compatible object store that runs locally via Docker. Since R2 uses the S3 API and we use `@aws-sdk/client-s3`, the exact same code works against MinIO locally and R2 in production — just a different endpoint URL.
+MinIO is an S3-compatible object store that runs locally via Docker. Since we use `@aws-sdk/client-s3`, the exact same code works against MinIO locally and any S3-compatible provider in production — just a different endpoint URL.
 
 ```bash
 # Start MinIO (persists data in ./minio-data, gitignored)
@@ -94,24 +94,21 @@ docker run -d --name fgt-minio \
 
 Local `.env.local` for MinIO:
 ```
-R2_ENDPOINT=http://localhost:9000
-R2_ACCESS_KEY_ID=minioadmin
-R2_SECRET_ACCESS_KEY=minioadmin
-R2_BUCKET_NAME=fgt-users
+S3_ENDPOINT=http://localhost:9000
+S3_ACCESS_KEY_ID=minioadmin
+S3_SECRET_ACCESS_KEY=minioadmin
+S3_BUCKET_NAME=fgt-users
 ```
 
-No `R2_ACCOUNT_ID` needed locally. The store code detects `localhost` or uses a flag to skip the Cloudflare-specific account ID prefix.
-
 **What I need from you (for production):**
-- A **Cloudflare account** (free tier is fine — R2 gives 10 GB free storage, 10M reads/month, 1M writes/month — we'll use a fraction of that)
-- Create an **R2 bucket** (e.g. `fgt-users`)
-- Create an **R2 API token** with read/write access to that bucket
+- An account with any S3-compatible provider (e.g. Cloudflare R2 free tier — 10 GB storage, 10M reads/month, 1M writes/month)
+- Create a **bucket** (e.g. `fgt-users`)
+- Create an **API token** with read/write access to that bucket
 - Gives you these env vars:
-  - `R2_ACCOUNT_ID`
-  - `R2_ACCESS_KEY_ID`
-  - `R2_SECRET_ACCESS_KEY`
-  - `R2_BUCKET_NAME`
-  - `R2_ENDPOINT` (format: `https://<account-id>.r2.cloudflarestorage.com`)
+  - `S3_ACCESS_KEY_ID`
+  - `S3_SECRET_ACCESS_KEY`
+  - `S3_BUCKET_NAME`
+  - `S3_ENDPOINT` (e.g. `https://<account-id>.r2.cloudflarestorage.com` for R2)
 
 **Cost estimate:** Even at 1000 users, total storage would be ~1 MB. Well within free tier forever.
 
@@ -150,11 +147,10 @@ No `R2_ACCOUNT_ID` needed locally. The store code detects `localhost` or uses a 
 | `NEXTAUTH_URL` | Vercel only | Your production URL, e.g. `https://french-grammar.vercel.app` |
 | `HMAC_KEY` | Vercel + `.env.local` | `openssl rand -hex 32` |
 | `ALLOW_LIST_GIST_URL` | Vercel + `.env.local` | Raw URL of your GitHub Gist |
-| `R2_ACCOUNT_ID` | Vercel only | Cloudflare dashboard (not needed locally) |
-| `R2_ACCESS_KEY_ID` | Vercel + `.env.local` | Cloudflare R2 API token (locally: `minioadmin`) |
-| `R2_SECRET_ACCESS_KEY` | Vercel + `.env.local` | Cloudflare R2 API token (locally: `minioadmin`) |
-| `R2_BUCKET_NAME` | Vercel + `.env.local` | Whatever you named the bucket |
-| `R2_ENDPOINT` | Vercel + `.env.local` | R2: `https://<account-id>.r2.cloudflarestorage.com`, local: `http://localhost:9000` |
+| `S3_ACCESS_KEY_ID` | Vercel + `.env.local` | S3-compatible provider API token (locally: `minioadmin`) |
+| `S3_SECRET_ACCESS_KEY` | Vercel + `.env.local` | S3-compatible provider API token (locally: `minioadmin`) |
+| `S3_BUCKET_NAME` | Vercel + `.env.local` | Whatever you named the bucket |
+| `S3_ENDPOINT` | Vercel + `.env.local` | Provider endpoint URL (locally: `http://localhost:9000`) |
 | `NEXT_PUBLIC_LANG` | Vercel (optional) | `fr` (default) or `en` |
 
 ---
@@ -166,7 +162,7 @@ WP1 (Google OAuth)  ←  needs Google Cloud credentials
     ↓
 WP2 (Allow-list)    ←  needs GitHub Gist URL
     ↓
-WP3 (R2 Storage)    ←  needs Cloudflare credentials
+WP3 (S3 Storage)    ←  needs S3-compatible provider credentials
     ↓
 WP4 (Vercel Deploy) ←  needs Vercel account + all env vars above
 ```
@@ -176,13 +172,13 @@ WP1 and WP3 are independent — I can work on both in parallel. WP2 depends on W
 **What I can do right now without any credentials:**
 - Scaffold all the code for WP1–WP3 with env var placeholders
 - Write the env validation schema
-- Create the R2 store implementation
+- Create the S3 store implementation
 - Wire next-auth into the existing pages
 - Write the build-time gist fetch script
-- **Fully test R2 storage locally** using MinIO (Docker) — no Cloudflare account needed
+- **Fully test S3 storage locally** using MinIO (Docker) — no cloud provider account needed
 
 **What blocks deployment (but not local dev/testing):**
-- You creating the Google OAuth client, Cloudflare R2 bucket, GitHub Gist, and Vercel project
+- You creating the Google OAuth client, S3 bucket, GitHub Gist, and Vercel project
 - You providing the production env var values
 
 ---
