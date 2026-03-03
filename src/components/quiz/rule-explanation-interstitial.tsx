@@ -64,6 +64,7 @@ export function RuleExplanationInterstitial({
             className="w-full py-3 px-6 rounded-lg bg-tricolore-bleu text-tricolore-blanc font-semibold text-base transition-all hover:bg-tricolore-bleu/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tricolore-bleu/50 focus-visible:ring-offset-2"
           >
             {t.quiz.startPractice}
+            <span className="ml-2 text-xs text-white/40">{t.quiz.enterHint}</span>
           </button>
         </div>
       </div>
