@@ -46,7 +46,25 @@ function getFamilies(text: string): string[] {
 function collectErrors(parsed: ParsedFile): string[] {
   const errors: string[] = [...parsed.parseErrors];
 
+  // ruleId format is already validated by parseTxtFile; the "Missing RULE header"
+  // message below covers the legacy code path where ruleId was empty before
+  // parseTxtFile started emitting its own error for that case.
   if (!parsed.ruleId) errors.push("Missing RULE header");
+
+  // Verify that every question ID is consistent with this file's rule ID.
+  // If not, the most likely cause is that a merged section file was passed
+  // instead of individual per-rule files (e.g. "02-past-simple.txt" instead
+  // of "02-01.txt 02-02.txt 02-03.txt").
+  for (const q of parsed.questions) {
+    const parts = q.id.split("-");
+    const qRuleId = parts.length >= 3 ? `${parts[0]!}-${parts[1]!}` : q.id;
+    if (qRuleId !== parsed.ruleId) {
+      errors.push(
+        `[${q.id}] Question ID prefix "${qRuleId}" doesn't match file's rule ID "${parsed.ruleId}". ` +
+        `Pass individual rule files to convert-txt, not a merged section file.`,
+      );
+    }
+  }
 
   const mcqCount = parsed.questions.filter((q) => q.type === "mcq").length;
   const inputCount = parsed.questions.filter((q) => q.type === "input").length;

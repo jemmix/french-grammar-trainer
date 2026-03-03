@@ -175,5 +175,21 @@ export function parseTxtFile(content: string): ParsedFile {
     parseErrors.push("File ended without closing END QUESTION");
   }
 
+  // Validate rule ID format — must be XX-YY (e.g. "02-01").
+  // Common mistake: writing "RULE: 02-01" (colon before the ID) makes the
+  // parser skip that line entirely, then "RULE TITLE: ..." gets parsed as
+  // ruleId="TITLE". Catch both the empty and the wrong-format cases here so
+  // that convert-txt and split-txt fail loudly instead of silently.
+  if (!ruleId) {
+    parseErrors.push(
+      `Missing RULE header — expected "RULE XX-YY: <title>" (e.g. "RULE 02-01: Past simple...")`,
+    );
+  } else if (!/^\d{2}-\d{2}$/.test(ruleId)) {
+    parseErrors.push(
+      `Invalid RULE ID "${ruleId}" — expected "XX-YY" format (e.g. "02-01"). ` +
+      `Common mistake: "RULE: 02-01" puts a colon before the ID; the correct form is "RULE 02-01: <title>".`,
+    );
+  }
+
   return { ruleId, ruleTitle, generatedBy, declaredMcq, declaredInput, questions, parseErrors };
 }

@@ -151,13 +151,13 @@ function buildHeader(parsed: ReturnType<typeof parseTxtFile>, mcqCount: number, 
 // Main split logic
 // ============================================================
 
-function splitFile(filePath: string) {
+function splitFile(filePath: string): boolean {
   let content: string;
   try {
     content = readFileSync(filePath, "utf-8");
   } catch {
     console.error(`ERROR: Cannot read "${filePath}"`);
-    return;
+    return true;
   }
 
   const parsed = parseTxtFile(content);
@@ -264,6 +264,8 @@ function splitFile(filePath: string) {
       for (const e of errors) console.log(`    [${id}] ${e}`);
     }
   }
+
+  return fileLevelErrors.length > 0;
 }
 
 // ============================================================
@@ -278,8 +280,13 @@ function main() {
     process.exit(1);
   }
 
-  for (const f of files) splitFile(f);
+  let hadFileErrors = false;
+  for (const f of files) {
+    const fileHadErrors = splitFile(f);
+    if (fileHadErrors) hadFileErrors = true;
+  }
   console.log("\nDone.");
+  if (hadFileErrors) process.exit(1);
 }
 
 main();
