@@ -56,6 +56,7 @@ const fr = {
 
     interstitialIntro: "Révisez cette règle avant de pratiquer\u00a0:",
     examples: "Exemples",
+    noExplanation: "Pas encore d\u2019explication pour cette r\u00e8gle \u2014 d\u00e9sol\u00e9\u00a0!",
     openInspectorTitle: "Ouvrir dans l\u2019inspecteur",
     sectionNotFound: "Section introuvable",
     points: (n: number) => `${n} pt${n !== 1 ? "s" : ""}`,

@@ -81,6 +81,7 @@ export interface LangStrings {
 
     interstitialIntro: string;           // "Review this rule before practicing:"
     examples: string;                    // "Examples"
+    noExplanation: string;               // "No explanation available..."
     openInspectorTitle: string;          // tooltip on question ID link
     sectionNotFound: string;
     points: (n: number) => string;      // "3 pts"

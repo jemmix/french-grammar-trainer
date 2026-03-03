@@ -29,7 +29,7 @@ export function ExplanationPanel({
   isOpen,
   onClose,
 }: {
-  explanation: RuleExplanation;
+  explanation: RuleExplanation | undefined;
   isOpen: boolean;
   onClose: () => void;
 }) {
@@ -46,7 +46,7 @@ export function ExplanationPanel({
   return (
     <div
       role="complementary"
-      aria-label={explanation.title}
+      aria-label={explanation?.title ?? t.quiz.viewExplanation}
       className={`
         fixed z-50 bg-tricolore-blanc shadow-lg transition-transform duration-300 ease-out
         /* Mobile: bottom sheet */
@@ -67,7 +67,7 @@ export function ExplanationPanel({
       {/* Header */}
       <div className="flex items-start justify-between px-5 pt-3 pb-2 lg:pt-5">
         <h3 className="text-lg font-semibold text-encre leading-snug pr-4">
-          {explanation.title}
+          {explanation?.title ?? t.quiz.viewExplanation}
         </h3>
         <button
           onClick={onClose}
@@ -82,30 +82,38 @@ export function ExplanationPanel({
 
       {/* Scrollable content */}
       <div className="overflow-y-auto px-5 pb-6 max-h-[calc(80vh-4rem)] lg:max-h-[calc(100vh-5rem)]">
-        {/* Body */}
-        <div className="text-[15px] text-encre/90 leading-relaxed mb-5">
-          <RenderMiniMarkdown text={explanation.body} />
-        </div>
+        {explanation ? (
+          <>
+            {/* Body */}
+            <div className="text-[15px] text-encre/90 leading-relaxed mb-5">
+              <RenderMiniMarkdown text={explanation.body} />
+            </div>
 
-        {/* Examples */}
-        <h4 className="text-xs font-medium text-ardoise uppercase tracking-wider mb-3">
-          {t.quiz.examples}
-        </h4>
-        <ul className="space-y-2.5">
-          {explanation.examples.map((ex, i) => (
-            <li
-              key={i}
-              className="flex gap-2.5 text-sm text-encre/85 leading-relaxed"
-            >
-              <span className="text-tricolore-bleu/50 mt-0.5 shrink-0">
-                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 16 16">
-                  <circle cx="8" cy="8" r="3" />
-                </svg>
-              </span>
-              <span><RenderMiniMarkdown text={ex} /></span>
-            </li>
-          ))}
-        </ul>
+            {/* Examples */}
+            <h4 className="text-xs font-medium text-ardoise uppercase tracking-wider mb-3">
+              {t.quiz.examples}
+            </h4>
+            <ul className="space-y-2.5">
+              {explanation.examples.map((ex, i) => (
+                <li
+                  key={i}
+                  className="flex gap-2.5 text-sm text-encre/85 leading-relaxed"
+                >
+                  <span className="text-tricolore-bleu/50 mt-0.5 shrink-0">
+                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 16 16">
+                      <circle cx="8" cy="8" r="3" />
+                    </svg>
+                  </span>
+                  <span><RenderMiniMarkdown text={ex} /></span>
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : (
+          <p className="text-sm text-ardoise/70 italic">
+            {t.quiz.noExplanation}
+          </p>
+        )}
       </div>
     </div>
   );

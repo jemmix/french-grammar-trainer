@@ -82,11 +82,6 @@ export default function QuizPage() {
     return getExplanation(section, currentQuestion.ruleId);
   }, [section, currentQuestion]);
 
-  // Close panel when current question has no explanation
-  useEffect(() => {
-    if (!currentExplanation) setPanelOpen(false);
-  }, [currentExplanation]);
-
   const handleMcqSelect = useCallback(
     (index: number) => {
       if (answered || !currentQuestion || currentQuestion.type !== "mcq") return;
@@ -226,7 +221,7 @@ export default function QuizPage() {
               {t.shared.sections}
             </Link>
             <div className="flex items-center gap-3">
-              {!finished && currentExplanation && (
+              {!finished && (currentExplanation || panelOpen) && (
                 <button
                   onClick={() => setPanelOpen((o) => !o)}
                   className={`p-1.5 rounded-lg transition-colors ${
@@ -295,13 +290,11 @@ export default function QuizPage() {
         </main>
 
         {/* Explanation side panel */}
-        {currentExplanation && (
-          <ExplanationPanel
-            explanation={currentExplanation}
-            isOpen={panelOpen}
-            onClose={() => setPanelOpen(false)}
-          />
-        )}
+        <ExplanationPanel
+          explanation={currentExplanation}
+          isOpen={panelOpen}
+          onClose={() => setPanelOpen(false)}
+        />
       </div>
     </>
   );

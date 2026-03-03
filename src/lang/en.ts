@@ -56,6 +56,7 @@ const en = {
 
     interstitialIntro: "Review this rule before practicing:",
     examples: "Examples",
+    noExplanation: "No explanation available for this rule yet \u2014 sorry!",
     openInspectorTitle: "Open in inspector",
     sectionNotFound: "Section not found",
     points: (n: number) => `${n} pt${n !== 1 ? "s" : ""}`,
