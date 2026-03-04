@@ -37,7 +37,7 @@ export default function LoginPage() {
     const present = hasCookie();
     setMounted(true);
     setCookiePresent(present);
-    setAcknowledge(present);
+    // Don't pre-check the box — let the user opt in each time
   }, []);
 
   useEffect(() => {

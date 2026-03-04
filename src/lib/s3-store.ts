@@ -8,7 +8,7 @@ import {
 function getClient(): S3Client {
   return new S3Client({
     endpoint: process.env.S3_ENDPOINT!,
-    region: "auto",
+    region: process.env.S3_REGION ?? "us-east-1",
     credentials: {
       accessKeyId: process.env.S3_ACCESS_KEY_ID!,
       secretAccessKey: process.env.S3_SECRET_ACCESS_KEY!,
