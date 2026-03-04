@@ -17,5 +17,5 @@
 ## Weird questions
 
 - 10-11-005 [fr]: Suisse and Suisse aucun article the same thing?
-- 02-02-011 [en]: indicate if it's about present/past events more clearly, everywhere
+- ~~02-02-011 [en]: indicate if it's about present/past events more clearly, everywhere~~ — fixed: added past-tense context clues to 13 ambiguous questions in 02-01 and 02-02
 
