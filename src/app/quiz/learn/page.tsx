@@ -146,7 +146,7 @@ function LearnQuizRunner({
           <div className="flex items-center gap-3">
             {!finished && (currentExplanation || panelOpen) && (
               <button
-                onClick={() => setPanelOpen((o) => !o)}
+                onClick={() => setPanelOpen(!panelOpen)}
                 className={`p-1.5 rounded-lg transition-colors ${
                   panelOpen
                     ? "text-tricolore-bleu bg-tricolore-bleu/10"
