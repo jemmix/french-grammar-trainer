@@ -51,6 +51,7 @@ export interface LangStrings {
     privacyLink: string;     // "Confidentialité"
     myDataLink: string;      // "Mes données"
     logout: string;          // "Se déconnecter"
+    signingOut: string;      // "Déconnexion…"
     login: string;           // "Se connecter"
   };
 

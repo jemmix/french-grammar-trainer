@@ -30,6 +30,7 @@ const en = {
     privacyLink: "Privacy",
     myDataLink: "My data",
     logout: "Sign out",
+    signingOut: "Signing out\u2026",
     login: "Sign in",
   },
 

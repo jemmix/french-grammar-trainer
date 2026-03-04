@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { useCallback, useEffect, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
+import { GoogleSignInButton } from "~/components/google-sign-in-button";
 import { t } from "~/lang";
 
 const PRIVACY_COOKIE = "privacy-acknowledged";
@@ -157,14 +158,21 @@ export default function LoginPage() {
         </label>
 
         {/* Actions */}
-        <div className="flex flex-col gap-3">
-          <button
-            onClick={() => void (useDevAuth ? handleDevLogin() : handleGoogleLogin())}
-            disabled={loggingIn}
-            className="w-full px-6 py-3 bg-tricolore-bleu text-white font-medium rounded-xl hover:bg-encre-light transition-colors cursor-pointer disabled:opacity-60"
-          >
-            {t.login.loginButton(loggingIn)}
-          </button>
+        <div className="flex flex-col items-center gap-3">
+          {useDevAuth ? (
+            <button
+              onClick={() => void handleDevLogin()}
+              disabled={loggingIn}
+              className="w-full px-6 py-3 bg-tricolore-bleu text-white font-medium rounded-xl hover:bg-encre-light transition-colors cursor-pointer disabled:opacity-60"
+            >
+              {t.login.loginButton(loggingIn)}
+            </button>
+          ) : (
+            <GoogleSignInButton
+              onClick={() => void handleGoogleLogin()}
+              disabled={loggingIn}
+            />
+          )}
           <Link
             href="/"
             className="w-full px-6 py-3 text-center border border-craie text-ardoise font-medium rounded-xl hover:bg-papier-warm transition-colors text-sm"

@@ -30,6 +30,7 @@ const fr = {
     privacyLink: "Confidentialité",
     myDataLink: "Mes données",
     logout: "Se déconnecter",
+    signingOut: "D\u00e9connexion\u2026",
     login: "Se connecter",
   },
 

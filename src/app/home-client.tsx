@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useProgress } from "~/contexts/progress-context";
 import { ProgressRing } from "~/components/progress-ring";
+import { SigningOutOverlay } from "~/components/signing-out-overlay";
 import { getTier } from "~/lib/tiers";
 import { t } from "~/lang";
 import type { SectionMeta } from "~/data/types";
@@ -70,6 +71,7 @@ function SectionCardContent({
 
 export function HomeClient({ sections }: { sections: SectionMeta[] }) {
   const [revealed, setRevealed] = useState(false);
+  const [signingOut, setSigningOut] = useState(false);
   const {
     isLoggedIn,
     isLoading,
@@ -86,8 +88,15 @@ export function HomeClient({ sections }: { sections: SectionMeta[] }) {
   const globalPower = isLoggedIn && !isLoading ? getGlobalPower() : 0;
   const globalTier = getTier(globalPower, globalPower > 0);
 
+  const handleLogout = async () => {
+    setSigningOut(true);
+    await logout();
+  };
+
   return (
     <div className="min-h-screen bg-papier">
+      {signingOut && <SigningOutOverlay />}
+
       {/* Header */}
       <header className="border-b border-craie bg-tricolore-blanc">
         <div className="mx-auto max-w-6xl px-6 py-8 md:py-12">
@@ -112,7 +121,7 @@ export function HomeClient({ sections }: { sections: SectionMeta[] }) {
             </div>
 
             {/* Auth controls */}
-            <div className="shrink-0 flex flex-col items-end gap-1 pt-1">
+            <div className="shrink-0 flex flex-col items-end gap-1.5 pt-1">
               {isLoggedIn ? (
                 <>
                   <Link
@@ -122,7 +131,7 @@ export function HomeClient({ sections }: { sections: SectionMeta[] }) {
                     {t.home.myDataLink}
                   </Link>
                   <button
-                    onClick={() => void logout()}
+                    onClick={() => void handleLogout()}
                     className="text-xs text-ardoise hover:text-encre transition-colors cursor-pointer"
                   >
                     {t.home.logout}
