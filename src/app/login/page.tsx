@@ -19,7 +19,10 @@ function setCookie() {
   document.cookie = `${PRIVACY_COOKIE}=1; SameSite=Lax; Path=/; max-age=${COOKIE_MAX_AGE}`;
 }
 
-const isDev = process.env.NODE_ENV === "development";
+// "dev" = fake login (HMAC cookie, sub="0"), "google" = real Google OAuth.
+// Defaults to "google" if not set.
+const authMode = process.env.NEXT_PUBLIC_AUTH_MODE ?? "google";
+const useDevAuth = authMode === "dev";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -146,7 +149,7 @@ export default function LoginPage() {
         {/* Actions */}
         <div className="flex flex-col gap-3">
           <button
-            onClick={() => void handleGoogleLogin()}
+            onClick={() => void (useDevAuth ? handleDevLogin() : handleGoogleLogin())}
             disabled={loggingIn}
             className="w-full px-6 py-3 bg-tricolore-bleu text-white font-medium rounded-xl hover:bg-encre-light transition-colors cursor-pointer disabled:opacity-60"
           >
@@ -161,7 +164,7 @@ export default function LoginPage() {
         </div>
 
         {/* Dev-mode tools */}
-        {isDev && (
+        {useDevAuth && (
           <div className="mt-6 pt-6 border-t border-craie">
             <p className="text-[10px] uppercase tracking-widest text-ardoise/35 mb-3 text-center">
               {t.login.devModeLabel}

@@ -22,11 +22,13 @@ export const env = createEnv({
 
   client: {
     NEXT_PUBLIC_LANG: z.enum(["fr", "en"]).optional(),
+    NEXT_PUBLIC_AUTH_MODE: z.enum(["dev", "google"]).optional(),
   },
 
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_LANG: process.env.NEXT_PUBLIC_LANG,
+    NEXT_PUBLIC_AUTH_MODE: process.env.NEXT_PUBLIC_AUTH_MODE,
     COOKIE_SECRET: process.env.COOKIE_SECRET,
     HMAC_KEY: process.env.HMAC_KEY,
     ALLOW_LIST_DEV_MODE: process.env.ALLOW_LIST_DEV_MODE,

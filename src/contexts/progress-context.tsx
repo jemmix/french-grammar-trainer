@@ -199,7 +199,7 @@ export function ProgressProvider({
   }, []);
 
   const logout = useCallback(async (): Promise<void> => {
-    if (process.env.NODE_ENV === "development") {
+    if (process.env.NEXT_PUBLIC_AUTH_MODE === "dev") {
       await fetch("/api/auth/dev-logout", { method: "POST" });
     } else {
       const { signOut } = await import("next-auth/react");
