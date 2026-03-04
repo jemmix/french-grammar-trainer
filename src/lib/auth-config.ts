@@ -5,11 +5,6 @@ import { isUserAllowed } from "./allow-list";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
-  logger: {
-    error: () => {},   // suppress — we handle errors in getSession
-    warn: () => {},
-    debug: () => {},
-  },
   providers: [
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID!,

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 import { useCallback, useEffect, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
 import { t } from "~/lang";
@@ -29,7 +30,6 @@ export default function LoginPage() {
   const [acknowledge, setAcknowledge] = useState(false);
   const [loggingIn, setLoggingIn] = useState(false);
 
-  // Read cookie after first render (client-side only)
   useEffect(() => {
     const present = hasCookie();
     setMounted(true);
@@ -37,38 +37,31 @@ export default function LoginPage() {
     setAcknowledge(present);
   }, []);
 
-  // Once session check resolves, act on cookie state
   useEffect(() => {
     if (!mounted || isLoading) return;
-
     if (isLoggedIn) {
       router.push("/");
-      return;
     }
+  }, [mounted, isLoading, isLoggedIn, router]);
 
-    // Cookie present + dev mode → user already accepted privacy terms; skip the form and log in directly
-    if (isDev && cookiePresent && !loggingIn) {
-      setLoggingIn(true);
-      void login().then(() => router.push("/"));
-    }
-  }, [mounted, isLoading, isLoggedIn, cookiePresent, loggingIn, login, router]);
-
-  const handleLogin = useCallback(async () => {
+  // Primary login: Google OAuth via next-auth
+  const handleGoogleLogin = useCallback(async () => {
     if (loggingIn) return;
     setLoggingIn(true);
     if (acknowledge) setCookie();
+    await signIn("google", { callbackUrl: "/" });
+  }, [loggingIn, acknowledge]);
 
-    if (isDev) {
-      // Dev: use fake login
-      await login();
-      router.push("/");
-    } else {
-      // Production: redirect to Google OAuth via next-auth
-      const { signIn } = await import("next-auth/react");
-      await signIn("google", { callbackUrl: "/" });
-    }
+  // Dev-only: fake login (sub="0", HMAC cookie)
+  const handleDevLogin = useCallback(async () => {
+    if (loggingIn) return;
+    setLoggingIn(true);
+    if (acknowledge) setCookie();
+    await login();
+    router.push("/");
   }, [loggingIn, acknowledge, login, router]);
 
+  // Dev-only: simulate denied user
   const handleDenied = useCallback(async () => {
     if (loggingIn) return;
     setLoggingIn(true);
@@ -81,8 +74,7 @@ export default function LoginPage() {
     router.push(`/denied${data.userId ? `?userId=${data.userId}` : ""}`);
   }, [loggingIn, router]);
 
-  // Loading / auto-login in progress → show spinner, no form
-  if (!mounted || isLoading || (isDev && cookiePresent && !isLoggedIn)) {
+  if (!mounted || isLoading) {
     return (
       <div className="min-h-screen bg-papier flex items-center justify-center">
         <div className="text-ardoise text-sm">{t.login.connectingState}</div>
@@ -90,7 +82,6 @@ export default function LoginPage() {
     );
   }
 
-  // Already logged in — redirect handled by effect above, but guard here too
   if (isLoggedIn) return null;
 
   return (
@@ -155,7 +146,7 @@ export default function LoginPage() {
         {/* Actions */}
         <div className="flex flex-col gap-3">
           <button
-            onClick={() => void handleLogin()}
+            onClick={() => void handleGoogleLogin()}
             disabled={loggingIn}
             className="w-full px-6 py-3 bg-tricolore-bleu text-white font-medium rounded-xl hover:bg-encre-light transition-colors cursor-pointer disabled:opacity-60"
           >
@@ -169,19 +160,28 @@ export default function LoginPage() {
           </Link>
         </div>
 
-        {/* Dev-mode: test denied flow */}
+        {/* Dev-mode tools */}
         {isDev && (
           <div className="mt-6 pt-6 border-t border-craie">
             <p className="text-[10px] uppercase tracking-widest text-ardoise/35 mb-3 text-center">
               {t.login.devModeLabel}
             </p>
-            <button
-              onClick={() => void handleDenied()}
-              disabled={loggingIn}
-              className="w-full px-6 py-2.5 text-center border border-craie/60 text-ardoise/50 font-medium rounded-xl hover:bg-papier-warm hover:text-ardoise transition-colors text-sm disabled:opacity-40 cursor-pointer"
-            >
-              {t.login.simulateDenied}
-            </button>
+            <div className="flex flex-col gap-2">
+              <button
+                onClick={() => void handleDevLogin()}
+                disabled={loggingIn}
+                className="w-full px-6 py-2.5 text-center border border-craie/60 text-ardoise/50 font-medium rounded-xl hover:bg-papier-warm hover:text-ardoise transition-colors text-sm disabled:opacity-40 cursor-pointer"
+              >
+                Fake login (sub=0)
+              </button>
+              <button
+                onClick={() => void handleDenied()}
+                disabled={loggingIn}
+                className="w-full px-6 py-2.5 text-center border border-craie/60 text-ardoise/50 font-medium rounded-xl hover:bg-papier-warm hover:text-ardoise transition-colors text-sm disabled:opacity-40 cursor-pointer"
+              >
+                {t.login.simulateDenied}
+              </button>
+            </div>
           </div>
         )}
 
