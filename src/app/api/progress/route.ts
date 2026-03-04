@@ -8,6 +8,7 @@ import {
   encodeRecord,
   recordAnswerInPlace,
 } from "~/lib/user-record";
+import { lz4Compress, lz4Decompress } from "~/lib/lz4";
 
 interface AnswerItem {
   ruleId: string;
@@ -29,10 +30,11 @@ export async function GET(_req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   const store = await getStore();
-  const data = await store.get(userId);
-  if (!data) {
+  const raw = await store.get(userId);
+  if (!raw) {
     return new NextResponse(null, { status: 204 });
   }
+  const data = await lz4Decompress(raw);
   const header = decodeHeader(data);
   const powers = decodeRecord(data);
   return NextResponse.json({ ...header, powers: Array.from(powers) });
@@ -49,13 +51,13 @@ export async function POST(req: NextRequest) {
   }
   const store = await getStore();
   const existing = await store.get(userId);
-  const powers = existing ? decodeRecord(existing) : createEmptyPowers();
+  const powers = existing ? decodeRecord(await lz4Decompress(existing)) : createEmptyPowers();
   for (const item of body.answers) {
     if (typeof item.ruleId === "string" && typeof item.correct === "boolean") {
       recordAnswerInPlace(powers, item.ruleId, item.correct);
     }
   }
-  await store.put(userId, encodeRecord(powers));
+  await store.put(userId, await lz4Compress(encodeRecord(powers)));
   return NextResponse.json({ ok: true });
 }
 
