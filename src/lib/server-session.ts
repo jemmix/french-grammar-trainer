@@ -12,12 +12,16 @@ type SessionResult =
 
 export async function getSession(): Promise<SessionResult> {
   // 1. Try next-auth session (production Google OAuth)
-  const nextAuthSession = await auth();
-  const mangledId = (
-    nextAuthSession as unknown as Record<string, unknown> | null
-  )?.mangledUserId;
-  if (typeof mangledId === "string" && mangledId) {
-    return { isLoggedIn: true, userId: mangledId, shouldRenew: false };
+  try {
+    const nextAuthSession = await auth();
+    const mangledId = (
+      nextAuthSession as unknown as Record<string, unknown> | null
+    )?.mangledUserId;
+    if (typeof mangledId === "string" && mangledId) {
+      return { isLoggedIn: true, userId: mangledId, shouldRenew: false };
+    }
+  } catch {
+    // Invalid/corrupt next-auth cookie — ignore and fall through
   }
 
   // 2. Fall back to HMAC cookie (dev fake-login)

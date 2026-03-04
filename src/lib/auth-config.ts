@@ -4,6 +4,7 @@ import { mangleUserId } from "./auth";
 import { isUserAllowed } from "./allow-list";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID!,
