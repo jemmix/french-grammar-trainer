@@ -44,8 +44,18 @@ export default function LoginPage() {
     if (!mounted || isLoading) return;
     if (isLoggedIn) {
       router.push("/");
+      return;
     }
-  }, [mounted, isLoading, isLoggedIn, router]);
+    // Privacy already acknowledged → skip interstitial, go straight to login
+    if (cookiePresent && !loggingIn) {
+      setLoggingIn(true);
+      if (useDevAuth) {
+        void login().then(() => router.push("/"));
+      } else {
+        void signIn("google", { callbackUrl: "/" });
+      }
+    }
+  }, [mounted, isLoading, isLoggedIn, cookiePresent, loggingIn, login, router]);
 
   // Primary login: Google OAuth via next-auth
   const handleGoogleLogin = useCallback(async () => {
@@ -77,7 +87,7 @@ export default function LoginPage() {
     router.push(`/denied${data.userId ? `?userId=${data.userId}` : ""}`);
   }, [loggingIn, router]);
 
-  if (!mounted || isLoading) {
+  if (!mounted || isLoading || (cookiePresent && !isLoggedIn)) {
     return (
       <div className="min-h-screen bg-papier flex items-center justify-center">
         <div className="text-ardoise text-sm">{t.login.connectingState}</div>
