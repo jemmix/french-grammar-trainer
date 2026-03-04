@@ -93,6 +93,7 @@ const en = {
     ] as const,
     dontShowAgain: "Don\u2019t show this again",
     loginButton: (inProgress: boolean) => inProgress ? "Signing in\u2026" : "Sign in (dev)",
+    googleSignIn: "Sign in with Google",
     stayAnonymous: "Stay anonymous \u2192",
     devModeLabel: "Development mode",
     simulateDenied: "Simulate access denied \u2192",

@@ -158,7 +158,7 @@ export default function LoginPage() {
         </label>
 
         {/* Actions */}
-        <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col gap-3">
           {useDevAuth ? (
             <button
               onClick={() => void handleDevLogin()}
@@ -171,6 +171,8 @@ export default function LoginPage() {
             <GoogleSignInButton
               onClick={() => void handleGoogleLogin()}
               disabled={loggingIn}
+              fullWidth
+              label={t.login.googleSignIn}
             />
           )}
           <Link

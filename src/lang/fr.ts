@@ -93,6 +93,7 @@ const fr = {
     ] as const,
     dontShowAgain: "Ne plus afficher ce message",
     loginButton: (inProgress: boolean) => inProgress ? "Connexion\u2026" : "Se connecter (dev)",
+    googleSignIn: "Se connecter avec Google",
     stayAnonymous: "Rester anonyme →",
     devModeLabel: "Mode développement",
     simulateDenied: "Simuler un accès refusé →",

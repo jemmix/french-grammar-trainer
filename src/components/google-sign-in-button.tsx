@@ -8,10 +8,10 @@ import Link from "next/link";
  * - White background, #1f1f1f text
  * - Google "G" multicolor logo
  * - Roboto Medium 14px
- * - 40px height, 4px border-radius
- * - Specific padding ratios
+ * - Rounded corners, subtle shadow
  *
  * Supports both `onClick` (button) and `href` (Next.js Link) modes.
+ * Pass `fullWidth` to stretch to container width (login page).
  */
 
 function GoogleLogo({ size = 18 }: { size?: number }) {
@@ -26,10 +26,10 @@ function GoogleLogo({ size = 18 }: { size?: number }) {
   );
 }
 
-const standardClass =
-  "inline-flex items-center justify-center gap-3 h-10 pl-3 pr-4 rounded bg-white border border-[#dadce0] shadow-[0_1px_2px_0_rgba(60,64,67,.3),0_1px_3px_1px_rgba(60,64,67,.15)] hover:shadow-[0_1px_3px_0_rgba(60,64,67,.3),0_4px_8px_3px_rgba(60,64,67,.15)] hover:bg-[#f8f9fa] active:bg-[#e8eaed] transition-all duration-150";
+const baseClass =
+  "inline-flex items-center justify-center gap-3 h-11 px-5 rounded-xl bg-white border border-[#dadce0] shadow-[0_1px_2px_0_rgba(60,64,67,.3),0_1px_3px_1px_rgba(60,64,67,.15)] hover:shadow-[0_1px_3px_0_rgba(60,64,67,.3),0_4px_8px_3px_rgba(60,64,67,.15)] hover:bg-[#f8f9fa] active:bg-[#e8eaed] transition-all duration-150";
 
-function StandardContent({ label }: { label: string }) {
+function Content({ label }: { label: string }) {
   return (
     <>
       <GoogleLogo size={18} />
@@ -44,19 +44,23 @@ function StandardContent({ label }: { label: string }) {
 }
 
 type GoogleSignInButtonProps = {
-  label?: string;
+  label: string;
   disabled?: boolean;
+  fullWidth?: boolean;
 } & ({ onClick: () => void; href?: never } | { href: string; onClick?: never });
 
 export function GoogleSignInButton({
-  label = "Sign in with Google",
+  label,
   disabled = false,
+  fullWidth = false,
   ...rest
 }: GoogleSignInButtonProps) {
+  const cls = `${baseClass}${fullWidth ? " w-full" : ""}`;
+
   if ("href" in rest && rest.href) {
     return (
-      <Link href={rest.href} className={standardClass}>
-        <StandardContent label={label} />
+      <Link href={rest.href} className={cls}>
+        <Content label={label} />
       </Link>
     );
   }
@@ -65,9 +69,9 @@ export function GoogleSignInButton({
     <button
       onClick={"onClick" in rest ? rest.onClick : undefined}
       disabled={disabled}
-      className={`${standardClass} cursor-pointer disabled:opacity-50 disabled:cursor-default disabled:shadow-none`}
+      className={`${cls} cursor-pointer disabled:opacity-50 disabled:cursor-default disabled:shadow-none`}
     >
-      <StandardContent label={label} />
+      <Content label={label} />
     </button>
   );
 }

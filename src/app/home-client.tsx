@@ -144,7 +144,7 @@ export function HomeClient({ sections }: { sections: SectionMeta[] }) {
                   )}
                 </>
               ) : (
-                <GoogleSignInButton href="/login" label={t.home.login} />
+                <GoogleSignInButton href="/login" label={t.login.googleSignIn} />
               )}
             </div>
           </div>

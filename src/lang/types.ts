@@ -114,6 +114,7 @@ export interface LangStrings {
     privacyBullets: readonly [string, string, string, string, string];
     dontShowAgain: string;
     loginButton: (inProgress: boolean) => string;
+    googleSignIn: string;    // "Se connecter avec Google"
     stayAnonymous: string;
     devModeLabel: string;
     simulateDenied: string;
