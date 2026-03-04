@@ -16,5 +16,6 @@
 
 ## Weird questions
 
-- 10-11-005: Suisse and Suisse aucun article the same thing?
+- 10-11-005 [fr]: Suisse and Suisse aucun article the same thing?
+- 02-02-011 [en]: indicate if it's about present/past events more clearly, everywhere
 
