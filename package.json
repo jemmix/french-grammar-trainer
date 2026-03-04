@@ -4,8 +4,9 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "predev": "node --env-file-if-exists=.env --env-file-if-exists=.env.development --env-file-if-exists=.env.development.local scripts/fetch-allowlist.mjs",
     "dev": "next dev --turbo",
-    "prebuild": "npx tsx --env-file=.env scripts/fetch-allowlist.ts",
+    "prebuild": "node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/fetch-allowlist.mjs",
     "build": "next build",
     "start": "next start",
     "preview": "next build && next start",
