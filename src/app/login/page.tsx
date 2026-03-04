@@ -18,6 +18,8 @@ function setCookie() {
   document.cookie = `${PRIVACY_COOKIE}=1; SameSite=Lax; Path=/; max-age=${COOKIE_MAX_AGE}`;
 }
 
+const isDev = process.env.NODE_ENV === "development";
+
 export default function LoginPage() {
   const router = useRouter();
   const { login, isLoggedIn, isLoading } = useProgress();
@@ -44,8 +46,8 @@ export default function LoginPage() {
       return;
     }
 
-    // Cookie present → user already accepted privacy terms; skip the form and log in directly
-    if (cookiePresent && !loggingIn) {
+    // Cookie present + dev mode → user already accepted privacy terms; skip the form and log in directly
+    if (isDev && cookiePresent && !loggingIn) {
       setLoggingIn(true);
       void login().then(() => router.push("/"));
     }
@@ -55,8 +57,16 @@ export default function LoginPage() {
     if (loggingIn) return;
     setLoggingIn(true);
     if (acknowledge) setCookie();
-    await login();
-    router.push("/");
+
+    if (isDev) {
+      // Dev: use fake login
+      await login();
+      router.push("/");
+    } else {
+      // Production: redirect to Google OAuth via next-auth
+      const { signIn } = await import("next-auth/react");
+      await signIn("google", { callbackUrl: "/" });
+    }
   }, [loggingIn, acknowledge, login, router]);
 
   const handleDenied = useCallback(async () => {
@@ -72,7 +82,7 @@ export default function LoginPage() {
   }, [loggingIn, router]);
 
   // Loading / auto-login in progress → show spinner, no form
-  if (!mounted || isLoading || (cookiePresent && !isLoggedIn)) {
+  if (!mounted || isLoading || (isDev && cookiePresent && !isLoggedIn)) {
     return (
       <div className="min-h-screen bg-papier flex items-center justify-center">
         <div className="text-ardoise text-sm">{t.login.connectingState}</div>
@@ -160,18 +170,20 @@ export default function LoginPage() {
         </div>
 
         {/* Dev-mode: test denied flow */}
-        <div className="mt-6 pt-6 border-t border-craie">
-          <p className="text-[10px] uppercase tracking-widest text-ardoise/35 mb-3 text-center">
-            {t.login.devModeLabel}
-          </p>
-          <button
-            onClick={() => void handleDenied()}
-            disabled={loggingIn}
-            className="w-full px-6 py-2.5 text-center border border-craie/60 text-ardoise/50 font-medium rounded-xl hover:bg-papier-warm hover:text-ardoise transition-colors text-sm disabled:opacity-40 cursor-pointer"
-          >
-            {t.login.simulateDenied}
-          </button>
-        </div>
+        {isDev && (
+          <div className="mt-6 pt-6 border-t border-craie">
+            <p className="text-[10px] uppercase tracking-widest text-ardoise/35 mb-3 text-center">
+              {t.login.devModeLabel}
+            </p>
+            <button
+              onClick={() => void handleDenied()}
+              disabled={loggingIn}
+              className="w-full px-6 py-2.5 text-center border border-craie/60 text-ardoise/50 font-medium rounded-xl hover:bg-papier-warm hover:text-ardoise transition-colors text-sm disabled:opacity-40 cursor-pointer"
+            >
+              {t.login.simulateDenied}
+            </button>
+          </div>
+        )}
 
         {/* Footer link */}
         <p className="mt-6 text-center text-xs text-ardoise/60">

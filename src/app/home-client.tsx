@@ -112,38 +112,36 @@ export function HomeClient({ sections }: { sections: SectionMeta[] }) {
             </div>
 
             {/* Auth controls */}
-            {process.env.NODE_ENV === "development" && (
-              <div className="shrink-0 flex flex-col items-end gap-1 pt-1">
-                {isLoggedIn ? (
-                  <>
-                    <Link
-                      href="/my-data"
-                      className="text-xs text-ardoise hover:text-encre transition-colors"
-                    >
-                      {t.home.myDataLink}
-                    </Link>
-                    <button
-                      onClick={() => void logout()}
-                      className="text-xs text-ardoise hover:text-encre transition-colors cursor-pointer"
-                    >
-                      {t.home.logout}
-                    </button>
-                    {userId && (
-                      <span className="text-[10px] font-mono text-ardoise/40">
-                        {userId.slice(0, 8)}…
-                      </span>
-                    )}
-                  </>
-                ) : (
+            <div className="shrink-0 flex flex-col items-end gap-1 pt-1">
+              {isLoggedIn ? (
+                <>
                   <Link
-                    href="/login"
-                    className="text-xs text-tricolore-bleu hover:text-encre transition-colors"
+                    href="/my-data"
+                    className="text-xs text-ardoise hover:text-encre transition-colors"
                   >
-                    {t.home.login}
+                    {t.home.myDataLink}
                   </Link>
-                )}
-              </div>
-            )}
+                  <button
+                    onClick={() => void logout()}
+                    className="text-xs text-ardoise hover:text-encre transition-colors cursor-pointer"
+                  >
+                    {t.home.logout}
+                  </button>
+                  {userId && (
+                    <span className="text-[10px] font-mono text-ardoise/40">
+                      {userId.slice(0, 8)}…
+                    </span>
+                  )}
+                </>
+              ) : (
+                <Link
+                  href="/login"
+                  className="text-xs text-tricolore-bleu hover:text-encre transition-colors"
+                >
+                  {t.home.login}
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </header>

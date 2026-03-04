@@ -34,7 +34,7 @@ export default async function RootLayout({
 }) {
   const session = await getSession();
   const initialPowers = session.isLoggedIn
-    ? getProgressPowers(session.userId)
+    ? await getProgressPowers(session.userId)
     : undefined;
 
   if (session.isLoggedIn && session.shouldRenew) {

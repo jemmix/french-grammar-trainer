@@ -1,8 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
-import { env } from "~/env";
-import { sqliteStore } from "~/lib/sqlite-store";
-import { verifyCookie } from "~/lib/session-cookie";
-import { isUserAllowed } from "~/lib/allow-list";
+import { getStore } from "~/lib/store";
+import { getSession } from "~/lib/server-session";
 import {
   createEmptyPowers,
   decodeHeader,
@@ -20,25 +18,18 @@ interface PostBody {
   answers: AnswerItem[];
 }
 
-async function getUserId(req: NextRequest): Promise<string | null> {
-  const val = req.cookies.get("fgt-session")?.value;
-  if (!val) return null;
-
-  const verified = verifyCookie(val, env.COOKIE_SECRET);
-  if (!verified) return null;
-
-  const allowed = await isUserAllowed(verified.userId);
-  if (!allowed) return null;
-
-  return verified.userId;
+async function getUserId(): Promise<string | null> {
+  const session = await getSession();
+  return session.isLoggedIn ? session.userId : null;
 }
 
-export async function GET(req: NextRequest) {
-  const userId = await getUserId(req);
+export async function GET(_req: NextRequest) {
+  const userId = await getUserId();
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  const data = sqliteStore.get(userId);
+  const store = await getStore();
+  const data = await store.get(userId);
   if (!data) {
     return new NextResponse(null, { status: 204 });
   }
@@ -48,7 +39,7 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  const userId = await getUserId(req);
+  const userId = await getUserId();
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -56,22 +47,24 @@ export async function POST(req: NextRequest) {
   if (!Array.isArray(body?.answers)) {
     return NextResponse.json({ error: "Invalid body" }, { status: 400 });
   }
-  const existing = sqliteStore.get(userId);
+  const store = await getStore();
+  const existing = await store.get(userId);
   const powers = existing ? decodeRecord(existing) : createEmptyPowers();
   for (const item of body.answers) {
     if (typeof item.ruleId === "string" && typeof item.correct === "boolean") {
       recordAnswerInPlace(powers, item.ruleId, item.correct);
     }
   }
-  sqliteStore.put(userId, encodeRecord(powers));
+  await store.put(userId, encodeRecord(powers));
   return NextResponse.json({ ok: true });
 }
 
-export async function DELETE(req: NextRequest) {
-  const userId = await getUserId(req);
+export async function DELETE(_req: NextRequest) {
+  const userId = await getUserId();
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  sqliteStore.delete(userId);
+  const store = await getStore();
+  await store.delete(userId);
   return NextResponse.json({ ok: true });
 }

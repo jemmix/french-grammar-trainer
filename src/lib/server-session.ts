@@ -1,15 +1,26 @@
 import { cookies } from "next/headers";
 import { env } from "~/env";
-import { sqliteStore } from "./sqlite-store";
+import { getStore } from "./store";
 import { createEmptyPowers, decodeRecord } from "./user-record";
 import { verifyCookie, shouldRenew } from "./session-cookie";
 import { isUserAllowed } from "./allow-list";
+import { auth } from "./auth-config";
 
 type SessionResult =
   | { isLoggedIn: false }
   | { isLoggedIn: true; userId: string; shouldRenew: boolean };
 
 export async function getSession(): Promise<SessionResult> {
+  // 1. Try next-auth session (production Google OAuth)
+  const nextAuthSession = await auth();
+  const mangledId = (
+    nextAuthSession as unknown as Record<string, unknown> | null
+  )?.mangledUserId;
+  if (typeof mangledId === "string" && mangledId) {
+    return { isLoggedIn: true, userId: mangledId, shouldRenew: false };
+  }
+
+  // 2. Fall back to HMAC cookie (dev fake-login)
   const cookie = (await cookies()).get("fgt-session")?.value;
   if (!cookie) return { isLoggedIn: false };
 
@@ -26,8 +37,9 @@ export async function getSession(): Promise<SessionResult> {
   };
 }
 
-export function getProgressPowers(userId: string): number[] {
-  const data = sqliteStore.get(userId);
+export async function getProgressPowers(userId: string): Promise<number[]> {
+  const store = await getStore();
+  const data = await store.get(userId);
   if (!data) return Array.from(createEmptyPowers());
   return Array.from(decodeRecord(data));
 }
