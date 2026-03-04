@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "02-past-simple",
   title: "Past Simple",
-  description: "Forming and using the past simple tense in English",
+  description: "Forming and using the past simple tense",
   rules: [
     { id: "02-01", sectionId: "02-past-simple", title: "Past simple of regular verbs: affirmative (-ed ending)" },
     { id: "02-02", sectionId: "02-past-simple", title: "Past simple: spelling rules for -ed (double consonant, -e → -ed, -y → -ied)" },
@@ -109,10 +109,10 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-01",
       generatedBy: "claude-sonnet-4-6",
-      prompt: "Complete the sentence: \"She ___ the instructions carefully before assembling the furniture.\"",
+      prompt: "Complete the sentence: \"She ___ the instructions carefully before assembling the furniture last weekend.\"",
       choices: [
-        { text: "followed", correct: true, explanation: "\"Follow\" + -ed = \"followed.\" The sequence \"before assembling\" tells us this is a completed past action." },
-        { text: "follows", correct: false, explanation: "\"Follows\" is the third person singular present. Use the past form \"followed.\"" },
+        { text: "followed", correct: true, explanation: "\"Follow\" + -ed = \"followed.\" \"Last weekend\" anchors the action in the past, and the task was completed before she assembled the furniture." },
+        { text: "follows", correct: false, explanation: "\"Follows\" is the third person singular present. \"Last weekend\" tells us this happened in the past — use \"followed.\"" },
         { text: "was following", correct: false, explanation: "\"Was following\" (past continuous) describes an action in progress — not a completed task done before something else." },
         { text: "follow", correct: false, explanation: "\"Follow\" is the base form. Regular verbs need -ed in the past simple: \"followed.\"" },
       ],
