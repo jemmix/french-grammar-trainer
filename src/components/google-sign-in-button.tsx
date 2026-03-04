@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 /**
  * Google's branded "Sign in with Google" button.
  * Follows Google Identity branding guidelines:
@@ -9,9 +11,7 @@
  * - 40px height, 4px border-radius
  * - Specific padding ratios
  *
- * Two variants:
- * - "standard" — full "Sign in with Google" button
- * - "compact"  — just the "G" icon (for tight header layouts)
+ * Supports both `onClick` (button) and `href` (Next.js Link) modes.
  */
 
 function GoogleLogo({ size = 18 }: { size?: number }) {
@@ -26,38 +26,12 @@ function GoogleLogo({ size = 18 }: { size?: number }) {
   );
 }
 
-interface GoogleSignInButtonProps {
-  onClick: () => void;
-  disabled?: boolean;
-  variant?: "standard" | "compact";
-  label?: string;
-}
+const standardClass =
+  "inline-flex items-center justify-center gap-3 h-10 pl-3 pr-4 rounded bg-white border border-[#dadce0] shadow-[0_1px_2px_0_rgba(60,64,67,.3),0_1px_3px_1px_rgba(60,64,67,.15)] hover:shadow-[0_1px_3px_0_rgba(60,64,67,.3),0_4px_8px_3px_rgba(60,64,67,.15)] hover:bg-[#f8f9fa] active:bg-[#e8eaed] transition-all duration-150";
 
-export function GoogleSignInButton({
-  onClick,
-  disabled = false,
-  variant = "standard",
-  label = "Sign in with Google",
-}: GoogleSignInButtonProps) {
-  if (variant === "compact") {
-    return (
-      <button
-        onClick={onClick}
-        disabled={disabled}
-        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white border border-[#dadce0] shadow-[0_1px_2px_0_rgba(60,64,67,.3),0_1px_3px_1px_rgba(60,64,67,.15)] hover:shadow-[0_1px_3px_0_rgba(60,64,67,.3),0_4px_8px_3px_rgba(60,64,67,.15)] hover:bg-[#f8f9fa] active:bg-[#e8eaed] transition-all duration-150 cursor-pointer disabled:opacity-50 disabled:cursor-default disabled:shadow-none"
-        aria-label={label}
-      >
-        <GoogleLogo size={18} />
-      </button>
-    );
-  }
-
+function StandardContent({ label }: { label: string }) {
   return (
-    <button
-      onClick={onClick}
-      disabled={disabled}
-      className="inline-flex items-center justify-center gap-3 h-10 pl-3 pr-4 rounded bg-white border border-[#dadce0] shadow-[0_1px_2px_0_rgba(60,64,67,.3),0_1px_3px_1px_rgba(60,64,67,.15)] hover:shadow-[0_1px_3px_0_rgba(60,64,67,.3),0_4px_8px_3px_rgba(60,64,67,.15)] hover:bg-[#f8f9fa] active:bg-[#e8eaed] transition-all duration-150 cursor-pointer disabled:opacity-50 disabled:cursor-default disabled:shadow-none"
-    >
+    <>
       <GoogleLogo size={18} />
       <span
         className="text-sm font-medium text-[#1f1f1f] tracking-[0.25px] whitespace-nowrap"
@@ -65,6 +39,35 @@ export function GoogleSignInButton({
       >
         {label}
       </span>
+    </>
+  );
+}
+
+type GoogleSignInButtonProps = {
+  label?: string;
+  disabled?: boolean;
+} & ({ onClick: () => void; href?: never } | { href: string; onClick?: never });
+
+export function GoogleSignInButton({
+  label = "Sign in with Google",
+  disabled = false,
+  ...rest
+}: GoogleSignInButtonProps) {
+  if ("href" in rest && rest.href) {
+    return (
+      <Link href={rest.href} className={standardClass}>
+        <StandardContent label={label} />
+      </Link>
+    );
+  }
+
+  return (
+    <button
+      onClick={"onClick" in rest ? rest.onClick : undefined}
+      disabled={disabled}
+      className={`${standardClass} cursor-pointer disabled:opacity-50 disabled:cursor-default disabled:shadow-none`}
+    >
+      <StandardContent label={label} />
     </button>
   );
 }

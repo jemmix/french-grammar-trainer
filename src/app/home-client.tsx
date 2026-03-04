@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useProgress } from "~/contexts/progress-context";
 import { ProgressRing } from "~/components/progress-ring";
+import { GoogleSignInButton } from "~/components/google-sign-in-button";
 import { SigningOutOverlay } from "~/components/signing-out-overlay";
 import { getTier } from "~/lib/tiers";
 import { t } from "~/lang";
@@ -143,12 +144,7 @@ export function HomeClient({ sections }: { sections: SectionMeta[] }) {
                   )}
                 </>
               ) : (
-                <Link
-                  href="/login"
-                  className="text-xs text-tricolore-bleu hover:text-encre transition-colors"
-                >
-                  {t.home.login}
-                </Link>
+                <GoogleSignInButton href="/login" label={t.home.login} />
               )}
             </div>
           </div>
