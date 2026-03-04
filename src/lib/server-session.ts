@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { env } from "~/env";
 import { getStore } from "./store";
 import { createEmptyPowers, decodeRecord } from "./user-record";
+import { lz4Decompress } from "./lz4";
 import { verifyCookie, shouldRenew } from "./session-cookie";
 import { isUserAllowed } from "./allow-list";
 import { auth } from "./auth-config";
@@ -45,5 +46,5 @@ export async function getProgressPowers(userId: string): Promise<number[]> {
   const store = await getStore();
   const data = await store.get(userId);
   if (!data) return Array.from(createEmptyPowers());
-  return Array.from(decodeRecord(data));
+  return Array.from(decodeRecord(await lz4Decompress(data)));
 }
