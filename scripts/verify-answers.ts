@@ -62,7 +62,7 @@ if (files.length === 0) {
 // Prompt construction
 // ---------------------------------------------------------------------------
 
-const SYSTEM_PROMPT =
+const INSTRUCTIONS =
   `You are a grammar answer verifier. Given a question and a proposed answer, ` +
   `respond with exactly one word:\n` +
   `- TRUE if the answer correctly completes or answers the question\n` +
@@ -71,7 +71,7 @@ const SYSTEM_PROMPT =
   `Your response must contain ONLY one of these three words in all caps. No explanation.`;
 
 function buildPrompt(question: string, answer: string): string {
-  return `Question: ${question}\nAnswer: ${answer}`;
+  return `${INSTRUCTIONS}\n\nQuestion: ${question}\nAnswer: ${answer}`;
 }
 
 // ---------------------------------------------------------------------------
@@ -82,7 +82,7 @@ function invokeAI(prompt: string): Promise<string> {
   return new Promise((resolve, reject) => {
     const child = execFile(
       "opencode",
-      ["run", "-p", SYSTEM_PROMPT, prompt],
+      ["run", prompt],
       { timeout: 60_000, maxBuffer: 10 * 1024 },
       (err, stdout, stderr) => {
         if (err) {
@@ -195,9 +195,7 @@ async function processFile(filePath: string): Promise<void> {
     for (const job of jobs) {
       const prompt = buildPrompt(job.prompt, job.answer);
       const tag = job.expectedVerdict === "TRUE" ? "RIGHT" : "WRONG";
-      console.log(
-        `[${tag}] opencode run -p ${JSON.stringify(SYSTEM_PROMPT)} ${JSON.stringify(prompt)}`,
-      );
+      console.log(`[${tag}] opencode run ${JSON.stringify(prompt)}`);
     }
     return;
   }
