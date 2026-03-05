@@ -1,6 +1,7 @@
 import type { Section, SectionMeta } from "../types";
 import section01 from "./01-present-simple-continuous";
 import section02 from "./02-past-simple";
+import section03 from "./03-past-continuous";
 import explanations01 from "./explanations/01-explanations";
 import explanations02 from "./explanations/02-explanations";
 
@@ -10,7 +11,7 @@ import explanations02 from "./explanations/02-explanations";
 section01.explanations = explanations01;
 section02.explanations = explanations02;
 
-export const loadedSections: Section[] = [section01, section02];
+export const loadedSections: Section[] = [section01, section02, section03];
 
 export const meta: Omit<SectionMeta, "questionCount">[] = [
   { id: "01-present-simple-continuous", title: "Present Simple & Present Continuous", description: "Affirmative, negative, and question forms; spelling rules; habits vs. temporary actions" },
