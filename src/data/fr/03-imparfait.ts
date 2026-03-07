@@ -1,6 +1,6 @@
 import type { Section } from "../types";
 
-// Generated from: questions/03-01.txt, questions/03-02.txt, questions/03-03.txt, questions/03-04.txt, questions/03-05.txt, questions/03-06.txt, questions/03-07.txt, questions/03-08.txt, questions/03-09.txt, questions/03-10.txt, questions/03-11.txt, questions/03-12.txt, questions/03-13.txt, questions/03-14.txt, questions/03-15.txt, questions/03-16.txt, questions/03-17.txt, questions/03-18.txt, questions/03-19.txt, questions/03-20.txt
+// Generated from: questions/fr/03-01.txt, questions/fr/03-02.txt, questions/fr/03-03.txt, questions/fr/03-04.txt, questions/fr/03-05.txt, questions/fr/03-06.txt, questions/fr/03-07.txt, questions/fr/03-08.txt, questions/fr/03-09.txt, questions/fr/03-10.txt, questions/fr/03-11.txt, questions/fr/03-12.txt, questions/fr/03-13.txt, questions/fr/03-14.txt, questions/fr/03-15.txt, questions/fr/03-16.txt, questions/fr/03-17.txt, questions/fr/03-18.txt, questions/fr/03-19.txt, questions/fr/03-20.txt
 // Total: 400 MCQ + 100 INPUT = 500 questions
 
 const section: Section = {
@@ -4870,9 +4870,9 @@ const section: Section = {
       prompt: "Choisissez la phrase correcte :",
       choices: [
         { text: "Je dormais pendant qu'il travaillait.", correct: true, explanation: "« Pendant que » introduit une action simultanée, donc imparfait des deux côtés." },
-        { text: "Je dormais quand il travaillait.", correct: false, explanation: "« Quand » avec l'imparfait des deux côtés est maladroit ; « quand » s'utilise généralement avec une interruption (passé composé)." },
+        { text: "Je dormais pendant qu'il travaille.", correct: false, explanation: "Le présent ne convient pas au contexte passé avec « pendant que » ; l'imparfait est nécessaire." },
         { text: "Je dormais pendant qu'il a travaillé.", correct: false, explanation: "Après « pendant que », on ne met jamais le passé composé." },
-        { text: "J'ai dormi pendant qu'il travaillait.", correct: false, explanation: "La première action doit aussi être à l'imparfait avec « pendant que »." },
+        { text: "J'avais dormi pendant qu'il travaillait.", correct: false, explanation: "Le plus-que-parfait indique que le sommeil s'est terminé avant qu'il commence à travailler, ce qui contredit la simultanéité de « pendant que »." },
       ],
     },
     {
@@ -4896,7 +4896,7 @@ const section: Section = {
       prompt: "Choisissez la phrase correcte :",
       choices: [
         { text: "Je dormais quand le téléphone a sonné.", correct: true, explanation: "« Quand » introduit une interruption, donc imparfait pour l'action en cours et passé composé pour l'interruption." },
-        { text: "Je dormais quand le téléphone sonnait.", correct: false, explanation: "Après « quand » avec interruption, on utilise le passé composé, pas l'imparfait." },
+        { text: "J'ai dormi quand le téléphone a sonné.", correct: false, explanation: "Le passé composé pour l'action de fond (dormir) est incorrect ; c'est l'action en cours (imparfait) qui sert d'arrière-plan à l'interruption." },
         { text: "Je me suis endormi quand le téléphone a sonné.", correct: false, explanation: "Cette structure est possible mais les deux actions seraient complétées, pas une en cours et une interruption." },
         { text: "Je dormirais quand le téléphone sonnait.", correct: false, explanation: "Le conditionnel ne s'utilise pas pour des faits passés avec « quand »." },
       ],
@@ -4922,7 +4922,7 @@ const section: Section = {
       prompt: "Complétez : « Elle ___ la maison pendant que son mari ___ au bureau. »",
       choices: [
         { text: "nettoyait / travaillait", correct: true, explanation: "« Pendant que » exige l'imparfait pour exprimer deux actions simultanées en cours." },
-        { text: "a nettoyé / travaillait", correct: false, explanation: "La première action doit aussi être à l'imparfait pour la simultanéité." },
+        { text: "avait nettoyé / travaillait", correct: false, explanation: "Le plus-que-parfait indiquerait que le nettoyage était terminé avant que le mari commence à travailler, ce qui contredit la simultanéité de « pendant que »." },
         { text: "nettoyait / a travaillé", correct: false, explanation: "Les deux verbes doivent avoir le même temps." },
         { text: "nettoiera / travaillera", correct: false, explanation: "Le futur ne s'utilise pas pour des actions passées." },
       ],
@@ -4958,12 +4958,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-15",
       generatedBy: "haiku",
-      prompt: "Choisissez la phrase correcte :",
+      prompt: "Choisissez la phrase correcte pour exprimer deux actions simultanées dans le passé :",
       choices: [
-        { text: "Nous étudions tandis que vous regardez un film.", correct: true, explanation: "Cette phrase utilise le présent des deux côtés pour décrire des actions simultanées actuelles." },
-        { text: "Nous avons étudié tandis que vous regardiez un film.", correct: false, explanation: "Les deux verbes doivent être au même temps avec « tandis que »." },
-        { text: "Nous étudiions tandis que vous regarderez un film.", correct: false, explanation: "Les temps doivent être cohérents pour exprimer la simultanéité." },
-        { text: "Nous étudierions tandis que vous regarderiez un film.", correct: false, explanation: "Cette structure utilise le conditionnel, ce qui changerait le sens." },
+        { text: "Nous étudiions tandis que vous regardiez un film.", correct: true, explanation: "« Tandis que » exprime la simultanéité dans le passé : les deux actions continues s'expriment à l'imparfait." },
+        { text: "Nous étudiions tandis que vous aviez regardé un film.", correct: false, explanation: "Le plus-que-parfait indiquerait que vous aviez fini de regarder avant que nous étudiions, ce qui contredit la simultanéité exprimée par « tandis que »." },
+        { text: "Nous étudiions tandis que vous regarderez un film.", correct: false, explanation: "On ne mélange pas l'imparfait et le futur avec « tandis que » ; les deux verbes doivent être au même temps passé." },
+        { text: "Nous étudierions tandis que vous regarderiez un film.", correct: false, explanation: "Le conditionnel exprime une hypothèse, pas une action passée simultanée réelle." },
       ],
     },
     {
@@ -4975,7 +4975,7 @@ const section: Section = {
       choices: [
         { text: "as préparé", correct: true, explanation: "Après « après que », on utilise le passé composé pour montrer que l'action s'est terminée avant l'autre." },
         { text: "préparais", correct: false, explanation: "L'imparfait n'exprime pas l'action complétée avant une autre." },
-        { text: "avais préparé", correct: false, explanation: "Le plus-que-parfait s'utilise généralement avec une autre action au passé antérieur, pas ici." },
+        { text: "prépareras", correct: false, explanation: "Le futur simple ne s'utilise pas après « après que » pour une action passée." },
         { text: "prépares", correct: false, explanation: "Le présent ne convient pas au contexte passé." },
       ],
     },
@@ -4987,7 +4987,7 @@ const section: Section = {
       prompt: "Choisissez la phrase correcte :",
       choices: [
         { text: "Pendant que nous discutions, ils arrivaient.", correct: true, explanation: "Avec « pendant que », les deux actions se déroulent simultanément à l'imparfait." },
-        { text: "Pendant que nous discutions, ils sont arrivés.", correct: false, explanation: "Après « pendant que », les deux verbes doivent être à l'imparfait." },
+        { text: "Pendant que nous avions discuté, ils arrivaient.", correct: false, explanation: "Le plus-que-parfait exprime une antériorité, pas une action simultanée ; « pendant que » appelle l'imparfait." },
         { text: "Pendant que nous avons discuté, ils arrivaient.", correct: false, explanation: "Après « pendant que », le premier verbe doit aussi être à l'imparfait." },
         { text: "Pendant que nous discuterons, ils arriveront.", correct: false, explanation: "Le futur change le sens ; « pendant que » introduit un contexte passé dans cet exemple." },
       ],
@@ -5014,7 +5014,7 @@ const section: Section = {
       choices: [
         { text: "Tandis qu'elle cuisinait, il mettait la table.", correct: true, explanation: "« Tandis que » exige l'imparfait pour les deux actions simultanées." },
         { text: "Tandis qu'elle a cuisiné, il mettait la table.", correct: false, explanation: "Après « tandis que », le premier verbe doit aussi être à l'imparfait." },
-        { text: "Tandis qu'elle cuisinait, il a mis la table.", correct: false, explanation: "Après « tandis que », les deux verbes doivent être à l'imparfait." },
+        { text: "Tandis qu'elle avait cuisiné, il mettait la table.", correct: false, explanation: "Le plus-que-parfait indiquerait que la cuisine était terminée avant que la table soit mise, ce qui contredit « tandis que »." },
         { text: "Tandis qu'elle cuisine, il mettra la table.", correct: false, explanation: "Les deux verbes ne doivent pas mélanger présent et futur avec « tandis que »." },
       ],
     },
@@ -5052,8 +5052,8 @@ const section: Section = {
       prompt: "Choisissez la phrase correcte :",
       choices: [
         { text: "Elle regardait par la fenêtre tandis que le train partait.", correct: true, explanation: "« Tandis que » exige l'imparfait pour les deux actions simultanées." },
-        { text: "Elle regardait par la fenêtre tandis que le train est parti.", correct: false, explanation: "Après « tandis que », le deuxième verbe doit aussi être à l'imparfait." },
-        { text: "Elle a regardé par la fenêtre tandis que le train partait.", correct: false, explanation: "Après « tandis que », les deux verbes doivent être à l'imparfait." },
+        { text: "Elle regardait par la fenêtre tandis que le train était déjà parti.", correct: false, explanation: "Le plus-que-parfait indique que le train est parti avant qu'elle regarde, ce qui contredit la simultanéité exprimée par « tandis que »." },
+        { text: "Elle avait regardé par la fenêtre tandis que le train partait.", correct: false, explanation: "Le plus-que-parfait indiquerait que le regard s'est produit avant le départ du train, ce qui est incompatible avec « tandis que »." },
         { text: "Elle regardait par la fenêtre tandis que le train partira.", correct: false, explanation: "Les temps doivent correspondre avec « tandis que »." },
       ],
     },
@@ -5078,7 +5078,7 @@ const section: Section = {
       prompt: "Choisissez la phrase correcte :",
       choices: [
         { text: "Pendant que tu dormais, j'ai fait les courses.", correct: true, explanation: "L'action en cours (imparfait : tu dormais) se déroule tandis qu'une autre action se complète (passé composé : j'ai fait)." },
-        { text: "Pendant que tu dormais, je faisais les courses.", correct: false, explanation: "Avec « pendant que » et deux imparfaits, cela suggère que tu dormais et que je faisais les courses simultanément." },
+        { text: "Pendant que tu dormais, je ferais les courses.", correct: false, explanation: "Le conditionnel ne s'utilise pas pour exprimer une action passée réelle ; il faudrait le passé composé ici." },
         { text: "Pendant que tu as dormi, j'ai fait les courses.", correct: false, explanation: "Après « pendant que », le premier verbe doit être à l'imparfait pour montrer une action continue." },
         { text: "Pendant que tu dormais, j'ai dormis les courses.", correct: false, explanation: "Cette phrase n'a aucun sens." },
       ],
@@ -5088,7 +5088,7 @@ const section: Section = {
       type: "input",
       ruleId: "03-15",
       generatedBy: "haiku",
-      prompt: "Complétez avec la forme correcte du verbe au passé",
+      prompt: "Conjuguez le verbe « prendre » à l'imparfait.",
       phrase: { before: "Le téléphone a sonné tandis qu'il ", after: " une douche." },
       answer: "prenait",
       explanation: "Après « tandis que », l'imparfait exprime l'action qui continuait avant l'interruption.",
@@ -5104,7 +5104,7 @@ const section: Section = {
       type: "input",
       ruleId: "03-15",
       generatedBy: "haiku",
-      prompt: "Conjuguez le verbe au passé : pendant que + imparfait",
+      prompt: "Conjuguez le verbe « parler » à l'imparfait.",
       phrase: { before: "Pendant qu'elle ", after: " , nous avons continué notre travail." },
       answer: "parlait",
       explanation: "Après « pendant que », le verbe exprime une action qui durait simultanément, donc imparfait.",
@@ -5121,7 +5121,7 @@ const section: Section = {
       type: "input",
       ruleId: "03-15",
       generatedBy: "haiku",
-      prompt: "Conjuguez le verbe à l'imparfait pour exprimer la simultanéité avec « pendant que ».",
+      prompt: "Conjuguez le verbe « manger » à l'imparfait pour exprimer la simultanéité avec « pendant que ».",
       phrase: { before: "Pendant que nous ", after: ", les enfants jouaient dehors." },
       answer: "mangions",
       explanation: "Avec « pendant que », les deux actions se déroulent en même temps → imparfait pour les deux. « Manger » → nous mangions. Notez le -ge- conservé devant -ions : mangions.",
@@ -5153,7 +5153,7 @@ const section: Section = {
       type: "input",
       ruleId: "03-15",
       generatedBy: "haiku",
-      prompt: "Conjuguez le verbe à l'imparfait pour exprimer la simultanéité avec « pendant que ».",
+      prompt: "Conjuguez le verbe « faire » à l'imparfait pour exprimer la simultanéité avec « pendant que ».",
       phrase: { before: "Pendant que vous prépariez le repas, nous ", after: " la décoration." },
       answer: "faisions",
       explanation: "« Pendant que vous prépariez » indique une action continue en parallèle. L'action simultanée doit aussi être à l'imparfait : nous faisions. Notez le -i- double dans faisions.",
