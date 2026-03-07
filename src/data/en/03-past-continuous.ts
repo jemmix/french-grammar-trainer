@@ -39,7 +39,7 @@ const section: Section = {
       choices: [
         { text: "was cooking", correct: true, explanation: "With \"I,\" the past continuous uses \"was\" + verb-ing. \"I was cooking\" describes an action in progress in the past." },
         { text: "were cooking", correct: false, explanation: "\"Were\" is used with you/we/they, not with \"I.\" The correct form is \"I was cooking.\"" },
-        { text: "cooked", correct: false, explanation: "\"Cooked\" is past simple, which suggests a completed action. Past continuous \"was cooking\" shows the action was in progress." },
+        { text: "has cooked", correct: false, explanation: "\"Has cooked\" is the present perfect, used for events with a connection to now. \"When you called\" anchors this in the past — use \"was cooking.\"" },
         { text: "am cooking", correct: false, explanation: "\"Am cooking\" is present continuous. The past continuous form is \"was cooking.\"" },
       ],
     },
@@ -52,7 +52,7 @@ const section: Section = {
       choices: [
         { text: "were working", correct: true, explanation: "With \"they,\" the past continuous uses \"were\" + verb-ing. \"They were working\" describes an action in progress when interrupted." },
         { text: "was working", correct: false, explanation: "\"Was\" is used with I/he/she/it, not with \"they.\" The correct form is \"they were working.\"" },
-        { text: "worked", correct: false, explanation: "\"Worked\" (past simple) suggests a completed action, not an ongoing action interrupted by the rain." },
+        { text: "has worked", correct: false, explanation: "\"Has worked\" is the present perfect. The sentence is about a past moment (\"when it started to rain\") — use \"were working.\"" },
         { text: "are working", correct: false, explanation: "\"Are working\" is present continuous. The past continuous form is \"were working.\"" },
       ],
     },
@@ -65,7 +65,7 @@ const section: Section = {
       choices: [
         { text: "was reading", correct: true, explanation: "With \"she\" (third person singular), past continuous uses \"was\" + verb-ing. \"She was reading\" describes an action in progress." },
         { text: "were reading", correct: false, explanation: "\"Were\" is used with you/we/they. With \"she,\" the correct form is \"was reading.\"" },
-        { text: "read", correct: false, explanation: "\"Read\" (pronounced /red/) is past simple. Past continuous \"was reading\" shows the action was ongoing." },
+        { text: "has read", correct: false, explanation: "\"Has read\" is the present perfect. The sentence describes a past moment (\"when I entered\") — use \"was reading.\"" },
         { text: "is reading", correct: false, explanation: "\"Is reading\" is present continuous. The past continuous form is \"was reading.\"" },
       ],
     },
@@ -78,7 +78,7 @@ const section: Section = {
       choices: [
         { text: "were listening", correct: true, explanation: "With \"we,\" past continuous uses \"were\" + verb-ing. \"We were listening\" describes an ongoing action interrupted by another event." },
         { text: "was listening", correct: false, explanation: "\"Was\" is used with I/he/she/it. With \"we,\" the correct form is \"were listening.\"" },
-        { text: "listened", correct: false, explanation: "\"Listened\" is past simple. Past continuous \"were listening\" emphasizes that the action was in progress." },
+        { text: "has listened", correct: false, explanation: "\"Has listened\" is the present perfect. The sentence describes a past moment (\"when the power went out\") — use \"were listening.\"" },
         { text: "are listening", correct: false, explanation: "\"Are listening\" is present continuous. The past continuous form is \"were listening.\"" },
       ],
     },
@@ -91,7 +91,7 @@ const section: Section = {
       choices: [
         { text: "were playing", correct: true, explanation: "With \"the children\" (= they), past continuous uses \"were\" + verb-ing. \"Were playing\" describes an ongoing action." },
         { text: "was playing", correct: false, explanation: "\"Was\" is for singular subjects (I/he/she/it). \"The children\" is plural, so \"were playing\" is correct." },
-        { text: "played", correct: false, explanation: "\"Played\" is past simple. Past continuous \"were playing\" shows the action was in progress when interrupted." },
+        { text: "have played", correct: false, explanation: "\"Have played\" is the present perfect. The sentence describes a past moment (\"when it started to rain\") — use \"were playing.\"" },
         { text: "playing", correct: false, explanation: "\"Playing\" without \"were\" is incomplete. Past continuous requires \"were playing.\"" },
       ],
     },
@@ -104,7 +104,7 @@ const section: Section = {
       choices: [
         { text: "was watching", correct: true, explanation: "With \"he\" (third person singular), past continuous uses \"was\" + verb-ing. \"Was watching\" describes an action in progress." },
         { text: "were watching", correct: false, explanation: "\"Were\" is used with you/we/they. With \"he,\" the correct form is \"was watching.\"" },
-        { text: "watched", correct: false, explanation: "\"Watched\" is past simple. Past continuous \"was watching\" emphasizes the ongoing nature of the action." },
+        { text: "has watched", correct: false, explanation: "\"Has watched\" is the present perfect. The sentence describes a past moment (\"when the phone rang\") — use \"was watching.\"" },
         { text: "is watching", correct: false, explanation: "\"Is watching\" is present continuous. The past continuous form is \"was watching.\"" },
       ],
     },
@@ -182,7 +182,7 @@ const section: Section = {
       choices: [
         { text: "was waiting", correct: true, explanation: "With \"I,\" past continuous uses \"was\" + verb-ing. \"Was waiting\" describes an action in progress." },
         { text: "were waiting", correct: false, explanation: "\"Were\" is used with you/we/they. With \"I,\" the correct form is \"was waiting.\"" },
-        { text: "waited", correct: false, explanation: "\"Waited\" is past simple. Past continuous \"was waiting\" shows the action was ongoing when interrupted." },
+        { text: "has waited", correct: false, explanation: "\"Has waited\" is the present perfect. The sentence describes a past moment (\"when it started to snow\") — use \"was waiting.\"" },
         { text: "waiting", correct: false, explanation: "\"Waiting\" without \"was\" is incomplete. Past continuous requires \"was waiting.\"" },
       ],
     },
@@ -221,7 +221,7 @@ const section: Section = {
       choices: [
         { text: "was playing", correct: true, explanation: "With \"my brother\" (= he), past continuous uses \"was\" + verb-ing. \"Was playing\" describes an extended ongoing activity." },
         { text: "were playing", correct: false, explanation: "\"Were\" is for plural subjects. \"My brother\" is singular, so \"was playing\" is correct." },
-        { text: "played", correct: false, explanation: "\"Played\" is past simple. Past continuous \"was playing\" emphasizes the continuous nature of the activity." },
+        { text: "has played", correct: false, explanation: "\"Has played\" is the present perfect. \"All evening yesterday\" is a finished past period — use \"was playing.\"" },
         { text: "playing", correct: false, explanation: "\"Playing\" without \"was\" is incomplete. Past continuous requires \"was playing.\"" },
       ],
     },
@@ -230,11 +230,11 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-01",
       generatedBy: "opencode",
-      prompt: "Complete the sentence: \"The car ___ slowly down the street.\"",
+      prompt: "Complete the sentence: \"The car ___ slowly down the street when the light turned red.\"",
       choices: [
-        { text: "was moving", correct: true, explanation: "With \"the car\" (= it), past continuous uses \"was\" + verb-ing. \"Was moving\" describes an action in progress." },
+        { text: "was moving", correct: true, explanation: "With \"the car\" (= it), past continuous uses \"was\" + verb-ing. \"Was moving\" describes an action in progress when interrupted." },
         { text: "were moving", correct: false, explanation: "\"Were\" is for plural subjects. \"The car\" is singular, so \"was moving\" is correct." },
-        { text: "moved", correct: false, explanation: "\"Moved\" is past simple. Past continuous \"was moving\" emphasizes the ongoing nature of the action." },
+        { text: "has moved", correct: false, explanation: "\"Has moved\" is the present perfect. The sentence describes a past moment (\"when the light turned red\") — use \"was moving.\"" },
         { text: "moving", correct: false, explanation: "\"Moving\" without \"was\" is incomplete. Past continuous requires \"was moving.\"" },
       ],
     },
@@ -247,7 +247,7 @@ const section: Section = {
       choices: [
         { text: "were waiting", correct: true, explanation: "With \"some people\" (= they), past continuous uses \"were\" + verb-ing. \"Were waiting\" describes an ongoing action." },
         { text: "was waiting", correct: false, explanation: "\"Was\" is for singular subjects. \"Some people\" is plural, so \"were waiting\" is correct." },
-        { text: "waited", correct: false, explanation: "\"Waited\" is past simple. Past continuous \"were waiting\" shows the action was in progress." },
+        { text: "have waited", correct: false, explanation: "\"Have waited\" is the present perfect. The sentence describes a past moment (\"when we arrived\") — use \"were waiting.\"" },
         { text: "waiting", correct: false, explanation: "\"Waiting\" without \"were\" is incomplete. Past continuous requires \"were waiting.\"" },
       ],
     },
@@ -260,7 +260,7 @@ const section: Section = {
       choices: [
         { text: "was working", correct: true, explanation: "With \"she,\" past continuous uses \"was\" + verb-ing. \"Was working\" describes an action interrupted by another event." },
         { text: "were working", correct: false, explanation: "\"Were\" is used with you/we/they. With \"she,\" the correct form is \"was working.\"" },
-        { text: "worked", correct: false, explanation: "\"Worked\" is past simple. Past continuous \"was working\" shows the action was in progress." },
+        { text: "has worked", correct: false, explanation: "\"Has worked\" is the present perfect. The sentence describes a past moment (\"when the battery died\") — use \"was working.\"" },
         { text: "working", correct: false, explanation: "\"Working\" without \"was\" is incomplete. Past continuous requires \"was working.\"" },
       ],
     },
@@ -273,7 +273,7 @@ const section: Section = {
       choices: [
         { text: "were flying", correct: true, explanation: "With \"the birds\" (= they), past continuous uses \"were\" + verb-ing. \"Were flying\" describes an ongoing action." },
         { text: "was flying", correct: false, explanation: "\"Was\" is for singular subjects. \"The birds\" is plural, so \"were flying\" is correct." },
-        { text: "flew", correct: false, explanation: "\"Flew\" is past simple. Past continuous \"were flying\" emphasizes the ongoing nature of the migration." },
+        { text: "have flown", correct: false, explanation: "\"Have flown\" is the present perfect. \"At that time\" anchors this in the past — use \"were flying.\"" },
         { text: "flying", correct: false, explanation: "\"Flying\" without \"were\" is incomplete. Past continuous requires \"were flying.\"" },
       ],
     },
@@ -1058,9 +1058,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"At 8 o'clock last night, I ___ dinner.\"",
       choices: [
         { text: "was cooking", correct: true, explanation: "Past continuous is used for actions in progress at a specific past time. \"At 8 o'clock\" specifies when the action was ongoing." },
-        { text: "cooked", correct: false, explanation: "\"Cooked\" (past simple) suggests a completed action. Past continuous \"was cooking\" shows the action was in progress at that specific time." },
+        { text: "has cooked", correct: false, explanation: "\"Has cooked\" is the present perfect. \"At 8 o'clock last night\" is a finished past time — use \"was cooking.\"" },
         { text: "cook", correct: false, explanation: "\"Cook\" is present tense. The sentence refers to a specific past time, so past continuous \"was cooking\" is needed." },
-        { text: "had cooked", correct: false, explanation: "\"Had cooked\" (past perfect) indicates the action was completed before 8 o'clock. Past continuous shows it was ongoing at 8 o'clock." },
+        { text: "will cook", correct: false, explanation: "\"Will cook\" is future tense. \"Last night\" is clearly past — use \"was cooking.\"" },
       ],
     },
     {
@@ -1071,9 +1071,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"At noon yesterday, they ___ in the park.\"",
       choices: [
         { text: "were playing", correct: true, explanation: "Past continuous describes an action in progress at a specific past time. \"At noon yesterday\" is the specific time." },
-        { text: "played", correct: false, explanation: "\"Played\" (past simple) doesn't emphasize that the action was ongoing at that specific moment." },
+        { text: "have played", correct: false, explanation: "\"Have played\" is the present perfect. \"At noon yesterday\" is a finished past time — use \"were playing.\"" },
         { text: "play", correct: false, explanation: "\"Play\" is present tense. The sentence refers to past time, requiring \"were playing.\"" },
-        { text: "had played", correct: false, explanation: "\"Had played\" indicates completion before noon. Past continuous \"were playing\" shows the action was happening at noon." },
+        { text: "will play", correct: false, explanation: "\"Will play\" is future tense. \"Yesterday\" is clearly past — use \"were playing.\"" },
       ],
     },
     {
@@ -1084,9 +1084,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"At 10 p.m. last night, she ___ a book.\"",
       choices: [
         { text: "was reading", correct: true, explanation: "Past continuous is used for actions in progress at a specific past time. \"At 10 p.m.\" specifies when." },
-        { text: "read", correct: false, explanation: "\"Read\" (past simple, pronounced /red/) suggests a completed action. Past continuous \"was reading\" shows ongoing action at 10 p.m." },
+        { text: "has read", correct: false, explanation: "\"Has read\" is the present perfect. \"At 10 p.m. last night\" is a finished past time — use \"was reading.\"" },
         { text: "reads", correct: false, explanation: "\"Reads\" is present tense. The sentence refers to past time." },
-        { text: "had read", correct: false, explanation: "\"Had read\" indicates she finished before 10 p.m. Past continuous shows she was in the middle of reading at 10 p.m." },
+        { text: "will read", correct: false, explanation: "\"Will read\" is future tense. \"Last night\" is clearly past — use \"was reading.\"" },
       ],
     },
     {
@@ -1099,7 +1099,7 @@ const section: Section = {
         { text: "were taking", correct: true, explanation: "Past continuous describes an action in progress at a specific past time. \"At 3 p.m.\" is the specific time." },
         { text: "took", correct: false, explanation: "\"Took\" (past simple) doesn't emphasize that the nap was ongoing when I called." },
         { text: "take", correct: false, explanation: "\"Take\" is present tense. The sentence refers to past time." },
-        { text: "had taken", correct: false, explanation: "\"Had taken\" suggests the nap was over by 3 p.m. Past continuous \"were taking\" shows it was in progress." },
+        { text: "will take", correct: false, explanation: "\"Will take\" is future tense. \"When I called\" describes a past moment — use \"were taking.\"" },
       ],
     },
     {
@@ -1110,9 +1110,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"At midnight, we still ___ at the party.\"",
       choices: [
         { text: "were dancing", correct: true, explanation: "Past continuous describes an action in progress at a specific past time. \"At midnight\" is the specific time." },
-        { text: "danced", correct: false, explanation: "\"Danced\" (past simple) doesn't emphasize the ongoing nature of the action at that exact moment." },
+        { text: "have danced", correct: false, explanation: "\"Have danced\" is the present perfect. \"At midnight\" in a past narrative is a finished moment — use \"were dancing.\"" },
         { text: "dance", correct: false, explanation: "\"Dance\" is present tense. The sentence refers to past time." },
-        { text: "had danced", correct: false, explanation: "\"Had danced\" suggests the dancing was finished by midnight. Past continuous shows it was still happening." },
+        { text: "will dance", correct: false, explanation: "\"Will dance\" is future tense. \"At midnight\" here is a past moment — use \"were dancing.\"" },
       ],
     },
     {
@@ -1123,9 +1123,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"At 7 a.m. this morning, the sun ___.\"",
       choices: [
         { text: "was rising", correct: true, explanation: "Past continuous describes an action in progress at a specific past time. \"At 7 a.m.\" is the specific time." },
-        { text: "rose", correct: false, explanation: "\"Rose\" (past simple) doesn't emphasize the ongoing process. Past continuous \"was rising\" shows it was happening." },
+        { text: "has risen", correct: false, explanation: "\"Has risen\" is the present perfect. \"At 7 a.m. this morning\" is a finished past moment — use \"was rising.\"" },
         { text: "rises", correct: false, explanation: "\"Rises\" is present tense. The sentence refers to \"this morning\" (past)." },
-        { text: "had risen", correct: false, explanation: "\"Had risen\" suggests the sun was already up by 7 a.m. Past continuous \"was rising\" shows the process was ongoing." },
+        { text: "will rise", correct: false, explanation: "\"Will rise\" is future tense. \"This morning\" is a past reference — use \"was rising.\"" },
       ],
     },
     {
@@ -1136,9 +1136,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"When the clock struck twelve, everyone ___.\"",
       choices: [
         { text: "was cheering", correct: true, explanation: "Past continuous describes an action in progress at a specific past moment. \"When the clock struck twelve\" is that moment." },
-        { text: "cheered", correct: false, explanation: "\"Cheered\" (past simple) suggests a completed action. Past continuous \"was cheering\" shows the action was ongoing." },
+        { text: "is cheering", correct: false, explanation: "\"Is cheering\" is present continuous. The sentence describes a past moment (\"when the clock struck twelve\") — use \"was cheering.\"" },
         { text: "cheers", correct: false, explanation: "\"Cheers\" is present tense. The sentence refers to past time." },
-        { text: "had cheered", correct: false, explanation: "\"Had cheered\" suggests the cheering happened before twelve. Past continuous shows it was happening at that moment." },
+        { text: "will cheer", correct: false, explanation: "\"Will cheer\" is future tense. \"When the clock struck twelve\" is a past moment — use \"was cheering.\"" },
       ],
     },
     {
@@ -1149,9 +1149,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"At 6 p.m. yesterday, I ___ home from work.\"",
       choices: [
         { text: "was driving", correct: true, explanation: "Past continuous describes an action in progress at a specific past time. \"At 6 p.m.\" is the specific time." },
-        { text: "drove", correct: false, explanation: "\"Drove\" (past simple) doesn't emphasize that the driving was ongoing at exactly 6 p.m." },
+        { text: "has driven", correct: false, explanation: "\"Has driven\" is the present perfect. \"At 6 p.m. yesterday\" is a finished past time — use \"was driving.\"" },
         { text: "drive", correct: false, explanation: "\"Drive\" is present tense. The sentence refers to past time." },
-        { text: "had driven", correct: false, explanation: "\"Had driven\" suggests arrival before 6 p.m. Past continuous \"was driving\" shows the journey was in progress." },
+        { text: "will drive", correct: false, explanation: "\"Will drive\" is future tense. \"Yesterday\" is clearly past — use \"was driving.\"" },
       ],
     },
     {
@@ -1162,9 +1162,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"At that exact moment, the phone ___.\"",
       choices: [
         { text: "was ringing", correct: true, explanation: "Past continuous describes an action in progress at a specific past moment. \"At that exact moment\" specifies the time." },
-        { text: "rang", correct: false, explanation: "\"Rang\" (past simple) suggests the phone rang once or completed ringing. Past continuous \"was ringing\" shows ongoing action." },
+        { text: "has rung", correct: false, explanation: "\"Has rung\" is the present perfect. \"At that exact moment\" anchors this in the past — use \"was ringing.\"" },
         { text: "rings", correct: false, explanation: "\"Rings\" is present tense. The sentence refers to past time." },
-        { text: "had rung", correct: false, explanation: "\"Had rung\" suggests the ringing happened before that moment. Past continuous shows it was happening then." },
+        { text: "will ring", correct: false, explanation: "\"Will ring\" is future tense. \"At that exact moment\" is a past reference — use \"was ringing.\"" },
       ],
     },
     {
@@ -1175,9 +1175,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"When the film started at 8 p.m., we ___ popcorn.\"",
       choices: [
         { text: "were eating", correct: true, explanation: "Past continuous describes an action in progress at a specific past time. \"At 8 p.m.\" is the specific time." },
-        { text: "ate", correct: false, explanation: "\"Ate\" (past simple) doesn't emphasize the ongoing nature of eating at that specific time." },
+        { text: "have eaten", correct: false, explanation: "\"Have eaten\" is the present perfect. \"When the film started at 8 p.m.\" is a past moment — use \"were eating.\"" },
         { text: "eat", correct: false, explanation: "\"Eat\" is present tense. The sentence refers to past time." },
-        { text: "had eaten", correct: false, explanation: "\"Had eaten\" suggests we finished before the film started. Past continuous shows we were eating as it started." },
+        { text: "will eat", correct: false, explanation: "\"Will eat\" is future tense. \"When the film started at 8 p.m.\" is a past moment — use \"were eating.\"" },
       ],
     },
     {
@@ -1188,9 +1188,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"At 9 a.m. yesterday, the children ___ in class.\"",
       choices: [
         { text: "were sitting", correct: true, explanation: "Past continuous describes a state in progress at a specific past time. \"At 9 a.m.\" is the specific time." },
-        { text: "sat", correct: false, explanation: "\"Sat\" (past simple) doesn't emphasize the ongoing state at that exact time." },
+        { text: "have sat", correct: false, explanation: "\"Have sat\" is the present perfect. \"At 9 a.m. yesterday\" is a finished past time — use \"were sitting.\"" },
         { text: "sit", correct: false, explanation: "\"Sit\" is present tense. The sentence refers to past time." },
-        { text: "had sat", correct: false, explanation: "\"Had sat\" suggests they were seated before 9 a.m. Past continuous shows the state was ongoing at 9 a.m." },
+        { text: "will sit", correct: false, explanation: "\"Will sit\" is future tense. \"Yesterday\" is clearly past — use \"were sitting.\"" },
       ],
     },
     {
@@ -1201,9 +1201,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"At 5 p.m., it ___ heavily outside.\"",
       choices: [
         { text: "was raining", correct: true, explanation: "Past continuous describes weather in progress at a specific past time. \"At 5 p.m.\" is the specific time." },
-        { text: "rained", correct: false, explanation: "\"Rained\" (past simple) doesn't emphasize the ongoing nature of the rain at that specific time." },
+        { text: "has rained", correct: false, explanation: "\"Has rained\" is the present perfect. \"At 5 p.m.\" in a past context is a finished time — use \"was raining.\"" },
         { text: "rains", correct: false, explanation: "\"Rains\" is present tense. The sentence refers to past time." },
-        { text: "had rained", correct: false, explanation: "\"Had rained\" suggests the rain was over by 5 p.m. Past continuous shows it was still raining." },
+        { text: "will rain", correct: false, explanation: "\"Will rain\" is future tense. \"At 5 p.m.\" in this context is a past moment — use \"was raining.\"" },
       ],
     },
     {
@@ -1214,7 +1214,7 @@ const section: Section = {
       prompt: "Complete the sentence: \"When I looked at my watch at 11 p.m., the meeting still ___.\"",
       choices: [
         { text: "was continuing", correct: true, explanation: "Past continuous describes an action in progress at a specific past time. \"At 11 p.m.\" is the specific time." },
-        { text: "continued", correct: false, explanation: "\"Continued\" (past simple) doesn't emphasize that the meeting was ongoing at exactly 11 p.m." },
+        { text: "has continued", correct: false, explanation: "\"Has continued\" is the present perfect. \"At 11 p.m.\" in a past narrative is a finished moment — use \"was continuing.\"" },
         { text: "continues", correct: false, explanation: "\"Continues\" is present tense. The sentence refers to past time." },
         { text: "had continued", correct: false, explanation: "\"Had continued\" is grammatically awkward here. Past continuous \"was continuing\" shows the ongoing action." },
       ],
@@ -1227,9 +1227,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"At 3 o'clock, the baby ___.\"",
       choices: [
         { text: "was sleeping", correct: true, explanation: "Past continuous describes a state in progress at a specific past time. \"At 3 o'clock\" is the specific time." },
-        { text: "slept", correct: false, explanation: "\"Slept\" (past simple) doesn't emphasize the ongoing state at that exact time." },
+        { text: "has slept", correct: false, explanation: "\"Has slept\" is the present perfect. \"At 3 o'clock\" in a past context is a finished time — use \"was sleeping.\"" },
         { text: "sleeps", correct: false, explanation: "\"Sleeps\" is present tense. The sentence refers to past time." },
-        { text: "had slept", correct: false, explanation: "\"Had slept\" suggests the baby finished sleeping before 3 o'clock. Past continuous shows ongoing sleep." },
+        { text: "will sleep", correct: false, explanation: "\"Will sleep\" is future tense. \"At 3 o'clock\" in this context is a past moment — use \"was sleeping.\"" },
       ],
     },
     {
@@ -1240,9 +1240,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"When I checked at noon, they ___ lunch.\"",
       choices: [
         { text: "were having", correct: true, explanation: "Past continuous describes an action in progress at a specific past time. \"At noon\" is the specific time." },
-        { text: "had", correct: false, explanation: "\"Had\" (past simple) doesn't emphasize that lunch was ongoing at exactly noon." },
-        { text: "have", correct: false, explanation: "\"Have\" is present tense. The sentence refers to past time." },
-        { text: "had had", correct: false, explanation: "\"Had had\" (past perfect) suggests they finished before noon. Past continuous shows they were eating at noon." },
+        { text: "has", correct: false, explanation: "\"Has\" is wrong in two ways: it's present tense, and \"they\" requires \"have\" not \"has.\" Use \"were having.\"" },
+        { text: "have", correct: false, explanation: "\"Have\" is present tense. The sentence refers to past time — use \"were having.\"" },
+        { text: "will have", correct: false, explanation: "\"Will have\" is future tense. The sentence describes a past moment (\"when I checked at noon\") — use \"were having.\"" },
       ],
     },
     {
@@ -1253,9 +1253,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"At 4 p.m., my brother ___ for his exam.\"",
       choices: [
         { text: "was studying", correct: true, explanation: "Past continuous describes an action in progress at a specific past time. \"At 4 p.m.\" is the specific time." },
-        { text: "studied", correct: false, explanation: "\"Studied\" (past simple) doesn't emphasize the ongoing action at exactly 4 p.m." },
+        { text: "has studied", correct: false, explanation: "\"Has studied\" is the present perfect. \"At 4 p.m.\" in a past context is a finished time — use \"was studying.\"" },
         { text: "studies", correct: false, explanation: "\"Studies\" is present tense. The sentence refers to past time." },
-        { text: "had studied", correct: false, explanation: "\"Had studied\" suggests he finished before 4 p.m. Past continuous shows he was studying at 4 p.m." },
+        { text: "will study", correct: false, explanation: "\"Will study\" is future tense. \"At 4 p.m.\" in this context is a past moment — use \"was studying.\"" },
       ],
     },
     {
@@ -1266,9 +1266,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"When the alarm went off at 7 a.m., I ___.\"",
       choices: [
         { text: "was dreaming", correct: true, explanation: "Past continuous describes an action in progress at a specific past time. \"At 7 a.m.\" is the specific time." },
-        { text: "dreamed", correct: false, explanation: "\"Dreamed\" (past simple) doesn't emphasize the ongoing action at the moment the alarm went off." },
+        { text: "has dreamed", correct: false, explanation: "\"Has dreamed\" is the present perfect. The sentence describes a past moment (\"when the alarm went off\") — use \"was dreaming.\"" },
         { text: "dream", correct: false, explanation: "\"Dream\" is present tense. The sentence refers to past time." },
-        { text: "had dreamed", correct: false, explanation: "\"Had dreamed\" suggests the dream ended before 7 a.m. Past continuous shows it was ongoing." },
+        { text: "will dream", correct: false, explanation: "\"Will dream\" is future tense. \"When the alarm went off\" is a past moment — use \"was dreaming.\"" },
       ],
     },
     {
@@ -1279,9 +1279,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"At that time yesterday, the shop ___.\"",
       choices: [
         { text: "was closing", correct: true, explanation: "Past continuous describes an action in progress at a specific past time. \"At that time\" specifies the moment." },
-        { text: "closed", correct: false, explanation: "\"Closed\" (past simple) suggests a completed action. Past continuous \"was closing\" shows the process was ongoing." },
+        { text: "has closed", correct: false, explanation: "\"Has closed\" is the present perfect. \"At that time yesterday\" is a finished past moment — use \"was closing.\"" },
         { text: "closes", correct: false, explanation: "\"Closes\" is present tense. The sentence refers to past time." },
-        { text: "had closed", correct: false, explanation: "\"Had closed\" suggests the shop was already closed at that time. Past continuous shows the process of closing." },
+        { text: "will close", correct: false, explanation: "\"Will close\" is future tense. \"At that time yesterday\" clearly refers to the past — use \"was closing.\"" },
       ],
     },
     {
@@ -1292,9 +1292,9 @@ const section: Section = {
       prompt: "Complete the sentence: \"When I looked out the window at 6 a.m., the birds ___.\"",
       choices: [
         { text: "were singing", correct: true, explanation: "Past continuous describes an action in progress at a specific past time. \"At 6 a.m.\" is the specific time." },
-        { text: "sang", correct: false, explanation: "\"Sang\" (past simple) doesn't emphasize the ongoing action at exactly 6 a.m." },
+        { text: "have sung", correct: false, explanation: "\"Have sung\" is the present perfect. \"At 6 a.m.\" in a past narrative is a finished time — use \"were singing.\"" },
         { text: "sing", correct: false, explanation: "\"Sing\" is present tense. The sentence refers to past time." },
-        { text: "had sung", correct: false, explanation: "\"Had sung\" suggests they finished before 6 a.m. Past continuous shows they were singing at 6 a.m." },
+        { text: "will sing", correct: false, explanation: "\"Will sing\" is future tense. \"At 6 a.m.\" in this context is a past moment — use \"were singing.\"" },
       ],
     },
     {
@@ -1398,7 +1398,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"The sun ___ brightly, and birds were singing in the trees.\"",
       choices: [
         { text: "was shining", correct: true, explanation: "Past continuous is used for background descriptions in narratives, setting the scene before the main action." },
-        { text: "shone", correct: false, explanation: "\"Shone\" (past simple) would make this a completed action. Past continuous \"was shining\" creates an ongoing background scene." },
+        { text: "has shone", correct: false, explanation: "\"Has shone\" is the present perfect. Narratives use past tenses — use \"was shining\" for ongoing background." },
         { text: "shines", correct: false, explanation: "\"Shines\" is present tense. Narratives typically use past tenses." },
         { text: "had shone", correct: false, explanation: "\"Had shone\" (past perfect) would place this before the narrative time. Past continuous sets the current scene." },
       ],
@@ -1411,7 +1411,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"The wind ___ through the trees as we walked home.\"",
       choices: [
         { text: "was blowing", correct: true, explanation: "Past continuous describes the background atmosphere. The wind blowing is part of the setting, not the main action." },
-        { text: "blew", correct: false, explanation: "\"Blew\" (past simple) makes this a completed action. Past continuous \"was blowing\" creates ongoing atmosphere." },
+        { text: "has blown", correct: false, explanation: "\"Has blown\" is the present perfect. Use \"was blowing\" for an ongoing background in a past narrative." },
         { text: "blows", correct: false, explanation: "\"Blows\" is present tense. The narrative is in the past." },
         { text: "had blown", correct: false, explanation: "\"Had blown\" suggests the wind stopped before they walked. Past continuous shows it was happening during their walk." },
       ],
@@ -1424,7 +1424,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"People ___ in the streets, going about their daily lives.\"",
       choices: [
         { text: "were hurrying", correct: true, explanation: "Past continuous describes the background activity of other people, setting the scene." },
-        { text: "hurried", correct: false, explanation: "\"Hurried\" (past simple) would make this a specific completed action. Past continuous \"were hurrying\" shows ongoing background activity." },
+        { text: "have hurried", correct: false, explanation: "\"Have hurried\" is the present perfect. Use \"were hurrying\" for ongoing background activity in a past narrative." },
         { text: "hurry", correct: false, explanation: "\"Hurry\" is present tense. The narrative is in the past." },
         { text: "had hurried", correct: false, explanation: "\"Had hurried\" places the action before the narrative. Past continuous shows concurrent background action." },
       ],
@@ -1437,7 +1437,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"Music ___ from the open windows of the apartment building.\"",
       choices: [
         { text: "was playing", correct: true, explanation: "Past continuous describes background sounds and atmosphere in narratives." },
-        { text: "played", correct: false, explanation: "\"Played\" (past simple) suggests a specific musical performance. Past continuous \"was playing\" shows ambient background music." },
+        { text: "has played", correct: false, explanation: "\"Has played\" is the present perfect. Use \"was playing\" for ongoing background sound in a past narrative." },
         { text: "plays", correct: false, explanation: "\"Plays\" is present tense. The narrative is in the past." },
         { text: "had played", correct: false, explanation: "\"Had played\" suggests the music stopped. Past continuous shows it was ongoing." },
       ],
@@ -1450,7 +1450,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"The old house ___ at the end of the street, looking abandoned.\"",
       choices: [
         { text: "was standing", correct: true, explanation: "Past continuous describes the static background scene. The house's position is part of the setting." },
-        { text: "stood", correct: false, explanation: "\"Stood\" (past simple) is acceptable but less atmospheric. Past continuous \"was standing\" emphasizes the ongoing scene." },
+        { text: "has stood", correct: false, explanation: "\"Has stood\" is the present perfect. Use \"was standing\" for an ongoing scene description in a past narrative." },
         { text: "stands", correct: false, explanation: "\"Stands\" is present tense. The narrative is in the past." },
         { text: "had stood", correct: false, explanation: "\"Had stood\" suggests the house was no longer there. Past continuous shows its current (in narrative time) position." },
       ],
@@ -1463,7 +1463,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"Rain ___ down as he waited at the bus stop.\"",
       choices: [
         { text: "was pouring", correct: true, explanation: "Past continuous describes background weather, setting the mood for the main action (waiting)." },
-        { text: "poured", correct: false, explanation: "\"Poured\" (past simple) makes the rain a main action. Past continuous \"was pouring\" shows it as background." },
+        { text: "has poured", correct: false, explanation: "\"Has poured\" is the present perfect. Use \"was pouring\" for ongoing background weather in a past narrative." },
         { text: "pours", correct: false, explanation: "\"Pours\" is present tense. The narrative is in the past." },
         { text: "had poured", correct: false, explanation: "\"Had poured\" suggests the rain stopped. Past continuous shows ongoing background rain." },
       ],
@@ -1476,7 +1476,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"Children ___ in the playground, their laughter filling the air.\"",
       choices: [
         { text: "were playing", correct: true, explanation: "Past continuous describes background activity that sets the scene for the narrative." },
-        { text: "played", correct: false, explanation: "\"Played\" (past simple) focuses on the action itself. Past continuous \"were playing\" shows ongoing background activity." },
+        { text: "have played", correct: false, explanation: "\"Have played\" is the present perfect. Use \"were playing\" for ongoing background activity in a past narrative." },
         { text: "play", correct: false, explanation: "\"Play\" is present tense. The narrative is in the past." },
         { text: "had played", correct: false, explanation: "\"Had played\" suggests they finished playing. Past continuous shows ongoing activity." },
       ],
@@ -1489,7 +1489,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"The city ___ with activity as night fell.\"",
       choices: [
         { text: "was buzzing", correct: true, explanation: "Past continuous describes the background atmosphere of the city setting." },
-        { text: "buzzed", correct: false, explanation: "\"Buzzed\" (past simple) makes this a completed action. Past continuous \"was buzzing\" shows ongoing atmosphere." },
+        { text: "has buzzed", correct: false, explanation: "\"Has buzzed\" is the present perfect. Use \"was buzzing\" for ongoing background atmosphere in a past narrative." },
         { text: "buzzes", correct: false, explanation: "\"Buzzes\" is present tense. The narrative is in the past." },
         { text: "had buzzed", correct: false, explanation: "\"Had buzzed\" suggests the activity stopped. Past continuous shows ongoing background." },
       ],
@@ -1502,7 +1502,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"Smoke ___ from the chimney of the cottage.\"",
       choices: [
         { text: "was rising", correct: true, explanation: "Past continuous describes background details that create atmosphere in narratives." },
-        { text: "rose", correct: false, explanation: "\"Rose\" (past simple) is a completed action. Past continuous \"was rising\" shows ongoing background detail." },
+        { text: "has risen", correct: false, explanation: "\"Has risen\" is the present perfect. Use \"was rising\" for ongoing background detail in a past narrative." },
         { text: "rises", correct: false, explanation: "\"Rises\" is present tense. The narrative is in the past." },
         { text: "had risen", correct: false, explanation: "\"Had risen\" suggests the smoke stopped. Past continuous shows it was ongoing." },
       ],
@@ -1515,7 +1515,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"Cars ___ slowly through the crowded streets.\"",
       choices: [
         { text: "were moving", correct: true, explanation: "Past continuous describes background traffic as part of the scene-setting in narratives." },
-        { text: "moved", correct: false, explanation: "\"Moved\" (past simple) focuses on completed movement. Past continuous \"were moving\" shows ongoing background activity." },
+        { text: "have moved", correct: false, explanation: "\"Have moved\" is the present perfect. Use \"were moving\" for ongoing background movement in a past narrative." },
         { text: "move", correct: false, explanation: "\"Move\" is present tense. The narrative is in the past." },
         { text: "had moved", correct: false, explanation: "\"Had moved\" suggests the cars stopped. Past continuous shows ongoing movement." },
       ],
@@ -1528,7 +1528,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"The waves ___ gently against the shore as we sat on the beach.\"",
       choices: [
         { text: "were crashing", correct: true, explanation: "Past continuous describes background sounds and movements that set the scene." },
-        { text: "crashed", correct: false, explanation: "\"Crashed\" (past simple) makes this a specific event. Past continuous \"were crashing\" shows ongoing background." },
+        { text: "have crashed", correct: false, explanation: "\"Have crashed\" is the present perfect. Use \"were crashing\" for ongoing background sound in a past narrative." },
         { text: "crash", correct: false, explanation: "\"Crash\" is present tense. The narrative is in the past." },
         { text: "had crashed", correct: false, explanation: "\"Had crashed\" suggests the waves stopped. Past continuous shows ongoing movement." },
       ],
@@ -1541,7 +1541,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"Leaves ___ across the garden in the autumn wind.\"",
       choices: [
         { text: "were blowing", correct: true, explanation: "Past continuous describes background details that create atmosphere and setting." },
-        { text: "blew", correct: false, explanation: "\"Blew\" (past simple) makes this a completed action. Past continuous \"were blowing\" shows ongoing background movement." },
+        { text: "have blown", correct: false, explanation: "\"Have blown\" is the present perfect. Use \"were blowing\" for ongoing background movement in a past narrative." },
         { text: "blow", correct: false, explanation: "\"Blow\" is present tense. The narrative is in the past." },
         { text: "had blown", correct: false, explanation: "\"Had blown\" suggests the leaves stopped. Past continuous shows ongoing movement." },
       ],
@@ -1554,7 +1554,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"The clock ___ steadily in the quiet room.\"",
       choices: [
         { text: "was ticking", correct: true, explanation: "Past continuous describes background sounds that establish the atmosphere." },
-        { text: "ticked", correct: false, explanation: "\"Ticked\" (past simple) is a completed action. Past continuous \"was ticking\" shows ongoing background sound." },
+        { text: "has ticked", correct: false, explanation: "\"Has ticked\" is the present perfect. Use \"was ticking\" for ongoing background sound in a past narrative." },
         { text: "ticks", correct: false, explanation: "\"Ticks\" is present tense. The narrative is in the past." },
         { text: "had ticked", correct: false, explanation: "\"Had ticked\" suggests the clock stopped. Past continuous shows ongoing sound." },
       ],
@@ -1567,7 +1567,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"Shadows ___ across the walls as the fire burned low.\"",
       choices: [
         { text: "were dancing", correct: true, explanation: "Past continuous describes background visual effects that create atmosphere." },
-        { text: "danced", correct: false, explanation: "\"Danced\" (past simple) makes this a completed action. Past continuous \"were dancing\" shows ongoing background effect." },
+        { text: "have danced", correct: false, explanation: "\"Have danced\" is the present perfect. Use \"were dancing\" for ongoing background atmosphere in a past narrative." },
         { text: "dance", correct: false, explanation: "\"Dance\" is present tense. The narrative is in the past." },
         { text: "had danced", correct: false, explanation: "\"Had danced\" suggests the shadows stopped. Past continuous shows ongoing movement." },
       ],
@@ -1580,7 +1580,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"A dog ___ in the distance, adding to the eerie atmosphere.\"",
       choices: [
         { text: "was barking", correct: true, explanation: "Past continuous describes background sounds that establish mood in narratives." },
-        { text: "barked", correct: false, explanation: "\"Barked\" (past simple) makes this a specific event. Past continuous \"was barking\" shows ongoing background sound." },
+        { text: "has barked", correct: false, explanation: "\"Has barked\" is the present perfect. Use \"was barking\" for ongoing background sound in a past narrative." },
         { text: "barks", correct: false, explanation: "\"Barks\" is present tense. The narrative is in the past." },
         { text: "had barked", correct: false, explanation: "\"Had barked\" suggests the dog stopped. Past continuous shows ongoing barking." },
       ],
@@ -1593,7 +1593,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"The market ___ with vendors and shoppers.\"",
       choices: [
         { text: "was filling", correct: true, explanation: "Past continuous describes background activity that sets the scene." },
-        { text: "filled", correct: false, explanation: "\"Filled\" (past simple) makes this a completed action. Past continuous \"was filling\" shows ongoing background." },
+        { text: "has filled", correct: false, explanation: "\"Has filled\" is the present perfect. Use \"was filling\" for an ongoing background scene in a past narrative." },
         { text: "fills", correct: false, explanation: "\"Fills\" is present tense. The narrative is in the past." },
         { text: "had filled", correct: false, explanation: "\"Had filled\" suggests the market was full already. Past continuous shows the process." },
       ],
@@ -1606,7 +1606,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"Lights ___ in every window as evening approached.\"",
       choices: [
         { text: "were shining", correct: true, explanation: "Past continuous describes background visual details that create atmosphere." },
-        { text: "shone", correct: false, explanation: "\"Shone\" (past simple) makes this a completed action. Past continuous \"were shining\" shows ongoing background." },
+        { text: "have shone", correct: false, explanation: "\"Have shone\" is the present perfect. Use \"were shining\" for ongoing background lighting in a past narrative." },
         { text: "shine", correct: false, explanation: "\"Shine\" is present tense. The narrative is in the past." },
         { text: "had shone", correct: false, explanation: "\"Had shone\" suggests the lights stopped. Past continuous shows ongoing lighting." },
       ],
@@ -1619,7 +1619,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"Snow ___ softly outside as we sat by the fire.\"",
       choices: [
         { text: "was falling", correct: true, explanation: "Past continuous describes background weather that creates atmosphere." },
-        { text: "fell", correct: false, explanation: "\"Fell\" (past simple) makes this a completed action. Past continuous \"was falling\" shows ongoing background." },
+        { text: "has fallen", correct: false, explanation: "\"Has fallen\" is the present perfect. Use \"was falling\" for ongoing background weather in a past narrative." },
         { text: "falls", correct: false, explanation: "\"Falls\" is present tense. The narrative is in the past." },
         { text: "had fallen", correct: false, explanation: "\"Had fallen\" suggests the snow stopped. Past continuous shows ongoing falling." },
       ],
@@ -1632,7 +1632,7 @@ const section: Section = {
       prompt: "Complete the narrative: \"Voices ___ from the room next door.\"",
       choices: [
         { text: "were murmuring", correct: true, explanation: "Past continuous describes background sounds that establish the setting." },
-        { text: "murmured", correct: false, explanation: "\"Murmured\" (past simple) makes this a completed action. Past continuous \"were murmuring\" shows ongoing background sound." },
+        { text: "have murmured", correct: false, explanation: "\"Have murmured\" is the present perfect. Use \"were murmuring\" for ongoing background sound in a past narrative." },
         { text: "murmur", correct: false, explanation: "\"Murmur\" is present tense. The narrative is in the past." },
         { text: "had murmured", correct: false, explanation: "\"Had murmured\" suggests the voices stopped. Past continuous shows ongoing sound." },
       ],
@@ -1660,7 +1660,7 @@ const section: Section = {
       answer: "was shining",
       explanation: "Past continuous describes background weather. \"Was shining\" sets the scene.",
       wrongAnswers: [
-        { text: "shone", explanation: "\"Shone\" (past simple) makes this a main action rather than background." },
+        { text: "has shone", explanation: "\"Has shone\" is the present perfect. The narrative is in the past — use \"was shining.\"" },
         { text: "shines", explanation: "\"Shines\" is present tense. The narrative is in the past." },
         { text: "had shone", explanation: "\"Had shone\" suggests the sun stopped shining. Past continuous shows ongoing background." },
         { text: "is shining", explanation: "\"Is shining\" is present continuous. The narrative is in the past." },
@@ -1676,7 +1676,7 @@ const section: Section = {
       answer: "was blowing",
       explanation: "Past continuous describes background atmosphere. \"Was blowing\" creates the setting.",
       wrongAnswers: [
-        { text: "blew", explanation: "\"Blew\" (past simple) makes this a completed action rather than ongoing background." },
+        { text: "has blown", explanation: "\"Has blown\" is the present perfect. The narrative is in the past — use \"was blowing.\"" },
         { text: "blows", explanation: "\"Blows\" is present tense. The narrative is in the past." },
         { text: "had blown", explanation: "\"Had blown\" suggests the wind stopped. Past continuous shows ongoing background." },
         { text: "is blowing", explanation: "\"Is blowing\" is present continuous. The narrative is in the past." },
@@ -1692,7 +1692,7 @@ const section: Section = {
       answer: "was falling",
       explanation: "Past continuous describes background weather. \"Was falling\" sets the mood.",
       wrongAnswers: [
-        { text: "fell", explanation: "\"Fell\" (past simple) makes this a completed action rather than ongoing background." },
+        { text: "has fallen", explanation: "\"Has fallen\" is the present perfect. The narrative is in the past — use \"was falling.\"" },
         { text: "falls", explanation: "\"Falls\" is present tense. The narrative is in the past." },
         { text: "had fallen", explanation: "\"Had fallen\" suggests the rain stopped. Past continuous shows ongoing background." },
         { text: "is falling", explanation: "\"Is falling\" is present continuous. The narrative is in the past." },
@@ -1708,7 +1708,7 @@ const section: Section = {
       answer: "was buzzing",
       explanation: "Past continuous describes background atmosphere. \"Was buzzing\" creates the setting.",
       wrongAnswers: [
-        { text: "buzzed", explanation: "\"Buzzed\" (past simple) makes this a completed action rather than ongoing background." },
+        { text: "has buzzed", explanation: "\"Has buzzed\" is the present perfect. The narrative is in the past — use \"was buzzing.\"" },
         { text: "buzzes", explanation: "\"Buzzes\" is present tense. The narrative is in the past." },
         { text: "had buzzed", explanation: "\"Had buzzed\" suggests the activity stopped. Past continuous shows ongoing background." },
         { text: "is buzzing", explanation: "\"Is buzzing\" is present continuous. The narrative is in the past." },
@@ -1724,7 +1724,7 @@ const section: Section = {
       answer: "were singing",
       explanation: "Past continuous describes background sounds. \"Were singing\" creates atmosphere.",
       wrongAnswers: [
-        { text: "sang", explanation: "\"Sang\" (past simple) makes this a completed action rather than ongoing background." },
+        { text: "have sung", explanation: "\"Have sung\" is the present perfect. The narrative is in the past — use \"were singing.\"" },
         { text: "sing", explanation: "\"Sing\" is present tense. The narrative is in the past." },
         { text: "had sung", explanation: "\"Had sung\" suggests the birds stopped. Past continuous shows ongoing background." },
         { text: "are singing", explanation: "\"Are singing\" is present continuous. The narrative is in the past." },
