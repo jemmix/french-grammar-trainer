@@ -73,7 +73,7 @@ interface InputQuestion {
   type: "input";
   ruleId: string;
   prompt: string;
-  phrase: string;
+  phrase: { before: string; after: string };
   answer: string;
   explanation: string;
   wrongAnswers: WrongAnswer[];
@@ -149,13 +149,9 @@ function validateMcq(q: McqQuestion) {
 }
 
 function validateInput(q: InputQuestion) {
-  // Check phrase has exactly one placeholder (2+ consecutive underscores)
-  if (!q.phrase || !q.phrase.trim()) {
+  // Check phrase has before/after structure
+  if (!q.phrase || (!q.phrase.before.trim() && !q.phrase.after.trim())) {
     error(q.id, "Missing or empty phrase");
-  } else {
-    const placeholders = q.phrase.match(/_{2,}/g)?.length ?? 0;
-    if (placeholders === 0) error(q.id, "phrase has no placeholder (need 2+ consecutive underscores)");
-    else if (placeholders > 1) error(q.id, `phrase has ${placeholders} placeholders — must have exactly 1`);
   }
 
   // Check answer exists
@@ -219,21 +215,34 @@ async function validateSection(section: Section, filename: string) {
   }
 }
 
-async function main() {
-  const sectionsDir = join(import.meta.dirname ?? ".", "..", "src", "data", "sections");
-  const files = readdirSync(sectionsDir).filter((f) => f.endsWith(".ts"));
+async function validateLang(lang: string): Promise<number> {
+  const sectionsDir = join(import.meta.dirname ?? ".", "..", "src", "data", lang);
+  const files = readdirSync(sectionsDir).filter((f) => /^\d\d-/.test(f) && f.endsWith(".ts"));
 
-  console.log(`Found ${files.length} section file(s) to validate`);
+  console.log(`\n[${lang}] Found ${files.length} section file(s) to validate`);
 
+  const before = errorCount;
   for (const file of files) {
     const mod = (await import(join(sectionsDir, file))) as { default: Section };
     await validateSection(mod.default, file);
   }
+  return errorCount - before;
+}
+
+async function main() {
+  const args = process.argv.slice(2);
+  const langArg = args.find((a) => a.startsWith("--lang="))?.slice(7);
+  const langs = langArg ? [langArg] : ["en", "fr"];
+
+  let totalErrors = 0;
+  for (const lang of langs) {
+    totalErrors += await validateLang(lang);
+  }
 
   console.log(`\n${"=".repeat(50)}`);
-  console.log(`Errors: ${errorCount}, Warnings: ${warnCount}`);
+  console.log(`Total errors: ${totalErrors}, Warnings: ${warnCount}`);
 
-  if (errorCount > 0) {
+  if (totalErrors > 0) {
     console.log("VALIDATION FAILED");
     process.exit(1);
   } else {
