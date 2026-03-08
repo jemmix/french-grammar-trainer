@@ -5292,7 +5292,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-16",
       generatedBy: "opencode",
-      prompt: "Which sentence is correct?",
+      prompt: "Which sentence correctly uses past continuous to show the crying was already in progress when the movie ended?",
       choices: [
         { text: "When the movie ended, we were crying.", correct: true, explanation: "Past simple (ended) for the completed event; past continuous (were crying) for the ongoing emotional state." },
         { text: "When the movie was ending, we cried.", correct: false, explanation: "The movie ending should be in past simple; crying was ongoing and should be continuous." },
@@ -6789,14 +6789,14 @@ const section: Section = {
       ruleId: "03-20",
       generatedBy: "opencode",
       prompt: "Complete the sentence with the past continuous of \"have.\"",
-      phrase: { before: "At 10 a.m. yesterday, the team ", after: " a meeting." },
+      phrase: { before: "At 10 a.m. yesterday, she ", after: " a meeting with the team." },
       answer: "was having",
       explanation: "Past continuous with specific time shows an action in progress at that moment.",
       wrongAnswers: [
         { text: "had", explanation: "Past simple doesn't emphasize the meeting was in progress at 10 a.m." },
         { text: "had had", explanation: "Past perfect changes the temporal relationship." },
         { text: "has", explanation: "Present simple is incorrect for past context." },
-        { text: "were having", explanation: "Subject \"team\" (singular collective) requires \"was.\"" },
+        { text: "were having", explanation: "Subject \"she\" requires \"was,\" not \"were.\"" },
       ],
     },
     {
