@@ -6496,7 +6496,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-20",
       generatedBy: "opencode",
-      prompt: "Which tense is correct: \"When I arrived home, my wife ___ dinner.\"",
+      prompt: "Which tense shows the cooking was in progress when you arrived home?",
       choices: [
         { text: "was cooking", correct: true, explanation: "Past continuous (was cooking) because the cooking was in progress when the speaker arrived." },
         { text: "cooked", correct: false, explanation: "Past simple doesn't show the cooking was in progress at the moment of arrival." },
@@ -6574,7 +6574,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-20",
       generatedBy: "opencode",
-      prompt: "Which tense is correct: \"All morning, the baby ___ peacefully.\"",
+      prompt: "Which tense correctly uses past continuous in \"All morning, the baby ___ peacefully\"?",
       choices: [
         { text: "was sleeping", correct: true, explanation: "Past continuous (was sleeping) with \"all morning\" emphasizes the duration and ongoing nature." },
         { text: "slept", correct: false, explanation: "Past simple doesn't emphasize the continuous nature as strongly." },
@@ -6600,7 +6600,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-20",
       generatedBy: "opencode",
-      prompt: "Which tense is correct: \"From 2 to 4 p.m., they ___ in a meeting.\"",
+      prompt: "Which tense correctly uses past continuous in \"From 2 to 4 p.m., they ___ in a meeting\"?",
       choices: [
         { text: "were sitting", correct: true, explanation: "Past continuous (were sitting) with time period shows an ongoing state during that time." },
         { text: "sat", correct: false, explanation: "Past simple doesn't emphasize the continuous nature of being in a meeting." },
@@ -6613,7 +6613,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-20",
       generatedBy: "opencode",
-      prompt: "Choose the correct tense: \"She ___ dinner when the guests arrived.\"",
+      prompt: "Which tense shows that dinner preparation was in progress when the guests arrived?",
       choices: [
         { text: "was preparing", correct: true, explanation: "Past continuous (was preparing) shows an action in progress when interrupted." },
         { text: "prepared", correct: false, explanation: "Past simple treats preparing as a completed action rather than something in progress when the guests arrived." },
@@ -6652,7 +6652,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-20",
       generatedBy: "opencode",
-      prompt: "Which tense is correct: \"When the teacher entered, the students ___ loudly.\"",
+      prompt: "Which tense shows the students were already talking when the teacher entered?",
       choices: [
         { text: "were talking", correct: true, explanation: "Past continuous (were talking) shows an action in progress when the teacher entered." },
         { text: "talked", correct: false, explanation: "Past simple doesn't convey that the talking was already in progress when the teacher entered." },
@@ -6665,7 +6665,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-20",
       generatedBy: "opencode",
-      prompt: "Choose the correct tense: \"While the band ___ , the audience cheered.\"",
+      prompt: "Which tense correctly uses past continuous for the band's ongoing performance in \"While the band ___, the audience cheered\"?",
       choices: [
         { text: "was playing", correct: true, explanation: "Past continuous (was playing) with \"while\" shows the ongoing background action." },
         { text: "played", correct: false, explanation: "Past simple doesn't emphasize the ongoing nature of the performance." },
@@ -6717,7 +6717,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-20",
       generatedBy: "opencode",
-      prompt: "Choose the correct tense: \"The children ___ in the garden all afternoon.\"",
+      prompt: "Which tense correctly uses past continuous in \"The children ___ in the garden all afternoon\"?",
       choices: [
         { text: "were playing", correct: true, explanation: "Past continuous (were playing) with \"all afternoon\" emphasizes the duration." },
         { text: "played", correct: false, explanation: "Past simple doesn't emphasize the continuous nature as strongly." },
