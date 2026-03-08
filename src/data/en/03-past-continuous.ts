@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "03-past-continuous",
   title: "Past Continuous",
-  description: "Form and uses of the past continuous tense",
+  description: "Formation and use of the past continuous tense",
   rules: [
     { id: "03-01", sectionId: "03-past-continuous", title: "Past continuous: formation (was / were + verb-ing)" },
     { id: "03-02", sectionId: "03-past-continuous", title: "Past continuous: negative form (wasn't / weren't + verb-ing)" },
@@ -5162,7 +5162,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-16",
       generatedBy: "opencode",
-      prompt: "Which sentence is grammatically correct?",
+      prompt: "Which sentence correctly uses past continuous for the background action and past simple for the event?",
       choices: [
         { text: "While I was studying, my roommate came home.", correct: true, explanation: "\"While\" introduces the ongoing action (past continuous), and the main clause uses past simple for the interrupting event." },
         { text: "While I studied, my roommate was coming home.", correct: false, explanation: "The ongoing action should be in past continuous after \"while.\"" },
@@ -5175,7 +5175,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-16",
       generatedBy: "opencode",
-      prompt: "Choose the correct complex sentence.",
+      prompt: "Choose the complex sentence using past continuous for the background action and past simple for the main event.",
       choices: [
         { text: "As I was walking to work, I saw an old friend.", correct: true, explanation: "\"As\" introduces the ongoing background action (past continuous), and the main event is in past simple." },
         { text: "As I walked to work, I was seeing an old friend.", correct: false, explanation: "The background action should be in past continuous; \"see\" is typically a momentary event in past simple." },
@@ -5201,7 +5201,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-16",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence.",
+      prompt: "Choose the sentence using past continuous for the background action and past simple for the event.",
       choices: [
         { text: "He fell asleep while he was reading the book.", correct: true, explanation: "\"While\" introduces the ongoing action (was reading), and the main clause uses past simple (fell asleep) for the event that occurred during it." },
         { text: "He was falling asleep while he read the book.", correct: false, explanation: "The main event should be in past simple, and the ongoing action in continuous." },
@@ -5214,7 +5214,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-16",
       generatedBy: "opencode",
-      prompt: "Which sentence is correct?",
+      prompt: "Which sentence correctly uses past continuous for the background state and past simple for the action?",
       choices: [
         { text: "The sun was shining when we left the house.", correct: true, explanation: "Past continuous (was shining) describes the background state; past simple (left) describes the completed action." },
         { text: "The sun shone when we were leaving the house.", correct: false, explanation: "Background states are better expressed with past continuous." },
@@ -5253,7 +5253,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-16",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence.",
+      prompt: "Choose the sentence using past continuous for the background action and past simple for the interrupting event.",
       choices: [
         { text: "While they were eating dinner, someone knocked on the door.", correct: true, explanation: "\"While\" introduces the ongoing action (were eating); past simple (knocked) for the interruption." },
         { text: "While they ate dinner, someone was knocking on the door.", correct: false, explanation: "The ongoing action should be continuous; the interruption should be past simple." },
@@ -5279,7 +5279,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-16",
       generatedBy: "opencode",
-      prompt: "Choose the correct complex sentence.",
+      prompt: "Choose the complex sentence using past continuous for the background action and past simple for the main event.",
       choices: [
         { text: "As she was leaving the office, she realized she had forgotten her keys.", correct: true, explanation: "\"As\" introduces the ongoing action (was leaving); past simple (realized) for the mental event that occurred." },
         { text: "As she left the office, she was realizing she had forgotten her keys.", correct: false, explanation: "\"Realize\" is typically a momentary event, not continuous." },
@@ -5357,7 +5357,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-16",
       generatedBy: "opencode",
-      prompt: "Choose the correct complex sentence.",
+      prompt: "Choose the sentence using past continuous for the ongoing arrival and past simple for the host's action.",
       choices: [
         { text: "As the guests were arriving, the host prepared the drinks.", correct: true, explanation: "\"As\" introduces the ongoing action (were arriving); past simple (prepared) for the action taken during that time." },
         { text: "As the guests arrived, the host was preparing the drinks.", correct: false, explanation: "The guests' arrival was ongoing; preparing should be past simple or both could be continuous." },
@@ -5370,7 +5370,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-16",
       generatedBy: "opencode",
-      prompt: "Which sentence correctly combines the tenses?",
+      prompt: "Which sentence correctly uses past simple for the act of looking and past continuous for the weather condition?",
       choices: [
         { text: "When I looked out the window, it was snowing heavily.", correct: true, explanation: "Past simple (looked) for the momentary action; past continuous (was snowing) for the ongoing weather condition." },
         { text: "When I was looking out the window, it snowed heavily.", correct: false, explanation: "Looking should be past simple; snowing was ongoing." },
@@ -5383,7 +5383,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-16",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence.",
+      prompt: "Choose the sentence using past continuous for the band's performance and past simple for the audience's reaction.",
       choices: [
         { text: "While the band was playing, the audience cheered.", correct: true, explanation: "\"While\" introduces the ongoing action (was playing); past simple (cheered) for the reaction that occurred." },
         { text: "While the band played, the audience was cheering.", correct: false, explanation: "Playing was ongoing; cheering should be past simple." },
@@ -5489,7 +5489,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence.",
+      prompt: "Which sentence correctly uses past continuous with \"all morning\"?",
       choices: [
         { text: "We were hiking all morning yesterday.", correct: true, explanation: "\"All morning\" indicates duration, which requires past continuous to show an ongoing activity." },
         { text: "We hiked all morning yesterday.", correct: false, explanation: "Past simple can work but doesn't emphasize the ongoing nature as strongly." },
@@ -5502,7 +5502,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "opencode",
-      prompt: "Which sentence is grammatically correct?",
+      prompt: "Which sentence correctly uses past continuous with this time expression?",
       choices: [
         { text: "She was working from 3 to 5 yesterday afternoon.", correct: true, explanation: "\"From [time] to [time]\" indicates a period during which an action was ongoing, requiring past continuous." },
         { text: "She worked from 3 to 5 yesterday afternoon.", correct: false, explanation: "Past simple is acceptable but past continuous better emphasizes the ongoing nature." },
@@ -5515,7 +5515,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence with a time expression.",
+      prompt: "Which sentence correctly uses past continuous with \"at midnight\"?",
       choices: [
         { text: "At midnight, they were still celebrating the New Year.", correct: true, explanation: "\"At midnight\" is a specific point in time, and past continuous shows what was happening at that exact moment." },
         { text: "At midnight, they celebrated the New Year.", correct: false, explanation: "Past simple suggests a completed action rather than one in progress." },
@@ -5554,7 +5554,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "opencode",
-      prompt: "Which sentence is correct?",
+      prompt: "Which sentence correctly uses past continuous with a \"from...to...\" time expression?",
       choices: [
         { text: "From 9 to 11 last night, I was studying for my exam.", correct: true, explanation: "\"From [time] to [time]\" indicates a continuous period, and past continuous shows ongoing action during that period." },
         { text: "From 9 to 11 last night, I studied for my exam.", correct: false, explanation: "Past simple doesn't emphasize the ongoing nature as strongly." },
@@ -5567,7 +5567,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence.",
+      prompt: "Which sentence correctly uses past continuous with \"at noon\"?",
       choices: [
         { text: "At noon, the sun was shining brightly.", correct: true, explanation: "\"At noon\" is a specific time, and past continuous describes what was happening at that moment." },
         { text: "At noon, the sun shone brightly.", correct: false, explanation: "Past simple describes a completed action or state." },
@@ -5593,7 +5593,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence.",
+      prompt: "Which sentence correctly uses past continuous with \"at 7:30\"?",
       choices: [
         { text: "At 7:30 this morning, I was eating breakfast.", correct: true, explanation: "\"At [specific time]\" with past continuous shows an action in progress at that exact time." },
         { text: "At 7:30 this morning, I ate breakfast.", correct: false, explanation: "Past simple suggests a completed action." },
@@ -5606,7 +5606,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "opencode",
-      prompt: "Which sentence is grammatically correct?",
+      prompt: "Which sentence correctly uses past continuous with a \"from...to...\" time expression?",
       choices: [
         { text: "From 6 to 8 p.m., they were preparing dinner for the guests.", correct: true, explanation: "\"From [time] to [time]\" indicates a period, and past continuous shows ongoing activity during that period." },
         { text: "From 6 to 8 p.m., they prepared dinner for the guests.", correct: false, explanation: "Past simple doesn't emphasize the ongoing nature." },
@@ -5619,7 +5619,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence with a time expression.",
+      prompt: "Which sentence correctly uses past continuous with \"all night long\"?",
       choices: [
         { text: "All night long, the wind was howling outside.", correct: true, explanation: "\"All night long\" emphasizes duration, and past continuous describes the ongoing nature of the action." },
         { text: "All night long, the wind howled outside.", correct: false, explanation: "Past simple describes a completed action." },
@@ -5632,7 +5632,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "opencode",
-      prompt: "Which sentence is correct?",
+      prompt: "Which sentence correctly uses past continuous with \"at 3 o'clock\"?",
       choices: [
         { text: "At 3 o'clock, we were having a meeting.", correct: true, explanation: "\"At [specific time]\" with past continuous indicates an action in progress at that moment." },
         { text: "At 3 o'clock, we had a meeting.", correct: false, explanation: "Past simple suggests a scheduled event, not necessarily in progress." },
@@ -5645,7 +5645,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence.",
+      prompt: "Which sentence correctly uses past continuous with \"all morning\"?",
       choices: [
         { text: "All morning, he was trying to fix the computer.", correct: true, explanation: "\"All morning\" indicates duration, and past continuous emphasizes the ongoing effort." },
         { text: "All morning, he tried to fix the computer.", correct: false, explanation: "Past simple doesn't emphasize the continuous nature as strongly." },
@@ -5671,12 +5671,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "opencode",
-      prompt: "Choose the grammatically correct sentence.",
+      prompt: "Which sentence correctly uses past continuous with a \"from...to...\" time expression?",
       choices: [
-        { text: "From 1 to 2 p.m., the store was closed for lunch.", correct: true, explanation: "\"From [time] to [time]\" indicates a period, and past continuous (or simple past with \"closed\" as adjective) describes the state." },
-        { text: "From 1 to 2 p.m., the store closed for lunch.", correct: false, explanation: "Past simple suggests the action of closing, not the state." },
-        { text: "From 1 to 2 p.m., the store closes for lunch.", correct: false, explanation: "This is present tense." },
-        { text: "From 1 to 2 p.m., the store had closed for lunch.", correct: false, explanation: "Past perfect indicates completion before another event." },
+        { text: "From 1 to 2 p.m., the employees were taking their lunch break.", correct: true, explanation: "\"From [time] to [time]\" indicates a period; past continuous shows what was happening throughout that period." },
+        { text: "From 1 to 2 p.m., the employees took their lunch break.", correct: false, explanation: "Past simple doesn't show the break as an ongoing activity during that period." },
+        { text: "From 1 to 2 p.m., the employees take their lunch break.", correct: false, explanation: "This is present tense, not past continuous." },
+        { text: "From 1 to 2 p.m., the employees had taken their lunch break.", correct: false, explanation: "Past perfect suggests the break was completed before another past event." },
       ],
     },
     {
@@ -5697,7 +5697,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence with a time expression.",
+      prompt: "Which sentence correctly uses past continuous with \"at 6 a.m.\"?",
       choices: [
         { text: "At 6 a.m., the birds were singing in the trees.", correct: true, explanation: "\"At [specific time]\" with past continuous shows what was happening at that exact moment." },
         { text: "At 6 a.m., the birds sang in the trees.", correct: false, explanation: "Past simple doesn't emphasize the ongoing activity." },
@@ -5723,12 +5723,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence.",
+      prompt: "Which sentence correctly uses a time expression with a stative verb in the past?",
       choices: [
-        { text: "All day yesterday, I was feeling terrible.", correct: true, explanation: "\"All day\" indicates duration, and past continuous describes the ongoing state or feeling." },
-        { text: "All day yesterday, I felt terrible.", correct: false, explanation: "Past simple describes a completed state." },
-        { text: "All day yesterday, I feel terrible.", correct: false, explanation: "This is present tense." },
-        { text: "All day yesterday, I had felt terrible.", correct: false, explanation: "Past perfect indicates a different time relationship." },
+        { text: "All day yesterday, I felt terrible.", correct: true, explanation: "\"Feel\" is a stative verb describing a state, not an action. Stative verbs don't normally take continuous form — use past simple \"felt.\"" },
+        { text: "All day yesterday, I was feeling terrible.", correct: false, explanation: "\"Feel\" is a stative verb and is not normally used in continuous form. Use past simple \"felt\" instead." },
+        { text: "All day yesterday, I feel terrible.", correct: false, explanation: "Present simple \"feel\" is incorrect in a past context." },
+        { text: "All day yesterday, I had felt terrible.", correct: false, explanation: "Past perfect \"had felt\" suggests the feeling ended before another past event, changing the meaning." },
       ],
     },
     {
@@ -5816,7 +5816,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Which sentence correctly shows two parallel actions in the past?",
+      prompt: "Which sentence correctly uses past continuous in BOTH clauses to show two parallel past actions?",
       choices: [
         { text: "He was cooking dinner while she was reading a book.", correct: true, explanation: "Both verbs in past continuous (was cooking, was reading) show two simultaneous ongoing actions." },
         { text: "He cooked dinner while she read a book.", correct: false, explanation: "Past simple for both suggests completed actions, not simultaneous ongoing actions." },
@@ -5829,7 +5829,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Choose the sentence that shows parallel actions.",
+      prompt: "Choose the sentence that uses past continuous in BOTH clauses to show parallel actions.",
       choices: [
         { text: "While the children were playing outside, their parents were relaxing inside.", correct: true, explanation: "Both clauses use past continuous to show two simultaneous ongoing activities." },
         { text: "While the children played outside, their parents relaxed inside.", correct: false, explanation: "Past simple for both doesn't emphasize the ongoing nature." },
@@ -5842,7 +5842,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Which sentence correctly describes parallel actions?",
+      prompt: "Which sentence correctly uses past continuous in BOTH clauses to describe parallel actions?",
       choices: [
         { text: "She was listening to music while she was working on her laptop.", correct: true, explanation: "Both verbs in past continuous (was listening, was working) show two simultaneous ongoing actions." },
         { text: "She listened to music while she worked on her laptop.", correct: false, explanation: "Past simple for both suggests completed actions." },
@@ -5855,7 +5855,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence with parallel actions.",
+      prompt: "Choose the sentence using past continuous in BOTH clauses to show parallel actions.",
       choices: [
         { text: "The sun was setting while the birds were returning to their nests.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing processes in nature." },
         { text: "The sun set while the birds returned to their nests.", correct: false, explanation: "Past simple for both doesn't emphasize the ongoing nature." },
@@ -5868,7 +5868,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Which sentence shows two parallel ongoing actions?",
+      prompt: "Which sentence uses past continuous in BOTH clauses to show two parallel ongoing actions?",
       choices: [
         { text: "While he was painting the walls, she was fixing the furniture.", correct: true, explanation: "Both clauses use past continuous to show two simultaneous ongoing activities." },
         { text: "While he painted the walls, she fixed the furniture.", correct: false, explanation: "Past simple for both suggests completed actions." },
@@ -5881,7 +5881,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence.",
+      prompt: "Choose the sentence using past continuous in BOTH clauses for parallel actions.",
       choices: [
         { text: "The students were taking notes while the professor was explaining the concept.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing actions in the classroom." },
         { text: "The students took notes while the professor explained the concept.", correct: false, explanation: "Past simple for both doesn't emphasize the ongoing nature." },
@@ -5894,7 +5894,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Which sentence correctly shows parallel actions?",
+      prompt: "Which sentence correctly uses past continuous in BOTH clauses to show parallel actions?",
       choices: [
         { text: "While the band was playing, the audience was dancing.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing activities." },
         { text: "While the band played, the audience danced.", correct: false, explanation: "Past simple for both doesn't emphasize the ongoing nature." },
@@ -5907,7 +5907,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Choose the sentence with parallel actions.",
+      prompt: "Choose the sentence that uses past continuous in BOTH clauses for parallel actions.",
       choices: [
         { text: "She was washing the dishes while he was drying them.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing activities." },
         { text: "She washed the dishes while he dried them.", correct: false, explanation: "Past simple for both suggests completed actions." },
@@ -5920,7 +5920,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Which sentence correctly describes parallel actions?",
+      prompt: "Which sentence correctly uses past continuous in BOTH clauses to describe parallel actions?",
       choices: [
         { text: "The dog was barking while the cat was sleeping on the couch.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing activities by the pets." },
         { text: "The dog barked while the cat slept on the couch.", correct: false, explanation: "Past simple for both doesn't emphasize the ongoing nature." },
@@ -5933,7 +5933,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence.",
+      prompt: "Choose the sentence using past continuous in BOTH clauses for parallel actions.",
       choices: [
         { text: "While the mechanic was fixing the car, the customer was waiting in the lobby.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing activities." },
         { text: "While the mechanic fixed the car, the customer waited in the lobby.", correct: false, explanation: "Past simple for both doesn't emphasize the ongoing nature." },
@@ -5946,7 +5946,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Which sentence shows two parallel ongoing actions?",
+      prompt: "Which sentence uses past continuous in BOTH clauses to show two parallel ongoing actions?",
       choices: [
         { text: "The wind was blowing while the rain was falling.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing weather conditions." },
         { text: "The wind blew while the rain fell.", correct: false, explanation: "Past simple for both doesn't emphasize the ongoing nature." },
@@ -5959,7 +5959,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence with parallel actions.",
+      prompt: "Choose the sentence using past continuous in BOTH clauses to show parallel actions.",
       choices: [
         { text: "While the chef was preparing the main course, the assistant was making the dessert.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing cooking activities." },
         { text: "While the chef prepared the main course, the assistant made the dessert.", correct: false, explanation: "Past simple for both suggests completed actions." },
@@ -5972,7 +5972,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Which sentence correctly shows parallel actions?",
+      prompt: "Which sentence correctly uses past continuous in BOTH clauses to show parallel actions?",
       choices: [
         { text: "She was talking on the phone while she was checking her email.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing activities." },
         { text: "She talked on the phone while she checked her email.", correct: false, explanation: "Past simple for both doesn't emphasize the ongoing nature." },
@@ -5985,7 +5985,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Choose the sentence with parallel actions.",
+      prompt: "Choose the sentence using past continuous in BOTH clauses to show parallel actions.",
       choices: [
         { text: "The old man was reading the newspaper while his wife was knitting a sweater.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing activities." },
         { text: "The old man read the newspaper while his wife knitted a sweater.", correct: false, explanation: "Past simple for both doesn't emphasize the ongoing nature." },
@@ -5998,7 +5998,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Which sentence correctly describes parallel actions?",
+      prompt: "Which sentence correctly uses past continuous in BOTH clauses to describe parallel actions?",
       choices: [
         { text: "While the actors were rehearsing, the director was watching from the audience.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing activities." },
         { text: "While the actors rehearsed, the director watched from the audience.", correct: false, explanation: "Past simple for both doesn't emphasize the ongoing nature." },
@@ -6011,7 +6011,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence.",
+      prompt: "Choose the sentence using past continuous in BOTH clauses for parallel actions.",
       choices: [
         { text: "The baby was sleeping while the toddler was playing with toys.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing activities." },
         { text: "The baby slept while the toddler played with toys.", correct: false, explanation: "Past simple for both doesn't emphasize the ongoing nature." },
@@ -6024,7 +6024,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Which sentence shows two parallel ongoing actions?",
+      prompt: "Which sentence uses past continuous in BOTH clauses to show two parallel ongoing actions?",
       choices: [
         { text: "While the gardener was mowing the lawn, the neighbor was watering the flowers.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing gardening activities." },
         { text: "While the gardener mowed the lawn, the neighbor watered the flowers.", correct: false, explanation: "Past simple for both doesn't emphasize the ongoing nature." },
@@ -6037,7 +6037,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Choose the sentence with parallel actions.",
+      prompt: "Choose the sentence using past continuous in BOTH clauses for parallel actions.",
       choices: [
         { text: "She was singing while she was playing the guitar.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing musical activities." },
         { text: "She sang while she played the guitar.", correct: false, explanation: "Past simple for both doesn't emphasize the ongoing nature." },
@@ -6050,7 +6050,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Which sentence correctly shows parallel actions?",
+      prompt: "Which sentence correctly uses past continuous in BOTH clauses to show parallel actions?",
       choices: [
         { text: "While the salesperson was helping one customer, another customer was browsing the shelves.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing activities in the store." },
         { text: "While the salesperson helped one customer, another customer browsed the shelves.", correct: false, explanation: "Past simple for both doesn't emphasize the ongoing nature." },
@@ -6063,7 +6063,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Choose the correct sentence.",
+      prompt: "Choose the sentence using past continuous in BOTH clauses for parallel actions.",
       choices: [
         { text: "The train was moving while the passengers were looking out the windows.", correct: true, explanation: "Both verbs in past continuous show two simultaneous ongoing activities." },
         { text: "The train moved while the passengers looked out the windows.", correct: false, explanation: "Past simple for both doesn't emphasize the ongoing nature." },
@@ -6092,7 +6092,7 @@ const section: Section = {
       type: "input",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Complete with past continuous for parallel action.",
+      prompt: "Complete with the past continuous of \"cycle\" to show a parallel action.",
       phrase: { before: "While he was running on the treadmill, his friend ", after: " in the park." },
       answer: "was cycling",
       explanation: "Past continuous \"was cycling\" shows the second simultaneous ongoing action.",
@@ -6108,7 +6108,7 @@ const section: Section = {
       type: "input",
       ruleId: "03-18",
       generatedBy: "opencode",
-      prompt: "Complete with past continuous for parallel action.",
+      prompt: "Complete with the past continuous of \"clean\" to show a parallel action.",
       phrase: { before: "While Mom was cooking dinner, Dad ", after: " the kitchen." },
       answer: "was cleaning",
       explanation: "Past continuous \"was cleaning\" shows the second simultaneous ongoing action.",
@@ -6182,7 +6182,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "opencode",
-      prompt: "Which sentence is a polite way to ask for information?",
+      prompt: "Which sentence is a polite way to ask for information, using past continuous?",
       choices: [
         { text: "I was wondering if you knew the answer.", correct: true, explanation: "\"I was wondering\" is a standard polite way to ask for information indirectly." },
         { text: "I wonder if you knew the answer.", correct: false, explanation: "Present simple is more direct." },
@@ -6195,7 +6195,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "opencode",
-      prompt: "Choose the polite request.",
+      prompt: "Choose the polite request using past continuous.",
       choices: [
         { text: "I was thinking perhaps you could lend me your notes.", correct: true, explanation: "\"I was thinking\" creates a tentative, polite tone for making a request." },
         { text: "I think perhaps you could lend me your notes.", correct: false, explanation: "Present simple is more direct." },
@@ -6208,7 +6208,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "opencode",
-      prompt: "Which sentence is a polite way to make a suggestion?",
+      prompt: "Which sentence is a polite way to make a suggestion, using past continuous?",
       choices: [
         { text: "We were wondering if you'd like to come along.", correct: true, explanation: "\"We were wondering\" creates a polite, indirect invitation." },
         { text: "We wonder if you'd like to come along.", correct: false, explanation: "Present simple is more direct." },
@@ -6234,7 +6234,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "opencode",
-      prompt: "Which sentence is a polite way to ask for a favor?",
+      prompt: "Which sentence is a polite way to ask for a favor, using past continuous?",
       choices: [
         { text: "I was hoping you might be able to help me move this weekend.", correct: true, explanation: "\"I was hoping\" creates a soft, polite tone for making a request." },
         { text: "I hope you might be able to help me move this weekend.", correct: false, explanation: "Present simple is more direct." },
@@ -6247,7 +6247,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "opencode",
-      prompt: "Choose the polite request.",
+      prompt: "Choose the polite request using past continuous.",
       choices: [
         { text: "I was wondering if it would be possible to get a refund.", correct: true, explanation: "\"I was wondering\" politely introduces a potentially difficult request." },
         { text: "I wonder if it would be possible to get a refund.", correct: false, explanation: "Present simple is more direct." },
@@ -6260,7 +6260,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "opencode",
-      prompt: "Which sentence is a polite way to ask for clarification?",
+      prompt: "Which sentence is a polite way to ask for clarification, using past continuous?",
       choices: [
         { text: "I was wondering if you could explain that again.", correct: true, explanation: "\"I was wondering\" creates a polite, non-demanding tone for asking for help." },
         { text: "I wonder if you could explain that again.", correct: false, explanation: "Present simple is more direct." },
@@ -6286,7 +6286,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "opencode",
-      prompt: "Which sentence is a polite way to ask for permission?",
+      prompt: "Which sentence is a polite way to ask for permission, using past continuous?",
       choices: [
         { text: "I was wondering if I could borrow your car for the weekend.", correct: true, explanation: "\"I was wondering\" creates a polite, tentative tone for asking permission." },
         { text: "I wonder if I could borrow your car for the weekend.", correct: false, explanation: "Present simple is more direct." },
@@ -6299,7 +6299,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "opencode",
-      prompt: "Choose the polite request.",
+      prompt: "Choose the polite request using past continuous.",
       choices: [
         { text: "I was hoping you could spare a few minutes to talk.", correct: true, explanation: "\"I was hoping\" creates a polite, soft tone for requesting someone's time." },
         { text: "I hope you could spare a few minutes to talk.", correct: false, explanation: "Present simple is more direct." },
@@ -6312,7 +6312,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "opencode",
-      prompt: "Which sentence is a polite way to make an inquiry?",
+      prompt: "Which sentence is a polite way to make an inquiry, using past continuous?",
       choices: [
         { text: "I was wondering if the position is still available.", correct: true, explanation: "\"I was wondering\" is a standard polite way to inquire about job openings." },
         { text: "I wonder if the position is still available.", correct: false, explanation: "Present simple is more direct." },
@@ -6338,7 +6338,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "opencode",
-      prompt: "Which sentence is a polite way to ask for advice?",
+      prompt: "Which sentence is a polite way to ask for advice, using past continuous?",
       choices: [
         { text: "I was wondering if you could give me some advice on this matter.", correct: true, explanation: "\"I was wondering\" creates a polite, respectful tone for seeking advice." },
         { text: "I wonder if you could give me some advice on this matter.", correct: false, explanation: "Present simple is more direct." },
@@ -6351,7 +6351,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "opencode",
-      prompt: "Choose the polite request.",
+      prompt: "Choose the polite request using past continuous.",
       choices: [
         { text: "We were hoping you might consider our proposal.", correct: true, explanation: "\"We were hoping\" creates a polite, professional tone for business requests." },
         { text: "We hope you might consider our proposal.", correct: false, explanation: "Present simple is more direct." },
@@ -6364,7 +6364,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "opencode",
-      prompt: "Which sentence is a polite way to ask for a meeting?",
+      prompt: "Which sentence is a polite way to ask for a meeting, using past continuous?",
       choices: [
         { text: "I was wondering if you might have time to meet next week.", correct: true, explanation: "\"I was wondering\" creates a polite, tentative tone for requesting a meeting." },
         { text: "I wonder if you might have time to meet next week.", correct: false, explanation: "Present simple is more direct." },
@@ -6390,7 +6390,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "opencode",
-      prompt: "Which sentence is a polite way to ask for feedback?",
+      prompt: "Which sentence is a polite way to ask for feedback, using past continuous?",
       choices: [
         { text: "I was wondering if you could review my draft and give me some feedback.", correct: true, explanation: "\"I was wondering\" creates a polite, respectful tone for requesting feedback." },
         { text: "I wonder if you could review my draft and give me some feedback.", correct: false, explanation: "Present simple is more direct." },
@@ -6403,7 +6403,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "opencode",
-      prompt: "Choose the polite request.",
+      prompt: "Choose the polite request using past continuous.",
       choices: [
         { text: "I was hoping you might be able to recommend a good restaurant.", correct: true, explanation: "\"I was hoping\" creates a polite, soft tone for asking for a recommendation." },
         { text: "I hope you might be able to recommend a good restaurant.", correct: false, explanation: "Present simple is more direct." },
@@ -6499,7 +6499,7 @@ const section: Section = {
       prompt: "Which tense is correct: \"When I arrived home, my wife ___ dinner.\"",
       choices: [
         { text: "was cooking", correct: true, explanation: "Past continuous (was cooking) because the cooking was in progress when the speaker arrived." },
-        { text: "cooked", correct: false, explanation: "Past simple suggests the cooking happened after the arrival, not during it." },
+        { text: "cooked", correct: false, explanation: "Past simple doesn't show the cooking was in progress at the moment of arrival." },
         { text: "had cooked", correct: false, explanation: "Past perfect suggests the cooking was completed before the arrival." },
         { text: "cooks", correct: false, explanation: "Present simple is incorrect for past context." },
       ],
@@ -6616,7 +6616,7 @@ const section: Section = {
       prompt: "Choose the correct tense: \"She ___ dinner when the guests arrived.\"",
       choices: [
         { text: "was preparing", correct: true, explanation: "Past continuous (was preparing) shows an action in progress when interrupted." },
-        { text: "prepared", correct: false, explanation: "Past simple suggests she prepared dinner after they arrived." },
+        { text: "prepared", correct: false, explanation: "Past simple treats preparing as a completed action rather than something in progress when the guests arrived." },
         { text: "had prepared", correct: false, explanation: "Past perfect suggests she finished before they arrived." },
         { text: "prepares", correct: false, explanation: "Present simple is incorrect for past context." },
       ],
@@ -6655,7 +6655,7 @@ const section: Section = {
       prompt: "Which tense is correct: \"When the teacher entered, the students ___ loudly.\"",
       choices: [
         { text: "were talking", correct: true, explanation: "Past continuous (were talking) shows an action in progress when the teacher entered." },
-        { text: "talked", correct: false, explanation: "Past simple suggests they talked after the teacher entered." },
+        { text: "talked", correct: false, explanation: "Past simple doesn't convey that the talking was already in progress when the teacher entered." },
         { text: "had talked", correct: false, explanation: "Past perfect suggests they finished talking before the teacher entered." },
         { text: "talk", correct: false, explanation: "Present simple is incorrect for past context." },
       ],
@@ -6756,7 +6756,7 @@ const section: Section = {
       type: "input",
       ruleId: "03-20",
       generatedBy: "opencode",
-      prompt: "Choose the correct tense (past simple or past continuous) and complete the sentence.",
+      prompt: "Complete the sentence with the correct past simple form of \"go off.\"",
       phrase: { before: "When the fire alarm ", after: " , we were working in the office." },
       answer: "went off",
       explanation: "Past simple for the interrupting event (fire alarm), past continuous for the ongoing action (working).",
@@ -6772,7 +6772,7 @@ const section: Section = {
       type: "input",
       ruleId: "03-20",
       generatedBy: "opencode",
-      prompt: "Choose the correct tense (past simple or past continuous) and complete the sentence.",
+      prompt: "Complete the sentence with the past continuous form of \"listen.\"",
       phrase: { before: "While she ", after: " to music, her brother was reading a book." },
       answer: "was listening",
       explanation: "Past continuous with \"while\" to show an action happening simultaneously with another ongoing action.",
@@ -6788,7 +6788,7 @@ const section: Section = {
       type: "input",
       ruleId: "03-20",
       generatedBy: "opencode",
-      prompt: "Choose the correct tense (past simple or past continuous) and complete the sentence.",
+      prompt: "Complete the sentence with the past continuous of \"have.\"",
       phrase: { before: "At 10 a.m. yesterday, the team ", after: " a meeting." },
       answer: "was having",
       explanation: "Past continuous with specific time shows an action in progress at that moment.",
@@ -6820,7 +6820,7 @@ const section: Section = {
       type: "input",
       ruleId: "03-20",
       generatedBy: "opencode",
-      prompt: "Choose the correct tense (past simple or past continuous) and complete the sentence.",
+      prompt: "Complete the sentence with the past continuous of \"study.\"",
       phrase: { before: "All evening, they ", after: " for the exam." },
       answer: "were studying",
       explanation: "Past continuous with \"all evening\" emphasizes the duration and ongoing nature.",
