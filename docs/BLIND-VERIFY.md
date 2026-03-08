@@ -4,90 +4,107 @@
 
 Validate that quiz questions are unambiguous and have exactly one correct
 answer — without leaking any hints about which answer is "right". This
-catches questions where:
+catches:
 
-- Multiple choices are grammatically valid (genuine ambiguity)
-- The intended correct answer is actually wrong
-- The question is unclear or under-specified
+- Multiple choices that are both grammatically valid (genuine ambiguity)
+- The intended correct answer that is actually wrong
+- Nonexistent or misspelled word forms used as distractors
+- Incoherent sentences where the prompt doesn't fit the answer
 
-## How it works
+**Important scope:** blind verification only covers what a student sees —
+the prompt and answer choices. Explanation text is revealed post-answer and
+is invisible to the verifier, so explanation errors are out of scope here.
 
-### 1. Strip (`scripts/blind-verify.ts`)
+## Workflow
 
-The script reads a canonical question file (`questions/fr/<rule-id>.txt`)
-and produces two files in `gen/blind-verify/`:
+### 1. Strip
+
+Run `scripts/blind-verify.ts` on one or more canonical question files.
+It produces two files per rule in `gen/blind-verify/`:
 
 | File | Contents |
 |------|----------|
-| `<rule-id>-quiz.txt` | What the student sees: prompt + shuffled choices (MCQ) or prompt + blank sentence (INPUT). No right/wrong labels, no explanations, no rule title. |
-| `<rule-id>-key.json` | Answer key for later comparison: question ID, type, correct answer, and (for MCQ) the shuffled choice order. |
+| `<rule-id>-quiz.txt` | Prompt + shuffled choices (MCQ) or prompt + blank phrase (INPUT). No right/wrong labels, no explanations, no rule title. |
+| `<rule-id>-key.json` | Answer key: question ID, type, correct answer, and (MCQ) the shuffled choice order shown. |
 
 ```bash
-npx tsx scripts/blind-verify.ts questions/fr/02-10.txt
-# → gen/blind-verify/02-10-quiz.txt
-# → gen/blind-verify/02-10-key.json
+# Single rule
+npx tsx scripts/blind-verify.ts questions/fr/01-01.txt
+
+# Batch — pass as many files as needed
+npx tsx scripts/blind-verify.ts questions/fr/01-06.txt questions/fr/01-07.txt questions/fr/01-08.txt
 ```
 
-Multiple files can be passed at once.
+### 2. Verify (sub-agents, run in parallel)
 
-### 2. Verify (Claude Code sub-agent)
+Launch one `general-purpose` sub-agent per rule. The agent:
 
-The stripped quiz file is fed to a Sonnet sub-agent with these instructions:
+1. Reads the stripped quiz file
+2. Answers every question independently (MCQ: pick one; INPUT: fill the blank)
+3. Reads the key and compares its answers
+4. Reports **only discrepancies**
 
-- **MCQ**: list ALL choices that could be considered correct (there may be
-  more than one)
-- **INPUT**: provide the correct answer
-- **Unclear**: respond with `UNCLEAR` if the question is genuinely
-  ambiguous
-
-The sub-agent writes structured output to
-`gen/blind-verify/<rule-id>-response.txt`:
+Agent prompt template:
 
 ```
-ID: 01-01-001
-CORRECT: parle
+You are a French grammar expert taking a quiz. Read <rule-id>-quiz.txt
 
-ID: 01-01-002
-CORRECT: achètes
+For each MCQ: pick the correct answer from the choices.
+For each INPUT: provide the correct answer for the blank.
 
-ID: 01-01-003
-UNCLEAR: multiple tenses could work without more context
+Then read the key at <rule-id>-key.json and compare.
+
+Report ONLY:
+- Questions where your answer differs from the key
+- Genuinely ambiguous questions (multiple choices could be correct)
+- Nonexistent or misspelled word forms in the choices
+
+Return "CLEAN" if no issues.
 ```
 
-### 3. Compare
+Up to 5 rules can be verified in parallel in a single message.
 
-The response is compared against the answer key. Interesting outcomes:
+### 3. Fix and re-verify
 
-| Status | Meaning |
-|--------|---------|
-| **match** | Model picked exactly our correct answer, nothing else |
-| **extra-correct** | Model found additional valid answers among the choices — question may be ambiguous |
-| **missed-correct** | Model didn't pick our answer — question or answer may be wrong |
-| **unclear** | Model flagged the question as ambiguous |
-| **missing** | Model didn't respond for this question |
+For each flagged issue:
 
-### What to do with the results
+- **Answer mismatch**: Either the key answer is wrong (fix the source file)
+  or the model is wrong (investigate and decide).
+- **Ambiguous question**: Add context to the sentence so only one answer
+  fits, or replace a distractor that overlaps with the correct answer.
+- **Nonexistent form**: Replace the distractor with a real (but wrong)
+  French form — wrong tense, wrong person, or wrong verb.
 
-- **extra-correct**: Review whether the extra answer is genuinely valid. If
-  so, the question needs rewriting to disambiguate. If the model is wrong,
-  the question is fine.
-- **missed-correct**: Likely a bug in the question or our answer key.
-  Investigate immediately.
-- **unclear**: Check if the question really is ambiguous. Rewrite if needed.
-- **match on everything**: The rule is clean. Move on.
+After fixing, re-strip **only the changed files** and re-run their
+sub-agents. Iterate until every rule returns "CLEAN".
 
-## Design choices
+### 4. Commit
 
-- **No rule/section hints** in the stripped output — the model must judge
-  purely from the sentence and choices, just like a student would.
-- **Shuffled choices** — prevents positional bias.
-- **"Play pretend" multiple-correct** — asking the model to consider
-  multiple valid answers is the key insight. A model that's told "pick the
-  one right answer" will always pick one, even if two are valid. Asking for
-  all valid options surfaces ambiguity.
-- **Sub-agent isolation** — the verifier runs as a separate Claude Code
-  agent so it has no access to the answer key or the original question
-  file with markings.
+```bash
+git add questions/fr/<rule-id>.txt ...
+git commit -m "fix: blind-verify and fix fr section XX rules YY-ZZ"
+```
+
+## What to fix vs. what to leave alone
+
+| Issue type | Action |
+|------------|--------|
+| Key answer is wrong | Fix the `RIGHT ANSWER` line |
+| Multiple choices both valid | Tighten the sentence for context |
+| Distractor is a nonexistent form | Replace with a real wrong-form |
+| Distractor is a correct alternate spelling | Replace with a different wrong-form |
+| Explanation has errors | Out of scope — fix separately |
+| Explanation contradicts answer | Out of scope — fix separately |
+
+## Design notes
+
+- **No rule/section hints** in the stripped output — the model judges
+  purely from the sentence and choices, like a student would.
+- **Choices are shuffled** to prevent positional bias.
+- **Agent reads key itself** — no separate compare script needed; the
+  agent answers first, then looks at the key, so there's no contamination.
+- **Parallel agents** — running 5 rules simultaneously keeps iteration
+  fast; each agent has its own isolated context.
 
 ## Files
 
