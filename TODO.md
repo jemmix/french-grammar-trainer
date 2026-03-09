@@ -4,6 +4,8 @@
 
 - **Nonsensical questions** — some generated questions are internally incoherent: e.g. an input question with PROMPT "Conjuguez le verbe au présent" but neither the PROMPT nor the PHRASE names which verb to conjugate, leaving the blank completely undefined. These pass all structural checks. Fix: adjust `scripts/verify-answers.ts` to also verify user-input questions using a different prompt that checks for self-consistency (e.g. the verb to conjugate must be identifiable from the prompt or phrase).
 
+- **Elision linter in blind-verify** — add mechanical string checks to `scripts/blind-verify.ts` (or a standalone `scripts/lint-elision.ts`) that flag questions where the subject+blank combo mismatches the answer's initial sound: e.g. `Je ___` + vowel-starting answer (should be `J'___`), `J'___` + consonant-starting answer (should be `Je ___`), `m'___` + consonant-starting answer (should be `me ___`), and inline verb hints like `(prendre) ___` in a PHRASE field. Pure string matching, no LLM needed.
+
 - **Grammar-check generated answers** — no validation that answers are grammatically plausible French (e.g. a generated wrong answer like "je arrive" would pass validation). Could run answers through a grammar API, a local spaCy/Lefff model, or a cheap LLM call to flag obviously broken forms before committing content.
 
 - **LLM verification for input questions** — `scripts/verify-answers.ts` currently only verifies MCQ questions (skips input questions). Extend it to also verify user-input questions using a different prompt that asks the model to check whether each prepared wrong answer is a plausible learner mistake and whether its explanation correctly identifies the error.
