@@ -241,7 +241,7 @@ export function InputFeedbackPanel({
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
             <p className="text-sm text-encre">
-              {t.quiz.caseWarningBefore} <strong>«\u00a0{result.matchedAnswer}\u00a0»</strong>, {t.quiz.caseWarningAfter} «\u00a0{userInput}\u00a0».
+              {t.quiz.caseWarningBefore} <strong>{"«\u00a0"}{result.matchedAnswer}{"\u00a0»"}</strong>, {t.quiz.caseWarningAfter} {"«\u00a0"}{userInput}{"\u00a0»"}.
             </p>
           </div>
           <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
@@ -283,7 +283,7 @@ export function InputFeedbackPanel({
             <span className="font-semibold text-warning">{t.quiz.correctAnswer}</span>
           </div>
           <p className="text-sm text-encre leading-relaxed mb-3">
-            {t.quiz.typoCorrectBefore} <strong>«\u00a0{result.matchedAnswer}\u00a0»</strong> {t.quiz.typoCorrectAfter}
+            {t.quiz.typoCorrectBefore} <strong>{"«\u00a0"}{result.matchedAnswer}{"\u00a0»"}</strong> {t.quiz.typoCorrectAfter}
           </p>
           <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
         </div>
@@ -292,20 +292,20 @@ export function InputFeedbackPanel({
     // ---- Typo of wrong answer ----
     case "typo-wrong":
       return (
-        <div className="rounded-xl border p-5 bg-warning-bg border-warning-border">
+        <div className="rounded-xl border p-5 bg-incorrect-bg border-incorrect-border">
           <div className="flex items-center gap-2 mb-3">
-            <div className="w-6 h-6 rounded-full bg-warning flex items-center justify-center">
-              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+            <div className="w-6 h-6 rounded-full bg-incorrect flex items-center justify-center">
+              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </div>
-            <span className="font-semibold text-warning">{t.quiz.correctAnswer}</span>
+            <span className="font-semibold text-incorrect">{t.quiz.wrongAnswer}</span>
           </div>
           <p className="text-sm text-encre leading-relaxed mb-3">
-            {t.quiz.typoWrongBefore} <strong>«\u00a0{result.matchedAnswer}\u00a0»</strong> {t.quiz.typoWrongAfter}
+            {t.quiz.typoWrongBefore} <strong>{"«\u00a0"}{result.matchedAnswer}{"\u00a0»"}</strong> {t.quiz.typoWrongAfter}
           </p>
           <p className="text-sm text-encre leading-relaxed">{result.wrongExplanation}</p>
-          <div className="mt-4 pt-4 border-t border-warning-border/50">
+          <div className="mt-4 pt-4 border-t border-incorrect-border/50">
             <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-1">
               {t.quiz.correctAnswerLabel} {question.answer}
             </p>
