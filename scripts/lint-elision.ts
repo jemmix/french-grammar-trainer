@@ -106,17 +106,17 @@ function checkQuestion(q: ParsedQuestion): Issue[] {
     texts.push(q.phrase);
   }
 
-  // Check if ALL answers start with vowel/consonant (for MCQ with mixed answers, non-elided is safest)
-  const allVowel = allAnswers.every(a => startsWithVowelSound(a));
-  const allConsonant = allAnswers.every(a => startsWithConsonantSound(a));
+  // Check if ANY answer starts with vowel/consonant (elision must work for all choices)
+  const anyVowel = allAnswers.some(a => startsWithVowelSound(a));
+  const anyConsonant = allAnswers.some(a => startsWithConsonantSound(a));
 
   for (const text of texts) {
     // Case 1: word + space + ___ (non-elided form before blank)
     const wordBefore = getTextBeforeBlank(text);
     if (wordBefore) {
       const cleaned = wordBefore.replace(/[«»"',.:;!?()]/g, "").toLowerCase();
-      // If all answers start with vowel, non-elided form is wrong
-      if (allVowel) {
+      // If any answer starts with vowel, non-elided form is wrong
+      if (anyVowel) {
         for (const [full, elided] of ELISION_PAIRS) {
           if (cleaned === full) {
             issues.push({
@@ -133,8 +133,8 @@ function checkQuestion(q: ParsedQuestion): Issue[] {
     const elidedBefore = getTextBeforeBlankElided(text);
     if (elidedBefore) {
       const cleaned = elidedBefore.replace(/[«»"',.:;!?()]/g, "").toLowerCase();
-      // If all answers start with consonant, elided form is wrong
-      if (allConsonant) {
+      // If any answer starts with consonant, elided form is wrong
+      if (anyConsonant) {
         for (const [full, elided] of ELISION_PAIRS) {
           if (cleaned === elided) {
             issues.push({
