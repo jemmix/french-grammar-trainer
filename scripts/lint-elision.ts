@@ -10,8 +10,6 @@
  *   "m'___"   + consonant-starting answer → should be "me ___"
  *   (same for te/t', se/s', le/l', la/l', de/d', ne/n', que/qu', ce/c')
  *
- * Also flags inline verb hints like "(prendre) ___" in PHRASE.
- *
  * Usage: npx tsx scripts/lint-elision.ts [--stats=none|rule|section] <file.txt> [...]
  *
  * Options:
@@ -79,7 +77,7 @@ function startsWithConsonantSound(word: string): boolean {
 
 interface Issue {
   id: string;
-  kind: "elision-missing" | "elision-wrong" | "verb-hint";
+  kind: "elision-missing" | "elision-wrong";
   message: string;
 }
 
@@ -104,17 +102,6 @@ function checkQuestion(q: ParsedQuestion): Issue[] {
   const texts: string[] = [q.prompt];
   if (q.type === "input" && q.phrase) {
     texts.push(q.phrase);
-  }
-
-  // Check for inline verb hints like "(prendre) ___"
-  for (const text of texts) {
-    if (/\([a-zàâäéèêëîïôùûüÿœæ]+\)\s*___/i.test(text)) {
-      issues.push({
-        id: q.id,
-        kind: "verb-hint",
-        message: `Inline verb hint before blank: "${text.match(/\([^)]+\)\s*___/)![0]}"`,
-      });
-    }
   }
 
   const isVowel = startsWithVowelSound(answer);
