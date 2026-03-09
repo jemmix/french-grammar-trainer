@@ -12,7 +12,12 @@
  *
  * Also flags inline verb hints like "(prendre) ___" in PHRASE.
  *
- * Usage: npx tsx scripts/lint-elision.ts questions/fr/*.txt
+ * Usage: npx tsx scripts/lint-elision.ts [--stats=none|rule|section] <file.txt> [...]
+ *
+ * Options:
+ *   --stats=none     Don't print stats, only issues
+ *   --stats=rule     Print stats grouped by rule (default)
+ *   --stats=section  Print stats grouped by section
  */
 
 import { readFileSync } from "fs";
@@ -159,20 +164,43 @@ function checkQuestion(q: ParsedQuestion): Issue[] {
 // Main
 // ============================================================
 
-const files = process.argv.slice(2);
+type StatsMode = "none" | "rule" | "section";
+
+function parseArgs(args: string[]): { statsMode: StatsMode; files: string[] } {
+  let statsMode: StatsMode = "rule";
+  const files: string[] = [];
+
+  for (const arg of args) {
+    if (arg.startsWith("--stats=")) {
+      const mode = arg.split("=")[1];
+      if (mode === "none" || mode === "rule" || mode === "section") {
+        statsMode = mode;
+      } else {
+        console.error(`Invalid --stats value: ${mode}. Use none, rule, or section.`);
+        process.exit(1);
+      }
+    } else if (!arg.startsWith("--")) {
+      files.push(arg);
+    }
+  }
+
+  return { statsMode, files };
+}
+
+const { statsMode, files } = parseArgs(process.argv.slice(2));
 if (files.length === 0) {
-  console.error("Usage: npx tsx scripts/lint-elision.ts <file.txt> [...]");
+  console.error("Usage: npx tsx scripts/lint-elision.ts [--stats=none|rule|section] <file.txt> [...]");
   process.exit(1);
 }
 
-interface SectionStats {
+interface Stats {
   total: number;
   valid: number;
   invalid: number;
   issues: Issue[];
 }
 
-const sectionMap = new Map<string, SectionStats>();
+const statsMap = new Map<string, Stats>();
 
 let totalQuestions = 0;
 let totalIssues = 0;
@@ -180,12 +208,15 @@ let totalIssues = 0;
 for (const file of files) {
   const content = readFileSync(file, "utf-8");
   const parsed = parseTxtFile(content);
-  const sectionId = parsed.ruleId.split("-")[0]!;
+  const ruleId = parsed.ruleId;
+  const sectionId = ruleId.split("-")[0]!;
 
-  if (!sectionMap.has(sectionId)) {
-    sectionMap.set(sectionId, { total: 0, valid: 0, invalid: 0, issues: [] });
+  const key = statsMode === "section" ? sectionId : ruleId;
+
+  if (!statsMap.has(key)) {
+    statsMap.set(key, { total: 0, valid: 0, invalid: 0, issues: [] });
   }
-  const stats = sectionMap.get(sectionId)!;
+  const stats = statsMap.get(key)!;
 
   for (const q of parsed.questions) {
     const issues = checkQuestion(q);
@@ -201,28 +232,31 @@ for (const file of files) {
   }
 }
 
-// Print stats per section
-console.log("Elision lint results by section:");
-console.log("─".repeat(60));
+// Print stats
+if (statsMode !== "none") {
+  const label = statsMode === "section" ? "section" : "rule";
+  console.log(`Elision lint results by ${label}:`);
+  console.log("─".repeat(60));
 
-const sections = [...sectionMap.entries()].sort((a, b) => a[0].localeCompare(b[0]));
-for (const [sectionId, stats] of sections) {
-  const validPct = stats.total > 0 ? ((stats.valid / stats.total) * 100).toFixed(1) : "N/A";
-  const invalidPct = stats.total > 0 ? ((stats.invalid / stats.total) * 100).toFixed(1) : "N/A";
-  console.log(
-    `Section ${sectionId}: ${stats.total} Qs | ${validPct}% valid | ${invalidPct}% invalid (${stats.invalid} Qs with issues)`,
-  );
+  const entries = [...statsMap.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+  for (const [key, stats] of entries) {
+    const validPct = stats.total > 0 ? ((stats.valid / stats.total) * 100).toFixed(1) : "N/A";
+    const invalidPct = stats.total > 0 ? ((stats.invalid / stats.total) * 100).toFixed(1) : "N/A";
+    console.log(
+      `${key}: ${stats.total} Qs | ${validPct}% valid | ${invalidPct}% invalid (${stats.invalid} Qs with issues)`,
+    );
+  }
+
+  console.log("─".repeat(60));
+  console.log(`Total: ${totalQuestions} Qs | ${totalIssues} issues across ${files.length} files`);
+  console.log();
 }
-
-console.log("─".repeat(60));
-const totalValidPct = totalQuestions > 0 ? (((totalQuestions - totalIssues) / totalQuestions) * 100).toFixed(1) : "N/A";
-console.log(`Total: ${totalQuestions} Qs | ${totalIssues} issues across ${files.length} files`);
-console.log();
 
 // Print detailed issues
 if (totalIssues > 0) {
   console.log("Issues found:");
-  for (const [, stats] of sections) {
+  const entries = [...statsMap.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+  for (const [, stats] of entries) {
     for (const issue of stats.issues) {
       console.log(`  ${issue.id}: [${issue.kind}] ${issue.message}`);
     }
