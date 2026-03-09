@@ -1,0 +1,232 @@
+/**
+ * Elision linter for French question files.
+ *
+ * Pure text-matching — no LLM. Checks whether the word before `___` in PROMPT
+ * or PHRASE is consistent with the answer's initial sound:
+ *
+ *   "Je ___"  + vowel-starting answer  → should be "J'___"
+ *   "J'___"   + consonant-starting answer → should be "Je ___"
+ *   "me ___"  + vowel-starting answer  → should be "m'___"
+ *   "m'___"   + consonant-starting answer → should be "me ___"
+ *   (same for te/t', se/s', le/l', la/l', de/d', ne/n', que/qu', ce/c')
+ *
+ * Also flags inline verb hints like "(prendre) ___" in PHRASE.
+ *
+ * Usage: npx tsx scripts/lint-elision.ts questions/fr/*.txt
+ */
+
+import { readFileSync } from "fs";
+import { basename } from "path";
+import { parseTxtFile, type ParsedQuestion } from "./lib/parse-txt.js";
+
+// Words with aspirate h — no elision before these
+const ASPIRATE_H = new Set([
+  "hache", "haches", "haine", "haines", "haïr", "hais", "haïs", "haït",
+  "haïssons", "haïssez", "haïssent", "halte", "hamac", "hamacs", "hameau",
+  "hameaux", "hanche", "hanches", "handicap", "handicapé", "handicapée",
+  "hangar", "hangars", "hanter", "hante", "hantes", "hantent", "harceler",
+  "harcèle", "hardi", "hardie", "hardis", "hardies", "hareng", "harengs",
+  "haricot", "haricots", "harpe", "harpes", "hasard", "hasards", "hâte",
+  "hausse", "hausser", "haut", "haute", "hauts", "hautes", "hauteur",
+  "hauteurs", "héros", "hêtre", "hêtres", "hibou", "hiboux", "hiérarchie",
+  "hobby", "hobbies", "hockey", "hollande", "hollandais", "hollandaise",
+  "homard", "homards", "hongre", "hongrois", "hongroise", "honte",
+  "hooligan", "hooligans", "hoquet", "hoquets", "horde", "hordes", "hors",
+  "hot-dog", "hotte", "hottes", "houblon", "housse", "housses", "hublot",
+  "hublots", "huée", "huées", "huer", "hurler", "hurle", "hurles",
+  "hurlent", "hutte", "huttes",
+]);
+
+// Elision pairs: [full form, elided form]
+// The full form is what appears before a consonant; the elided form before a vowel.
+const ELISION_PAIRS: [string, string][] = [
+  ["je", "j'"],
+  ["me", "m'"],
+  ["te", "t'"],
+  ["se", "s'"],
+  ["le", "l'"],
+  ["la", "l'"],
+  ["de", "d'"],
+  ["ne", "n'"],
+  ["que", "qu'"],
+  ["ce", "c'"],
+];
+
+function startsWithVowelSound(word: string): boolean {
+  if (!word) return false;
+  const lower = word.toLowerCase();
+  // Check aspirate h
+  if (lower.startsWith("h")) {
+    // Check if it's an aspirate-h word
+    for (const ah of ASPIRATE_H) {
+      if (lower === ah || lower.startsWith(ah)) return false;
+    }
+    // Mute h — elision applies
+    return true;
+  }
+  return /^[aeiouyàâäéèêëîïôùûüÿœæ]/i.test(word);
+}
+
+function startsWithConsonantSound(word: string): boolean {
+  if (!word) return false;
+  return !startsWithVowelSound(word);
+}
+
+interface Issue {
+  id: string;
+  kind: "elision-missing" | "elision-wrong" | "verb-hint";
+  message: string;
+}
+
+function getTextBeforeBlank(text: string): string | null {
+  // Find the word immediately before ___
+  const m = text.match(/(\S+)\s+___/);
+  return m ? m[1]! : null;
+}
+
+function getTextBeforeBlankElided(text: string): string | null {
+  // Find word attached to ___ via apostrophe: J'___, l'___
+  const m = text.match(/(\S+')\s*___/);
+  return m ? m[1]! : null;
+}
+
+function checkQuestion(q: ParsedQuestion): Issue[] {
+  const issues: Issue[] = [];
+  const answer = q.right.text.trim();
+  if (!answer) return issues;
+
+  // Determine the text to check (PHRASE for input, PROMPT for mcq)
+  const texts: string[] = [q.prompt];
+  if (q.type === "input" && q.phrase) {
+    texts.push(q.phrase);
+  }
+
+  // Check for inline verb hints like "(prendre) ___"
+  for (const text of texts) {
+    if (/\([a-zàâäéèêëîïôùûüÿœæ]+\)\s*___/i.test(text)) {
+      issues.push({
+        id: q.id,
+        kind: "verb-hint",
+        message: `Inline verb hint before blank: "${text.match(/\([^)]+\)\s*___/)![0]}"`,
+      });
+    }
+  }
+
+  const isVowel = startsWithVowelSound(answer);
+
+  for (const text of texts) {
+    // Case 1: word + space + ___ (non-elided form before blank)
+    const wordBefore = getTextBeforeBlank(text);
+    if (wordBefore) {
+      const cleaned = wordBefore.replace(/[«»"',.:;!?()]/g, "").toLowerCase();
+      if (isVowel) {
+        // Answer starts with vowel — check if the word before should be elided
+        for (const [full, elided] of ELISION_PAIRS) {
+          if (cleaned === full) {
+            issues.push({
+              id: q.id,
+              kind: "elision-missing",
+              message: `"${wordBefore} ___" + answer "${answer}" (vowel) → should be "${elided}___"`,
+            });
+          }
+        }
+      }
+    }
+
+    // Case 2: word'___ (elided form before blank)
+    const elidedBefore = getTextBeforeBlankElided(text);
+    if (elidedBefore) {
+      const cleaned = elidedBefore.replace(/[«»"',.:;!?()]/g, "").toLowerCase();
+      if (!isVowel) {
+        // Answer starts with consonant — check if elision is wrong
+        for (const [full, elided] of ELISION_PAIRS) {
+          if (cleaned === elided) {
+            issues.push({
+              id: q.id,
+              kind: "elision-wrong",
+              message: `"${elidedBefore}___" + answer "${answer}" (consonant) → should be "${full} ___"`,
+            });
+          }
+        }
+      }
+    }
+  }
+
+  return issues;
+}
+
+// ============================================================
+// Main
+// ============================================================
+
+const files = process.argv.slice(2);
+if (files.length === 0) {
+  console.error("Usage: npx tsx scripts/lint-elision.ts <file.txt> [...]");
+  process.exit(1);
+}
+
+interface SectionStats {
+  total: number;
+  valid: number;
+  invalid: number;
+  issues: Issue[];
+}
+
+const sectionMap = new Map<string, SectionStats>();
+
+let totalQuestions = 0;
+let totalIssues = 0;
+
+for (const file of files) {
+  const content = readFileSync(file, "utf-8");
+  const parsed = parseTxtFile(content);
+  const sectionId = parsed.ruleId.split("-")[0]!;
+
+  if (!sectionMap.has(sectionId)) {
+    sectionMap.set(sectionId, { total: 0, valid: 0, invalid: 0, issues: [] });
+  }
+  const stats = sectionMap.get(sectionId)!;
+
+  for (const q of parsed.questions) {
+    const issues = checkQuestion(q);
+    stats.total++;
+    totalQuestions++;
+    if (issues.length > 0) {
+      stats.invalid++;
+      totalIssues += issues.length;
+      stats.issues.push(...issues);
+    } else {
+      stats.valid++;
+    }
+  }
+}
+
+// Print stats per section
+console.log("Elision lint results by section:");
+console.log("─".repeat(60));
+
+const sections = [...sectionMap.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+for (const [sectionId, stats] of sections) {
+  const validPct = stats.total > 0 ? ((stats.valid / stats.total) * 100).toFixed(1) : "N/A";
+  const invalidPct = stats.total > 0 ? ((stats.invalid / stats.total) * 100).toFixed(1) : "N/A";
+  console.log(
+    `Section ${sectionId}: ${stats.total} Qs | ${validPct}% valid | ${invalidPct}% invalid (${stats.invalid} Qs with issues)`,
+  );
+}
+
+console.log("─".repeat(60));
+const totalValidPct = totalQuestions > 0 ? (((totalQuestions - totalIssues) / totalQuestions) * 100).toFixed(1) : "N/A";
+console.log(`Total: ${totalQuestions} Qs | ${totalIssues} issues across ${files.length} files`);
+console.log();
+
+// Print detailed issues
+if (totalIssues > 0) {
+  console.log("Issues found:");
+  for (const [, stats] of sections) {
+    for (const issue of stats.issues) {
+      console.log(`  ${issue.id}: [${issue.kind}] ${issue.message}`);
+    }
+  }
+}
+
+process.exit(totalIssues > 0 ? 1 : 0);
