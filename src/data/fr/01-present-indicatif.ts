@@ -553,9 +553,9 @@ const section: Section = {
       prompt: "Complétez : « Tu ___ tes exercices si tu étudies bien. »",
       choices: [
         { text: "réussis", correct: true, explanation: "Avec « tu », le verbe réussir se conjugue « tu réussis » (tu + -is)." },
-        { text: "réussies", correct: false, explanation: "« Réussies » est un adjectif féminin pluriel, pas une forme verbale conjuguée." },
+        { text: "réussira", correct: false, explanation: "« Réussira » est la 3ème personne du futur (il/elle réussira). Avec « tu », le futur serait « réussiras » — mais la forme demandée ici est le présent « réussis »." },
         { text: "réussit", correct: false, explanation: "« Réussit » est pour « il/elle », pas pour « tu »." },
-        { text: "réussira", correct: false, explanation: "« Réussira » est le futur simple, pas le présent." },
+        { text: "réussies", correct: false, explanation: "« Réussies » est un adjectif féminin pluriel, pas une forme verbale conjuguée." },
       ],
     },
     {
