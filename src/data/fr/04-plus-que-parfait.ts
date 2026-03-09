@@ -1,6 +1,6 @@
 import type { Section } from "../types";
 
-// Generated from: questions/04-01.txt, questions/04-02.txt, questions/04-03.txt, questions/04-04.txt, questions/04-05.txt, questions/04-06.txt, questions/04-07.txt, questions/04-08.txt, questions/04-09.txt, questions/04-10.txt, questions/04-11.txt, questions/04-12.txt, questions/04-13.txt, questions/04-14.txt, questions/04-15.txt, questions/04-16.txt, questions/04-17.txt, questions/04-18.txt, questions/04-19.txt, questions/04-20.txt
+// Generated from: questions/fr/04-01.txt, questions/fr/04-02.txt, questions/fr/04-03.txt, questions/fr/04-04.txt, questions/fr/04-05.txt, questions/fr/04-06.txt, questions/fr/04-07.txt, questions/fr/04-08.txt, questions/fr/04-09.txt, questions/fr/04-10.txt, questions/fr/04-11.txt, questions/fr/04-12.txt, questions/fr/04-13.txt, questions/fr/04-14.txt, questions/fr/04-15.txt, questions/fr/04-16.txt, questions/fr/04-17.txt, questions/fr/04-18.txt, questions/fr/04-19.txt, questions/fr/04-20.txt
 // Total: 400 MCQ + 100 INPUT = 500 questions
 
 const section: Section = {
@@ -260,7 +260,7 @@ const section: Section = {
       choices: [
         { text: "avions nettoyé", correct: true, explanation: "Le plus-que-parfait de « nettoyer » avec nous : auxiliaire avoir à l'imparfait (avions) + participe passé (nettoyé)." },
         { text: "avons nettoyé", correct: false, explanation: "« Avons nettoyé » est le passé composé (avoir au présent). Pour le plus-que-parfait, l'auxiliaire doit être à l'imparfait : avions." },
-        { text: "avions nettoyé·e·s", correct: false, explanation: "Le participe passé avec avoir ne s'accorde pas avec le sujet. Il reste invariable : avions nettoyé." },
+        { text: "avions nettoyés", correct: false, explanation: "Le participe passé avec avoir ne s'accorde pas avec le sujet. Il reste invariable : avions nettoyé (sans -s)." },
         { text: "nettoyions", correct: false, explanation: "« Nettoyions » est l'imparfait simple. Le plus-que-parfait est un temps composé : avions + nettoyé." },
       ],
     },
@@ -329,10 +329,10 @@ const section: Section = {
       type: "input",
       ruleId: "04-01",
       generatedBy: "sonnet",
-      prompt: "Mettez le verbe entre parenthèses au plus-que-parfait",
+      prompt: "Mettez le verbe entre parenthèses au plus-que-parfait (sujet masculin)",
       phrase: { before: "Je ne savais pas que tu ", after: " (se blesser) la veille." },
       answer: "t'étais blessé",
-      explanation: "« Se blesser » est un verbe pronominal qui prend être. Le plus-que-parfait avec tu : te + être à l'imparfait (étais) + participe passé (blessé). Le participe reste au masculin singulier si le sujet est masculin.",
+      explanation: "« Se blesser » est un verbe pronominal qui prend être. Le plus-que-parfait avec tu (masculin) : te + être à l'imparfait (étais) + participe passé (blessé), accordé au masculin singulier.",
       wrongAnswers: [
         { text: "t'es blessé", explanation: "« T'es blessé » est le passé composé (être au présent). Pour le plus-que-parfait, l'auxiliaire être doit être à l'imparfait : étais." },
         { text: "t'avais blessé", explanation: "Les verbes pronominaux comme « se blesser » se conjuguent avec être, jamais avec avoir. La forme correcte est « t'étais blessé »." },
@@ -785,11 +785,11 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-03",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elle les ___ la veille. »",
+      prompt: "Complétez : « Ces films, elle les ___ la veille. »",
       choices: [
-        { text: "avait vus", correct: true, explanation: "Le pronom personnel « les » est un COD masculin pluriel placé avant le verbe. Avec avoir, le participe passé s'accorde avec ce COD : « vus » (masculin pluriel)." },
-        { text: "avait vu", correct: false, explanation: "Quand un COD précède le verbe conjugué avec avoir, le participe doit s'accorder. « Les » représente un groupe masculin pluriel, donc il faut « vus »." },
-        { text: "avait vue", correct: false, explanation: "« Vue » serait l'accord féminin singulier. Le pronom « les » représente ici un groupe masculin pluriel, donc l'accord correct est « vus »." },
+        { text: "avait vus", correct: true, explanation: "Le pronom personnel « les » reprend « ces films », COD masculin pluriel placé avant le verbe. Avec avoir, le participe passé s'accorde avec ce COD : « vus » (masculin pluriel)." },
+        { text: "avait vu", correct: false, explanation: "Quand un COD précède le verbe conjugué avec avoir, le participe doit s'accorder. « Les » représente « ces films » (masculin pluriel), donc il faut « vus »." },
+        { text: "avait vues", correct: false, explanation: "« Vues » serait l'accord féminin pluriel. Le COD « les » renvoie à « ces films » (masculin pluriel), donc l'accord correct est « vus »." },
         { text: "était vue", correct: false, explanation: "« Voir » se conjugue avec avoir au plus-que-parfait, non avec être. De plus, le COD précédant requiert un accord masculin pluriel : « vus »." },
       ],
     },
@@ -798,12 +798,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-03",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Nous ___ avant que la réunion commence. »",
+      prompt: "Complétez : « Paul et moi ___ avant que la réunion commence. »",
       choices: [
-        { text: "étions arrivés", correct: true, explanation: "« Arriver » se conjugue avec être. Le sujet « nous » représentant un groupe masculin (ou mixte par défaut) prend l'accord masculin pluriel : « arrivés »." },
-        { text: "étions arrivées", correct: false, explanation: "« Arrivées » est la forme féminine pluriel ; elle ne s'emploie que si le groupe désigné par « nous » est entièrement féminin. Par défaut, on emploie « arrivés »." },
+        { text: "étions arrivés", correct: true, explanation: "« Arriver » se conjugue avec être. Le sujet « Paul et moi » (groupe mixte ou masculin) prend l'accord masculin pluriel : « arrivés »." },
+        { text: "étions arrivées", correct: false, explanation: "« Arrivées » est la forme féminine pluriel. Le groupe « Paul et moi » comprend un homme (Paul), donc on emploie le masculin pluriel : « arrivés »." },
         { text: "avions arrivé", correct: false, explanation: "« Arriver » se conjugue avec être, non avec avoir, au plus-que-parfait." },
-        { text: "étions arrivé", correct: false, explanation: "« Arrivé » est la forme singulier ; le sujet « nous » est pluriel, donc il faut « arrivés »." },
+        { text: "étions arrivé", correct: false, explanation: "« Arrivé » est la forme singulier ; le sujet « Paul et moi » est pluriel, donc il faut « arrivés »." },
       ],
     },
     {
@@ -825,10 +825,10 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-03",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Des pommes, il en ___ mangé. »",
+      prompt: "Complétez : « Des pommes, il en ___ . »",
       choices: [
-        { text: "avait", correct: true, explanation: "Quand le COD est repris par le pronom « en », le participe passé reste invariable. On écrit donc « avait mangé » sans accord." },
-        { text: "avait mangés", correct: false, explanation: "Le pronom « en » ne détermine pas de genre ni de nombre précis ; le participe passé reste donc invariable : « mangé »." },
+        { text: "avait mangé", correct: true, explanation: "Quand le COD est repris par le pronom « en », le participe passé reste invariable. On écrit donc « avait mangé » sans accord." },
+        { text: "avait mangés", correct: false, explanation: "Le pronom « en » ne détermine pas de genre ni de nombre précis ; le participe passé reste donc invariable : « mangé » (sans -s)." },
         { text: "avait mangées", correct: false, explanation: "Le pronom « en » ne détermine pas l'accord du participe passé. On écrit « avait mangé » sans accord." },
         { text: "était mangé", correct: false, explanation: "« Manger » se conjugue avec avoir au plus-que-parfait, non avec être." },
       ],
@@ -1018,7 +1018,7 @@ const section: Section = {
       ruleId: "04-03",
       generatedBy: "sonnet",
       prompt: "Complétez avec le plus-que-parfait en accordant correctement le participe passé.",
-      phrase: { before: "La cliente ", after: " avant la fermeture du magasin." },
+      phrase: { before: "La cliente ", after: " (sortir) avant la fermeture du magasin." },
       answer: "était sortie",
       explanation: "« Sortir » se conjugue avec être. Le sujet « la cliente » est féminin singulier, donc le participe s'accorde au féminin singulier : « sortie ».",
       wrongAnswers: [
@@ -1051,7 +1051,7 @@ const section: Section = {
       ruleId: "04-03",
       generatedBy: "sonnet",
       prompt: "Complétez avec le plus-que-parfait en accordant correctement le participe passé.",
-      phrase: { before: "Les lettres qu'il ", after: " contenaient de bonnes nouvelles." },
+      phrase: { before: "Les lettres qu'il ", after: " (recevoir) contenaient de bonnes nouvelles." },
       answer: "avait reçues",
       explanation: "Le pronom relatif « que » représente « les lettres », COD féminin pluriel placé avant le verbe « recevoir » conjugué avec avoir. Le participe s'accorde au féminin pluriel : « reçues ».",
       wrongAnswers: [
@@ -1106,10 +1106,10 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ avant de partir en vacances. »",
+      prompt: "Complétez (sujet masculin) : « Tu ___ avant de partir en vacances. »",
       choices: [
-        { text: "t'étais reposé", correct: true, explanation: "Plus-que-parfait de « se reposer » à la 2e personne du singulier : pronom réfléchi « t' » + auxiliaire « étais » + participe passé. Le sujet « tu » est masculin non précisé (forme de base), donc « reposé » sans accord supplémentaire." },
-        { text: "t'étais reposée", correct: false, explanation: "La forme « reposée » est correcte si le sujet est féminin. La question n'indique pas le genre féminin pour « tu », donc la forme masculine de base s'applique : reposé." },
+        { text: "t'étais reposé", correct: true, explanation: "Plus-que-parfait de « se reposer » à la 2e personne du singulier masculin : pronom réfléchi « t' » + auxiliaire « étais » + participe passé « reposé » (masculin singulier)." },
+        { text: "t'étais reposée", correct: false, explanation: "« Reposée » est la forme féminine. Le sujet étant masculin, le participe s'accorde au masculin : « reposé »." },
         { text: "te étais reposé", correct: false, explanation: "Devant « étais » qui commence par une voyelle, le pronom « te » s'élide en « t' ». La forme correcte est « t'étais reposé »." },
         { text: "t'avais reposé", correct: false, explanation: "Les verbes pronominaux utilisent l'auxiliaire « être » au plus-que-parfait, pas « avoir ». Il faut « t'étais reposé »." },
       ],
@@ -1262,12 +1262,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elles ___ avant que nous arrivions. »",
+      prompt: "Complétez avec le plus-que-parfait de « s'enfuir » : « Elles ___ avant que nous arrivions. »",
       choices: [
         { text: "s'étaient enfuies", correct: true, explanation: "« S'enfuir » est un verbe essentiellement pronominal. Le sujet est « elles » (féminin pluriel), donc le participe s'accorde : enfuies. L'auxiliaire « être » est à l'imparfait." },
-        { text: "s'étaient enfui", correct: false, explanation: "Le sujet « elles » est féminin pluriel. Le participe des verbes pronominaux essentiels s'accorde avec le sujet : enfuies (féminin pluriel), pas enfui." },
+        { text: "s'étaient enfui", correct: false, explanation: "Le sujet « elles » est féminin pluriel. Le participe de « s'enfuir » s'accorde avec le sujet : enfuies (féminin pluriel), pas enfui." },
         { text: "s'avaient enfuies", correct: false, explanation: "Les verbes pronominaux prennent toujours l'auxiliaire « être », pas « avoir ». La forme correcte est « s'étaient enfuies »." },
-        { text: "s'étaient sauvées", correct: false, explanation: "« Se sauver » et « s'enfuir » sont proches en sens, mais si le contexte emploie « s'enfuir », le participe « enfuies » est requis — pas « sauvées »." },
+        { text: "s'étaient sauvées", correct: false, explanation: "Le verbe demandé est « s'enfuir », dont le participe est « enfui(e)s ». La forme « sauvées » vient de « se sauver », un verbe différent." },
       ],
     },
     {
@@ -1301,10 +1301,10 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Avant de répondre, tu ___ un moment. »",
+      prompt: "Complétez (sujet masculin) : « Avant de répondre, tu ___ un moment. »",
       choices: [
-        { text: "t'étais tu", correct: true, explanation: "« Se taire » est un verbe essentiellement pronominal. Plus-que-parfait à la 2e personne du singulier : tu t'étais tu. Le participe passé de « se taire » est « tu » (invariable au masculin singulier)." },
-        { text: "t'étais tue", correct: false, explanation: "« Tue » serait la forme féminine. Sans indication que le sujet « tu » est féminin, on emploie la forme de base (masculine) : tu t'étais tu." },
+        { text: "t'étais tu", correct: true, explanation: "« Se taire » est un verbe essentiellement pronominal. Plus-que-parfait à la 2e personne du singulier masculin : t' + étais + tu. Le participe passé de « se taire » est « tu » (forme masculine singulière)." },
+        { text: "t'étais tue", correct: false, explanation: "« Tue » est la forme féminine du participe. Le sujet étant masculin, on emploie la forme masculine : « tu »." },
         { text: "t'avais tu", correct: false, explanation: "Les verbes pronominaux utilisent l'auxiliaire « être », pas « avoir ». La forme correcte est « t'étais tu »." },
         { text: "te taisais", correct: false, explanation: "« Te taisais » est l'imparfait simple. Pour exprimer une action antérieure à un autre passé, il faut le plus-que-parfait : t'étais tu." },
       ],
@@ -1857,11 +1857,11 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Le médecin a constaté que le patient ___ mal dormi depuis une semaine. »",
+      prompt: "Complétez : « Le médecin a constaté que le patient ___ depuis une semaine. »",
       choices: [
-        { text: "avait", correct: true, explanation: "Le manque de sommeil (depuis une semaine) est antérieur au constat du médecin. Le plus-que-parfait (avait mal dormi) exprime cet état antérieur à l'action principale au passé composé (a constaté)." },
-        { text: "a", correct: false, explanation: "« A mal dormi » est le passé composé. Il ne marque pas l'antériorité du manque de sommeil par rapport au constat ; il faut le plus-que-parfait (avait mal dormi)." },
-        { text: "dormait mal", correct: false, explanation: "L'imparfait (dormait mal) situerait le manque de sommeil au même moment que le constat, sans marquer son antériorité. Le plus-que-parfait est nécessaire ici." },
+        { text: "avait mal dormi", correct: true, explanation: "Le manque de sommeil est antérieur au constat du médecin. Le plus-que-parfait (avait mal dormi) exprime cet état antérieur à l'action principale au passé composé (a constaté)." },
+        { text: "a mal dormi", correct: false, explanation: "Le passé composé (a mal dormi) ne marque pas l'antériorité par rapport au constat ; il faut le plus-que-parfait (avait mal dormi)." },
+        { text: "dormait mal", correct: false, explanation: "L'imparfait (dormait mal) situerait le manque de sommeil comme simultané au constat, sans marquer son antériorité. Le plus-que-parfait est nécessaire ici." },
         { text: "aurait mal dormi", correct: false, explanation: "Le conditionnel passé exprime une hypothèse ou un reproche, non une réalité passée antérieure à une autre. Il faut le plus-que-parfait de l'indicatif." },
       ],
     },
@@ -1898,10 +1898,10 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez : « Après qu'il ___ ses affaires, il a fermé la porte à clé. »",
       choices: [
-        { text: "eut rangé", correct: true, explanation: "« Après que » + passé antérieur (eut rangé) ou plus-que-parfait marque que le rangement est achevé avant la fermeture. Le passé antérieur (eut rangé) s'utilise avec « après que » quand la principale est au passé simple ; avec le passé composé en registre courant, le plus-que-parfait (avait rangé) est aussi correct." },
-        { text: "rangea", correct: false, explanation: "Le passé simple (rangea) place les deux actions au même niveau temporel et n'indique pas que le rangement précède la fermeture. Après « après que », il faut un temps qui marque l'antériorité." },
-        { text: "rangeait", correct: false, explanation: "L'imparfait (rangeait) indiquerait une action en cours ou habituelle, non une action achevée avant une autre. Après « après que », il faut le passé antérieur ou le plus-que-parfait." },
-        { text: "range", correct: false, explanation: "Le présent de l'indicatif (range) n'a pas de valeur passée. Après « après que » dans un contexte passé, il faut un temps du passé qui exprime l'antériorité." },
+        { text: "avait rangé", correct: true, explanation: "Avec « après que » et une principale au passé composé (a fermé), le plus-que-parfait (avait rangé) est la forme naturelle pour marquer que le rangement est achevé avant la fermeture." },
+        { text: "eut rangé", correct: false, explanation: "Le passé antérieur (eut rangé) s'emploie avec « après que » uniquement lorsque la principale est au passé simple. Ici la principale est au passé composé (a fermé) ; il faut donc le plus-que-parfait (avait rangé)." },
+        { text: "rangeait", correct: false, explanation: "L'imparfait (rangeait) indiquerait une action en cours ou habituelle, non une action achevée avant une autre. Après « après que », il faut le plus-que-parfait pour marquer l'antériorité." },
+        { text: "range", correct: false, explanation: "Le présent de l'indicatif (range) n'a pas de valeur passée. Dans un contexte entièrement passé, il faut le plus-que-parfait (avait rangé)." },
       ],
     },
     {
@@ -2005,7 +2005,7 @@ const section: Section = {
         { text: "eut terminé", correct: true, explanation: "« Dès que » suivi du passé antérieur (eut terminé) marque que la fin du rapport précède immédiatement l'envoi. En registre courant avec le passé composé en principale, on peut aussi employer « avait terminé » (plus-que-parfait)." },
         { text: "termina", correct: false, explanation: "Le passé simple (termina) dans une subordonnée avec « dès que » ne marque pas l'antériorité stricte. Avec « dès que », il faut le passé antérieur (eut terminé) pour signifier que l'action est préalable et immédiatement suivie par l'autre." },
         { text: "terminait", correct: false, explanation: "L'imparfait (terminait) indiquerait une action en cours ou habituelle, non une action achevée juste avant l'envoi. Avec « dès que », un temps d'antériorité est nécessaire." },
-        { text: "avait eu terminé", correct: false, explanation: "« Avait eu terminé » est agrammatical en français. Le passé antérieur est « eut terminé » ; le plus-que-parfait est « avait terminé ». Il ne faut pas combiner les deux auxiliaires." },
+        { text: "aurait terminé", correct: false, explanation: "Le conditionnel passé (aurait terminé) exprime une hypothèse ou un irréel, non un fait passé antérieur à un autre. Avec « dès que » dans un contexte factuel passé, il faut le passé antérieur (eut terminé)." },
       ],
     },
     {

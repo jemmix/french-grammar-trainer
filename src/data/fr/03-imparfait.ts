@@ -6296,10 +6296,10 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "« Je pense que tu as raison. » → Il a déclaré qu'il ___ que j'___ raison.",
       choices: [
-        { text: "pensait, aie", correct: true, explanation: "Le présent « pense » devient imparfait « pensait », et le présent du subjonctif « aies » reste inchangé en discours indirect." },
-        { text: "pense, aie", correct: false, explanation: "« Pense » est au présent du discours direct ; il doit devenir imparfait au discours indirect." },
-        { text: "penserait, aurais", correct: false, explanation: "Le conditionnel et le subjonctif passé ne conviennent pas ici." },
-        { text: "a pensé, aies", correct: false, explanation: "Le passé composé et le subjonctif ne conviennent pas pour cette transformation." },
+        { text: "pensait, avais", correct: true, explanation: "Le présent « pense » devient imparfait « pensait » ; le présent indicatif « as » dans la subordonnée de « penser que » affirmative devient imparfait « avais » en discours indirect au passé." },
+        { text: "pensait, aie", correct: false, explanation: "Le subjonctif n'est pas requis ici. « Penser que » à la forme affirmative est suivi de l'indicatif, pas du subjonctif. En discours indirect au passé, le présent devient imparfait : « avais »." },
+        { text: "pense, avais", correct: false, explanation: "« Pense » est au présent du discours direct ; il doit devenir imparfait « pensait » au discours indirect après un verbe de parole au passé." },
+        { text: "penserait, aurait", correct: false, explanation: "Le conditionnel s'utilise pour le futur du discours direct, pas pour le présent en discours indirect." },
       ],
     },
     {
