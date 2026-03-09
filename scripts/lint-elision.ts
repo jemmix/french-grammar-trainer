@@ -95,8 +95,10 @@ function getTextBeforeBlankElided(text: string): string | null {
 
 function checkQuestion(q: ParsedQuestion): Issue[] {
   const issues: Issue[] = [];
-  const answer = q.right.text.trim();
-  if (!answer) return issues;
+  
+  // Collect all answers (right + wrongs)
+  const allAnswers = [q.right.text.trim(), ...q.wrongs.map((w: { text: string }) => w.text.trim())].filter(a => a);
+  if (allAnswers.length === 0) return issues;
 
   // Determine the text to check (PHRASE for input, PROMPT for mcq)
   const texts: string[] = [q.prompt];
@@ -104,21 +106,23 @@ function checkQuestion(q: ParsedQuestion): Issue[] {
     texts.push(q.phrase);
   }
 
-  const isVowel = startsWithVowelSound(answer);
+  // Check if ALL answers start with vowel/consonant (for MCQ with mixed answers, non-elided is safest)
+  const allVowel = allAnswers.every(a => startsWithVowelSound(a));
+  const allConsonant = allAnswers.every(a => startsWithConsonantSound(a));
 
   for (const text of texts) {
     // Case 1: word + space + ___ (non-elided form before blank)
     const wordBefore = getTextBeforeBlank(text);
     if (wordBefore) {
       const cleaned = wordBefore.replace(/[«»"',.:;!?()]/g, "").toLowerCase();
-      if (isVowel) {
-        // Answer starts with vowel — check if the word before should be elided
+      // If all answers start with vowel, non-elided form is wrong
+      if (allVowel) {
         for (const [full, elided] of ELISION_PAIRS) {
           if (cleaned === full) {
             issues.push({
               id: q.id,
               kind: "elision-missing",
-              message: `"${wordBefore} ___" + answer "${answer}" (vowel) → should be "${elided}___"`,
+              message: `"${wordBefore} ___" but some answers start with vowel → should be "${elided}___"`,
             });
           }
         }
@@ -129,14 +133,14 @@ function checkQuestion(q: ParsedQuestion): Issue[] {
     const elidedBefore = getTextBeforeBlankElided(text);
     if (elidedBefore) {
       const cleaned = elidedBefore.replace(/[«»"',.:;!?()]/g, "").toLowerCase();
-      if (!isVowel) {
-        // Answer starts with consonant — check if elision is wrong
+      // If all answers start with consonant, elided form is wrong
+      if (allConsonant) {
         for (const [full, elided] of ELISION_PAIRS) {
           if (cleaned === elided) {
             issues.push({
               id: q.id,
               kind: "elision-wrong",
-              message: `"${elidedBefore}___" + answer "${answer}" (consonant) → should be "${full} ___"`,
+              message: `"${elidedBefore}___" but some answers start with consonant → should be "${full} ___"`,
             });
           }
         }
