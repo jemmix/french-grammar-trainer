@@ -198,6 +198,70 @@ export function InputQuestionView({
   );
 }
 
+// ---- Shared shell: derives all chrome from result.isCorrect / result.kind ----
+
+type FeedbackTheme = "correct" | "warning" | "incorrect" | "unknown";
+
+function getFeedbackTheme(result: InputResult): FeedbackTheme {
+  if (result.kind === "unknown") return "unknown";
+  if (!result.isCorrect) return "incorrect";
+  if (result.kind === "case-warning") return "warning";
+  return "correct";
+}
+
+const THEME = {
+  correct:   { shell: "bg-correct-bg border-correct-border",     iconBg: "bg-correct",   labelCls: "text-correct",   divider: "border-correct-border/50"   },
+  warning:   { shell: "bg-warning-bg border-warning-border",     iconBg: "bg-warning",   labelCls: "text-warning",   divider: "border-warning-border/50"   },
+  incorrect: { shell: "bg-incorrect-bg border-incorrect-border", iconBg: "bg-incorrect", labelCls: "text-incorrect", divider: "border-incorrect-border/50" },
+  unknown:   { shell: "bg-incorrect-bg border-incorrect-border", iconBg: "bg-ardoise",   labelCls: "text-ardoise",   divider: "border-incorrect-border/50" },
+} as const;
+
+function FeedbackShell({ result, children }: { result: InputResult; children: React.ReactNode }) {
+  const theme = getFeedbackTheme(result);
+  const { shell, iconBg, labelCls } = THEME[theme];
+  const label = theme === "correct" || theme === "warning" ? t.quiz.correctAnswer
+              : theme === "unknown" ? t.quiz.unexpectedAnswer
+              : t.quiz.wrongAnswer;
+
+  return (
+    <div className={`rounded-xl border p-5 ${shell}`}>
+      <div className="flex items-center gap-2 mb-3">
+        <div className={`w-6 h-6 rounded-full ${iconBg} flex items-center justify-center`}>
+          {theme === "correct" || theme === "warning" ? (
+            <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          ) : theme === "unknown" ? (
+            <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01" />
+            </svg>
+          ) : (
+            <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          )}
+        </div>
+        <span className={`font-semibold ${labelCls}`}>{label}</span>
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function CorrectAnswerFooter({ result, question }: { result: InputResult; question: InputQuestion }) {
+  const { divider } = THEME[getFeedbackTheme(result)];
+  return (
+    <div className={`mt-4 pt-4 border-t ${divider}`}>
+      <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-1">
+        {t.quiz.correctAnswerLabel} {question.answer}
+      </p>
+      <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
+    </div>
+  );
+}
+
+// ---- Public component ----
+
 export function InputFeedbackPanel({
   result,
   question,
@@ -208,34 +272,16 @@ export function InputFeedbackPanel({
   userInput: string;
 }) {
   switch (result.kind) {
-    // ---- Exact correct ----
     case "exact":
       return (
-        <div className="rounded-xl border p-5 bg-correct-bg border-correct-border">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-6 h-6 rounded-full bg-correct flex items-center justify-center">
-              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <span className="font-semibold text-correct">{t.quiz.correctAnswer}</span>
-          </div>
+        <FeedbackShell result={result}>
           <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
-        </div>
+        </FeedbackShell>
       );
 
-    // ---- Correct but wrong case ----
     case "case-warning":
       return (
-        <div className="rounded-xl border p-5 bg-warning-bg border-warning-border">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-6 h-6 rounded-full bg-warning flex items-center justify-center">
-              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <span className="font-semibold text-warning">{t.quiz.correctAnswer}</span>
-          </div>
+        <FeedbackShell result={result}>
           <div className="flex items-start gap-2 mb-3 px-3 py-2 rounded-lg bg-warning/5 border border-warning/15">
             <svg className="w-4 h-4 text-warning shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
@@ -245,97 +291,46 @@ export function InputFeedbackPanel({
             </p>
           </div>
           <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
-        </div>
+        </FeedbackShell>
       );
 
-    // ---- Prepared wrong answer ----
     case "wrong-prepared":
       return (
-        <div className="rounded-xl border p-5 bg-incorrect-bg border-incorrect-border">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-6 h-6 rounded-full bg-incorrect flex items-center justify-center">
-              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </div>
-            <span className="font-semibold text-incorrect">{t.quiz.wrongAnswer}</span>
-          </div>
+        <FeedbackShell result={result}>
           <p className="text-sm text-encre leading-relaxed">{result.wrongExplanation}</p>
-          <div className="mt-4 pt-4 border-t border-incorrect-border/50">
-            <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-1">
-              {t.quiz.correctAnswerLabel} {question.answer}
-            </p>
-            <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
-          </div>
-        </div>
+          <CorrectAnswerFooter result={result} question={question} />
+        </FeedbackShell>
       );
 
-    // ---- Typo of correct answer ----
     case "typo-correct":
       return (
-        <div className="rounded-xl border p-5 bg-incorrect-bg border-incorrect-border">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-6 h-6 rounded-full bg-incorrect flex items-center justify-center">
-              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </div>
-            <span className="font-semibold text-incorrect">{t.quiz.wrongAnswer}</span>
-          </div>
+        <FeedbackShell result={result}>
           <p className="text-sm text-encre leading-relaxed mb-3">
             {t.quiz.typoCorrectBefore} <strong>{"«\u00a0"}{result.matchedAnswer}{"\u00a0»"}</strong> {t.quiz.typoCorrectAfter}
           </p>
           <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
-        </div>
+        </FeedbackShell>
       );
 
-    // ---- Typo of wrong answer ----
     case "typo-wrong":
       return (
-        <div className="rounded-xl border p-5 bg-incorrect-bg border-incorrect-border">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-6 h-6 rounded-full bg-incorrect flex items-center justify-center">
-              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </div>
-            <span className="font-semibold text-incorrect">{t.quiz.wrongAnswer}</span>
-          </div>
+        <FeedbackShell result={result}>
           <p className="text-sm text-encre leading-relaxed mb-3">
             {t.quiz.typoWrongBefore} <strong>{"«\u00a0"}{result.matchedAnswer}{"\u00a0»"}</strong> {t.quiz.typoWrongAfter}
           </p>
           <p className="text-sm text-encre leading-relaxed">{result.wrongExplanation}</p>
-          <div className="mt-4 pt-4 border-t border-incorrect-border/50">
-            <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-1">
-              {t.quiz.correctAnswerLabel} {question.answer}
-            </p>
-            <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
-          </div>
-        </div>
+          <CorrectAnswerFooter result={result} question={question} />
+        </FeedbackShell>
       );
 
-    // ---- Unknown answer ----
     case "unknown":
       return (
-        <div className="rounded-xl border p-5 bg-incorrect-bg border-incorrect-border">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-6 h-6 rounded-full bg-ardoise flex items-center justify-center">
-              <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01" />
-              </svg>
-            </div>
-            <span className="font-semibold text-ardoise">{t.quiz.unexpectedAnswer}</span>
-          </div>
+        <FeedbackShell result={result}>
           <p className="text-sm text-encre leading-relaxed mb-1">
             {t.quiz.unexpectedDetails(userInput)}
           </p>
-          <div className="mt-4 pt-4 border-t border-incorrect-border/50">
-            <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-1">
-              {t.quiz.correctAnswerLabel} {question.answer}
-            </p>
-            <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
-          </div>
-        </div>
+          <CorrectAnswerFooter result={result} question={question} />
+        </FeedbackShell>
       );
   }
 }
