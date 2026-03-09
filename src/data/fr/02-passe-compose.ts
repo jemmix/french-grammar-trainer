@@ -1,6 +1,6 @@
 import type { Section } from "../types";
 
-// Generated from: questions/02-01.txt, questions/02-02.txt, questions/02-03.txt, questions/02-04.txt, questions/02-05.txt, questions/02-06.txt, questions/02-07.txt, questions/02-08.txt, questions/02-09.txt, questions/02-10.txt, questions/02-11.txt, questions/02-12.txt, questions/02-13.txt, questions/02-14.txt, questions/02-15.txt, questions/02-16.txt, questions/02-17.txt, questions/02-18.txt, questions/02-19.txt, questions/02-20.txt
+// Generated from: questions/fr/02-01.txt, questions/fr/02-02.txt, questions/fr/02-03.txt, questions/fr/02-04.txt, questions/fr/02-05.txt, questions/fr/02-06.txt, questions/fr/02-07.txt, questions/fr/02-08.txt, questions/fr/02-09.txt, questions/fr/02-10.txt, questions/fr/02-11.txt, questions/fr/02-12.txt, questions/fr/02-13.txt, questions/fr/02-14.txt, questions/fr/02-15.txt, questions/fr/02-16.txt, questions/fr/02-17.txt, questions/fr/02-18.txt, questions/fr/02-19.txt, questions/fr/02-20.txt
 // Total: 400 MCQ + 100 INPUT = 500 questions
 
 const section: Section = {
@@ -40,7 +40,7 @@ const section: Section = {
         { text: "ai", correct: true, explanation: "Le sujet « je » prend l'auxiliaire avoir à la première personne du singulier, qui est « ai ». Le passé composé se forme avec avoir + participe passé." },
         { text: "as", correct: false, explanation: "« as » est la deuxième personne du singulier (tu as), pas la première personne (je ai)." },
         { text: "a", correct: false, explanation: "« a » est la troisième personne du singulier (il/elle a), pas la première personne (je ai)." },
-        { text: "ai mangé", correct: false, explanation: "L'auxiliaire seul est requis ici ; « mangé » vient après l'auxiliaire, pas à sa place." },
+        { text: "avais", correct: false, explanation: "« Avais » est l'imparfait (je avais), pas le passé composé. Le passé composé demande l'auxiliaire avoir au présent : « ai »." },
       ],
     },
     {
@@ -182,7 +182,7 @@ const section: Section = {
       choices: [
         { text: "Ils ont cherché la solution pendant une heure.", correct: true, explanation: "Passé composé correct : « ont » (troisième personne du pluriel) + « cherché » (participe passé de chercher, verbe transitif)." },
         { text: "Ils ont cherchés la solution pendant une heure.", correct: false, explanation: "Le participe passé au passé composé ne s'accorde pas avec le sujet. « Cherché » reste invariable avec un sujet pluriel." },
-        { text: "Ils cherchaien la solution pendant une heure.", correct: false, explanation: "Ce n'est pas un temps correct en français. Le passé composé est : « Ils ont cherché... »" },
+        { text: "Ils cherchaient la solution pendant une heure.", correct: false, explanation: "Ce n'est pas un temps correct en français. Le passé composé est : « Ils ont cherché... »" },
         { text: "Ils étaient cherché la solution pendant une heure.", correct: false, explanation: "Construction incorrecte. Le passé composé avec « chercher » demande l'auxiliaire avoir au présent : « Ils ont cherché... »" },
       ],
     },
@@ -609,16 +609,16 @@ const section: Section = {
       type: "input",
       ruleId: "02-02",
       generatedBy: "haiku",
-      prompt: "Conjuguez le verbe « venir » au passé composé avec le sujet donné.",
+      prompt: "Conjuguez le verbe « venir » au passé composé avec le sujet donné. (vous = locuteur singulier masculin)",
       phrase: { before: "Vous ", after: " à notre réunion la semaine dernière ?" },
       answer: "êtes venu",
-      explanation: "« Venir » utilise « être » au passé composé. Avec « vous » (pluriel), le participe s'accorde : « venus » (ou « venues » si toutes les personnes sont féminines, ou « venu » s'il s'agit d'une seule personne informelle). La forme standard pour « vous » pluriel est « êtes venus ».",
+      explanation: "« Venir » utilise « être » au passé composé. Avec « vous » singulier poli s'adressant à un homme, le participe reste au masculin singulier : « venu ».",
       wrongAnswers: [
         { text: "avez venu", explanation: "« Venir » utilise l'auxiliaire « être », pas « avoir »." },
-        { text: "veniez", explanation: "« Veniez » est l'imparfait ; le passé composé utilise « êtes venu(e)s »." },
-        { text: "venez", explanation: "« Venez » est le présent ; le passé composé utilise « êtes venu(e)s »." },
-        { text: "êtes venus", explanation: "« Êtes venus » est correct, mais le singulier « vous » serait « êtes venu(e) ». En contexte, la forme plurielle standard est généralement utilisée." },
-        { text: "serez venus", explanation: "« Serez venus » est le futur antérieur, pas le passé composé." },
+        { text: "veniez", explanation: "« Veniez » est l'imparfait ; le passé composé utilise « êtes venu »." },
+        { text: "venez", explanation: "« Venez » est le présent ; le passé composé utilise « êtes venu »." },
+        { text: "êtes venus", explanation: "« Êtes venus » serait correct si « vous » désignait plusieurs personnes ; ici, « vous » est singulier poli, donc « êtes venu » (masculin singulier)." },
+        { text: "serez venu", explanation: "« Serez venu » est le futur antérieur, pas le passé composé." },
       ],
     },
     {
@@ -1136,9 +1136,9 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez : « Ils _____ les valises au premier étage. »",
       choices: [
-        { text: "ont montées", correct: true, explanation: "« Monter quelque chose » (faire monter un objet) utilise « avoir ». Le COD « les valises » précède le verbe, donc l'accord s'ajoute : « montées »." },
+        { text: "ont monté", correct: true, explanation: "« Monter quelque chose » (faire monter un objet) utilise « avoir ». Le COD « les valises » suit le verbe, donc le participe passé reste invariable : « monté »." },
         { text: "sont montés", correct: false, explanation: "« Être » s'utilise pour le mouvement simple sans COD. Ici, il y a un COD (« les valises »), donc « avoir » est correct." },
-        { text: "ont monté", correct: false, explanation: "Quand le COD précède « avoir », le participe passé doit s'accorder : « montées » (féminin pluriel)." },
+        { text: "ont montées", correct: false, explanation: "Avec « avoir », l'accord du participe n'a lieu que si le COD précède le verbe. Ici, « les valises » suit, donc pas d'accord." },
         { text: "sont montées", correct: false, explanation: "Après « être », l'accord se fait, mais ici « avoir » est le bon auxiliaire puisqu'il y a un COD." },
       ],
     },
@@ -1175,10 +1175,10 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez : « Elle _____ la crêpe dans la poêle. »",
       choices: [
-        { text: "a retournée", correct: true, explanation: "« Retourner quelque chose » (tourner, inverser) utilise « avoir ». Le COD « la crêpe » précède le verbe, donc accord : « retournée »." },
-        { text: "est retournée", correct: false, explanation: "« Être » s'utilise pour « retourner » au sens de « revenir ». Ici, le sens est « tourner un objet », donc « avoir » est correct." },
-        { text: "a retourné", correct: false, explanation: "Le COD « la crêpe » précède le verbe, donc l'accord s'ajoute : « retournée » (féminin singulier)." },
-        { text: "a retourné la crêpe", correct: false, explanation: "Cette forme est correcte grammaticalement (« avoir » + participe invariable quand COD suit), mais la question demande de compléter avec le verbe au passé composé avec accord." },
+        { text: "a retourné", correct: true, explanation: "« Retourner quelque chose » (tourner, inverser) utilise « avoir ». Le COD « la crêpe » suit le verbe, donc le participe passé reste invariable : « retourné »." },
+        { text: "est retournée", correct: false, explanation: "« Être » s'utilise pour « retourner » au sens de « revenir quelque part ». Ici, le sens est « tourner un objet », donc « avoir » est correct." },
+        { text: "a retournée", correct: false, explanation: "Avec « avoir », l'accord du participe n'a lieu que si le COD précède le verbe. Ici, « la crêpe » suit, donc pas d'accord." },
+        { text: "avait retourné", correct: false, explanation: "« Avait retourné » est le plus-que-parfait, pas le passé composé. On utilise l'auxiliaire au présent : « a retourné »." },
       ],
     },
     {
@@ -1201,10 +1201,10 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez : « Nous _____ les bagages au sous-sol. »",
       choices: [
-        { text: "avons descendus", correct: true, explanation: "« Descendre quelque chose » (faire descendre un objet) utilise « avoir ». Le COD « les bagages » précède, donc accord : « descendus »." },
-        { text: "sommes descendus", correct: false, explanation: "« Être » s'utilise pour « descendre » au sens de mouvement simple. Ici, il y a une action sur un objet (« les bagages »), donc « avoir » est correct." },
-        { text: "avons descendu", correct: false, explanation: "Le COD « les bagages » précède le verbe, donc l'accord s'ajoute : « descendus »." },
-        { text: "sommes descendues", correct: false, explanation: "« Être » est incorrect ici. L'action porte sur « les bagages », donc « avoir » est le bon auxiliaire." },
+        { text: "avons descendu", correct: true, explanation: "« Descendre quelque chose » (faire descendre un objet) utilise « avoir ». Le COD « les bagages » suit le verbe, donc le participe passé reste invariable : « descendu »." },
+        { text: "sommes descendus", correct: false, explanation: "« Être » s'utilise pour « descendre » au sens de mouvement simple sans COD. Ici, il y a une action sur un objet (« les bagages »), donc « avoir » est correct." },
+        { text: "avons descendus", correct: false, explanation: "Avec « avoir », l'accord du participe n'a lieu que si le COD précède le verbe. Ici, « les bagages » suit, donc pas d'accord." },
+        { text: "sommes descendues", correct: false, explanation: "« Être » est incorrect ici (il y a un COD), et l'accord au féminin est incorrect pour un sujet « nous » masculin/mixte." },
       ],
     },
     {
@@ -1227,10 +1227,10 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez : « La voiture _____ très loin ce jour-là. »",
       choices: [
-        { text: "a passé", correct: true, explanation: "« Passer » au sens de « faire la route, traverser » peut s'utiliser avec « avoir ». Ici, « passer loin » signifie « aller/se déplacer loin »." },
-        { text: "est passée", correct: false, explanation: "Bien que « être » soit aussi possible pour « passer » (mouvement), « avoir » est approprié ici avec le sens de « parcourir une distance »." },
-        { text: "a passée", correct: false, explanation: "Après « avoir », l'accord du participe n'existe que si le COD précède. Ici, il n'y a pas de COD explicite." },
-        { text: "est passés", correct: false, explanation: "« La voiture » est singulier féminin, donc si on utilise « être », ce serait « est passée » (pas « passés »)." },
+        { text: "est passée", correct: true, explanation: "« Passer » utilisé sans complément d'objet direct (sens de mouvement, « aller quelque part ») prend l'auxiliaire « être ». Le participe s'accorde avec le sujet féminin singulier : « passée »." },
+        { text: "a passé", correct: false, explanation: "« Avoir » s'utilise quand « passer » a un COD (« passer l'examen », « passer un appel »). Ici, il n'y a pas de COD, juste un complément de mouvement, donc « être »." },
+        { text: "a passée", correct: false, explanation: "« Avoir » est incorrect ici (pas de COD). De plus, avec « avoir » sans COD précédant le verbe, il n'y aurait pas d'accord." },
+        { text: "est passés", correct: false, explanation: "« La voiture » est singulier féminin. L'accord au pluriel masculin est incorrect : la forme correcte serait « est passée »." },
       ],
     },
     {
@@ -1251,9 +1251,9 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu _____ enfin ! On t'attendait. »",
+      prompt: "Complétez : « Tu _____ enfin ! On t'attendait. » (locuteur masculin)",
       choices: [
-        { text: "es retourné", correct: true, explanation: "« Retourner » au sens de « revenir » utilise « être ». Avec le sujet « tu » (masculin), le participe devient « retourné »." },
+        { text: "es retourné", correct: true, explanation: "« Retourner » au sens de « revenir » utilise « être ». Avec le sujet « tu » (locuteur masculin), le participe devient « retourné »." },
         { text: "as retourné", correct: false, explanation: "« Avoir » s'utilise quand « retourner » signifie « tourner, inverser un objet ». Ici, c'est « revenir », donc « être »." },
         { text: "es retournée", correct: false, explanation: "Avec le sujet « tu » masculin, l'accord se fait au masculin : « retourné » (pas « retournée »)." },
         { text: "as retournée", correct: false, explanation: "« Avoir » demande un COD pour cette forme. Ici, « retourner » signifie « revenir », donc « être » est correct." },
@@ -1266,10 +1266,10 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Quelle phrase est correcte ?",
       choices: [
-        { text: "Nous avons sorti la bache avant l'orage.", correct: true, explanation: "« Sortir quelque chose » (faire sortir un objet) utilise « avoir ». Le COD « la bâche » suit, donc pas d'accord." },
-        { text: "Nous sommes sortis la bache avant l'orage.", correct: false, explanation: "« Être » s'utilise sans COD. Ici, il y a un COD (« la bâche »), donc « avoir » est correct." },
-        { text: "Nous avons sortie la bache avant l'orage.", correct: false, explanation: "L'accord s'ajoute seulement si le COD précède. Ici, « la bâche » suit, donc pas d'accord." },
-        { text: "Nous sommes sortie la bache avant l'orage.", correct: false, explanation: "« Être » avec un COD est incorrect (devrait être « avoir »). De plus, « sortie » devrait être « sortis » (sujet « nous »)." },
+        { text: "Nous avons sorti la bâche avant l'orage.", correct: true, explanation: "« Sortir quelque chose » (faire sortir un objet) utilise « avoir ». Le COD « la bâche » suit, donc pas d'accord." },
+        { text: "Nous sommes sortis la bâche avant l'orage.", correct: false, explanation: "« Être » s'utilise sans COD. Ici, il y a un COD (« la bâche »), donc « avoir » est correct." },
+        { text: "Nous avons sortie la bâche avant l'orage.", correct: false, explanation: "L'accord s'ajoute seulement si le COD précède. Ici, « la bâche » suit, donc pas d'accord." },
+        { text: "Nous sommes sortie la bâche avant l'orage.", correct: false, explanation: "« Être » avec un COD est incorrect (devrait être « avoir »). De plus, « sortie » devrait être « sortis » (sujet « nous »)." },
       ],
     },
     {
@@ -2146,8 +2146,8 @@ const section: Section = {
       prompt: "Que signifie « entendu » ?",
       choices: [
         { text: "participe passé du verbe entendre (entendu = heard)", correct: true, explanation: "Entendre → on supprime -re et on ajoute -u → entendu. C'est la bonne formation." },
-        { text: "participe passé du verbe entendre formé comme « entendu »", correct: false, explanation: "Ceci semble correct à première vue, mais la formation avec « entendu » est bonne." },
-        { text: "adjectif signifiant « évidemment »", correct: false, explanation: "Bien que « entendu » puisse être utilisé comme adjectif (« c'est entendu »), son origine est le participe passé." },
+        { text: "participe présent du verbe entendre", correct: false, explanation: "Le participe présent d'« entendre » est « entendant », pas « entendu ». « Entendu » est le participe passé." },
+        { text: "gérondif du verbe entendre", correct: false, explanation: "Le gérondif d'« entendre » est « en entendant », pas « entendu ». « Entendu » est le participe passé." },
         { text: "forme conjuguée au présent", correct: false, explanation: "La forme conjuguée au présent serait « entend », pas « entendu »." },
       ],
     },
@@ -2466,7 +2466,7 @@ const section: Section = {
       choices: [
         { text: "fait", correct: true, explanation: "Le participe passé irrégulier de « faire » est « fait ». La phrase signifie « J'ai commis une belle erreur. »" },
         { text: "faité", correct: false, explanation: "« Faité » n'existe pas. C'est une régularisation incorrecte du verbe faire. La forme correcte est « fait »." },
-        { text: "fait (verbe à l'infinitif)", correct: false, explanation: "C'est une confusion avec l'infinitif, mais nous avons besoin du participe passé après « avoir »." },
+        { text: "faisait", correct: false, explanation: "« Faisait » est l'imparfait (il/elle faisait), pas le participe passé. Le participe passé de « faire » est « fait »." },
         { text: "faisé", correct: false, explanation: "« Faisé » n'existe pas. C'est une tentative incorrecte de régularisation. Le participe passé correct est « fait »." },
       ],
     },
@@ -2479,7 +2479,7 @@ const section: Section = {
       choices: [
         { text: "dit", correct: true, explanation: "Le participe passé irrégulier de « dire » est « dit ». Exemple : « Il a dit la vérité. »" },
         { text: "diré", correct: false, explanation: "« Diré » n'existe pas. C'est une régularisation incorrecte du verbe dire. La forme correcte est « dit »." },
-        { text: "dit (du verbe dite)", correct: false, explanation: "Bien que « dit » soit correct, il n'existe pas de verbe « dite ». Le verbe est « dire » et son participe est « dit »." },
+        { text: "disait", correct: false, explanation: "« Disait » est l'imparfait (il/elle disait), pas le participe passé. Le participe passé de « dire » est « dit »." },
         { text: "disant", correct: false, explanation: "« Disant » est le participe présent de « dire », pas le participe passé. Nous avons besoin de « dit »." },
       ],
     },
@@ -2492,7 +2492,7 @@ const section: Section = {
       choices: [
         { text: "mis", correct: true, explanation: "Le participe passé irrégulier de « mettre » est « mis ». Exemple : « Elle a mis sa robe neuve. »" },
         { text: "miset", correct: false, explanation: "« Miset » n'existe pas. C'est une tentative de régularisation. La forme correcte est « mis »." },
-        { text: "mis (du verbe miser)", correct: false, explanation: "Bien que « mis » soit l'orthographe correcte, il faut noter que « miser » est un verbe différent. Le participe passé de « mettre » reste « mis »." },
+        { text: "mettait", correct: false, explanation: "« Mettait » est l'imparfait (il/elle mettait), pas le participe passé. Le participe passé de « mettre » est « mis »." },
         { text: "mité", correct: false, explanation: "« Mité » n'existe pas comme participe passé de « mettre ». C'est une mauvaise formation. La forme correcte est « mis »." },
       ],
     },
@@ -2583,7 +2583,7 @@ const section: Section = {
       choices: [
         { text: "bu", correct: true, explanation: "Le participe passé irrégulier de « boire » est « bu ». La phrase signifie « J'ai consommé un verre d'eau ce matin. »" },
         { text: "boiré", correct: false, explanation: "« Boiré » n'existe pas. C'est une régularisation incorrecte. Le participe passé correct est « bu »." },
-        { text: "bu (du verbe bue)", correct: false, explanation: "Bien que « bu » soit correct, il faut noter que la forme à boire se conjugue « bu » au masculin singulier comme ici." },
+        { text: "buvait", correct: false, explanation: "« Buvait » est l'imparfait (il/elle buvait), pas le participe passé. Le participe passé de « boire » est « bu »." },
         { text: "vu", correct: false, explanation: "« Vu » est le participe passé de « voir », pas de « boire ». Le participe passé correct est « bu »." },
       ],
     },
@@ -2596,7 +2596,7 @@ const section: Section = {
       choices: [
         { text: "vu", correct: true, explanation: "Le participe passé irrégulier de « voir » est « vu ». Exemple : « Tu as vu ce film hier soir ? »" },
         { text: "voyé", correct: false, explanation: "« Voyé » n'existe pas. C'est une régularisation incorrecte. Le participe passé correct est « vu »." },
-        { text: "vu (à ne pas confondre avec bu)", correct: false, explanation: "Bien que « vu » soit correct, on doit noter qu'il ne faut pas le confondre avec « bu » (de boire)." },
+        { text: "voyait", correct: false, explanation: "« Voyait » est l'imparfait (il/elle voyait), pas le participe passé. Le participe passé de « voir » est « vu »." },
         { text: "voyant", correct: false, explanation: "« Voyant » est le participe présent de « voir », pas le participe passé. Nous avons besoin de « vu »." },
       ],
     },
@@ -2623,7 +2623,7 @@ const section: Section = {
         { text: "su", correct: true, explanation: "Le participe passé irrégulier de « savoir » est « su ». La phrase signifie « Elle a connu/appris la réponse immédiatement. »" },
         { text: "suè", correct: false, explanation: "« Suè » n'existe pas. C'est une tentative de régularisation. Le participe passé correct est « su »." },
         { text: "saurait", correct: false, explanation: "« Saurait » est le conditionnel de « savoir », pas le participe passé. Nous avons besoin de « su »." },
-        { text: "su (du verbe sue)", correct: false, explanation: "Bien que « su » soit l'orthographe correcte, on doit noter que c'est le participe passé de « savoir », pas de « suer »." },
+        { text: "savait", correct: false, explanation: "« Savait » est l'imparfait (il/elle savait), pas le participe passé. Le participe passé de « savoir » est « su »." },
       ],
     },
     {
@@ -2675,7 +2675,7 @@ const section: Section = {
         { text: "mis", correct: true, explanation: "Le participe passé irrégulier de « mettre » est « mis ». La phrase signifie « Ils ont préparé/mis le gâteau hier pour la fête. »" },
         { text: "misé", correct: false, explanation: "« Misé » n'existe pas. C'est une régularisation incorrecte. Le participe passé correct est « mis »." },
         { text: "mettant", correct: false, explanation: "« Mettant » est le participe présent de « mettre », pas le participe passé. Nous avons besoin de « mis »." },
-        { text: "mis (du verbe miser)", correct: false, explanation: "Bien que « mis » soit correct pour « mettre », il ne faut pas le confondre avec le participe passé de « miser »." },
+        { text: "mettait", correct: false, explanation: "« Mettait » est l'imparfait (il/elle mettait), pas le participe passé. Le participe passé de « mettre » est « mis »." },
       ],
     },
     {
@@ -2687,7 +2687,7 @@ const section: Section = {
       choices: [
         { text: "compris", correct: true, explanation: "Le participe passé irrégulier de « comprendre » (dérivé de prendre) est « compris ». Exemple : « J'ai compris la leçon. »" },
         { text: "comprendu", correct: false, explanation: "« Comprendu » n'existe pas. C'est une tentative incorrecte. Le participe passé correct est « compris »." },
-        { text: "compris (du verbe compresser)", correct: false, explanation: "Bien que « compris » soit correct pour « comprendre », on doit noter que « compresser » a un participe passé différent." },
+        { text: "comprenait", correct: false, explanation: "« Comprenait » est l'imparfait (il/elle comprenait), pas le participe passé. Le participe passé de « comprendre » est « compris »." },
         { text: "comprenant", correct: false, explanation: "« Comprenant » est le participe présent de « comprendre », pas le participe passé. Nous avons besoin de « compris »." },
       ],
     },
@@ -2696,12 +2696,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-08",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu as ___ le texte sur le mur. »",
+      prompt: "Complétez : « Tu as ___ la scène avec précision. »",
       choices: [
-        { text: "décrit", correct: true, explanation: "Le participe passé irrégulier de « décrire » (dérivé d'écrire) est « décrit ». La phrase signifie « Tu as décrit le texte sur le mur. »" },
+        { text: "décrit", correct: true, explanation: "Le participe passé irrégulier de « décrire » (dérivé d'écrire) est « décrit ». La phrase signifie « Tu as décrit la scène avec précision. »" },
         { text: "décrivé", correct: false, explanation: "« Décrivé » n'existe pas. C'est une régularisation incorrecte. Le participe passé correct est « décrit »." },
         { text: "décrire", correct: false, explanation: "« Décrire » est l'infinitif, pas le participe passé. Nous avons besoin de « décrit »." },
-        { text: "écrit", correct: false, explanation: "« Écrit » est le participe passé de « écrire » seul, pas de « décrire ». Le participe passé correct est « décrit »." },
+        { text: "écrit", correct: false, explanation: "« Écrit » est le participe passé de « écrire », pas de « décrire ». De plus, on n'« écrit » pas une scène : on la décrit. Le participe passé correct ici est « décrit »." },
       ],
     },
     {
@@ -2799,9 +2799,9 @@ const section: Section = {
       ruleId: "02-08",
       generatedBy: "haiku",
       prompt: "Complétez avec le participe passé du verbe entre parenthèses.",
-      phrase: { before: "Nous avons ", after: " cette décision ensemble." },
+      phrase: { before: "Nous avons ", after: " participer, mais les places étaient complètes." },
       answer: "voulu",
-      explanation: "Le participe passé irrégulier de « vouloir » est « voulu ». La phrase signifie « Nous avons souhaité cette décision ensemble. »",
+      explanation: "Le participe passé irrégulier de « vouloir » est « voulu ». La phrase signifie « Nous avons souhaité participer, mais les places étaient complètes. »",
       wrongAnswers: [
         { text: "vouliré", explanation: "« Vouliré » n'existe pas. Le participe passé correct est « voulu »." },
         { text: "voulut", explanation: "« Voulut » est le passé simple (il), pas le participe passé. Le participe passé correct est « voulu »." },
@@ -2937,9 +2937,9 @@ const section: Section = {
       prompt: "Quel verbe a le participe passé « mort »?",
       choices: [
         { text: "mourir", correct: true, explanation: "Le verbe « mourir » a un participe passé irrégulier « mort ». C'est un des rares participes passés à une seule syllabe." },
-        { text: "morir", correct: false, explanation: "« Morir » n'existe pas en français. Le participe passé de « mourir » est « mort »." },
-        { text: "mordu", correct: false, explanation: "« Mordu » est le participe passé de « mordre », pas de « mourir »." },
-        { text: "mortir", correct: false, explanation: "« Mortir » n'existe pas. Le participe passé correct est « mort »." },
+        { text: "mordre", correct: false, explanation: "Le participe passé de « mordre » est « mordu », pas « mort »." },
+        { text: "amortir", correct: false, explanation: "Le participe passé d'« amortir » est « amorti », pas « mort »." },
+        { text: "endormir", correct: false, explanation: "Le participe passé d'« endormir » est « endormi », pas « mort »." },
       ],
     },
     {
@@ -2952,7 +2952,7 @@ const section: Section = {
         { text: "nées", correct: true, explanation: "Le verbe « naître » utilise l'auxiliaire ÊTRE et a un participe passé irrégulier « né ». Accord : nées (féminin pluriel)." },
         { text: "ont nées", correct: false, explanation: "« Naître » utilise toujours l'auxiliaire ÊTRE, jamais AVOIR. La bonne forme est « sont nées »." },
         { text: "sont nai", correct: false, explanation: "Le participe passé de « naître » est « né/née/nés/nées », pas « nai ». Avec sujet féminin pluriel : « sont nées »." },
-        { text: "sont nées", correct: false, explanation: "Ceci est la bonne réponse, pas une mauvaise réponse." },
+        { text: "sont nées", correct: false, explanation: "« Sont nées » comprend l'auxiliaire « sont » qui est déjà dans la phrase. Remplir le blanc avec « sont nées » donnerait « Elles sont sont nées », ce qui est incorrect. On complète uniquement avec le participe passé accordé : « nées »." },
       ],
     },
     {
