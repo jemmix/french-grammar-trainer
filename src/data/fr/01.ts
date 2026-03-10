@@ -1,12 +1,12 @@
 import type { Section } from "../types";
 
 // Generated from: questions/fr/01-01.txt, questions/fr/01-02.txt, questions/fr/01-03.txt, questions/fr/01-04.txt, questions/fr/01-05.txt, questions/fr/01-06.txt, questions/fr/01-07.txt, questions/fr/01-08.txt, questions/fr/01-09.txt, questions/fr/01-10.txt, questions/fr/01-11.txt, questions/fr/01-12.txt, questions/fr/01-13.txt, questions/fr/01-14.txt, questions/fr/01-15.txt, questions/fr/01-16.txt, questions/fr/01-17.txt, questions/fr/01-18.txt, questions/fr/01-19.txt, questions/fr/01-20.txt
-// Total: 400 MCQ + 100 INPUT = 500 questions
+// Total: 400 MCQ + 98 INPUT = 498 questions
 
 const section: Section = {
   id: "01",
-  title: "Le présent de l'indicatif",
-  description: "",
+  title: "Section 01",
+  description: "Section 01",
   rules: [
     { id: "01-01", sectionId: "01", title: "Conjugaison des verbes réguliers en -er (parler, manger, commencer, etc.)" },
     { id: "01-02", sectionId: "01", title: "Conjugaison des verbes réguliers en -ir (finir, choisir, réussir, etc.)" },
@@ -105,7 +105,7 @@ const section: Section = {
         { text: "nettoie", correct: true, explanation: "Le verbe « nettoyer » à la première personne du singulier (je) au présent se conjugue « je nettoie » (le -y- se change en -i- avant -e au singulier et à la troisième personne du pluriel)." },
         { text: "nettoyai", correct: false, explanation: "« Nettoyai » est le passé simple à la première personne, pas le présent de l'indicatif." },
         { text: "nettoyais", correct: false, explanation: "« Nettoyais » est l'imparfait, qui décrit une action habituelle au passé." },
-        { text: "nettoyent", correct: false, explanation: "« Nettoyent » est la troisième personne du pluriel (ils nettoyent), non pas la première personne du singulier." },
+        { text: "nettoient", correct: false, explanation: "« Nettoient » est la troisième personne du pluriel (ils nettoient), non pas la première personne du singulier." },
       ],
     },
     {
@@ -243,7 +243,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-01",
       generatedBy: "haiku",
-      prompt: "Complétez au présent : « Je ___ la musique classique. »",
+      prompt: "Complétez au présent : « J'___ la musique classique. »",
       choices: [
         { text: "aime", correct: true, explanation: "Le verbe « aimer » à la première personne du singulier (je) au présent de l'indicatif se conjugue avec la terminaison -e : j'aime." },
         { text: "aimes", correct: false, explanation: "« Aimes » est la deuxième personne du singulier (tu aimes), non pas la première personne." },
@@ -553,9 +553,9 @@ const section: Section = {
       prompt: "Complétez : « Tu ___ tes exercices si tu étudies bien. »",
       choices: [
         { text: "réussis", correct: true, explanation: "Avec « tu », le verbe réussir se conjugue « tu réussis » (tu + -is)." },
-        { text: "réussies", correct: false, explanation: "« Réussies » est un adjectif féminin pluriel, pas une forme verbale conjuguée." },
+        { text: "réussira", correct: false, explanation: "« Réussira » est la 3ème personne du futur (il/elle réussira). Avec « tu », le futur serait « réussiras » — mais la forme demandée ici est le présent « réussis »." },
         { text: "réussit", correct: false, explanation: "« Réussit » est pour « il/elle », pas pour « tu »." },
-        { text: "réussira", correct: false, explanation: "« Réussira » est le futur simple, pas le présent." },
+        { text: "réussies", correct: false, explanation: "« Réussies » est un adjectif féminin pluriel, pas une forme verbale conjuguée." },
       ],
     },
     {
@@ -1087,7 +1087,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ à l'école. »",
+      prompt: "Complétez : « J'___ à l'école. »",
       choices: [
         { text: "vais", correct: true, explanation: "« Je vais » est la forme correcte du présent d'aller à la 1ère personne du singulier." },
         { text: "vas", correct: false, explanation: "« Vas » est la forme pour la 2e personne du singulier (tu vas), pas pour je." },
@@ -1165,11 +1165,11 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « J'___ chez mon ami. »",
+      prompt: "Complétez : « Je ___ chez mon ami. »",
       choices: [
-        { text: "vais", correct: true, explanation: "« Vais » est la forme correcte du présent d'aller après j' (contraction de je)." },
-        { text: "envoie", correct: false, explanation: "« Envoie » est la forme d'envoyer à la 1ère personne, pas d'aller." },
-        { text: "allais", correct: false, explanation: "« Allais » est l'imparfait, pas le présent." },
+        { text: "vais", correct: true, explanation: "« Vais » est la forme correcte du présent d'aller à la 1ère personne du singulier : je vais." },
+        { text: "va", correct: false, explanation: "« Va » est la forme pour il/elle, pas pour je." },
+        { text: "vont", correct: false, explanation: "« Vont » est la forme pour ils/elles (pluriel), pas pour je." },
         { text: "viens", correct: false, explanation: "« Viens » est la forme d'un autre verbe (venir), pas d'aller." },
       ],
     },
@@ -1282,7 +1282,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ à la pharmacie acheter des médicaments. »",
+      prompt: "Complétez : « J'___ à la pharmacie acheter des médicaments. »",
       choices: [
         { text: "vais", correct: true, explanation: "« Vais » est la forme correcte du présent d'aller à la 1ère personne du singulier." },
         { text: "envoie", correct: false, explanation: "« Envoie » est une forme d'envoyer, pas d'aller." },
@@ -1308,7 +1308,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ne ___ jamais acheter de fruits pourris. »",
+      prompt: "Complétez : « Nous n'___ jamais acheter de fruits pourris. »",
       choices: [
         { text: "allons", correct: true, explanation: "« Allons » est la forme correcte du présent d'aller à la 1ère personne du pluriel." },
         { text: "envoyons", correct: false, explanation: "« Envoyons » est une forme d'envoyer, pas d'aller." },
@@ -1335,7 +1335,7 @@ const section: Section = {
       ruleId: "01-04",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe aller au présent.",
-      phrase: { before: "Je ", after: " à la bibliothèque cet après-midi." },
+      phrase: { before: "J'", after: " à la bibliothèque cet après-midi." },
       answer: "vais",
       explanation: "« Vais » est la conjugaison d'aller à la 1ère personne du singulier au présent.",
       wrongAnswers: [
@@ -1399,7 +1399,7 @@ const section: Section = {
       ruleId: "01-04",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe envoyer au présent avec le sujet je.",
-      phrase: { before: "Je ", after: " un email à mon patron avant de partir au bureau." },
+      phrase: { before: "J'", after: " un email à mon patron avant de partir au bureau." },
       answer: "envoie",
       explanation: "« Envoyer » est irrégulier au présent : je envoie (et non « j'envois » ni « j'envoye »). La racine change : envo- → envoie pour les personnes singulier et 3e pluriel.",
       wrongAnswers: [
@@ -1433,9 +1433,9 @@ const section: Section = {
       prompt: "Complétez : « Je ___ français. »",
       choices: [
         { text: "suis", correct: true, explanation: "Le verbe « être » à la première personne du singulier au présent est « suis »." },
-        { text: "ai", correct: false, explanation: "« ai » est le présent du verbe « avoir », non « être ». La phrase serait grammaticalement incorrecte." },
         { text: "fais", correct: false, explanation: "« fais » est le présent du verbe « faire ». Ici, on a besoin du verbe « être »." },
         { text: "dis", correct: false, explanation: "« dis » est le présent du verbe « dire ». Ce n'est pas le bon verbe pour exprimer une nationalité." },
+        { text: "sommes", correct: false, explanation: "« sommes » est la première personne du pluriel du verbe « être ». Pour « je », on utilise « suis »." },
       ],
     },
     {
@@ -1512,8 +1512,8 @@ const section: Section = {
       choices: [
         { text: "fais", correct: true, explanation: "Le verbe « faire » à la première personne du singulier au présent est « fais »." },
         { text: "suis", correct: false, explanation: "« suis » est le présent du verbe « être ». On utilise « faire » pour exprimer l'action de préparer." },
-        { text: "ai", correct: false, explanation: "« ai » est le présent du verbe « avoir ». Ici, on a besoin du verbe « faire » pour l'action de préparer un gâteau." },
         { text: "dis", correct: false, explanation: "« dis » est le présent du verbe « dire ». Le contexte demande l'action « faire »." },
+        { text: "faisons", correct: false, explanation: "« faisons » est la première personne du pluriel du verbe « faire ». Pour « je », on utilise « fais »." },
       ],
     },
     {
@@ -1573,7 +1573,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il ___ du travail. »",
+      prompt: "Complétez : « Il ___ beaucoup de travail en ce moment. »",
       choices: [
         { text: "a", correct: true, explanation: "Le verbe « avoir » à la troisième personne du singulier au présent est « a ». On l'utilise pour exprimer la possession." },
         { text: "est", correct: false, explanation: "« est » est le présent du verbe « être ». Pour exprimer la possession, on utilise « avoir »." },
@@ -1651,7 +1651,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu n' ___ rien. »",
+      prompt: "Complétez : « Tu n' ___ pas de chance. »",
       choices: [
         { text: "as", correct: true, explanation: "Le verbe « avoir » à la deuxième personne du singulier au présent est « as ». « Ne rien avoir » signifie ne posséder aucune chose." },
         { text: "es", correct: false, explanation: "« es » est le présent du verbe « être ». Pour exprimer la possession négative, on utilise « avoir »." },
@@ -1664,12 +1664,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elles ne ___ rien. »",
+      prompt: "Complétez : « Elles ne ___ rien à personne. »",
       choices: [
         { text: "disent", correct: true, explanation: "Le verbe « dire » à la troisième personne du pluriel au présent est « disent ». « Ne rien dire » signifie rester silencieux." },
         { text: "sont", correct: false, explanation: "« sont » est le présent du verbe « être ». Pour exprimer le silence, on utilise « dire »." },
-        { text: "ont", correct: false, explanation: "« ont » est le présent du verbe « avoir ». Ce n'est pas le bon verbe pour exprimer le silence." },
         { text: "font", correct: false, explanation: "« font » est le présent du verbe « faire ». La phrase demande le verbe « dire »." },
+        { text: "dit", correct: false, explanation: "« dit » est la troisième personne du singulier du verbe « dire ». Pour « elles », on utilise « disent »." },
       ],
     },
     {
@@ -2035,7 +2035,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elles ___ danser. »",
+      prompt: "Complétez : « Malgré leur âge, elles ___ encore danser. »",
       choices: [
         { text: "peuvent", correct: true, explanation: "Présent de l'indicatif, 3ème personne pluriel du verbe pouvoir." },
         { text: "veulent", correct: false, explanation: "C'est le verbe vouloir, pas pouvoir. Les deux sont irréguliers mais distincts." },
@@ -2133,7 +2133,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ à la réunion demain. »",
+      prompt: "Complétez : « Je ___ à la réunion tous les lundis. »",
       choices: [
         { text: "viens", correct: true, explanation: "À la première personne du singulier (je), le verbe venir au présent est « viens »." },
         { text: "vais", correct: false, explanation: "« Vais » est la première personne du singulier du verbe aller, non venir. C'est une confusion courante entre deux verbes de mouvement." },
@@ -2341,7 +2341,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ absolument à vous avant demain. »",
+      prompt: "Complétez : « Je ___ beaucoup à vous. »",
       choices: [
         { text: "tiens", correct: true, explanation: "À la première personne du singulier (je), le verbe tenir au présent est « tiens ». L'expression « tenir à » signifie « être attaché à » ou « être important pour quelqu'un »." },
         { text: "tenais", correct: false, explanation: "« Tenais » est la première personne du singulier à l'imparfait, non au présent." },
@@ -2626,7 +2626,7 @@ const section: Section = {
         { text: "boivent", correct: true, explanation: "Les enfants boivent = présent du verbe boire, troisième personne du pluriel." },
         { text: "buvons", correct: false, explanation: "buvons est la forme à la première personne du pluriel (nous buvons), pas ils." },
         { text: "boit", correct: false, explanation: "boit est la forme à la troisième personne du singulier (il/elle boit), pas ils." },
-        { text: "boient", correct: false, explanation: "boient n'existe pas. La forme correcte du pluriel est boivent, avec le radical buv-." },
+        { text: "buvaient", correct: false, explanation: "buvaient est l'imparfait, pas le présent. Au présent, la forme correcte est boivent." },
       ],
     },
     {
@@ -2827,7 +2827,7 @@ const section: Section = {
       choices: [
         { text: "envoie", correct: true, explanation: "Avec « il », envoyer se conjugue avec ie (il envoie). Le y se transforme en i avant la lettre muette. Envoyer accepte uniquement les formes en -i-, jamais en -y-." },
         { text: "envoyait", correct: false, explanation: "« Envoyait » est l'imparfait, pas le présent. Au présent, avec « il », on dit « il envoie »." },
-        { text: "envoye", correct: false, explanation: "Cette forme n'existe pas. Envoyer n'accepte pas la variante -ye- comme payer ou essayer. Seule forme correcte : « envoie »." },
+        { text: "envoient", correct: false, explanation: "« Envoient » est la troisième personne du pluriel (ils/elles envoient). Avec « il », la conjugaison est « il envoie »." },
         { text: "envoyons", correct: false, explanation: "« Envoyons » est la forme pour « nous ». Avec « il », la conjugaison au présent est « il envoie »." },
       ],
     },
@@ -2839,7 +2839,7 @@ const section: Section = {
       prompt: "Complétez : « Nous ___ le salon chaque semaine. »",
       choices: [
         { text: "nettoyons", correct: true, explanation: "Avec « nous », le verbe nettoyer garde le y intact. La conjugaison est « nous nettoyons », pas de transformation y→i." },
-        { text: "nettoyent", correct: false, explanation: "« Nettoyent » est la troisième personne du pluriel (ils/elles). Avec « nous », c'est « nettoyons »." },
+        { text: "nettoient", correct: false, explanation: "« Nettoient » est la troisième personne du pluriel (ils/elles nettoient). Avec « nous », la conjugaison est « nettoyons »." },
         { text: "nettoies", correct: false, explanation: "« Nettoies » est la deuxième personne du singulier (tu) avec transformation y→i. Avec « nous », gardez le y : « nettoyons »." },
         { text: "nettoyer", correct: false, explanation: "« Nettoyer » est l'infinitif. Avec « nous », il faut conjuguer : « nous nettoyons »." },
       ],
@@ -2865,7 +2865,7 @@ const section: Section = {
       prompt: "Complétez : « Ils ___ à résoudre ce problème. »",
       choices: [
         { text: "essaient", correct: true, explanation: "Avec « ils », le verbe essayer se conjugue avec ia (ils essaient). Le y se transforme en i avant la lettre muette de la troisième personne du pluriel." },
-        { text: "essayent", correct: false, explanation: "Bien que « essayent » soit parfois acceptée, « essaient » est la forme standard avec la transformation y→i." },
+        { text: "essayions", correct: false, explanation: "« Essayions » est la première personne du pluriel à l'imparfait (nous essayions). Avec « ils » au présent, la conjugaison est « essaient »." },
         { text: "essayez", correct: false, explanation: "« Essayez » est la deuxième personne du pluriel (vous). Avec « ils », la conjugaison est « essaient »." },
         { text: "essayer", correct: false, explanation: "« Essayer » est l'infinitif. Avec « ils », il faut conjuguer : « ils essaient »." },
       ],
@@ -2878,7 +2878,7 @@ const section: Section = {
       prompt: "Complétez : « Elles ___ combien pour cette course ? »",
       choices: [
         { text: "paient", correct: true, explanation: "Avec « elles », le verbe payer se conjugue avec ie (elles paient). Le y se transforme en i avant la lettre muette de la troisième personne du pluriel." },
-        { text: "payent", correct: false, explanation: "Bien que « payent » soit une variante acceptée, « paient » est la forme standard avec la transformation y→i." },
+        { text: "payaient", correct: false, explanation: "« Payaient » est l'imparfait à la troisième personne du pluriel, pas le présent. Au présent : elles paient." },
         { text: "payons", correct: false, explanation: "« Payons » est la première personne du pluriel (nous). Avec « elles », la conjugaison est « elles paient »." },
         { text: "payer", correct: false, explanation: "« Payer » est l'infinitif. Avec « elles », il faut conjuguer : « elles paient »." },
       ],
@@ -2906,7 +2906,7 @@ const section: Section = {
         { text: "essaies", correct: true, explanation: "Avec « tu », essayer au présent se conjugue en « tu essaies » (transformation y→i avant la lettre muette)." },
         { text: "as essayé", correct: false, explanation: "« Tu as essayé » est le passé composé, mais le contexte (aucun marqueur de passé) indique le présent. Au présent : « tu essaies »." },
         { text: "essayais", correct: false, explanation: "« Tu essayais » est l'imparfait. Sans marqueur de temps, c'est le présent qui est attendu : « tu essaies »." },
-        { text: "essaye", correct: false, explanation: "Bien que « essaye » soit une variante, « essaies » est la forme standard avec la transformation y→i au présent." },
+        { text: "essayerait", correct: false, explanation: "« Essayerait » est le conditionnel présent à la troisième personne. Avec « tu » au présent de l'indicatif, la forme correcte est « essaies »." },
       ],
     },
     {
@@ -2914,12 +2914,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-09",
       generatedBy: "haiku",
-      prompt: "Complétez : « Quand ___ vous cet argent ? »",
+      prompt: "Complétez : « Vous ___ cet argent la semaine prochaine. »",
       choices: [
-        { text: "payerez", correct: true, explanation: "Au futur simple, « vous payerez ». Le y se transforme en i avant la lettre muette : paierez (bien que « payerez » soit aussi acceptée, « paierez » suit la règle de transformation)." },
-        { text: "payez", correct: false, explanation: "« Payez » est le présent de l'indicatif. L'adverbe « quand » avec futur implique la question porte sur un moment à venir : « payerez »." },
-        { text: "payiez", correct: false, explanation: "Cette forme n'existe pas. Au futur, la conjugaison correcte est « payerez » ou « paierez »." },
-        { text: "paierez", correct: false, explanation: "Cette forme est correcte (transformation y→i au futur), mais sans plus de contexte, « payerez » est aussi acceptée." },
+        { text: "payerez", correct: true, explanation: "Au futur simple, « vous payerez ». La transformation y→i est optionnelle au futur : « paierez » est également correcte, mais « payerez » est la forme standard enseignée." },
+        { text: "payez", correct: false, explanation: "« Payez » est le présent de l'indicatif. « La semaine prochaine » indique le futur : « payerez »." },
+        { text: "payiez", correct: false, explanation: "« Payiez » est la deuxième personne du pluriel à l'imparfait ou au subjonctif présent, pas au futur." },
+        { text: "payer", correct: false, explanation: "« Payer » est l'infinitif. Avec un sujet « vous » et une indication de futur, il faut conjuguer au futur : « payerez »." },
       ],
     },
     {
@@ -2943,7 +2943,7 @@ const section: Section = {
       prompt: "Complétez : « Elles ___ des colis à leurs clients tous les jours. »",
       choices: [
         { text: "envoient", correct: true, explanation: "Avec « elles », envoyer au présent se conjugue en « elles envoient » (transformation y→i). Envoyer n'accepte que les formes en -i-." },
-        { text: "envoyent", correct: false, explanation: "Bien que payer et essayer acceptent « payent » et « essayent » comme variantes, envoyer n'accepte que la forme « envoient »." },
+        { text: "envoyait", correct: false, explanation: "« Envoyait » est l'imparfait à la troisième personne du singulier. Avec « elles » au présent, la conjugaison est « elles envoient »." },
         { text: "envoyons", correct: false, explanation: "« Envoyons » est la première personne du pluriel (nous). Avec « elles », la conjugaison est « elles envoient »." },
         { text: "envoyer", correct: false, explanation: "« Envoyer » est l'infinitif. Avec « elles », il faut conjuguer : « elles envoient »." },
       ],
@@ -2957,7 +2957,7 @@ const section: Section = {
       choices: [
         { text: "nettoie", correct: true, explanation: "Avec le sujet « on » (qui fonctionne comme « il »), nettoyer se conjugue en « on nettoie » (transformation y→i)." },
         { text: "nettoyons", correct: false, explanation: "« Nettoyons » est la première personne du pluriel (nous). Avec « on », qui se conjugue comme la troisième personne du singulier : « on nettoie »." },
-        { text: "nettoyent", correct: false, explanation: "« Nettoyent » est la troisième personne du pluriel (ils/elles). « On » se conjugue au singulier : « on nettoie »." },
+        { text: "nettoient", correct: false, explanation: "« Nettoient » est la troisième personne du pluriel (ils/elles nettoient). « On » se conjugue comme la troisième personne du singulier : « on nettoie »." },
         { text: "nettoyer", correct: false, explanation: "« Nettoyer » est l'infinitif. Avec « on », il faut conjuguer : « on nettoie »." },
       ],
     },
@@ -3021,7 +3021,7 @@ const section: Section = {
       prompt: "Complétez : « Elles ___ à garder les enfants ce soir. »",
       choices: [
         { text: "essaient", correct: true, explanation: "Avec « elles », essayer se conjugue avec ie au présent (transformation y→i) : « elles essaient »." },
-        { text: "essayent", correct: false, explanation: "Bien que « essayent » soit une variante acceptée, « essaient » est la forme standard avec la transformation y→i." },
+        { text: "essayaient", correct: false, explanation: "« Essayaient » est l'imparfait à la troisième personne du pluriel, pas le présent. Au présent : elles essaient." },
         { text: "essayons", correct: false, explanation: "« Essayons » est la première personne du pluriel (nous). Avec « elles », la conjugaison est « essaient »." },
         { text: "essayer", correct: false, explanation: "« Essayer » est l'infinitif. Avec « elles », il faut conjuguer : « elles essaient »." },
       ],
@@ -3034,7 +3034,7 @@ const section: Section = {
       prompt: "Complétez : « Nous ___ cette route tous les jours pour aller au travail. »",
       choices: [
         { text: "nettoyons", correct: true, explanation: "Avec « nous », nettoyer garde le y intact : « nous nettoyons ». Il n'y a pas de transformation y→i." },
-        { text: "nettoyent", correct: false, explanation: "« Nettoyent » est la troisième personne du pluriel (ils/elles). Avec « nous », c'est « nettoyons »." },
+        { text: "nettoient", correct: false, explanation: "« Nettoient » est la troisième personne du pluriel (ils/elles nettoient). Avec « nous », la conjugaison est « nettoyons »." },
         { text: "nettoies", correct: false, explanation: "« Nettoies » est la deuxième personne du singulier (tu) avec transformation y→i. Avec « nous », c'est « nettoyons »." },
         { text: "nettoyer", correct: false, explanation: "« Nettoyer » est l'infinitif. Avec « nous », il faut conjuguer : « nous nettoyons »." },
       ],
@@ -3048,7 +3048,7 @@ const section: Section = {
       choices: [
         { text: "nettoie", correct: true, explanation: "Avec « je », nettoyer se conjugue avec ie (transformation y→i) : « je nettoie »." },
         { text: "nettoyons", correct: false, explanation: "« Nettoyons » est la première personne du pluriel (nous). Avec « je », la conjugaison est « je nettoie »." },
-        { text: "nettoyent", correct: false, explanation: "« Nettoyent » est la troisième personne du pluriel (ils/elles). Avec « je », la conjugaison est « je nettoie »." },
+        { text: "nettoient", correct: false, explanation: "« Nettoient » est la troisième personne du pluriel (ils/elles nettoient). Avec « je », la conjugaison est « je nettoie »." },
         { text: "nettoyer", correct: false, explanation: "« Nettoyer » est l'infinitif. Après le sujet « je », il faut conjuguer : « je nettoie »." },
       ],
     },
@@ -3075,7 +3075,7 @@ const section: Section = {
       ruleId: "01-09",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « envoyer » au présent avec le sujet indiqué.",
-      phrase: { before: "Vous ", after: " les documents par courrier demain." },
+      phrase: { before: "Vous ", after: " les documents par courrier aujourd'hui." },
       answer: "envoyez",
       explanation: "Avec le sujet « vous », le verbe envoyer garde le y intact au présent. La conjugaison est « vous envoyez ».",
       wrongAnswers: [
@@ -3108,8 +3108,8 @@ const section: Section = {
       type: "input",
       ruleId: "01-09",
       generatedBy: "haiku",
-      prompt: "Conjuguez le verbe « payer » ou « essayer » au présent avec le sujet indiqué.",
-      phrase: { before: "Je ", after: " mon restaurant préféré pour la réservation." },
+      prompt: "Conjuguez le verbe « payer » au présent avec le sujet indiqué.",
+      phrase: { before: "Je ", after: " l'addition au restaurant avec ma carte bleue." },
       answer: "paie",
       explanation: "Avec le sujet « je », le verbe payer se conjugue en « je paie » (transformation y→i). La forme « je paye » est une variante moins courante mais acceptée.",
       wrongAnswers: [
@@ -3128,7 +3128,7 @@ const section: Section = {
       prompt: "Complétez : « Je ___ ma facture chaque mois. »",
       choices: [
         { text: "paie", correct: true, explanation: "Avec le sujet « je », le verbe payer se conjugue avec ie (je paie), car la lettre muette qui suit exige la transformation du y en i." },
-        { text: "paye", correct: false, explanation: "« Paye » est une variante acceptée pour payer, mais « paie » est la forme plus standard avec la transformation y→i." },
+        { text: "payerais", correct: false, explanation: "« Payerais » est le conditionnel présent, pas le présent de l'indicatif. Au présent : je paie." },
         { text: "payons", correct: false, explanation: "« Payons » est la conjugaison pour « nous », pas pour « je ». Avec « je », le y devient i : je paie." },
         { text: "payez", correct: false, explanation: "« Payez » est la deuxième personne du pluriel (vous payez). Pour « je », la forme correcte est paie." },
       ],
@@ -3168,7 +3168,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-10",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ mon ami pour lui parler. »",
+      prompt: "Complétez : « J'___ mon ami pour lui parler. »",
       choices: [
         { text: "appelle", correct: true, explanation: "Au présent, « appeler » double la consonne « l » à la 1ère personne du singulier : j'appelle (avec elision de « e »)." },
         { text: "appele", correct: false, explanation: "Forme incorrecte. Il faut doubler le « l » au présent : j'appelle, non j'appele." },
@@ -3298,7 +3298,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-10",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ les lettres avant d'envoyer. »",
+      prompt: "Complétez : « J'___ les lettres avant d'envoyer. »",
       choices: [
         { text: "épelle", correct: true, explanation: "« Épeler » suit la même règle. À la 1ère personne du singulier du présent : j'épelle (double consonne et elision)." },
         { text: "épele", correct: false, explanation: "Forme incorrecte. Il faut doubler le « l » : j'épelle." },
@@ -3315,7 +3315,7 @@ const section: Section = {
       choices: [
         { text: "gèle", correct: true, explanation: "« Geler » suit le pattern 2 : accent grave sur le « e » devant la consonne. Je gèle (pas de double consonne)." },
         { text: "gelle", correct: false, explanation: "Forme incorrecte pour « geler ». On n'utilise pas la double consonne, mais l'accent grave : je gèle." },
-        { text: "gelis", correct: false, explanation: "C'est une forme du passé simple, non du présent." },
+        { text: "gelerai", correct: false, explanation: "« Gelerai » est le futur simple, non le présent. Au présent : je gèle." },
         { text: "gelais", correct: false, explanation: "C'est l'imparfait, non le présent." },
       ],
     },
@@ -3328,7 +3328,7 @@ const section: Section = {
       choices: [
         { text: "pèle", correct: true, explanation: "« Peler » utilise l'accent grave au présent. À la 1ère personne du singulier : je pèle (pas de double consonne)." },
         { text: "pelle", correct: false, explanation: "Forme incorrecte pour « peler ». On utilise l'accent grave (je pèle), non la double consonne." },
-        { text: "pelis", correct: false, explanation: "C'est une forme du passé simple, non du présent." },
+        { text: "pelerai", correct: false, explanation: "« Pelerai » est le futur simple, non le présent. Au présent : je pèle." },
         { text: "pelais", correct: false, explanation: "C'est l'imparfait, non le présent." },
       ],
     },
@@ -3402,12 +3402,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-10",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu ___ avec la nourriture. »",
+      prompt: "Complétez : « Tu ___ les enfants pour dîner. »",
       choices: [
-        { text: "joues", correct: true, explanation: "« Jouer » est un verbe régulier du 1er groupe, non en -eler/-eter. À la 2e personne du singulier : tu joues." },
-        { text: "joules", correct: false, explanation: "Forme incorrecte. « Jouer » se conjugue tu joues, non tu joules." },
-        { text: "jouais", correct: false, explanation: "C'est l'imparfait, non le présent." },
-        { text: "joulles", correct: false, explanation: "Forme incorrecte et inexistante. C'est tu joues." },
+        { text: "rappelles", correct: true, explanation: "À la 2e personne du singulier du présent, « rappeler » double le « l » : tu rappelles." },
+        { text: "rappeles", correct: false, explanation: "Forme incorrecte. Il faut doubler le « l » : tu rappelles." },
+        { text: "rappèles", correct: false, explanation: "L'accent grave n'est pas utilisé pour « rappeler ». On double simplement la consonne : tu rappelles." },
+        { text: "rappelais", correct: false, explanation: "C'est l'imparfait, non le présent." },
       ],
     },
     {
@@ -3416,7 +3416,7 @@ const section: Section = {
       ruleId: "01-10",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « appeler » au présent, 1ère personne du singulier.",
-      phrase: { before: "Je ", after: " un taxi pour rentrer à la maison." },
+      phrase: { before: "J'", after: " un taxi pour rentrer à la maison." },
       answer: "appelle",
       explanation: "Au présent, à la 1ère personne du singulier, « appeler » double le « l » : j'appelle.",
       wrongAnswers: [
@@ -3475,7 +3475,7 @@ const section: Section = {
         { text: "gelle", explanation: "« Geler » n'utilise pas la double consonne. C'est je gèle." },
         { text: "gelais", explanation: "C'est l'imparfait, non le présent." },
         { text: "gelas", explanation: "C'est le passé simple, non le présent." },
-        { text: "gelis", explanation: "C'est une forme du passé simple, non du présent." },
+        { text: "gelerai", explanation: "« Gelerai » est le futur simple, non le présent. Au présent : je gèle." },
       ],
     },
     {
@@ -3516,7 +3516,7 @@ const section: Section = {
       prompt: "Complétez : « Je _____ mon travail à midi. »",
       choices: [
         { text: "commence", correct: true, explanation: "Verbe \"commencer\" à la première personne du singulier. Pas de cédille car pas de \"a\" ou \"o\" après le \"c\"." },
-        { text: "commençe", correct: false, explanation: "Ajout incorrect de la cédille. La cédille n'est nécessaire que devant \"a\" ou \"o\" (nous commençons)." },
+        { text: "commençai", correct: false, explanation: "« Commençai » est la première personne du passé simple, pas le présent. Au présent : je commence." },
         { text: "commençait", correct: false, explanation: "Ceci est l'imparfait. Le contexte demande le présent." },
         { text: "commencerai", correct: false, explanation: "Ceci est le futur, pas le présent." },
       ],
@@ -3529,7 +3529,7 @@ const section: Section = {
       prompt: "Complétez : « Vous _____ vos présentations demain. »",
       choices: [
         { text: "commencez", correct: true, explanation: "Verbe \"commencer\" à la deuxième personne du pluriel. Pas de cédille car pas de \"a\" ou \"o\" après le \"c\"." },
-        { text: "commençez", correct: false, explanation: "Ajout incorrect de la cédille. La cédille n'est nécessaire que devant \"o\" (nous commençons)." },
+        { text: "commenciez", correct: false, explanation: "« Commenciez » est la deuxième personne du pluriel à l'imparfait, pas au présent. Au présent : vous commencez." },
         { text: "commencement", correct: false, explanation: "Ceci est un nom, pas un verbe conjugué." },
         { text: "commenceriez", correct: false, explanation: "Ceci est le conditionnel, pas le présent." },
       ],
@@ -3555,7 +3555,7 @@ const section: Section = {
       prompt: "Complétez : « Je _____ trop vite. »",
       choices: [
         { text: "mange", correct: true, explanation: "Verbe \"manger\" à la première personne du singulier. Pas de \"e\" intercalaire car pas de \"a\" ou \"o\" après le \"g\"." },
-        { text: "mangee", correct: false, explanation: "Ceci n'existe pas. Il ne faut pas ajouter de \"e\" intercalaire au singulier." },
+        { text: "mangeront", correct: false, explanation: "« Mangeront » est le futur simple à la troisième personne du pluriel. Au présent avec « je » : mange." },
         { text: "mangeais", correct: false, explanation: "Ceci est l'imparfait, pas le présent." },
         { text: "mangerai", correct: false, explanation: "Ceci est le futur, pas le présent." },
       ],
@@ -3581,9 +3581,9 @@ const section: Section = {
       prompt: "Complétez : « Elles _____ dans la piscine. »",
       choices: [
         { text: "nagent", correct: true, explanation: "Verbe \"nager\" à la troisième personne du pluriel. Pas de \"e\" intercalaire car pas de \"a\" ou \"o\" après le \"g\"." },
-        { text: "nagiaient", correct: false, explanation: "Cette forme n'existe pas ; c'est un mélange entre imparfait et présent." },
+        { text: "nageaient", correct: false, explanation: "« Nageaient » est l'imparfait à la troisième personne du pluriel, pas le présent." },
         { text: "nageons", correct: false, explanation: "Ceci est la première personne du pluriel, pas la troisième." },
-        { text: "nageaient", correct: false, explanation: "Ceci est l'imparfait avec \"aient\", pas le présent." },
+        { text: "nagerait", correct: false, explanation: "« Nagerait » est le conditionnel présent à la troisième personne du singulier. Au présent avec « elles » : nagent." },
       ],
     },
     {
@@ -3620,7 +3620,7 @@ const section: Section = {
       prompt: "Complétez : « Je _____ avec mes amis. »",
       choices: [
         { text: "voyage", correct: true, explanation: "Verbe \"voyager\" à la première personne du singulier. Pas de \"e\" intercalaire car pas de \"a\" ou \"o\" après le \"g\"." },
-        { text: "voyagee", correct: false, explanation: "Ceci n'existe pas. Il ne faut pas ajouter de \"e\" intercalaire au singulier." },
+        { text: "voyageront", correct: false, explanation: "« Voyageront » est le futur simple à la troisième personne du pluriel. Au présent avec « je » : voyage." },
         { text: "voyageais", correct: false, explanation: "Ceci est l'imparfait, pas le présent." },
         { text: "voyagerai", correct: false, explanation: "Ceci est le futur, pas le présent." },
       ],
@@ -3646,7 +3646,7 @@ const section: Section = {
       prompt: "Complétez : « Tu _____ la cédille dans la langue française. »",
       choices: [
         { text: "prononces", correct: true, explanation: "Verbe \"prononcer\" à la deuxième personne du singulier. Pas de cédille car pas de \"a\" ou \"o\" après le \"c\"." },
-        { text: "prononçes", correct: false, explanation: "Ajout incorrect de la cédille. La cédille n'est nécessaire que devant \"o\" (nous prononçons)." },
+        { text: "prononciez", correct: false, explanation: "« Prononciez » est la deuxième personne du pluriel à l'imparfait. Au présent avec « tu » : prononces." },
         { text: "prononcerai", correct: false, explanation: "Ceci est le futur, pas le présent." },
         { text: "prononçait", correct: false, explanation: "Ceci est l'imparfait avec une cédille incorrecte. Le \"ç\" n'apparaît que devant \"o\"." },
       ],
@@ -3659,9 +3659,9 @@ const section: Section = {
       prompt: "Complétez : « Nous _____ l'anglais ensemble. »",
       choices: [
         { text: "prononçons", correct: true, explanation: "Verbe \"prononcer\" à la première personne du pluriel. Avant \"o\", on ajoute la cédille : prononçons." },
-        { text: "prononconsons", correct: false, explanation: "Ceci est une duplication incorrecte. Le verbe \"prononcer\" devient \"prononçons\"." },
+        { text: "prononça", correct: false, explanation: "« Prononça » est la troisième personne du singulier au passé simple. Au présent avec « nous » : prononçons." },
         { text: "prononçions", correct: false, explanation: "Ceci est l'imparfait, pas le présent." },
-        { text: "pronouncons", correct: false, explanation: "Mauvaise orthographe avec \"wn\". Le verbe s'écrit \"prononcer\"." },
+        { text: "prononcez", correct: false, explanation: "« Prononcez » est la deuxième personne du pluriel (vous). Au présent avec « nous » : prononçons." },
       ],
     },
     {
@@ -3672,7 +3672,7 @@ const section: Section = {
       prompt: "Complétez : « Je _____ mon adresse. »",
       choices: [
         { text: "place", correct: true, explanation: "Verbe \"placer\" à la première personne du singulier. Pas de cédille car pas de \"a\" ou \"o\" après le \"c\"." },
-        { text: "plaçe", correct: false, explanation: "Ajout incorrect de la cédille au singulier. La cédille n'est nécessaire que devant \"o\"." },
+        { text: "plaça", correct: false, explanation: "« Plaça » est la troisième personne du singulier au passé simple. Au présent avec « je » : place." },
         { text: "plaçais", correct: false, explanation: "Ceci est l'imparfait, pas le présent." },
         { text: "placerai", correct: false, explanation: "Ceci est le futur, pas le présent." },
       ],
@@ -3687,7 +3687,7 @@ const section: Section = {
         { text: "plaçons", correct: true, explanation: "Verbe \"placer\" à la première personne du pluriel. Avant \"o\", on ajoute la cédille : plaçons." },
         { text: "placons", correct: false, explanation: "Oubli de la cédille. Sans cédille, la prononciation change (son \"k\")." },
         { text: "placerons", correct: false, explanation: "Ceci est le futur, pas le présent." },
-        { text: "placeions", correct: false, explanation: "Ceci est l'imparfait, pas le présent." },
+        { text: "plaçions", correct: false, explanation: "« Plaçions » est la première personne du pluriel à l'imparfait, pas au présent. Au présent : plaçons." },
       ],
     },
     {
@@ -3698,7 +3698,7 @@ const section: Section = {
       prompt: "Complétez : « Vous _____ l'argent sur la table. »",
       choices: [
         { text: "lancez", correct: true, explanation: "Verbe \"lancer\" à la deuxième personne du pluriel. Pas de cédille car pas de \"a\" ou \"o\" après le \"c\"." },
-        { text: "lancèz", correct: false, explanation: "Ajout incorrect d'un accent grave et pas de cédille. Au \"vous\", on ajoute juste \"ez\" sans modifications." },
+        { text: "lança", correct: false, explanation: "« Lança » est la troisième personne du singulier au passé simple. Au présent avec « vous » : lancez." },
         { text: "lançons", correct: false, explanation: "Ceci est la première personne du pluriel, pas la deuxième." },
         { text: "lanceriez", correct: false, explanation: "Ceci est le conditionnel, pas le présent." },
       ],
@@ -3724,7 +3724,7 @@ const section: Section = {
       prompt: "Complétez : « Je _____ la corde. »",
       choices: [
         { text: "rince", correct: true, explanation: "Verbe \"rincer\" à la première personne du singulier. Pas de cédille car pas de \"a\" ou \"o\" après le \"c\"." },
-        { text: "rinçe", correct: false, explanation: "Ajout incorrect de la cédille au singulier. La cédille n'est nécessaire que devant \"o\"." },
+        { text: "rinça", correct: false, explanation: "« Rinça » est la troisième personne du singulier au passé simple. Au présent avec « je » : rince." },
         { text: "rincais", correct: false, explanation: "Ceci est l'imparfait, pas le présent." },
         { text: "rincerai", correct: false, explanation: "Ceci est le futur, pas le présent." },
       ],
@@ -3764,7 +3764,7 @@ const section: Section = {
       choices: [
         { text: "commencent", correct: true, explanation: "Verbe « commencer » à la troisième personne du pluriel. Pas de cédille car la terminaison -ent ne commence pas par « a » ou « o »." },
         { text: "commençons", correct: false, explanation: "« Commençons » est la première personne du pluriel (nous commençons). Pour « elles », on utilise commencent." },
-        { text: "commençent", correct: false, explanation: "Ajout incorrect de la cédille — la cédille n'est nécessaire que devant « a » et « o », pas devant « e »." },
+        { text: "commenceront", correct: false, explanation: "« Commenceront » est le futur simple à la troisième personne du pluriel. Au présent : elles commencent." },
         { text: "commencaient", correct: false, explanation: "« Commencaient » est l'imparfait à la troisième personne du pluriel, non le présent." },
       ],
     },
@@ -4081,10 +4081,10 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez : « Je ___ de cet événement. »",
       choices: [
-        { text: "m'appelle", correct: true, explanation: "La première personne du singulier du verbe s'appeler au présent est « je m'appelle ». Le pronom « se » s'élide en « m' » devant la voyelle « a »." },
-        { text: "se appelle", correct: false, explanation: "Pas d'élision ici, mais il faut élider « se » en « m' » avant une voyelle quand le sujet est « je »." },
+        { text: "me rappelle", correct: true, explanation: "La première personne du singulier du verbe se rappeler au présent est « je me rappelle ». Le pronom « se » devient « me » avec le sujet « je »." },
+        { text: "se rappelle", correct: false, explanation: "Le pronom « se » devient « me » avec le sujet « je », pas « se »." },
         { text: "te souviens", correct: false, explanation: "C'est un verbe différent (se souvenir) et le pronom « te » est pour « tu ». Le pronom et le verbe ne correspondent pas au contexte." },
-        { text: "nous rappelons", correct: false, explanation: "C'est la forme pour « nous » et un verbe différent (se rappeler). Le pronom ne correspond pas au sujet." },
+        { text: "nous rappelons", correct: false, explanation: "C'est la forme pour « nous ». Le pronom ne correspond pas au sujet." },
       ],
     },
     {
@@ -4222,7 +4222,7 @@ const section: Section = {
         { text: "regardent", correct: true, explanation: "Le verbe se regarder avec le sujet « les deux amis » (3e personne du pluriel) utilise la forme « se regardent ». C'est un verbe réciproque : ils se regardent l'un l'autre." },
         { text: "regarde", correct: false, explanation: "« Regarde » est la 2e personne du singulier ou la 3e personne du singulier. Ici, le sujet est pluriel." },
         { text: "regardez", correct: false, explanation: "« Regardez » est pour la 2e personne du pluriel (vous), pas pour « ils/elles »." },
-        { text: "se regarden", correct: false, explanation: "« Regarden » n'existe pas. La forme correcte pour la 3e personne du pluriel est « regardent »." },
+        { text: "se regardait", correct: false, explanation: "« Se regardait » est la troisième personne du singulier à l'imparfait. Au présent avec un sujet pluriel : se regardent." },
       ],
     },
     {
@@ -4360,12 +4360,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-13",
       generatedBy: "haiku",
-      prompt: "Complétez : « Ils se ___ sur la bouche. »",
+      prompt: "Complétez : « Ils s'___ sur la bouche. »",
       choices: [
         { text: "embrassent", correct: true, explanation: "Avec le sujet « ils » (3e personne du pluriel), le verbe s'embrasser donne « ils s'embrassent ». C'est une action réciproque : ils s'embrassent mutuellement." },
         { text: "embrasse", correct: false, explanation: "« Embrasse » est la 3e personne du singulier (il/elle). Le sujet est pluriel." },
         { text: "embrassez", correct: false, explanation: "« Embrassez » est pour « vous », pas « ils »." },
-        { text: "nous embrassons", correct: false, explanation: "« Nous embrassons » est pour « nous », pas « ils »." },
+        { text: "embrassons", correct: false, explanation: "« Embrassons » est pour « nous », pas « ils »." },
       ],
     },
     {
@@ -4417,7 +4417,7 @@ const section: Section = {
         { text: "adressent", correct: true, explanation: "Avec le sujet « ils » (3e personne du pluriel), le verbe s'adresser (mutuellement) donne « ils s'adressent ». L'élision « s' » est correcte avant une voyelle. Ici, ils posent une question l'un à l'autre." },
         { text: "adresse", correct: false, explanation: "« Adresse » est la 3e personne du singulier. Le sujet est pluriel." },
         { text: "adressez", correct: false, explanation: "« Adressez » est pour « vous », pas « ils »." },
-        { text: "s'adressent", correct: false, explanation: "Cette réponse est correcte en fait. Attendez — l'élision « s' » plus « adressent » = « s'adressent »." },
+        { text: "adressaient", correct: false, explanation: "« Adressaient » est l'imparfait à la troisième personne du pluriel, pas le présent." },
       ],
     },
     {
@@ -4553,7 +4553,7 @@ const section: Section = {
       choices: [
         { text: "prends", correct: true, explanation: "Le présent est utilisé pour exprimer une habitude quotidienne. « Prends » est la première personne du singulier du verbe « prendre »." },
         { text: "prenais", correct: false, explanation: "L'imparfait indique une habitude du passé, pas une habitude actuelle. Cette réponse changerait le sens." },
-        { text: "ai pris", correct: false, explanation: "Le passé composé exprime une action unique achevée au passé, pas une habitude quotidienne." },
+        { text: "prendrais", correct: false, explanation: "Le conditionnel exprime une hypothèse ou une condition, pas une habitude réelle." },
         { text: "prendrai", correct: false, explanation: "Le futur simple indique une action future, pas une habitude présente." },
       ],
     },
@@ -4692,7 +4692,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-14",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ne ___ jamais le chocolat chaud. »",
+      prompt: "Complétez : « Je n'___ jamais le chocolat chaud. »",
       choices: [
         { text: "oublie", correct: true, explanation: "Le présent pour exprimer une habitude négative constante. « Oublie » est la première personne du singulier du verbe « oublier »." },
         { text: "oubliais", correct: false, explanation: "L'imparfait exprime une habitude ancienne, pas l'habitude actuelle constante." },
@@ -4787,7 +4787,7 @@ const section: Section = {
       choices: [
         { text: "prépare", correct: true, explanation: "Le présent pour exprimer une habitude quotidienne personnelle. « Prépare » est la première personne du singulier du verbe « préparer »." },
         { text: "préparais", correct: false, explanation: "L'imparfait indique une ancienne habitude, pas la pratique actuelle toujours maintenue." },
-        { text: "ai préparé", correct: false, explanation: "Le passé composé indique qu'on s'est préparé une fois, pas une habitude quotidienne." },
+        { text: "préparerais", correct: false, explanation: "Le conditionnel exprime une hypothèse, pas une habitude réelle." },
         { text: "préparerai", correct: false, explanation: "Le futur simple indique une intention future, pas une habitude présente établie." },
       ],
     },
@@ -4809,14 +4809,14 @@ const section: Section = {
       type: "input",
       ruleId: "01-14",
       generatedBy: "haiku",
-      prompt: "Conjuguez le verbe entre parenthèses au présent pour exprimer une habitude quotidienne.",
-      phrase: { before: "Le matin, je (prendre) ", after: " mon café." },
+      prompt: "Conjuguez le verbe « prendre » au présent pour exprimer une habitude quotidienne.",
+      phrase: { before: "Le matin, tu ", after: " ton café." },
       answer: "prends",
       explanation: "Le présent est utilisé pour exprimer une habitude quotidienne. Le verbe « prendre » à la première personne du singulier est « prends ».",
       wrongAnswers: [
         { text: "prenais", explanation: "L'imparfait décrit une habitude passée, pas une routine actuelle quotidienne." },
-        { text: "ai pris", explanation: "Le passé composé exprime une action unique passée, pas une habitude répétée." },
-        { text: "prendrai", explanation: "Le futur simple indique une action future, pas une habitude présente." },
+        { text: "as pris", explanation: "Le passé composé exprime une action unique passée, pas une habitude répétée." },
+        { text: "prendras", explanation: "Le futur simple indique une action future, pas une habitude présente." },
         { text: "prendrais", explanation: "Le conditionnel exprime une hypothèse, pas une habitude réelle." },
       ],
     },
@@ -4942,7 +4942,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-15",
       generatedBy: "haiku",
-      prompt: "Complétez : « Maintenant, je ___ un excellent roman. »",
+      prompt: "Complétez : « Maintenant, j'___ un excellent roman. »",
       choices: [
         { text: "lis", correct: true, explanation: "Le présent simple s'emploie pour exprimer une action en cours actuellement." },
         { text: "lisais", correct: false, explanation: "L'imparfait s'utilise pour une action passée qui se déroulait, non pour l'action présente." },
@@ -5085,7 +5085,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-15",
       generatedBy: "haiku",
-      prompt: "Complétez : « En ce moment, je ___ une excellente conférence en ligne. »",
+      prompt: "Complétez : « En ce moment, j'___ une excellente conférence en ligne. »",
       choices: [
         { text: "suis en train de suivre", correct: true, explanation: "La formule « être en train de » + infinitif exprime explicitement une action en cours au moment présent." },
         { text: "suivais", correct: false, explanation: "L'imparfait convient pour une action passée, non pour une action présente." },
@@ -5138,7 +5138,7 @@ const section: Section = {
       ruleId: "01-15",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent pour exprimer une action en cours en ce moment.",
-      phrase: { before: "À l'instant, je ", after: " à mon meilleur ami au téléphone." },
+      phrase: { before: "À l'instant, j'", after: " à mon meilleur ami au téléphone." },
       answer: "parle",
       explanation: "Le présent simple exprime l'action qui se déroule en ce moment : je suis en train de parler à mon ami.",
       wrongAnswers: [
@@ -5205,7 +5205,7 @@ const section: Section = {
       type: "input",
       ruleId: "01-15",
       generatedBy: "haiku",
-      prompt: "Conjuguez le verbe au présent pour décrire ce qui se passe en ce moment.",
+      prompt: "Conjuguez le verbe au présent. Décrive current action.",
       phrase: { before: "À l'instant même, elle ", after: " un délicieux gâteau au chocolat." },
       answer: "mange",
       explanation: "Le présent de l'indicatif exprime l'action qui se déroule en ce moment : elle est en train de manger.",
@@ -5529,16 +5529,17 @@ const section: Section = {
       type: "input",
       ruleId: "01-16",
       generatedBy: "haiku",
-      prompt: "Mettez le verbe entre parenthèses au présent avec valeur de futur proche.",
+      prompt: "Mettez le verbe entre parenthèses au présent avec valeur de future.",
       phrase: { before: "Je ", after: " mes amis ce soir pour fêter mon anniversaire." },
-      answer: "vois",
+      answer: "reçois",
       explanation: "Le présent « vois » exprime naturellement une visite programmée pour ce soir.",
       wrongAnswers: [
         { text: "verrai", explanation: "Le futur simple « verrai » semble plus distant pour une action si imminente et planifiée." },
         { text: "voyais", explanation: "L'imparfait « voyais » décrit une habitude passée, pas une action future programmée." },
         { text: "voie", explanation: "Le subjonctif « voie » ne convient pas ici ; le contexte appelle l'indicatif présent." },
-        { text: "ai vu", explanation: "Le passé composé « ai vu » indique une action complétée, non une visite future." },
+        { text: "verrais", explanation: "Le conditionnel « verrais » exprime une hypothèse, non une action certaine." },
         { text: "voyez", explanation: "La deuxième personne du pluriel « voyez » ne s'accorde pas avec le sujet « je »." },
+        { text: "voit", explanation: "La troisième personne du singulier « voit » ne s'accorde pas avec le sujet « je »." },
       ],
     },
     {
@@ -5563,15 +5564,16 @@ const section: Section = {
       type: "input",
       ruleId: "01-16",
       generatedBy: "haiku",
-      prompt: "Mettez le verbe au présent indiquant une action future très proche.",
-      phrase: { before: "Dans cinq minutes, je ", after: " à la réunion." },
-      answer: "vais",
+      prompt: "Mettez le verbe entre parenthèses au présent avec valeur de future.",
+      phrase: { before: "Dans cinq minutes, j'", after: " à la réunion." },
+      answer: "arrive",
       explanation: "Le présent « vais » exprime naturellement une action imminente et programmée dans cinq minutes.",
       wrongAnswers: [
-        { text: "irai", explanation: "Le futur simple « irai » est correct mais sonne plus formel et distant pour une action dans cinq minutes." },
-        { text: "allais", explanation: "L'imparfait « allais » décrit une habitude passée ou une action passée répétée, non une action future." },
-        { text: "irais", explanation: "Le conditionnel « irais » exprime une hypothèse ou une politesse, non une action imminente certaine." },
-        { text: "suis allé", explanation: "Le passé composé « suis allé » indique une action déjà accomplie, non une action future." },
+        { text: "viens", explanation: "Le verbe « venir » est possible mais « arriver » est plus direct pour exprimer l'arrivée imminente." },
+        { text: "viendrai", explanation: "Le futur simple « viendrai » est correct mais sonne plus formel et distant pour une action dans cinq minutes." },
+        { text: "venais", explanation: "L'imparfait « venais » décrit une habitude passée ou une action passée répétée, non une action future." },
+        { text: "viendrais", explanation: "Le conditionnel « viendrais » exprime une hypothèse ou une politesse, non une action imminente certaine." },
+        { text: "pars", explanation: "Le verbe « partir » exprime le départ, non l'arrivée à la réunion." },
         { text: "allez", explanation: "La deuxième personne du pluriel « allez » ne s'accorde pas avec le sujet « je »." },
       ],
     },
@@ -5580,7 +5582,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-17",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je _____ ici depuis cinq ans. »",
+      prompt: "Complétez : « J'_____ ici depuis cinq ans. »",
       choices: [
         { text: "habite", correct: true, explanation: "Avec « depuis » pour une action qui continue au présent, on utilise le présent de l'indicatif, pas le passé composé." },
         { text: "ai habité", correct: false, explanation: "Le passé composé est incorrect avec « depuis » pour une durée qui continue. C'est une erreur très commune chez les apprenants." },
@@ -5899,7 +5901,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-17",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je _____ cette langue depuis dix ans et je la parle couramment. »",
+      prompt: "Complétez : « J'_____ cette langue depuis dix ans et je la parle couramment. »",
       choices: [
         { text: "parle", correct: true, explanation: "Avec « depuis », on utilise le présent pour montrer que l'action continue depuis le passé jusqu'à maintenant." },
         { text: "parlerai", correct: false, explanation: "Le futur simple ne peut pas s'employer avec « depuis » pour une action qui dure depuis le passé jusqu'à présent." },
@@ -5954,7 +5956,7 @@ const section: Section = {
       prompt: "Complétez : « Je rentre chez moi et je ____. La porte est grande ouverte. »",
       choices: [
         { text: "trouve", correct: true, explanation: "Le présent de narration « trouve » donne au récit oral l'impression que l'action se déroule maintenant." },
-        { text: "ai trouvé", correct: false, explanation: "Le passé composé est grammaticalement correct mais enlève l'immédiateté narrative du présent." },
+        { text: "découvre", correct: false, explanation: "Le verbe « découvrir » change le sens de la phrase, ce n'est pas un problème de temps." },
         { text: "trouvais", correct: false, explanation: "L'imparfait serait utilisé pour une description de fond, non pour l'action principale du récit." },
         { text: "trouverai", correct: false, explanation: "Le futur n'est pas approprié : il s'agit d'un événement passé raconté." },
       ],
@@ -6029,10 +6031,10 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-18",
       generatedBy: "haiku",
-      prompt: "Complétez : « Alors, je ____ la porte et je la voir... fantastique ! »",
+      prompt: "Complétez : « Alors, j'____ la porte et je la voir... fantastique ! »",
       choices: [
         { text: "ouvre", correct: true, explanation: "Le présent de narration « ouvre » rend le récit oral vivant et immédiat, comme si le lecteur était présent." },
-        { text: "ai ouvert", correct: false, explanation: "Le passé composé est correct mais moins dramatique que le présent de narration." },
+        { text: "ferme", correct: false, explanation: "Le verbe « fermer » est le contraire de l'action attendue dans ce contexte narratif." },
         { text: "ouvrais", correct: false, explanation: "L'imparfait serait utilisé pour une description ou arrière-plan, pas l'action principale." },
         { text: "ouvrirai", correct: false, explanation: "Le futur ne convient pas pour un événement déjà passé." },
       ],
@@ -6185,43 +6187,8 @@ const section: Section = {
       type: "input",
       ruleId: "01-18",
       generatedBy: "haiku",
-      prompt: "Conjuguez le verbe au présent de narration.",
-      phrase: { before: "En 1870, la France ", after: "_ la guerre contre la Prusse." },
-      answer: "perd",
-      explanation: "Le présent de narration « perd » rend l'événement historique vivant et immédiat, comme s'il se déroulait actuellement dans le récit.",
-      wrongAnswers: [
-        { text: "a perdu", explanation: "Le passé composé est grammaticalement correct mais ne crée pas l'effet dramatique du présent de narration littéraire." },
-        { text: "perdait", explanation: "L'imparfait décrirait un arrière-plan ou une action d'ambiance, non l'événement principal du récit." },
-        { text: "perdit", explanation: "Le passé simple est littéraire mais moins vivace pour l'usage du présent de narration moderne." },
-        { text: "perdra", explanation: "Le futur n'est pas approprié pour un événement historique passé." },
-        { text: "perdrait", explanation: "Le conditionnel supposerait une hypothèse, ce qui ne convient pas ici pour un événement passé certain." },
-      ],
-    },
-    {
-      id: "01-18-022",
-      type: "input",
-      ruleId: "01-18",
-      generatedBy: "haiku",
-      prompt: "Complétez la narration avec le présent de narration.",
-      phrase: { before: "Alors je ", after: "_ une voix étrange qui m'appelle par mon nom. Je me retourne rapidement." },
-      answer: "entends",
-      explanation: "Le présent de narration « entends » rend la scène dramatique et immédiate, comme si le lecteur vivait l'événement maintenant.",
-      wrongAnswers: [
-        { text: "ai entendu", explanation: "Le passé composé est correct mais enlève l'immédiateté du présent de narration dans le style oral." },
-        { text: "entendais", explanation: "L'imparfait décrirait une action d'arrière-plan ou une ambiance sonore persistante." },
-        { text: "entendu", explanation: "Le participe passé n'est pas une forme conjuguée appropriée pour remplir le blanc." },
-        { text: "entendrai", explanation: "Le futur n'est pas approprié pour un événement qui s'est déjà déroulé dans la narration." },
-        { text: "entendrais", explanation: "Le conditionnel supposerait une hypothèse, ce qui n'est pas le cas ici." },
-        { text: "entendrait", explanation: "Le conditionnel ne convient pas pour un événement passé certain." },
-      ],
-    },
-    {
-      id: "01-18-023",
-      type: "input",
-      ruleId: "01-18",
-      generatedBy: "haiku",
       prompt: "Écrivez la forme correcte au présent de narration.",
-      phrase: { before: "Le héros ", after: "_ le château et fait face à ses ennemis." },
+      phrase: { before: "L'incendie ", after: "_ le château et fait face à ses ennemis." },
       answer: "atteint",
       explanation: "Le présent de narration « atteint » crée un moment dramatique, rendant l'action vivante comme si elle se produisait maintenant.",
       wrongAnswers: [
@@ -6237,9 +6204,9 @@ const section: Section = {
       type: "input",
       ruleId: "01-18",
       generatedBy: "haiku",
-      prompt: "Complétez au présent de narration.",
-      phrase: { before: "L'incendie ", after: "_ une maison historique. Les sapeurs-pompiers arrivent trop tard." },
-      answer: "ravage",
+      prompt: "Écrivez la forme correcte au présent de narration",
+      phrase: { before: "L'ouragan ", after: "_ la ville entière." },
+      answer: "détruit",
       explanation: "Le présent de narration « ravage » rend l'événement dramatique et immédiat dans un style journalistique.",
       wrongAnswers: [
         { text: "a ravagé", explanation: "Le passé composé est exact mais le présent de narration crée plus d'immédiateté et de dramatisme." },
@@ -6287,7 +6254,7 @@ const section: Section = {
       prompt: "Complétez : « Il ___ ranger sa chambre avant demain. »",
       choices: [
         { text: "faut", correct: true, explanation: "« Faut » est la forme correcte du verbe « falloir » au présent. La structure « il faut + infinitif » exprime l'obligation." },
-        { text: "doit", correct: false, explanation: "« Doit » est une forme personnelle du verbe « devoir » (3e personne singulier), non l'impersonnelle « il faut »." },
+        { text: "fallait", correct: false, explanation: "« Fallait » est l'imparfait du verbe « falloir », qui exprime une obligation passée, non présente." },
         { text: "faudra", correct: false, explanation: "« Faudra » est le futur simple du verbe « falloir », non le présent." },
         { text: "faille", correct: false, explanation: "« Faille » est le subjonctif du verbe « falloir », utilisé après certaines expressions de doute ou d'émotion." },
       ],
@@ -6301,8 +6268,8 @@ const section: Section = {
       choices: [
         { text: "y a", correct: true, explanation: "« Y a » (de « il y a ») est la forme correcte pour indiquer l'existence ou la présence de quelque chose. Ici, la présence du vent." },
         { text: "est", correct: false, explanation: "« Est » convient pour le verbe « être » au présent, mais la structure impersonnelle correcte pour indiquer la présence du vent est « il y a »." },
-        { text: "souffle", correct: false, explanation: "« Souffle » est une forme personnelle du verbe « souffler » et ne convient pas à la structure impersonnelle. De plus, on utilise plutôt « il y a du vent »." },
-        { text: "vente", correct: false, explanation: "« Vente » est un nom (noun), non un verbe. La phrase exige un verbe conjugué." },
+        { text: "soufflait", correct: false, explanation: "« Soufflait » est l'imparfait du verbe « souffler », qui décrit une action passée, non une constatation présente." },
+        { text: "y avait", correct: false, explanation: "« Il y avait du vent » est l'imparfait, qui décrit une condition passée, non une constatation présente." },
       ],
     },
     {
@@ -6349,12 +6316,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-19",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il ___ que quelque chose se passe. »",
+      prompt: "Complétez : « Il ___ quelque chose de bizarre dans cet immeuble. »",
       choices: [
-        { text: "se passe", correct: true, explanation: "La structure « il se passe que » + indicatif signifie « il arrive que / il se produit que ». Cette forme est correcte au présent." },
-        { text: "passait", correct: false, explanation: "« Passait » est l'imparfait du verbe « passer », non la structure impersonnelle correcte au présent." },
-        { text: "passe", correct: false, explanation: "« Passe » serait incorrect dans cette structure. « Il se passe que » exige la forme réfléchie « se passe »." },
-        { text: "se passerait", correct: false, explanation: "« Se passerait » est le conditionnel, qui exprime une hypothèse, non une affirmation au présent." },
+        { text: "se passe", correct: true, explanation: "La structure impersonnelle « il se passe » signifie « il arrive / il se produit ». C'est la forme correcte pour exprimer qu'un événement est en cours." },
+        { text: "passait", correct: false, explanation: "« Passait » est l'imparfait du verbe « passer » (sans « se »), qui ne forme pas la construction impersonnelle correcte et qui indique le passé." },
+        { text: "passe", correct: false, explanation: "« Il passe quelque chose » n'est pas la construction impersonnelle standard. Il faut la forme réfléchie « il se passe »." },
+        { text: "se passerait", correct: false, explanation: "« Se passerait » est le conditionnel, qui exprime une hypothèse, non une observation au présent." },
       ],
     },
     {
@@ -6367,7 +6334,7 @@ const section: Section = {
         { text: "faut", correct: true, explanation: "« Faut » est la forme correcte du verbe « falloir » au présent. « Il faut + infinitif » exprime l'obligation ou la nécessité." },
         { text: "fallait", correct: false, explanation: "« Fallait » est l'imparfait, qui décrit une obligation passée ou habituelle, non une nécessité présente." },
         { text: "faut à", correct: false, explanation: "La structure correcte est « il faut + infinitif », non « il faut à + infinitif ». La préposition « à » n'est pas utilisée ici." },
-        { text: "serait faut", correct: false, explanation: "Cette construction est grammaticalement incorrecte. La forme correcte du présent est simplement « il faut »." },
+        { text: "faudrait", correct: false, explanation: "Le conditionnel « faudrait » exprime une hypothèse ou un conseil atténué, non une nécessité certaine au présent." },
       ],
     },
     {
@@ -6379,7 +6346,7 @@ const section: Section = {
       choices: [
         { text: "fait froid", correct: true, explanation: "« Fait froid » est l'expression impersonnelle correcte au présent pour indiquer une température basse. « Fait » s'accorde avec le sujet impersonnel « il »." },
         { text: "faisait froid", correct: false, explanation: "« Faisait froid » est l'imparfait, qui décrit une température passée habituelle, non actuelle." },
-        { text: "gèle", correct: false, explanation: "« Gèle » est correct pour indiquer que la température est en dessous de zéro (il gèle), mais « il fait froid » est plus général et couramment utilisé." },
+        { text: "gelait", correct: false, explanation: "« Gelait » est l'imparfait du verbe « geler », qui décrit une condition passée, non actuelle." },
         { text: "fait froids", correct: false, explanation: "L'adjectif « froid » ne s'accorde pas au pluriel après « fait » dans l'expression impersonnelle « il fait froid »." },
       ],
     },
@@ -6405,7 +6372,7 @@ const section: Section = {
       choices: [
         { text: "faut", correct: true, explanation: "La structure « il faut que + subjonctif » exprime l'obligation ou la nécessité. « Faut » est la forme correcte du présent du verbe « falloir »." },
         { text: "faudrait", correct: false, explanation: "« Faudrait » est le conditionnel, qui exprime une hypothèse ou un conseil atténué, non une obligation certaine." },
-        { text: "faillait", correct: false, explanation: "« Faillait » est l'imparfait, qui décrit une obligation passée, non une obligation présente." },
+        { text: "fallait", correct: false, explanation: "« Fallait » est l'imparfait, qui décrit une obligation passée, non une obligation présente." },
         { text: "fasse", correct: false, explanation: "« Fasse » est le subjonctif du verbe « faire » au présent, mais ici on demande l'impersonnelle « il faut », non le subjonctif du verbe « faire »." },
       ],
     },
@@ -6430,7 +6397,7 @@ const section: Section = {
       prompt: "Complétez : « Il ___ mieux partir maintenant. »",
       choices: [
         { text: "vaut", correct: true, explanation: "« Vaut » est la forme correcte du verbe « valoir » au présent. « Il vaut mieux + infinitif » exprime qu'une action est préférable ou plus sage." },
-        { text: "vaudrait", correct: false, explanation: "« Vaudrait » est le conditionnel, qui exprime une hypothèse, non une affirmation certaine sur ce qui est préférable." },
+        { text: "vaux", correct: false, explanation: "« Vaux » est la forme de la 1ère et 2ème personne du singulier (je vaux, tu vaux). Avec le sujet impersonnel « il », la forme correcte est « vaut »." },
         { text: "valait", correct: false, explanation: "« Valait » est l'imparfait, qui décrit une préférence passée, non une affirmation présente." },
         { text: "vaudra", correct: false, explanation: "« Vaudra » est le futur simple, qui décrit une situation future. Ici, on demande le présent." },
       ],
@@ -6444,7 +6411,7 @@ const section: Section = {
       choices: [
         { text: "va", correct: true, explanation: "Bien que « il gèle » soit une construction impersonnelle directe, « il va geler » (futur proche) est approprié pour indiquer une prévision de gel imminent. « Va » est la forme présente du verbe « aller »." },
         { text: "gèle", correct: false, explanation: "« Gèle » serait correct au présent (il gèle = it freezes), mais avec l'adverbe « cette nuit » (future), « va geler » (futur proche) est plus naturel." },
-        { text: "gèlera", correct: false, explanation: "« Gèlera » est le futur simple, qui est correct pour exprimer une action future, mais « va geler » (futur proche) est plus courant dans le langage parlé." },
+        { text: "a gelé", correct: false, explanation: "« A gelé » est le passé composé, qui exprime une action terminée dans le passé, non une prévision pour cette nuit." },
         { text: "gelait", correct: false, explanation: "« Gelait » est l'imparfait et exprime une action passée habituelle, non une prévision future." },
       ],
     },
@@ -6484,7 +6451,7 @@ const section: Section = {
         { text: "s'agit", correct: true, explanation: "« S'agit » est la forme correcte du verbe « s'agir » au présent. « Il s'agit de » + nom signifie « c'est une question de » ou « il est question de »." },
         { text: "s'agirait", correct: false, explanation: "« S'agirait » est le conditionnel, qui exprime une hypothèse, non une affirmation certaine." },
         { text: "agit", correct: false, explanation: "« Agit » est la forme simple du verbe « agir » sans le pronom réfléchi. La forme correcte est « s'agit »." },
-        { text: "est agit", correct: false, explanation: "Cette construction est incorrecte. La forme impersonnelle appropriée est simplement « il s'agit de »." },
+        { text: "s'agira", correct: false, explanation: "Le futur simple « s'agira » exprime une situation future, non une affirmation au présent." },
       ],
     },
     {
@@ -6492,11 +6459,11 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-19",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il ___ des nuages ce soir. »",
+      prompt: "Complétez : « Il ___ des nuages en ce moment. »",
       choices: [
         { text: "y a", correct: true, explanation: "« Y a » (de « il y a ») est la forme correcte pour indiquer la présence des nuages. C'est l'expression impersonnelle standard pour exprimer l'existence." },
         { text: "sont", correct: false, explanation: "« Sont » est la forme plurielle du verbe « être » (ils sont), non l'impersonnelle appropriée. On utilise « il y a » pour indiquer la présence ou l'existence." },
-        { text: "nuagent", correct: false, explanation: "« Nuagent » n'est pas un verbe français valide. Il n'existe pas de verbe « nuager » ou « nuagir » dans la langue française." },
+        { text: "gèle", correct: false, explanation: "« Il gèle » est un verbe impersonnel réel, mais il indique que la température est en dessous de zéro, non la présence de nuages." },
         { text: "y aura", correct: false, explanation: "« Y aura » est le futur simple, qui exprime une prévision future, non une constatation présente." },
       ],
     },
@@ -6505,10 +6472,10 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-19",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il ___ suffire de vérifier les documents. »",
+      prompt: "Complétez : « Normalement, il ___ suffire de vérifier les documents. »",
       choices: [
         { text: "suffit", correct: true, explanation: "« Suffit » est la forme correcte du verbe « suffire » au présent. « Il suffit de + infinitif » signifie qu'une seule action est nécessaire." },
-        { text: "suffira", correct: false, explanation: "« Suffira » est le futur simple, qui exprime une action future, non une affirmation présente." },
+        { text: "a suffi", correct: false, explanation: "Le passé composé « a suffi » exprime qu'une action a suffi dans le passé, non une règle générale au présent." },
         { text: "suffisait", correct: false, explanation: "« Suffisait » est l'imparfait, qui décrit une situation passée habituelle, non une situation présente." },
         { text: "suffise", correct: false, explanation: "« Suffise » est le subjonctif du verbe « suffire », utilisé après certaines expressions de doute, non le présent de l'indicatif." },
       ],
@@ -6672,7 +6639,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-20",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ beaucoup cette pièce de théâtre ? »",
+      prompt: "Complétez en utilisant le verbe « plaire » : « Vous ___ beaucoup cette pièce de théâtre ? »",
       choices: [
         { text: "plaît-elle", correct: true, explanation: "Inversion du sujet « elle » avec la deuxième personne du singulier « vous plaît-elle » (est-ce que vous plaît ? = does it please you?). La forme est « plaît » pour le sujet singulier « pièce »." },
         { text: "plaît-vous", correct: false, explanation: "« Vous » est l'objet indirect (indirect object), pas le sujet. L'inversion serait incorrecte." },
@@ -6714,7 +6681,7 @@ const section: Section = {
       prompt: "Complétez : « Il ___ que tu reviennes demain. »",
       choices: [
         { text: "faut", correct: true, explanation: "Avec « il faut + subjonctif », on utilise « il faut que ». La forme est « il faut que tu reviennes »." },
-        { text: "faudra", correct: false, explanation: "C'est le futur, mais on cherche le présent avec la structure « il faut que + subjonctif »." },
+        { text: "fallait", correct: false, explanation: "C'est l'imparfait, qui exprime une obligation passée ; on cherche le présent pour exprimer une obligation actuelle." },
         { text: "va", correct: false, explanation: "« Va » seul ne convient pas ici. On cherche le verbe « falloir »." },
         { text: "faut finir", correct: false, explanation: "Avec « il faut que », on utilise le subjonctif (« que tu reviennes »), pas l'infinitif." },
       ],
@@ -6724,7 +6691,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-20",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il m'___ d'argent pour acheter ce livre. »",
+      prompt: "Complétez : « Il me ___ d'argent pour acheter ce livre. »",
       choices: [
         { text: "manque", correct: true, explanation: "« Il me manque d'argent » = I lack money / I'm missing money. Le sujet est « d'argent »." },
         { text: "faut", correct: false, explanation: "Bien que « il faut de l'argent » soit possible, ici on cherche « manquer » pour signifier « faire défaut »." },
@@ -6776,11 +6743,11 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-20",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il ___ un stylo pour écrire. »",
+      prompt: "Complétez avec le verbe « suffire » : « Il ___ d'un stylo pour écrire. »",
       choices: [
-        { text: "suffit d'un", correct: true, explanation: "« Il suffit d'un stylo » = One pen is enough / A pen suffices. Construction impersonnelle avec « il suffit de »." },
-        { text: "faut un", correct: false, explanation: "Bien que « il faut un stylo » soit possible, ici on cherche la construction « il suffit de »." },
-        { text: "suffit", correct: false, explanation: "« Il suffit » seul est incomplet. On utilise « il suffit de + nom » ou « il suffit de + infinitif »." },
+        { text: "suffit", correct: true, explanation: "« Il suffit d'un stylo » = One pen is enough / A pen suffices. Construction impersonnelle avec « il suffit de + nom »." },
+        { text: "faut", correct: false, explanation: "« Il faut de + nom » n'est pas une construction correcte. « Il faut » se construit directement avec un nom (il faut un stylo) ou un infinitif." },
+        { text: "suffit à", correct: false, explanation: "La construction correcte est « il suffit de + nom », non « il suffit à ». La préposition « de » est obligatoire ici." },
         { text: "suffis", correct: false, explanation: "« Suffis » est la première personne du singulier (je suffis), pas la troisième personne impersonnelle." },
       ],
     },
@@ -6820,7 +6787,7 @@ const section: Section = {
         { text: "suffiront", correct: true, explanation: "« Quelques minutes... lui suffiront » = A few minutes will be enough for him/her. Sujet pluriel au futur." },
         { text: "suffit", correct: false, explanation: "« Suffit » est le singulier au présent. Ici, on a un sujet pluriel (« quelques minutes ») et le contexte futur." },
         { text: "va suffire", correct: false, explanation: "Ceci serait une construction maladroite. On utilise simplement « suffiront »." },
-        { text: "sufficient", correct: false, explanation: "« Sufficient » est un adjectif anglais, pas une forme française du verbe." },
+        { text: "suffirait", correct: false, explanation: "Le conditionnel singulier « suffirait » ne s'accorde pas avec le sujet pluriel « quelques minutes » et exprime une hypothèse plutôt qu'un fait." },
       ],
     },
     {
@@ -6857,7 +6824,7 @@ const section: Section = {
       prompt: "Complétez : « Il ___ à toute la classe de faire un projet ensemble. »",
       choices: [
         { text: "plaît", correct: true, explanation: "« Il plaît à toute la classe » = It pleases the whole class / The whole class likes it. Ici, on inverse et on dit « il plaît à » au lieu de « la classe aime »." },
-        { text: "plait", correct: false, explanation: "Sans l'accent circonflexe, c'est une faute. La forme correcte est « plaît »." },
+        { text: "plairait", correct: false, explanation: "Le conditionnel « plairait » exprimerait une hypothèse (ce serait apprécié), non un fait affirmatif au présent." },
         { text: "plaît de", correct: false, explanation: "On utilise « plaît à », pas « plaît de ». La structure est « cela plaît à quelqu'un »." },
         { text: "aiment", correct: false, explanation: "Ceci est un verbe régulier différent. On cherche « plaire »." },
       ],
@@ -6915,15 +6882,15 @@ const section: Section = {
       ruleId: "01-20",
       generatedBy: "haiku",
       prompt: "Inversez le sens : « Ma mère aime les gâteaux » → Dites que les gâteaux plaisent à ma mère (utilisez « plaire »).",
-      phrase: { before: "Les gâteaux me ", after: " ." },
+      phrase: { before: "Les gâteaux lui ", after: " ." },
       answer: "plaisent",
-      explanation: "« Les gâteaux me plaisent » = The cakes please me / I like the cakes. Sujet pluriel « les gâteaux » → « plaisent ». (Notez : le sens n'est pas exactement « ma mère aimé les gâteaux », mais une illustration de la construction « plaire ».)",
+      explanation: "« Les gâteaux lui plaisent » = The cakes please her / My mother likes the cakes. Sujet pluriel « les gâteaux » → « plaisent ». L'objet indirect « lui » représente « ma mère ».",
       wrongAnswers: [
         { text: "plaît", explanation: "« Plaît » est le singulier. Avec le sujet pluriel « les gâteaux », on utilise « plaisent »." },
-        { text: "m'aiment", explanation: "C'est « aimer » en construction régulière, pas « plaire »." },
+        { text: "lui aiment", explanation: "C'est « aimer » en construction régulière, pas « plaire ». De plus, l'objet indirect se place différemment avec « aimer »." },
         { text: "plaisant", explanation: "C'est un adjectif ou un participe présent, pas une forme verbale appropriée ici." },
         { text: "vont plaire", explanation: "C'est le futur proche, pas le présent." },
-        { text: "me plaît", explanation: "L'ordre est incorrect et la conjugaison aussi. C'est « les gâteaux me plaisent »." },
+        { text: "lui plaît", explanation: "« Plaît » est le singulier. Avec le sujet pluriel « les gâteaux », il faut « plaisent »." },
       ],
     },
     {
@@ -6940,7 +6907,6 @@ const section: Section = {
         { text: "suffent", explanation: "« Suffent » n'existe pas en français. La forme plurielle est « suffisent »." },
         { text: "suffit à", explanation: "On dit « me suffire » (objet indirect direct), pas « suffire à »." },
         { text: "suffira", explanation: "C'est le futur simple, pas le présent." },
-        { text: "il suffit", explanation: "Ceci changerait le sujet à la construction impersonnelle. Ici, on a un sujet personnel." },
       ],
     },
     {
