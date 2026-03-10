@@ -43,22 +43,46 @@ for (const ruleId of files) {
   let currentUnclear = null;
   
   for (const line of lines) {
-    if (line.startsWith("ID:")) {
+    if (line.startsWith("QUESTION_ID:")) {
       if (currentId) {
         responses.set(currentId, { correct: currentCorrect, unclear: currentUnclear });
       }
       currentId = line.split(":")[1].trim();
       currentCorrect = [];
       currentUnclear = null;
-    } else if (line.startsWith("CORRECT:")) {
-      const answers = line.substring(8).split(",").map(a => a.trim());
+    } else if (line.startsWith("ANSWERS:")) {
+      const answerStr = line.substring(8).trim();
+      const answers = answerStr.split(/,\s*/).map(a => a.trim()).filter(a => a);
       currentCorrect = answers;
-    } else if (line.startsWith("UNCLEAR:")) {
-      currentUnclear = line.substring(8).trim();
+    } else if (line.startsWith("REASONING:")) {
+      const reasoning = line.substring(10).trim().toLowerCase();
+      if (reasoning.includes("unclear") || reasoning.includes("ambiguous") || reasoning.includes("both") || reasoning.includes("multiple valid")) {
+        currentUnclear = line.substring(10).trim();
+      }
     }
   }
   if (currentId) {
     responses.set(currentId, { correct: currentCorrect, unclear: currentUnclear });
+  }
+  
+  // Build letter-to-choice map for MCQ questions
+  const keyMap = new Map();
+  for (const key of keyData) {
+    keyMap.set(key.id, key);
+  }
+  
+  // Convert letter answers to text for MCQ questions
+  function letterToText(questionId, answer) {
+    const key = keyMap.get(questionId);
+    if (!key || key.type !== "mcq") return answer; // Return as-is for INPUT
+    // Only convert if it's a single letter (A-Z)
+    if (/^[A-Za-z]$/.test(answer)) {
+      const idx = answer.toUpperCase().charCodeAt(0) - 65; // A=0, B=1, etc.
+      if (idx >= 0 && idx < key.choices.length) {
+        return key.choices[idx];
+      }
+    }
+    return answer; // Return as-is if already text or invalid letter
   }
   
   // Compare
@@ -100,9 +124,16 @@ for (const ruleId of files) {
     }
     
     const normalizedExpected = key.correctAnswer.toLowerCase().trim();
-    const normalizedGot = response.correct.map(a => a.toLowerCase().trim());
+    const normalizedGot = response.correct.map(a => {
+      const text = letterToText(key.id, a);
+      return text.toLowerCase().trim();
+    });
     const hasExpected = normalizedGot.includes(normalizedExpected);
     const hasExtra = normalizedGot.some(a => a !== normalizedExpected);
+    const gotText = response.correct.map(a => {
+      const text = letterToText(key.id, a);
+      return `${a}: ${text}`;
+    });
     
     if (hasExpected && !hasExtra) {
       ruleResult.match++;
@@ -112,7 +143,7 @@ for (const ruleId of files) {
         id: key.id,
         status: "EXTRA-CORRECT",
         expected: key.correctAnswer,
-        got: response.correct
+        got: gotText
       });
     } else if (!hasExpected) {
       ruleResult.missedCorrect++;
@@ -120,7 +151,7 @@ for (const ruleId of files) {
         id: key.id,
         status: "MISSED-CORRECT",
         expected: key.correctAnswer,
-        got: response.correct
+        got: gotText
       });
     }
   }
