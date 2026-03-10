@@ -1,7 +1,7 @@
 import type { Section } from "../types";
 
 // Generated from: questions/fr/01-01.txt, questions/fr/01-02.txt, questions/fr/01-03.txt, questions/fr/01-04.txt, questions/fr/01-05.txt, questions/fr/01-06.txt, questions/fr/01-07.txt, questions/fr/01-08.txt, questions/fr/01-09.txt, questions/fr/01-10.txt, questions/fr/01-11.txt, questions/fr/01-12.txt, questions/fr/01-13.txt, questions/fr/01-14.txt, questions/fr/01-15.txt, questions/fr/01-16.txt, questions/fr/01-17.txt, questions/fr/01-18.txt, questions/fr/01-19.txt, questions/fr/01-20.txt
-// Total: 400 MCQ + 98 INPUT = 498 questions
+// Total: 400 MCQ + 100 INPUT = 500 questions
 
 const section: Section = {
   id: "01",
@@ -6197,6 +6197,41 @@ const section: Section = {
         { text: "atteignit", explanation: "Le passé simple est littéraire mais moins immédiat que le présent de narration moderne." },
         { text: "atteindra", explanation: "Le futur ne convient pas pour un événement passé raconté." },
         { text: "atteindrait", explanation: "Le conditionnel suggère une hypothèse, non un événement passé certain." },
+      ],
+    },
+    {
+      id: "01-18-022",
+      type: "input",
+      ruleId: "01-18",
+      generatedBy: "haiku",
+      prompt: "Complétez la narration avec le présent de narration.",
+      phrase: { before: "Alors j'", after: "_ une voix étrange qui m'appelle par mon nom. Je me retourne rapidement." },
+      answer: "entends",
+      explanation: "Le présent de narration « entends » rend la scène dramatique et immédiate, comme si le lecteur vivait l'événement maintenant.",
+      wrongAnswers: [
+        { text: "entends pas", explanation: "L'ajout de « pas » change le sens de la phrase en la rendant négative." },
+        { text: "entendais", explanation: "L'imparfait décrirait une action d'arrière-plan ou une ambiance sonore persistante." },
+        { text: "entendu", explanation: "Le participe passé n'est pas une forme conjuguée appropriée pour remplir le blanc." },
+        { text: "entendrai", explanation: "Le futur n'est pas approprié pour un événement qui s'est déjà déroulé dans la narration." },
+        { text: "entendrais", explanation: "Le conditionnel supposerait une hypothèse, ce qui n'est pas le cas ici." },
+        { text: "entendrait", explanation: "Le conditionnel ne convient pas pour un événement passé certain." },
+      ],
+    },
+    {
+      id: "01-18-023",
+      type: "input",
+      ruleId: "01-18",
+      generatedBy: "haiku",
+      prompt: "Conjuguez le verbe au présent de narration.",
+      phrase: { before: "En 1870, la France ", after: "_ la guerre contre la Prusse." },
+      answer: "perd",
+      explanation: "Le présent de narration « perd » rend l'événement historique vivant et immédiat, comme s'il se déroulait actuellement dans le récit.",
+      wrongAnswers: [
+        { text: "perd pas", explanation: "L'ajout de « pas » change le sens de la phrase en la rendant négative." },
+        { text: "perdait", explanation: "L'imparfait décrirait un arrière-plan ou une action d'ambiance, non l'événement principal du récit." },
+        { text: "perdit", explanation: "Le passé simple est littéraire mais moins vivace pour l'usage du présent de narration moderne." },
+        { text: "perdra", explanation: "Le futur n'est pas approprié pour un événement historique passé." },
+        { text: "perdrait", explanation: "Le conditionnel supposerait une hypothèse, ce qui ne convient pas ici pour un événement passé certain." },
       ],
     },
     {
