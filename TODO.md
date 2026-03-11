@@ -14,6 +14,12 @@
 
 ## Build / tooling
 
+- **DSL with LSP for question validation** — transition `questions/*.txt` and `src/data/*/*.ts` to a format with LSP support to catch structural/type inconsistencies in-editor. Options:
+  - **YAML + JSON Schema** (recommended): mature ecosystem, `yaml-language-server` built into VS Code/Neovim, schema validation + autocomplete. Low effort, high ROI.
+  - **Keep .txt + tree-sitter + custom LSP**: preserves current format but ~2-3 days upfront work to write grammar and LSP.
+  - **TypeScript source files**: write `.ts` directly (not generated), get instant TS LSP feedback. Zero new tooling but more verbose.
+  - **Zod schemas + runtime validation**: keep `.txt` format, validate at build-time. No IDE support.
+
 - **Automate TS codegen** — `src/data/fr/*.ts` files are currently compiled manually via `npm run convert-txt` and it's easy to forget after editing question source files. Options:
   - Pre-build script: add a `prebuild` (and `predev`) npm script that runs `convert-txt` for all sections, regenerating any `.ts` whose source `.txt` files are newer (check mtimes). Fast, no watcher needed.
   - Watch mode: add a `--watch` flag to `convert-txt` that re-emits a section's `.ts` whenever any of its source `.txt` files change. Run alongside `next dev`.
