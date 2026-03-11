@@ -5,8 +5,8 @@ import type { Section } from "../types";
 
 const section: Section = {
   id: "01-present-simple-continuous",
-  title: "Present Simple & Present Continuous",
-  description: "English present simple and continuous tenses",
+  title: "Present Simple vs Continuous",
+  description: "Formation and usage of present simple and continuous tenses",
   rules: [
     { id: "01-01", sectionId: "01-present-simple-continuous", title: "Present simple affirmative with I / you / we / they (base form)" },
     { id: "01-02", sectionId: "01-present-simple-continuous", title: "Present simple third person singular (-s, -es, -ies)" },
@@ -280,7 +280,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Write the correct present simple form of \"work\" for the subject \"I.\"",
       phrase: { before: "I ", after: " from nine to five." },
-      hint: "With \"I,\" the present simple uses the base form of the verb — no added ending.",
+      hint: "work",
       answer: "work",
       explanation: "With the subject \"I,\" the present simple uses the base form of the verb. No ending is added.",
       wrongAnswers: [
@@ -298,7 +298,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Write the correct present simple form of \"want\" for the subject \"they.\"",
       phrase: { before: "They ", after: " a bigger house." },
-      hint: "With \"they,\" the present simple uses the base form — no -s ending needed.",
+      hint: "want",
       answer: "want",
       explanation: "With the subject \"they,\" the present simple uses the base form. \"They want\" is correct.",
       wrongAnswers: [
@@ -315,7 +315,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Write the correct present simple form of \"like\" for the subject \"you.\"",
       phrase: { before: "You ", after: " chocolate ice cream, right?" },
-      hint: "With \"you,\" whether singular or plural, the present simple always uses the base form.",
+      hint: "like",
       answer: "like",
       explanation: "With the subject \"you,\" the present simple uses the base form. \"You like\" describes a personal preference.",
       wrongAnswers: [
@@ -332,7 +332,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Write the correct present simple form of \"run\" for the subject \"we.\"",
       phrase: { before: "We ", after: " five kilometers every Saturday." },
-      hint: "With \"we,\" the present simple uses the base form — the same form as the infinitive.",
+      hint: "run",
       answer: "run",
       explanation: "With the subject \"we,\" the present simple uses the base form. \"We run\" describes a weekly habit.",
       wrongAnswers: [
@@ -350,7 +350,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Write the correct present simple form of \"believe\" for the subject \"I.\"",
       phrase: { before: "I ", after: " you are making the right decision." },
-      hint: "With \"I,\" the present simple uses the base form — no -s ending and no auxiliary verb.",
+      hint: "believe",
       answer: "believe",
       explanation: "With the subject \"I,\" the present simple uses the base form. \"Believe\" is a stative verb expressing a mental state.",
       wrongAnswers: [
@@ -627,7 +627,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Write the correct present simple form of \"watch\" for the subject \"he.\"",
       phrase: { before: "He ", after: " the news every evening." },
-      hint: "When a verb ends in -ch, you need to add more than just -s for third person singular.",
+      hint: "watch",
       answer: "watches",
       explanation: "Verbs ending in -ch add -es in the third person singular: watch → watches.",
       wrongAnswers: [
@@ -645,7 +645,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Write the correct present simple form of \"carry\" for the subject \"she.\"",
       phrase: { before: "She ", after: " her laptop to work every day." },
-      hint: "When a verb ends in a consonant + y, the y changes to i before adding the ending.",
+      hint: "carry",
       answer: "carries",
       explanation: "\"Carry\" ends in consonant + y, so the y changes to i and -es is added: carry → carries.",
       wrongAnswers: [
@@ -663,7 +663,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Write the correct present simple form of \"have\" for the subject \"it.\"",
       phrase: { before: "It ", after: " a beautiful garden." },
-      hint: "This verb is irregular in the third person singular — it doesn't follow the normal -s/-es rules.",
+      hint: "have",
       answer: "has",
       explanation: "\"Have\" is irregular — the third person singular form is \"has,\" not \"haves.\" This is one of the few irregular present simple forms in English.",
       wrongAnswers: [
@@ -680,7 +680,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Write the correct present simple form of \"fly\" for the subject \"she.\"",
       phrase: { before: "She ", after: " to New York twice a month." },
-      hint: "This verb ends in consonant + y. Think about what happens to the y in third person singular.",
+      hint: "fly",
       answer: "flies",
       explanation: "\"Fly\" ends in consonant + y, so the y changes to i and -es is added: fly → flies.",
       wrongAnswers: [
@@ -698,7 +698,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Write the correct present simple form of \"miss\" for the subject \"he.\"",
       phrase: { before: "He ", after: " his family when he travels." },
-      hint: "This verb already ends in double -ss. Consider what you add to make the third person singular form.",
+      hint: "miss",
       answer: "misses",
       explanation: "Verbs ending in -ss add -es in the third person singular: miss → misses.",
       wrongAnswers: [
@@ -976,7 +976,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Make this sentence negative: \"She speaks Italian.\"",
       phrase: { before: "She ", after: " Italian." },
-      hint: "\"She\" is third person singular. Choose the auxiliary that matches this person, and remember the main verb stays in base form.",
+      hint: "speak",
       answer: "doesn't speak",
       explanation: "To make a third person singular sentence negative, use \"doesn't\" + base form. \"Speaks\" becomes \"doesn't speak\" — the -s moves from the verb to the auxiliary \"does.\"",
       wrongAnswers: [
@@ -994,7 +994,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Make this sentence negative: \"They play tennis on weekends.\"",
       phrase: { before: "They ", after: " tennis on weekends." },
-      hint: "\"They\" is a plural subject (like we/you/I). Which auxiliary do these subjects use in the negative?",
+      hint: "play",
       answer: "don't play",
       explanation: "With \"they,\" use \"don't\" + base form. \"Play\" stays the same after \"don't.\"",
       wrongAnswers: [
@@ -1011,7 +1011,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Make this sentence negative: \"He likes spicy food.\"",
       phrase: { before: "He ", after: " spicy food." },
-      hint: "\"He\" is third person singular. The -s from \"likes\" moves to the auxiliary — so what form does the main verb take?",
+      hint: "like",
       answer: "doesn't like",
       explanation: "For third person singular negatives, use \"doesn't\" + base form. \"Likes\" → \"doesn't like\" — the -s drops from the main verb.",
       wrongAnswers: [
@@ -1029,7 +1029,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Make this sentence negative: \"I drive to work.\"",
       phrase: { before: "I ", after: " to work." },
-      hint: "With \"I,\" use the auxiliary that matches first person. The main verb stays in its base form.",
+      hint: "drive",
       answer: "don't drive",
       explanation: "With \"I,\" the negative is \"don't\" + base form: \"I don't drive.\"",
       wrongAnswers: [
@@ -1046,7 +1046,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Make this sentence negative: \"The bus stops here on weekdays.\"",
       phrase: { before: "The bus ", after: " here on weekdays." },
-      hint: "\"The bus\" is a singular noun — it works like \"it\" (third person singular). Choose the matching auxiliary.",
+      hint: "stop",
       answer: "doesn't stop",
       explanation: "\"The bus\" = it (third person singular). The negative is \"doesn't\" + base form: \"doesn't stop.\" The -s from \"stops\" is absorbed into \"does.\"",
       wrongAnswers: [

@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "02-past-simple",
   title: "Past Simple",
-  description: "English past simple tense",
+  description: "Formation and usage of past simple tense",
   rules: [
     { id: "02-01", sectionId: "02-past-simple", title: "Past simple of regular verbs: affirmative (-ed ending)" },
     { id: "02-02", sectionId: "02-past-simple", title: "Past simple: spelling rules for -ed (double consonant, -e → -ed, -y → -ied)" },
@@ -280,7 +280,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "Put \"play\" into the past simple.",
       phrase: { before: "He ", after: " football with his friends on Saturday." },
-      hint: "For verbs ending in a vowel + y, simply add -ed to form the past simple.",
+      hint: "play",
       answer: "played",
       explanation: "\"Play\" + -ed = \"played.\" Since \"play\" ends in a vowel + y, simply add -ed. This describes a completed past action.",
       wrongAnswers: [
@@ -298,7 +298,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "Put \"work\" into the past simple.",
       phrase: { before: "She ", after: " all night on her presentation." },
-      hint: "Regular verbs form the past simple by adding -ed to the base form.",
+      hint: "work",
       answer: "worked",
       explanation: "\"Work\" + -ed = \"worked.\" This describes a completed effort in the past.",
       wrongAnswers: [
@@ -316,7 +316,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "Put \"visit\" into the past simple.",
       phrase: { before: "They ", after: " to see us every Christmas when we lived in the country." },
-      hint: "Repeated past habits are expressed with the simple past, not the continuous form.",
+      hint: "visit",
       answer: "visited",
       explanation: "\"Visit\" + -ed = \"visited.\" The past simple expresses a repeated past habit during a finished period (\"when we lived in the country\").",
       wrongAnswers: [
@@ -334,7 +334,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "Put \"land\" into the past simple.",
       phrase: { before: "The plane ", after: " on time, so we didn't miss our connection." },
-      hint: "The sentence describes a completed event with a clear result — use the simple past form.",
+      hint: "land",
       answer: "landed",
       explanation: "\"Land\" + -ed = \"landed.\" This describes a specific completed past event. The result (not missing the connection) confirms it happened.",
       wrongAnswers: [
@@ -352,7 +352,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "Put \"call\" into the past simple.",
       phrase: { before: "She ", after: " for a taxi because the buses had stopped running." },
-      hint: "Add -ed to the base form to create the past simple of a regular verb.",
+      hint: "call",
       answer: "called",
       explanation: "\"Call\" + -ed = \"called.\" This describes a completed past action triggered by the bus situation.",
       wrongAnswers: [
@@ -630,7 +630,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "Write the correct past simple form of \"reply.\"",
       phrase: { before: "She ", after: " to all the messages that afternoon." },
-      hint: "This verb ends in a consonant plus y. Think about what happens to the y before adding -ed.",
+      hint: "reply",
       answer: "replied",
       explanation: "\"Reply\" ends in consonant + y → change y to i and add -ed: \"replied.\"",
       wrongAnswers: [
@@ -647,7 +647,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "Write the correct past simple form of \"stop.\"",
       phrase: { before: "The car ", after: " at the red light." },
-      hint: "This is a one-syllable verb with a consonant-vowel-consonant ending. Check if you need to double anything.",
+      hint: "stop",
       answer: "stopped",
       explanation: "\"Stop\" is a one-syllable CVC verb — double the final p before -ed: \"stopped.\"",
       wrongAnswers: [
@@ -664,7 +664,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "Write the correct past simple form of \"live.\"",
       phrase: { before: "They ", after: " in Paris for five years." },
-      hint: "Notice how this verb already ends. You don't need to add the full -ed ending.",
+      hint: "live",
       answer: "lived",
       explanation: "\"Live\" ends in -e → add only -d (not the full -ed): \"lived.\"",
       wrongAnswers: [
@@ -681,7 +681,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "Write the correct past simple form of \"plan.\"",
       phrase: { before: "He ", after: " the trip very carefully." },
-      hint: "This one-syllable verb has a consonant-vowel-consonant pattern. Consider whether the final letter needs attention.",
+      hint: "plan",
       answer: "planned",
       explanation: "\"Plan\" is a one-syllable CVC verb — double the final n before -ed: \"planned.\"",
       wrongAnswers: [
@@ -698,7 +698,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "Write the correct past simple form of \"worry.\"",
       phrase: { before: "She ", after: " about the exam all night." },
-      hint: "Look at what comes before the y. This tells you how to handle the ending.",
+      hint: "worry",
       answer: "worried",
       explanation: "\"Worry\" ends in consonant + y → change y to i and add -ed: \"worried.\"",
       wrongAnswers: [
@@ -975,7 +975,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"looked\"? Type: t, d, or id",
       phrase: { before: "The -ed in \"looked\" is pronounced ", after: "." },
-      hint: "\"Look\" ends in the sound /k/. Think about whether /k/ is a voiced or voiceless consonant.",
+      hint: "looked",
       answer: "t",
       explanation: "\"Look\" ends in /k/, a voiceless consonant. After voiceless consonants, the -ed sounds like /t/: \"looked\" = /lʊkt/.",
       wrongAnswers: [
@@ -992,7 +992,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"needed\"? Type: t, d, or id",
       phrase: { before: "The -ed in \"needed\" is pronounced ", after: "." },
-      hint: "\"Need\" ends in the sound /d/. What happens when -ed follows another /t/ or /d/ sound?",
+      hint: "needed",
       answer: "id",
       explanation: "\"Need\" ends in /d/. After /t/ or /d/, the -ed becomes a separate syllable /ɪd/: \"needed\" = /ˈniːdɪd/ (two syllables).",
       wrongAnswers: [
@@ -1009,7 +1009,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"rained\"? Type: t, d, or id",
       phrase: { before: "The -ed in \"rained\" is pronounced ", after: "." },
-      hint: "\"Rain\" ends in the sound /n/. Consider whether /n/ is voiced or voiceless.",
+      hint: "rained",
       answer: "d",
       explanation: "\"Rain\" ends in /n/, a voiced consonant. After voiced sounds, the -ed is pronounced /d/: \"rained\" = /reɪnd/.",
       wrongAnswers: [
@@ -1026,7 +1026,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"watched\"? Type: t, d, or id",
       phrase: { before: "The -ed in \"watched\" is pronounced ", after: "." },
-      hint: "\"Watch\" ends in the sound /tʃ/ (the \"ch\" sound). Is this sound voiced or voiceless?",
+      hint: "watched",
       answer: "t",
       explanation: "\"Watch\" ends in /tʃ/ (the \"ch\" sound), a voiceless consonant cluster. After voiceless consonants, the -ed sounds like /t/: \"watched\" = /wɒtʃt/.",
       wrongAnswers: [
@@ -1043,7 +1043,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"visited\"? Type: t, d, or id",
       phrase: { before: "The -ed in \"visited\" is pronounced ", after: "." },
-      hint: "\"Visit\" ends in the sound /t/. What happens when -ed follows a /t/ or /d/ sound?",
+      hint: "visited",
       answer: "id",
       explanation: "\"Visit\" ends in /t/. After /t/ or /d/, the -ed becomes a separate syllable /ɪd/: \"visited\" = /ˈvɪzɪtɪd/ (three syllables: vis-it-ed).",
       wrongAnswers: [
