@@ -61,3 +61,34 @@ All 5 INPUT questions (02-14-021 to 02-14-025) claim to test "placing the adverb
 3. Redesign as MCQ questions where all options are grammatically valid CODs but only one fits the specific context
 4. For 11-01-025 specifically: add the missing verb to the phrase (e.g. "Nous avons vu ___ hier soir")
 
+### "..." hints for ambiguous words (le/la/les/l')
+
+The answer-hints system (`src/data/{lang}/answer-hints.ts`) maps each answer to a single hint, but words like `le`, `la`, `les`, `l'` can be either:
+- **Article**: "les enfants" (the children)
+- **Pronom COD**: "je les vois" (I see them)
+
+Currently these are mapped to `"..."` as a cop-out because the system can't express ambiguity. This is unhelpful for learners.
+
+**Fix: context-aware hints**
+
+1. **Extend the hint format** to allow per-question overrides:
+   - Option A: Add optional `hintOverride` field to INPUT questions in the .txt format
+   - Option B: Change hint lookup to key on `(answer, questionId)` instead of just `answer`
+   - Option C: Store hints in the question itself (remove centralized dictionary for ambiguous cases)
+
+2. **Update answer-hints.test.ts** to validate that:
+   - If a question's answer is in the ambiguous set (`le`, `la`, `les`, `l'`, `en`, `y`, `leur`, etc.), the question MUST provide a context-specific hint
+   - No `"..."` hints remain in the dictionary or in questions
+
+3. **Audit existing questions** using `...` hints:
+   - Search: `grep -n '"\.\.\.":' src/data/fr/answer-hints.ts`
+   - For each question using these answers, determine the correct context-specific hint
+   - Examples:
+     - 11-01-022: "les" as COD pronoun → hint: "pronom COD"
+     - Article questions: "les" → hint: "article"
+
+4. **Framework for disambiguation**:
+   - Create `src/data/fr/ambiguous-hints.ts` listing words with multiple possible hints
+   - Validation script checks that questions using ambiguous words have explicit hints
+   - Generation skill prompts for context-specific hint when answer is ambiguous
+
