@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "09-imperatif",
   title: "L'impératif",
-  description: "Formation, place des pronoms, verbes pronominaux",
+  description: "Formation et emplois de l'impératif",
   rules: [
     { id: "09-01", sectionId: "09-imperatif", title: "Formation de l'impératif pour les verbes en -er (parle, parlons, parlez — sans s à tu)" },
     { id: "09-02", sectionId: "09-imperatif", title: "Formation de l'impératif pour les verbes en -ir et -re (finis, finissons, finissez / attends, attendons, attendez)" },
@@ -297,6 +297,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif (tu)",
       phrase: { before: "", after: " tes amis ce soir ! » (inviter)" },
+      hint: "inviter",
       answer: "Invite",
       explanation: "L'impératif « tu » du verbe « inviter » s'écrit sans -s : « invite ».",
       wrongAnswers: [
@@ -313,6 +314,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif (nous)",
       phrase: { before: "", after: " cette musique ensemble ! » (écouter)" },
+      hint: "écouter",
       answer: "Écoutons",
       explanation: "À la forme « nous » de l'impératif, on ajoute -ons à la racine : « écoutons ».",
       wrongAnswers: [
@@ -329,6 +331,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif (vous)",
       phrase: { before: "", after: " les consignes attentivement, s'il vous plaît ! » (suivre)" },
+      hint: "suivre",
       answer: "Suivez",
       explanation: "L'impératif « vous » du verbe « suivre » s'écrit avec -ez : « suivez ».",
       wrongAnswers: [
@@ -345,6 +348,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « rentrer » à l'impératif (tu)",
       phrase: { before: "", after: " avant minuit, d'accord ?" },
+      hint: "rentrer",
       answer: "Rentre",
       explanation: "L'impératif « tu » du verbe « rentrer » s'écrit sans -s : « rentre ». C'est un verbe en -er.",
       wrongAnswers: [
@@ -361,6 +365,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif (nous)",
       phrase: { before: "", after: " notre route vers la victoire ! » (continuer)" },
+      hint: "continuer",
       answer: "Continuons",
       explanation: "À la forme « nous » de l'impératif, on ajoute -ons à la racine : « continuons ».",
       wrongAnswers: [
@@ -637,6 +642,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif « tu »",
       phrase: { before: "", after: " cette opportunité, elle ne reviendra plus ! » (choisir)" },
+      hint: "choisir",
       answer: "Choisis",
       explanation: "Choisir est en -ir (type finir). L'impératif « tu » ajoute -s : choisis.",
       wrongAnswers: [
@@ -653,6 +659,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif « nous »",
       phrase: { before: "", after: " nos valises et partons ! » (remplir)" },
+      hint: "remplir",
       answer: "Remplissons",
       explanation: "Remplir est en -ir. L'impératif « nous » est remplissons (même que l'indicatif « nous »).",
       wrongAnswers: [
@@ -669,6 +676,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif « vous »",
       phrase: { before: "", after: " bien les consignes avant de commencer. » (entendre)" },
+      hint: "entendre",
       answer: "Entendez",
       explanation: "Entendre est en -re. L'impératif « vous » est entendez (même que l'indicatif « vous »).",
       wrongAnswers: [
@@ -685,6 +693,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif « tu »",
       phrase: { before: "", after: " la patience, tout s'arrangera. » (avoir)" },
+      hint: "avoir",
       answer: "Aie",
       explanation: "Pour avoir, l'impératif « tu » est aie (forme irrégulière, sans -s).",
       wrongAnswers: [
@@ -701,6 +710,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif « nous »",
       phrase: { before: "", after: " cette occasion unique ! » (saisir)" },
+      hint: "saisir",
       answer: "Saisissons",
       explanation: "Saisir est en -ir (type finir). L'impératif « nous » est saisissons.",
       wrongAnswers: [
@@ -977,6 +987,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « être » à l'impératif (tu) dans la phrase suivante.",
       phrase: { before: "", after: " courageux et affronte tes peurs !" },
+      hint: "être",
       answer: "Sois",
       explanation: "L'impératif de « être » à la deuxième personne du singulier est « sois ». C'est une forme irrégulière qui vient du subjonctif, non de l'indicatif « es ».",
       wrongAnswers: [
@@ -994,6 +1005,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « avoir » à l'impératif (nous) dans la phrase suivante.",
       phrase: { before: "", after: " confiance en nos capacités et réussissons ensemble !" },
+      hint: "avoir",
       answer: "Ayons",
       explanation: "L'impératif de « avoir » à la première personne du pluriel est « ayons ». C'est une forme irrégulière basée sur le subjonctif, pas l'indicatif « avons ».",
       wrongAnswers: [
@@ -1011,6 +1023,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « savoir » à l'impératif (tu) dans la phrase suivante.",
       phrase: { before: "", after: " que je crois en toi et tes talents !" },
+      hint: "savoir",
       answer: "Sache",
       explanation: "L'impératif de « savoir » à la deuxième personne du singulier est « sache ». C'est une forme irrégulière du subjonctif, non l'indicatif « sais ».",
       wrongAnswers: [
@@ -1028,6 +1041,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « être » à l'impératif (nous) dans la phrase suivante.",
       phrase: { before: "", after: " responsables de nos choix et de nos actions !" },
+      hint: "être",
       answer: "Soyons",
       explanation: "L'impératif de « être » à la première personne du pluriel est « soyons ». C'est une forme irrégulière du subjonctif, pas l'indicatif « sommes ».",
       wrongAnswers: [
@@ -1045,6 +1059,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « avoir » à l'impératif (vous) dans la phrase suivante.",
       phrase: { before: "", after: " du courage et n'abandonnez jamais vos rêves !" },
+      hint: "avoir",
       answer: "Ayez",
       explanation: "L'impératif de « avoir » à la deuxième personne du pluriel est « ayez ». C'est une forme irrégulière du subjonctif, pas l'indicatif « avez ».",
       wrongAnswers: [
@@ -1322,6 +1337,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « aller » à l'impératif tu avec le pronom « y »",
       phrase: { before: "", after: " !" },
+      hint: "aller",
       answer: "Vas-y",
       explanation: "Le tu-impératif de « aller » est « va », mais devant « y », on ajoute un -s euphonique pour fluidité : « Vas-y ». C'est une exception importante.",
       wrongAnswers: [
@@ -1338,6 +1354,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte de l'impératif tu de « aller » (sans pronom y ou en)",
       phrase: { before: "", after: " au parc avec tes amis." },
+      hint: "aller",
       answer: "Va",
       explanation: "Sans « y » ou « en », le tu-impératif de « aller » s'écrit « va » sans -s. C'est la règle de base, car « aller » est un verbe du premier groupe (-er).",
       wrongAnswers: [
@@ -1354,6 +1371,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez la forme correcte de l'impératif vous de « aller » avec le pronom « y »",
       phrase: { before: "", after: " chercher vos affaires immédiatement !" },
+      hint: "aller",
       answer: "Allez-y",
       explanation: "Le vous-impératif de « aller » est « allez ». Devant « y », on garde « allez » sans modification supplémentaire.",
       wrongAnswers: [
@@ -1370,6 +1388,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte de l'impératif nous de « aller » (sans pronom)",
       phrase: { before: "", after: " maintenant, sinon on sera en retard." },
+      hint: "aller",
       answer: "Allons",
       explanation: "Le nous-impératif de « aller » est « allons ». C'est la forme inclusive pour proposer une action collective.",
       wrongAnswers: [
@@ -1386,6 +1405,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez la forme négative de l'impératif tu de « aller » avec le pronom « y »",
       phrase: { before: "", after: " , c'est trop dangereux." },
+      hint: "aller",
       answer: "N'y va pas",
       explanation: "À la forme négative, on écrit « va » sans -s, même devant « y ». Le -s euphonique n'existe qu'à l'affirmatif. « N'y va pas » est la forme correcte du négatif.",
       wrongAnswers: [
@@ -1662,6 +1682,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe vouloir à l'impératif formel (vous) pour compléter la demande courtoise.",
       phrase: { before: "", after: " excuser ce retard involontaire, je vous prie." },
+      hint: "vouloir",
       answer: "Veuillez",
       explanation: "« Veuillez » est l'impératif formel de vouloir à la 2e personne du pluriel. C'est la formulation appropriée pour une demande courtoise et formelle.",
       wrongAnswers: [
@@ -1679,6 +1700,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez le blanc avec l'impératif formel de vouloir pour terminer cette formule épistolaire.",
       phrase: { before: "", after: " agréer l'expression de mes meilleurs sentiments." },
+      hint: "vouloir",
       answer: "Veuillez",
       explanation: "« Veuillez » est l'impératif formel de vouloir à la 2e personne du pluriel. C'est la formule standard pour conclure une lettre officielle ou formelle.",
       wrongAnswers: [
@@ -1696,6 +1718,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez l'impératif formel de vouloir pour cette demande administrative.",
       phrase: { before: "", after: " nous contacter par courriel pour toute question." },
+      hint: "vouloir",
       answer: "Veuillez",
       explanation: "« Veuillez » est l'impératif formel de vouloir. C'est la formulation standard dans une correspondance administrative pour exprimer une demande courtoise.",
       wrongAnswers: [
@@ -1713,6 +1736,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Insérez la forme impérative formelle de vouloir dans cette phrase administrative.",
       phrase: { before: "", after: " trouver ci-joint le document demandé ainsi que la facture." },
+      hint: "vouloir",
       answer: "Veuillez",
       explanation: "« Veuillez » est l'impératif formel de vouloir. C'est une formule standard et très utilisée dans les correspondances professionnelles et administratives.",
       wrongAnswers: [
@@ -1730,6 +1754,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez cette demande formelle avec l'impératif approprié de vouloir.",
       phrase: { before: "", after: " bien patienter quelques instants, le responsable arrive dans un moment." },
+      hint: "vouloir",
       answer: "Veuillez",
       explanation: "« Veuillez » est l'impératif formel de vouloir à la 2e personne du pluriel. Cette formule est courtoise et appropriée pour demander à quelqu'un d'attendre de manière respectueuse.",
       wrongAnswers: [
@@ -2007,6 +2032,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez l'impératif négatif de « parler trop vite » (pour tu)",
       phrase: { before: "", after: " trop vite." },
+      hint: "parler",
       answer: "Ne parle pas",
       explanation: "À l'impératif négatif singulier (tu), on utilise « ne + verbe au présent + pas ». Pour « parler », c'est « ne parle pas ». (Le complément « trop vite » s'ajoute après.)",
       wrongAnswers: [
@@ -2024,6 +2050,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez l'impératif négatif de « faire du bruit » (pour nous)",
       phrase: { before: "Ne ", after: " du bruit." },
+      hint: "faire",
       answer: "faisons pas",
       explanation: "Pour la 1ère personne du pluriel (nous), l'impératif du verbe « faire » est « faisons ». La structure complète de l'impératif négatif est « ne faisons pas ».",
       wrongAnswers: [
@@ -2041,6 +2068,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez l'impératif négatif avec pronom pour « ne pas aller là » (pour tu)",
       phrase: { before: "N' ", after: " pas." },
+      hint: "aller",
       answer: "y va",
       explanation: "À l'impératif négatif avec le pronom « y » (pour « là »), on dit « n'y va pas ». Le pronom « y » se place avant le verbe. Attention : pas de -s à la 2e personne du singulier même avec le pronom.",
       wrongAnswers: [
@@ -2058,6 +2086,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez l'impératif négatif avec pronom objet pour « ne pas les écouter » (pour vous)",
       phrase: { before: "Ne ", after: " pas." },
+      hint: "écouter",
       answer: "les écoutez",
       explanation: "À l'impératif négatif avec un pronom objet direct (« les »), le pronom se place avant le verbe. Pour la 2e personne du pluriel (vous), la forme est « ne les écoutez pas ».",
       wrongAnswers: [
@@ -2074,6 +2103,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez l'impératif négatif de « attendre ici » (pour nous)",
       phrase: { before: "N' ", after: " pas ici." },
+      hint: "attendre",
       answer: "attendons",
       explanation: "À l'impératif négatif pour la 1ère personne du pluriel (nous), l'impératif du verbe « attendre » est « attendons ». La structure complète est « n'attendons pas ici ». (Le « ne » s'élide en « n' » avant une voyelle.)",
       wrongAnswers: [
@@ -2351,6 +2381,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez l'impératif affirmatif avec le pronom COD.",
       phrase: { before: "Tu vois cette photo ? ", after: "-la !" },
+      hint: "regarder",
       answer: "Regarde",
       explanation: "À l'impératif affirmatif, le pronom COD féminin « la » se place après le verbe avec un trait d'union. On écrit « Regarde-la ! »",
       wrongAnswers: [
@@ -2367,6 +2398,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'impératif affirmatif et le pronom COD.",
       phrase: { before: "Tu as trouvé les clés ? ", after: "-les !" },
+      hint: "prendre",
       answer: "Prends",
       explanation: "À l'impératif affirmatif, le pronom COD pluriel « les » se place après le verbe avec un trait d'union. On écrit « Prends-les ! »",
       wrongAnswers: [
@@ -2383,6 +2415,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez le verbe à l'impératif affirmatif avec le pronom COD.",
       phrase: { before: "Ces fruits sont mûrs ! ", after: "-les !" },
+      hint: "manger",
       answer: "Mange",
       explanation: "À l'impératif affirmatif, le pronom COD pluriel « les » se place après le verbe avec un trait d'union. On écrit « Mange-les ! »",
       wrongAnswers: [
@@ -2399,6 +2432,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez l'impératif affirmatif avec le pronom COD qui convient.",
       phrase: { before: "Tu dois écouter ce disque ! ", after: "-le !" },
+      hint: "écouter",
       answer: "Écoute",
       explanation: "À l'impératif affirmatif, le pronom COD masculin « le » se place après le verbe avec un trait d'union. On écrit « Écoute-le ! »",
       wrongAnswers: [
@@ -2415,6 +2449,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Formez l'impératif affirmatif avec le pronom COD.",
       phrase: { before: "Vous voyez cette lettre ? ", after: "-la !" },
+      hint: "lire",
       answer: "Lisez",
       explanation: "À l'impératif affirmatif à la 2e personne du pluriel, le pronom COD féminin « la » se place après le verbe avec un trait d'union. On écrit « Lisez-la ! »",
       wrongAnswers: [
@@ -2691,6 +2726,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez à l'impératif affirmatif avec le pronom COI « lui ».",
       phrase: { before: "Parle ", after: "__ de ton voyage !" },
+      hint: "parler",
       answer: "parle-lui",
       explanation: "« Parler à » prend un COI. À l'impératif affirmatif, « lui » se place après le verbe avec trait d'union.",
       wrongAnswers: [
@@ -2707,6 +2743,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez à l'impératif affirmatif avec le pronom COI « leur ».",
       phrase: { before: "Écris ", after: "__ une lettre !" },
+      hint: "écrire",
       answer: "écris-leur",
       explanation: "« Écrire à » prend un COI. À l'impératif affirmatif, « leur » (3e personne du pluriel) se place après le verbe.",
       wrongAnswers: [
@@ -2723,6 +2760,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez à l'impératif affirmatif avec le pronom COI « moi ».",
       phrase: { before: "Donne ", after: "__ ton avis !" },
+      hint: "donner",
       answer: "donne-moi",
       explanation: "À l'impératif affirmatif, me devient « moi » et se place après le verbe avec trait d'union.",
       wrongAnswers: [
@@ -2739,6 +2777,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez à l'impératif affirmatif avec le pronom COI « toi ».",
       phrase: { before: "Promets ", after: "__ de ne pas oublier !" },
+      hint: "promettre",
       answer: "promets-toi",
       explanation: "À l'impératif affirmatif, te devient « toi » et se place après le verbe avec trait d'union.",
       wrongAnswers: [
@@ -2755,6 +2794,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez à l'impératif affirmatif avec le pronom COI « nous ».",
       phrase: { before: "Téléphone ", after: "__ demain !" },
+      hint: "téléphoner",
       answer: "téléphone-nous",
       explanation: "À l'impératif affirmatif, « nous » (1ère personne du pluriel COI) se place après le verbe avec trait d'union.",
       wrongAnswers: [
@@ -3031,6 +3071,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez l'impératif à la forme négative avec le pronom placé correctement.",
       phrase: { before: "N'", after: " regarde pas, c'est trop violent." },
+      hint: "regarder",
       answer: "le",
       explanation: "Impératif négatif : le pronom COD « le » se place avant le verbe. Structure : ne + le + regarde + pas.",
       wrongAnswers: [
@@ -3048,6 +3089,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez l'impératif négatif avec le pronom personnel correct.",
       phrase: { before: "N'", after: " parlez pas, laissez-le dormir." },
+      hint: "parler",
       answer: "lui",
       explanation: "Impératif négatif avec COI (parler à quelqu'un). Structure : ne + lui + parlez + pas.",
       wrongAnswers: [
@@ -3065,6 +3107,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez la phrase à l'impératif négatif avec placement correct du pronom réfléchi.",
       phrase: { before: "Ne ", after: " lève pas si tu n'es pas d'accord." },
+      hint: "se lever",
       answer: "te",
       explanation: "Impératif négatif réfléchi, 2e personne singulier. Le pronom « te » se place avant le verbe.",
       wrongAnswers: [
@@ -3082,6 +3125,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le pronom personnel correct à l'impératif négatif.",
       phrase: { before: "N'", after: " mangez pas ces fruits, ils ne sont pas mûrs." },
+      hint: "manger",
       answer: "les",
       explanation: "Pronom COD pluriel à l'impératif négatif. « Ne les mangez pas » (vous adressant à plusieurs).",
       wrongAnswers: [
@@ -3099,6 +3143,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez la phrase à l'impératif négatif avec le pronom bien placé.",
       phrase: { before: "N'", after: " appelle pas si tu n'as pas besoin, il est occupé." },
+      hint: "appeler",
       answer: "le",
       explanation: "Pronom COD singulier à l'impératif négatif. « Ne le appelle pas » (ne l'appelle pas).",
       wrongAnswers: [
@@ -3376,6 +3421,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez l'impératif affirmatif avec les deux pronoms (COD puis COI)",
       phrase: { before: "Donne-", after: " ! » (le livre à moi)" },
+      hint: "donner",
       answer: "donne-le-moi",
       explanation: "À l'impératif affirmatif, le COD (le) précède le COI (moi). Me devient moi (forme tonique).",
       wrongAnswers: [
@@ -3393,6 +3439,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez l'impératif affirmatif avec les deux pronoms",
       phrase: { before: "Montre-", after: " ! » (les photos à lui)" },
+      hint: "montrer",
       answer: "montre-les-lui",
       explanation: "À l'impératif affirmatif, les (COD) précède lui (COI). Lui reste inchangé.",
       wrongAnswers: [
@@ -3410,6 +3457,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Transformez l'impératif affirmatif avec les deux pronoms",
       phrase: { before: "Prête-", after: " ! » (la voiture à nous)" },
+      hint: "prêter",
       answer: "prête-la-nous",
       explanation: "À l'impératif affirmatif, la (COD) précède nous (COI). Nous reste identique.",
       wrongAnswers: [
@@ -3427,6 +3475,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez l'impératif affirmatif avec les deux pronoms",
       phrase: { before: "Envoie-", after: " ! » (les lettres à toi)" },
+      hint: "envoyer",
       answer: "envoie-les-toi",
       explanation: "À l'impératif affirmatif, les (COD) précède toi (COI). Te devient toi (forme tonique).",
       wrongAnswers: [
@@ -3444,6 +3493,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez l'impératif affirmatif avec les deux pronoms",
       phrase: { before: "Dites-", after: " ! » (la vérité à nous)" },
+      hint: "dire",
       answer: "dites-la-nous",
       explanation: "À l'impératif affirmatif vous, la (COD) précède nous (COI). Nous reste identique.",
       wrongAnswers: [
@@ -3695,6 +3745,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Transformez en impératif négatif : donne-moi la clé.",
       phrase: { before: "Ne ", after: " pas la clé !" },
+      hint: "donner",
       answer: "me la donne",
       explanation: "Impératif négatif : ne + me (COI) + la (COD) + donne + pas.",
       wrongAnswers: [
@@ -3712,6 +3763,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez à l'impératif négatif : montrez-nous les photos.",
       phrase: { before: "Ne ", after: " pas les photos !" },
+      hint: "montrer",
       answer: "nous les montrez",
       explanation: "Impératif négatif nous : ne + nous (COI) + les (COD) + montrez + pas.",
       wrongAnswers: [
@@ -3729,6 +3781,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Transformez en impératif négatif : prête-le-moi.",
       phrase: { before: "Ne ", after: " pas !" },
+      hint: "prêter",
       answer: "me le prête",
       explanation: "Impératif négatif : ne + me (COI) + le (COD) + prête + pas.",
       wrongAnswers: [
@@ -3746,6 +3799,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez à l'impératif négatif : dis-lui en un mot.",
       phrase: { before: "N'", after: " pas en un mot !" },
+      hint: "dire",
       answer: "lui en dis",
       explanation: "Impératif négatif : ne + lui (COI) + en (pronom adverbial) + dis + pas.",
       wrongAnswers: [
@@ -3763,6 +3817,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Transformez en impératif négatif : envoyez-moi les documents.",
       phrase: { before: "N'", after: " pas les documents !" },
+      hint: "envoyer",
       answer: "me les envoyez",
       explanation: "Impératif négatif vous : ne + me (COI) + les (COD) + envoyez + pas.",
       wrongAnswers: [
@@ -4066,6 +4121,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez l'impératif affirmatif avec y.",
       phrase: { before: "", after: " y !" },
+      hint: "aller",
       answer: "Vas",
       explanation: "À l'impératif affirmatif, « aller » + « y » devient « vas-y » (avec le -s euphonique à la deuxième personne du singulier).",
       wrongAnswers: [
@@ -4082,6 +4138,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez l'impératif affirmatif avec en.",
       phrase: { before: "", after: " en un peu !" },
+      hint: "prendre",
       answer: "Prends",
       explanation: "À l'impératif affirmatif, « prendre » + « en » à la deuxième personne du singulier est « prends-en ». Le -s est déjà présent dans la conjugaison.",
       wrongAnswers: [
@@ -4098,6 +4155,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez à l'impératif négatif avec y.",
       phrase: { before: "", after: " y va pas !" },
+      hint: "aller",
       answer: "N'y",
       explanation: "À l'impératif négatif, « y » se place directement après la négation « ne » (n'y). La structure est n'y + verbe + pas.",
       wrongAnswers: [
@@ -4114,6 +4172,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez l'impératif négatif avec en.",
       phrase: { before: "", after: " en mange pas !" },
+      hint: "manger",
       answer: "N'en",
       explanation: "À l'impératif négatif avec « en », on place « en » directement après la négation « ne » (n'en). La structure est n'en + verbe + pas.",
       wrongAnswers: [
@@ -4130,6 +4189,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez au singulier à l'impératif affirmatif avec en.",
       phrase: { before: "", after: " en un morceau !" },
+      hint: "manger",
       answer: "Manges",
       explanation: "Le verbe « manger » à la deuxième personne du singulier prend un -s euphonique avant « en » : manges-en. Cela évite la fusion entre le e muet et le e d'« en ».",
       wrongAnswers: [
@@ -4406,6 +4466,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au mode impératif affirmatif (2e personne du singulier)",
       phrase: { before: "", after: " immédiatement ! » (se lever)" },
+      hint: "se lever",
       answer: "Lève-toi",
       explanation: "À l'impératif affirmatif du verbe se lever (tu), on conjugue le verbe et on ajoute le pronom tonique avec un trait d'union : lève-toi.",
       wrongAnswers: [
@@ -4423,6 +4484,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au mode impératif affirmatif (1re personne du pluriel)",
       phrase: { before: "", after: " maintenant, avant qu'il ne soit trop tard ! » (se dépêcher)" },
+      hint: "se dépêcher",
       answer: "Dépêchons-nous",
       explanation: "À l'impératif affirmatif du verbe se dépêcher (nous), on conjugue le verbe et on ajoute le pronom avec un trait d'union : dépêchons-nous.",
       wrongAnswers: [
@@ -4440,6 +4502,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au mode impératif affirmatif (2e personne du pluriel)",
       phrase: { before: "", after: " et écoutez-moi bien ! » (s'asseoir)" },
+      hint: "s'asseoir",
       answer: "Asseyez-vous",
       explanation: "À l'impératif affirmatif du verbe s'asseoir (vous), on conjugue le verbe et on ajoute « vous » avec un trait d'union : asseyez-vous.",
       wrongAnswers: [
@@ -4457,6 +4520,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au mode impératif affirmatif (2e personne du singulier)",
       phrase: { before: "", after: " et va faire tes devoirs ! » (se préparer)" },
+      hint: "se préparer",
       answer: "Prépare-toi",
       explanation: "À l'impératif affirmatif du verbe se préparer (tu), on utilise le verbe conjugué suivi du pronom tonique avec un trait d'union : prépare-toi.",
       wrongAnswers: [
@@ -4474,6 +4538,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au mode impératif affirmatif (1re personne du pluriel)",
       phrase: { before: "", after: " dans une heure, s'il vous plaît ! » (se réveiller)" },
+      hint: "se réveiller",
       answer: "Réveillons-nous",
       explanation: "À l'impératif affirmatif du verbe se réveiller (nous), on conjugue le verbe et on ajoute le pronom avec un trait d'union : réveillons-nous.",
       wrongAnswers: [
@@ -4751,6 +4816,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au négatif de l'impératif.",
       phrase: { before: "Ne ", after: " pas trop tard ce soir !" },
+      hint: "se coucher",
       answer: "te couche",
       explanation: "À l'impératif négatif du singulier (tu), on utilise : ne + te + couche + pas. Le pronom unstressed « te » se place avant le verbe.",
       wrongAnswers: [
@@ -4768,6 +4834,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au négatif de l'impératif.",
       phrase: { before: "Nous, ne ", after: " pas pendant la réunion !" },
+      hint: "s'inquiéter",
       answer: "nous inquiétons",
       explanation: "À l'impératif négatif avec « nous », on utilise : ne + nous + inquiétons + pas. La terminaison pour « nous » est « -ons ».",
       wrongAnswers: [
@@ -4785,6 +4852,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au négatif de l'impératif.",
       phrase: { before: "Vous deux, ne ", after: " pas maintenant !" },
+      hint: "se lever",
       answer: "vous levez",
       explanation: "À l'impératif négatif avec « vous », on utilise : ne + vous + levez + pas. La terminaison pour « vous » est « -ez ».",
       wrongAnswers: [
@@ -4802,6 +4870,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase avec le verbe « se dépêcher » à l'impératif négatif.",
       phrase: { before: "Ne ", after: " pas, prends ton temps !" },
+      hint: "se dépêcher",
       answer: "te dépêche",
       explanation: "À l'impératif négatif du singulier (tu), on utilise : ne + te + dépêche + pas. Le pronom unstressed « te » se place avant le verbe.",
       wrongAnswers: [
@@ -4819,6 +4888,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au négatif de l'impératif.",
       phrase: { before: "Ne ", after: " pas de cette décision, c'est important !" },
+      hint: "se plaindre",
       answer: "vous plaignez",
       explanation: "À l'impératif négatif avec « vous », on utilise : ne + vous + plaignez + pas. La terminaison pour « vous » est « -ez ». Le verbe « se plaindre » a une conjugaison régulière à l'impératif.",
       wrongAnswers: [
@@ -5096,6 +5166,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif tu pour exprimer un ordre direct à un ami.",
       phrase: { before: "", after: " cette vidéo, c'est vraiment drôle !" },
+      hint: "regarder",
       answer: "regarde",
       explanation: "L'impératif tu du verbe « regarder » : « regarde ». Ton amical et direct.",
       wrongAnswers: [
@@ -5113,6 +5184,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif vous pour exprimer un ordre formel ou adressé à plusieurs personnes.",
       phrase: { before: "", after: " s'il vous plaît, la porte derrière vous." },
+      hint: "fermer",
       answer: "Fermez",
       explanation: "L'impératif vous du verbe « fermer » : « fermez ». Instruction polite adressée à plusieurs personnes ou en contexte formel.",
       wrongAnswers: [
@@ -5130,6 +5202,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif négatif pour exprimer une interdiction.",
       phrase: { before: "Ne ", after: " pas cette prise. C'est dangereux !" },
+      hint: "toucher",
       answer: "touche",
       explanation: "L'impératif tu négatif du verbe « toucher » : « ne touche pas ». Interdiction à un enfant ou un ami.",
       wrongAnswers: [
@@ -5147,6 +5220,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif pour exprimer une instruction dans un contexte professionnel ou d'autorité.",
       phrase: { before: "", after: " vos ceintures de sécurité immédiatement." },
+      hint: "attacher",
       answer: "Attachez",
       explanation: "L'impératif vous du verbe « attacher » : « attachez ». Ordre direct dans un contexte officiel ou adressé à plusieurs personnes.",
       wrongAnswers: [
@@ -5164,6 +5238,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif tu pour exprimer une suggestion ou un ordre amical.",
       phrase: { before: "", after: " l'eau froide, c'est bon pour la santé." },
+      hint: "boire",
       answer: "bois",
       explanation: "L'impératif tu du verbe « boire » : « bois ». Ton amical et direct, encourage une action.",
       wrongAnswers: [
@@ -5441,6 +5516,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif pour donner un conseil à un ami fatigué.",
       phrase: { before: "Tu as l'air épuisée. ", after: " un peu plus longtemps." },
+      hint: "dormir",
       answer: "Dors",
       explanation: "L'impératif « dors » exprime un conseil bienveillant et direct. C'est la forme naturelle pour suggérer du repos à quelqu'un.",
       wrongAnswers: [
@@ -5458,6 +5534,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif pour donner un conseil sur l'alimentation.",
       phrase: { before: "Tu mangeras mieux si tu ", after: " des fruits et des légumes chaque jour." },
+      hint: "manger",
       answer: "manges",
       explanation: "L'impératif « manges » donne un conseil pratique et direct sur l'alimentation saine.",
       wrongAnswers: [
@@ -5475,6 +5552,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif pour conseiller un groupe d'amis.",
       phrase: { before: "Vous êtes stressés. ", after: " ensemble et détendez-vous." },
+      hint: "sortir",
       answer: "Sortez",
       explanation: "L'impératif « sortez » à la 2e personne du pluriel donne un conseil collectif clair et motivant.",
       wrongAnswers: [
@@ -5492,6 +5570,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au réfléchi à l'impératif pour donner un conseil personnel.",
       phrase: { before: "Tu sembles déprimé. ", after: " un peu et appelle un ami." },
+      hint: "se détendre",
       answer: "Détends-toi",
       explanation: "L'impératif réfléchi « détends-toi » donne un conseil bienveillant pour se relaxer et prendre soin de soi.",
       wrongAnswers: [
@@ -5509,6 +5588,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif pour donner un conseil de santé.",
       phrase: { before: "Pour être en meilleure santé, ", after: " régulièrement du sport." },
+      hint: "faire",
       answer: "fais",
       explanation: "L'impératif « fais » donne un conseil pratique et direct sur l'importance de l'activité physique.",
       wrongAnswers: [
@@ -5786,6 +5866,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « vouloir » à l'impératif pour exprimer une demande formelle.",
       phrase: { before: "", after: " patienter quelques minutes, Monsieur." },
+      hint: "vouloir",
       answer: "Veuillez",
       explanation: "« Veuillez » est l'impératif du verbe « vouloir » utilisé pour une demande formelle et polite.",
       wrongAnswers: [
@@ -5802,6 +5883,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « excuser » à l'impératif avec le pronom réfléchi.",
       phrase: { before: "Je suis désolée d'être en retard. ", after: "." },
+      hint: "s'excuser",
       answer: "Excusez-moi",
       explanation: "« Excusez-moi » est l'impératif du verbe « excuser » avec le pronom affaibli « moi » placé après le verbe.",
       wrongAnswers: [
@@ -5818,6 +5900,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase avec l'impératif polite du verbe « permettre ».",
       phrase: { before: "", after: " me présenter ma collègue, Madame." },
+      hint: "permettre",
       answer: "Permettez-moi",
       explanation: "« Permettez-moi » est l'impératif du verbe « permettre » pour demander poliment de faire quelque chose.",
       wrongAnswers: [
@@ -5834,6 +5917,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez le formulaire avec l'impératif : « ___ vos coordonnées ci-dessous. »",
       phrase: { before: "Pour continuer, ", after: " vos coordonnées ci-dessous." },
+      hint: "fournir",
       answer: "Fournissez",
       explanation: "« Fournissez » est l'impératif du verbe « fournir » utilisé pour une demande d'information sur un formulaire.",
       wrongAnswers: [
@@ -5850,6 +5934,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez avec l'impératif polite pour une demande formelle.",
       phrase: { before: "", after: " agréer, Monsieur, l'expression de mes salutations distinguées." },
+      hint: "vouloir",
       answer: "Veuillez",
       explanation: "« Veuillez » (impératif de vouloir) est la formule impérative polite standard dans la correspondance formelle.",
       wrongAnswers: [
@@ -6113,6 +6198,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez l'impératif négatif au présent (vous) pour interdire de parler fort.",
       phrase: { before: "", after: " , s'il vous plaît !" },
+      hint: "parler",
       answer: "Ne parlez pas fort",
       explanation: "Impératif (vous) négatif — la forme standard pour interdire poliment à un groupe de parler fort.",
       wrongAnswers: [
@@ -6130,6 +6216,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez l'impératif négatif au présent (tu) pour interdire à quelqu'un de manger trop de bonbons.",
       phrase: { before: "", after: " comme ça !" },
+      hint: "manger",
       answer: "Ne mange pas de bonbons",
       explanation: "Impératif (tu) négatif — la forme correcte pour une interdiction directe concernant la quantité de bonbons.",
       wrongAnswers: [
@@ -6147,6 +6234,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez l'impératif négatif au présent (nous) pour suggérer à un groupe de ne pas se battre.",
       phrase: { before: "", after: " , d'accord ?" },
+      hint: "se battre",
       answer: "Ne nous battons pas",
       explanation: "Impératif (nous) négatif avec pronom réfléchi — la forme correcte pour suggérer à un groupe (incluant le locuteur) de ne pas se battre.",
       wrongAnswers: [
@@ -6164,6 +6252,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez l'impératif négatif au présent (vous) pour interdire de stationner dans cet espace.",
       phrase: { before: "", after: " dans cet espace !" },
+      hint: "stationner",
       answer: "Ne stationnez pas",
       explanation: "Impératif (vous) négatif — la forme standard pour une interdiction de stationner sur un panneau public.",
       wrongAnswers: [
@@ -6194,6 +6283,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez l'impératif négatif au présent (tu) pour interdire à quelqu'un de courir.",
       phrase: { before: "", after: " dans les couloirs !" },
+      hint: "courir",
       answer: "Ne cours pas",
       explanation: "Impératif (tu) négatif de « courir » — c'est la forme correcte pour une interdiction directe à une personne de courir.",
       wrongAnswers: [
@@ -6471,6 +6561,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la consigne écrite en utilisant l'infinitif au lieu de l'impératif",
       phrase: { before: "", after: " avant chaque utilisation" },
+      hint: "laver",
       answer: "Laver",
       explanation: "L'infinitif « laver » est la forme requise pour les consignes écrites affirmatives. Elle remplace l'impératif pour rester impersonnelle.",
       wrongAnswers: [
@@ -6488,6 +6579,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez l'infinitif négatif pour compléter cette consigne de sécurité",
       phrase: { before: "", after: " à la chaleur" },
+      hint: "exposer",
       answer: "Ne pas exposer",
       explanation: "Structure correcte : « ne pas + infinitif ». C'est la formulation standard pour les interdictions écrites.",
       wrongAnswers: [
@@ -6505,6 +6597,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplacez l'impératif par l'infinitif pour cette étiquette de médicament",
       phrase: { before: "", after: " avant de prendre" },
+      hint: "agiter",
       answer: "Agiter",
       explanation: "L'infinitif « agiter » remplace l'impératif « agitez ». Cette forme est standard sur les étiquettes.",
       wrongAnswers: [
@@ -6522,6 +6615,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez l'infinitif pour compléter cette consigne de rangement",
       phrase: { before: "", after: " au frais" },
+      hint: "conserver",
       answer: "Conserver",
       explanation: "L'infinitif « conserver » est la formulation standard pour les instructions de stockage sur les étiquettes alimentaires.",
       wrongAnswers: [
@@ -6539,6 +6633,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez cette consigne de sécurité en utilisant l'infinitif négatif",
       phrase: { before: "", after: " à portée des enfants" },
+      hint: "laisser",
       answer: "Ne pas laisser",
       explanation: "Structure correcte : « ne pas + infinitif ». C'est la formulation standard pour les avertissements écrits.",
       wrongAnswers: [
@@ -6816,6 +6911,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif affirmatif avec les pronoms en ordre correct.",
       phrase: { before: "Donne-moi ce livre, s'il te plaît ! → Donne ", after: " ce livre, s'il te plaît ! (Remplacez « moi » par le pronom le + moi)" },
+      hint: "donner",
       answer: "le-moi",
       explanation: "À l'impératif affirmatif, l'ordre des deux pronoms COD-COI est respecté avec des traits d'union : donne-le-moi.",
       wrongAnswers: [
@@ -6833,6 +6929,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif négatif avec les pronoms en ordre correct.",
       phrase: { before: "Ne me l'apporte pas. → Ne ", after: " apporte pas. (Remplacez « me l' » par un seul tiret combiné)" },
+      hint: "apporter",
       answer: "me la",
       explanation: "À l'impératif négatif avec deux pronoms, l'ordre est COI-COD avant le verbe sans traits d'union : ne me la apporte pas (ou ne me l'apporte pas avec élision).",
       wrongAnswers: [
@@ -6850,6 +6947,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Choisissez la bonne forme à l'impératif affirmatif.",
       phrase: { before: "Va à ce concert ! → ", after: " à ce concert ! (Complétez avec le verbe à l'impératif et le pronom y)" },
+      hint: "aller",
       answer: "Vas-y",
       explanation: "À l'impératif affirmatif, y se place après le verbe avec un trait d'union ; on ajoute un -s euphonique : vas-y.",
       wrongAnswers: [
@@ -6866,6 +6964,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Transformez à l'impératif affirmatif.",
       phrase: { before: "Ne m'en donne pas. → ", after: " de ce gâteau ! (Dites à quelqu'un de vous en donner)" },
+      hint: "donner",
       answer: "Donne-m'en",
       explanation: "À l'impératif affirmatif, me devient m' devant en, et l'ordre est m'-en avec un trait d'union : donne-m'en.",
       wrongAnswers: [
@@ -6882,6 +6981,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent de l'impératif avec le pronom adéquat.",
       phrase: { before: "Regarde cette photo ! → Ne ", after: " regarde pas maintenant, attends ce soir. (Insérez le pronom COD approprié à la forme négative)" },
+      hint: "regarder",
       answer: "la",
       explanation: "À l'impératif négatif, le pronom COD se place avant le verbe sans trait d'union ; « la » remplace « cette photo » : ne la regarde pas.",
       wrongAnswers: [

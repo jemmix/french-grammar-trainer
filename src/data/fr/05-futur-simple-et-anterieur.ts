@@ -5,8 +5,8 @@ import type { Section } from "../types";
 
 const section: Section = {
   id: "05-futur-simple-et-anterieur",
-  title: "Le futur simple et le futur antérieur",
-  description: "Formation régulière et irrégulière, emplois, antériorité",
+  title: "Le futur simple et antérieur",
+  description: "Formation et emplois des futurs",
   rules: [
     { id: "05-01", sectionId: "05-futur-simple-et-anterieur", title: "Formation du futur simple des verbes en -er (infinitif + -ai, -as, -a, -ons, -ez, -ont)" },
     { id: "05-02", sectionId: "05-futur-simple-et-anterieur", title: "Formation du futur simple des verbes en -ir (infinitif + terminaisons)" },
@@ -297,6 +297,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple.",
       phrase: { before: "Je ", after: " à la plage demain." },
+      hint: "nager",
       answer: "nagerai",
       explanation: "Futur simple du verbe « nager » à la 1re personne du singulier. L'infinitif « nager » + terminaison « -ai » = « nagerai ».",
       wrongAnswers: [
@@ -314,6 +315,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple.",
       phrase: { before: "Tu ", after: " ta mère à faire les courses." },
+      hint: "aider",
       answer: "aideras",
       explanation: "Futur simple du verbe « aider » à la 2e personne du singulier. L'infinitif « aider » + terminaison « -as » = « aideras ».",
       wrongAnswers: [
@@ -331,6 +333,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple.",
       phrase: { before: "Nous ", after: " nos amis demain soir." },
+      hint: "rencontrer",
       answer: "verrons",
       explanation: "Futur simple du verbe « voir ». Attendez—« voir » n'est pas un verbe en -er. Utilisons plutôt « rencontrerons » (de « rencontrer »). L'infinitif « rencontrer » + terminaison « -ons » = « rencontrerons ».",
       wrongAnswers: [
@@ -348,6 +351,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple.",
       phrase: { before: "Vous ", after: " l'examen dans deux semaines." },
+      hint: "passer",
       answer: "passerez",
       explanation: "Futur simple du verbe « passer » à la 2e personne du pluriel. L'infinitif « passer » + terminaison « -ez » = « passerez ».",
       wrongAnswers: [
@@ -365,6 +369,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple.",
       phrase: { before: "Les enfants ", after: " à l'école à 8h30." },
+      hint: "arriver",
       answer: "arriveront",
       explanation: "Futur simple du verbe « arriver » à la 3e personne du pluriel. L'infinitif « arriver » + terminaison « -ont » = « arriveront ».",
       wrongAnswers: [
@@ -616,6 +621,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « finir » au futur simple, 1ère personne du singulier.",
       phrase: { before: "Je ", after: " le travail demain." },
+      hint: "finir",
       answer: "finirai",
       explanation: "Verbe « finir » au futur simple : infinitif + terminaison -ai pour « je ».",
       wrongAnswers: [
@@ -633,6 +639,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « choisir » au futur simple, 2e personne du singulier.",
       phrase: { before: "Tu ", after: " la couleur de la peinture." },
+      hint: "choisir",
       answer: "choisiras",
       explanation: "Verbe « choisir » au futur simple : infinitif + terminaison -as pour « tu ».",
       wrongAnswers: [
@@ -650,6 +657,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « établir » au futur simple, 1ère personne du pluriel.",
       phrase: { before: "Nous ", after: " les règles du jeu avant de commencer." },
+      hint: "établir",
       answer: "établirons",
       explanation: "Verbe « établir » au futur simple : infinitif + terminaison -ons pour « nous ».",
       wrongAnswers: [
@@ -667,6 +675,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « fournir » au futur simple, 3e personne du pluriel.",
       phrase: { before: "Ils ", after: " tous les documents nécessaires avant la date limite." },
+      hint: "fournir",
       answer: "fourniront",
       explanation: "Verbe « fournir » au futur simple : infinitif + terminaison -ont pour « ils ».",
       wrongAnswers: [
@@ -710,6 +719,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « saisir » au futur simple, 2e personne du pluriel.",
       phrase: { before: "Vous ", after: " cette opportunité aujourd'hui." },
+      hint: "saisir",
       answer: "saisirez",
       explanation: "Verbe « saisir » au futur simple : infinitif + terminaison -ez pour « vous ».",
       wrongAnswers: [
@@ -883,6 +893,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple",
       phrase: { before: "Tu ", after: " cette chance dans ta vie." },
+      hint: "savoir",
       answer: "sauras",
       explanation: "Le verbe « savoir » (verbe en -re) au futur simple : savoir → saur- + -as = sauras (tu). C'est un verbe irrégulier, mais suit le pattern sans -e.",
       wrongAnswers: [
@@ -900,6 +911,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple",
       phrase: { before: "Elle ", after: " toutes les conditions avant d'accepter." },
+      hint: "vérifier",
       answer: "vérifi era",
       explanation: "Le verbe « vérifier » au futur simple : vérifier → vérifier- + -a = vérifiera (elle). Note : bien que ce soit un verbe en -er, il suit le pattern régulier du futur.",
       wrongAnswers: [
@@ -917,6 +929,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple",
       phrase: { before: "Vous ", after: " cette décision en un instant." },
+      hint: "comprendre",
       answer: "comprendrez",
       explanation: "Le verbe « comprendre » au futur simple : comprendre → comprendr- + -ez = comprendrez (vous). C'est un dérivé d'« apprendre » qui suit le même pattern.",
       wrongAnswers: [
@@ -1038,6 +1051,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple",
       phrase: { before: "Je ", after: " l'eau qui bout." },
+      hint: "voir",
       answer: "verrai",
       explanation: "Le verbe « voir » au futur simple : voir → verr- + -ai = verrai (je). Note : le futur de « voir » a un radical irrégulier « verr- ».",
       wrongAnswers: [
@@ -1055,6 +1069,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple",
       phrase: { before: "Nous ", after: " les obstacles ensemble." },
+      hint: "surmonter",
       answer: "surmonterons",
       explanation: "Le verbe « surmonter » au futur simple : surmonter → surmonter- + -ons = surmonterons (nous)",
       wrongAnswers: [
@@ -1331,6 +1346,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « être » au futur simple.",
       phrase: { before: "J'", after: " certain que tu réussiras." },
+      hint: "être",
       answer: "serai",
       explanation: "Le futur irrégulier du verbe « être » utilise le radical « ser- » auquel on ajoute les terminaisons régulières du futur. Pour la 1ère personne du singulier, on ajoute « -ai ».",
       wrongAnswers: [
@@ -1348,6 +1364,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « avoir » au futur simple.",
       phrase: { before: "Tu ", after: " toutes les réponses demain." },
+      hint: "avoir",
       answer: "auras",
       explanation: "Le futur irrégulier du verbe « avoir » utilise le radical « aur- » auquel on ajoute les terminaisons régulières du futur. Pour la 2e personne du singulier, on ajoute « -as ».",
       wrongAnswers: [
@@ -1365,6 +1382,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « faire » au futur simple.",
       phrase: { before: "Il ", after: " son travail avec soin." },
+      hint: "faire",
       answer: "fera",
       explanation: "Le futur irrégulier du verbe « faire » utilise le radical « fer- » auquel on ajoute les terminaisons régulières du futur. Pour la 3e personne du singulier, on ajoute « -a ».",
       wrongAnswers: [
@@ -1382,6 +1400,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « aller » au futur simple.",
       phrase: { before: "Nous ", after: " à la plage le mois prochain." },
+      hint: "aller",
       answer: "irons",
       explanation: "Le futur irrégulier du verbe « aller » utilise le radical « ir- » auquel on ajoute les terminaisons régulières du futur. Pour la 1ère personne du pluriel, on ajoute « -ons ».",
       wrongAnswers: [
@@ -1399,6 +1418,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « être » au futur simple.",
       phrase: { before: "Vous ", after: " toujours les bienvenus chez nous." },
+      hint: "être",
       answer: "serez",
       explanation: "Le futur irrégulier du verbe « être » utilise le radical « ser- » auquel on ajoute les terminaisons régulières du futur. Pour la 2e personne du pluriel, on ajoute « -ez ».",
       wrongAnswers: [
@@ -1663,6 +1683,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « pouvoir » au futur simple (1ère personne du singulier).",
       phrase: { before: "Je ", after: " vous appeler demain matin." },
+      hint: "pouvoir",
       answer: "pourrai",
       explanation: "Futur simple du verbe « pouvoir ». Le radical irrégulier « pourr- » + terminaison « -ai » pour la 1ère personne du singulier.",
       wrongAnswers: [
@@ -1680,6 +1701,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « vouloir » au futur simple (3e personne du singulier).",
       phrase: { before: "Mon ami ", after: " participer à ce projet avec nous." },
+      hint: "vouloir",
       answer: "voudra",
       explanation: "Futur simple du verbe « vouloir ». Le radical irrégulier « voudr- » + terminaison « -a » pour la 3e personne du singulier.",
       wrongAnswers: [
@@ -1698,6 +1720,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « devoir » au futur simple (2e personne du pluriel).",
       phrase: { before: "Vous ", after: " remplacer les pièces défectueuses avant la livraison." },
+      hint: "devoir",
       answer: "devrez",
       explanation: "Futur simple du verbe « devoir ». Le radical irrégulier « devr- » + terminaison « -ez » pour la 2e personne du pluriel.",
       wrongAnswers: [
@@ -1715,7 +1738,8 @@ const section: Section = {
       ruleId: "05-05",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « savoir » au futur simple (1ère personne du pluriel).",
-      phrase: { before: "Nous ", after: " tous les détails du projet avant la réunion." },
+      phrase: { before: "Nous ", after: " tous les détails du contexte avant la réunion." },
+      hint: "savoir",
       answer: "saurons",
       explanation: "Futur simple du verbe « savoir ». Le radical irrégulier « saur- » + terminaison « -ons » pour la 1ère personne du pluriel.",
       wrongAnswers: [
@@ -1747,6 +1771,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « pouvoir » au futur simple.",
       phrase: { before: "Mon frère ", after: " naviguer sur internet grâce à son nouveau téléphone." },
+      hint: "pouvoir",
       answer: "pourra",
       explanation: "Futur simple du verbe « pouvoir » à la 3e personne du singulier. Le radical irrégulier « pourr- » + terminaison « -a » = « pourra ».",
       wrongAnswers: [
@@ -2011,6 +2036,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « venir » au futur simple, à la 1ère personne du singulier.",
       phrase: { before: "Je ", after: " te rendre visite la semaine prochaine." },
+      hint: "venir",
       answer: "viendrai",
       explanation: "Le verbe « venir » au futur simple à la 1ère personne du singulier est « viendrai », formé avec le radical irrégulier « viendr- ».",
       wrongAnswers: [
@@ -2029,6 +2055,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « tenir » au futur simple, à la 3e personne du singulier.",
       phrase: { before: "Elle ", after: " sa promesse envers nous." },
+      hint: "tenir",
       answer: "tiendra",
       explanation: "Le verbe « tenir » au futur simple à la 3e personne du singulier est « tiendra », formé avec le radical irrégulier « tiendr- ».",
       wrongAnswers: [
@@ -2047,6 +2074,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « voir » au futur simple, à la 2e personne du pluriel.",
       phrase: { before: "Vous ", after: " la beauté de ce paysage." },
+      hint: "voir",
       answer: "verrez",
       explanation: "Le verbe « voir » au futur simple à la 2e personne du pluriel est « verrez », formé avec le radical irrégulier « verr- ».",
       wrongAnswers: [
@@ -2065,6 +2093,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « envoyer » au futur simple, à la 3e personne du pluriel.",
       phrase: { before: "Ils ", after: " tous les documents avant demain soir." },
+      hint: "envoyer",
       answer: "enverront",
       explanation: "Le verbe « envoyer » au futur simple à la 3e personne du pluriel est « enverront », formé avec le radical irrégulier « enverr- ».",
       wrongAnswers: [
@@ -2083,6 +2112,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « devenir » au futur simple, à la 1ère personne du pluriel.",
       phrase: { before: "Nous ", after: " des experts dans ce domaine." },
+      hint: "devenir",
       answer: "deviendrons",
       explanation: "Le verbe « devenir » (dérivé de « venir ») utilise le même radical irrégulier au futur. Au futur simple à la 1ère personne du pluriel, c'est « deviendrons ».",
       wrongAnswers: [
@@ -2335,6 +2365,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « courir » au futur simple.",
       phrase: { before: "Demain matin, je ", after: " cinq kilomètres." },
+      hint: "courir",
       answer: "courrai",
       explanation: "Futur simple du verbe « courir » à la 1ère personne du singulier. Le radical irrégulier « courr- » double le « r ».",
       wrongAnswers: [
@@ -2352,6 +2383,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « mourir » au futur simple.",
       phrase: { before: "Dans cent ans, personne ne ", after: " pour se souvenir de nous." },
+      hint: "mourir",
       answer: "mourra",
       explanation: "Futur simple du verbe « mourir » à la 3e personne du singulier. Le radical irrégulier « mourr- » double le « r ».",
       wrongAnswers: [
@@ -2370,6 +2402,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « courir » au futur simple.",
       phrase: { before: "Nous ", after: " tous ensemble vers le succès." },
+      hint: "courir",
       answer: "courrons",
       explanation: "Futur simple du verbe « courir » à la 1ère personne du pluriel. Le radical irrégulier « courr- » est suivi de la terminaison « -ons ».",
       wrongAnswers: [
@@ -2387,6 +2420,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « mourir » au futur simple.",
       phrase: { before: "Vous ", after: " certainement d'envie de découvrir la fin de l'histoire." },
+      hint: "mourir",
       answer: "mourrez",
       explanation: "Futur simple du verbe « mourir » à la 2e personne du pluriel. Le radical irrégulier « mourr- » est suivi de la terminaison « -ez ».",
       wrongAnswers: [
@@ -2404,6 +2438,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « acquérir » au futur simple.",
       phrase: { before: "Tu ", after: " toutes les compétences nécessaires avec du travail." },
+      hint: "acquérir",
       answer: "acquerras",
       explanation: "Futur simple du verbe « acquérir » à la 2e personne du singulier. Le radical irrégulier « acquerr- » double le « r ».",
       wrongAnswers: [
@@ -2681,6 +2716,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « nettoyer » au futur simple.",
       phrase: { before: "Elle ", after: " la maison le weekend prochain." },
+      hint: "nettoyer",
       answer: "nettoiera",
       explanation: "Au futur simple, « nettoyer » (verbe en -oyer) devient obligatoirement « nettoiera » (y→i).",
       wrongAnswers: [
@@ -2698,6 +2734,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « appuyer » au futur simple.",
       phrase: { before: "Tu ", after: " sur ce bouton pour continuer." },
+      hint: "appuyer",
       answer: "appuieras",
       explanation: "Au futur simple, « appuyer » (verbe en -uyer) devient obligatoirement « appuieras » (y→i).",
       wrongAnswers: [
@@ -2715,6 +2752,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « essuyer » au futur simple.",
       phrase: { before: "Nous ", after: " les verres ensemble." },
+      hint: "essuyer",
       answer: "essuierons",
       explanation: "Au futur simple, « essuyer » (verbe en -uyer) devient obligatoirement « essuierons » (y→i).",
       wrongAnswers: [
@@ -2732,6 +2770,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « employer » au futur simple.",
       phrase: { before: "Ils ", after: " un nouveau système demain." },
+      hint: "employer",
       answer: "emploieront",
       explanation: "Au futur simple, « employer » (verbe en -oyer) devient obligatoirement « emploieront » (y→i).",
       wrongAnswers: [
@@ -2788,6 +2827,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « payer » au futur simple.",
       phrase: { before: "Je ", after: " l'addition aujourd'hui." },
+      hint: "payer",
       answer: "paierai",
       explanation: "Au futur simple, « payer » (verbe en -ayer) se conjugue « paierai » (y→i) ou « payerai » (y conservé). Les deux formes sont acceptées.",
       wrongAnswers: [
@@ -3064,6 +3104,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « épeler » au futur simple.",
       phrase: { before: "Elle ", after: " chaque lettre très lentement." },
+      hint: "épeler",
       answer: "épellera",
       explanation: "Au futur, « épeler » double le « l » : elle épellera (épeLL-era).",
       wrongAnswers: [
@@ -3082,6 +3123,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « jeter » au futur simple.",
       phrase: { before: "Vous ", after: " ces vieux habits à la déchetterie." },
+      hint: "jeter",
       answer: "jetterez",
       explanation: "Au futur, « jeter » double le « t » : vous jetterez (jeT-T-erez).",
       wrongAnswers: [
@@ -3100,6 +3142,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « appeler » au futur simple.",
       phrase: { before: "J'", after: " ma mère ce soir." },
+      hint: "appeler",
       answer: "appellerai",
       explanation: "Au futur, « appeler » double le « l » dans toutes les formes : j'appellerai (appell-erai).",
       wrongAnswers: [
@@ -3118,6 +3161,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « rejeter » au futur simple.",
       phrase: { before: "Nous ", after: " cette proposition demain." },
+      hint: "rejeter",
       answer: "rejetterons",
       explanation: "Au futur, « rejeter » double le « t » : nous rejetterons (rejett-erons).",
       wrongAnswers: [
@@ -3135,6 +3179,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « renouveler » au futur simple.",
       phrase: { before: "Elles ", after: " leur permis de conduire l'année prochaine." },
+      hint: "renouveler",
       answer: "renouvelleront",
       explanation: "Au futur, « renouveler » double le « l » : elles renouvelleront (renouvell-eront).",
       wrongAnswers: [
@@ -3412,6 +3457,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe au futur simple pour exprimer un projet.",
       phrase: { before: "L'année prochaine, je ", after: " mon diplôme." },
+      hint: "terminer",
       answer: "terminerai",
       explanation: "Le futur simple « terminerai » exprime un projet personnel certifié. C'est la forme correcte pour une intention planifiée.",
       wrongAnswers: [
@@ -3428,6 +3474,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe au futur simple pour exprimer une prédiction.",
       phrase: { before: "Demain, il ", after: " très chaud." },
+      hint: "faire",
       answer: "fera",
       explanation: "Le futur simple « fera » du verbe faire exprime une prédiction météorologique. C'est la forme correcte pour anticiper le temps.",
       wrongAnswers: [
@@ -3445,6 +3492,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe au futur simple pour exprimer une intention.",
       phrase: { before: "Nous ", after: " ensemble dans dix ans." },
+      hint: "se retrouver",
       answer: "nous retrouverons",
       explanation: "Le futur simple « nous retrouverons » exprime un projet ou un souhait pour un moment futur lointain. C'est la forme correcte pour une intention certaine.",
       wrongAnswers: [
@@ -3462,6 +3510,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe au futur simple pour exprimer un projet de carrière.",
       phrase: { before: "Après mes études, je ", after: " en tant que développeur." },
+      hint: "travailler",
       answer: "travaillerai",
       explanation: "Le futur simple « travaillerai » exprime un projet professionnel après la formation. C'est la forme correcte pour une intention de carrière.",
       wrongAnswers: [
@@ -3478,6 +3527,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe au futur simple pour exprimer une prédiction.",
       phrase: { before: "Les technologies ", after: " la façon dont nous vivons." },
+      hint: "changer",
       answer: "changeront",
       explanation: "Le futur simple « changeront » du verbe changer exprime une prédiction sur l'impact technologique futur. C'est la forme correcte pour anticiper une transformation.",
       wrongAnswers: [
@@ -3755,6 +3805,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple pour exprimer une promesse.",
       phrase: { before: "Je t'", after: " un coup de fil dès que j'arrive à l'aéroport." },
+      hint: "donner",
       answer: "donnerai",
       explanation: "Le futur simple « donnerai » exprime une promesse claire de contacter l'autre personne.",
       wrongAnswers: [
@@ -3772,6 +3823,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple pour exprimer un ordre parental.",
       phrase: { before: "Tu ", after: " tous tes légumes avant de prendre du dessert." },
+      hint: "manger",
       answer: "mangeras",
       explanation: "Le futur simple « mangeras » exprime un ordre obligatoire et non-négociable du parent.",
       wrongAnswers: [
@@ -3789,6 +3841,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe au futur simple pour exprimer une promesse.",
       phrase: { before: "Nous ", after: " vos appels avec la plus grande discrétion." },
+      hint: "traiter",
       answer: "traiterons",
       explanation: "Le futur simple « traiterons » exprime une promesse professionnelle de confidentialité.",
       wrongAnswers: [
@@ -3806,6 +3859,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez l'ordre officiel avec le verbe au futur simple.",
       phrase: { before: "Vous n'", after: " pas vos téléphones portables pendant l'examen." },
+      hint: "utiliser",
       answer: "utiliserez",
       explanation: "Le futur simple « utiliserez » exprime une interdiction officielle et obligatoire.",
       wrongAnswers: [
@@ -3823,6 +3877,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la promesse avec le verbe « être » au futur simple.",
       phrase: { before: "Je vous le promets : votre commande ", after: " livrée avant vendredi." },
+      hint: "être",
       answer: "sera",
       explanation: "Le futur simple « sera » exprime ici une promesse ferme et certaine d'une livraison future. Le futur s'emploie pour les engagements solennels.",
       wrongAnswers: [
@@ -4100,6 +4155,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe « arriver » au futur simple.",
       phrase: { before: "Quand tu ", after: "____, appelle-moi." },
+      hint: "arriver",
       answer: "arriveras",
       explanation: "Après « quand », on doit conjuguer le verbe au futur simple « arriveras ».",
       wrongAnswers: [
@@ -4117,6 +4173,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « finir » au futur simple après « dès que ».",
       phrase: { before: "Dès que vous ", after: "____, vous pourrez partir." },
+      hint: "finir",
       answer: "aurez fini",
       explanation: "Après « dès que », on utilise le futur antérieur « aurez fini » pour une action future complétée avant le départ.",
       wrongAnswers: [
@@ -4134,6 +4191,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « partir » au futur simple après « lorsque ».",
       phrase: { before: "Lorsque tu ", after: "____, ferme la porte à clé." },
+      hint: "partir",
       answer: "partiras",
       explanation: "Après « lorsque » (synonyme de « quand »), on emploie le futur simple « partiras ».",
       wrongAnswers: [
@@ -4151,6 +4209,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe « préparer » au futur antérieur après « aussitôt que ».",
       phrase: { before: "Aussitôt que vous ", after: "____ le dîner, vous servirez les invités." },
+      hint: "préparer",
       answer: "aurez préparé",
       explanation: "Après « aussitôt que », on utilise le futur antérieur « aurez préparé » pour une action future complétée avant de servir.",
       wrongAnswers: [
@@ -4168,6 +4227,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « commencer » au futur simple pour compléter la phrase.",
       phrase: { before: "Quand le professeur ", after: "____, écoutez attentivement." },
+      hint: "commencer",
       answer: "commencera",
       explanation: "Après « quand », on emploie le futur simple « commencera » pour une action future.",
       wrongAnswers: [
@@ -4419,6 +4479,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le futur simple pour exprimer une prédiction formelle et lointaine.",
       phrase: { before: "Les climatologues prédisent que les températures mondiales ", after: "__ de trois degrés d'ici 2050." },
+      hint: "augmenter",
       answer: "augmenteront",
       explanation: "Le futur simple convient pour une prédiction scientifique formelle et lointaine. C'est le registre neutre et informatif.",
       wrongAnswers: [
@@ -4462,6 +4523,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le futur proche pour exprimer le danger immédiat.",
       phrase: { before: "Attention ! Ce verre ", after: " par terre !" },
+      hint: "tomber",
       answer: "va tomber",
       explanation: "Le futur proche est approprié car il y a un danger immédiat et visible. L'interjection « Attention ! » indique l'urgence de l'action imminente.",
       wrongAnswers: [
@@ -4479,6 +4541,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le futur simple après « quand ».",
       phrase: { before: "Quand tu ", after: " tes études, tu devras chercher un emploi." },
+      hint: "finir",
       answer: "finiras",
       explanation: "Après « quand » dans un contexte futur, on emploie obligatoirement le futur simple, jamais le présent comme en anglais.",
       wrongAnswers: [
@@ -4496,6 +4559,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le futur proche pour exprimer une intention forte et immédiate.",
       phrase: { before: "Je n'en peux plus ! Je ", after: " tout arrêter et recommencer à zéro." },
+      hint: "aller",
       answer: "vais",
       explanation: "Le futur proche exprime une intention forte et une décision prise maintenant. Le locuteur veut exprimer son urgence et sa détermination immédiate.",
       wrongAnswers: [
@@ -4512,6 +4576,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le futur simple pour exprimer une promesse formelle.",
       phrase: { before: "Je te le promets : je ", after: " à l'heure." },
+      hint: "être",
       answer: "serai",
       explanation: "Le futur simple s'emploie pour les promesses et les engagements formels. Le ton est solennel et définitif.",
       wrongAnswers: [
@@ -4788,6 +4853,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent dans la subordonnée.",
       phrase: { before: "Si tu ", after: " attention à ce que tu dis, tu ne régretteras rien." },
+      hint: "faire",
       answer: "fais",
       explanation: "Après « si », on utilise le présent de l'indicatif. « Fais » est la 2e personne du singulier du présent du verbe faire.",
       wrongAnswers: [
@@ -4805,6 +4871,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple dans la principale.",
       phrase: { before: "Si tu m'aides maintenant, je te ", after: " toujours ma gratitude." },
+      hint: "montrer",
       answer: "montrerai",
       explanation: "Après « si + présent », on utilise le futur simple (montrerai) dans la principale. C'est la 1re personne du singulier du futur simple du verbe montrer.",
       wrongAnswers: [
@@ -4822,6 +4889,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase avec la bonne forme du verbe au présent.",
       phrase: { before: "Si vous ", after: " à notre appel, vous verrez ce que nous pouvons faire ensemble." },
+      hint: "répondre",
       answer: "répondez",
       explanation: "Après « si », on utilise le présent de l'indicatif. « Répondez » est la 2e personne du pluriel du présent du verbe répondre.",
       wrongAnswers: [
@@ -4839,6 +4907,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple pour exprimer la conséquence.",
       phrase: { before: "Si elle part demain matin, elle ", after: " à midi au plus tard." },
+      hint: "arriver",
       answer: "arrivera",
       explanation: "Après « si + présent », on utilise le futur simple (arrivera) dans la principale. C'est la 3e personne du singulier du futur simple du verbe arriver.",
       wrongAnswers: [
@@ -4856,6 +4925,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez le blanc avec la bonne forme verbale au présent.",
       phrase: { before: "Si vous ne ", after: " pas vos efforts, vous n'atteindrez jamais vos objectifs." },
+      hint: "redoubler",
       answer: "redoublez",
       explanation: "Après « si », on utilise le présent de l'indicatif. « Redoublez » est la 2e personne du pluriel du présent du verbe redoubler.",
       wrongAnswers: [
@@ -5133,6 +5203,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur antérieur.",
       phrase: { before: "J'", after: " mon travail avant ce soir. » (finir)" },
+      hint: "finir",
       answer: "aurai fini",
       explanation: "« Finir » utilise l'auxiliaire « avoir » au futur simple (aurai) + participe passé (fini). Formation correcte du futur antérieur.",
       wrongAnswers: [
@@ -5150,6 +5221,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur antérieur.",
       phrase: { before: "Il ", after: " à Paris avant la fin du mois. » (arriver)" },
+      hint: "arriver",
       answer: "sera arrivé",
       explanation: "« Arriver » est un verbe intransitif qui utilise l'auxiliaire « être » au futur simple (sera) + participe passé (arrivé). Formation correcte.",
       wrongAnswers: [
@@ -5167,6 +5239,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe pronominal au futur antérieur.",
       phrase: { before: "Elle ", after: " avant notre conversation. » (se réveiller)" },
+      hint: "se réveiller",
       answer: "se sera réveillée",
       explanation: "Les verbes pronominaux utilisent l'auxiliaire « être » au futur simple (sera) + participe passé (réveillée). Accord au féminin singulier.",
       wrongAnswers: [
@@ -5184,6 +5257,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur antérieur.",
       phrase: { before: "Vous ", after: " tous les détails avant de décider. » (examiner)" },
+      hint: "examiner",
       answer: "aurez examiné",
       explanation: "« Examiner » utilise l'auxiliaire « avoir » au futur simple (aurez) + participe passé (examiné). Formation correcte du futur antérieur.",
       wrongAnswers: [
@@ -5201,6 +5275,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur antérieur.",
       phrase: { before: "Elles ", after: " avant le coucher du soleil. » (partir)" },
+      hint: "partir",
       answer: "seront parties",
       explanation: "« Partir » est un verbe intransitif qui utilise l'auxiliaire « être » au futur simple (seront) + participe passé (parties). Accord au féminin pluriel.",
       wrongAnswers: [
@@ -5478,6 +5553,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au futur antérieur pour exprimer une action accomplie avant un moment précis.",
       phrase: { before: "J'", after: "__ mon travail avant 17h00." },
+      hint: "terminer",
       answer: "aurai terminé",
       explanation: "Le futur antérieur « aurai terminé » exprime que le travail sera complété avant 17h00. C'est la forme correcte pour montrer une completion avant une heure précise.",
       wrongAnswers: [
@@ -5496,6 +5572,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au futur antérieur avec l'auxiliaire « être » pour exprimer une arrivée avant une heure précise.",
       phrase: { before: "Elle ", after: "__ avant le coucher du soleil." },
+      hint: "arriver",
       answer: "sera arrivée",
       explanation: "Le futur antérieur « sera arrivée » avec l'auxiliaire « être » exprime que l'arrivée sera complétée avant le coucher du soleil. L'accord du participe passé « arrivée » est correct (sujet féminin singulier).",
       wrongAnswers: [
@@ -5514,6 +5591,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez avec le futur antérieur pour exprimer une completion avant une deadline.",
       phrase: { before: "D'ici lundi, tu ", after: "__ tous tes devoirs." },
+      hint: "finir",
       answer: "auras fini",
       explanation: "Le futur antérieur « auras fini » avec l'expression « d'ici lundi » exprime que les devoirs seront complétés avant lundi. C'est le temps approprié pour une deadline.",
       wrongAnswers: [
@@ -5532,6 +5610,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au futur antérieur pour exprimer l'ordre des événements futurs.",
       phrase: { before: "Quand tu arriveras, j'", after: "__ le dîner." },
+      hint: "préparer",
       answer: "aurai préparé",
       explanation: "Le futur antérieur « aurai préparé » montre que la préparation du dîner sera complétée avant ton arrivée. C'est l'ordre logique des deux événements futurs.",
       wrongAnswers: [
@@ -5550,6 +5629,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez avec le futur antérieur pour exprimer une completion avant une heure précise.",
       phrase: { before: "À cette heure-là, nous ", after: "__ le projet." },
+      hint: "achever",
       answer: "aurons achevé",
       explanation: "Le futur antérieur « aurons achevé » exprime que le projet sera complété à une heure précise dans le futur. C'est le temps approprié pour indiquer une completion avant un moment spécifique.",
       wrongAnswers: [
@@ -5828,6 +5908,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au futur antérieur.",
       phrase: { before: "Quand tu ", after: " tes exercices, tu pourras sortir." },
+      hint: "finir",
       answer: "auras fini",
       explanation: "Le futur antérieur « auras fini » exprime l'action complétée avant la permission de sortir.",
       wrongAnswers: [
@@ -5845,6 +5926,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez le verbe au futur antérieur.",
       phrase: { before: "Dès qu'on ", after: " le code, on pourra entrer." },
+      hint: "composer",
       answer: "aura composé",
       explanation: "Le futur antérieur « aura composé » indique que l'action de composer le code sera complétée avant l'entrée.",
       wrongAnswers: [
@@ -5862,6 +5944,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez au futur antérieur.",
       phrase: { before: "Lorsque vous ", after: " vos documents, nous pourrons commencer." },
+      hint: "rassembler",
       answer: "aurez rassemblés",
       explanation: "Le futur antérieur « aurez rassemblés » exprime que le rassemblement des documents précède le début.",
       wrongAnswers: [
@@ -5879,6 +5962,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur antérieur.",
       phrase: { before: "Aussitôt qu'elle ", after: " son message, elle partira." },
+      hint: "envoyer",
       answer: "aura envoyé",
       explanation: "Le futur antérieur « aura envoyé » indique que l'envoi du message sera complété avant le départ.",
       wrongAnswers: [
@@ -5896,6 +5980,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez au futur antérieur.",
       phrase: { before: "Une fois qu'ils ", after: " le pont, les voitures pourront passer." },
+      hint: "réparer",
       answer: "auront réparé",
       explanation: "Le futur antérieur « auront réparé » indique que la réparation du pont sera complétée avant le passage des voitures.",
       wrongAnswers: [
@@ -6173,6 +6258,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le futur antérieur pour exprimer une supposition sur le passé. Conjuguez le verbe entre parenthèses.",
       phrase: { before: "Pourquoi ne sont-elles pas venues à la réunion ? Elles ", after: " (oublier) la date." },
+      hint: "oublier",
       answer: "auront oublié",
       explanation: "Le futur antérieur (auront oublié) exprime la supposition probable sur la raison de leur absence.",
       wrongAnswers: [
@@ -6190,6 +6276,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Exprimez une supposition sur le passé en conjuguant le verbe entre parenthèses au futur antérieur.",
       phrase: { before: "L'e-mail important n'a pas été reçu — il ", after: " (se perdre) dans les spams." },
+      hint: "se perdre",
       answer: "se sera perdu",
       explanation: "Le futur antérieur (se sera perdu) exprime la supposition probable sur le destin de l'e-mail.",
       wrongAnswers: [
@@ -6208,6 +6295,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le futur antérieur pour exprimer une supposition. Conjuguez le verbe.",
       phrase: { before: "Mon ami ne m'a pas appelé — il ", after: " (être) très occupé." },
+      hint: "être",
       answer: "aura été",
       explanation: "Le futur antérieur (aura été) exprime la supposition probable sur la raison de son silence.",
       wrongAnswers: [
@@ -6226,6 +6314,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Exprimez une supposition sur le passé avec le futur antérieur. Conjuguez le verbe entre parenthèses.",
       phrase: { before: "Le client s'est plaint — il ", after: " (trouver) un défaut dans le produit." },
+      hint: "trouver",
       answer: "aura trouvé",
       explanation: "Le futur antérieur (aura trouvé) exprime la supposition probable sur la raison de sa plainte.",
       wrongAnswers: [
@@ -6244,6 +6333,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le futur antérieur pour exprimer une supposition sur le passé.",
       phrase: { before: "Les résultats ne sont pas arrivés — il ", after: " (y avoir) un souci technique." },
+      hint: "avoir",
       answer: "aura eu",
       explanation: "Le futur antérieur (aura eu) exprime la supposition probable sur la cause du délai.",
       wrongAnswers: [
@@ -6522,6 +6612,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple avec la négation « ne...pas ».",
       phrase: { before: "Je ", after: " demain." },
+      hint: "partir",
       answer: "ne partirai pas",
       explanation: "Au futur simple négatif, la structure est « ne » + verbe conjugué au futur + « pas ». « Partirai » est le futur du verbe « partir ».",
       wrongAnswers: [
@@ -6541,6 +6632,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez le blanc avec la bonne forme au futur antérieur négatif avec « pas ».",
       phrase: { before: "Il ", after: " ce travail avant vendredi." },
+      hint: "finir",
       answer: "n'aura pas fini",
       explanation: "Au futur antérieur négatif, la structure est « ne » + auxiliaire au futur + « pas » + participe passé. « N'aura pas fini » est la bonne forme avec élision.",
       wrongAnswers: [
@@ -6560,6 +6652,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase avec la bonne négation au futur simple avec « jamais ».",
       phrase: { before: "Nous n", after: " là-bas." },
+      hint: "aller",
       answer: "'irons jamais",
       explanation: "Au futur simple avec « jamais », la structure est « ne » + verbe au futur + « jamais ». « N'irons jamais » (avec élision de « ne » en « n' ») est correct. Variante acceptée: « n'irons jamais ».",
       wrongAnswers: [
@@ -6579,6 +6672,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au futur antérieur négatif avec « jamais » (entre l'auxiliaire et le participe).",
       phrase: { before: "Vous ", after: " une telle opportunité." },
+      hint: "avoir",
       answer: "n'aurez jamais eue",
       explanation: "Au futur antérieur avec « jamais », la structure est « ne » + auxiliaire au futur + « jamais » + participe passé. Avec le verbe « avoir une opportunité » au féminin, « n'aurez jamais eue » est correct (l'accord se fait avec « opportunité »).",
       wrongAnswers: [
@@ -6598,6 +6692,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez avec la bonne négation au futur simple : « personne » doit venir APRÈS le verbe.",
       phrase: { before: "Je ne rencontrerai ", after: " au café." },
+      hint: "rencontrer",
       answer: "personne",
       explanation: "Au futur simple avec « personne », la structure est « ne » + verbe au futur + « personne ». Le mot « personne » (négatif) vient après le verbe conjugué.",
       wrongAnswers: [
@@ -6864,6 +6959,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Choisissez entre futur proche, futur simple et futur antérieur.",
       phrase: { before: "Regarde ! Le bébé ", after: " !" },
+      hint: "marcher",
       answer: "va marcher",
       explanation: "Le futur proche exprime une action imminente et visible : le bébé est sur le point de marcher maintenant.",
       wrongAnswers: [
@@ -6881,6 +6977,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au temps approprié selon le contexte.",
       phrase: { before: "Lorsque tu ", after: " tes études, tu trouveras un bon emploi." },
+      hint: "terminer",
       answer: "auras terminé",
       explanation: "Le futur antérieur après « lorsque » indique que les études doivent être COMPLÉTÉES avant la recherche d'emploi.",
       wrongAnswers: [
@@ -6898,6 +6995,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le futur approprié pour une promesse.",
       phrase: { before: "Je te le promets : tu ", after: " la vérité la semaine prochaine." },
+      hint: "savoir",
       answer: "sauras",
       explanation: "Le futur simple exprime une promesse ferme : tu apprendras (sauras) la vérité à la semaine prochaine.",
       wrongAnswers: [
@@ -6915,6 +7013,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Exprimez une action imminente avec le futur proche.",
       phrase: { before: "Regarde le ciel ! Il ", after: " dans quelques minutes." },
+      hint: "pleuvoir",
       answer: "va pleuvoir",
       explanation: "Le futur proche avec « dans quelques minutes » exprime l'imminence d'une action observable : la pluie va tomber très bientôt.",
       wrongAnswers: [
@@ -6932,6 +7031,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Choisissez le futur antérieur pour exprimer une supposition sur le passé.",
       phrase: { before: "Il n'a pas répondu à mes messages. Il ", after: " mon numéro de téléphone." },
+      hint: "perdre",
       answer: "aura perdu",
       explanation: "Le futur antérieur s'utilise pour une supposition rétroactive : il a probablement perdu le numéro de téléphone, ce qui explique son silence.",
       wrongAnswers: [

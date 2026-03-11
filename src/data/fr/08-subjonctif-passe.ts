@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "08-subjonctif-passe",
   title: "Le subjonctif passé",
-  description: "Formation, emplois, opposition indicatif/subjonctif",
+  description: "Formation et emplois du subjonctif passé",
   rules: [
     { id: "08-01", sectionId: "08-subjonctif-passe", title: "Formation du subjonctif passé : auxiliaire au subjonctif présent + participe passé" },
     { id: "08-02", sectionId: "08-subjonctif-passe", title: "Le choix de l'auxiliaire au subjonctif passé (avoir ou être)" },
@@ -297,6 +297,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé",
       phrase: { before: "Je suis heureux que vous ", after: " cette lettre à temps." },
+      hint: "recevoir",
       answer: "ayez reçue",
       explanation: "Le subjonctif passé se forme avec ayez (avoir au subjonctif) + reçue (participe passé accordé au féminin singulier avec « lettre »).",
       wrongAnswers: [
@@ -314,6 +315,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez avec le subjonctif passé",
       phrase: { before: "Bien que nous ", after: " tard, nous avons pu finir le projet." },
+      hint: "arriver",
       answer: "soyons arrivés",
       explanation: "Le subjonctif passé du verbe arriver se forme avec soyons (être au subjonctif) + arrivés (participe passé, accord au masculin pluriel).",
       wrongAnswers: [
@@ -332,6 +334,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé",
       phrase: { before: "Elle doute que tu ", after: " les instructions correctement." },
+      hint: "comprendre",
       answer: "aies comprise",
       explanation: "Le subjonctif passé se forme avec aies (avoir au subjonctif) + comprise (participe passé accordé au féminin singulier, car « tu » renvoie à une femme dans ce contexte, et s'accorde avec l'objet « les instructions »).",
       wrongAnswers: [
@@ -350,6 +353,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez le verbe au subjonctif passé",
       phrase: { before: "Pourvu qu'on ", after: " ce virus avant l'été !" },
+      hint: "éliminer",
       answer: "ait éliminé",
       explanation: "Le subjonctif passé se forme avec ait (avoir au subjonctif) + éliminé (participe passé du verbe éliminer).",
       wrongAnswers: [
@@ -368,6 +372,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé",
       phrase: { before: "À moins que vous ", after: " de cette situation précaire, rien ne changera." },
+      hint: "parler",
       answer: "ayez parlé",
       explanation: "Le subjonctif passé se forme avec ayez (avoir au subjonctif) + parlé (participe passé du verbe parler).",
       wrongAnswers: [
@@ -647,6 +652,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé.",
       phrase: { before: "Je suis heureux que tu ", after: " ce cours." },
+      hint: "suivre",
       answer: "aies suivi",
       explanation: "Le verbe \"suivre\" se conjugue avec l'auxiliaire \"avoir\" au subjonctif passé. \"Aies suivi\" est la 2e personne du singulier du subjonctif passé.",
       wrongAnswers: [
@@ -664,6 +670,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez au subjonctif passé.",
       phrase: { before: "Il est possible que nous ", after: " trop tard." },
+      hint: "arriver",
       answer: "soyons arrivés",
       explanation: "Le verbe \"arriver\" se conjugue avec l'auxiliaire \"être\" au subjonctif passé. \"Soyons arrivés\" est la 1ère personne du pluriel du subjonctif passé, accordé au masculin pluriel.",
       wrongAnswers: [
@@ -681,6 +688,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé.",
       phrase: { before: "Je suis surpris qu'il ", after: " ses études." },
+      hint: "abandonner",
       answer: "ait abandonné",
       explanation: "Le verbe \"abandonner\" se conjugue avec l'auxiliaire \"avoir\" au subjonctif passé. \"Ait abandonné\" est la 3e personne du singulier du subjonctif passé.",
       wrongAnswers: [
@@ -698,6 +706,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé.",
       phrase: { before: "Je doute qu'elle ", after: " de Rome." },
+      hint: "revenir",
       answer: "soit revenue",
       explanation: "Le verbe \"revenir\" se conjugue avec l'auxiliaire \"être\" au subjonctif passé. \"Soit revenue\" accorde le participe passé au féminin singulier avec le sujet \"elle\".",
       wrongAnswers: [
@@ -715,6 +724,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez au subjonctif passé.",
       phrase: { before: "Bien que vous ", after: " de bonne heure, vous aviez raison." },
+      hint: "partir",
       answer: "soyez partis",
       explanation: "Le verbe \"partir\" se conjugue avec l'auxiliaire \"être\" au subjonctif passé. \"Soyez partis\" est la 2e personne du pluriel du subjonctif passé, accordé au masculin pluriel.",
       wrongAnswers: [
@@ -979,6 +989,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le participe passé accordé correctement au subjonctif passé.",
       phrase: { before: "Je suis content que tu aies ", after: " cette décision importante." },
+      hint: "prendre",
       answer: "prise",
       explanation: "Le participe passé du verbe « prendre » s'accorde au féminin singulier avec le sujet féminin « tu ».",
       wrongAnswers: [
@@ -996,6 +1007,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez le blanc avec le participe passé s'accordant avec le complément d'objet direct.",
       phrase: { before: "Bien que nous les ayons ", after: ", ces erreurs nous troublent encore." },
+      hint: "corriger",
       answer: "corrigées",
       explanation: "Le participe passé s'accorde avec le COD « les » qui précède le verbe et qui est féminin pluriel.",
       wrongAnswers: [
@@ -1013,6 +1025,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez le verbe au subjonctif passé avec l'accord du participe passé correct.",
       phrase: { before: "Je suis heureux que vous ayez ", after: " cette belle opportunité." },
+      hint: "saisir",
       answer: "saisie",
       explanation: "Le participe passé « saisi » s'accorde avec le COD « cette belle opportunité » qui est féminin singulier (opportunité est féminin).",
       wrongAnswers: [
@@ -1029,7 +1042,8 @@ const section: Section = {
       ruleId: "08-03",
       generatedBy: "haiku",
       prompt: "Complétez en conjuguant au subjonctif passé avec l'accord approprié du participe passé.",
-      phrase: { before: "Bien que je les aie ", after: " attentivement, je ne les ai pas mémorisés." },
+      phrase: { before: "Bien que je les aie ", after: " attentivement, je ne les ai pas mémorisé." },
+      hint: "lire",
       answer: "lues",
       explanation: "Le participe passé « lu » s'accorde avec le COD « les » qui précède le verbe et qui est féminin pluriel.",
       wrongAnswers: [
@@ -1060,6 +1074,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au subjonctif passé en accordant correctement le participe passé.",
       phrase: { before: "Pourvu qu'elle ait ", after: " tous les exercices avant midi." },
+      hint: "terminer",
       answer: "terminés",
       explanation: "Le participe passé \"terminé\" s'accorde avec le COD \"tous les exercices\" (masculin pluriel) qui précède le verbe dans la structure de la subordonnée. Accord masculin pluriel.",
       wrongAnswers: [
@@ -1337,6 +1352,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au subjonctif passé du verbe pronominal « se lever ».",
       phrase: { before: "Je doute qu'il ", after: " à temps ce matin-là." },
+      hint: "se lever",
       answer: "se soit levé",
       explanation: "Le subjonctif passé du verbe pronominal « se lever » avec le sujet « il » : « se soit levé ».",
       wrongAnswers: [
@@ -1354,6 +1370,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au subjonctif passé du verbe pronominal « se mettre ».",
       phrase: { before: "C'est dommage qu'elle ", after: " en route sans nous attendre." },
+      hint: "se mettre",
       answer: "se soit mise",
       explanation: "Le subjonctif passé du verbe pronominal « se mettre » avec le sujet féminin « elle » : « se soit mise ».",
       wrongAnswers: [
@@ -1371,6 +1388,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au subjonctif passé du verbe pronominal « se souvenir ».",
       phrase: { before: "Il est important que vous ", after: " de cette date importante." },
+      hint: "se souvenir",
       answer: "vous soyez souvenus",
       explanation: "Le subjonctif passé du verbe pronominal « se souvenir » avec le sujet « vous » : « vous soyez souvenus ».",
       wrongAnswers: [
@@ -1388,6 +1406,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au subjonctif passé du verbe pronominal « se battre ».",
       phrase: { before: "Je suis surpris qu'ils ", after: " pour un tel sujet futile." },
+      hint: "se battre",
       answer: "se soient battus",
       explanation: "Le subjonctif passé du verbe pronominal « se battre » avec le sujet « ils » : « se soient battus ».",
       wrongAnswers: [
@@ -1405,6 +1424,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au subjonctif passé du verbe pronominal « se tromper ».",
       phrase: { before: "Bien qu'elle ", after: " plusieurs fois, elle a finalement compris." },
+      hint: "se tromper",
       answer: "se soit trompée",
       explanation: "Le subjonctif passé du verbe pronominal « se tromper » avec le sujet féminin « elle » : « se soit trompée ».",
       wrongAnswers: [
@@ -1682,6 +1702,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé du verbe « finir ».",
       phrase: { before: "Je suis heureux que tu ", after: " tes études." },
+      hint: "finir",
       answer: "aies fini",
       explanation: "Le subjonctif passé (aies fini) exprime la joie face à l'accomplissement des études. C'est la forme correcte du subjonctif passé du verbe « finir » à la 2e personne du singulier.",
       wrongAnswers: [
@@ -1699,6 +1720,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé du verbe « aller ».",
       phrase: { before: "Je crains qu'il n'", after: " à l'école." },
+      hint: "aller",
       answer: "soit allé",
       explanation: "Le subjonctif passé (soit allé) exprime la crainte qu'une action s'est produite. « Aller » utilise l'auxiliaire « être ».",
       wrongAnswers: [
@@ -1716,6 +1738,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé du verbe « venir ».",
       phrase: { before: "Elle est surprise que vous ", after: " sans l'avertir." },
+      hint: "venir",
       answer: "soyez venus",
       explanation: "Le subjonctif passé (soyez venus) convient après « elle est surprise que ». « Venir » utilise l'auxiliaire « être » et s'accorde au pluriel (vous).",
       wrongAnswers: [
@@ -1733,6 +1756,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé du verbe « voir ».",
       phrase: { before: "Je doute qu'il ", after: " cet incident." },
+      hint: "voir",
       answer: "ait vu",
       explanation: "Le subjonctif passé (ait vu) convient après « je doute que » pour exprimer qu'on doute qu'une action s'est réalisée. C'est la forme correcte du verbe « voir ».",
       wrongAnswers: [
@@ -1750,6 +1774,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé du verbe « arriver ».",
       phrase: { before: "Bien qu'elle ", after: " tard, elle a pu participer à la réunion." },
+      hint: "arriver",
       answer: "soit arrivée",
       explanation: "Le subjonctif passé (soit arrivée) convient après « bien que » pour exprimer une concession. « Arriver » utilise l'auxiliaire « être » et s'accorde au féminin avec le sujet « elle ».",
       wrongAnswers: [
@@ -2027,6 +2052,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé après le verbe de sentiment au présent.",
       phrase: { before: "Je suis heureux/heureuse qu'il ", after: " accepté l'invitation." },
+      hint: "avoir",
       answer: "ait",
       explanation: "Après « être heureux » au présent + « qu'il », on utilise le subjonctif passé : « ait accepté ». L'auxiliaire « avoir » se conjugue au subjonctif présent pour la 3e personne du singulier.",
       wrongAnswers: [
@@ -2044,6 +2070,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé du verbe fourni.",
       phrase: { before: "Elle craint que nous ", after: " pas compris ses explications." },
+      hint: "avoir",
       answer: "ayons",
       explanation: "Après « craindre » au présent + « que nous » + « ne pas compris », on utilise le subjonctif passé : « ayons compris ». L'auxiliaire « avoir » pour la 1ère personne du pluriel.",
       wrongAnswers: [
@@ -2061,6 +2088,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé du verbe « être ».",
       phrase: { before: "Vous êtes soulagé(e)(s) que tout ", after: " enfin résolu." },
+      hint: "être",
       answer: "soit",
       explanation: "Après « être soulagé » au présent + « que tout », on utilise le subjonctif passé : « soit résolu ». L'auxiliaire « être » pour la 3e personne du singulier (« tout »).",
       wrongAnswers: [
@@ -2078,6 +2106,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé après le verbe de sentiment.",
       phrase: { before: "Je suis surprise que tu ", after: " sans m'avertir." },
+      hint: "partir",
       answer: "sois partie",
       explanation: "Après « être surprise » au présent + « que tu », on utilise le subjonctif passé : « sois partie ». Pour un sujet féminin « tu » (identité feminine), on accorde le participe avec le sujet.",
       wrongAnswers: [
@@ -2095,6 +2124,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé du verbe fourni.",
       phrase: { before: "Nous regrettons que vous ", after: " cette opportunité." },
+      hint: "refuser",
       answer: "ayez refusée",
       explanation: "Après « regretter » au présent + « que vous », on utilise le subjonctif passé : « ayez refusée ». L'auxiliaire « avoir » se conjugue au subjonctif présent pour « vous », et le participe « refusée » s'accorde avec « opportunité » (COD féminin singulier).",
       wrongAnswers: [
@@ -2372,6 +2402,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé après « je doute que ».",
       phrase: { before: "Je doute qu'il ", after: " compris le problème." },
+      hint: "avoir",
       answer: "ait",
       explanation: "Après « je doute que » au subjonctif, on utilise « ait » (subjonctif passé du verbe « avoir ») suivi du participe passé.",
       wrongAnswers: [
@@ -2389,6 +2420,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé après « nous doutons que ».",
       phrase: { before: "Nous doutons qu'elle ", after: " arrivée avant midi." },
+      hint: "être",
       answer: "soit",
       explanation: "Après « nous doutons que », on utilise « soit » (subjonctif présent du verbe « être ») suivi du participe passé pour exprimer le doute sur une action passée.",
       wrongAnswers: [
@@ -2406,6 +2438,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé pour exprimer le doute sur une action passée.",
       phrase: { before: "Je doute que tu ", after: " ta promesse." },
+      hint: "tenir",
       answer: "aies tenue",
       explanation: "Après « je doute que », on utilise « aies » (subjonctif présent du verbe « avoir ») suivi du participe passé pour exprimer le doute sur une action passée.",
       wrongAnswers: [
@@ -2423,6 +2456,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe pour exprimer le doute sur une action passée avec « je ne doute pas que ».",
       phrase: { before: "Je ne doute pas qu'il ", after: " son travail." },
+      hint: "terminer",
       answer: "ait terminé",
       explanation: "Après « je ne doute pas que », on utilise toujours le subjonctif. « ait terminé » est le subjonctif passé, exprimant le doute (malgré la négation) sur une action passée.",
       wrongAnswers: [
@@ -2440,6 +2474,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé après « ils doutent que ».",
       phrase: { before: "Ils doutent que nous ", after: " la solution correcte." },
+      hint: "trouver",
       answer: "ayons trouvée",
       explanation: "Après « ils doutent que », on utilise « ayons » (subjonctif présent du verbe « avoir ») suivi du participe passé pour exprimer le doute sur une action passée.",
       wrongAnswers: [
@@ -2717,6 +2752,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé après « avant que »",
       phrase: { before: "Je quitterai avant qu'il ", after: " ." },
+      hint: "comprendre",
       answer: "ait compris",
       explanation: "Le subjonctif passé « ait compris » s'utilise après « avant que » pour exprimer une action antérieure.",
       wrongAnswers: [
@@ -2734,6 +2770,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez le blanc avec le subjonctif passé approprié",
       phrase: { before: "Elle veut partir avant que nous ", after: " ." },
+      hint: "comprendre",
       answer: "ayons compris",
       explanation: "Le subjonctif passé « ayons compris » (nous) s'emploie après « avant que » pour l'antériorité.",
       wrongAnswers: [
@@ -2751,6 +2788,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé du verbe entre parenthèses",
       phrase: { before: "Avant que vous n'", after: " la nouvelle, nous l'avions déjà su." },
+      hint: "apprendre",
       answer: "ayez apprise",
       explanation: "Le subjonctif passé « ayez apprise » (vous) s'utilise après « avant que » pour marquer l'antériorité.",
       wrongAnswers: [
@@ -2768,6 +2806,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé après « avant que »",
       phrase: { before: "Ils partiront avant qu'on n'", after: " à le joindre." },
+      hint: "réussir",
       answer: "ait réussi",
       explanation: "Le subjonctif passé « ait réussi » s'emploie après « avant que » pour exprimer l'antériorité.",
       wrongAnswers: [
@@ -2785,6 +2824,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez le blanc avec le subjonctif passé du verbe approprié",
       phrase: { before: "Elle veut manger avant qu'on n'", after: " le repas." },
+      hint: "servir",
       answer: "ait servi",
       explanation: "Le subjonctif passé « ait servi » s'utilise après « avant que » pour montrer que l'action de manger doit avoir lieu avant celle de servir.",
       wrongAnswers: [
@@ -3062,6 +3102,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé après « bien que ».",
       phrase: { before: "Bien qu'il ", after: " ses études, il n'a pas trouvé de travail." },
+      hint: "terminer",
       answer: "ait terminé",
       explanation: "Le subjonctif passé « ait terminé » s'utilise après « bien que » pour exprimer une action accomplie en contraste avec l'absence d'emploi.",
       wrongAnswers: [
@@ -3079,6 +3120,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « venir » au subjonctif passé après « quoique ».",
       phrase: { before: "Quoique vous ", after: " plusieurs fois, vous ne vous souvenez pas de l'endroit." },
+      hint: "venir",
       answer: "soyez venu(s)",
       explanation: "Le subjonctif passé de « venir » avec l'auxiliaire « être » : « soyez venu(s) » s'accorde avec le sujet « vous ».",
       wrongAnswers: [
@@ -3096,6 +3138,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé du verbe « faire ».",
       phrase: { before: "Bien que nous ", after: " tout notre possible, nous n'avons pas pu sauver l'entreprise." },
+      hint: "faire",
       answer: "ayons fait",
       explanation: "Le subjonctif passé « ayons fait » après « bien que » indique l'accomplissement de l'effort maximal malgré l'échec.",
       wrongAnswers: [
@@ -3113,6 +3156,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « prendre » au subjonctif passé après « quoique ».",
       phrase: { before: "Quoique j'", after: " mes précautions, j'ai quand même eu un accident." },
+      hint: "prendre",
       answer: "aie prises",
       explanation: "Le subjonctif passé « aie prises » avec accord du participe passé « prises » sur l'objet direct féminin « précautions ».",
       wrongAnswers: [
@@ -3130,6 +3174,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé du verbe « voir ».",
       phrase: { before: "Bien que tu ", after: " cette exposition, tu m'as dit que tu ne l'aimais pas." },
+      hint: "voir",
       answer: "aies vu",
       explanation: "Le subjonctif passé « aies vu » après « bien que » indique que tu as visité l'exposition malgré ton avis négatif.",
       wrongAnswers: [
@@ -3381,6 +3426,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé dans la structure « le seul/le premier/le meilleur que ».",
       phrase: { before: "C'est le seul film que tu ", after: " le mois dernier." },
+      hint: "regarder",
       answer: "aies regardé",
       explanation: "Après « le seul que », le subjonctif passé exprime une action complète et passée unique.",
       wrongAnswers: [
@@ -3398,6 +3444,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé.",
       phrase: { before: "C'est la première personne que j' ", after: " qui ait vraiment compris ma vision." },
+      hint: "rencontrer",
       answer: "aie rencontrée",
       explanation: "Le subjonctif passé après « la première personne que » marque une action antérieure unique.",
       wrongAnswers: [
@@ -3415,6 +3462,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé pour exprimer une action unique.",
       phrase: { before: "C'est le meilleur roman que vous ", after: " de votre vie." },
+      hint: "lire",
       answer: "ayez lu",
       explanation: "Le subjonctif passé après « le meilleur que » exprime une action passée et unique.",
       wrongAnswers: [
@@ -3432,6 +3480,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé après cette structure superlative.",
       phrase: { before: "C'est la seule solution qui ", after: " à ce problème complexe." },
+      hint: "remédier",
       answer: "ait remédié",
       explanation: "Le subjonctif passé après « la seule solution qui » marque une action unique et antérieure.",
       wrongAnswers: [
@@ -3449,6 +3498,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé dans une phrase comparative.",
       phrase: { before: "C'est le premier ministre qui ", after: " cette réforme importante en cinquante ans." },
+      hint: "proposer",
       answer: "ait proposée",
       explanation: "Le subjonctif passé après « le premier qui » exprime une action unique et passée.",
       wrongAnswers: [
@@ -3752,6 +3802,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au subjonctif (présent ou passé) : simultanéité ou antériorité ?",
       phrase: { before: "Je suis fier que tu ", after: " de si bons résultats." },
+      hint: "obtenir",
       answer: "aies obtenu",
       explanation: "Le subjonctif passé « aies obtenu » indique que tu as obtenu des résultats avant le moment où je suis fier : c'est une action antérieure.",
       wrongAnswers: [
@@ -3769,6 +3820,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif du verbe « être » au présent ou au passé.",
       phrase: { before: "Bien qu'il ", after: " toujours amical avec nous, il a changé récemment." },
+      hint: "être",
       answer: "soit",
       explanation: "Le subjonctif présent « soit » indique l'état actuel/général : il est toujours amical avec nous en ce moment.",
       wrongAnswers: [
@@ -3786,6 +3838,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif du verbe « partir » au présent ou au passé.",
       phrase: { before: "Je regrette qu'elle ", after: " sans me dire au revoir hier." },
+      hint: "partir",
       answer: "soit partie",
       explanation: "Le subjonctif passé « soit partie » indique une action antérieure (hier) : elle est déjà partie avant le moment actuel du regret.",
       wrongAnswers: [
@@ -3803,6 +3856,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « finir » au subjonctif (présent ou passé) selon le contexte temporel.",
       phrase: { before: "Il faut que vous ", after: " vos projets avant les vacances." },
+      hint: "finir",
       answer: "ayez fini",
       explanation: "Le subjonctif passé « ayez fini » indique que vos projets doivent être terminés avant les vacances : c'est une antériorité requise.",
       wrongAnswers: [
@@ -3820,6 +3874,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif du verbe « pouvoir » au présent ou au passé.",
       phrase: { before: "Je doute qu'il ", after: " résoudre ce problème seul." },
+      hint: "pouvoir",
       answer: "puisse",
       explanation: "Le subjonctif présent « puisse » est utilisé pour une action envisagée au moment présent : on doute qu'il soit capable maintenant/généralement.",
       wrongAnswers: [
@@ -4097,6 +4152,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé dans une subordonnée après une expression d'émotion.",
       phrase: { before: "Je suis heureux que tu ", after: " ta licence." },
+      hint: "obtenir",
       answer: "aies obtenue",
       explanation: "Le subjonctif passé « aies obtenue » convient après « je suis heureux que » pour exprimer une émotion sur une action antérieure (accord avec « licence »).",
       wrongAnswers: [
@@ -4116,6 +4172,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe avec l'auxiliaire correct au subjonctif passé.",
       phrase: { before: "Bien que nous ", after: " très tôt le matin, nous avons raté le train." },
+      hint: "partir",
       answer: "soyons partis",
       explanation: "Le subjonctif passé « soyons partis » convient après « bien que » pour exprimer une concession ; « partir » est intransitif, donc auxiliaire « être ».",
       wrongAnswers: [
@@ -4135,6 +4192,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Choisissez la forme correcte du subjonctif passé dans une subordonnée.",
       phrase: { before: "À condition que vous ", after: " vos exercices, vous réussirez l'examen." },
+      hint: "terminer",
       answer: "ayez terminés",
       explanation: "Le subjonctif passé « ayez terminés » suit « à condition que » pour indiquer une condition que l'action doit être complétée (accord avec « exercices »).",
       wrongAnswers: [
@@ -4154,6 +4212,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé dans une subordonnée de crainte.",
       phrase: { before: "Il craint que nous n'", after: " l'événement." },
+      hint: "manquer",
       answer: "ayons manqué",
       explanation: "Le subjonctif passé « ayons manqué » convient après « il craint que ne » pour exprimer la crainte d'une action antérieure.",
       wrongAnswers: [
@@ -4173,6 +4232,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Employez le subjonctif passé après une expression de doute.",
       phrase: { before: "Je doute que vous ", after: " cette offre d'emploi." },
+      hint: "accepter",
       answer: "ayez acceptée",
       explanation: "Le subjonctif passé « ayez acceptée » s'utilise après « je doute que » pour exprimer le doute sur une action antérieure (accord avec « offre »).",
       wrongAnswers: [
@@ -4452,6 +4512,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé de \"travailler\"",
       phrase: { before: "Je doute qu'il ", after: " assez dur pour réussir." },
+      hint: "travailler",
       answer: "ait travaillé",
       explanation: "Après \"douter que\" (négation), le subjonctif passé s'utilise. \"Ait travaillé\" est la forme correcte pour \"il\".",
       wrongAnswers: [
@@ -4469,6 +4530,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé de \"arriver\"",
       phrase: { before: "Il n'est pas certain qu'elle ", after: " à temps pour la réunion." },
+      hint: "arriver",
       answer: "soit arrivée",
       explanation: "Après \"il n'est pas certain que\" (expression négative), le subjonctif passé s'utilise. \"Soit arrivée\" s'accorde avec le sujet féminin \"elle\".",
       wrongAnswers: [
@@ -4486,6 +4548,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé de \"faire\"",
       phrase: { before: "Je conteste que vous ", after: " une telle erreur." },
+      hint: "faire",
       answer: "ayez faite",
       explanation: "Après \"contester que\" (négation), le subjonctif passé s'utilise. Le participe \"faite\" s'accorde avec le COD féminin \"erreur\".",
       wrongAnswers: [
@@ -4503,6 +4566,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé de \"comprendre\"",
       phrase: { before: "Il est impossible qu'ils ", after: " cette théorie complexe." },
+      hint: "comprendre",
       answer: "aient comprise",
       explanation: "Après \"il est impossible que\" (expression négative), le subjonctif passé s'utilise. Le participe \"comprise\" s'accorde avec le COD féminin \"théorie\".",
       wrongAnswers: [
@@ -4520,6 +4584,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé de \"perdre\"",
       phrase: { before: "Je nie que tu ", after: " ta confiance en nous." },
+      hint: "perdre",
       answer: "aies perdue",
       explanation: "Après \"nier que\" (verbe de négation), le subjonctif passé s'utilise. Le participe \"perdue\" s'accorde avec le COD féminin \"confiance\".",
       wrongAnswers: [
@@ -4797,6 +4862,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au subjonctif passé pour exprimer un souhait irréalisé",
       phrase: { before: "J'aurais aimé qu'elle ", after: " les examens avec succès." },
+      hint: "réussir",
       answer: "ait réussi",
       explanation: "Le subjonctif passé (ait réussi) exprime le regret d'une action passée (les examens échoués).",
       wrongAnswers: [
@@ -4814,6 +4880,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au subjonctif passé le verbe entre parenthèses",
       phrase: { before: "Aurais-tu voulu que j'", after: " ce voyage avec toi ? (faire)" },
+      hint: "faire",
       answer: "aie fait",
       explanation: "Le subjonctif passé (aie fait) exprime un regret de ne pas avoir participé au voyage.",
       wrongAnswers: [
@@ -4831,6 +4898,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez au subjonctif passé pour exprimer un souhait non réalisé",
       phrase: { before: "Nous aurions souhaité que vous ", after: " nous rendre visite. (pouvoir)" },
+      hint: "pouvoir",
       answer: "ayez pu",
       explanation: "Le subjonctif passé (ayez pu) exprime un souhait irréalisé concernant une capacité passée.",
       wrongAnswers: [
@@ -4848,6 +4916,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au subjonctif passé pour exprimer un souhait irréalisé",
       phrase: { before: "Il aurait préféré que tu ", after: " honnête avec lui. (être)" },
+      hint: "être",
       answer: "aies été",
       explanation: "Le subjonctif passé (aies été) exprime un regret d'un comportement passé.",
       wrongAnswers: [
@@ -4865,6 +4934,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez au subjonctif passé pour exprimer le regret d'une situation passée",
       phrase: { before: "Elles auraient aimé que le projet ", after: " au-delà de nos attentes. (dépasser)" },
+      hint: "dépasser",
       answer: "ait dépassé",
       explanation: "Le subjonctif passé (ait dépassé) exprime un regret que le projet n'ait pas surpassé les attentes.",
       wrongAnswers: [
@@ -5129,6 +5199,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé pour exprimer l'antériorité.",
       phrase: { before: "Je suis surpris qu'elle ", after: " avant la réunion." },
+      hint: "partir",
       answer: "soit partie",
       explanation: "Le subjonctif passé (soit partie) exprime que le départ est antérieur à la surprise. C'est la concordance correcte.",
       wrongAnswers: [
@@ -5146,6 +5217,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe au subjonctif passé.",
       phrase: { before: "Bien qu'il ", after: " son travail, il n'était pas satisfait." },
+      hint: "terminer",
       answer: "eût terminé",
       explanation: "Le subjonctif imparfait passé (eût terminé) exprime l'antériorité dans une concession. Le travail est fait avant la non-satisfaction.",
       wrongAnswers: [
@@ -5163,6 +5235,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez le blanc avec le subjonctif passé pour exprimer le doute sur une action antérieure.",
       phrase: { before: "Je doute qu'ils ", after: " cette opportunité avant." },
+      hint: "avoir",
       answer: "aient eu",
       explanation: "Le subjonctif passé (aient eu) exprime le doute sur une action passée. L'opportunité est antérieure au doute.",
       wrongAnswers: [
@@ -5180,6 +5253,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe pour exprimer l'antériorité au subjonctif après une expression de sentiment.",
       phrase: { before: "Nous sommes contents que vous ", after: " cet article utile." },
+      hint: "trouver",
       answer: "ayez trouvé",
       explanation: "Le subjonctif passé (ayez trouvé) exprime que l'action de trouver est antérieure à la satisfaction. C'est l'antériorité appropriée.",
       wrongAnswers: [
@@ -5197,6 +5271,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez avec la forme correcte du subjonctif passé pour exprimer l'obligation qu'une action soit achevée.",
       phrase: { before: "Il faut que tu ", after: " tes devoirs avant demain soir." },
+      hint: "finir",
       answer: "aies fini",
       explanation: "Le subjonctif passé (aies fini) exprime l'obligation que l'action soit antérieure à demain soir. C'est la concordance correcte pour l'antériorité.",
       wrongAnswers: [
@@ -5487,6 +5562,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez l'expression figée : Dieu ___ son âme.",
       phrase: { before: "À la mort de son grand-père, on a dit : Dieu ", after: " son âme." },
+      hint: "avoir",
       answer: "ait",
       explanation: "L'expression figée « Dieu ait son âme » utilise le subjonctif passé « ait » pour invoquer le repos éternel de l'âme du défunt.",
       wrongAnswers: [
@@ -5504,6 +5580,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez l'expression littéraire : qu'il en ___ ainsi.",
       phrase: { before: "Le roi a prononcé les paroles solennelles : Qu'il en ", after: " ainsi !" },
+      hint: "être",
       answer: "soit",
       explanation: "« Qu'il en soit ainsi ! » est une expression figée solennelle utilisant le subjonctif « soit » pour affirmer une décision ou un jugement définitif.",
       wrongAnswers: [
@@ -5521,6 +5598,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé : Vive ___!",
       phrase: { before: "Les enfants ont crié : Vive ", after: "!" },
+      hint: "vivre",
       answer: "la France",
       explanation: "« Vive la France ! » est l'expression figée consacrée utilisant le subjonctif pour exprimer l'honneur et la loyauté patriotique.",
       wrongAnswers: [
@@ -5538,6 +5616,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez l'expression conditionnelle : Pourvu qu'il ___ réussi.",
       phrase: { before: "L'examen est fini ; pourvu qu'il ", after: " réussi !" },
+      hint: "avoir",
       answer: "ait",
       explanation: "« Pourvu qu'il ait réussi » utilise le subjonctif passé « ait » pour exprimer un souhait ou une appréhension sur un événement passé.",
       wrongAnswers: [
@@ -5555,6 +5634,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte du subjonctif passé.",
       phrase: { before: "Nous ne l'avons pas vu : soit qu'il ", after: " parti, soit qu'il ait changé d'avis." },
+      hint: "avoir",
       answer: "ait",
       explanation: "Dans la construction « Soit que... soit que... », le subjonctif passé s'emploie pour exprimer deux hypothèses alternatives sur le passé. « Ait » est la troisième personne du singulier du subjonctif présent d'avoir, servant d'auxiliaire pour « parti ».",
       wrongAnswers: [
@@ -5832,6 +5912,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'infinitif passé ou le subjonctif passé selon le contexte.",
       phrase: { before: "Après ", after: " le film, nous avons discuté de l'histoire." },
+      hint: "regarder",
       answer: "avoir regardé",
       explanation: "Même sujet (nous) dans les deux propositions → infinitif passé « avoir regardé ».",
       wrongAnswers: [
@@ -5849,6 +5930,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'infinitif passé ou le subjonctif passé selon le contexte.",
       phrase: { before: "Je suis déçu ", after: " cet examen." },
+      hint: "échouer",
       answer: "qu'il ait échoué",
       explanation: "Deux sujets différents (je vs il) → subjonctif passé « qu'il ait échoué ».",
       wrongAnswers: [
@@ -5866,6 +5948,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'infinitif passé ou le subjonctif passé selon le contexte.",
       phrase: { before: "Avant ", after: " à la retraite, il a travaillé plus de quarante ans." },
+      hint: "partir",
       answer: "de partir",
       explanation: "Même sujet (il) → infinitif simple « partir » car l'action n'est pas accomplie antérieurement.",
       wrongAnswers: [
@@ -5883,6 +5966,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'infinitif passé ou le subjonctif passé selon le contexte.",
       phrase: { before: "Nous sommes fiers ", after: " le projet." },
+      hint: "compléter",
       answer: "qu'elles aient complété",
       explanation: "Deux sujets différents (nous vs elles) → subjonctif passé « qu'elles aient complété ».",
       wrongAnswers: [
@@ -5900,6 +5984,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'infinitif passé ou le subjonctif passé selon le contexte.",
       phrase: { before: "Après ", after: " en France, ils ont appris à cuisiner français." },
+      hint: "aller",
       answer: "être allés",
       explanation: "Même sujet (ils) et verbe intransitif → infinitif passé « être allés ».",
       wrongAnswers: [
@@ -6099,6 +6184,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au subjonctif présent.",
       phrase: { before: "Il a fini son travail sans que nous le ", after: " (savoir)." },
+      hint: "savoir",
       answer: "sachions",
       explanation: "Après « sans que », on utilise toujours le subjonctif présent. Avec le sujet « nous » (première personne du pluriel), le verbe « savoir » se conjugue « sachions ».",
       wrongAnswers: [
@@ -6115,6 +6201,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au subjonctif présent.",
       phrase: { before: "Elles ont quitté la salle sans que quiconque ne les ", after: " (voir)." },
+      hint: "voir",
       answer: "voie",
       explanation: "Après « sans que », on utilise le subjonctif présent. Avec le sujet « quiconque » (troisième personne du singulier), le verbe « voir » se conjugue « voie ».",
       wrongAnswers: [
@@ -6131,6 +6218,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au subjonctif présent.",
       phrase: { before: "Le projet a été approuvé sans que les détails ", after: " (être) clairement expliqués." },
+      hint: "être",
       answer: "soient",
       explanation: "Après « sans que », on utilise le subjonctif présent. Avec le sujet « les détails » (troisième personne du pluriel), le verbe « être » se conjugue « soient ».",
       wrongAnswers: [
@@ -6147,6 +6235,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au subjonctif présent.",
       phrase: { before: "Nous avons pris cette décision sans que vous ", after: " (pouvoir) l'influencer." },
+      hint: "pouvoir",
       answer: "puissiez",
       explanation: "Après « sans que », on utilise le subjonctif présent. Avec le sujet « vous » (deuxième personne du pluriel), le verbe « pouvoir » se conjugue « puissiez ».",
       wrongAnswers: [
@@ -6241,6 +6330,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au subjonctif présent.",
       phrase: { before: "Tu as changé d'avis sans que je t'", after: " (presser)." },
+      hint: "presser",
       answer: "presse",
       explanation: "Après « sans que », on utilise le subjonctif présent. Avec le sujet « je » (première personne du singulier), le verbe « presser » se conjugue « presse ».",
       wrongAnswers: [
@@ -6517,6 +6607,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « arriver » au subjonctif passé après « pourvu que ».",
       phrase: { before: "Pourvu qu'elle ", after: " à l'heure !" },
+      hint: "arriver",
       answer: "soit arrivée",
       explanation: "Avec le sujet féminin singulier « elle » et le verbe intransitif « arriver », le subjonctif passé de « arriver » est « soit arrivée ». L'accord du participe passé se fait avec le sujet féminin.",
       wrongAnswers: [
@@ -6534,6 +6625,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « partir » au subjonctif passé après « pourvu que ».",
       phrase: { before: "Pourvu qu'ils ", after: " avant minuit !" },
+      hint: "partir",
       answer: "soient partis",
       explanation: "Avec le sujet masculin pluriel « ils » et le verbe intransitif « partir », le subjonctif passé est « soient partis ». L'accord du participe passé se fait avec le sujet masculin pluriel.",
       wrongAnswers: [
@@ -6551,6 +6643,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « comprendre » au subjonctif passé après « pourvu que ».",
       phrase: { before: "Pourvu que tu ", after: " mes explications !" },
+      hint: "comprendre",
       answer: "aies compris",
       explanation: "Avec le sujet « tu » et le verbe « comprendre », le subjonctif passé est « aies compris ». Cette forme exprime l'espoir qu'une action passée soit complétée.",
       wrongAnswers: [
@@ -6568,6 +6661,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « finir » au subjonctif passé avec négation après « pourvu que ».",
       phrase: { before: "Pourvu qu'elle ", after: " pas de ses études !" },
+      hint: "abandonner",
       answer: "n'ait abandonné",
       explanation: "Avec le sujet féminin « elle », la négation, et le verbe « abandonner » (exprimé par la phrase négative), le subjonctif passé avec négation est « n'ait abandonné ». La négation « n' » se place avant l'auxiliaire « ait ».",
       wrongAnswers: [
@@ -6585,6 +6679,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « obtenir » au subjonctif passé après « pourvu que ».",
       phrase: { before: "Pourvu que mon client ", after: " le contrat !" },
+      hint: "obtenir",
       answer: "ait obtenu",
       explanation: "Avec le sujet singulier « mon client » et le verbe « obtenir », le subjonctif passé est « ait obtenu ». Cette forme exprime l'espoir que le contrat ait été acquis.",
       wrongAnswers: [
@@ -6836,6 +6931,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif (présent ou passé selon le contexte).",
       phrase: { before: "Pourvu que nos invités ", after: " à l'heure demain soir !" },
+      hint: "arriver",
       answer: "arrivent",
       explanation: "Après « pourvu que » (souhait prospectif), on utilise le subjonctif présent pour exprimer l'arrivée future attendue.",
       wrongAnswers: [
@@ -6855,6 +6951,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif (présent ou passé selon le contexte).",
       phrase: { before: "Je regrette que vous n'", after: " pas la réunion d'hier après-midi." },
+      hint: "pouvoir",
       answer: "ayez pu assister",
       explanation: "Le subjonctif passé exprime une action antérieure complétée (ne pas avoir pu assister à la réunion passée).",
       wrongAnswers: [
@@ -6900,6 +6997,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif (présent ou passé selon le contexte).",
       phrase: { before: "Je suis surpris que tu ", after: " cette opportunité sans m'en parler d'abord." },
+      hint: "accepter",
       answer: "aies acceptée",
       explanation: "Le subjonctif passé indique que l'acceptation s'est déjà produite avant la surprise du locuteur (antériorité).",
       wrongAnswers: [
@@ -6918,6 +7016,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif (présent ou passé selon le contexte).",
       phrase: { before: "À moins que vous n'", after: " vos objections très bientôt, nous procéderons sans votre accord." },
+      hint: "faire",
       answer: "fassiez",
       explanation: "Après « à moins que » (concession), le subjonctif présent exprime une condition future pour une action à venir.",
       wrongAnswers: [
@@ -6937,6 +7036,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif (présent ou passé selon le contexte).",
       phrase: { before: "Bien que le projet ", after: " plusieurs mois de préparation, les résultats ont surpassé nos attentes." },
+      hint: "demander",
       answer: "ait demandé",
       explanation: "Le subjonctif passé exprime que la demande de préparation s'est complétée avant les résultats finaux (antériorité).",
       wrongAnswers: [

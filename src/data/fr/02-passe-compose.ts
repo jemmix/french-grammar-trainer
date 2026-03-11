@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "02-passe-compose",
   title: "Le passé composé",
-  description: "Formation avec avoir/être, accord du participe passé, choix de l'auxiliaire",
+  description: "Formation et emplois du passé composé",
   rules: [
     { id: "02-01", sectionId: "02-passe-compose", title: "Formation du passé composé avec l'auxiliaire avoir (règle générale)" },
     { id: "02-02", sectionId: "02-passe-compose", title: "Formation du passé composé avec l'auxiliaire être (les 14 verbes + dérivés)" },
@@ -297,6 +297,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez le passé composé du verbe « avoir » au présent avec le participe passé.",
       phrase: { before: "J'", after: " terminé mon travail avant six heures." },
+      hint: "terminer",
       answer: "ai",
       explanation: "Le sujet « je » demande la première personne du singulier de l'auxiliaire avoir au présent : « ai ». La phrase complète : « Je ai terminé... » (contraction : « J'ai terminé... »).",
       wrongAnswers: [
@@ -314,6 +315,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez la forme correcte du passé composé avec l'auxiliaire avoir.",
       phrase: { before: "Nous ", after: " reçu une lettre importante hier." },
+      hint: "recevoir",
       answer: "avons",
       explanation: "Le sujet « nous » demande la première personne du pluriel de l'auxiliaire avoir au présent : « avons ». Le passé composé = avoir + participe passé.",
       wrongAnswers: [
@@ -331,6 +333,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte du passé composé.",
       phrase: { before: "Elles ", after: " entendu les nouvelles à la radio." },
+      hint: "entendre",
       answer: "ont",
       explanation: "Le sujet « elles » demande la troisième personne du pluriel de l'auxiliaire avoir au présent : « ont ». Le passé composé = avoir + participe passé.",
       wrongAnswers: [
@@ -348,6 +351,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez la forme correcte de l'auxiliaire avoir au présent pour compléter le passé composé.",
       phrase: { before: "Il ", after: " commandé deux cafés et un croissant." },
+      hint: "commander",
       answer: "a",
       explanation: "Le sujet « il » demande la troisième personne du singulier de l'auxiliaire avoir au présent : « a ». Le passé composé = avoir + participe passé.",
       wrongAnswers: [
@@ -365,6 +369,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez le passé composé avec l'auxiliaire avoir au présent.",
       phrase: { before: "Vous ", after: " décidé d'aller au cinéma samedi prochain." },
+      hint: "décider",
       answer: "avez",
       explanation: "Le sujet « vous » demande la deuxième personne du pluriel de l'auxiliaire avoir au présent : « avez ». Le passé composé = avoir + participe passé.",
       wrongAnswers: [
@@ -611,6 +616,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « venir » au passé composé avec le sujet donné. (vous = locuteur singulier masculin)",
       phrase: { before: "Vous ", after: " à notre réunion la semaine dernière ?" },
+      hint: "venir",
       answer: "êtes venu",
       explanation: "« Venir » utilise « être » au passé composé. Avec « vous » singulier poli s'adressant à un homme, le participe reste au masculin singulier : « venu ».",
       wrongAnswers: [
@@ -628,6 +634,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « entrer » au passé composé avec le sujet donné.",
       phrase: { before: "Elle ", after: " dans le musée à 10h ce matin." },
+      hint: "entrer",
       answer: "est entrée",
       explanation: "« Entrer » utilise « être » au passé composé. Avec le sujet « elle » (féminin singulier), le participe s'accorde : « entrée ».",
       wrongAnswers: [
@@ -645,6 +652,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « rester » au passé composé avec le sujet donné.",
       phrase: { before: "Nous ", after: " chez nos parents toute la fin de semaine." },
+      hint: "rester",
       answer: "sommes restés",
       explanation: "« Rester » utilise « être » au passé composé. Avec « nous » (pluriel, supposé mixte ou masculin), le participe s'accorde : « restés ». Avec un groupe entièrement féminin, ce serait « restées ».",
       wrongAnswers: [
@@ -662,6 +670,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « descendre » au passé composé avec le sujet donné.",
       phrase: { before: "Elles ", after: " du dernier étage en ascenseur." },
+      hint: "descendre",
       answer: "sont descendues",
       explanation: "« Descendre » utilise « être » au passé composé. Avec le sujet « elles » (féminin pluriel), le participe s'accorde : « descendues ».",
       wrongAnswers: [
@@ -679,6 +688,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « devenir » au passé composé avec le sujet donné.",
       phrase: { before: "Ils ", after: " célèbres après leur spectacle." },
+      hint: "devenir",
       answer: "sont devenus",
       explanation: "« Devenir » utilise « être » au passé composé. Avec le sujet « ils » (masculin pluriel), le participe s'accorde : « devenus ». Avec un groupe entièrement féminin (« elles »), ce serait « devenues ».",
       wrongAnswers: [
@@ -998,6 +1008,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé.",
       phrase: { before: "J'", after: "__ arrivé à l'école à 8h." },
+      hint: "arriver",
       answer: "suis",
       explanation: "« Arriver » est un verbe de mouvement intransitif, il se conjugue avec « être ». Pour « je », la forme correcte est « suis ».",
       wrongAnswers: [
@@ -1015,6 +1026,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé.",
       phrase: { before: "Elles ", after: "__ mangé une pizza." },
+      hint: "manger",
       answer: "ont",
       explanation: "« Manger » est un verbe transitif (elles mangent quelque chose), il se conjugue avec « avoir ». Pour « elles », la forme correcte est « ont ».",
       wrongAnswers: [
@@ -1032,6 +1044,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé.",
       phrase: { before: "Tu ", after: "__ sorti sans dire au revoir." },
+      hint: "sortir",
       answer: "es",
       explanation: "« Sortir » utilisé seul (sans complément d'objet direct) est un verbe intransitif de mouvement, il se conjugue avec « être ». Pour « tu », la forme correcte est « es ».",
       wrongAnswers: [
@@ -1049,6 +1062,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé.",
       phrase: { before: "Il ", after: "__ descendu les valises à la cave." },
+      hint: "descendre",
       answer: "a",
       explanation: "« Descendre » avec un complément d'objet direct (les valises) est un verbe transitif, il se conjugue avec « avoir ». Pour « il », la forme correcte est « a ».",
       wrongAnswers: [
@@ -1066,6 +1080,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé.",
       phrase: { before: "Nous ", after: "__ nous couché tard hier." },
+      hint: "se coucher",
       answer: "sommes",
       explanation: "« Se coucher » est un verbe pronominal, il se conjugue avec « être ». Pour « nous », la forme correcte est « sommes ».",
       wrongAnswers: [
@@ -1344,6 +1359,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « monter » à la troisième personne du singulier, passé composé : la fille a apporté ses valises à l'étage.",
       phrase: { before: "La fille ", after: "__ ses valises à l'étage." },
+      hint: "monter",
       answer: "a monté",
       explanation: "Avec un COD (« ses valises »), le verbe « monter » utilise l'auxiliaire « avoir ». La forme correcte est « a monté ».",
       wrongAnswers: [
@@ -1361,6 +1377,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « descendre » à la troisième personne du pluriel, passé composé : les garçons sont allés vers le bas.",
       phrase: { before: "Les garçons ", after: "__ à la cave chercher du vin." },
+      hint: "descendre",
       answer: "sont descendus",
       explanation: "Sans complément d'objet direct, « descendre » signifie « aller vers le bas ». On utilise « être » et le participe s'accorde avec le sujet : « descendus ».",
       wrongAnswers: [
@@ -1378,6 +1395,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « sortir » au passé composé : l'action concerne une personne qui est allée dehors.",
       phrase: { before: "Elle ", after: "__ ce matin." },
+      hint: "sortir",
       answer: "est sortie",
       explanation: "Sans complément d'objet, « sortir » signifie « quitter un lieu ». On utilise « être » et le participe s'accorde avec le sujet féminin : « sortie ».",
       wrongAnswers: [
@@ -1395,6 +1413,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « passer » au passé composé : l'action concerne le passage à travers un endroit.",
       phrase: { before: "Elles ", after: "__ par Lyon en venant de Marseille." },
+      hint: "passer",
       answer: "sont passées",
       explanation: "« Passer par » (traverser, faire un détour) utilise l'auxiliaire « être ». Le participe s'accorde avec le sujet féminin pluriel : « passées ».",
       wrongAnswers: [
@@ -1412,6 +1431,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « retourner » au passé composé : l'action concerne le fait de revenir quelque part.",
       phrase: { before: "Il ", after: "__ chez lui après le travail." },
+      hint: "retourner",
       answer: "est retourné",
       explanation: "« Retourner » au sens de « revenir » utilise l'auxiliaire « être ». Le participe s'accorde avec le sujet masculin singulier : « retourné ».",
       wrongAnswers: [
@@ -1585,6 +1605,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « essayer » au passé composé avec le sujet « Elle ».",
       phrase: { before: "Elle a ", after: "__ de nouvelles chaussures au magasin." },
+      hint: "essayer",
       answer: "essayé",
       explanation: "Le participe passé d'essayer est essayé (on remplace -er par -é). Avec l'auxiliaire avoir, le participe passé reste invariable, même si le sujet est au féminin.",
       wrongAnswers: [
@@ -1602,6 +1623,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « payer » au passé composé avec le sujet « Tu ».",
       phrase: { before: "Tu as ", after: "__ l'addition au restaurant hier soir." },
+      hint: "payer",
       answer: "payé",
       explanation: "Le participe passé de payer est payé (on remplace -er par -é). Après l'auxiliaire avoir, le participe passé reste invariable au passé composé.",
       wrongAnswers: [
@@ -1619,6 +1641,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « oublier » au passé composé avec le sujet « Vous ».",
       phrase: { before: "Vous avez ", after: "__ de fermer la fenêtre avant de partir." },
+      hint: "oublier",
       answer: "oublié",
       explanation: "Le participe passé d'oublier est oublié (on remplace -er par -é). Avec l'auxiliaire avoir, le participe passé reste invariable au passé composé.",
       wrongAnswers: [
@@ -1740,6 +1763,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « marcher » au passé composé avec le sujet « Nous ».",
       phrase: { before: "Nous avons ", after: "__ pendant deux heures." },
+      hint: "marcher",
       answer: "marché",
       explanation: "Le participe passé de marcher est marché (on remplace -er par -é). Avec l'auxiliaire avoir, le participe passé reste invariable au singulier ou au pluriel.",
       wrongAnswers: [
@@ -1757,6 +1781,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez au passé composé : le verbe « chercher » avec le sujet « Ils ».",
       phrase: { before: "Ils ont ", after: "__ les clés pendant une heure." },
+      hint: "chercher",
       answer: "cherché",
       explanation: "Le participe passé de chercher est cherché (on remplace -er par -é). Après avoir au passé composé, le participe passé n'a pas besoin de s'accorder avec le sujet.",
       wrongAnswers: [
@@ -2034,6 +2059,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « finir » au participe passé.",
       phrase: { before: "J'ai ", after: " mon travail à temps." },
+      hint: "finir",
       answer: "fini",
       explanation: "Avec l'auxiliaire « avoir », le participe passé « fini » ne s'accorde pas avec le sujet.",
       wrongAnswers: [
@@ -2051,6 +2077,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « choisir » au participe passé.",
       phrase: { before: "Elle a ", after: " une robe bleue." },
+      hint: "choisir",
       answer: "choisi",
       explanation: "Le participe passé de « choisir » est « choisi ». Pas d'accord du participe avec le sujet après « avoir ».",
       wrongAnswers: [
@@ -2068,6 +2095,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « réussir » au participe passé.",
       phrase: { before: "Nous avons ", after: " notre examen." },
+      hint: "réussir",
       answer: "réussi",
       explanation: "Le participe passé de « réussir » est « réussi ». Pas d'accord nécessaire après « avoir ».",
       wrongAnswers: [
@@ -2085,6 +2113,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « remplir » au participe passé.",
       phrase: { before: "J'ai ", after: " le formulaire correctement." },
+      hint: "remplir",
       answer: "rempli",
       explanation: "Le participe passé de « remplir » est « rempli ». Formation : suppression de -ir, ajout de -i.",
       wrongAnswers: [
@@ -2102,6 +2131,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « établir » au participe passé.",
       phrase: { before: "Ils ont ", after: " un nouveau système." },
+      hint: "établir",
       answer: "établi",
       explanation: "Le participe passé de « établir » est « établi ». Pas d'accord après « avoir ».",
       wrongAnswers: [
@@ -2327,6 +2357,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au passé composé.",
       phrase: { before: "Nous avons ", after: " (attendre) le bus pendant une heure." },
+      hint: "attendre",
       answer: "attendu",
       explanation: "Attendre → attendu. Au passé composé avec avoir, on utilise le participe passé attendu.",
       wrongAnswers: [
@@ -2344,6 +2375,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le participe passé du verbe donné.",
       phrase: { before: "Elle a ", after: " (perdre) ses documents importants." },
+      hint: "perdre",
       answer: "perdu",
       explanation: "Perdre → perdu. Le participe passé de perdre suit la règle régulière -re → -u.",
       wrongAnswers: [
@@ -2361,6 +2393,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez le verbe au participe passé.",
       phrase: { before: "Ils ont ", after: " (rendre) visite à leurs grands-parents." },
+      hint: "rendre",
       answer: "rendu",
       explanation: "Rendre → rendu. Au passé composé avec avoir, on utilise le participe passé rendu.",
       wrongAnswers: [
@@ -2378,6 +2411,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le participe passé de l'exception.",
       phrase: { before: "Qu'est-ce que tu as ", after: " (mettre) dans ce panier ?" },
+      hint: "mettre",
       answer: "mis",
       explanation: "Mettre est une EXCEPTION ! Son participe passé est mis, pas mettu. C'est une forme irrégulière.",
       wrongAnswers: [
@@ -2395,6 +2429,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le participe passé de l'exception.",
       phrase: { before: "Avez-vous ", after: " (prendre) votre parapluie avant de partir ?" },
+      hint: "prendre",
       answer: "pris",
       explanation: "Prendre est une EXCEPTION ! Son participe passé est pris, pas prendu. C'est une forme irrégulière à mémoriser.",
       wrongAnswers: [
@@ -2724,6 +2759,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « avoir + participe passé » à la forme demandée.",
       phrase: { before: "J'ai ", after: " une belle journée hier." },
+      hint: "avoir",
       answer: "eu",
       explanation: "Le participe passé irrégulier de « avoir » est « eu ». La phrase signifie « J'ai vécu une belle journée hier. »",
       wrongAnswers: [
@@ -2743,6 +2779,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le participe passé du verbe entre parenthèses.",
       phrase: { before: "Elle a ", after: " sa robe neuve pour la soirée." },
+      hint: "mettre",
       answer: "mis",
       explanation: "Le participe passé irrégulier de « mettre » est « mis ». La phrase signifie « Elle a mis sa robe neuve pour la soirée. »",
       wrongAnswers: [
@@ -2762,6 +2799,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez le blanc avec le participe passé du verbe approprié.",
       phrase: { before: "Vous avez ", after: " une excellente décision." },
+      hint: "prendre",
       answer: "pris",
       explanation: "Le participe passé irrégulier de « prendre » est « pris ». La phrase signifie « Vous avez pris une excellente décision. »",
       wrongAnswers: [
@@ -2781,6 +2819,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé avec le participe passé irrégulier.",
       phrase: { before: "Il a ", after: " un excellent roman la semaine dernière." },
+      hint: "lire",
       answer: "lu",
       explanation: "Le participe passé irrégulier de « lire » est « lu ». La phrase signifie « Il a lu un excellent roman la semaine dernière. »",
       wrongAnswers: [
@@ -2800,6 +2839,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le participe passé du verbe entre parenthèses.",
       phrase: { before: "Nous avons ", after: " participer, mais les places étaient complètes." },
+      hint: "vouloir",
       answer: "voulu",
       explanation: "Le participe passé irrégulier de « vouloir » est « voulu ». La phrase signifie « Nous avons souhaité participer, mais les places étaient complètes. »",
       wrongAnswers: [
@@ -3001,6 +3041,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « ouvrir » au passé composé (première personne du singulier).",
       phrase: { before: "J'ai ", after: " la fenêtre ce matin." },
+      hint: "ouvrir",
       answer: "ouvert",
       explanation: "Le verbe « ouvrir » a un participe passé irrégulier « ouvert ». Conjugaison : j'ai ouvert.",
       wrongAnswers: [
@@ -3018,6 +3059,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « mourir » au passé composé (troisième personne du singulier féminin).",
       phrase: { before: "Ma grand-mère est ", after: " hier." },
+      hint: "mourir",
       answer: "morte",
       explanation: "Le verbe « mourir » utilise l'auxiliaire ÊTRE et a un participe passé irrégulier « mort ». Accord féminin : morte.",
       wrongAnswers: [
@@ -3035,6 +3077,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « naître » au passé composé (troisième personne du pluriel).",
       phrase: { before: "Les enfants sont ", after: " à l'hôpital." },
+      hint: "naître",
       answer: "nés",
       explanation: "Le verbe « naître » utilise l'auxiliaire ÊTRE et a un participe passé irrégulier « né ». Accord pluriel : nés.",
       wrongAnswers: [
@@ -3052,6 +3095,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « peindre » au passé composé (première personne du singulier).",
       phrase: { before: "J'ai ", after: " ce tableau l'année dernière." },
+      hint: "peindre",
       answer: "peint",
       explanation: "Le verbe « peindre » a un participe passé irrégulier « peint » (modèle -indre → -int).",
       wrongAnswers: [
@@ -3069,6 +3113,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « joindre » au passé composé (première personne du pluriel).",
       phrase: { before: "Nous avons ", after: " nos forces pour ce projet." },
+      hint: "joindre",
       answer: "joint",
       explanation: "Le verbe « joindre » a un participe passé irrégulier « joint » (modèle -oindre → -oint). Même au pluriel, « joint » ne change pas.",
       wrongAnswers: [
@@ -3426,6 +3471,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au passé composé avec l'auxiliaire être.",
       phrase: { before: "Elle est (partir) ", after: "." },
+      hint: "partir",
       answer: "partie",
       explanation: "Le sujet « elle » (féminin singulier) exige l'accord du participe passé. Le participe passé de partir est partie (base + e).",
       wrongAnswers: [
@@ -3443,6 +3489,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au passé composé avec l'auxiliaire être.",
       phrase: { before: "Les enfants sont (arriver) ", after: " tard." },
+      hint: "arriver",
       answer: "arrivés",
       explanation: "Le sujet « les enfants » (pluriel) exige l'accord du participe passé. Pour un groupe mixte ou masculin pluriel, on ajoute -s.",
       wrongAnswers: [
@@ -3460,6 +3507,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au passé composé avec l'auxiliaire être.",
       phrase: { before: "Nous sommes (sortir) ", after: " du cinéma. » (groupe de femmes)" },
+      hint: "sortir",
       answer: "sorties",
       explanation: "Le sujet « nous » représente un groupe de femmes (féminin pluriel). Le participe passé doit être « sorties ».",
       wrongAnswers: [
@@ -3477,6 +3525,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au passé composé avec l'auxiliaire être.",
       phrase: { before: "Tu es (devenir) ", after: " très fort. » (speaker: femme)" },
+      hint: "devenir",
       answer: "devenue",
       explanation: "Le sujet « tu » désigne une femme (féminin singulier). Le participe passé de devenir au féminin singulier est « devenue ».",
       wrongAnswers: [
@@ -3494,6 +3543,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au passé composé avec l'auxiliaire être.",
       phrase: { before: "Ils sont (naître) ", after: " en même temps." },
+      hint: "naître",
       answer: "nés",
       explanation: "Le sujet « ils » (masculin pluriel) exige l'accord du participe passé. Le participe passé de naître au masculin pluriel est « nés ».",
       wrongAnswers: [
@@ -3758,6 +3808,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au passé composé avec « avoir ». Attention : pas d'accord !",
       phrase: { before: "Elle a ", after: " ses amis hier soir. (inviter)" },
+      hint: "inviter",
       answer: "invité",
       explanation: "Avec « avoir », le participe passé « invité » ne s'accorde jamais avec le sujet féminin « elle ». Il reste au singulier masculin.",
       wrongAnswers: [
@@ -3775,6 +3826,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé. N'oubliez pas : pas d'accord avec « avoir » !",
       phrase: { before: "Elles ont ", after: " l'article intéressant. (lire)" },
+      hint: "lire",
       answer: "lu",
       explanation: "Le participe passé « lu » reste invariable avec « avoir », même si le sujet « elles » est féminin pluriel. C'est la règle générale.",
       wrongAnswers: [
@@ -3792,6 +3844,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le participe passé du verbe. Souvenez-vous : avec « avoir », pas d'accord !",
       phrase: { before: "Ils ont ", after: " la maison en bleu. (peindre)" },
+      hint: "peindre",
       answer: "peint",
       explanation: "Le participe passé « peint » reste invariable avec « avoir », même si le sujet « ils » est masculin pluriel. C'est la règle générale du passé composé avec « avoir ».",
       wrongAnswers: [
@@ -3809,6 +3862,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez le verbe au passé composé. Attention : avec « avoir », le participe n'accorde jamais !",
       phrase: { before: "Les étudiantes ont ", after: " l'examen avec succès. (réussir)" },
+      hint: "réussir",
       answer: "réussi",
       explanation: "Le participe passé « réussi » reste invariable avec « avoir », même si le sujet « les étudiantes » est féminin pluriel. C'est la règle générale : pas d'accord avec l'auxiliaire « avoir ».",
       wrongAnswers: [
@@ -3839,6 +3893,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez le passé composé en choisissant la bonne forme du participe. Pas d'accord avec le sujet !",
       phrase: { before: "Vous avez ", after: " cette décision importante. (prendre)" },
+      hint: "prendre",
       answer: "pris",
       explanation: "Le participe passé « pris » reste invariable avec « avoir », même si le sujet est « vous ». C'est la règle générale : avec « avoir », pas d'accord.",
       wrongAnswers: [
@@ -4076,7 +4131,8 @@ const section: Section = {
       ruleId: "02-12",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe pronominal au passé composé. Attention à l'accord du participe passé.",
-      phrase: { before: "Elle ", after: " à sept heures du matin. » (se réveiller)" },
+      phrase: { before: "Elle ", after: " à sept heures du matin." },
+      hint: "se réveiller",
       answer: "s'est réveillée",
       explanation: "Verbe pronominal « se réveiller » au passé composé avec sujet féminin singulier. Structure : sujet + pronom réfléchi « se » élidé en « s' » + auxiliaire être au présent (« est ») + participe passé accordé au féminin singulier (« réveillée »).",
       wrongAnswers: [
@@ -4093,7 +4149,8 @@ const section: Section = {
       ruleId: "02-12",
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte du verbe pronominal au passé composé. Accordez le participe passé.",
-      phrase: { before: "Les garçons ", after: " en retard hier. » (se dépêcher)" },
+      phrase: { before: "Les garçons ", after: " en retard hier." },
+      hint: "se dépêcher",
       answer: "se sont dépêchés",
       explanation: "Verbe pronominal « se dépêcher » au passé composé avec sujet pluriel masculin. Structure : sujet + pronom réfléchi « se » + auxiliaire être à la 3e personne du pluriel (« sont ») + participe passé accordé au pluriel masculin (« dépêchés »).",
       wrongAnswers: [
@@ -4110,7 +4167,8 @@ const section: Section = {
       ruleId: "02-12",
       generatedBy: "haiku",
       prompt: "Mettez le verbe pronominal au passé composé. Accordez le participe passé correctement.",
-      phrase: { before: "Vous ", after: " pour cette magnifique journée. » (s'habiller)" },
+      phrase: { before: "Vous ", after: " pour cette magnifique journée." },
+      hint: "s'habiller",
       answer: "vous êtes habillés/habillées",
       explanation: "Verbe pronominal « s'habiller » au passé composé avec sujet « vous » (2e personne du pluriel). Structure : vous + pronom réfléchi « vous » + auxiliaire être à la 2e personne du pluriel (« êtes ») + participe passé accordé au pluriel (« habillés » pour un groupe masculin ou mixte, « habillées » pour un groupe féminin).",
       wrongAnswers: [
@@ -4127,7 +4185,8 @@ const section: Section = {
       ruleId: "02-12",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé. Accordez le participe passé avec le sujet.",
-      phrase: { before: "Elles ", after: " jusqu'à minuit. » (s'amuser)" },
+      phrase: { before: "Elles ", after: " jusqu'à minuit." },
+      hint: "s'amuser",
       answer: "se sont amusées",
       explanation: "Verbe pronominal « s'amuser » au passé composé avec sujet féminin pluriel. Structure : elles + pronom réfléchi « se » + auxiliaire être à la 3e personne du pluriel (« sont ») + participe passé accordé au féminin pluriel (« amusées »).",
       wrongAnswers: [
@@ -4144,7 +4203,8 @@ const section: Section = {
       ruleId: "02-12",
       generatedBy: "haiku",
       prompt: "Mettez le verbe au passé composé. Faites attention à l'élision du pronom réfléchi et à l'accord du participe passé.",
-      phrase: { before: "Il ", after: " tôt ce matin. » (s'asseoir)" },
+      phrase: { before: "Il ", after: " tôt ce matin." },
+      hint: "s'asseoir",
       answer: "s'est assis",
       explanation: "Verbe pronominal « s'asseoir » au passé composé avec sujet masculin singulier. Le pronom réfléchi « se » s'élide en « s' » devant la voyelle « e ». Structure : il + s' + est + participe passé « assis » (accordé au masculin singulier).",
       wrongAnswers: [
@@ -4461,6 +4521,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase au passé composé avec la bonne forme négative.",
       phrase: { before: "J'", after: " pas allé à l'école hier." },
+      hint: "aller",
       answer: "n'ai",
       explanation: "Au passé composé, ne/n' va avant l'auxiliaire avoir. Structure : ne + avoir + pas + participe.",
       wrongAnswers: [
@@ -4478,6 +4539,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec la structure correcte du passé composé négatif avec le verbe être.",
       phrase: { before: "Elle ", after: " pas venue à la réunion." },
+      hint: "venir",
       answer: "n'est",
       explanation: "Au passé composé avec l'auxiliaire être, on utilise ne/n' avant être. Structure : ne + être + pas + participe.",
       wrongAnswers: [
@@ -4495,6 +4557,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé négatif avec la bonne structure.",
       phrase: { before: "Ils ", after: " jamais vu ce spectacle." },
+      hint: "voir",
       answer: "n'ont",
       explanation: "Au passé composé avec jamais : ne/n' + auxiliaire + jamais + participe. Jamais remplace pas.",
       wrongAnswers: [
@@ -4512,6 +4575,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase avec la structure correcte du passé composé négatif avec un verbe pronominal.",
       phrase: { before: "Elle ", after: " pas levée ce matin." },
+      hint: "se lever",
       answer: "ne s'est",
       explanation: "Verbe pronominal au passé composé négatif : ne + être + pas + participe accordé. Le pronom réfléchi s' vient entre ne et est.",
       wrongAnswers: [
@@ -4529,6 +4593,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec la bonne structure du passé composé négatif incluant personne.",
       phrase: { before: "J'", after: " vu personne à la gare." },
+      hint: "voir",
       answer: "n'ai",
       explanation: "Avec « personne », on omet « pas » : la structure est ne + auxiliaire + participe + personne. « Je n'ai vu personne » — « pas » est remplacé par « personne ».",
       wrongAnswers: [
@@ -4767,6 +4832,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « déjà » à la bonne place.",
       phrase: { before: "Tu as ", after: " fini tes devoirs ?" },
+      hint: "finir",
       answer: "déjà",
       explanation: "L'adverbe court « déjà » se place entre l'auxiliaire « as » et le participe passé « fini » pour former « Tu as déjà fini tes devoirs ? ».",
       wrongAnswers: [
@@ -4784,6 +4850,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « beaucoup » à la bonne place.",
       phrase: { before: "Elle a ", after: " aimé ce film." },
+      hint: "aimer",
       answer: "beaucoup",
       explanation: "L'adverbe court « beaucoup » se place entre l'auxiliaire « a » et le participe passé « aimé » pour former « Elle a beaucoup aimé ce film. ».",
       wrongAnswers: [
@@ -4801,6 +4868,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « rapidement » à la bonne place.",
       phrase: { before: "Il a résolu ", after: " ce problème." },
+      hint: "résoudre",
       answer: "rapidement",
       explanation: "L'adverbe long en « -ment » « rapidement » se place après le participe passé « résolu » pour former « Il a résolu rapidement ce problème. ».",
       wrongAnswers: [
@@ -4818,6 +4886,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « mal » à la bonne place.",
       phrase: { before: "Nous avons ", after: " compris les instructions." },
+      hint: "comprendre",
       answer: "mal",
       explanation: "L'adverbe court « mal » se place entre l'auxiliaire « avons » et le participe passé « compris » pour former « Nous avons mal compris les instructions. ».",
       wrongAnswers: [
@@ -4835,6 +4904,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « honnêtement » à la bonne place.",
       phrase: { before: "Vous avez répondu ", after: " à cette question difficile." },
+      hint: "répondre",
       answer: "honnêtement",
       explanation: "L'adverbe long en « -ment » « honnêtement » se place après le participe passé « répondu » pour former « Vous avez répondu honnêtement à cette question difficile. ».",
       wrongAnswers: [
@@ -5151,6 +5221,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé.",
       phrase: { before: "Hier matin, j'", after: " (boire) une tasse de café." },
+      hint: "boire",
       answer: "ai bu",
       explanation: "« Hier matin » indique un moment spécifique du passé. « Boire une tasse de café » est une action ponctuelle et bornée qui demande le passé composé.",
       wrongAnswers: [
@@ -5168,6 +5239,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le passé composé du verbe donné.",
       phrase: { before: "La nuit dernière, elle ", after: " (lire) jusqu'à minuit." },
+      hint: "lire",
       answer: "a lu",
       explanation: "« La nuit dernière » marque une nuit précise. « Lire jusqu'à minuit » est une action bornée et ponctuelle, exigeant le passé composé.",
       wrongAnswers: [
@@ -5185,6 +5257,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au passé composé le verbe entre parenthèses.",
       phrase: { before: "Tout à coup, les enfants ", after: " (courir) dans le parc." },
+      hint: "courir",
       answer: "ont couru",
       explanation: "« Tout à coup » signale une action soudaine et instantanée. « Courir » est une action ponctuelle et bornée, ce qui demande le passé composé.",
       wrongAnswers: [
@@ -5202,6 +5275,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez le verbe au passé composé.",
       phrase: { before: "Il y a une semaine, nous ", after: " (voir) un film magnifique." },
+      hint: "voir",
       answer: "avons vu",
       explanation: "« Il y a une semaine » ancre l'action dans un moment précis du passé. « Voir un film » est une action ponctuelle et bornée, exigeant le passé composé.",
       wrongAnswers: [
@@ -5219,6 +5293,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au passé composé.",
       phrase: { before: "À midi, vous ", after: " (finir) votre travail." },
+      hint: "finir",
       answer: "avez fini",
       explanation: "« À midi » indique un moment précis. « Finir son travail » est une action ponctuelle et bornée, ce qui demande le passé composé.",
       wrongAnswers: [
@@ -5496,6 +5571,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé pour compléter cette succession d'actions.",
       phrase: { before: "D'abord, nous ", after: " (aller) à la gare, puis nous avons acheté nos billets et nous avons pris le train." },
+      hint: "aller",
       answer: "sommes allés / sommes allées",
       explanation: "« Aller » se conjugue avec l'auxiliaire « être » au passé composé. La succession d'actions complétées (d'abord… puis…) exige le passé composé. L'accord du participe dépend du groupe : « allés » (mixte ou masculin) ou « allées » (féminin).",
       wrongAnswers: [
@@ -5512,6 +5588,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé pour compléter cette succession d'actions.",
       phrase: { before: "Le matin, j'ai arrêté mon réveil, je me suis dépêché et je ", after: " de la maison." },
+      hint: "sortir",
       answer: "suis sorti / suis sortie",
       explanation: "« Sortir » se conjugue avec l'auxiliaire « être » au passé composé. C'est la troisième action d'une succession complétée. L'accord dépend du genre du sujet : « sorti » (masculin) ou « sortie » (féminin).",
       wrongAnswers: [
@@ -5528,6 +5605,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé pour compléter cette succession d'actions.",
       phrase: { before: "Lorsqu'il a ouvert la porte, il a allumé les lumières, il a rangé ses clés et il ", after: " dans la maison." },
+      hint: "entrer",
       answer: "est entré",
       explanation: "« Entrer » se conjugue avec l'auxiliaire « être » au passé composé. C'est la dernière étape d'une succession d'actions complétées.",
       wrongAnswers: [
@@ -5544,6 +5622,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé pour compléter cette succession d'actions.",
       phrase: { before: "Ensuite, elle a mis sa robe, elle ", after: " ses chaussures et elle est partie de la maison." },
+      hint: "mettre",
       answer: "a mis",
       explanation: "« Mettre » se conjugue avec l'auxiliaire « avoir » au passé composé : elle a mis. C'est une action ponctuelle et complétée dans une succession.",
       wrongAnswers: [
@@ -5560,6 +5639,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé pour compléter cette succession d'actions.",
       phrase: { before: "Tout à coup, l'orage a éclaté, les enfants sont entrés dedans, j'", after: " les fenêtres et nous nous sommes réunis." },
+      hint: "fermer",
       answer: "ai fermé",
       explanation: "« Fermer » se conjugue avec l'auxiliaire « avoir » au passé composé : j'ai fermé. C'est une action ponctuelle dans une succession d'événements passés.",
       wrongAnswers: [
@@ -5836,6 +5916,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « classer » au passé composé pour exprimer un résultat présent",
       phrase: { before: "Nous ", after: " les documents. Les papiers sont rangés sur le bureau." },
+      hint: "classer",
       answer: "avons classé",
       explanation: "Le passé composé « avons classé » montre que l'action passée de classer a un résultat visible et pertinent maintenant (les papiers sont organisés).",
       wrongAnswers: [
@@ -5853,6 +5934,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe « partir » au passé composé pour montrer un résultat présent",
       phrase: { before: "Le train ", after: ". Il n'y a plus personne à la gare." },
+      hint: "partir",
       answer: "est parti",
       explanation: "Le passé composé « est parti » relie le départ (action passée) à son résultat présent (absence du train).",
       wrongAnswers: [
@@ -5870,6 +5952,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au passé composé pour exprimer que l'action a une conséquence visible maintenant",
       phrase: { before: "Le vase ", after: ". Les fleurs sont par terre." },
+      hint: "se casser",
       answer: "s'est cassé",
       explanation: "Le passé composé « s'est cassé » montre que la casse a un résultat observable et négatif maintenant.",
       wrongAnswers: [
@@ -5887,6 +5970,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez avec le verbe « terminer » au passé composé pour montrer un résultat présent",
       phrase: { before: "Vous ", after: " le projet ? Excellent ! Nous pouvons maintenant commencer la présentation." },
+      hint: "terminer",
       answer: "avez terminé",
       explanation: "Le passé composé « avez terminé » exprime que l'achèvement du projet a un résultat présent : la capacité à avancer vers la prochaine étape.",
       wrongAnswers: [
@@ -5904,6 +5988,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au passé composé pour exprimer un changement d'état avec effets présents",
       phrase: { before: "Ma sœur ", after: ". Elle est maintenant plus grande que moi." },
+      hint: "grandir",
       answer: "a grandi",
       explanation: "Le passé composé « a grandi » exprime que le processus passé de croissance a un résultat physique et observable maintenant.",
       wrongAnswers: [
@@ -6168,6 +6253,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé avec le marqueur temporel approprié.",
       phrase: { before: "Hier, ma grand-mère ", after: " un gâteau délicieux." },
+      hint: "faire",
       answer: "a fait",
       explanation: "« Hier » marque un moment précis du passé, exigeant le passé composé « a fait » (de « faire »).",
       wrongAnswers: [
@@ -6185,6 +6271,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en conjuguant le verbe avec le bon temps.",
       phrase: { before: "Il y a une semaine, tu ", after: " à Paris avec tes parents." },
+      hint: "aller",
       answer: "es allé / es allée",
       explanation: "« Il y a une semaine » marque un moment spécifique du passé, exigeant le passé composé. L'accord dépend du genre : « es allé » (masculin) ou « es allée » (féminin).",
       wrongAnswers: [
@@ -6202,6 +6289,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez le blanc avec la forme correcte du verbe.",
       phrase: { before: "La semaine dernière, ils ", after: " (vendre) leur maison." },
+      hint: "vendre",
       answer: "ont vendu",
       explanation: "« La semaine dernière » indique une période complétée du passé, exigeant le passé composé « ont vendu ».",
       wrongAnswers: [
@@ -6232,6 +6320,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé en tenant compte du marqueur temporel.",
       phrase: { before: "Avant-hier, elle ", after: " (recevoir) un appel important de son chef." },
+      hint: "recevoir",
       answer: "a reçu",
       explanation: "« Avant-hier » est un marqueur temporel ponctuel qui exige le passé composé pour une action complétée. « Recevoir » → auxiliaire avoir → elle a reçu.",
       wrongAnswers: [
@@ -6248,6 +6337,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé en tenant compte du marqueur temporel.",
       phrase: { before: "Il y a deux mois, nous ", after: " (aller) en vacances en Italie avec toute la famille." },
+      hint: "aller",
       answer: "sommes allés",
       explanation: "« Il y a deux mois » marque un moment précis et révolu dans le passé → passé composé. « Aller » se conjugue avec l'auxiliaire « être » et le participe s'accorde avec le sujet pluriel : sommes allés.",
       wrongAnswers: [
@@ -6524,6 +6614,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la question informelle au passé composé avec le verbe donné.",
       phrase: { before: "Tu ", after: " à la gare ?" },
+      hint: "arriver",
       answer: "es arrivé / es arrivée",
       explanation: "Question informelle avec intonation. Le verbe « arriver » utilise l'auxiliaire « être » au passé composé : « es arrivé » (masculin) ou « es arrivée » (féminin).",
       wrongAnswers: [
@@ -6541,6 +6632,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la question formelle avec inversion au passé composé.",
       phrase: { before: "", after: " mangé au restaurant ?" },
+      hint: "manger",
       answer: "Avez-vous",
       explanation: "L'inversion formelle place l'auxiliaire avant le sujet avec un trait d'union : « Avez-vous mangé au restaurant ? »",
       wrongAnswers: [
@@ -6558,6 +6650,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Formulez la question en inversion pour le sujet « Marc et Paul ».",
       phrase: { before: "", after: " partis à l'étranger ?" },
+      hint: "partir",
       answer: "Sont-ils",
       explanation: "Avec un sujet masculin pluriel et le verbe « partir » (utilisant « être »), la question en inversion est « sont-ils ».",
       wrongAnswers: [
@@ -6575,6 +6668,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez la question au passé composé avec « est-ce que » en utilisant le verbe et le sujet donnés.",
       phrase: { before: "", after: " que vous avez vu ce film ?" },
+      hint: "voir",
       answer: "Est-ce",
       explanation: "La forme neutre avec « est-ce que » : « est-ce que vous avez vu ». Ici, on remplit le début de la phrase.",
       wrongAnswers: [
@@ -6592,6 +6686,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la question négative en inversion au passé composé avec le verbe et le sujet donnés.",
       phrase: { before: "N'", after: " pas vu le spectacle ?" },
+      hint: "voir",
       answer: "as-tu",
       explanation: "La négation au passé composé en inversion : « n'as-tu pas ». L'auxiliaire « as » s'inverse avec « tu ».",
       wrongAnswers: [
@@ -6869,6 +6964,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en conjuguant le verbe au passé composé pour maintenir la cohérence du récit.",
       phrase: { before: "Nous avons quitté la maison à six heures. Nous ", after: " le bus et nous sommes arrivés à l'école à sept heures." },
+      hint: "prendre",
       answer: "avons pris",
       explanation: "Pour maintenir la cohérence avec « avons quitté » et « sommes arrivés », le verbe « prendre » doit être au passé composé : « avons pris ».",
       wrongAnswers: [
@@ -6886,6 +6982,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en conjuguant le verbe au présent de narration pour maintenir la cohérence du récit.",
       phrase: { before: "Le prince entre dans la forêt enchantée. Il ", after: " une sorcière mystérieuse et elle lui offre une potion magique." },
+      hint: "rencontrer",
       answer: "rencontre",
       explanation: "Pour maintenir la cohérence du présent de narration avec « entre » et « offre », le verbe « rencontrer » doit rester au présent : « rencontre ».",
       wrongAnswers: [
@@ -6903,6 +7000,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Choisissez le verbe correct au passé composé pour maintenir la cohérence temporelle du récit.",
       phrase: { before: "Les touristes ont descendu du bus. Ils ", after: " la cathédrale et ils ont pris des photos." },
+      hint: "visiter",
       answer: "ont visité",
       explanation: "Pour maintenir la cohérence avec « ont descendu » et « ont pris », le verbe « visiter » doit être au passé composé : « ont visité ».",
       wrongAnswers: [
@@ -6920,6 +7018,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent de narration pour maintenir la cohérence avec le récit au présent.",
       phrase: { before: "Elle sort de la maison. Elle ", after: " sa mère dans la rue et elles se serrent dans les bras." },
+      hint: "rencontrer",
       answer: "rencontre",
       explanation: "Pour maintenir la cohérence avec « sort » et « se serrent », le verbe « rencontrer » doit rester au présent : « rencontre ».",
       wrongAnswers: [
@@ -6937,6 +7036,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé pour maintenir la cohérence du récit narratif.",
       phrase: { before: "Nous avons organisé une fête surprise. Les invités ", after: " à l'improviste et nous avons tous célébré ensemble." },
+      hint: "arriver",
       answer: "sont arrivés",
       explanation: "Pour maintenir la cohérence avec « avons organisé » et « avons célébré », le verbe « arriver » doit être au passé composé : « sont arrivés ». Notez que « arriver » utilise l'auxiliaire « être ».",
       wrongAnswers: [

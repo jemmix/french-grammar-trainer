@@ -5,8 +5,8 @@ import type { Section } from "../types";
 
 const section: Section = {
   id: "11-pronoms-cod-coi",
-  title: "Les pronoms personnels (COD, COI)",
-  description: "Identification, place dans la phrase, double pronominalisation",
+  title: "Les pronoms COD/COI",
+  description: "Pronoms d'objet direct et indirect",
   rules: [
     { id: "11-01", sectionId: "11-pronoms-cod-coi", title: "Identifier le COD dans une phrase (verbe + quoi/qui → COD)" },
     { id: "11-02", sectionId: "11-pronoms-cod-coi", title: "Identifier le COI dans une phrase (verbe + à qui → COI)" },
@@ -297,6 +297,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Identifiez le complément d'objet direct",
       phrase: { before: "Les musiciens jouent une belle ", after: " chaque soir." },
+      hint: "jouer",
       answer: "symphonie",
       explanation: "« symphonie » répond à « jouent quoi ? » - c'est le COD du verbe « jouer ».",
       wrongAnswers: [
@@ -313,6 +314,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplacez le COD par un pronom",
       phrase: { before: "Tu appelles tes amis ? Oui, je ", after: " appelle souvent." },
+      hint: "appeler",
       answer: "les",
       explanation: "Le pronom « les » remplace le COD « tes amis ». « Je les appelle » est la construction correcte.",
       wrongAnswers: [
@@ -330,6 +332,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec un COD approprié",
       phrase: { before: "Le professeur explique ", after: " aux élèves." },
+      hint: "expliquer",
       answer: "la leçon",
       explanation: "« la leçon » répond à « expliquer quoi ? » - c'est le COD du verbe « expliquer ».",
       wrongAnswers: [
@@ -347,6 +350,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Identifiez et complétez avec le COD manquant",
       phrase: { before: "Nous avons ", after: " hier soir et cela nous a beaucoup plu." },
+      hint: "avoir",
       answer: "un film",
       explanation: "« un film » est le COD de « avoir regardé » (implicite) ou « avoir vu ». C'est l'objet qui nous a plu.",
       wrongAnswers: [
@@ -364,6 +368,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Accordez le participe passé avec le COD",
       phrase: { before: "Les photos qu'il a ", after: " sont magnifiques." },
+      hint: "prendre",
       answer: "prises",
       explanation: "Le participe passé « pris » s'accorde avec le COD féminin pluriel « les photos » → « prises ».",
       wrongAnswers: [
@@ -641,6 +646,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Identifiez le COI en complétant : le COI du verbe « parler » dans la phrase « Je parle à mon ami » est « ___ »",
       phrase: { before: "Je parle à mon ami. Le COI est ", after: " ." },
+      hint: "parler",
       answer: "à mon ami",
       explanation: "Le COI répond à la question « parle à qui ? ». « À mon ami » est le COI du verbe « parler ».",
       wrongAnswers: [
@@ -658,6 +664,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Dans la phrase « Tu envoies un cadeau à ta grand-mère », quel est le COI du verbe « envoyer » ?",
       phrase: { before: "Tu envoies un cadeau à ta grand-mère. Le COI est ", after: " ." },
+      hint: "envoyer",
       answer: "à ta grand-mère",
       explanation: "Le COI répond à « envoies à qui ? ». « À ta grand-mère » reçoit indirectement l'action du verbe.",
       wrongAnswers: [
@@ -675,6 +682,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Identifiez le COI en complétant : dans la phrase « Nous expliquons la leçon à nos élèves », le COI est « ___ »",
       phrase: { before: "Nous expliquons la leçon à nos élèves. Le COI du verbe « expliquer » est ", after: " ." },
+      hint: "expliquer",
       answer: "à nos élèves",
       explanation: "Le COI répond à « expliquons à qui ? ». « À nos élèves » est le COI.",
       wrongAnswers: [
@@ -692,6 +700,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez : le COI du verbe « ressembler » dans la phrase « Les enfants ressemblent à leurs parents » est « ___ »",
       phrase: { before: "Les enfants ressemblent à leurs parents. Le COI est ", after: " ." },
+      hint: "ressembler",
       answer: "à leurs parents",
       explanation: "Le COI répond à « ressemblent à qui ? ». « À leurs parents » est le COI du verbe « ressembler ».",
       wrongAnswers: [
@@ -709,6 +718,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Identifiez le COI en complétant : dans la phrase « Je confie mon secret à ma meilleure amie », le COI est « ___ »",
       phrase: { before: "Je confie mon secret à ma meilleure amie. Le COI du verbe « confier » est ", after: " ." },
+      hint: "confier",
       answer: "à ma meilleure amie",
       explanation: "Le COI répond à « confie à qui ? ». « À ma meilleure amie » est le COI du verbe « confier ».",
       wrongAnswers: [
@@ -934,6 +944,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Choisissez le pronom COD correct qui remplace le mot souligné",
       phrase: { before: "J'", after: " appelle chaque matin. » (appelle = calls)" },
+      hint: "appeler",
       answer: "te",
       explanation: "« te » est le pronom COD singulier deuxième personne. On appelle quelqu'un (toi) → on te l'appelle. (Note : « Je t'appelle » utiliserait l'élision « t' » devant une voyelle, mais ici « appelle » commence par une consonne.)",
       wrongAnswers: [
@@ -950,6 +961,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Conjuguez avec le pronom COD approprié",
       phrase: { before: "Elle ", after: " a rencontré au parc. » (rencontré = met)" },
+      hint: "rencontrer",
       answer: "nous",
       explanation: "« nous » est le pronom COD pluriel première personne. Elle a rencontré nous (group) → Elle nous a rencontrés au parc.",
       wrongAnswers: [
@@ -967,6 +979,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec le bon pronom COD",
       phrase: { before: "Les cahiers ? J'", after: " ai oubliés à la maison. » (oubliés = forgot)" },
+      hint: "oublier",
       answer: "les",
       explanation: "« les » est le pronom COD pluriel qui remplace « les cahiers ». L'accord du participe passé : « oubliés » s'accorde avec le COD antécédent pluriel « les ».",
       wrongAnswers: [
@@ -984,6 +997,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Mettez le pronom COD approprié",
       phrase: { before: "Ton professeur ", after: " a vu à la bibliothèque ? » (vu = seen)" },
+      hint: "voir",
       answer: "t'",
       explanation: "Élision de « te » devant le « a » (voyelle). « Ton professeur t'a vu à la bibliothèque ».",
       wrongAnswers: [
@@ -1001,6 +1015,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Choisissez le pronom COD qui convient",
       phrase: { before: "Cette robe ? Non, je ne ", after: " aime pas beaucoup. » (aime = like)" },
+      hint: "aimer",
       answer: "l'",
       explanation: "Élision de « la » devant le « a » de « aime ». La robe est féminin singulier, donc « la ». Devant une voyelle : « l'aime ». « Je ne l'aime pas beaucoup ».",
       wrongAnswers: [
@@ -1330,6 +1345,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom COI approprié.",
       phrase: { before: "J'", after: " parle depuis une heure. » (parlant à mon ami Paul)" },
+      hint: "parler",
       answer: "lui",
       explanation: "« Lui » est le pronom COI singulier pour Paul (3ᵉ personne). On dit « parler à quelqu'un ».",
       wrongAnswers: [
@@ -1347,6 +1363,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom COI approprié.",
       phrase: { before: "Nous ", after: " avons recommandé un excellent restaurant. » (recommandé à nos amies)" },
+      hint: "recommander",
       answer: "leur",
       explanation: "« Leur » est le pronom COI pluriel pour nos amies (3ᵉ personne du pluriel). On dit « recommander à quelqu'un ».",
       wrongAnswers: [
@@ -1365,6 +1382,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom COI approprié.",
       phrase: { before: "Tu ", after: " as prêté ton stylo ? » (prêté à ta sœur)" },
+      hint: "prêter",
       answer: "te",
       explanation: "« Lui » est le pronom COI singulier pour ta sœur (3ᵉ personne). On dit « prêter à quelqu'un ».",
       wrongAnswers: [
@@ -1382,6 +1400,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom COI approprié.",
       phrase: { before: "Elle ", after: " offre toujours des cadeaux. » (offre à nous)" },
+      hint: "offrir",
       answer: "nous",
       explanation: "« Nous » est le pronom COI pluriel de la 1ʳᵉ personne. On dit « offrir à quelqu'un ».",
       wrongAnswers: [
@@ -1399,6 +1418,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom COI approprié.",
       phrase: { before: "Vous ", after: " expliquerez la leçon demain ? » (expliquerez à eux)" },
+      hint: "expliquer",
       answer: "leur",
       explanation: "« Leur » est le pronom COI pluriel de la 3ᵉ personne. On dit « expliquer à quelqu'un ».",
       wrongAnswers: [
@@ -1639,6 +1659,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplacez le groupe nominal souligné par un pronom COD ou COI (le, la, les, lui, leur).",
       phrase: { before: "Je connais bien mon professeur, et je ", after: " respecte énormément." },
+      hint: "respecter",
       answer: "le",
       explanation: "« le » remplace « mon professeur » (COD du verbe « respecter »).",
       wrongAnswers: [
@@ -1655,6 +1676,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplacez le groupe nominal souligné par un pronom COD ou COI (le, la, les, lui, leur).",
       phrase: { before: "Je dois téléphoner à ma tante demain, et je vais ", after: " expliquer la situation." },
+      hint: "expliquer",
       answer: "lui",
       explanation: "« lui » remplace « à ma tante » (COI du verbe « expliquer »).",
       wrongAnswers: [
@@ -1671,6 +1693,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplacez le groupe nominal souligné par un pronom COD ou COI (le, la, les, lui, leur).",
       phrase: { before: "Mes enfants adorent ces histoires, et je ", after: " raconte une chaque soir." },
+      hint: "raconter",
       answer: "leur",
       explanation: "« leur » remplace « à mes enfants » (COI du verbe « raconter »).",
       wrongAnswers: [
@@ -1687,6 +1710,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplacez le groupe nominal souligné par un pronom COD ou COI (le, la, les, lui, leur).",
       phrase: { before: "Ma voiture est très vieille, mais j'y tiens beaucoup et je ", after: " ai confiée à un bon mécanicien." },
+      hint: "confier",
       answer: "l'",
       explanation: "« l' » (élision de « la ») remplace « ma voiture » (COD du verbe « confier »).",
       wrongAnswers: [
@@ -1703,6 +1727,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplacez le groupe nominal souligné par un pronom COD ou COI (le, la, les, lui, leur).",
       phrase: { before: "Ces mauvaises nouvelles surprennent tout le monde, et je vais ", after: " appeler ce soir pour en discuter." },
+      hint: "appeler",
       answer: "leur",
       explanation: "« leur » remplace « à tout le monde » (COI du verbe « appeler » au sens de « téléphoner à »).",
       wrongAnswers: [
@@ -2018,6 +2043,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom COD approprié",
       phrase: { before: "J'", after: " ai vu ce matin." },
+      hint: "voir",
       answer: "l'",
       explanation: "« L' » est la forme apocopée du COD « le » avant une voyelle. Au passé composé, le COD se place avant l'auxiliaire.",
       wrongAnswers: [
@@ -2035,6 +2061,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom COD approprié",
       phrase: { before: "Nous ", after: " attendons depuis longtemps." },
+      hint: "attendre",
       answer: "les",
       explanation: "« Les » est le pronom COD plural. Il se place avant le verbe conjugué « attendons ».",
       wrongAnswers: [
@@ -2052,6 +2079,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom COD approprié",
       phrase: { before: "Elle ", after: " reconnaît à peine." },
+      hint: "reconnaître",
       answer: "le",
       explanation: "« Le » est le pronom COD singular (neutre ou masculin). Il se place avant le verbe « reconnaît ».",
       wrongAnswers: [
@@ -2069,6 +2097,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom COD approprié",
       phrase: { before: "Vous ", after: " dites demain." },
+      hint: "dire",
       answer: "me",
       explanation: "« Me » est le pronom COD singulier à la première personne. Il se place avant le verbe « dites ».",
       wrongAnswers: [
@@ -2086,6 +2115,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom COD approprié",
       phrase: { before: "Ils ", after: " ont appelés hier soir." },
+      hint: "appeler",
       answer: "les",
       explanation: "« Les » est le pronom COD plural qui se place avant l'auxiliaire « ont » au passé composé.",
       wrongAnswers: [
@@ -2363,6 +2393,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom COI correct : « Je ___ ai parlé hier. »",
       phrase: { before: "Je ", after: " ai parlé hier." },
+      hint: "parler",
       answer: "lui",
       explanation: "Le pronom COI « lui » doit précéder l'auxiliaire « ai » au passé composé. « Je lui ai parlé » = je lui ai parlé (à lui/à elle).",
       wrongAnswers: [
@@ -2381,6 +2412,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom COI correct : « Elle ___ envoie un message. »",
       phrase: { before: "Elle ", after: " envoie un message." },
+      hint: "envoyer",
       answer: "leur",
       explanation: "Le pronom COI « leur » (à eux, à elles) doit précéder le verbe « envoie ». « Elle leur envoie » = elle envoie un message à eux/à elles.",
       wrongAnswers: [
@@ -2400,6 +2432,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom COI correct : « Tu ___ dis toujours la vérité. »",
       phrase: { before: "Tu ", after: " dis toujours la vérité." },
+      hint: "dire",
       answer: "me",
       explanation: "Le pronom COI « me » (à moi) doit précéder le verbe « dis ». « Tu me dis » = tu dis la vérité à moi.",
       wrongAnswers: [
@@ -2419,6 +2452,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom COI correct : « Nous ___ rendons visite chaque mois. »",
       phrase: { before: "Nous ", after: " rendons visite chaque mois." },
+      hint: "rendre visite",
       answer: "lui",
       explanation: "Le pronom COI « lui » (à lui/à elle) doit précéder le verbe « rendons ». « Nous lui rendons visite » = nous visitons régulièrement lui/elle.",
       wrongAnswers: [
@@ -2438,6 +2472,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom COI correct : « Vous ___ permettez de partir. »",
       phrase: { before: "Vous ", after: " permettez de partir." },
+      hint: "permettre",
       answer: "leur",
       explanation: "Le pronom COI « leur » (à eux, à elles) doit précéder le verbe « permettez ». « Vous leur permettez » = vous donnez la permission à eux/à elles.",
       wrongAnswers: [
@@ -2717,6 +2752,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au passé composé en plaçant le pronom correctement",
       phrase: { before: "Je ", after: " ai donné le document." },
+      hint: "donner",
       answer: "te",
       explanation: "Le pronom indirect « te » (deuxième personne singulière) se place avant l'auxiliaire « ai ».",
       wrongAnswers: [
@@ -2734,6 +2770,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom approprié au passé composé",
       phrase: { before: "Nous ", after: " avons vus pendant les vacances." },
+      hint: "voir",
       answer: "les",
       explanation: "Le pronom objet direct pluriel « les » se place avant l'auxiliaire « avons ».",
       wrongAnswers: [
@@ -2751,6 +2788,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Placez le pronom avant l'auxiliaire au passé composé",
       phrase: { before: "Elle ", after: " a écrit plusieurs fois cette année." },
+      hint: "écrire",
       answer: "m'",
       explanation: "Le pronom indirect « m' » (contraction de « me ») se place avant l'auxiliaire « a ». L'élision est nécessaire avant voyelle.",
       wrongAnswers: [
@@ -2768,6 +2806,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom convenable au passé composé",
       phrase: { before: "Vous ", after: " avez rencontrées lors du congrès." },
+      hint: "rencontrer",
       answer: "les",
       explanation: "Le pronom objet direct féminin pluriel « les » se place avant l'auxiliaire « avez ». L'accord du participe se fait avec « les ».",
       wrongAnswers: [
@@ -2785,6 +2824,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe avec le pronom au passé composé",
       phrase: { before: "Tu ", after: " a offert un cadeau magnifique." },
+      hint: "offrir",
       answer: "lui",
       explanation: "Le pronom objet indirect singulier « lui » se place avant l'auxiliaire « a ». C'est la forme indirecte appropriée.",
       wrongAnswers: [
@@ -3062,6 +3102,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom objet direct ou indirect qui convient.",
       phrase: { before: "Nous voulons ", after: " parler avant de partir." },
+      hint: "parler",
       answer: "lui",
       explanation: "« Lui » (pronom indirect) est correct car « parler à quelqu'un » utilise un objet indirect. « Nous voulons lui parler » = « We want to speak to him/her ».",
       wrongAnswers: [
@@ -3081,6 +3122,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom approprié.",
       phrase: { before: "Peux-tu ", after: " appeler ce soir ?" },
+      hint: "appeler",
       answer: "me",
       explanation: "« Me » (pronom direct) est correct. « Peux-tu m'appeler ce soir ? » = « Can you call me tonight? » Note: « me » devient « m' » devant la voyelle.",
       wrongAnswers: [
@@ -3100,6 +3142,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le verbe à l'infinitif précédé du pronom correct.",
       phrase: { before: "Vous devez ", after: " ce document avant vendredi." },
+      hint: "signer",
       answer: "le signer",
       explanation: "« Le signer » est correct. Le pronom direct « le » précède l'infinitif « signer ». « Vous devez le signer » = « You must sign it ».",
       wrongAnswers: [
@@ -3119,6 +3162,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec le pronom réfléchi ou objet approprié.",
       phrase: { before: "Je veux ", after: " demain matin." },
+      hint: "se reposer",
       answer: "me reposer",
       explanation: "« Me reposer » est correct. Le pronom réfléchi « me » précède l'infinitif réfléchi « reposer ». « Je veux me reposer demain matin » = « I want to rest (myself) tomorrow morning ».",
       wrongAnswers: [
@@ -3138,6 +3182,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe à l'infinitif avec le pronom approprié.",
       phrase: { before: "Elles vont ", after: " leurs enfants à l'école." },
+      hint: "accompagner",
       answer: "les accompagner",
       explanation: "« Les accompagner » est correct. Le pronom direct plural « les » (les = leurs enfants) précède l'infinitif « accompagner ». « Elles vont les accompagner » = « They are going to accompany/take them to school ».",
       wrongAnswers: [
@@ -3418,6 +3463,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Transformez à l'impératif affirmatif en remplaçant le pronom complément",
       phrase: { before: "Regarde cet ami ! Regarde-", after: " !" },
+      hint: "regarder",
       answer: "le",
       explanation: "À l'impératif affirmatif, le pronom complément d'objet direct se place après le verbe avec un trait d'union : « regarde-le ».",
       wrongAnswers: [
@@ -3435,6 +3481,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Transformez à l'impératif négatif en remplaçant le pronom complément",
       phrase: { before: "Tu dois appeler ta mère. → N'", after: " pas !" },
+      hint: "appeler",
       answer: "l'appelle",
       explanation: "À l'impératif négatif, le pronom complément d'objet direct se place avant le verbe. Avec un verbe commençant par une voyelle, « la » se contracte en « l' » : « ne l'appelle pas ».",
       wrongAnswers: [
@@ -3452,6 +3499,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez l'impératif négatif avec deux pronoms",
       phrase: { before: "Ne ", after: " pas cette histoire ! » (sens : ne me la dis pas)" },
+      hint: "dire",
       answer: "me la dis",
       explanation: "À l'impératif négatif avec deux pronoms, l'ordre est : pronom indirect (« me ») puis pronom direct (« la ») puis verbe. La forme correcte est « ne me la dis pas ».",
       wrongAnswers: [
@@ -3469,6 +3517,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez l'impératif affirmatif avec deux pronoms",
       phrase: { before: "Donne le livre à Pierre ! → Donne-", after: " !" },
+      hint: "donner",
       answer: "le-lui",
       explanation: "À l'impératif affirmatif avec deux pronoms, l'ordre est : COD (« le ») puis COI (« lui »). La forme correcte est « donne-le-lui ».",
       wrongAnswers: [
@@ -3486,6 +3535,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Transformez à l'impératif affirmatif avec deux pronoms",
       phrase: { before: "Envoie la lettre à ta grand-mère ! → Envoie-", after: " !" },
+      hint: "envoyer",
       answer: "la-lui",
       explanation: "À l'impératif affirmatif avec deux pronoms, l'ordre est : COD (« la ») puis COI (« lui »). La forme correcte est « envoie-la-lui ».",
       wrongAnswers: [
@@ -3737,6 +3787,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Conjuguez avec les deux pronoms COI et COD à l'ordre correct",
       phrase: { before: "Il ", after: " donne ce livre. » (à moi)" },
+      hint: "donner",
       answer: "me le",
       explanation: "Le COI « me » doit venir avant le COD « le ». Construction correcte : il me le donne.",
       wrongAnswers: [
@@ -3754,6 +3805,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec les pronoms COI et COD au passé composé",
       phrase: { before: "Elle ", after: " a montré ces photos. » (à nous)" },
+      hint: "montrer",
       answer: "nous les",
       explanation: "Le COI « nous » doit venir avant le COD « les ». Construction correcte : elle nous les a montré(e)s.",
       wrongAnswers: [
@@ -3771,6 +3823,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Conjuguez avec les deux pronoms (COI = « lui »)",
       phrase: { before: "Je ", after: " ai expliqué cette règle. » (à Pierre)" },
+      hint: "expliquer",
       answer: "la lui",
       explanation: "Quand le COI est « lui », le COD « la » vient AVANT « lui ». Construction : je la lui ai expliquée.",
       wrongAnswers: [
@@ -3788,6 +3841,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec les deux pronoms (COI = « leur »)",
       phrase: { before: "Nous ", after: " enverrons ces documents. » (à vos parents)" },
+      hint: "envoyer",
       answer: "les leur",
       explanation: "Quand le COI est « leur », le COD « les » vient AVANT « leur ». Construction : nous les leur enverrons.",
       wrongAnswers: [
@@ -3805,6 +3859,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Conjuguez au futur avec l'ordre correct des deux pronoms",
       phrase: { before: "Tu ", after: " rendras ce livre demain. » (à moi)" },
+      hint: "rendre",
       answer: "me le",
       explanation: "Le COI « me » doit venir avant le COD « le ». Construction correcte : tu me le rendras.",
       wrongAnswers: [
@@ -4108,6 +4163,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez avec les pronoms corrects (pronom indirect + pronom direct)",
       phrase: { before: "Le professeur ", after: " explique les concepts difficiles." },
+      hint: "expliquer",
       answer: "nous les",
       explanation: "L'ordre correct est : pronom indirect (nous) + pronom direct (les). « nous les » = « à nous » + « les concepts » = « à nous les explique ».",
       wrongAnswers: [
@@ -4124,6 +4180,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez avec l'ordre correct des pronoms doubles",
       phrase: { before: "Je ", after: " vends très cher." },
+      hint: "vendre",
       answer: "te la",
       explanation: "L'ordre correct est : pronom indirect (te) + pronom direct (la). « te la » = « à toi » + « la maison/voiture ».",
       wrongAnswers: [
@@ -4141,6 +4198,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez avec les pronoms à l'ordre correct",
       phrase: { before: "Elles ", after: " envoient les documents demain." },
+      hint: "envoyer",
       answer: "vous les",
       explanation: "L'ordre correct est : pronom indirect (vous) + pronom direct (les). « vous les » = « à vous » + « les documents ».",
       wrongAnswers: [
@@ -4158,6 +4216,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec les pronoms à l'ordre approprié",
       phrase: { before: "Il ", after: " a promis une augmentation." },
+      hint: "promettre",
       answer: "me la",
       explanation: "L'ordre correct est : pronom indirect (me) + pronom direct (la). « me la » = « à moi » + « l'augmentation ».",
       wrongAnswers: [
@@ -4175,6 +4234,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez avec les pronoms dans le bon ordre",
       phrase: { before: "Vous ", after: " montrez le chemin ?" },
+      hint: "montrer",
       answer: "me le",
       explanation: "L'ordre correct est : pronom indirect (me) + pronom direct (le). « me le » = « à moi » + « le chemin ».",
       wrongAnswers: [
@@ -4439,6 +4499,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec les bons pronoms doubles (COD + COI)",
       phrase: { before: "Je ", after: " ai expliqué la règle." },
+      hint: "expliquer",
       answer: "le lui",
       explanation: "Ordre correct : COD (le) + COI (lui). \"La règle\" → \"le\" en tant que COD.",
       wrongAnswers: [
@@ -4457,6 +4518,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec les bons pronoms doubles",
       phrase: { before: "Elles ", after: " ont montré ces documents hier." },
+      hint: "montrer",
       answer: "les leur",
       explanation: "Ordre correct : COD pluriel (les) + COI pluriel (leur) au passé composé.",
       wrongAnswers: [
@@ -4474,6 +4536,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec les pronoms doubles au futur",
       phrase: { before: "Je ", after: " enverrai cette lettre demain." },
+      hint: "envoyer",
       answer: "la lui",
       explanation: "Ordre correct : COD (la) + COI (lui) au futur. \"Cette lettre\" → \"la\".",
       wrongAnswers: [
@@ -4504,6 +4567,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec les pronoms doubles",
       phrase: { before: "Passe-", after: " mon téléphone, s'il te plaît !" },
+      hint: "passer",
       answer: "le-moi",
       explanation: "À l'impératif affirmatif, l'ordre est COD puis COI avec des tirets : « le » (COD) + « moi » (COI) → « passe-le-moi ».",
       wrongAnswers: [
@@ -4521,6 +4585,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec les bons pronoms doubles à l'impératif affirmatif",
       phrase: { before: "Raconte-", after: " cette blague !" },
+      hint: "raconter",
       answer: "la-moi",
       explanation: "À l'impératif affirmatif, l'ordre est COD puis COI avec des tirets : « la » (COD, « cette blague » féminin) + « moi » (COI) → « raconte-la-moi ».",
       wrongAnswers: [
@@ -4798,6 +4863,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Réécrivez la phrase à l'impératif affirmatif en remplaçant les pronoms et en plaçant les deux pronoms correctement.",
       phrase: { before: "Donne cette clé à moi, s'il te plaît. » → Donne-", after: " !" },
+      hint: "donner",
       answer: "la-moi",
       explanation: "À l'impératif affirmatif avec deux pronoms : verbe + COD (la) + COI (moi). « Donne-la-moi ».",
       wrongAnswers: [
@@ -4814,6 +4880,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Conjuguez les verbes à l'impératif affirmatif avec les pronoms en ordre correct.",
       phrase: { before: "Montre tes dessins à tes amis. » → Montre-", after: " !" },
+      hint: "montrer",
       answer: "les-leur",
       explanation: "À l'impératif affirmatif : verbe + COD (les) + COI (leur). « Montre-les-leur ».",
       wrongAnswers: [
@@ -4831,6 +4898,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez la phrase en mettant les deux pronoms à l'impératif affirmatif.",
       phrase: { before: "Dis la vérité à ta mère. » → Dis-", after: " !" },
+      hint: "dire",
       answer: "la-lui",
       explanation: "À l'impératif affirmatif : verbe + COD (la) + COI (lui). « Dis-la-lui ».",
       wrongAnswers: [
@@ -4848,6 +4916,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Mettez les verbes entre parenthèses à l'impératif affirmatif avec les deux pronoms.",
       phrase: { before: "Apporte cette lettre à ta grand-mère. » → (Apporter) -", after: " !" },
+      hint: "apporter",
       answer: "la-lui",
       explanation: "À l'impératif affirmatif : verbe + COD (la) + COI (lui). « Apporte-la-lui ».",
       wrongAnswers: [
@@ -4865,6 +4934,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec les pronoms COD et COI à l'ordre correct pour l'impératif affirmatif.",
       phrase: { before: "Rends ces affaires à tes copains. » → Rends-", after: " !" },
+      hint: "rendre",
       answer: "les-leur",
       explanation: "À l'impératif affirmatif : verbe + COD (les) + COI (leur). « Rends-les-leur ».",
       wrongAnswers: [
@@ -5142,6 +5212,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplacez « de + nom » par le pronom « en ».",
       phrase: { before: "J'", after: " veux beaucoup." },
+      hint: "vouloir",
       answer: "en",
       explanation: "« Je veux beaucoup de café » → « J'en veux beaucoup. » Le pronom « en » remplace « de café ».",
       wrongAnswers: [
@@ -5159,6 +5230,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplacez « de + nom » par « en » au passé composé.",
       phrase: { before: "Ils ", after: " ont parlé longtemps." },
+      hint: "parler",
       answer: "en",
       explanation: "« Ils ont parlé de ce projet » → « Ils en ont parlé longtemps. » Au passé composé, « en » se place avant l'auxiliaire.",
       wrongAnswers: [
@@ -5176,6 +5248,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom « en » à la place de « de + nom ».",
       phrase: { before: "Elle m'", after: " a parlé hier." },
+      hint: "parler",
       answer: "en",
       explanation: "« Parler de quelque chose » → « en parler ». Avec un objet indirect (m'), on utilise l'ordre : pronom indirect + « en » + verbe. « Elle m'en a parlé. »",
       wrongAnswers: [
@@ -5193,6 +5266,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplacez le complément de peur par le pronom « en ».",
       phrase: { before: "Nous ", after: " avions vraiment peur." },
+      hint: "avoir peur",
       answer: "en",
       explanation: "« Avoir peur de l'orage » → « en avoir peur ». « Nous en avions vraiment peur » signifie que nous avions peur de cet événement.",
       wrongAnswers: [
@@ -5210,6 +5284,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplacez « de + nom » par « en » avec la construction « se douter de ».",
       phrase: { before: "Tu n'", after: " doutes plus." },
+      hint: "se douter",
       answer: "en",
       explanation: "« Se douter de quelque chose » → « s'en douter ». « Tu n'en doutes plus » signifie que tu ne doutes plus de sa loyauté.",
       wrongAnswers: [
@@ -5487,6 +5562,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au présent et remplacez le complément par « y ».",
       phrase: { before: "Aller à la plage pendant les vacances d'été est toujours agréable. Nous ", after: " allons chaque année." },
+      hint: "aller",
       answer: "y",
       explanation: "« Y » remplace « à la plage ». Au présent avec « nous » : « Nous y allons ».",
       wrongAnswers: [
@@ -5506,6 +5582,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Mettez le verbe au passé composé et remplacez le complément par « y ».",
       phrase: { before: "Ils se sont intéressés à cette question difficile. Ses collègues ", after: " se sont intéressées aussi." },
+      hint: "s'intéresser",
       answer: "y",
       explanation: "« Y » remplace « à cette question ». Au passé composé réfléchi : « Ses collègues s'y sont intéressées aussi ».",
       wrongAnswers: [
@@ -5525,6 +5602,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Mettez au futur simple et remplacez le complément par « y ».",
       phrase: { before: "Vous vous opposerez à cette décision injuste. Je ne m'", after: " opposerai pas." },
+      hint: "s'opposer",
       answer: "y",
       explanation: "Forme négative au futur : « Je ne m'y opposerai pas ». Le pronom « y » remplace « à cette décision ».",
       wrongAnswers: [
@@ -5544,6 +5622,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Conjuguez au passé composé et remplacez le complément par « y ».",
       phrase: { before: "Nous avons participé à ce projet passionnant. Mes frères ", after: " ont participé aussi." },
+      hint: "participer",
       answer: "y",
       explanation: "Au passé composé : « Mes frères y ont participé aussi ». Le pronom « y » remplace « à ce projet ».",
       wrongAnswers: [
@@ -5563,6 +5642,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Mettez à l'imparfait et remplacez le complément par « y ».",
       phrase: { before: "Vous vous habituiez à ce climat tropical. Nous ", after: " nous habituions progressivement." },
+      hint: "s'habituer",
       answer: "y",
       explanation: "À l'imparfait avec verbe réfléchi : « Nous nous y habituions progressivement ». Le pronom « y » remplace « à ce climat ».",
       wrongAnswers: [
@@ -5840,8 +5920,9 @@ const section: Section = {
       type: "input",
       ruleId: "11-17",
       generatedBy: "sonnet",
-      prompt: "Conjuguez avec l'ordre correct des pronoms. (Il donne du café à sa mère.)",
-      phrase: { before: "Il ", after: " donne." },
+      prompt: "Conjuguez avec l'ordre correct des pronoms.",
+      phrase: { before: "Il ", after: " donne. » (Give me some of it.)" },
+      hint: "donner",
       answer: "le lui",
       explanation: "Ordre correct : pronom direct (le) + pronom indirect (lui). « Il le lui donne » = He gives it to her.",
       wrongAnswers: [
@@ -5857,8 +5938,9 @@ const section: Section = {
       type: "input",
       ruleId: "11-17",
       generatedBy: "sonnet",
-      prompt: "Remplissez avec les pronoms appropriés. (Je parle de cette histoire à mes amis.)",
+      prompt: "Remplissez avec les pronoms appropriés. (Je parle de cette histoire à mes friends.)",
       phrase: { before: "J'", after: " parle." },
+      hint: "parler",
       answer: "leur en",
       explanation: "Ordre correct : pronom indirect (leur) + « en ». « En » remplace « de cette histoire ».",
       wrongAnswers: [
@@ -5874,8 +5956,9 @@ const section: Section = {
       type: "input",
       ruleId: "11-17",
       generatedBy: "sonnet",
-      prompt: "Construisez avec l'ordre des pronoms correct. (Il y a beaucoup de livres sur cette étagère.)",
-      phrase: { before: "Il ", after: " a beaucoup." },
+      prompt: "Construise avec l'ordre des pronoms correct. (There are some books there.)",
+      phrase: { before: "Il ", after: " a beaucoup. » (There are a lot there.)" },
+      hint: "y a",
       answer: "y en",
       explanation: "Ordre correct : « y » (le lieu) + « en » (la quantité indéterminée). « Il y en a » = There are (some) there.",
       wrongAnswers: [
@@ -5891,8 +5974,9 @@ const section: Section = {
       type: "input",
       ruleId: "11-17",
       generatedBy: "sonnet",
-      prompt: "Complétez avec l'ordre exact des pronoms. (Elle montre des photos à ses parents.)",
+      prompt: "Remplissez avec les pronoms dans le bon ordre. (She shows her photos to her parents)",
       phrase: { before: "Elle ", after: " montre." },
+      hint: "montrer",
       answer: "leur en",
       explanation: "Ordre correct : pronom indirect (leur) + « en ». « En » remplace « des photos ».",
       wrongAnswers: [
@@ -5908,8 +5992,9 @@ const section: Section = {
       type: "input",
       ruleId: "11-17",
       generatedBy: "sonnet",
-      prompt: "Remplissez avec les pronoms dans le bon ordre. (Je dois reconnaître mes erreurs à cet endroit.)",
+      prompt: "Complétez avec l'ordre exact des pronoms. (I must recognize my mistakes there.)",
       phrase: { before: "J'", after: " reconnais." },
+      hint: "reconnaître",
       answer: "les y",
       explanation: "Ordre correct : pronom direct (les) + « y ». « Les » remplace « mes erreurs », et « y » indique le lieu.",
       wrongAnswers: [
@@ -6187,6 +6272,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé avec accord du participe passé si nécessaire.",
       phrase: { before: "La robe que j'ai ", after: " hier était magnifique." },
+      hint: "acheter",
       answer: "achetée",
       explanation: "Le pronom relatif « que » remplace « la robe » (féminin singulier) qui est le COD antéposé, donc le participe passé « achetée » s'accorde au féminin singulier.",
       wrongAnswers: [
@@ -6204,6 +6290,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase avec la forme correcte du participe passé.",
       phrase: { before: "Je vous les ai ", after: " ce matin." },
+      hint: "envoyer",
       answer: "envoyer",
       explanation: "Avec le pronom « les » (féminin pluriel) en position de COD antéposé, le participe passé doit s'accorder : « envoyées ». Cependant, si vous cherchez le verbe infinitif pour une construction différente, ce serait « envoyer ».",
       wrongAnswers: [
@@ -6222,6 +6309,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplacez le blanc avec le participe passé correctement accordé.",
       phrase: { before: "Les livres que vous nous avez ", after: " contenaient beaucoup d'informations utiles." },
+      hint: "recommander",
       answer: "recommandés",
       explanation: "Le pronom relatif « que » remplace « les livres » (masculin pluriel) en position de COD antéposé, donc le participe passé s'accorde au masculin pluriel.",
       wrongAnswers: [
@@ -6239,6 +6327,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au passé composé avec accord si nécessaire.",
       phrase: { before: "Quelle décision avez-vous ", after: " à la fin ?" },
+      hint: "prendre",
       answer: "prise",
       explanation: "Le pronom interrogatif « quelle » remplace une décision (féminin singulier) qui est le COD antéposé, donc le participe passé s'accorde au féminin singulier : « prise ».",
       wrongAnswers: [
@@ -6256,6 +6345,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez le blanc avec le participe passé correctement accordé.",
       phrase: { before: "Les demandes que j'ai ", after: " ont finalement été approuvées." },
+      hint: "soumettre",
       answer: "soumises",
       explanation: "Le pronom relatif « que » remplace « les demandes » (féminin pluriel) qui est le COD antéposé, donc le participe passé s'accorde au féminin pluriel : « soumises ».",
       wrongAnswers: [
@@ -6533,6 +6623,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplacez le complément en gras par le pronom correct (y ou en) : « Tu penses **à tes vacances**. Tu ___ penses ? »",
       phrase: { before: "Tu ", after: " penses ?" },
+      hint: "penser",
       answer: "y",
       explanation: "« Penser à » (to think of/about) se remplace par « y ». « Tu y penses » signifie « Tu penses à tes vacances ».",
       wrongAnswers: [
@@ -6551,6 +6642,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplacez le complément en gras par le pronom correct (y ou en) : « Qu'est-ce que tu penses **de ce livre** ? J'___ pense que c'est bien. »",
       phrase: { before: "J'", after: " pense que c'est bien." },
+      hint: "penser",
       answer: "en",
       explanation: "« Penser de » (to have an opinion of) se remplace par « en ». « J'en pense que... » exprime l'opinion à propos du livre.",
       wrongAnswers: [
@@ -6569,6 +6661,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom correct (y ou en) : « Nous avons besoin **de votre aide**. Nous ___ avons besoin. »",
       phrase: { before: "Nous ", after: " avons besoin." },
+      hint: "avoir besoin",
       answer: "en",
       explanation: "« Avoir besoin de » prend « de ». Le pronom « en » remplace ce complément indirect. « Nous en avons besoin » = « Nous avons besoin de votre aide ».",
       wrongAnswers: [
@@ -6587,6 +6680,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom correct (y ou en) : « Ils s'intéressent **à l'art contemporain**. Ils ___ s'intéressent beaucoup. »",
       phrase: { before: "Ils ", after: " s'intéressent beaucoup." },
+      hint: "s'intéresser",
       answer: "y",
       explanation: "« S'intéresser à » prend « à ». Le pronom « y » remplace ce complément indirect. « Ils y s'intéressent » = « Ils s'intéressent à l'art ».",
       wrongAnswers: [
@@ -6605,6 +6699,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom correct (y ou en) : « Elle tient beaucoup **à sa liberté**. Elle ___ tient énormément. »",
       phrase: { before: "Elle ", after: " tient énormément." },
+      hint: "tenir",
       answer: "y",
       explanation: "« Tenir à » (to care about, value) prend « à ». Le pronom « y » remplace ce complément indirect. « Elle y tient » = « Elle tient à sa liberté ».",
       wrongAnswers: [
@@ -6883,6 +6978,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom qui remplace le COD en gras",
       phrase: { before: "Marie a rencontré **ses amies** et elle ", after: " a invitées à prendre un café." },
+      hint: "inviter",
       answer: "les",
       explanation: "« Ses amies » (féminin pluriel) est le COD. Le pronom COD correspondant est « les ».",
       wrongAnswers: [
@@ -6900,6 +6996,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom qui remplace le complément introduit par « de »",
       phrase: { before: "Nous avons parlé **de ce projet** avec le directeur et il ", after: " a donné son opinion définitive." },
+      hint: "parler",
       answer: "en",
       explanation: "« De ce projet » est un complément introduit par « de ». Le pronom correspondant est « en ».",
       wrongAnswers: [
@@ -6917,6 +7014,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom qui remplace le complément introduit par « à »",
       phrase: { before: "Vous avez pensé **à vos examens** et vous ", after: " avez enfin commencé à vous préparer sérieusement." },
+      hint: "penser",
       answer: "y",
       explanation: "« À vos examens » est un complément introduit par « à ». Le pronom correspondant est « y ».",
       wrongAnswers: [
@@ -6934,6 +7032,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom COI (à une personne)",
       phrase: { before: "Mon frère a raconté ses aventures **à ses amis** et il ", after: " a également montré ses photos." },
+      hint: "raconter",
       answer: "leur",
       explanation: "« À ses amis » (pluriel) est un COI. Le pronom COI correspondant est « leur ».",
       wrongAnswers: [
@@ -6951,6 +7050,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom approprié selon la nature du complément",
       phrase: { before: "Combien de portions avez-vous commandées au restaurant ? » « Nous ", after: " avons commandé trois pour notre dîner." },
+      hint: "commander",
       answer: "en",
       explanation: "« Combien de portions » indique une quantité. Le pronom pour remplacer une quantité est « en ».",
       wrongAnswers: [

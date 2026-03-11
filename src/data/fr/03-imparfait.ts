@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "03-imparfait",
   title: "L'imparfait",
-  description: "Formation, emplois, opposition passé composé/imparfait",
+  description: "Formation et emplois de l'imparfait",
   rules: [
     { id: "03-01", sectionId: "03-imparfait", title: "Formation de l'imparfait : radical du présent (nous) + terminaisons (-ais, -ais, -ait, -ions, -iez, -aient)" },
     { id: "03-02", sectionId: "03-imparfait", title: "L'imparfait du verbe être (seul verbe au radical irrégulier : ét-)" },
@@ -297,6 +297,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'imparfait (je)",
       phrase: { before: "J'", after: " toujours content de vous rencontrer." },
+      hint: "être",
       answer: "étais",
       explanation: "L'imparfait de « être » à la 1ère personne du singulier. Le radical « ét- » (du présent nous sommes) + terminaison « -ais ».",
       wrongAnswers: [
@@ -314,6 +315,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au imparfait (ils)",
       phrase: { before: "Ils ", after: " souvent à la plage en juillet." },
+      hint: "aller",
       answer: "allaient",
       explanation: "L'imparfait d'« aller » à la 3e personne du pluriel. Le radical « all- » (du présent nous allons) + terminaison « -aient ».",
       wrongAnswers: [
@@ -331,6 +333,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au imparfait (tu)",
       phrase: { before: "Tu ", after: " des histoires fascinantes quand tu étais enfant." },
+      hint: "lire",
       answer: "lisais",
       explanation: "L'imparfait de « lire » à la 2e personne du singulier. Le radical « lis- » (du présent nous lisons) + terminaison « -ais ».",
       wrongAnswers: [
@@ -348,6 +351,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « finir » à l'imparfait (nous)",
       phrase: { before: "Nous ", after: " nos devoirs chaque jour avant d'aller à l'école." },
+      hint: "finir",
       answer: "finissions",
       explanation: "L'imparfait de « finir » (régulier -ir) à la 1ère personne du pluriel. Le radical du présent nous form « finiss- » + terminaison « -ions ».",
       wrongAnswers: [
@@ -365,6 +369,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au imparfait (vous)",
       phrase: { before: "Vous ", after: " la leçon avec beaucoup d'attention." },
+      hint: "écouter",
       answer: "écoutiez",
       explanation: "L'imparfait d'« écouter » (régulier -er) à la 2e personne du pluriel. Le radical « écout- » (du présent nous écoutons) + terminaison « -iez ».",
       wrongAnswers: [
@@ -603,6 +608,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe être à l'imparfait pour compléter la phrase.",
       phrase: { before: "Quand j'", after: " enfant, je rêvais de devenir pilote." },
+      hint: "être",
       answer: "étais",
       explanation: "Première personne du singulier de l'imparfait du verbe être : étais (radical ét- + terminaison -ais)",
       wrongAnswers: [
@@ -620,6 +626,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe être à l'imparfait pour compléter la phrase.",
       phrase: { before: "Pendant que vous ", after: " en vacances, nous travaillions dur." },
+      hint: "être",
       answer: "étiez",
       explanation: "Deuxième personne du pluriel de l'imparfait : vous étiez (radical ét- + terminaison -iez)",
       wrongAnswers: [
@@ -637,6 +644,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe être à l'imparfait pour compléter la phrase.",
       phrase: { before: "Nous ", after: " très heureux lors de cette célébration." },
+      hint: "être",
       answer: "étions",
       explanation: "Première personne du pluriel de l'imparfait : nous étions (radical ét- + terminaison -ions)",
       wrongAnswers: [
@@ -654,6 +662,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe être à l'imparfait pour compléter la phrase.",
       phrase: { before: "Elles ", after: " les plus compétentes de l'équipe." },
+      hint: "être",
       answer: "étaient",
       explanation: "Troisième personne du pluriel de l'imparfait : elles étaient (radical ét- + terminaison -aient)",
       wrongAnswers: [
@@ -671,6 +680,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe être à l'imparfait pour compléter la phrase.",
       phrase: { before: "Tu ", after: " un excellent professeur à cette époque." },
+      hint: "être",
       answer: "étais",
       explanation: "Deuxième personne du singulier de l'imparfait : tu étais (radical ét- + terminaison -ais)",
       wrongAnswers: [
@@ -935,6 +945,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « placer » à l'imparfait, 1re personne du singulier",
       phrase: { before: "Quand j'étais enfant, je ", after: " toujours mes jouets au même endroit." },
+      hint: "placer",
       answer: "plaçais",
       explanation: "Le verbe « placer » à l'imparfait exige la cédille (ç) avant -ais pour conserver le son /s/.",
       wrongAnswers: [
@@ -952,6 +963,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « bouger » à l'imparfait, 1re personne du pluriel",
       phrase: { before: "Nous ne ", after: " jamais pendant les discours solennels." },
+      hint: "bouger",
       answer: "bougions",
       explanation: "À la 1re personne du pluriel, il n'y a pas d'ajout de 'e' devant -ions car le 'i' rend le 'g' automatiquement doux.",
       wrongAnswers: [
@@ -969,6 +981,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « effacer » à l'imparfait, 3e personne du singulier",
       phrase: { before: "Il ", after: " le tableau noir à la fin de chaque cours." },
+      hint: "effacer",
       answer: "effaçait",
       explanation: "Le verbe « effacer » à la 3e personne du singulier exige la cédille avant -ait.",
       wrongAnswers: [
@@ -986,6 +999,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « obliger » à l'imparfait, 2e personne du pluriel",
       phrase: { before: "Vous ", after: " tous les élèves à respecter les règles." },
+      hint: "obliger",
       answer: "obligiez",
       explanation: "À la 2e personne du pluriel, il n'y a pas d'ajout de 'e' devant -iez car le 'i' rend le 'g' doux.",
       wrongAnswers: [
@@ -1003,6 +1017,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « commencer » à l'imparfait, 3e personne du pluriel",
       phrase: { before: "Ils ", after: " à discuter dès qu'on ouvrait la porte." },
+      hint: "commencer",
       answer: "commençaient",
       explanation: "Le verbe « commencer » à la 3e personne du pluriel exige la cédille avant -aient pour conserver /s/.",
       wrongAnswers: [
@@ -1308,6 +1323,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « oublier » à l'imparfait pour « nous ».",
       phrase: { before: "Nous ", after: " jamais cette belle journée." },
+      hint: "oublier",
       answer: "oubliions",
       explanation: "Le verbe « oublier » à l'imparfait nous nécessite le double-i : oubliions. La terminaison -ions s'ajoute au radical en -i.",
       wrongAnswers: [
@@ -1325,6 +1341,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « crier » à l'imparfait pour « vous ».",
       phrase: { before: "Vous ", after: " de joie en voyant le résultat." },
+      hint: "crier",
       answer: "criiez",
       explanation: "Le verbe « crier » à l'imparfait vous nécessite le double-i : criiez. La terminaison -iez s'ajoute au radical en -i.",
       wrongAnswers: [
@@ -1342,6 +1359,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « apprécier » à l'imparfait pour « nous ».",
       phrase: { before: "Nous ", after: " beaucoup ces moments en famille." },
+      hint: "apprécier",
       answer: "appréciions",
       explanation: "Le verbe « apprécier » à l'imparfait nous nécessite le double-i : appréciions. La terminaison -ions s'ajoute au radical en -i.",
       wrongAnswers: [
@@ -1359,6 +1377,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « confier » à l'imparfait pour « vous ».",
       phrase: { before: "Vous ", after: " vos pensées les plus intimes à cette personne." },
+      hint: "confier",
       answer: "confiiez",
       explanation: "Le verbe « confier » à l'imparfait vous nécessite le double-i : confiiez. La terminaison -iez s'ajoute au radical en -i.",
       wrongAnswers: [
@@ -1376,6 +1395,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « vérifier » à l'imparfait pour « nous ».",
       phrase: { before: "Nous ", after: " tous les détails avant de procéder." },
+      hint: "vérifier",
       answer: "vérifiions",
       explanation: "Le verbe « vérifier » à l'imparfait nous nécessite le double-i : vérifiions. La terminaison -ions s'ajoute au radical en -i.",
       wrongAnswers: [
@@ -1679,6 +1699,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « se laver » à l'imparfait avec le sujet « je »",
       phrase: { before: "Le matin, ", after: " avant le petit-déjeuner." },
+      hint: "se laver",
       answer: "me lavais",
       explanation: "L'imparfait du verbe « se laver » à la 1ère personne du singulier est « me lavais ». Le pronom réfléchi « me » est obligatoire pour les verbes pronominaux.",
       wrongAnswers: [
@@ -1696,6 +1717,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « se coucher » à l'imparfait avec le sujet « vous »",
       phrase: { before: "Autrefois, ", after: " à dix heures du soir." },
+      hint: "se coucher",
       answer: "vous couchiez",
       explanation: "L'imparfait du verbe « se coucher » à la 2e personne du pluriel est « vous couchiez ». Le pronom réfléchi « vous » et la terminaison « iez » marquent cette conjugaison.",
       wrongAnswers: [
@@ -1713,6 +1735,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « se souvenir » à l'imparfait avec le sujet « ils »",
       phrase: { before: "Pendant les vacances, ", after: " de toutes les aventures." },
+      hint: "se souvenir",
       answer: "se souvenaient",
       explanation: "L'imparfait du verbe « se souvenir » à la 3e personne du pluriel est « se souvenaient ». Le pronom réfléchi « se » et la terminaison « aient » marquent cette conjugaison.",
       wrongAnswers: [
@@ -1730,6 +1753,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « s'habiller » à l'imparfait avec le sujet « elle »",
       phrase: { before: "Ma mère ", after: " toujours élégamment pour sortir." },
+      hint: "s'habiller",
       answer: "s'habillait",
       explanation: "L'imparfait du verbe « s'habiller » à la 3e personne du singulier est « s'habillait ». Le pronom réfléchi « s' » (contraction avant voyelle) et la terminaison « ait » marquent cette forme.",
       wrongAnswers: [
@@ -1747,6 +1771,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « se dépêcher » à l'imparfait avec le sujet « nous »",
       phrase: { before: "Chaque jour, ", after: " pour arriver à l'école à temps." },
+      hint: "se dépêcher",
       answer: "nous dépêchions",
       explanation: "L'imparfait du verbe « se dépêcher » à la 1ère personne du pluriel est « nous dépêchions ». Le pronom réfléchi « nous » et la terminaison « ions » marquent cette conjugaison.",
       wrongAnswers: [
@@ -2024,6 +2049,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé pour exprimer une habitude",
       phrase: { before: "Quand j'étais petit, j'", after: " à la bibliothèque chaque samedi." },
+      hint: "aller",
       answer: "allais",
       explanation: "L'imparfait « allais » exprime l'habitude régulière d'aller à la bibliothèque.",
       wrongAnswers: [
@@ -2040,6 +2066,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « recevoir » à l'imparfait pour exprimer une habitude passée",
       phrase: { before: "D'habitude, elle ", after: " ses amis le dimanche à la maison." },
+      hint: "recevoir",
       answer: "recevait",
       explanation: "L'imparfait « recevait » décrit l'habitude régulière de recevoir ses amis.",
       wrongAnswers: [
@@ -2056,6 +2083,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez le blanc en conjuguant le verbe à l'imparfait",
       phrase: { before: "Autrefois, nous ", after: " nos vacances à la campagne." },
+      hint: "passer",
       answer: "passions",
       explanation: "L'imparfait « passions » exprime l'habitude régulière de passer les vacances à la campagne.",
       wrongAnswers: [
@@ -2072,6 +2100,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez l'expression « rendre visite à » à l'imparfait (il)",
       phrase: { before: "Chaque année, il ", after: " ses cousins en juillet." },
+      hint: "rendre visite à",
       answer: "rendait visite à",
       explanation: "L'imparfait « rendait visite à » exprime l'habitude annuelle de rendre visite.",
       wrongAnswers: [
@@ -2088,6 +2117,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « danser » à l'imparfait pour exprimer une habitude passée",
       phrase: { before: "Quand nous étions étudiants, nous ", after: " tout le vendredi soir." },
+      hint: "danser",
       answer: "dansions",
       explanation: "L'imparfait « dansions » exprime l'habitude régulière de danser le vendredi soir.",
       wrongAnswers: [
@@ -2364,6 +2394,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez le verbe à l'imparfait pour décrire la scène",
       phrase: { before: "Ce jour-là, le ciel ", after: " nuageux et gris." },
+      hint: "être",
       answer: "était",
       explanation: "L'imparfait « était » décrit les conditions météorologiques dans le passé.",
       wrongAnswers: [
@@ -2380,6 +2411,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « avoir » à l'imparfait pour décrire l'apparence",
       phrase: { before: "La jeune fille ", after: " les yeux bleus et longs cheveux noirs." },
+      hint: "avoir",
       answer: "avait",
       explanation: "L'imparfait « avait » décrit les traits physiques de la jeune fille.",
       wrongAnswers: [
@@ -2396,6 +2428,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez le verbe « sentir » à l'imparfait pour décrire une atmosphère",
       phrase: { before: "Dans la forêt, on ", after: " l'odeur douce des fleurs sauvages." },
+      hint: "sentir",
       answer: "sentait",
       explanation: "L'imparfait « sentait » décrit l'atmosphère olfactive du lieu.",
       wrongAnswers: [
@@ -2412,6 +2445,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « briller » à l'imparfait pour décrire une scène",
       phrase: { before: "Le soleil ", after: " sur l'horizon, peignant le ciel de couleurs orangées." },
+      hint: "briller",
       answer: "brillait",
       explanation: "L'imparfait « brillait » décrit l'apparence du soleil à ce moment-là.",
       wrongAnswers: [
@@ -2428,6 +2462,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez le verbe « souffler » à l'imparfait pour décrire les conditions météorologiques",
       phrase: { before: "Le vent ", after: " doucement et les feuilles des arbres dansaient." },
+      hint: "souffler",
       answer: "soufflait",
       explanation: "L'imparfait « soufflait » décrit les conditions météorologiques et l'atmosphère du moment.",
       wrongAnswers: [
@@ -2704,6 +2739,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez l'imparfait pour exprimer un état émotionnel : « Il ___ content de revoir ses amis. »",
       phrase: { before: "Il ", after: " content de revoir ses amis." },
+      hint: "être",
       answer: "était",
       explanation: "L'imparfait d'être (était) exprime un état émotionnel durable. Il était content décrit une joie prolongée dans le passé.",
       wrongAnswers: [
@@ -2720,6 +2756,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez l'imparfait pour exprimer une possession durable : « Nous ___ trois chats à cette époque. »",
       phrase: { before: "Nous ", after: " trois chats à cette époque." },
+      hint: "avoir",
       answer: "avions",
       explanation: "L'imparfait d'avoir (avions) exprime la possession durable. Nous avions trois chats décrit une situation prolongée dans le passé.",
       wrongAnswers: [
@@ -2736,6 +2773,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez l'imparfait pour exprimer une capacité passée : « Je n'___ pas nager à dix ans. »",
       phrase: { before: "Je n'", after: " pas nager à dix ans." },
+      hint: "pouvoir",
       answer: "pouvais",
       explanation: "L'imparfait de pouvoir (pouvais) exprime une incapacité durable. Je ne pouvais pas nager décrit une limitation prolongée.",
       wrongAnswers: [
@@ -2752,6 +2790,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez l'imparfait pour exprimer une opinion durable : « Elle ___ que tout allait bien. »",
       phrase: { before: "Elle ", after: " que tout allait bien." },
+      hint: "penser",
       answer: "pensait",
       explanation: "L'imparfait de penser (pensait) exprime une conviction maintenue. Elle pensait que exprime une opinion établie dans le passé.",
       wrongAnswers: [
@@ -2768,6 +2807,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez l'imparfait pour exprimer un état situationnel : « Vous ___ au Canada pendant plusieurs années. »",
       phrase: { before: "Vous ", after: " au Canada pendant plusieurs années." },
+      hint: "habiter",
       answer: "habitiez",
       explanation: "L'imparfait d'habiter (habitiez) exprime une situation durable. Vous habitiez au Canada décrit une période prolongée de vie.",
       wrongAnswers: [
@@ -3044,6 +3084,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé : l'action en cours à l'imparfait, puis l'interruption au passé composé.",
       phrase: { before: "J'", after: " quand mon frère est entré dans ma chambre." },
+      hint: "dormir",
       answer: "dormais",
       explanation: "L'imparfait (dormais) exprime l'action en cours qui a été interrompue par l'entrée de mon frère (passé composé).",
       wrongAnswers: [
@@ -3060,6 +3101,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « préparer » à l'imparfait (nous) pour l'action de fond.",
       phrase: { before: "Nous ", after: " notre projet quand l'électricité a coupé." },
+      hint: "préparer",
       answer: "préparions",
       explanation: "L'imparfait (préparions) pour l'action de fond qui se déroulait quand l'interruption s'est produite.",
       wrongAnswers: [
@@ -3076,6 +3118,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé : l'action en arrière-plan à l'imparfait.",
       phrase: { before: "Elle ", after: " une chanson quand ses amis ont frappé à la porte." },
+      hint: "chanter",
       answer: "chantait",
       explanation: "L'imparfait (chantait) exprime l'action en cours interrompue par les coups à la porte (passé composé).",
       wrongAnswers: [
@@ -3092,6 +3135,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « tenir » à l'imparfait (vous) pour l'action de fond.",
       phrase: { before: "Vous ", after: " une réunion importante quand nous avons eu des problèmes informatiques." },
+      hint: "tenir",
       answer: "teniez",
       explanation: "L'imparfait (teniez) pour l'action de fond interrompue par les problèmes informatiques (passé composé).",
       wrongAnswers: [
@@ -3108,6 +3152,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe conjugué au passé : l'action en cours à l'imparfait.",
       phrase: { before: "Ils ", after: " un film quand il a commencé à pleuvoir très fort." },
+      hint: "regarder",
       answer: "regardaient",
       explanation: "L'imparfait (regardaient) pour l'action de fond interrompue par le début de la pluie (passé composé).",
       wrongAnswers: [
@@ -3384,6 +3429,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe « vouloir » à l'imparfait de politesse",
       phrase: { before: "Excusez-moi, j'", after: " vous demander quelque chose." },
+      hint: "vouloir",
       answer: "voulais",
       explanation: "L'imparfait « voulais » adoucit la demande, la rendant plus courtoise qu'une demande directe au présent.",
       wrongAnswers: [
@@ -3400,6 +3446,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez avec le verbe « venir » à l'imparfait de politesse",
       phrase: { before: "Je ", after: " vous voir pour discuter du projet." },
+      hint: "venir",
       answer: "venais",
       explanation: "L'imparfait « venais » adoucit l'intention de visite, ce qui est courtois et professionnel.",
       wrongAnswers: [
@@ -3416,6 +3463,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe « désirer » à l'imparfait de politesse",
       phrase: { before: "J'", after: " vérifier si ma commande était prête." },
+      hint: "désirer",
       answer: "désirais",
       explanation: "L'imparfait « désirais » adoucit le but de la visite, ce qui est très courtois en contexte de service.",
       wrongAnswers: [
@@ -3432,6 +3480,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « passer » à l'imparfait pour exprimer poliment la raison d'une visite",
       phrase: { before: "Je ", after: " prendre des nouvelles de la situation." },
+      hint: "passer",
       answer: "passais",
       explanation: "L'imparfait « passais » exprime discrètement et poliment la raison d'une visite ou d'une approche.",
       wrongAnswers: [
@@ -3448,6 +3497,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « souhaiter » à l'imparfait pour adoucir une demande",
       phrase: { before: "J'", after: " avoir un conseil sur ce produit." },
+      hint: "souhaiter",
       answer: "souhaitais",
       explanation: "L'imparfait « souhaitais » exprime poliment le souhait, adoucissant la demande en contexte commercial.",
       wrongAnswers: [
@@ -3725,6 +3775,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase avec le verbe avoir à l'imparfait.",
       phrase: { before: "Si tu ", after: " une voiture, tu pourrais voyager plus loin." },
+      hint: "avoir",
       answer: "avais",
       explanation: "Après « si » dans une hypothèse irréelle, on utilise toujours l'imparfait. « avais » est la forme correcte du verbe avoir à l'imparfait pour la deuxième personne du singulier.",
       wrongAnswers: [
@@ -3742,6 +3793,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase avec le verbe être à l'imparfait.",
       phrase: { before: "Si j'", after: " à ta place, je changerais de travail." },
+      hint: "être",
       answer: "étais",
       explanation: "Après « si » dans une hypothèse irréelle, on utilise l'imparfait. « étais » est la forme correcte du verbe être à l'imparfait pour la première personne du singulier.",
       wrongAnswers: [
@@ -3759,6 +3811,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase avec le verbe pouvoir à l'imparfait.",
       phrase: { before: "Si vous ", after: " venir demain, ce serait merveilleux." },
+      hint: "pouvoir",
       answer: "pouviez",
       explanation: "Après « si » dans une hypothèse irréelle, on utilise l'imparfait. « pouviez » est la forme correcte du verbe pouvoir à l'imparfait pour la deuxième personne du pluriel.",
       wrongAnswers: [
@@ -3776,6 +3829,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase avec le verbe travailler à l'imparfait.",
       phrase: { before: "Si elle ", after: " moins, elle serait moins fatiguée." },
+      hint: "travailler",
       answer: "travaillait",
       explanation: "Après « si » dans une hypothèse irréelle, on utilise l'imparfait. « travaillait » est la forme correcte du verbe travailler à l'imparfait pour la troisième personne du singulier.",
       wrongAnswers: [
@@ -3793,6 +3847,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase avec le verbe comprendre à l'imparfait.",
       phrase: { before: "Si tu ", after: " l'importance de ce moment, tu serais heureux." },
+      hint: "comprendre",
       answer: "comprenais",
       explanation: "Après « si » dans une hypothèse irréelle, on utilise l'imparfait. « comprenais » est la forme correcte du verbe comprendre à l'imparfait pour la deuxième personne du singulier.",
       wrongAnswers: [
@@ -4070,6 +4125,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'imparfait pour décrire l'arrière-plan",
       phrase: { before: "Pendant qu'il ", after: " (attendre) l'ascenseur, un collègue est arrivé." },
+      hint: "attendre",
       answer: "attendait",
       explanation: "L'imparfait décrit l'action de fond (attendre) avant l'arrivée du collègue.",
       wrongAnswers: [
@@ -4086,6 +4142,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé pour marquer l'événement principal",
       phrase: { before: "Il pleuvait quand Marie ", after: " (sortir) de la maison." },
+      hint: "sortir",
       answer: "est sortie",
       explanation: "Le passé composé marque l'événement qui s'est produit pendant la pluie (l'arrière-plan à l'imparfait).",
       wrongAnswers: [
@@ -4102,6 +4159,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'imparfait pour décrire la situation de fond",
       phrase: { before: "Nous ", after: " (dormir) quand le chien a commencé à aboyer." },
+      hint: "dormir",
       answer: "dormions",
       explanation: "L'imparfait décrit l'état de fond (dormir) avant l'interruption de l'aboiement.",
       wrongAnswers: [
@@ -4118,6 +4176,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez à l'imparfait pour décrire l'action de fond",
       phrase: { before: "Tandis que je ", after: " (lire) mon livre, quelqu'un a frappé à la porte." },
+      hint: "lire",
       answer: "lisais",
       explanation: "L'imparfait décrit l'action de fond (lire) avant l'interruption du coup à la porte.",
       wrongAnswers: [
@@ -4134,6 +4193,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au passé composé pour décrire l'événement principal",
       phrase: { before: "Il faisait nuit quand les pompiers ", after: " (arriver) à l'incendie." },
+      hint: "arriver",
       answer: "sont arrivés",
       explanation: "Le passé composé marque l'événement (l'arrivée des pompiers) qui s'est produit pendant la nuit (l'arrière-plan à l'imparfait).",
       wrongAnswers: [
@@ -4410,6 +4470,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au passé composé car la durée est définie.",
       phrase: { before: "Il ", after: " à Paris pendant cinq ans." },
+      hint: "habiter",
       answer: "a habité",
       explanation: "« Pendant cinq ans » indique une durée définie et complétée, donc on utilise le passé composé du verbe « habiter ».",
       wrongAnswers: [
@@ -4426,6 +4487,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez à l'imparfait car il n'y a pas de durée définie.",
       phrase: { before: "Autrefois, elle ", after: " dans ce village." },
+      hint: "vivre",
       answer: "vivait",
       explanation: "« Autrefois » ne précise pas une durée définie ; c'est une description générale du passé, donc on utilise l'imparfait.",
       wrongAnswers: [
@@ -4442,6 +4504,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « travailler » au passé composé car la durée est définie.",
       phrase: { before: "Nous ", after: " pendant trois heures sans arrêt." },
+      hint: "travailler",
       answer: "avons travaillé",
       explanation: "« Pendant trois heures » indique une durée définie et complétée, donc on utilise le passé composé.",
       wrongAnswers: [
@@ -4458,6 +4521,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez au passé composé car on précise la durée.",
       phrase: { before: "Elles ", after: " toute la journée." },
+      hint: "attendre",
       answer: "ont attendu",
       explanation: "« Toute la journée » indique une durée définie et complétée, donc on utilise le passé composé du verbe « attendre ».",
       wrongAnswers: [
@@ -4474,6 +4538,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez à l'imparfait car le contexte ne précise pas de durée.",
       phrase: { before: "À cette époque, j'", after: " chaque matin." },
+      hint: "chercher",
       answer: "cherchais",
       explanation: "« À cette époque » décrit un contexte passé sans durée définie précise, et « chaque matin » indique une habitude, donc on utilise l'imparfait.",
       wrongAnswers: [
@@ -4750,6 +4815,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le temps approprié (imparfait ou passé composé).",
       phrase: { before: "Les enfants jouaient tandis que les parents ", after: " de la télévision." },
+      hint: "regarder",
       answer: "regardaient",
       explanation: "« Tandis que » marque la simultanéité : les deux actions se déroulent en même temps. Les deux verbes doivent être à l'imparfait — « jouaient » et « regardaient ».",
       wrongAnswers: [
@@ -4766,6 +4832,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le temps approprié pour exprimer la succession d'actions.",
       phrase: { before: "D'abord, il ", after: " ses devoirs. Ensuite, il est allé jouer au foot." },
+      hint: "faire",
       answer: "a fait",
       explanation: "« D'abord… Ensuite » marque une succession d'actions ponctuelles et complétées → passé composé. « Faire » → auxiliaire avoir → il a fait.",
       wrongAnswers: [
@@ -4782,6 +4849,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'imparfait ou le passé composé selon le rôle de l'action.",
       phrase: { before: "Quand elle est sortie de la maison, son frère ", after: " dans le jardin." },
+      hint: "jouer",
       answer: "jouait",
       explanation: "« Son frère jouait » décrit une action en cours au moment où elle est sortie. L'imparfait sert de toile de fond à l'événement principal (passé composé).",
       wrongAnswers: [
@@ -4798,6 +4866,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le temps approprié pour exprimer la simultanéité.",
       phrase: { before: "Pendant que vous lisiez, nous ", after: " la cuisine." },
+      hint: "préparer",
       answer: "préparions",
       explanation: "« Pendant que vous lisiez » décrit une action continue. L'action simultanée « préparer » doit aussi être à l'imparfait : nous préparions.",
       wrongAnswers: [
@@ -4814,6 +4883,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le passé composé pour exprimer la succession d'actions.",
       phrase: { before: "Elle a pris le bus, ", after: " et est allée au marché." },
+      hint: "descendre",
       answer: "est descendue",
       explanation: "« Descendre » se conjugue avec « être » au passé composé. Le participe s'accorde avec le sujet féminin : est descendue. C'est la deuxième étape d'une succession rapide.",
       wrongAnswers: [
@@ -5090,6 +5160,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « prendre » à l'imparfait.",
       phrase: { before: "Le téléphone a sonné tandis qu'il ", after: " une douche." },
+      hint: "prendre",
       answer: "prenait",
       explanation: "Après « tandis que », l'imparfait exprime l'action qui continuait avant l'interruption.",
       wrongAnswers: [
@@ -5106,6 +5177,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « parler » à l'imparfait.",
       phrase: { before: "Pendant qu'elle ", after: " , nous avons continué notre travail." },
+      hint: "parler",
       answer: "parlait",
       explanation: "Après « pendant que », le verbe exprime une action qui durait simultanément, donc imparfait.",
       wrongAnswers: [
@@ -5123,6 +5195,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « manger » à l'imparfait pour exprimer la simultanéité avec « pendant que ».",
       phrase: { before: "Pendant que nous ", after: ", les enfants jouaient dehors." },
+      hint: "manger",
       answer: "mangions",
       explanation: "Avec « pendant que », les deux actions se déroulent en même temps → imparfait pour les deux. « Manger » → nous mangions. Notez le -ge- conservé devant -ions : mangions.",
       wrongAnswers: [
@@ -5139,6 +5212,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « boire » à l'imparfait ou au passé composé selon le rôle de l'action.",
       phrase: { before: "J'", after: " mon café quand mon ami est arrivé." },
+      hint: "boire",
       answer: "buvais",
       explanation: "« Je buvais » décrit l'action en cours (arrière-plan) interrompue par l'arrivée de l'ami (passé composé). « Quand » + interruption → imparfait + passé composé.",
       wrongAnswers: [
@@ -5155,6 +5229,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « faire » à l'imparfait pour exprimer la simultanéité avec « pendant que ».",
       phrase: { before: "Pendant que vous prépariez le repas, nous ", after: " la décoration." },
+      hint: "faire",
       answer: "faisions",
       explanation: "« Pendant que vous prépariez » indique une action continue en parallèle. L'action simultanée doit aussi être à l'imparfait : nous faisions. Notez le -i- double dans faisions.",
       wrongAnswers: [
@@ -5431,6 +5506,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'imparfait ou le passé composé selon le rôle narratif.",
       phrase: { before: "Hier, il ", after: " beau et j'ai fait une longue promenade au parc." },
+      hint: "faire",
       answer: "faisait",
       explanation: "La météo est un état de fond (décor) et non un événement qui fait avancer le récit → imparfait. On dit « il faisait beau » pour décrire le contexte d'une journée passée.",
       wrongAnswers: [
@@ -5447,6 +5523,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'imparfait ou le passé composé selon le marqueur temporel.",
       phrase: { before: "Chaque matin, elle ", after: " avec ses enfants, mais ce jour-là, elle a marché seule." },
+      hint: "marcher",
       answer: "marchait",
       explanation: "« Chaque matin » signale une habitude régulière → imparfait. La répétition passée s'exprime avec l'imparfait : elle marchait.",
       wrongAnswers: [
@@ -5463,6 +5540,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'imparfait ou le passé composé selon le rôle de l'action.",
       phrase: { before: "Lorsque le téléphone ", after: ", je finissais juste le dîner." },
+      hint: "sonner",
       answer: "a sonné",
       explanation: "« Lorsque » introduit ici un événement soudain qui interrompt une action en cours. L'événement déclencheur (la sonnerie) s'exprime au passé composé ; l'action en cours (dîner) s'exprime à l'imparfait.",
       wrongAnswers: [
@@ -5479,6 +5557,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'imparfait ou le passé composé selon le marqueur temporel.",
       phrase: { before: "En général, il prenait le métro pour aller travailler, mais ce jour-là, il ", after: "." },
+      hint: "marcher",
       answer: "a marché",
       explanation: "« Ce jour-là » marque une exception unique par rapport à l'habitude → passé composé. L'habitude « en général » est déjà à l'imparfait ; l'exception se met au passé composé.",
       wrongAnswers: [
@@ -5495,6 +5574,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'imparfait ou le passé composé selon le rôle narratif.",
       phrase: { before: "Soudain, la lumière ", after: " et le silence s'est rompu." },
+      hint: "s'éteindre",
       answer: "s'est éteinte",
       explanation: "« Soudain » signale un événement brusque qui fait avancer le récit → passé composé. « S'éteindre » est pronominal ; le sujet féminin « la lumière » entraîne l'accord : s'est éteinte.",
       wrongAnswers: [
@@ -5771,6 +5851,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'imparfait avec le marqueur de régularité.",
       phrase: { before: "Tous les samedis, j'", after: " mes amis au cinéma." },
+      hint: "retrouver",
       answer: "retrouvais",
       explanation: "« Tous les samedis » marque une habitude régulière. L'imparfait « retrouvais » exprime cette répétition.",
       wrongAnswers: [
@@ -5787,6 +5868,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'imparfait selon le marqueur temporel d'époque.",
       phrase: { before: "À l'époque où j'étais enfant, mon frère et moi, nous ", after: " tous les jours dans la cour." },
+      hint: "jouer",
       answer: "jouions",
       explanation: "« À l'époque » et « tous les jours » sont des marqueurs d'habitude passée → imparfait. Sujet « nous » : jouions. Notez le -i- dans la terminaison : nous jou-i-ons.",
       wrongAnswers: [
@@ -5803,6 +5885,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'imparfait selon le marqueur temporel d'époque.",
       phrase: { before: "Quand tu ", after: " jeune, tu fredonnais toujours cette chanson." },
+      hint: "être",
       answer: "étais",
       explanation: "« Quand tu étais jeune » exprime un état dans le passé avec une dimension de durée ou d'époque → imparfait de « être ». C'est la toile de fond d'une habitude passée.",
       wrongAnswers: [
@@ -5819,6 +5902,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'imparfait selon le marqueur d'habitude passée.",
       phrase: { before: "Avant, nous ", after: " chaque été chez nos grands-parents qui vivaient à la montagne." },
+      hint: "aller",
       answer: "allions",
       explanation: "« Avant » et « chaque été » sont des marqueurs d'habitude passée régulière → imparfait. Sujet « nous » : allions. « Aller » est entièrement irrégulier à l'imparfait.",
       wrongAnswers: [
@@ -5835,6 +5919,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « venir » à l'imparfait selon le marqueur de régularité.",
       phrase: { before: "Généralement, ma grand-mère faisait un gâteau le dimanche, et je ", after: " toujours à l'aider." },
+      hint: "venir",
       answer: "venais",
       explanation: "« Généralement » et « toujours » sont des marqueurs d'habitude → imparfait. Sujet « je » : venais. « Venir » est irrégulier à l'imparfait : la racine est ven- et non vien-.",
       wrongAnswers: [
@@ -6111,6 +6196,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'imparfait pour exprimer une action en cours lors d'un événement passé.",
       phrase: { before: "Il ", after: " dans cette maison depuis cinq ans quand le tremblement de terre s'est produit." },
+      hint: "habiter",
       answer: "habitait",
       explanation: "On utilise l'imparfait « habitait » pour montrer que l'habitation était en cours au moment du tremblement de terre.",
       wrongAnswers: [
@@ -6127,6 +6213,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez le verbe à l'imparfait pour montrer la continuité d'une action dans le passé.",
       phrase: { before: "Elles ", after: " à ce problème depuis plusieurs mois quand elles ont trouvé la solution." },
+      hint: "réfléchir",
       answer: "réfléchissaient",
       explanation: "L'imparfait « réfléchissaient » indique que la réflexion était en cours depuis plusieurs mois.",
       wrongAnswers: [
@@ -6143,6 +6230,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au temps approprié pour compléter cette phrase avec « depuis ».",
       phrase: { before: "J'", after: " cette langue depuis trois ans quand j'ai décidé de l'abandonner." },
+      hint: "apprendre",
       answer: "apprenais",
       explanation: "L'imparfait « apprenais » montre que l'apprentissage était en cours au moment de la décision.",
       wrongAnswers: [
@@ -6159,6 +6247,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez le verbe à l'imparfait pour montrer une action durative avec « depuis » dans un contexte passé.",
       phrase: { before: "Il ", after: " à cet endroit depuis très longtemps quand nous l'avons découvert." },
+      hint: "vivre",
       answer: "vivait",
       explanation: "L'imparfait « vivait » indique que la vie à cet endroit durait depuis longtemps avant notre découverte.",
       wrongAnswers: [
@@ -6175,6 +6264,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe conjugué à l'imparfait pour exprimer une action qui durait au passé.",
       phrase: { before: "Nous ", after: " dans cette ville depuis quatre ans quand l'opportunité de déménager s'est présentée." },
+      hint: "habiter",
       answer: "habitions",
       explanation: "L'imparfait « habitions » montre que l'habitation durait depuis quatre ans lors de cette opportunité.",
       wrongAnswers: [
@@ -6452,6 +6542,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Transformez en discours indirect : Il a dit qu'il ___ faim.",
       phrase: { before: "Il a dit qu'il ", after: " faim." },
+      hint: "avoir",
       answer: "avait",
       explanation: "Avec un verbe de parole au passé (« a dit »), le présent « j'ai faim » devient imparfait « avait faim » en discours indirect.",
       wrongAnswers: [
@@ -6469,6 +6560,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Transformez en discours indirect : Elle a demandé si tu ___ venir.",
       phrase: { before: "Elle a demandé si tu ", after: " venir." },
+      hint: "pouvoir",
       answer: "pouvais",
       explanation: "Avec un verbe de parole au passé (« a demandé »), le présent « peux-tu » devient imparfait « pouvais » en discours indirect.",
       wrongAnswers: [
@@ -6486,6 +6578,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Transformez en discours indirect : Il a expliqué qu'il ___ bien ce sujet.",
       phrase: { before: "Il a expliqué qu'il ", after: " bien ce sujet." },
+      hint: "comprendre",
       answer: "comprenait",
       explanation: "Avec un verbe de parole au passé (« a expliqué »), le présent « je comprends » devient imparfait « comprenait » en discours indirect.",
       wrongAnswers: [
@@ -6503,6 +6596,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Transformez en discours indirect : Il a affirmé qu'elle ___ à Paris.",
       phrase: { before: "Il a affirmé qu'elle ", after: " à Paris." },
+      hint: "habiter",
       answer: "habitait",
       explanation: "Avec un verbe de parole au passé (« a affirmé »), le présent « habite » devient imparfait « habitait » en discours indirect.",
       wrongAnswers: [
@@ -6520,6 +6614,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Transformez en discours indirect : Elles ont répondu qu'elles ___ faire.",
       phrase: { before: "Elles ont répondu qu'elles ", after: " faire." },
+      hint: "devoir",
       answer: "devaient",
       explanation: "Avec un verbe de parole au passé (« ont répondu »), le présent « nous devons » devient imparfait « devaient » en discours indirect.",
       wrongAnswers: [
@@ -6797,6 +6892,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses à l'imparfait pour faire une suggestion.",
       phrase: { before: "Si on ", after: " (aller) au cinéma ce soir ?" },
+      hint: "aller",
       answer: "allait",
       explanation: "L'imparfait de suggestion utilise « si on » + imparfait du verbe. « Allait » est l'imparfait correct d'aller.",
       wrongAnswers: [
@@ -6813,6 +6909,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'imparfait du verbe « prendre » pour exprimer une suggestion.",
       phrase: { before: "Si on ", after: " un café sur la terrasse ?" },
+      hint: "prendre",
       answer: "prenait",
       explanation: "« Prenait » est l'imparfait de « prendre ». C'est la forme correcte pour une suggestion avec « si on ».",
       wrongAnswers: [
@@ -6829,6 +6926,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses à l'imparfait pour faire une suggestion au pluriel.",
       phrase: { before: "Si nous ", after: " (partir) en vacances la semaine prochaine ?" },
+      hint: "partir",
       answer: "partions",
       explanation: "« Partions » est l'imparfait de « partir » à la première personne du pluriel. C'est la forme correcte pour une suggestion avec « si nous ».",
       wrongAnswers: [
@@ -6845,6 +6943,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'imparfait du verbe « commander » pour exprimer une suggestion.",
       phrase: { before: "Si on ", after: " une pizza et de la salade pour le dîner ?" },
+      hint: "commander",
       answer: "commandait",
       explanation: "« Commandait » est l'imparfait de « commander ». C'est la forme correcte pour une suggestion avec « si on ».",
       wrongAnswers: [
@@ -6861,6 +6960,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses à l'imparfait pour faire une suggestion.",
       phrase: { before: "Si on ", after: " (jouer) au football après les cours ?" },
+      hint: "jouer",
       answer: "jouait",
       explanation: "« Jouait » est l'imparfait du verbe « jouer ». C'est la forme standard pour une suggestion avec « si on ».",
       wrongAnswers: [
