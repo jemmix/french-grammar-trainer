@@ -38,3 +38,26 @@
 - 10-11-005 [fr]: Suisse and Suisse aucun article the same thing?
 - ~~02-02-011 [en]: indicate if it's about present/past events more clearly, everywhere~~ — fixed: added past-tense context clues to 13 ambiguous questions in 02-01 and 02-02
 
+### 02-14 INPUT questions — misleading prompts
+
+All 5 INPUT questions (02-14-021 to 02-14-025) claim to test "placing the adverb at the right position" but the blank is already positioned correctly in the PHRASE. The user just types the adverb, not the position. Examples:
+- "Complétez la phrase en plaçant l'adverbe « déjà » à la bonne place." → Phrase: "Tu as ___ fini tes devoirs ?" → Answer: "déjà"
+- The user isn't demonstrating they know WHERE to place the adverb; the blank is pre-placed.
+
+**Fix options:**
+1. Simplify prompts to just "Complétez avec l'adverbe « déjà »" (honest about what's being tested)
+2. Redesign to present the full sentence and ask user to rewrite with adverb (harder to validate)
+3. Add more varied wrong answers that test position confusion (e.g. for short adverbs: "a déjà fini" vs "déjà a fini" vs "a fini déjà")
+
+### 11-01 INPUT questions — open-ended prompts with single "correct" answers
+
+- **11-01-021**: "Identifiez le COD" → Phrase has blank "une belle ___" → Answer: "symphonie". Problem: many valid CODs exist (mélodie, chanson, sonate). This tests vocabulary recall, not COD grammar.
+- **11-01-024**: "Complétez avec un COD approprié" → "Le professeur explique ___ aux élèves." → Answer: "la leçon". Same problem: "une règle", "un concept", "la grammaire" are all valid.
+- **11-01-025**: "Identifiez et complétez avec le COD manquant" → "Nous avons ___ hier soir et cela nous a beaucoup plu." → Answer: "un film". Problem: missing verb! Is it "avons vu"? "avons regardé"? User must guess context. Also "un repas", "un concert", "une fête" would work.
+
+**Fix options:**
+1. Make prompts more constrained: specify the verb or provide disambiguating context
+2. Accept multiple valid answers (requires app changes to support alt answers)
+3. Redesign as MCQ questions where all options are grammatically valid CODs but only one fits the specific context
+4. For 11-01-025 specifically: add the missing verb to the phrase (e.g. "Nous avons vu ___ hier soir")
+
