@@ -39,6 +39,7 @@ export interface ParsedInputQuestion {
   ruleId: string;
   prompt: string;
   phrase: string;
+  hint?: string;
   right: AnswerPair;
   wrongs: AnswerPair[];
 }
@@ -78,6 +79,7 @@ export function parseTxtFile(content: string): ParsedFile {
   let currentType = "";
   let currentPrompt = "";
   let currentPhrase = "";
+  let currentHint = "";
 
   interface MutablePair {
     kind: "right" | "wrong";
@@ -114,6 +116,7 @@ export function parseTxtFile(content: string): ParsedFile {
         currentType = "";
         currentPrompt = "";
         currentPhrase = "";
+        currentHint = "";
         currentPairs = [];
         lastPair = null;
       }
@@ -141,6 +144,7 @@ export function parseTxtFile(content: string): ParsedFile {
             ruleId: qRuleId,
             prompt: currentPrompt,
             phrase: currentPhrase,
+            hint: currentHint || undefined,
             right: rightPair ? { text: rightPair.text, explanation: rightPair.explanation } : { text: "", explanation: "" },
             wrongs: wrongPairs.map((p) => ({ text: p.text, explanation: p.explanation })),
           });
@@ -155,6 +159,8 @@ export function parseTxtFile(content: string): ParsedFile {
         currentPrompt = line.slice(7).trim();
       } else if (line.startsWith("PHRASE:")) {
         currentPhrase = line.slice(7).trim();
+      } else if (line.startsWith("HINT:")) {
+        currentHint = line.slice(5).trim();
       } else if (line.startsWith("RIGHT ANSWER:")) {
         lastPair = { kind: "right", text: line.slice(13).trim(), explanation: "" };
         currentPairs.push(lastPair);

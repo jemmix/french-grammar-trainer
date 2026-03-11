@@ -24,6 +24,7 @@ export interface MultipleChoiceQuestion extends BaseQuestion {
 export interface InputQuestion extends BaseQuestion {
   type: "input";
   phrase: { before: string; after: string };
+  hint?: string;
   answer: string;
   explanation: string;
   wrongAnswers: WrongAnswer[];

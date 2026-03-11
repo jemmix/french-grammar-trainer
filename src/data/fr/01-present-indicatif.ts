@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "01-present-indicatif",
   title: "Le présent de l'indicatif",
-  description: "Conjugaison régulière et irrégulière, verbes pronominaux, emplois du présent",
+  description: "Formation et emplois du présent de l'indicatif",
   rules: [
     { id: "01-01", sectionId: "01-present-indicatif", title: "Conjugaison des verbes réguliers en -er (parler, manger, commencer, etc.)" },
     { id: "01-02", sectionId: "01-present-indicatif", title: "Conjugaison des verbes réguliers en -ir (finir, choisir, réussir, etc.)" },
@@ -1336,6 +1336,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe aller au présent.",
       phrase: { before: "J'", after: " à la bibliothèque cet après-midi." },
+      hint: "aller",
       answer: "vais",
       explanation: "« Vais » est la conjugaison d'aller à la 1ère personne du singulier au présent.",
       wrongAnswers: [
@@ -1353,6 +1354,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe aller ou envoyer au présent selon le contexte.",
       phrase: { before: "Elles ", after: " ensemble au marché pour acheter des légumes." },
+      hint: "aller",
       answer: "vont",
       explanation: "« Vont » est la conjugaison d'aller à la 3e personne du pluriel au présent. Le contexte « pour acheter » indique le mouvement, donc aller est approprié.",
       wrongAnswers: [
@@ -1383,6 +1385,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe envoyer au présent.",
       phrase: { before: "Nous ", after: " nos candidatures avant vendredi." },
+      hint: "envoyer",
       answer: "envoyons",
       explanation: "« Envoyons » est la conjugaison d'envoyer à la 1ère personne du pluriel au présent. Avec « nous », on conserve le radical envoy- et on ajoute -ons.",
       wrongAnswers: [
@@ -1400,6 +1403,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe envoyer au présent avec le sujet je.",
       phrase: { before: "J'", after: " un email à mon patron avant de partir au bureau." },
+      hint: "envoyer",
       answer: "envoie",
       explanation: "« Envoyer » est irrégulier au présent : je envoie (et non « j'envois » ni « j'envoye »). La racine change : envo- → envoie pour les personnes singulier et 3e pluriel.",
       wrongAnswers: [
@@ -1416,6 +1420,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe aller au présent avec le sujet vous.",
       phrase: { before: "Vous ", after: " au concert demain soir avec vos amis." },
+      hint: "aller",
       answer: "allez",
       explanation: "« Aller » est entièrement irrégulier au présent : vous allez. La forme ne ressemble pas à l'infinitif — c'est l'une des formes les plus irrégulières du français.",
       wrongAnswers: [

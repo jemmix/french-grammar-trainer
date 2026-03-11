@@ -180,6 +180,8 @@ function renderInput(q: ParsedInputQuestion, generatedBy: string, indent = "    
   const before = splitIdx === -1 ? stripped : stripped.slice(0, splitIdx);
   const after = splitIdx === -1 ? "" : stripped.slice(splitIdx + 3);
 
+  const hintLine = q.hint ? `${i2}hint: "${esc(q.hint)}",\n` : "";
+
   return [
     `${indent}{`,
     `${i2}id: "${q.id}",`,
@@ -188,7 +190,7 @@ function renderInput(q: ParsedInputQuestion, generatedBy: string, indent = "    
     `${i2}generatedBy: "${esc(generatedBy)}",`,
     `${i2}prompt: "${esc(instruction)}",`,
     `${i2}phrase: { before: "${esc(before)}", after: "${esc(after)}" },`,
-    `${i2}answer: "${esc(q.right.text)}",`,
+    hintLine + `${i2}answer: "${esc(q.right.text)}",`,
     `${i2}explanation: "${esc(q.right.explanation)}",`,
     `${i2}wrongAnswers: [`,
     wrongAnswers + ",",
