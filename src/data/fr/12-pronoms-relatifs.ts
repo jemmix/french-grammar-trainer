@@ -1,7 +1,7 @@
 import type { Section } from "../types";
 
 // Generated from: questions/fr/12-01.txt, questions/fr/12-02.txt, questions/fr/12-03.txt, questions/fr/12-04.txt, questions/fr/12-05.txt, questions/fr/12-06.txt, questions/fr/12-07.txt, questions/fr/12-08.txt, questions/fr/12-09.txt, questions/fr/12-10.txt, questions/fr/12-11.txt, questions/fr/12-12.txt, questions/fr/12-13.txt, questions/fr/12-14.txt, questions/fr/12-15.txt, questions/fr/12-16.txt, questions/fr/12-17.txt, questions/fr/12-18.txt, questions/fr/12-19.txt, questions/fr/12-20.txt
-// Total: 402 MCQ + 98 INPUT = 500 questions
+// Total: 400 MCQ + 100 INPUT = 500 questions
 
 const section: Section = {
   id: "12-pronoms-relatifs",
@@ -6402,15 +6402,20 @@ const section: Section = {
     },
     {
       id: "12-19-003",
-      type: "mcq",
+      type: "input",
       ruleId: "12-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Les livres ___ j'ai lus hier étaient excellents. »",
-      choices: [
-        { text: "que", correct: true, explanation: "Le verbe « lire » demande un complément d'objet direct. « Que » est le relatif COD approprié. La phrase est restrictive (sans virgule)." },
-        { text: "dont", correct: false, explanation: "« Dont » s'utilise pour exprimer une relation de possession ou de dépendance (« dont j'ai parlé »), pas l'objet direct d'un verbe." },
-        { text: "qui", correct: false, explanation: "« Qui » est un sujet ; on aurait « qui m'intéressaient », mais le contexte du verbe « lire » demande un COD." },
-        { text: "où", correct: false, explanation: "« Où » convient pour les lieux ou le temps métaphorique ; « les livres où » n'a pas de sens ici." },
+      prompt: "Complétez avec le pronom relatif approprié",
+      phrase: { before: "Les livres ", after: " j'ai lus hier étaient excellents." },
+      hint: "lire",
+      answer: "que",
+      explanation: "Le verbe « lire » demande un complément d'objet direct. « Que » est le relatif COD approprié. La phrase est restrictive (sans virgule).",
+      wrongAnswers: [
+        { text: "dont", explanation: "« Dont » s'utilise pour exprimer une relation de possession ou de dépendance (« dont j'ai parlé »), pas l'objet direct d'un verbe." },
+        { text: "qui", explanation: "« Qui » est un sujet ; on aurait « qui m'intéressaient », mais le contexte du verbe « lire » demande un COD." },
+        { text: "où", explanation: "« Où » convient pour les lieux ou le temps métaphorique ; « les livres où » n'a pas de sens ici." },
+        { text: "lequel", explanation: "« Lequel » s'utilise après une préposition, pas pour un COD simple." },
+        { text: "duquel", explanation: "« Duquel » introduit un complément avec « de », pas un COD direct." },
       ],
     },
     {
@@ -6454,15 +6459,20 @@ const section: Section = {
     },
     {
       id: "12-19-007",
-      type: "mcq",
+      type: "input",
       ruleId: "12-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « La ville ___ je suis né offre de beaux paysages. »",
-      choices: [
-        { text: "où", correct: true, explanation: "« Où » est le relatif pour les lieux. Il convient parfaitement pour « la ville ». C'est une relative restrictive (sans virgule)." },
-        { text: "dont", correct: false, explanation: "« Dont » ne convient pas pour indiquer un lieu ; on l'utilise pour possession ou relation." },
-        { text: "qui", correct: false, explanation: "« Qui » est un sujet, et on aurait besoin d'un verbe qui s'accorde avec « ville » au singulier." },
-        { text: "que", correct: false, explanation: "« Que » est un COD, mais on ne « complète » pas une ville de cette manière." },
+      prompt: "Complétez avec le pronom relatif approprié",
+      phrase: { before: "La ville ", after: " je suis né offre de beaux paysages." },
+      hint: "naître",
+      answer: "où",
+      explanation: "« Où » est le relatif pour les lieux. Il convient parfaitement pour « la ville ». C'est une relative restrictive (sans virgule).",
+      wrongAnswers: [
+        { text: "dont", explanation: "« Dont » ne convient pas pour indiquer un lieu ; on l'utilise pour possession ou relation." },
+        { text: "qui", explanation: "« Qui » est un sujet, et on aurait besoin d'un verbe qui s'accorde avec « ville » au singulier." },
+        { text: "que", explanation: "« Que » est un COD, mais on ne « complète » pas une ville de cette manière." },
+        { text: "laquelle", explanation: "« Laquelle » s'utilise après une préposition, pas pour indiquer un lieu simple." },
+        { text: "dans laquelle", explanation: "« Dans laquelle » serait correct mais plus lourd que « où »." },
       ],
     },
     {
