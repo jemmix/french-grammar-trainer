@@ -146,12 +146,15 @@ export function InputQuestionView({
             </span>
           </span>
           <span>{after}{t.phraseClose}</span>
-          {question.hint && (
-            <span className="ml-3 text-sm font-normal text-ardoise/50 italic tracking-tight">
-              ({question.hint})
-            </span>
-          )}
         </p>
+        {question.hint && (
+          <p className="mt-4 text-sm text-ardoise/70">
+            <span className="font-medium text-ardoise/80">Infinitif :</span>{" "}
+            <span className="inline-flex items-center px-2 py-0.5 rounded bg-tricolore-bleu/8 text-tricolore-bleu font-medium">
+              {question.hint}
+            </span>
+          </p>
+        )}
       </div>
 
       {/* Submit button */}
