@@ -21,133 +21,33 @@
 import { readFileSync } from "fs";
 import { basename } from "path";
 import { parseTxtFile, type ParsedQuestion } from "./lib/parse-txt.js";
-
-// Words with aspirate h — no elision before these
-const ASPIRATE_H = new Set([
-  "hache", "haches", "haine", "haines", "haïr", "hais", "haïs", "haït",
-  "haïssons", "haïssez", "haïssent", "halte", "hamac", "hamacs", "hameau",
-  "hameaux", "hanche", "hanches", "handicap", "handicapé", "handicapée",
-  "hangar", "hangars", "hanter", "hante", "hantes", "hantent", "harceler",
-  "harcèle", "hardi", "hardie", "hardis", "hardies", "hareng", "harengs",
-  "haricot", "haricots", "harpe", "harpes", "hasard", "hasards", "hâte",
-  "hausse", "hausser", "haut", "haute", "hauts", "hautes", "hauteur",
-  "hauteurs", "héros", "hêtre", "hêtres", "hibou", "hiboux", "hiérarchie",
-  "hobby", "hobbies", "hockey", "hollande", "hollandais", "hollandaise",
-  "homard", "homards", "hongre", "hongrois", "hongroise", "honte",
-  "hooligan", "hooligans", "hoquet", "hoquets", "horde", "hordes", "hors",
-  "hot-dog", "hotte", "hottes", "houblon", "housse", "housses", "hublot",
-  "hublots", "huée", "huées", "huer", "hurler", "hurle", "hurles",
-  "hurlent", "hutte", "huttes",
-]);
-
-// Elision pairs: [full form, elided form]
-// The full form is what appears before a consonant; the elided form before a vowel.
-const ELISION_PAIRS: [string, string][] = [
-  ["je", "j'"],
-  ["me", "m'"],
-  ["te", "t'"],
-  ["se", "s'"],
-  ["le", "l'"],
-  ["la", "l'"],
-  ["de", "d'"],
-  ["ne", "n'"],
-  ["que", "qu'"],
-  ["ce", "c'"],
-];
-
-function startsWithVowelSound(word: string): boolean {
-  if (!word) return false;
-  const lower = word.toLowerCase();
-  // Check aspirate h
-  if (lower.startsWith("h")) {
-    // Check if it's an aspirate-h word
-    for (const ah of ASPIRATE_H) {
-      if (lower === ah || lower.startsWith(ah)) return false;
-    }
-    // Mute h — elision applies
-    return true;
-  }
-  return /^[aeiouyàâäéèêëîïôùûüÿœæ]/i.test(word);
-}
-
-function startsWithConsonantSound(word: string): boolean {
-  if (!word) return false;
-  return !startsWithVowelSound(word);
-}
+import { checkElision, type ElisionIssueKind } from "./lib/elision-check.js";
 
 interface Issue {
   id: string;
-  kind: "elision-missing" | "elision-wrong";
+  kind: ElisionIssueKind;
   message: string;
 }
 
-function getTextBeforeBlank(text: string): string | null {
-  // Find the word immediately before ___
-  const m = text.match(/(\S+)\s+___/);
-  return m ? m[1]! : null;
-}
-
-function getTextBeforeBlankElided(text: string): string | null {
-  // Find word attached to ___ via apostrophe: J'___, l'___
-  const m = text.match(/(\S+')\s*___/);
-  return m ? m[1]! : null;
-}
-
 function checkQuestion(q: ParsedQuestion): Issue[] {
-  const issues: Issue[] = [];
-  
-  // Collect all answers (right + wrongs)
   const allAnswers = [q.right.text.trim(), ...q.wrongs.map((w: { text: string }) => w.text.trim())].filter(a => a);
-  if (allAnswers.length === 0) return issues;
+  if (allAnswers.length === 0) return [];
 
-  // Determine the text to check (PHRASE for input, PROMPT for mcq)
   const texts: string[] = [q.prompt];
   if (q.type === "input" && q.phrase) {
     texts.push(q.phrase);
   }
 
-  // Check if ANY answer starts with vowel/consonant (elision must work for all choices)
-  const anyVowel = allAnswers.some(a => startsWithVowelSound(a));
-  const anyConsonant = allAnswers.some(a => startsWithConsonantSound(a));
-
+  const issues: Issue[] = [];
   for (const text of texts) {
-    // Case 1: word + space + ___ (non-elided form before blank)
-    const wordBefore = getTextBeforeBlank(text);
-    if (wordBefore) {
-      const cleaned = wordBefore.replace(/[«»"',.:;!?()]/g, "").toLowerCase();
-      // If any answer starts with vowel, non-elided form is wrong
-      if (anyVowel) {
-        for (const [full, elided] of ELISION_PAIRS) {
-          if (cleaned === full) {
-            issues.push({
-              id: q.id,
-              kind: "elision-missing",
-              message: `"${wordBefore} ___" but some answers start with vowel → should be "${elided}___"`,
-            });
-          }
-        }
-      }
-    }
-
-    // Case 2: word'___ (elided form before blank)
-    const elidedBefore = getTextBeforeBlankElided(text);
-    if (elidedBefore) {
-      const cleaned = elidedBefore.replace(/[«»"',.:;!?()]/g, "").toLowerCase();
-      // If any answer starts with consonant, elided form is wrong
-      if (anyConsonant) {
-        for (const [full, elided] of ELISION_PAIRS) {
-          if (cleaned === elided) {
-            issues.push({
-              id: q.id,
-              kind: "elision-wrong",
-              message: `"${elidedBefore}___" but some answers start with consonant → should be "${full} ___"`,
-            });
-          }
-        }
-      }
+    const elisionIssues = checkElision(text, allAnswers);
+    for (const issue of elisionIssues) {
+      issues.push({
+        id: q.id,
+        ...issue,
+      });
     }
   }
-
   return issues;
 }
 
