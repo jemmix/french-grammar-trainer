@@ -213,7 +213,12 @@ export function compileSectionToTs(
 
   const tsCode = `import type { Section } from "../types";
 
-// Generated from: ${files.map(({ path: p }) => p).join(", ")}
+// =============================================================================
+// AUTO-GENERATED FILE — DO NOT EDIT
+// This file is compiled from DSL sources. Any manual changes will be lost.
+// To regenerate: npm run compile-all -- --lang <fr|en>
+// =============================================================================
+// Source files: ${files.map(({ path: p }) => p).join(", ")}
 // Total: ${totalMcq} MCQ + ${totalInput} INPUT = ${totalQ} questions
 
 const section: Section = {

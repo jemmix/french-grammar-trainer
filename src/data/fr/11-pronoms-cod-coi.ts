@@ -1,6 +1,11 @@
 import type { Section } from "../types";
 
-// Generated from: questions/fr/11-01.txt, questions/fr/11-02.txt, questions/fr/11-03.txt, questions/fr/11-04.txt, questions/fr/11-05.txt, questions/fr/11-06.txt, questions/fr/11-07.txt, questions/fr/11-08.txt, questions/fr/11-09.txt, questions/fr/11-10.txt, questions/fr/11-11.txt, questions/fr/11-12.txt, questions/fr/11-13.txt, questions/fr/11-14.txt, questions/fr/11-15.txt, questions/fr/11-16.txt, questions/fr/11-17.txt, questions/fr/11-18.txt, questions/fr/11-19.txt, questions/fr/11-20.txt
+// =============================================================================
+// AUTO-GENERATED FILE — DO NOT EDIT
+// This file is compiled from DSL sources. Any manual changes will be lost.
+// To regenerate: npm run compile-all -- --lang <fr|en>
+// =============================================================================
+// Source files: questions/fr/11-01.txt, questions/fr/11-02.txt, questions/fr/11-03.txt, questions/fr/11-04.txt, questions/fr/11-05.txt, questions/fr/11-06.txt, questions/fr/11-07.txt, questions/fr/11-08.txt, questions/fr/11-09.txt, questions/fr/11-10.txt, questions/fr/11-11.txt, questions/fr/11-12.txt, questions/fr/11-13.txt, questions/fr/11-14.txt, questions/fr/11-15.txt, questions/fr/11-16.txt, questions/fr/11-17.txt, questions/fr/11-18.txt, questions/fr/11-19.txt, questions/fr/11-20.txt
 // Total: 400 MCQ + 100 INPUT = 500 questions
 
 const section: Section = {
