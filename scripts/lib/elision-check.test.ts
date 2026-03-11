@@ -236,5 +236,155 @@ describe("checkElision", () => {
       expect(upper).toHaveLength(1);
       expect(lower).toHaveLength(1);
     });
+
+    it("handles guillemets attached to elided form", () => {
+      const issues = checkElision("«J'___ à la pharmacie. »", ["vais"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-wrong");
+    });
+
+    it("handles punctuation after blank", () => {
+      const issues = checkElision("J'___?", ["vais"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-wrong");
+    });
+
+    it("handles multiple blanks - only checks first", () => {
+      const issues = checkElision("Je ___ et tu ___", ["aller"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-missing");
+    });
+  });
+
+  describe("potential bugs to investigate", () => {
+    it("should detect curly apostrophe (U+2019) as elision marker", () => {
+      const curlyApostrophe = "J'___";
+      const issues = checkElision(curlyApostrophe, ["vais"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-wrong");
+    });
+
+    it("should detect Unicode apostrophe variants", () => {
+      const curlyApostrophe = "J\u2019___";
+      const issues = checkElision(curlyApostrophe, ["vais"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-wrong");
+    });
+
+    it("y is treated as vowel in French", () => {
+      const issues = checkElision("le ___", ["yeux", "yacht"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-missing");
+    });
+
+    it("suggestion preserves original case for elision-missing", () => {
+      const issues = checkElision("Je ___", ["aller"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.message).toMatch(/Je|J'/);
+    });
+
+    it("suggestion preserves original case for elision-wrong", () => {
+      const issues = checkElision("J'___", ["vais"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.message).toMatch(/Je|je/);
+    });
+
+    it("handles la vs le both eliding to l'", () => {
+      const issues = checkElision("l'___", ["chat"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-wrong");
+      expect(issues[0]!.message).toMatch(/la ___|le ___/);
+    });
+
+    it("does not false positive on words containing elision words", () => {
+      const issues = checkElision("jeune ___", ["homme"]);
+      expect(issues).toHaveLength(0);
+    });
+
+    it("handles très (no elision - trè is not a valid elision base)", () => {
+      const issues = checkElision("très ___", ["intéressant"]);
+      expect(issues).toHaveLength(0);
+    });
+
+    it("handles jusqu'___ with consonant answers (elision wrong)", () => {
+      const issues = checkElision("jusqu'___", ["ici", "demain"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-wrong");
+      expect(issues[0]!.message.toLowerCase()).toContain("jusque ___");
+    });
+
+    it("handles jusque ___ with vowel answers (elision missing)", () => {
+      const issues = checkElision("jusque ___", ["ici"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-missing");
+    });
+
+    it("handles jusqu'___ with all vowel answers (correct)", () => {
+      const issues = checkElision("jusqu'___", ["ici", "aujourd'hui"]);
+      expect(issues).toHaveLength(0);
+    });
+
+    it("handles puisque ___ with vowel (elision missing)", () => {
+      const issues = checkElision("puisque ___", ["il", "elle"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-missing");
+    });
+
+    it("handles puisqu'___ with consonant (elision wrong)", () => {
+      const issues = checkElision("puisqu'___", ["tu", "nous"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-wrong");
+    });
+
+    it("handles lorsque ___ with consonant (no elision needed)", () => {
+      const issues = checkElision("lorsque ___", ["tu"]);
+      expect(issues).toHaveLength(0);
+    });
+
+    it("handles lorsque ___ with vowel (elision missing)", () => {
+      const issues = checkElision("lorsque ___", ["il", "elle"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-missing");
+    });
+
+    it("handles lorsqu'___ with consonant (elision wrong)", () => {
+      const issues = checkElision("lorsqu'___", ["tu", "nous"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-wrong");
+    });
+
+    it("handles quelques ___ (plural does not elide)", () => {
+      const issues = checkElision("quelques ___", ["amis"]);
+      expect(issues).toHaveLength(0);
+    });
+
+    it("handles quelque ___ with vowel (elision missing)", () => {
+      const issues = checkElision("quelque ___", ["un", "autre"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-missing");
+    });
+
+    it("handles quelqu'___ with consonant (elision wrong)", () => {
+      const issues = checkElision("quelqu'___", ["chose"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-wrong");
+    });
+
+    it("handles quelqu'___ with vowel (correct)", () => {
+      const issues = checkElision("quelqu'___", ["un", "autre"]);
+      expect(issues).toHaveLength(0);
+    });
+
+    it("handles quoique ___ with vowel (elision missing)", () => {
+      const issues = checkElision("quoique ___", ["il", "elle"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-missing");
+    });
+
+    it("handles quoiqu'___ with consonant (elision wrong)", () => {
+      const issues = checkElision("quoiqu'___", ["tu", "nous"]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0]!.kind).toBe("elision-wrong");
+    });
   });
 });

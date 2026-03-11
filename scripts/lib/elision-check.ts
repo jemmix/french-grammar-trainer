@@ -35,6 +35,11 @@ export const ELISION_PAIRS: [string, string][] = [
   ["ne", "n'"],
   ["que", "qu'"],
   ["ce", "c'"],
+  ["jusque", "jusqu'"],
+  ["puisque", "puisqu'"],
+  ["lorsque", "lorsqu'"],
+  ["quoique", "quoiqu'"],
+  ["quelque", "quelqu'"],
 ];
 
 export function startsWithVowelSound(word: string): boolean {
@@ -60,7 +65,7 @@ export function getTextBeforeBlank(text: string): string | null {
 }
 
 export function getTextBeforeBlankElided(text: string): string | null {
-  const m = text.match(/(\S+')\s*___/);
+  const m = text.match(/(\S+['\u2019])\s*___/);
   return m ? m[1]! : null;
 }
 
@@ -106,7 +111,7 @@ export function checkElision(text: string, answers: string[]): ElisionIssue[] {
   // Case 2: word'___ (elided form before blank)
   const elidedBefore = getTextBeforeBlankElided(text);
   if (elidedBefore) {
-    const cleaned = elidedBefore.replace(/[«»".,:;!?()]/g, "").toLowerCase();
+    const cleaned = elidedBefore.replace(/[«»".,:;!?()]/g, "").replace(/\u2019/g, "'").toLowerCase();
     if (anyConsonant) {
       for (const [full, elided] of ELISION_PAIRS) {
         if (cleaned === elided) {
