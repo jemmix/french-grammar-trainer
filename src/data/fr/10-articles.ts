@@ -4775,6 +4775,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Utilisez l'article et la préposition corrects pour exprimer l'origine du lieu.",
       phrase: { before: "Les meilleurs chocolats viennent ", after: " Belgique." },
+      hint: "venir",
       answer: "de",
       explanation: "Belgique est un pays féminin. Avec les verbes d'origine (« venir de »), on n'utilise pas de contraction avec les pays féminins. On dit simplement « de Belgique » (pas « de la Belgique »). Les meilleurs chocolats viennent de Belgique.",
       wrongAnswers: [

@@ -145,9 +145,7 @@ export function InputQuestionView({
               />
             </span>
           </span>
-          {question.hint && (
-            <span className="text-ardoise/60 italic ml-1">({question.hint})</span>
-          )}
+          <span className="text-ardoise/60 italic ml-1">({question.hint})</span>
           <span>{after}{t.phraseClose}</span>
         </p>
       </div>
