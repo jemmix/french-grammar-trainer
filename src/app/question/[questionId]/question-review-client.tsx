@@ -556,6 +556,11 @@ function InputReview({ question }: { question: InputQuestion }) {
             </span>
           </span>
           <span>{after}{t.phraseClose}</span>
+          {question.hint && (
+            <span className="ml-3 text-sm font-normal text-ardoise/50 italic tracking-tight">
+              ({question.hint})
+            </span>
+          )}
         </p>
 
         {/* Submit / Reset */}
