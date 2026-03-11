@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "03-past-continuous",
   title: "Past Continuous",
-  description: "Formation and use of the past continuous tense",
+  description: "English past continuous tense",
   rules: [
     { id: "03-01", sectionId: "03-past-continuous", title: "Past continuous: formation (was / were + verb-ing)" },
     { id: "03-02", sectionId: "03-past-continuous", title: "Past continuous: negative form (wasn't / weren't + verb-ing)" },
@@ -297,6 +297,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write the past continuous form of \"work\" for the subject \"I.\"",
       phrase: { before: "I ", after: " when you called." },
+      hint: "\"I\" always takes \"was\" in the past continuous. Don't forget to add \"-ing\" to the verb.",
       answer: "was working",
       explanation: "With \"I,\" the past continuous uses \"was\" + verb-ing. \"I was working\" describes an action in progress in the past.",
       wrongAnswers: [
@@ -313,6 +314,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write the past continuous form of \"study\" for the subject \"they.\"",
       phrase: { before: "They ", after: " all evening yesterday." },
+      hint: "Plural subjects like \"they\" use \"were.\" Remember to drop the \"y\" and add \"-ying\" for verbs ending in consonant + \"y.\"",
       answer: "were studying",
       explanation: "With \"they,\" the past continuous uses \"were\" + verb-ing. \"They were studying\" describes an ongoing past action.",
       wrongAnswers: [
@@ -329,6 +331,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write the past continuous form of \"sleep\" for the subject \"the baby.\"",
       phrase: { before: "The baby ", after: " peacefully when the phone rang." },
+      hint: "\"The baby\" is singular, so it takes the same auxiliary as he/she/it. Keep the verb in its basic form before adding \"-ing.\"",
       answer: "was sleeping",
       explanation: "With \"the baby\" (= it/he/she), past continuous uses \"was\" + verb-ing. \"Was sleeping\" describes an ongoing state.",
       wrongAnswers: [
@@ -345,6 +348,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write the past continuous form of \"run\" for the subject \"we.\"",
       phrase: { before: "We ", after: " to catch the bus when it started raining." },
+      hint: "\"We\" is a plural subject that uses \"were.\" Double the final consonant when the verb ends in consonant-vowel-consonant.",
       answer: "were running",
       explanation: "With \"we,\" the past continuous uses \"were\" + verb-ing. \"We were running\" describes an action in progress.",
       wrongAnswers: [
@@ -361,6 +365,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write the past continuous form of \"write\" for the subject \"she.\"",
       phrase: { before: "She ", after: " an email when her computer crashed." },
+      hint: "\"She\" is third person singular, so use \"was.\" Drop the silent \"e\" before adding \"-ing.\"",
       answer: "was writing",
       explanation: "With \"she,\" the past continuous uses \"was\" + verb-ing. \"She was writing\" describes an action interrupted by another event.",
       wrongAnswers: [
@@ -637,6 +642,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write the past continuous negative form of \"listen\" for the subject \"I.\"",
       phrase: { before: "I ", after: " to music when you came in." },
+      hint: "Use \"wasn't\" for the first person singular \"I.\" Remember to add -ing to the verb.",
       answer: "wasn't listening",
       explanation: "With \"I,\" the past continuous negative uses \"wasn't\" + verb-ing. \"I wasn't listening\" is correct.",
       wrongAnswers: [
@@ -653,6 +659,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write the past continuous negative form of \"play\" for the subject \"they.\"",
       phrase: { before: "They ", after: " football when it started to rain." },
+      hint: "Use \"weren't\" for plural subjects like \"they.\" Don't forget to put the verb in -ing form.",
       answer: "weren't playing",
       explanation: "With \"they,\" the past continuous negative uses \"weren't\" + verb-ing. \"They weren't playing\" is correct.",
       wrongAnswers: [
@@ -669,6 +676,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write the past continuous negative form of \"eat\" for the subject \"she.\"",
       phrase: { before: "She ", after: " when the phone rang." },
+      hint: "Use \"wasn't\" for third person singular subjects like \"she,\" \"he,\" or \"it.\" Add -ing to the verb.",
       answer: "wasn't eating",
       explanation: "With \"she,\" the past continuous negative uses \"wasn't\" + verb-ing. \"She wasn't eating\" is correct.",
       wrongAnswers: [
@@ -685,6 +693,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write the past continuous negative form of \"watch\" for the subject \"we.\"",
       phrase: { before: "We ", after: " TV when the guests arrived." },
+      hint: "Use \"weren't\" for the first person plural \"we.\" The verb should end in -ing.",
       answer: "weren't watching",
       explanation: "With \"we,\" the past continuous negative uses \"weren't\" + verb-ing. \"We weren't watching\" is correct.",
       wrongAnswers: [
@@ -701,6 +710,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write the past continuous negative form of \"talk\" for the subject \"the students.\"",
       phrase: { before: "The students ", after: " during the lecture." },
+      hint: "\"The students\" is a plural noun, so use \"weren't.\" Remember the -ing ending on the verb.",
       answer: "weren't talking",
       explanation: "With \"the students\" (= they), past continuous negative uses \"weren't\" + verb-ing. \"Weren't talking\" is correct.",
       wrongAnswers: [
@@ -977,6 +987,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write the past continuous question form for \"he / read\" at 8 p.m.",
       phrase: { before: "", after: " at 8 p.m. last night?" },
+      hint: "Use the singular past auxiliary with \"he,\" and don't forget the -ing form of the verb.",
       answer: "Was he reading",
       explanation: "With \"he,\" past continuous questions use \"Was\" + subject + verb-ing. \"Was he reading\" is correct.",
       wrongAnswers: [
@@ -993,6 +1004,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write the past continuous question form for \"they / sleep\" when you called.",
       phrase: { before: "", after: " when you called them?" },
+      hint: "\"They\" is plural, so use the plural past auxiliary verb.",
       answer: "Were they sleeping",
       explanation: "With \"they,\" past continuous questions use \"Were\" + subject + verb-ing. \"Were they sleeping\" is correct.",
       wrongAnswers: [
@@ -1009,6 +1021,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write the past continuous question form for \"you / work\" at that time.",
       phrase: { before: "", after: " at that time?" },
+      hint: "\"You\" always takes the plural form of the past auxiliary in questions.",
       answer: "Were you working",
       explanation: "With \"you,\" past continuous questions use \"Were\" + subject + verb-ing. \"Were you working\" is correct.",
       wrongAnswers: [
@@ -1025,6 +1038,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write the past continuous question form for \"the cat / sleep\" on the sofa.",
       phrase: { before: "", after: " on the sofa when you came in?" },
+      hint: "\"The cat\" is a singular subject, so choose the singular past auxiliary.",
       answer: "Was the cat sleeping",
       explanation: "With \"the cat\" (= it), past continuous questions use \"Was\" + subject + verb-ing. \"Was the cat sleeping\" is correct.",
       wrongAnswers: [
@@ -1041,6 +1055,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write the past continuous question form for \"we / make\" too much noise.",
       phrase: { before: "", after: " too much noise during the movie?" },
+      hint: "\"We\" is plural, so use the plural past auxiliary and add -ing to the verb.",
       answer: "Were we making",
       explanation: "With \"we,\" past continuous questions use \"Were\" + subject + verb-ing. \"Were we making\" is correct.",
       wrongAnswers: [
@@ -1317,6 +1332,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write what you were doing at 8 p.m. yesterday using \"have dinner.\"",
       phrase: { before: "At 8 p.m. yesterday, I ", after: "." },
+      hint: "Use the past continuous tense to show an action that was in progress at a specific time. For \"I,\" use \"was\" + verb-ing.",
       answer: "was having dinner",
       explanation: "Past continuous describes an action in progress at a specific past time. \"At 8 p.m.\" requires \"was having.\"",
       wrongAnswers: [
@@ -1333,6 +1349,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write what they were doing at noon using \"work.\"",
       phrase: { before: "At noon yesterday, they ", after: "." },
+      hint: "Use the past continuous tense with \"they\" (plural subject). You'll need \"were\" + verb-ing.",
       answer: "were working",
       explanation: "Past continuous describes an action in progress at a specific past time. \"At noon\" requires \"were working.\"",
       wrongAnswers: [
@@ -1349,6 +1366,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write what she was doing at 3 p.m. using \"study.\"",
       phrase: { before: "At 3 p.m., she ", after: "." },
+      hint: "Use the past continuous tense with a singular subject. Remember to double the final consonant when adding -ing to \"study.\"",
       answer: "was studying",
       explanation: "Past continuous describes an action in progress at a specific past time. \"At 3 p.m.\" requires \"was studying.\"",
       wrongAnswers: [
@@ -1365,6 +1383,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write what the children were doing at 4 o'clock using \"play.\"",
       phrase: { before: "At 4 o'clock, the children ", after: "." },
+      hint: "Use the past continuous tense with a plural subject (\"the children\"). You need \"were\" + verb-ing.",
       answer: "were playing",
       explanation: "Past continuous describes an action in progress at a specific past time. \"At 4 o'clock\" requires \"were playing.\"",
       wrongAnswers: [
@@ -1381,6 +1400,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write what he was doing at midnight using \"sleep.\"",
       phrase: { before: "At midnight, he ", after: "." },
+      hint: "Use the past continuous tense with a singular subject. The form is \"was\" + verb-ing.",
       answer: "was sleeping",
       explanation: "Past continuous describes a state in progress at a specific past time. \"At midnight\" requires \"was sleeping.\"",
       wrongAnswers: [
@@ -1657,6 +1677,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write a background description using \"shine\" for the sun.",
       phrase: { before: "The sun ", after: " brightly as we walked to school." },
+      hint: "Use the past continuous tense (was/were + -ing) to describe ongoing background weather. Think about what form \"shine\" takes.",
       answer: "was shining",
       explanation: "Past continuous describes background weather. \"Was shining\" sets the scene.",
       wrongAnswers: [
@@ -1673,6 +1694,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write a background description using \"blow\" for the wind.",
       phrase: { before: "The wind ", after: " through the trees." },
+      hint: "The wind is singular, so start with \"was\". Add the -ing form of \"blow\" to create the continuous aspect.",
       answer: "was blowing",
       explanation: "Past continuous describes background atmosphere. \"Was blowing\" creates the setting.",
       wrongAnswers: [
@@ -1689,6 +1711,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write a background description using \"fall\" for rain.",
       phrase: { before: "Rain ", after: " as she looked out the window." },
+      hint: "Use the past continuous to describe ongoing background weather. \"Rain\" is uncountable/singular here.",
       answer: "was falling",
       explanation: "Past continuous describes background weather. \"Was falling\" sets the mood.",
       wrongAnswers: [
@@ -1705,6 +1728,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write a background description using \"buzz\" for the city.",
       phrase: { before: "The city ", after: " with activity." },
+      hint: "\"The city\" is singular, so use \"was\" plus the -ing form of \"buzz\". Remember to double the consonant.",
       answer: "was buzzing",
       explanation: "Past continuous describes background atmosphere. \"Was buzzing\" creates the setting.",
       wrongAnswers: [
@@ -1721,6 +1745,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write a background description using \"sing\" for birds.",
       phrase: { before: "Birds ", after: " in the morning air." },
+      hint: "\"Birds\" is plural, so use \"were\" instead of \"was\". Add the -ing form of \"sing\" to complete the tense.",
       answer: "were singing",
       explanation: "Past continuous describes background sounds. \"Were singing\" creates atmosphere.",
       wrongAnswers: [
@@ -1997,6 +2022,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with a simultaneous action using \"watch.\"",
       phrase: { before: "While I was cooking dinner, she ", after: " TV." },
+      hint: "Use past continuous to match the ongoing action in the first clause. Remember to use the correct auxiliary verb for \"she.\"",
       answer: "was watching",
       explanation: "\"While\" connects simultaneous actions. \"Was watching\" matches \"was cooking\" for parallel structure.",
       wrongAnswers: [
@@ -2013,6 +2039,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with a simultaneous action using \"read.\"",
       phrase: { before: "While he was cleaning the house, I ", after: " a book." },
+      hint: "Match the past continuous form from the first clause. \"I\" takes a different auxiliary than plural subjects.",
       answer: "was reading",
       explanation: "\"While\" connects simultaneous actions. \"Was reading\" matches \"was cleaning.\"",
       wrongAnswers: [
@@ -2029,6 +2056,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with a simultaneous action using \"sleep.\"",
       phrase: { before: "While the parents were watching TV, the baby ", after: "." },
+      hint: "Use past continuous for a simultaneous action. The subject is singular, so choose the right auxiliary.",
       answer: "was sleeping",
       explanation: "\"While\" connects simultaneous actions. \"Was sleeping\" matches \"were watching.\"",
       wrongAnswers: [
@@ -2045,6 +2073,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with a simultaneous action using \"work.\"",
       phrase: { before: "While she was talking on the phone, he ", after: "." },
+      hint: "Keep the same tense as the first clause. Use the singular form of the past continuous auxiliary.",
       answer: "was working",
       explanation: "\"While\" connects simultaneous actions. \"Was working\" matches \"was talking.\"",
       wrongAnswers: [
@@ -2061,6 +2090,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with a simultaneous action using \"play.\"",
       phrase: { before: "While the adults were talking, the children ", after: "." },
+      hint: "Match the past continuous structure. \"Children\" is a plural subject, so use the plural auxiliary.",
       answer: "were playing",
       explanation: "\"While\" connects simultaneous actions. \"Were playing\" matches \"were talking.\"",
       wrongAnswers: [
@@ -2337,6 +2367,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with an interrupting action using \"ring.\"",
       phrase: { before: "I was sleeping when the alarm ", after: "." },
+      hint: "The alarm interrupts an ongoing past action. Use the simple past form of \"ring.\"",
       answer: "rang",
       explanation: "Past simple \"rang\" interrupts the ongoing \"was sleeping.\"",
       wrongAnswers: [
@@ -2353,6 +2384,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with an interrupting action using \"start.\"",
       phrase: { before: "They were playing outside when it ", after: " to rain." },
+      hint: "The rain begins suddenly during an ongoing action. Use the simple past form of \"start.\"",
       answer: "started",
       explanation: "Past simple \"started\" interrupts the ongoing \"were playing.\"",
       wrongAnswers: [
@@ -2369,6 +2401,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with an interrupting action using \"enter.\"",
       phrase: { before: "She was reading when her brother ", after: " the room." },
+      hint: "The brother's entry interrupts the ongoing reading. Use the simple past form of \"enter.\"",
       answer: "entered",
       explanation: "Past simple \"entered\" interrupts the ongoing \"was reading.\"",
       wrongAnswers: [
@@ -2385,6 +2418,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with an interrupting action using \"see.\"",
       phrase: { before: "He was walking home when he ", after: " an old friend." },
+      hint: "Seeing a friend is a sudden interruption during an ongoing walk. Use the simple past form of \"see.\"",
       answer: "saw",
       explanation: "Past simple \"saw\" interrupts the ongoing \"was walking.\"",
       wrongAnswers: [
@@ -2401,6 +2435,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with an interrupting action using \"call.\"",
       phrase: { before: "We were watching TV when someone ", after: " our names." },
+      hint: "Someone calling your names interrupts the ongoing TV watching. Use the simple past form of \"call.\"",
       answer: "called",
       explanation: "Past simple \"called\" interrupts the ongoing \"were watching.\"",
       wrongAnswers: [
@@ -2677,6 +2712,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with the background action using \"shine.\"",
       phrase: { before: "The moon ", after: " brightly when they left the house." },
+      hint: "Use past continuous for an ongoing background action. The subject \"moon\" is singular.",
       answer: "was shining",
       explanation: "Past continuous \"was shining\" describes the ongoing background light.",
       wrongAnswers: [
@@ -2693,6 +2729,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with the background action using \"blow.\"",
       phrase: { before: "The wind ", after: " through the trees when we arrived at the cabin." },
+      hint: "The wind was already blowing when they arrived. Use past continuous for the ongoing background action.",
       answer: "was blowing",
       explanation: "Past continuous \"was blowing\" describes the ongoing background weather.",
       wrongAnswers: [
@@ -2709,6 +2746,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with the background action using \"buzz.\"",
       phrase: { before: "Bees ", after: " around the flowers when she entered the garden." },
+      hint: "Multiple bees were performing an ongoing action. Use past continuous with a plural subject.",
       answer: "were buzzing",
       explanation: "Past continuous \"were buzzing\" describes the ongoing background activity.",
       wrongAnswers: [
@@ -2725,6 +2763,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with the background action using \"flow.\"",
       phrase: { before: "Water ", after: " gently in the stream when we found the spot." },
+      hint: "The water was continuously moving in the background. Use past continuous for this ongoing past action.",
       answer: "was flowing",
       explanation: "Past continuous \"was flowing\" describes the ongoing background water movement.",
       wrongAnswers: [
@@ -2741,6 +2780,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with the background action using \"glow.\"",
       phrase: { before: "City lights ", after: " in the distance when they reached the hilltop." },
+      hint: "Multiple lights were creating an ongoing background scene. Use past continuous for a plural subject.",
       answer: "were glowing",
       explanation: "Past continuous \"were glowing\" describes the ongoing background lights.",
       wrongAnswers: [
@@ -3017,6 +3057,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with the longer action using \"paint.\"",
       phrase: { before: "She ", after: " the bedroom when she ran out of paint." },
+      hint: "Use past continuous (was/were + verb-ing) for the longer, ongoing action.",
       answer: "was painting",
       explanation: "Past continuous \"was painting\" is the longer action interrupted by running out.",
       wrongAnswers: [
@@ -3033,6 +3074,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with the longer action using \"study.\"",
       phrase: { before: "They ", after: " in the library when the fire drill started." },
+      hint: "Use past continuous (was/were + verb-ing) for the longer, ongoing action. Remember \"they\" takes \"were.\"",
       answer: "were studying",
       explanation: "Past continuous \"were studying\" is the longer action interrupted by the drill.",
       wrongAnswers: [
@@ -3049,6 +3091,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with the longer action using \"clean.\"",
       phrase: { before: "I ", after: " the house when my mother-in-law arrived." },
+      hint: "Use past continuous (was/were + verb-ing) for the longer, ongoing action. \"I\" takes \"was.\"",
       answer: "was cleaning",
       explanation: "Past continuous \"was cleaning\" is the longer action interrupted by arrival.",
       wrongAnswers: [
@@ -3065,6 +3108,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with the longer action using \"bake.\"",
       phrase: { before: "She ", after: " cookies when the timer went off." },
+      hint: "Use past continuous (was/were + verb-ing) for the longer, ongoing action.",
       answer: "was baking",
       explanation: "Past continuous \"was baking\" is the longer action; timer going off is the shorter event.",
       wrongAnswers: [
@@ -3081,6 +3125,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with the longer action using \"drive.\"",
       phrase: { before: "He ", after: " to work when he got a flat tire." },
+      hint: "Use past continuous (was/were + verb-ing) for the longer, ongoing action.",
       answer: "was driving",
       explanation: "Past continuous \"was driving\" is the longer action interrupted by the flat tire.",
       wrongAnswers: [
@@ -3357,6 +3402,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete using \"while\" to show the ongoing background action.",
       phrase: { before: "", after: " she was cooking, the fire alarm went off." },
+      hint: "\"While\" is typically used to introduce a continuous or ongoing action in the past.",
       answer: "While",
       explanation: "\"While\" introduces the ongoing background action \"was cooking\" before the interruption.",
       wrongAnswers: [
@@ -3373,6 +3419,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Choose \"while\" or \"when\" to complete the sentence.",
       phrase: { before: "The baby started crying ", after: " his mother left the room." },
+      hint: "Think about whether the action \"left\" is ongoing or momentary.",
       answer: "when",
       explanation: "\"When\" introduces the momentary action \"left\" that coincides with \"started crying.\"",
       wrongAnswers: [
@@ -3389,6 +3436,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete using \"while\" to show the ongoing background action.",
       phrase: { before: "I sprained my ankle ", after: " I was playing tennis." },
+      hint: "\"While\" connects a sudden event to an ongoing background action.",
       answer: "while",
       explanation: "\"While\" introduces the ongoing background action \"was playing\" during which \"sprained\" happened.",
       wrongAnswers: [
@@ -3405,6 +3453,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Choose \"while\" or \"when\" to complete the sentence.",
       phrase: { before: "", after: " the guests arrived, we were still setting the table." },
+      hint: "Consider whether \"arrived\" describes an ongoing action or a point in time.",
       answer: "When",
       explanation: "\"When\" introduces the momentary arrival; \"were setting\" was the ongoing action.",
       wrongAnswers: [
@@ -3421,6 +3470,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete using \"while\" to show the ongoing background action.",
       phrase: { before: "He dropped his keys ", after: " he was getting out of the car." },
+      hint: "The action \"was getting out\" was in progress when the keys were dropped.",
       answer: "while",
       explanation: "\"While\" introduces the ongoing background action \"was getting out\" during which \"dropped\" happened.",
       wrongAnswers: [
@@ -3697,6 +3747,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous using \"stay\" to show a temporary situation.",
       phrase: { before: "I ", after: " at a hotel while my apartment was being painted." },
+      hint: "Use past continuous with \"I\" as the subject. The structure is \"was/were\" + verb-ing.",
       answer: "was staying",
       explanation: "Past continuous \"was staying\" emphasizes the temporary accommodation.",
       wrongAnswers: [
@@ -3713,6 +3764,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous to show a temporary situation.",
       phrase: { before: "She ", after: " part-time while finishing her degree." },
+      hint: "Use past continuous with \"she\" as the subject. The verb is \"work.\"",
       answer: "was working",
       explanation: "Past continuous \"was working\" emphasizes the temporary part-time arrangement.",
       wrongAnswers: [
@@ -3729,6 +3781,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous using \"go\" to show a temporary situation.",
       phrase: { before: "They ", after: " vegetarian for a month as an experiment." },
+      hint: "The subject is \"they\" — use the plural past continuous form with \"go.\"",
       answer: "were going",
       explanation: "Past continuous \"were going\" emphasizes the temporary dietary change.",
       wrongAnswers: [
@@ -3745,6 +3798,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous using \"stay open\" to show a temporary situation.",
       phrase: { before: "The store ", after: " 24 hours during the holiday rush." },
+      hint: "Use past continuous with \"the store\" (singular) and include both parts of the phrasal verb.",
       answer: "was staying open",
       explanation: "Past continuous \"was staying open\" describes the temporary extended operating hours.",
       wrongAnswers: [
@@ -3761,6 +3815,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous using \"live\" to show a temporary situation.",
       phrase: { before: "He ", after: " with his parents while saving for a house." },
+      hint: "Use past continuous with \"he\" as the subject. The verb is \"live.\"",
       answer: "was living",
       explanation: "Past continuous \"was living\" emphasizes the temporary living arrangement.",
       wrongAnswers: [
@@ -4037,6 +4092,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous and \"always\" to show annoyance.",
       phrase: { before: "He ", after: " his homework at the last minute." },
+      hint: "Use the past continuous form (was/were + -ing) combined with \"always\" between the auxiliary and the main verb.",
       answer: "was always doing",
       explanation: "Past continuous with \"always\" expresses irritation about the repeated behavior.",
       wrongAnswers: [
@@ -4053,6 +4109,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous and \"forever\" to show emphasis.",
       phrase: { before: "She ", after: " about her travels." },
+      hint: "\"Forever\" works like \"always\" in this pattern—place it between the past form of \"be\" and the -ing verb.",
       answer: "was forever talking",
       explanation: "Past continuous with \"forever\" emphasizes repeated talking.",
       wrongAnswers: [
@@ -4069,6 +4126,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous and \"always\" to show annoyance.",
       phrase: { before: "They ", after: " their appointments." },
+      hint: "Remember that \"they\" takes \"were\" (not \"was\"), and \"always\" goes between the auxiliary and the -ing form.",
       answer: "were always missing",
       explanation: "Past continuous with \"always\" expresses irritation about repeated missed appointments.",
       wrongAnswers: [
@@ -4085,6 +4143,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous and \"constantly\" to show annoyance.",
       phrase: { before: "My brother ", after: " my things without asking." },
+      hint: "\"Constantly\" follows the same pattern as \"always\"—it goes between \"was/were\" and the -ing verb.",
       answer: "was constantly borrowing",
       explanation: "Past continuous with \"constantly\" expresses irritation about repeated borrowing.",
       wrongAnswers: [
@@ -4101,6 +4160,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous and \"always\" to show annoyance.",
       phrase: { before: "The cat ", after: " on the kitchen counter." },
+      hint: "Use \"was\" (singular) with \"always\" followed by the -ing form of the verb.",
       answer: "was always jumping",
       explanation: "Past continuous with \"always\" expresses irritation about repeated jumping.",
       wrongAnswers: [
@@ -4377,6 +4437,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the reported speech using past continuous: Direct: \"I am cooking dinner.\" → Reported: \"She said she ___ dinner.\"",
       phrase: { before: "She said she ", after: " dinner." },
+      hint: "In reported speech, present continuous backshifts to past continuous. Use \"was\" or \"were\" plus the verb ending in \"-ing.\"",
       answer: "was cooking",
       explanation: "Present continuous \"am cooking\" becomes past continuous \"was cooking\" in reported speech.",
       wrongAnswers: [
@@ -4393,6 +4454,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the reported speech using past continuous: Direct: \"They are watching a movie.\" → Reported: \"He said they ___ a movie.\"",
       phrase: { before: "He said they ", after: " a movie." },
+      hint: "Remember that \"they\" is plural, so the past continuous auxiliary must match. Think about the difference between \"was\" and \"were.\"",
       answer: "were watching",
       explanation: "Present continuous \"are watching\" becomes past continuous \"were watching\" in reported speech.",
       wrongAnswers: [
@@ -4409,6 +4471,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence in reported speech: \"She told me she ___ for the train when it started to snow.\"",
       phrase: { before: "She told me she ", after: " for the train when it started to snow." },
+      hint: "The action was in progress when something else happened. Use the past continuous form that shows an ongoing action with a singular subject.",
       answer: "was waiting",
       explanation: "Past continuous \"was waiting\" describes an action in progress at a specific past time in reported speech.",
       wrongAnswers: [
@@ -4425,6 +4488,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the reported speech: Direct: \"I'm not listening to music.\" → Reported: \"He said he ___ to music.\"",
       phrase: { before: "He said he ", after: " to music." },
+      hint: "This is a negative form. The contraction combines \"was not\" and needs to be followed by the verb with \"-ing.\"",
       answer: "wasn't listening",
       explanation: "Present continuous negative \"I'm not listening\" becomes past continuous negative \"he wasn't listening\" in reported speech.",
       wrongAnswers: [
@@ -4441,6 +4505,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the reported speech using past continuous: Direct: \"We are watering the garden.\" → Reported: \"They explained that they ___ the garden when the storm hit.\"",
       phrase: { before: "They explained that they ", after: " the garden when the storm hit." },
+      hint: "The subject \"they\" requires a plural auxiliary verb in past continuous. Keep the continuous aspect with \"-ing\" on the main verb.",
       answer: "were watering",
       explanation: "With \"they,\" past continuous uses \"were\" + verb-ing. \"Were watering\" describes an action interrupted by another event.",
       wrongAnswers: [
@@ -4717,6 +4782,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write a scene-setting description using \"shine\" for the sun.",
       phrase: { before: "The sun ", after: " brightly as they set off on their journey." },
+      hint: "Use the past continuous tense to show an ongoing atmospheric condition. Think: \"was/were + verb-ing.\"",
       answer: "was shining",
       explanation: "Past continuous \"was shining\" creates atmospheric background for the journey's start.",
       wrongAnswers: [
@@ -4733,6 +4799,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write a scene-setting description using \"blow\" for the wind.",
       phrase: { before: "A cold wind ", after: " through the trees." },
+      hint: "Story openings need past tenses. Use the past continuous form of \"blow\" to describe ongoing atmospheric action.",
       answer: "was blowing",
       explanation: "Past continuous \"was blowing\" creates atmospheric background.",
       wrongAnswers: [
@@ -4749,6 +4816,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write a scene-setting description using \"fall\" for rain.",
       phrase: { before: "Rain ", after: " gently outside the window." },
+      hint: "Use past continuous to show continuous background action. The rain is ongoing, not completed.",
       answer: "was falling",
       explanation: "Past continuous \"was falling\" creates peaceful atmosphere.",
       wrongAnswers: [
@@ -4765,6 +4833,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write a scene-setting description using \"buzz\" for a city.",
       phrase: { before: "The city ", after: " with nighttime activity." },
+      hint: "The subject is singular, so use \"was\" plus the -ing form of \"buzz\" to create atmospheric background.",
       answer: "was buzzing",
       explanation: "Past continuous \"was buzzing\" creates atmospheric background.",
       wrongAnswers: [
@@ -4781,6 +4850,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Write a scene-setting description using \"flow\" for a river.",
       phrase: { before: "The river ", after: " peacefully through the valley." },
+      hint: "Use past continuous to describe a continuous, ongoing action in the background. Remember: \"was\" + verb ending in -ing.",
       answer: "was flowing",
       explanation: "Past continuous \"was flowing\" creates calm atmospheric background.",
       wrongAnswers: [
@@ -5057,6 +5127,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct form of the verb \"know\" (past tense).",
       phrase: { before: "She ", after: " the answer to the question immediately." },
+      hint: "\"Know\" is a stative verb that describes a mental state, so it never takes a continuous form. Use the simple past tense.",
       answer: "knew",
       explanation: "\"Know\" is a stative verb and must be used in simple past tense, not past continuous.",
       wrongAnswers: [
@@ -5074,6 +5145,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct form of the verb \"understand\" (past tense).",
       phrase: { before: "They ", after: " the instructions perfectly." },
+      hint: "\"Understand\" is a stative verb describing a cognitive state, so avoid continuous forms. Think of the simple past.",
       answer: "understood",
       explanation: "\"Understand\" is a stative verb expressing a cognitive state. It must be used in simple past tense.",
       wrongAnswers: [
@@ -5090,6 +5162,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct form of the verb \"want\" (past tense).",
       phrase: { before: "He ", after: " to buy a new car last year." },
+      hint: "\"Want\" expresses a state of desire and is a stative verb. Use a simple tense, not a continuous one.",
       answer: "wanted",
       explanation: "\"Want\" is a stative verb expressing a desire. It must be used in simple past tense.",
       wrongAnswers: [
@@ -5106,6 +5179,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct form of the verb \"believe\" (past tense).",
       phrase: { before: "We ", after: " everything she told us." },
+      hint: "\"Believe\" is a stative verb that describes a mental state. It doesn't use continuous forms—stick to simple tenses.",
       answer: "believed",
       explanation: "\"Believe\" is a stative verb expressing a mental state. It must be used in simple past tense.",
       wrongAnswers: [
@@ -5122,6 +5196,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct form of the verb \"need\" (past tense).",
       phrase: { before: "I ", after: " some money to pay the bills." },
+      hint: "\"Need\" expresses a state of necessity and is a stative verb. Use the simple past, not a continuous form.",
       answer: "needed",
       explanation: "\"Need\" is a stative verb expressing necessity. It must be used in simple past tense.",
       wrongAnswers: [
@@ -5398,6 +5473,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct form of \"read\" (past continuous).",
       phrase: { before: "While she ", after: " a book, the phone rang." },
+      hint: "Use \"was/were + verb-ing\" for an action in progress. Match the auxiliary to the singular subject \"she.\"",
       answer: "was reading",
       explanation: "After \"while,\" we use past continuous to describe an ongoing action that was interrupted by the past simple action \"rang.\"",
       wrongAnswers: [
@@ -5414,6 +5490,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct form of \"arrive\" (past simple).",
       phrase: { before: "When the train ", after: ", we were waiting on the platform." },
+      hint: "This is a sudden interrupting event, not an ongoing action. Use the simple past form of the verb.",
       answer: "arrived",
       explanation: "After \"when,\" we use past simple for the interrupting event, while the ongoing action uses past continuous.",
       wrongAnswers: [
@@ -5430,6 +5507,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct form of \"sleep\" (past continuous).",
       phrase: { before: "The baby ", after: " peacefully when the doorbell rang." },
+      hint: "The action was ongoing before being interrupted. Use \"was/were + verb-ing\" and match the singular subject.",
       answer: "was sleeping",
       explanation: "The baby's sleep was an ongoing action interrupted by the doorbell, so past continuous is required.",
       wrongAnswers: [
@@ -5446,6 +5524,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct form of \"start\" (past simple).",
       phrase: { before: "While they were eating dinner, the fire alarm ", after: "." },
+      hint: "The alarm going off is a sudden interruption, not a continuous action. Use the simple past form.",
       answer: "started",
       explanation: "The fire alarm starting is the interrupting event, so it uses past simple.",
       wrongAnswers: [
@@ -5462,6 +5541,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct form of \"work\" (past continuous).",
       phrase: { before: "When the boss came in, we ", after: " on the project." },
+      hint: "Use \"was/were + verb-ing\" for an ongoing action. Remember that \"we\" requires the plural auxiliary.",
       answer: "were working",
       explanation: "Working on the project was an ongoing action interrupted by the boss's arrival, so past continuous is needed.",
       wrongAnswers: [
@@ -5738,6 +5818,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct past continuous form of \"cook.\"",
       phrase: { before: "At 7 p.m. yesterday, she ", after: " dinner in the kitchen." },
+      hint: "Past continuous uses \"was/were\" + the -ing form of the verb. Consider whether \"she\" is singular or plural.",
       answer: "was cooking",
       explanation: "\"At 7 p.m.\" is a specific time, and past continuous shows what was happening at that exact moment.",
       wrongAnswers: [
@@ -5754,6 +5835,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct past continuous form of \"write.\"",
       phrase: { before: "All morning, the author ", after: " her new novel." },
+      hint: "The time expression \"all morning\" indicates an ongoing action. Match the auxiliary verb to the singular subject \"author.\"",
       answer: "was writing",
       explanation: "\"All morning\" indicates duration, and past continuous emphasizes the ongoing activity.",
       wrongAnswers: [
@@ -5770,6 +5852,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct past continuous form of \"rain.\"",
       phrase: { before: "From 2 to 4 p.m., it ", after: " heavily." },
+      hint: "The subject \"it\" always takes a singular verb form. Use the past tense of \"to be\" plus the -ing form.",
       answer: "was raining",
       explanation: "\"From 2 to 4 p.m.\" indicates a period, and past continuous shows the ongoing weather condition.",
       wrongAnswers: [
@@ -5786,6 +5869,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct past continuous form of \"drive.\"",
       phrase: { before: "At 10 p.m. last night, we ", after: " home from the party." },
+      hint: "The subject \"we\" is plural, so you need the plural form of the past auxiliary verb.",
       answer: "were driving",
       explanation: "\"At 10 p.m.\" is a specific time, and past continuous shows what was happening at that moment.",
       wrongAnswers: [
@@ -5802,6 +5886,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct past continuous form of \"play.\"",
       phrase: { before: "All afternoon, the musicians ", after: " their instruments." },
+      hint: "\"Musicians\" is a plural noun. Choose the correct past auxiliary verb for plural subjects.",
       answer: "were playing",
       explanation: "\"All afternoon\" indicates duration, and past continuous emphasizes the ongoing activity.",
       wrongAnswers: [
@@ -6078,6 +6163,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous for parallel action.",
       phrase: { before: "While she was studying for the exam, she ", after: " to classical music." },
+      hint: "Use the same tense as the first clause to show two actions happening at the same time.",
       answer: "was listening",
       explanation: "Past continuous \"was listening\" shows the second simultaneous ongoing action.",
       wrongAnswers: [
@@ -6094,6 +6180,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with the past continuous of \"cycle\" to show a parallel action.",
       phrase: { before: "While he was running on the treadmill, his friend ", after: " in the park." },
+      hint: "Match the tense of \"was running\" to show both actions as ongoing at the same time.",
       answer: "was cycling",
       explanation: "Past continuous \"was cycling\" shows the second simultaneous ongoing action.",
       wrongAnswers: [
@@ -6110,6 +6197,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with the past continuous of \"clean\" to show a parallel action.",
       phrase: { before: "While Mom was cooking dinner, Dad ", after: " the kitchen." },
+      hint: "Use the past continuous form to show Dad's action happening simultaneously with Mom's cooking.",
       answer: "was cleaning",
       explanation: "Past continuous \"was cleaning\" shows the second simultaneous ongoing action.",
       wrongAnswers: [
@@ -6126,6 +6214,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous for parallel action.",
       phrase: { before: "While the students were writing essays, the teacher ", after: " diagrams on the board." },
+      hint: "Match the ongoing nature of \"were writing\" to show simultaneous actions.",
       answer: "was drawing",
       explanation: "Past continuous \"was drawing\" shows the teacher's simultaneous ongoing action.",
       wrongAnswers: [
@@ -6142,6 +6231,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous for parallel action.",
       phrase: { before: "While they were watching TV, they ", after: " popcorn." },
+      hint: "Use the past continuous with the correct plural auxiliary verb to show two simultaneous actions.",
       answer: "were eating",
       explanation: "Past continuous \"were eating\" shows the second simultaneous ongoing action.",
       wrongAnswers: [
@@ -6418,6 +6508,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the polite request with the past continuous form of \"wonder.\"",
       phrase: { before: "I ", after: " if you could help me with my homework." },
+      hint: "Use the past continuous form with the first person singular subject. This structure makes requests sound more polite and indirect.",
       answer: "was wondering",
       explanation: "\"I was wondering\" is the standard polite, indirect way to make a request.",
       wrongAnswers: [
@@ -6434,6 +6525,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the polite request with the past continuous form of \"hope.\"",
       phrase: { before: "We ", after: " you could attend the meeting tomorrow." },
+      hint: "Remember that \"we\" requires a different past form of \"to be\" than \"I\". The past continuous softens the tone of invitations.",
       answer: "were hoping",
       explanation: "\"We were hoping\" creates a polite, soft tone for making a request or invitation.",
       wrongAnswers: [
@@ -6450,6 +6542,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the polite request with the past continuous form of \"think.\"",
       phrase: { before: "I ", after: " perhaps you could lend me your notes." },
+      hint: "Use the past continuous form with the first person singular subject. This structure makes suggestions sound more tentative and polite.",
       answer: "was thinking",
       explanation: "\"I was thinking\" creates a tentative, polite tone for making a request.",
       wrongAnswers: [
@@ -6466,6 +6559,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the polite request with the past continuous form of \"wonder.\"",
       phrase: { before: "I ", after: " if it would be possible to reschedule the appointment." },
+      hint: "Use the past continuous form with the first person singular subject. This pattern is commonly used to make requests sound less direct.",
       answer: "was wondering",
       explanation: "\"I was wondering\" is the standard polite way to ask for a change or favor.",
       wrongAnswers: [
@@ -6482,6 +6576,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the polite request with the past continuous form of \"hope.\"",
       phrase: { before: "I ", after: " you might be free for dinner this weekend." },
+      hint: "Use the past continuous form with the first person singular subject. This structure softens invitations and makes them sound more polite.",
       answer: "was hoping",
       explanation: "\"I was hoping\" creates a soft, polite tone for making an invitation.",
       wrongAnswers: [
@@ -6758,6 +6853,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the correct past simple form of \"go off.\"",
       phrase: { before: "When the fire alarm ", after: " , we were working in the office." },
+      hint: "An interrupting event that happens suddenly is usually in past simple, not continuous.",
       answer: "went off",
       explanation: "Past simple for the interrupting event (fire alarm), past continuous for the ongoing action (working).",
       wrongAnswers: [
@@ -6774,6 +6870,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the past continuous form of \"listen.\"",
       phrase: { before: "While she ", after: " to music, her brother was reading a book." },
+      hint: "\"While\" often signals two simultaneous ongoing actions, both in past continuous.",
       answer: "was listening",
       explanation: "Past continuous with \"while\" to show an action happening simultaneously with another ongoing action.",
       wrongAnswers: [
@@ -6790,6 +6887,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the past continuous of \"have.\"",
       phrase: { before: "At 10 a.m. yesterday, she ", after: " a meeting with the team." },
+      hint: "A specific time (e.g., \"at 10 a.m.\") often signals an action in progress at that moment.",
       answer: "was having",
       explanation: "Past continuous with specific time shows an action in progress at that moment.",
       wrongAnswers: [
@@ -6806,6 +6904,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Choose the correct tense (past simple or past continuous) and complete the sentence.",
       phrase: { before: "He ", after: " his wallet while he was jogging in the park." },
+      hint: "A sudden, momentary event during an ongoing action uses past simple.",
       answer: "lost",
       explanation: "Past simple for the momentary event (losing) that occurred during an ongoing action (jogging).",
       wrongAnswers: [
@@ -6822,6 +6921,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence with the past continuous of \"study.\"",
       phrase: { before: "All evening, they ", after: " for the exam." },
+      hint: "Phrases like \"all evening\" or \"all day\" emphasize duration, which pairs well with past continuous.",
       answer: "were studying",
       explanation: "Past continuous with \"all evening\" emphasizes the duration and ongoing nature.",
       wrongAnswers: [
