@@ -1,6 +1,6 @@
 import type { Section } from "../types";
 
-// Generated from: questions/10-01.txt, questions/10-02.txt, questions/10-03.txt, questions/10-04.txt, questions/10-05.txt, questions/10-06.txt, questions/10-07.txt, questions/10-08.txt, questions/10-09.txt, questions/10-10.txt, questions/10-11.txt, questions/10-12.txt, questions/10-13.txt, questions/10-14.txt, questions/10-15.txt, questions/10-16.txt, questions/10-17.txt, questions/10-18.txt, questions/10-19.txt, questions/10-20.txt
+// Generated from: questions/fr/10-01.txt, questions/fr/10-02.txt, questions/fr/10-03.txt, questions/fr/10-04.txt, questions/fr/10-05.txt, questions/fr/10-06.txt, questions/fr/10-07.txt, questions/fr/10-08.txt, questions/fr/10-09.txt, questions/fr/10-10.txt, questions/fr/10-11.txt, questions/fr/10-12.txt, questions/fr/10-13.txt, questions/fr/10-14.txt, questions/fr/10-15.txt, questions/fr/10-16.txt, questions/fr/10-17.txt, questions/fr/10-18.txt, questions/fr/10-19.txt, questions/fr/10-20.txt
 // Total: 460 MCQ + 115 INPUT = 575 questions
 
 const section: Section = {
@@ -4677,9 +4677,9 @@ const section: Section = {
       answer: "vais",
       explanation: "Conjugaison du verbe « aller » à la 1ère personne singulier au présent : « je vais ». Italie étant un pays féminin, on utilise « en », ce qui donne « Je vais en Italie l'été prochain ».",
       wrongAnswers: [
-        { text: "irai", explanation: "« Irai » est le futur simple (« je irai »), pas le présent. Le contexte demande le présent : « je vais »." },
+        { text: "j'irai", explanation: "« J'irai » est le futur simple, pas le présent. Le contexte demande le présent : « je vais »." },
         { text: "va", explanation: "« Va » est la conjugaison à la 3ème personne singulier (« il/elle va »), pas la 1ère personne. Pour « je », on utilise « vais »." },
-        { text: "allais", explanation: "« Allais » est l'imparfait (« je allais »), pas le présent. Le contexte demande le présent : « je vais »." },
+        { text: "j'allais", explanation: "« J'allais » est l'imparfait, pas le présent. Le contexte demande le présent : « je vais »." },
         { text: "suis allée", explanation: "Bien que « suis allée » soit une forme possible au passé composé, le contexte indique le futur (« l'été prochain »), donc le présent « je vais » est correct." },
         { text: "vont", explanation: "« Vont » est la conjugaison à la 3ème personne pluriel (« ils/elles vont »), pas la 1ère personne singulier. Pour « je », on utilise « vais »." },
       ],
@@ -6881,7 +6881,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "10-18",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ parce que je n'ai pas mangé depuis ce matin. »",
+      prompt: "Complétez : « J'___ parce que je n'ai pas mangé depuis ce matin. »",
       choices: [
         { text: "ai faim", correct: true, explanation: "L'expression figée « avoir faim » n'utilise pas d'article : « avoir faim » (littéralement « avoir faim »), pas « avoir la faim »." },
         { text: "ai la faim", correct: false, explanation: "On ne dit jamais « avoir la faim ». L'expression figée est « avoir faim » sans article." },
@@ -7076,7 +7076,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "10-18",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je _____ peur du noir depuis mon enfance. »",
+      prompt: "Complétez : « J'_____ peur du noir depuis mon enfance. »",
       choices: [
         { text: "ai", correct: true, explanation: "On dit « avoir peur de quelque chose ». Ici, on remplace simplement le sujet indéfini par un sujet personnel : « j'ai peur du noir ». Pas d'article dans « avoir peur »." },
         { text: "ai la", correct: false, explanation: "On ne dit jamais « avoir la peur ». L'expression est « avoir peur ». Après « avoir », on met un adjectif ou un complément, pas un article." },

@@ -1,6 +1,6 @@
 import type { Section } from "../types";
 
-// Generated from: questions/08-01.txt, questions/08-02.txt, questions/08-03.txt, questions/08-04.txt, questions/08-05.txt, questions/08-06.txt, questions/08-07.txt, questions/08-08.txt, questions/08-09.txt, questions/08-10.txt, questions/08-11.txt, questions/08-12.txt, questions/08-13.txt, questions/08-14.txt, questions/08-15.txt, questions/08-16.txt, questions/08-17.txt, questions/08-18.txt, questions/08-19.txt, questions/08-20.txt
+// Generated from: questions/fr/08-01.txt, questions/fr/08-02.txt, questions/fr/08-03.txt, questions/fr/08-04.txt, questions/fr/08-05.txt, questions/fr/08-06.txt, questions/fr/08-07.txt, questions/fr/08-08.txt, questions/fr/08-09.txt, questions/fr/08-10.txt, questions/fr/08-11.txt, questions/fr/08-12.txt, questions/fr/08-13.txt, questions/fr/08-14.txt, questions/fr/08-15.txt, questions/fr/08-16.txt, questions/fr/08-17.txt, questions/fr/08-18.txt, questions/fr/08-19.txt, questions/fr/08-20.txt
 // Total: 400 MCQ + 100 INPUT = 500 questions
 
 const section: Section = {
@@ -1698,7 +1698,7 @@ const section: Section = {
       ruleId: "08-05",
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé du verbe « aller ».",
-      phrase: { before: "Je crains qu'il ne ", after: " à l'école." },
+      phrase: { before: "Je crains qu'il n'", after: " à l'école." },
       answer: "soit allé",
       explanation: "Le subjonctif passé (soit allé) exprime la crainte qu'une action s'est produite. « Aller » utilise l'auxiliaire « être ».",
       wrongAnswers: [
@@ -2494,7 +2494,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-08",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je vais partir avant qu'elle ne me ___ . »",
+      prompt: "Complétez : « Je vais partir avant qu'elle ne m'___ . »",
       choices: [
         { text: "pose des questions", correct: true, explanation: "Après « avant que », le subjonctif passé « aie posé » s'utiliserait, mais ici « pose » au subjonctif présent est acceptable pour une action attendue." },
         { text: "avait posé", correct: false, explanation: "« avait posé » est au plus-que-parfait indicatif, pas au subjonctif." },
@@ -2559,7 +2559,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-08",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous devons partir avant qu'ils ne ___ . »",
+      prompt: "Complétez : « Nous devons partir avant qu'ils n'___ . »",
       choices: [
         { text: "aient découvert", correct: true, explanation: "Le subjonctif passé « aient découvert » convient après « avant que » pour une action antérieure." },
         { text: "découvrent", correct: false, explanation: "« découvrent » est au subjonctif présent, mais on a besoin du subjonctif passé." },
@@ -2585,7 +2585,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-08",
       generatedBy: "haiku",
-      prompt: "Complétez : « Avant qu'elle ne ___ la porte, il s'était échappé. »",
+      prompt: "Complétez : « Avant qu'elle n'___ la porte, il s'était échappé. »",
       choices: [
         { text: "ait fermée", correct: true, explanation: "Le subjonctif passé « ait fermée » s'emploie après « avant que » pour marquer l'antériorité." },
         { text: "ferme", correct: false, explanation: "« ferme » est au subjonctif présent, mais on a besoin du subjonctif passé." },
@@ -2611,7 +2611,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-08",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle part avant qu'on ne la ___ . »",
+      prompt: "Complétez : « Elle part avant qu'on ne l'___ . »",
       choices: [
         { text: "reconnaisse", correct: true, explanation: "Le subjonctif présent « reconnaisse » est ici accepté, mais le subjonctif passé marquerait mieux l'antériorité attendue." },
         { text: "reconnaîtra", correct: false, explanation: "« reconnaîtra » est au futur simple, non au subjonctif." },
@@ -2650,7 +2650,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-08",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous partons avant que les enfants ne ___ de l'école. »",
+      prompt: "Complétez : « Nous partons avant que les enfants n'___ de l'école. »",
       choices: [
         { text: "aient sorti", correct: true, explanation: "Le subjonctif passé « aient sorti » s'emploie après « avant que » pour l'antériorité." },
         { text: "sortent", correct: false, explanation: "« sortent » est au subjonctif présent, mais le passé est requis pour l'antériorité." },
@@ -2663,7 +2663,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-08",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle veut partir avant qu'il ne me ___ la vérité. »",
+      prompt: "Complétez : « Elle veut partir avant qu'il ne m'___ la vérité. »",
       choices: [
         { text: "ait dit", correct: true, explanation: "Le subjonctif passé « ait dit » convient après « avant que » pour une action antérieure." },
         { text: "dise", correct: false, explanation: "« dise » est au subjonctif présent, mais on a besoin du subjonctif passé pour l'antériorité." },
@@ -2676,7 +2676,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-08",
       generatedBy: "haiku",
-      prompt: "Complétez : « Avant qu'on ne ___ cette décision, nous la contestons. »",
+      prompt: "Complétez : « Avant qu'on n'___ cette décision, nous la contestons. »",
       choices: [
         { text: "ait prise", correct: true, explanation: "Le subjonctif passé « ait prise » s'utilise après « avant que » pour marquer l'antériorité." },
         { text: "prenne", correct: false, explanation: "« prenne » est au subjonctif présent, mais le passé est nécessaire pour l'antériorité." },
@@ -2689,7 +2689,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-08",
       generatedBy: "haiku",
-      prompt: "Complétez : « Les ouvriers quitteront avant qu'ils ne ___ le bâtiment. »",
+      prompt: "Complétez : « Les ouvriers quitteront avant qu'ils n'___ le bâtiment. »",
       choices: [
         { text: "aient terminé", correct: true, explanation: "Le subjonctif passé « aient terminé » convient après « avant que » pour l'antériorité." },
         { text: "terminent", correct: false, explanation: "« terminent » est au subjonctif présent, mais le passé est requis pour l'antériorité." },
@@ -2750,7 +2750,7 @@ const section: Section = {
       ruleId: "08-08",
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif passé du verbe entre parenthèses",
-      phrase: { before: "Avant que vous ne ", after: " la nouvelle, nous l'avions déjà su." },
+      phrase: { before: "Avant que vous n'", after: " la nouvelle, nous l'avions déjà su." },
       answer: "ayez apprise",
       explanation: "Le subjonctif passé « ayez apprise » (vous) s'utilise après « avant que » pour marquer l'antériorité.",
       wrongAnswers: [
@@ -2767,7 +2767,7 @@ const section: Section = {
       ruleId: "08-08",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé après « avant que »",
-      phrase: { before: "Ils partiront avant qu'on ne ", after: " à le joindre." },
+      phrase: { before: "Ils partiront avant qu'on n'", after: " à le joindre." },
       answer: "ait réussi",
       explanation: "Le subjonctif passé « ait réussi » s'emploie après « avant que » pour exprimer l'antériorité.",
       wrongAnswers: [
@@ -2784,7 +2784,7 @@ const section: Section = {
       ruleId: "08-08",
       generatedBy: "haiku",
       prompt: "Remplissez le blanc avec le subjonctif passé du verbe approprié",
-      phrase: { before: "Elle veux manger avant qu'on ne ", after: " le repas." },
+      phrase: { before: "Elle veut manger avant qu'on n'", after: " le repas." },
       answer: "ait servi",
       explanation: "Le subjonctif passé « ait servi » s'utilise après « avant que » pour montrer que l'action de manger doit avoir lieu avant celle de servir.",
       wrongAnswers: [
@@ -2813,7 +2813,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-09",
       generatedBy: "haiku",
-      prompt: "Complétez : « Quoique je ___ tous les cours, j'ai eu une mauvaise note. »",
+      prompt: "Complétez : « Quoique j'___ tous les cours, j'ai eu une mauvaise note. »",
       choices: [
         { text: "aie suivi", correct: true, explanation: "Après « quoique » (synonyme de « bien que »), le subjonctif passé « aie suivi » exprime une action antérieure au verbe principal." },
         { text: "suivais", correct: false, explanation: "L'imparfait « suivais » n'est pas approprié après « quoique » qui requiert le subjonctif." },
@@ -3008,7 +3008,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-09",
       generatedBy: "haiku",
-      prompt: "Complétez : « Bien que je ___ cette langue pendant cinq ans, je ne la parle pas couramment. »",
+      prompt: "Complétez : « Bien que j'___ cette langue pendant cinq ans, je ne la parle pas couramment. »",
       choices: [
         { text: "aie étudiée", correct: true, explanation: "Le subjonctif passé « aie étudiée » après « bien que » avec accord du participe passé sur l'objet direct « cette langue » (féminin)." },
         { text: "ai étudiée", correct: false, explanation: "L'indicatif passé composé « ai étudiée » ne convient pas ; après « bien que » il faut le subjonctif." },
@@ -3171,7 +3171,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-10",
       generatedBy: "haiku",
-      prompt: "Complétez : « C'est la première fois que je ___ une telle beauté. »",
+      prompt: "Complétez : « C'est la première fois que j' ___ une telle beauté. »",
       choices: [
         { text: "aie aperçue", correct: true, explanation: "Après « la première fois que », le subjonctif passé exprime l'idée d'une action unique et antérieure." },
         { text: "aperçois", correct: false, explanation: "C'est le présent de l'indicatif, non le subjonctif passé requis après « la première fois que »." },
@@ -3327,7 +3327,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-10",
       generatedBy: "haiku",
-      prompt: "Complétez : « C'est le meilleur conseil qu'il me ___ jamais donné. »",
+      prompt: "Complétez : « C'est le meilleur conseil qu'il m' ___ jamais donné. »",
       choices: [
         { text: "ait", correct: true, explanation: "Le subjonctif passé du verbe « avoir » après « le meilleur que » exprime une action antérieure unique." },
         { text: "a", correct: false, explanation: "C'est l'indicatif passé composé, non le subjonctif passé exigé." },
@@ -3397,7 +3397,7 @@ const section: Section = {
       ruleId: "08-10",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé.",
-      phrase: { before: "C'est la première personne que je ", after: " qui ait vraiment compris ma vision." },
+      phrase: { before: "C'est la première personne que j' ", after: " qui ait vraiment compris ma vision." },
       answer: "aie rencontrée",
       explanation: "Le subjonctif passé après « la première personne que » marque une action antérieure unique.",
       wrongAnswers: [
@@ -3900,7 +3900,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-12",
       generatedBy: "haiku",
-      prompt: "Complétez : « Ils sont surpris que nous ne ___ pas plus tôt. »",
+      prompt: "Complétez : « Ils sont surpris que nous n'___ pas plus tôt. »",
       choices: [
         { text: "soyons partis", correct: true, explanation: "Le subjonctif passé « soyons partis » convient après « ils sont surpris que » pour marquer l'antériorité d'une action négative." },
         { text: "sommes pas partis", correct: false, explanation: "« sommes pas partis » est un passé composé de l'indicatif au lieu du subjonctif ; il ne convient pas après une expression de surprise." },
@@ -3952,7 +3952,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-12",
       generatedBy: "haiku",
-      prompt: "Complétez : « Craignez-vous que les enfants ne ___ la maison ? »",
+      prompt: "Complétez : « Craignez-vous que les enfants n'___ la maison ? »",
       choices: [
         { text: "aient salie", correct: true, explanation: "Le subjonctif passé « aient salie » suit « craignez-vous que ne », exprimant la crainte d'une action passée (accord avec « maison »)." },
         { text: "ont salie", correct: false, explanation: "« ont salie » est le passé composé de l'indicatif ; la crainte exige le subjonctif passé, pas l'indicatif." },
@@ -4082,7 +4082,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-12",
       generatedBy: "haiku",
-      prompt: "Complétez : « À moins qu'il ne ___ ses erreurs, il n'aura pas de promotion. »",
+      prompt: "Complétez : « À moins qu'il n'___ ses erreurs, il n'aura pas de promotion. »",
       choices: [
         { text: "ait reconnu", correct: true, explanation: "Le subjonctif passé « ait reconnu » convient après « à moins que ne » pour indiquer une condition sur une action antérieure." },
         { text: "a reconnu", correct: false, explanation: "« a reconnu » est le passé composé de l'indicatif ; « à moins que » exige le subjonctif." },
@@ -4153,7 +4153,7 @@ const section: Section = {
       ruleId: "08-12",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé dans une subordonnée de crainte.",
-      phrase: { before: "Il craint que nous ne ", after: " l'événement." },
+      phrase: { before: "Il craint que nous n'", after: " l'événement." },
       answer: "ayons manqué",
       explanation: "Le subjonctif passé « ayons manqué » convient après « il craint que ne » pour exprimer la crainte d'une action antérieure.",
       wrongAnswers: [
@@ -4652,7 +4652,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-14",
       generatedBy: "haiku",
-      prompt: "Complétez : « Mon collègue aurait souhaité que je ___ plus de responsabilités. »",
+      prompt: "Complétez : « Mon collègue aurait souhaité que j'___ plus de responsabilités. »",
       choices: [
         { text: "aie acceptées", correct: true, explanation: "Le subjonctif passé (aie acceptées) exprime un souhait irréalisé concernant une action passée." },
         { text: "accepte", correct: false, explanation: "Le subjonctif présent (accepte) marque un désir présent, non un souhait irréalisé dans le passé." },
@@ -4678,7 +4678,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-14",
       generatedBy: "haiku",
-      prompt: "Complétez : « Aurais-tu aimé que je ___ ce problème différemment ? »",
+      prompt: "Complétez : « Aurais-tu aimé que j'___ ce problème différemment ? »",
       choices: [
         { text: "aie résolu", correct: true, explanation: "Le subjonctif passé (aie résolu) exprime le regret d'une action passée." },
         { text: "résolve", correct: false, explanation: "Le subjonctif présent (résolve) marque un désir présent, non un regret pour une action passée." },
@@ -4769,7 +4769,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-14",
       generatedBy: "haiku",
-      prompt: "Complétez : « Ils auraient voulu que je ___ des efforts supplémentaires. »",
+      prompt: "Complétez : « Ils auraient voulu que j'___ des efforts supplémentaires. »",
       choices: [
         { text: "aie fournis", correct: true, explanation: "Le subjonctif passé (aie fournis) exprime un souhait irréalisé concernant une action passée." },
         { text: "fournis", correct: false, explanation: "Le passé composé (j'ai fournis) serait de l'indicatif ; le subjonctif passé est requis ici." },
@@ -4813,7 +4813,7 @@ const section: Section = {
       ruleId: "08-14",
       generatedBy: "haiku",
       prompt: "Conjuguez au subjonctif passé le verbe entre parenthèses",
-      phrase: { before: "Aurais-tu voulu que je ", after: " ce voyage avec toi ? (faire)" },
+      phrase: { before: "Aurais-tu voulu que j'", after: " ce voyage avec toi ? (faire)" },
       answer: "aie fait",
       explanation: "Le subjonctif passé (aie fait) exprime un regret de ne pas avoir participé au voyage.",
       wrongAnswers: [
@@ -6058,7 +6058,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-18",
       generatedBy: "haiku",
-      prompt: "Complétez : « Le projet a avancé sans que des problèmes majeurs ne ___ survenus. »",
+      prompt: "Complétez : « Le projet a avancé sans que des problèmes majeurs n'___ survenus. »",
       choices: [
         { text: "soient", correct: true, explanation: "Après « sans que », on utilise le subjonctif présent. Le sujet « des problèmes majeurs » est au pluriel (troisième personne), donc « être » doit être au subjonctif présent : « soient »." },
         { text: "sont", correct: false, explanation: "« Sont » est à l'indicatif présent. Après « sans que », on utilise le subjonctif présent." },
@@ -6084,7 +6084,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-18",
       generatedBy: "haiku",
-      prompt: "Complétez : « Les changements ont été mis en place sans que les employés ne ___ consultés à l'avance. »",
+      prompt: "Complétez : « Les changements ont été mis en place sans que les employés n'___ consultés à l'avance. »",
       choices: [
         { text: "soient", correct: true, explanation: "Après « sans que », on utilise le subjonctif présent. Le sujet « les employés » est au pluriel (troisième personne), donc « être » doit être au subjonctif présent : « soient »." },
         { text: "sont", correct: false, explanation: "« Sont » est à l'indicatif présent. Après « sans que », on utilise le subjonctif présent." },
@@ -6161,7 +6161,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-18",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu as mangé sans que je te le ___ demander. »",
+      prompt: "Complétez : « Tu as mangé sans que je te l'___ demander. »",
       choices: [
         { text: "demande", correct: true, explanation: "Après « sans que », on utilise le subjonctif présent. Le sujet « je » est à la première personne du singulier, donc « demander » doit être au subjonctif présent : « demande »." },
         { text: "demandais", correct: false, explanation: "« Demandais » est à l'imparfait indicatif. Après « sans que », on utilise le subjonctif présent, pas l'imparfait." },
@@ -6174,7 +6174,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-18",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle a changé d'avis sans que personne ne la ___ persuader. »",
+      prompt: "Complétez : « Elle a changé d'avis sans que personne ne l'___ persuader. »",
       choices: [
         { text: "persuade", correct: true, explanation: "Après « sans que », on utilise le subjonctif présent. Le sujet « personne » est à la troisième personne du singulier, donc « persuader » doit être au subjonctif présent : « persuade »." },
         { text: "persuadait", correct: false, explanation: "« Persuadait » est à l'imparfait indicatif. Après « sans que », on utilise le subjonctif présent." },
@@ -6187,7 +6187,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-18",
       generatedBy: "haiku",
-      prompt: "Complétez : « Le rapport a été présenté sans que les chiffres ne ___ vérifiés. »",
+      prompt: "Complétez : « Le rapport a été présenté sans que les chiffres n'___ vérifiés. »",
       choices: [
         { text: "soient", correct: true, explanation: "Après « sans que », on utilise le subjonctif présent. Le sujet « les chiffres » est au pluriel (troisième personne), donc « être » doit être au subjonctif présent : « soient »." },
         { text: "sont", correct: false, explanation: "« Sont » est l'indicatif présent. Après « sans que », on emploie le subjonctif, pas l'indicatif." },
@@ -6200,7 +6200,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-18",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous avons accepté sans que tu le ___ demander deux fois. »",
+      prompt: "Complétez : « Nous avons accepté sans que tu l'___ demander deux fois. »",
       choices: [
         { text: "demandes", correct: true, explanation: "Après « sans que », on utilise le subjonctif présent. Le sujet « tu » est à la deuxième personne du singulier, donc « demander » doit être au subjonctif présent : « demandes »." },
         { text: "demandais", correct: false, explanation: "« Demandais » est à l'imparfait indicatif. Après « sans que », on utilise le subjonctif présent." },
@@ -6213,7 +6213,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-18",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle a pris une décision sans que personne ne ___ son avis. »",
+      prompt: "Complétez : « Elle a pris une décision sans que personne n'___ son avis. »",
       choices: [
         { text: "demande", correct: true, explanation: "Après « sans que », on utilise le subjonctif présent. Le sujet « personne » est à la troisième personne du singulier, donc « demander » doit être au subjonctif présent : « demande »." },
         { text: "demandait", correct: false, explanation: "« Demandait » est à l'imparfait indicatif. Après « sans que », on utilise le subjonctif présent." },
@@ -6226,7 +6226,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-18",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il a réussi sans que rien ne le ___. »",
+      prompt: "Complétez : « Il a réussi sans que rien ne l'___. »",
       choices: [
         { text: "gêne", correct: true, explanation: "Après « sans que », on utilise le subjonctif présent. Le sujet « rien » est à la troisième personne du singulier, donc « gêner » doit être au subjonctif présent : « gêne »." },
         { text: "gênait", correct: false, explanation: "« Gênait » est à l'imparfait indicatif. Après « sans que », on utilise le subjonctif présent." },
@@ -6240,7 +6240,7 @@ const section: Section = {
       ruleId: "08-18",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au subjonctif présent.",
-      phrase: { before: "Tu as changé d'avis sans que je te ", after: " (presser)." },
+      phrase: { before: "Tu as changé d'avis sans que je t'", after: " (presser)." },
       answer: "presse",
       explanation: "Après « sans que », on utilise le subjonctif présent. Avec le sujet « je » (première personne du singulier), le verbe « presser » se conjugue « presse ».",
       wrongAnswers: [
@@ -6359,7 +6359,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-19",
       generatedBy: "haiku",
-      prompt: "Complétez : « Pourvu que je ___ cette opportunité ! »",
+      prompt: "Complétez : « Pourvu que j'___ cette opportunité ! »",
       choices: [
         { text: "aie saisie", correct: true, explanation: "Avec le sujet « je » et le verbe « saisir », le subjonctif passé est « aie saisie ». L'accord du participe passé « saisie » se fait avec le COD féminin « cette opportunité »." },
         { text: "saisisse", correct: false, explanation: "« Saisisse » est le subjonctif présent. Pour exprimer l'espoir qu'une action soit déjà accomplies, il faut le subjonctif passé « aie saisie »." },
@@ -6639,7 +6639,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-20",
       generatedBy: "haiku",
-      prompt: "Complétez : « Le professeur craint que ses élèves ne ___ pas compris la leçon. »",
+      prompt: "Complétez : « Le professeur craint que ses élèves n'___ pas compris la leçon. »",
       choices: [
         { text: "aient compris", correct: true, explanation: "Le subjonctif passé indique que la non-compréhension pourrait être antérieure à la crainte exprimée au présent." },
         { text: "comprennent", correct: false, explanation: "Le subjonctif présent suggérerait une incompréhension en cours ou future, non passée." },
@@ -6808,7 +6808,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-20",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle craint que l'affaire ne ___ mauvaise tournure depuis son départ. »",
+      prompt: "Complétez : « Elle craint que l'affaire n'___ mauvaise tournure depuis son départ. »",
       choices: [
         { text: "ait pris", correct: true, explanation: "Le subjonctif passé exprime une crainte que quelque chose s'est produit antérieurement à son absence." },
         { text: "prenne", correct: false, explanation: "Le subjonctif présent n'indique pas que le tournant est passé ; « depuis » réclame le subjonctif passé." },
@@ -6854,7 +6854,7 @@ const section: Section = {
       ruleId: "08-20",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif (présent ou passé selon le contexte).",
-      phrase: { before: "Je regrette que vous ne ", after: " pas la réunion d'hier après-midi." },
+      phrase: { before: "Je regrette que vous n'", after: " pas la réunion d'hier après-midi." },
       answer: "ayez pu assister",
       explanation: "Le subjonctif passé exprime une action antérieure complétée (ne pas avoir pu assister à la réunion passée).",
       wrongAnswers: [
@@ -6917,7 +6917,7 @@ const section: Section = {
       ruleId: "08-20",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif (présent ou passé selon le contexte).",
-      phrase: { before: "À moins que vous ne ", after: " vos objections très bientôt, nous procéderons sans votre accord." },
+      phrase: { before: "À moins que vous n'", after: " vos objections très bientôt, nous procéderons sans votre accord." },
       answer: "fassiez",
       explanation: "Après « à moins que » (concession), le subjonctif présent exprime une condition future pour une action à venir.",
       wrongAnswers: [

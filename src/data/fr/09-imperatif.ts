@@ -1,6 +1,6 @@
 import type { Section } from "../types";
 
-// Generated from: questions/09-01.txt, questions/09-02.txt, questions/09-03.txt, questions/09-04.txt, questions/09-05.txt, questions/09-06.txt, questions/09-07.txt, questions/09-08.txt, questions/09-09.txt, questions/09-10.txt, questions/09-11.txt, questions/09-12.txt, questions/09-13.txt, questions/09-14.txt, questions/09-15.txt, questions/09-16.txt, questions/09-17.txt, questions/09-18.txt, questions/09-19.txt, questions/09-20.txt
+// Generated from: questions/fr/09-01.txt, questions/fr/09-02.txt, questions/fr/09-03.txt, questions/fr/09-04.txt, questions/fr/09-05.txt, questions/fr/09-06.txt, questions/fr/09-07.txt, questions/fr/09-08.txt, questions/fr/09-09.txt, questions/fr/09-10.txt, questions/fr/09-11.txt, questions/fr/09-12.txt, questions/fr/09-13.txt, questions/fr/09-14.txt, questions/fr/09-15.txt, questions/fr/09-16.txt, questions/fr/09-17.txt, questions/fr/09-18.txt, questions/fr/09-19.txt, questions/fr/09-20.txt
 // Total: 400 MCQ + 100 INPUT = 500 questions
 
 const section: Section = {
@@ -2061,11 +2061,10 @@ const section: Section = {
       answer: "les écoutez",
       explanation: "À l'impératif négatif avec un pronom objet direct (« les »), le pronom se place avant le verbe. Pour la 2e personne du pluriel (vous), la forme est « ne les écoutez pas ».",
       wrongAnswers: [
-        { text: "écoutez les", explanation: "L'ordre est mauvais. Le pronom d'objet direct doit se placer avant le verbe : « ne les écoutez pas », pas « ne écoutez pas les »." },
         { text: "les écoutons", explanation: "« Écoutez » est la 2e personne du pluriel (vous), pas « écoutons » qui est la 1ère personne du pluriel (nous). Le contexte demande la 2e personne du pluriel." },
         { text: "les écoutiez", explanation: "« Écoutiez » est la 2e personne du pluriel de l'imparfait, pas l'impératif. L'impératif utilise « écoutez »." },
         { text: "les écouter", explanation: "C'est la forme infinitive, pas l'impératif. L'impératif négatif est « ne les écoutez pas »." },
-        { text: "écoutez pas", explanation: "Le pronom « les » manque avant le verbe. La forme correcte est « ne les écoutez pas »." },
+        { text: "les écoutes", explanation: "« Écoutes » est la 2e personne du singulier (tu). Le contexte demande la 2e personne du pluriel (vous), qui est « écoutez »." },
       ],
     },
     {
@@ -2900,7 +2899,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "09-09",
       generatedBy: "haiku",
-      prompt: "Complétez l'impératif négatif : « Ne ___ touchez pas, c'est fragile ! »",
+      prompt: "Complétez l'impératif négatif : « N'___ touchez pas, c'est fragile ! »",
       choices: [
         { text: "les", correct: true, explanation: "Pronom COD pluriel (les objets fragiles). « Ne les touchez pas » est la forme correcte." },
         { text: "leur", correct: false, explanation: "« Leur » est un COI (pour des personnes). « Les » est le COD correct." },
@@ -2965,7 +2964,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "09-09",
       generatedBy: "haiku",
-      prompt: "Complétez l'impératif négatif : « Ne ___ envoie pas ce message, réfléchis d'abord. »",
+      prompt: "Complétez l'impératif négatif : « N'___ envoie pas ce message, réfléchis d'abord. »",
       choices: [
         { text: "le", correct: true, explanation: "Pronom COD singulier (le message). « Ne le envoie pas » (ne l'envoie pas)." },
         { text: "lui", correct: false, explanation: "« Lui » est un COI. « Envoyer quelque chose » utilise un COD (le)." },
@@ -3031,7 +3030,7 @@ const section: Section = {
       ruleId: "09-09",
       generatedBy: "haiku",
       prompt: "Mettez l'impératif à la forme négative avec le pronom placé correctement.",
-      phrase: { before: "Ne ", after: " regarde pas, c'est trop violent." },
+      phrase: { before: "N'", after: " regarde pas, c'est trop violent." },
       answer: "le",
       explanation: "Impératif négatif : le pronom COD « le » se place avant le verbe. Structure : ne + le + regarde + pas.",
       wrongAnswers: [
@@ -3048,7 +3047,7 @@ const section: Section = {
       ruleId: "09-09",
       generatedBy: "haiku",
       prompt: "Complétez l'impératif négatif avec le pronom personnel correct.",
-      phrase: { before: "Ne ", after: " parlez pas, laissez-le dormir." },
+      phrase: { before: "N'", after: " parlez pas, laissez-le dormir." },
       answer: "lui",
       explanation: "Impératif négatif avec COI (parler à quelqu'un). Structure : ne + lui + parlez + pas.",
       wrongAnswers: [
@@ -3082,7 +3081,7 @@ const section: Section = {
       ruleId: "09-09",
       generatedBy: "haiku",
       prompt: "Complétez avec le pronom personnel correct à l'impératif négatif.",
-      phrase: { before: "Ne ", after: " mangez pas ces fruits, ils ne sont pas mûrs." },
+      phrase: { before: "N'", after: " mangez pas ces fruits, ils ne sont pas mûrs." },
       answer: "les",
       explanation: "Pronom COD pluriel à l'impératif négatif. « Ne les mangez pas » (vous adressant à plusieurs).",
       wrongAnswers: [
@@ -3099,7 +3098,7 @@ const section: Section = {
       ruleId: "09-09",
       generatedBy: "haiku",
       prompt: "Mettez la phrase à l'impératif négatif avec le pronom bien placé.",
-      phrase: { before: "Ne ", after: " appelle pas si tu n'as pas besoin, il est occupé." },
+      phrase: { before: "N'", after: " appelle pas si tu n'as pas besoin, il est occupé." },
       answer: "le",
       explanation: "Pronom COD singulier à l'impératif négatif. « Ne le appelle pas » (ne l'appelle pas).",
       wrongAnswers: [
@@ -3746,7 +3745,7 @@ const section: Section = {
       ruleId: "09-11",
       generatedBy: "haiku",
       prompt: "Complétez à l'impératif négatif : dis-lui en un mot.",
-      phrase: { before: "Ne ", after: " pas en un mot !" },
+      phrase: { before: "N'", after: " pas en un mot !" },
       answer: "lui en dis",
       explanation: "Impératif négatif : ne + lui (COI) + en (pronom adverbial) + dis + pas.",
       wrongAnswers: [
@@ -3763,7 +3762,7 @@ const section: Section = {
       ruleId: "09-11",
       generatedBy: "haiku",
       prompt: "Transformez en impératif négatif : envoyez-moi les documents.",
-      phrase: { before: "Ne ", after: " pas les documents !" },
+      phrase: { before: "N'", after: " pas les documents !" },
       answer: "me les envoyez",
       explanation: "Impératif négatif vous : ne + me (COI) + les (COD) + envoyez + pas.",
       wrongAnswers: [
@@ -4775,7 +4774,7 @@ const section: Section = {
         { text: "se inquiétons", explanation: "À l'impératif, on ne peut pas utiliser « se ». Pour « nous », on utilise toujours « nous ». La forme correcte est : ne nous inquiétons pas." },
         { text: "nous inquiète", explanation: "La terminaison « -e » est pour la troisième personne du singulier (il/elle). Pour « nous », la terminaison est « -ons » : ne nous inquiétons pas." },
         { text: "vous inquiétez", explanation: "Cette forme utilise « vous » et « -ez », qui sont pour la deuxième personne du pluriel. Pour « nous », la form est : ne nous inquiétons pas." },
-        { text: "inquiétez-nous", explanation: "C'est la structure de l'impératif affirmatif avec le pronom après le verbe (inquiétez-nous). À la forme négative, le pronom se place avant : ne nous inquiétons pas." },
+        { text: "se inquiètent", explanation: "À l'impératif, on ne peut pas utiliser « se ». De plus, « -ent » est pour la troisième personne du pluriel. Pour « nous », on utilise : ne nous inquiétons pas." },
         { text: "nous inquiéter", explanation: "À la première personne du pluriel (nous), la terminaison est « -ons » (inquiétons), pas l'infinitif (inquiéter)." },
       ],
     },
@@ -5087,7 +5086,7 @@ const section: Section = {
         { text: "sois", correct: true, explanation: "L'impératif tu négatif du verbe « être » : « ne sois pas ». Interdiction ou avertissement amical." },
         { text: "soyez", correct: false, explanation: "C'est l'impératif vous, trop formel entre amis." },
         { text: "tu es", correct: false, explanation: "C'est l'indicatif présent, pas l'impératif." },
-        { text: "être", correct: false, explanation: "C'est l'infinitif, pas la forme impérative." },
+        { text: "seras", correct: false, explanation: "C'est le futur simple, pas l'impératif." },
       ],
     },
     {

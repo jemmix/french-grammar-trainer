@@ -1,6 +1,6 @@
 import type { Section } from "../types";
 
-// Generated from: questions/07-01.txt, questions/07-02.txt, questions/07-03.txt, questions/07-04.txt, questions/07-05.txt, questions/07-06.txt, questions/07-07.txt, questions/07-08.txt, questions/07-09.txt, questions/07-10.txt, questions/07-11.txt, questions/07-12.txt, questions/07-13.txt, questions/07-14.txt, questions/07-15.txt, questions/07-16.txt, questions/07-17.txt, questions/07-18.txt, questions/07-19.txt, questions/07-20.txt
+// Generated from: questions/fr/07-01.txt, questions/fr/07-02.txt, questions/fr/07-03.txt, questions/fr/07-04.txt, questions/fr/07-05.txt, questions/fr/07-06.txt, questions/fr/07-07.txt, questions/fr/07-08.txt, questions/fr/07-09.txt, questions/fr/07-10.txt, questions/fr/07-11.txt, questions/fr/07-12.txt, questions/fr/07-13.txt, questions/fr/07-14.txt, questions/fr/07-15.txt, questions/fr/07-16.txt, questions/fr/07-17.txt, questions/fr/07-18.txt, questions/fr/07-19.txt, questions/fr/07-20.txt
 // Total: 400 MCQ + 100 INPUT = 500 questions
 
 const section: Section = {
@@ -484,7 +484,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-02",
       generatedBy: "haiku",
-      prompt: "Complétez : « À moins que vous ne ___ à temps, nous partirons sans vous. »",
+      prompt: "Complétez : « À moins que vous n'___ à temps, nous partirons sans vous. »",
       choices: [
         { text: "arriviez", correct: true, explanation: "Après « à moins que », on utilise le subjonctif. Pour « vous », la forme régulière du subjonctif présent de « arriver » est « arriviez »." },
         { text: "arrivez", correct: false, explanation: "« Arrivez » est l'indicatif présent, pas le subjonctif. « À moins que » exige le subjonctif." },
@@ -575,7 +575,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-02",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je crains qu'ils ne ___ une erreur. »",
+      prompt: "Complétez : « Je crains qu'ils n'___ une erreur. »",
       choices: [
         { text: "fassent", correct: true, explanation: "Le subjonctif irrégulier de « faire » pour la troisième personne du pluriel est « fassent ». Après « craindre que », on utilise le subjonctif." },
         { text: "font", correct: false, explanation: "« Font » est l'indicatif présent, pas le subjonctif. L'expression « craindre que » exige le subjonctif." },
@@ -588,7 +588,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-02",
       generatedBy: "haiku",
-      prompt: "Complétez : « À moins que tu ne ___ cette promesse, je serais déçu. »",
+      prompt: "Complétez : « À moins que tu n'___ cette promesse, je serais déçu. »",
       choices: [
         { text: "fasses", correct: true, explanation: "Le subjonctif irrégulier de « faire » pour la deuxième personne du singulier est « fasses ». Après « à moins que », on utilise le subjonctif." },
         { text: "fais", correct: false, explanation: "« Fais » est l'indicatif présent (ou l'impératif), pas le subjonctif. « À moins que » exige le subjonctif." },
@@ -1629,7 +1629,7 @@ const section: Section = {
       prompt: "Complétez : « Je souhaite que tu ne ___ plus tard. »",
       choices: [
         { text: "sois", correct: true, explanation: "Après « souhaiter que », on utilise le subjonctif. « Sois » est la 2e personne du singulier du subjonctif présent du verbe « être »." },
-        { text: "es", correct: false, explanation: "« Es » est l'indicatif présent, pas le subjonctif. Après « souhaiter que », il faut utiliser le subjonctif." },
+        { text: "soit", correct: false, explanation: "« Soit » est la 3e personne du singulier du subjonctif. Le sujet est « tu » (2e personne du singulier), donc c'est « sois »." },
         { text: "serais", correct: false, explanation: "« Serais » est le conditionnel, pas le subjonctif. Après « souhaiter que », on utilise le subjonctif présent." },
         { text: "seras", correct: false, explanation: "« Seras » est le futur simple, pas le subjonctif. Après « souhaiter que », on utilise le subjonctif présent." },
       ],
@@ -1786,7 +1786,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « J'ai peur que vous ne ___ malades. »",
+      prompt: "Complétez : « J'ai peur que vous n'___ malades. »",
       choices: [
         { text: "soyez", correct: true, explanation: "Après « avoir peur que », le subjonctif est obligatoire. « Soyez » est le subjonctif présent de « être » à la deuxième personne du pluriel." },
         { text: "êtes", correct: false, explanation: "C'est l'indicatif présent. Le subjonctif « soyez » est requis après « avoir peur que »." },
@@ -1851,7 +1851,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous sommes désolés que vous ne ___ pas libre. »",
+      prompt: "Complétez : « Nous sommes désolés que vous n'___ pas libre. »",
       choices: [
         { text: "soyez", correct: true, explanation: "Après « être désolé que », le subjonctif est obligatoire. « Soyez » est le subjonctif présent de « être » à la deuxième personne du pluriel." },
         { text: "êtes", correct: false, explanation: "C'est l'indicatif présent. Le subjonctif « soyez » est requis après « être désolé que »." },
@@ -1864,7 +1864,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous vous étonnez que je ___ capable de cela. »",
+      prompt: "Complétez : « Vous vous étonnez que j'___ capable de cela. »",
       choices: [
         { text: "sois", correct: true, explanation: "Après « s'étonner que », le subjonctif est obligatoire. « Sois » est le subjonctif présent de « être » à la première personne du singulier." },
         { text: "suis", correct: false, explanation: "C'est l'indicatif présent. Le subjonctif « sois » est requis après « s'étonner que »." },
@@ -1877,7 +1877,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle regrette que nous ne ___ pas d'argent. »",
+      prompt: "Complétez : « Elle regrette que nous n'___ pas d'argent. »",
       choices: [
         { text: "ayons", correct: true, explanation: "Après « regretter que », le subjonctif est obligatoire. « Ayons » est le subjonctif présent de « avoir » à la première personne du pluriel." },
         { text: "avons", correct: false, explanation: "C'est l'indicatif présent. Le subjonctif « ayons » est requis après « regretter que »." },
@@ -1942,7 +1942,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle craint que nous ne ___ pas compris. »",
+      prompt: "Complétez : « Elle craint que nous n'___ pas compris. »",
       choices: [
         { text: "ayons", correct: true, explanation: "Après « craindre que », le subjonctif est obligatoire. « Ayons » est le subjonctif présent de « avoir » à la première personne du pluriel (avec « pas compris » = négatif)." },
         { text: "avons", correct: false, explanation: "C'est l'indicatif présent. Le subjonctif « ayons » est requis après « craindre que »." },
@@ -1968,7 +1968,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « J'ai peur que tu ne te ___ blessé. »",
+      prompt: "Complétez : « J'ai peur que tu ne t'___ blessé. »",
       choices: [
         { text: "sois", correct: true, explanation: "Après « avoir peur que », le subjonctif est obligatoire. « Sois » est le subjonctif présent de « être » à la deuxième personne du singulier (passé composé : « tu te sois blessé »)." },
         { text: "es", correct: false, explanation: "C'est l'indicatif présent. Le subjonctif « sois » est requis après « avoir peur que »." },
@@ -1994,7 +1994,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il regrette que vous ne ___ pas d'accord avec lui. »",
+      prompt: "Complétez : « Il regrette que vous n'___ pas d'accord avec lui. »",
       choices: [
         { text: "soyez", correct: true, explanation: "Après « regretter que », le subjonctif est obligatoire. « Soyez » est le subjonctif présent de « être » à la deuxième personne du pluriel." },
         { text: "êtes", correct: false, explanation: "C'est l'indicatif présent. Le subjonctif « soyez » est requis après « regretter que »." },
@@ -2007,7 +2007,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous craignons que tu ne ___ assez forte pour cette épreuve. »",
+      prompt: "Complétez : « Nous craignons que tu n'___ assez forte pour cette épreuve. »",
       choices: [
         { text: "sois", correct: true, explanation: "Après « craindre que », le subjonctif est obligatoire. « Sois » est le subjonctif présent de « être » à la deuxième personne du singulier." },
         { text: "es", correct: false, explanation: "C'est l'indicatif présent. Le subjonctif « sois » est requis après « craindre que »." },
@@ -2038,7 +2038,7 @@ const section: Section = {
       ruleId: "07-06",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après un verbe de sentiment.",
-      phrase: { before: "Elle craint que nous ne ", after: " pas d'argent pour le voyage." },
+      phrase: { before: "Elle craint que nous n'", after: " pas d'argent pour le voyage." },
       answer: "ayons",
       explanation: "Après « craindre que », le subjonctif est obligatoire. « Ayons » est le subjonctif présent de « avoir » à la première personne du pluriel.",
       wrongAnswers: [
@@ -2089,7 +2089,7 @@ const section: Section = {
       ruleId: "07-06",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après un verbe de sentiment.",
-      phrase: { before: "J'ai peur que tu ne te ", after: " malade avant la compétition." },
+      phrase: { before: "J'ai peur que tu ne t'", after: " malade avant la compétition." },
       answer: "sois",
       explanation: "Après « avoir peur que », le subjonctif est obligatoire. « Sois » est le subjonctif présent de « être » à la deuxième personne du singulier (passé composé : « tu te sois rendu malade »).",
       wrongAnswers: [
@@ -2807,7 +2807,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-09",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il est étrange que ton ami ne _____ pas venu à la fête. »",
+      prompt: "Complétez : « Il est étrange que ton ami n'_____ pas venu à la fête. »",
       choices: [
         { text: "soit", correct: true, explanation: "Après « il est étrange que », le subjonctif passé s'utilise pour une action passée. « Soit » (présent) s'utilise avec le participe passé « venu »." },
         { text: "est", correct: false, explanation: "« Est » est l'indicatif présent, pas le subjonctif. Il faut le subjonctif après « il est étrange que »." },
@@ -2833,7 +2833,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-09",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il est bizarre que personne ne _____ remarqué ce problème. »",
+      prompt: "Complétez : « Il est bizarre que personne n'_____ remarqué ce problème. »",
       choices: [
         { text: "ait", correct: true, explanation: "Après « il est bizarre que », on utilise le subjonctif passé. « Ait » est la troisième personne singulier du subjonctif du verbe avoir." },
         { text: "a", correct: false, explanation: "« A » est l'indicatif passé composé. Une expression de jugement nécessite le subjonctif, pas l'indicatif." },
@@ -2963,7 +2963,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-09",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il est dommage que vous ne _____ pas cette présentation. »",
+      prompt: "Complétez : « Il est dommage que vous n'_____ pas cette présentation. »",
       choices: [
         { text: "ayez vue", correct: true, explanation: "Après « il est dommage que », le subjonctif passé composé s'utilise. « Ayez vue » est la deuxième personne pluriel avec le participe passé « vue »." },
         { text: "ayez vu", correct: false, explanation: "Le participe passé « vu » est correct mais « vue » s'accorde avec « présentation » (féminin). Cependant, « vu » (invariable) est aussi accepté." },
@@ -3089,7 +3089,7 @@ const section: Section = {
       ruleId: "07-09",
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe au subjonctif présent.",
-      phrase: { before: "Il est dommage que vous ne ", after: "__ pas cette opportunité." },
+      phrase: { before: "Il est dommage que vous n'", after: "__ pas cette opportunité." },
       answer: "profitiez",
       explanation: "Après « il est dommage que », le subjonctif présent s'utilise. « Profitiez » est la deuxième personne pluriel du subjonctif du verbe profiter.",
       wrongAnswers: [
@@ -3855,7 +3855,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-12",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il faut étudier avant que le professeur ne ___ l'examen. »",
+      prompt: "Complétez : « Il faut étudier avant que le professeur n'___ l'examen. »",
       choices: [
         { text: "donne", correct: true, explanation: "Après « avant que », le subjonctif est obligatoire. « Donne » est le subjonctif présent (3e personne singulier de « donner »)." },
         { text: "donne pas", correct: false, explanation: "La négation « pas » n'accompagne pas le subjonctif après « avant que ». Seul « ne » est utilisé comme explétif facultatif." },
@@ -3946,7 +3946,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-12",
       generatedBy: "haiku",
-      prompt: "Complétez : « Avant que je ne ___ la porte, sonnez à nouveau. »",
+      prompt: "Complétez : « Avant que je n'___ la porte, sonnez à nouveau. »",
       choices: [
         { text: "ferme", correct: true, explanation: "Après « avant que », le subjonctif est obligatoire. « Ferme » est le subjonctif présent (1ère personne singulier de « fermer »)." },
         { text: "fermais", correct: false, explanation: "C'est l'imparfait indicatif, non correct après « avant que ». Le subjonctif « ferme » s'impose." },
@@ -3972,7 +3972,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-12",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il faut réserver avant que le restaurant ne ___ complet. »",
+      prompt: "Complétez : « Il faut réserver avant que le restaurant n'___ complet. »",
       choices: [
         { text: "soit", correct: true, explanation: "Après « avant que », le subjonctif est obligatoire. « Soit » est le subjonctif présent du verbe « être »." },
         { text: "est", correct: false, explanation: "C'est l'indicatif présent, qui ne s'utilise pas après « avant que ». Le subjonctif « soit » est correct." },
@@ -3998,7 +3998,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-12",
       generatedBy: "haiku",
-      prompt: "Complétez : « Avant que nous ne ___ à l'accord, nous devons en discuter davantage. »",
+      prompt: "Complétez : « Avant que nous n'___ à l'accord, nous devons en discuter davantage. »",
       choices: [
         { text: "arrivions", correct: true, explanation: "Après « avant que », le subjonctif est obligatoire. « Arrivions » est le subjonctif imparfait (1ère personne pluriel de « arriver »), bien que le présent soit également possible." },
         { text: "arrivons", correct: false, explanation: "C'est l'indicatif présent, qui ne s'utilise pas après « avant que ». Le subjonctif « arrivions » est correct." },
@@ -4050,7 +4050,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-12",
       generatedBy: "haiku",
-      prompt: "Complétez : « Avant qu'ils ne ___ les clés, fermez les portes. »",
+      prompt: "Complétez : « Avant qu'ils n'___ les clés, fermez les portes. »",
       choices: [
         { text: "retrouvent", correct: true, explanation: "Après « avant que », le subjonctif est obligatoire. « Retrouvent » est le subjonctif présent (3e personne pluriel de « retrouver »)." },
         { text: "retrouveront", correct: false, explanation: "C'est le futur, qui n'est pas approprié après « avant que ». Le subjonctif « retrouvent » est correct." },
@@ -4090,7 +4090,7 @@ const section: Section = {
       ruleId: "07-12",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif après « avant que ».",
-      phrase: { before: "Avant qu'il ne ", after: " la maison, ils vont vérifier toutes les portes." },
+      phrase: { before: "Avant qu'il n'", after: " la maison, ils vont vérifier toutes les portes." },
       answer: "quitte",
       explanation: "Après « avant que », on utilise le subjonctif présent. « Quitte » (subjonctif présent 3e singulier de « quitter ») est correct.",
       wrongAnswers: [
@@ -4158,7 +4158,7 @@ const section: Section = {
       ruleId: "07-12",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après « avant que ».",
-      phrase: { before: "Avant qu'il ne ", after: " , tout le monde était calme dans la salle." },
+      phrase: { before: "Avant qu'il n'", after: " , tout le monde était calme dans la salle." },
       answer: "parte",
       explanation: "Après « avant que », on utilise le subjonctif présent. La 3e personne du singulier du subjonctif de « partir » est « parte ».",
       wrongAnswers: [
@@ -4200,7 +4200,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-13",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous partons à moins que vous ne ___ d'objection. »",
+      prompt: "Complétez : « Nous partons à moins que vous n'___ d'objection. »",
       choices: [
         { text: "ayez", correct: true, explanation: "Après « à moins que », on utilise le subjonctif présent. Le sujet « vous » demande la 2e personne du pluriel. Le ne explétif est optionnel mais courant." },
         { text: "ayiez", correct: false, explanation: "« Ayiez » n'est pas une forme correcte du subjonctif. La forme 2e personne du pluriel du subjonctif de « avoir » est « ayez »." },
@@ -4278,7 +4278,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-13",
       generatedBy: "haiku",
-      prompt: "Complétez : « À moins qu'elle ne ___ à l'accord, rien ne changera. »",
+      prompt: "Complétez : « À moins qu'elle n'___ à l'accord, rien ne changera. »",
       choices: [
         { text: "consente", correct: true, explanation: "Après « à moins que », on utilise le subjonctif présent. Le sujet « elle » demande la 3e personne du singulier. Le ne explétif est optionnel mais courant." },
         { text: "consent", correct: false, explanation: "C'est l'indicatif présent, non le subjonctif. Après « à moins que », le subjonctif est obligatoire : « consente »." },
@@ -4291,7 +4291,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-13",
       generatedBy: "haiku",
-      prompt: "Complétez : « Sans que je le ___ explicitement, tu l'as deviné. »",
+      prompt: "Complétez : « Sans que je l'___ explicitement, tu l'as deviné. »",
       choices: [
         { text: "dise", correct: true, explanation: "Après « sans que », on utilise le subjonctif présent. Le sujet « je » demande la 1re personne du singulier. Le complément d'objet « le » précède le verbe." },
         { text: "dis", correct: false, explanation: "C'est l'indicatif présent, non le subjonctif. Après « sans que », le subjonctif est obligatoire : « dise »." },
@@ -4317,12 +4317,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-13",
       generatedBy: "haiku",
-      prompt: "Complétez : « À moins que tu ne me ___ une meilleure raison, je refuse. »",
+      prompt: "Complétez : « À moins que tu ne me ___ une meilleure idée, je refuse. »",
       choices: [
         { text: "donnes", correct: true, explanation: "Après « à moins que », on utilise le subjonctif présent. Le sujet « tu » demande la 2e personne du singulier. Le ne explétif est optionnel." },
         { text: "donnais", correct: false, explanation: "C'est l'imparfait, non le subjonctif. Après « à moins que », le subjonctif est obligatoire : « donnes »." },
         { text: "donnerais", correct: false, explanation: "C'est le conditionnel, non le subjonctif. Après « à moins que », on utilise le subjonctif : « donnes »." },
-        { text: "aies donné", correct: false, explanation: "C'est le subjonctif passé, qui n'est pas approprié ici. On utilise le subjonctif présent : « donnes »." },
+        { text: "donneras", correct: false, explanation: "C'est le futur simple, non le subjonctif. Après « à moins que », le subjonctif est obligatoire : « donnes »." },
       ],
     },
     {
@@ -4382,7 +4382,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-13",
       generatedBy: "haiku",
-      prompt: "Complétez : « À moins qu'il ne ___ à l'heure, je partirai sans lui. »",
+      prompt: "Complétez : « À moins qu'il n'___ à l'heure, je partirai sans lui. »",
       choices: [
         { text: "soit arrivé", correct: true, explanation: "Après « à moins que », on peut utiliser le subjonctif passé pour exprimer une action complétée. Le sujet « il » demande la 3e personne du singulier. Le ne explétif est optionnel mais courant." },
         { text: "soit arrive", correct: false, explanation: "« Soit arrive » n'est pas une forme correcte. On utilise soit le subjonctif présent « arrive » soit le subjonctif passé « soit arrivé »." },
@@ -4395,7 +4395,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-13",
       generatedBy: "haiku",
-      prompt: "Complétez : « Sans que vous le ___ remarqué, j'ai changé les meubles. »",
+      prompt: "Complétez : « Sans que vous l'___ remarqué, j'ai changé les meubles. »",
       choices: [
         { text: "ayez", correct: true, explanation: "Après « sans que », on utilise le subjonctif passé pour une action complétée. Le sujet « vous » demande la 2e personne du pluriel. Le complément d'objet « le » précède le verbe." },
         { text: "eussiez", correct: false, explanation: "C'est le subjonctif plus-que-parfait, qui est archaïque. On utilise le subjonctif passé : « ayez »." },
@@ -4513,7 +4513,7 @@ const section: Section = {
       choices: [
         { text: "découvre", correct: true, explanation: "Après « de peur que », on utilise le subjonctif présent. Le sujet « il » demande la 3e personne du singulier. Le ne explétif est courant dans ce contexte." },
         { text: "découvres", correct: false, explanation: "C'est la 2e personne du singulier, non la 3e. Avec le sujet « il », on utilise « découvre »." },
-        { text: "a découvert", correct: false, explanation: "C'est le passé composé de l'indicatif. Après « de peur que », le subjonctif présent est obligatoire." },
+        { text: "découvrira", correct: false, explanation: "C'est le futur simple, non le subjonctif. Après « de peur que », le subjonctif présent est obligatoire." },
         { text: "découvrait", correct: false, explanation: "C'est l'imparfait, non le subjonctif. Après « de peur que », le subjonctif est obligatoire : « découvre »." },
       ],
     },
@@ -4522,7 +4522,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-14",
       generatedBy: "haiku",
-      prompt: "Complétez : « C'est le film le plus intéressant que je ___ vu. »",
+      prompt: "Complétez : « C'est le film le plus intéressant que j'___ vu. »",
       choices: [
         { text: "aie", correct: true, explanation: "Après un superlatif + relatif (le plus…que), le subjonctif est obligatoire. « Aie » est la première personne du subjonctif présent de « avoir »." },
         { text: "ai", correct: false, explanation: "« Ai » est l'indicatif présent (première personne), pas le subjonctif. L'indicatif est incorrect après un superlatif + relative." },
@@ -4600,7 +4600,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-14",
       generatedBy: "haiku",
-      prompt: "Complétez : « C'est le seul livre qui me ___ vraiment intéressé. »",
+      prompt: "Complétez : « C'est le seul livre qui m'___ vraiment intéressé. »",
       choices: [
         { text: "ait", correct: true, explanation: "Après « le seul…qui », le subjonctif est obligatoire. « Ait » est la troisième personne du subjonctif présent de « avoir »." },
         { text: "a", correct: false, explanation: "« A » est l'indicatif présent. Le subjonctif « ait » est requis après « le seul qui »." },
@@ -4717,7 +4717,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-14",
       generatedBy: "haiku",
-      prompt: "Complétez : « C'est le moins probable résultat que je ___ imaginé. »",
+      prompt: "Complétez : « C'est le moins probable résultat que j'___ imaginé. »",
       choices: [
         { text: "aie", correct: true, explanation: "Après « le moins…que », le subjonctif est obligatoire. « Aie » est la première personne du subjonctif présent d'« avoir »." },
         { text: "ai", correct: false, explanation: "« Ai » est l'indicatif présent. Le subjonctif « aie » est requis après un superlatif." },
@@ -4770,7 +4770,7 @@ const section: Section = {
       ruleId: "07-14",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif présent après le superlatif.",
-      phrase: { before: "C'est le plus bel appartement que je ", after: " jamais visité." },
+      phrase: { before: "C'est le plus bel appartement que j'", after: " jamais visité." },
       answer: "aie",
       explanation: "Après « le plus…que », le subjonctif est obligatoire. « Aie » est la première personne du subjonctif présent d'« avoir ».",
       wrongAnswers: [
@@ -4859,7 +4859,6 @@ const section: Section = {
         { text: "donnait", explanation: "« Donnait » est l'imparfait de l'indicatif, non le subjonctif." },
         { text: "donnerait", explanation: "« Donnerait » est le conditionnel, pas le subjonctif." },
         { text: "donnera", explanation: "« Donnera » est le futur simple. Après « le dernier…que », on utilise le subjonctif présent." },
-        { text: "a donné", explanation: "« A donné » est le passé composé de l'indicatif. Après un superlatif avec relatif, le subjonctif « donne » est obligatoire." },
       ],
     },
     {
@@ -5178,7 +5177,7 @@ const section: Section = {
         { text: "sois", correct: true, explanation: "Après « penser que » à l'interrogatif, on utilise le subjonctif. « Sois » est le subjonctif présent 1ère personne du verbe « être »." },
         { text: "suis", correct: false, explanation: "« Suis » est l'indicatif présent. Après une interrogation avec « penser que », on utilise le subjonctif, pas l'indicatif." },
         { text: "serais", correct: false, explanation: "« Serais » est le conditionnel. Après « penser que » interrogatif, on utilise le subjonctif présent, pas le conditionnel." },
-        { text: "étais", correct: false, explanation: "« Étais » est l'imparfait de l'indicatif. Avec une interrogation, on demande le subjonctif présent, pas l'imparfait." },
+        { text: "serai", correct: false, explanation: "« Serai » est le futur simple de l'indicatif. Avec une interrogation, on utilise le subjonctif présent, pas le futur." },
       ],
     },
     {
@@ -6703,7 +6702,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-20",
       generatedBy: "haiku",
-      prompt: "« À moins que tu ne ___ une très bonne excuse, tu dois venir. »",
+      prompt: "« À moins que tu n'___ une très bonne excuse, tu dois venir. »",
       choices: [
         { text: "aies", correct: true, explanation: "« À moins que » (avec « ne » explétif) est une conjonction d'exception qui déclenche le subjonctif. « Avoir » au subjonctif à la 2e personne du singulier est « aies »." },
         { text: "as", correct: false, explanation: "C'est l'indicatif (présent). « À moins que » exige le subjonctif." },
@@ -6794,7 +6793,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-20",
       generatedBy: "haiku",
-      prompt: "« Pourvu que le train ne ___ pas en retard ! »",
+      prompt: "« Pourvu que le train n'___ pas en retard ! »",
       choices: [
         { text: "soit", correct: true, explanation: "« Pourvu que » est une conjonction exprimant le souhait qui déclenche le subjonctif. « Être » au subjonctif à la 3e personne du singulier est « soit »." },
         { text: "est", correct: false, explanation: "C'est l'indicatif (présent). Après « pourvu que », le subjonctif est obligatoire." },
@@ -6833,7 +6832,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-20",
       generatedBy: "haiku",
-      prompt: "« Je regrette que tu ne ___ pas plus de temps à m'écouter. »",
+      prompt: "« Je regrette que tu n'___ pas plus de temps à m'écouter. »",
       choices: [
         { text: "aies", correct: true, explanation: "« Regretter que » est un verbe de sentiment qui déclenche le subjonctif. « Avoir » au subjonctif à la 2e personne du singulier est « aies »." },
         { text: "as", correct: false, explanation: "C'est l'indicatif (présent). Après « regretter que », le subjonctif est obligatoire." },

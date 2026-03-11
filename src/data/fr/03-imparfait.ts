@@ -295,8 +295,8 @@ const section: Section = {
       type: "input",
       ruleId: "03-01",
       generatedBy: "haiku",
-      prompt: "Conjuguez le verbe au imparfait (je)",
-      phrase: { before: "Je ", after: " toujours content de vous rencontrer." },
+      prompt: "Conjuguez le verbe à l'imparfait (je)",
+      phrase: { before: "J'", after: " toujours content de vous rencontrer." },
       answer: "étais",
       explanation: "L'imparfait de « être » à la 1ère personne du singulier. Le radical « ét- » (du présent nous sommes) + terminaison « -ais ».",
       wrongAnswers: [
@@ -575,7 +575,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-02",
       generatedBy: "haiku",
-      prompt: "Complétez : « Hier, je ___ tellement heureux de vous revoir. »",
+      prompt: "Complétez : « Hier, j'___ tellement heureux de vous revoir. »",
       choices: [
         { text: "étais", correct: true, explanation: "Première personne du singulier de l'imparfait : j'étais (radical ét- + terminaison -ais)" },
         { text: "suis", correct: false, explanation: "« Suis » est le présent, pas l'imparfait" },
@@ -1098,7 +1098,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ne ___ jamais mes lunettes quand j'étais enfant. »",
+      prompt: "Complétez : « Je n'___ jamais mes lunettes quand j'étais enfant. »",
       choices: [
         { text: "oubliais", correct: true, explanation: "Le verbe « oublier » à l'imparfait, première personne du singulier, se conjugue en oubliais (pas de double-i pour je/tu/il/elle/ils/elles)." },
         { text: "oubliions", correct: false, explanation: "Le double-i n'existe que pour les formes nous et vous. Pour je, il faut simplement oubliais." },
@@ -1762,7 +1762,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Quand j'étais enfant, je ___ à l'école à pied. »",
+      prompt: "Complétez : « Quand j'étais enfant, j'___ à l'école à pied. »",
       choices: [
         { text: "allais", correct: true, explanation: "L'imparfait « allais » exprime une habitude régulière dans le passé." },
         { text: "suis allé", correct: false, explanation: "Le passé composé « suis allé » indique une action unique, pas une habitude." },
@@ -1814,7 +1814,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Quand je travaillais là-bas, je ___ à midi. »",
+      prompt: "Complétez : « Quand je travaillais là-bas, j'___ à midi. »",
       choices: [
         { text: "déjeunais", correct: true, explanation: "L'imparfait « déjeunais » exprime l'habitude quotidienne de déjeuner à midi." },
         { text: "ai déjeuné", correct: false, explanation: "Le passé composé « ai déjeuné » indique une action unique achevée." },
@@ -1879,7 +1879,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Chaque matin, quand je travaillais là-bas, je ___ une douche avant de partir. »",
+      prompt: "Complétez : « Chaque matin, quand je travaillais là-bas, j'___ une douche avant de partir. »",
       choices: [
         { text: "prenais", correct: true, explanation: "L'imparfait « prenais » décrit l'habitude quotidienne de prendre une douche." },
         { text: "ai pris", correct: false, explanation: "Le passé composé « ai pris » indique une douche unique achevée." },
@@ -1918,7 +1918,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Quand j'étais jeune, je ___ mon vélo dans le quartier. »",
+      prompt: "Complétez : « Quand j'étais jeune, j'___ mon vélo dans le quartier. »",
       choices: [
         { text: "promenais", correct: true, explanation: "L'imparfait « promenais » exprime l'habitude régulière de promener son vélo." },
         { text: "ai promené", correct: false, explanation: "Le passé composé « ai promené » indique une promenade unique." },
@@ -2023,7 +2023,7 @@ const section: Section = {
       ruleId: "03-06",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé pour exprimer une habitude",
-      phrase: { before: "Quand j'étais petit, je ", after: " à la bibliothèque chaque samedi." },
+      phrase: { before: "Quand j'étais petit, j'", after: " à la bibliothèque chaque samedi." },
       answer: "allais",
       explanation: "L'imparfait « allais » exprime l'habitude régulière d'aller à la bibliothèque.",
       wrongAnswers: [
@@ -2481,7 +2481,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-08",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle ne ___ pas conduire seule à cause de son âge. »",
+      prompt: "Complétez : « Elle n'___ pas conduire seule à cause de son âge. »",
       choices: [
         { text: "pouvait", correct: true, explanation: "L'imparfait de pouvoir exprime une capacité ou une permission manquante dans le passé. Elle ne pouvait pas décrit une limitation durable." },
         { text: "peut", correct: false, explanation: "Le présent décrit une impossibilité actuelle, non celle du passé." },
@@ -2520,7 +2520,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-08",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ froid dans cette maison sans chauffage. »",
+      prompt: "Complétez : « J'___ froid dans cette maison sans chauffage. »",
       choices: [
         { text: "avais", correct: true, explanation: "L'imparfait d'avoir exprime une sensation physique. Je avais froid décrit un état de froid prolongé." },
         { text: "ai froid", correct: false, explanation: "Le présent décrit une sensation actuelle, non celle du passé." },
@@ -2598,7 +2598,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-08",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ que c'était impossible. »",
+      prompt: "Complétez : « J'___ que c'était impossible. »",
       choices: [
         { text: "pensais", correct: true, explanation: "L'imparfait de penser exprime une conviction mentale durable. Je pensais que exprime une opinion prolongée dans le passé." },
         { text: "ai pensé", correct: false, explanation: "Le passé composé suggère une pensée formée à un moment précis, pas maintenue sur une période." },
@@ -2650,7 +2650,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-08",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ne ___ pas chaud en hiver sous les couvertures. »",
+      prompt: "Complétez : « Nous n'___ pas chaud en hiver sous les couvertures. »",
       choices: [
         { text: "avions", correct: true, explanation: "L'imparfait d'avoir exprime une sensation physique. Nous n'avions pas chaud décrit une absence de chaleur durable." },
         { text: "avons eu", correct: false, explanation: "Le passé composé suggère un manque ponctuel de chaleur, pas une condition durable sous les couvertures." },
@@ -2676,7 +2676,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-08",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ que tu ferais mieux. »",
+      prompt: "Complétez : « J'___ que tu ferais mieux. »",
       choices: [
         { text: "croyais", correct: true, explanation: "L'imparfait de croire exprime une conviction maintenue. Je croyais que exprime une opinion établie dans le passé." },
         { text: "ai cru", correct: false, explanation: "Le passé composé suggère le moment où tu as formé cette conviction, pas une opinion durable." },
@@ -2734,8 +2734,8 @@ const section: Section = {
       type: "input",
       ruleId: "03-08",
       generatedBy: "haiku",
-      prompt: "Conjuguez l'imparfait pour exprimer une capacité passée : « Je ne ___ pas nager à dix ans. »",
-      phrase: { before: "Je ne ", after: " pas nager à dix ans." },
+      prompt: "Conjuguez l'imparfait pour exprimer une capacité passée : « Je n'___ pas nager à dix ans. »",
+      phrase: { before: "Je n'", after: " pas nager à dix ans." },
       answer: "pouvais",
       explanation: "L'imparfait de pouvoir (pouvais) exprime une incapacité durable. Je ne pouvais pas nager décrit une limitation prolongée.",
       wrongAnswers: [
@@ -2782,7 +2782,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-09",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ quand le téléphone a sonné. »",
+      prompt: "Complétez : « J'___ quand le téléphone a sonné. »",
       choices: [
         { text: "dormais", correct: true, explanation: "On utilise l'imparfait pour l'action en cours (dormir) qui est interrompue par un événement soudain (le téléphone a sonné au passé composé)." },
         { text: "ai dormi", correct: false, explanation: "Le passé composé (ai dormi) indique une action complète, pas une action en cours interrompue." },
@@ -2873,7 +2873,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-09",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ les devoirs quand mon ami m'a texté. »",
+      prompt: "Complétez : « J'___ les devoirs quand mon ami m'a texté. »",
       choices: [
         { text: "faisais", correct: true, explanation: "L'imparfait (faisais) pour l'action de fond interrompue par le message texte (passé composé)." },
         { text: "ai fait", correct: false, explanation: "Le passé composé indique une action terminée, pas une action interrompue." },
@@ -2964,7 +2964,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-09",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ une décision quand vous êtes intervenu. »",
+      prompt: "Complétez : « J'___ une décision quand vous êtes intervenu. »",
       choices: [
         { text: "prenais", correct: true, explanation: "L'imparfait (prenais) pour l'action de fond interrompue par l'intervention (passé composé)." },
         { text: "ai pris", correct: false, explanation: "Le passé composé indique une action terminée, non interrompue." },
@@ -3043,7 +3043,7 @@ const section: Section = {
       ruleId: "03-09",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé : l'action en cours à l'imparfait, puis l'interruption au passé composé.",
-      phrase: { before: "Je ", after: " quand mon frère est entré dans ma chambre." },
+      phrase: { before: "J'", after: " quand mon frère est entré dans ma chambre." },
       answer: "dormais",
       explanation: "L'imparfait (dormais) exprime l'action en cours qui a été interrompue par l'entrée de mon frère (passé composé).",
       wrongAnswers: [
@@ -3148,7 +3148,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-10",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ savoir si vous aviez du pain frais. »",
+      prompt: "Complétez : « J'___ savoir si vous aviez du pain frais. »",
       choices: [
         { text: "voulais", correct: true, explanation: "L'imparfait « voulais » est l'usage classique de l'imparfait de politesse pour une demande discrète." },
         { text: "voulus", correct: false, explanation: "Le passé simple n'est pas utilisé à l'oral et ne convient pas à ce registre de politesse." },
@@ -3200,7 +3200,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-10",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous aviez un moment ? Je ___ vous demander quelque chose. »",
+      prompt: "Complétez : « Vous aviez un moment ? J'___ vous demander quelque chose. »",
       choices: [
         { text: "voulais", correct: true, explanation: "L'imparfait « voulais » rend la demande moins abrupte et plus courtoise." },
         { text: "veux", correct: false, explanation: "Le présent serait trop brusque dans cette demande." },
@@ -3278,7 +3278,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-10",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ simplement vérifier mon numéro de commande. »",
+      prompt: "Complétez : « J'___ simplement vérifier mon numéro de commande. »",
       choices: [
         { text: "venais", correct: true, explanation: "L'imparfait « venais » adoucit la raison de la visite, exprimant l'humilité." },
         { text: "viens", correct: false, explanation: "Le présent est correct mais moins nuancé pour exprimer une demande simple." },
@@ -3304,7 +3304,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-10",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ vous demander si c'était possible de rembourser. »",
+      prompt: "Complétez : « J'___ vous demander si c'était possible de rembourser. »",
       choices: [
         { text: "voulais", correct: true, explanation: "L'imparfait « voulais » est l'usage classique pour adoucir une demande délicate." },
         { text: "veux", correct: false, explanation: "Le présent est trop abrupt pour une demande de remboursement." },
@@ -3356,7 +3356,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-10",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ vous demander une petite faveur. »",
+      prompt: "Complétez : « J'___ vous demander une petite faveur. »",
       choices: [
         { text: "voulais", correct: true, explanation: "L'imparfait « voulais » adoucit la demande de faveur, ce qui est courtois et naturel." },
         { text: "veux", correct: false, explanation: "Le présent serait trop brusque pour demander une faveur." },
@@ -3383,7 +3383,7 @@ const section: Section = {
       ruleId: "03-10",
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe « vouloir » à l'imparfait de politesse",
-      phrase: { before: "Excusez-moi, je ", after: " vous demander quelque chose." },
+      phrase: { before: "Excusez-moi, j'", after: " vous demander quelque chose." },
       answer: "voulais",
       explanation: "L'imparfait « voulais » adoucit la demande, la rendant plus courtoise qu'une demande directe au présent.",
       wrongAnswers: [
@@ -3415,7 +3415,7 @@ const section: Section = {
       ruleId: "03-10",
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe « désirer » à l'imparfait de politesse",
-      phrase: { before: "Je ", after: " vérifier si ma commande était prête." },
+      phrase: { before: "J'", after: " vérifier si ma commande était prête." },
       answer: "désirais",
       explanation: "L'imparfait « désirais » adoucit le but de la visite, ce qui est très courtois en contexte de service.",
       wrongAnswers: [
@@ -3447,7 +3447,7 @@ const section: Section = {
       ruleId: "03-10",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « souhaiter » à l'imparfait pour adoucir une demande",
-      phrase: { before: "Je ", after: " avoir un conseil sur ce produit." },
+      phrase: { before: "J'", after: " avoir un conseil sur ce produit." },
       answer: "souhaitais",
       explanation: "L'imparfait « souhaitais » exprime poliment le souhait, adoucissant la demande en contexte commercial.",
       wrongAnswers: [
@@ -3554,7 +3554,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-11",
       generatedBy: "haiku",
-      prompt: "Complétez : « Si je ___ à ta place, je serais heureux. »",
+      prompt: "Complétez : « Si j'___ à ta place, je serais heureux. »",
       choices: [
         { text: "étais", correct: true, explanation: "Après « si » dans une hypothèse irréelle, on utilise l'imparfait. « étais » est la forme correcte du verbe être à l'imparfait pour la première personne du singulier." },
         { text: "serais", correct: false, explanation: "« serais » est le conditionnel présent. Le conditionnel appartient à la proposition principale, jamais à la clause si." },
@@ -3619,7 +3619,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-11",
       generatedBy: "haiku",
-      prompt: "Complétez : « Si je ___ riche, j'aiderais les pauvres. »",
+      prompt: "Complétez : « Si j'___ riche, j'aiderais les pauvres. »",
       choices: [
         { text: "étais", correct: true, explanation: "Après « si » dans une hypothèse irréelle, on utilise l'imparfait. « étais » est la forme correcte du verbe être à l'imparfait pour la première personne du singulier." },
         { text: "serais", correct: false, explanation: "« serais » est le conditionnel présent. Le conditionnel s'utilise dans la proposition principale, jamais après « si »." },
@@ -3741,7 +3741,7 @@ const section: Section = {
       ruleId: "03-11",
       generatedBy: "haiku",
       prompt: "Complétez la phrase avec le verbe être à l'imparfait.",
-      phrase: { before: "Si je ", after: " à ta place, je changerais de travail." },
+      phrase: { before: "Si j'", after: " à ta place, je changerais de travail." },
       answer: "étais",
       explanation: "Après « si » dans une hypothèse irréelle, on utilise l'imparfait. « étais » est la forme correcte du verbe être à l'imparfait pour la première personne du singulier.",
       wrongAnswers: [
@@ -4121,10 +4121,10 @@ const section: Section = {
       answer: "lisais",
       explanation: "L'imparfait décrit l'action de fond (lire) avant l'interruption du coup à la porte.",
       wrongAnswers: [
-        { text: "ai lu", explanation: "Le passé composé indiquerait que la lecture était finie, pas en cours." },
-        { text: "lisez", explanation: "C'est la mauvaise personne et le mauvais temps." },
+        { text: "lis", explanation: "Le présent n'est pas approprié dans un contexte de narration au passé." },
+        { text: "lisait", explanation: "C'est la troisième personne du singulier, mais le sujet est « je »." },
+        { text: "lisez", explanation: "C'est la deuxième personne du pluriel, mais le sujet est « je »." },
         { text: "lira", explanation: "Le futur n'a pas sa place dans une narration au passé." },
-        { text: "avais lu", explanation: "Le plus-que-parfait suggérerait une action antérieure au coup à la porte." },
       ],
     },
     {
@@ -4161,7 +4161,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-13",
       generatedBy: "haiku",
-      prompt: "Complétez : « Quand j'étais jeune, je ___ dans cette maison. »",
+      prompt: "Complétez : « Quand j'étais jeune, j'___ dans cette maison. »",
       choices: [
         { text: "vivais", correct: true, explanation: "« Quand j'étais jeune » n'indique pas une durée définie ; c'est un contexte imprécis, donc on utilise l'imparfait." },
         { text: "ai vécu", correct: false, explanation: "Le passé composé indique une durée définie ou complétée, mais ici on décrit une situation ouverte sans endpoint précis." },
@@ -4226,7 +4226,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-13",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ ma leçon de trois à cinq heures. »",
+      prompt: "Complétez : « J'___ ma leçon de trois à cinq heures. »",
       choices: [
         { text: "ai étudié", correct: true, explanation: "« De trois à cinq heures » indique une durée définie avec des bornes précises, donc on utilise le passé composé." },
         { text: "étudiais", correct: false, explanation: "L'imparfait s'emploie sans indication d'horaires précis ; ici on a un créneau temporel défini." },
@@ -4330,7 +4330,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-13",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ pendant une heure sans trouver mes clés. »",
+      prompt: "Complétez : « J'___ pendant une heure sans trouver mes clés. »",
       choices: [
         { text: "ai cherché", correct: true, explanation: "« Pendant une heure » indique une durée définie et complétée, donc on utilise le passé composé." },
         { text: "cherchais", correct: false, explanation: "L'imparfait s'utilise sans indication de durée définie ; ici on a une période précise d'une heure." },
@@ -4382,7 +4382,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-13",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ dans mon bureau de neuf heures à midi. »",
+      prompt: "Complétez : « J'___ dans mon bureau de neuf heures à midi. »",
       choices: [
         { text: "ai étudié", correct: true, explanation: "« De neuf heures à midi » indique une durée définie avec des bornes précises, donc on utilise le passé composé." },
         { text: "étudiais", correct: false, explanation: "L'imparfait s'emploie sans indication d'horaires précis ; ici on a un créneau temporel défini." },
@@ -4473,7 +4473,7 @@ const section: Section = {
       ruleId: "03-13",
       generatedBy: "haiku",
       prompt: "Conjuguez à l'imparfait car le contexte ne précise pas de durée.",
-      phrase: { before: "À cette époque, je ", after: " chaque matin." },
+      phrase: { before: "À cette époque, j'", after: " chaque matin." },
       answer: "cherchais",
       explanation: "« À cette époque » décrit un contexte passé sans durée définie précise, et « chaque matin » indique une habitude, donc on utilise l'imparfait.",
       wrongAnswers: [
@@ -4527,7 +4527,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-14",
       generatedBy: "haiku",
-      prompt: "Complétez : « Quand je _____ à la gare, elle _____ déjà. »",
+      prompt: "Complétez : « Quand j'_____ à la gare, elle _____ déjà. »",
       choices: [
         { text: "suis arrivé, était partie", correct: true, explanation: "Le passé composé (suis arrivé) marque l'action ponctuelle. L'imparfait (était partie) exprime l'état/l'action déjà en cours." },
         { text: "arrivais, partait", correct: false, explanation: "L'imparfait des deux côtés ne marque pas clairement la succession. « Suis arrivé » précise le moment où j'arrive." },
@@ -4722,7 +4722,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-14",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je _____ la cuisine pendant qu'il _____ la salle à manger. »",
+      prompt: "Complétez : « J'_____ la cuisine pendant qu'il _____ la salle à manger. »",
       choices: [
         { text: "nettoyais, nettoyait", correct: true, explanation: "« Pendant qu'il » marque la simultanéité. Deux actions qui se passent en même temps, donc deux imparfaits." },
         { text: "ai nettoyé, nettoyait", correct: false, explanation: "« Ai nettoyé » marque une action terminée, pas l'action continue. « Pendant qu'il » exige deux imparfaits." },
@@ -5023,7 +5023,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-15",
       generatedBy: "haiku",
-      prompt: "Complétez : « J'ai vu un accident pendant que je ___ à l'école. »",
+      prompt: "Complétez : « J'ai vu un accident pendant que j'___ à l'école. »",
       choices: [
         { text: "allais", correct: true, explanation: "L'action qui continue (aller à l'école) s'exprime à l'imparfait avec « pendant que », même si l'action principale est au passé composé." },
         { text: "suis allé", correct: false, explanation: "Après « pendant que », on utilise l'imparfait, pas le passé composé." },
@@ -5138,7 +5138,7 @@ const section: Section = {
       ruleId: "03-15",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « boire » à l'imparfait ou au passé composé selon le rôle de l'action.",
-      phrase: { before: "Je ", after: " mon café quand mon ami est arrivé." },
+      phrase: { before: "J'", after: " mon café quand mon ami est arrivé." },
       answer: "buvais",
       explanation: "« Je buvais » décrit l'action en cours (arrière-plan) interrompue par l'arrivée de l'ami (passé composé). « Quand » + interruption → imparfait + passé composé.",
       wrongAnswers: [
@@ -5509,7 +5509,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "haiku",
-      prompt: "Complétez : « Autrefois, je ___ tous les jours à la plage. »",
+      prompt: "Complétez : « Autrefois, j'___ tous les jours à la plage. »",
       choices: [
         { text: "allais", correct: true, explanation: "« Autrefois » est un marqueur temporel de l'imparfait signifiant une habitude passée. L'imparfait « allais » est la forme correcte." },
         { text: "suis allé", correct: false, explanation: "Le passé composé « suis allé » ne convient pas avec « autrefois ». Ce marqueur indique une habitude, pas un événement unique." },
@@ -5587,12 +5587,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "haiku",
-      prompt: "Complétez : « Quand j'___ enfant, je ___ toujours à jouer dans le jardin. »",
+      prompt: "Complétez : « Quand j'___ enfant, je jouais toujours dans le jardin. »",
       choices: [
-        { text: "étais / restais", correct: true, explanation: "« Quand j'étais enfant » est un marqueur d'époque passée. L'imparfait convient pour les deux verbes pour exprimer l'habitude." },
-        { text: "étais / suis resté", correct: false, explanation: "L'imparfait « étais » est correct mais « suis resté » (passé composé) indique une action unique, pas une habitude." },
-        { text: "ai été / restais", correct: false, explanation: "Le passé composé « ai été » ne s'accorde pas avec le marqueur temporel « quand j'étais enfant »." },
-        { text: "suis / reste", correct: false, explanation: "Le présent ne convient pas au contexte passé marqué par « quand j'étais enfant »." },
+        { text: "étais", correct: true, explanation: "« Quand j'étais enfant » est un marqueur d'époque passée. L'imparfait « étais » est la forme correcte pour décrire un état dans le passé." },
+        { text: "serais", correct: false, explanation: "Le conditionnel « serais » indique une hypothèse, pas une description réelle du passé." },
+        { text: "fus", correct: false, explanation: "Le passé simple « fus » ne convient pas dans un contexte conversationnel. L'imparfait est requis pour décrire une époque passée." },
+        { text: "suis", correct: false, explanation: "Le présent « suis » ne convient pas au contexte passé marqué par « enfant » qui implique une époque révolue." },
       ],
     },
     {
@@ -5613,7 +5613,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "haiku",
-      prompt: "Complétez : « Autrefois, tous les matins avant de partir au travail, je ___ un café. »",
+      prompt: "Complétez : « Autrefois, tous les matins avant de partir au travail, j'___ un café. »",
       choices: [
         { text: "prenais", correct: true, explanation: "« Tous les matins » est un marqueur d'habitude régulière. L'imparfait « prenais » convient." },
         { text: "ai pris", correct: false, explanation: "Le passé composé « ai pris » indique une action unique, pas une habitude." },
@@ -5691,7 +5691,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "haiku",
-      prompt: "Complétez : « Avant, je ___ beaucoup, mais maintenant j'___ peu. »",
+      prompt: "Complétez : « Avant, j'___ beaucoup, mais maintenant j'___ peu. »",
       choices: [
         { text: "fumais / fume", correct: true, explanation: "« Avant » indique une habitude passée (imparfait), et « maintenant » indique le présent (présent)." },
         { text: "fume / fume", correct: false, explanation: "Le présent ne convient pas à « avant », qui indique le passé." },
@@ -5743,7 +5743,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-17",
       generatedBy: "haiku",
-      prompt: "Complétez : « Jamais il ne ___ à ses parents quand il ___ petit. »",
+      prompt: "Complétez : « Jamais il n'___ à ses parents quand il ___ petit. »",
       choices: [
         { text: "désobéissait / était", correct: true, explanation: "« Jamais ... quand il était petit » marque une habitude négative du passé. L'imparfait convient pour les deux." },
         { text: "a désobéi / était", correct: false, explanation: "Le passé composé « a désobéi » ne s'accorde pas avec « jamais », qui marque une habitude." },
@@ -5770,7 +5770,7 @@ const section: Section = {
       ruleId: "03-17",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'imparfait avec le marqueur de régularité.",
-      phrase: { before: "Tous les samedis, je ", after: " mes amis au cinéma." },
+      phrase: { before: "Tous les samedis, j'", after: " mes amis au cinéma." },
       answer: "retrouvais",
       explanation: "« Tous les samedis » marque une habitude régulière. L'imparfait « retrouvais » exprime cette répétition.",
       wrongAnswers: [
@@ -5891,7 +5891,7 @@ const section: Section = {
       prompt: "Complétez : « Je ___ depuis vingt minutes quand le réveil a sonné. »",
       choices: [
         { text: "dormais", correct: true, explanation: "L'imparfait « dormais » exprime que je dormais au moment où le réveil a sonné." },
-        { text: "ai dormi", correct: false, explanation: "Le passé composé n'indique pas que l'action était en cours lors du réveil." },
+        { text: "dormira", correct: false, explanation: "Le futur simple ne convient pas pour décrire une action passée." },
         { text: "dors", correct: false, explanation: "Le présent ne correspond pas au contexte narratif passé." },
         { text: "dormis", correct: false, explanation: "Le passé simple n'est pas approprié ici ; l'imparfait est la forme correcte pour les actions duratives du passé." },
       ],
@@ -6023,7 +6023,7 @@ const section: Section = {
         { text: "restais", correct: true, explanation: "L'imparfait « restais » exprime que je restais dans cette position quand le pied s'est endormi." },
         { text: "suis resté", correct: false, explanation: "Le passé composé ne convient pas pour exprimer une durée en cours." },
         { text: "reste", correct: false, explanation: "Le présent ne correspond pas au contexte passé." },
-        { text: "étais resté", correct: false, explanation: "Le plus-que-parfait n'est pas approprié ici." },
+        { text: "resterai", correct: false, explanation: "Le futur simple ne convient pas pour décrire une action passée." },
       ],
     },
     {
@@ -6142,7 +6142,7 @@ const section: Section = {
       ruleId: "03-18",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au temps approprié pour compléter cette phrase avec « depuis ».",
-      phrase: { before: "Je ", after: " cette langue depuis trois ans quand j'ai décidé de l'abandonner." },
+      phrase: { before: "J'", after: " cette langue depuis trois ans quand j'ai décidé de l'abandonner." },
       answer: "apprenais",
       explanation: "L'imparfait « apprenais » montre que l'apprentissage était en cours au moment de la décision.",
       wrongAnswers: [
@@ -6216,7 +6216,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "haiku",
-      prompt: "« Tu comprends ? » → Il a demandé si je ___ .",
+      prompt: "« Tu comprends ? » → Il a demandé si j'___ .",
       choices: [
         { text: "comprenais", correct: true, explanation: "Avec un verbe de parole au passé (« a demandé »), le présent « comprends » se transforme en imparfait « comprenais » au discours indirect." },
         { text: "comprends", correct: false, explanation: "C'est le présent du discours direct, mais il faut l'imparfait au discours indirect avec un verbe de parole au passé." },
@@ -6359,7 +6359,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "03-19",
       generatedBy: "haiku",
-      prompt: "« Tu aimes les gâteaux ? » → Sa mère a demandé si je ___ les gâteaux.",
+      prompt: "« Tu aimes les gâteaux ? » → Sa mère a demandé si j'___ les gâteaux.",
       choices: [
         { text: "aimais", correct: true, explanation: "Le présent « aimes » devient imparfait « aimais » au discours indirect avec un verbe de parole au passé." },
         { text: "aimes", correct: false, explanation: "C'est le présent du discours direct, mais le discours indirect exige l'imparfait." },

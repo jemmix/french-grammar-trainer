@@ -1,6 +1,6 @@
 import type { Section } from "../types";
 
-// Generated from: questions/11-01.txt, questions/11-02.txt, questions/11-03.txt, questions/11-04.txt, questions/11-05.txt, questions/11-06.txt, questions/11-07.txt, questions/11-08.txt, questions/11-09.txt, questions/11-10.txt, questions/11-11.txt, questions/11-12.txt, questions/11-13.txt, questions/11-14.txt, questions/11-15.txt, questions/11-16.txt, questions/11-17.txt, questions/11-18.txt, questions/11-19.txt, questions/11-20.txt
+// Generated from: questions/fr/11-01.txt, questions/fr/11-02.txt, questions/fr/11-03.txt, questions/fr/11-04.txt, questions/fr/11-05.txt, questions/fr/11-06.txt, questions/fr/11-07.txt, questions/fr/11-08.txt, questions/fr/11-09.txt, questions/fr/11-10.txt, questions/fr/11-11.txt, questions/fr/11-12.txt, questions/fr/11-13.txt, questions/fr/11-14.txt, questions/fr/11-15.txt, questions/fr/11-16.txt, questions/fr/11-17.txt, questions/fr/11-18.txt, questions/fr/11-19.txt, questions/fr/11-20.txt
 // Total: 400 MCQ + 100 INPUT = 500 questions
 
 const section: Section = {
@@ -317,10 +317,10 @@ const section: Section = {
       explanation: "Le pronom « les » remplace le COD « tes amis ». « Je les appelle » est la construction correcte.",
       wrongAnswers: [
         { text: "leur", explanation: "« leur » est un COI indirect, pas un pronom pour remplacer un COD." },
-        { text: "en", explanation: "« en » remplace un complément de quantité ou un COI avec « de », pas le COD." },
-        { text: "y", explanation: "« y » remplace un complément de lieu, pas un COD." },
         { text: "lui", explanation: "« lui » est un COI singulier, pas le pronom pour un COD pluriel." },
         { text: "me", explanation: "« me » serait un COD singulier (moi), pas le bon pronom pour « tes amis »." },
+        { text: "la", explanation: "« la » serait un COD féminin singulier, mais « tes amis » est masculin pluriel." },
+        { text: "le", explanation: "« le » serait un COD masculin singulier, mais « tes amis » est pluriel." },
       ],
     },
     {
@@ -750,7 +750,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-03",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ connais très bien. »",
+      prompt: "Complétez : « J'___ connais très bien. »",
       choices: [
         { text: "les", correct: true, explanation: "« les » est le pronom COD qui remplace un nom pluriel (« je connais les enfants » → « je les connais »). Il se place avant le verbe." },
         { text: "leur", correct: false, explanation: "« leur » est un pronom COI (« dire à quelqu'un ») ou un adjectif possessif (« leur maison »), pas un pronom COD pour le verbe « connaître »." },
@@ -828,7 +828,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-03",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ achète chaque semaine. »",
+      prompt: "Complétez : « J'___ achète chaque semaine. »",
       choices: [
         { text: "les", correct: true, explanation: "« les » est le pronom COD pluriel qui remplace un nom (« J'achète les journaux chaque semaine » → « Je les achète chaque semaine »)." },
         { text: "le", correct: false, explanation: "« le » est le pronom COD singulier. Pour une pluralité (« les »), on utilise la forme plurale « les »." },
@@ -933,7 +933,7 @@ const section: Section = {
       ruleId: "11-03",
       generatedBy: "sonnet",
       prompt: "Choisissez le pronom COD correct qui remplace le mot souligné",
-      phrase: { before: "Je ", after: " appelle chaque matin. » (appelle = calls)" },
+      phrase: { before: "J'", after: " appelle chaque matin. » (appelle = calls)" },
       answer: "te",
       explanation: "« te » est le pronom COD singulier deuxième personne. On appelle quelqu'un (toi) → on te l'appelle. (Note : « Je t'appelle » utiliserait l'élision « t' » devant une voyelle, mais ici « appelle » commence par une consonne.)",
       wrongAnswers: [
@@ -966,7 +966,7 @@ const section: Section = {
       ruleId: "11-03",
       generatedBy: "sonnet",
       prompt: "Remplissez avec le bon pronom COD",
-      phrase: { before: "Les cahiers ? Je ", after: " ai oubliés à la maison. » (oubliés = forgot)" },
+      phrase: { before: "Les cahiers ? J'", after: " ai oubliés à la maison. » (oubliés = forgot)" },
       answer: "les",
       explanation: "« les » est le pronom COD pluriel qui remplace « les cahiers ». L'accord du participe passé : « oubliés » s'accorde avec le COD antécédent pluriel « les ».",
       wrongAnswers: [
@@ -1055,7 +1055,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-03",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ cherche depuis longtemps. »",
+      prompt: "Complétez : « J'___ cherche depuis longtemps. »",
       choices: [
         { text: "la", correct: true, explanation: "« la » est le pronom COD singulier féminin. Ici « cherche » commence par une consonne, donc pas d'élision : on utilise « la » tel quel." },
         { text: "lui", correct: false, explanation: "« lui » est un pronom COI (« chercher à quelqu'un » n'existe pas). Le verbe « chercher » prend un COD direct." },
@@ -1068,7 +1068,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-04",
       generatedBy: "sonnet",
-      prompt: "Choisissez le bon pronom COI : « Je ___ parle tous les jours. » (parlant à mon ami)",
+      prompt: "Choisissez le bon pronom COI : « J'___ parle tous les jours. » (parlant à mon ami)",
       choices: [
         { text: "lui", correct: true, explanation: "« Lui » est le pronom COI singulier pour les 3ᵉ personnes (masculin et féminin). On parle « à quelqu'un », donc c'est un COI." },
         { text: "le", correct: false, explanation: "« Le » est un pronom COD (complément d'objet direct), pas un COI. On ne dit pas « je le parle »." },
@@ -1250,7 +1250,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ écris une lettre. » (écrivant à vous)",
+      prompt: "Complétez : « J'___ écris une lettre. » (écrivant à vous)",
       choices: [
         { text: "vous", correct: true, explanation: "« Vous » est le pronom COI pluriel de la 2ᵉ personne (ou le « vous » de politesse singulier). « Écrire à quelqu'un » utilise le COI." },
         { text: "te", correct: false, explanation: "« Te » est le pronom COI singulier de la 2ᵉ personne. Puisqu'on s'adresse à « vous » (pluriel ou politesse), on utilise « vous »." },
@@ -1329,7 +1329,7 @@ const section: Section = {
       ruleId: "11-04",
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom COI approprié.",
-      phrase: { before: "Je ", after: " parle depuis une heure. » (parlant à mon ami Paul)" },
+      phrase: { before: "J'", after: " parle depuis une heure. » (parlant à mon ami Paul)" },
       answer: "lui",
       explanation: "« Lui » est le pronom COI singulier pour Paul (3ᵉ personne). On dit « parler à quelqu'un ».",
       wrongAnswers: [
@@ -2003,7 +2003,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ ai acheté au supermarché. » (acheter quelque chose)",
+      prompt: "Complétez : « J'___ ai acheté au supermarché. » (acheter quelque chose)",
       choices: [
         { text: "l'", correct: true, explanation: "« L' » (apocopée de « le ») est le pronom COD singular qui se place avant l'auxiliaire « ai » au passé composé." },
         { text: "le", correct: false, explanation: "Bien que « le » soit correct, « l' » (apocopée) est requis avant une voyelle comme « ai »." },
@@ -2017,7 +2017,7 @@ const section: Section = {
       ruleId: "11-06",
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom COD approprié",
-      phrase: { before: "Je ", after: " ai vu ce matin." },
+      phrase: { before: "J'", after: " ai vu ce matin." },
       answer: "l'",
       explanation: "« L' » est la forme apocopée du COD « le » avant une voyelle. Au passé composé, le COD se place avant l'auxiliaire.",
       wrongAnswers: [
@@ -2455,7 +2455,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-08",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ ai vu. »",
+      prompt: "Complétez : « J'___ ai vu. »",
       choices: [
         { text: "l'", correct: true, explanation: "Le pronom objet direct « l' » se place avant l'auxiliaire « ai » au passé composé." },
         { text: "ai l'", correct: false, explanation: "Le pronom ne doit pas suivre l'auxiliaire ; il se place toujours avant." },
@@ -2533,7 +2533,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-08",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ ai contacté. »",
+      prompt: "Complétez : « J'___ ai contacté. »",
       choices: [
         { text: "t'", correct: true, explanation: "Le pronom indirect « t' » (contraction de « te ») se place avant l'auxiliaire « ai »." },
         { text: "ai t'", correct: false, explanation: "Le pronom doit précéder l'auxiliaire." },
@@ -2614,7 +2614,7 @@ const section: Section = {
       prompt: "Complétez : « Je ___ ai aidées. »",
       choices: [
         { text: "les", correct: true, explanation: "Le pronom objet direct féminin pluriel « les » se place avant l'auxiliaire « ai ». L'accord du participe est avec « les »." },
-        { text: "ai les", correct: false, explanation: "Le pronom doit précéder l'auxiliaire." },
+        { text: "des", correct: false, explanation: "« Des » est un article indéfini, non un pronom objet." },
         { text: "leur", correct: false, explanation: "« Leur » est un pronom indirect, non direct. Ici, « les » est correct." },
         { text: "la", correct: false, explanation: "« La » est singulier féminin, non pluriel. Ici, « les » est correct." },
       ],
@@ -2666,8 +2666,8 @@ const section: Section = {
       prompt: "Complétez : « Je ___ ai montré le chemin. »",
       choices: [
         { text: "te", correct: true, explanation: "Le pronom objet indirect deuxième personne « te » se place avant l'auxiliaire « ai ». Pas d'élision avant consonne." },
-        { text: "ai te", correct: false, explanation: "Le pronom doit précéder l'auxiliaire." },
         { text: "t'", correct: false, explanation: "L'élision « t' » ne s'utilise que devant une voyelle. Avant consonne « m », on écrit « te »." },
+        { text: "se", correct: false, explanation: "« Se » est un pronom réfléchi, non un pronom indirect. Ici, « te » est correct." },
         { text: "la", correct: false, explanation: "« La » est un pronom direct féminin, non indirect deuxième personne. Ici, « te » est correct." },
       ],
     },
@@ -2722,7 +2722,7 @@ const section: Section = {
       wrongAnswers: [
         { text: "t'", explanation: "L'élision « t' » s'utilise devant une voyelle, pas devant consonne. Avant consonne, on écrit « te »." },
         { text: "te l'", explanation: "Un seul pronom clitique est attendu ici ; « l' » n'est pas nécessaire." },
-        { text: "ai te", explanation: "Le pronom doit précéder l'auxiliaire, jamais le suivre." },
+        { text: "se", explanation: "« Se » est un pronom réfléchi, non un pronom indirect. Ici, « te » est correct." },
         { text: "le", explanation: "« Le » est un pronom direct, non indirect. Pour un pronom indirect deuxième personne, on utilise « te »." },
         { text: "nous", explanation: "« Nous » est première personne plurielle, non deuxième personne. Ici, « te » est correct." },
       ],
@@ -3364,7 +3364,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-10",
       generatedBy: "sonnet",
-      prompt: "Choisissez la bonne réponse : « Ne ___ pas ! » (sens : ne m'appelle pas)",
+      prompt: "Choisissez la bonne réponse : « N'___ pas ! » (sens : ne m'appelle pas)",
       choices: [
         { text: "m'appelle", correct: true, explanation: "À l'impératif négatif, le pronom précède le verbe. Avec un verbe commençant par une voyelle, on contracte « me » en « m' » : « ne m'appelle pas »." },
         { text: "appelle-moi", correct: false, explanation: "C'est la structure de l'impératif AFFIRMATIF. À l'impératif négatif, le pronom précède le verbe : « ne m'appelle pas »." },
@@ -3434,7 +3434,7 @@ const section: Section = {
       ruleId: "11-10",
       generatedBy: "sonnet",
       prompt: "Transformez à l'impératif négatif en remplaçant le pronom complément",
-      phrase: { before: "Tu dois appeler ta mère. → Ne ", after: " pas !" },
+      phrase: { before: "Tu dois appeler ta mère. → N'", after: " pas !" },
       answer: "l'appelle",
       explanation: "À l'impératif négatif, le pronom complément d'objet direct se place avant le verbe. Avec un verbe commençant par une voyelle, « la » se contracte en « l' » : « ne l'appelle pas ».",
       wrongAnswers: [
@@ -3825,7 +3825,7 @@ const section: Section = {
         { text: "la", correct: true, explanation: "Vous avez déjà le COI « me » ; on ajoute le COD « la ». Avec inversion, l'ordre reste : me + la." },
         { text: "le", correct: false, explanation: "« la montre » est féminin, donc le COD est « la », pas « le »." },
         { text: "lui", correct: false, explanation: "« lui » est un pronom COI (indirect), mais « me » est déjà le COI ici. Le manquant est le COD « la »." },
-        { text: "en", correct: false, explanation: "« en » remplace « de + nom » ou une quantité. Ici on remplace un COD défini (« la montre »), donc on utilise « la »." },
+        { text: "leur", correct: false, explanation: "« leur » est un pronom COI pluriel, mais le contexte demande un COD singulier « la »." },
       ],
     },
     {
@@ -3838,7 +3838,7 @@ const section: Section = {
         { text: "la", correct: true, explanation: "Dans la construction réfléchie « se la montrent », « se » est COI et « la » est COD. Ordre : se + la." },
         { text: "le", correct: false, explanation: "« l'image » (féminin) nécessite « la », pas « le »." },
         { text: "lui", correct: false, explanation: "« lui » est un COI, mais « se » remplit déjà ce rôle. Le manquant est le COD « la »." },
-        { text: "en", correct: false, explanation: "« en » remplace « de + nom » ou une quantité. Le contexte appelle un COD défini féminin : « la »." },
+        { text: "leur", correct: false, explanation: "« leur » est un pronom COI pluriel, mais le contexte demande un COD singulier « la »." },
       ],
     },
     {
@@ -4446,7 +4446,7 @@ const section: Section = {
         { text: "la lui", explanation: "\"La\" n'est pas le bon COD. On utilise \"le\" pour le COD ici." },
         { text: "le leur", explanation: "\"Leur\" est pluriel, mais ici c'est \"lui\" (singulier)." },
         { text: "lui", explanation: "Incomplet. Il manque le COD." },
-        { text: "en le", explanation: "\"En\" n'est pas approprié. L'ordre correct est COD + COI." },
+        { text: "les lui", explanation: "\"Les\" n'est pas correct. \"La règle\" est singulier → \"le\"." },
         { text: "le", explanation: "Incomplet. Il manque le COI." },
       ],
     },
@@ -4481,7 +4481,7 @@ const section: Section = {
         { text: "le lui", explanation: "\"Le\" n'est pas correct. \"Cette lettre\" est féminin → \"la\"." },
         { text: "la leur", explanation: "\"Leur\" est pluriel, mais ici c'est \"lui\" (singulier)." },
         { text: "lui", explanation: "Incomplet. Il manque le COD (la)." },
-        { text: "en lui", explanation: "\"En\" n'est pas approprié. L'ordre correct est COD + COI." },
+        { text: "les lui", explanation: "\"Les\" n'est pas correct. \"Cette lettre\" est singulier → \"la\"." },
       ],
     },
     {
@@ -4880,7 +4880,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-15",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je veux du café. Je ___ veux. »",
+      prompt: "Complétez : « Je veux du café. J'___ veux. »",
       choices: [
         { text: "en", correct: true, explanation: "Le pronom « en » remplace « du café » (de + nom). On dit « J'en veux » pour éviter la répétition." },
         { text: "le", correct: false, explanation: "« Le » est un pronom d'objet direct, mais il ne remplace pas « de + nom ». On ne dit pas « Je le veux » pour signifier « du café »." },
@@ -4919,7 +4919,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-15",
       generatedBy: "sonnet",
-      prompt: "Réécrivez : « Voulez-vous de la tarte ? Oui, je ___ veux. »",
+      prompt: "Réécrivez : « Voulez-vous de la tarte ? Oui, j'___ veux. »",
       choices: [
         { text: "en", correct: true, explanation: "« En » remplace la partitive « de la tarte ». C'est la seule façon correcte de répondre." },
         { text: "en la", correct: false, explanation: "On ne peut pas utiliser « en » et « la » ensemble dans ce contexte. Il faut seulement « en »." },
@@ -5225,9 +5225,9 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-16",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je vais à Paris. Je ___ vais. »",
+      prompt: "Complétez : « Je vais à Paris. J'___ vais. »",
       choices: [
-        { text: "y", correct: true, explanation: "Le pronom « y » remplace « à Paris » (le lieu). La phrase est : « Je y vais » → « J'y vais »." },
+        { text: "y", correct: true, explanation: "Le pronom « y » remplace « à Paris » (le lieu). La phrase est : « J'y vais »." },
         { text: "le", correct: false, explanation: "« Le » remplace un complément d'objet direct (un nom). Ici on a « à Paris » (à + lieu), donc on utilise « y »." },
         { text: "lui", correct: false, explanation: "« Lui » remplace un complément d'objet indirect (à + personne). Ici on remplace « à + lieu », donc « y » est correct." },
         { text: "l'", correct: false, explanation: "« L' » remplace un complément d'objet direct. On a « à + lieu » donc « y » est approprié." },
@@ -5316,7 +5316,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-16",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je m'intéresse à la littérature française. Je ___ m'intéresse beaucoup. »",
+      prompt: "Complétez : « Je m'intéresse à la littérature française. Je m'___ intéresse beaucoup. »",
       choices: [
         { text: "y", correct: true, explanation: "« Y » remplace « à la littérature française ». La phrase devient : « Je m'y intéresse beaucoup »." },
         { text: "l'", correct: false, explanation: "« L' » remplace un COD. Ici on a « à + chose » donc le pronom est « y »." },
@@ -5368,7 +5368,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-16",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu t'opposes à cette loi ? Non, je ne ___ oppose pas. »",
+      prompt: "Complétez : « Tu t'opposes à cette loi ? Non, je ne m'___ oppose pas. »",
       choices: [
         { text: "y", correct: true, explanation: "« Y » remplace « à cette loi ». « Je ne m'y oppose pas » est correct (le pronom se place avant le verbe négatif)." },
         { text: "la", correct: false, explanation: "« La » remplace un COD. Ici c'est « à + chose » donc le pronom est « y »." },
@@ -5407,9 +5407,9 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-16",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Est-ce que tu crois à cette explication ? Oui, je ___ crois. »",
+      prompt: "Complétez : « Est-ce que tu crois à cette explication ? Oui, j'___ crois. »",
       choices: [
-        { text: "y", correct: true, explanation: "« Y » remplace « à cette explication ». « Je y crois » → « J'y crois » avec élision." },
+        { text: "y", correct: true, explanation: "« Y » remplace « à cette explication ». « J'y crois » avec élision." },
         { text: "la", correct: false, explanation: "« La » remplace un COD. Ici c'est « à + chose abstraite » donc le pronom est « y »." },
         { text: "l'", correct: false, explanation: "« L' » remplace un COD. On a « à + chose » donc on utilise « y »." },
         { text: "lui", correct: false, explanation: "« Lui » remplace « à + personne ». On a « à + chose abstraite » donc « y » convient." },
@@ -5524,17 +5524,17 @@ const section: Section = {
       ruleId: "11-16",
       generatedBy: "sonnet",
       prompt: "Mettez au futur simple et remplacez le complément par « y ».",
-      phrase: { before: "Vous vous opposerez à cette décision injuste. Je ne ", after: " opposerai pas." },
-      answer: "m'y",
+      phrase: { before: "Vous vous opposerez à cette décision injuste. Je ne m'", after: " opposerai pas." },
+      answer: "y",
       explanation: "Forme négative au futur : « Je ne m'y opposerai pas ». Le pronom « y » remplace « à cette décision ».",
       wrongAnswers: [
-        { text: "l'", explanation: "« L' » remplace un COD. Ici on a « à + chose » donc on utilise « y » avec le pronom réfléchi « m' »." },
-        { text: "me", explanation: "« Me » est un pronom COD réfléchi. On a besoin de « m'y » (réfléchi + objet indirect)." },
-        { text: "y", explanation: "Incomplet. La forme correcte avec verbe réfléchi est « m'y », pas « y » seul." },
+        { text: "l'", explanation: "« L' » remplace un COD. Ici on a « à + chose » donc on utilise « y »." },
+        { text: "me", explanation: "« Me » est un pronom réfléchi déjà présent dans « m' ». On a besoin de « y » pour l'objet indirect." },
         { text: "lui", explanation: "« Lui » remplace « à + personne ». On a « à + chose » donc on utilise « y »." },
         { text: "la", explanation: "« La » remplace un COD. Ici c'est « à + chose » donc le pronom correct est « y »." },
-        { text: "m'", explanation: "Incomplet. Le pronom réfléchi seul ne suffit pas ; on a besoin de « m'y »." },
+        { text: "en", explanation: "« En » remplace « de + nom ». Ici c'est « à + chose » donc on utilise « y »." },
         { text: "à", explanation: "« À » est une préposition, pas un pronom. Le pronom correct est « y »." },
+        { text: "le", explanation: "« Le » remplace un COD. Ici on a « à + chose » donc on utilise « y »." },
       ],
     },
     {
@@ -5619,7 +5619,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-17",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ parle. » (I speak to her about it.)",
+      prompt: "Complétez : « J'___ parle. » (I speak to her about it.)",
       choices: [
         { text: "lui en", correct: true, explanation: "Avec un verbe comme « parler de », on utilise « lui » (indirect) + « en ». Le pronom objet direct n'intervient pas ici." },
         { text: "en lui", correct: false, explanation: "L'ordre est incorrect. « En » doit venir après le pronom indirect." },
@@ -5697,7 +5697,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-17",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ laisse pas. » (I don't leave them there.)",
+      prompt: "Complétez : « J'___ laisse pas. » (I don't leave them there.)",
       choices: [
         { text: "les y ne", correct: true, explanation: "L'ordre correct est : pronom objet direct (les) + « y » + négation (ne)." },
         { text: "ne les y", correct: false, explanation: "La négation doit venir après les pronoms, pas avant." },
@@ -5762,7 +5762,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-17",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ ai pas donné. » (I didn't give any to her.)",
+      prompt: "Complétez : « J'___ ai pas donné. » (I didn't give any to her.)",
       choices: [
         { text: "lui en ne", correct: true, explanation: "L'ordre correct avec passé composé est : pronom indirect (lui) + « en » + « ne » (pas)." },
         { text: "ne lui en", correct: false, explanation: "Avec le passé composé, « ne » précède l'auxiliaire, pas les pronoms qui suivent le verbe conjugué." },
@@ -5858,7 +5858,7 @@ const section: Section = {
       ruleId: "11-17",
       generatedBy: "sonnet",
       prompt: "Remplissez avec les pronoms appropriés. (Je parle de cette histoire à mes amis.)",
-      phrase: { before: "Je ", after: " parle." },
+      phrase: { before: "J'", after: " parle." },
       answer: "leur en",
       explanation: "Ordre correct : pronom indirect (leur) + « en ». « En » remplace « de cette histoire ».",
       wrongAnswers: [
@@ -5909,7 +5909,7 @@ const section: Section = {
       ruleId: "11-17",
       generatedBy: "sonnet",
       prompt: "Remplissez avec les pronoms dans le bon ordre. (Je dois reconnaître mes erreurs à cet endroit.)",
-      phrase: { before: "Je ", after: " reconnais." },
+      phrase: { before: "J'", after: " reconnais." },
       answer: "les y",
       explanation: "Ordre correct : pronom direct (les) + « y ». « Les » remplace « mes erreurs », et « y » indique le lieu.",
       wrongAnswers: [
@@ -6271,9 +6271,9 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-19",
       generatedBy: "sonnet",
-      prompt: "Choisissez la bonne option : « Je pense souvent à mes amis. Je ___ pense souvent. »",
+      prompt: "Choisissez la bonne option : « Je pense souvent à mes amis. J'___ pense souvent. »",
       choices: [
-        { text: "y", correct: true, explanation: "« Penser à » (to think of/about) se remplace par le pronom « y ». « Je y pense souvent » signifie « Je pense souvent à mes amis »." },
+        { text: "y", correct: true, explanation: "« Penser à » (to think of/about) se remplace par le pronom « y ». « J'y pense souvent » signifie « Je pense souvent à mes amis »." },
         { text: "en", correct: false, explanation: "Le pronom « en » remplace « de » (penser de quelqu'un = avoir une opinion). « Je en pense... » serait faux dans ce contexte." },
         { text: "le", correct: false, explanation: "Le pronom direct « le » ne convient pas ici. On doit utiliser un pronom de lieu/chose indirect (« y ») puisque « à » est prépositionnel." },
         { text: "lui", correct: false, explanation: "« Lui » s'utilise pour remplacer un COI avec « à » quand il s'agit d'une personne unique en tant que destinataire (« Je lui parle »), pas pour « penser à »." },
@@ -6284,9 +6284,9 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Qu'est-ce que tu penses de ce film ? Je ___ pense que c'est excellent. »",
+      prompt: "Complétez : « Qu'est-ce que tu penses de ce film ? J'___ pense que c'est excellent. »",
       choices: [
-        { text: "en", correct: true, explanation: "« Penser de » (to have an opinion of) se remplace par « en ». « Je en pense que... » exprime l'opinion à propos du film." },
+        { text: "en", correct: true, explanation: "« Penser de » (to have an opinion of) se remplace par « en ». « J'en pense que... » exprime l'opinion à propos du film." },
         { text: "y", correct: false, explanation: "« Y » remplace « à » (penser à = to think of), pas « de » (penser de = to have an opinion). C'est un contexte où on exprime une opinion, donc « de »." },
         { text: "la", correct: false, explanation: "Le pronom direct « la » ne s'emploie pas pour remplacer « de ». Le pronom indirect « en » est nécessaire avec « penser de »." },
         { text: "lui", correct: false, explanation: "« Lui » ne convient pas ici. « En » est le pronom indirect qui remplace le complément introduit par « de »." },
@@ -6479,9 +6479,9 @@ const section: Section = {
       type: "mcq",
       ruleId: "11-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je m'inquiète de votre santé. Je ___ inquiète. »",
+      prompt: "Complétez : « Je m'inquiète de votre santé. J'___ inquiète. »",
       choices: [
-        { text: "en", correct: true, explanation: "« S'inquiéter de » (to worry about) prend « de ». Le pronom « en » remplace ce complément. « Je en inquiète » = « Je m'inquiète de votre santé »." },
+        { text: "en", correct: true, explanation: "« S'inquiéter de » (to worry about) prend « de ». Le pronom « en » remplace ce complément. « J'en inquiète » = « Je m'inquiète de votre santé »." },
         { text: "y", correct: false, explanation: "« Y » remplace « à ». « S'inquiéter de » exige « en »." },
         { text: "la", correct: false, explanation: "« La » est un pronom direct. « S'inquiéter de » demande le pronom indirect « en »." },
         { text: "lui", correct: false, explanation: "« Lui » s'utilise pour les personnes dans certains contextes. Ici, on remplace « de votre santé » avec « en »." },
@@ -6549,10 +6549,10 @@ const section: Section = {
       type: "input",
       ruleId: "11-19",
       generatedBy: "sonnet",
-      prompt: "Remplacez le complément en gras par le pronom correct (y ou en) : « Qu'est-ce que tu penses **de ce livre** ? Je ___ pense que c'est bien. »",
-      phrase: { before: "Je ", after: " pense que c'est bien." },
+      prompt: "Remplacez le complément en gras par le pronom correct (y ou en) : « Qu'est-ce que tu penses **de ce livre** ? J'___ pense que c'est bien. »",
+      phrase: { before: "J'", after: " pense que c'est bien." },
       answer: "en",
-      explanation: "« Penser de » (to have an opinion of) se remplace par « en ». « Je en pense que... » exprime l'opinion à propos du livre.",
+      explanation: "« Penser de » (to have an opinion of) se remplace par « en ». « J'en pense que... » exprime l'opinion à propos du livre.",
       wrongAnswers: [
         { text: "y", explanation: "« Y » remplace « à » (penser à = to think of/about), pas « de ». Ici, c'est « penser de », donc « en »." },
         { text: "le", explanation: "« Le » est un pronom direct. On utilise « en » avec la préposition « de »." },
@@ -6872,8 +6872,8 @@ const section: Section = {
       choices: [
         { text: "lui", correct: true, explanation: "« Au client » est un COI. On utilise « lui » pour un COI singulier." },
         { text: "le", correct: false, explanation: "« Le » est un pronom COD, pas un COI." },
-        { text: "en", correct: false, explanation: "« En » remplace les compléments introduits par « de »." },
-        { text: "y", correct: false, explanation: "« Y » remplace un complément de lieu ou introduit par « à »." },
+        { text: "leur", correct: false, explanation: "« Leur » est un COI pluriel, mais « au client » est singulier." },
+        { text: "les", correct: false, explanation: "« Les » est un pronom COD pluriel, pas un COI singulier." },
       ],
     },
     {

@@ -1,12 +1,12 @@
 import type { Section } from "../types";
 
-// Generated from: questions/05-01.txt, questions/05-02.txt, questions/05-03.txt, questions/05-04.txt, questions/05-05.txt, questions/05-06.txt, questions/05-07.txt, questions/05-08.txt, questions/05-09.txt, questions/05-10.txt, questions/05-11.txt, questions/05-12.txt, questions/05-13.txt, questions/05-14.txt, questions/05-15.txt, questions/05-16.txt, questions/05-17.txt, questions/05-18.txt, questions/05-19.txt, questions/05-20.txt
+// Generated from: questions/fr/05-01.txt, questions/fr/05-02.txt, questions/fr/05-03.txt, questions/fr/05-04.txt, questions/fr/05-05.txt, questions/fr/05-06.txt, questions/fr/05-07.txt, questions/fr/05-08.txt, questions/fr/05-09.txt, questions/fr/05-10.txt, questions/fr/05-11.txt, questions/fr/05-12.txt, questions/fr/05-13.txt, questions/fr/05-14.txt, questions/fr/05-15.txt, questions/fr/05-16.txt, questions/fr/05-17.txt, questions/fr/05-18.txt, questions/fr/05-19.txt, questions/fr/05-20.txt
 // Total: 400 MCQ + 100 INPUT = 500 questions
 
 const section: Section = {
   id: "05-futur-simple-et-anterieur",
   title: "Le futur simple et le futur antérieur",
-  description: "Maîtrisez la formation et les emplois du futur simple (projets, prédictions, promesses, ordres) et du futur antérieur (antériorité, actions accomplies), ainsi que leurs nuances par rapport au futur proche.",
+  description: "Formation régulière et irrégulière, emplois, antériorité",
   rules: [
     { id: "05-01", sectionId: "05-futur-simple-et-anterieur", title: "Formation du futur simple des verbes en -er (infinitif + -ai, -as, -a, -ons, -ez, -ont)" },
     { id: "05-02", sectionId: "05-futur-simple-et-anterieur", title: "Formation du futur simple des verbes en -ir (infinitif + terminaisons)" },
@@ -35,7 +35,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-01",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ à la gare à 15 heures. »",
+      prompt: "Complétez : « J'___ à la gare à 15 heures. »",
       choices: [
         { text: "arriverai", correct: true, explanation: "Futur simple du verbe « arriver » avec le sujet « je ». On prend l'infinitif « arriver » et on ajoute la terminaison « -ai »." },
         { text: "arrivais", correct: false, explanation: "C'est l'imparfait, pas le futur simple. L'imparfait utilise la terminaison « -ais » et décrit une action répétée dans le passé." },
@@ -1069,7 +1069,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ heureux de te revoir demain. »",
+      prompt: "Complétez : « J'___ heureux de te revoir demain. »",
       choices: [
         { text: "serai", correct: true, explanation: "C'est le futur irrégulier du verbe « être » avec le radical « ser- » et la terminaison de 1ère personne du singulier « -ai »." },
         { text: "suis", correct: false, explanation: "C'est le présent du verbe « être », pas le futur. Le contexte « demain » indique le futur." },
@@ -1330,7 +1330,7 @@ const section: Section = {
       ruleId: "05-04",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « être » au futur simple.",
-      phrase: { before: "Je ", after: " certain que tu réussiras." },
+      phrase: { before: "J'", after: " certain que tu réussiras." },
       answer: "serai",
       explanation: "Le futur irrégulier du verbe « être » utilise le radical « ser- » auquel on ajoute les terminaisons régulières du futur. Pour la 1ère personne du singulier, on ajoute « -ai ».",
       wrongAnswers: [
@@ -2310,9 +2310,9 @@ const section: Section = {
       prompt: "Complétez : « Je ___ les moyens de réussir ce projet. »",
       choices: [
         { text: "courrai", correct: true, explanation: "Futur simple du verbe « courir » à la 1ère personne du singulier (sens figuré : « obtenir »)." },
-        { text: "aurai", correct: false, explanation: "Verbe différent ; bien qu'aussi au futur, ce n'est pas « courir »." },
         { text: "cours", correct: false, explanation: "C'est le présent à la 1ère personne du singulier." },
         { text: "courais", correct: false, explanation: "C'est l'imparfait du verbe « courir »." },
+        { text: "courirai", correct: false, explanation: "Erreur : oubli du double « r » du radical irrégulier." },
       ],
     },
     {
@@ -2794,7 +2794,6 @@ const section: Section = {
         { text: "paye", explanation: "Ceci est le présent à la 1re personne du singulier, pas le futur." },
         { text: "paierait", explanation: "Ceci est le conditionnel présent, pas le futur." },
         { text: "payerai", explanation: "Bien que valide aussi (y conservé pour les verbes en -ayer), « paierai » (y→i) est la forme standard à privilégier." },
-        { text: "ai payé", explanation: "Ceci est le passé composé, pas le futur simple." },
         { text: "paierions", explanation: "C'est la 1ère personne du pluriel au conditionnel, pas le futur à la 1ère personne du singulier." },
       ],
     },
@@ -2803,7 +2802,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-09",
       generatedBy: "haiku",
-      prompt: "Conjuguez : « Je ___ mon ami demain. »",
+      prompt: "Conjuguez : « J'___ mon ami demain. »",
       choices: [
         { text: "appellerai", correct: true, explanation: "Le futur du verbe « appeler » double le « l » dans tous les formes : appellerai (j'appeLL-erai)." },
         { text: "apellerai", correct: false, explanation: "Erreur courante : oublier le doublement de la consonne au futur. Le futur demande toujours deux « l »." },
@@ -3100,7 +3099,7 @@ const section: Section = {
       ruleId: "05-09",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « appeler » au futur simple.",
-      phrase: { before: "Je ", after: " ma mère ce soir." },
+      phrase: { before: "J'", after: " ma mère ce soir." },
       answer: "appellerai",
       explanation: "Au futur, « appeler » double le « l » dans toutes les formes : j'appellerai (appell-erai).",
       wrongAnswers: [
@@ -3420,7 +3419,6 @@ const section: Section = {
         { text: "terminerais", explanation: "Le conditionnel exprime une hypothèse, pas un projet décidé. Le contexte indique une intention sérieuse et planifiée." },
         { text: "vais terminer", explanation: "Le futur proche est acceptable, mais le futur simple est plus formel et plus approprié pour un projet scolaire planifié." },
         { text: "terminais", explanation: "L'imparfait décrit une action passée habituellement, pas un projet futur. Le contexte indique clairement un événement à venir." },
-        { text: "ai terminé", explanation: "Le passé composé décrit une action passée complétée, pas un projet futur. Le contexte exige le futur." },
       ],
     },
     {
@@ -3471,7 +3469,6 @@ const section: Section = {
         { text: "travaillerais", explanation: "Le conditionnel exprime une hypothèse ou une condition, pas une intention professionnelle certaine." },
         { text: "vais travailler", explanation: "Le futur proche est acceptable, mais le futur simple est plus formel pour un projet de carrière à long terme." },
         { text: "travaillais", explanation: "L'imparfait décrit une situation passée, pas un projet professionnel futur. Le contexte exige le futur." },
-        { text: "ai travaillé", explanation: "Le passé composé décrit une expérience passée, pas un projet professionnel futur. Le contexte indique clairement un plan à venir." },
       ],
     },
     {
@@ -3757,7 +3754,7 @@ const section: Section = {
       ruleId: "05-11",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur simple pour exprimer une promesse.",
-      phrase: { before: "Je te ", after: " un coup de fil dès que j'arrive à l'aéroport." },
+      phrase: { before: "Je t'", after: " un coup de fil dès que j'arrive à l'aéroport." },
       answer: "donnerai",
       explanation: "Le futur simple « donnerai » exprime une promesse claire de contacter l'autre personne.",
       wrongAnswers: [
@@ -3808,7 +3805,7 @@ const section: Section = {
       ruleId: "05-11",
       generatedBy: "haiku",
       prompt: "Complétez l'ordre officiel avec le verbe au futur simple.",
-      phrase: { before: "Vous ne ", after: " pas vos téléphones portables pendant l'examen." },
+      phrase: { before: "Vous n'", after: " pas vos téléphones portables pendant l'examen." },
       answer: "utiliserez",
       explanation: "Le futur simple « utiliserez » exprime une interdiction officielle et obligatoire.",
       wrongAnswers: [
@@ -4453,9 +4450,9 @@ const section: Section = {
       prompt: "« Ne t'inquiète pas, je ___ appeler le plombier dès maintenant. » Quel temps convient le mieux ?",
       choices: [
         { text: "vais", correct: true, explanation: "Le futur proche s'emploie pour une action décidée et imminente. L'adverbe « dès maintenant » confirme l'imminence de l'action." },
-        { text: "allais", correct: false, explanation: "C'est le futur dans le passé (imparfait d'aller + infinitif). Le contexte est au présent, pas au passé." },
-        { text: "appellerai", correct: false, explanation: "Le futur simple est possible mais moins naturel ici : « dès maintenant » indique une intention immédiate, mieux rendue par le futur proche." },
-        { text: "appellerais", correct: false, explanation: "Le conditionnel exprimerait l'incertitude, contraire au ton rassurant du locuteur." },
+        { text: "pourrais", correct: false, explanation: "Le conditionnel exprime une possibilité incertaine, contraire au ton rassurant et décidé du locuteur." },
+        { text: "dois", correct: false, explanation: "Le verbe « devoir » exprime une obligation, pas une intention personnelle et rassurante." },
+        { text: "voudrais", correct: false, explanation: "Le conditionnel exprime un souhait, pas une décision ferme et immédiate." },
       ],
     },
     {
@@ -4502,11 +4499,10 @@ const section: Section = {
       answer: "vais",
       explanation: "Le futur proche exprime une intention forte et une décision prise maintenant. Le locuteur veut exprimer son urgence et sa détermination immédiate.",
       wrongAnswers: [
-        { text: "arrêterai", explanation: "Le futur simple est possible mais moins expressif ici pour une décision prise dans l'instant sous le coup de l'émotion." },
-        { text: "allais", explanation: "C'est le futur dans le passé (imparfait). Le contexte est au présent." },
         { text: "dois", explanation: "Le verbe « devoir » change le sens : ce n'est plus une intention mais une obligation." },
         { text: "voulais", explanation: "L'imparfait de « vouloir » exprimerait un désir passé, pas une intention présente." },
-        { text: "arrêterais", explanation: "Le conditionnel exprimerait une hypothèse, non une intention ferme." },
+        { text: "peux", explanation: "Le verbe « pouvoir » exprime une capacité, pas une décision ferme." },
+        { text: "veux", explanation: "Le verbe « vouloir » exprime un désir, pas une action imminente." },
       ],
     },
     {
@@ -4523,7 +4519,6 @@ const section: Section = {
         { text: "suis", explanation: "Le présent changerait le sens : on ne parle pas du présent actuel mais d'une promesse future." },
         { text: "serais", explanation: "Le conditionnel exprimerait l'incertitude, contraire à l'idée d'une promesse ferme." },
         { text: "sois", explanation: "Le subjonctif présent ne convient pas pour exprimer une promesse à la première personne." },
-        { text: "aurais été", explanation: "Le conditionnel passé exprimerait un regret ou une hypothèse irréelle, pas une promesse." },
       ],
     },
     {
@@ -4627,7 +4622,7 @@ const section: Section = {
         { text: "pardonnerai", correct: true, explanation: "Après « si tu me dis » (présent), on utilise le futur simple (pardonnerai) pour exprimer la conséquence future." },
         { text: "pardonnais", correct: false, explanation: "L'imparfait ne s'utilise pas ici. Après « si + présent », on emploie le futur simple ou le présent, pas l'imparfait." },
         { text: "pardonnerais", correct: false, explanation: "Le conditionnel (pardonnerais) correspond à « si + imparfait ». Avec « si + présent », on use le futur simple." },
-        { text: "ai pardonné", correct: false, explanation: "Le passé composé exprime une action passée, non la conséquence future d'une hypothèse." },
+        { text: "pardonne", correct: false, explanation: "Le présent pourrait fonctionner dans certains contextes, mais le futur simple est la forme attendue pour exprimer une conséquence future certaine." },
       ],
     },
     {
@@ -4815,8 +4810,8 @@ const section: Section = {
       wrongAnswers: [
         { text: "montrerais", explanation: "Le conditionnel (montrerais) correspond au pattern « si + imparfait → conditionnel », pas à « si + présent → futur »." },
         { text: "montre", explanation: "Le présent n'exprime pas clairement l'idée de futur avec certitude. On utilise le futur simple avec « si + présent »." },
-        { text: "ai montré", explanation: "Le passé composé décrit une action passée accomplie, pas une conséquence future." },
-        { text: "aurais montré", explanation: "Le conditionnel passé s'utilise après « si + plus-que-parfait ». Ici, on a « si + présent → futur »." },
+        { text: "montrer", explanation: "L'infinitif n'est pas conjugué. Après « je », il faut utiliser une forme conjuguée au futur simple." },
+        { text: "montrant", explanation: "Le participe présent n'est pas une forme conjuguée. Il faut utiliser le futur simple « montrerai »." },
         { text: "montreras", explanation: "C'est la 2e personne du singulier du futur. Pour « je » au futur, la terminaison est -ai, pas -as." },
       ],
     },
@@ -4867,8 +4862,8 @@ const section: Section = {
         { text: "redoubliez", explanation: "Ceci est l'imparfait, non le présent. Après « si » pour une hypothèse réalisable, on utilise le présent." },
         { text: "redoubleriez", explanation: "Le conditionnel n'est pas correct après « si » pour une hypothèse réalisable. Il s'utilise après « si + imparfait »." },
         { text: "redoublerez", explanation: "Le futur ne s'utilise jamais après « si ». On emploie le présent ou le passé selon le contexte." },
-        { text: "aviez redoublé", explanation: "Le plus-que-parfait n'est pas la forme ici. Cette hypothèse concerne le présent/futur, pas le passé." },
-        { text: "avez redoublé", explanation: "Le passé composé décrit une action passée accomplie, pas une hypothèse réalisable au futur." },
+        { text: "redoubler", explanation: "L'infinitif n'est pas conjugué. Après « si » pour une hypothèse réalisable, on utilise le présent de l'indicatif." },
+        { text: "redoublant", explanation: "Le participe présent n'est pas une forme conjuguée. Il faut utiliser le présent « redoublez »." },
       ],
     },
     {
@@ -4876,7 +4871,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-15",
       generatedBy: "haiku",
-      prompt: "Complétez la phrase : « Je ___ ce projet avant la fin du mois. »",
+      prompt: "Complétez la phrase : « J'___ ce projet avant la fin du mois. »",
       choices: [
         { text: "aurai terminé", correct: true, explanation: "Le verbe « terminer » est un verbe du premier groupe qui utilise l'auxiliaire « avoir » au futur simple (aurai) + le participe passé (terminé). C'est la formation correcte du futur antérieur." },
         { text: "ai terminé", correct: false, explanation: "C'est du passé composé, pas du futur antérieur. L'auxiliaire « avoir » est au présent (ai), non au futur (aurai)." },
@@ -5019,7 +5014,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-15",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ tous mes emails avant 17h. » (envoyer)",
+      prompt: "Complétez : « J'___ tous mes emails avant 17h. » (envoyer)",
       choices: [
         { text: "aurai envoyé", correct: true, explanation: "« Envoyer » utilise l'auxiliaire « avoir » au futur simple (aurai) + participe passé (envoyé). Formation correcte du futur antérieur." },
         { text: "ai envoyé", correct: false, explanation: "C'est du passé composé avec l'auxiliaire au présent (ai), non au futur antérieur (aurai)." },
@@ -5137,7 +5132,7 @@ const section: Section = {
       ruleId: "05-15",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au futur antérieur.",
-      phrase: { before: "Je ", after: " mon travail avant ce soir. » (finir)" },
+      phrase: { before: "J'", after: " mon travail avant ce soir. » (finir)" },
       answer: "aurai fini",
       explanation: "« Finir » utilise l'auxiliaire « avoir » au futur simple (aurai) + participe passé (fini). Formation correcte du futur antérieur.",
       wrongAnswers: [
@@ -5455,12 +5450,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-16",
       generatedBy: "haiku",
-      prompt: "Choisissez le verbe correct : « À cette heure-ci demain, je _____ Rome. »",
+      prompt: "Choisissez le verbe correct : « À cette heure-ci demain, j'_____ à Rome. »",
       choices: [
-        { text: "serai arrivé à", correct: true, explanation: "Le futur antérieur « serai arrivé » avec l'auxiliaire « être » exprime que tu seras déjà arrivé à Rome à une heure précise demain." },
-        { text: "arriverai à", correct: false, explanation: "Le futur simple « arriverai » n'indique pas que tu seras DÉJÀ arrivé à une heure précise." },
-        { text: "aurai arrivé à", correct: false, explanation: "Le verbe « arriver » demande l'auxiliaire « être », pas « avoir »." },
-        { text: "serais arrivé à", correct: false, explanation: "Le conditionnel passé « serais arrivé » exprime une hypothèse, pas une certitude future." },
+        { text: "serai arrivé", correct: true, explanation: "Le futur antérieur « serai arrivé » avec l'auxiliaire « être » exprime que tu seras déjà arrivé à Rome à une heure précise demain." },
+        { text: "arriverai", correct: false, explanation: "Le futur simple « arriverai » n'indique pas que tu seras DÉJÀ arrivé à une heure précise." },
+        { text: "aurai arrivé", correct: false, explanation: "Le verbe « arriver » demande l'auxiliaire « être », pas « avoir »." },
+        { text: "serais arrivé", correct: false, explanation: "Le conditionnel passé « serais arrivé » exprime une hypothèse, pas une certitude future." },
       ],
     },
     {
@@ -5482,7 +5477,7 @@ const section: Section = {
       ruleId: "05-16",
       generatedBy: "haiku",
       prompt: "Conjuguez au futur antérieur pour exprimer une action accomplie avant un moment précis.",
-      phrase: { before: "Je ", after: "__ mon travail avant 17h00." },
+      phrase: { before: "J'", after: "__ mon travail avant 17h00." },
       answer: "aurai terminé",
       explanation: "Le futur antérieur « aurai terminé » exprime que le travail sera complété avant 17h00. C'est la forme correcte pour montrer une completion avant une heure précise.",
       wrongAnswers: [
@@ -6952,7 +6947,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-20",
       generatedBy: "haiku",
-      prompt: "« Attends ! Je ___ t'appeler dans cinq minutes. »",
+      prompt: "« Attends ! J'___ t'appeler dans cinq minutes. »",
       choices: [
         { text: "vais", correct: true, explanation: "Le futur proche avec un délai court (cinq minutes) exprime une intention imminente et certaine : « je vais t'appeler »." },
         { text: "aurai appelé", correct: false, explanation: "Le futur antérieur exprime une action achevée avant un moment futur. Il n'est pas approprié pour exprimer une simple intention imminente." },

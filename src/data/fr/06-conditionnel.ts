@@ -1,12 +1,12 @@
 import type { Section } from "../types";
 
-// Generated from: questions/06-01.txt, questions/06-02.txt, questions/06-03.txt, questions/06-04.txt, questions/06-05.txt, questions/06-06.txt, questions/06-07.txt, questions/06-08.txt, questions/06-09.txt, questions/06-10.txt, questions/06-11.txt, questions/06-12.txt, questions/06-13.txt, questions/06-14.txt, questions/06-15.txt, questions/06-16.txt, questions/06-17.txt, questions/06-18.txt, questions/06-19.txt, questions/06-20.txt
+// Generated from: questions/fr/06-01.txt, questions/fr/06-02.txt, questions/fr/06-03.txt, questions/fr/06-04.txt, questions/fr/06-05.txt, questions/fr/06-06.txt, questions/fr/06-07.txt, questions/fr/06-08.txt, questions/fr/06-09.txt, questions/fr/06-10.txt, questions/fr/06-11.txt, questions/fr/06-12.txt, questions/fr/06-13.txt, questions/fr/06-14.txt, questions/fr/06-15.txt, questions/fr/06-16.txt, questions/fr/06-17.txt, questions/fr/06-18.txt, questions/fr/06-19.txt, questions/fr/06-20.txt
 // Total: 400 MCQ + 100 INPUT = 500 questions
 
 const section: Section = {
   id: "06-conditionnel",
   title: "Le conditionnel présent et passé",
-  description: "Formation et emplois du conditionnel présent et passé",
+  description: "Politesse, hypothèse, information non confirmée, regret",
   rules: [
     { id: "06-01", sectionId: "06-conditionnel", title: "Formation du conditionnel présent : radical du futur + terminaisons de l'imparfait" },
     { id: "06-02", sectionId: "06-conditionnel", title: "Les conditionnels irréguliers (mêmes radicaux que le futur : ser-, aur-, fer-, ir-, pourr-, voudr-...)" },
@@ -304,7 +304,6 @@ const section: Section = {
         { text: "lisais", explanation: "C'est l'imparfait. Bien que la terminaison soit celle de l'imparfait, le radical n'est pas le radical futur." },
         { text: "lirai", explanation: "C'est le futur simple. Incorrect : on anticipe une action future plutôt que conditionnelle." },
         { text: "lise", explanation: "C'est le subjonctif présent. Mode incorrect pour exprimer une condition." },
-        { text: "aurais lu", explanation: "C'est le conditionnel passé composé. Bien que correct dans d'autres contextes, seul le conditionnel présent est attendu ici." },
         { text: "lisse", explanation: "Forme incorrecte du subjonctif. Non seulement le mode est mauvais, mais la conjugaison est aussi fautive." },
       ],
     },
@@ -463,9 +462,9 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-02",
       generatedBy: "sonnet",
-      prompt: "« Je ___ au cinéma ce soir si tu m'accompagnais. »",
+      prompt: "« J'___ au cinéma ce soir si tu m'accompagnais. »",
       choices: [
-        { text: "irais", correct: true, explanation: "Le radical irrégulier « ir- » + la terminaison du conditionnel pour « je » : « -ais ». Je irais = I would go." },
+        { text: "irais", correct: true, explanation: "Le radical irrégulier « ir- » + la terminaison du conditionnel pour « je » : « -ais ». J'irais = I would go." },
         { text: "irai", correct: false, explanation: "« Irai » est le futur simple. Le conditionnel du radical « ir- » est « irais »." },
         { text: "vais", correct: false, explanation: "« Vais » est le présent de « aller ». Le conditionnel du radical irrégulier « ir- » est « irais »." },
         { text: "irois", correct: false, explanation: "« Irois » n'existe pas. La forme correcte du conditionnel de « aller » est « irais »." },
@@ -593,9 +592,9 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-02",
       generatedBy: "sonnet",
-      prompt: "« Je ___ cela si j'avais pu. »",
+      prompt: "« J'___ cela si j'avais pu. »",
       choices: [
-        { text: "aurais fait", correct: true, explanation: "Le radical irrégulier « aur- » (de « avoir ») + la terminaison du conditionnel pour « je » : « -ais ». Au conditionnel passé, on ajoute le participe passé « fait »." },
+        { text: "aurais fait", correct: true, explanation: "Le radical irrégulier « aur- » (de « avoir ») + la terminaison du conditionnel pour « je » : « -ais ». J'aurais fait = I would have done." },
         { text: "aurai fait", correct: false, explanation: "« Aurai » est le futur simple. Le conditionnel du radical « aur- » est « aurais »." },
         { text: "ai fait", correct: false, explanation: "« Ai » est le passé composé présent. Le contexte « si j'avais pu » exige le conditionnel." },
         { text: "aurois fait", correct: false, explanation: "« Aurois » n'existe pas. La forme correcte du conditionnel de « avoir » est « aurais »." },
@@ -1042,7 +1041,7 @@ const section: Section = {
       ruleId: "06-03",
       generatedBy: "sonnet",
       prompt: "Mettez le verbe au conditionnel pour exprimer une suggestion polite",
-      phrase: { before: "Je ", after: " consulter un professionnel à votre place." },
+      phrase: { before: "J'", after: " consulter un professionnel à votre place." },
       answer: "ferais",
       explanation: "Le conditionnel « ferais » exprime poliment ce qu'on ferait à la place de quelqu'un d'autre.",
       wrongAnswers: [
@@ -1059,7 +1058,7 @@ const section: Section = {
       ruleId: "06-03",
       generatedBy: "sonnet",
       prompt: "Conjuguez au conditionnel pour refuser poliment quelque chose",
-      phrase: { before: "Je ne ", after: " malheureusement pas accepter cette proposition." },
+      phrase: { before: "Je n'", after: " malheureusement pas accepter cette proposition." },
       answer: "pourrais",
       explanation: "Le conditionnel « ne pourrais » exprime un refus poli et respectueux.",
       wrongAnswers: [
@@ -1343,7 +1342,6 @@ const section: Section = {
         { text: "veux", explanation: "« Veux » est le présent de l'indicatif, plus direct et moins poli." },
         { text: "voudrai", explanation: "« Voudrai » est le futur simple, qui annonce une intention certaine, non un souhait polite." },
         { text: "voudrait", explanation: "« Voudrait » est la troisième personne du singulier, pas la première." },
-        { text: "ai voulu", explanation: "« Ai voulu » est le passé composé, qui décrit une action passée, non un souhait présent." },
         { text: "voulais", explanation: "« Voulais » est l'imparfait, qui exprime une volonté passée, non un désir présent." },
       ],
     },
@@ -2489,7 +2487,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si j'avais assez d'argent, je ___ une maison. »",
+      prompt: "Complétez : « Si j'avais assez d'argent, j'___ une maison. »",
       choices: [
         { text: "achèterais", correct: true, explanation: "Le conditionnel présent « achèterais » s'utilise dans la principale après « si + imparfait »." },
         { text: "achetais", correct: false, explanation: "« Achetais » est l'imparfait, mais il faut le conditionnel dans la conséquence." },
@@ -2779,7 +2777,7 @@ const section: Section = {
       ruleId: "06-08",
       generatedBy: "opus",
       prompt: "Remplissez le blanc avec le conditionnel présent après une condition au passé",
-      phrase: { before: "Si vous m'aviez écouté, vous ne ", after: " pas dans cette situation difficile." },
+      phrase: { before: "Si vous m'aviez écouté, vous n'", after: " pas dans cette situation difficile." },
       answer: "seriez",
       explanation: "Le conditionnel présent « seriez » exprime la conséquence hypothétique de ne pas avoir écouté.",
       wrongAnswers: [
@@ -3489,7 +3487,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-11",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Si j'avais eu le temps, je ___ à la réunion. »",
+      prompt: "Complétez : « Si j'avais eu le temps, j'___ à la réunion. »",
       choices: [
         { text: "serais allé", correct: true, explanation: "Le conditionnel passé requiert l'auxiliaire au conditionnel (serais) + participe passé (allé). C'est la forme correcte pour exprimer une action hypothétique dans le passé." },
         { text: "serais aller", correct: false, explanation: "Après l'auxiliaire, on utilise le participe passé (allé), pas l'infinitif (aller)." },
@@ -3593,7 +3591,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-11",
       generatedBy: "sonnet",
-      prompt: "Quel auxiliaire faut-il au conditionnel passé pour : « Je ___ arrivé en retard. »",
+      prompt: "Quel auxiliaire faut-il au conditionnel passé pour : « J'___ arrivé en retard. »",
       choices: [
         { text: "serais", correct: true, explanation: "Pour les verbes de mouvement (arriver) avec être, le conditionnel passé utilise l'auxiliaire être au conditionnel : serais." },
         { text: "aurais", correct: false, explanation: "L'auxiliaire avoir convient pour avoir, mais arriver requiert être au conditionnel passé." },
@@ -3736,7 +3734,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-11",
       generatedBy: "sonnet",
-      prompt: "Quel auxiliaire au conditionnel complète : « Je ___ disparu sans explication. »",
+      prompt: "Quel auxiliaire au conditionnel complète : « J'___ disparu sans explication. »",
       choices: [
         { text: "serais", correct: true, explanation: "Disparaître utilise l'auxiliaire être au conditionnel passé : serais disparu." },
         { text: "aurais", correct: false, explanation: "Disparaître requiert l'auxiliaire être, pas avoir." },
@@ -3784,7 +3782,7 @@ const section: Section = {
       ruleId: "06-11",
       generatedBy: "sonnet",
       prompt: "Complétez la phrase au conditionnel passé de « vouloir ».",
-      phrase: { before: "Je ", after: " te voir, mais j'étais trop fatigué." },
+      phrase: { before: "J'", after: " te voir, mais j'étais trop fatigué." },
       answer: "aurais voulu",
       explanation: "Le conditionnel passé de vouloir à la première personne du singulier est « aurais voulu ». Cela signifie une action hypothétique qui aurait pu se produire dans le passé.",
       wrongAnswers: [
@@ -3834,7 +3832,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ plus attentif à la classe si j'avais étudié. »",
+      prompt: "Complétez : « J'___ plus attentif à la classe si j'avais étudié. »",
       choices: [
         { text: "aurais été", correct: true, explanation: "Le conditionnel passé « aurais été » exprime un regret sur le passé. La structure avec « si + plus-que-parfait » demande un conditionnel passé." },
         { text: "serais", correct: false, explanation: "« Serais » est un conditionnel simple (présent) alors qu'on a besoin du conditionnel passé (aurais été)." },
@@ -3990,7 +3988,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ cette décision si j'avais envisagé les conséquences. »",
+      prompt: "Complétez : « J'___ cette décision si j'avais envisagé les conséquences. »",
       choices: [
         { text: "aurais modifié", correct: true, explanation: "Le conditionnel passé « aurais modifié » exprime le regret d'avoir pris une décision sans réfléchir aux conséquences." },
         { text: "aurais modifiant", correct: false, explanation: "Le participe passé de « modifier » est « modifié », pas « modifiant »." },
@@ -4257,7 +4255,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ te parler plus tôt pour éviter ce malentendu. »",
+      prompt: "Complétez : « J'___ te parler plus tôt pour éviter ce malentendu. »",
       choices: [
         { text: "aurais dû", correct: true, explanation: "Le conditionnel passé (aurais dû) exprime le reproche : je ne t'ai pas parlé, mais j'aurais dû." },
         { text: "devrais", correct: false, explanation: "Le conditionnel présent (devrais) marque une obligation hypothétique présente, pas un reproche passé." },
@@ -4335,7 +4333,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ vérifier les faits avant de critiquer. »",
+      prompt: "Complétez : « J'___ vérifier les faits avant de critiquer. »",
       choices: [
         { text: "aurais dû", correct: true, explanation: "Le conditionnel passé (aurais dû) exprime le reproche : je n'ai pas vérifié, mais j'aurais dû." },
         { text: "devrais", correct: false, explanation: "Le conditionnel présent (devrais) marque une obligation hypothétique actuelle, pas un reproche passé." },
@@ -4413,7 +4411,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ accepter cette invitation. »",
+      prompt: "Complétez : « J'___ accepter cette invitation. »",
       choices: [
         { text: "aurais dû", correct: true, explanation: "Le conditionnel passé (aurais dû) exprime le reproche : je n'ai pas accepté, mais j'aurais dû." },
         { text: "aurais pu", correct: false, explanation: "Bien que au conditionnel passé, « aurais pu » marque la capacité, pas l'obligation." },
@@ -4537,7 +4535,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si j'avais su, je ___ venue plus tôt. »",
+      prompt: "« Si j'avais su, j'___ venue plus tôt. »",
       choices: [
         { text: "serais", correct: true, explanation: "Après « si » au plus-que-parfait, le verbe de la principale se conjugue au conditionnel passé. Ici, il faut « je serais venue » (conditionnel passé du verbe « être »)." },
         { text: "aurais", correct: false, explanation: "« Aurais » est le conditionnel passé d'« avoir », ce qui ne convient pas à cette phrase. Le verbe de movement « venir » utilise l'auxiliaire « être », non « avoir »." },
@@ -4550,7 +4548,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si tu avais réfléchi, tu ne ___ pas cette erreur. »",
+      prompt: "« Si tu avais réfléchi, tu n'___ pas cette erreur. »",
       choices: [
         { text: "aurais commis", correct: true, explanation: "Le conditionnel passé « aurais commis » est la bonne forme après « si » au plus-que-parfait. C'est un verbe transitif qui prend l'auxiliaire « avoir »." },
         { text: "avais commis", correct: false, explanation: "Le plus-que-parfait « avais commis » s'utilise après la conjonction « si » dans l'antécédent, pas dans la principale. La principale nécessite le conditionnel passé." },
@@ -4602,7 +4600,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si j'avais pu, je ___ cette chance. »",
+      prompt: "« Si j'avais pu, j'___ cette chance. »",
       choices: [
         { text: "aurais saisie", correct: true, explanation: "« Aurais saisie » (conditionnel passé du verbe « saisir ») avec l'accord au féminin convient car « chance » est féminin et que le participe passé s'accorde avec le COD féminin antéposé." },
         { text: "aurais saisi", correct: false, explanation: "La forme masculine « aurais saisi » ne s'accorde pas avec le COD féminin « chance ». Le participe passé doit s'accorder : « saisie »." },
@@ -4654,7 +4652,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si j'avais su qu'elle était malade, je ___ la visiter. »",
+      prompt: "« Si j'avais su qu'elle était malade, j'___ la visiter. »",
       choices: [
         { text: "serais allée", correct: true, explanation: "« Serais allée » (conditionnel passé de « aller ») est correct. Le verbe « aller » utilise l'auxiliaire « être » et le participe s'accorde avec le sujet féminin." },
         { text: "aurais allée", correct: false, explanation: "Le verbe « aller » prend l'auxiliaire « être », non « avoir ». On ne dit pas « aurais allée »." },
@@ -4771,7 +4769,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si je n'avais pas oublié mes documents, je ___ entrer sans problème. »",
+      prompt: "« Si je n'avais pas oublié mes documents, j'___ entrer sans problème. »",
       choices: [
         { text: "aurais pu", correct: true, explanation: "« Aurais pu » (conditionnel passé de « pouvoir ») est correct. Le verbe « pouvoir » au conditionnel passé s'utilise avec l'infinitif qui suit." },
         { text: "avais pu", correct: false, explanation: "Le plus-que-parfait « avais pu » s'utilise dans la clause « si », pas dans la principale. La conséquence demande le conditionnel passé." },
@@ -4798,7 +4796,7 @@ const section: Section = {
       ruleId: "06-14",
       generatedBy: "sonnet",
       prompt: "Complétez la phrase avec le conditionnel passé du verbe entre parenthèses.",
-      phrase: { before: "Si j'avais étudié, je ", after: " (réussir) mon examen." },
+      phrase: { before: "Si j'avais étudié, j'", after: " (réussir) mon examen." },
       answer: "aurais réussi",
       explanation: "Après « si » au plus-que-parfait, le verbe de la principale se conjugue au conditionnel passé. Ici, « aurais réussi » est la forme correcte du conditionnel passé du verbe « réussir ».",
       wrongAnswers: [
@@ -4815,7 +4813,7 @@ const section: Section = {
       ruleId: "06-14",
       generatedBy: "sonnet",
       prompt: "Complétez avec le conditionnel passé du verbe « aller ».",
-      phrase: { before: "Si tu m'avais invité, je ", after: " à ta fête." },
+      phrase: { before: "Si tu m'avais invité, j'", after: " à ta fête." },
       answer: "serais allé",
       explanation: "Le verbe « aller » utilise l'auxiliaire « être » au conditionnel passé. La forme correcte est « serais allé » (ou « serais allée » si le sujet est féminin). Accord du participe passé selon le sujet.",
       wrongAnswers: [
@@ -5283,7 +5281,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-16",
       generatedBy: "sonnet",
-      prompt: "Sélectionnez. « Il savait que je ne ___ pas d'accord. »",
+      prompt: "Sélectionnez. « Il savait que je n'___ pas d'accord. »",
       choices: [
         { text: "serais", correct: true, explanation: "Le conditionnel « serais » exprime une action future envisagée depuis le passé. Il savait que je ne serais pas d'accord = envisagé depuis le passé." },
         { text: "suis", correct: false, explanation: "Le présent « suis » ne convient pas après un verbe au passé dans un discours rapporté indirect." },
@@ -5496,7 +5494,7 @@ const section: Section = {
       ruleId: "06-16",
       generatedBy: "sonnet",
       prompt: "Complétez en utilisant le conditionnel pour exprimer le futur dans le passé.",
-      phrase: { before: "J'ai promis que je ", after: " tous les détails avant demain." },
+      phrase: { before: "J'ai promis que j'", after: " tous les détails avant demain." },
       answer: "vérifierais",
       explanation: "Le conditionnel « vérifierais » exprime une promesse envisagée depuis le passé. J'ai promis que je vérifierais (envisagé au moment de la promesse).",
       wrongAnswers: [
@@ -5759,7 +5757,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-17",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Si tu m'avais écouté, tu ne ___ pas en retard. »",
+      prompt: "Complétez : « Si tu m'avais écouté, tu n'___ pas en retard. »",
       choices: [
         { text: "serais", correct: true, explanation: "Le conditionnel passé (serais + participe) s'utilise après « si » plus-que-parfait pour une condition passée." },
         { text: "étais", correct: false, explanation: "L'imparfait ne convient pas ici." },
@@ -6048,7 +6046,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-18",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je crains que nous ne ___ pas assez de temps. »",
+      prompt: "Complétez : « Je crains que nous n'___ pas assez de temps. »",
       choices: [
         { text: "ayons", correct: true, explanation: "Après « craindre que », le subjonctif présent est obligatoire, souvent avec une négation « ne ». « Ayons » est la forme correcte du subjonctif à la 1re personne du pluriel du verbe avoir." },
         { text: "aurions", correct: false, explanation: "Le conditionnel « aurions » n'est pas correct après « craindre que ». Le subjonctif est le mode exigé pour exprimer la crainte." },
@@ -6157,7 +6155,7 @@ const section: Section = {
       ruleId: "06-18",
       generatedBy: "sonnet",
       prompt: "Complétez au subjonctif présent après « craindre que »",
-      phrase: { before: "Je crains que vous ne ", after: " déçu par les résultats." },
+      phrase: { before: "Je crains que vous n'", after: " déçu par les résultats." },
       answer: "soyez",
       explanation: "Après « craindre que », le subjonctif présent est obligatoire, souvent avec une négation « ne ». « Soyez » est la forme correcte du subjonctif à la 2e personne du pluriel du verbe être, exprimant la crainte du sujet.",
       wrongAnswers: [

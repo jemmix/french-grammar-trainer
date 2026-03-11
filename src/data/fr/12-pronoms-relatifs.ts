@@ -1,12 +1,12 @@
 import type { Section } from "../types";
 
-// Generated from: questions/12-01.txt, questions/12-02.txt, questions/12-03.txt, questions/12-04.txt, questions/12-05.txt, questions/12-06.txt, questions/12-07.txt, questions/12-08.txt, questions/12-09.txt, questions/12-10.txt, questions/12-11.txt, questions/12-12.txt, questions/12-13.txt, questions/12-14.txt, questions/12-15.txt, questions/12-16.txt, questions/12-17.txt, questions/12-18.txt, questions/12-19.txt, questions/12-20.txt
+// Generated from: questions/fr/12-01.txt, questions/fr/12-02.txt, questions/fr/12-03.txt, questions/fr/12-04.txt, questions/fr/12-05.txt, questions/fr/12-06.txt, questions/fr/12-07.txt, questions/fr/12-08.txt, questions/fr/12-09.txt, questions/fr/12-10.txt, questions/fr/12-11.txt, questions/fr/12-12.txt, questions/fr/12-13.txt, questions/fr/12-14.txt, questions/fr/12-15.txt, questions/fr/12-16.txt, questions/fr/12-17.txt, questions/fr/12-18.txt, questions/fr/12-19.txt, questions/fr/12-20.txt
 // Total: 402 MCQ + 98 INPUT = 500 questions
 
 const section: Section = {
   id: "12-pronoms-relatifs",
   title: "Les pronoms relatifs",
-  description: "Maîtrisez les pronoms relatifs : qui, que, où, dont, lequel et ses formes composées, ainsi que ce qui/que/dont.",
+  description: "Qui, que, dont, où, lequel, ce qui/ce que/ce dont",
   rules: [
     { id: "12-01", sectionId: "12-pronoms-relatifs", title: "Le pronom relatif qui — sujet du verbe de la relative (l'homme qui parle)" },
     { id: "12-02", sectionId: "12-pronoms-relatifs", title: "Le pronom relatif que — COD du verbe de la relative (le livre que je lis)" },

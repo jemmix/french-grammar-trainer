@@ -35,7 +35,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-01",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ mangé une pomme ce matin. »",
+      prompt: "Complétez : « J'___ mangé une pomme ce matin. »",
       choices: [
         { text: "ai", correct: true, explanation: "Le sujet « je » prend l'auxiliaire avoir à la première personne du singulier, qui est « ai ». Le passé composé se forme avec avoir + participe passé." },
         { text: "as", correct: false, explanation: "« as » est la deuxième personne du singulier (tu as), pas la première personne (je ai)." },
@@ -296,7 +296,7 @@ const section: Section = {
       ruleId: "02-01",
       generatedBy: "haiku",
       prompt: "Complétez le passé composé du verbe « avoir » au présent avec le participe passé.",
-      phrase: { before: "Je ", after: " terminé mon travail avant six heures." },
+      phrase: { before: "J'", after: " terminé mon travail avant six heures." },
       answer: "ai",
       explanation: "Le sujet « je » demande la première personne du singulier de l'auxiliaire avoir au présent : « ai ». La phrase complète : « Je ai terminé... » (contraction : « J'ai terminé... »).",
       wrongAnswers: [
@@ -734,7 +734,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-03",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je _____ allé au cinéma hier soir. »",
+      prompt: "Complétez : « J'_____ allé au cinéma hier soir. »",
       choices: [
         { text: "suis", correct: true, explanation: "« Aller » est un verbe de mouvement intransitif, il se conjugue toujours avec l'auxiliaire « être »." },
         { text: "ai", correct: false, explanation: "« Avoir » s'utilise avec les verbes transitifs (verbes qui prennent un COD), pas avec les verbes de mouvement." },
@@ -851,7 +851,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-03",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je _____ resté à la maison. »",
+      prompt: "Complétez : « J'_____ resté à la maison. »",
       choices: [
         { text: "suis", correct: true, explanation: "« Rester » est un verbe d'état intransitif, il se conjugue toujours avec « être »." },
         { text: "ai", correct: false, explanation: "« Avoir » s'utilise avec les verbes transitifs. « Rester » est un verbe d'état qui prend « être »." },
@@ -929,7 +929,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-03",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je _____ venu te voir. »",
+      prompt: "Complétez : « J'_____ venu te voir. »",
       choices: [
         { text: "suis", correct: true, explanation: "« Venir » est un verbe de mouvement intransitif, il se conjugue toujours avec « être »." },
         { text: "ai", correct: false, explanation: "« Avoir » s'utilise avec les verbes transitifs, pas avec « venir » qui est un verbe de mouvement." },
@@ -997,7 +997,7 @@ const section: Section = {
       ruleId: "02-03",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé.",
-      phrase: { before: "Je ", after: "__ arrivé à l'école à 8h." },
+      phrase: { before: "J'", after: "__ arrivé à l'école à 8h." },
       answer: "suis",
       explanation: "« Arriver » est un verbe de mouvement intransitif, il se conjugue avec « être ». Pour « je », la forme correcte est « suis ».",
       wrongAnswers: [
@@ -1147,7 +1147,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je _____ l'examen avec succès. »",
+      prompt: "Complétez : « J'_____ l'examen avec succès. »",
       choices: [
         { text: "ai passé", correct: true, explanation: "« Passer quelque chose » (faire passer, subir) utilise « avoir ». L'examen est COD. « Ai passé » est correct." },
         { text: "suis passé", correct: false, explanation: "« Être » s'utilise pour « passer » au sens de « traverser un endroit ». Ici, « passer l'examen » signifie « subir l'examen », donc « avoir » est requis." },
@@ -4199,7 +4199,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-13",
       generatedBy: "haiku",
-      prompt: "Complétez la phrase avec la bonne forme négative : « Je ___ allé au cinéma hier. »",
+      prompt: "Complétez la phrase avec la bonne forme négative : « J'___ allé au cinéma hier. »",
       choices: [
         { text: "n'ai pas", correct: true, explanation: "Au passé composé, ne/n' va avant l'auxiliaire et pas va après. Structure : ne + avoir + pas + participe." },
         { text: "ai pas n'", correct: false, explanation: "Cet ordre est incorrect. Ne/n' doit précéder directement l'auxiliaire." },
@@ -4282,7 +4282,7 @@ const section: Section = {
         { text: "s'est", correct: true, explanation: "Verbe pronominal au passé composé : ne + être + pas/plus + participe. Ici : ne s'est plus parlé." },
         { text: "s'a", correct: false, explanation: "Les verbes pronominaux utilisent être, pas avoir." },
         { text: "ne s'est pas", correct: false, explanation: "Plus et pas ne s'utilisent pas ensemble. Ici c'est ne...plus." },
-        { text: "a pas s'est", correct: false, explanation: "L'ordre et l'auxiliaire sont incorrects." },
+        { text: "se sont", correct: false, explanation: "Le sujet « Elle » est singulier, donc on utilise « s'est » et non « se sont »." },
       ],
     },
     {
@@ -4460,7 +4460,7 @@ const section: Section = {
       ruleId: "02-13",
       generatedBy: "haiku",
       prompt: "Complétez la phrase au passé composé avec la bonne forme négative.",
-      phrase: { before: "Je ", after: " pas allé à l'école hier." },
+      phrase: { before: "J'", after: " pas allé à l'école hier." },
       answer: "n'ai",
       explanation: "Au passé composé, ne/n' va avant l'auxiliaire avoir. Structure : ne + avoir + pas + participe.",
       wrongAnswers: [
@@ -4528,7 +4528,7 @@ const section: Section = {
       ruleId: "02-13",
       generatedBy: "haiku",
       prompt: "Complétez avec la bonne structure du passé composé négatif incluant personne.",
-      phrase: { before: "Je ", after: " vu personne à la gare." },
+      phrase: { before: "J'", after: " vu personne à la gare." },
       answer: "n'ai",
       explanation: "Avec « personne », on omet « pas » : la structure est ne + auxiliaire + participe + personne. « Je n'ai vu personne » — « pas » est remplacé par « personne ».",
       wrongAnswers: [
@@ -4889,7 +4889,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-15",
       generatedBy: "haiku",
-      prompt: "Complétez la phrase avec le verbe au bon temps : « Hier, je ___ au cinéma avec mes amis. »",
+      prompt: "Complétez la phrase avec le verbe au bon temps : « Hier, j'___ au cinéma avec mes amis. »",
       choices: [
         { text: "suis allé", correct: true, explanation: "« Hier » indique une moment spécifique dans le passé. L'action « aller au cinéma » est ponctuelle et complète, donc on utilise le passé composé." },
         { text: "allais", correct: false, explanation: "L'imparfait décrit une action habituelle ou en cours dans le passé. Ici, l'action est unique et bornée." },
@@ -4993,7 +4993,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-15",
       generatedBy: "haiku",
-      prompt: "Identifiez le meilleur temps verbal : « Un jour, je ___ une lettre insolite. »",
+      prompt: "Identifiez le meilleur temps verbal : « Un jour, j'___ une lettre insolite. »",
       choices: [
         { text: "ai reçu", correct: true, explanation: "« Un jour » (autrefois, une fois) marque un instant du passé. L'action « recevoir une lettre » est ponctuelle et bornée, donc passé composé." },
         { text: "recevais", correct: false, explanation: "L'imparfait s'utilise pour les habitudes ou les descriptions duratives, non pour une action unique et spécifique." },
@@ -5123,7 +5123,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-15",
       generatedBy: "haiku",
-      prompt: "Complétez : « La semaine dernière, je ___ avec mon professeur. »",
+      prompt: "Complétez : « La semaine dernière, j'___ avec mon professeur. »",
       choices: [
         { text: "ai discuté", correct: true, explanation: "« La semaine dernière » marque une période précise. « Discuter » est une action ponctuelle et complète, exigeant le passé composé." },
         { text: "discutais", correct: false, explanation: "L'imparfait décrirait une action habituelle ou en cours, non une action unique et bornée." },
@@ -5150,7 +5150,7 @@ const section: Section = {
       ruleId: "02-15",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé.",
-      phrase: { before: "Hier matin, je ", after: " (boire) une tasse de café." },
+      phrase: { before: "Hier matin, j'", after: " (boire) une tasse de café." },
       answer: "ai bu",
       explanation: "« Hier matin » indique un moment spécifique du passé. « Boire une tasse de café » est une action ponctuelle et bornée qui demande le passé composé.",
       wrongAnswers: [
@@ -5403,7 +5403,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-16",
       generatedBy: "haiku",
-      prompt: "Quel verbe au passé composé complète correctement cette narration ? « Je suis arrivé au bureau, j'ai allumé l'ordinateur et je ___ immédiatement les emails. »",
+      prompt: "Quel verbe au passé composé complète correctement cette narration ? « Je suis arrivé au bureau, j'ai allumé l'ordinateur et j'___ immédiatement les emails. »",
       choices: [
         { text: "ai vérifié", correct: true, explanation: "Le passé composé « ai vérifié » continue la succession logique des actions : arriver, allumer, vérifier." },
         { text: "vérifiais", correct: false, explanation: "L'imparfait suggère une action habituelle ou un processus continu, pas une action complétée dans la succession." },
@@ -5559,7 +5559,7 @@ const section: Section = {
       ruleId: "02-16",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé pour compléter cette succession d'actions.",
-      phrase: { before: "Tout à coup, l'orage a éclaté, les enfants sont entrés dedans, je ", after: " les fenêtres et nous nous sommes réunis." },
+      phrase: { before: "Tout à coup, l'orage a éclaté, les enfants sont entrés dedans, j'", after: " les fenêtres et nous nous sommes réunis." },
       answer: "ai fermé",
       explanation: "« Fermer » se conjugue avec l'auxiliaire « avoir » au passé composé : j'ai fermé. C'est une action ponctuelle dans une succession d'événements passés.",
       wrongAnswers: [
@@ -6036,12 +6036,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-18",
       generatedBy: "haiku",
-      prompt: "Quand j'étais enfant, je ___ tous les jours à la plage.",
+      prompt: "Quand j'étais enfant, j'___ tous les jours à la plage.",
       choices: [
         { text: "allais", correct: true, explanation: "« Tous les jours » et « quand j'étais enfant » indiquent une action habituelle et répétée, donc l'imparfait « allais » est correct." },
-        { text: "suis allé", correct: false, explanation: "Le passé composé « suis allé » exprime une action unique et complétée, non une habitude répétée." },
-        { text: "vais", correct: false, explanation: "Le présent « vais » ne convient pas pour exprimer une action du passé habituelle." },
-        { text: "ai allé", correct: false, explanation: "Mauvais auxiliaire ; « aller » utilise « être » (suis allé), pas « avoir »." },
+        { text: "irais", correct: false, explanation: "Le conditionnel « j'irais » exprime une hypothèse, non une habitude du passé." },
+        { text: "suis allé", correct: false, explanation: "Le passé composé « je suis allé » (sans élision) exprime une action unique, non une habitude." },
+        { text: "allé", correct: false, explanation: "Le participe passé « allé » seul est incomplet ; il faut l'auxiliaire « être » conjugué." },
       ],
     },
     {

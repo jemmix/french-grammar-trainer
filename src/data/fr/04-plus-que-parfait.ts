@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "04-plus-que-parfait",
   title: "Le plus-que-parfait",
-  description: "Formation, emplois et distinctions du plus-que-parfait",
+  description: "Formation, emplois, concordance des temps",
   rules: [
     { id: "04-01", sectionId: "04-plus-que-parfait", title: "Formation du plus-que-parfait : auxiliaire à l'imparfait + participe passé" },
     { id: "04-02", sectionId: "04-plus-que-parfait", title: "Le choix de l'auxiliaire avoir ou être au plus-que-parfait" },
@@ -178,7 +178,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-01",
       generatedBy: "sonnet",
-      prompt: "Complétez avec la forme correcte du plus-que-parfait : « Je ___ mes clés avant de partir. »",
+      prompt: "Complétez avec la forme correcte du plus-que-parfait : « J'___ mes clés avant de partir. »",
       choices: [
         { text: "avais perdu", correct: true, explanation: "Le plus-que-parfait de « perdre » avec je : auxiliaire avoir à l'imparfait (avais) + participe passé (perdu)." },
         { text: "perdais", correct: false, explanation: "« Perdais » est l'imparfait simple. Le plus-que-parfait est un temps composé : il faut un auxiliaire à l'imparfait + participe passé." },
@@ -535,7 +535,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-02",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ déjà vu ce film trois fois. »",
+      prompt: "Complétez : « J'___ déjà vu ce film trois fois. »",
       choices: [
         { text: "avais", correct: true, explanation: "Le verbe « voir » est un verbe transitif ordinaire qui prend l'auxiliaire avoir. Au plus-que-parfait à la 1re personne du singulier, on utilise « avais »." },
         { text: "étais", correct: false, explanation: "« Voir » n'est ni un verbe de la maison d'être ni un verbe pronominal ; il prend toujours l'auxiliaire avoir." },
@@ -673,7 +673,7 @@ const section: Section = {
       ruleId: "04-02",
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe pronominal « se souvenir » au plus-que-parfait.",
-      phrase: { before: "Elle ne ", after: " pas souvenue de la date." },
+      phrase: { before: "Elle n'", after: " pas souvenue de la date." },
       answer: "s'était",
       explanation: "« Se souvenir » est un verbe pronominal qui prend toujours l'auxiliaire être au plus-que-parfait. Pour « elle » (3e personne du singulier féminin), on dit « elle s'était souvenue ».",
       wrongAnswers: [
@@ -957,7 +957,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-03",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ la vérité depuis longtemps. »",
+      prompt: "Complétez : « J'___ la vérité depuis longtemps. »",
       choices: [
         { text: "avais su", correct: true, explanation: "« Savoir » se conjugue avec avoir. Sans COD précédant le verbe, le participe passé « su » reste invariable." },
         { text: "avais sue", correct: false, explanation: "Le participe passé avec avoir ne s'accorde pas avec le sujet. Sans COD antéposé, « su » est invariable." },
@@ -1447,7 +1447,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-05",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ ce film avant hier soir. »",
+      prompt: "Complétez : « J'___ ce film avant hier soir. »",
       choices: [
         { text: "n'avais jamais vu", correct: true, explanation: "Avec « ne...jamais », « jamais » se place entre l'auxiliaire et le participe passé, comme « pas » : je n'avais jamais vu." },
         { text: "n'avais vu jamais", correct: false, explanation: "« jamais » doit se placer entre l'auxiliaire (avais) et le participe passé (vu), et non après le participe." },
@@ -1818,7 +1818,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-06",
       generatedBy: "sonnet",
-      prompt: "Choisissez la forme correcte : « Ils sont partis avant que je ___ leur annoncer la nouvelle. »",
+      prompt: "Choisissez la forme correcte : « Ils sont partis avant que j'___ leur annoncer la nouvelle. »",
       choices: [
         { text: "aie pu", correct: true, explanation: "La proposition principale (ils sont partis) est au passé composé. L'action d'annoncer n'a pas eu lieu car ils étaient déjà partis. Avec « avant que », on utilise le subjonctif passé (aie pu) pour marquer l'antériorité du départ sur l'annonce impossible." },
         { text: "avais pu", correct: false, explanation: "Après « avant que », on emploie le subjonctif, non l'indicatif. « Avais pu » est le plus-que-parfait de l'indicatif, incorrect ici." },
@@ -2440,7 +2440,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-08",
       generatedBy: "sonnet",
-      prompt: "Choisissez la bonne forme : « Quand je ___ à la gare, le train ___ déjà. »",
+      prompt: "Choisissez la bonne forme : « Quand j'___ à la gare, le train ___ déjà. »",
       choices: [
         { text: "suis arrivé / était parti", correct: true, explanation: "L'arrivée à la gare (passé composé) est l'événement postérieur. Le départ du train (plus-que-parfait) est antérieur : il était déjà parti avant mon arrivée." },
         { text: "suis arrivé / est parti", correct: false, explanation: "Si les deux verbes sont au passé composé, on ne marque aucune antériorité : la phrase ne précise plus lequel des deux événements a eu lieu en premier." },
@@ -2558,7 +2558,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-08",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ que tu ___ la vérité depuis le début. »",
+      prompt: "Complétez : « J'___ que tu ___ la vérité depuis le début. »",
       choices: [
         { text: "ai réalisé / savais", correct: true, explanation: "La réalisation (passé composé) est postérieure. « Savais » à l'imparfait est correct ici car il s'agit d'un état continu dans le passé, non d'un événement ponctuel antérieur." },
         { text: "ai réalisé / avais su", correct: false, explanation: "« Avais su » au plus-que-parfait implique que tu as su puis tu ne savais plus, ce qui n'est pas le sens visé ; un état de connaissance durable appelle l'imparfait." },
@@ -2662,7 +2662,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-08",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Personne ne ___ que le suspect ___ déjà le pays. »",
+      prompt: "Complétez : « Personne n'___ que le suspect ___ déjà le pays. »",
       choices: [
         { text: "savait / avait quitté", correct: true, explanation: "L'ignorance (imparfait, état continu dans le passé) est simultanée au moment de référence ; le départ du suspect (plus-que-parfait) est antérieur à ce moment." },
         { text: "savait / a quitté", correct: false, explanation: "Le passé composé « a quitté » ne marquerait pas clairement que le départ a eu lieu avant le moment où personne ne le savait." },
@@ -3035,7 +3035,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ qu'il ___ déjà la réponse avant la fin du cours. »",
+      prompt: "Complétez : « J'___ qu'il ___ déjà la réponse avant la fin du cours. »",
       choices: [
         { text: "savais / avait trouvé", correct: true, explanation: "« Savais » à l'imparfait décrit l'état de connaissance (je savais quelque chose) ; « avait trouvé » au plus-que-parfait indique que l'action de trouver la réponse s'était accomplie avant la fin du cours." },
         { text: "savais / trouvait", correct: false, explanation: "« Trouvait » à l'imparfait décrit l'action de trouver comme en cours ou répétée, mais l'adverbe « déjà » et le contexte indiquent une action accomplie avant la fin du cours." },
@@ -3185,7 +3185,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-10",
       generatedBy: "haiku",
-      prompt: "Complétez : « Si j'avais connu la vérité, je ___ différemment. »",
+      prompt: "Complétez : « Si j'avais connu la vérité, j'___ différemment. »",
       choices: [
         { text: "aurais agi", correct: true, explanation: "La structure si + plus-que-parfait (avais connu) → conditionnel passé (aurais agi) est correcte." },
         { text: "agirais", correct: false, explanation: "C'est le conditionnel présent, qui s'utilise après l'imparfait, pas après le plus-que-parfait." },
@@ -3318,7 +3318,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-10",
       generatedBy: "haiku",
-      prompt: "Complétez : « Si j'avais commencé plus tôt, je ___ terminé à temps. »",
+      prompt: "Complétez : « Si j'avais commencé plus tôt, j'___ terminé à temps. »",
       choices: [
         { text: "aurais", correct: true, explanation: "Le conditionnel passé de « terminer » est « aurais terminé ». Le blanc demande l'auxiliaire « aurais »." },
         { text: "aurai", correct: false, explanation: "C'est le futur (auxiliaire + participe passé), non le conditionnel passé." },
@@ -3399,7 +3399,7 @@ const section: Section = {
       ruleId: "04-10",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au conditionnel passé pour compléter la phrase.",
-      phrase: { before: "Si j'avais étudié davantage, je ", after: " l'examen." },
+      phrase: { before: "Si j'avais étudié davantage, j'", after: " l'examen." },
       answer: "aurais réussi",
       explanation: "Avec si + plus-que-parfait (avais étudié), la clause principale demande le conditionnel passé (aurais réussi).",
       wrongAnswers: [
@@ -3496,7 +3496,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-11",
       generatedBy: "haiku",
-      prompt: "Complétez : « Ah, si je _____ ta proposition ! »",
+      prompt: "Complétez : « Ah, si j'_____ ta proposition ! »",
       choices: [
         { text: "avais accepté", correct: true, explanation: "Le plus-que-parfait (avais accepté) exprime le regret d'avoir refusé l'offre dans le passé." },
         { text: "accepterais", correct: false, explanation: "Le conditionnel présent (accepterais) ne convient pas avec « si » pour exprimer un regret passé." },
@@ -3548,7 +3548,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-11",
       generatedBy: "haiku",
-      prompt: "Complétez : « Ah, si je _____ qu'il était malade ! »",
+      prompt: "Complétez : « Ah, si j'_____ qu'il était malade ! »",
       choices: [
         { text: "avais su", correct: true, explanation: "Le plus-que-parfait (avais su) exprime le regret de ne pas avoir eu cette information." },
         { text: "savais", correct: false, explanation: "L'imparfait (savais) indique une connaissance habituellement manquante, non un regret émotionnel." },
@@ -3626,7 +3626,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-11",
       generatedBy: "haiku",
-      prompt: "Complétez : « Ah, si je _____ cette opportunité ! »",
+      prompt: "Complétez : « Ah, si j'_____ cette opportunité ! »",
       choices: [
         { text: "avais saisi", correct: true, explanation: "Le plus-que-parfait (avais saisi) exprime le regret de ne pas avoir profité de l'occasion." },
         { text: "saisirais", correct: false, explanation: "Le conditionnel présent (saisirais) introduit une action hypothétique, pas un regret retroactif." },
@@ -3717,7 +3717,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-11",
       generatedBy: "haiku",
-      prompt: "Complétez : « Si seulement je _____ ma grand-mère avant qu'elle meure ! »",
+      prompt: "Complétez : « Si seulement j'_____ ma grand-mère avant qu'elle meure ! »",
       choices: [
         { text: "avais embrassé", correct: true, explanation: "Le plus-que-parfait (avais embrassé) exprime le regret profond d'un adieu non accompli." },
         { text: "embrasserais", correct: false, explanation: "Le conditionnel présent (embrasserais) projette une action hypothétique future." },
@@ -3762,7 +3762,7 @@ const section: Section = {
       ruleId: "04-11",
       generatedBy: "haiku",
       prompt: "Remplissez la phrase avec le plus-que-parfait pour exprimer un regret à propos d'une décision passée.",
-      phrase: { before: "Ah, si je ne ", after: "__ pas accepté ce contrat désastreux !" },
+      phrase: { before: "Ah, si je n'", after: "__ pas accepté ce contrat désastreux !" },
       answer: "avais",
       explanation: "Le plus-que-parfait (avais accepté) exprime le regret de la mauvaise décision prise autrefois.",
       wrongAnswers: [
@@ -3816,7 +3816,7 @@ const section: Section = {
       ruleId: "04-11",
       generatedBy: "haiku",
       prompt: "Remplissez avec le plus-que-parfait pour exprimer un regret sur une parole non prononcée.",
-      phrase: { before: "Si seulement je ", after: "__ (dire) la vérité à ce moment-là !" },
+      phrase: { before: "Si seulement j'", after: "__ (dire) la vérité à ce moment-là !" },
       answer: "avais dit",
       explanation: "Le plus-que-parfait (avais dit) exprime le regret profond de n'avoir pas été honnête quand cela importait.",
       wrongAnswers: [
@@ -6780,7 +6780,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-20",
       generatedBy: "haiku",
-      prompt: "Complétez : « Dès que j'___ à la gare, je ___ un taxi. »",
+      prompt: "Complétez : « Dès que j'___ à la gare, j'___ un taxi. »",
       choices: [
         { text: "suis arrivé / ai pris", correct: true, explanation: "Deux passés composés montrent deux actions complétées et successives. Le passé composé s'utilise pour les actions qui font avancer le récit." },
         { text: "arrivais / prenais", correct: false, explanation: "Deux imparfaits décrirait des actions habituelles ou répétées, non des actions spécifiques et successives." },
@@ -6860,7 +6860,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "04-20",
       generatedBy: "haiku",
-      prompt: "Complétez : « Si j'___ arrivé plus tôt, je ___ pu l'aider. »",
+      prompt: "Complétez : « Si j'___ arrivé plus tôt, j'___ pu l'aider. »",
       choices: [
         { text: "étais / aurais", correct: true, explanation: "C'est un conditionnel passé avec « si + plus-que-parfait ». « Étais arrivé » et « aurais pu » forment la construction correcte du contrefactuel." },
         { text: "étais / pouvais", correct: false, explanation: "« Pouvais » (imparfait) ne convient pas à la construction du conditionnel. Il faudrait « aurais pu »." },

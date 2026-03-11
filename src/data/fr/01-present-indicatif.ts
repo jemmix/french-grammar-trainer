@@ -243,7 +243,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-01",
       generatedBy: "haiku",
-      prompt: "Complétez au présent : « Je ___ la musique classique. »",
+      prompt: "Complétez au présent : « J'___ la musique classique. »",
       choices: [
         { text: "aime", correct: true, explanation: "Le verbe « aimer » à la première personne du singulier (je) au présent de l'indicatif se conjugue avec la terminaison -e : j'aime." },
         { text: "aimes", correct: false, explanation: "« Aimes » est la deuxième personne du singulier (tu aimes), non pas la première personne." },
@@ -1087,7 +1087,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ à l'école. »",
+      prompt: "Complétez : « J'___ à l'école. »",
       choices: [
         { text: "vais", correct: true, explanation: "« Je vais » est la forme correcte du présent d'aller à la 1ère personne du singulier." },
         { text: "vas", correct: false, explanation: "« Vas » est la forme pour la 2e personne du singulier (tu vas), pas pour je." },
@@ -1282,7 +1282,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ à la pharmacie acheter des médicaments. »",
+      prompt: "Complétez : « J'___ à la pharmacie acheter des médicaments. »",
       choices: [
         { text: "vais", correct: true, explanation: "« Vais » est la forme correcte du présent d'aller à la 1ère personne du singulier." },
         { text: "envoie", correct: false, explanation: "« Envoie » est une forme d'envoyer, pas d'aller." },
@@ -1308,7 +1308,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ne ___ jamais acheter de fruits pourris. »",
+      prompt: "Complétez : « Nous n'___ jamais acheter de fruits pourris. »",
       choices: [
         { text: "allons", correct: true, explanation: "« Allons » est la forme correcte du présent d'aller à la 1ère personne du pluriel." },
         { text: "envoyons", correct: false, explanation: "« Envoyons » est une forme d'envoyer, pas d'aller." },
@@ -1335,7 +1335,7 @@ const section: Section = {
       ruleId: "01-04",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe aller au présent.",
-      phrase: { before: "Je ", after: " à la bibliothèque cet après-midi." },
+      phrase: { before: "J'", after: " à la bibliothèque cet après-midi." },
       answer: "vais",
       explanation: "« Vais » est la conjugaison d'aller à la 1ère personne du singulier au présent.",
       wrongAnswers: [
@@ -1399,7 +1399,7 @@ const section: Section = {
       ruleId: "01-04",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe envoyer au présent avec le sujet je.",
-      phrase: { before: "Je ", after: " un email à mon patron avant de partir au bureau." },
+      phrase: { before: "J'", after: " un email à mon patron avant de partir au bureau." },
       answer: "envoie",
       explanation: "« Envoyer » est irrégulier au présent : je envoie (et non « j'envois » ni « j'envoye »). La racine change : envo- → envoie pour les personnes singulier et 3e pluriel.",
       wrongAnswers: [
@@ -1433,9 +1433,9 @@ const section: Section = {
       prompt: "Complétez : « Je ___ français. »",
       choices: [
         { text: "suis", correct: true, explanation: "Le verbe « être » à la première personne du singulier au présent est « suis »." },
-        { text: "ai", correct: false, explanation: "« ai » est le présent du verbe « avoir », non « être ». La phrase serait grammaticalement incorrecte." },
         { text: "fais", correct: false, explanation: "« fais » est le présent du verbe « faire ». Ici, on a besoin du verbe « être »." },
         { text: "dis", correct: false, explanation: "« dis » est le présent du verbe « dire ». Ce n'est pas le bon verbe pour exprimer une nationalité." },
+        { text: "sommes", correct: false, explanation: "« sommes » est la première personne du pluriel du verbe « être ». Pour « je », on utilise « suis »." },
       ],
     },
     {
@@ -1512,8 +1512,8 @@ const section: Section = {
       choices: [
         { text: "fais", correct: true, explanation: "Le verbe « faire » à la première personne du singulier au présent est « fais »." },
         { text: "suis", correct: false, explanation: "« suis » est le présent du verbe « être ». On utilise « faire » pour exprimer l'action de préparer." },
-        { text: "ai", correct: false, explanation: "« ai » est le présent du verbe « avoir ». Ici, on a besoin du verbe « faire » pour l'action de préparer un gâteau." },
         { text: "dis", correct: false, explanation: "« dis » est le présent du verbe « dire ». Le contexte demande l'action « faire »." },
+        { text: "faisons", correct: false, explanation: "« faisons » est la première personne du pluriel du verbe « faire ». Pour « je », on utilise « fais »." },
       ],
     },
     {
@@ -1668,8 +1668,8 @@ const section: Section = {
       choices: [
         { text: "disent", correct: true, explanation: "Le verbe « dire » à la troisième personne du pluriel au présent est « disent ». « Ne rien dire » signifie rester silencieux." },
         { text: "sont", correct: false, explanation: "« sont » est le présent du verbe « être ». Pour exprimer le silence, on utilise « dire »." },
-        { text: "ont", correct: false, explanation: "« ont » est le présent du verbe « avoir ». Ce n'est pas le bon verbe pour exprimer le silence." },
         { text: "font", correct: false, explanation: "« font » est le présent du verbe « faire ». La phrase demande le verbe « dire »." },
+        { text: "dit", correct: false, explanation: "« dit » est la troisième personne du singulier du verbe « dire ». Pour « elles », on utilise « disent »." },
       ],
     },
     {
@@ -2133,7 +2133,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ à toutes les réunions de l'équipe. »",
+      prompt: "Complétez : « Je ___ à la réunion tous les lundis. »",
       choices: [
         { text: "viens", correct: true, explanation: "À la première personne du singulier (je), le verbe venir au présent est « viens »." },
         { text: "vais", correct: false, explanation: "« Vais » est la première personne du singulier du verbe aller, non venir. C'est une confusion courante entre deux verbes de mouvement." },
@@ -2328,7 +2328,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Chaque jour, vous ___ vos médicaments trois fois par jour. »",
+      prompt: "Complétez : « Vous ___ vos médicaments trois fois par jour. »",
       choices: [
         { text: "prenez", correct: true, explanation: "À la deuxième personne du pluriel (vous), le verbe prendre au présent est « prenez ». C'est une instruction médicale." },
         { text: "preniez", correct: false, explanation: "« Preniez » est la deuxième personne du pluriel à l'imparfait, non au présent." },
@@ -2341,7 +2341,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ absolument à vous remercier pour votre aide. »",
+      prompt: "Complétez : « Je ___ beaucoup à vous. »",
       choices: [
         { text: "tiens", correct: true, explanation: "À la première personne du singulier (je), le verbe tenir au présent est « tiens ». L'expression « tenir à » signifie « être attaché à » ou « être important pour quelqu'un »." },
         { text: "tenais", correct: false, explanation: "« Tenais » est la première personne du singulier à l'imparfait, non au présent." },
@@ -3298,7 +3298,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-10",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ les lettres avant d'envoyer. »",
+      prompt: "Complétez : « J'___ les lettres avant d'envoyer. »",
       choices: [
         { text: "épelle", correct: true, explanation: "« Épeler » suit la même règle. À la 1ère personne du singulier du présent : j'épelle (double consonne et elision)." },
         { text: "épele", correct: false, explanation: "Forme incorrecte. Il faut doubler le « l » : j'épelle." },
@@ -3416,7 +3416,7 @@ const section: Section = {
       ruleId: "01-10",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « appeler » au présent, 1ère personne du singulier.",
-      phrase: { before: "Je ", after: " un taxi pour rentrer à la maison." },
+      phrase: { before: "J'", after: " un taxi pour rentrer à la maison." },
       answer: "appelle",
       explanation: "Au présent, à la 1ère personne du singulier, « appeler » double le « l » : j'appelle.",
       wrongAnswers: [
@@ -3913,7 +3913,7 @@ const section: Section = {
       prompt: "Complétez : « Vous ___ après le dîner ? »",
       choices: [
         { text: "vous promenez", correct: true, explanation: "Le sujet « vous » demande le pronom « vous » avec la terminaison -ez. C'est la deuxième personne du pluriel du verbe se promener au présent." },
-        { text: "vous promeniez", correct: false, explanation: "« Vous promeniez » est l'imparfait, pas le présent. Au présent : vous vous promenez." },
+        { text: "vous promenade", correct: false, explanation: "C'est un nom, pas une forme conjuguée du verbe se promener." },
         { text: "nous promenons", correct: false, explanation: "C'est la forme pour « nous », pas pour « vous ». Le pronom et la terminaison ne correspondent pas au sujet." },
         { text: "vous promenait", correct: false, explanation: "C'est l'imparfait, pas le présent. Il faut utiliser la terminaison du présent -ez." },
       ],
@@ -3925,9 +3925,9 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez : « Elles ___ sur les chaises. »",
       choices: [
-        { text: "s'asseyent", correct: true, explanation: "La troisième personne du pluriel du verbe s'asseoir au présent est « s'asseyent ». Le pronom « se » s'élide en « s' » devant la voyelle « a »." },
-        { text: "s'asseyait", correct: false, explanation: "« S'asseyait » est la troisième personne du singulier à l'imparfait. Au présent avec « elles » : s'asseyent." },
-        { text: "se asseyent", correct: false, explanation: "Pas d'élision ici. Il faut élider « se » en « s' » devant une voyelle : s'asseyent." },
+        { text: "s'asseient", correct: true, explanation: "La troisième personne du pluriel du verbe s'asseoir au présent est « s'asseient ». Le pronom « se » s'élide en « s' » devant la voyelle « a »." },
+        { text: "s'assoyent", correct: false, explanation: "C'est une variante moins courante d'asseoir. La forme standard au présent est « s'asseient »." },
+        { text: "se asseient", correct: false, explanation: "Pas d'élision, mais il faut élider « se » en « s' » avant une voyelle." },
         { text: "nous asseyons", correct: false, explanation: "C'est la forme pour « nous », pas pour « elles ». Le pronom et la terminaison ne correspondent pas au sujet." },
       ],
     },
@@ -4042,9 +4042,9 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez : « Ils ___ à table pour manger. »",
       choices: [
-        { text: "s'asseyent", correct: true, explanation: "La troisième personne du pluriel du verbe s'asseoir au présent est « ils s'asseyent ». Le pronom « se » s'élide en « s' » devant la voyelle « a »." },
-        { text: "s'asseyaient", correct: false, explanation: "« S'asseyaient » est la troisième personne du pluriel à l'imparfait. Au présent : ils s'asseyent." },
-        { text: "se asseyent", correct: false, explanation: "Pas d'élision ici. Il faut élider « se » en « s' » devant une voyelle : s'asseyent." },
+        { text: "s'asseient", correct: true, explanation: "La troisième personne du pluriel du verbe s'asseoir au présent est « ils s'asseient ». Le pronom « se » s'élide en « s' » devant la voyelle « a »." },
+        { text: "s'assoyent", correct: false, explanation: "C'est une variante moins courante. La forme standard au présent est « s'asseient »." },
+        { text: "se asseient", correct: false, explanation: "Pas d'élision, mais il faut élider « se » en « s' » avant une voyelle." },
         { text: "t'assois", correct: false, explanation: "C'est la deuxième personne du singulier, pas la troisième personne du pluriel. La forme ne correspond pas au sujet." },
       ],
     },
@@ -4053,7 +4053,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-12",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle ___ Marie. »",
+      prompt: "Complétez : « Elle ___ à cet homme. »",
       choices: [
         { text: "s'appelle", correct: true, explanation: "La troisième personne du singulier du verbe s'appeler au présent est « elle s'appelle ». Le pronom « se » s'élide en « s' » devant la voyelle « a »." },
         { text: "se appelle", correct: false, explanation: "Pas d'élision ici, mais il faut élider « se » en « s' » avant une voyelle." },
@@ -4081,10 +4081,10 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez : « Je ___ de cet événement. »",
       choices: [
-        { text: "me souviens", correct: true, explanation: "La première personne du singulier du verbe se souvenir au présent est « je me souviens ». « Se souvenir de » signifie avoir le souvenir de quelque chose." },
-        { text: "se souvient", correct: false, explanation: "« Se souvient » est la troisième personne du singulier (il/elle se souvient). Avec « je », le pronom est « me » : je me souviens." },
-        { text: "te souviens", correct: false, explanation: "« Te souviens » est pour « tu ». Avec « je », le pronom réfléchi est « me » : je me souviens." },
-        { text: "nous rappelons", correct: false, explanation: "« Nous rappelons » est la première personne du pluriel d'un verbe différent (se rappeler). Avec « je » : je me souviens." },
+        { text: "me rappelle", correct: true, explanation: "La première personne du singulier du verbe se rappeler au présent est « je me rappelle ». Le pronom « se » devient « me » avec le sujet « je »." },
+        { text: "se rappelle", correct: false, explanation: "Le pronom « se » devient « me » avec le sujet « je », pas « se »." },
+        { text: "te souviens", correct: false, explanation: "C'est un verbe différent (se souvenir) et le pronom « te » est pour « tu ». Le pronom et le verbe ne correspondent pas au contexte." },
+        { text: "nous rappelons", correct: false, explanation: "C'est la forme pour « nous ». Le pronom ne correspond pas au sujet." },
       ],
     },
     {
@@ -4108,7 +4108,7 @@ const section: Section = {
       prompt: "Complétez : « Tu ___ ? »",
       choices: [
         { text: "t'assois", correct: true, explanation: "La deuxième personne du singulier du verbe s'asseoir au présent est « tu t'assois ». Le pronom « se » s'élide en « t' » devant la voyelle « a »." },
-        { text: "t'asseyais", correct: false, explanation: "« T'asseyais » est l'imparfait. Au présent pour « tu »." },
+        { text: "t'asseies", correct: false, explanation: "C'est une variante de conjugaison, mais « t'assois » est la forme standard pour « tu »." },
         { text: "se asseoit", correct: false, explanation: "C'est la forme pour « il/elle » (il/elle s'assoit), pas pour « tu ». Le pronom ne correspond pas au sujet." },
         { text: "vous asseyez", correct: false, explanation: "C'est la forme pour « vous », pas pour « tu ». Le pronom et la terminaison ne correspondent pas au sujet." },
       ],
@@ -4141,7 +4141,7 @@ const section: Section = {
       answer: "t'assois",
       explanation: "La deuxième personne du singulier de s'asseoir au présent est « tu t'assois ». Le pronom « se » s'élide en « t' » devant la voyelle « a ».",
       wrongAnswers: [
-        { text: "t'asseyais", explanation: "« T'asseyais » est l'imparfait. Au présent pour la deuxième personne du singulier." },
+        { text: "t'asseies", explanation: "C'est une variante de conjugaison, mais « t'assois » est la forme standard pour la deuxième personne du singulier." },
         { text: "se assois", explanation: "Pas d'élision ici, mais il faut élider « se » en « t' » devant la voyelle « a » quand le sujet est « tu »." },
         { text: "vous asseyez", explanation: "C'est la forme pour « vous », pas pour « tu ». Le pronom et la terminaison ne correspondent pas au sujet." },
         { text: "je m'assois", explanation: "C'est la forme pour « je », pas pour « tu ». Le pronom correct est « t' »." },
@@ -4154,7 +4154,7 @@ const section: Section = {
       ruleId: "01-12",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe se souvenir au présent avec le pronom nous.",
-      phrase: { before: "Nous ", after: " de ce magnifique voyage." },
+      phrase: { before: "Nous ", after: " de cette vacation merveille." },
       answer: "nous souvenons",
       explanation: "La première personne du pluriel de se souvenir au présent est « nous nous souvenons ». Le pronom « nous » ne s'élide pas devant la consonne « s ».",
       wrongAnswers: [
@@ -4360,12 +4360,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-13",
       generatedBy: "haiku",
-      prompt: "Complétez : « Ils se ___ sur la bouche. »",
+      prompt: "Complétez : « Ils s'___ sur la bouche. »",
       choices: [
         { text: "embrassent", correct: true, explanation: "Avec le sujet « ils » (3e personne du pluriel), le verbe s'embrasser donne « ils s'embrassent ». C'est une action réciproque : ils s'embrassent mutuellement." },
         { text: "embrasse", correct: false, explanation: "« Embrasse » est la 3e personne du singulier (il/elle). Le sujet est pluriel." },
         { text: "embrassez", correct: false, explanation: "« Embrassez » est pour « vous », pas « ils »." },
-        { text: "nous embrassons", correct: false, explanation: "« Nous embrassons » est pour « nous », pas « ils »." },
+        { text: "embrassons", correct: false, explanation: "« Embrassons » est pour « nous », pas « ils »." },
       ],
     },
     {
@@ -4553,7 +4553,7 @@ const section: Section = {
       choices: [
         { text: "prends", correct: true, explanation: "Le présent est utilisé pour exprimer une habitude quotidienne. « Prends » est la première personne du singulier du verbe « prendre »." },
         { text: "prenais", correct: false, explanation: "L'imparfait indique une habitude du passé, pas une habitude actuelle. Cette réponse changerait le sens." },
-        { text: "ai pris", correct: false, explanation: "Le passé composé exprime une action unique achevée au passé, pas une habitude quotidienne." },
+        { text: "prendrais", correct: false, explanation: "Le conditionnel exprime une hypothèse ou une condition, pas une habitude réelle." },
         { text: "prendrai", correct: false, explanation: "Le futur simple indique une action future, pas une habitude présente." },
       ],
     },
@@ -4692,7 +4692,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-14",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ne ___ jamais le chocolat chaud. »",
+      prompt: "Complétez : « Je n'___ jamais le chocolat chaud. »",
       choices: [
         { text: "oublie", correct: true, explanation: "Le présent pour exprimer une habitude négative constante. « Oublie » est la première personne du singulier du verbe « oublier »." },
         { text: "oubliais", correct: false, explanation: "L'imparfait exprime une habitude ancienne, pas l'habitude actuelle constante." },
@@ -4787,7 +4787,7 @@ const section: Section = {
       choices: [
         { text: "prépare", correct: true, explanation: "Le présent pour exprimer une habitude quotidienne personnelle. « Prépare » est la première personne du singulier du verbe « préparer »." },
         { text: "préparais", correct: false, explanation: "L'imparfait indique une ancienne habitude, pas la pratique actuelle toujours maintenue." },
-        { text: "ai préparé", correct: false, explanation: "Le passé composé indique qu'on s'est préparé une fois, pas une habitude quotidienne." },
+        { text: "préparerais", correct: false, explanation: "Le conditionnel exprime une hypothèse, pas une habitude réelle." },
         { text: "préparerai", correct: false, explanation: "Le futur simple indique une intention future, pas une habitude présente établie." },
       ],
     },
@@ -4810,13 +4810,13 @@ const section: Section = {
       ruleId: "01-14",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « prendre » au présent pour exprimer une habitude quotidienne.",
-      phrase: { before: "Le matin, je ", after: " mon café." },
+      phrase: { before: "Le matin, tu ", after: " ton café." },
       answer: "prends",
       explanation: "Le présent est utilisé pour exprimer une habitude quotidienne. Le verbe « prendre » à la première personne du singulier est « prends ».",
       wrongAnswers: [
         { text: "prenais", explanation: "L'imparfait décrit une habitude passée, pas une routine actuelle quotidienne." },
-        { text: "ai pris", explanation: "Le passé composé exprime une action unique passée, pas une habitude répétée." },
-        { text: "prendrai", explanation: "Le futur simple indique une action future, pas une habitude présente." },
+        { text: "as pris", explanation: "Le passé composé exprime une action unique passée, pas une habitude répétée." },
+        { text: "prendras", explanation: "Le futur simple indique une action future, pas une habitude présente." },
         { text: "prendrais", explanation: "Le conditionnel exprime une hypothèse, pas une habitude réelle." },
       ],
     },
@@ -4942,7 +4942,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-15",
       generatedBy: "haiku",
-      prompt: "Complétez : « Maintenant, je ___ un excellent roman. »",
+      prompt: "Complétez : « Maintenant, j'___ un excellent roman. »",
       choices: [
         { text: "lis", correct: true, explanation: "Le présent simple s'emploie pour exprimer une action en cours actuellement." },
         { text: "lisais", correct: false, explanation: "L'imparfait s'utilise pour une action passée qui se déroulait, non pour l'action présente." },
@@ -5085,7 +5085,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-15",
       generatedBy: "haiku",
-      prompt: "Complétez : « En ce moment, je ___ une excellente conférence en ligne. »",
+      prompt: "Complétez : « En ce moment, j'___ une excellente conférence en ligne. »",
       choices: [
         { text: "suis en train de suivre", correct: true, explanation: "La formule « être en train de » + infinitif exprime explicitement une action en cours au moment présent." },
         { text: "suivais", correct: false, explanation: "L'imparfait convient pour une action passée, non pour une action présente." },
@@ -5138,7 +5138,7 @@ const section: Section = {
       ruleId: "01-15",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent pour exprimer une action en cours en ce moment.",
-      phrase: { before: "À l'instant, je ", after: " à mon meilleur ami au téléphone." },
+      phrase: { before: "À l'instant, j'", after: " à mon meilleur ami au téléphone." },
       answer: "parle",
       explanation: "Le présent simple exprime l'action qui se déroule en ce moment : je suis en train de parler à mon ami.",
       wrongAnswers: [
@@ -5205,7 +5205,7 @@ const section: Section = {
       type: "input",
       ruleId: "01-15",
       generatedBy: "haiku",
-      prompt: "Conjuguez le verbe au présent pour décrire ce qui se passe en ce moment.",
+      prompt: "Conjuguez le verbe au présent. Décrive current action.",
       phrase: { before: "À l'instant même, elle ", after: " un délicieux gâteau au chocolat." },
       answer: "mange",
       explanation: "Le présent de l'indicatif exprime l'action qui se déroule en ce moment : elle est en train de manger.",
@@ -5238,9 +5238,9 @@ const section: Section = {
       prompt: "Complétez : « Je ___ demain à la gare. »",
       choices: [
         { text: "pars", correct: true, explanation: "Le présent « pars » exprime une action planifiée pour demain. C'est l'usage naturel du présent avec une valeur de futur proche." },
-        { text: "partirais", correct: false, explanation: "Le conditionnel « partirais » exprime une hypothèse ou un souhait, non une action planifiée avec certitude." },
+        { text: "partirai", correct: false, explanation: "Le futur simple « partirai » est grammaticalement correct mais trop formel pour cette action planifiée et prévisible." },
         { text: "partais", correct: false, explanation: "L'imparfait « partais » est un temps du passé, ce qui ne convient pas pour une action future." },
-        { text: "suis parti", correct: false, explanation: "Le passé composé « suis parti » exprime une action terminée dans le passé, non une action future." },
+        { text: "vais partir", correct: false, explanation: "Le futur proche « vais partir » est correct mais indique une intention plus immédiate ou une décision venant d'être prise." },
       ],
     },
     {
@@ -5251,9 +5251,9 @@ const section: Section = {
       prompt: "Complétez : « Nous ___ ce soir au restaurant. »",
       choices: [
         { text: "mangeons", correct: true, explanation: "Le présent « mangeons » avec le marqueur temporel « ce soir » exprime une action future planifiée de façon naturelle." },
-        { text: "mangeras", correct: false, explanation: "« Mangeras » est la deuxième personne du singulier, ce qui ne s'accorde pas avec le sujet « nous » à la première personne du pluriel." },
-        { text: "mangerions", correct: false, explanation: "Le conditionnel « mangerions » exprime une hypothèse ou un souhait, non une action planifiée avec certitude." },
-        { text: "avons mangé", correct: false, explanation: "Le passé composé « avons mangé » exprime une action terminée dans le passé, non une action future." },
+        { text: "mangeres", correct: false, explanation: "Cette forme n'existe pas en français. Le futur serait « mangerons »." },
+        { text: "mangerons", correct: false, explanation: "Le futur simple « mangerons » est trop formel pour exprimer une action si prochaine et planifiée." },
+        { text: "allons manger", correct: false, explanation: "Le futur proche « allons manger » change légèrement le sens, suggérant une intention immédiate." },
       ],
     },
     {
@@ -5264,7 +5264,7 @@ const section: Section = {
       prompt: "Complétez : « Il ___ lundi prochain pour Paris. »",
       choices: [
         { text: "part", correct: true, explanation: "Le présent « part » avec « lundi prochain » est l'usage courant pour exprimer un départ programmé." },
-        { text: "partirait", correct: false, explanation: "Le conditionnel « partirait » exprime une hypothèse ou un souhait, non un départ planifié avec certitude." },
+        { text: "partira", correct: false, explanation: "Le futur simple « partira » convient mais sonne plus distant et moins naturel pour une action si prochaine." },
         { text: "partait", correct: false, explanation: "L'imparfait « partait » est un passé, ce qui ne convient absolument pas." },
         { text: "est parti", correct: false, explanation: "Le passé composé « est parti » indique une action déjà complétée, non une action future." },
       ],
@@ -5277,9 +5277,9 @@ const section: Section = {
       prompt: "Complétez : « Tu ___ ce week-end à la plage ? »",
       choices: [
         { text: "vas", correct: true, explanation: "Le présent « vas » est la forme naturelle pour une question sur une action prochaine et planifiée." },
-        { text: "irais", correct: false, explanation: "Le conditionnel « irais » exprime une hypothèse ou un souhait, non une action planifiée et certaine." },
+        { text: "iras", correct: false, explanation: "Le futur simple « iras » est possible mais semble moins naturel en conversation courante pour une action si proche." },
         { text: "allais", correct: false, explanation: "L'imparfait « allais » est un temps passé, inadapté pour l'avenir." },
-        { text: "es allé", correct: false, explanation: "Le passé composé « es allé » exprime une action terminée dans le passé, non une action future." },
+        { text: "vas aller", correct: false, explanation: "Le futur proche « vas aller » est redondant ici ; le simple présent « vas » suffit." },
       ],
     },
     {
@@ -5290,9 +5290,9 @@ const section: Section = {
       prompt: "Complétez : « Elles ___ leurs vacances en Italie cet été. »",
       choices: [
         { text: "passent", correct: true, explanation: "Le présent « passent » avec le marqueur temporel « cet été » exprime un plan déterminé pour l'avenir." },
-        { text: "passeraient", correct: false, explanation: "Le conditionnel « passeraient » exprime une hypothèse ou un souhait, non un projet planifié avec certitude." },
+        { text: "passeront", correct: false, explanation: "Le futur simple « passeront » est correct mais moins naturel pour un projet aussi planifié." },
         { text: "passaient", correct: false, explanation: "L'imparfait « passaient » décrit une habitude passée, non une action future." },
-        { text: "ont passé", correct: false, explanation: "Le passé composé « ont passé » exprime une action terminée dans le passé, non une action future." },
+        { text: "vont passer", correct: false, explanation: "Le futur proche « vont passer » est acceptable mais suggère une intention plus immédiate." },
       ],
     },
     {
@@ -5303,9 +5303,9 @@ const section: Section = {
       prompt: "Complétez : « Notre réunion ___ à 14h aujourd'hui. »",
       choices: [
         { text: "commence", correct: true, explanation: "Le présent « commence » avec un horaire spécifique exprime une action future programmée et certaine." },
-        { text: "commencerait", correct: false, explanation: "Le conditionnel « commencerait » exprime une hypothèse ou un souhait, non un événement prévu avec certitude." },
+        { text: "commencera", correct: false, explanation: "Le futur simple « commencera » est grammaticalement correct mais moins naturel pour un événement si précis et proche." },
         { text: "commençait", correct: false, explanation: "L'imparfait « commençait » décrit une répétition passée, pas une action future." },
-        { text: "a commencé", correct: false, explanation: "Le passé composé « a commencé » exprime une action terminée dans le passé, non une action future." },
+        { text: "va commencer", correct: false, explanation: "Le futur proche « va commencer » change légèrement le ton, suggérant une imminence particulière." },
       ],
     },
     {
@@ -5313,12 +5313,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "haiku",
-      prompt: "Complétez avec le présent : « Je ___ l'avion demain matin. »",
+      prompt: "Complétez : « Je ___ l'avion demain matin. »",
       choices: [
-        { text: "prends", correct: true, explanation: "Pour un plan concret et certain à court terme, le présent s'emploie souvent à la place du futur : « je prends l'avion demain » est plus naturel et ancré dans le réel que « je prendrai »." },
-        { text: "prendrai", correct: false, explanation: "Le futur simple « prendrai » est grammaticalement correct ici, mais cette règle porte sur l'emploi du présent pour les plans immédiats et certains — la question demande explicitement le présent." },
-        { text: "prenais", correct: false, explanation: "L'imparfait « prenais » est un temps passé, ce qui ne correspond pas à un trajet prévu demain." },
-        { text: "ai pris", correct: false, explanation: "Le passé composé « ai pris » exprime une action terminée dans le passé, non une action future." },
+        { text: "prends", correct: true, explanation: "Le présent « prends » est la formulation naturelle d'un trajet programmé pour demain." },
+        { text: "prendrai", correct: false, explanation: "Le futur simple « prendrai » est possible mais trop formel pour une action si prochaine et planifiée." },
+        { text: "prenais", correct: false, explanation: "L'imparfait « prenais » est un temps passé, ce qui ne correspond pas." },
+        { text: "vais prendre", correct: false, explanation: "Le futur proche « vais prendre » est acceptable mais implique une urgence ou une décision momentanée." },
       ],
     },
     {
@@ -5329,9 +5329,9 @@ const section: Section = {
       prompt: "Complétez : « Les enfants ___ l'école la semaine prochaine. »",
       choices: [
         { text: "reprennent", correct: true, explanation: "Le présent « reprennent » avec le marqueur temporel « la semaine prochaine » exprime un retour planifié." },
-        { text: "reprendraient", correct: false, explanation: "Le conditionnel « reprendraient » exprime une hypothèse ou un souhait, non un retour planifié avec certitude." },
+        { text: "reprendront", correct: false, explanation: "Le futur simple « reprendront » sonne plus distant et officiel qu'un simple présent." },
         { text: "reprenaient", correct: false, explanation: "L'imparfait « reprenaient » décrit une habitude passée, non un événement futur." },
-        { text: "ont repris", correct: false, explanation: "Le passé composé « ont repris » exprime une action terminée dans le passé, non une action future." },
+        { text: "vont reprendre", correct: false, explanation: "Le futur proche « vont reprendre » est acceptable mais plus emphatique." },
       ],
     },
     {
@@ -5342,9 +5342,9 @@ const section: Section = {
       prompt: "Complétez : « Vous ___ les résultats dans trois jours. »",
       choices: [
         { text: "recevez", correct: true, explanation: "Le présent « recevez » avec le délai temporel « dans trois jours » exprime une attente programmée." },
-        { text: "recevriez", correct: false, explanation: "Le conditionnel « recevriez » exprime une hypothèse ou un souhait, non une communication certaine et proche." },
+        { text: "recevrez", correct: false, explanation: "Le futur simple « recevrez » est correct mais moins naturel pour une communication d'une certitude proche." },
         { text: "receviez", correct: false, explanation: "L'imparfait « receviez » indique un temps passé, inapplicable ici." },
-        { text: "avez reçu", correct: false, explanation: "Le passé composé « avez reçu » exprime une action terminée dans le passé, non une action future." },
+        { text: "allez recevoir", correct: false, explanation: "Le futur proche « allez recevoir » implique une imminence ou une décision qui vient d'être prise." },
       ],
     },
     {
@@ -5355,9 +5355,9 @@ const section: Section = {
       prompt: "Complétez : « Mon ami ___ à ma fête demain soir. »",
       choices: [
         { text: "vient", correct: true, explanation: "Le présent « vient » est la forme la plus naturelle pour exprimer une présence future programmée." },
-        { text: "viendrait", correct: false, explanation: "Le conditionnel « viendrait » exprime une hypothèse ou un souhait, non une présence planifiée avec certitude." },
+        { text: "viendra", correct: false, explanation: "Le futur simple « viendra » semble trop formel pour une action aussi imminente et prévue." },
         { text: "venait", correct: false, explanation: "L'imparfait « venait » décrit une habitude passée, ce qui ne correspond pas." },
-        { text: "est venu", correct: false, explanation: "Le passé composé « est venu » exprime une action terminée dans le passé, non une action future." },
+        { text: "va venir", correct: false, explanation: "Le futur proche « va venir » change le ton pour souligner une imminence particulière." },
       ],
     },
     {
@@ -5368,9 +5368,9 @@ const section: Section = {
       prompt: "Complétez : « Je ___ mon examen la semaine prochaine. »",
       choices: [
         { text: "passe", correct: true, explanation: "Le présent « passe » avec « la semaine prochaine » est l'expression naturelle d'un examen programmé." },
-        { text: "passerais", correct: false, explanation: "Le conditionnel « passerais » exprime une hypothèse ou un souhait, non un examen planifié avec certitude." },
+        { text: "passerai", correct: false, explanation: "Le futur simple « passerai » est correct mais semble plus distant et bureaucratique." },
         { text: "passais", correct: false, explanation: "L'imparfait « passais » s'utilise pour des habitudes passées, non pour un événement futur." },
-        { text: "ai passé", correct: false, explanation: "Le passé composé « ai passé » exprime une action terminée dans le passé, non une action future." },
+        { text: "vais passer", correct: false, explanation: "Le futur proche « vais passer » convient mais insiste davantage sur l'imminence ou l'intentionnalité." },
       ],
     },
     {
@@ -5381,9 +5381,9 @@ const section: Section = {
       prompt: "Complétez : « Le film ___ à 20h ce soir. »",
       choices: [
         { text: "commence", correct: true, explanation: "Le présent « commence » pour une heure précisée exprime un événement futur fiable et planifié." },
-        { text: "commencerait", correct: false, explanation: "Le conditionnel « commencerait » exprime une hypothèse ou un souhait, non un horaire certain et proche." },
+        { text: "commencera", correct: false, explanation: "Le futur simple « commencera » semble moins naturel pour un horaire si précis et si proche." },
         { text: "commençait", correct: false, explanation: "L'imparfait « commençait » décrit une répétition passée ou une habitude passée." },
-        { text: "a commencé", correct: false, explanation: "Le passé composé « a commencé » exprime une action terminée dans le passé, non une action future." },
+        { text: "va commencer", correct: false, explanation: "Le futur proche « va commencer » souligne l'imminence de façon plus emphatique." },
       ],
     },
     {
@@ -5394,9 +5394,9 @@ const section: Section = {
       prompt: "Complétez : « Nous ___ demain matin. »",
       choices: [
         { text: "partons", correct: true, explanation: "Le présent « partons » est la forme naturelle pour exprimer un départ programmé pour demain." },
-        { text: "partirions", correct: false, explanation: "Le conditionnel « partirions » exprime une hypothèse ou un souhait, non un départ planifié avec certitude." },
-        { text: "partions", correct: false, explanation: "L'imparfait « partions » convient au passé mais pas au futur." },
-        { text: "sommes partis", correct: false, explanation: "Le passé composé « sommes partis » exprime une action terminée dans le passé, non une action future." },
+        { text: "partirons", correct: false, explanation: "Le futur simple « partirons » semble plus formel pour une action si proche et si certainement programmée." },
+        { text: "partions", correct: false, explanation: "Le passé composé et l'imparfait « partions » conviendraient au passé mais pas au futur." },
+        { text: "allons partir", correct: false, explanation: "Le futur proche « allons partir » change le registre en soulignant davantage l'imminence." },
       ],
     },
     {
@@ -5407,9 +5407,9 @@ const section: Section = {
       prompt: "Complétez : « Elle ___ ce week-end avec sa famille. »",
       choices: [
         { text: "arrive", correct: true, explanation: "Le présent « arrive » est la formulation naturelle pour une arrivée programmée ce week-end." },
-        { text: "arriverait", correct: false, explanation: "Le conditionnel « arriverait » exprime une hypothèse ou un souhait, non une arrivée planifiée avec certitude." },
+        { text: "arrivera", correct: false, explanation: "Le futur simple « arrivera » semble trop distant pour un événement si proche et prévisionnel." },
         { text: "arrivait", correct: false, explanation: "L'imparfait « arrivait » s'utilise pour des actions répétées ou habituelles au passé." },
-        { text: "est arrivée", correct: false, explanation: "Le passé composé « est arrivée » exprime une action terminée dans le passé, non une action future." },
+        { text: "va arriver", correct: false, explanation: "Le futur proche « va arriver » suggère une imminence ou une intention décidée dernièrement." },
       ],
     },
     {
@@ -5420,9 +5420,9 @@ const section: Section = {
       prompt: "Complétez : « Vous ___ des nouvelles dans quelques jours. »",
       choices: [
         { text: "avez", correct: true, explanation: "Le présent « avez » avec le délai exprime une attente programmée et prévisible." },
-        { text: "auriez", correct: false, explanation: "Le conditionnel « auriez » exprime une hypothèse ou un souhait, non une communication certaine et proche." },
+        { text: "aurez", correct: false, explanation: "Le futur simple « aurez » est correct mais moins naturel pour une communication de certitude proche." },
         { text: "aviez", correct: false, explanation: "L'imparfait « aviez » décrit un passé, ce qui ne convient absolument pas." },
-        { text: "avez eu", correct: false, explanation: "Le passé composé « avez eu » exprime une action terminée dans le passé, non une action future." },
+        { text: "allez avoir", correct: false, explanation: "Le futur proche « allez avoir » insiste sur l'imminence ou l'intention nouvelle." },
       ],
     },
     {
@@ -5433,9 +5433,9 @@ const section: Section = {
       prompt: "Complétez : « Les vacances ___ dans deux semaines ! »",
       choices: [
         { text: "commencent", correct: true, explanation: "Le présent « commencent » est la manière naturelle d'exprimer le début imminent et programmé des vacances." },
-        { text: "commenceraient", correct: false, explanation: "Le conditionnel « commenceraient » exprime une hypothèse ou un souhait, non un événement planifié avec certitude." },
+        { text: "commenceront", correct: false, explanation: "Le futur simple « commenceront » semble plus distant et moins enthousiaste." },
         { text: "commençaient", correct: false, explanation: "L'imparfait « commençaient » décrit une habitude ou une répétition passée." },
-        { text: "ont commencé", correct: false, explanation: "Le passé composé « ont commencé » exprime une action terminée dans le passé, non une action future." },
+        { text: "vont commencer", correct: false, explanation: "Le futur proche « vont commencer » convient mais souligne davantage l'imminence." },
       ],
     },
     {
@@ -5446,9 +5446,9 @@ const section: Section = {
       prompt: "Complétez : « Je ___ mes amis demain à midi. »",
       choices: [
         { text: "rencontre", correct: true, explanation: "Le présent « rencontre » est l'usage naturel pour un rendez-vous programmé." },
-        { text: "rencontrerais", correct: false, explanation: "Le conditionnel « rencontrerais » exprime une hypothèse ou un souhait, non un rendez-vous planifié avec certitude." },
+        { text: "rencontrerai", correct: false, explanation: "Le futur simple « rencontrerai » semble trop formel pour une action si programmée et proche." },
         { text: "rencontrais", correct: false, explanation: "L'imparfait « rencontrais » décrit une habitude passée, pas une action future." },
-        { text: "ai rencontré", correct: false, explanation: "Le passé composé « ai rencontré » exprime une action terminée dans le passé, non une action future." },
+        { text: "vais rencontrer", correct: false, explanation: "Le futur proche « vais rencontrer » change le ton en insistant sur l'intention ou l'imminence." },
       ],
     },
     {
@@ -5459,9 +5459,9 @@ const section: Section = {
       prompt: "Complétez : « Demain, nous ___ nos efforts pour réussir. »",
       choices: [
         { text: "redoublons", correct: true, explanation: "Le présent « redoublons » avec le marqueur temporel « demain » exprime une résolution programmée." },
-        { text: "redoublerions", correct: false, explanation: "Le conditionnel « redoublerions » exprime une hypothèse ou un souhait, non un engagement planifié avec certitude." },
-        { text: "redoublions", correct: false, explanation: "L'imparfait « redoublions » n'est pas adapté à ce contexte futur." },
-        { text: "avons redoublé", correct: false, explanation: "Le passé composé « avons redoublé » exprime une action terminée dans le passé, non une action future." },
+        { text: "redoublerons", correct: false, explanation: "Le futur simple « redoublerons » semble moins personnel et moins engagé." },
+        { text: "redoublions", correct: false, explanation: "L'usage de « redoublions » sans le verbe d'action n'est pas adapté à ce contexte." },
+        { text: "allons redoubler", correct: false, explanation: "Le futur proche « allons redoubler » convient mais souligne davantage l'intention nouvelle." },
       ],
     },
     {
@@ -5472,9 +5472,9 @@ const section: Section = {
       prompt: "Complétez : « Le concert ___ samedi prochain à 19h. »",
       choices: [
         { text: "commence", correct: true, explanation: "Le présent « commence » pour un horaire programmé est l'usage naturel du français parlé." },
-        { text: "commencerait", correct: false, explanation: "Le conditionnel « commencerait » exprime une hypothèse ou un souhait, non un horaire certain et planifié." },
+        { text: "commencera", correct: false, explanation: "Le futur simple « commencera » semble plus officiel et distant pour un événement si proche." },
         { text: "commençait", correct: false, explanation: "L'imparfait « commençait » décrit une habitude passée, ce qui ne s'applique pas ici." },
-        { text: "a commencé", correct: false, explanation: "Le passé composé « a commencé » exprime une action terminée dans le passé, non une action future." },
+        { text: "va commencer", correct: false, explanation: "Le futur proche « va commencer » insiste davantage sur l'imminence ou l'intention." },
       ],
     },
     {
@@ -5485,9 +5485,9 @@ const section: Section = {
       prompt: "Complétez : « Tu ___ tes devoirs ce soir ? »",
       choices: [
         { text: "fais", correct: true, explanation: "Le présent « fais » est la question naturelle sur une action planifiée pour ce soir." },
-        { text: "ferais", correct: false, explanation: "Le conditionnel « ferais » exprime une hypothèse ou un souhait, non une action planifiée avec certitude." },
+        { text: "feras", correct: false, explanation: "Le futur simple « feras » semble trop formel pour une conversation courante sur des plans si proches." },
         { text: "faisais", correct: false, explanation: "L'imparfait « faisais » décrit des habitudes passées ou des actions passées répétées." },
-        { text: "as fait", correct: false, explanation: "Le passé composé « as fait » exprime une action terminée dans le passé, non une action future." },
+        { text: "vas faire", correct: false, explanation: "Le futur proche « vas faire » change le ton pour souligner l'imminence ou l'engagement nouveau." },
       ],
     },
     {
@@ -5512,7 +5512,7 @@ const section: Section = {
       type: "input",
       ruleId: "01-16",
       generatedBy: "haiku",
-      prompt: "Complétez avec le présent du verbe « recevoir » indiquant un futur proche.",
+      prompt: "Complétez avec le présent indiquant un futur proche.",
       phrase: { before: "Ma sœur ", after: " son diplôme la semaine prochaine." },
       answer: "reçoit",
       explanation: "Le présent « reçoit » exprime l'attente programmée d'un événement si proche et certain.",
@@ -5529,16 +5529,17 @@ const section: Section = {
       type: "input",
       ruleId: "01-16",
       generatedBy: "haiku",
-      prompt: "Mettez le verbe entre parenthèses au présent avec valeur de futur proche. (voir)",
+      prompt: "Mettez le verbe entre parenthèses au présent avec valeur de future.",
       phrase: { before: "Je ", after: " mes amis ce soir pour fêter mon anniversaire." },
-      answer: "vois",
+      answer: "reçois",
       explanation: "Le présent « vois » exprime naturellement une visite programmée pour ce soir.",
       wrongAnswers: [
         { text: "verrai", explanation: "Le futur simple « verrai » semble plus distant pour une action si imminente et planifiée." },
         { text: "voyais", explanation: "L'imparfait « voyais » décrit une habitude passée, pas une action future programmée." },
         { text: "voie", explanation: "Le subjonctif « voie » ne convient pas ici ; le contexte appelle l'indicatif présent." },
-        { text: "ai vu", explanation: "Le passé composé « ai vu » indique une action complétée, non une visite future." },
+        { text: "verrais", explanation: "Le conditionnel « verrais » exprime une hypothèse, non une action certaine." },
         { text: "voyez", explanation: "La deuxième personne du pluriel « voyez » ne s'accorde pas avec le sujet « je »." },
+        { text: "voit", explanation: "La troisième personne du singulier « voit » ne s'accorde pas avec le sujet « je »." },
       ],
     },
     {
@@ -5563,15 +5564,16 @@ const section: Section = {
       type: "input",
       ruleId: "01-16",
       generatedBy: "haiku",
-      prompt: "Mettez le verbe au présent indiquant une action future très proche.",
-      phrase: { before: "Dans cinq minutes, je ", after: " à la réunion." },
-      answer: "vais",
+      prompt: "Mettez le verbe entre parenthèses au présent avec valeur de future.",
+      phrase: { before: "Dans cinq minutes, j'", after: " à la réunion." },
+      answer: "arrive",
       explanation: "Le présent « vais » exprime naturellement une action imminente et programmée dans cinq minutes.",
       wrongAnswers: [
-        { text: "irai", explanation: "Le futur simple « irai » est correct mais sonne plus formel et distant pour une action dans cinq minutes." },
-        { text: "allais", explanation: "L'imparfait « allais » décrit une habitude passée ou une action passée répétée, non une action future." },
-        { text: "irais", explanation: "Le conditionnel « irais » exprime une hypothèse ou un souhait, non une action imminente certaine." },
-        { text: "suis allé", explanation: "Le passé composé « suis allé » indique une action déjà accomplie, non une action future." },
+        { text: "viens", explanation: "Le verbe « venir » est possible mais « arriver » est plus direct pour exprimer l'arrivée imminente." },
+        { text: "viendrai", explanation: "Le futur simple « viendrai » est correct mais sonne plus formel et distant pour une action dans cinq minutes." },
+        { text: "venais", explanation: "L'imparfait « venais » décrit une habitude passée ou une action passée répétée, non une action future." },
+        { text: "viendrais", explanation: "Le conditionnel « viendrais » exprime une hypothèse ou une politesse, non une action imminente certaine." },
+        { text: "pars", explanation: "Le verbe « partir » exprime le départ, non l'arrivée à la réunion." },
         { text: "allez", explanation: "La deuxième personne du pluriel « allez » ne s'accorde pas avec le sujet « je »." },
       ],
     },
@@ -5580,7 +5582,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-17",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je _____ ici depuis cinq ans. »",
+      prompt: "Complétez : « J'_____ ici depuis cinq ans. »",
       choices: [
         { text: "habite", correct: true, explanation: "Avec « depuis » pour une action qui continue au présent, on utilise le présent de l'indicatif, pas le passé composé." },
         { text: "ai habité", correct: false, explanation: "Le passé composé est incorrect avec « depuis » pour une durée qui continue. C'est une erreur très commune chez les apprenants." },
@@ -5899,7 +5901,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-17",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je _____ cette langue depuis dix ans et je la parle couramment. »",
+      prompt: "Complétez : « J'_____ cette langue depuis dix ans et je la parle couramment. »",
       choices: [
         { text: "parle", correct: true, explanation: "Avec « depuis », on utilise le présent pour montrer que l'action continue depuis le passé jusqu'à maintenant." },
         { text: "parlerai", correct: false, explanation: "Le futur simple ne peut pas s'employer avec « depuis » pour une action qui dure depuis le passé jusqu'à présent." },
@@ -5954,7 +5956,7 @@ const section: Section = {
       prompt: "Complétez : « Je rentre chez moi et je ____. La porte est grande ouverte. »",
       choices: [
         { text: "trouve", correct: true, explanation: "Le présent de narration « trouve » donne au récit oral l'impression que l'action se déroule maintenant." },
-        { text: "ai trouvé", correct: false, explanation: "Le passé composé est grammaticalement correct mais enlève l'immédiateté narrative du présent." },
+        { text: "découvre", correct: false, explanation: "Le verbe « découvrir » change le sens de la phrase, ce n'est pas un problème de temps." },
         { text: "trouvais", correct: false, explanation: "L'imparfait serait utilisé pour une description de fond, non pour l'action principale du récit." },
         { text: "trouverai", correct: false, explanation: "Le futur n'est pas approprié : il s'agit d'un événement passé raconté." },
       ],
@@ -6029,10 +6031,10 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-18",
       generatedBy: "haiku",
-      prompt: "Complétez : « Alors, je ____ la porte et je la voir... fantastique ! »",
+      prompt: "Complétez : « Alors, j'____ la porte et je la voir... fantastique ! »",
       choices: [
         { text: "ouvre", correct: true, explanation: "Le présent de narration « ouvre » rend le récit oral vivant et immédiat, comme si le lecteur était présent." },
-        { text: "ai ouvert", correct: false, explanation: "Le passé composé est correct mais moins dramatique que le présent de narration." },
+        { text: "ferme", correct: false, explanation: "Le verbe « fermer » est le contraire de l'action attendue dans ce contexte narratif." },
         { text: "ouvrais", correct: false, explanation: "L'imparfait serait utilisé pour une description ou arrière-plan, pas l'action principale." },
         { text: "ouvrirai", correct: false, explanation: "Le futur ne convient pas pour un événement déjà passé." },
       ],
@@ -6185,43 +6187,8 @@ const section: Section = {
       type: "input",
       ruleId: "01-18",
       generatedBy: "haiku",
-      prompt: "Conjuguez le verbe au présent de narration.",
-      phrase: { before: "En 1870, la France ", after: "_ la guerre contre la Prusse." },
-      answer: "perd",
-      explanation: "Le présent de narration « perd » rend l'événement historique vivant et immédiat, comme s'il se déroulait actuellement dans le récit.",
-      wrongAnswers: [
-        { text: "a perdu", explanation: "Le passé composé est grammaticalement correct mais ne crée pas l'effet dramatique du présent de narration littéraire." },
-        { text: "perdait", explanation: "L'imparfait décrirait un arrière-plan ou une action d'ambiance, non l'événement principal du récit." },
-        { text: "perdit", explanation: "Le passé simple est littéraire mais moins vivace pour l'usage du présent de narration moderne." },
-        { text: "perdra", explanation: "Le futur n'est pas approprié pour un événement historique passé." },
-        { text: "perdrait", explanation: "Le conditionnel supposerait une hypothèse, ce qui ne convient pas ici pour un événement passé certain." },
-      ],
-    },
-    {
-      id: "01-18-022",
-      type: "input",
-      ruleId: "01-18",
-      generatedBy: "haiku",
-      prompt: "Complétez la narration avec le présent de narration.",
-      phrase: { before: "Alors je ", after: "_ une voix étrange qui m'appelle par mon nom. Je me retourne rapidement." },
-      answer: "entends",
-      explanation: "Le présent de narration « entends » rend la scène dramatique et immédiate, comme si le lecteur vivait l'événement maintenant.",
-      wrongAnswers: [
-        { text: "ai entendu", explanation: "Le passé composé est correct mais enlève l'immédiateté du présent de narration dans le style oral." },
-        { text: "entendais", explanation: "L'imparfait décrirait une action d'arrière-plan ou une ambiance sonore persistante." },
-        { text: "entendu", explanation: "Le participe passé n'est pas une forme conjuguée appropriée pour remplir le blanc." },
-        { text: "entendrai", explanation: "Le futur n'est pas approprié pour un événement qui s'est déjà déroulé dans la narration." },
-        { text: "entendrais", explanation: "Le conditionnel supposerait une hypothèse, ce qui n'est pas le cas ici." },
-        { text: "entendrait", explanation: "Le conditionnel ne convient pas pour un événement passé certain." },
-      ],
-    },
-    {
-      id: "01-18-023",
-      type: "input",
-      ruleId: "01-18",
-      generatedBy: "haiku",
       prompt: "Écrivez la forme correcte au présent de narration.",
-      phrase: { before: "Le héros ", after: "_ le château et fait face à ses ennemis." },
+      phrase: { before: "L'incendie ", after: "_ le château et fait face à ses ennemis." },
       answer: "atteint",
       explanation: "Le présent de narration « atteint » crée un moment dramatique, rendant l'action vivante comme si elle se produisait maintenant.",
       wrongAnswers: [
@@ -6233,13 +6200,47 @@ const section: Section = {
       ],
     },
     {
+      id: "01-18-022",
+      type: "input",
+      ruleId: "01-18",
+      generatedBy: "haiku",
+      prompt: "Complétez la narration avec le présent de narration.",
+      phrase: { before: "Alors j'", after: "_ une voix étrange qui m'appelle par mon nom. Je me retourne rapidement." },
+      answer: "entends",
+      explanation: "Le présent de narration « entends » rend la scène dramatique et immédiate, comme si le lecteur vivait l'événement maintenant.",
+      wrongAnswers: [
+        { text: "écoute", explanation: "Le verbe « écouter » implique une action volontaire, pas une perception soudaine." },
+        { text: "entendais", explanation: "L'imparfait décrirait une action d'arrière-plan ou une ambiance sonore persistante." },
+        { text: "entendu", explanation: "Le participe passé n'est pas une forme conjuguée appropriée pour remplir le blanc." },
+        { text: "entendrai", explanation: "Le futur n'est pas approprié pour un événement qui s'est déjà déroulé dans la narration." },
+        { text: "entendrais", explanation: "Le conditionnel supposerait une hypothèse, ce qui n'est pas le cas ici." },
+      ],
+    },
+    {
+      id: "01-18-023",
+      type: "input",
+      ruleId: "01-18",
+      generatedBy: "haiku",
+      prompt: "Conjuguez le verbe au présent de narration.",
+      phrase: { before: "En 1870, la France ", after: "_ la guerre contre la Prusse." },
+      answer: "perd",
+      explanation: "Le présent de narration « perd » rend l'événement historique vivant et immédiat, comme s'il se déroulait actuellement dans le récit.",
+      wrongAnswers: [
+        { text: "perd pas", explanation: "L'ajout de « pas » change le sens de la phrase en la rendant négative." },
+        { text: "perdait", explanation: "L'imparfait décrirait un arrière-plan ou une action d'ambiance, non l'événement principal du récit." },
+        { text: "perdit", explanation: "Le passé simple est littéraire mais moins vivace pour l'usage du présent de narration moderne." },
+        { text: "perdra", explanation: "Le futur n'est pas approprié pour un événement historique passé." },
+        { text: "perdrait", explanation: "Le conditionnel supposerait une hypothèse, ce qui ne convient pas ici pour un événement passé certain." },
+      ],
+    },
+    {
       id: "01-18-024",
       type: "input",
       ruleId: "01-18",
       generatedBy: "haiku",
-      prompt: "Complétez au présent de narration.",
-      phrase: { before: "L'incendie ", after: "_ une maison historique. Les sapeurs-pompiers arrivent trop tard." },
-      answer: "ravage",
+      prompt: "Écrivez la forme correcte au présent de narration",
+      phrase: { before: "L'ouragan ", after: "_ la ville entière." },
+      answer: "détruit",
       explanation: "Le présent de narration « ravage » rend l'événement dramatique et immédiat dans un style journalistique.",
       wrongAnswers: [
         { text: "a ravagé", explanation: "Le passé composé est exact mais le présent de narration crée plus d'immédiateté et de dramatisme." },
@@ -6940,7 +6941,6 @@ const section: Section = {
         { text: "suffent", explanation: "« Suffent » n'existe pas en français. La forme plurielle est « suffisent »." },
         { text: "suffit à", explanation: "On dit « me suffire » (objet indirect direct), pas « suffire à »." },
         { text: "suffira", explanation: "C'est le futur simple, pas le présent." },
-        { text: "il suffit", explanation: "Ceci changerait le sujet à la construction impersonnelle. Ici, on a un sujet personnel." },
       ],
     },
     {
