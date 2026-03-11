@@ -4832,7 +4832,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « déjà » à la bonne place.",
       phrase: { before: "Tu as ", after: " fini tes devoirs ?" },
-      hint: "finir",
+      hint: "adverbe",
       answer: "déjà",
       explanation: "L'adverbe court « déjà » se place entre l'auxiliaire « as » et le participe passé « fini » pour former « Tu as déjà fini tes devoirs ? ».",
       wrongAnswers: [
@@ -4850,7 +4850,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « beaucoup » à la bonne place.",
       phrase: { before: "Elle a ", after: " aimé ce film." },
-      hint: "aimer",
+      hint: "adverbe",
       answer: "beaucoup",
       explanation: "L'adverbe court « beaucoup » se place entre l'auxiliaire « a » et le participe passé « aimé » pour former « Elle a beaucoup aimé ce film. ».",
       wrongAnswers: [
@@ -4886,7 +4886,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « mal » à la bonne place.",
       phrase: { before: "Nous avons ", after: " compris les instructions." },
-      hint: "comprendre",
+      hint: "adverbe",
       answer: "mal",
       explanation: "L'adverbe court « mal » se place entre l'auxiliaire « avons » et le participe passé « compris » pour former « Nous avons mal compris les instructions. ».",
       wrongAnswers: [

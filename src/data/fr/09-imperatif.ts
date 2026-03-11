@@ -3071,7 +3071,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez l'impératif à la forme négative avec le pronom placé correctement.",
       phrase: { before: "N'", after: " regarde pas, c'est trop violent." },
-      hint: "regarder",
+      hint: "article",
       answer: "le",
       explanation: "Impératif négatif : le pronom COD « le » se place avant le verbe. Structure : ne + le + regarde + pas.",
       wrongAnswers: [
@@ -3089,7 +3089,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez l'impératif négatif avec le pronom personnel correct.",
       phrase: { before: "N'", after: " parlez pas, laissez-le dormir." },
-      hint: "parler",
+      hint: "pronom",
       answer: "lui",
       explanation: "Impératif négatif avec COI (parler à quelqu'un). Structure : ne + lui + parlez + pas.",
       wrongAnswers: [
@@ -3107,7 +3107,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez la phrase à l'impératif négatif avec placement correct du pronom réfléchi.",
       phrase: { before: "Ne ", after: " lève pas si tu n'es pas d'accord." },
-      hint: "se lever",
+      hint: "pronom",
       answer: "te",
       explanation: "Impératif négatif réfléchi, 2e personne singulier. Le pronom « te » se place avant le verbe.",
       wrongAnswers: [
@@ -3125,7 +3125,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le pronom personnel correct à l'impératif négatif.",
       phrase: { before: "N'", after: " mangez pas ces fruits, ils ne sont pas mûrs." },
-      hint: "manger",
+      hint: "article",
       answer: "les",
       explanation: "Pronom COD pluriel à l'impératif négatif. « Ne les mangez pas » (vous adressant à plusieurs).",
       wrongAnswers: [
@@ -3143,7 +3143,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez la phrase à l'impératif négatif avec le pronom bien placé.",
       phrase: { before: "N'", after: " appelle pas si tu n'as pas besoin, il est occupé." },
-      hint: "appeler",
+      hint: "article",
       answer: "le",
       explanation: "Pronom COD singulier à l'impératif négatif. « Ne le appelle pas » (ne l'appelle pas).",
       wrongAnswers: [
@@ -6981,7 +6981,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent de l'impératif avec le pronom adéquat.",
       phrase: { before: "Regarde cette photo ! → Ne ", after: " regarde pas maintenant, attends ce soir. (Insérez le pronom COD approprié à la forme négative)" },
-      hint: "regarder",
+      hint: "article",
       answer: "la",
       explanation: "À l'impératif négatif, le pronom COD se place avant le verbe sans trait d'union ; « la » remplace « cette photo » : ne la regarde pas.",
       wrongAnswers: [

@@ -3487,7 +3487,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif du verbe « partir » après « afin que ».",
       phrase: { before: "Nous ouvrons la fenêtre afin que l'air frais ", after: "." },
-      hint: "entrer",
+      hint: "préposition",
       answer: "entre",
       explanation: "Après « afin que » avec le sujet « l'air » (troisième personne du singulier), on utilise le subjonctif : « entre ».",
       wrongAnswers: [
