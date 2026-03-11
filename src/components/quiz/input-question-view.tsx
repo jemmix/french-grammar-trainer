@@ -146,9 +146,7 @@ export function InputQuestionView({
             </span>
           </span>
           {question.hint && (
-            <span className="inline-flex items-center ml-2 px-2 py-0.5 rounded bg-tricolore-bleu/10 text-tricolore-bleu text-sm font-medium">
-              {question.hint}
-            </span>
+            <span className="text-ardoise/60 italic ml-1">({question.hint})</span>
           )}
           <span>{after}{t.phraseClose}</span>
         </p>
