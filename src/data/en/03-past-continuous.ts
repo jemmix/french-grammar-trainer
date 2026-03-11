@@ -3407,7 +3407,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete using \"while\" to show the ongoing background action.",
       phrase: { before: "", after: " she was cooking, the fire alarm went off." },
-      hint: "while",
+      hint: "conjunction",
       answer: "While",
       explanation: "\"While\" introduces the ongoing background action \"was cooking\" before the interruption.",
       wrongAnswers: [
@@ -3441,7 +3441,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete using \"while\" to show the ongoing background action.",
       phrase: { before: "I sprained my ankle ", after: " I was playing tennis." },
-      hint: "while",
+      hint: "conjunction",
       answer: "while",
       explanation: "\"While\" introduces the ongoing background action \"was playing\" during which \"sprained\" happened.",
       wrongAnswers: [
@@ -3475,7 +3475,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete using \"while\" to show the ongoing background action.",
       phrase: { before: "He dropped his keys ", after: " he was getting out of the car." },
-      hint: "while",
+      hint: "conjunction",
       answer: "while",
       explanation: "\"While\" introduces the ongoing background action \"was getting out\" during which \"dropped\" happened.",
       wrongAnswers: [
@@ -3769,7 +3769,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous to show a temporary situation.",
       phrase: { before: "She ", after: " part-time while finishing her degree." },
-      hint: "working",
+      hint: "work",
       answer: "was working",
       explanation: "Past continuous \"was working\" emphasizes the temporary part-time arrangement.",
       wrongAnswers: [
@@ -4097,7 +4097,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous and \"always\" to show annoyance.",
       phrase: { before: "He ", after: " his homework at the last minute." },
-      hint: "always",
+      hint: "do",
       answer: "was always doing",
       explanation: "Past continuous with \"always\" expresses irritation about the repeated behavior.",
       wrongAnswers: [
@@ -4114,7 +4114,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous and \"forever\" to show emphasis.",
       phrase: { before: "She ", after: " about her travels." },
-      hint: "forever",
+      hint: "talk",
       answer: "was forever talking",
       explanation: "Past continuous with \"forever\" emphasizes repeated talking.",
       wrongAnswers: [
@@ -4131,7 +4131,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous and \"always\" to show annoyance.",
       phrase: { before: "They ", after: " their appointments." },
-      hint: "always",
+      hint: "miss",
       answer: "were always missing",
       explanation: "Past continuous with \"always\" expresses irritation about repeated missed appointments.",
       wrongAnswers: [
@@ -4148,7 +4148,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous and \"constantly\" to show annoyance.",
       phrase: { before: "My brother ", after: " my things without asking." },
-      hint: "constantly",
+      hint: "borrow",
       answer: "was constantly borrowing",
       explanation: "Past continuous with \"constantly\" expresses irritation about repeated borrowing.",
       wrongAnswers: [
@@ -4165,7 +4165,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous and \"always\" to show annoyance.",
       phrase: { before: "The cat ", after: " on the kitchen counter." },
-      hint: "always",
+      hint: "jump",
       answer: "was always jumping",
       explanation: "Past continuous with \"always\" expresses irritation about repeated jumping.",
       wrongAnswers: [
@@ -4442,7 +4442,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the reported speech using past continuous: Direct: \"I am cooking dinner.\" → Reported: \"She said she ___ dinner.\"",
       phrase: { before: "She said she ", after: " dinner." },
-      hint: "cooking",
+      hint: "cook",
       answer: "was cooking",
       explanation: "Present continuous \"am cooking\" becomes past continuous \"was cooking\" in reported speech.",
       wrongAnswers: [
@@ -4459,7 +4459,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the reported speech using past continuous: Direct: \"They are watching a movie.\" → Reported: \"He said they ___ a movie.\"",
       phrase: { before: "He said they ", after: " a movie." },
-      hint: "watching",
+      hint: "watch",
       answer: "were watching",
       explanation: "Present continuous \"are watching\" becomes past continuous \"were watching\" in reported speech.",
       wrongAnswers: [
@@ -4476,7 +4476,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the sentence in reported speech: \"She told me she ___ for the train when it started to snow.\"",
       phrase: { before: "She told me she ", after: " for the train when it started to snow." },
-      hint: "waiting",
+      hint: "wait",
       answer: "was waiting",
       explanation: "Past continuous \"was waiting\" describes an action in progress at a specific past time in reported speech.",
       wrongAnswers: [
@@ -4510,7 +4510,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete the reported speech using past continuous: Direct: \"We are watering the garden.\" → Reported: \"They explained that they ___ the garden when the storm hit.\"",
       phrase: { before: "They explained that they ", after: " the garden when the storm hit." },
-      hint: "watering",
+      hint: "water",
       answer: "were watering",
       explanation: "With \"they,\" past continuous uses \"were\" + verb-ing. \"Were watering\" describes an action interrupted by another event.",
       wrongAnswers: [
@@ -6168,7 +6168,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous for parallel action.",
       phrase: { before: "While she was studying for the exam, she ", after: " to classical music." },
-      hint: "listening",
+      hint: "listen",
       answer: "was listening",
       explanation: "Past continuous \"was listening\" shows the second simultaneous ongoing action.",
       wrongAnswers: [
@@ -6219,7 +6219,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous for parallel action.",
       phrase: { before: "While the students were writing essays, the teacher ", after: " diagrams on the board." },
-      hint: "drawing",
+      hint: "draw",
       answer: "was drawing",
       explanation: "Past continuous \"was drawing\" shows the teacher's simultaneous ongoing action.",
       wrongAnswers: [
@@ -6236,7 +6236,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Complete with past continuous for parallel action.",
       phrase: { before: "While they were watching TV, they ", after: " popcorn." },
-      hint: "eating",
+      hint: "eat",
       answer: "were eating",
       explanation: "Past continuous \"were eating\" shows the second simultaneous ongoing action.",
       wrongAnswers: [
@@ -6909,7 +6909,7 @@ const section: Section = {
       generatedBy: "opencode",
       prompt: "Choose the correct tense (past simple or past continuous) and complete the sentence.",
       phrase: { before: "He ", after: " his wallet while he was jogging in the park." },
-      hint: "lost",
+      hint: "lose",
       answer: "lost",
       explanation: "Past simple for the momentary event (losing) that occurred during an ongoing action (jogging).",
       wrongAnswers: [

@@ -6697,7 +6697,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez avec la bonne négation au futur simple : « personne » doit venir APRÈS le verbe.",
       phrase: { before: "Je ne rencontrerai ", after: " au café." },
-      hint: "rencontrer",
+      hint: "pronom indéfini",
       answer: "personne",
       explanation: "Au futur simple avec « personne », la structure est « ne » + verbe au futur + « personne ». Le mot « personne » (négatif) vient après le verbe conjugué.",
       wrongAnswers: [

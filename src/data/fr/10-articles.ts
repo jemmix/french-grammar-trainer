@@ -1082,7 +1082,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "", after: " soleil se couche à l'ouest." },
-      hint: "se coucher",
+      hint: "...",
       answer: "Le",
       explanation: "« Soleil » est masculin singulier et commence par une consonne → article défini « le ». Le soleil est unique et connu de tous.",
       wrongAnswers: [
@@ -1099,7 +1099,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "", after: " lune éclaire la nuit." },
-      hint: "éclairer",
+      hint: "...",
       answer: "La",
       explanation: "« Lune » est féminin singulier et commence par une consonne → « la lune ». La lune est unique.",
       wrongAnswers: [
@@ -1116,7 +1116,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "", after: " été, nous allons à la plage." },
-      hint: "aller",
+      hint: "...",
       answer: "L'",
       explanation: "« Été » est masculin et commence par une voyelle → élision : « l'été ». Ici, valeur générale (chaque été).",
       wrongAnswers: [
@@ -1133,7 +1133,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "", after: " enfants sont à l'école." },
-      hint: "être",
+      hint: "...",
       answer: "Les",
       explanation: "« Enfants » est pluriel → article défini pluriel « les ». On parle d'enfants identifiés.",
       wrongAnswers: [
@@ -1150,7 +1150,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "J'aime ", after: " cinéma français." },
-      hint: "aimer",
+      hint: "...",
       answer: "le",
       explanation: "Verbe de goût (aimer) + nom masculin singulier → article défini « le ». On parle du cinéma français en général.",
       wrongAnswers: [
@@ -1167,7 +1167,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "", after: " hôtel est complet ce soir." },
-      hint: "être",
+      hint: "...",
       answer: "L'",
       explanation: "« Hôtel » commence par un « h » muet → élision obligatoire : « l'hôtel ».",
       wrongAnswers: [
@@ -1184,7 +1184,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "", after: " hamster de Julie s'est échappé." },
-      hint: "s'échapper",
+      hint: "...",
       answer: "Le",
       explanation: "« Hamster » a un « h » aspiré → pas d'élision : « le hamster ». « De Julie » identifie un hamster précis.",
       wrongAnswers: [
@@ -1201,7 +1201,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "", after: " mer est calme ce matin." },
-      hint: "être",
+      hint: "...",
       answer: "La",
       explanation: "« Mer » est féminin singulier, commence par une consonne → « la mer ». On parle de la mer que l'on voit.",
       wrongAnswers: [
@@ -1218,7 +1218,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "Nous adorons ", after: " montagne." },
-      hint: "adorer",
+      hint: "...",
       answer: "la",
       explanation: "Verbe de goût (adorer) + nom féminin singulier → article défini « la montagne » (en général).",
       wrongAnswers: [
@@ -1235,7 +1235,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "", after: " univers est infini." },
-      hint: "être",
+      hint: "...",
       answer: "L'",
       explanation: "« Univers » est masculin et commence par une voyelle → élision : « l'univers ». Valeur générale (l'univers est unique).",
       wrongAnswers: [
@@ -1252,7 +1252,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "Il préfère ", after: " thé vert." },
-      hint: "préférer",
+      hint: "...",
       answer: "le",
       explanation: "Verbe de goût (préférer) + nom masculin singulier → article défini « le thé vert » (en général).",
       wrongAnswers: [
@@ -1269,7 +1269,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "", after: " fleurs du jardin sont magnifiques." },
-      hint: "être",
+      hint: "...",
       answer: "Les",
       explanation: "« Du jardin » identifie des fleurs spécifiques → article défini pluriel « les fleurs ».",
       wrongAnswers: [
@@ -1286,7 +1286,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "Elle se maquille ", after: " yeux chaque matin." },
-      hint: "se maquiller",
+      hint: "...",
       answer: "les",
       explanation: "Verbe pronominal + partie du corps → article défini pluriel : « se maquiller les yeux ».",
       wrongAnswers: [
@@ -1303,7 +1303,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "", after: " Canada est un pays bilingue." },
-      hint: "être",
+      hint: "...",
       answer: "Le",
       explanation: "Les noms de pays masculins singuliers prennent « le » : « le Canada ».",
       wrongAnswers: [
@@ -1320,7 +1320,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "", after: " Allemagne a gagné le match." },
-      hint: "gagner",
+      hint: "...",
       answer: "L'",
       explanation: "« Allemagne » est féminin et commence par une voyelle → élision : « l'Allemagne ».",
       wrongAnswers: [
@@ -1337,7 +1337,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "", after: " vendredi, je finis plus tôt." },
-      hint: "finir",
+      hint: "...",
       answer: "Le",
       explanation: "L'article défini + jour de la semaine exprime une habitude : « le vendredi » = chaque vendredi.",
       wrongAnswers: [
@@ -1354,7 +1354,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "", after: " hérisson est un animal protégé." },
-      hint: "être",
+      hint: "...",
       answer: "Le",
       explanation: "« Hérisson » a un « h » aspiré → pas d'élision : « le hérisson ». Valeur générale (l'espèce).",
       wrongAnswers: [
@@ -1371,7 +1371,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "", after: " océan Atlantique sépare l'Europe de l'Amérique." },
-      hint: "séparer",
+      hint: "...",
       answer: "L'",
       explanation: "« Océan » est masculin et commence par une voyelle → élision : « l'océan ». Nom propre géographique → article défini.",
       wrongAnswers: [
@@ -1388,7 +1388,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "Il a mal à ", after: " gorge depuis hier." },
-      hint: "avoir",
+      hint: "...",
       answer: "la",
       explanation: "Avec « avoir mal à » + partie du corps → article défini : « la gorge » (féminin).",
       wrongAnswers: [
@@ -1405,7 +1405,7 @@ const section: Section = {
       generatedBy: "opus",
       prompt: "Complétez avec l'article défini qui convient",
       phrase: { before: "", after: " Portugal est un beau pays." },
-      hint: "être",
+      hint: "...",
       answer: "Le",
       explanation: "« Portugal » est masculin singulier → « le Portugal ». Les noms de pays masculins prennent « le ».",
       wrongAnswers: [
@@ -1435,7 +1435,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article indéfini approprié (un, une ou des).",
       phrase: { before: "Mon frère veut être ", after: " avocat." },
-      hint: "être",
+      hint: "article",
       answer: "un",
       explanation: "\"Avocat\" est un nom masculin singulier pour une profession. L'article indéfini masculin \"un\" est correct pour introduire une profession non spécifiée.",
       wrongAnswers: [
@@ -1453,7 +1453,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article indéfini approprié (un, une ou des).",
       phrase: { before: "Nous avons acheté ", after: " chaises pour la salle à manger." },
-      hint: "acheter",
+      hint: "article",
       answer: "des",
       explanation: "\"Chaises\" est pluriel féminin, donc l'article indéfini pluriel \"des\" est correct. On parle de plusieurs objets non spécifiés qu'on a achetés.",
       wrongAnswers: [
@@ -1471,7 +1471,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article indéfini approprié (un, une ou des).",
       phrase: { before: "Vous avez ", after: " chambre spacieuse avec balcon." },
-      hint: "avoir",
+      hint: "article",
       answer: "une",
       explanation: "\"Chambre\" est un nom féminin singulier. L'article indéfini féminin \"une\" est correct pour parler d'une pièce non spécifiée.",
       wrongAnswers: [
@@ -1489,7 +1489,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article indéfini approprié (un, une ou des).",
       phrase: { before: "Elle cherche ", after: " emploi dans une grande entreprise." },
-      hint: "chercher",
+      hint: "article",
       answer: "un",
       explanation: "\"Emploi\" est un nom masculin singulier. L'article indéfini masculin \"un\" est correct pour parler d'un travail non spécifié qu'elle cherche.",
       wrongAnswers: [
@@ -1507,7 +1507,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article indéfini approprié (un, une ou des).",
       phrase: { before: "Ils ont visité ", after: " musées intéressants pendant leurs vacances." },
-      hint: "visiter",
+      hint: "article",
       answer: "des",
       explanation: "\"Musées\" est pluriel masculin, donc l'article indéfini pluriel \"des\" est correct. On parle de plusieurs établissements non spécifiés qu'ils ont visités.",
       wrongAnswers: [
@@ -1992,7 +1992,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Choisissez l'article partitif correct",
       phrase: { before: "Je prends ", after: " eau quand j'ai soif." },
-      hint: "prendre",
+      hint: "article",
       answer: "de l'",
       explanation: "« de l' » est l'article partitif devant la voyelle « eau ». On désigne une quantité indéterminée d'eau.",
       wrongAnswers: [
@@ -2009,7 +2009,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec la forme négative du partitif",
       phrase: { before: "Nous n'avons pas ", after: " sucre à la maison." },
-      hint: "avoir",
+      hint: "article",
       answer: "de",
       explanation: "Après une négation (« pas »), le partitif devient « de » simple. « Pas de sucre » exprime l'absence de sucre.",
       wrongAnswers: [
@@ -2026,7 +2026,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Conjuguez au passé composé avec l'article partitif correct",
       phrase: { before: "Ils ont mangé ", after: " fromage délicieux." },
-      hint: "manger",
+      hint: "article",
       answer: "du",
       explanation: "L'article partitif « du » est correct pour exprimer une quantité indéterminée de fromage. « Ont mangé » est le passé composé correct.",
       wrongAnswers: [
@@ -2043,7 +2043,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Choisissez l'article partitif approprié",
       phrase: { before: "Versez ", after: " lait dans le bol." },
-      hint: "verser",
+      hint: "article",
       answer: "du",
       explanation: "« du » est l'article partitif masculin singulier pour une quantité indéterminée de lait.",
       wrongAnswers: [
@@ -2356,7 +2356,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec l'article contracté correct.",
       phrase: { before: "Je vais ", after: " cinéma ce soir." },
-      hint: "aller",
+      hint: "article",
       answer: "au",
       explanation: "« au cinéma » = « à + le cinéma ». La contraction est obligatoire.",
       wrongAnswers: [
@@ -2373,7 +2373,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article contracté approprié.",
       phrase: { before: "La couverture ", after: " livre est blanche." },
-      hint: "être",
+      hint: "article",
       answer: "du",
       explanation: "« du livre » = « de + le livre ». La contraction est obligatoire.",
       wrongAnswers: [
@@ -2390,7 +2390,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec l'article contracté qui convient.",
       phrase: { before: "Les enfants jouent ", after: " jeux dans la cour." },
-      hint: "jouer",
+      hint: "article",
       answer: "aux",
       explanation: "« aux jeux » = « à + les jeux ». La contraction au pluriel est obligatoire.",
       wrongAnswers: [
@@ -2407,7 +2407,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez la phrase avec l'article contracté correct.",
       phrase: { before: "Les fenêtres ", after: " maisons sont fermées." },
-      hint: "être",
+      hint: "article",
       answer: "des",
       explanation: "« des maisons » = « de + les maisons ». La contraction au pluriel est obligatoire.",
       wrongAnswers: [
@@ -2424,7 +2424,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec l'article contracté approprié.",
       phrase: { before: "Ils pensent souvent ", after: " vacances de l'été." },
-      hint: "penser",
+      hint: "article",
       answer: "aux",
       explanation: "« aux vacances » = « à + les vacances ». Les vacances est pluriel, donc la contraction est « aux ».",
       wrongAnswers: [
@@ -2701,7 +2701,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article partitif ou contracté qui convient.",
       phrase: { before: "Pour son anniversaire, elle a mangé ", after: " gâteau au chocolat." },
-      hint: "manger",
+      hint: "article",
       answer: "du",
       explanation: "« Du » est ici un article partitif (de + le) : il désigne une quantité indéfinie d'une substance indénombrable. « Manger du gâteau » exprime le fait de consommer une portion de gâteau sans préciser la quantité.",
       wrongAnswers: [
@@ -2719,7 +2719,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article contracté qui convient.",
       phrase: { before: "Après l'entraînement, je reviens ", after: " gymnase." },
-      hint: "revenir",
+      hint: "article",
       answer: "du",
       explanation: "« Du » est ici un article contracté (de + le) : « revenir de » est un verbe de mouvement suivi de la préposition « de » pour indiquer l'origine, et « gymnase » est masculin, donc de + le = du.",
       wrongAnswers: [
@@ -2737,7 +2737,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article partitif qui convient.",
       phrase: { before: "Le matin, nous buvons ", after: " jus d'orange." },
-      hint: "boire",
+      hint: "article",
       answer: "du",
       explanation: "« Du » est ici un article partitif (de + le) : le jus d'orange est un liquide indénombrable. « Boire du jus d'orange » exprime la consommation d'une quantité indéfinie de jus.",
       wrongAnswers: [
@@ -2754,7 +2754,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article contracté qui convient.",
       phrase: { before: "Ils rentrent ", after: " supermarché avec beaucoup de courses." },
-      hint: "rentrer",
+      hint: "article",
       answer: "du",
       explanation: "« Du » est ici un article contracté (de + le) : « rentrer de » est un verbe de mouvement suivi de la préposition « de » pour indiquer l'origine, et « supermarché » est masculin, donc de + le = du.",
       wrongAnswers: [
@@ -2772,7 +2772,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article partitif qui convient.",
       phrase: { before: "Ce soir, nous avons ", after: " temps libre pour nous reposer." },
-      hint: "avoir",
+      hint: "article",
       answer: "du",
       explanation: "« Du » est ici un article partitif (de + le) : le temps est une notion abstraite et indénombrable. « Avoir du temps libre » exprime la possession d'une certaine quantité de temps disponible, sans la préciser.",
       wrongAnswers: [
@@ -3049,7 +3049,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec « des » (article indéfini) ou identifiez le verbe approprié",
       phrase: { before: "Elle vend ", after: " antiquités à ses clients réguliers." },
-      hint: "vendre",
+      hint: "article",
       answer: "des",
       explanation: "« Des antiquités » est l'objet direct du verbe « vendre ». C'est l'article indéfini pluriel.",
       wrongAnswers: [
@@ -3067,7 +3067,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Choisissez entre article indéfini et contraction",
       phrase: { before: "Ils doutent ", after: " promesses qu'on leur a faites." },
-      hint: "douter",
+      hint: "article",
       answer: "des",
       explanation: "Après « douter de », c'est la contraction « des ». Ils doutent à propos des promesses.",
       wrongAnswers: [
@@ -3085,7 +3085,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article approprié",
       phrase: { before: "Mon ami se dépêche parce qu'il a besoin ", after: " dossiers pour la réunion." },
-      hint: "avoir",
+      hint: "article",
       answer: "des",
       explanation: "Après « avoir besoin de », c'est la contraction « des ». Il a besoin à propos des dossiers.",
       wrongAnswers: [
@@ -3103,7 +3103,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec l'article indéfini pluriel",
       phrase: { before: "Pendant les soldes, nous achetons ", after: " vêtements neufs pour l'hiver." },
-      hint: "acheter",
+      hint: "article",
       answer: "des",
       explanation: "« Des vêtements » est l'objet direct du verbe « acheter ». C'est l'article indéfini pluriel.",
       wrongAnswers: [
@@ -3121,7 +3121,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Choisissez entre article indéfini et contraction de préposition",
       phrase: { before: "Les scientifiques s'inquiètent ", after: " changements climatiques mondiaux." },
-      hint: "s'inquiéter",
+      hint: "article",
       answer: "des",
       explanation: "Après « s'inquiéter de », c'est la contraction « des ». Ils s'inquiètent à propos des changements.",
       wrongAnswers: [
@@ -3386,7 +3386,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez en utilisant l'article partitif négatif",
       phrase: { before: "Je n'ai pas ", after: " argent pour acheter ce livre." },
-      hint: "avoir",
+      hint: "article",
       answer: "d'",
       explanation: "Devant le mot commençant par voyelle (argent), le partitif négatif est d'.",
       wrongAnswers: [
@@ -3403,7 +3403,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez en utilisant l'article partitif négatif",
       phrase: { before: "Elle ne veut pas ", after: " sucre dans son café." },
-      hint: "vouloir",
+      hint: "article",
       answer: "de",
       explanation: "Devant une consonne (sucre), le partitif négatif est de.",
       wrongAnswers: [
@@ -3420,7 +3420,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez en utilisant l'article partitif négatif",
       phrase: { before: "Vous ne mangez pas ", after: " épinards à midi ?" },
-      hint: "manger",
+      hint: "article",
       answer: "d'",
       explanation: "Devant une voyelle (épinards), le partitif négatif est d'.",
       wrongAnswers: [
@@ -3437,7 +3437,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez en utilisant l'article partitif négatif",
       phrase: { before: "Ils ne boivent pas ", after: " lait à cause de l'intolérance." },
-      hint: "boire",
+      hint: "article",
       answer: "de",
       explanation: "Devant une consonne (lait), le partitif négatif est de.",
       wrongAnswers: [
@@ -3454,7 +3454,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez en utilisant l'article partitif négatif",
       phrase: { before: "Tu n'aimes pas ", after: " oignons dans ta salade ?" },
-      hint: "aimer",
+      hint: "article",
       answer: "d'",
       explanation: "Devant une voyelle (oignons), le partitif négatif est d'.",
       wrongAnswers: [
@@ -3731,7 +3731,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Transformez au négatif : « Je veux un café. » → « Je n'ai pas ___ café. »",
       phrase: { before: "Je n'ai pas ", after: " café." },
-      hint: "avoir",
+      hint: "article",
       answer: "de",
       explanation: "L'article indéfini « un » devient « de » à la forme négative (pas d'élision avant une consonne).",
       wrongAnswers: [
@@ -3748,7 +3748,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Transformez au négatif : « Elle a une idée. » → « Elle n'a pas ___ idée. »",
       phrase: { before: "Elle n'a pas ", after: " idée." },
-      hint: "avoir",
+      hint: "article",
       answer: "d'",
       explanation: "L'article indéfini « une » devient « d' » à la forme négative devant une voyelle.",
       wrongAnswers: [
@@ -3766,7 +3766,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Transformez au négatif : « Nous avons des amis. » → « Nous n'avons pas ___ amis. »",
       phrase: { before: "Nous n'avons pas ", after: " amis." },
-      hint: "avoir",
+      hint: "article",
       answer: "d'",
       explanation: "L'article indéfini « des » devient « d' » à la forme négative devant une voyelle.",
       wrongAnswers: [
@@ -3784,7 +3784,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez : « Il ne boit jamais ___ vin le matin. »",
       phrase: { before: "Il ne boit jamais ", after: " vin le matin." },
-      hint: "boire",
+      hint: "article",
       answer: "de",
       explanation: "L'article indéfini « un » devient « de » à la forme négative (pas d'élision avant une consonne).",
       wrongAnswers: [
@@ -3801,7 +3801,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez : « Tu n'as pas ___ animal à la maison. »",
       phrase: { before: "Tu n'as pas ", after: " animal à la maison." },
-      hint: "avoir",
+      hint: "article",
       answer: "d'",
       explanation: "L'article indéfini « un » devient « d' » à la forme négative devant une voyelle.",
       wrongAnswers: [
@@ -4092,7 +4092,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article approprié devant l'adjectif antéposé.",
       phrase: { before: "Elle a trouvé ", after: " petites clés cachées dans le tiroir." },
-      hint: "trouver",
+      hint: "article",
       answer: "de",
       explanation: "Devant l'adjectif antéposé \"petites\" au pluriel, on utilise \"de\" et non \"des\".",
       wrongAnswers: [
@@ -4110,7 +4110,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec la forme correcte devant l'adjectif antéposé.",
       phrase: { before: "Le pâtissier vend ", after: " délicieux gâteaux tous les jours." },
-      hint: "vendre",
+      hint: "article",
       answer: "de",
       explanation: "Avant l'adjectif antéposé \"délicieux\" au pluriel, \"des\" devient \"de\".",
       wrongAnswers: [
@@ -4128,7 +4128,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Trouvez la forme correcte de l'article devant l'adjectif antéposé.",
       phrase: { before: "Nous avons découvert ", after: " magnifiques ruines antiques." },
-      hint: "découvrir",
+      hint: "article",
       answer: "de",
       explanation: "Devant l'adjectif antéposé \"magnifiques\" au pluriel, \"des\" devient \"de\".",
       wrongAnswers: [
@@ -4146,7 +4146,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Sélectionnez le bon article devant l'adjectif antéposé au pluriel.",
       phrase: { before: "L'école a embauché ", after: " jeunes professeurs enthousiastes." },
-      hint: "embaucher",
+      hint: "article",
       answer: "de",
       explanation: "Avant l'adjectif antéposé \"jeunes\" au pluriel, \"des\" devient \"de\".",
       wrongAnswers: [
@@ -4164,7 +4164,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le bon article devant l'adjectif antéposé pluriel.",
       phrase: { before: "Nous avons reçu ", after: " intéressantes propositions du comité." },
-      hint: "recevoir",
+      hint: "article",
       answer: "de",
       explanation: "Devant l'adjectif antéposé \"intéressantes\" au pluriel, \"des\" devient \"de\".",
       wrongAnswers: [
@@ -4442,7 +4442,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'expression correcte « beaucoup de / des / du ».",
       phrase: { before: "Il y a ", after: " livres à la bibliothèque municipale." },
-      hint: "avoir",
+      hint: "article",
       answer: "beaucoup de",
       explanation: "Après « beaucoup », on n'ajoute jamais d'article. La forme correcte est « beaucoup de livres ».",
       wrongAnswers: [
@@ -4461,7 +4461,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'expression correcte « peu de / des / du ».",
       phrase: { before: "", after: " habitants vivent dans ce petit village." },
-      hint: "vivre",
+      hint: "article",
       answer: "peu de",
       explanation: "Après « peu », l'article s'omet. La forme correcte est « peu de habitants ».",
       wrongAnswers: [
@@ -4480,7 +4480,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'expression correcte « trop de / du / des ».",
       phrase: { before: "", after: " travail et pas assez de repos, c'est mauvais." },
-      hint: "être",
+      hint: "article",
       answer: "trop de",
       explanation: "Après « trop », on n'ajoute jamais d'article. La forme correcte est « trop de travail ».",
       wrongAnswers: [
@@ -4499,7 +4499,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'expression correcte « assez de / du / des ».",
       phrase: { before: "Nous avons ", after: " argent pour les vacances cette année." },
-      hint: "avoir",
+      hint: "article",
       answer: "assez de",
       explanation: "Après « assez », l'article s'omet. La forme correcte est « assez de argent » (liaison possible).",
       wrongAnswers: [
@@ -4518,7 +4518,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'expression de quantité appropriée (beaucoup de, peu de, trop de, assez de).",
       phrase: { before: "On a ", after: " raison d'être optimiste." },
-      hint: "avoir",
+      hint: "article",
       answer: "assez de",
       explanation: "Après une expression de quantité, l'article s'omet. Ici, « assez de raison » signifie « suffisamment de raison ». La construction est correcte sans article entre l'expression et le nom.",
       wrongAnswers: [
@@ -4762,7 +4762,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Choisissez l'article et la préposition corrects pour le pays.",
       phrase: { before: "Nous avons une réunion importante ", after: " Canada à la fin du mois." },
-      hint: "avoir",
+      hint: "article",
       answer: "au",
       explanation: "Canada est un pays masculin singulier. La contraction de « à + le = au » donne « au Canada ». Nous avons une réunion au Canada.",
       wrongAnswers: [
@@ -4780,7 +4780,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Utilisez l'article et la préposition corrects pour exprimer l'origine du lieu.",
       phrase: { before: "Les meilleurs chocolats viennent ", after: " Belgique." },
-      hint: "venir",
+      hint: "article",
       answer: "de",
       explanation: "Belgique est un pays féminin. Avec les verbes d'origine (« venir de »), on n'utilise pas de contraction avec les pays féminins. On dit simplement « de Belgique » (pas « de la Belgique »). Les meilleurs chocolats viennent de Belgique.",
       wrongAnswers: [
@@ -4798,7 +4798,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec l'article correct du pays.",
       phrase: { before: "L'histoire ", after: " Égypte ancienne fascine les archéologues du monde entier." },
-      hint: "fasciner",
+      hint: "article",
       answer: "de l'",
       explanation: "Égypte commence par une voyelle et est féminin. La contraction de « de + la = de l' » (par élision) donne « de l'Égypte ». Notez que « de l' » est la forme contractée pour les pays féminins qui commencent par une voyelle.",
       wrongAnswers: [
@@ -4868,7 +4868,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec la préposition et l'article contracté appropriés.",
       phrase: { before: "Mes cousins habitent ", after: " Pays-Bas depuis dix ans." },
-      hint: "habiter",
+      hint: "article",
       answer: "aux",
       explanation: "Pays-Bas est un pays pluriel. La contraction de « à + les = aux ». La phrase complète est « Mes cousins habitent aux Pays-Bas depuis dix ans ».",
       wrongAnswers: [
@@ -5107,7 +5107,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez par le nom d'une langue sans article, après le verbe « parler ».",
       phrase: { before: "Mon collègue parle ", after: " avec ses clients." },
-      hint: "parler",
+      hint: "nom",
       answer: "japonais",
       explanation: "Après le verbe « parler », on omet l'article. On dit « parler japonais ».",
       wrongAnswers: [
@@ -5125,7 +5125,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez par un nom de langue avec article, après le verbe « étudier ».",
       phrase: { before: "Elle étudie ", after: " depuis trois ans." },
-      hint: "étudier",
+      hint: "nom",
       answer: "le suédois",
       explanation: "Après le verbe « étudier », on conserve l'article défini. On dit « étudier le suédois ».",
       wrongAnswers: [
@@ -5143,7 +5143,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez par un nom de langue sans article, après la préposition « en ».",
       phrase: { before: "J'ai trouvé un bon article écrit en ", after: "." },
-      hint: "écrire",
+      hint: "nom",
       answer: "polonais",
       explanation: "Après la préposition « en » + langue, on omet l'article. On dit « en polonais ».",
       wrongAnswers: [
@@ -5161,7 +5161,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez : le verbe est « parler ». N'oubliez pas l'omission d'article.",
       phrase: { before: "Les touristes ne parlent pas ", after: ", mais ils se débrouillent." },
-      hint: "parler",
+      hint: "nom",
       answer: "français",
       explanation: "Après le verbe « parler », on omet l'article. On dit « ne parler pas français ».",
       wrongAnswers: [
@@ -5179,7 +5179,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec un article défini et un nom de langue (en position de sujet).",
       phrase: { before: "", after: " est parlé par environ 1.5 milliard de personnes." },
-      hint: "parler",
+      hint: "nom",
       answer: "Le mandarin",
       explanation: "Quand on parle d'une langue comme sujet, on utilise l'article défini « le ». On dit « Le mandarin est parlé... ».",
       wrongAnswers: [
@@ -5496,7 +5496,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article défini ou la contraction appropriée après une préposition",
       phrase: { before: "Elle s'est relevée en se tenant ", after: " bras de son ami." },
-      hint: "se tenir",
+      hint: "...",
       answer: "le",
       explanation: "Après la préposition « de » dans la phrase « se tenir de + article + partie du corps », on utilise l'article défini (le) plutôt qu'un adjectif possessif.",
       wrongAnswers: [
@@ -5513,7 +5513,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article défini approprié avant la partie du corps.",
       phrase: { before: "Avant de sortir, elle se lave ", after: " visage." },
-      hint: "se laver",
+      hint: "...",
       answer: "le",
       explanation: "Avec le verbe pronominal « se laver », on utilise l'article défini. « Visage » est masculin singulier, donc « le ». On ne dit pas « son visage » avec un verbe pronominal.",
       wrongAnswers: [
@@ -5530,7 +5530,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article défini approprié avant la partie du corps.",
       phrase: { before: "Demain, je me coifferai ", after: " cheveux avant la réunion." },
-      hint: "se coiffer",
+      hint: "...",
       answer: "les",
       explanation: "Avec le verbe pronominal « se coiffer », on utilise l'article défini. « Cheveux » est pluriel, donc « les ». On ne dit pas « mes cheveux » avec un verbe pronominal.",
       wrongAnswers: [
@@ -5547,7 +5547,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article défini approprié avant la partie du corps.",
       phrase: { before: "Les enfants se sont lavé ", after: " mains après avoir joué dehors." },
-      hint: "se laver",
+      hint: "...",
       answer: "les",
       explanation: "Avec le verbe pronominal « se laver », on utilise l'article défini. « Mains » est pluriel féminin, donc « les ». On ne dit pas « leurs mains » avec un verbe pronominal.",
       wrongAnswers: [
@@ -5565,7 +5565,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article défini approprié avant la partie du corps.",
       phrase: { before: "Chaque matin, il se brosse ", after: " dents." },
-      hint: "se brosser",
+      hint: "...",
       answer: "les",
       explanation: "Avec le verbe pronominal « se brosser », on utilise l'article défini. « Dents » est pluriel, donc « les ». On ne dit pas « ses dents » avec un verbe pronominal.",
       wrongAnswers: [
@@ -5817,7 +5817,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec l'article défini approprié pour exprimer une valeur générale.",
       phrase: { before: "", after: " générosité est une belle qualité." },
-      hint: "être",
+      hint: "...",
       answer: "La",
       explanation: "On utilise l'article défini « la » pour parler de la générosité comme concept ou valeur générale abstraite.",
       wrongAnswers: [
@@ -5835,7 +5835,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec l'article défini approprié pour exprimer une valeur générale.",
       phrase: { before: "", after: " roses rouges symbolisent l'amour." },
-      hint: "symboliser",
+      hint: "...",
       answer: "Les",
       explanation: "On utilise l'article défini « les » pour parler des roses rouges en tant que catégorie générale ou symbole.",
       wrongAnswers: [
@@ -5853,7 +5853,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec l'article défini approprié pour exprimer une valeur générale.",
       phrase: { before: "", after: " intelligence artificielle change notre monde." },
-      hint: "changer",
+      hint: "...",
       answer: "L'",
       explanation: "On utilise l'article défini « l' » pour parler de l'intelligence artificielle comme phénomène ou domaine général.",
       wrongAnswers: [
@@ -5871,7 +5871,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec l'article défini approprié pour exprimer une valeur générale.",
       phrase: { before: "", after: " chocolat noir est délicieux et bon pour la santé." },
-      hint: "être",
+      hint: "...",
       answer: "Le",
       explanation: "On utilise l'article défini « le » pour parler du chocolat noir comme catégorie générale, pas d'une barre spécifique.",
       wrongAnswers: [
@@ -5889,7 +5889,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec l'article défini approprié pour exprimer une valeur générale.",
       phrase: { before: "", after: " étudier est essentiel pour réussir." },
-      hint: "être",
+      hint: "...",
       answer: "L'",
       explanation: "On utilise l'article défini « l' » devant une voyelle pour parler d'étudier comme concept ou activité générale.",
       wrongAnswers: [
@@ -6193,7 +6193,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article indéfini approprié pour exprimer une catégorie générale.",
       phrase: { before: "", after: " scientifique base ses recherches sur des observations et des expériences rigoureux." },
-      hint: "baser",
+      hint: "article",
       answer: "Un",
       explanation: "L'article indéfini singulier « un » exprime la catégorie générale des scientifiques et leur méthodologie.",
       wrongAnswers: [
@@ -6211,7 +6211,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec l'article indéfini pour créer une affirmation catégorique.",
       phrase: { before: "", after: " enseignant contribue au développement intellectuel de ses élèves." },
-      hint: "contribuer",
+      hint: "article",
       answer: "Un",
       explanation: "L'article indéfini « un » marque ce qu'est ou ce que fait un enseignant dans sa catégorie professionnelle.",
       wrongAnswers: [
@@ -6229,7 +6229,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article indéfini pour exprimer une vérité générale sur une catégorie.",
       phrase: { before: "", after: " médecin se doit d'être compatissant envers ses patients." },
-      hint: "devoir",
+      hint: "article",
       answer: "Un",
       explanation: "L'article indéfini « un » exprime la catégorie générale des médecins et leurs obligations éthiques.",
       wrongAnswers: [
@@ -6247,7 +6247,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc pour créer une phrase exprimant une définition catégorique.",
       phrase: { before: "", after: " poète exprime ses émotions à travers des mots choisis avec soin." },
-      hint: "exprimer",
+      hint: "article",
       answer: "Un",
       explanation: "L'article indéfini « un » marque la catégorie générale des poètes et leur pratique artistique.",
       wrongAnswers: [
@@ -6265,7 +6265,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez pour exprimer une affirmation générale sur une profession ou une catégorie.",
       phrase: { before: "", after: " pharmacien doit connaître les propriétés et les interactions des médicaments." },
-      hint: "devoir",
+      hint: "article",
       answer: "Un",
       explanation: "L'article indéfini « un » exprime la catégorie générale des pharmaciens et leurs connaissances requises.",
       wrongAnswers: [
@@ -6543,7 +6543,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez en mettant la profession correcte après « être »",
       phrase: { before: "Je suis ", after: " depuis dix ans." },
-      hint: "développer",
+      hint: "nom",
       answer: "développeur",
       explanation: "Après « être » sans adjectif, la profession s'énonce directement sans article. « Je suis développeur » est la construction correcte.",
       wrongAnswers: [
@@ -6561,7 +6561,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec la profession correcte",
       phrase: { before: "Ma sœur est ", after: " très compétente." },
-      hint: "être",
+      hint: "nom",
       answer: "une infirmière",
       explanation: "Avec l'adjectif « très compétente » qui modifie la profession, l'article indéfini « une » est obligatoire. « Une infirmière » est correct.",
       wrongAnswers: [
@@ -6579,7 +6579,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec la profession appropriée",
       phrase: { before: "Ils sont ", after: " dans cette usine." },
-      hint: "être",
+      hint: "nom",
       answer: "mécaniciens",
       explanation: "Après « être » sans adjectif, la profession au pluriel s'énonce sans article. « Mécaniciens » convient parfaitement.",
       wrongAnswers: [
@@ -6597,7 +6597,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec la profession et l'article si nécessaire",
       phrase: { before: "Elle est ", after: " brillante." },
-      hint: "être",
+      hint: "nom",
       answer: "une avocate",
       explanation: "Avec l'adjectif « brillante » qui modifie la profession, l'article indéfini « une » est obligatoire avant le nom.",
       wrongAnswers: [
@@ -6615,7 +6615,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec la profession correcte au pluriel",
       phrase: { before: "Vous êtes ", after: " depuis longtemps ?" },
-      hint: "être",
+      hint: "nom",
       answer: "architectes",
       explanation: "Après « être » sans adjectif, la profession au pluriel s'énonce directement sans article. « Architectes » est la forme correcte.",
       wrongAnswers: [
@@ -6893,7 +6893,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez la phrase avec le bon article",
       phrase: { before: "C'est ", after: " comptable qui gère nos finances." },
-      hint: "être",
+      hint: "article",
       answer: "un",
       explanation: "Après « c'est », on doit utiliser l'article indéfini « un » avant la profession « comptable ».",
       wrongAnswers: [
@@ -6912,7 +6912,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez la phrase avec le bon article",
       phrase: { before: "C'est ", after: " infirmier très attentif envers les patients." },
-      hint: "être",
+      hint: "article",
       answer: "un",
       explanation: "On utilise l'article indéfini « un » après « c'est » avant la profession.",
       wrongAnswers: [
@@ -6931,7 +6931,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez la phrase avec le bon article",
       phrase: { before: "C'est ", after: " biologiste qui a découvert ce nouveau médicament." },
-      hint: "être",
+      hint: "article",
       answer: "un",
       explanation: "Après « c'est », on utilise l'article indéfini « un » avant la profession.",
       wrongAnswers: [
@@ -6950,7 +6950,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez la phrase avec le bon article",
       phrase: { before: "C'est ", after: " photographe talentueuse qui a pris ces magnifiques photos." },
-      hint: "être",
+      hint: "article",
       answer: "une",
       explanation: "Pour une profession féminin, on utilise l'article indéfini féminin « une » après « c'est ».",
       wrongAnswers: [
@@ -6969,7 +6969,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez la phrase avec le bon article",
       phrase: { before: "C'est ", after: " assistant social qui aide les familles dans le besoin." },
-      hint: "être",
+      hint: "article",
       answer: "un",
       explanation: "Après « c'est », on utilise l'article indéfini « un » avant la profession.",
       wrongAnswers: [
@@ -7599,7 +7599,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article défini approprié",
       phrase: { before: "", after: " richesse véritable réside dans les relations humaines, pas dans les possessions matérielles." },
-      hint: "être",
+      hint: "...",
       answer: "La",
       explanation: "La richesse est un nom abstrait féminin qui prend l'article défini « la ».",
       wrongAnswers: [
@@ -7616,7 +7616,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article défini",
       phrase: { before: "", after: " responsabilité nous oblige à penser aux conséquences de nos actions." },
-      hint: "être",
+      hint: "...",
       answer: "La",
       explanation: "La responsabilité est un abstrait féminin qui prend l'article défini « la ».",
       wrongAnswers: [
@@ -7633,7 +7633,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez l'article défini manquant.",
       phrase: { before: "", after: " intégrité morale est le fondement de la confiance entre les individus." },
-      hint: "être",
+      hint: "...",
       answer: "L'",
       explanation: "Les noms abstraits prennent l'article défini en français. « Intégrité » commence par une voyelle, donc l'élision est obligatoire : « l'intégrité ».",
       wrongAnswers: [
@@ -7650,7 +7650,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Sélectionnez l'article défini approprié.",
       phrase: { before: "", after: " générosité est la plus grande richesse qu'on puisse offrir à autrui." },
-      hint: "être",
+      hint: "...",
       answer: "La",
       explanation: "Les noms abstraits prennent l'article défini en français. « Générosité » est féminin, donc « la générosité ».",
       wrongAnswers: [
@@ -7667,7 +7667,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez l'article défini convenable.",
       phrase: { before: "La tolérance et la compréhension sont ", after: " clés pour vivre en harmonie avec les autres." },
-      hint: "être",
+      hint: "...",
       answer: "les",
       explanation: "« Clés » est pluriel. Les noms abstraits généraux prennent l'article défini, donc « les clés » au pluriel.",
       wrongAnswers: [
@@ -7931,7 +7931,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Écrivez l'article (défini, indéfini ou partitif) qui convient.",
       phrase: { before: "J'aime beaucoup ", after: " musique classique." },
-      hint: "aimer",
+      hint: "...",
       answer: "la",
       explanation: "On parle d'un genre de musique en général (généralisation). L'article défini « la » est utilisé pour les généralités : « J'aime la musique classique. »",
       wrongAnswers: [
@@ -7949,7 +7949,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec l'article approprié.",
       phrase: { before: "Pour ce plat, on a besoin ", after: " œufs." },
-      hint: "avoir",
+      hint: "article",
       answer: "d'oeufs et de",
       explanation: "Après « avoir besoin de », on utilise la préposition « de ». Devant une voyelle, « de » + « les » → « des », mais avant un nom indénombrable on dit « d'oeufs » (partitif de l'œuf) et « de beurre ». Attendez, la phrase a deux blancs. Instruction : il ne doit y avoir QU'UN SEUL blanc. Corrigeons.",
       wrongAnswers: [
@@ -7967,7 +7967,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Choisissez l'article qui convient pour compléter la phrase.",
       phrase: { before: "Nous avons vu ", after: " film extraordinaire hier soir." },
-      hint: "avoir",
+      hint: "article",
       answer: "un",
       explanation: "On présente un film nouveau, inconnu précédemment. L'article indéfini « un » est approprié pour introduire un élément non spécifié.",
       wrongAnswers: [
@@ -7985,7 +7985,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article (défini, indéfini ou partitif) qui convient.",
       phrase: { before: "Il n'y a plus ", after: " place disponible dans cette classe." },
-      hint: "avoir",
+      hint: "article",
       answer: "de",
       explanation: "Après une négation (« plus »), on utilise « de » au lieu de l'article : « Il n'y a plus de place. » C'est une construction particulière du français.",
       wrongAnswers: [
@@ -8016,7 +8016,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec l'article correct (défini, indéfini ou partitif).",
       phrase: { before: "Tu veux du jus d'orange ou ", after: " lait ?" },
-      hint: "voir",
+      hint: "article",
       answer: "du",
       explanation: "On offre un choix entre deux quantités indénombrables. L'article partitif « du » convient pour le lait : « Tu veux du jus ou du lait ? »",
       wrongAnswers: [

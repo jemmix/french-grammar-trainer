@@ -980,7 +980,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"looked\"? Type: t, d, or id",
       phrase: { before: "The -ed in \"looked\" is pronounced ", after: "." },
-      hint: "looked",
+      hint: "pronunciation",
       answer: "t",
       explanation: "\"Look\" ends in /k/, a voiceless consonant. After voiceless consonants, the -ed sounds like /t/: \"looked\" = /lʊkt/.",
       wrongAnswers: [
@@ -997,7 +997,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"needed\"? Type: t, d, or id",
       phrase: { before: "The -ed in \"needed\" is pronounced ", after: "." },
-      hint: "needed",
+      hint: "pronunciation",
       answer: "id",
       explanation: "\"Need\" ends in /d/. After /t/ or /d/, the -ed becomes a separate syllable /ɪd/: \"needed\" = /ˈniːdɪd/ (two syllables).",
       wrongAnswers: [
@@ -1014,7 +1014,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"rained\"? Type: t, d, or id",
       phrase: { before: "The -ed in \"rained\" is pronounced ", after: "." },
-      hint: "rained",
+      hint: "pronunciation",
       answer: "d",
       explanation: "\"Rain\" ends in /n/, a voiced consonant. After voiced sounds, the -ed is pronounced /d/: \"rained\" = /reɪnd/.",
       wrongAnswers: [
@@ -1031,7 +1031,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"watched\"? Type: t, d, or id",
       phrase: { before: "The -ed in \"watched\" is pronounced ", after: "." },
-      hint: "watched",
+      hint: "pronunciation",
       answer: "t",
       explanation: "\"Watch\" ends in /tʃ/ (the \"ch\" sound), a voiceless consonant cluster. After voiceless consonants, the -ed sounds like /t/: \"watched\" = /wɒtʃt/.",
       wrongAnswers: [
@@ -1048,7 +1048,7 @@ const section: Section = {
       generatedBy: "claude-sonnet-4-6",
       prompt: "How is the -ed ending pronounced in \"visited\"? Type: t, d, or id",
       phrase: { before: "The -ed in \"visited\" is pronounced ", after: "." },
-      hint: "visited",
+      hint: "pronunciation",
       answer: "id",
       explanation: "\"Visit\" ends in /t/. After /t/ or /d/, the -ed becomes a separate syllable /ɪd/: \"visited\" = /ˈvɪzɪtɪd/ (three syllables: vis-it-ed).",
       wrongAnswers: [

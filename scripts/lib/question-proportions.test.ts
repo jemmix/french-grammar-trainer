@@ -113,7 +113,7 @@ describe("TypeScript question proportions", () => {
     if (!fs.existsSync(langDir)) continue;
 
     const files = fs.readdirSync(langDir)
-      .filter(f => f.endsWith(".ts") && f !== "index.ts")
+      .filter(f => f.endsWith(".ts") && f !== "index.ts" && f !== "answer-hints.ts")
       .sort();
 
     describe(`src/data/${lang}`, () => {

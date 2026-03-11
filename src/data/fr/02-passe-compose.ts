@@ -302,7 +302,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez le passé composé du verbe « avoir » au présent avec le participe passé.",
       phrase: { before: "J'", after: " terminé mon travail avant six heures." },
-      hint: "terminer",
+      hint: "avoir",
       answer: "ai",
       explanation: "Le sujet « je » demande la première personne du singulier de l'auxiliaire avoir au présent : « ai ». La phrase complète : « Je ai terminé... » (contraction : « J'ai terminé... »).",
       wrongAnswers: [
@@ -320,7 +320,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez la forme correcte du passé composé avec l'auxiliaire avoir.",
       phrase: { before: "Nous ", after: " reçu une lettre importante hier." },
-      hint: "recevoir",
+      hint: "avoir",
       answer: "avons",
       explanation: "Le sujet « nous » demande la première personne du pluriel de l'auxiliaire avoir au présent : « avons ». Le passé composé = avoir + participe passé.",
       wrongAnswers: [
@@ -338,7 +338,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte du passé composé.",
       phrase: { before: "Elles ", after: " entendu les nouvelles à la radio." },
-      hint: "entendre",
+      hint: "avoir",
       answer: "ont",
       explanation: "Le sujet « elles » demande la troisième personne du pluriel de l'auxiliaire avoir au présent : « ont ». Le passé composé = avoir + participe passé.",
       wrongAnswers: [
@@ -356,7 +356,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez la forme correcte de l'auxiliaire avoir au présent pour compléter le passé composé.",
       phrase: { before: "Il ", after: " commandé deux cafés et un croissant." },
-      hint: "commander",
+      hint: "avoir",
       answer: "a",
       explanation: "Le sujet « il » demande la troisième personne du singulier de l'auxiliaire avoir au présent : « a ». Le passé composé = avoir + participe passé.",
       wrongAnswers: [
@@ -374,7 +374,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez le passé composé avec l'auxiliaire avoir au présent.",
       phrase: { before: "Vous ", after: " décidé d'aller au cinéma samedi prochain." },
-      hint: "décider",
+      hint: "avoir",
       answer: "avez",
       explanation: "Le sujet « vous » demande la deuxième personne du pluriel de l'auxiliaire avoir au présent : « avez ». Le passé composé = avoir + participe passé.",
       wrongAnswers: [
@@ -1013,7 +1013,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé.",
       phrase: { before: "J'", after: "__ arrivé à l'école à 8h." },
-      hint: "arriver",
+      hint: "être",
       answer: "suis",
       explanation: "« Arriver » est un verbe de mouvement intransitif, il se conjugue avec « être ». Pour « je », la forme correcte est « suis ».",
       wrongAnswers: [
@@ -1031,7 +1031,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé.",
       phrase: { before: "Elles ", after: "__ mangé une pizza." },
-      hint: "manger",
+      hint: "avoir",
       answer: "ont",
       explanation: "« Manger » est un verbe transitif (elles mangent quelque chose), il se conjugue avec « avoir ». Pour « elles », la forme correcte est « ont ».",
       wrongAnswers: [
@@ -1049,7 +1049,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé.",
       phrase: { before: "Tu ", after: "__ sorti sans dire au revoir." },
-      hint: "sortir",
+      hint: "être",
       answer: "es",
       explanation: "« Sortir » utilisé seul (sans complément d'objet direct) est un verbe intransitif de mouvement, il se conjugue avec « être ». Pour « tu », la forme correcte est « es ».",
       wrongAnswers: [
@@ -1067,7 +1067,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé.",
       phrase: { before: "Il ", after: "__ descendu les valises à la cave." },
-      hint: "descendre",
+      hint: "avoir",
       answer: "a",
       explanation: "« Descendre » avec un complément d'objet direct (les valises) est un verbe transitif, il se conjugue avec « avoir ». Pour « il », la forme correcte est « a ».",
       wrongAnswers: [
@@ -1085,7 +1085,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé.",
       phrase: { before: "Nous ", after: "__ nous couché tard hier." },
-      hint: "se coucher",
+      hint: "être",
       answer: "sommes",
       explanation: "« Se coucher » est un verbe pronominal, il se conjugue avec « être ». Pour « nous », la forme correcte est « sommes ».",
       wrongAnswers: [
@@ -4526,7 +4526,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase au passé composé avec la bonne forme négative.",
       phrase: { before: "J'", after: " pas allé à l'école hier." },
-      hint: "aller",
+      hint: "avoir",
       answer: "n'ai",
       explanation: "Au passé composé, ne/n' va avant l'auxiliaire avoir. Structure : ne + avoir + pas + participe.",
       wrongAnswers: [
@@ -4544,7 +4544,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec la structure correcte du passé composé négatif avec le verbe être.",
       phrase: { before: "Elle ", after: " pas venue à la réunion." },
-      hint: "venir",
+      hint: "être",
       answer: "n'est",
       explanation: "Au passé composé avec l'auxiliaire être, on utilise ne/n' avant être. Structure : ne + être + pas + participe.",
       wrongAnswers: [
@@ -4562,7 +4562,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au passé composé négatif avec la bonne structure.",
       phrase: { before: "Ils ", after: " jamais vu ce spectacle." },
-      hint: "voir",
+      hint: "avoir",
       answer: "n'ont",
       explanation: "Au passé composé avec jamais : ne/n' + auxiliaire + jamais + participe. Jamais remplace pas.",
       wrongAnswers: [
@@ -4598,7 +4598,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec la bonne structure du passé composé négatif incluant personne.",
       phrase: { before: "J'", after: " vu personne à la gare." },
-      hint: "voir",
+      hint: "avoir",
       answer: "n'ai",
       explanation: "Avec « personne », on omet « pas » : la structure est ne + auxiliaire + participe + personne. « Je n'ai vu personne » — « pas » est remplacé par « personne ».",
       wrongAnswers: [
@@ -4837,7 +4837,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « déjà » à la bonne place.",
       phrase: { before: "Tu as ", after: " fini tes devoirs ?" },
-      hint: "finir",
+      hint: "adverbe",
       answer: "déjà",
       explanation: "L'adverbe court « déjà » se place entre l'auxiliaire « as » et le participe passé « fini » pour former « Tu as déjà fini tes devoirs ? ».",
       wrongAnswers: [
@@ -4855,7 +4855,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « beaucoup » à la bonne place.",
       phrase: { before: "Elle a ", after: " aimé ce film." },
-      hint: "aimer",
+      hint: "adverbe",
       answer: "beaucoup",
       explanation: "L'adverbe court « beaucoup » se place entre l'auxiliaire « a » et le participe passé « aimé » pour former « Elle a beaucoup aimé ce film. ».",
       wrongAnswers: [
@@ -4873,7 +4873,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « rapidement » à la bonne place.",
       phrase: { before: "Il a résolu ", after: " ce problème." },
-      hint: "résoudre",
+      hint: "adverbe",
       answer: "rapidement",
       explanation: "L'adverbe long en « -ment » « rapidement » se place après le participe passé « résolu » pour former « Il a résolu rapidement ce problème. ».",
       wrongAnswers: [
@@ -4891,7 +4891,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « mal » à la bonne place.",
       phrase: { before: "Nous avons ", after: " compris les instructions." },
-      hint: "comprendre",
+      hint: "adverbe",
       answer: "mal",
       explanation: "L'adverbe court « mal » se place entre l'auxiliaire « avons » et le participe passé « compris » pour former « Nous avons mal compris les instructions. ».",
       wrongAnswers: [
@@ -4909,7 +4909,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « honnêtement » à la bonne place.",
       phrase: { before: "Vous avez répondu ", after: " à cette question difficile." },
-      hint: "répondre",
+      hint: "adverbe",
       answer: "honnêtement",
       explanation: "L'adverbe long en « -ment » « honnêtement » se place après le participe passé « répondu » pour former « Vous avez répondu honnêtement à cette question difficile. ».",
       wrongAnswers: [
@@ -6637,7 +6637,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la question formelle avec inversion au passé composé.",
       phrase: { before: "", after: " mangé au restaurant ?" },
-      hint: "manger",
+      hint: "avoir",
       answer: "Avez-vous",
       explanation: "L'inversion formelle place l'auxiliaire avant le sujet avec un trait d'union : « Avez-vous mangé au restaurant ? »",
       wrongAnswers: [
@@ -6655,7 +6655,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Formulez la question en inversion pour le sujet « Marc et Paul ».",
       phrase: { before: "", after: " partis à l'étranger ?" },
-      hint: "partir",
+      hint: "être",
       answer: "Sont-ils",
       explanation: "Avec un sujet masculin pluriel et le verbe « partir » (utilisant « être »), la question en inversion est « sont-ils ».",
       wrongAnswers: [
@@ -6673,7 +6673,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez la question au passé composé avec « est-ce que » en utilisant le verbe et le sujet donnés.",
       phrase: { before: "", after: " que vous avez vu ce film ?" },
-      hint: "voir",
+      hint: "être",
       answer: "Est-ce",
       explanation: "La forme neutre avec « est-ce que » : « est-ce que vous avez vu ». Ici, on remplit le début de la phrase.",
       wrongAnswers: [
@@ -6691,7 +6691,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la question négative en inversion au passé composé avec le verbe et le sujet donnés.",
       phrase: { before: "N'", after: " pas vu le spectacle ?" },
-      hint: "voir",
+      hint: "avoir",
       answer: "as-tu",
       explanation: "La négation au passé composé en inversion : « n'as-tu pas ». L'auxiliaire « as » s'inverse avec « tu ».",
       wrongAnswers: [

@@ -651,7 +651,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe « entrer » au plus-que-parfait. Choisissez le bon auxiliaire.",
       phrase: { before: "Quand j'ai téléphoné, Paul ", after: " déjà entré dans la salle." },
-      hint: "entrer",
+      hint: "être",
       answer: "était",
       explanation: "« Entrer » est un verbe de la maison d'être qui se conjugue toujours avec l'auxiliaire être au plus-que-parfait. Pour « il/Paul » (3e personne du singulier), l'imparfait d'être est « était ».",
       wrongAnswers: [
@@ -669,7 +669,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe « finir » au plus-que-parfait. Choisissez le bon auxiliaire.",
       phrase: { before: "Ils ", after: " fini de dîner avant votre arrivée." },
-      hint: "finir",
+      hint: "avoir",
       answer: "avaient",
       explanation: "« Finir » est un verbe transitif ordinaire qui prend l'auxiliaire avoir. Au plus-que-parfait à la 3e personne du pluriel (ils), l'imparfait d'avoir est « avaient ».",
       wrongAnswers: [
@@ -703,7 +703,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe « aller » au plus-que-parfait. Choisissez le bon auxiliaire.",
       phrase: { before: "Nous ", after: " allés au cinéma la veille." },
-      hint: "aller",
+      hint: "être",
       answer: "étions",
       explanation: "« Aller » est le verbe de mouvement par excellence, il prend toujours l'auxiliaire être. Au plus-que-parfait à la 1re personne du pluriel (nous), l'imparfait d'être est « étions ».",
       wrongAnswers: [
@@ -720,7 +720,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Choisissez l'auxiliaire correct pour « sortir » au plus-que-parfait selon le contexte.",
       phrase: { before: "Le soir, il ", after: " sorti les poubelles avant de se coucher." },
-      hint: "sortir",
+      hint: "avoir",
       answer: "avait",
       explanation: "« Sortir » employé transitivement (avec un COD : « les poubelles ») prend l'auxiliaire avoir. On dit « il avait sorti les poubelles » car « les poubelles » est le complément d'objet direct.",
       wrongAnswers: [
@@ -2081,7 +2081,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez la phrase avec la forme correcte du plus-que-parfait.",
       phrase: { before: "Nous ", after: " à peine assis quand on a frappé à la porte." },
-      hint: "s'asseoir",
+      hint: "être",
       answer: "nous étions",
       explanation: "Le fait de s'asseoir est antérieur à la frappe à la porte. Le plus-que-parfait pronominal (nous nous étions assis) marque cette antériorité. Ici, la réponse dans le blanc est « nous étions », le reste de la forme verbale (« assis ») étant déjà visible dans la phrase.",
       wrongAnswers: [
@@ -2779,7 +2779,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Conjuguez le verbe au plus-que-parfait pour exprimer ce qui n'avait pas encore eu lieu.",
       phrase: { before: "Les médecins ont diagnostiqué une maladie qu'ils n'", after: " jamais vue auparavant." },
-      hint: "voir",
+      hint: "avoir",
       answer: "avaient",
       explanation: "Le plus-que-parfait négatif « n'avaient jamais vue » indique que les médecins n'avaient aucune expérience préalable de cette maladie avant le diagnostic. « Avaient » est l'auxiliaire à l'imparfait (3e personne du pluriel) qui forme le plus-que-parfait.",
       wrongAnswers: [
@@ -3486,7 +3486,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'auxiliaire correct pour former le conditionnel passé.",
       phrase: { before: "Si tu avais vu le match, tu ", after: " compris pourquoi tout le monde en parle." },
-      hint: "comprendre",
+      hint: "avoir",
       answer: "aurais",
       explanation: "La clause principale demande le conditionnel passé : « aurais compris ». Le blanc appelle l'auxiliaire « aurais ».",
       wrongAnswers: [

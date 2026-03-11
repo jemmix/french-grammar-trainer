@@ -5603,7 +5603,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au subjonctif passé : Vive ___!",
       phrase: { before: "Les enfants ont crié : Vive ", after: "!" },
-      hint: "vivre",
+      hint: "nom",
       answer: "la France",
       explanation: "« Vive la France ! » est l'expression figée consacrée utilisant le subjonctif pour exprimer l'honneur et la loyauté patriotique.",
       wrongAnswers: [

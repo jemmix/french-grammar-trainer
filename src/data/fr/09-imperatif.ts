@@ -2091,7 +2091,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez l'impératif négatif avec pronom objet pour « ne pas les écouter » (pour vous)",
       phrase: { before: "Ne ", after: " pas." },
-      hint: "écouter",
+      hint: "...",
       answer: "les écoutez",
       explanation: "À l'impératif négatif avec un pronom objet direct (« les »), le pronom se place avant le verbe. Pour la 2e personne du pluriel (vous), la forme est « ne les écoutez pas ».",
       wrongAnswers: [
@@ -3076,7 +3076,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez l'impératif à la forme négative avec le pronom placé correctement.",
       phrase: { before: "N'", after: " regarde pas, c'est trop violent." },
-      hint: "regarder",
+      hint: "...",
       answer: "le",
       explanation: "Impératif négatif : le pronom COD « le » se place avant le verbe. Structure : ne + le + regarde + pas.",
       wrongAnswers: [
@@ -3094,7 +3094,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez l'impératif négatif avec le pronom personnel correct.",
       phrase: { before: "N'", after: " parlez pas, laissez-le dormir." },
-      hint: "parler",
+      hint: "pronom",
       answer: "lui",
       explanation: "Impératif négatif avec COI (parler à quelqu'un). Structure : ne + lui + parlez + pas.",
       wrongAnswers: [
@@ -3112,7 +3112,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez la phrase à l'impératif négatif avec placement correct du pronom réfléchi.",
       phrase: { before: "Ne ", after: " lève pas si tu n'es pas d'accord." },
-      hint: "se lever",
+      hint: "pronom",
       answer: "te",
       explanation: "Impératif négatif réfléchi, 2e personne singulier. Le pronom « te » se place avant le verbe.",
       wrongAnswers: [
@@ -3130,7 +3130,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le pronom personnel correct à l'impératif négatif.",
       phrase: { before: "N'", after: " mangez pas ces fruits, ils ne sont pas mûrs." },
-      hint: "manger",
+      hint: "...",
       answer: "les",
       explanation: "Pronom COD pluriel à l'impératif négatif. « Ne les mangez pas » (vous adressant à plusieurs).",
       wrongAnswers: [
@@ -3148,7 +3148,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez la phrase à l'impératif négatif avec le pronom bien placé.",
       phrase: { before: "N'", after: " appelle pas si tu n'as pas besoin, il est occupé." },
-      hint: "appeler",
+      hint: "...",
       answer: "le",
       explanation: "Pronom COD singulier à l'impératif négatif. « Ne le appelle pas » (ne l'appelle pas).",
       wrongAnswers: [
@@ -4160,7 +4160,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez à l'impératif négatif avec y.",
       phrase: { before: "", after: " y va pas !" },
-      hint: "aller",
+      hint: "pronom",
       answer: "N'y",
       explanation: "À l'impératif négatif, « y » se place directement après la négation « ne » (n'y). La structure est n'y + verbe + pas.",
       wrongAnswers: [
@@ -4177,7 +4177,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez l'impératif négatif avec en.",
       phrase: { before: "", after: " en mange pas !" },
-      hint: "manger",
+      hint: "article",
       answer: "N'en",
       explanation: "À l'impératif négatif avec « en », on place « en » directement après la négation « ne » (n'en). La structure est n'en + verbe + pas.",
       wrongAnswers: [
@@ -6916,7 +6916,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif affirmatif avec les pronoms en ordre correct.",
       phrase: { before: "Donne-moi ce livre, s'il te plaît ! → Donne ", after: " ce livre, s'il te plaît ! (Remplacez « moi » par le pronom le + moi)" },
-      hint: "donner",
+      hint: "pronom",
       answer: "le-moi",
       explanation: "À l'impératif affirmatif, l'ordre des deux pronoms COD-COI est respecté avec des traits d'union : donne-le-moi.",
       wrongAnswers: [
@@ -6934,7 +6934,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe à l'impératif négatif avec les pronoms en ordre correct.",
       phrase: { before: "Ne me l'apporte pas. → Ne ", after: " apporte pas. (Remplacez « me l' » par un seul tiret combiné)" },
-      hint: "apporter",
+      hint: "pronom",
       answer: "me la",
       explanation: "À l'impératif négatif avec deux pronoms, l'ordre est COI-COD avant le verbe sans traits d'union : ne me la apporte pas (ou ne me l'apporte pas avec élision).",
       wrongAnswers: [
@@ -6986,7 +6986,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent de l'impératif avec le pronom adéquat.",
       phrase: { before: "Regarde cette photo ! → Ne ", after: " regarde pas maintenant, attends ce soir. (Insérez le pronom COD approprié à la forme négative)" },
-      hint: "regarder",
+      hint: "...",
       answer: "la",
       explanation: "À l'impératif négatif, le pronom COD se place avant le verbe sans trait d'union ; « la » remplace « cette photo » : ne la regarde pas.",
       wrongAnswers: [
