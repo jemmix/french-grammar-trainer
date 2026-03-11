@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "03-imparfait",
   title: "L'imparfait",
-  description: "Formation et emplois de l'imparfait",
+  description: "Formation, emplois, opposition passé composé/imparfait",
   rules: [
     { id: "03-01", sectionId: "03-imparfait", title: "Formation de l'imparfait : radical du présent (nous) + terminaisons (-ais, -ais, -ait, -ions, -iez, -aient)" },
     { id: "03-02", sectionId: "03-imparfait", title: "L'imparfait du verbe être (seul verbe au radical irrégulier : ét-)" },

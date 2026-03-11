@@ -5,8 +5,8 @@ import type { Section } from "../types";
 
 const section: Section = {
   id: "05-futur-simple-et-anterieur",
-  title: "Le futur simple et antérieur",
-  description: "Formation et emplois des futurs",
+  title: "Le futur simple et le futur antérieur",
+  description: "Formation régulière et irrégulière, emplois, antériorité",
   rules: [
     { id: "05-01", sectionId: "05-futur-simple-et-anterieur", title: "Formation du futur simple des verbes en -er (infinitif + -ai, -as, -a, -ons, -ez, -ont)" },
     { id: "05-02", sectionId: "05-futur-simple-et-anterieur", title: "Formation du futur simple des verbes en -ir (infinitif + terminaisons)" },

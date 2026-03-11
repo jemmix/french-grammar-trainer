@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "01-present-indicatif",
   title: "Le présent de l'indicatif",
-  description: "Formation et emplois du présent de l'indicatif",
+  description: "Conjugaison régulière et irrégulière, verbes pronominaux, emplois du présent",
   rules: [
     { id: "01-01", sectionId: "01-present-indicatif", title: "Conjugaison des verbes réguliers en -er (parler, manger, commencer, etc.)" },
     { id: "01-02", sectionId: "01-present-indicatif", title: "Conjugaison des verbes réguliers en -ir (finir, choisir, réussir, etc.)" },

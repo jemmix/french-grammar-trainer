@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "12-pronoms-relatifs",
   title: "Les pronoms relatifs",
-  description: "Qui, que, dont, où, etc.",
+  description: "Qui, que, dont, où, lequel, ce qui/ce que/ce dont",
   rules: [
     { id: "12-01", sectionId: "12-pronoms-relatifs", title: "Le pronom relatif qui — sujet du verbe de la relative (l'homme qui parle)" },
     { id: "12-02", sectionId: "12-pronoms-relatifs", title: "Le pronom relatif que — COD du verbe de la relative (le livre que je lis)" },
@@ -297,7 +297,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif « qui » quand nécessaire",
       phrase: { before: "L'homme ", after: " vit à côté de nous est un musicien réputé." },
-      hint: "pronom",
+      hint: "vivre",
       answer: "qui",
       explanation: "« qui » est le sujet du verbe « vit ». C'est le pronom relatif sujet obligatoire.",
       wrongAnswers: [
@@ -317,7 +317,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom relatif approprié",
       phrase: { before: "Les enfants ", after: " participent au concours recevront des prix." },
-      hint: "pronom",
+      hint: "participer",
       answer: "qui",
       explanation: "« qui » est le sujet du verbe « participent ». C'est le pronom relatif sujet obligatoire, même au pluriel.",
       wrongAnswers: [
@@ -337,7 +337,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif convenable",
       phrase: { before: "Les projets ", after: " ont reçu le financement seront lancés en septembre." },
-      hint: "pronom",
+      hint: "recevoir",
       answer: "qui",
       explanation: "« qui » est le sujet du verbe « ont reçu ». C'est le pronom relatif sujet standard, même au passé composé.",
       wrongAnswers: [
@@ -357,7 +357,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec le pronom relatif approprié",
       phrase: { before: "La découverte ", after: " a révolutionné la science a été faite il y a cent ans." },
-      hint: "pronom",
+      hint: "révolutionner",
       answer: "qui",
       explanation: "« qui » est le sujet du verbe « a révolutionné ». C'est le pronom relatif sujet obligatoire.",
       wrongAnswers: [
@@ -377,7 +377,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez le blanc avec le pronom relatif convenable",
       phrase: { before: "Les scientifiques ", after: " travaillent sur ce projet espèrent trouver une solution dans les cinq prochaines années." },
-      hint: "pronom",
+      hint: "travailler",
       answer: "qui",
       explanation: "« qui » est le sujet du verbe « travaillent ». C'est le pronom relatif sujet standard, même avec un verbe au présent de l'indicatif.",
       wrongAnswers: [
@@ -657,7 +657,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le pronom relatif (« que » ou « qui »)",
       phrase: { before: "L'écrivain ", after: " a écrit ce roman est très célèbre." },
-      hint: "pronom",
+      hint: "écrire",
       answer: "qui",
       explanation: "Le sujet de la relative est « l'écrivain » ; c'est lui qui a écrit. On utilise « qui » pour le sujet, non pas « que ».",
       wrongAnswers: [
@@ -674,7 +674,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le pronom relatif correct",
       phrase: { before: "La voiture ", after: " vous voyez au loin appartient à mon ami." },
-      hint: "pronom",
+      hint: "voir",
       answer: "que",
       explanation: "« que » est le COD du verbe « voir ». Vous voyez la voiture ; c'est l'objet direct.",
       wrongAnswers: [
@@ -693,7 +693,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié",
       phrase: { before: "Les cours ", after: " vous suivez ce trimestre sont très intéressants." },
-      hint: "pronom",
+      hint: "suivre",
       answer: "que",
       explanation: "« que » est le COD du verbe « suivre ». Vous suivez les cours ; c'est l'objet direct de l'action.",
       wrongAnswers: [
@@ -711,7 +711,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le pronom relatif manquant",
       phrase: { before: "Le livre ", after: " tu m'as recommandé est devenu mon préféré." },
-      hint: "pronom",
+      hint: "recommander",
       answer: "que",
       explanation: "« que » est le COD du verbe « recommander ». Tu m'as recommandé le livre ; c'est l'objet direct de cette action.",
       wrongAnswers: [
@@ -729,7 +729,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le bon pronom relatif",
       phrase: { before: "Les personnes ", after: " nous avons invitées à la fête étaient très sympathiques." },
-      hint: "pronom",
+      hint: "inviter",
       answer: "que",
       explanation: "« que » est le COD du verbe « inviter ». Nous avons invité les personnes ; c'est l'objet direct, confirmé par l'accord « invitées ».",
       wrongAnswers: [
@@ -1007,7 +1007,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié.",
       phrase: { before: "La maison ", after: " nous avons grandi appartient toujours à notre famille." },
-      hint: "pronom",
+      hint: "grandir",
       answer: "où",
       explanation: "\"où\" remplace le complément de lieu « dans la maison ». On dit « nous avons grandi dans la maison ».",
       wrongAnswers: [
@@ -1025,7 +1025,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié.",
       phrase: { before: "Le village ", after: " tu as grandi a beaucoup changé depuis." },
-      hint: "pronom",
+      hint: "grandir",
       answer: "où",
       explanation: "\"où\" remplace le complément de lieu « dans le village ». On dit « tu as grandi dans le village ».",
       wrongAnswers: [
@@ -1043,7 +1043,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié.",
       phrase: { before: "L'université ", after: " elle étudie offre des cours de linguistique." },
-      hint: "pronom",
+      hint: "étudier",
       answer: "où",
       explanation: "\"où\" remplace le complément de lieu « à l'université ». On dit « elle étudie à l'université ».",
       wrongAnswers: [
@@ -1061,7 +1061,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié.",
       phrase: { before: "Le restaurant ", after: " ils célèbrent leur anniversaire est fermé le lundi." },
-      hint: "pronom",
+      hint: "célébrer",
       answer: "où",
       explanation: "\"où\" remplace le complément de lieu « au restaurant ». On dit « ils célèbrent au restaurant ».",
       wrongAnswers: [
@@ -1079,7 +1079,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié.",
       phrase: { before: "La bibliothèque ", after: " nous empruntons des livres est ouverte jusqu'à dix-neuf heures." },
-      hint: "pronom",
+      hint: "emprunter",
       answer: "où",
       explanation: "\"où\" remplace le complément de lieu « à la bibliothèque ». On dit « nous empruntons des livres à la bibliothèque ».",
       wrongAnswers: [
@@ -1357,7 +1357,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif temporel approprié",
       phrase: { before: "Le jour ", after: " je t'ai rencontré, ma vie a changé à jamais." },
-      hint: "pronom",
+      hint: "rencontrer",
       answer: "où",
       explanation: "« où » est le pronom relatif temporel qui introduit un complément de temps (the day when).",
       wrongAnswers: [
@@ -1375,7 +1375,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié pour exprimer le temps",
       phrase: { before: "L'année ", after: " nous avons voyagé en Italie, nous avons découvert tant de choses." },
-      hint: "pronom",
+      hint: "voyager",
       answer: "où",
       explanation: "« où » introduit un complément de temps (the year when).",
       wrongAnswers: [
@@ -1393,7 +1393,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom relatif temporel",
       phrase: { before: "La nuit ", after: " il a commencé à pleuvoir, nous sommes restés à l'intérieur." },
-      hint: "pronom",
+      hint: "commencer",
       answer: "où",
       explanation: "« où » est le relatif temporel (the night when).",
       wrongAnswers: [
@@ -1411,7 +1411,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Insérez le pronom relatif pour exprimer le moment temporel",
       phrase: { before: "L'instant ", after: " la musique a commencé, tout le monde s'est levé pour danser." },
-      hint: "pronom",
+      hint: "commencer",
       answer: "où",
       explanation: "« où » introduit un complément de temps (the instant when).",
       wrongAnswers: [
@@ -1429,7 +1429,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié pour le temps",
       phrase: { before: "L'époque ", after: " nous vivons actuellement demande une grande responsabilité envers la planète." },
-      hint: "pronom",
+      hint: "vivre",
       answer: "où",
       explanation: "« où » est le relatif temporel pour exprimer l'époque/le moment (the era when).",
       wrongAnswers: [
@@ -1707,7 +1707,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif \"dont\" : « Voici le parc ___ les enfants aiment jouer. »",
       phrase: { before: "Voici le parc ", after: " les enfants aiment jouer." },
-      hint: "pronom",
+      hint: "aimer",
       answer: "dont",
       explanation: "Le verbe \"aimer\" ici est suivi de \"jouer dans le parc\", donc il y a une relation \"de\" : \"dont\" remplace \"de + le parc\".",
       wrongAnswers: [
@@ -1727,7 +1727,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom relatif approprié : « C'est un sujet ___ on doit discuter sérieusement. »",
       phrase: { before: "C'est un sujet ", after: " on doit discuter sérieusement." },
-      hint: "pronom",
+      hint: "discuter",
       answer: "dont",
       explanation: "Le verbe \"discuter\" demande \"discuter de quelque chose\", donc \"dont\" remplace \"de + sujet\".",
       wrongAnswers: [
@@ -1748,7 +1748,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Utilisez le pronom relatif correct : « Les acteurs ___ j'ai admiré la performance ont reçu plusieurs prix. »",
       phrase: { before: "Les acteurs ", after: " j'ai admiré la performance ont reçu plusieurs prix." },
-      hint: "pronom",
+      hint: "admirer",
       answer: "dont",
       explanation: "\"dont\" remplace \"de + les acteurs\" (la performance de laquelle j'ai admiré = la performance des acteurs). C'est une relation possessive.",
       wrongAnswers: [
@@ -1769,7 +1769,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc : « L'époque ___ il se souvient avec nostalgie est révolue. »",
       phrase: { before: "L'époque ", after: " il se souvient avec nostalgie est révolue." },
-      hint: "pronom",
+      hint: "se souvenir",
       answer: "dont",
       explanation: "Le verbe \"se souvenir\" exige \"se souvenir de quelque chose\", donc \"dont\" remplace \"de + l'époque\".",
       wrongAnswers: [
@@ -1790,7 +1790,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec \"dont\" ou un pronom similaire : « Les conditions ___ nous avons besoin pour réussir sont difficiles à réunir. »",
       phrase: { before: "Les conditions ", after: " nous avons besoin pour réussir sont difficiles à réunir." },
-      hint: "pronom",
+      hint: "avoir besoin",
       answer: "dont",
       explanation: "L'expression \"avoir besoin de quelque chose\" exige \"de\", donc \"dont\" remplace \"de + les conditions\".",
       wrongAnswers: [
@@ -2072,7 +2072,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié (avoir besoin de, parler de, se souvenir de)",
       phrase: { before: "La personne ", after: " j'ai besoin pour ce projet arrivera demain." },
-      hint: "pronom",
+      hint: "avoir besoin",
       answer: "dont",
       explanation: "\"dont\" remplace \"de + la personne\" avec le verbe \"avoir besoin de\".",
       wrongAnswers: [
@@ -2090,7 +2090,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom relatif qui convient",
       phrase: { before: "Les événements ", after: " tu te souviens ont marqué notre amitié." },
-      hint: "pronom",
+      hint: "se souvenir",
       answer: "dont",
       explanation: "\"dont\" remplace \"de + les événements\" avec le verbe pronominal \"se souvenir de\".",
       wrongAnswers: [
@@ -2108,7 +2108,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec le pronom relatif qui convient (parler de)",
       phrase: { before: "Le sujet ", after: " nous parlons depuis une heure me fascine." },
-      hint: "pronom",
+      hint: "parler",
       answer: "dont",
       explanation: "\"dont\" remplace \"de + le sujet\" avec le verbe \"parler de\".",
       wrongAnswers: [
@@ -2126,7 +2126,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le bon pronom relatif",
       phrase: { before: "Les ressources ", after: " vous avez besoin pour accomplir cette tâche sont disponibles." },
-      hint: "pronom",
+      hint: "avoir besoin",
       answer: "dont",
       explanation: "\"dont\" remplace \"de + les ressources\" avec \"avoir besoin de\".",
       wrongAnswers: [
@@ -2144,7 +2144,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec le pronom relatif approprié",
       phrase: { before: "L'ami ", after: " je me souviens ici travaille maintenant à Paris." },
-      hint: "pronom",
+      hint: "se souvenir",
       answer: "dont",
       explanation: "\"dont\" remplace \"de + l'ami\" avec \"se souvenir de\".",
       wrongAnswers: [
@@ -2422,7 +2422,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec \"dont\" ou un pronom relatif approprié",
       phrase: { before: "Le sculpteur ", after: " nous avons admiré les œuvres a reçu le Grand Prix." },
-      hint: "pronom",
+      hint: "admirer",
       answer: "dont",
       explanation: "\"dont\" introduit une relation de possession : les œuvres du sculpteur. La structure « dont nous avons admiré les œuvres » signifie « dont on a admiré les œuvres ».",
       wrongAnswers: [
@@ -2440,7 +2440,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom relatif correct",
       phrase: { before: "Les enfants ", after: " les parents ne parlent que français apprennent vite." },
-      hint: "pronom",
+      hint: "parler",
       answer: "dont",
       explanation: "\"dont\" exprime la possession : les parents des enfants. C'est une relation de possession simple et courante.",
       wrongAnswers: [
@@ -2458,7 +2458,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Choisissez le pronom relatif qui convient",
       phrase: { before: "L'immeuble ", after: " l'architecte a conçu les plans a été construit en 1920." },
-      hint: "pronom",
+      hint: "concevoir",
       answer: "dont",
       explanation: "\"dont\" exprime la possession : les plans de l'immeuble. C'est une possession logique : ce sont les plans de l'immeuble.",
       wrongAnswers: [
@@ -2476,7 +2476,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez avec le pronom relatif approprié",
       phrase: { before: "L'exposition ", after: " les œuvres proviennent du Musée d'Orsay ferme dimanche." },
-      hint: "pronom",
+      hint: "provenir",
       answer: "dont",
       explanation: "\"dont\" exprime la possession ou la provenance : les œuvres de l'exposition/de ce musée. Elle exprime une relation de possession.",
       wrongAnswers: [
@@ -2494,7 +2494,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Identifiez le pronom relatif correct",
       phrase: { before: "Le musicien ", after: " la symphonie a été jouée au Carnegie Hall a gagné un Grammy." },
-      hint: "pronom",
+      hint: "jouer",
       answer: "dont",
       explanation: "\"dont\" exprime la possession : la symphonie du musicien. C'est une relation classique de possession avec \"dont\".",
       wrongAnswers: [
@@ -2772,7 +2772,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec « dont » ou « duquel » : « Le projet ___ il m'a parlé semble intéressant. »",
       phrase: { before: "Le projet ", after: " il m'a parlé semble intéressant." },
-      hint: "pronom",
+      hint: "parler",
       answer: "dont",
       explanation: "\"Dont\" s'utilise pour remplacer \"de + qui/lequel/laquelle\". \"Il m'a parlé de ce projet\" → \"Le projet dont il m'a parlé\".",
       wrongAnswers: [
@@ -2808,7 +2808,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec « dont », « duquel » ou « de laquelle » : « La raison ___ il a quitté son emploi était personnelle. »",
       phrase: { before: "La raison ", after: " il a quitté son emploi était personnelle." },
-      hint: "pronom",
+      hint: "quitter",
       answer: "dont",
       explanation: "\"Dont\" remplace \"de + laquelle\". \"Il a quitté son emploi pour cette raison / de cette raison\" → \"La raison dont il a quitté son emploi\". C'est la forme la plus naturelle.",
       wrongAnswers: [
@@ -2826,7 +2826,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif correct : « Les conditions sous ___ cet accord a été signé étaient strictes. »",
       phrase: { before: "Les conditions sous ", after: " cet accord a été signé étaient strictes." },
-      hint: "pronom",
+      hint: "signer",
       answer: "lesquelles",
       explanation: "La préposition est \"sous\", pas \"de\". On utilise \"sous + lesquelles\" (= \"sous lesquelles\"). \"Dont\" ne s'utilise que pour \"de\".",
       wrongAnswers: [
@@ -2844,7 +2844,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec « dont » ou « duquel » : « L'article ___ il base ses arguments contient plusieurs erreurs. »",
       phrase: { before: "L'article ", after: " il base ses arguments contient plusieurs erreurs." },
-      hint: "pronom",
+      hint: "baser",
       answer: "dont",
       explanation: "\"Dont\" remplace \"de + lequel\". \"Il base ses arguments sur cet article / de cet article\" → \"L'article dont il base ses arguments\". Structure forcée mais \"dont\" est correct.",
       wrongAnswers: [
@@ -3122,7 +3122,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif composé approprié après la préposition",
       phrase: { before: "Les films pour ", after: " j'ai payé tant d'argent étaient décevants." },
-      hint: "pronom",
+      hint: "payer",
       answer: "lesquels",
       explanation: "Après la préposition « pour », on utilise le pronom relatif composé. « Lesquels » s'accorde avec l'antécédent « films » (masculin pluriel).",
       wrongAnswers: [
@@ -3140,7 +3140,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec la forme contractée appropriée",
       phrase: { before: "La personne chez ", after: " nous avons dormi était très généreuse." },
-      hint: "pronom",
+      hint: "dormir",
       answer: "laquelle",
       explanation: "Après la préposition « chez », on utilise « laquelle » qui s'accorde avec « personne » (féminin singulier). Chez se contracte plutôt librement avec les formes.",
       wrongAnswers: [
@@ -3194,7 +3194,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif composé approprié après la préposition",
       phrase: { before: "L'équipe sans ", after: " nous ne pourrions pas réussir est dévouée et compétente." },
-      hint: "pronom",
+      hint: "réussir",
       answer: "laquelle",
       explanation: "Après la préposition « sans », on utilise le pronom relatif composé « laquelle » qui s'accorde avec l'antécédent « équipe » (féminin singulier).",
       wrongAnswers: [
@@ -4177,7 +4177,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom relatif correct.",
       phrase: { before: "La personne avec ", after: " j'ai voyagé m'a raconté des histoires fascinantes." },
-      hint: "pronom",
+      hint: "voyager",
       answer: "laquelle",
       explanation: "\"Personne\" est féminin singulier. Après la préposition \"avec\", on utilise \"laquelle\".",
       wrongAnswers: [
@@ -4195,7 +4195,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom relatif correct.",
       phrase: { before: "Les principes sans ", after: " aucune société ne peut fonctionner sont la liberté et l'égalité." },
-      hint: "pronom",
+      hint: "fonctionner",
       answer: "lesquels",
       explanation: "\"Principes\" est masculin pluriel. Après la préposition \"sans\", on utilise \"lesquels\".",
       wrongAnswers: [
@@ -4213,7 +4213,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom relatif correct.",
       phrase: { before: "L'entreprise pour ", after: " je travaille depuis trois ans est très prospère." },
-      hint: "pronom",
+      hint: "travailler",
       answer: "laquelle",
       explanation: "\"Entreprise\" est féminin singulier. Après la préposition \"pour\", on utilise \"laquelle\".",
       wrongAnswers: [
@@ -4231,7 +4231,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom relatif correct.",
       phrase: { before: "Les défis sur ", after: " nous avons travaillé ensemble nous ont rapprochés." },
-      hint: "pronom",
+      hint: "travailler",
       answer: "lesquels",
       explanation: "\"Défis\" est masculin pluriel. Après la préposition \"sur\", on utilise \"lesquels\".",
       wrongAnswers: [
@@ -4249,7 +4249,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Remplissez le blanc avec le pronom relatif correct.",
       phrase: { before: "Les valeurs selon ", after: " nous avons éducado nos enfants se sont avérées judicieuses." },
-      hint: "pronom",
+      hint: "éduquer",
       answer: "lesquelles",
       explanation: "\"Valeurs\" est féminin pluriel. Après la préposition \"selon\", on utilise \"lesquelles\".",
       wrongAnswers: [
@@ -5943,7 +5943,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif correct : « L'homme ___ habite à côté de nous. »",
       phrase: { before: "L'homme ", after: " habite à côté de nous est chirurgien." },
-      hint: "pronom",
+      hint: "habiter",
       answer: "qui",
       explanation: "« Qui » est le pronom relatif sujet. L'homme est le sujet du verbe habiter.",
       wrongAnswers: [
@@ -5961,7 +5961,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif correct : « Le film ___ j'ai regardé hier soir. »",
       phrase: { before: "Le film ", after: " j'ai regardé hier soir était excellent." },
-      hint: "pronom",
+      hint: "regarder",
       answer: "que",
       explanation: "« Que » est le pronom relatif complément d'objet direct. Le film est l'objet de l'action « regarder ».",
       wrongAnswers: [
@@ -5979,7 +5979,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif correct : « Les journalistes ___ ont couvert cet événement. »",
       phrase: { before: "Les journalistes ", after: " ont couvert cet événement travaillent pour une grande agence." },
-      hint: "pronom",
+      hint: "couvrir",
       answer: "qui",
       explanation: "« Qui » est le pronom relatif sujet. Les journalistes sont le sujet du verbe couvrir.",
       wrongAnswers: [
@@ -5997,7 +5997,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif correct : « La technique ___ nous utilisons. »",
       phrase: { before: "La technique ", after: " nous utilisons pour ce projet a été développée récemment." },
-      hint: "pronom",
+      hint: "utiliser",
       answer: "que",
       explanation: "« Que » est le pronom relatif complément d'objet direct. La technique est l'objet de l'action « utiliser ».",
       wrongAnswers: [
@@ -6015,7 +6015,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif correct : « Les étudiants ___ réussissent. »",
       phrase: { before: "Les étudiants ", after: " réussissent ont étudié régulièrement." },
-      hint: "pronom",
+      hint: "réussir",
       answer: "qui",
       explanation: "« Qui » est le pronom relatif sujet. Les étudiants sont le sujet du verbe réussir.",
       wrongAnswers: [
@@ -6407,7 +6407,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié",
       phrase: { before: "Les livres ", after: " j'ai lus hier étaient excellents." },
-      hint: "pronom",
+      hint: "lire",
       answer: "que",
       explanation: "Le verbe « lire » demande un complément d'objet direct. « Que » est le relatif COD approprié. La phrase est restrictive (sans virgule).",
       wrongAnswers: [
@@ -6464,7 +6464,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié",
       phrase: { before: "La ville ", after: " je suis né offre de beaux paysages." },
-      hint: "pronom",
+      hint: "naître",
       answer: "où",
       explanation: "« Où » est le relatif pour les lieux. Il convient parfaitement pour « la ville ». C'est une relative restrictive (sans virgule).",
       wrongAnswers: [
@@ -6669,7 +6669,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez en choisissant le relatif correct et la ponctuation appropriée.",
       phrase: { before: "Les résultats ", after: " nous avons obtenus dépassent tous les objectifs." },
-      hint: "pronom",
+      hint: "obtenir",
       answer: "que",
       explanation: "« Obtenir » est un verbe transitif direct. « Que » est le relatif COD correct. Pas de virgule car la relative restrictive identifie les résultats spécifiques.",
       wrongAnswers: [
@@ -6991,7 +6991,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié",
       phrase: { before: "Le chef ", after: " supervise tous les projets est très strict." },
-      hint: "pronom",
+      hint: "superviser",
       answer: "qui",
       explanation: "« Qui » s'utilise car « le chef » est le sujet du verbe « supervise ». Le pronom relatif sujet est toujours « qui ».",
       wrongAnswers: [
@@ -7008,7 +7008,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié",
       phrase: { before: "Les objectifs ", after: " nous avons établis au début de l'année sont difficiles à atteindre." },
-      hint: "pronom",
+      hint: "établir",
       answer: "que",
       explanation: "« Que » s'utilise car « nous » est le sujet et « les objectifs » est le complément d'objet direct du verbe « avons établis ».",
       wrongAnswers: [
@@ -7025,7 +7025,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié",
       phrase: { before: "L'écrivain ", after: " nous admirons beaucoup a écrit plusieurs best-sellers." },
-      hint: "pronom",
+      hint: "admirer",
       answer: "que",
       explanation: "« Que » s'utilise car « nous » est le sujet et « l'écrivain » est le complément d'objet direct du verbe « admirons ».",
       wrongAnswers: [
@@ -7042,7 +7042,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié",
       phrase: { before: "Le sujet ", after: " il a décidé d'écrire son mémoire est très complexe." },
-      hint: "pronom",
+      hint: "décider",
       answer: "dont",
       explanation: "« Dont » s'utilise car « le sujet du mémoire » = « dont il a décidé d'écrire son mémoire ». C'est une relation de possession ou d'appartenance au mémoire.",
       wrongAnswers: [
@@ -7059,7 +7059,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Complétez avec le pronom relatif approprié",
       phrase: { before: "Les personnes sans ", after: " l'organisation ne pourrait pas fonctionner méritent notre gratitude." },
-      hint: "pronom",
+      hint: "fonctionner",
       answer: "lesquelles",
       explanation: "Après la préposition « sans », on utilise « lequel ». Ici, c'est le pluriel féminin « lesquelles » car « les personnes » est féminin pluriel.",
       wrongAnswers: [

@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "08-subjonctif-passe",
   title: "Le subjonctif passé",
-  description: "Formation et emplois du subjonctif passé",
+  description: "Formation, emplois, opposition indicatif/subjonctif",
   rules: [
     { id: "08-01", sectionId: "08-subjonctif-passe", title: "Formation du subjonctif passé : auxiliaire au subjonctif présent + participe passé" },
     { id: "08-02", sectionId: "08-subjonctif-passe", title: "Le choix de l'auxiliaire au subjonctif passé (avoir ou être)" },

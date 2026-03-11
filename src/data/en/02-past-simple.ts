@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "02-past-simple",
   title: "Past Simple",
-  description: "Formation and usage of past simple tense",
+  description: "Regular and irregular verbs, negatives, questions, time expressions, used to",
   rules: [
     { id: "02-01", sectionId: "02-past-simple", title: "Past simple of regular verbs: affirmative (-ed ending)" },
     { id: "02-02", sectionId: "02-past-simple", title: "Past simple: spelling rules for -ed (double consonant, -e → -ed, -y → -ied)" },

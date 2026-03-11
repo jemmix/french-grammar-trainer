@@ -5,8 +5,8 @@ import type { Section } from "../types";
 
 const section: Section = {
   id: "01-present-simple-continuous",
-  title: "Present Simple vs Continuous",
-  description: "Formation and usage of present simple and continuous tenses",
+  title: "Present Simple & Present Continuous",
+  description: "Affirmative, negative, and question forms; spelling rules; habits vs. temporary actions",
   rules: [
     { id: "01-01", sectionId: "01-present-simple-continuous", title: "Present simple affirmative with I / you / we / they (base form)" },
     { id: "01-02", sectionId: "01-present-simple-continuous", title: "Present simple third person singular (-s, -es, -ies)" },

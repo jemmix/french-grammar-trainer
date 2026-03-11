@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "03-past-continuous",
   title: "Past Continuous",
-  description: "Formation and usage of past continuous tense",
+  description: "Formation, background descriptions, interrupted actions, simultaneous actions",
   rules: [
     { id: "03-01", sectionId: "03-past-continuous", title: "Past continuous: formation (was / were + verb-ing)" },
     { id: "03-02", sectionId: "03-past-continuous", title: "Past continuous: negative form (wasn't / weren't + verb-ing)" },

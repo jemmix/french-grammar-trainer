@@ -5,8 +5,8 @@ import type { Section } from "../types";
 
 const section: Section = {
   id: "06-conditionnel",
-  title: "Le conditionnel",
-  description: "Formation et emplois du conditionnel",
+  title: "Le conditionnel présent et passé",
+  description: "Politesse, hypothèse, information non confirmée, regret",
   rules: [
     { id: "06-01", sectionId: "06-conditionnel", title: "Formation du conditionnel présent : radical du futur + terminaisons de l'imparfait" },
     { id: "06-02", sectionId: "06-conditionnel", title: "Les conditionnels irréguliers (mêmes radicaux que le futur : ser-, aur-, fer-, ir-, pourr-, voudr-...)" },

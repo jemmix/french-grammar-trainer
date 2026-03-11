@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "02-passe-compose",
   title: "Le passé composé",
-  description: "Formation et emplois du passé composé",
+  description: "Formation avec avoir/être, accord du participe passé, choix de l'auxiliaire",
   rules: [
     { id: "02-01", sectionId: "02-passe-compose", title: "Formation du passé composé avec l'auxiliaire avoir (règle générale)" },
     { id: "02-02", sectionId: "02-passe-compose", title: "Formation du passé composé avec l'auxiliaire être (les 14 verbes + dérivés)" },
@@ -4832,7 +4832,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « déjà » à la bonne place.",
       phrase: { before: "Tu as ", after: " fini tes devoirs ?" },
-      hint: "adverbe",
+      hint: "finir",
       answer: "déjà",
       explanation: "L'adverbe court « déjà » se place entre l'auxiliaire « as » et le participe passé « fini » pour former « Tu as déjà fini tes devoirs ? ».",
       wrongAnswers: [
@@ -4850,7 +4850,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « beaucoup » à la bonne place.",
       phrase: { before: "Elle a ", after: " aimé ce film." },
-      hint: "adverbe",
+      hint: "aimer",
       answer: "beaucoup",
       explanation: "L'adverbe court « beaucoup » se place entre l'auxiliaire « a » et le participe passé « aimé » pour former « Elle a beaucoup aimé ce film. ».",
       wrongAnswers: [
@@ -4886,7 +4886,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase en plaçant l'adverbe « mal » à la bonne place.",
       phrase: { before: "Nous avons ", after: " compris les instructions." },
-      hint: "adverbe",
+      hint: "comprendre",
       answer: "mal",
       explanation: "L'adverbe court « mal » se place entre l'auxiliaire « avons » et le participe passé « compris » pour former « Nous avons mal compris les instructions. ».",
       wrongAnswers: [

@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "04-plus-que-parfait",
   title: "Le plus-que-parfait",
-  description: "Formation et emplois du plus-que-parfait",
+  description: "Formation, emplois, concordance des temps",
   rules: [
     { id: "04-01", sectionId: "04-plus-que-parfait", title: "Formation du plus-que-parfait : auxiliaire à l'imparfait + participe passé" },
     { id: "04-02", sectionId: "04-plus-que-parfait", title: "Le choix de l'auxiliaire avoir ou être au plus-que-parfait" },

@@ -6,7 +6,7 @@ import type { Section } from "../types";
 const section: Section = {
   id: "07-subjonctif-present",
   title: "Le subjonctif présent",
-  description: "Formation et emplois du subjonctif présent",
+  description: "Formation, emplois après les verbes de volonté, sentiment, doute",
   rules: [
     { id: "07-01", sectionId: "07-subjonctif-present", title: "Formation régulière du subjonctif présent : radical de ils/elles au présent + -e, -es, -e, -ions, -iez, -ent" },
     { id: "07-02", sectionId: "07-subjonctif-present", title: "Les subjonctifs irréguliers : être (sois), avoir (aie), aller (aille), faire (fasse)" },
@@ -3487,7 +3487,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le subjonctif du verbe « partir » après « afin que ».",
       phrase: { before: "Nous ouvrons la fenêtre afin que l'air frais ", after: "." },
-      hint: "préposition",
+      hint: "entrer",
       answer: "entre",
       explanation: "Après « afin que » avec le sujet « l'air » (troisième personne du singulier), on utilise le subjonctif : « entre ».",
       wrongAnswers: [
