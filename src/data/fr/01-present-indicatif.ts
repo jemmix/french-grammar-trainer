@@ -271,6 +271,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « regarder » au présent de l'indicatif avec le sujet « elles ».",
       phrase: { before: "Elles ", after: " un film ensemble." },
+      hint: "regarder",
       answer: "regardent",
       explanation: "À la troisième personne du pluriel (elles), le verbe « regarder » prend la terminaison -ent : elles regardent.",
       wrongAnswers: [
@@ -291,6 +292,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « donner » au présent de l'indicatif avec le sujet « nous ».",
       phrase: { before: "Nous ", after: " des cadeaux à nos amis." },
+      hint: "donner",
       answer: "donnons",
       explanation: "À la première personne du pluriel (nous), le verbe « donner » prend la terminaison -ons : nous donnons.",
       wrongAnswers: [
@@ -311,6 +313,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « penser » au présent de l'indicatif avec le sujet « tu ».",
       phrase: { before: "Tu ", after: " à moi, n'est-ce pas ?" },
+      hint: "penser",
       answer: "penses",
       explanation: "À la deuxième personne du singulier (tu), le verbe « penser » prend la terminaison -es : tu penses.",
       wrongAnswers: [
@@ -331,6 +334,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « travailler » au présent de l'indicatif avec le sujet « vous ».",
       phrase: { before: "Vous ", after: " dur pour réussir." },
+      hint: "travailler",
       answer: "travaillez",
       explanation: "À la deuxième personne du pluriel (vous), le verbe « travailler » prend la terminaison -ez : vous travaillez.",
       wrongAnswers: [
@@ -377,6 +381,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « danser » au présent de l'indicatif avec le sujet « je ».",
       phrase: { before: "Je ", after: " avec mon partenaire." },
+      hint: "danser",
       answer: "danse",
       explanation: "À la première personne du singulier (je), le verbe « danser » prend la terminaison -e : je danse.",
       wrongAnswers: [
@@ -656,6 +661,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « grandir » au présent de l'indicatif avec le sujet proposé.",
       phrase: { before: "Tu ", after: " rapidement." },
+      hint: "grandir",
       answer: "grandis",
       explanation: "Le verbe grandir au présent avec « tu » se conjugue « tu grandis » (tu + -is).",
       wrongAnswers: [
@@ -673,6 +679,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « nourrir » au présent de l'indicatif avec le sujet proposé.",
       phrase: { before: "Les parents ", after: " leurs enfants avec soin." },
+      hint: "nourrir",
       answer: "nourrissent",
       explanation: "Avec « les parents » (ils/elles pluriel), le verbe nourrir se conjugue « ils nourrissent » ou « elles nourrissent » (pluriel + -issent).",
       wrongAnswers: [
@@ -691,6 +698,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « agir » au présent de l'indicatif avec le sujet proposé.",
       phrase: { before: "Vous ", after: " rapidement pour résoudre le problème." },
+      hint: "agir",
       answer: "agissez",
       explanation: "Avec « vous », le verbe agir se conjugue « vous agissez » (vous + -issez).",
       wrongAnswers: [
@@ -709,6 +717,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « saisir » au présent de l'indicatif avec le sujet proposé.",
       phrase: { before: "Je ", after: " cette opportunité pour apprendre." },
+      hint: "saisir",
       answer: "saisis",
       explanation: "Avec « je », le verbe saisir se conjugue « je saisis » (je + -is).",
       wrongAnswers: [
@@ -726,6 +735,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « bâtir » au présent de l'indicatif avec le sujet proposé.",
       phrase: { before: "Elles ", after: " une nouvelle maison près de la rivière." },
+      hint: "bâtir",
       answer: "bâtissent",
       explanation: "Avec « elles », le verbe bâtir se conjugue « elles bâtissent » (elles + -issent).",
       wrongAnswers: [
@@ -991,6 +1001,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec la bonne conjugaison du verbe « vendre »",
       phrase: { before: "Nous ", after: " notre voiture au mois de mai." },
+      hint: "vendre",
       answer: "vendons",
       explanation: "À la 1ère personne du pluriel, on ajoute -ons à la racine « vend- » : nous vendons. La phrase complète est « Nous vendons notre voiture au mois de mai. »",
       wrongAnswers: [
@@ -1008,6 +1019,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « répondre » au présent",
       phrase: { before: "Tu ", after: " toujours poliment à tes enseignants." },
+      hint: "répondre",
       answer: "réponds",
       explanation: "À la 2ème personne du singulier, on ajoute -s à la racine « répond- » : tu réponds. La phrase complète est « Tu réponds toujours poliment à tes enseignants. »",
       wrongAnswers: [
@@ -1025,6 +1037,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « entendre » au présent de l'indicatif",
       phrase: { before: "Les enfants ", after: " les cloches de l'église." },
+      hint: "entendre",
       answer: "entendent",
       explanation: "À la 3ème personne du pluriel, on ajoute -ent à la racine « entend- » : ils/elles entendent. La phrase complète est « Les enfants entendent les cloches de l'église. »",
       wrongAnswers: [
@@ -1042,6 +1055,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec la bonne conjugaison du verbe « perdre »",
       phrase: { before: "Vous ne ", after: " jamais patience avec vos élèves." },
+      hint: "perdre",
       answer: "perdez",
       explanation: "À la 2ème personne du pluriel, on ajoute -ez à la racine « perd- » : vous perdez. La phrase complète est « Vous ne perdez jamais patience avec vos élèves. »",
       wrongAnswers: [
@@ -1072,6 +1086,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe en -re au présent de l'indicatif",
       phrase: { before: "J'", after: " ma copine à la gare ce soir." },
+      hint: "attendre",
       answer: "attends",
       explanation: "À la 1ère personne du singulier, on ajoute -s à la racine « attend- » : j'attends. Le verbe s'élide avec le pronom sujet devant une voyelle.",
       wrongAnswers: [
@@ -1697,6 +1712,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « être » à la personne indiquée.",
       phrase: { before: "Tu ", after: " heureux." },
+      hint: "être",
       answer: "es",
       explanation: "La deuxième personne du singulier du verbe « être » au présent est « es ».",
       wrongAnswers: [
@@ -1715,6 +1731,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « avoir » à la personne indiquée.",
       phrase: { before: "Nous ", after: " deux enfants." },
+      hint: "avoir",
       answer: "avons",
       explanation: "La première personne du pluriel du verbe « avoir » au présent est « avons ».",
       wrongAnswers: [
@@ -1734,6 +1751,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « faire » à la personne indiquée.",
       phrase: { before: "Vous ", after: " du sport." },
+      hint: "faire",
       answer: "faites",
       explanation: "La deuxième personne du pluriel du verbe « faire » au présent est « faites ».",
       wrongAnswers: [
@@ -1754,6 +1772,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « dire » à la personne indiquée.",
       phrase: { before: "Je ", after: " bonjour." },
+      hint: "dire",
       answer: "dis",
       explanation: "La première personne du singulier du verbe « dire » au présent est « dis ».",
       wrongAnswers: [
@@ -1774,6 +1793,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « avoir » à la personne indiquée.",
       phrase: { before: "Ils ", after: " des amis." },
+      hint: "avoir",
       answer: "ont",
       explanation: "La troisième personne du pluriel du verbe « avoir » au présent est « ont ».",
       wrongAnswers: [
@@ -2055,6 +2075,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe vouloir à la 2ème personne singulier du présent.",
       phrase: { before: "Tu ", after: " vraiment comprendre ce texte ?" },
+      hint: "vouloir",
       answer: "veux",
       explanation: "Présent de l'indicatif, 2ème personne singulier de vouloir.",
       wrongAnswers: [
@@ -2072,6 +2093,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe devoir à la 1ère personne pluriel du présent.",
       phrase: { before: "Nous ", after: " tous contribuer au succès du projet." },
+      hint: "devoir",
       answer: "devons",
       explanation: "Présent de l'indicatif, 1ère personne pluriel de devoir.",
       wrongAnswers: [
@@ -2089,6 +2111,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe savoir à la 2ème personne pluriel du présent.",
       phrase: { before: "Vous ", after: " où se trouve la gare ?" },
+      hint: "savoir",
       answer: "savez",
       explanation: "Présent de l'indicatif, 2ème personne pluriel de savoir.",
       wrongAnswers: [
@@ -2106,6 +2129,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe approprié (pouvoir, vouloir, devoir, savoir) à la 3ème personne singulier du présent.",
       phrase: { before: "Elle ", after: " marcher jusqu'au parc sans aide." },
+      hint: "pouvoir",
       answer: "peut",
       explanation: "Présent de l'indicatif, 3ème personne singulier de pouvoir. Le contexte indique une capacité.",
       wrongAnswers: [
@@ -2123,6 +2147,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe pouvoir au présent de l'indicatif.",
       phrase: { before: "Je ", after: " t'appeler ce soir." },
+      hint: "pouvoir",
       answer: "peux",
       explanation: "Présent de l'indicatif, 1ère personne du singulier de pouvoir : je peux.",
       wrongAnswers: [
@@ -2387,6 +2412,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe venir au présent.",
       phrase: { before: "Je ", after: " de Paris." },
+      hint: "venir",
       answer: "viens",
       explanation: "À la première personne du singulier, venir se conjugue « viens » au présent. L'expression « venir de + infinitif » signifie « venir de faire quelque chose ».",
       wrongAnswers: [
@@ -2404,6 +2430,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe tenir à l'imparfait.",
       phrase: { before: "Tu ", after: " un secret depuis longtemps." },
+      hint: "tenir",
       answer: "tenais",
       explanation: "À la deuxième personne du singulier, tenir se conjugue « tenais » à l'imparfait. C'est une action qui a duré dans le passé.",
       wrongAnswers: [
@@ -2421,6 +2448,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe prendre au futur simple.",
       phrase: { before: "Nous ", after: " un café après la réunion." },
+      hint: "prendre",
       answer: "prendrons",
       explanation: "À la première personne du pluriel, prendre se conjugue « prendrons » au futur simple. C'est une action future planifiée.",
       wrongAnswers: [
@@ -2438,6 +2466,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe mettre au présent (troisième personne du singulier).",
       phrase: { before: "Elle ", after: " ses efforts au bon endroit." },
+      hint: "mettre",
       answer: "met",
       explanation: "À la troisième personne du singulier (elle), mettre se conjugue « met » au présent. L'expression « mettre ses efforts » signifie « investir son énergie ».",
       wrongAnswers: [
@@ -2468,6 +2497,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe venir au présent (deuxième personne du pluriel).",
       phrase: { before: "Quand est-ce que vous ", after: " nous rendre visite ?" },
+      hint: "venir",
       answer: "venez",
       explanation: "À la deuxième personne du pluriel (vous), venir se conjugue « venez » au présent.",
       wrongAnswers: [
@@ -2745,6 +2775,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « voir » au présent.",
       phrase: { before: "Je ", after: " ma sœur demain." },
+      hint: "voir",
       answer: "vois",
       explanation: "Je vois = première personne du singulier du verbe voir au présent.",
       wrongAnswers: [
@@ -2762,6 +2793,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « boire » au présent.",
       phrase: { before: "Nous ", after: " du jus d'orange." },
+      hint: "boire",
       answer: "buvons",
       explanation: "Nous buvons = première personne du pluriel du verbe boire au présent. Le radical change à buv- pour nous/vous.",
       wrongAnswers: [
@@ -2779,6 +2811,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « écrire » au présent.",
       phrase: { before: "Tu ", after: " une lettre à ta mère." },
+      hint: "écrire",
       answer: "écris",
       explanation: "Tu écris = deuxième personne du singulier du verbe écrire au présent.",
       wrongAnswers: [
@@ -2796,6 +2829,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « lire » au présent.",
       phrase: { before: "Ils ", after: " le même livre en classe." },
+      hint: "lire",
       answer: "lisent",
       explanation: "Ils lisent = troisième personne du pluriel du verbe lire au présent.",
       wrongAnswers: [
@@ -2813,6 +2847,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « croire » au présent.",
       phrase: { before: "Vous ", after: " que c'est difficile ?" },
+      hint: "croire",
       answer: "croyez",
       explanation: "Vous croyez = deuxième personne du pluriel du verbe croire au présent.",
       wrongAnswers: [
@@ -3064,6 +3099,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase avec le verbe « essayer » au présent.",
       phrase: { before: "Tu ", after: " cette veste pour voir si elle te va." },
+      hint: "essayer",
       answer: "essaies",
       explanation: "Avec le sujet « tu », le verbe essayer se conjugue avec la transformation y→i : « tu essaies ». La forme « essaye » est une variante moins courante.",
       wrongAnswers: [
@@ -3081,6 +3117,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « envoyer » au présent avec le sujet indiqué.",
       phrase: { before: "Vous ", after: " les documents par courrier aujourd'hui." },
+      hint: "envoyer",
       answer: "envoyez",
       explanation: "Avec le sujet « vous », le verbe envoyer garde le y intact au présent. La conjugaison est « vous envoyez ».",
       wrongAnswers: [
@@ -3098,6 +3135,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la phrase avec le verbe « nettoyer » au présent.",
       phrase: { before: "Ils ", after: " la salle de bains avec des produits naturels." },
+      hint: "nettoyer",
       answer: "nettoient",
       explanation: "Avec le sujet « ils », le verbe nettoyer se conjugue avec la transformation y→i : « ils nettoient ». Le y devient ie avant la lettre muette.",
       wrongAnswers: [
@@ -3115,6 +3153,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « payer » au présent avec le sujet indiqué.",
       phrase: { before: "Je ", after: " l'addition au restaurant avec ma carte bleue." },
+      hint: "payer",
       answer: "paie",
       explanation: "Avec le sujet « je », le verbe payer se conjugue en « je paie » (transformation y→i). La forme « je paye » est une variante moins courante mais acceptée.",
       wrongAnswers: [
@@ -3158,6 +3197,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « payer » au présent avec le sujet indiqué.",
       phrase: { before: "Nous ", after: " nos factures en ligne." },
+      hint: "payer",
       answer: "payons",
       explanation: "Avec le sujet « nous », le verbe payer garde le y intact au présent. La conjugaison est « nous payons ».",
       wrongAnswers: [
@@ -3422,6 +3462,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « appeler » au présent, 1ère personne du singulier.",
       phrase: { before: "J'", after: " un taxi pour rentrer à la maison." },
+      hint: "appeler",
       answer: "appelle",
       explanation: "Au présent, à la 1ère personne du singulier, « appeler » double le « l » : j'appelle.",
       wrongAnswers: [
@@ -3439,6 +3480,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « jeter » au présent, 3e personne du singulier.",
       phrase: { before: "Il ", after: " son argent par les fenêtres." },
+      hint: "jeter",
       answer: "jette",
       explanation: "À la 3e personne du singulier du présent, « jeter » double le « t » : il jette.",
       wrongAnswers: [
@@ -3456,6 +3498,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « acheter » au présent, 2e personne du singulier.",
       phrase: { before: "Tu ", after: " ton cahier à la librairie." },
+      hint: "acheter",
       answer: "achètes",
       explanation: "Au présent, « acheter » utilise l'accent grave à la 2e personne du singulier : tu achètes.",
       wrongAnswers: [
@@ -3473,6 +3516,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « geler » au présent, 1ère personne du singulier.",
       phrase: { before: "Je ", after: " en hiver." },
+      hint: "geler",
       answer: "gèle",
       explanation: "Au présent, à la 1ère personne du singulier, « geler » utilise l'accent grave : je gèle.",
       wrongAnswers: [
@@ -3503,6 +3547,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « rappeler » au présent, 1ère personne du pluriel.",
       phrase: { before: "Nous ", after: " les enfants à dix-sept heures." },
+      hint: "rappeler",
       answer: "rappelons",
       explanation: "À la 1ère personne du pluriel du présent, « rappeler » ne double pas la consonne : nous rappelons.",
       wrongAnswers: [
@@ -3780,6 +3825,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe \"commencer\" au présent avec \"nous\".",
       phrase: { before: "Nous ", after: " la nouvelle année ensemble." },
+      hint: "commencer",
       answer: "commençons",
       explanation: "Verbe « commencer » à la première personne du pluriel. Avant « o », on ajoute la cédille pour conserver le son /s/ : nous commençons.",
       wrongAnswers: [
@@ -3797,6 +3843,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe \"manger\" au présent avec \"nous\".",
       phrase: { before: "Nous ", after: " des légumes." },
+      hint: "manger",
       answer: "mangeons",
       explanation: "Verbe « manger » à la première personne du pluriel. Avant « o », on intercale un « e » pour conserver le son /ʒ/ : nous mangeons.",
       wrongAnswers: [
@@ -3814,6 +3861,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe \"placer\" au présent avec \"nous\".",
       phrase: { before: "Nous ", after: " les chaises autour de la table." },
+      hint: "placer",
       answer: "plaçons",
       explanation: "Verbe « placer » à la première personne du pluriel. Avant « o », on ajoute la cédille pour conserver le son /s/ : nous plaçons.",
       wrongAnswers: [
@@ -3831,6 +3879,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe \"voyager\" au présent avec \"nous\".",
       phrase: { before: "Nous ", after: " en Europe cet été." },
+      hint: "voyager",
       answer: "voyageons",
       explanation: "Verbe « voyager » à la première personne du pluriel. Avant « o », on intercale un « e » pour conserver le son /ʒ/ : nous voyageons.",
       wrongAnswers: [
@@ -3848,6 +3897,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe \"nager\" au présent avec \"nous\".",
       phrase: { before: "Nous ", after: " dans la mer chaque jour." },
+      hint: "nager",
       answer: "nageons",
       explanation: "Verbe « nager » à la première personne du pluriel. Avant « o », on intercale un « e » pour conserver le son /ʒ/ : nous nageons.",
       wrongAnswers: [
@@ -4125,6 +4175,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe se lever au présent avec le pronom je.",
       phrase: { before: "Chaque matin, je ", after: " à 6 heures." },
+      hint: "se lever",
       answer: "me lève",
       explanation: "La première personne du singulier de se lever au présent est « je me lève ». Le pronom « me » ne s'élide pas devant la consonne « l ».",
       wrongAnswers: [
@@ -4143,6 +4194,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe s'asseoir au présent avec le pronom approprié.",
       phrase: { before: "Tu ", after: " confortablement dans ce fauteuil." },
+      hint: "s'asseoir",
       answer: "t'assois",
       explanation: "La deuxième personne du singulier de s'asseoir au présent est « tu t'assois ». Le pronom « se » s'élide en « t' » devant la voyelle « a ».",
       wrongAnswers: [
@@ -4160,6 +4212,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe se souvenir au présent avec le pronom nous.",
       phrase: { before: "Nous ", after: " de cette vacation merveille." },
+      hint: "se souvenir",
       answer: "nous souvenons",
       explanation: "La première personne du pluriel de se souvenir au présent est « nous nous souvenons ». Le pronom « nous » ne s'élide pas devant la consonne « s ».",
       wrongAnswers: [
@@ -4177,6 +4230,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe se préparer au présent avec le pronom vous.",
       phrase: { before: "Vous ", after: " pour le voyage de demain ?" },
+      hint: "se préparer",
       answer: "vous préparez",
       explanation: "La deuxième personne du pluriel de se préparer au présent est « vous vous préparez ». Le pronom « vous » ne s'élide pas devant la consonne « p ».",
       wrongAnswers: [
@@ -4194,6 +4248,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe se sentir au présent avec le pronom il.",
       phrase: { before: "Il ne ", after: " pas très bien aujourd'hui." },
+      hint: "se sentir",
       answer: "se sent",
       explanation: "La troisième personne du singulier de se sentir au présent est « il se sent ». Le pronom « se » ne s'élide pas devant la consonne « s ».",
       wrongAnswers: [
@@ -4457,7 +4512,8 @@ const section: Section = {
       ruleId: "01-13",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent (forme réciproque avec le sujet donné).",
-      phrase: { before: "Nous nous ", after: " chaque soir. » (se parler)" },
+      phrase: { before: "Nous nous ", after: " chaque soir." },
+      hint: "se parler",
       answer: "parlons",
       explanation: "Avec le sujet « nous », le verbe réciproque se parler devient « nous nous parlons ». C'est l'action mutuelle : chacun parle à l'autre.",
       wrongAnswers: [
@@ -4474,7 +4530,8 @@ const section: Section = {
       ruleId: "01-13",
       generatedBy: "haiku",
       prompt: "Complétez avec la forme réciproque correcte.",
-      phrase: { before: "Ils se ", after: " au café tous les jeudis. » (se retrouver)" },
+      phrase: { before: "Ils se ", after: " au café tous les jeudis." },
+      hint: "se retrouver",
       answer: "retrouvent",
       explanation: "Avec le sujet « ils » (3e personne du pluriel), le verbe réciproque se retrouver donne « se retrouvent ». C'est l'action mutuelle : ils se retrouvent l'un l'autre chaque jeudi.",
       wrongAnswers: [
@@ -4491,7 +4548,8 @@ const section: Section = {
       ruleId: "01-13",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe réciproque au présent.",
-      phrase: { before: "Vous vous ", after: " depuis dix ans ? » (se connaître)" },
+      phrase: { before: "Vous vous ", after: " depuis dix ans ?" },
+      hint: "se connaître",
       answer: "connaissez",
       explanation: "Avec le sujet « vous » (2e personne du pluriel), le verbe se connaître donne « vous vous connaissez ». C'est l'action réciproque : vous vous connaissez mutuellement.",
       wrongAnswers: [
@@ -4508,7 +4566,8 @@ const section: Section = {
       ruleId: "01-13",
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte du verbe réciproque.",
-      phrase: { before: "Les deux amies s'", after: " une lettre chaque semaine. » (s'écrire)" },
+      phrase: { before: "Les deux amies s'", after: " une lettre chaque semaine." },
+      hint: "s'écrire",
       answer: "écrivent",
       explanation: "Avec le sujet « les deux amies » (3e personne du pluriel), le verbe s'écrire (communiquer par écrit réciproquement) donne « s'écrivent ». Elles s'écrivent mutuellement.",
       wrongAnswers: [
@@ -4525,7 +4584,8 @@ const section: Section = {
       ruleId: "01-13",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent (verbe réciproque).",
-      phrase: { before: "Elles se ", after: " à l'entrée du cinéma. » (se donner rendez-vous)" },
+      phrase: { before: "Elles se ", after: " à l'entrée du cinéma." },
+      hint: "se donner rendez-vous",
       answer: "donnent rendez-vous",
       explanation: "Avec le sujet « elles » (3e personne du pluriel), l'expression « se donner rendez-vous » donne « se donnent rendez-vous ». C'est une action réciproque : elles se fixent un rendez-vous mutuellement à l'entrée du cinéma.",
       wrongAnswers: [
@@ -4816,6 +4876,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe « prendre » au présent pour exprimer une habitude quotidienne.",
       phrase: { before: "Le matin, tu ", after: " ton café." },
+      hint: "prendre",
       answer: "prends",
       explanation: "Le présent est utilisé pour exprimer une habitude quotidienne. Le verbe « prendre » à la première personne du singulier est « prends ».",
       wrongAnswers: [
@@ -4832,6 +4893,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe « aller » au présent pour exprimer une habitude saisonnière.",
       phrase: { before: "En hiver, nous ", after: " souvent à la montagne." },
+      hint: "aller",
       answer: "allons",
       explanation: "Le présent exprime une habitude saisonnière régulière. Le verbe « aller » à la première personne du pluriel est « allons ». La phrase complète est « En hiver, nous allons souvent à la montagne. »",
       wrongAnswers: [
@@ -4848,6 +4910,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent pour exprimer une habitude quotidienne régulière.",
       phrase: { before: "Toujours, les enfants (finir) ", after: " leurs devoirs avant le dîner." },
+      hint: "finir",
       answer: "finissent",
       explanation: "Le présent exprime une habitude quotidienne constante. Le verbe « finir » (groupe -ir) à la troisième personne du pluriel est « finissent ». La phrase complète est « Toujours, les enfants finissent leurs devoirs avant le dîner. »",
       wrongAnswers: [
@@ -4864,6 +4927,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe « vivre » au présent pour exprimer une habitude ou une vérité générale.",
       phrase: { before: "En général, nous (vivre) ", after: " une vie équilibrée." },
+      hint: "vivre",
       answer: "vivons",
       explanation: "Le présent exprime une habitude de vie générale actuelle. Le verbe « vivre » à la première personne du pluriel est « vivons ». La phrase complète est « En général, nous vivons une vie équilibrée. »",
       wrongAnswers: [
@@ -4880,6 +4944,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au présent pour exprimer une vérité générale.",
       phrase: { before: "L'eau (bouillir) ", after: " à 100 degrés Celsius." },
+      hint: "bouillir",
       answer: "bout",
       explanation: "Le présent est utilisé pour exprimer une vérité générale ou scientifique. Le verbe « bouillir » à la 3e personne du singulier est « bout ».",
       wrongAnswers: [
@@ -5144,6 +5209,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent pour exprimer une action en cours en ce moment.",
       phrase: { before: "À l'instant, j'", after: " à mon meilleur ami au téléphone." },
+      hint: "parler",
       answer: "parle",
       explanation: "Le présent simple exprime l'action qui se déroule en ce moment : je suis en train de parler à mon ami.",
       wrongAnswers: [
@@ -5161,6 +5227,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent pour exprimer une action qui se déroule maintenant.",
       phrase: { before: "Regarde ! Les enfants ", after: " partout dans le parc." },
+      hint: "courir",
       answer: "courent",
       explanation: "Le présent de l'indicatif exprime l'action qui se passe en ce moment : les enfants sont en train de courir.",
       wrongAnswers: [
@@ -5178,6 +5245,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent pour décrire une action qui se déroule en ce moment.",
       phrase: { before: "En ce moment, nous ", after: " un film passionnant au cinéma." },
+      hint: "regarder",
       answer: "regardons",
       explanation: "Le présent de l'indicatif exprime l'action en train de se dérouler actuellement.",
       wrongAnswers: [
@@ -5195,6 +5263,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent pour exprimer une action en train de se dérouler.",
       phrase: { before: "Actuellement, tu ", after: " un beau dessin au crayon." },
+      hint: "dessiner",
       answer: "dessines",
       explanation: "Le présent simple exprime l'action qui se passe en ce moment : tu es en train de dessiner.",
       wrongAnswers: [
@@ -5212,6 +5281,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent. Décrive current action.",
       phrase: { before: "À l'instant même, elle ", after: " un délicieux gâteau au chocolat." },
+      hint: "manger",
       answer: "mange",
       explanation: "Le présent de l'indicatif exprime l'action qui se déroule en ce moment : elle est en train de manger.",
       wrongAnswers: [
@@ -5502,6 +5572,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent (valeur de futur proche).",
       phrase: { before: "Nous ", after: " à la bibliothèque demain après-midi." },
+      hint: "aller",
       answer: "allons",
       explanation: "Le présent « allons » exprime naturellement un déplacement programmé pour demain.",
       wrongAnswers: [
@@ -5519,6 +5590,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le présent indiquant un futur proche.",
       phrase: { before: "Ma sœur ", after: " son diplôme la semaine prochaine." },
+      hint: "recevoir",
       answer: "reçoit",
       explanation: "Le présent « reçoit » exprime l'attente programmée d'un événement si proche et certain.",
       wrongAnswers: [
@@ -5536,6 +5608,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez le verbe entre parenthèses au présent avec valeur de future.",
       phrase: { before: "Je ", after: " mes amis ce soir pour fêter mon anniversaire." },
+      hint: "recevoir",
       answer: "reçois",
       explanation: "Le présent « vois » exprime naturellement une visite programmée pour ce soir.",
       wrongAnswers: [
@@ -5554,6 +5627,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent pour exprimer un futur proche programmé.",
       phrase: { before: "Les enfants ", after: " l'école demain matin comme d'habitude." },
+      hint: "reprendre",
       answer: "reprennent",
       explanation: "Le présent « reprennent » exprime l'action programmée et routinière du retour à l'école demain.",
       wrongAnswers: [
@@ -5571,6 +5645,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Mettez le verbe entre parenthèses au présent avec valeur de future.",
       phrase: { before: "Dans cinq minutes, j'", after: " à la réunion." },
+      hint: "arriver",
       answer: "arrive",
       explanation: "Le présent « vais » exprime naturellement une action imminente et programmée dans cinq minutes.",
       wrongAnswers: [
@@ -5823,6 +5898,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le présent de l'indicatif du verbe « habiter »",
       phrase: { before: "Elle ", after: "__ dans cet appartement depuis dix ans." },
+      hint: "habiter",
       answer: "habite",
       explanation: "Avec « depuis » pour une durée qui continue, on utilise le présent de l'indicatif, pas le passé composé.",
       wrongAnswers: [
@@ -5840,6 +5916,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le présent du verbe « attendre »",
       phrase: { before: "Il y a deux heures qu'il ", after: "__ l'autobus." },
+      hint: "attendre",
       answer: "attend",
       explanation: "« Il y a... que » exprime une durée depuis le passé jusqu'au présent ; le présent de l'indicatif est obligatoire.",
       wrongAnswers: [
@@ -5857,6 +5934,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le présent du verbe « travailler »",
       phrase: { before: "Ça fait quinze ans qu'il ", after: "__ pour cette entreprise." },
+      hint: "travailler",
       answer: "travaille",
       explanation: "« Ça fait... que » indique une durée qui continue jusqu'au présent, donc le présent de l'indicatif s'impose.",
       wrongAnswers: [
@@ -5874,6 +5952,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le présent du verbe « étudier »",
       phrase: { before: "Depuis combien de temps vous ", after: "__ le français ?" },
+      hint: "étudier",
       answer: "étudiez",
       explanation: "Avec « depuis », on utilise toujours le présent de l'indicatif pour une action qui continue du passé jusqu'au présent.",
       wrongAnswers: [
@@ -5891,6 +5970,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le présent du verbe « apprendre »",
       phrase: { before: "Il y a six mois qu'elle ", after: "__ la guitare et elle progresse rapidement." },
+      hint: "apprendre",
       answer: "apprend",
       explanation: "« Il y a... que » + présent exprime une action continue depuis six mois jusqu'au présent.",
       wrongAnswers: [
@@ -6194,6 +6274,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez la forme correcte au présent de narration.",
       phrase: { before: "L'incendie ", after: "_ le château et fait face à ses ennemis." },
+      hint: "atteindre",
       answer: "atteint",
       explanation: "Le présent de narration « atteint » crée un moment dramatique, rendant l'action vivante comme si elle se produisait maintenant.",
       wrongAnswers: [
@@ -6211,6 +6292,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez la narration avec le présent de narration.",
       phrase: { before: "Alors j'", after: "_ une voix étrange qui m'appelle par mon nom. Je me retourne rapidement." },
+      hint: "entendre",
       answer: "entends",
       explanation: "Le présent de narration « entends » rend la scène dramatique et immédiate, comme si le lecteur vivait l'événement maintenant.",
       wrongAnswers: [
@@ -6228,6 +6310,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe au présent de narration.",
       phrase: { before: "En 1870, la France ", after: "_ la guerre contre la Prusse." },
+      hint: "perdre",
       answer: "perd",
       explanation: "Le présent de narration « perd » rend l'événement historique vivant et immédiat, comme s'il se déroulait actuellement dans le récit.",
       wrongAnswers: [
@@ -6245,6 +6328,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez la forme correcte au présent de narration",
       phrase: { before: "L'ouragan ", after: "_ la ville entière." },
+      hint: "détruire",
       answer: "détruit",
       explanation: "Le présent de narration « ravage » rend l'événement dramatique et immédiat dans un style journalistique.",
       wrongAnswers: [
@@ -6262,6 +6346,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Écrivez la forme du présent de narration.",
       phrase: { before: "Ce matin-là, un coup à la porte nous ", after: "_. Ma mère se lève immédiatement." },
+      hint: "réveiller",
       answer: "réveille",
       explanation: "Le présent de narration « réveille » rend le moment dramatique et vivant, comme si le lecteur était présent à cet instant.",
       wrongAnswers: [
@@ -6539,6 +6624,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte du verbe « falloir » au présent.",
       phrase: { before: "Il ", after: " prendre un parapluie car il pleut." },
+      hint: "falloir",
       answer: "faut",
       explanation: "« Faut » est la forme correcte du verbe « falloir » au présent pour exprimer l'obligation ou la nécessité de prendre un parapluie.",
       wrongAnswers: [
@@ -6557,6 +6643,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe impersonnel approprié au présent.",
       phrase: { before: "Il ", after: " neiger demain matin selon la météo." },
+      hint: "aller",
       answer: "va",
       explanation: "Autre acceptation : « neigera » (futur simple) est aussi correct pour une prévision future. « Va neiger » (futur proche) est plus naturel dans le langage parlé.",
       wrongAnswers: [
@@ -6574,6 +6661,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe impersonnel « il s'agir de » au présent.",
       phrase: { before: "Il ", after: " d'un projet très important pour notre équipe." },
+      hint: "s'agir",
       answer: "s'agit",
       explanation: "« S'agit » est la forme correcte du verbe « s'agir » au présent. « Il s'agit de + nom » signifie « c'est une question de » ou « il est question de ».",
       wrongAnswers: [
@@ -6592,6 +6680,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec l'expression impersonnelle correcte au présent.",
       phrase: { before: "Il ", after: " beaucoup de travail à faire avant la fin du mois." },
+      hint: "y avoir",
       answer: "y a",
       explanation: "« Y a » (de « il y a ») est la forme correcte pour indiquer l'existence ou la présence d'une grande quantité de travail.",
       wrongAnswers: [
@@ -6610,6 +6699,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec le verbe impersonnel approprié au présent.",
       phrase: { before: "Il ", after: " mieux d'arriver en avance que d'être en retard." },
+      hint: "valoir",
       answer: "vaut",
       explanation: "« Vaut » est la forme correcte du verbe « valoir » au présent. « Il vaut mieux + infinitif que + infinitif » exprime que quelque chose est préférable.",
       wrongAnswers: [
@@ -6888,6 +6978,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Conjuguez « falloir » au présent dans la structure « il faut + infinitif ».",
       phrase: { before: "", after: " arriver à l'heure demain." },
+      hint: "falloir",
       answer: "Il faut",
       explanation: "« Il faut arriver à l'heure demain » = It is necessary to arrive on time tomorrow. Structure : il faut + infinitif.",
       wrongAnswers: [
@@ -6905,6 +6996,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte de « manquer » (subject-verb agreement).",
       phrase: { before: "Mes meilleurs amis me ", after: " quand je suis au lycée." },
+      hint: "manquer",
       answer: "manquent",
       explanation: "Sujet pluriel « mes meilleurs amis » demande « manquent ». Sens : I miss my best friends.",
       wrongAnswers: [
@@ -6922,6 +7014,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Inversez le sens : « Ma mère aime les gâteaux » → Dites que les gâteaux plaisent à ma mère (utilisez « plaire »).",
       phrase: { before: "Les gâteaux lui ", after: " ." },
+      hint: "plaire",
       answer: "plaisent",
       explanation: "« Les gâteaux lui plaisent » = The cakes please her / My mother likes the cakes. Sujet pluriel « les gâteaux » → « plaisent ». L'objet indirect « lui » représente « ma mère ».",
       wrongAnswers: [
@@ -6939,6 +7032,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec la forme correcte de « suffire » (impersonal ou personal).",
       phrase: { before: "Un verre d'eau me ", after: ". Je n'ai pas besoin de plus." },
+      hint: "suffire",
       answer: "suffit",
       explanation: "« Un verre d'eau me suffit » = One glass of water is enough for me. Sujet singulier « un verre » → « suffit ».",
       wrongAnswers: [
@@ -6955,6 +7049,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez avec « il faut » + infinitif ou « il faut que » + subjonctif selon le contexte.",
       phrase: { before: "", after: " que vous finissiez ce travail avant demain." },
+      hint: "falloir",
       answer: "Il faut",
       explanation: "« Il faut que vous finissiez ce travail avant demain » = It is necessary that you finish this work by tomorrow. Structure : il faut que + subjonctif.",
       wrongAnswers: [
