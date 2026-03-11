@@ -2,6 +2,13 @@
 
 ## Content generation
 
+- **Rule explanations for all sections** — the `Section.explanations` field is currently optional and code special-cases missing explanations (`section.explanations?.find(...)`, `explanation?.title ?? fallback`). This should be required:
+  1. **Audit existing sections**: identify which sections lack `RuleExplanation[]` entries for their rules
+  2. **Write missing explanations**: create pedagogical explanations (title, body, examples) for every rule in every section
+  3. **Make field required**: change `explanations?: RuleExplanation[]` to `explanations: RuleExplanation[]` in `src/data/types.ts`
+  4. **Remove fallback code**: delete special-casing in `src/lib/explanation-helpers.ts`, `src/components/quiz/explanation-panel.tsx`, and anywhere else that handles `undefined`
+  5. **Add validation**: ensure compile-time or test-time failure if a section is missing explanations for any of its rules
+
 - **Nonsensical questions** — some generated questions are internally incoherent: e.g. an input question with PROMPT "Conjuguez le verbe au présent" but neither the PROMPT nor the PHRASE names which verb to conjugate, leaving the blank completely undefined. These pass all structural checks. Fix: adjust `scripts/verify-answers.ts` to also verify user-input questions using a different prompt that checks for self-consistency (e.g. the verb to conjugate must be identifiable from the prompt or phrase).
 
 - **Elision linter in blind-verify** — add mechanical string checks to `scripts/blind-verify.ts` (or a standalone `scripts/lint-elision.ts`) that flag questions where the subject+blank combo mismatches the answer's initial sound: e.g. `Je ___` + vowel-starting answer (should be `J'___`), `J'___` + consonant-starting answer (should be `Je ___`), `m'___` + consonant-starting answer (should be `me ___`), and inline verb hints like `(prendre) ___` in a PHRASE field. Pure string matching, no LLM needed. — **DONE**: linter now exists at `scripts/lint-elision.ts` with 55 unit tests.
