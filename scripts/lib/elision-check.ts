@@ -76,6 +76,52 @@ export interface ElisionIssue {
   message: string;
 }
 
+export interface QuestionElisionIssue {
+  questionId: string;
+  kind: ElisionIssueKind;
+  message: string;
+}
+
+export interface RuleElisionResult {
+  ruleId: string;
+  sectionId: string;
+  total: number;
+  valid: number;
+  invalid: number;
+  issues: QuestionElisionIssue[];
+}
+
+export interface ParsedQuestionLike {
+  id: string;
+  prompt: string;
+  type: string;
+  phrase?: string;
+  right: { text: string };
+  wrongs: { text: string }[];
+}
+
+export function checkQuestionElision(q: ParsedQuestionLike): QuestionElisionIssue[] {
+  const allAnswers = [q.right.text.trim(), ...q.wrongs.map((w) => w.text.trim())].filter((a) => a);
+  if (allAnswers.length === 0) return [];
+
+  const texts: string[] = [q.prompt];
+  if (q.type === "input" && q.phrase) {
+    texts.push(q.phrase);
+  }
+
+  const issues: QuestionElisionIssue[] = [];
+  for (const text of texts) {
+    const elisionIssues = checkElision(text, allAnswers);
+    for (const issue of elisionIssues) {
+      issues.push({
+        questionId: q.id,
+        ...issue,
+      });
+    }
+  }
+  return issues;
+}
+
 /**
  * Check if elision is correct given a prompt/phrase text and possible answers.
  *

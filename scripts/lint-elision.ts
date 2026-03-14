@@ -21,35 +21,9 @@
 import { readFileSync } from "fs";
 import { basename } from "path";
 import { parseTxtFile, type ParsedQuestion } from "./lib/parse-txt.js";
-import { checkElision, type ElisionIssueKind } from "./lib/elision-check.js";
+import { checkQuestionElision, type QuestionElisionIssue } from "./lib/elision-check.js";
 
-interface Issue {
-  id: string;
-  kind: ElisionIssueKind;
-  message: string;
-}
-
-function checkQuestion(q: ParsedQuestion): Issue[] {
-  const allAnswers = [q.right.text.trim(), ...q.wrongs.map((w: { text: string }) => w.text.trim())].filter(a => a);
-  if (allAnswers.length === 0) return [];
-
-  const texts: string[] = [q.prompt];
-  if (q.type === "input" && q.phrase) {
-    texts.push(q.phrase);
-  }
-
-  const issues: Issue[] = [];
-  for (const text of texts) {
-    const elisionIssues = checkElision(text, allAnswers);
-    for (const issue of elisionIssues) {
-      issues.push({
-        id: q.id,
-        ...issue,
-      });
-    }
-  }
-  return issues;
-}
+type Issue = QuestionElisionIssue;
 
 // ============================================================
 // Main
@@ -110,7 +84,7 @@ for (const file of files) {
   const stats = statsMap.get(key)!;
 
   for (const q of parsed.questions) {
-    const issues = checkQuestion(q);
+    const issues = checkQuestionElision(q);
     stats.total++;
     totalQuestions++;
     if (issues.length > 0) {
@@ -149,7 +123,7 @@ if (totalIssues > 0) {
   const entries = [...statsMap.entries()].sort((a, b) => a[0].localeCompare(b[0]));
   for (const [, stats] of entries) {
     for (const issue of stats.issues) {
-      console.log(`  ${issue.id}: [${issue.kind}] ${issue.message}`);
+      console.log(`  ${issue.questionId}: [${issue.kind}] ${issue.message}`);
     }
   }
 }
