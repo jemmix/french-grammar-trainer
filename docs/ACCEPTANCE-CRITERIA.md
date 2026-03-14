@@ -18,6 +18,7 @@ This document defines the criteria for determining whether a question is **corre
 | INPUT: Wrong ≠ correct answer | Structural | TS | `validate-content.ts` |
 | INPUT: PHRASE contains `___` | Structural | TS | `validate-txt.ts` |
 | INPUT: Answer has hint | Structural | TS | `answer-hints.test.ts` |
+| INPUT: Hint doesn't give away answer | Pedagogical | TS + allowlist | **TODO** |
 | 80% MCQ / 20% INPUT ratio | Structural | TS (test) | `question-proportions.test.ts` |
 | French elision correctness | Language | TS (regex) | `lint-elision.ts` |
 | Non-empty explanations | Structural | TS (warn) | `validate-content.ts` |
@@ -178,7 +179,53 @@ ID pattern: /^\d{2}-\d{2}-\d{3}$/
 
 ---
 
-### 1.11 Question Type Ratio
+### 1.11 INPUT: Hint Doesn't Give Away Answer
+
+**Criterion**: The hint must not trivially reveal the answer. It should provide grammatical context while requiring the learner to apply knowledge.
+
+**Good hints** (require cognitive effort):
+| Answer | Hint | Why it's good |
+|--------|------|---------------|
+| `ai` | `avoir` | Learner must conjugate infinitive to 1st person |
+| `vendons` | `vendre` | Learner must conjugate + determine person/number from context |
+| `le` | `article` | Learner must choose correct definite article |
+| `les` | `pronom COD` | Learner must identify pronoun function from context |
+| `change` (EN) | `change` | Learner must know 1st person = infinitive in English present |
+
+**Bad hints** (give away the answer):
+| Answer | Hint | Why it's bad |
+|--------|------|--------------|
+| `le` | `le` | Just repeats the answer |
+| `mange` | `je mange` | Shows the conjugated form directly |
+| `aux` | `à + les = aux` | Explains the answer in the hint |
+
+**Allowlist for hint = answer**:
+In some languages (especially English), the hint may equal the answer when:
+- The answer IS the dictionary form (e.g., English present tense 1st/2nd singular)
+- The learning objective is recognizing that form, not producing it
+
+These cases require explicit allowlisting with justification.
+
+**Test**: TypeScript script with three checks:
+1. `hint !== answer` (case-insensitive) — unless in allowlist
+2. Hint is not a substring of answer that reveals it (e.g., "mangeons" hint "mange")
+3. Answer is not a substring of hint that reveals it (e.g., "ai" hint "j'ai")
+
+**Allowlist format** (per language):
+```typescript
+// src/data/{lang}/hint-allowlist.ts
+export const hintEqualsAnswerAllowlist: Record<string, string> = {
+  "change": "English present 1sg = infinitive",
+  "run": "English present 1sg = infinitive",
+  // ...
+};
+```
+
+**Script**: **TODO** — create `scripts/lint-hint-quality.ts`
+
+---
+
+### 1.12 Question Type Ratio
 
 **Criterion**: Each rule must have exactly 20% INPUT / 80% MCQ questions (divisible by 5).
 
@@ -481,17 +528,18 @@ Could there be other valid answers a learner might reasonably give?
 1. **INPUT prompt self-contained check** — catches nonsensical questions
 2. **INPUT wrong answer plausibility** — ensures quality distractors
 3. **Ambiguous prompt detection** — prevents frustration
+4. **Hint quality check** — ensures hints don't trivially reveal answers
 
 ### Medium Priority TODO 🟡
 
-4. **Grammar validity check** — catches invalid French
-5. **Question-rule alignment** — ensures questions test what they claim
-6. **Explanation accuracy** — ensures feedback is correct
+5. **Grammar validity check** — catches invalid French
+6. **Question-rule alignment** — ensures questions test what they claim
+7. **Explanation accuracy** — ensures feedback is correct
 
 ### Low Priority TODO 🟢
 
-7. **Choice diversity classification** — nice-to-have for quality metrics
-8. **Explanation quality rating** — subjective, hard to automate
+8. **Choice diversity classification** — nice-to-have for quality metrics
+9. **Explanation quality rating** — subjective, hard to automate
 
 ---
 
@@ -504,6 +552,7 @@ npx tsx scripts/validate-txt.ts questions/fr/*.txt  # Source .txt files
 
 # Language-specific validation
 npx tsx scripts/lint-elision.ts questions/fr/*.txt  # French elision
+npx tsx scripts/lint-hint-quality.ts               # Hint quality (TODO)
 
 # Semantic validation (slow, uses LLM)
 npx tsx scripts/verify-answers.ts questions/fr/01-01.txt  # MCQ verification
@@ -526,5 +575,6 @@ This would:
 1. Run `validate-txt.ts` on all source files
 2. Run `validate-content.ts` on compiled sections
 3. Run `lint-elision.ts` on French files
-4. Run test suite
-5. Optionally run LLM verification (with `--llm` flag)
+4. Run `lint-hint-quality.ts` on all sections
+5. Run test suite
+6. Optionally run LLM verification (with `--llm` flag)
