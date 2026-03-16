@@ -14,9 +14,7 @@
 ### Non-LLM (structural, language)
 
 - [x] `elision-correct` — French elision check
-- [ ] `hint-not-trivial` — Hint doesn't reveal answer
 - [ ] Migrate structural checks from `validate-content.ts`:
-  - [ ] Unique question ID
   - [ ] Required fields present
   - [ ] MCQ: ≥2 choices, exactly 1 correct
   - [ ] MCQ: No duplicate choices
@@ -27,16 +25,20 @@
   - [ ] INPUT: Answer has hint
   - [ ] 80/20 ratio
 
+Note: "Unique question ID" removed — already enforced by DSL parser, not a predicate
+
 ### LLM (semantic, pedagogical)
 
 - [x] `mcq-correct-is-true` — Verify correct answer is TRUE
 - [ ] `mcq-wrong-is-false` — Verify wrong answers are FALSE
-- [ ] `input-prompt-self-contained` — Prompt identifies what to input
+- [ ] `input-prompt-self-contained` — Prompt identifies what to input (provide answer as hint to LLM)
 - [ ] `input-wrong-plausible` — Wrong answers are plausible mistakes
 - [ ] `input-explanation-accurate` — Wrong answer explanations correct
 - [ ] `question-rule-alignment` — Question tests stated rule
 - [ ] `no-ambiguous-prompts` — Single valid answer for INPUT
 - [ ] `grammar-valid` — Answers are grammatically valid French/English
+- [ ] `hint-not-trivial` — LLM check (hint=answer valid when answer IS dictionary form; e.g., English 1sg present = infinitive)
+- [ ] `not-ridiculous` — Generic sanity check: "Is this a reasonable language learning exercise?"
 
 ## Infrastructure
 

@@ -195,21 +195,19 @@ ID pattern: /^\d{2}-\d{2}-\d{3}$/
 **Bad hints** (give away the answer):
 | Answer | Hint | Why it's bad |
 |--------|------|--------------|
-| `le` | `le` | Just repeats the answer |
+| `le` | `le` | Just repeats the answer (unless justified) |
 | `mange` | `je mange` | Shows the conjugated form directly |
 | `aux` | `à + les = aux` | Explains the answer in the hint |
 
-**Allowlist for hint = answer**:
-In some languages (especially English), the hint may equal the answer when:
-- The answer IS the dictionary form (e.g., English present tense 1st/2nd singular)
-- The learning objective is recognizing that form, not producing it
+**Rules for good hints**:
+1. **Don't repeat the answer verbatim** — unless the answer IS the dictionary form (see exception)
+2. **Don't show the conjugated/inflected form** — that's what's being tested
+3. **Don't explain the grammar rule** — that reveals the answer
+4. **DO provide the dictionary form / infinitive** — learner must conjugate it themselves
+5. **DO provide the grammatical category** — "article", "pronom COD", etc. helps learner reason
+6. **Exception: hint = answer is OK** when the answer IS the dictionary form (e.g., English 1sg/2sg present = infinitive, imperative = infinitive). Must be justified in allowlist.
 
-These cases require explicit allowlisting with justification.
-
-**Test**: TypeScript script with three checks:
-1. `hint !== answer` (case-insensitive) — unless in allowlist
-2. Hint is not a substring of answer that reveals it (e.g., "mangeons" hint "mange")
-3. Answer is not a substring of hint that reveals it (e.g., "ai" hint "j'ai")
+**Test**: LLM verification with answer provided as context (to judge if hint trivially reveals it)
 
 **Allowlist format** (per language):
 ```typescript
@@ -221,7 +219,7 @@ export const hintEqualsAnswerAllowlist: Record<string, string> = {
 };
 ```
 
-**Script**: **TODO** — create `scripts/lint-hint-quality.ts`
+**Script**: **TODO** — create LLM predicate `hint-not-trivial`
 
 ---
 
@@ -471,6 +469,40 @@ CORRECT ANSWER: {answer}
 Could there be other valid answers a learner might reasonably give?
 - If yes, list 2-3 alternatives and mark AMBIGUOUS
 - If no, mark UNAMBIGUOUS
+```
+
+---
+
+### 4.4 Not a Ridiculous Exercise (TODO)
+
+**Criterion**: The question should be a reasonable language learning exercise.
+
+**Counter-examples**:
+- "Place this in the correct position" INPUT where `___` IS the correct position (tests nothing)
+- Nonsensical sentences that no native speaker would say
+- Testing trivial facts unrelated to grammar
+
+**Why**: Catches questions that technically pass other checks but are pedagogically useless or confusing.
+
+**Test**: LLM verification
+
+**Script**: **TODO**
+
+**Prompt**:
+```
+You are a language learning quality checker. Rate this exercise:
+
+PROMPT: {prompt}
+PHRASE: {phrase} (if INPUT)
+CHOICES: {choices} (if MCQ)
+CORRECT ANSWER: {answer}
+
+Is this a reasonable language learning exercise? Consider:
+- Does the sentence make sense in the target language?
+- Does it actually test the grammar rule it claims to test?
+- Is the blank in a meaningful position?
+
+Respond GOOD or BAD with a brief reason.
 ```
 
 ---
