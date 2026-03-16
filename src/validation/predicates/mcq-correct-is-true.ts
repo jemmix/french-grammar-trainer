@@ -18,10 +18,14 @@ export const mcqCorrectIsTruePredicate: LLMPredicate = {
     }
 
     const lang = ctx.lang === "fr" ? "French" : "English";
+    const choicesText = question.choices.map((c, i) => {
+      const marker = c.correct ? " [MARKED CORRECT]" : "";
+      return String.fromCharCode(65 + i) + "." + marker + " " + c.text;
+    }).join("\n");
 
     return {
-      systemPrompt: "You are a " + lang + " grammar verifier. Given a question and a proposed answer, respond with exactly one word: TRUE, FALSE, or UNCLEAR.\n\n- TRUE if the answer correctly answers the question\n- FALSE if the answer is incorrect\n- UNCLEAR if there is genuinely no way to determine correctness\n\nYour response must contain ONLY one of these three words in all caps. No explanation.",
-      userPrompt: "Question: " + ctx.question.prompt + "\n\nProposed answer: " + correctChoice.text,
+      systemPrompt: "You are a " + lang + " grammar verifier. Given a multiple choice question with one answer marked as correct, verify if that answer is indeed the correct choice.\n\nRespond with exactly one word: TRUE, FALSE, or UNCLEAR.\n\n- TRUE if the marked-correct answer is indeed the correct/best answer\n- FALSE if the marked-correct answer is wrong (another option is correct)\n- UNCLEAR if multiple answers could be correct or the question is ambiguous\n\nYour response must contain ONLY one of these three words in all caps. No explanation.",
+      userPrompt: "Question: " + ctx.question.prompt + "\n\nChoices:\n" + choicesText,
     };
   },
 
