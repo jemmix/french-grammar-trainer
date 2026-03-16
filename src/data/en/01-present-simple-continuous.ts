@@ -62,12 +62,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-01",
       generatedBy: "opus",
-      prompt: "Choose the correct form: \"You ___ very well.\"",
+      prompt: "Choose the correct present simple form: \"You ___ very well.\"",
       choices: [
         { text: "cook", correct: true, explanation: "With the subject \"you,\" the present simple uses the base form. \"You cook\" is correct whether \"you\" is singular or plural." },
         { text: "cooks", correct: false, explanation: "\"Cooks\" is the third person singular form (he cooks). \"You\" always takes the base form, regardless of whether it refers to one person or several." },
         { text: "are cook", correct: false, explanation: "The present simple does not need an auxiliary before the main verb. \"You cook\" is the correct structure." },
-        { text: "cooked", correct: false, explanation: "\"Cooked\" is the past tense. The sentence describes a general ability or habitual truth, which uses the present simple base form." },
+        { text: "cooked", correct: false, explanation: "\"Cooked\" is the past tense. The present simple uses the base form \"cook.\"" },
       ],
     },
     {
