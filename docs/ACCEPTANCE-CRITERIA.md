@@ -563,18 +563,160 @@ npm test
 
 ---
 
-## Future: Unified Validation Script
+## Validation Framework
 
-Consider creating a single command that runs all checks:
+### Architecture
 
-```bash
-npm run validate-all
+```
+src/validation/
+├── types.ts           # Predicate interfaces, cache types
+├── cache.ts           # Content-addressable cache (llm-cache/*.json)
+├── harness.ts         # LLM harness abstraction (opencode)
+├── runner.ts          # Main validation loop, majority voting
+└── predicates/
+    ├── index.ts       # Exports allPredicates array
+    ├── elision.ts     # Non-LLM: French elision check
+    └── mcq-correct-is-true.ts  # LLM: verify correct answer
+
+scripts/
+└── validate.ts        # CLI entry point
+
+llm-cache/             # Committed cache files
+└── <hash>.json        # One per (question, predicate) pair
 ```
 
-This would:
-1. Run `validate-txt.ts` on all source files
-2. Run `validate-content.ts` on compiled sections
-3. Run `lint-elision.ts` on French files
-4. Run `lint-hint-quality.ts` on all sections
-5. Run test suite
-6. Optionally run LLM verification (with `--llm` flag)
+### Predicate Types
+
+```typescript
+// Non-LLM predicate (structural, language checks)
+interface StructuralPredicate {
+  id: string;
+  category: "structural" | "language";
+  check(ctx: QuestionContext): PredicateResult;
+}
+
+// LLM predicate (semantic, pedagogical checks)
+interface LLMPredicate {
+  id: string;
+  category: "semantic" | "pedagogical";
+  generatePrompt(ctx: QuestionContext): LLMRequestSpec;
+  interpretResponse(ctx: QuestionContext, rawResponse: string): PredicateResult;
+}
+```
+
+### Cache Structure
+
+```
+llm-cache/<sha256-hash>.json
+```
+
+```json
+{
+  "cacheKey": "a1b2c3d4e5f6...",
+  "predicateId": "mcq-correct-is-true",
+  "questionId": "01-01-001",
+  "spec": {
+    "systemPrompt": "You are an English grammar verifier...",
+    "userPrompt": "Question: Choose the correct sentence.\nProposed answer: I walk to work...",
+    "nonce": "nonce-1742152800000-abc123"
+  },
+  "responses": [
+    {
+      "raw": "TRUE",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1742152800000-abc123",
+      "timestamp": "2025-03-16T16:00:00.000Z"
+    }
+  ]
+}
+```
+
+Cache key = `sha256(predicateId:questionId:systemPrompt:userPrompt)` (first 16 chars)
+
+### LLM Execution with Nonce
+
+Each LLM request includes a nonce to ensure cache integrity:
+
+```
+<System prompt>
+
+nonce-1742152800000-abc123
+
+<User prompt>
+```
+
+The nonce is recorded in both request spec and response, proving the response matches the exact request.
+
+### Majority Voting (3+7 Adaptive)
+
+1. Run 3 times initially
+2. If all TRUE → pass
+3. If any FALSE → run 7 more (total 10)
+4. Check for 90% majority
+
+```
+3/3 TRUE → pass
+2/3 TRUE → run 7 more → 9/10 TRUE → pass
+5/10 FALSE → fail (majority FALSE)
+5/10 TRUE, 5/10 FALSE → fail (no clear majority)
+```
+
+### CLI Usage
+
+```bash
+# Non-LLM checks only (structural + language)
+npx tsx scripts/validate.ts --lang en --rule 01-01
+
+# LLM checks (dry-run: show cache status only)
+npx tsx scripts/validate.ts --lang en --rule 01-01 --llm --dry-run
+
+# LLM checks (populate cache)
+npx tsx scripts/validate.ts --lang en --rule 01-01 --llm --update-cache
+
+# Prune orphaned cache entries
+npx tsx scripts/validate.ts --prune-cache
+
+# JSON output
+npx tsx scripts/validate.ts --lang en --rule 01-01 --json
+```
+
+### Adding New Predicates
+
+1. Create `src/validation/predicates/my-check.ts`
+2. Implement `StructuralPredicate` or `LLMPredicate`
+3. Export from `predicates/index.ts` and add to `allPredicates` array
+4. Run validation to test
+
+### Migrating Existing Checks
+
+| Existing Script | Migration Status |
+|-----------------|------------------|
+| `validate-content.ts` | TODO: migrate structural checks |
+| `validate-txt.ts` | TODO: migrate structural checks |
+| `lint-elision.ts` | ✅ Migrated to `predicates/elision.ts` |
+| `verify-answers.ts` | ✅ Partial: `mcq-correct-is-true` predicate |
+
+---
+
+## Implementation Status
+
+### Framework Core ✅
+- [x] Predicate types (`src/validation/types.ts`)
+- [x] Cache layer with nonce (`src/validation/cache.ts`)
+- [x] LLM harness for opencode (`src/validation/harness.ts`)
+- [x] Runner with majority voting (`src/validation/runner.ts`)
+- [x] CLI (`scripts/validate.ts`)
+
+### Predicates
+- [x] `elision-correct` (language, non-LLM)
+- [x] `mcq-correct-is-true` (semantic, LLM)
+- [ ] `mcq-wrong-is-false` (semantic, LLM)
+- [ ] `input-prompt-self-contained` (semantic, LLM)
+- [ ] `hint-not-trivial` (pedagogical, non-LLM)
+- [ ] Migrate structural checks from `validate-content.ts`
+
+### Infrastructure
+- [x] Cache directory committed to git (`llm-cache/`)
+- [ ] GitHub CI integration
+- [ ] npm script: `validate`
