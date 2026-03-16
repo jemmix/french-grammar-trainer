@@ -34,6 +34,7 @@ export interface LLMResponse {
 export interface LLMPredicate {
   id: string;
   category: "semantic" | "pedagogical";
+  appliesTo(ctx: QuestionContext): boolean;
   generatePrompt(ctx: QuestionContext): LLMRequestSpec;
   interpretResponse(ctx: QuestionContext, rawResponse: string): PredicateResult;
 }
@@ -58,10 +59,10 @@ export interface ValidationOptions {
   rules?: string[];
   questions?: string[];
   categories?: Array<"structural" | "language" | "semantic" | "pedagogical">;
-  llm?: boolean;
-  dryRun?: boolean;
-  updateCache?: boolean;
-  pruneCache?: boolean;
+  llm: boolean;
+  dryRun: boolean;
+  updateCache: boolean;
+  pruneCache: boolean;
 }
 
 export interface CheckResult {

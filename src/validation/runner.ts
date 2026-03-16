@@ -16,11 +16,31 @@ import {
   createCacheEntry,
   pruneCache,
 } from "./cache";
-import { opencodeHarness } from "./harness";
+import { opencodeHarness, parseVerdict } from "./harness";
 
 const INITIAL_RUNS = 3;
 const ADDITIONAL_RUNS = 7;
 const MAJORITY_THRESHOLD = 0.9;
+const MAX_CONCURRENCY = 5;
+
+function createConcurrencyLimiter(maxConcurrent: number) {
+  let running = 0;
+  const queue: (() => void)[] = [];
+  
+  return async <T>(fn: () => Promise<T>): Promise<T> => {
+    while (running >= maxConcurrent) {
+      await new Promise<void>(resolve => queue.push(resolve));
+    }
+    running++;
+    try {
+      return await fn();
+    } finally {
+      running--;
+      const next = queue.shift();
+      if (next) next();
+    }
+  };
+}
 
 async function loadSections(lang: "fr" | "en"): Promise<Map<string, { section: any; rules: Map<string, any> }>> {
   const { loadedSections } = await import("../data/" + lang + "/index.ts");
@@ -49,52 +69,62 @@ function categoryMatches(predicate: { category: string }, opts: ValidationOption
   return opts.categories.includes(predicate.category as any);
 }
 
-async function runLLMWithMajority(
-  predicate: LLMPredicate,
-  ctx: QuestionContext,
-  entry: CacheEntry,
-  updateCache: boolean
-): Promise<{ pass: boolean; reason?: string; responseCount: number }> {
-  const spec = { systemPrompt: entry.spec.systemPrompt, userPrompt: entry.spec.userPrompt };
-  
-  while (entry.responses.length < INITIAL_RUNS && updateCache) {
-    const nonce = generateNonce();
-    const response = await opencodeHarness.run(spec, nonce);
-    entry.responses.push(response);
-    saveCacheEntry(entry);
-  }
-  
-  const responses = entry.responses.slice(0, INITIAL_RUNS);
-  if (responses.length === 0) {
-    return { pass: false, reason: "No cached responses and cache update disabled", responseCount: 0 };
-  }
-  
-  const results = responses.map(r => predicate.interpretResponse(ctx, r.raw));
-  const trueCount = results.filter(r => r.pass).length;
-  const falseCount = results.filter(r => !r.pass).length;
-  
-  if (falseCount > 0 && updateCache) {
-    while (entry.responses.length < INITIAL_RUNS + ADDITIONAL_RUNS) {
-      const nonce = generateNonce();
-      const response = await opencodeHarness.run(spec, nonce);
-      entry.responses.push(response);
-      saveCacheEntry(entry);
+interface LLMPendingTask {
+  predicate: LLMPredicate;
+  ctx: QuestionContext;
+  entry: CacheEntry;
+  fromCache: boolean;
+  resolve: (result: { pass: boolean; reason?: string; responseCount: number }) => void;
+}
+
+async function runLLMBatch(
+  tasks: LLMPendingTask[],
+  updateCache: boolean,
+  limitConcurrency: <T>(fn: () => Promise<T>) => Promise<T>
+): Promise<void> {
+  const runTask = async (task: LLMPendingTask) => {
+    const { predicate, ctx, entry, fromCache } = task;
+    const spec = { systemPrompt: entry.spec.systemPrompt, userPrompt: entry.spec.userPrompt };
+    
+    const neededRuns = fromCache 
+      ? Math.max(0, INITIAL_RUNS - entry.responses.length)
+      : INITIAL_RUNS;
+    
+    const needsMore = (count: number, results: { pass: boolean }[]) => {
+      if (count < INITIAL_RUNS) return true;
+      const falseCount = results.filter(r => !r.pass).length;
+      return falseCount > 0 && count < INITIAL_RUNS + ADDITIONAL_RUNS;
+    };
+    
+    while (updateCache && needsMore(entry.responses.length, entry.responses.map(r => predicate.interpretResponse(ctx, r.raw)))) {
+      await limitConcurrency(async () => {
+        const nonce = generateNonce();
+        const response = await opencodeHarness.run(spec, nonce);
+        entry.responses.push(response);
+        saveCacheEntry(entry);
+      });
     }
-  }
+    
+    if (entry.responses.length === 0) {
+      task.resolve({ pass: false, reason: "No cached responses and cache update disabled", responseCount: 0 });
+      return;
+    }
+    
+    const allResults = entry.responses.map(r => predicate.interpretResponse(ctx, r.raw));
+    const allTrueCount = allResults.filter(r => r.pass).length;
+    const totalResponses = allResults.length;
+    
+    if (allTrueCount / totalResponses >= MAJORITY_THRESHOLD) {
+      task.resolve({ pass: true, responseCount: totalResponses });
+    } else if ((totalResponses - allTrueCount) / totalResponses >= MAJORITY_THRESHOLD) {
+      const failedResult = allResults.find(r => !r.pass);
+      task.resolve({ pass: false, reason: failedResult?.reason || "Majority FALSE", responseCount: totalResponses });
+    } else {
+      task.resolve({ pass: false, reason: "No clear majority: " + allTrueCount + "/" + totalResponses + " TRUE", responseCount: totalResponses });
+    }
+  };
   
-  const allResults = entry.responses.map(r => predicate.interpretResponse(ctx, r.raw));
-  const allTrueCount = allResults.filter(r => r.pass).length;
-  const totalResponses = allResults.length;
-  
-  if (allTrueCount / totalResponses >= MAJORITY_THRESHOLD) {
-    return { pass: true, responseCount: totalResponses };
-  }
-  if ((totalResponses - allTrueCount) / totalResponses >= MAJORITY_THRESHOLD) {
-    const failedResult = allResults.find(r => !r.pass);
-    return { pass: false, reason: failedResult?.reason || "Majority FALSE", responseCount: totalResponses };
-  }
-  
-  return { pass: false, reason: "No clear majority: " + allTrueCount + "/" + totalResponses + " TRUE", responseCount: totalResponses };
+  await Promise.all(tasks.map(runTask));
 }
 
 export async function runValidation(opts: ValidationOptions): Promise<ValidationReport> {
@@ -109,6 +139,10 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   const lang = opts.lang || "en";
   const sections = await loadSections(lang);
   const cacheKeysUsed = new Set<string>();
+  const limitConcurrency = createConcurrencyLimiter(MAX_CONCURRENCY);
+  
+  const llmPendingTasks: LLMPendingTask[] = [];
+  const structuralResults: CheckResult[] = [];
   
   for (const [sectionId, { section, rules }] of sections) {
     for (const question of section.questions || []) {
@@ -126,9 +160,11 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
       
       for (const predicate of allPredicates) {
         if (!categoryMatches(predicate, opts)) continue;
-        if (isLLMPredicate(predicate) && !opts.llm) continue;
+        if (isLLMPredicate(predicate) && opts.llm !== true) continue;
         
         if (isLLMPredicate(predicate)) {
+          if (!predicate.appliesTo(ctx)) continue;
+          
           const spec = predicate.generatePrompt(ctx);
           const cacheKey = computeCacheKey(predicate.id, question.id, spec);
           cacheKeysUsed.add(cacheKey);
@@ -139,6 +175,14 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
           if (!entry) {
             if (opts.dryRun) {
               cacheMisses++;
+              console.log("");
+              console.log("--- LLM command (would run " + INITIAL_RUNS + " times) ---");
+              console.log("predicate:", predicate.id);
+              console.log("question:", question.id);
+              console.log("cache key:", cacheKey);
+              console.log("system prompt:", spec.systemPrompt);
+              console.log("user prompt:", spec.userPrompt);
+              console.log("");
               results.push({
                 questionId: question.id,
                 predicateId: predicate.id,
@@ -149,6 +193,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
               });
               continue;
             }
+            
             if (!opts.updateCache) {
               cacheMisses++;
               results.push({
@@ -169,22 +214,32 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
             cacheHits++;
           }
           
-          const llmResult = await runLLMWithMajority(predicate, ctx, entry, !!opts.updateCache && !fromCache);
+          const taskPromise = new Promise<{ pass: boolean; reason?: string; responseCount: number }>(resolve => {
+            llmPendingTasks.push({
+              predicate,
+              ctx,
+              entry: entry!,
+              fromCache,
+              resolve,
+            });
+          });
           
-          const result: CheckResult = {
-            questionId: question.id,
-            predicateId: predicate.id,
-            category: predicate.category,
-            pass: llmResult.pass,
-            reason: llmResult.reason,
-            fromCache,
-            responseCount: llmResult.responseCount,
-          };
+          taskPromise.then(llmResult => {
+            const result: CheckResult = {
+              questionId: question.id,
+              predicateId: predicate.id,
+              category: predicate.category,
+              pass: llmResult.pass,
+              reason: llmResult.reason,
+              fromCache,
+              responseCount: llmResult.responseCount,
+            };
+            results.push(result);
+            if (result.pass) passed++;
+            else if (predicate.category === "pedagogical") { warnings++; failed++; }
+            else failed++;
+          });
           
-          results.push(result);
-          if (result.pass) passed++;
-          else if (predicate.category === "pedagogical") { warnings++; failed++; }
-          else failed++;
         } else {
           const predicateResult = predicate.check(ctx);
           const checkResult: CheckResult = {
@@ -194,12 +249,19 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
             pass: predicateResult.pass,
             reason: predicateResult.reason,
           };
-          results.push(checkResult);
+          structuralResults.push(checkResult);
           if (predicateResult.pass) passed++;
           else failed++;
         }
       }
     }
+  }
+  
+  results.unshift(...structuralResults);
+  
+  if (llmPendingTasks.length > 0) {
+    console.log("Running " + llmPendingTasks.length + " LLM tasks (max " + MAX_CONCURRENCY + " concurrent)...");
+    await runLLMBatch(llmPendingTasks, !!opts.updateCache, limitConcurrency);
   }
   
   if (opts.pruneCache) {

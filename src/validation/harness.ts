@@ -10,20 +10,16 @@ export const opencodeHarness: LLMHarness = {
   name: "opencode",
 
   async run(spec: LLMRequestSpec, nonce: string): Promise<LLMResponse> {
-    const fullPrompt = `${spec.systemPrompt}
-
-${nonce}
-
-${spec.userPrompt}`;
+    const fullPrompt = spec.systemPrompt + "\n\n" + nonce + "\n\n" + spec.userPrompt;
 
     return new Promise((resolve, reject) => {
       const child = execFile(
         "opencode",
-        ["run", fullPrompt],
+        ["run", "--model", "zai-coding-plan/glm-5", fullPrompt],
         { timeout: 60_000, maxBuffer: 10 * 1024 },
         (err, stdout, stderr) => {
           if (err) {
-            reject(new Error(`opencode failed: ${err.message}\nstderr: ${stderr}`));
+            reject(new Error("opencode failed: " + err.message + "\nstderr: " + stderr));
             return;
           }
           const raw = stdout.trim();
