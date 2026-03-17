@@ -34,26 +34,26 @@ export const grammarValidPredicate: LLMPredicate = {
     const firstLine = lines[0]?.trim().toUpperCase() || "";
 
     if (firstLine === "VALID") {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (firstLine === "INVALID") {
       const reason = lines.slice(1).join(" ").trim();
-      return { pass: false, reason: reason || "Correct answer has grammar issues" };
+      return { status: "fail", reason: reason || "Correct answer has grammar issues" };
     }
     if (firstLine.includes("VALID") && !firstLine.includes("INVALID")) {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (firstLine.includes("INVALID")) {
       const reason = lines.slice(1).join(" ").trim();
-      return { pass: false, reason: reason || "Correct answer has grammar issues" };
+      return { status: "fail", reason: reason || "Correct answer has grammar issues" };
     }
     const verdict = parseVerdict(rawResponse);
     if (verdict === "TRUE") {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (verdict === "FALSE") {
-      return { pass: false, reason: "Correct answer has grammar issues" };
+      return { status: "fail", reason: "Correct answer has grammar issues" };
     }
-    return { pass: false, reason: "Unexpected response: " + rawResponse.slice(0, 100) };
+    return { status: "invalid", reason: "Unexpected response: " + rawResponse.slice(0, 100) };
   },
 };

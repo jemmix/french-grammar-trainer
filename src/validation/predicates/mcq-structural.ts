@@ -32,7 +32,7 @@ export const mcqStructuralPredicate: StructuralPredicate = {
 
   check(ctx: QuestionContext): PredicateResult {
     if (ctx.question.type !== "mcq") {
-      return { pass: true };
+      return { status: "pass" };
     }
 
     const q = ctx.question as MultipleChoiceQuestion;
@@ -75,8 +75,8 @@ export const mcqStructuralPredicate: StructuralPredicate = {
     }
 
     if (errors.length > 0) {
-      return { pass: false, reason: errors.join("; ") };
+      return { status: "fail", reason: errors.join("; ") };
     }
-    return { pass: true };
+    return { status: "pass" };
   },
 };

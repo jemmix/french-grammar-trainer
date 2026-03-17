@@ -29,18 +29,18 @@ export const inputWrongPlausiblePredicate: LLMPredicate = {
     const verdict = parseVerdict(rawResponse);
 
     if (verdict === "TRUE" || rawResponse.trim().toUpperCase() === "PLAUSIBLE") {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (verdict === "FALSE" || rawResponse.trim().toUpperCase() === "IMPLAUSIBLE") {
-      return { pass: false, reason: "Wrong answers contain implausible options" };
+      return { status: "fail", reason: "Wrong answers contain implausible options" };
     }
     const cleaned = rawResponse.trim().toUpperCase();
     if (cleaned.includes("PLAUSIBLE") && !cleaned.includes("IMPLAUSIBLE")) {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (cleaned.includes("IMPLAUSIBLE")) {
-      return { pass: false, reason: "Wrong answers contain implausible options" };
+      return { status: "fail", reason: "Wrong answers contain implausible options" };
     }
-    return { pass: false, reason: "Unexpected response: " + rawResponse.slice(0, 100) };
+    return { status: "invalid", reason: "Unexpected response: " + rawResponse.slice(0, 100) };
   },
 };

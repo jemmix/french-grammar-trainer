@@ -31,7 +31,7 @@ export const hintNotTrivialPredicate: StructuralPredicate = {
 
   check(ctx: QuestionContext): PredicateResult {
     if (ctx.question.type !== "input") {
-      return { pass: true };
+      return { status: "pass" };
     }
 
     const q = ctx.question as InputQuestion;
@@ -39,7 +39,7 @@ export const hintNotTrivialPredicate: StructuralPredicate = {
     const answerWords = extractWords(q.answer);
 
     if (answerWords.length === 0) {
-      return { pass: true };
+      return { status: "pass" };
     }
 
     const questionText = [
@@ -52,18 +52,18 @@ export const hintNotTrivialPredicate: StructuralPredicate = {
 
     if (isConsecutiveSubsequence(answerWords, questionWords)) {
       return {
-        pass: false,
+        status: "fail",
         reason: 'Answer "' + q.answer + '" appears in the question text',
       };
     }
 
     if (isConsecutiveSubsequence(answerWords, hintWords)) {
       return {
-        pass: false,
+        status: "fail",
         reason: 'Answer "' + q.answer + '" appears in the hint',
       };
     }
 
-    return { pass: true };
+    return { status: "pass" };
   },
 };

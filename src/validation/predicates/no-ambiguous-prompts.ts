@@ -40,33 +40,33 @@ export const noAmbiguousPromptsPredicate: LLMPredicate = {
     if (verdictMatch?.[1]) {
       const verdict = verdictMatch[1].toUpperCase();
       if (verdict === "CLEAR") {
-        return { pass: true };
+        return { status: "pass" };
       } else if (verdict === "AMBIGUOUS") {
-        return { pass: false, reason: extractedReason || "Prompt is ambiguous or unclear" };
+        return { status: "fail", reason: extractedReason || "Prompt is ambiguous or unclear" };
       }
     }
 
     const cleaned = rawResponse.trim().toUpperCase();
 
     if (cleaned === "CLEAR") {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (cleaned === "AMBIGUOUS") {
-      return { pass: false, reason: "Prompt is ambiguous or unclear" };
+      return { status: "fail", reason: "Prompt is ambiguous or unclear" };
     }
     if (cleaned.includes("CLEAR") && !cleaned.includes("AMBIGUOUS") && !cleaned.includes("UNCLEAR")) {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (cleaned.includes("AMBIGUOUS") || cleaned.includes("UNCLEAR")) {
-      return { pass: false, reason: "Prompt is ambiguous or unclear" };
+      return { status: "fail", reason: "Prompt is ambiguous or unclear" };
     }
     const verdict = parseVerdict(rawResponse);
     if (verdict === "TRUE") {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (verdict === "FALSE") {
-      return { pass: false, reason: "Prompt is ambiguous or unclear" };
+      return { status: "fail", reason: "Prompt is ambiguous or unclear" };
     }
-    return { pass: false, reason: "Unexpected response: " + rawResponse.slice(0, 100) };
+    return { status: "invalid", reason: "Unexpected response: " + rawResponse.slice(0, 100) };
   },
 };

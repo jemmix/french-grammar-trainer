@@ -5,8 +5,10 @@ import type {
   CheckResult,
   LLMPredicate,
   CacheEntry,
+  ValidPredicateResult,
 } from "./types";
 import { isLLMPredicate } from "./types";
+import type { LLMHarness } from "./harness";
 import { allPredicates } from "./predicates";
 import {
   computeCacheKey,
@@ -16,7 +18,7 @@ import {
   createCacheEntry,
   pruneCache,
 } from "./cache";
-import { opencodeHarness, parseVerdict } from "./harness";
+import { createOpencodeHarness, parseVerdict } from "./harness";
 
 const INITIAL_RUNS = 3;
 const ADDITIONAL_RUNS = 7;
@@ -69,9 +71,9 @@ function categoryMatches(predicate: { category: string }, opts: ValidationOption
   return opts.categories.includes(predicate.category as any);
 }
 
-function formatStatus(pass: boolean, reason?: string): string {
-  if (pass) return "\x1b[32mPASS\x1b[0m";
-  return "\x1b[31mFAIL\x1b[0m" + (reason ? ": " + reason : "");
+function formatStatus(result: { status: string; reason?: string }): string {
+  if (result.status === "pass") return "\x1b[32mPASS\x1b[0m";
+  return "\x1b[31m" + result.status.toUpperCase() + "\x1b[0m" + (result.reason ? ": " + result.reason : "");
 }
 
 function emitResult(
@@ -79,11 +81,10 @@ function emitResult(
   predicateId: string,
   attemptNumber: number,
   fromCache: boolean,
-  pass: boolean,
-  reason?: string
+  result: { status: string; reason?: string }
 ): void {
   const cacheTag = fromCache ? "[cached]" : "[fresh] ";
-  const status = formatStatus(pass, reason);
+  const status = formatStatus(result);
   console.log("  " + questionId + " | " + predicateId + " | attempt " + attemptNumber + " | " + cacheTag + " " + status);
 }
 
@@ -92,27 +93,30 @@ interface LLMPendingTask {
   ctx: QuestionContext;
   entry: CacheEntry;
   fromCache: boolean;
-  resolve: (result: { pass: boolean; reason?: string; responseCount: number }) => void;
+  resolve: (result: ValidPredicateResult & { responseCount: number }) => void;
 }
 
 async function runLLMBatch(
   tasks: LLMPendingTask[],
   updateCache: boolean,
   limitConcurrency: <T>(fn: () => Promise<T>) => Promise<T>,
-  verbose: boolean
+  verbose: boolean,
+  harness: LLMHarness
 ): Promise<void> {
   const runTask = async (task: LLMPendingTask) => {
     const { predicate, ctx, entry, fromCache } = task;
     const spec = { systemPrompt: entry.spec.systemPrompt, userPrompt: entry.spec.userPrompt };
     
-    const neededRuns = fromCache 
-      ? Math.max(0, INITIAL_RUNS - entry.responses.length)
-      : INITIAL_RUNS;
+    const getValidResults = () => {
+      const all = entry.responses.map(r => predicate.interpretResponse(ctx, r.raw));
+      return all.filter((r): r is ValidPredicateResult => r.status !== "invalid");
+    };
     
-    const needsMore = (count: number, results: { pass: boolean }[]) => {
-      if (count < INITIAL_RUNS) return true;
-      const falseCount = results.filter(r => !r.pass).length;
-      return falseCount > 0 && count < INITIAL_RUNS + ADDITIONAL_RUNS;
+    const needsMore = () => {
+      const validResults = getValidResults();
+      if (validResults.length < INITIAL_RUNS) return true;
+      const failCount = validResults.filter(r => r.status === "fail").length;
+      return failCount > 0 && validResults.length < INITIAL_RUNS + ADDITIONAL_RUNS;
     };
     
     let attemptNumber = 0;
@@ -121,48 +125,57 @@ async function runLLMBatch(
       for (const response of entry.responses) {
         attemptNumber++;
         const interp = predicate.interpretResponse(ctx, response.raw);
-        emitResult(ctx.question.id, predicate.id, attemptNumber, true, interp.pass, interp.reason);
+        emitResult(ctx.question.id, predicate.id, attemptNumber, true, interp);
       }
     } else {
       attemptNumber = entry.responses.length;
     }
     
-    while (updateCache && needsMore(entry.responses.length, entry.responses.map(r => predicate.interpretResponse(ctx, r.raw)))) {
+    while (updateCache && needsMore()) {
       await limitConcurrency(async () => {
         const nonce = generateNonce();
-        const response = await opencodeHarness.run(spec, nonce);
+        const response = await harness.run(spec, nonce);
         entry.responses.push(response);
         saveCacheEntry(entry);
         
         attemptNumber++;
         if (verbose) {
           const interp = predicate.interpretResponse(ctx, response.raw);
-          emitResult(ctx.question.id, predicate.id, attemptNumber, false, interp.pass, interp.reason);
+          emitResult(ctx.question.id, predicate.id, attemptNumber, false, interp);
         }
       });
     }
     
     if (entry.responses.length === 0) {
       if (verbose) {
-        emitResult(ctx.question.id, predicate.id, 0, fromCache, false, "No cached responses and cache update disabled");
+        emitResult(ctx.question.id, predicate.id, 0, fromCache, { status: "fail", reason: "No cached responses and cache update disabled" });
       }
-      task.resolve({ pass: false, reason: "No cached responses and cache update disabled", responseCount: 0 });
+      task.resolve({ status: "fail", reason: "No cached responses and cache update disabled", responseCount: 0 });
       return;
     }
     
-    const allResults = entry.responses.map(r => predicate.interpretResponse(ctx, r.raw));
-    const allTrueCount = allResults.filter(r => r.pass).length;
-    const totalResponses = allResults.length;
+    const validResults = getValidResults();
     
-    if (allTrueCount / totalResponses >= MAJORITY_THRESHOLD) {
-      task.resolve({ pass: true, responseCount: totalResponses });
-    } else if ((totalResponses - allTrueCount) / totalResponses >= MAJORITY_THRESHOLD) {
-      const failedResult = allResults.find(r => !r.pass);
+    if (validResults.length === 0) {
+      throw new Error(
+        "All LLM responses were invalid for " + ctx.question.id + " / " + predicate.id + ". " +
+        "Total responses: " + entry.responses.length + ". " +
+        "Last response: " + (entry.responses[entry.responses.length - 1]?.raw?.slice(0, 200) || "none")
+      );
+    }
+    
+    const passCount = validResults.filter(r => r.status === "pass").length;
+    const totalValid = validResults.length;
+    
+    if (passCount / totalValid >= MAJORITY_THRESHOLD) {
+      task.resolve({ status: "pass", responseCount: totalValid });
+    } else if ((totalValid - passCount) / totalValid >= MAJORITY_THRESHOLD) {
+      const failedResult = validResults.find(r => r.status === "fail");
       const reason = failedResult?.reason || "Majority FALSE";
-      task.resolve({ pass: false, reason, responseCount: totalResponses });
+      task.resolve({ status: "fail", reason, responseCount: totalValid });
     } else {
-      const reason = "No clear majority: " + allTrueCount + "/" + totalResponses + " TRUE";
-      task.resolve({ pass: false, reason, responseCount: totalResponses });
+      const reason = "No clear majority: " + passCount + "/" + totalValid + " PASS";
+      task.resolve({ status: "fail", reason, responseCount: totalValid });
     }
   };
   
@@ -179,6 +192,8 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   let cacheMisses = 0;
   
   const lang = opts.lang || "en";
+  const model = opts.model || "glm-5";
+  const harness = createOpencodeHarness(model);
   const sections = await loadSections(lang);
   const cacheKeysUsed = new Set<string>();
   const concurrency = opts.concurrency || DEFAULT_CONCURRENCY;
@@ -258,7 +273,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
             cacheHits++;
           }
           
-          const taskPromise = new Promise<{ pass: boolean; reason?: string; responseCount: number }>(resolve => {
+          const taskPromise = new Promise<ValidPredicateResult & { responseCount: number }>(resolve => {
             llmPendingTasks.push({
               predicate,
               ctx,
@@ -273,8 +288,8 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
               questionId: question.id,
               predicateId: predicate.id,
               category: predicate.category,
-              pass: llmResult.pass,
-              reason: llmResult.reason,
+              pass: llmResult.status === "pass",
+              reason: llmResult.status === "fail" ? llmResult.reason : undefined,
               fromCache,
               responseCount: llmResult.responseCount,
             };
@@ -290,11 +305,11 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
             questionId: question.id,
             predicateId: predicate.id,
             category: predicate.category,
-            pass: predicateResult.pass,
-            reason: predicateResult.reason,
+            pass: predicateResult.status === "pass",
+            reason: predicateResult.status !== "pass" ? predicateResult.reason : undefined,
           };
           structuralResults.push(checkResult);
-          if (predicateResult.pass) passed++;
+          if (predicateResult.status === "pass") passed++;
           else failed++;
         }
       }
@@ -305,7 +320,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   
   if (llmPendingTasks.length > 0) {
     console.log("Running " + llmPendingTasks.length + " LLM tasks (max " + concurrency + " concurrent)...");
-    await runLLMBatch(llmPendingTasks, !!opts.updateCache, limitConcurrency, verbose);
+    await runLLMBatch(llmPendingTasks, !!opts.updateCache, limitConcurrency, verbose, harness);
   }
   
   if (opts.pruneCache) {

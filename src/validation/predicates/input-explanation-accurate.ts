@@ -29,24 +29,24 @@ export const inputExplanationAccuratePredicate: LLMPredicate = {
     const cleaned = rawResponse.trim().toUpperCase();
 
     if (cleaned === "ACCURATE") {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (cleaned === "INACCURATE") {
-      return { pass: false, reason: "At least one wrong answer explanation is inaccurate" };
+      return { status: "fail", reason: "At least one wrong answer explanation is inaccurate" };
     }
     if (cleaned.includes("ACCURATE") && !cleaned.includes("INACCURATE")) {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (cleaned.includes("INACCURATE")) {
-      return { pass: false, reason: "At least one wrong answer explanation is inaccurate" };
+      return { status: "fail", reason: "At least one wrong answer explanation is inaccurate" };
     }
     const verdict = parseVerdict(rawResponse);
     if (verdict === "TRUE") {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (verdict === "FALSE") {
-      return { pass: false, reason: "At least one wrong answer explanation is inaccurate" };
+      return { status: "fail", reason: "At least one wrong answer explanation is inaccurate" };
     }
-    return { pass: false, reason: "Unexpected response: " + rawResponse.slice(0, 100) };
+    return { status: "invalid", reason: "Unexpected response: " + rawResponse.slice(0, 100) };
   },
 };

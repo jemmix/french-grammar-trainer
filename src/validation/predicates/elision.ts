@@ -7,7 +7,7 @@ export const elisionPredicate: StructuralPredicate = {
 
   check(ctx: QuestionContext): PredicateResult {
     if (ctx.lang !== "fr") {
-      return { pass: true, reason: "Elision check only applies to French" };
+      return { status: "pass" };
     }
 
     const questionLike = {
@@ -23,10 +23,10 @@ export const elisionPredicate: StructuralPredicate = {
 
     const issues = checkQuestionElision(questionLike);
     if (issues.length === 0) {
-      return { pass: true };
+      return { status: "pass" };
     }
     return {
-      pass: false,
+      status: "fail",
       reason: issues.map(i => i.message).join("; "),
     };
   },

@@ -53,16 +53,16 @@ Is this prompt well-formed? Does it give the learner a clear imperative instruct
   interpretResponse(_ctx: QuestionContext, rawResponse: string): PredicateResult {
     const cleaned = rawResponse.trim().toUpperCase();
     if (cleaned === "WELL-FORMED") {
-      return { pass: true };
+      return { status: "pass" };
     } else if (cleaned === "NOT-WELL-FORMED") {
-      return { pass: false, reason: "Prompt is not a clear imperative instruction" };
+      return { status: "fail", reason: "Prompt is not a clear imperative instruction" };
     }
     if (cleaned.includes("WELL-FORMED") && !cleaned.includes("NOT")) {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (cleaned.includes("NOT") || cleaned.includes("BAD") || cleaned.includes("NARRATIVE")) {
-      return { pass: false, reason: "Prompt is not a clear imperative instruction" };
+      return { status: "fail", reason: "Prompt is not a clear imperative instruction" };
     }
-    return { pass: false, reason: "Unexpected response: " + rawResponse };
+    return { status: "invalid", reason: "Unexpected response: " + rawResponse };
   },
 };

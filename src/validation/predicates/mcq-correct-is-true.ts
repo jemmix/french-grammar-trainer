@@ -33,14 +33,14 @@ export const mcqCorrectIsTruePredicate: LLMPredicate = {
     const verdict = parseVerdict(rawResponse);
 
     if (verdict === "TRUE") {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (verdict === "FALSE") {
-      return { pass: false, reason: "LLM says correct answer is FALSE" };
+      return { status: "fail", reason: "LLM says correct answer is FALSE" };
     }
     if (verdict === "UNCLEAR") {
-      return { pass: false, reason: "LLM says answer is UNCLEAR - may need review" };
+      return { status: "fail", reason: "LLM says answer is UNCLEAR - may need review" };
     }
-    return { pass: false, reason: `Failed to parse LLM response: ${rawResponse.slice(0, 100)}` };
+    return { status: "invalid", reason: "Failed to parse LLM response: " + rawResponse.slice(0, 100) };
   },
 };

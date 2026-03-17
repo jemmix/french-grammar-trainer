@@ -7,10 +7,14 @@ export interface QuestionContext {
   lang: "fr" | "en";
 }
 
-export interface PredicateResult {
-  pass: boolean;
-  reason?: string;
-}
+export type PredicateResult =
+  | { status: "pass" }
+  | { status: "fail"; reason: string }
+  | { status: "invalid"; reason: string };
+
+export type ValidPredicateResult =
+  | { status: "pass" }
+  | { status: "fail"; reason: string };
 
 export interface StructuralPredicate {
   id: string;
@@ -64,6 +68,7 @@ export interface ValidationOptions {
   updateCache: boolean;
   pruneCache: boolean;
   concurrency?: number;
+  model?: string;
 }
 
 export interface CheckResult {

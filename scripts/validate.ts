@@ -14,6 +14,7 @@
  *   --update-cache         Run LLM and update cache for misses
  *   --prune-cache          Remove orphaned cache entries
  *   --concurrency <n>      Max concurrent LLM calls (default: 10)
+ *   --model <model>        LLM model to use (default: glm-5)
  *   --json                 Output as JSON
  */
 
@@ -52,6 +53,8 @@ function parseArgs(): ValidationOptions & { json?: boolean } {
       opts.json = true;
     } else if (arg === "--concurrency" && args[i + 1]) {
       opts.concurrency = parseInt(args[++i]!, 10);
+    } else if (arg === "--model" && args[i + 1]) {
+      opts.model = args[++i];
     } else if (arg && arg.startsWith("--")) {
       console.error("Unknown option:", arg);
       process.exit(1);

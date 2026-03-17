@@ -35,6 +35,7 @@ function isRetryableError(err: Error): boolean {
   if (msg.includes("503")) return true;
   if (msg.includes("504")) return true;
   if (msg.includes("overloaded")) return true;
+  if (msg.includes("empty response")) return true;
   return false;
 }
 
@@ -70,51 +71,59 @@ async function runWithRetry<T>(
   throw lastError;
 }
 
-export const opencodeHarness: LLMHarness = {
-  name: "opencode",
+export function createOpencodeHarness(modelId: string): LLMHarness {
+  return {
+    name: "opencode",
 
-  async run(spec: LLMRequestSpec, nonce: string): Promise<LLMResponse> {
-    const fullPrompt = spec.systemPrompt + "\n\n" + nonce + "\n\n" + spec.userPrompt;
+    async run(spec: LLMRequestSpec, nonce: string): Promise<LLMResponse> {
+      const fullPrompt = spec.systemPrompt + "\n\n" + nonce + "\n\n" + spec.userPrompt;
 
-    return runWithRetry(
-      () =>
-        new Promise<LLMResponse>((resolve, reject) => {
-          const child = execFile(
-            "opencode",
-            ["run", "--model", "zai-coding-plan/glm-5", fullPrompt],
-            { timeout: HARNESS_TIMEOUT_MS, maxBuffer: 10 * 1024 },
-            (err, stdout, stderr) => {
-              if (err) {
-                const isTimeout = err.message.includes("ETIMEDOUT") || (err as any).killed;
-                const parts: string[] = ["opencode failed"];
-                if (isTimeout) {
-                  parts.push("reason: timeout after " + (HARNESS_TIMEOUT_MS / 1000) + "s");
-                } else if ((err as any).code !== undefined) {
-                  parts.push("reason: exit code " + (err as any).code);
-                } else {
-                  parts.push("reason: " + err.message);
+      return runWithRetry(
+        () =>
+          new Promise<LLMResponse>((resolve, reject) => {
+            const child = execFile(
+              "opencode",
+              ["run", "--model", "zai-coding-plan/" + modelId, fullPrompt],
+              { timeout: HARNESS_TIMEOUT_MS, maxBuffer: 10 * 1024 },
+              (err, stdout, stderr) => {
+                if (err) {
+                  const isTimeout = err.message.includes("ETIMEDOUT") || (err as any).killed;
+                  const parts: string[] = ["opencode failed"];
+                  if (isTimeout) {
+                    parts.push("reason: timeout after " + (HARNESS_TIMEOUT_MS / 1000) + "s");
+                  } else if ((err as any).code !== undefined) {
+                    parts.push("reason: exit code " + (err as any).code);
+                  } else {
+                    parts.push("reason: " + err.message);
+                  }
+                  if (stderr?.trim()) parts.push("stderr: " + stderr.trim());
+                  if (stdout?.trim()) parts.push("stdout: " + stdout.trim());
+                  reject(new Error(parts.join("\n")));
+                  return;
                 }
-                if (stderr?.trim()) parts.push("stderr: " + stderr.trim());
-                if (stdout?.trim()) parts.push("stdout: " + stdout.trim());
-                reject(new Error(parts.join("\n")));
-                return;
+                const raw = stdout.trim();
+                if (!raw) {
+                  reject(new Error("opencode failed: empty response"));
+                  return;
+                }
+                resolve({
+                  raw,
+                  model: modelId,
+                  harness: "opencode",
+                  nonce,
+                  timestamp: new Date().toISOString(),
+                });
               }
-              const raw = stdout.trim();
-              resolve({
-                raw,
-                model: "glm-5",
-                harness: "opencode",
-                nonce,
-                timestamp: new Date().toISOString(),
-              });
-            }
-          );
-          child.stdin?.end();
-        }),
-      { maxRetries: MAX_RETRIES, operation: "opencode LLM call" }
-    );
-  },
-};
+            );
+            child.stdin?.end();
+          }),
+        { maxRetries: MAX_RETRIES, operation: "opencode LLM call" }
+      );
+    },
+  };
+}
+
+export const opencodeHarness: LLMHarness = createOpencodeHarness("glm-5");
 
 export function parseVerdict(raw: string): "TRUE" | "FALSE" | "UNCLEAR" | "PARSE_ERROR" {
   const upper = raw.toUpperCase().trim();

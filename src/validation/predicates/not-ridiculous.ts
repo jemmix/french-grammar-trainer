@@ -38,26 +38,26 @@ export const notRidiculousPredicate: LLMPredicate = {
     const firstLine = lines[0]?.trim().toUpperCase() || "";
 
     if (firstLine === "REASONABLE") {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (firstLine === "RIDICULOUS") {
       const reason = lines.slice(1).join(" ").trim();
-      return { pass: false, reason: reason || "Question is ridiculous or inappropriate" };
+      return { status: "fail", reason: reason || "Question is ridiculous or inappropriate" };
     }
     if (firstLine.includes("REASONABLE") && !firstLine.includes("RIDICULOUS")) {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (firstLine.includes("RIDICULOUS")) {
       const reason = lines.slice(1).join(" ").trim();
-      return { pass: false, reason: reason || "Question is ridiculous or inappropriate" };
+      return { status: "fail", reason: reason || "Question is ridiculous or inappropriate" };
     }
     const verdict = parseVerdict(rawResponse);
     if (verdict === "TRUE") {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (verdict === "FALSE") {
-      return { pass: false, reason: "Question is ridiculous or inappropriate" };
+      return { status: "fail", reason: "Question is ridiculous or inappropriate" };
     }
-    return { pass: false, reason: "Unexpected response: " + rawResponse.slice(0, 100) };
+    return { status: "invalid", reason: "Unexpected response: " + rawResponse.slice(0, 100) };
   },
 };

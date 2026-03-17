@@ -28,22 +28,22 @@ export const inputPromptSelfContainedPredicate: LLMPredicate = {
     if (verdictMatch?.[1]) {
       const verdict = verdictMatch[1].toUpperCase();
       if (verdict === "SELF-CONTAINED") {
-        return { pass: true };
+        return { status: "pass" };
       } else if (verdict === "UNCLEAR") {
-        return { pass: false, reason: extractedReason || "Prompt does not clearly identify what to input" };
+        return { status: "fail", reason: extractedReason || "Prompt does not clearly identify what to input" };
       } else if (verdict === "AMBIGUOUS") {
-        return { pass: false, reason: extractedReason || "Multiple valid answers possible" };
+        return { status: "fail", reason: extractedReason || "Multiple valid answers possible" };
       }
     }
     
     const cleaned = rawResponse.trim().toUpperCase();
     if (cleaned === "SELF-CONTAINED") {
-      return { pass: true };
+      return { status: "pass" };
     } else if (cleaned === "UNCLEAR") {
-      return { pass: false, reason: "Prompt does not clearly identify what to input" };
+      return { status: "fail", reason: "Prompt does not clearly identify what to input" };
     } else if (cleaned === "AMBIGUOUS") {
-      return { pass: false, reason: "Multiple valid answers possible" };
+      return { status: "fail", reason: "Multiple valid answers possible" };
     }
-    return { pass: false, reason: "Unexpected response: " + rawResponse };
+    return { status: "invalid", reason: "Unexpected response: " + rawResponse };
   },
 };

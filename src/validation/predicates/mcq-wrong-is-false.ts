@@ -30,12 +30,12 @@ export const mcqWrongIsFalsePredicate: LLMPredicate = {
   interpretResponse(ctx: QuestionContext, rawResponse: string): PredicateResult {
     const cleaned = rawResponse.trim().toUpperCase();
     if (cleaned === "TRUE") {
-      return { pass: true };
+      return { status: "pass" };
     } else if (cleaned === "FALSE") {
-      return { pass: false, reason: "At least one wrong answer may be correct" };
+      return { status: "fail", reason: "At least one wrong answer may be correct" };
     } else if (cleaned === "UNCLEAR") {
-      return { pass: false, reason: "Question is ambiguous" };
+      return { status: "fail", reason: "Question is ambiguous" };
     }
-    return { pass: false, reason: "Unexpected response: " + rawResponse };
+    return { status: "invalid", reason: "Unexpected response: " + rawResponse };
   },
 };

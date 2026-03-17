@@ -41,33 +41,33 @@ export const questionRuleAlignmentPredicate: LLMPredicate = {
     if (verdictMatch?.[1]) {
       const verdict = verdictMatch[1].toUpperCase();
       if (verdict === "ALIGNED") {
-        return { pass: true };
+        return { status: "pass" };
       } else if (verdict === "MISALIGNED") {
-        return { pass: false, reason: extractedReason || "Question does not test the stated grammar rule" };
+        return { status: "fail", reason: extractedReason || "Question does not test the stated grammar rule" };
       }
     }
 
     const cleaned = rawResponse.trim().toUpperCase();
 
     if (cleaned === "ALIGNED") {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (cleaned === "MISALIGNED") {
-      return { pass: false, reason: "Question does not test the stated grammar rule" };
+      return { status: "fail", reason: "Question does not test the stated grammar rule" };
     }
     if (cleaned.includes("ALIGNED") && !cleaned.includes("MISALIGNED")) {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (cleaned.includes("MISALIGNED")) {
-      return { pass: false, reason: "Question does not test the stated grammar rule" };
+      return { status: "fail", reason: "Question does not test the stated grammar rule" };
     }
     const verdict = parseVerdict(rawResponse);
     if (verdict === "TRUE") {
-      return { pass: true };
+      return { status: "pass" };
     }
     if (verdict === "FALSE") {
-      return { pass: false, reason: "Question does not test the stated grammar rule" };
+      return { status: "fail", reason: "Question does not test the stated grammar rule" };
     }
-    return { pass: false, reason: "Unexpected response: " + rawResponse.slice(0, 100) };
+    return { status: "invalid", reason: "Unexpected response: " + rawResponse.slice(0, 100) };
   },
 };

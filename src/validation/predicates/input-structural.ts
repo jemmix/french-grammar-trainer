@@ -7,7 +7,7 @@ export const inputStructuralPredicate: StructuralPredicate = {
 
   check(ctx: QuestionContext): PredicateResult {
     if (ctx.question.type !== "input") {
-      return { pass: true };
+      return { status: "pass" };
     }
 
     const q = ctx.question as InputQuestion;
@@ -47,8 +47,8 @@ export const inputStructuralPredicate: StructuralPredicate = {
     }
 
     if (errors.length > 0) {
-      return { pass: false, reason: errors.join("; ") };
+      return { status: "fail", reason: errors.join("; ") };
     }
-    return { pass: true };
+    return { status: "pass" };
   },
 };
