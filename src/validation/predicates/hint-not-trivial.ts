@@ -10,7 +10,7 @@ function extractWords(text: string): string[] {
 }
 
 function isWordSubsequence(answerWords: string[], sourceWords: string[]): boolean {
-  return answerWords.some((aw) => sourceWords.some((sw) => sw.includes(aw)));
+  return answerWords.some((aw) => sourceWords.includes(aw));
 }
 
 export const hintNotTrivialPredicate: StructuralPredicate = {
