@@ -23,9 +23,7 @@
 
 - **Validation against DSL files** — `scripts/validate.ts` currently reads from compiled TypeScript (`src/data/{lang}/*.ts`), requiring `npm run compile-all` after every DSL edit before validation. Fix: have validation read directly from `questions/{lang}/*.txt` DSL files so no recompilation is needed during iterative content fixes.
 
-- **compile-all should compile all languages** — currently requires `--lang fr` or `--lang en` flag; default should compile all available languages to avoid accidentally validating one language's DSL while the compiled TS is stale for another.
-
-- **Clarify compile-all vs convert-txt** — `convert-txt` is a low-level tool that requires manually constructing section IDs and titles; `compile-all` is the user-friendly wrapper. Add clearer documentation/error messages to steer people toward `compile-all` for typical recompilation workflows.
+- **compile-all default language** — currently requires `--lang fr` or `--lang en` flag; default should compile all available languages to avoid accidentally validating one language's DSL while the compiled TS is stale for another. Default to `--lang all` or or make this the default.
 
 - **DSL with LSP for question validation** — transition `questions/*.txt` and `src/data/*/*.ts` to a format with LSP support to catch structural/type inconsistencies in-editor. Options:
   - **YAML + JSON Schema** (recommended): mature ecosystem, `yaml-language-server` built into VS Code/Neovim, schema validation + autocomplete. Low effort, high ROI.
