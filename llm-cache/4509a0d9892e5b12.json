@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4509a0d9892e5b12",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-01-023",
+  "spec": {
+    "systemPrompt": "You are a English language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Complete with the verb form of the first word in the sentence.\n\nPHRASE: Reading expands your mind. I ___ two books every month.\n\nHINT: the action described by the gerund\n\nEXPECTED ANSWER: read\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1773774463138-a94leglt"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: \"The sentence\" is ambiguous when there are two sentences present, and the connection between identifying \"Reading\" as the gerund and knowing to conjugate \"read\" for the blank in the second sentence requires too much inference.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773774463139-noqxpq51",
+      "timestamp": "2026-03-17T19:08:07.345Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt \"verb form of the first word\" is confusing because \"Reading\" is already a verb form (a gerund); a learner cannot easily determine what transformation is being requested from the prompt alone.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773774493001-vfpgvm4z",
+      "timestamp": "2026-03-17T19:08:42.739Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The hint \"the action described by the gerund\" clearly identifies \"Reading\" as the source word, and \"every month\" + \"I ___\" context makes present tense conjugation unambiguous.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773774530707-ck5hmziz",
+      "timestamp": "2026-03-17T19:09:12.564Z"
+    }
+  ]
+}

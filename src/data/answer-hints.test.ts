@@ -6,7 +6,9 @@ const HINT_EXCEPTIONS = new Set<string>([
   "run",
   "sing",
   "swim",
+  "walk",
   "work",
+  "write",
 ]);
 
 async function loadSections(lang: string): Promise<Section[]> {

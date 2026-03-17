@@ -1,0 +1,33 @@
+{
+  "cacheKey": "98d1add501fe1986",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-01-023",
+  "spec": {
+    "systemPrompt": "You are a English language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Complete with the proper form of the verb in the first part of the sentence.\n\nPHRASE: He runs marathons for charity, and when I'm late for work, I actually ___ instead of walking.\n\nHINT: same action, different subject\n\nEXPECTED ANSWER: run\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1773773723611-vo5epnz0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The prompt identifies the source verb as being in \"the first part\" (clearly \"runs\" from \"He runs\"), the hint clarifies to reuse the same action with a different subject, and the blank follows \"I\" making the target conjugation unambiguous.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773773723612-c1v0nsoc",
+      "timestamp": "2026-03-17T18:55:51.484Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The prompt identifies the verb source (\"first part\"), the hint clarifies it needs the same action for a different subject, and the phrase clearly shows subject \"I\" before the blank — learner can deduce \"run\" from \"runs\" conjugated for \"I\".",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773773757977-hpaqm6we",
+      "timestamp": "2026-03-17T18:56:19.352Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt directs the learner to the verb \"runs\" in the first clause, the blank follows \"I actually\", and the hint \"same action, different subject\" makes it clear to conjugate \"run\" for first person singular.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773773794259-ebh1q0p7",
+      "timestamp": "2026-03-17T18:56:45.107Z"
+    }
+  ]
+}

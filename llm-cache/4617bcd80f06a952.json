@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4617bcd80f06a952",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-01-023",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-01 - Present simple affirmative with I / you / we / they (base form)\n\nQUESTION:\nType: Input\nPrompt: Complete with the same verb as in the first clause.\nPhrase: He runs marathons for charity, and when I'm late for work, I actually ___ instead of walking.\nCorrect Answer: run\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773773531410-gpipy800"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowing that \"I\" takes the base form \"run\" rather than the third-person form \"runs,\" which is the core distinction taught in rule 01-01.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773773531429-ca5djqm3",
+      "timestamp": "2026-03-17T18:52:34.694Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"I\" requires the base form \"run\" in present simple, contrasting with the third-person singular \"runs\" shown in the first clause.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773773618462-26f5ivgx",
+      "timestamp": "2026-03-17T18:53:49.177Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"I\" takes the base form \"run\" (not the third-person \"runs\"), which is the core concept of the stated rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773773671575-cv3g2hab",
+      "timestamp": "2026-03-17T18:54:47.359Z"
+    }
+  ]
+}
