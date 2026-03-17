@@ -14,24 +14,19 @@
 ### Non-LLM (structural, language)
 
 - [x] `elision-correct` — French elision check
-- [ ] Migrate structural checks from `validate-content.ts`:
-  - [ ] Required fields present
-  - [ ] MCQ: ≥2 choices, exactly 1 correct
-  - [ ] MCQ: No duplicate choices
-  - [ ] MCQ: Determiner family diversity
-  - [ ] INPUT: ≥4 wrong answers
-  - [ ] INPUT: Wrong ≠ correct answer
-  - [ ] INPUT: Phrase contains blank
-  - [ ] INPUT: Answer has hint
-  - [ ] 80/20 ratio
+- [x] `mcq-structural` — MCQ: ≥2 choices, exactly 1 correct, no duplicates, determiner family diversity
+- [x] `input-structural` — INPUT: ≥4 wrong answers, wrong ≠ correct, phrase/answer/explanation present
+- [ ] Migrate remaining checks from `validate-content.ts`:
+  - [ ] 80/20 ratio (in test suite)
+  - [ ] Answer has hint (in answer-hints.test.ts)
 
 Note: "Unique question ID" removed — already enforced by DSL parser, not a predicate
 
 ### LLM (semantic, pedagogical)
 
 - [x] `mcq-correct-is-true` — Verify correct answer is TRUE
-- [ ] `mcq-wrong-is-false` — Verify wrong answers are FALSE
-- [ ] `input-prompt-self-contained` — Prompt identifies what to input (provide answer as hint to LLM)
+- [x] `mcq-wrong-is-false` — Verify wrong answers are FALSE
+- [x] `input-prompt-self-contained` — Prompt identifies what to input (provides answer to LLM for context)
 - [ ] `input-wrong-plausible` — Wrong answers are plausible mistakes
 - [ ] `input-explanation-accurate` — Wrong answer explanations correct
 - [ ] `question-rule-alignment` — Question tests stated rule
