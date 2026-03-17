@@ -79,7 +79,7 @@ const section: Section = {
       choices: [
         { text: "speak", correct: true, explanation: "With the subject \"I,\" the present simple uses the base form. \"I speak\" describes a permanent ability or general fact." },
         { text: "speaks", correct: false, explanation: "\"Speaks\" is the third person singular form (he speaks). With \"I,\" the base form \"speak\" is required." },
-        { text: "am speaking", correct: false, explanation: "\"Am speaking\" is present continuous, for an action happening right now. A lifelong ability described with \"I grew up…\" calls for the present simple \"speak.\"" },
+        { text: "speaking", correct: false, explanation: "\"Speaking\" without an auxiliary verb is grammatically incomplete. You need \"am speaking\" for present continuous, or simply \"speak\" for present simple." },
         { text: "spoken", correct: false, explanation: "\"Spoken\" is the past participle. It can't stand alone as a main verb. The present simple is \"I speak.\"" },
       ],
     },
@@ -106,7 +106,7 @@ const section: Section = {
         { text: "listen to", correct: true, explanation: "With \"we,\" the present simple uses the base form. \"Listen to\" is the correct verb + preposition combination for music." },
         { text: "listens to", correct: false, explanation: "\"Listens\" is the third person singular form (she listens). With \"we,\" the base form is required." },
         { text: "listen", correct: false, explanation: "While \"listen\" is the correct base form, this verb requires the preposition \"to\" before its object. You listen TO music, not just listen music." },
-        { text: "are listening to", correct: false, explanation: "\"Are listening to\" is the present continuous form. For a habitual evening routine, the present simple \"listen to\" is the better choice." },
+        { text: "listening", correct: false, explanation: "\"Listening\" without an auxiliary verb is grammatically incomplete. The present simple with \"we\" is \"listen to.\"" },
       ],
     },
     {
@@ -196,7 +196,7 @@ const section: Section = {
       choices: [
         { text: "give", correct: true, explanation: "With \"you,\" the present simple uses the base form \"give.\" The adverb \"always\" emphasizes the habitual nature of this action." },
         { text: "gives", correct: false, explanation: "\"Gives\" is the third person singular form (he gives). With \"you,\" the base form \"give\" is correct." },
-        { text: "gave", correct: false, explanation: "\"Gave\" is the past simple. The adverb \"always\" and the present context call for the present simple \"give.\"" },
+        { text: "gived", correct: false, explanation: "\"Gived\" is not a valid English word. \"Give\" is irregular — its past tense is \"gave,\" and the present simple with \"you\" is \"give.\"" },
         { text: "given", correct: false, explanation: "\"Given\" is the past participle and can't stand alone as the main verb. The present simple is \"you give.\"" },
       ],
     },
@@ -231,12 +231,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-01",
       generatedBy: "opus",
-      prompt: "Complete the sentence: \"They ___ their grandparents every Sunday.\"",
+      prompt: "Complete the sentence: \"Usually, they ___ their grandparents every Sunday.\"",
       choices: [
-        { text: "visit", correct: true, explanation: "With \"they,\" the present simple uses the base form \"visit.\" \"Every Sunday\" signals a repeated, habitual action." },
+        { text: "visit", correct: true, explanation: "With \"they,\" the present simple uses the base form \"visit.\" \"Usually\" signals a repeated, habitual action." },
         { text: "visits", correct: false, explanation: "\"Visits\" is the third person singular form (she visits). With \"they,\" the base form \"visit\" is needed." },
-        { text: "visited", correct: false, explanation: "\"Visited\" is the past simple. The phrase \"every Sunday\" with present context calls for the present simple." },
-        { text: "are visiting", correct: false, explanation: "\"Are visiting\" is present continuous, used for an action happening now or a temporary arrangement. For a regular Sunday habit, present simple \"visit\" is better." },
+        { text: "visitings", correct: false, explanation: "\"Visitings\" is not a valid English word. The present simple with \"they\" is \"visit.\"" },
+        { text: "are visiting", correct: false, explanation: "\"Are visiting\" describes a temporary action happening now. With \"usually,\" the sentence clearly refers to a habit, not something happening at the moment. Present simple \"visit\" is correct." },
       ],
     },
     {
@@ -262,7 +262,7 @@ const section: Section = {
         { text: "read", correct: true, explanation: "With \"I,\" the present simple uses the base form \"read.\" This describes a habitual evening routine." },
         { text: "reads", correct: false, explanation: "\"Reads\" is the third person singular form (he reads). With \"I,\" the base form \"read\" is required." },
         { text: "readed", correct: false, explanation: "\"Readed\" is not a real English word. \"Read\" is an irregular verb — its past form is also \"read\" (pronounced /rɛd/), and its present simple is \"read\" (pronounced /riːd/)." },
-        { text: "am reading", correct: false, explanation: "\"Am reading\" is present continuous, used for what's happening right now. For a general bedtime habit, present simple \"read\" is the right choice." },
+        { text: "reading", correct: false, explanation: "\"Reading\" without an auxiliary verb is grammatically incomplete. The present simple with \"I\" is \"read.\"" },
       ],
     },
     {
