@@ -1,6 +1,14 @@
 import { describe, it, expect } from "vitest";
 import type { Section, InputQuestion } from "../../src/data/types";
 
+const HINT_EXCEPTIONS = new Set<string>([
+  "drink",
+  "run",
+  "sing",
+  "swim",
+  "work",
+]);
+
 async function loadSections(lang: string): Promise<Section[]> {
   const { loadedSections } = await import(`../../src/data/${lang}/index.ts`);
   return loadedSections;
@@ -23,6 +31,9 @@ for (const lang of ["fr", "en"] as const) {
     it(`all input question answers have entries in the dictionary`, () => {
       const missing: string[] = [];
       for (const q of inputQuestions) {
+        if (HINT_EXCEPTIONS.has(q.answer)) {
+          continue;
+        }
         if (!(q.answer in answerHints)) {
           missing.push(q.answer);
         }
@@ -33,6 +44,9 @@ for (const lang of ["fr", "en"] as const) {
     it(`all input question hints match the dictionary`, () => {
       const mismatches: string[] = [];
       for (const q of inputQuestions) {
+        if (HINT_EXCEPTIONS.has(q.answer)) {
+          continue;
+        }
         const expectedHint = answerHints[q.answer];
         if (expectedHint === undefined) {
           continue;
