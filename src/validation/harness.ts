@@ -36,6 +36,10 @@ function isRetryableError(err: Error): boolean {
   if (msg.includes("504")) return true;
   if (msg.includes("overloaded")) return true;
   if (msg.includes("empty response")) return true;
+  if (msg.includes("exit code null")) return true;
+  if (msg.includes("signal:")) return true;
+  if (msg.includes("killed")) return true;
+  if (msg.includes("crashed")) return true;
   return false;
 }
 
@@ -87,12 +91,15 @@ export function createOpencodeHarness(modelId: string): LLMHarness {
               { timeout: HARNESS_TIMEOUT_MS, maxBuffer: 10 * 1024 },
               (err, stdout, stderr) => {
                 if (err) {
-                  const isTimeout = err.message.includes("ETIMEDOUT") || (err as any).killed;
+                  const execErr = err as any;
+                  const isTimeout = execErr.message.includes("ETIMEDOUT") || execErr.killed;
                   const parts: string[] = ["opencode failed"];
                   if (isTimeout) {
                     parts.push("reason: timeout after " + (HARNESS_TIMEOUT_MS / 1000) + "s");
-                  } else if ((err as any).code !== undefined) {
-                    parts.push("reason: exit code " + (err as any).code);
+                  } else if (execErr.code !== undefined && execErr.code !== null) {
+                    parts.push("reason: exit code " + execErr.code);
+                  } else if (execErr.signal) {
+                    parts.push("reason: killed by signal " + execErr.signal);
                   } else {
                     parts.push("reason: " + err.message);
                   }
