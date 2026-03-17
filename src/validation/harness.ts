@@ -1,6 +1,8 @@
 import { execFile } from "child_process";
 import type { LLMRequestSpec, LLMResponse } from "./types";
 
+const HARNESS_TIMEOUT_MS = 300_000;
+
 export interface LLMHarness {
   name: string;
   run(spec: LLMRequestSpec, nonce: string): Promise<LLMResponse>;
@@ -16,10 +18,21 @@ export const opencodeHarness: LLMHarness = {
       const child = execFile(
         "opencode",
         ["run", "--model", "zai-coding-plan/glm-5", fullPrompt],
-        { timeout: 60_000, maxBuffer: 10 * 1024 },
+        { timeout: HARNESS_TIMEOUT_MS, maxBuffer: 10 * 1024 },
         (err, stdout, stderr) => {
           if (err) {
-            reject(new Error("opencode failed: " + err.message + "\nstderr: " + stderr));
+            const isTimeout = err.message.includes("ETIMEDOUT") || (err as any).killed;
+            const parts: string[] = ["opencode failed"];
+            if (isTimeout) {
+              parts.push("reason: timeout after " + (HARNESS_TIMEOUT_MS / 1000) + "s");
+            } else if ((err as any).code !== undefined) {
+              parts.push("reason: exit code " + (err as any).code);
+            } else {
+              parts.push("reason: " + err.message);
+            }
+            if (stderr?.trim()) parts.push("stderr: " + stderr.trim());
+            if (stdout?.trim()) parts.push("stdout: " + stdout.trim());
+            reject(new Error(parts.join("\n")));
             return;
           }
           const raw = stdout.trim();

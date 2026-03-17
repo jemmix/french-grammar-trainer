@@ -69,6 +69,24 @@ function categoryMatches(predicate: { category: string }, opts: ValidationOption
   return opts.categories.includes(predicate.category as any);
 }
 
+function formatStatus(pass: boolean, reason?: string): string {
+  if (pass) return "\x1b[32mPASS\x1b[0m";
+  return "\x1b[31mFAIL\x1b[0m" + (reason ? ": " + reason : "");
+}
+
+function emitResult(
+  questionId: string,
+  predicateId: string,
+  attemptNumber: number,
+  fromCache: boolean,
+  pass: boolean,
+  reason?: string
+): void {
+  const cacheTag = fromCache ? "[cached]" : "[fresh] ";
+  const status = formatStatus(pass, reason);
+  console.log("  " + questionId + " | " + predicateId + " | attempt " + attemptNumber + " | " + cacheTag + " " + status);
+}
+
 interface LLMPendingTask {
   predicate: LLMPredicate;
   ctx: QuestionContext;
@@ -80,7 +98,8 @@ interface LLMPendingTask {
 async function runLLMBatch(
   tasks: LLMPendingTask[],
   updateCache: boolean,
-  limitConcurrency: <T>(fn: () => Promise<T>) => Promise<T>
+  limitConcurrency: <T>(fn: () => Promise<T>) => Promise<T>,
+  verbose: boolean
 ): Promise<void> {
   const runTask = async (task: LLMPendingTask) => {
     const { predicate, ctx, entry, fromCache } = task;
@@ -96,16 +115,37 @@ async function runLLMBatch(
       return falseCount > 0 && count < INITIAL_RUNS + ADDITIONAL_RUNS;
     };
     
+    let attemptNumber = 0;
+    
+    if (verbose && fromCache) {
+      for (const response of entry.responses) {
+        attemptNumber++;
+        const interp = predicate.interpretResponse(ctx, response.raw);
+        emitResult(ctx.question.id, predicate.id, attemptNumber, true, interp.pass, interp.reason);
+      }
+    } else {
+      attemptNumber = entry.responses.length;
+    }
+    
     while (updateCache && needsMore(entry.responses.length, entry.responses.map(r => predicate.interpretResponse(ctx, r.raw)))) {
       await limitConcurrency(async () => {
         const nonce = generateNonce();
         const response = await opencodeHarness.run(spec, nonce);
         entry.responses.push(response);
         saveCacheEntry(entry);
+        
+        attemptNumber++;
+        if (verbose) {
+          const interp = predicate.interpretResponse(ctx, response.raw);
+          emitResult(ctx.question.id, predicate.id, attemptNumber, false, interp.pass, interp.reason);
+        }
       });
     }
     
     if (entry.responses.length === 0) {
+      if (verbose) {
+        emitResult(ctx.question.id, predicate.id, 0, fromCache, false, "No cached responses and cache update disabled");
+      }
       task.resolve({ pass: false, reason: "No cached responses and cache update disabled", responseCount: 0 });
       return;
     }
@@ -118,9 +158,11 @@ async function runLLMBatch(
       task.resolve({ pass: true, responseCount: totalResponses });
     } else if ((totalResponses - allTrueCount) / totalResponses >= MAJORITY_THRESHOLD) {
       const failedResult = allResults.find(r => !r.pass);
-      task.resolve({ pass: false, reason: failedResult?.reason || "Majority FALSE", responseCount: totalResponses });
+      const reason = failedResult?.reason || "Majority FALSE";
+      task.resolve({ pass: false, reason, responseCount: totalResponses });
     } else {
-      task.resolve({ pass: false, reason: "No clear majority: " + allTrueCount + "/" + totalResponses + " TRUE", responseCount: totalResponses });
+      const reason = "No clear majority: " + allTrueCount + "/" + totalResponses + " TRUE";
+      task.resolve({ pass: false, reason, responseCount: totalResponses });
     }
   };
   
@@ -143,6 +185,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   
   const llmPendingTasks: LLMPendingTask[] = [];
   const structuralResults: CheckResult[] = [];
+  const verbose = opts.llm === true;
   
   for (const [sectionId, { section, rules }] of sections) {
     for (const question of section.questions || []) {
@@ -261,7 +304,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   
   if (llmPendingTasks.length > 0) {
     console.log("Running " + llmPendingTasks.length + " LLM tasks (max " + MAX_CONCURRENCY + " concurrent)...");
-    await runLLMBatch(llmPendingTasks, !!opts.updateCache, limitConcurrency);
+    await runLLMBatch(llmPendingTasks, !!opts.updateCache, limitConcurrency, verbose);
   }
   
   if (opts.pruneCache) {
