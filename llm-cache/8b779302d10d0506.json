@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8b779302d10d0506",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-005",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-02 - Present simple third person singular (-s, -es, -ies)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence: \"She ___ hard for her exams.\"\nChoices:\nA. [CORRECT] studies\nB. studys\nC. study\nD. studiess\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773775610170-r1yrl2xe"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Answering correctly requires knowing that \"study\" (consonant+y) becomes \"studies\" in third person singular—the core spelling rule being tested.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773775709069-tfxrljel",
+      "timestamp": "2026-03-17T19:28:54.456Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Answering correctly requires knowing both that third person singular requires verb modification and the specific -ies spelling pattern for verbs ending in consonant+y, which is exactly what the rule covers.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773776162881-sqtxzn3e",
+      "timestamp": "2026-03-17T19:36:52.586Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying the third person singular -s rule to a verb ending in consonant+y (study → studies), which is the core of the stated rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773777453722-2ab10vxe",
+      "timestamp": "2026-03-17T19:57:48.863Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0cb1221bd6dc538b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-03-016",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-03 - Present simple negative form (don't / doesn't + base form)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence: \"I ___ what you mean.\"\nChoices:\nA. [CORRECT] don't understand\nB. doesn't understand\nC. not understand\nD. don't understands\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773778309739-n4cdh15h"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting \"don't\" for first-person singular and the base form \"understand\" after the auxiliary, which directly tests the present simple negative construction rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773778732356-h6wsagg4",
+      "timestamp": "2026-03-17T20:19:38.236Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing both that \"I\" takes \"don't\" (not \"doesn't\") and that the base form \"understand\" follows, with distractors testing common errors specific to present simple negative formation.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773784986412-nsesopv8",
+      "timestamp": "2026-03-17T22:04:34.260Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"I\" takes \"don't\" (not \"doesn't\") and that the verb remains in base form (\"understand,\" not \"understands\"), which directly tests the stated rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773785601201-zi12bl0w",
+      "timestamp": "2026-03-17T22:14:11.125Z"
+    }
+  ]
+}

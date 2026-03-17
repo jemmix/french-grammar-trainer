@@ -43,6 +43,7 @@ export const answerHints: Record<string, string> = {
   "started": "start",
   "stopped": "stop",
   "t": "pronunciation",
+  "tries": "try",
   "understood": "understand",
   "visited": "visit",
   "want": "want",

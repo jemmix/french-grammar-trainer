@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ed07acb960f46b94",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-03-007",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-03 - Present simple negative form (don't / doesn't + base form)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence: \"I ___ the answer to that question.\"\nChoices:\nA. [CORRECT] don't know\nB. doesn't know\nC. am not know\nD. not knowing\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773778309738-5vf5b1kx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the learner to select \"don't + base form (know)\" for first person \"I\", with distractors testing the key distinctions of the rule (doesn't for 3rd person, incorrect be-auxiliary, incorrect -ing form).",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773778402476-o1ucugk7",
+      "timestamp": "2026-03-17T20:13:41.083Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the present simple negative construction \"don't + base form\" with first person singular \"I\", and the distractors test common errors (wrong auxiliary \"doesn't\", incorrect continuous form \"am not know\", and incomplete verb phrase \"not knowing\").",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773784832889-id5k2x3r",
+      "timestamp": "2026-03-17T22:00:51.726Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests present simple negative form with \"I\" requiring \"don't + base form,\" and the distractors include the common error of using \"doesn't\" (wrong person) and incorrect verb forms.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773785380326-ywewn4v3",
+      "timestamp": "2026-03-17T22:09:53.561Z"
+    }
+  ]
+}

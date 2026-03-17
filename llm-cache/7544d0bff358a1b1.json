@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7544d0bff358a1b1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-03-010",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-03 - Present simple negative form (don't / doesn't + base form)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence: \"It ___ much in summer.\"\nChoices:\nA. [CORRECT] doesn't rain\nB. don't rain\nC. doesn't rains\nD. isn't rain\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773778309738-k6414nh2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests present simple negative form by requiring selection of \"doesn't\" (for third-person \"it\") plus base form \"rain\", with distractors targeting common errors (wrong auxiliary \"don't\", adding -s after \"doesn't\", and confusing with present continuous).",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773778526822-vekiw99t",
+      "timestamp": "2026-03-17T20:16:36.734Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests both aspects of the rule—selecting the correct auxiliary (doesn't for third-person singular) and using the base form after it (rain, not rains)—with distractors specifically targeting common mistakes related to this rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773784881949-o9x5ueb1",
+      "timestamp": "2026-03-17T22:05:07.240Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests both aspects of the rule—choosing \"doesn't\" for third-person singular \"it\" and using the base form \"rain\" (not \"rains\") after the auxiliary.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773785640610-ko89m31s",
+      "timestamp": "2026-03-17T22:14:58.649Z"
+    }
+  ]
+}

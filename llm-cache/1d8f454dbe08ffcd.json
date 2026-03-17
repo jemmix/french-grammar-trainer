@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1d8f454dbe08ffcd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-019",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-02 - Present simple third person singular (-s, -es, -ies)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence: \"She currently ___ French at the local college.\"\nChoices:\nA. [CORRECT] teaches\nB. teachs\nC. teach\nD. taught\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773775610171-k7j9qys7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests third person singular present simple conjugation with -es (teach→teaches), and distractor B specifically tests the -s vs -es distinction central to this rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773775981265-ii6n17ih",
+      "timestamp": "2026-03-17T19:33:15.103Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests third person singular present simple verb conjugation—the subject \"She\" and adverb \"currently\" require selecting \"teaches\" (demonstrating the -es rule for verbs ending in -ch), while wrong options include common errors like omitting the suffix (\"teach\"), misspelling it (\"teachs\"), or using the wrong tense (\"taught\").",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773776438546-l0q5rq1n",
+      "timestamp": "2026-03-17T19:40:59.614Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the correct third-person singular present simple form (\"teaches\"), and the distractors test common errors directly related to the rule—omitting the -s (\"teach\") and incorrect spelling (\"teachs\"), plus tense confusion (\"taught\").",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773777634118-75hhx91s",
+      "timestamp": "2026-03-17T20:00:50.265Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f1b7cffa5e7e3b51",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-01-002",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-01 - Present simple affirmative with I / you / we / they (base form)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence: \"We ___ dinner at seven o'clock.\"\nChoices:\nA. [CORRECT] eat\nB. eats\nC. eating\nD. are eat\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773774951988-5o82yq0z"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowing that \"we\" takes the base form \"eat\" in present simple affirmative, with distractors testing third-person singular (\"eats\"), participle form (\"eating\"), and an ungrammatical construction (\"are eat\").",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773774952016-d5h6tucx",
+      "timestamp": "2026-03-17T19:16:06.728Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the base form verb \"eat\" for the subject \"we\" in a present simple affirmative context, directly testing the rule that I/you/we/they take the base form.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773775135939-zjpguud4",
+      "timestamp": "2026-03-17T19:19:12.393Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether students know that \"we\" takes the base form \"eat\" (not third-person \"eats\"), and the distractors target common confusion points (third-person singular, present participle, incorrect auxiliary) all relevant to mastering present simple with I/you/we/they.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773775284117-oiyg1shk",
+      "timestamp": "2026-03-17T19:21:59.606Z"
+    }
+  ]
+}

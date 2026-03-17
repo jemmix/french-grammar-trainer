@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3e24cf9ef2420f32",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-01-001",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-01 - Present simple affirmative with I / you / we / they (base form)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choose the correct sentence.\nChoices:\nA. [CORRECT] I walk to work every morning.\nB. I walks to work every morning.\nC. I am walk to work every morning.\nD. I walking to work every morning.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773775284085-f22xtajr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the base form \"walk\" with \"I\" and rejecting common errors (adding -s for third person, using continuous forms), which directly tests the stated rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773775284115-8k2enkjr",
+      "timestamp": "2026-03-17T19:23:55.655Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"I\" requires the base verb form \"walk\" in present simple affirmative, as the three distractors each violate this rule by adding -s (wrong subject agreement), using \"am\" (present continuous), or using -ing without auxiliary.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773775481700-xl2z8na4",
+      "timestamp": "2026-03-17T19:25:02.801Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the learner knows that subject \"I\" takes the base verb form (walk) rather than the third-person -s form (walks) or continuous structures, which is precisely what the rule teaches.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773775502801-z54wx6eq",
+      "timestamp": "2026-03-17T19:25:14.758Z"
+    }
+  ]
+}

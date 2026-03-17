@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f88be381103cfa95",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-01-009",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-01 - Present simple affirmative with I / you / we / they (base form)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence: \"You ___ a lot of patience with the students.\"\nChoices:\nA. [CORRECT] have\nB. has\nC. having\nD. haves\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773774951995-elmwa3ki"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the base form \"have\" for the subject \"you\" in present simple affirmative, which directly tests the stated rule that I/you/we/they take the base form.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773775018002-o5ubau70",
+      "timestamp": "2026-03-17T19:17:10.520Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the learner knows that \"you\" requires the base form \"have\" in present simple affirmative, with \"has\" as the key distractor testing the he/she/it distinction.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773775203005-66iafoq9",
+      "timestamp": "2026-03-17T19:20:18.351Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the base form \"have\" for the subject \"you\", directly testing the rule that I/you/we/they take the base form in present simple affirmative, with distractors testing common confusion points (third-person \"has\", participle \"having\", and incorrect \"haves\").",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773775330472-0mg1szdp",
+      "timestamp": "2026-03-17T19:22:59.683Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "38ddff77529b3a00",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-014",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-02 - Present simple third person singular (-s, -es, -ies)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Which sentence is grammatically correct?\nChoices:\nA. [CORRECT] She enjoys reading before bed.\nB. She enjoies reading before bed.\nC. She enjoy reading before bed.\nD. She enjoyies reading before bed.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773775610171-nmrkl251"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the third person singular -s/-ies distinction by requiring the learner to recognize that \"enjoy\" (vowel+y) takes -s not -ies, and that third person singular requires a verb ending at all.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773775891875-b8pbgfdp",
+      "timestamp": "2026-03-17T19:32:25.644Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that third person singular \"she\" takes \"enjoys\" (not base \"enjoy\") and that verbs ending in vowel+y take -s, not -ies.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773776386974-jmdcxqcu",
+      "timestamp": "2026-03-17T19:40:02.287Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that third person singular requires verb modification, and specifically tests the -s vs -ies distinction by using \"enjoy\" (vowel + y, so adds -s, not -ies).",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773777577629-k0gngm8j",
+      "timestamp": "2026-03-17T19:59:51.840Z"
+    }
+  ]
+}

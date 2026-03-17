@@ -1,0 +1,33 @@
+{
+  "cacheKey": "47eff954a5f7a435",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-006",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-02 - Present simple third person singular (-s, -es, -ies)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence: \"My father ___ the car every Saturday.\"\nChoices:\nA. [CORRECT] fixes\nB. fix\nC. fixs\nD. fixies\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773775610170-ri3sbxo5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests third person singular verb conjugation in present simple tense, requiring knowledge that \"father\" triggers -es (not -s or -ies) because the base verb \"fix\" ends in x.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773775727732-pgopih5j",
+      "timestamp": "2026-03-17T19:29:00.917Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests third person singular present simple conjugation, requiring knowledge that \"My father\" triggers the -s/-es form and that verbs ending in \"x\" take \"-es\" (fixes).",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773776170985-4okf54ab",
+      "timestamp": "2026-03-17T19:36:23.588Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowing how to form third person singular present simple for \"fix\" (adding -es because it ends in -x), with distractors testing common misconceptions about each conjugation pattern.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773777473119-iqpohi3o",
+      "timestamp": "2026-03-17T20:00:24.961Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e3f70ce6617b5335",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-01-020",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-01 - Present simple affirmative with I / you / we / they (base form)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Which sentence is correct?\nChoices:\nA. [CORRECT] We know the answer to that question.\nB. We knows the answer to that question.\nC. We are knowing the answer to that question.\nD. We knowing the answer to that question.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773774952004-g8hk68i2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"we\" takes the base verb form \"know\" rather than \"knows\" (which is for third person singular), directly testing the stated rule about present simple affirmative with we/they/I/you.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773775115023-rsfwh09n",
+      "timestamp": "2026-03-17T19:18:55.937Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student uses the base form \"know\" (not \"knows\") with \"we\" in present simple affirmative, and the distractors represent common errors related to this rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773775419083-t4wxx5o2",
+      "timestamp": "2026-03-17T19:23:53.339Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether students use the base form \"know\" (not \"knows\") with the pronoun \"we\", which is the core concept of the rule—using base form verbs with I/you/we/they in present simple affirmative.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773775481534-is0ijd9o",
+      "timestamp": "2026-03-17T19:24:53.630Z"
+    }
+  ]
+}

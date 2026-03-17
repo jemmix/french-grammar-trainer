@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cd2ff8d27c678378",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-03-013",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-03 - Present simple negative form (don't / doesn't + base form)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence: \"The store ___ on Sundays.\"\nChoices:\nA. [CORRECT] doesn't open\nB. don't open\nC. doesn't opens\nD. not open\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773778309738-10ahg3va"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Answering correctly requires knowing that third-person singular subjects use \"doesn't\" + base form, and the distractors directly test common errors (wrong auxiliary \"don't\", adding -s after \"doesn't\", omitting the auxiliary).",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773778624491-lclnr0gg",
+      "timestamp": "2026-03-17T20:17:34.598Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests both aspects of the rule—choosing \"doesn't\" for third-person singular and using the base form \"open\" (not \"opens\") after the auxiliary.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773784934921-cr5fg5dl",
+      "timestamp": "2026-03-17T22:02:31.353Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Answering correctly requires knowing both that third-person singular subjects take \"doesn't\" (not \"don't\") and that the verb must be in base form after the auxiliary (not \"opens\"), which are the two core components of the stated rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773785511937-osw755mo",
+      "timestamp": "2026-03-17T22:12:09.759Z"
+    }
+  ]
+}
