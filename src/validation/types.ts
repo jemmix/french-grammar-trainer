@@ -63,6 +63,7 @@ export interface ValidationOptions {
   dryRun: boolean;
   updateCache: boolean;
   pruneCache: boolean;
+  concurrency?: number;
 }
 
 export interface CheckResult {

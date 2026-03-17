@@ -13,6 +13,7 @@
  *   --dry-run              Show cache status without running LLM
  *   --update-cache         Run LLM and update cache for misses
  *   --prune-cache          Remove orphaned cache entries
+ *   --concurrency <n>      Max concurrent LLM calls (default: 10)
  *   --json                 Output as JSON
  */
 
@@ -49,6 +50,8 @@ function parseArgs(): ValidationOptions & { json?: boolean } {
       opts.pruneCache = true;
     } else if (arg === "--json") {
       opts.json = true;
+    } else if (arg === "--concurrency" && args[i + 1]) {
+      opts.concurrency = parseInt(args[++i]!, 10);
     } else if (arg && arg.startsWith("--")) {
       console.error("Unknown option:", arg);
       process.exit(1);

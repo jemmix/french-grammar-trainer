@@ -21,7 +21,7 @@ import { opencodeHarness, parseVerdict } from "./harness";
 const INITIAL_RUNS = 3;
 const ADDITIONAL_RUNS = 7;
 const MAJORITY_THRESHOLD = 0.9;
-const MAX_CONCURRENCY = 5;
+const DEFAULT_CONCURRENCY = 10;
 
 function createConcurrencyLimiter(maxConcurrent: number) {
   let running = 0;
@@ -181,7 +181,8 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   const lang = opts.lang || "en";
   const sections = await loadSections(lang);
   const cacheKeysUsed = new Set<string>();
-  const limitConcurrency = createConcurrencyLimiter(MAX_CONCURRENCY);
+  const concurrency = opts.concurrency || DEFAULT_CONCURRENCY;
+  const limitConcurrency = createConcurrencyLimiter(concurrency);
   
   const llmPendingTasks: LLMPendingTask[] = [];
   const structuralResults: CheckResult[] = [];
@@ -303,7 +304,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   results.unshift(...structuralResults);
   
   if (llmPendingTasks.length > 0) {
-    console.log("Running " + llmPendingTasks.length + " LLM tasks (max " + MAX_CONCURRENCY + " concurrent)...");
+    console.log("Running " + llmPendingTasks.length + " LLM tasks (max " + concurrency + " concurrent)...");
     await runLLMBatch(llmPendingTasks, !!opts.updateCache, limitConcurrency, verbose);
   }
   
