@@ -9,8 +9,20 @@ function extractWords(text: string): string[] {
   return normalized.split(/\s+/).filter((w) => w.length > 0);
 }
 
-function isWordSubsequence(answerWords: string[], sourceWords: string[]): boolean {
-  return answerWords.some((aw) => sourceWords.includes(aw));
+function isConsecutiveSubsequence(answerWords: string[], sourceWords: string[]): boolean {
+  if (answerWords.length === 0) return true;
+  if (answerWords.length > sourceWords.length) return false;
+  for (let i = 0; i <= sourceWords.length - answerWords.length; i++) {
+    let match = true;
+    for (let j = 0; j < answerWords.length; j++) {
+      if (sourceWords[i + j] !== answerWords[j]) {
+        match = false;
+        break;
+      }
+    }
+    if (match) return true;
+  }
+  return false;
 }
 
 export const hintNotTrivialPredicate: StructuralPredicate = {
@@ -38,14 +50,14 @@ export const hintNotTrivialPredicate: StructuralPredicate = {
     const questionWords = extractWords(questionText);
     const hintWords = extractWords(q.hint);
 
-    if (isWordSubsequence(answerWords, questionWords)) {
+    if (isConsecutiveSubsequence(answerWords, questionWords)) {
       return {
         pass: false,
         reason: 'Answer "' + q.answer + '" appears in the question text',
       };
     }
 
-    if (isWordSubsequence(answerWords, hintWords)) {
+    if (isConsecutiveSubsequence(answerWords, hintWords)) {
       return {
         pass: false,
         reason: 'Answer "' + q.answer + '" appears in the hint',

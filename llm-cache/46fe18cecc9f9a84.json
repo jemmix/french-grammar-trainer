@@ -1,0 +1,33 @@
+{
+  "cacheKey": "46fe18cecc9f9a84",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-03-006",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-03 - Present simple negative form (don't / doesn't + base form)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence: \"My brother is vegetarian, so he ___ meat.\"\nChoices:\nA. [CORRECT] doesn't eat\nB. don't eat\nC. doesn't eats\nD. not eats\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773787731750-77xcd3j8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct negative auxiliary (doesn't for 3rd person singular \"he\") AND the correct verb form (base form \"eat\" after doesn't), directly testing both components of the stated rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773787731776-7t5e577l",
+      "timestamp": "2026-03-17T22:49:24.924Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting \"doesn't\" for third-person singular \"he\" and using the base form \"eat\" (not \"eats\"), directly testing the don't/doesn't + base form structure.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773787825379-9bsr6iq6",
+      "timestamp": "2026-03-17T22:50:46.548Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Answering correctly requires knowing that \"he\" (3rd person singular) takes \"doesn't\" and that the verb must remain in base form \"eat\" after the auxiliary—both core aspects of the present simple negative rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773787909294-ohhq93hy",
+      "timestamp": "2026-03-17T22:52:00.601Z"
+    }
+  ]
+}

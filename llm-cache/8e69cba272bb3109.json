@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8e69cba272bb3109",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-03-013",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-03 - Present simple negative form (don't / doesn't + base form)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence with a negative form: \"The store ___ on Sundays.\"\nChoices:\nA. [CORRECT] doesn't open\nB. don't open\nC. doesn't opens\nD. not open\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773787731756-9ommtobg"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing both to select \"doesn't\" (not \"don't\") for third-person singular \"The store\" AND to use the base form \"open\" (not \"opens\") after the auxiliary, which is exactly what the rule specifies.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773787751130-vv6wvxk4",
+      "timestamp": "2026-03-17T22:50:00.888Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct auxiliary (doesn't vs don't) for a singular subject and knowing the base form follows (not the -s form), both central to the stated rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773787863198-xjizocqm",
+      "timestamp": "2026-03-17T22:51:22.400Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests both components of the rule—choosing \"doesn't\" over \"don't\" for third-person singular (\"The store\"), and using the base form \"open\" rather than \"opens\" (tested by choice C).",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773787948422-5bf9q6mu",
+      "timestamp": "2026-03-17T22:52:46.546Z"
+    }
+  ]
+}

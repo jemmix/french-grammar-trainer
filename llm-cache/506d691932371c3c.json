@@ -1,0 +1,33 @@
+{
+  "cacheKey": "506d691932371c3c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-03-019",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-03 - Present simple negative form (don't / doesn't + base form)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence: \"He's a terrible singer — he generally ___ very well.\"\nChoices:\nA. [CORRECT] doesn't sing\nB. don't sing\nC. doesn't sings\nD. not sing\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773788090497-zslxufjv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing both that \"he\" takes \"doesn't\" (not \"don't\") and that the base form \"sing\" follows (not \"sings\"), which directly tests the don't/doesn't + base form rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773788090508-1kpm6o1l",
+      "timestamp": "2026-03-17T22:55:03.832Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: To select the correct answer, the learner must know both that \"he\" requires \"doesn't\" (not \"don't\") and that the main verb remains in base form (\"sing,\" not \"sings\"), which are the two core components of the stated rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773788103832-8mxkj0qj",
+      "timestamp": "2026-03-17T22:55:20.696Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Answering correctly requires knowing both that \"he\" (3rd person singular) takes \"doesn't\" rather than \"don't\", and that the verb following \"doesn't\" must be in base form (\"sing\" not \"sings\")—both core aspects of the stated rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773788120696-e0attczg",
+      "timestamp": "2026-03-17T22:55:32.659Z"
+    }
+  ]
+}
