@@ -5,6 +5,7 @@ import { mcqWrongIsFalsePredicate } from "./mcq-wrong-is-false";
 import { mcqStructuralPredicate } from "./mcq-structural";
 import { inputStructuralPredicate } from "./input-structural";
 import { inputPromptSelfContainedPredicate } from "./input-prompt-self-contained";
+import { inputPromptWellFormedPredicate } from "./input-prompt-well-formed";
 import { inputWrongPlausiblePredicate } from "./input-wrong-plausible";
 import { inputExplanationAccuratePredicate } from "./input-explanation-accurate";
 import { questionRuleAlignmentPredicate } from "./question-rule-alignment";
@@ -20,6 +21,7 @@ export const allPredicates: Predicate[] = [
   mcqCorrectIsTruePredicate,
   mcqWrongIsFalsePredicate,
   inputPromptSelfContainedPredicate,
+  inputPromptWellFormedPredicate,
   inputWrongPlausiblePredicate,
   inputExplanationAccuratePredicate,
   questionRuleAlignmentPredicate,
@@ -36,6 +38,7 @@ export {
   mcqStructuralPredicate,
   inputStructuralPredicate,
   inputPromptSelfContainedPredicate,
+  inputPromptWellFormedPredicate,
   inputWrongPlausiblePredicate,
   inputExplanationAccuratePredicate,
   questionRuleAlignmentPredicate,

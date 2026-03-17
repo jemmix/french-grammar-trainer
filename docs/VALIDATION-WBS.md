@@ -27,6 +27,7 @@ Note: "Unique question ID" removed — already enforced by DSL parser, not a pre
 - [x] `mcq-correct-is-true` — Verify correct answer is TRUE
 - [x] `mcq-wrong-is-false` — Verify wrong answers are FALSE
 - [x] `input-prompt-self-contained` — Prompt identifies what to input (provides answer to LLM for context)
+- [x] `input-prompt-well-formed` — Prompt is a clear imperative instruction (not narrative context)
 - [x] `input-wrong-plausible` — Wrong answers are plausible mistakes
 - [x] `input-explanation-accurate` — Wrong answer explanations correct
 - [x] `question-rule-alignment` — Question tests stated rule

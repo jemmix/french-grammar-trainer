@@ -32,7 +32,7 @@ Always use **`general-purpose`** subagents (not `Bash`) for question generation.
 2. **Split** — `npm run split-txt -- gen/<rule-id>.txt ...` → produces `gen/<rule-id>-passed.txt` + `gen/<rule-id>-failed.txt`
 3. **Fix** — manually correct failed questions, save as `gen/<rule-id>-fixed.txt` (remove `VALIDATION ERROR:` lines)
 4. **Merge** — `npm run merge-txt -- --output questions/{lang}/<rule-id>.txt gen/<rule-id>-passed.txt [gen/<rule-id>-fixed.txt]` (later files override earlier for duplicate IDs)
-5. **Compile** — `npm run convert-txt -- --section-id ... --section-title ... --section-desc ... --output src/data/{lang}/<section-id>.ts questions/{lang}/<rule-id>.txt ...`
+5. **Compile** — `npm run compile-all -- --lang {lang}` (compiles all DSL files to TypeScript using TOC metadata)
 6. **Register** — add the new section to `src/data/sections-index.ts`: import the compiled file (from `./fr/` or `./en/`), add a metadata entry to `_meta`, and add the section to `_loadedSections`
 7. **Commit** — `git add questions/ src/data/ .gitignore`, commit and push (temp files in `gen/` are never tracked)
 
