@@ -23,16 +23,29 @@ export const noAmbiguousPromptsPredicate: LLMPredicate = {
     } else {
       const q = ctx.question as InputQuestion;
       const phrase = q.phrase.before + "___" + q.phrase.after;
-      questionContent = "Prompt: " + q.prompt + "\nPhrase: " + phrase;
+      questionContent = "Prompt: " + q.prompt + "\nPhrase: " + phrase + "\nHint: " + q.hint;
     }
 
     return {
-      systemPrompt: "You are a " + lang + " language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nRespond with exactly one word: CLEAR or AMBIGUOUS.\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity\n\nYour response must contain ONLY one of these two words in all caps. No explanation.",
+      systemPrompt: "You are a " + lang + " language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
       userPrompt: "RULE: " + ctx.rule.title + "\n\nQUESTION:\n" + questionContent + "\n\nIs this prompt clear and unambiguous?",
     };
   },
 
   interpretResponse(_ctx: QuestionContext, rawResponse: string): PredicateResult {
+    const verdictMatch = rawResponse.match(/VERDICT:\s*(CLEAR|AMBIGUOUS)/i);
+    const reasonMatch = rawResponse.match(/REASON:\s*(.+)/i);
+    const extractedReason = reasonMatch?.[1]?.trim() ?? null;
+
+    if (verdictMatch?.[1]) {
+      const verdict = verdictMatch[1].toUpperCase();
+      if (verdict === "CLEAR") {
+        return { pass: true };
+      } else if (verdict === "AMBIGUOUS") {
+        return { pass: false, reason: extractedReason || "Prompt is ambiguous or unclear" };
+      }
+    }
+
     const cleaned = rawResponse.trim().toUpperCase();
 
     if (cleaned === "CLEAR") {

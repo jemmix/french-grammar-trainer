@@ -283,9 +283,9 @@ const section: Section = {
       type: "input",
       ruleId: "01-01",
       generatedBy: "opus",
-      prompt: "Complete the sentence with the present simple form of the verb.",
+      prompt: "Complete with the present simple form of the verb.",
       phrase: { before: "My brother works from nine to five, and on Saturdays I ", after: " from ten to six." },
-      hint: "do the same job",
+      hint: "use the same verb as the first part",
       answer: "work",
       explanation: "With the subject \"I,\" the present simple uses the base form of the verb. No ending is added.",
       wrongAnswers: [
@@ -301,9 +301,9 @@ const section: Section = {
       type: "input",
       ruleId: "01-01",
       generatedBy: "opus",
-      prompt: "Fill in the blank with the present simple form of the verb.",
+      prompt: "Complete with the same verb as the first clause, but in present simple.",
       phrase: { before: "They drank coffee all day yesterday, but every morning we ", after: " tea." },
-      hint: "same action with tea",
+      hint: "do the same thing with",
       answer: "drink",
       explanation: "With the subject \"we,\" the present simple uses the base form. \"We drink\" describes a daily habit.",
       wrongAnswers: [
