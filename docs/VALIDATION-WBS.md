@@ -31,9 +31,9 @@ Note: "Unique question ID" removed — already enforced by DSL parser, not a pre
 - [x] `input-explanation-accurate` — Wrong answer explanations correct
 - [x] `question-rule-alignment` — Question tests stated rule
 - [x] `no-ambiguous-prompts` — Single valid answer for INPUT
-- [ ] `grammar-valid` — Answers are grammatically valid French/English
-- [ ] `hint-not-trivial` — LLM check (hint=answer valid when answer IS dictionary form; e.g., English 1sg present = infinitive)
-- [ ] `not-ridiculous` — Generic sanity check: "Is this a reasonable language learning exercise?"
+- [x] `grammar-valid` — Answers are grammatically valid French/English
+- [x] `hint-not-trivial` — LLM check (hint=answer valid when answer IS dictionary form; e.g., English 1sg present = infinitive)
+- [x] `not-ridiculous` — Generic sanity check: "Is this a reasonable language learning exercise?"
 
 ## Infrastructure
 
