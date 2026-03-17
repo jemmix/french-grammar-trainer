@@ -27,10 +27,10 @@ Note: "Unique question ID" removed — already enforced by DSL parser, not a pre
 - [x] `mcq-correct-is-true` — Verify correct answer is TRUE
 - [x] `mcq-wrong-is-false` — Verify wrong answers are FALSE
 - [x] `input-prompt-self-contained` — Prompt identifies what to input (provides answer to LLM for context)
-- [ ] `input-wrong-plausible` — Wrong answers are plausible mistakes
-- [ ] `input-explanation-accurate` — Wrong answer explanations correct
-- [ ] `question-rule-alignment` — Question tests stated rule
-- [ ] `no-ambiguous-prompts` — Single valid answer for INPUT
+- [x] `input-wrong-plausible` — Wrong answers are plausible mistakes
+- [x] `input-explanation-accurate` — Wrong answer explanations correct
+- [x] `question-rule-alignment` — Question tests stated rule
+- [x] `no-ambiguous-prompts` — Single valid answer for INPUT
 - [ ] `grammar-valid` — Answers are grammatically valid French/English
 - [ ] `hint-not-trivial` — LLM check (hint=answer valid when answer IS dictionary form; e.g., English 1sg present = infinitive)
 - [ ] `not-ridiculous` — Generic sanity check: "Is this a reasonable language learning exercise?"
