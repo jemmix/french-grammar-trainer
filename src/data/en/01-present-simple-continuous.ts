@@ -101,12 +101,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-01",
       generatedBy: "opus",
-      prompt: "Complete the sentence: \"We ___ music every evening after work.\"",
+      prompt: "Choose the correct present simple form: \"We ___ our dog twice a day.\"",
       choices: [
-        { text: "listen to", correct: true, explanation: "With \"we,\" the present simple uses the base form. \"Listen to\" is the correct verb + preposition combination for music." },
-        { text: "listens to", correct: false, explanation: "\"Listens\" is the third person singular form (she listens). With \"we,\" the base form is required." },
-        { text: "listen", correct: false, explanation: "While \"listen\" is the correct base form, this verb requires the preposition \"to\" before its object. You listen TO music, not just listen music." },
-        { text: "listening", correct: false, explanation: "\"Listening\" without an auxiliary verb is grammatically incomplete. The present simple with \"we\" is \"listen to.\"" },
+        { text: "walk", correct: true, explanation: "With \"we,\" the present simple uses the base form \"walk.\" This describes a regular habit." },
+        { text: "walks", correct: false, explanation: "\"Walks\" is the third person singular form (she walks). With \"we,\" the base form \"walk\" is needed." },
+        { text: "walking", correct: false, explanation: "\"Walking\" without an auxiliary verb is grammatically incomplete. The present simple is just \"we walk.\"" },
+        { text: "are walk", correct: false, explanation: "The present simple does not use an auxiliary before the main verb. The correct form is \"we walk.\"" },
       ],
     },
     {
@@ -205,7 +205,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-01",
       generatedBy: "opus",
-      prompt: "Complete the sentence: \"I ___ to the gym three times a week.\"",
+      prompt: "Choose the correct present simple verb form: \"I ___ to the gym three times a week.\"",
       choices: [
         { text: "go", correct: true, explanation: "With \"I,\" the present simple uses the base form \"go.\" \"Three times a week\" indicates a regular habit." },
         { text: "goes", correct: false, explanation: "\"Goes\" is the third person singular form (she goes). With \"I,\" the base form \"go\" is required." },
