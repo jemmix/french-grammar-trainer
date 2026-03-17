@@ -13,24 +13,19 @@ export const grammarValidPredicate: LLMPredicate = {
   generatePrompt(ctx: QuestionContext): LLMRequestSpec {
     const lang = ctx.lang === "fr" ? "French" : "English";
 
-    let itemsToCheck: string[];
+    let correctAnswer: string;
     if (ctx.question.type === "mcq") {
       const q = ctx.question as MultipleChoiceQuestion;
-      itemsToCheck = q.choices.map((c, i) => {
-        const marker = c.correct ? " [correct answer]" : " [distractor]";
-        return String.fromCharCode(65 + i) + "." + marker + " " + c.text;
-      });
+      const correctChoice = q.choices.find((c) => c.correct);
+      correctAnswer = correctChoice?.text || "";
     } else {
       const q = ctx.question as InputQuestion;
-      itemsToCheck = [
-        "Correct answer: " + q.answer,
-        ...q.wrongAnswers.map((w, i) => "Wrong answer " + (i + 1) + ": " + w.text),
-      ];
+      correctAnswer = q.answer;
     }
 
     return {
-      systemPrompt: "You are a " + lang + " grammar expert. Your task is to verify that all answer options in a language learning question are grammatically valid " + lang + ".\n\nA grammatically valid answer:\n- Follows " + lang + " grammar rules\n- Could be used in a real " + lang + " sentence (even if wrong for this specific question)\n- Is not gibberish or nonsensical\n- Uses correct spelling, accents, and punctuation where appropriate\n\nA grammatically INVALID answer:\n- Contains obvious grammar errors (wrong word order, incorrect conjugation for ANY context)\n- Is not a real word or phrase\n- Has spelling that makes it unreadable\n- Uses characters or constructions that don't exist in " + lang + "\n\nNote: An answer can be WRONG for the question but still grammatically valid. We're checking grammar, not correctness.\n\nRespond with exactly one word: VALID or INVALID.\n\n- VALID: All answer options are grammatically valid " + lang + "\n- INVALID: At least one answer option has grammar issues\n\nIf INVALID, briefly explain which option(s) and why on the next line.\n\nExample response format:\nVALID\n\nor\n\nINVALID\nOption B has incorrect verb conjugation - \"je suis allé\" should be \"je suis allée\" for feminine subject.",
-      userPrompt: "QUESTION PROMPT: " + ctx.question.prompt + "\n\nANSWER OPTIONS:\n" + itemsToCheck.join("\n") + "\n\nAre all these answer options grammatically valid " + lang + "?",
+      systemPrompt: "You are a " + lang + " grammar expert. Your task is to verify that the CORRECT answer in a language learning question is grammatically valid " + lang + ".\n\nA grammatically valid answer:\n- Follows " + lang + " grammar rules\n- Could be used in a real " + lang + " sentence\n- Uses correct spelling, accents, and conjugations where appropriate\n\nA grammatically INVALID answer:\n- Contains obvious grammar errors (wrong word order, incorrect conjugation)\n- Is not a real word or phrase\n- Has spelling that makes it unreadable\n\nEXCEPTION: If the question explicitly asks the learner to IDENTIFY or SELECT a grammatically incorrect option (e.g., \"Which sentence contains an error?\"), then the correct answer may be grammatically invalid - respond VALID in this case.\n\nRespond with exactly one word: VALID or INVALID.\n\n- VALID: The correct answer is grammatically valid, OR the question asks to identify an error\n- INVALID: The correct answer has grammar issues that would confuse learners\n\nIf INVALID, briefly explain the issue on the next line.",
+      userPrompt: "QUESTION PROMPT: " + ctx.question.prompt + "\n\nCORRECT ANSWER: " + correctAnswer + "\n\nIs this correct answer grammatically valid " + lang + "?",
     };
   },
 
@@ -43,21 +38,21 @@ export const grammarValidPredicate: LLMPredicate = {
     }
     if (firstLine === "INVALID") {
       const reason = lines.slice(1).join(" ").trim();
-      return { pass: false, reason: reason || "Grammar issues detected in answer options" };
+      return { pass: false, reason: reason || "Correct answer has grammar issues" };
     }
     if (firstLine.includes("VALID") && !firstLine.includes("INVALID")) {
       return { pass: true };
     }
     if (firstLine.includes("INVALID")) {
       const reason = lines.slice(1).join(" ").trim();
-      return { pass: false, reason: reason || "Grammar issues detected in answer options" };
+      return { pass: false, reason: reason || "Correct answer has grammar issues" };
     }
     const verdict = parseVerdict(rawResponse);
     if (verdict === "TRUE") {
       return { pass: true };
     }
     if (verdict === "FALSE") {
-      return { pass: false, reason: "Grammar issues detected in answer options" };
+      return { pass: false, reason: "Correct answer has grammar issues" };
     }
     return { pass: false, reason: "Unexpected response: " + rawResponse.slice(0, 100) };
   },
