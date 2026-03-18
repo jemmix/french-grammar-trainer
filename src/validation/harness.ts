@@ -1,4 +1,5 @@
 import { execFile } from "child_process";
+import type { ExecFileException } from "child_process";
 import type { LLMRequestSpec, LLMResponse } from "./types";
 
 const HARNESS_TIMEOUT_MS = 300_000;
@@ -91,15 +92,14 @@ export function createOpencodeHarness(modelId: string): LLMHarness {
               { timeout: HARNESS_TIMEOUT_MS, maxBuffer: 10 * 1024 },
               (err, stdout, stderr) => {
                 if (err) {
-                  const execErr = err as any;
-                  const isTimeout = execErr.message.includes("ETIMEDOUT") || execErr.killed;
+                  const isTimeout = err.message.includes("ETIMEDOUT") || err.killed;
                   const parts: string[] = ["opencode failed"];
                   if (isTimeout) {
                     parts.push("reason: timeout after " + (HARNESS_TIMEOUT_MS / 1000) + "s");
-                  } else if (execErr.code !== undefined && execErr.code !== null) {
-                    parts.push("reason: exit code " + execErr.code);
-                  } else if (execErr.signal) {
-                    parts.push("reason: killed by signal " + execErr.signal);
+                  } else if (err.code !== undefined && err.code !== null) {
+                    parts.push("reason: exit code " + err.code);
+                  } else if (err.signal) {
+                    parts.push("reason: killed by signal " + err.signal);
                   } else {
                     parts.push("reason: " + err.message);
                   }
