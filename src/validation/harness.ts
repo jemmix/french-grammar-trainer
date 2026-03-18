@@ -105,7 +105,7 @@ export function createOpencodeHarness(modelId: string): LLMHarness {
                   }
                   if (stderr?.trim()) parts.push("stderr: " + stderr.trim());
                   if (stdout?.trim()) parts.push("stdout: " + stdout.trim());
-                  reject(new Error(parts.join("\n")));
+                  reject(new Error(parts.join("; ")));
                   return;
                 }
                 const raw = stdout.trim();
