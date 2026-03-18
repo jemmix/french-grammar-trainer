@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3306d1d781a5c7ed",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-02-005",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 02-02 - Past simple: spelling rules for -ed (double consonant, -e → -ed, -y → -ied)\n\nQUESTION:\nType: Multiple Choice\nPrompt: What is the correct past simple spelling of \"plan\"?\nChoices:\nA. [CORRECT] planned\nB. planed\nC. plannd\nD. planing\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773840005099-6hoxukjl"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the double consonant spelling rule, requiring students to know that \"plan\" (CVC pattern, stressed final syllable) becomes \"planned\" with a doubled consonant—one of the three spelling patterns explicitly covered by the stated rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773840005136-w0799iig",
+      "timestamp": "2026-03-18T13:20:35.753Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the double consonant spelling rule for -ed (plan → planned requires doubling the 'n' because it follows the CVC pattern), which is explicitly covered in the stated rule.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773840189204-1crh42hj",
+      "timestamp": "2026-03-18T13:23:42.811Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the double consonant rule (one of the three patterns covered by 02-02) — answering correctly requires knowing that \"plan\" follows the CVC pattern and needs the final consonant doubled before adding -ed.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773840352443-1bkcx5i7",
+      "timestamp": "2026-03-18T13:26:15.450Z"
+    }
+  ]
+}

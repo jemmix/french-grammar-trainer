@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b1b31c19f7cc1bf4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-02-011",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 02-02 - Past simple: spelling rules for -ed (double consonant, -e → -ed, -y → -ied)\n\nQUESTION:\nType: Multiple Choice\nPrompt: What is the correct past simple spelling of \"phone\"?\nChoices:\nA. [CORRECT] phoned\nB. phoneed\nC. phonned\nD. phonn\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773840005104-4m511jtj"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the \"-e → -ed\" spelling rule (one of the three patterns covered by 02-02), requiring the learner to know that verbs already ending in -e only add -d, not -ed.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773840051887-n9x06ng2",
+      "timestamp": "2026-03-18T13:21:15.723Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the \"-e → -ed\" spelling rule specifically, as \"phone\" ends in silent -e, requiring the student to know that only -d is added (not -ed, not a doubled consonant).",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773840234801-9sa86l8z",
+      "timestamp": "2026-03-18T13:24:26.352Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the \"-e → -ed\" rule specifically—the verb \"phone\" ends in silent -e, so the past simple adds only -d (phoned), not -ed (phoneed).",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773840393873-oqekp152",
+      "timestamp": "2026-03-18T13:26:58.858Z"
+    }
+  ]
+}
