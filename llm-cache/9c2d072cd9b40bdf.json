@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9c2d072cd9b40bdf",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-01-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-01 - Conjugaison des verbes réguliers en -er (parler, manger, commencer, etc.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Je ___ français avec mes amis. »\nChoices:\nA. [CORRECT] parle\nB. parles\nC. parlais\nD. parler\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773843081622-a76vp1pv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests conjugation of \"parler\" (a regular -er verb) in the present tense for the first-person singular subject \"Je\", and the wrong answers test person (parles), tense (parlais), and form (parler) distinctions central to -er verb conjugation.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1773843081637-ng2107ev",
+      "timestamp": "2026-03-18T14:12:56.707Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of regular -er verb conjugation in the present tense for \"je\" (first person singular), which is exactly what rule 01-01 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773843239751-ozs2cj6i",
+      "timestamp": "2026-03-18T14:25:03.602Z"
+    }
+  ]
+}
