@@ -11,6 +11,12 @@ import section09 from "./09-imperatif";
 import section10 from "./10-articles";
 import section11 from "./11-pronoms-cod-coi";
 import section12 from "./12-pronoms-relatifs";
+import explanations01 from "./explanations/01-explanations";
+
+// Attach explanations to sections here (not in generated section files, which
+// get overwritten by codegen). Explanations are hand-authored and live in
+// src/data/fr/explanations/.
+section01.explanations = explanations01;
 
 export const loadedSections: Section[] = [section01, section02, section03, section04, section05, section06, section07, section08, section09, section10, section11, section12];
 
