@@ -42,6 +42,10 @@ export const hintNotTrivialPredicate: StructuralPredicate = {
       return { status: "pass" };
     }
 
+    if (answerWords.every((w) => w.length <= 2)) {
+      return { status: "pass" };
+    }
+
     const questionText = [
       q.prompt,
       q.phrase.before,
