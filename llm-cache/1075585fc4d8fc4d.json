@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1075585fc4d8fc4d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-03-013",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 02-03 - Past simple: pronunciation of -ed (/t/, /d/, /ɪd/)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Which word has the SAME -ed pronunciation as \"started\"?\nChoices:\nA. [CORRECT] planted\nB. helped\nC. called\nD. washed\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773832435190-9xg8edjl"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To answer correctly, learners must know that \"started\" ends with 't' and therefore takes the /ɪd/ pronunciation, then identify which other word follows the same pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773832632800-nultkxp4",
+      "timestamp": "2026-03-18T11:18:32.072Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"started\" has the /ɪd/ pronunciation (because it ends in /t/), and then applying the same rule to identify \"planted\" as another verb ending in /t/ that also takes /ɪd/.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773833255000-3v91g3rr",
+      "timestamp": "2026-03-18T11:28:36.987Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the -ed pronunciation rule by requiring the learner to identify which word shares the same /ɪd/ pronunciation as \"started\" based on the final sound of the base verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773833710345-56r71k4u",
+      "timestamp": "2026-03-18T11:36:14.976Z"
+    }
+  ]
+}

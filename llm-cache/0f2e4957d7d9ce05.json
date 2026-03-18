@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0f2e4957d7d9ce05",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-03-015",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 02-03 - Past simple: pronunciation of -ed (/t/, /d/, /ɪd/)\n\nQUESTION:\nType: Multiple Choice\nPrompt: How many syllables does \"played\" have?\nChoices:\nA. [CORRECT] One — the -ed does not add a syllable.\nB. Two — the -ed adds a syllable.\nC. The same number of syllables as \"wanted.\"\nD. The same number of syllables as \"decided.\"\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773832435190-b08jc8iv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that -ed is pronounced /d/ after voiced consonants like the /eɪ/ in \"play,\" which doesn't add a syllable—the core concept of the pronunciation rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773832694935-ft8l999n",
+      "timestamp": "2026-03-18T11:19:50.880Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that -ed is pronounced /d/ when the verb ends in a voiced sound, which does not add a syllable — directly testing the /t/, /d/, /ɪd/ pronunciation rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773833287188-qgcdvkbs",
+      "timestamp": "2026-03-18T11:28:26.449Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the pronunciation rule for -ed, as answering correctly requires knowing that -ed after a voiceless consonant is pronounced /d/ without adding a syllable.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773833705263-2db7nth8",
+      "timestamp": "2026-03-18T11:35:32.263Z"
+    }
+  ]
+}
