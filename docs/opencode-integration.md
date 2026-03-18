@@ -7,10 +7,24 @@ This document describes options for integrating OpenCode LLM calls into the Fren
 The existing harness (`src/validation/harness.ts`) spawns a new `opencode run` process for each LLM call:
 
 ```typescript
-execFile("opencode", ["run", "--model", "zai-coding-plan/" + modelId, fullPrompt], ...)
+execFile("opencode", ["run", "--model", "zai-coding-plan/" + modelId, fullPrompt], {
+  timeout: 300_000,  // 5 minutes
+  maxBuffer: 10 * 1024
+}, ...)
 ```
 
-This works but has overhead: each call bootstraps and tears down the opencode runtime.
+Key parameters from the current implementation:
+
+| Parameter       | Value              | Location                                |
+| --------------- | ------------------ | --------------------------------------- |
+| Timeout         | 300s (5 min)       | `HARNESS_TIMEOUT_MS` in `harness.ts:5`  |
+| Max retries     | 3                  | `MAX_RETRIES` in `harness.ts:6`         |
+| Initial backoff | 1s                 | `INITIAL_DELAY_MS` in `harness.ts:7`    |
+| Max backoff     | 30s                | `MAX_DELAY_MS` in `harness.ts:8`        |
+| Concurrency     | 10                 | `DEFAULT_CONCURRENCY` in `runner.ts:26` |
+| Model prefix    | `zai-coding-plan/` | `harness.ts:91`                         |
+
+Each call bootstraps and tears down the opencode runtime, which adds overhead but is acceptable for batch validation.
 
 ## Integration Options
 
@@ -138,21 +152,66 @@ This gives true `execve` semantics on Unix — the Node process is replaced by B
 
 Given the current architecture:
 
-1. **Short-term**: Keep the current `execFile` approach. It's simple and works. The overhead is acceptable for batch validation runs.
+1. **Short-term**: Keep the current `execFile` approach. It's simple and works. The overhead is acceptable for batch validation runs. The retry logic already handles transient failures well.
 
-2. **If orphan risk is a concern**: Add a startup check in `validate.ts`:
+2. **If orphan risk is a concern**: Add a startup check in `scripts/validate.ts`:
 
    ```typescript
+   import { execFileSync } from "child_process";
+
    // Kill any stale opencode processes from previous crashed runs
-   execFileSync("pkill", ["-f", "opencode serve"], { shell: true });
+   try {
+     execFileSync("pkill", ["-f", "opencode"], { stdio: "ignore" });
+   } catch {
+     // pkill exits with non-zero if no processes found
+   }
    ```
 
 3. **If performance becomes critical**: Migrate to Option 3 (Node wrapper + Bun) for in-process execution. This would require:
    - Adding `bun` as a dependency
    - Creating a Bun-based runner that imports opencode directly
-   - Modifying `harness.ts` to use the in-process client
+   - Modifying `src/validation/harness.ts` to use the in-process client instead of `execFile`
 
 4. **For CI/CD**: The current approach is fine. CI environments are ephemeral, so orphan processes die with the runner.
+
+## Specific Considerations for This Project
+
+### Retry Behavior
+
+The harness implements exponential backoff with jitter:
+
+- Initial delay: 1s
+- Max delay: 30s
+- Backoff multiplier: 2x
+- Retryable errors: timeout, connection errors, 429 rate limit, 502/503/504
+
+### Model Configuration
+
+The model is passed with the `zai-coding-plan/` prefix. The default model is `glm-5` (set in `runner.ts:195`). To use a different model:
+
+```bash
+npx tsx scripts/validate.ts --llm --model other-model
+```
+
+### Concurrency
+
+Default is 10 concurrent LLM calls. Adjust with `--concurrency` flag. Sessions are independent — multiple can run concurrently. The bottleneck is provider rate limits, not opencode internals.
+
+### Event Streaming
+
+For in-process integration, you SDK provides event streaming for results:
+
+```typescript
+const events = await client.event.subscribe();
+for await (const event of events.stream) {
+  if (
+    event.type === "session.status" &&
+    event.properties.status.type === "idle"
+  ) {
+    // Session completed
+  }
+}
+```
 
 ## Session Creation Cost
 
