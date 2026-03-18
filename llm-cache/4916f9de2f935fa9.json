@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4916f9de2f935fa9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-02-022",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 02-02 - Past simple: spelling rules for -ed (double consonant, -e → -ed, -y → -ied)\n\nQUESTION:\nType: Input\nPrompt: Write the correct past simple form of \"stop.\"\nPhrase: The car ___ at the red light.\nCorrect Answer: stopped\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773792081822-a9uji2h2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing to double the final consonant in \"stop\" before adding -ed, which is exactly the double consonant spelling rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773792333229-yam927vt",
+      "timestamp": "2026-03-18T00:05:43.377Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying the double consonant spelling rule (stop → stopped), which is a core component of the stated rule about -ed spelling patterns.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773792637040-18tfrdbu",
+      "timestamp": "2026-03-18T00:10:56.977Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires applying the double consonant spelling rule for CVC words (stop → stopped), which is directly covered by the stated rule about -ed spelling conventions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773792821151-3xkt32ks",
+      "timestamp": "2026-03-18T00:13:52.319Z"
+    }
+  ]
+}
