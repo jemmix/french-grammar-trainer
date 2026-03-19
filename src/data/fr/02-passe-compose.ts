@@ -134,7 +134,7 @@ const section: Section = {
       prompt: "Complétez : « Elles ___ compris les instructions du professeur. »",
       choices: [
         { text: "ont", correct: true, explanation: "Le sujet « elles » prend l'auxiliaire avoir à la troisième personne du pluriel, qui est « ont ». Le passé composé = avoir + participe passé." },
-        { text: "avait", correct: false, explanation: "« avait » est l'imparfait à la troisième personne du singulier, pas le passé composé. Le passé composé demande have au présent + participe passé." },
+        { text: "avait", correct: false, explanation: "« avait » est l'imparfait à la troisième personne du singulier, pas le passé composé. Le passé composé demande « avoir » au présent + participe passé." },
         { text: "est", correct: false, explanation: "« est » est l'auxiliaire être (utilisé pour les verbes de mouvement et pronominaux). « comprendre » utilise avoir." },
         { text: "a", correct: false, explanation: "« a » est la troisième personne du singulier (il/elle a), pas la troisième personne du pluriel (elles ont)." },
       ],
@@ -2180,7 +2180,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Que signifie « entendu » ?",
       choices: [
-        { text: "participe passé du verbe entendre (entendu = heard)", correct: true, explanation: "Entendre → on supprime -re et on ajoute -u → entendu. C'est la bonne formation." },
+        { text: "participe passé du verbe entendre", correct: true, explanation: "Entendre → on supprime -re et on ajoute -u → entendu. C'est la bonne formation." },
         { text: "participe présent du verbe entendre", correct: false, explanation: "Le participe présent d'« entendre » est « entendant », pas « entendu ». « Entendu » est le participe passé." },
         { text: "gérondif du verbe entendre", correct: false, explanation: "Le gérondif d'« entendre » est « en entendant », pas « entendu ». « Entendu » est le participe passé." },
         { text: "forme conjuguée au présent", correct: false, explanation: "La forme conjuguée au présent serait « entend », pas « entendu »." },
@@ -3252,7 +3252,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-10",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu es ___ tard ce soir. » (speaker: femme)",
+      prompt: "Complétez : « Tu es ___ tard ce soir. » (locutrice)",
       choices: [
         { text: "rentrée", correct: true, explanation: "Le sujet « tu » désigne une femme (féminin singulier). Le participe passé du verbe rentrer doit être « rentrée »." },
         { text: "rentré", correct: false, explanation: "Le participe passé « rentré » est au masculin singulier. Le sujet « tu » désigne une femme, donc il faut « rentrée »." },
@@ -3382,7 +3382,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-10",
       generatedBy: "haiku",
-      prompt: "Quel est le bon accord ? « Tu es ___ en France ? » (speaker: homme)",
+      prompt: "Quel est le bon accord ? « Tu es ___ en France ? » (locuteur)",
       choices: [
         { text: "allé", correct: true, explanation: "Le sujet « tu » désigne un homme (masculin singulier). Le participe passé du verbe aller doit être « allé »." },
         { text: "allée", correct: false, explanation: "Le participe passé « allée » est au féminin singulier. Le sujet « tu » désigne un homme, donc il faut « allé »." },
@@ -3529,7 +3529,7 @@ const section: Section = {
       ruleId: "02-10",
       generatedBy: "haiku",
       prompt: "Conjuguez le verbe entre parenthèses au passé composé avec l'auxiliaire être.",
-      phrase: { before: "Tu es (devenir) ", after: " très fort. » (speaker: femme)" },
+      phrase: { before: "Tu es (devenir) ", after: " très fort. » (locutrice)" },
       hint: "devenir",
       answer: "devenue",
       explanation: "Le sujet « tu » désigne une femme (féminin singulier). Le participe passé de devenir au féminin singulier est « devenue ».",
@@ -6180,7 +6180,7 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Quel marqueur temporel indique que le passé composé est approprié ?",
       choices: [
-        { text: "« Le 3 mars »", correct: true, explanation: "Une date précise comme « le 3 mars » marque un moment specific et complet du passé, exigeant le passé composé." },
+        { text: "« Le 3 mars »", correct: true, explanation: "Une date précise comme « le 3 mars » marque un moment spécifique et complet du passé, exigeant le passé composé." },
         { text: "« Tous les jours »", correct: false, explanation: "« Tous les jours » indique une répétition habituelle, requérant l'imparfait." },
         { text: "« Autrefois »", correct: false, explanation: "« Autrefois » décrit une époque habituelle ou régulière, pas une action unique, donc l'imparfait est préféré." },
         { text: "« Quand j'étais jeune »", correct: false, explanation: "Cette expression situe une action habituelle dans le passé, demandant l'imparfait, non le passé composé." },
