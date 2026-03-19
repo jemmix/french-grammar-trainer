@@ -13,6 +13,7 @@ import { noAmbiguousPromptsPredicate } from "./no-ambiguous-prompts";
 import { grammarValidPredicate } from "./grammar-valid";
 import { hintNotTrivialPredicate } from "./hint-not-trivial";
 import { notRidiculousPredicate } from "./not-ridiculous";
+import { frenchLanguagePredicate } from "./french-language";
 
 export const allPredicates: Predicate[] = [
   elisionPredicate,
@@ -29,6 +30,7 @@ export const allPredicates: Predicate[] = [
   grammarValidPredicate,
   hintNotTrivialPredicate,
   notRidiculousPredicate,
+  frenchLanguagePredicate,
 ];
 
 export {
@@ -46,4 +48,5 @@ export {
   grammarValidPredicate,
   hintNotTrivialPredicate,
   notRidiculousPredicate,
+  frenchLanguagePredicate,
 };
