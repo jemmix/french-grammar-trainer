@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2205b02108c7fa1e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-04-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-04 - Les verbes irréguliers du 1er groupe (aller, envoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Mon ami ___ beaucoup de messages par jour. »\nChoices:\nA. [CORRECT] envoie\nB. envoies\nC. envoyons\nD. va\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773955860156-jybccg43"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"envoyer\" (one of the specified irregular 1st group verbs) for the third-person singular subject \"Mon ami\", testing the exact rule content.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773955989550-g5p561ug",
+      "timestamp": "2026-03-19T21:33:24.788Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of \"envoyer\" (one of the two irregular 1st group verbs specified in the rule) in the present tense, requiring knowledge of the correct third person singular form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956337971-v38ttcee",
+      "timestamp": "2026-03-19T21:39:18.656Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of envoyer's specific present tense conjugation (y→i before mute e endings) and subject agreement to identify that \"Mon ami\" takes \"envoie\" not \"envoies\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956643104-xsg5b7d4",
+      "timestamp": "2026-03-19T21:44:17.815Z"
+    }
+  ]
+}

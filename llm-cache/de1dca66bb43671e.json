@@ -1,0 +1,82 @@
+{
+  "cacheKey": "de1dca66bb43671e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-04-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-04 - Les verbes irréguliers du 1er groupe (aller, envoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Tes parents ___ une lettre importante demain. »\nChoices:\nA. [CORRECT] envoient\nB. envoyait\nC. envoie\nD. vont\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773955860157-qkcx5tw1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the present tense conjugation of \"envoyer\" (one of the irregular 1st group verbs in this rule) for 3rd person plural subjects, eliminating other choices through person/number agreement and meaning.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956108414-2bt62su4",
+      "timestamp": "2026-03-19T21:35:33.710Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Answering correctly requires knowing how to conjugate \"envoyer\" (an irregular 1st group verb) in present tense for plural subject, which is the core of rule 01-04.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956425969-9o1ggncu",
+      "timestamp": "2026-03-19T21:40:53.277Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question uses regular present tense forms of \"envoyer\" which don't test its irregularity (its irregularity only appears in certain forms like future/enverront, imperfect/envoyait, or the 'y'→'i' spelling changes), and \"aller\" isn't tested at all.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956828041-z68rj8ns",
+      "timestamp": "2026-03-19T21:47:31.278Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests present tense conjugation and subject-verb agreement (Tes parents = 3rd person plural), but \"envoyer\" conjugates regularly in the present tense like standard -er verbs, so the answer doesn't require knowledge of its irregular characteristics which define this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956990777-mortsjfe",
+      "timestamp": "2026-03-19T21:50:27.162Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of \"envoyer\" (an irregular 1st group verb) in the present tense, requiring knowledge of its unique \"eu\" infix pattern that regular -er verbs don't have.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957106293-xebqggq3",
+      "timestamp": "2026-03-19T21:52:09.374Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests conjugation of \"envoyer\" in present tense (requires knowing its irregular stem \"envo-\") and distinguishes it from \"aller\", which are the exact two irregular 1st group verbs covered by the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957192285-hvr7dm2z",
+      "timestamp": "2026-03-19T21:53:32.784Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests present tense conjugation of envoyer (an irregular 1st group verb) with subject-verb agreement for \"parents\" (plural), while \"demain\" tests understanding that French uses present tense for future actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957270232-ycuttlfz",
+      "timestamp": "2026-03-19T21:55:15.872Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests subject-verb agreement and present tense selection, while the correct answer \"envoient\" is a regular conjugation form that doesn't demonstrate the irregular features of \"envoyer\" (like the future tense \"j'enverrai\" or double 'r' in nous/ils forms) that define this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957363255-qe8ogrvz",
+      "timestamp": "2026-03-19T21:57:39.287Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests present tense conjugation (person/number agreement) with \"envoient\" following regular -er verb patterns, while the rule focuses on irregular stem changes of \"envoyer\" in future/conditional tenses; \"envoient\" is regular, not irregular.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957485539-n7abmnfo",
+      "timestamp": "2026-03-19T21:58:25.662Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence uses \"demain\" which indicates future tense, but all answer choices are in present or imparfait, making the question grammatically inconsistent and testing tense confusion rather than irregular 1st group verb conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957513776-92hsqugi",
+      "timestamp": "2026-03-19T21:58:46.333Z"
+    }
+  ]
+}

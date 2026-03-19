@@ -1,0 +1,82 @@
+{
+  "cacheKey": "f40c80dfd65b33a0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-04-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-04 - Les verbes irréguliers du 1er groupe (aller, envoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Vous ___ des invitations pour la fête. »\nChoices:\nA. [CORRECT] envoyez\nB. envoyons\nC. envoie\nD. irez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773955860156-f2q6rnby"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the regular plural form \"vous envoyez\" of envoyer, not the irregular singular forms (j'envoie, tu envoies) that actually make it irregular; any student knowing regular -er verb conjugation could answer correctly without knowledge of envoyer's irregularity.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773955946925-dr241bkb",
+      "timestamp": "2026-03-19T21:32:56.231Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question primarily tests subject-verb agreement (matching \"vous\" to the -ez ending) rather than the irregular features of envoyer; the -ez conjugation for \"vous\" is regular, and \"envoyez\" doesn't showcase the stem change (envo-) that makes envoyer irregular.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956323717-o295xj7t",
+      "timestamp": "2026-03-19T21:38:58.757Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of \"envoyer\" (one of the two verbs covered by the rule) with subject \"vous\", requiring knowledge of its irregular -ez ending pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956617048-iz2gci99",
+      "timestamp": "2026-03-19T21:48:28.096Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The conjugation \"envoyez\" for \"vous\" follows the regular -er verb pattern and doesn't require knowledge of \"envoyer\"'s irregular spelling changes (the \"y\" to \"i\" shift before mute \"e\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957017092-67miv101",
+      "timestamp": "2026-03-19T21:50:30.417Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests basic subject-verb agreement (matching \"vous\" with the correct -ez ending), which applies to all regular -er verbs, not the specific irregular characteristics of \"envoyer\" (extra 'e' in stem in \"nous/vous\" forms or 'y'→'i' changes in other forms).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957111885-vr7r6zul",
+      "timestamp": "2026-03-19T21:52:47.207Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests standard present tense conjugation (matching \"vous\" to \"-ez\" ending), but \"envoyez\" is the regular form of the verb; the irregularity of \"envoyer\" isn't relevant to this conjugation, so the question doesn't test the \"irregular 1st group verbs\" rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957223191-toys0vkj",
+      "timestamp": "2026-03-19T21:53:53.748Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowing the present tense conjugation of \"envoyer\" for \"vous\", which is irregular (stem changes from \"envoy-\" to \"envoie\" in most forms, though kept for \"vous\"), making the rule directly relevant.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957292087-xv122jol",
+      "timestamp": "2026-03-19T21:55:27.819Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The conjugation \"envoyez\" follows the regular -er verb pattern and doesn't demonstrate the y→i irregularity that makes envoyer irregular; a student could answer correctly using regular conjugation knowledge without knowing what makes the verb irregular.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957381498-0aa9rcxb",
+      "timestamp": "2026-03-19T21:56:35.447Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"envoyer\", which is explicitly listed in the rule as an irregular 1st group verb, and correctly selecting \"envoyez\" depends on knowledge of this specific verb rather than generic conjugation patterns.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957438544-a1jins69",
+      "timestamp": "2026-03-19T21:57:40.545Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the conjugation of \"envoyer\" (an irregular 1st group verb) for the \"vous\" subject, requiring knowledge that even though \"vous envoyez\" ends in -ez like regular -er verbs, \"envoyer\" is classified as an irregular verb due to spelling changes in other forms (j'envoie vs. expected *j'envoie).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957486632-rpm9otkf",
+      "timestamp": "2026-03-19T21:59:02.492Z"
+    }
+  ]
+}

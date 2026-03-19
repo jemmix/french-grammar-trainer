@@ -1,0 +1,82 @@
+{
+  "cacheKey": "dc2e6038a60a13a5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-04-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-04 - Les verbes irréguliers du 1er groupe (aller, envoyer)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe envoyer au présent.\nPhrase: Nous ___ nos candidatures avant vendredi.\nCorrect Answer: envoyons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773955860158-juz7c5i9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the present tense conjugation of envoyer for the nous form (\"envoyons\"), which is the specific irregular verb covered by this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956128508-hbg897rf",
+      "timestamp": "2026-03-19T21:35:58.774Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The \"nous\" form \"envoyons\" follows the regular -er verb conjugation pattern, so a student could answer correctly without knowing that \"envoyer\" is irregular (the irregular forms are je envoie, tu envoies, il/elle envoie, and ils/elles envoient where one 'i' is lost).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956449929-eq6p2ywb",
+      "timestamp": "2026-03-19T21:41:25.035Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the irregular present tense conjugation of \"envoyer\" (nous → envoyons), which is the exact grammar concept covered by rule 01-04.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956872324-usr9d55t",
+      "timestamp": "2026-03-19T21:48:02.410Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The \"nous\" form \"envoyons\" follows the regular -er verb pattern and doesn't test the distinctive irregularity of envoyer (y → i alternation), which only appears in other persons (j'envoie, tu envoies, il envoie).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956993611-xh8ii780",
+      "timestamp": "2026-03-19T21:51:19.000Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating envoyer, one of the two irregular verbs explicitly covered by this rule, and the correct spelling envoyons depends on knowing its specific irregularity rather than the regular -er pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957160783-fhu15o6f",
+      "timestamp": "2026-03-19T21:52:55.572Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The nous form \"envoyons\" follows the regular -er verb pattern and doesn't demonstrate the y→i spelling irregularity that makes envoyer an irregular verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957229195-nogpmrve",
+      "timestamp": "2026-03-19T21:59:11.406Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question uses the \"nous\" form \"envoyons\", which follows the regular -er conjugation pattern and doesn't demonstrate the irregular stem change (envoy- → envoi-) that makes \"envoyer\" an irregular 1st group verb; testing the irregularity would require using forms like \"j'envoie\", \"tu envoies\", or \"ils envoient\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957551407-6c5d59tr",
+      "timestamp": "2026-03-19T21:59:33.574Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the irregular spelling behavior of envoyer (a -oyer verb) in present tense conjugation, which is the core concept of rule 01-04.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957573574-v6q2jbg0",
+      "timestamp": "2026-03-19T21:59:58.638Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge that \"envoyer\" is an irregular 1st group verb requiring the specific form \"envoyons\" for \"nous\" at the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957598638-gvjrcgu9",
+      "timestamp": "2026-03-19T22:00:10.575Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Envoyer\" is an irregular 1st group verb with a y→i spelling change in most conjugations (j'envoie, tu envoies, il/elle envoie, ils/elles envoient), and correctly identifying \"nous envoyons\" requires knowing this verb's specific conjugation pattern as described in rule 01-04.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773957610576-yoxitcz6",
+      "timestamp": "2026-03-19T22:00:22.586Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d00268f8d6f4403c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-04-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-04 - Les verbes irréguliers du 1er groupe (aller, envoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Tu ___ un colis à Marie. »\nChoices:\nA. [CORRECT] envoies\nB. envoie\nC. envoyons\nD. envoyas\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773955860156-ytlk91b5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the irregular conjugation of \"envoyer\" for \"tu\" (envoies vs. regular pattern), which requires knowing the specific irregularity of 1st group verbs like envoyer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773955922511-jxsosz05",
+      "timestamp": "2026-03-19T21:32:18.556Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of \"envoyer\" in present tense, which requires knowing its irregular -ier stem change in singular forms (j'envoie, tu envoies, il envoie), a key irregularity that distinguishes it from regular -er verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956280212-vnsm9hem",
+      "timestamp": "2026-03-19T21:38:12.652Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of \"envoyer\" (an irregular 1st group verb listed in the rule) in the present tense, requiring knowledge of its specific irregular forms to distinguish \"tu envoies\" from incorrect conjugations like \"tu envoie\" or other tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956550675-5ob8lzmw",
+      "timestamp": "2026-03-19T21:43:01.777Z"
+    }
+  ]
+}

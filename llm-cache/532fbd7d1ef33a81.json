@@ -1,0 +1,33 @@
+{
+  "cacheKey": "532fbd7d1ef33a81",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-04-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-04 - Les verbes irréguliers du 1er groupe (aller, envoyer)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe envoyer au présent avec le sujet je.\nPhrase: J'___ un email à mon patron avant de partir au bureau.\nCorrect Answer: envoie\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773955860158-7cienjjn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the irregular conjugation of \"envoyer\" (j'envoie with y→i spelling change), which is the exact irregular pattern covered by the rule for first-group irregular verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956152756-vfts49t7",
+      "timestamp": "2026-03-19T21:36:05.197Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of envoyer's irregular stem \"envo-\" (not the regular \"envoy-\") in the first person singular present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956451211-2h6ofxeu",
+      "timestamp": "2026-03-19T21:41:03.851Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the irregular conjugation of \"envoyer\" (je → j'envoie), which cannot be correctly answered by applying regular -er verb rules alone.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956841979-9s8nsbnr",
+      "timestamp": "2026-03-19T21:47:34.634Z"
+    }
+  ]
+}

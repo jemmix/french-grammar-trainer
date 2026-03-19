@@ -1,0 +1,33 @@
+{
+  "cacheKey": "26a43a945f0944f6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-04-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-04 - Les verbes irréguliers du 1er groupe (aller, envoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Quand ___ -vous à Paris ? »\nChoices:\nA. [CORRECT] allez\nB. allons\nC. vas\nD. enverrez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773955860157-o9iy8941"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the conjugation of \"aller\" in the 2nd person plural form, which is one of the two irregular 1st group verbs explicitly listed in rule 01-04.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956050779-0qepgpsi",
+      "timestamp": "2026-03-19T21:34:22.746Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the irregular conjugation of \"aller\" for \"vous\" (allez), which is the core grammar rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956388553-ds0cdnmn",
+      "timestamp": "2026-03-19T21:39:58.585Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of \"aller\" (an irregular 1st group verb) for the subject \"vous\" in present tense and distinguishes it from \"envoyer\", which directly targets the stated rule about irregular 1st group verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773956727316-j5b0ruul",
+      "timestamp": "2026-03-19T21:46:07.562Z"
+    }
+  ]
+}
