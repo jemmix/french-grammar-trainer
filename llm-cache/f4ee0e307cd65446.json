@@ -1,0 +1,82 @@
+{
+  "cacheKey": "f4ee0e307cd65446",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-02 - Conjugaison des verbes réguliers en -ir (finir, choisir, réussir, etc.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je ___ la porte et j'entre. »\nChoices:\nA. [CORRECT] remplis\nB. remplie\nC. remplissait\nD. remplira\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773951683162-drolit0f"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the first person singular present conjugation of \"remplir\", a regular -IR verb, and the distractors represent different grammar concepts (past participle agreement, imperfect tense, future tense) that cannot be distinguished without knowing the correct -IR present tense form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773951904498-eijf9z8l",
+      "timestamp": "2026-03-19T20:25:14.695Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"remplir\" (a regular -ir verb) with subject \"je\" in the present tense, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952173294-5ynw1byd",
+      "timestamp": "2026-03-19T20:29:42.900Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests -ir verb conjugation technically (remplis is correct for je + remplir), but the sentence is semantically invalid (\"remplir la porte\" doesn't make sense), making it a poor test of the stated rule despite the grammatically correct conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952446427-jk0m2zvs",
+      "timestamp": "2026-03-19T20:34:28.835Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"remplir\" (a regular -ir verb) in the present tense first person singular, which directly tests the regular -ir conjugation pattern (-is for \"je\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952604315-7iqef0dc",
+      "timestamp": "2026-03-19T20:36:57.539Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: While \"remplis\" is the grammatically correct conjugation of a regular -ir verb, the verb \"remplir\" (to fill) doesn't make semantic sense in the context \"Je ___ la porte\" (I ___ the door), and the sentence \"Je remplis la porte et j'entre\" is nonsensical, making this a poor test of the rule despite the technical conjugation being correct.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952671484-lo3mn9tu",
+      "timestamp": "2026-03-19T20:38:20.869Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"remplir\" (a regular -ir verb) in the first person singular present tense, directly testing the -ir conjugation pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952727606-fyty9y6e",
+      "timestamp": "2026-03-19T20:39:08.692Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the first person singular present tense conjugation of \"remplir,\" a regular -ir verb, requiring knowledge of the -is ending pattern taught by the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952765698-phz05mnc",
+      "timestamp": "2026-03-19T20:39:35.308Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowing the present tense conjugation of \"remplir\" (a regular -ir verb) for \"je\", which directly tests the -ir verb conjugation pattern with the \"-is\" ending.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952790651-e5mljqph",
+      "timestamp": "2026-03-19T20:40:00.549Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of regular -ir verb present tense conjugation (je + stem + -is) and cannot be answered without understanding the specific conjugation pattern for -ir verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952814853-wofcw8on",
+      "timestamp": "2026-03-19T20:40:29.923Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: While the question technically tests -ir verb conjugation (remplis is the correct 1st person singular present), the sentence \"Je remplis la porte et j'entre\" is semantically nonsensical - \"remplir\" means \"to fill\", not \"to open\". The wrong answer \"remplie\" is also grammatically impossible with \"je\" (it would require agreement with a feminine subject), making this more of a grammar confusion test than a proper conjugation test.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952855627-74i2xerc",
+      "timestamp": "2026-03-19T20:41:20.303Z"
+    }
+  ]
+}

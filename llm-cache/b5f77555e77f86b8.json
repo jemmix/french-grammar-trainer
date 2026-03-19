@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b5f77555e77f86b8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-02 - Conjugaison des verbes réguliers en -ir (finir, choisir, réussir, etc.)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « agir » au présent de l'indicatif avec le sujet proposé.\nPhrase: Vous ___ rapidement pour résoudre le problème.\nCorrect Answer: agissez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773951683163-vlu4rji9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the regular -ir verb conjugation pattern (\"vous\" → \"-issez\" ending), which is the core concept of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773951957596-m9q47iry",
+      "timestamp": "2026-03-19T20:26:14.319Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"agir\" (a regular -ir verb) in the present tense, which directly tests the regular -ir verb conjugation pattern specified in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952232157-e4eu7bvz",
+      "timestamp": "2026-03-19T20:30:44.705Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"agir\" (a regular -ir verb) in the present tense for \"vous\", which directly tests the rule for conjugating regular -ir verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952515306-3vm1njuq",
+      "timestamp": "2026-03-19T20:35:24.468Z"
+    }
+  ]
+}

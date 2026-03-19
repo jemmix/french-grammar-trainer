@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bc1f28b73b807938",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-02 - Conjugaison des verbes réguliers en -ir (finir, choisir, réussir, etc.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je ___ la robe rouge pour la fête. »\nChoices:\nA. [CORRECT] choisis\nB. choisir\nC. choix\nD. choisie\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773951683159-7o5ldvcw"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"choisir\" (a regular -ir verb) for first person singular present tense, which is exactly what rule 01-02 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773951745447-d8hyrgxe",
+      "timestamp": "2026-03-19T20:22:35.300Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"choisir\" (a regular -ir verb) in the first person singular present tense, directly testing the stated rule about -ir verb conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952046308-4x7nh7ki",
+      "timestamp": "2026-03-19T20:28:15.344Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To correctly select \"choisis\" for the \"Je\" subject, the student must know how to conjugate the regular -ir verb \"choisir\" in the present tense first person singular, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952340346-1v8ymeeb",
+      "timestamp": "2026-03-19T20:33:14.610Z"
+    }
+  ]
+}

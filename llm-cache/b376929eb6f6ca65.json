@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b376929eb6f6ca65",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-02 - Conjugaison des verbes réguliers en -ir (finir, choisir, réussir, etc.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Ils ___ en affaires malgré les difficultés. »\nChoices:\nA. [CORRECT] réussissent\nB. réussit\nC. réussissons\nD. réussissez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773951683161-scmx4101"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating a regular -ir verb (réussir) with the subject \"Ils\" to produce \"réussissent\", which directly tests the -ir verb conjugation rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773951884287-z2gill53",
+      "timestamp": "2026-03-19T20:24:52.791Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"réussir\" (a regular -ir verb) for \"Ils\", making knowledge of -ir verb conjugation essential to select \"réussissent\" over other conjugated forms.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952154633-eljf4p2a",
+      "timestamp": "2026-03-19T20:29:34.554Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the correct conjugation of \"réussir\" (a regular -ir verb) with \"ils\" in the present tense, requiring knowledge of the -issent ending for 3rd person plural.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952435984-pan2vzom",
+      "timestamp": "2026-03-19T20:34:12.193Z"
+    }
+  ]
+}

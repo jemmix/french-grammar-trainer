@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ab8491f6a9079be5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-02 - Conjugaison des verbes réguliers en -ir (finir, choisir, réussir, etc.)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « grandir » au présent de l'indicatif avec le sujet proposé.\nPhrase: Tu ___ rapidement.\nCorrect Answer: grandis\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773951683162-m2m8yiyr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of regular -ir verb conjugation patterns in the present tense to correctly conjugate \"grandir\" for \"tu\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773951933751-vw7tph1h",
+      "timestamp": "2026-03-19T20:25:50.797Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"grandir\" (a regular -ir verb) with \"tu\" in the present tense, which directly tests the regular -ir verb conjugation pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952213170-kzaugxmp",
+      "timestamp": "2026-03-19T20:30:25.800Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the regular -ir verb conjugation pattern (ending in -is for \"tu\") to correctly answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773952494133-vp1rvhh3",
+      "timestamp": "2026-03-19T20:35:00.773Z"
+    }
+  ]
+}
