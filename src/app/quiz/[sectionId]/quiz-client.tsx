@@ -9,53 +9,25 @@ import { InputQuestionView } from "~/components/quiz/input-question-view";
 import { ScoreSummary } from "~/components/quiz/score-summary";
 import { RuleExplanationInterstitial } from "~/components/quiz/rule-explanation-interstitial";
 import { ExplanationPanel } from "~/components/quiz/explanation-panel";
-import { shuffleArray, QUESTIONS_PER_QUIZ } from "~/lib/quiz-helpers";
+import { QUESTIONS_PER_QUIZ } from "~/lib/quiz-helpers";
 import { getExplanation } from "~/lib/explanation-helpers";
-import { ruleWeight } from "~/lib/question-picker";
+import { ruleWeight, pickSectionQuizQuestions } from "~/lib/question-picker";
 import { t } from "~/lang";
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function pickShuffledQuestions(section: Section): Question[] {
-  const shuffled = shuffleArray(section.questions);
-  const selected = shuffled.slice(0, Math.min(QUESTIONS_PER_QUIZ, shuffled.length));
-  return selected.map((q) =>
-    q.type === "mcq" ? { ...q, choices: shuffleArray(q.choices) } : q,
-  );
-}
-
-function findWeakestExplanation(
-  section: Section,
-  getRulePower: (ruleId: string) => number,
-): RuleExplanation | null {
-  const rulesWithQs = section.rules.filter((r) =>
-    section.questions.some((q) => q.ruleId === r.id),
-  );
-  if (rulesWithQs.length === 0) return null;
-
-  let weakestRule = rulesWithQs[0]!;
-  let weakestWeight = -1;
-  for (const rule of rulesWithQs) {
-    const power = getRulePower(rule.id);
-    const w = ruleWeight(power, power > 0);
-    if (w > weakestWeight) {
-      weakestWeight = w;
-      weakestRule = rule;
-    }
-  }
-  const power = getRulePower(weakestRule.id);
-  if (power >= 0.20) return null;
-  return getExplanation(section, weakestRule.id) ?? null;
-}
 
 // ── Quiz runner (self-contained, no interstitial logic) ──────────────────────
 
-function SectionQuizRunner({ section }: { section: Section }) {
-  const { recordAnswer, flush } = useProgress();
+function SectionQuizRunner({
+  section,
+  initialQuestions,
+  onRestart,
+}: {
+  section: Section;
+  initialQuestions: Question[];
+  onRestart: () => void;
+}) {
+  const { recordAnswer, flush, getRulePower } = useProgress();
 
-  const [quizQuestions, setQuizQuestions] = useState<Question[]>(() =>
-    pickShuffledQuestions(section),
-  );
+  const [quizQuestions, setQuizQuestions] = useState<Question[]>(initialQuestions);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedChoiceIndex, setSelectedChoiceIndex] = useState<number | null>(null);
   const [answered, setAnswered] = useState(false);
@@ -107,15 +79,8 @@ function SectionQuizRunner({ section }: { section: Section }) {
   }, [currentIndex, totalQuestions]);
 
   const handleRestart = useCallback(() => {
-    setQuizQuestions(pickShuffledQuestions(section));
-    setCurrentIndex(0);
-    setSelectedChoiceIndex(null);
-    setAnswered(false);
-    setScore(0);
-    setFinished(false);
-    setAnswers([]);
-    setPanelOpen(false);
-  }, [section]);
+    onRestart();
+  }, [onRestart]);
 
   useEffect(() => {
     if (finished) void flush();
@@ -271,26 +236,80 @@ function SectionQuizRunner({ section }: { section: Section }) {
 // ── Exported client component (phase router) ─────────────────────────────────
 
 type Phase =
-  | { kind: "interstitial"; explanation: RuleExplanation }
-  | { kind: "quiz" };
+  | { kind: "interstitial"; explanation: RuleExplanation; questions: Question[] }
+  | { kind: "quiz"; questions: Question[] };
 
-export function QuizClient({ section }: { section: Section }) {
+export function QuizClient({
+  section,
+  initialQuestions,
+  initialExplanation,
+}: {
+  section: Section;
+  initialQuestions: Question[];
+  initialExplanation: RuleExplanation | null;
+}) {
   const { getRulePower } = useProgress();
 
   const [phase, setPhase] = useState<Phase>(() => {
-    const explanation = findWeakestExplanation(section, getRulePower);
-    if (explanation) return { kind: "interstitial", explanation };
-    return { kind: "quiz" };
+    if (initialExplanation) {
+      return { kind: "interstitial", explanation: initialExplanation, questions: initialQuestions };
+    }
+    return { kind: "quiz", questions: initialQuestions };
   });
+
+  const handleRestart = useCallback(() => {
+    // Regenerate questions using current progress
+    const newQuestions = pickSectionQuizQuestions({
+      section,
+      getRulePower,
+      targetCount: QUESTIONS_PER_QUIZ,
+    });
+
+    // Check for weakest rule again
+    const rulesWithQs = section.rules.filter((r) =>
+      section.questions.some((q) => q.ruleId === r.id),
+    );
+
+    let newExplanation: RuleExplanation | null = null;
+    if (rulesWithQs.length > 0) {
+      let weakestRule = rulesWithQs[0]!;
+      let weakestWeight = -Infinity;
+      for (const rule of rulesWithQs) {
+        const power = getRulePower(rule.id);
+        const w = ruleWeight(power, power > 0);
+        if (w > weakestWeight) {
+          weakestWeight = w;
+          weakestRule = rule;
+        }
+      }
+      const power = getRulePower(weakestRule.id);
+      if (power < 0.2) {
+        newExplanation = getExplanation(section, weakestRule.id) ?? null;
+      }
+    }
+
+    if (newExplanation) {
+      setPhase({ kind: "interstitial", explanation: newExplanation, questions: newQuestions });
+    } else {
+      setPhase({ kind: "quiz", questions: newQuestions });
+    }
+  }, [section, getRulePower]);
 
   if (phase.kind === "interstitial") {
     return (
       <RuleExplanationInterstitial
         explanation={phase.explanation}
-        onStart={() => setPhase({ kind: "quiz" })}
+        onStart={() => setPhase({ kind: "quiz", questions: phase.questions })}
       />
     );
   }
 
-  return <SectionQuizRunner section={section} />;
+  return (
+    <SectionQuizRunner
+      key={phase.questions[0]?.id ?? ""}
+      section={section}
+      initialQuestions={phase.questions}
+      onRestart={handleRestart}
+    />
+  );
 }

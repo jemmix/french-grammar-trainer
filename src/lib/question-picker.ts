@@ -17,7 +17,7 @@ export function weightedRandomIndex(weights: number[]): number {
   return weights.length - 1;
 }
 
-function shuffleArray<T>(array: T[]): T[] {
+export function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -231,4 +231,76 @@ export function pickLearnQuestions(params: {
     questions: shuffleArray(result.slice(0, PROGRESS.LEARN_TOTAL)),
     focusRuleId: focusRule.id,
   };
+}
+
+/**
+ * Power-aware section quiz: picks 20 questions from a section, weighted by rule strength.
+ *
+ * Algorithm:
+ * 1. Group section questions by rule
+ * 2. Compute weight per rule (inverted power: weak rules selected more)
+ * 3. For each of 20 slots: pick a weighted rule, then a random unused question from it
+ * 4. Shuffle the final batch
+ *
+ * Fallback: When logged out (all powers = 0), weights are equal → uniform random selection.
+ */
+export function pickSectionQuizQuestions(params: {
+  section: Section;
+  getRulePower: (ruleId: string) => number;
+  targetCount?: number;
+}): Question[] {
+  const { section, getRulePower, targetCount = 20 } = params;
+
+  if (section.questions.length === 0) return [];
+
+  // Group questions by rule
+  const questionsByRule = new Map<string, Question[]>();
+  for (const q of section.questions) {
+    if (!questionsByRule.has(q.ruleId)) {
+      questionsByRule.set(q.ruleId, []);
+    }
+    questionsByRule.get(q.ruleId)!.push(q);
+  }
+
+  // Get rules that have questions, sorted in section order
+  const rulesWithQuestions = section.rules.filter((r) => questionsByRule.has(r.id));
+
+  if (rulesWithQuestions.length === 0) return [];
+
+  // Compute weights
+  const weights = rulesWithQuestions.map((r) => {
+    const power = getRulePower(r.id);
+    return ruleWeight(power, power > 0);
+  });
+
+  // Pick questions
+  const collected = new Set<string>();
+  const result: Question[] = [];
+
+  for (let i = 0; i < targetCount && result.length < targetCount; i++) {
+    // Pick a rule via weighted random
+    const ruleIdx = weightedRandomIndex(weights);
+    const rule = rulesWithQuestions[ruleIdx]!;
+    const qs = questionsByRule.get(rule.id)!;
+
+    // Find an unused question from this rule
+    const available = qs.filter((q) => !collected.has(q.id));
+    if (available.length === 0) {
+      // No more questions from this rule; try a different approach
+      // Pick any unused question from the section
+      const allUnused = section.questions.filter((q) => !collected.has(q.id));
+      if (allUnused.length === 0) break;
+      const q = allUnused[Math.floor(Math.random() * allUnused.length)]!;
+      collected.add(q.id);
+      result.push(shuffleChoices(q));
+    } else {
+      const q = available[Math.floor(Math.random() * available.length)]!;
+      collected.add(q.id);
+      result.push(shuffleChoices(q));
+    }
+  }
+
+  console.log({result: result.map(q => q.ruleId)})
+  // Final shuffle
+  return shuffleArray(result);
 }
