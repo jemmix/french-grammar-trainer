@@ -116,16 +116,28 @@ export function getSectionDisplayPower(
   return count > 0 ? sum / count : 0;
 }
 
-/** Mean display power of all attempted rules globally. */
-export function getGlobalDisplayPower(powers: Uint16Array): number {
+/**
+ * Mean display power across all rules that have questions in the course.
+ * If validRuleIds is provided, averages across those rules (including unattempted as 0).
+ * If not provided, falls back to averaging only attempted rules for backward compatibility.
+ */
+export function getGlobalDisplayPower(
+  powers: Uint16Array,
+  validRuleIds: string[],
+): number {
+  if (validRuleIds.length == 0) {
+    // unlikely but let's just pretend everything's learned
+    return 1;
+  }
+
+  // Average across all rules with questions, including unattempted (as 0)
   let sum = 0;
-  let count = 0;
-  for (let i = 0; i < RULE_SLOTS; i++) {
-    const raw = powers[i] ?? 0;
-    if (raw !== 0) {
+  for (const ruleId of validRuleIds) {
+    const idx = getRuleSlotIndex(ruleId);
+    if (idx >= 0) {
+      const raw = powers[idx] ?? 0;
       sum += raw / 65535;
-      count++;
     }
   }
-  return count > 0 ? sum / count : 0;
+  return sum / validRuleIds.length;
 }

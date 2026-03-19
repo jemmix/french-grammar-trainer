@@ -20,3 +20,18 @@ export const sectionsIndex: SectionMeta[] = _meta.map((m) => ({
   ...m,
   questionCount: _questionCounts.get(m.id) ?? 0,
 }));
+
+/**
+ * Extract all rule IDs that have questions in the course.
+ * Used for fair global progress calculation: accounts for all real rules,
+ * including unattempted ones, so attempting a new rule doesn't cause demotion.
+ */
+export function getAllRuleIds(): string[] {
+  const ruleIds = new Set<string>();
+  for (const section of _loadedSections) {
+    for (const question of section.questions) {
+      ruleIds.add(question.ruleId);
+    }
+  }
+  return Array.from(ruleIds).sort();
+}

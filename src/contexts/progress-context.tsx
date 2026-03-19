@@ -16,6 +16,7 @@ import {
   getSectionDisplayPower,
   recordAnswerInPlace,
 } from "~/lib/user-record";
+import { getAllRuleIds } from "~/data/sections-index";
 import { PROGRESS } from "~/lib/constants";
 
 interface ProgressContextValue {
@@ -179,7 +180,7 @@ export function ProgressProvider({
   );
 
   const getGlobalPower = useCallback((): number => {
-    return getGlobalDisplayPower(powers);
+    return getGlobalDisplayPower(powers, getAllRuleIds());
   }, [powers]);
 
   const login = useCallback(async (): Promise<void> => {
