@@ -607,12 +607,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-02",
       generatedBy: "opus",
-      prompt: "Complete the sentence: \"She currently ___ French at the local college.\"",
+      prompt: "Complete the sentence: \"She ___ French at the local college every semester.\"",
       choices: [
-        { text: "teaches", correct: true, explanation: "Verbs ending in -ch add -es. \"Teach\" + es = \"teaches.\" With \"she\" (third person singular), this is the correct form. \"Currently\" signals present time." },
+        { text: "teaches", correct: true, explanation: "Verbs ending in -ch add -es. \"Teach\" + es = \"teaches.\" With \"she\" (third person singular), this is the correct form. \"Every semester\" signals a habitual action, so present simple is required." },
         { text: "teachs", correct: false, explanation: "When a verb ends in -ch, you must add -es, not just -s: teach → teaches." },
         { text: "teach", correct: false, explanation: "\"Teach\" is the base form. With \"she\" (third person singular), you need \"teaches.\"" },
-        { text: "taught", correct: false, explanation: "\"Taught\" is the past tense of \"teach.\" The word \"currently\" requires the present simple, not the past tense." },
+        { text: "taught", correct: false, explanation: "\"Taught\" is the past tense of \"teach.\" The phrase \"every semester\" requires the present simple for habitual actions." },
       ],
     },
     {
