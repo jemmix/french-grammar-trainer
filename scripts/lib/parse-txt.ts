@@ -39,7 +39,7 @@ export interface ParsedInputQuestion {
   ruleId: string;
   prompt: string;
   phrase: string;
-  hint?: string;
+  hint: string;
   right: AnswerPair;
   wrongs: AnswerPair[];
 }
@@ -138,13 +138,16 @@ export function parseTxtFile(content: string): ParsedFile {
             wrongs: wrongPairs.map((p) => ({ text: p.text, explanation: p.explanation })),
           });
         } else if (type === "INPUT") {
+          if (!currentHint) {
+            parseErrors.push(`Line ${lineNum}: INPUT question "${currentId}" is missing HINT`);
+          }
           questions.push({
             id: currentId,
             type: "input",
             ruleId: qRuleId,
             prompt: currentPrompt,
             phrase: currentPhrase,
-            hint: currentHint || undefined,
+            hint: currentHint,
             right: rightPair ? { text: rightPair.text, explanation: rightPair.explanation } : { text: "", explanation: "" },
             wrongs: wrongPairs.map((p) => ({ text: p.text, explanation: p.explanation })),
           });
