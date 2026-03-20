@@ -926,12 +926,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-03",
       generatedBy: "haiku",
-      prompt: "Conjuguez « descendre » au présent à la 1ère personne du singulier : « Je ___ les escaliers. »",
+      prompt: "Conjuguez « tendre » au présent à la 1ère personne du singulier : « Je ___ la main pour saluer. »",
       choices: [
-        { text: "descends", correct: true, explanation: "À la 1ère personne du singulier, on ajoute -s : je descends." },
-        { text: "descend", correct: false, explanation: "C'est la 3ème personne du singulier (il descend). À la 1ère personne du singulier, on doit ajouter -s : je descends." },
-        { text: "descendis", correct: false, explanation: "C'est le passé simple (je descendis). La question demande le présent de l'indicatif." },
-        { text: "descendais", correct: false, explanation: "C'est l'imparfait (je descendais). La question demande le présent de l'indicatif." },
+        { text: "tends", correct: true, explanation: "À la 1ère personne du singulier, on ajoute -s à la racine « tend- » : je tends." },
+        { text: "tend", correct: false, explanation: "C'est la 3ème personne du singulier (il tend). À la 1ère personne du singulier, on doit ajouter -s : je tends." },
+        { text: "tendis", correct: false, explanation: "C'est le passé simple (je tendis). La question demande le présent de l'indicatif." },
+        { text: "tendais", correct: false, explanation: "C'est l'imparfait (je tendais). La question demande le présent de l'indicatif." },
       ],
     },
     {
