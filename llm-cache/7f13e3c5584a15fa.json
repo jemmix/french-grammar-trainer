@@ -1,0 +1,26 @@
+{
+  "cacheKey": "7f13e3c5584a15fa",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-04-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-04 - Les verbes irréguliers du 1er groupe (aller, envoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Nous ___ au parc cet après-midi. »\nChoices:\nA. [CORRECT] allons\nB. vais\nC. allez\nD. vont\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773973751835-cnoxgwd3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests conjugation of \"aller\" (one of the two irregular 1st group verbs specified in the rule) with the subject \"nous\", requiring knowledge of this irregular verb's present tense forms.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773973751870-23vseuya",
+      "timestamp": "2026-03-20T02:39:49.694Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To correctly conjugate \"aller\" with \"nous\", you must know it's an irregular 1st group verb with distinctive conjugations (je vais, tu vas, il va) that differ from regular -er patterns, even though the \"nous\" form (allons) coincidentally follows the regular pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773974715634-uakm730u",
+      "timestamp": "2026-03-20T02:47:16.336Z"
+    }
+  ]
+}

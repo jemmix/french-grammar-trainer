@@ -1,0 +1,68 @@
+{
+  "cacheKey": "f4f16c99b4d66ba9",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-01-022",
+  "spec": {
+    "systemPrompt": "You are a English language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Complete the sentence with the correct verb form.\n\nPHRASE: They drank coffee all day yesterday, but every morning we ___ tea.\n\nHINT: use the same verb as the first clause\n\nEXPECTED ANSWER: drink\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1774003400243-dqdilua9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Both \"drink\" (present habitual) and \"drank\" (past habitual) are grammatically valid given the habitual context of \"every morning,\" but only \"drink\" is marked as correct.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774003400250-tju7h4ei",
+      "timestamp": "2026-03-20T10:44:15.965Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt indicates a verb is needed, the hint identifies \"drink\" as the verb (same as \"drank\" in the first clause), and the context \"every morning\" makes the present tense form clear.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774003455965-4hpwc48a",
+      "timestamp": "2026-03-20T10:44:30.663Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt asks for a verb form, and the hint clearly instructs to use the same verb as \"drank\" (the first clause), making \"drink\" the only expected answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774003470663-0deel3ah",
+      "timestamp": "2026-03-20T10:44:44.041Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The learner can deduce \"drink\" by combining the hint (same verb as \"drank\") with the context clues (present habitual action with subject \"we\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774003484041-lv80eshr",
+      "timestamp": "2026-03-20T10:45:04.290Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The hint \"use the same verb as the first clause\" requires learners to recognize \"drank\" as a past form of \"drink\" and then determine the appropriate tense for \"every morning,\" which could reasonably yield multiple answers like \"drink,\" \"are drinking,\" or \"will drink\" depending on interpretation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774003504290-w2ng57an",
+      "timestamp": "2026-03-20T10:45:30.570Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The hint \"use the same verb as the first clause\" is ambiguous—it could mean the same verb form (\"drank\") or the same root verb conjugated appropriately, and the prompt doesn't specify which tense to use for the habitual action indicated by \"every morning.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774003530571-6a8e9ik4",
+      "timestamp": "2026-03-20T10:45:53.227Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The hint \"use the same verb as the first clause\" could mean either the exact word \"drank\" or the base verb \"drink\", and \"every morning\" doesn't clearly indicate present vs past tense, making multiple interpretations possible.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774003553227-16l5kshe",
+      "timestamp": "2026-03-20T10:46:16.069Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The hint \"use the same verb as the first clause\" is ambiguous—it could mean \"drink\" (the base verb) or \"drank\" (the exact verb form used), and without explicit tense guidance, learners can't definitively determine whether to repeat \"drank\" or supply a present tense form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774003576069-1mwtywfs",
+      "timestamp": "2026-03-20T10:46:45.003Z"
+    }
+  ]
+}

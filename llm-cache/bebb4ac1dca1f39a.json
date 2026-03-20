@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bebb4ac1dca1f39a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-02 - Conjugaison des verbes réguliers en -ir (finir, choisir, réussir, etc.)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « agir » au présent de l'indicatif avec le sujet proposé.\nPhrase: Vous ___ rapidement pour résoudre le problème.\nCorrect Answer: agissez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773971841601-rqo9c4vh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the regular -ir verb conjugation pattern (adding -issez for \"vous\"), which is the core concept of rule 01-02.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971867809-ajxn2etv",
+      "timestamp": "2026-03-20T01:58:01.018Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"agir,\" a regular -ir verb, in the present tense for \"vous,\" which directly tests knowledge of regular -ir verb conjugation patterns.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971894823-nekr3q8o",
+      "timestamp": "2026-03-20T01:58:25.367Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"agir\" (a regular -ir verb) with \"Vous\" in the present indicative, which directly tests the regular -ir conjugation pattern for the 2nd person plural.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971930744-lskvcpur",
+      "timestamp": "2026-03-20T01:59:07.962Z"
+    }
+  ]
+}

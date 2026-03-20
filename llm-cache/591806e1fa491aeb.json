@@ -1,0 +1,33 @@
+{
+  "cacheKey": "591806e1fa491aeb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-01-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-01 - Conjugaison des verbes réguliers en -er (parler, manger, commencer, etc.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Tu ___ des lettres à ta grand-mère. »\nChoices:\nA. [CORRECT] signes\nB. signe\nC. signent\nD. signais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773971352313-eb0tmz13"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"signer\" for \"tu\" in the present tense, which directly tests the regular -er verb conjugation pattern (tu + verb stem + -es) defined in rule 01-01.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971352475-zc9bbu6u",
+      "timestamp": "2026-03-20T01:49:58.735Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of regular -er verb conjugation in the present tense to select the correct \"-es\" ending for \"tu\", directly testing the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971420264-3ajhq75a",
+      "timestamp": "2026-03-20T01:50:55.486Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the correct present tense conjugation of \"signer\" for \"tu\", which directly requires knowledge of regular -er verb conjugation patterns.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971487464-n6msd0jp",
+      "timestamp": "2026-03-20T01:51:38.255Z"
+    }
+  ]
+}

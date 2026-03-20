@@ -1,0 +1,33 @@
+{
+  "cacheKey": "247320e55ee65ffe",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-02-008",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Past Simple\n\nRULE BEING TESTED: 02-02 - Past simple: spelling rules for -ed (double consonant, -e → -ed, -y → -ied)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence: \"He ___ his heavy bag across the station yesterday.\"\nChoices:\nA. [CORRECT] dragged\nB. draged\nC. has dragged\nD. drags\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774002488329-iz25l005"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -ed spelling rule by including \"draged\" as a distractor, requiring knowledge that \"drag\" → \"dragged\" (double consonant rule) to select the correct answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774002488375-px1e5fpm",
+      "timestamp": "2026-03-20T10:28:30.340Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the double consonant spelling rule for -ed, with the key distractor \"draged\" being incorrect specifically because it fails to double the final 'g' in the CVC pattern of \"drag.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774002566539-86jl8u4x",
+      "timestamp": "2026-03-20T10:34:47.251Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the double consonant spelling rule for past simple -ed forms, as students must know that \"drag\" doubles the final 'g' to become \"dragged\" rather than \"draged.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774002887252-e17a8u5w",
+      "timestamp": "2026-03-20T10:35:00.869Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0c159c2bbcb039a6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-02-015",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Past Simple\n\nRULE BEING TESTED: 02-02 - Past simple: spelling rules for -ed (double consonant, -e → -ed, -y → -ied)\n\nQUESTION:\nType: Multiple Choice\nPrompt: What is the correct past simple spelling of \"move\"?\nChoices:\nA. [CORRECT] moved\nB. moveed\nC. movved\nD. mooved\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774002488337-juir1h6f"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the -e → -ed spelling rule by requiring learners to recognize that \"move\" (ending in -e) becomes \"moved\" by adding only -d.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774002489668-gjx1pdd7",
+      "timestamp": "2026-03-20T10:33:34.464Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -e → -ed spelling rule by requiring knowledge that verbs ending in \"e\" add only \"-d\" (moved), not \"-ed\" or other spellings, with distractors representing common mistakes from the three spelling patterns covered by this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774002814464-mdhm26un",
+      "timestamp": "2026-03-20T10:34:12.652Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the -e → -ed spelling rule (drop final e and add -ed) which is one of the three sub-rules explicitly covered in the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774002852653-37x2o691",
+      "timestamp": "2026-03-20T10:34:28.400Z"
+    }
+  ]
+}

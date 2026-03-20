@@ -1,0 +1,33 @@
+{
+  "cacheKey": "532e52f5cbd8e5d0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-010",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-02 - Present simple third person singular (-s, -es, -ies)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence: \"The train ___ at 8:15 every day.\"\nChoices:\nA. [CORRECT] leaves\nB. leave\nC. leavs\nD. is leaving\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773971356722-nqq98szy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The correct answer requires the third person singular -s ending for \"the train\"; without this rule, a student would incorrectly select \"leave\" (B), and while the present simple vs continuous distinction is also relevant, the core grammatical distinction being tested is the -s suffix.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971356779-m6dlomy1",
+      "timestamp": "2026-03-20T01:50:03.725Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the present simple third person singular form of \"leave\" (\"leaves\") for a habitual action with singular subject \"the train,\" directly testing the -s ending rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971453362-8ggz5ep5",
+      "timestamp": "2026-03-20T01:51:32.194Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that third person singular verbs take the -s ending in present simple to correctly identify \"leaves\" as the answer and distinguish it from \"leave\" which lacks the required -s.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971533070-k5jd7n0y",
+      "timestamp": "2026-03-20T01:52:45.930Z"
+    }
+  ]
+}

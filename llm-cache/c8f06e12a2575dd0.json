@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c8f06e12a2575dd0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-01-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-01 - Conjugaison des verbes réguliers en -er (parler, manger, commencer, etc.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Tu ___ un livre intéressant à la bibliothèque. »\nChoices:\nA. [CORRECT] cherches\nB. cherche\nC. cherchent\nD. cherchais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773971352293-pxvisb2n"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires conjugating \"chercher\" (a regular -er verb) in the present tense for \"tu\", which directly tests the stated rule about regular -er verb conjugation patterns.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971352326-lplfxosq",
+      "timestamp": "2026-03-20T01:49:40.104Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"chercher\" is a regular -er verb and uses the -es ending for \"tu\" in the present tense, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971398939-1rabdv6i",
+      "timestamp": "2026-03-20T01:50:32.511Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests present tense conjugation of the regular -er verb \"chercher\" with subject \"tu\", requiring knowledge of the -es ending for second person singular.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971455488-okn1vzng",
+      "timestamp": "2026-03-20T01:51:11.102Z"
+    }
+  ]
+}

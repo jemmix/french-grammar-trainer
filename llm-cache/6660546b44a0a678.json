@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6660546b44a0a678",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-03-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-03 - Conjugaison des verbes réguliers en -re (attendre, vendre, répondre, etc.)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « vendre » au présent de l'indicatif\nPhrase: Nous ___ notre voiture au marché.\nCorrect Answer: vendons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773972542320-l1r55uwr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"vendre\" follows the regular -re conjugation pattern to correctly produce \"vendons\" for \"nous\" in the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773972542475-mwa8evev",
+      "timestamp": "2026-03-20T02:13:47.356Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests conjugation of \"vendre,\" a regular -re verb, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773972827356-h1p4992o",
+      "timestamp": "2026-03-20T02:26:16.502Z"
+    }
+  ]
+}

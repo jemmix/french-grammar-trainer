@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5b75b523ec6f5a54",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-03-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-03 - Conjugaison des verbes réguliers en -re (attendre, vendre, répondre, etc.)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « perdre » au présent de l'indicatif\nPhrase: Vous ne ___ jamais patience avec vos élèves.\nCorrect Answer: perdez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773972542326-ouak6j7x"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The verb \"perdre\" is a regular -re verb and the question tests the vous-form conjugation (perdez) which directly applies the -re verb pattern taught in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773972575436-fjcq5dlf",
+      "timestamp": "2026-03-20T02:09:48.666Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the regular -re verb conjugation pattern to correctly determine that \"perdez\" is the \"vous\" form of \"perdre\" in the present indicative.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773972621626-jrny5o6n",
+      "timestamp": "2026-03-20T02:10:36.852Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying \"perdre\" as a regular -re verb and applying the -re conjugation pattern to produce the \"vous\" form \"perdez\", which directly tests the rule for conjugating regular -re verbs in the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773972669809-1qedq26q",
+      "timestamp": "2026-03-20T02:11:37.082Z"
+    }
+  ]
+}

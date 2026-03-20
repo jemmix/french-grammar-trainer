@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1838d49ac51a4bd2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-020",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-02 - Present simple third person singular (-s, -es, -ies)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence: \"He ___ karate twice a week.\"\nChoices:\nA. [CORRECT] practices\nB. practice\nC. practicies\nD. practicing\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773971356733-cev2lbym"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: To select \"practices,\" the learner must identify that \"He\" is third person singular and apply the -s ending rule for verbs ending in a consonant+e (practice → practices).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971357112-3l4yx82e",
+      "timestamp": "2026-03-20T01:49:49.813Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Answering correctly requires knowing that third person singular subjects require -s/-es endings and that verbs ending in -ce take -es, which is exactly what rule 01-02 tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971433118-33spbhoe",
+      "timestamp": "2026-03-20T01:50:51.064Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that third person singular subjects in present simple take -s ending, which is exactly the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971500193-jpvy1w7t",
+      "timestamp": "2026-03-20T01:52:08.560Z"
+    }
+  ]
+}

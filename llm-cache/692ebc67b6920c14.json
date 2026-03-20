@@ -1,0 +1,33 @@
+{
+  "cacheKey": "692ebc67b6920c14",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-02 - Conjugaison des verbes réguliers en -ir (finir, choisir, réussir, etc.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Elles ___ leurs études ce semestre. »\nChoices:\nA. [CORRECT] finissent\nB. finisse\nC. finissons\nD. finisent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773971841578-y7eq1d82"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the regular -ir verb conjugation pattern in present indicative, specifically the 3rd person plural ending \"-issent\" for the subject \"elles\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971841611-imub44eh",
+      "timestamp": "2026-03-20T01:57:40.313Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the correct 3rd person plural ending for regular -ir verbs (\"-issent\" for \"elles\"), and the wrong answers test common mistakes within this specific conjugation pattern (subjunctive form, \"nous\" form, and the -er ending error).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971877984-g5n7ddmk",
+      "timestamp": "2026-03-20T01:58:08.495Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the present tense conjugation of regular -ir verbs, specifically that \"finir\" with subject \"Elles\" becomes \"finissent\" — you cannot answer correctly without this rule knowledge.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971899829-l3ifxei7",
+      "timestamp": "2026-03-20T01:58:50.744Z"
+    }
+  ]
+}

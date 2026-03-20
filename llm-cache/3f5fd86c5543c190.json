@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3f5fd86c5543c190",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-03-011",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Past Simple\n\nRULE BEING TESTED: 02-03 - Past simple: pronunciation of -ed (/t/, /d/, /ɪd/)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Which word rhymes with \"walked\"?\nChoices:\nA. [CORRECT] talked\nB. rained\nC. started\nD. moved\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773975143822-jem0mtg9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To identify which word rhymes with \"walked\", you must know that \"walked\" ends with /t/ and determine which other word also has the /t/ ending, directly testing the -ed pronunciation rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773975145451-jn59tb9q",
+      "timestamp": "2026-03-20T02:53:28.378Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying that \"walked\" and \"talked\" both have the /t/ pronunciation for -ed (after voiceless consonants), which is the core of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773975250853-c9e72ifa",
+      "timestamp": "2026-03-20T03:01:12.437Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To identify which word rhymes with \"walked\", you must apply the -ed pronunciation rules: \"walked\" and \"talked\" both end in voiceless consonants (/k/), so their -ed is pronounced /t/, making them rhyme—knowing this requires the exact rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773975788606-8mu3m909",
+      "timestamp": "2026-03-20T03:04:26.520Z"
+    }
+  ]
+}

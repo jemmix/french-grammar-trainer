@@ -1,0 +1,33 @@
+{
+  "cacheKey": "979ade2333a2936c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-02 - Conjugaison des verbes réguliers en -ir (finir, choisir, réussir, etc.)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « nourrir » au présent de l'indicatif avec le sujet proposé.\nPhrase: Les parents ___ leurs enfants avec soin.\nCorrect Answer: nourrissent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773971841600-7o7gryxy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"nourrir,\" a regular -ir verb, with subject \"Les parents\" (3rd person plural), which directly tests the ils/elles → -issent pattern central to rule 01-02.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971862834-9vxaoflt",
+      "timestamp": "2026-03-20T01:58:02.891Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying the regular -ir verb conjugation pattern (specifically the 3rd person plural \"-issent\" ending) to correctly conjugate \"nourrir\" with the subject \"Les parents\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971894991-6exth9rr",
+      "timestamp": "2026-03-20T01:58:24.384Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"nourrir,\" a regular -ir verb, in the present indicative with a 3rd-person plural subject, which directly tests the -ir verb conjugation pattern covered by rule 01-02.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773971924057-4isiv0zk",
+      "timestamp": "2026-03-20T01:59:01.904Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "28c57033aa8679ec",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-05-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-05 - Les verbes irréguliers courants : être, avoir, faire, dire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il ___ ses devoirs. »\nChoices:\nA. [CORRECT] fait\nB. a\nC. est\nD. dit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773974961928-5hxns2up"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct verb from the être/avoir/faire/dire set and knowing the third-person singular conjugation \"fait\" for \"faire ses devoirs,\" which directly tests the irregular verbs covered by the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773974961967-6x8m1726",
+      "timestamp": "2026-03-20T03:01:13.313Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of \"faire\" (one of the four irregular verbs in the rule) in the 3rd person singular present tense, and distinguishes it from other forms of être, avoir, and dire.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773975714589-xtcp0ij1",
+      "timestamp": "2026-03-20T03:03:09.639Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct irregular verb (faire) and its proper present tense conjugation (fait) based on semantic fit, with all distractors being present tense forms of the other verbs in the rule (avoir, être, dire).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773975805746-aos1fe91",
+      "timestamp": "2026-03-20T03:08:46.143Z"
+    }
+  ]
+}
