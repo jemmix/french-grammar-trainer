@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e57d9ac562f4f0ea",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-03-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-03 - Conjugaison des verbes réguliers en -re (attendre, vendre, répondre, etc.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Conjuguez « attendre » au présent à la 3ème personne du pluriel : « Elles ___ leurs amies devant le cinéma. »\nChoices:\nA. [CORRECT] attendent\nB. attends\nC. attend\nD. attendaient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773958353781-l9gd5q4m"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the present tense conjugation pattern for regular -re verbs at the 3rd person plural, which is the exact scope of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773958740239-ebkfofof",
+      "timestamp": "2026-03-19T22:21:31.514Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugating the regular -re verb \"attendre\" in the present tense for 3rd person plural (\"attendent\"), which directly corresponds to the grammar rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773968908961-gxizrddp",
+      "timestamp": "2026-03-20T01:08:37.464Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowledge of the specific conjugation pattern for regular -re verbs in the present tense (3rd person plural -ent ending), which is the central concept of rule 01-03, and the distractors test within-topic distinctions (person/number, tense) rather than other grammar constructs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773969171390-yd7uob5t",
+      "timestamp": "2026-03-20T01:13:20.087Z"
+    }
+  ]
+}

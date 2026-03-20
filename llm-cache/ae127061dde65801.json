@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ae127061dde65801",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-03-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "RULE BEING TESTED: 01-03 - Conjugaison des verbes réguliers en -re (attendre, vendre, répondre, etc.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Conjuguez « vendre » au présent à la 1ère personne du pluriel : « Nous ___ nos colis au marché. »\nChoices:\nA. [CORRECT] vendons\nB. vends\nC. vend\nD. vendaient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1773958353781-sj7d1nru"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the conjugation of a regular -re verb (vendre) in the present tense at the 1st person plural, which requires knowing the specific -ons ending pattern for \"nous\" that defines regular -re verb conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773958884957-7av78k3e",
+      "timestamp": "2026-03-19T22:21:54.322Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of regular -re verb conjugation patterns to select the correct \"nous\" form ending, which is directly covered by the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773968963751-e488uu9o",
+      "timestamp": "2026-03-20T01:09:39.970Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugating \"vendre\" (a regular -re verb) at the 1st person plural, which directly requires knowledge of the regular -re verb conjugation pattern stated in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1773969221134-wzh2jkiz",
+      "timestamp": "2026-03-20T01:13:50.722Z"
+    }
+  ]
+}
