@@ -4,50 +4,37 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useProgress } from "~/contexts/progress-context";
-import { sectionsIndex, sectionMap } from "~/data/sections-index";
+import type { SectionMeta } from "~/data/types";
 import { getTier } from "~/lib/tiers";
 import { getRuleSlotIndex } from "~/lib/user-record";
 import { t } from "~/lang";
 
-// ── Raw blob data as returned by GET /api/progress ──────────────────────────
+export interface SlotSection {
+  sectionNum: number;
+  title: string | null;
+  slots: {
+    ruleId: string;
+    ruleTitle: string | null;
+    slotIdx: number;
+    sectionNum: number;
+    ruleNum: number;
+    sectionTitle: string | null;
+  }[];
+}
+
+interface RuleMetaEntry {
+  title: string;
+  sectionId: string;
+  sectionTitle: string;
+}
 
 interface BlobData {
   version: number;
   createdAt: number;
   lastActiveAt: number;
   ruleSlots: number;
-  powers: number[]; // 560 raw uint16 values in slot order
+  powers: number[];
 }
-
-// ── All 560 slot descriptors, computed once at module level ──────────────────
-
-const ALL_SLOTS = Array.from({ length: 28 }, (_, sIdx) => {
-  const sectionNum = sIdx + 1;
-  const sectionMeta = sectionsIndex[sIdx];
-  const loadedSection = sectionMeta ? sectionMap[sectionMeta.id] : undefined;
-  return Array.from({ length: 20 }, (_, rIdx) => {
-    const ruleNum = rIdx + 1;
-    const ruleId = `${String(sectionNum).padStart(2, "0")}-${String(ruleNum).padStart(2, "0")}`;
-    const ruleTitle = loadedSection?.rules.find((r) => r.id === ruleId)?.title ?? null;
-    return {
-      ruleId,
-      ruleTitle,
-      slotIdx: sIdx * 20 + rIdx,
-      sectionNum,
-      ruleNum,
-      sectionTitle: sectionMeta?.title ?? null,
-    };
-  });
-}).flat();
-
-// Group slots by section for display
-const SLOT_SECTIONS = Array.from({ length: 28 }, (_, sIdx) => ({
-  sectionNum: sIdx + 1,
-  title: sectionsIndex[sIdx]?.title ?? null,
-  slots: ALL_SLOTS.slice(sIdx * 20, sIdx * 20 + 20),
-}));
-
-// ── JSON export builder ──────────────────────────────────────────────────────
 
 function downloadJson(data: unknown, filename: string) {
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
@@ -65,29 +52,38 @@ function buildExportData(params: {
   getRulePower: (ruleId: string) => number;
   getSectionPower: (sectionId: string) => number;
   getGlobalPower: () => number;
+  sectionsIndex: SectionMeta[];
+  ruleMeta: Map<string, RuleMetaEntry>;
 }) {
-  const { userId, blobData, getRulePower, getSectionPower, getGlobalPower } = params;
+  const { userId, blobData, getRulePower, getSectionPower, getGlobalPower, sectionsIndex, ruleMeta } = params;
 
   const globalPower = getGlobalPower();
   const globalTier = getTier(globalPower, globalPower > 0);
 
-  // Decoded human-readable section — only attempted rules
+  const sectionRules = new Map<string, string[]>();
+  for (const [ruleId, meta] of ruleMeta) {
+    const arr = sectionRules.get(meta.sectionId) ?? [];
+    arr.push(ruleId);
+    sectionRules.set(meta.sectionId, arr);
+  }
+
   const decodedSections = sectionsIndex
     .map((meta) => {
-      const section = sectionMap[meta.id];
-      if (!section) return null;
+      const ruleIds = sectionRules.get(meta.id);
+      if (!ruleIds || ruleIds.length === 0) return null;
       const sectionPower = getSectionPower(meta.id);
       const tier = getTier(sectionPower, sectionPower > 0);
 
-      const rules = section.rules
-        .map((rule) => {
-          const slotIdx = getRuleSlotIndex(rule.id);
+      const rules = ruleIds
+        .map((ruleId) => {
+          const slotIdx = getRuleSlotIndex(ruleId);
           const rawPower = slotIdx >= 0 ? (blobData.powers[slotIdx] ?? 0) : 0;
           if (rawPower === 0) return null;
-          const ruleTier = getTier(getRulePower(rule.id), true);
+          const ruleTier = getTier(getRulePower(ruleId), true);
+          const ruleInfo = ruleMeta.get(ruleId);
           return {
-            id: rule.id,
-            title: rule.title,
+            id: ruleId,
+            title: ruleInfo?.title ?? ruleId,
             tier: ruleTier?.label ?? t.tiers[5]!.label,
             power: rawPower,
           };
@@ -122,9 +118,15 @@ function buildExportData(params: {
   };
 }
 
-// ── Page component ────────────────────────────────────────────────────────────
-
-export function MyDataClient() {
+export function MyDataClient({
+  sectionsIndex,
+  slotSections,
+  ruleMeta,
+}: {
+  sectionsIndex: SectionMeta[];
+  slotSections: SlotSection[];
+  ruleMeta: Map<string, RuleMetaEntry>;
+}) {
   const router = useRouter();
   const {
     isLoggedIn,
@@ -142,14 +144,12 @@ export function MyDataClient() {
   const [deleting, setDeleting] = useState(false);
   const navigatingToGoodbye = useRef(false);
 
-  // Redirect to home if not logged in (skip when deletion is in flight)
   useEffect(() => {
     if (!isLoading && !isLoggedIn && !navigatingToGoodbye.current) {
       router.push("/");
     }
   }, [isLoading, isLoggedIn, router]);
 
-  // Fetch raw blob data for the takeout display
   useEffect(() => {
     if (!isLoggedIn || isLoading) return;
     fetch("/api/progress")
@@ -165,9 +165,17 @@ export function MyDataClient() {
 
   const handleExport = useCallback(() => {
     if (!userId || !blobData) return;
-    const { data, filename } = buildExportData({ userId, blobData, getRulePower, getSectionPower, getGlobalPower });
+    const { data, filename } = buildExportData({
+      userId,
+      blobData,
+      getRulePower,
+      getSectionPower,
+      getGlobalPower,
+      sectionsIndex,
+      ruleMeta,
+    });
     downloadJson(data, filename);
-  }, [userId, blobData, getRulePower, getSectionPower, getGlobalPower]);
+  }, [userId, blobData, getRulePower, getSectionPower, getGlobalPower, sectionsIndex, ruleMeta]);
 
   const handleDelete = useCallback(async () => {
     if (deleting) return;
@@ -194,7 +202,6 @@ export function MyDataClient() {
   return (
     <div className="min-h-screen bg-papier">
       <div className="mx-auto max-w-2xl px-6 py-12 md:py-16">
-        {/* Back link */}
         <Link
           href="/"
           className="inline-flex items-center gap-1.5 text-sm text-ardoise hover:text-encre transition-colors mb-10"
@@ -214,7 +221,6 @@ export function MyDataClient() {
           <h1 className="text-2xl md:text-3xl font-bold text-encre">{t.myData.heading}</h1>
         </div>
 
-        {/* Identity */}
         <section className="mb-10">
           <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-3">{t.myData.identityTitle}</h2>
           <div className="bg-tricolore-blanc border border-craie rounded-xl p-5">
@@ -225,7 +231,6 @@ export function MyDataClient() {
           </div>
         </section>
 
-        {/* Raw blob */}
         <section className="mb-10">
           <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-1">{t.myData.rawDataTitle}</h2>
           <p className="text-xs text-ardoise mb-3 leading-relaxed">
@@ -242,7 +247,6 @@ export function MyDataClient() {
             </div>
           ) : (
             <div className="space-y-4">
-              {/* Header */}
               <div className="bg-tricolore-blanc border border-craie rounded-xl overflow-hidden">
                 <div className="px-5 py-3 bg-papier-warm border-b border-craie">
                   <p className="text-xs font-semibold text-encre">{t.myData.headerSectionLabel}</p>
@@ -295,7 +299,6 @@ export function MyDataClient() {
                 </table>
               </div>
 
-              {/* Power slots */}
               <div className="bg-tricolore-blanc border border-craie rounded-xl overflow-hidden">
                 <div className="px-5 py-3 bg-papier-warm border-b border-craie">
                   <p className="text-xs font-semibold text-encre">
@@ -306,7 +309,7 @@ export function MyDataClient() {
                   </p>
                 </div>
                 <div className="overflow-y-auto" style={{ maxHeight: "400px" }}>
-                  {SLOT_SECTIONS.map(({ sectionNum, title, slots }) => (
+                  {slotSections.map(({ sectionNum, title, slots }) => (
                     <div key={sectionNum}>
                       <div className="px-5 py-1.5 bg-papier-warm/60 border-y border-craie/40 sticky top-0">
                         <span className="text-[10px] font-mono font-semibold text-ardoise">
@@ -349,7 +352,6 @@ export function MyDataClient() {
           )}
         </section>
 
-        {/* JSON export */}
         <section className="mb-10">
           <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-3">{t.myData.jsonExportTitle}</h2>
           <div className="bg-tricolore-blanc border border-craie rounded-xl p-5">
@@ -369,7 +371,6 @@ export function MyDataClient() {
           </div>
         </section>
 
-        {/* Account removal */}
         <section>
           <h2 className="text-sm font-semibold text-ardoise uppercase tracking-wider border-l-2 border-tricolore-bleu/20 pl-3 mb-3">{t.myData.deleteTitle}</h2>
           <div className="bg-tricolore-blanc border border-craie rounded-xl p-5">
