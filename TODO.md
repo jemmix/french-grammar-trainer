@@ -21,6 +21,35 @@
 
 ## Build / tooling
 
+- **Prevent heavy data imports in client bundles** — after moving question data to server components, need automated checks to prevent future regressions where someone accidentally imports `~/data/*` in a client component. Options:
+
+  1. **ESLint `no-restricted-paths`** (immediate feedback):
+     - Add `eslint-plugin-import`
+     - Configure rule to block imports from `src/data/*` in files matching `*-client.tsx` or containing `"use client"`
+     - Pros: fails in editor + CI, fast
+     - Cons: requires detecting client components reliably
+
+  2. **`package.json` `browser` field** (runtime guard):
+     ```json
+     {
+       "browser": {
+         "./src/data/sections-index.ts": false,
+         "./src/data/fr/index.ts": false,
+         "./src/data/en/index.ts": false
+       }
+     }
+     ```
+     - Webpack resolves these to `false` in browser bundles
+     - Pros: hard runtime block
+     - Cons: no type/lint error, only fails at runtime; may not work with Next.js RSC
+
+  3. **Bundle size CI check** (safety net):
+     - Add script that fails CI if any client chunk exceeds threshold (e.g., 200KB)
+     - Pros: catches any regression, not just data imports
+     - Cons: only catches in CI, no editor feedback
+
+  4. **Recommended**: combine (1) + (3) — ESLint for immediate dev feedback, bundle check as CI safety net
+
 - **Per-language hint exceptions** — `src/data/answer-hints.test.ts` has a single `HINT_EXCEPTIONS` set applied to both `fr` and `en`. Should be split into per-language sets since English and French have different common verb answers that don't need dictionary hints (e.g. English: `write`, `walk`, `run`; French: different verbs).
 
 - **Validation against DSL files** — `scripts/validate.ts` currently reads from compiled TypeScript (`src/data/{lang}/*.ts`), requiring `npm run compile-all` after every DSL edit before validation. Fix: have validation read directly from `questions/{lang}/*.txt` DSL files so no recompilation is needed during iterative content fixes.
