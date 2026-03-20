@@ -29,7 +29,7 @@ export const questionRuleAlignmentPredicate: LLMPredicate = {
 
     return {
       systemPrompt: "You are a " + lang + " grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
-      userPrompt: "SECTION: " + ctx.section.title + " (Section " + ctx.section.id + ")\n\nRULE BEING TESTED: " + ctx.rule.id + " - " + ctx.rule.title + "\n\nQUESTION:\n" + questionContent + "\n\nDoes this question actually test the stated rule?",
+      userPrompt: "SECTION: " + ctx.section.title + "\n\nRULE BEING TESTED: " + ctx.rule.id + " - " + ctx.rule.title + "\n\nQUESTION:\n" + questionContent + "\n\nDoes this question actually test the stated rule?",
     };
   },
 
