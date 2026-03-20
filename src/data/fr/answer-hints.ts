@@ -342,6 +342,7 @@ export const answerHints: Record<string, string> = {
   "enverront": "envoyer",
   "envoie": "envoyer",
   "envoie-les-toi": "envoyer",
+  "envoient": "envoyer",
   "envoyer": "envoyer",
   "envoyez": "envoyer",
   "envoyons": "envoyer",

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fae10273938d0aa7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-04-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-04 - Les verbes irréguliers du 1er groupe (aller, envoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Tu ___ un message important aujourd'hui. »\nChoices:\nA. [CORRECT] envoies\nB. envoie\nC. envoyons\nD. enverras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774024835507-86dtapmb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the present tense conjugation of \"envoyer\" for \"tu\", which is covered by the irregular 1st group verbs rule; the correct answer \"envoies\" distinguishes from wrong answers including the future tense \"enverras\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774024897596-nbwkr2k7",
+      "timestamp": "2026-03-20T16:42:00.416Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"envoyer\" uses \"tu envoies\" in the present tense, not the regular -er pattern \"tu envoie\" (though \"envoie\" is actually the 3rd person form, making it a distractor). This is precisely the irregular conjugation pattern that rule 01-04 tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774024984424-wil9zk0d",
+      "timestamp": "2026-03-20T16:43:27.803Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the irregularity of \"envoyer\" by distinguishing the correct form \"envoies\" (with i) from the regular -er pattern \"envoie\" and other wrong conjugations.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774025075737-fzft7m51",
+      "timestamp": "2026-03-20T16:45:29.850Z"
+    }
+  ]
+}
