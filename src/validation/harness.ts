@@ -1,6 +1,6 @@
 import { execFile } from "child_process";
 import type { ExecFileException } from "child_process";
-import type { LLMRequestSpec, LLMResponse } from "./types";
+import type { LLMRequestSpec, LLMResponse, ResponseValidator } from "./types";
 
 const HARNESS_TIMEOUT_MS = 300_000;
 const MAX_RETRIES = 3;
@@ -10,7 +10,7 @@ const BACKOFF_MULTIPLIER = 2;
 
 export interface LLMHarness {
   name: string;
-  run(spec: LLMRequestSpec, nonce: string): Promise<LLMResponse>;
+  run(spec: LLMRequestSpec, nonce: string, validator?: ResponseValidator): Promise<LLMResponse>;
 }
 
 function sleep(ms: number): Promise<void> {
@@ -41,6 +41,7 @@ function isRetryableError(err: Error): boolean {
   if (msg.includes("signal:")) return true;
   if (msg.includes("killed")) return true;
   if (msg.includes("crashed")) return true;
+  if (msg.includes("invalid response:")) return true;
   return false;
 }
 
@@ -80,7 +81,7 @@ export function createOpencodeHarness(modelId: string): LLMHarness {
   return {
     name: "opencode",
 
-    async run(spec: LLMRequestSpec, nonce: string): Promise<LLMResponse> {
+    async run(spec: LLMRequestSpec, nonce: string, validator?: ResponseValidator): Promise<LLMResponse> {
       const fullPrompt = spec.systemPrompt + "\n\n" + nonce + "\n\n" + spec.userPrompt;
 
       return runWithRetry(
@@ -112,6 +113,14 @@ export function createOpencodeHarness(modelId: string): LLMHarness {
                 if (!raw) {
                   reject(new Error("opencode failed: empty response"));
                   return;
+                }
+                if (validator) {
+                  try {
+                    validator(raw);
+                  } catch (err) {
+                    reject(new Error("invalid response: " + (err instanceof Error ? err.message : String(err))));
+                    return;
+                  }
                 }
                 resolve({
                   raw,

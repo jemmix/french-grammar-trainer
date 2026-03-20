@@ -134,15 +134,22 @@ async function runLLMBatch(
     while (updateCache && needsMore()) {
       await limitConcurrency(async () => {
         const nonce = generateNonce();
-        const response = await harness.run(spec, nonce);
-        entry.responses.push(response);
-        saveCacheEntry(entry);
+        const validator = (raw: string) => {
+          const interp = predicate.interpretResponse(ctx, raw);
+          if (interp.status === "invalid") {
+            throw new Error(interp.reason);
+          }
+        };
+        const response = await harness.run(spec, nonce, validator);
         
         attemptNumber++;
         if (verbose) {
           const interp = predicate.interpretResponse(ctx, response.raw);
           emitResult(ctx.question.id, predicate.id, attemptNumber, false, interp);
         }
+        
+        entry.responses.push(response);
+        saveCacheEntry(entry);
       });
     }
     
