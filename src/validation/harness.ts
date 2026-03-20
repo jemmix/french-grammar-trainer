@@ -1,29 +1,18 @@
 import { execFile } from "child_process";
 import type { ExecFileException } from "child_process";
-import type { LLMRequestSpec, LLMResponse, ResponseValidator } from "./types";
+import type { LLMRequestSpec, LLMResponse } from "./types";
 
 const HARNESS_TIMEOUT_MS = 300_000;
-const MAX_RETRIES = 3;
-const INITIAL_DELAY_MS = 1000;
-const MAX_DELAY_MS = 30000;
-const BACKOFF_MULTIPLIER = 2;
 
-export interface LLMHarness {
-  name: string;
-  run(spec: LLMRequestSpec, nonce: string, validator?: ResponseValidator): Promise<LLMResponse>;
+export class InvalidResponseError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "InvalidResponseError";
+  }
 }
 
-function sleep(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-function calculateDelay(attempt: number): number {
-  const baseDelay = INITIAL_DELAY_MS * Math.pow(BACKOFF_MULTIPLIER, attempt);
-  const jitter = Math.random() * baseDelay * 0.3;
-  return Math.min(baseDelay + jitter, MAX_DELAY_MS);
-}
-
-function isRetryableError(err: Error): boolean {
+export function isRetryableError(err: Error): boolean {
+  if (err instanceof InvalidResponseError) return true;
   const msg = err.message.toLowerCase();
   if (msg.includes("timeout")) return true;
   if (msg.includes("etimedout")) return true;
@@ -41,100 +30,60 @@ function isRetryableError(err: Error): boolean {
   if (msg.includes("signal:")) return true;
   if (msg.includes("killed")) return true;
   if (msg.includes("crashed")) return true;
-  if (msg.includes("invalid response:")) return true;
   return false;
 }
 
-async function runWithRetry<T>(
-  fn: () => Promise<T>,
-  options: { maxRetries: number; operation: string }
-): Promise<T> {
-  let lastError: Error | null = null;
-
-  for (let attempt = 0; attempt <= options.maxRetries; attempt++) {
-    try {
-      return await fn();
-    } catch (err) {
-      lastError = err instanceof Error ? err : new Error(String(err));
-
-      if (attempt === options.maxRetries) {
-        break;
-      }
-
-      if (!isRetryableError(lastError)) {
-        throw lastError;
-      }
-
-      const delay = calculateDelay(attempt);
-      console.warn(
-        `${options.operation} failed (attempt ${attempt + 1}/${options.maxRetries + 1}), ` +
-        `retrying in ${Math.round(delay)}ms: ${lastError.message.split("\n")[0]}`
-      );
-      await sleep(delay);
-    }
-  }
-
-  throw lastError;
+export interface LLMHarness {
+  name: string;
+  run(spec: LLMRequestSpec, nonce: string): Promise<LLMResponse>;
 }
 
 export function createOpencodeHarness(modelId: string): LLMHarness {
   return {
     name: "opencode",
 
-    async run(spec: LLMRequestSpec, nonce: string, validator?: ResponseValidator): Promise<LLMResponse> {
+    async run(spec: LLMRequestSpec, nonce: string): Promise<LLMResponse> {
       const fullPrompt = spec.systemPrompt + "\n\n" + nonce + "\n\n" + spec.userPrompt;
 
-      return runWithRetry(
-        () =>
-          new Promise<LLMResponse>((resolve, reject) => {
-            const child = execFile(
-              "opencode",
-              ["run", "--model", "zai-coding-plan/" + modelId, fullPrompt],
-              { timeout: HARNESS_TIMEOUT_MS, maxBuffer: 10 * 1024 },
-              (err, stdout, stderr) => {
-                if (err) {
-                  const isTimeout = err.message.includes("ETIMEDOUT") || err.killed;
-                  const parts: string[] = ["opencode failed"];
-                  if (isTimeout) {
-                    parts.push("reason: timeout after " + (HARNESS_TIMEOUT_MS / 1000) + "s");
-                  } else if (err.code !== undefined && err.code !== null) {
-                    parts.push("reason: exit code " + err.code);
-                  } else if (err.signal) {
-                    parts.push("reason: killed by signal " + err.signal);
-                  } else {
-                    parts.push("reason: " + err.message);
-                  }
-                  if (stderr?.trim()) parts.push("stderr: " + stderr.trim());
-                  if (stdout?.trim()) parts.push("stdout: " + stdout.trim());
-                  reject(new Error(parts.join("; ")));
-                  return;
-                }
-                const raw = stdout.trim();
-                if (!raw) {
-                  reject(new Error("opencode failed: empty response"));
-                  return;
-                }
-                if (validator) {
-                  try {
-                    validator(raw);
-                  } catch (err) {
-                    reject(new Error("invalid response: " + (err instanceof Error ? err.message : String(err))));
-                    return;
-                  }
-                }
-                resolve({
-                  raw,
-                  model: modelId,
-                  harness: "opencode",
-                  nonce,
-                  timestamp: new Date().toISOString(),
-                });
+      return new Promise<LLMResponse>((resolve, reject) => {
+        const child = execFile(
+          "opencode",
+          ["run", "--model", "zai-coding-plan/" + modelId, fullPrompt],
+          { timeout: HARNESS_TIMEOUT_MS, maxBuffer: 10 * 1024 },
+          (err, stdout, stderr) => {
+            if (err) {
+              const isTimeout = err.message.includes("ETIMEDOUT") || err.killed;
+              const parts: string[] = ["opencode failed"];
+              if (isTimeout) {
+                parts.push("reason: timeout after " + (HARNESS_TIMEOUT_MS / 1000) + "s");
+              } else if (err.code !== undefined && err.code !== null) {
+                parts.push("reason: exit code " + err.code);
+              } else if (err.signal) {
+                parts.push("reason: killed by signal " + err.signal);
+              } else {
+                parts.push("reason: " + err.message);
               }
-            );
-            child.stdin?.end();
-          }),
-        { maxRetries: MAX_RETRIES, operation: "opencode LLM call" }
-      );
+              if (stderr?.trim()) parts.push("stderr: " + stderr.trim());
+              if (stdout?.trim()) parts.push("stdout: " + stdout.trim());
+              reject(new Error(parts.join("; ")));
+              return;
+            }
+            const raw = stdout.trim();
+            if (!raw) {
+              reject(new Error("opencode failed: empty response"));
+              return;
+            }
+            resolve({
+              raw,
+              model: modelId,
+              harness: "opencode",
+              nonce,
+              timestamp: new Date().toISOString(),
+            });
+          }
+        );
+        child.stdin?.end();
+      });
     },
   };
 }

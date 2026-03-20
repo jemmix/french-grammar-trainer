@@ -18,12 +18,58 @@ import {
   createCacheEntry,
   pruneCache,
 } from "./cache";
-import { createOpencodeHarness, parseVerdict } from "./harness";
+import { createOpencodeHarness, InvalidResponseError, isRetryableError } from "./harness";
 
 const INITIAL_RUNS = 3;
 const ADDITIONAL_RUNS = 7;
 const MAJORITY_THRESHOLD = 0.9;
 const DEFAULT_CONCURRENCY = 10;
+const MAX_RETRIES = 3;
+const INITIAL_DELAY_MS = 1000;
+const MAX_DELAY_MS = 30000;
+const BACKOFF_MULTIPLIER = 2;
+
+function sleep(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function calculateDelay(attempt: number): number {
+  const baseDelay = INITIAL_DELAY_MS * Math.pow(BACKOFF_MULTIPLIER, attempt);
+  const jitter = Math.random() * baseDelay * 0.3;
+  return Math.min(baseDelay + jitter, MAX_DELAY_MS);
+}
+
+async function runWithRetry<T>(
+  fn: () => Promise<T>,
+  operation: string
+): Promise<T> {
+  let lastError: Error | null = null;
+
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      return await fn();
+    } catch (err) {
+      lastError = err instanceof Error ? err : new Error(String(err));
+
+      if (attempt === MAX_RETRIES) {
+        throw lastError;
+      }
+
+      if (!isRetryableError(lastError)) {
+        throw lastError;
+      }
+
+      const delay = calculateDelay(attempt);
+      console.warn(
+        operation + " failed (attempt " + (attempt + 1) + "/" + (MAX_RETRIES + 1) + "), " +
+        "retrying in " + Math.round(delay) + "ms: " + lastError.message.split("\n")[0]
+      );
+      await sleep(delay);
+    }
+  }
+
+  throw lastError;
+}
 
 function createConcurrencyLimiter(maxConcurrent: number) {
   let running = 0;
@@ -134,13 +180,18 @@ async function runLLMBatch(
     while (updateCache && needsMore()) {
       await limitConcurrency(async () => {
         const nonce = generateNonce();
-        const validator = (raw: string) => {
-          const interp = predicate.interpretResponse(ctx, raw);
-          if (interp.status === "invalid") {
-            throw new Error(interp.reason);
-          }
-        };
-        const response = await harness.run(spec, nonce, validator);
+        
+        const response = await runWithRetry(
+          async () => {
+            const res = await harness.run(spec, nonce);
+            const interp = predicate.interpretResponse(ctx, res.raw);
+            if (interp.status === "invalid") {
+              throw new InvalidResponseError(interp.reason);
+            }
+            return res;
+          },
+          "LLM call for " + ctx.question.id + "/" + predicate.id
+        );
         
         attemptNumber++;
         if (verbose) {

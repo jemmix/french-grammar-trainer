@@ -35,8 +35,6 @@ export interface LLMResponse {
   timestamp: string;
 }
 
-export type ResponseValidator = (raw: string) => void;
-
 export interface LLMPredicate {
   id: string;
   category: "semantic" | "pedagogical";
