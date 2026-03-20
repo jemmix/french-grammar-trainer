@@ -300,7 +300,6 @@ export function pickSectionQuizQuestions(params: {
     }
   }
 
-  console.log({result: result.map(q => q.ruleId)})
   // Final shuffle
   return shuffleArray(result);
 }
