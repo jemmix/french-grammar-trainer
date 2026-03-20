@@ -114,12 +114,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-01",
       generatedBy: "claude-sonnet-4-6",
-      prompt: "Complete the sentence: \"She ___ the instructions carefully and then assembled the furniture last weekend.\"",
+      prompt: "What is the past simple form of the regular verb \"follow\"?",
       choices: [
-        { text: "followed", correct: true, explanation: "\"Follow\" + -ed = \"followed.\" \"Last weekend\" anchors both actions in the past, and the sequence (\"followed … and then assembled\") requires two simple past verbs." },
-        { text: "follows", correct: false, explanation: "\"Follows\" is the third person singular present. \"Last weekend\" tells us this happened in the past — use \"followed.\"" },
-        { text: "has followed", correct: false, explanation: "\"Has followed\" is the present perfect. With \"last weekend\" and a sequence of completed past actions, use the simple past \"followed.\"" },
-        { text: "follow", correct: false, explanation: "\"Follow\" is the base form. Regular verbs need -ed in the past simple: \"followed.\"" },
+        { text: "followed", correct: true, explanation: "\"Follow\" + -ed = \"followed.\" Regular verbs form the past simple by adding -ed to the base form." },
+        { text: "follought", correct: false, explanation: "\"Follought\" follows the irregular pattern of verbs like \"brought\" or \"thought,\" but \"follow\" is a regular verb. It simply adds -ed: \"followed.\"" },
+        { text: "followen", correct: false, explanation: "\"Followen\" follows an irregular pattern (like \"broken\" or \"frozen\"), but \"follow\" is a regular verb. The correct past form is \"followed.\"" },
+        { text: "followd", correct: false, explanation: "\"Followd\" is missing the 'e' — the correct spelling is \"followed\" with all the letters preserved from \"follow\" plus -ed." },
       ],
     },
     {
