@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2fa98c66acf34763",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-05-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-05 - Les verbes irréguliers courants : être, avoir, faire, dire\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « dire » au présent de l'indicatif à la personne indiquée dans la phrase.\nPhrase: Je ___ bonjour.\nCorrect Answer: dis\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774027573819-ww8owmxc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the irregular conjugation of \"dire\" (je dis), which is one of the irregular verbs explicitly listed in the rule and cannot be answered using regular verb patterns.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774027920205-935v52ls",
+      "timestamp": "2026-03-20T17:32:14.829Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the irregular conjugation of \"dire\" (je dis), which is one of the four specific irregular verbs listed in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774028354937-tu37mazm",
+      "timestamp": "2026-03-20T17:39:27.761Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the irregular first-person singular form \"dis\" of the verb \"dire,\" which is one of the four core irregular verbs specified in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774028483246-gsyiweid",
+      "timestamp": "2026-03-20T17:41:34.153Z"
+    }
+  ]
+}
