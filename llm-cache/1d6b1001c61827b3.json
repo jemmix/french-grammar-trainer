@@ -1,0 +1,82 @@
+{
+  "cacheKey": "1d6b1001c61827b3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-04-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-04 - Les verbes irréguliers du 1er groupe (aller, envoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « J'___ une lettre demain. »\nChoices:\nA. [CORRECT] envoie\nB. envoyer\nC. envoyais\nD. enverrai\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774019818015-tzngp40u"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge that \"envoyer\" has an irregular present conjugation (j'envoie) which cannot be derived from regular -er verb patterns, directly aligning with the rule about irregular first group verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774019818064-ns8qxhmp",
+      "timestamp": "2026-03-20T15:21:55.922Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests present vs. future vs. imparfait usage with temporal context, not the specific irregular conjugation pattern of 1st group verbs (envoyer's y → i alternation).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774020115923-o4v9v4jt",
+      "timestamp": "2026-03-20T15:22:08.625Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question contains \"demain\" (tomorrow), requiring future tense (futur simple) knowledge, not présent de l'indicatif as claimed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774020128625-baia10ls",
+      "timestamp": "2026-03-20T15:22:26.123Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the future tense conjugation of \"envoyer\" (enverrai), but the rule is about present tense irregularities of 1st group verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774020146123-okkfj6b1",
+      "timestamp": "2026-03-20T15:22:57.299Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the irregular future tense conjugation of \"envoyer\" (enverr- stem instead of envoyer-), which is the defining irregularity of this 1st group verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774020177299-0gnkyta4",
+      "timestamp": "2026-03-20T15:23:08.418Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question is incorrectly marked - \"demain\" requires future tense, but the correct answer is marked as \"envoie\" (present), and the actual correct answer \"enverrai\" tests futur simple conjugation, not the stated rule about irregular 1st group present tense patterns.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774020188418-rmtysnih",
+      "timestamp": "2026-03-20T15:23:27.490Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question is fundamentally flawed: \"demain\" requires future tense, so the correct answer should be \"enverrai\" (D), but the key marks \"envoie\" (A, present) as correct. Even if corrected, this primarily tests future tense formation with an irregular stem, not the broader rule about 1st group irregular verbs (aller/envoyer).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774020207490-9klboe1z",
+      "timestamp": "2026-03-20T15:24:00.089Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests whether to use présent or futur tense with \"demain\", not the irregular conjugation of \"envoyer\" in the présent de l'indicatif (both \"envoie\" and \"enverrai\" are grammatically valid in this context).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774020240089-qxvxsrcu",
+      "timestamp": "2026-03-20T15:24:17.572Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests present tense used for immediate future (présent pour exprimer un futur proche), not the irregularity of \"envoyer\" - the \"demain\" clue makes it a tense question, and answering correctly doesn't require knowledge that \"envoyer\" is irregular (a regular -er verb like \"donner\" would work identically in this structure).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774020257573-il5z59mu",
+      "timestamp": "2026-03-20T15:24:50.632Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of \"envoyer\" (an irregular 1st group verb explicitly named in the rule), requiring knowledge of its present tense form \"envoie\" for \"je\" and avoiding the future tense \"enverrai\" despite \"demain\" in the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774020290633-8w6sza62",
+      "timestamp": "2026-03-20T15:25:06.893Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "51a798b015e5ac8a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-04-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-04 - Les verbes irréguliers du 1er groupe (aller, envoyer)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe aller au présent.\nPhrase: Je ___ à la bibliothèque cet après-midi.\nCorrect Answer: vais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774019818031-4dkuja1o"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the irregular first-person singular conjugation \"vais\" of \"aller\" in the present tense, which is the core concept of rule 01-04 covering irregular 1st group verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774019818441-6cap5lc6",
+      "timestamp": "2026-03-20T15:21:47.851Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the irregular conjugation \"vais\" for \"aller\" in the present tense, which is exactly what rule 01-04 covers and cannot be determined from regular conjugation patterns.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774020107851-2ob6ojzq",
+      "timestamp": "2026-03-20T15:22:00.201Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the irregular present tense conjugation of \"aller\" (je vais), which cannot be answered correctly using regular -er verb patterns.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774020120202-nuacgcv7",
+      "timestamp": "2026-03-20T15:23:21.659Z"
+    }
+  ]
+}
