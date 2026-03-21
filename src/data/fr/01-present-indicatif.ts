@@ -1818,7 +1818,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ vous aider. »",
+      prompt: "Complétez au présent de l'indicatif : « Je ___ vous aider. »",
       choices: [
         { text: "peux", correct: true, explanation: "Présent de l'indicatif, 1ère personne singulier du verbe pouvoir." },
         { text: "peut", correct: false, explanation: "C'est la forme de 3ème personne singulier (il/elle), pas la 1ère personne." },
@@ -1831,7 +1831,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu ___ venir demain ? »",
+      prompt: "Complétez au présent de l'indicatif : « Tu ___ venir demain ? »",
       choices: [
         { text: "peux", correct: true, explanation: "Présent de l'indicatif, 2ème personne du singulier du verbe pouvoir : tu peux." },
         { text: "peut", correct: false, explanation: "« Peut » est la 3ème personne du singulier (il/elle peut), pas la 2ème. Pour « tu », on utilise peux." },
@@ -1845,7 +1845,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il ___ partir maintenant. »",
+      prompt: "Complétez au présent de l'indicatif : « Il ___ partir maintenant. »",
       choices: [
         { text: "peut", correct: true, explanation: "Présent de l'indicatif, 3ème personne singulier du verbe pouvoir." },
         { text: "peux", correct: false, explanation: "C'est la 1ère ou 2ème personne singulier, pas la 3ème personne." },
@@ -1858,7 +1858,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ___ danser ensemble. »",
+      prompt: "Complétez au présent de l'indicatif : « Nous ___ danser ensemble. »",
       choices: [
         { text: "pouvons", correct: true, explanation: "Présent de l'indicatif, 1ère personne pluriel du verbe pouvoir." },
         { text: "peuvent", correct: false, explanation: "C'est la 3ème personne pluriel (ils/elles), pas la 1ère personne." },
@@ -1871,7 +1871,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ entrer dans la salle. »",
+      prompt: "Complétez au présent de l'indicatif : « Vous ___ entrer dans la salle. »",
       choices: [
         { text: "pouvez", correct: true, explanation: "Présent de l'indicatif, 2ème personne pluriel du verbe pouvoir." },
         { text: "peuvent", correct: false, explanation: "C'est la 3ème personne pluriel (ils/elles), pas la 2ème personne." },
@@ -1884,7 +1884,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Ils ___ réussir s'ils travaillent. »",
+      prompt: "Complétez au présent de l'indicatif : « Ils ___ réussir s'ils travaillent. »",
       choices: [
         { text: "peuvent", correct: true, explanation: "Présent de l'indicatif, 3ème personne pluriel du verbe pouvoir." },
         { text: "pouvez", correct: false, explanation: "C'est la 2ème personne pluriel (vous), pas la 3ème personne." },
@@ -1897,7 +1897,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ manger une pomme. »",
+      prompt: "Complétez au présent de l'indicatif : « Je ___ manger une pomme. »",
       choices: [
         { text: "veux", correct: true, explanation: "Présent de l'indicatif, 1ère personne singulier du verbe vouloir." },
         { text: "veut", correct: false, explanation: "C'est la 3ème personne singulier (il/elle), pas la 1ère personne." },
@@ -1910,7 +1910,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle ___ partir tôt. »",
+      prompt: "Complétez au présent de l'indicatif : « Elle ___ partir tôt. »",
       choices: [
         { text: "veut", correct: true, explanation: "Présent de l'indicatif, 3ème personne singulier du verbe vouloir." },
         { text: "veux", correct: false, explanation: "C'est la 1ère ou 2ème personne singulier, pas la 3ème personne." },
@@ -1923,7 +1923,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ___ voyager en France. »",
+      prompt: "Complétez au présent de l'indicatif : « Nous ___ voyager en France. »",
       choices: [
         { text: "voulons", correct: true, explanation: "Présent de l'indicatif, 1ère personne pluriel du verbe vouloir." },
         { text: "voulez", correct: false, explanation: "C'est la 2ème personne pluriel (vous), pas la 1ère personne." },
@@ -1936,7 +1936,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ rester ici. »",
+      prompt: "Complétez au présent de l'indicatif, verbe vouloir : « Vous ___ rester ici. »",
       choices: [
         { text: "voulez", correct: true, explanation: "Présent de l'indicatif, 2ème personne pluriel du verbe vouloir." },
         { text: "voulons", correct: false, explanation: "C'est la 1ère personne pluriel (nous), pas la 2ème personne." },
@@ -1949,7 +1949,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ finir mon travail. »",
+      prompt: "Complétez au présent de l'indicatif : « Je ___ finir mon travail. »",
       choices: [
         { text: "dois", correct: true, explanation: "Présent de l'indicatif, 1ère personne singulier du verbe devoir." },
         { text: "doit", correct: false, explanation: "C'est la 3ème personne singulier (il/elle), pas la 1ère personne." },
@@ -1962,7 +1962,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu ___ respecter les règles. »",
+      prompt: "Complétez au présent de l'indicatif : « Tu ___ respecter les règles. »",
       choices: [
         { text: "dois", correct: true, explanation: "Présent de l'indicatif, 2ème personne singulier du verbe devoir." },
         { text: "doit", correct: false, explanation: "C'est la 3ème personne singulier (il/elle), pas la 2ème personne." },
@@ -1975,7 +1975,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « On ___ être honnête. »",
+      prompt: "Complétez au présent de l'indicatif : « On ___ être honnête. »",
       choices: [
         { text: "doit", correct: true, explanation: "Présent de l'indicatif, 3ème personne singulier du verbe devoir (on = il/elle grammaticalement)." },
         { text: "dois", correct: false, explanation: "C'est la 1ère personne singulier, pas la 3ème personne." },
@@ -1988,7 +1988,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ étudier pour l'examen. »",
+      prompt: "Complétez au présent de l'indicatif : « Vous ___ étudier pour l'examen. »",
       choices: [
         { text: "devez", correct: true, explanation: "Présent de l'indicatif, 2ème personne pluriel du verbe devoir." },
         { text: "doit", correct: false, explanation: "C'est la 3ème personne singulier, pas la 2ème personne pluriel." },
@@ -2001,7 +2001,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ ton adresse. »",
+      prompt: "Complétez au présent de l'indicatif : « Je ___ ton adresse. »",
       choices: [
         { text: "sais", correct: true, explanation: "Présent de l'indicatif, 1ère personne singulier du verbe savoir." },
         { text: "sait", correct: false, explanation: "C'est la 3ème personne singulier (il/elle), pas la 1ère personne." },
@@ -2014,7 +2014,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il ___ parler trois langues. »",
+      prompt: "Complétez au présent de l'indicatif : « Il ___ parler trois langues. »",
       choices: [
         { text: "sait", correct: true, explanation: "Présent de l'indicatif, 3ème personne singulier du verbe savoir." },
         { text: "sais", correct: false, explanation: "C'est la 1ère ou 2ème personne singulier, pas la 3ème personne." },
@@ -2027,7 +2027,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ___ où aller. »",
+      prompt: "Complétez au présent de l'indicatif : « Nous ___ où aller. »",
       choices: [
         { text: "savons", correct: true, explanation: "Présent de l'indicatif, 1ère personne pluriel du verbe savoir." },
         { text: "savez", correct: false, explanation: "C'est la 2ème personne pluriel (vous), pas la 1ère personne." },
@@ -2040,12 +2040,13 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ la réponse ? »",
+      prompt: "Complétez au présent de l'indicatif avec le verbe savoir : « Vous ___ la réponse? »",
       choices: [
         { text: "savez", correct: true, explanation: "Présent de l'indicatif, 2ème personne pluriel du verbe savoir." },
         { text: "savons", correct: false, explanation: "C'est la 1ère personne pluriel (nous), pas la 2ème personne." },
         { text: "savent", correct: false, explanation: "C'est la 3ème personne pluriel (ils/elles), pas la 2ème personne." },
-        { text: "saviez", correct: false, explanation: "C'est l'imparfait, pas le présent." },
+        { text: "savaient", correct: false, explanation: "C'est l'imparfait (3ème personne pluriel), pas le présent." },
+        { text: "sauriez", correct: false, explanation: "C'est le conditionnel (2ème personne pluriel), pas le présent." },
       ],
     },
     {
@@ -2053,7 +2054,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Ils ___ nager très bien. »",
+      prompt: "Complétez au présent de l'indicatif : « Ils ___ nager très bien. »",
       choices: [
         { text: "savent", correct: true, explanation: "Présent de l'indicatif, 3ème personne pluriel du verbe savoir." },
         { text: "savez", correct: false, explanation: "C'est la 2ème personne pluriel (vous), pas la 3ème personne." },
@@ -2066,12 +2067,13 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Complétez : « Malgré leur âge, elles ___ encore danser. »",
+      prompt: "Complétez au présent de l'indicatif avec le verbe pouvoir : « Malgré leur âge, elles ___ encore danser. »",
       choices: [
         { text: "peuvent", correct: true, explanation: "Présent de l'indicatif, 3ème personne pluriel du verbe pouvoir." },
-        { text: "veulent", correct: false, explanation: "C'est le verbe vouloir, pas pouvoir. Les deux sont irréguliers mais distincts." },
-        { text: "doivent", correct: false, explanation: "C'est le verbe devoir, pas pouvoir. Les deux sont irréguliers mais distincts." },
-        { text: "pouvaient", correct: false, explanation: "C'est l'imparfait, pas le présent." },
+        { text: "pouvais", correct: false, explanation: "C'est l'imparfait (3ème personne pluriel), pas le présent." },
+        { text: "pourront", correct: false, explanation: "C'est le conditionnel (3ème personne pluriel), pas le présent." },
+        { text: "veulent", correct: false, explanation: "C'est le verbe vouloir (volonté), pas pouvoir (capacité)." },
+        { text: "doivent", correct: false, explanation: "C'est le verbe devoir (obligation), pas pouvoir (capacité)." },
       ],
     },
     {
@@ -2133,7 +2135,7 @@ const section: Section = {
       type: "input",
       ruleId: "01-06",
       generatedBy: "haiku",
-      prompt: "Conjuguez le verbe approprié (pouvoir, vouloir, devoir, savoir) à la 3ème personne singulier du présent.",
+      prompt: "Conjuguez le verbe pouvoir au présent de l'indicatif à la 3ème personne singulier.",
       phrase: { before: "Elle ", after: " marcher jusqu'au parc sans aide." },
       hint: "pouvoir",
       answer: "peut",
