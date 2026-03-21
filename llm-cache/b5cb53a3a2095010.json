@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b5cb53a3a2095010",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-06-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-06 - Les verbes irréguliers courants : pouvoir, vouloir, devoir, savoir\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent de l'indicatif : « Je ___ finir mon travail. »\nChoices:\nA. [CORRECT] dois\nB. doit\nC. devons\nD. devait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774124568553-gzp2i52l"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of \"devoir\" (one of the listed irregular verbs) in the present indicative for first person singular, which directly matches the rule scope.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774124741324-97qbrkap",
+      "timestamp": "2026-03-21T20:25:59.706Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of devoir (one of the four irregular verbs in the rule) in the present indicative, requiring knowledge of its irregular 1st person singular form \"dois\" rather than the regular pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774125236800-stnaj78g",
+      "timestamp": "2026-03-21T20:34:22.332Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the irregular present tense conjugation of \"devoir\" (first person singular \"dois\"), which is one of the four irregular verbs listed in the rule, and correctly answering requires knowing this specific irregular form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774125884866-cjq08w72",
+      "timestamp": "2026-03-21T20:45:12.356Z"
+    }
+  ]
+}

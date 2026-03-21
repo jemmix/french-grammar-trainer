@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8d66ab4e62362007",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-06-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-06 - Les verbes irréguliers courants : pouvoir, vouloir, devoir, savoir\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent de l'indicatif, verbe vouloir : « Vous ___ rester ici. »\nChoices:\nA. [CORRECT] voulez\nB. voulons\nC. veulent\nD. voulais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774125540072-lktk4e31"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowing vouloir's irregular present tense conjugation to select \"voulez\" for 2nd person plural \"Vous\", which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774125853438-c6g7oclm",
+      "timestamp": "2026-03-21T20:44:36.953Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the present indicative conjugation of vouloir for \"vous\", which requires knowing vouloir's irregular present tense forms as covered in rule 01-06.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774126325937-c8ftsfh9",
+      "timestamp": "2026-03-21T20:52:45.301Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the irregular conjugation of vouloir (one of the four verbs in the rule) in the présent de l'indicatif, requiring knowledge that \"vous\" form is \"voulez\" rather than following regular verb patterns.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774126593984-ah2j68ch",
+      "timestamp": "2026-03-21T20:56:55.596Z"
+    }
+  ]
+}
