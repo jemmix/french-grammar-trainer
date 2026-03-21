@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cb498b75e9fb1736",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-08-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-08 - Les verbes irréguliers courants : voir, croire, boire, écrire, lire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Conjuguez le verbe « écrire » au présent : « Il ___ une poésie pour son amoureux. »\nChoices:\nA. [CORRECT] écrit\nB. écris\nC. écrivez\nD. écrivons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774131166071-6io4ez2r"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests conjugation of \"écrire,\" one of the irregular verbs explicitly listed in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774131444577-qg99r7r3",
+      "timestamp": "2026-03-21T22:17:39.454Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the irregular conjugation of \"écrire\" (one of the five verbs listed in rule 01-08) for the third person singular, which cannot be answered without knowing this specific irregular conjugation pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774131713822-vpqepofo",
+      "timestamp": "2026-03-21T22:22:03.158Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the irregular conjugation pattern of écrire, which is one of the specific verbs explicitly covered in the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774131979600-uybj6l3w",
+      "timestamp": "2026-03-21T22:26:36.605Z"
+    }
+  ]
+}

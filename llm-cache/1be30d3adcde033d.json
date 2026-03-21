@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1be30d3adcde033d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-08-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-08 - Les verbes irréguliers courants : voir, croire, boire, écrire, lire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Conjuguez le verbe « croire » au présent : « Je ___ que tu as raison. »\nChoices:\nA. [CORRECT] crois\nB. croit\nC. croyez\nD. croyons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774131166071-dbr739tm"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of \"croire's\" irregular conjugation pattern (the stem changes from croir- to croy- for nous/vous and there's no -t in the third person), and \"croire\" is explicitly listed in the rule as one of the irregular verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774131387911-khzocj7o",
+      "timestamp": "2026-03-21T22:16:41.199Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the irregular conjugation of \"croire\" in the present tense for the \"je\" form, which is explicitly covered by the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774131654172-nkca15so",
+      "timestamp": "2026-03-21T22:21:16.957Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the irregular present tense conjugation of \"croire\" in the first person singular (\"Je crois\"), which is one of the specific irregular verbs covered by rule 01-08.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774131930926-hfqx85cc",
+      "timestamp": "2026-03-21T22:25:40.834Z"
+    }
+  ]
+}
