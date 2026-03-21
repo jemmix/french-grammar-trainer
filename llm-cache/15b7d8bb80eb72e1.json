@@ -1,0 +1,33 @@
+{
+  "cacheKey": "15b7d8bb80eb72e1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-08-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-08 - Les verbes irréguliers courants : voir, croire, boire, écrire, lire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Vous ___ l'entrée de la maison ? »\nChoices:\nA. [CORRECT] voyez\nB. voyons\nC. vois\nD. croyez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774114713723-9x3vva07"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the irregular conjugation of \"voir\" for the subject \"vous\" (voyez), which is exactly what rule 01-08 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774114785541-u4vo6r35",
+      "timestamp": "2026-03-21T17:40:34.927Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the irregular conjugation of \"voir\" for \"vous\" (voyez), which is directly covered by the rule's focus on common irregular verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774115278842-f8s2yw9f",
+      "timestamp": "2026-03-21T17:48:19.244Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"voir\" (one of the irregular verbs in rule 01-08) for the subject \"vous\" in the present indicative, which is the exact grammar concept the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774115723861-ew1by50r",
+      "timestamp": "2026-03-21T17:55:36.892Z"
+    }
+  ]
+}

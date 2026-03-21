@@ -1,0 +1,33 @@
+{
+  "cacheKey": "effc04be40c79003",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-09 - Les verbes en -yer (payer, essayer, envoyer, nettoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Elles ___ à garder les enfants ce soir. »\nChoices:\nA. [CORRECT] essaient\nB. essayaient\nC. essayons\nD. essayer\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774117588245-psac0hw9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -yer verb spelling rule, where \"essayer\" conjugates to \"essaient\" (y→i) for elles in present tense, which is specific to this verb family.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774117828954-ldks9k40",
+      "timestamp": "2026-03-21T18:31:09.331Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -yer verb conjugation rule where 'y' becomes 'i' before mute endings like -e, -es, -e, -ent, which is essential to select \"essaient\" over alternatives like \"essayons\" where 'y' is retained.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118189222-8acdr35v",
+      "timestamp": "2026-03-21T18:37:00.434Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -yer verb \"essayer\" by requiring selection of the correct present tense conjugation \"essaient\" for the plural subject \"elles\", distinguishing it from other tenses and forms.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118552291-8cbp5eqo",
+      "timestamp": "2026-03-21T18:43:02.975Z"
+    }
+  ]
+}

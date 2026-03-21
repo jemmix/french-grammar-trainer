@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d3b6035bfe5f88cb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-07 - Les verbes irréguliers courants : venir, tenir, prendre, mettre\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Elles ___ les documents à la réception. »\nChoices:\nA. [CORRECT] prennent\nB. prenaient\nC. prenez\nD. prendront\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774110614198-cmit3fx6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the present tense conjugation of \"prendre\" (one of the listed irregular verbs) with the correct subject \"elles,\" requiring knowledge that it conjugates to \"prennent\" rather than the regular -er verb pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774110810656-ioej8xpf",
+      "timestamp": "2026-03-21T16:34:46.592Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the irregular present tense conjugation of \"prendre\" for \"elles\" (prennent), which is exactly what rule 01-07 specifies.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774111283908-j3hp36g1",
+      "timestamp": "2026-03-21T16:41:37.261Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the present tense conjugation of \"prendre\" (one of the four irregular verbs in the rule), requiring knowledge of its irregular form \"prennent\" with double 'n' for 3rd person plural, which cannot be determined from regular verb patterns.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774111629093-bvizaqfj",
+      "timestamp": "2026-03-21T16:47:25.325Z"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "cacheKey": "1178653621dc41b0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-09 - Les verbes en -yer (payer, essayer, envoyer, nettoyer)\n\nQUESTION:\nType: Input\nPrompt: Complétez la phrase avec le verbe « nettoyer » au présent.\nPhrase: Ils ___ la salle de bains avec des produits naturels.\nCorrect Answer: nettoient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774117588248-lz7f7bpx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests regular 3rd person plural conjugation of \"nettoyer\", which does not involve the characteristic 'y' to 'i' transformation that defines the -yer verb rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774117909615-sw32h3rv",
+      "timestamp": "2026-03-21T18:32:25.569Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the characteristic y → i spelling change in the ils form of -yer verbs (nettoient vs a regular -er ending), which cannot be correctly answered without knowledge of this -yer verb rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118268417-fn2548vn",
+      "timestamp": "2026-03-21T18:38:33.405Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question uses \"Ils\" (3rd person plural), which yields \"nettoient\" with the 'y' preserved, but the -yer rule is specifically about the optional y→i change that occurs in 1st/2nd/3rd person singular forms (nettoie/nettoies) - this conjugation doesn't test the distinctive feature of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118648512-ve74ohzj",
+      "timestamp": "2026-03-21T18:44:23.860Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -yer verb pattern (y → i before silent e) which is the defining characteristic of verbs like nettoyer, and the form \"nettoient\" specifically demonstrates this spelling change.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118823520-1afkn0gv",
+      "timestamp": "2026-03-21T18:47:27.726Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires inserting the 'i' before 'y' (nettoient), which is the defining feature of -yer verb conjugation for ils/elles in the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118935082-7axwqvpq",
+      "timestamp": "2026-03-21T18:50:17.063Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer \"nettoient\" can be determined using only regular -er verb conjugation knowledge (ils + -ent), without any understanding of the -yer rule's special y→i change pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774119095849-7njd57js",
+      "timestamp": "2026-03-21T18:51:54.257Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The \"ils\" form of -yer verbs doesn't demonstrate the special y→i spelling change (nettoient has the regular -ent ending like any -er verb), so this could be answered without knowing the -yer rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774119212171-qg6r2jdt",
+      "timestamp": "2026-03-21T18:53:54.681Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"nettoyer\" for \"ils\" (3rd person plural), and the correct answer \"nettoient\" demonstrates the y → i change that occurs before the silent -ent ending in -yer verbs, which is the core grammar rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774119322871-g0ouf18x",
+      "timestamp": "2026-03-21T19:00:59.928Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The conjugation \"ils nettoient\" follows the regular -er verb pattern; the special -yer rule (y→i spelling change) only applies to nous/vous forms, so this question doesn't test the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774119659930-idmh10r4",
+      "timestamp": "2026-03-21T19:01:17.902Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The conjugation \"nettoient\" follows the regular -er verb pattern without showing the special y→i spelling change that distinguishes -yer verbs; to properly test this rule, the question should target the je, tu, or nous forms where the distinctive spelling change occurs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774119677903-2cs6hbxy",
+      "timestamp": "2026-03-21T19:01:37.671Z"
+    }
+  ]
+}

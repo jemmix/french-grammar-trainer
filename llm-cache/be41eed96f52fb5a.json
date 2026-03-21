@@ -1,0 +1,33 @@
+{
+  "cacheKey": "be41eed96f52fb5a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-09 - Les verbes en -yer (payer, essayer, envoyer, nettoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je ___ toujours les miettes après le repas. »\nChoices:\nA. [CORRECT] nettoie\nB. nettoyons\nC. nettoient\nD. nettoyer\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774117588246-wu22d1p3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the special -yer verb spelling change (y→i before silent e) to select \"nettoie\" for \"je\" instead of incorrectly expecting \"nettoye\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774117860611-0lyz74bq",
+      "timestamp": "2026-03-21T18:31:15.891Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the -yer verb rule because among the options, only \"nettoie\" correctly applies the mandatory 'y' → 'i' spelling change for -oyer verbs in the je form; a student who doesn't know this rule would need to eliminate other wrong answers through subject-verb agreement alone.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118197935-f5jod33n",
+      "timestamp": "2026-03-21T18:37:32.417Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"nettoyer\" (a -yer verb) in the first person singular, which tests knowledge of the specific conjugation rules for verbs ending in -yer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118584511-qbfofvfh",
+      "timestamp": "2026-03-21T18:43:20.981Z"
+    }
+  ]
+}

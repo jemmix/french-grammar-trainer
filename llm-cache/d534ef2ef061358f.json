@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d534ef2ef061358f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-08-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-08 - Les verbes irréguliers courants : voir, croire, boire, écrire, lire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il ___ une poésie pour son amoureux. »\nChoices:\nA. [CORRECT] écrit\nB. écris\nC. écrivez\nD. lit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774114713727-uihdnkyv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the present indicative conjugation of écrire, which is one of the irregular verbs explicitly covered by the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774115020762-428p8cn2",
+      "timestamp": "2026-03-21T17:44:10.795Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests conjugation of \"écrire\" (one of the listed irregular verbs) in present tense, requiring knowledge of the specific irregular third-person singular form \"écrit\" versus \"écris\" (tu), \"écrivez\" (vous), and a distractor from a different verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774115469549-1k6dsl1t",
+      "timestamp": "2026-03-21T17:51:34.799Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"écrire\" for \"il\" in the present tense, which is one of the irregular verbs explicitly listed in rule 01-08.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774115883638-u4f4v49e",
+      "timestamp": "2026-03-21T17:58:13.404Z"
+    }
+  ]
+}

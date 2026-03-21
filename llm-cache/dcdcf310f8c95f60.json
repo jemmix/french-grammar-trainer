@@ -1,0 +1,82 @@
+{
+  "cacheKey": "dcdcf310f8c95f60",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-09 - Les verbes en -yer (payer, essayer, envoyer, nettoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Elles ___ des colis à leurs clients tous les jours. »\nChoices:\nA. [CORRECT] envoient\nB. envoyait\nC. envoyons\nD. envoyer\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774117588243-gmjml71g"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic -er verb conjugation (elles + -ent) rather than the special -yer spelling rule (y→i), since the 3rd person plural form \"envoient\" doesn't involve the characteristic y→i change that defines -yer verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774117731601-x6zaduvg",
+      "timestamp": "2026-03-21T18:29:16.838Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests basic present tense conjugation of \"envoyer\" for \"elles\" and does not require knowledge of the special -yer verb rule (the stem change where 'y' becomes 'i' in certain conjugations).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118094863-2nhseplr",
+      "timestamp": "2026-03-21T18:35:08.823Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests basic present tense conjugation and subject-verb agreement (elles → -ent ending), not the distinctive -yer rule of changing 'y' to 'i' (e.g., j'envoie, nous envoyons vs ils envoient).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118435075-xeqdu16f",
+      "timestamp": "2026-03-21T18:40:55.344Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The conjugation \"envoient\" follows the regular -er pattern without the y→i spelling change that characterizes -yer verbs, so it can be answered using only basic present tense conjugation knowledge rather than the specific rule about -yer verb spelling variations.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118734471-c5zsuuae",
+      "timestamp": "2026-03-21T18:45:49.183Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the present indicative conjugation of \"envoyer\", a -yer verb; to select \"envoient\" over the other choices requires knowing this is a -yer verb and its conjugation pattern in present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118859884-tr614ldg",
+      "timestamp": "2026-03-21T18:48:15.427Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests basic subject-verb agreement and present tense recognition (Elles → 3rd plural, tous les jours → present), but the 3rd person plural form \"envoient\" doesn't involve the special y→i transformation that characterizes -yer verbs; a student could answer correctly knowing only regular conjugation patterns without understanding the rule's unique -yer behavior.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118992489-s208sps6",
+      "timestamp": "2026-03-21T18:54:33.860Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying the -yer verb rule (y→i change) to conjugate \"envoyer\" correctly for \"elles\" in the present tense, producing \"envoient\" rather than a regular -er verb form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774119361279-zdj3kfoc",
+      "timestamp": "2026-03-21T18:56:24.784Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic present tense conjugation and subject-verb agreement (elles + present tense = envoient), which can be answered correctly without any knowledge of the special -yer spelling rules that define this grammar point.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774119470958-7pfc8i45",
+      "timestamp": "2026-03-21T18:58:19.399Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic present tense conjugation (choosing the correct person/number form) which applies to all -er verbs, not the special y→i spelling rule that defines -yer verbs; the correct form \"elles envoient\" keeps the 'y' unchanged, so no -yer-specific knowledge is required to answer correctly.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774119558875-uuavnpxd",
+      "timestamp": "2026-03-21T19:00:08.628Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly requires identifying the present tense conjugation of \"envoyer\" for \"elles\", which must involve the y→i change characteristic of -yer verbs; the wrong answers test incorrect tense (envoyait), incorrect person (envoyons), and wrong verb form (infinitive), so getting the correct answer \"envoient\" requires knowledge that the y changes to i in this form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774119622663-flk9bt9n",
+      "timestamp": "2026-03-21T19:01:03.604Z"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "cacheKey": "5cf4444c8d496078",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-09 - Les verbes en -yer (payer, essayer, envoyer, nettoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Nous ___ le salon chaque semaine. »\nChoices:\nA. [CORRECT] nettoyons\nB. nettoient\nC. nettoies\nD. nettoyer\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774117588232-frchui56"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests regular -er verb conjugation (nous + -ons), not the special -yer rule (y→i change before vowels), and \"nettoyer\" doesn't undergo the spelling change being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774117588311-djfaqunx",
+      "timestamp": "2026-03-21T18:31:47.702Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests basic -er verb conjugation in present tense; the -yer spelling rule (y→i in certain forms) does not apply to \"nettoyons\" where the y remains unchanged.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118236103-zbohj1gz",
+      "timestamp": "2026-03-21T18:38:45.684Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of \"nettoyer\", an -yer verb, requiring knowledge of how these verbs conjugate in the present tense (even though the nous form doesn't show the y→i change that appears in je/tu/il forms).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118663861-8z368r66",
+      "timestamp": "2026-03-21T18:45:06.113Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question can be answered correctly using only knowledge of basic subject-verb agreement and present tense conjugation; the \"nous\" form of nettoyer doesn't trigger the special y→i spelling change that defines the -yer rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118833317-r22bqb13",
+      "timestamp": "2026-03-21T18:47:32.247Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the nous form of a -yer verb, which does NOT undergo the characteristic y→i transformation that defines this rule; the answer \"nettoyons\" uses the regular -er conjugation pattern without any special -yer change, so the question can be answered using general present tense knowledge rather than requiring knowledge of the -yer rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118940531-w5akd4wz",
+      "timestamp": "2026-03-21T18:49:39.210Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests general verb conjugation for \"nous\" (-ons ending) rather than the -yer rule (y→i before silent e), since \"nettoyons\" doesn't involve the special -yer spelling change.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774119057352-w5xz3v1n",
+      "timestamp": "2026-03-21T18:51:22.364Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The conjugation \"nettoyons\" doesn't trigger the special -yer spelling rule (y → i before silent e), so this only tests standard -er verb conjugation, not the unique -yer verb pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774119174691-ji9p5p53",
+      "timestamp": "2026-03-21T18:53:18.981Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The conjugation \"nettoyons\" (nous form of nettoyer) follows the regular -er verb pattern without any of the distinctive -yer alternations (y→i), so answering correctly requires only standard subject-verb agreement knowledge, not the specific -yer rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774119288293-gkndiskg",
+      "timestamp": "2026-03-21T18:55:22.862Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic subject-verb agreement for the \"nous\" form of \"nettoyer\", which doesn't involve the distinctive -yer spelling rule (y→i before silent 'e'), so it can be answered correctly using only standard -er verb conjugation knowledge.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774119398824-uob0lmgv",
+      "timestamp": "2026-03-21T18:57:12.397Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests standard present tense conjugation with subject \"nous\" — the -yer rule isn't relevant since \"nous nettoyons\" doesn't involve the y→i change.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774119501462-4lge9976",
+      "timestamp": "2026-03-21T18:58:50.824Z"
+    }
+  ]
+}

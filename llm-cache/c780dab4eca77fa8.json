@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c780dab4eca77fa8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-08-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-08 - Les verbes irréguliers courants : voir, croire, boire, écrire, lire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Elles ___ que les vacances arrivent bientôt. »\nChoices:\nA. [CORRECT] croient\nB. croit\nC. croyons\nD. voient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774114713727-fba1cnxn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the correct present tense conjugation of \"croire\" with \"elles\" (3rd person plural), which is a core irregular verb pattern covered by this rule, and distractors include wrong conjugations of croire and a different verb from the same family.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774115052955-hyrnm2o2",
+      "timestamp": "2026-03-21T17:48:50.581Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the conjugation of \"croire\" (one of the irregular verbs listed in the rule) for 3rd person plural, which cannot be correctly answered without knowing the specific irregular conjugation pattern being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774115747105-jrqj8oox",
+      "timestamp": "2026-03-21T17:56:01.246Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of \"croire\" in present tense for \"elles\" (3rd person plural), which is one of the irregular verbs listed in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774116004360-k2fzbm30",
+      "timestamp": "2026-03-21T18:00:19.473Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "be2d6ad067ea69f6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-09 - Les verbes en -yer (payer, essayer, envoyer, nettoyer)\n\nQUESTION:\nType: Input\nPrompt: Complétez la phrase avec le verbe « essayer » au présent.\nPhrase: Tu ___ cette veste pour voir si elle te va.\nCorrect Answer: essaies\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774117588247-krkapdrq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that -yer verbs change \"y\" to \"i\" before mute \"e\" (tu essaies), which is the defining characteristic of this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774117878117-ryir7r5t",
+      "timestamp": "2026-03-21T18:32:08.884Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"essayer\" in the tu form, and the correct answer \"essaies\" demonstrates the characteristic y→i transformation specific to -yer verbs, which cannot be deduced from regular -er verb patterns alone.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118249392-z6nf981q",
+      "timestamp": "2026-03-21T18:37:42.994Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the special conjugation pattern of -yer verbs where y changes to i before silent e (essaies), which is the core concept of rule 01-09.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774118600981-6tas4x7u",
+      "timestamp": "2026-03-21T18:43:33.562Z"
+    }
+  ]
+}
