@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ab2c4681f85d331d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-07 - Les verbes irréguliers courants : venir, tenir, prendre, mettre\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Tu ___ souvent à la fête avec nous. »\nChoices:\nA. [CORRECT] viens\nB. venais\nC. viendras\nD. vienne\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774128009747-1wh7whhy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowing the present tense conjugation of \"venir\" for \"tu\", which is exactly what rule 01-07 covers for irregular verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774128339057-t6rxtqih",
+      "timestamp": "2026-03-21T21:26:12.900Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the present tense conjugation of \"venir\" (tu viens), which is one of the four irregular verbs listed in the rule, and cannot be answered correctly without knowledge of its irregular present tense form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774128782443-iz5iozjx",
+      "timestamp": "2026-03-21T21:33:14.395Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the irregular present tense conjugation of \"venir\" for \"tu\" (viens), which is exactly what rule 01-07 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774129112581-rnf9acsc",
+      "timestamp": "2026-03-21T21:38:45.792Z"
+    }
+  ]
+}
