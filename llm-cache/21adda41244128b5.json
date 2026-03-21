@@ -1,0 +1,33 @@
+{
+  "cacheKey": "21adda41244128b5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-06-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-06 - Les verbes irréguliers courants : pouvoir, vouloir, devoir, savoir\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je ___ finir mon travail. »\nChoices:\nA. [CORRECT] dois\nB. doit\nC. devons\nD. devait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774030682354-sveg3b0k"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the conjugation of \"devoir\" (one of the four irregular verbs listed in the rule) in the present tense, requiring knowledge of the specific irregular form \"dois\" for \"je\" rather than the regular pattern or other tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774030815897-72n15jkx",
+      "timestamp": "2026-03-20T18:21:05.162Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"devoir\" (one of the four irregular verbs in the rule) in the present tense for the subject \"Je\", directly testing the irregular conjugation covered by rule 01-06.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774093498245-n0obzzh1",
+      "timestamp": "2026-03-21T11:45:13.601Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the conjugation of the irregular verb \"devoir\" in the present indicative, which is central to the stated rule about common irregular verbs including pouvoir, vouloir, devoir, and savoir.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774093846499-31wc2380",
+      "timestamp": "2026-03-21T11:51:05.223Z"
+    }
+  ]
+}
