@@ -1,0 +1,54 @@
+{
+  "cacheKey": "e5c308919d615d55",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-12-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-12 - Les verbes pronominaux au présent (se lever, se souvenir, s'asseoir)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe se préparer au présent.\nPhrase: Vous vous ___ pour le voyage ?\nCorrect Answer: préparez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774729819884-g67vbsc7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugating a pronominal verb (se préparer) in the present tense, which directly requires knowledge of the rule for pronominal verbs at present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774730228530-v1dz772l",
+      "timestamp": "2026-03-28T20:37:20.333Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The reflexive pronoun \"vous\" is already provided in the phrase \"Vous vous ___\", so the question only requires conjugating the regular -er verb \"préparez\" without demonstrating knowledge of reflexive verb mechanics or pronoun placement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774730726579-y42kksy7",
+      "timestamp": "2026-03-28T20:45:39.870Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating the pronominal verb \"se préparer\" in the present tense for \"vous\", which directly tests knowledge of pronominal verbs and their present tense conjugation pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774731556604-jnjubvzs",
+      "timestamp": "2026-03-28T20:59:31.559Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating the reflexive verb \"se préparer\" in the present tense, which directly tests the stated rule about verbes pronominaux au présent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774731639096-t06cm1y0",
+      "timestamp": "2026-03-28T21:01:07.707Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of how to conjugate the reflexive verb \"se préparer\" in the present tense, which is exactly what the rule on verbes pronominaux au présent tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774731677087-9ocfg0k0",
+      "timestamp": "2026-03-28T21:01:49.729Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The reflexive pronoun is already provided in the sentence (\"vous vous\"), so the question only tests standard -er verb present tense conjugation, not the mechanics of reflexive verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774731709730-48j16uqx",
+      "timestamp": "2026-03-28T21:02:41.725Z"
+    }
+  ]
+}

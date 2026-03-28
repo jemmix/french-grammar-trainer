@@ -1,0 +1,26 @@
+{
+  "cacheKey": "1f2e406649adb8e9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-12-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-12 - Les verbes pronominaux au présent (se lever, se souvenir, s'asseoir)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Nous ___ à 7 heures le matin. »\nChoices:\nA. [CORRECT] nous levons\nB. nous lever\nC. levons\nD. vous levez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774729819882-5jvuyhdv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the simple present conjugation of \"lever\" (to lift) but the rule concerns reflexive verbs (verbes pronominaux) like \"se lever\" (to get up) — the correct answer \"nous levons\" is not reflexive, and the prompt doesn't include a reflexive pronoun structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774729834278-4e4f29h4",
+      "timestamp": "2026-03-28T20:30:50.482Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer \"nous levons\" is the regular form, not the pronominal form \"nous nous levons\" with reflexive pronoun required by the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774730276216-rw6sguj2",
+      "timestamp": "2026-03-28T20:38:17.995Z"
+    }
+  ]
+}

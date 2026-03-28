@@ -1,0 +1,26 @@
+{
+  "cacheKey": "cf1d75cf22c21373",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-12-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-12 - Les verbes pronominaux au présent (se lever, se souvenir, s'asseoir)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Vous ___ toujours tard le samedi. »\nChoices:\nA. [CORRECT] vous couchez\nB. vous coucher\nC. te couches\nD. nous couchons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774729819883-a2hx74t9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests standard present tense conjugation of \"coucher\" (to go to bed), not the reflexive/pronominal form \"se coucher\"; there is no reflexive pronoun required in the answer, making this a simple verb conjugation task unrelated to pronominal verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774730110383-epkbutg2",
+      "timestamp": "2026-03-28T20:35:26.559Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests regular conjugation of \"coucher\" (non-pronominal) in the present tense, not pronominal verbs with reflexive pronouns.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774730611236-mwym77ie",
+      "timestamp": "2026-03-28T20:44:02.856Z"
+    }
+  ]
+}

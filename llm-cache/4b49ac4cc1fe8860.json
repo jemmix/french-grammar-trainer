@@ -1,0 +1,47 @@
+{
+  "cacheKey": "4b49ac4cc1fe8860",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-12-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-12 - Les verbes pronominaux au présent (se lever, se souvenir, s'asseoir)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Vous vous ___ toujours tard le samedi. » (verbe : se coucher)\nChoices:\nA. [CORRECT] couchez\nB. coucher\nC. couches\nD. couchons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774732038356-alztuk93"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests present tense conjugation of the pronominal verb \"se coucher\", which is the exact scope of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774732344016-wbitel5h",
+      "timestamp": "2026-03-28T21:12:46.755Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugating a reflexive verb (se coucher) in the present tense for \"vous\", which requires knowledge of the stated rule about reflexive verbs in the present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774732728294-mm28cg5t",
+      "timestamp": "2026-03-28T21:19:07.398Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The reflexive pronoun \"vous\" is already provided in the sentence (\"Vous vous ___\"), so answering correctly only requires knowing the conjugation of \"coucher\" for \"vous,\" not the full mechanics of pronominal verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774733094777-1adw5lhg",
+      "timestamp": "2026-03-28T21:25:29.673Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of a pronominal verb (se coucher) in the present tense with the subject \"vous\", requiring knowledge of how pronominal verbs work and their correct present tense forms.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774733199640-4z7miieg",
+      "timestamp": "2026-03-28T21:29:09.960Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests basic conjugation of \"coucher\" for \"vous\" since the reflexive pronoun \"vous\" is already provided in the prompt; a student could answer correctly without understanding reflexive verbs or how they work.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774733349960-miyk2mor",
+      "timestamp": "2026-03-28T21:29:26.153Z"
+    }
+  ]
+}

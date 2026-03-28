@@ -888,6 +888,8 @@ export const answerHints: Record<string, string> = {
   "Ne pas laisser": "laisser",
   "Donne-m'en": "donner",
   "polonais": "nom",
+  "souvenons": "se souvenir",
+  "préparez": "se préparer",
   "Le mandarin": "nom",
 };
 

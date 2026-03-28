@@ -1,0 +1,47 @@
+{
+  "cacheKey": "a678ac60a709f776",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-12-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-12 - Les verbes pronominaux au présent (se lever, se souvenir, s'asseoir)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe se souvenir au présent.\nPhrase: Nous ___ de cette belle époque.\nCorrect Answer: nous souvenons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774729819884-90zsh2tx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer \"nous souvenons\" is grammatically incorrect for the reflexive verb \"se souvenir\" (should be \"nous nous souvenons\" with the reflexive pronoun), and accepting this wrong answer means the question fails to test the proper conjugation of pronominal verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774730205403-zcsf1liu",
+      "timestamp": "2026-03-28T20:37:06.634Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly requires knowledge that \"se souvenir\" is a pronominal verb and must be conjugated with the reflexive pronoun \"nous\" before the verb \"souvenons\" in the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774730710709-yojpsiof",
+      "timestamp": "2026-03-28T20:45:26.579Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests reflexive verb conjugation in present tense, requiring both the reflexive pronoun and correct verb form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774731544315-2ye4bf4d",
+      "timestamp": "2026-03-28T20:59:34.975Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of the pronominal verb \"se souvenir\" in the present tense for the subject \"nous\", which directly relates to rule 01-12 about pronominal verbs at the present tense.\n\nNote: The provided answer \"nous souvenons\" appears incomplete — it should be \"Nous nous souvenons\" to include the reflexive pronoun required for this pronominal verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774731641054-cxaexzcu",
+      "timestamp": "2026-03-28T21:01:01.736Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct conjugation of the pronominal verb \"se souvenir\" is \"nous nous souvenons\" (including the reflexive pronoun), but the answer \"nous souvenons\" is incomplete, indicating the question doesn't properly test the full reflexive verb conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774731675175-mxe2t17r",
+      "timestamp": "2026-03-28T21:01:35.043Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ebf6d9a624bffa1b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-12-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-12 - Les verbes pronominaux au présent (se lever, se souvenir, s'asseoir)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Nous nous ___ de cette journée inoubliable. » (verbe : se souvenir)\nChoices:\nA. [CORRECT] souvenons\nB. souvenir\nC. souviens\nD. souvient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774732038356-p92psljk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"se souvenir\" (a pronominal verb listed in the rule) with \"nous\" in the present tense, which directly tests pronominal verb conjugation in the present indicative.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774732316422-r17mbeff",
+      "timestamp": "2026-03-28T21:12:14.017Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of the reflexive verb \"se souvenir\" in the present tense for \"nous\", which is exactly what rule 01-12 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774732689260-ta6wlc6i",
+      "timestamp": "2026-03-28T21:19:30.251Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of how to conjugate the pronominal verb \"se souvenir\" in the present tense for the subject \"nous\", which is the exact topic of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774733120320-v4uf39yy",
+      "timestamp": "2026-03-28T21:25:40.983Z"
+    }
+  ]
+}

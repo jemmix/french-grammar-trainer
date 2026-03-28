@@ -1,0 +1,33 @@
+{
+  "cacheKey": "de9828c6626ee61f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-12-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-12 - Les verbes pronominaux au présent (se lever, se souvenir, s'asseoir)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Il ___ tous les jours à 6 heures. » (verbe : se lever)\nChoices:\nA. [CORRECT] se lève\nB. se lever\nC. lève\nD. me lève\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774732038355-vq52cax8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating a reflexive verb (se lever) in the present tense with the correct pronoun (se for il), which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774732065601-anggqoyi",
+      "timestamp": "2026-03-28T21:08:09.377Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that se lever is a pronominal verb needing the reflexive pronoun se conjugated for il, and distinguishes it from both non-pronominal forms (lève) and wrong pronouns (me lève).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774732464375-7139wfd0",
+      "timestamp": "2026-03-28T21:14:38.684Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of reflexive pronoun agreement (se for \"Il\") and present tense conjugation of a reflexive verb, which are core aspects of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774732825382-4fc49f56",
+      "timestamp": "2026-03-28T21:20:39.472Z"
+    }
+  ]
+}

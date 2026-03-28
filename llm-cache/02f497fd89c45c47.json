@@ -1,0 +1,26 @@
+{
+  "cacheKey": "02f497fd89c45c47",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-12-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Conjuguez le verbe se souvenir au présent. Quel est le pronom réfléchi et le verbe conjugué pour « nous » ?\n\nPHRASE: Nous nous ___ de cette belle époque.\n\nHINT: se souvenir\n\nEXPECTED ANSWER: souvenons\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1774732038360-mr5l9g2x"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt asks for both the reflexive pronoun AND the conjugated verb, but the phrase already contains \"nous nous\" (subject + reflexive pronoun) and only expects the verb form \"souvenons\" in the blank, creating a mismatch between what's requested and what's needed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774732382799-oq9kh7hs",
+      "timestamp": "2026-03-28T21:13:13.290Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks for both the reflexive pronoun and the conjugated verb, but the phrase already contains \"Nous nous\" and the blank appears positioned after the pronoun, creating confusion about whether the answer should include \"nous\" or only \"souvenons\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774732750505-0pzgj76i",
+      "timestamp": "2026-03-28T21:19:22.794Z"
+    }
+  ]
+}
