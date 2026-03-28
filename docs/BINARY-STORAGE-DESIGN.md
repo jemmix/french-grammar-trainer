@@ -1,6 +1,6 @@
 # Binary Question Storage — Design Doc
 
-**Status:** Draft v0.2
+**Status:** Draft v0.3
 **Goal:** Instantaneous cold starts on Vercel at 280K questions (28 sections × 20 rules × 500 questions).
 
 ## Problem
@@ -29,38 +29,45 @@ All three files ship as static assets. At runtime the app reads them into `Array
 
 The dictionary is the foundation: every string in every question (prompt text, choice text, explanations, phrase fields) is split into words, and each word is replaced by a uint32 ID. Lower IDs are assigned to more frequent words (pseudo-Huffman), so varint encoding produces the smallest bytes for the most common words.
 
+**Zero-init design:** the file IS the lookup structure. No parsing into JS objects. Word IDs are sequential (0..N), so decoding uses a flat offset table — two `DataView` reads per word, no hashmap probing at runtime.
+
 ```
 ┌──────────────────────────────────────────────────┐
 │ Header (16 bytes)                                │
 │   magic       uint32   0x574F5244 ("WORD")       │
 │   version     uint8    1                         │
-│   wordCount   uint32   total unique words        │
-│   bucketCount uint32   # of hashmap buckets      │
-│   stringOff   uint32   offset to string table    │
+│   wordCount   uint32   N = total unique words    │
+│   offsetsOff  uint32   offset to flat offset tbl │
+│   stringsOff  uint32   offset to string table    │
 │   (padding)   3 bytes                            │
 ├──────────────────────────────────────────────────┤
-│ Hashmap (bucketCount × 12 bytes)                 │
-│   Per bucket:                                    │
-│     hash24     uint24   lower 24 bits of xxhash  │
-│     wordId     uint32   word ID (0-based)        │
-│     offset     uint32   byte offset in string tbl│
+│ Flat offset table (N × 4 bytes)                  │
+│   offsets[0]  uint32   byte offset of word 0     │
+│   offsets[1]  uint32   byte offset of word 1     │
+│   ...                                            │
+│   offsets[N-1] uint32  byte offset of word N-1   │
 ├──────────────────────────────────────────────────┤
-│ String table (variable length)                   │
-│   Each entry:                                    │
+│ String table (variable length, at stringsOff)     │
+│   Each word:                                     │
 │     len         varint   byte length of word     │
 │     bytes       byte[]   UTF-8 word (no NUL)     │
 └──────────────────────────────────────────────────┘
 ```
 
-**Lookup (word → uint32):** hash the word, mod `bucketCount`, linear-probe the hashmap. Compare the hash24 + full string on match. Returns `wordId`.
+**Lookup (uint32 → word string) — runtime decoding:**
+```
+1. read uint32 at buffer[offsetsOff + wordId * 4]  → strOffset
+2. read varint at buffer[strOffset]                → len
+3. decode UTF-8 at buffer[strOffset + varintSize, len]  → word
+```
+Two reads on ramdisk. No hashmap, no init, no JS object construction.
 
-**Lookup (uint32 → word):** since word IDs are sequential starting at 0, and each string-table entry is fixed by its offset stored in the hashmap entry, we can also build a direct `wordId → string table offset` index at load time by scanning the hashmap into a flat array.
+**Lookup (word string → uint32) — build time only:**
+The build tool creates a separate hashmap section (omitted from above for clarity) or uses a sidecar file. This lookup is never needed at runtime — only during the build pipeline when encoding questions.
 
-**Load strategy:** read entire file once into an `ArrayBuffer`. Build two runtime arrays:
-- `words: string[]` — indexed by wordId, for decoding
-- `wordToId: Map<string, number>` — for encoding (build phase only)
+**Init cost:** zero. `fs.readFileSync` into a Buffer. The Buffer points into kernel page cache (ramdisk). No parsing.
 
-At 280K questions with ~20 words each, the unique word count will be ~5K–15K (French has a limited vocabulary in grammar exercises). The hashmap with ~32K buckets × 12 bytes ≈ 384KB. The string table ≈ 100KB. Total: **~500KB per language**.
+**Size:** ~5K–15K unique words × 4 bytes/offset ≈ 60KB offset table + ~100KB string table ≈ **~160KB per language**.
 
 ### 2. `questions-{lang}.bin` — Question Data
 
@@ -201,58 +208,85 @@ Three separate hashmaps in one file: sections, rules, and individual questions. 
 
 **Size estimate:** 280K question buckets × 12 bytes × (1/0.7 load factor) ≈ **4.8 MB** for the question hashmap. Rules: 560 × 20 × (1/0.7) ≈ 16 KB. Sections: negligible. Total: **~5 MB**.
 
-**Load strategy:** read entire file into `ArrayBuffer`. Build runtime `Map`s during initialization. On a ramdisk this is a single ~5 MB read — sub-millisecond.
+**Init cost:** zero. `fs.readFileSync` → Buffer. No parsing into JS Maps.
+
+**Runtime lookup (all from Buffer, no JS objects):**
+```
+function probeQuestion(buf, key): { offset, length } {
+  const h = xxh32(key) % questionBuckets;
+  let i = h;
+  while (true) {
+    const off = headerSize + i * 12;
+    if (buf.getUint32(off) == xxh32(key)) {
+      // verify full key string match
+      if (keyMatch(buf, buf.getUint32(off + 4), key)) {
+        return { offset: buf.getUint32(off + 8), length: buf.getUint16(off + 12) };
+      }
+    }
+    i = (i + 1) % questionBuckets;
+  }
+}
+```
+Typical: 1-2 probes (0.7 load factor), each probe = 3 `DataView` reads. On ramdisk-resident buffer: ~nanoseconds.
 
 ## Runtime Flow
 
 ### Initialization (once per cold start)
 
 ```
-1. Read dictionary-{lang}.bin → ArrayBuffer (≈500KB)
-2. Parse dictionary: build words[] array for decoding
-3. Read index-{lang}.bin → ArrayBuffer (≈5MB)
-4. Parse index: build sectionMap, ruleMap, questionMap
-5. DO NOT read questions.bin — defer to each request
+1. dictBuf  = fs.readFileSync("dictionary-{lang}.bin")   // ~160KB
+2. indexBuf = fs.readFileSync("index-{lang}.bin")         // ~5MB
+3. qFd      = fs.openSync("questions-{lang}.bin", "r")    // file handle only
 ```
 
-Steps 1–4 take < 5ms on a ramdisk (two sequential reads + simple struct parsing).
+**That's it.** Three syscalls. No parsing, no Map construction, no object allocation. On Vercel's ramdisk, `readFileSync` doesn't even copy — the Buffer points into kernel page cache. Cold start impact: **~0ms** (dominated by module resolution, not data).
 
 ### Hot path: pick a random question for a rule
 
 This is the most latency-sensitive operation in the app.
 
 ```
-1. Look up ruleId in ruleMap → { offset, length, count }
-2. Pick a random index i ∈ [0, count)
-3. Derive question ID from ruleId + i (e.g. "01-03-042")
-4. Look up questionId in questionMap → { offset, length }
-5. fseek to question offset in questions.bin (ramdisk: ≈ free)
-6. Read length bytes → single protobuf message
-7. Decode protobuf + resolve WordSeqs → Question object
-8. Return one question
+1. Probe indexBuf for ruleId → { offset, count }          // 2 DataView reads
+2. Pick random i ∈ [0, count)
+3. Derive questionId = `${ruleId}-${String(i+1).padStart(3,"0")}`
+4. Probe indexBuf for questionId → { offset, length }     // 2 DataView reads
+5. fs.read(qFd, buf, 0, length, offset)                   // ~150 bytes from ramdisk
+6. Decode single protobuf message from buf
+7. For each WordSeq: for each wordId, read dictBuf → word string
+8. Return Question object
 ```
 
-This is **one disk seek + one small read + one protobuf decode** — all on ramdisk. Expected: < 1ms.
+**Per-request cost:** 4 hashmap probes (each ~3 DataView reads) + 1 file read (~150 bytes) + 1 protobuf decode + ~60 word lookups (each 2 DataView reads). All operating on data already in CPU cache. Expected: **< 1ms**.
 
 ### Warm path: load all questions for a rule
 
-Used when the app needs the full question set (e.g. shuffling, analytics).
-
 ```
-1. Look up ruleId in ruleMap → { offset, length, count }
-2. Read questions.bin[offset..offset+length] → ArrayBuffer
-3. Decode count protobuf messages
-4. For each message, resolve WordSeq fields → strings using words[]
+1. Probe indexBuf for ruleId → { offset, length, count }
+2. fs.read(qFd, buf, 0, length, offset)     // ~75KB from ramdisk
+3. Decode count protobuf messages from buf
+4. Resolve WordSeqs via dictBuf
 5. Return Question[]
 ```
 
-For a single rule (500 questions × ~150 bytes ≈ 75KB), this is one seek + one read + protobuf decoding. Expected: < 2ms.
+Expected: **< 2ms** for 500 questions.
 
-### Memory-resident caching
+### Why not parse into Maps at init?
 
-- Dictionary and index: always resident in `ArrayBuffer` + parsed `Map`s.
-- Individual decoded questions: optional LRU cache. On Vercel, the function instance survives between requests, so hot rules stay decoded.
-- `questions.bin` file handle: kept open, rely on OS page cache / ramdisk. No need to duplicate 42MB into app memory — `fseek` on ramdisk is a pointer arithmetic, effectively free.
+Parsing 5MB of binary index into JS `Map<string, {offset, length}>` means:
+- 280K string allocations for question ID keys
+- 280K object allocations for values
+- 280K Map.insert operations (hash + bucket insertion)
+- All on a cold V8 that hasn't JIT'd any of this code yet
+
+Empirically, this kind of init on Vercel serverless takes **5–20ms** — not catastrophic, but it's proportional to question count and runs on every cold start. The zero-init approach has constant cost regardless of data size.
+
+The tradeoff: per-request lookups do `DataView` reads instead of `Map.get()`. But `Map.get()` with a string key still hashes the key internally — and probing a binary hashmap in a Buffer that's in L1/L2 cache is comparable. The difference (~10s of ns vs ~100s of ns) is invisible next to protobuf decoding.
+
+### Memory layout
+
+- `dictBuf`: ~160KB, always resident, in CPU cache (accessed every request)
+- `indexBuf`: ~5MB, always resident, hot pages stay cached
+- `questions.bin`: 42MB on disk, never fully loaded. Individual ~150 byte reads via file descriptor. OS page cache handles the rest — only touched pages are in RAM.
 
 ## Build Pipeline
 
@@ -336,3 +370,4 @@ Recommendation: embed in index.bin for consistency. No separate file needed.
 - **Word splitting:** split by single space, join by single space. No punctuation tokenization. Build validates no double spaces in source. (v0.2)
 - **Per-question indexing:** every question gets its own entry in the index hashmap. The hot path picks a random question ID, looks up its offset, seeks directly to that single protobuf. No need to decode a whole rule just to get one question. (v0.2)
 - **Lazy file reads:** `questions.bin` is never fully loaded into app memory. File handle kept open, individual questions read on demand via seek + read. Ramdisk makes seeks essentially free. (v0.2)
+- **Zero-init:** no parsing of binary files into JS objects at cold start. `fs.readFileSync` into Buffer (points to kernel page cache on ramdisk), file descriptor for questions. All lookups probe the Buffer directly via `DataView`. Dictionary uses flat offset table (sequential word IDs → no hashmap needed at runtime). Init cost: 3 syscalls, ~0ms. (v0.3)
