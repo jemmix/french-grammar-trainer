@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3f860a06d4251138",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-13-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Les verbes pronominaux réciproques (se parler, se regarder, se téléphoner)\n\nQUESTION:\nPrompt: Complétez avec la forme correcte du verbe réciproque.\nPhrase: Les deux amies s'___ une lettre chaque semaine.\nHint: s'écrire\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1774702435383-imhc1xpp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The hint \"s'écrire\" (to write to each other) cannot take \"une lettre\" as a direct object in French - you say \"elles s'écrivent\" not \"elles s'écrivent une lettre\", making the prompt grammatically impossible to complete as instructed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774702983176-nd4f56yc",
+      "timestamp": "2026-03-28T13:03:16.583Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly asks to complete with the correct form of the reciprocal verb, the hint \"s'écrire\" specifies which verb, and the context \"Les deux amies s'___\" makes it unambiguous that the user should conjugate s'écrire appropriately (s'écrivent).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774703527850-m76nohfh",
+      "timestamp": "2026-03-28T13:12:23.668Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt \"Complétez avec la forme correcte du verbe réciproque\" doesn't specify whether the blank should contain the conjugated verb (\"écrivent\"), the infinitive (\"écrire\"), or something else, and the hint \"s'écrire\" shows the full pronominal form while the blank already includes the \"s'\" prefix.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774703995995-0z2752aa",
+      "timestamp": "2026-03-28T13:20:23.752Z"
+    }
+  ]
+}

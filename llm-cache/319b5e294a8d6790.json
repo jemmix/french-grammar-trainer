@@ -1,0 +1,33 @@
+{
+  "cacheKey": "319b5e294a8d6790",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Je ___ un livre à terre. »\nChoices:\nA. [CORRECT] jette\nB. jete\nC. jète\nD. jetasse\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774705452663-f2yg17du"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"jeter\" doubles the consonant in certain present tense conjugations (je jette), which is the core concept of the rule about -eler/-eter verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774705765422-jia5xhnx",
+      "timestamp": "2026-03-28T13:49:38.648Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"jeter\" doubles the 't' in singular present tense forms (jet → jette), which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774706173050-ll2p2fgw",
+      "timestamp": "2026-03-28T13:56:26.808Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"jeter\" (a verb ending in -eter) doubles the consonant in the present tense (\"je jette\"), which is precisely what rule 01-10 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774706562501-ap5kc2oq",
+      "timestamp": "2026-03-28T14:02:59.377Z"
+    }
+  ]
+}

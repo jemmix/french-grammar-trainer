@@ -1,0 +1,33 @@
+{
+  "cacheKey": "735437a5b9933261",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-13-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-13 - Les verbes pronominaux réciproques (se parler, se regarder, se téléphoner)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Nous nous ___ une lettre chaque mois. »\nChoices:\nA. [CORRECT] écrivons\nB. écrivez\nC. écrit\nD. s'écrivent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774702435376-9wwjtyl7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The verb \"s'écrire\" (to write to each other) is a reciprocal pronominal verb, and the question requires understanding this reciprocal concept to correctly conjugate \"nous nous écrivons\" for the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774702618601-wo2jjd8p",
+      "timestamp": "2026-03-28T12:57:22.141Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests reciprocal pronominal verb \"s'écrire\" in a context where \"Nous nous écrivons\" means \"we write to each other\" - answering correctly requires understanding this as a reciprocal action between people.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774703221814-mricx28a",
+      "timestamp": "2026-03-28T13:07:16.607Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"s'écrire\" - a reciprocal pronominal verb - with \"nous,\" and students must recognize this is a reciprocal construction to choose \"écrivons\" over reflexive forms like \"s'écrivent.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774703763948-6potkvt6",
+      "timestamp": "2026-03-28T13:16:22.045Z"
+    }
+  ]
+}

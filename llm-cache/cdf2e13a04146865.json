@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cdf2e13a04146865",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Vous ___ le mot difficile à prononcer. »\nChoices:\nA. [CORRECT] épelez\nB. épellez\nC. épèlez\nD. épeliez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774705452663-yod54sw4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the -eler verb conjugation rule by requiring knowledge that \"vous épelez\" (not \"épellez\") doubles the 'l' for \"nous/vous\" forms.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774705676915-uenrf02n",
+      "timestamp": "2026-03-28T13:48:22.906Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the vous conjugation of épeler, an -eler verb that uses grave accents (è) instead of doubling the consonant — exactly the -eler/-eter irregular verb pattern covered by this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774706116009-14fndaw1",
+      "timestamp": "2026-03-28T13:55:38.468Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of épeler (a -eler verb), requiring knowledge of when NOT to double the consonant in the \"vous\" form, which is exactly what rule 01-10 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774706502830-erlpqk3a",
+      "timestamp": "2026-03-28T14:02:08.444Z"
+    }
+  ]
+}

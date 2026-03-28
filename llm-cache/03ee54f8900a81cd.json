@@ -1,0 +1,33 @@
+{
+  "cacheKey": "03ee54f8900a81cd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-13-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-13 - Les verbes pronominaux réciproques (se parler, se regarder, se téléphoner)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe réciproque au présent.\nPhrase: Vous vous ___ depuis dix ans ?\nCorrect Answer: connaissez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774702435383-v3j8ztlt"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The reciprocal pronoun structure (\"Vous vous ___\") is already complete; the question primarily tests present tense conjugation of connaître, not the mechanics or patterns of reciprocal pronominal verbs themselves.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774702947496-uv8k1j5l",
+      "timestamp": "2026-03-28T13:03:57.381Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Se connaître\" is a reciprocal pronominal verb when used with multiple subjects (meaning \"to know each other\"), and correctly conjugating it at the present tense with \"vous\" as the subject requires knowledge of how reciprocal pronominal verbs work.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774703577958-9mvy1qy8",
+      "timestamp": "2026-03-28T13:13:34.000Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: While \"se connaître\" can be reciprocal, this question tests present tense conjugation of a pronominal verb - the reciprocal meaning is not central to answering correctly.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774704026943-4yjzwl2i",
+      "timestamp": "2026-03-28T13:21:35.488Z"
+    }
+  ]
+}

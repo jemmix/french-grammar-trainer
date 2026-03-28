@@ -1,0 +1,33 @@
+{
+  "cacheKey": "67f09508a349f0e5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Nous ___ nos clients chaque semaine. »\nChoices:\nA. [CORRECT] appelons\nB. appellons\nC. appèlons\nD. appelais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774705452662-4fmp5w4r"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"appeler\" (an -eler verb) conjugates as \"nous appelons\" without doubling the consonant in the nous form, distinguishing it from forms like \"j'appelle\" where doubling does occur.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774705496783-b5o2dgxe",
+      "timestamp": "2026-03-28T13:45:15.885Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of when to double the consonant in -eler verbs (specifically that \"nous appelons\" keeps a single L unlike \"nous appelons\" in other forms), which is the core concept of rule 01-10.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774705922016-dkahasyz",
+      "timestamp": "2026-03-28T13:52:14.683Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowing the specific rule for -eler verbs: consonant doubling occurs for je/tu/il/ils/elles (j'appelle) but NOT for nous/vous (nous appelons), so you must understand this rule to choose correctly between \"appelons\" and the incorrect \"appellons.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774706331943-c2kqczs5",
+      "timestamp": "2026-03-28T13:59:03.609Z"
+    }
+  ]
+}

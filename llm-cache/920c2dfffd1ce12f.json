@@ -1,0 +1,26 @@
+{
+  "cacheKey": "920c2dfffd1ce12f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-13-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-13 - Les verbes pronominaux réciproques (se parler, se regarder, se téléphoner)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Nous nous ___ avec un grand sourire. »\nChoices:\nA. [CORRECT] sourions\nB. sourient\nC. souriez\nD. sourit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774702435383-o5je72lf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests present tense conjugation of \"sourire\" rather than reciprocal pronominal verbs; the sentence \"Nous nous ___ avec un grand sourire\" doesn't clearly establish a reciprocal context (multiple people smiling at each other), and without clear mutual action, the question can be answered using general conjugation knowledge rather than understanding reciprocity.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774703032105-vaecgh2c",
+      "timestamp": "2026-03-28T13:04:12.979Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This tests present tense conjugation of \"sourire\" (nous nous sourions) but doesn't require knowledge of reciprocal verbs since the pronominal structure is already provided and the task is simply conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774703588764-x18xqch4",
+      "timestamp": "2026-03-28T13:13:29.933Z"
+    }
+  ]
+}

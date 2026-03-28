@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9a2d420613f44a21",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Il ___ son nom au guichet. »\nChoices:\nA. [CORRECT] épelle\nB. épele\nC. épèle\nD. épelait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774705452663-rgr4u8o1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests conjugation of \"épeler\" (a verb ending in -eler), requiring knowledge that the L is doubled in present tense (\"il épelle\"), which is precisely the rule stated.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774705725570-8d33igh0",
+      "timestamp": "2026-03-28T13:48:55.549Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -eler verb conjugation rule specifically by requiring knowledge that \"épeler\" doubles the consonant (ll) before a mute e in the third person singular present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774706137702-tsvsj4bp",
+      "timestamp": "2026-03-28T13:55:49.019Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"épeler\" (to spell) is a -eler verb that doubles the consonant in singular forms (j'épelle, tu épelles, il épelle), which is exactly what rule 01-10 tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774706519871-rxb9o5st",
+      "timestamp": "2026-03-28T14:02:34.589Z"
+    }
+  ]
+}

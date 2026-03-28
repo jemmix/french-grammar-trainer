@@ -1,0 +1,47 @@
+{
+  "cacheKey": "dec0edf810340dd5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-13-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-13 - Les verbes pronominaux réciproques (se parler, se regarder, se téléphoner)\n\nQUESTION:\nType: Input\nPrompt: Complétez avec la forme correcte du verbe réciproque.\nPhrase: Les deux amies s'___ une lettre chaque semaine.\nCorrect Answer: écrivent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774702435383-rjks5chm"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"s'écrire\" is a reciprocal pronominal verb and tests conjugating it in the present tense for \"les deux amies\", which directly depends on the rule about verbes pronominaux réciproques.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774702978362-6giuy3rq",
+      "timestamp": "2026-03-28T13:03:13.497Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question primarily tests standard present tense conjugation of \"écrire\" rather than the reciprocal verb concept; \"s'écrivent\" can be determined purely through verb conjugation knowledge without understanding reciprocity (mutual action between subjects).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774703516689-wque4m5v",
+      "timestamp": "2026-03-28T13:12:49.860Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"s'écrire\" (to write to each other), which is a reciprocal pronominal verb, and requires conjugating it in present tense for plural subjects, directly testing the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774704012548-2sfkkhhu",
+      "timestamp": "2026-03-28T13:20:50.827Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires recognizing that \"s'écrivent\" is the reciprocal pronominal form of \"écrire\" meaning \"they write to each other,\" which directly tests knowledge of reciprocal verbs and their present tense conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774704138862-x0k43zco",
+      "timestamp": "2026-03-28T13:22:28.707Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests basic present tense conjugation of \"s'écrire\" (écrivent) rather than the concept of reciprocal verbs; the reciprocal nature is already given in the prompt and doesn't need to be applied to solve the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774704192228-z3mgd33a",
+      "timestamp": "2026-03-28T13:23:33.484Z"
+    }
+  ]
+}

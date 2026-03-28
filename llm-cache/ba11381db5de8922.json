@@ -1,0 +1,61 @@
+{
+  "cacheKey": "ba11381db5de8922",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Nous ___ la responsabilité du projet. »\nChoices:\nA. [CORRECT] rejetons\nB. rejettions\nC. rejètions\nD. rejetions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774705452662-6bb75onv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the rule for -eter verbs like rejeter, requiring knowledge that the nous form uses a single consonant (-ons) rather than double consonant or wrong accent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774705580497-73gj087r",
+      "timestamp": "2026-03-28T13:46:49.297Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To answer correctly, a student must know that -eter verbs like \"rejeter\" double the consonant in the \"nous\" form (rejetons vs rejetions), which is the core grammatical concept of rule 01-10.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774706027652-ukhmcjz5",
+      "timestamp": "2026-03-28T13:53:59.509Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The \"nous\" form of -eter verbs does not double the consonant (rejetons, not *rejettons), so this question cannot test the doubling rule - knowing the rule doesn't help identify the correct answer from the distractors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774706412955-20n763nj",
+      "timestamp": "2026-03-28T14:00:36.160Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that -eter verbs do NOT double the consonant in the nous form of present tense (rejetons, not rejettions), which is a core aspect of the stated rule about double consonnes in -eler/-eter verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774706726946-lpl6bpft",
+      "timestamp": "2026-03-28T14:05:54.839Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -eler/-eter verb rule by asking whether \"nous\" form doubles the consonon (it doesn't), requiring knowledge of when these verbs double their consonants vs. when they don't.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774706783900-y14xywx0",
+      "timestamp": "2026-03-28T14:07:07.039Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the learner knows that verbs in -eter (rejeter) do NOT double the consonant in the nous/vous forms (rejetons, rejetez), which is the core of rule 01-10.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774706838636-lglxj9ox",
+      "timestamp": "2026-03-28T14:07:33.549Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question has only one grammatically valid form (\"rejetons\"); the other choices are invalid conjugations that can be eliminated without knowing the -eler/-eter doubling rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774706857195-kmuoqzf5",
+      "timestamp": "2026-03-28T14:08:12.009Z"
+    }
+  ]
+}

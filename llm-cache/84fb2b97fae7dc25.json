@@ -1,0 +1,33 @@
+{
+  "cacheKey": "84fb2b97fae7dc25",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Vous nous ___ quand vous arrivez. »\nChoices:\nA. [CORRECT] appelez\nB. appellez\nC. appèlez\nD. appeliez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774705452663-pqroskxv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"appeler\" doubles the 'l' (→ \"appelez\") when conjugated with \"vous\" in the present tense, which is exactly the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774705744713-sw3xl2q7",
+      "timestamp": "2026-03-28T13:49:19.781Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the double consonant rule for \"appeler\" (an -eler verb), distinguishing \"appelez\" (correct doubled 'l') from \"appellez\" (incorrect single 'l').",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774706158143-2epyrwv2",
+      "timestamp": "2026-03-28T13:56:13.049Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question tests the conjugation of \"appeler\" (a -eler verb) for \"vous\" in present tense, requiring knowledge that it doubles the consonant to form \"appelez\" rather than \"appelez\" or other alternatives.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774706550252-4g8ky4nz",
+      "timestamp": "2026-03-28T14:02:47.222Z"
+    }
+  ]
+}
