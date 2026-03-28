@@ -36,6 +36,9 @@ Always use **`general-purpose`** subagents (not `Bash`) for question generation.
 6. **Register** — add the new section to `src/data/sections-index.ts`: import the compiled file (from `./fr/` or `./en/`), add a metadata entry to `_meta`, and add the section to `_loadedSections`
 7. **Commit** — `git add questions/ src/data/ .gitignore`, commit and push (temp files in `gen/` are never tracked)
 
+## LLM Validation Cache
+- The `llm-cache/` directory is **content-addressable**: cache keys are computed from question content, so editing questions automatically invalidates old entries and generates new ones on the next run. There is no need to manually clear or prune cache entries after fixing questions.
+
 ## Content Quality Rules
 
 ### General

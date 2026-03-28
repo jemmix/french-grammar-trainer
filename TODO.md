@@ -19,6 +19,17 @@
 
 - **LLM verification for input questions** — `scripts/verify-answers.ts` currently only verifies MCQ questions (skips input questions). Extend it to also verify user-input questions using a different prompt that asks the model to check whether each prepared wrong answer is a plausible learner mistake and whether its explanation correctly identifies the error.
 
+## Infrastructure
+
+- **S3 → DynamoDB migration** — user progress is currently stored as LZ4-compressed binary blobs in S3 (via `src/lib/s3-store.ts`). Each read/write takes hundreds of ms due to S3 latency. Migrate to Amazon DynamoDB for single-digit-ms P99 latency. Key points:
+  1. Replace `s3-store.ts` with `dynamo-store.ts` implementing the same `UserStore` interface
+  2. Store the 1131-byte user record as a DynamoDB attribute (well within 400KB item limit)
+  3. Key schema: `userId` as partition key, no sort key needed
+  4. Add `@aws-sdk/client-dynamodb` dependency, remove `@aws-sdk/client-s3`
+  5. Update `src/env.js` with DynamoDB env vars (`DYNAMO_TABLE_NAME`, etc.)
+  6. Consider on-demand billing mode (pay-per-request) for cost efficiency at current scale
+  7. Keep SQLite store as-is for local dev
+
 ## Build / tooling
 
 - **Prevent heavy data imports in client bundles** — after moving question data to server components, need automated checks to prevent future regressions where someone accidentally imports `~/data/*` in a client component. Options:
