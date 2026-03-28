@@ -127,7 +127,8 @@ function emitResult(
   predicateId: string,
   attemptNumber: number,
   result: { status: string; reason?: string },
-  progressSuffix?: string
+  progressSuffix?: string,
+  tracker?: ProgressTracker
 ): void {
   if (isInteractive) {
     process.stdout.write("\r\x1b[K");
@@ -135,6 +136,9 @@ function emitResult(
   const status = formatStatus(result);
   const line = "  " + questionId + " | " + predicateId + " | attempt " + attemptNumber + " | " + status;
   console.log(line + (progressSuffix || ""));
+  if (isInteractive && tracker) {
+    renderInteractiveProgress(tracker);
+  }
 }
 
 interface LLMPendingTask {
@@ -307,7 +311,7 @@ async function runLLMBatch(
         if (verbose) {
           const interp = predicate.interpretResponse(ctx, response.raw);
           const suffix = !isInteractive ? formatProgressSuffix(tracker) : undefined;
-          emitResult(ctx.question.id, predicate.id, attemptNumber, interp, suffix);
+          emitResult(ctx.question.id, predicate.id, attemptNumber, interp, suffix, tracker);
         }
         
         saveCacheEntry(entry);
@@ -318,7 +322,7 @@ async function runLLMBatch(
     
     if (entry.responses.length === 0) {
       if (verbose) {
-        emitResult(ctx.question.id, predicate.id, 0, { status: "fail", reason: "No cached responses and cache update disabled" });
+        emitResult(ctx.question.id, predicate.id, 0, { status: "fail", reason: "No cached responses and cache update disabled" }, undefined, tracker);
       }
       task.resolve({ status: "fail", reason: "No cached responses and cache update disabled", responseCount: 0 });
       return;
