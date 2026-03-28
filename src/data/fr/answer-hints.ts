@@ -515,6 +515,7 @@ export const answerHints: Record<string, string> = {
   "ne soit trop tard": "être",
   "ne soit": "être",
   "ne soyez trop fatigués": "être",
+  "nettoie": "nettoyer",
   "nettoient": "nettoyer",
   "nettoiera": "nettoyer",
   "nettoies": "nettoyer",
