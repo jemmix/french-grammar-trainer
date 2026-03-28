@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aaa561c58b3a5419",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-12-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Conjuguez le verbe se préparer au présent pour « vous » (donnez le pronom réfléchi et le verbe conjugué).\n\nPHRASE: Vous ___ pour le voyage de demain ?\n\nHINT: se préparer\n\nEXPECTED ANSWER: vous préparez\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1774735210441-f1rnr000"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt asks for both reflexive pronoun and conjugated verb, but with \"Vous\" already in the phrase, the expected answer \"vous préparez\" would create the ungrammatical \"Vous vous préparez\" - the learner cannot determine whether to include the pronoun or just the verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774735243255-b355ejtx",
+      "timestamp": "2026-03-28T22:01:08.069Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The prompt explicitly instructs to conjugate the reflexive verb \"se préparer\" for \"vous\" and states the answer should include \"le pronom réfléchi et le verbe conjugué\", making it clear that both components are required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774735301075-w8tpvr7t",
+      "timestamp": "2026-03-28T22:02:01.430Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\n\nREASON: The prompt asks for \"le pronom réfléchi et le verbe conjugué\" but the phrase already contains the subject pronoun \"Vous\" before the blank, making it ambiguous whether the learner should input both pronouns together, just the reflexive pronoun, or if the instructions are mismatched with the expected single-word answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774735344568-v1ye4r0y",
+      "timestamp": "2026-03-28T22:02:41.079Z"
+    }
+  ]
+}

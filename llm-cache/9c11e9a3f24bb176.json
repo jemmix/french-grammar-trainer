@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9c11e9a3f24bb176",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-12-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-12 - Les verbes pronominaux au présent (se lever, se souvenir, s'asseoir)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Vous ___ toujours tard le samedi. » (verbe : se coucher)\nChoices:\nA. [CORRECT] vous couchez\nB. se couche\nC. vous coucher\nD. nous couchons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774735210433-04vx2n10"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer \"vous couchez\" is missing the reflexive pronoun, so the question does not actually test reflexive verb conjugation — the verb is incorrectly conjugated as non-reflexive.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774735210470-05bvjza8",
+      "timestamp": "2026-03-28T22:00:52.635Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question is grammatically flawed - the sentence \"Vous ___ toujours tard\" with answer \"vous couchez\" would create \"Vous vous couchez\", which is ungrammatical (redundant subject pronoun), so the question cannot properly test pronominal verb conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774735292936-e5cen2uy",
+      "timestamp": "2026-03-28T22:02:06.690Z"
+    }
+  ]
+}
