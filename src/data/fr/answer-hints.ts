@@ -756,6 +756,7 @@ export const answerHints: Record<string, string> = {
   "t'assois": "s'asseoir",
   "t'étais blessé": "se blesser",
   "te couche": "se coucher",
+  "te couches": "se coucher",
   "te dépêche": "se dépêcher",
   "te la": "pronom",
   "te": "pronom",

@@ -88,14 +88,9 @@
 
 - **Explanation panel polish** — the rule explanation sidebar/bottom-sheet works but needs another design pass: review spacing, typography, open/close animation smoothness, and how it interacts with different question types (especially long MCQ lists). Consider whether the interstitial trigger threshold (power < 0.20) feels right after real usage.
 
-### 01-12 validation — 3 borderline failures remaining
+### 01-12 validation — pedagogical note on nous/vous pronominal questions
 
-After extensive rewriting (78 → 3 failures), 3 questions still get borderline "No clear majority" on `question-rule-alignment`:
-- **01-12-012** (MCQ): "Vous vous ___ dans le parc" → "promenez" (6/8 PASS)
-- **01-12-019** (MCQ): "Vous vous ___ toujours tard le samedi" → "couchez" (3/5 PASS)
-- **01-12-024** (INPUT): "Vous vous ___ pour le voyage de demain ?" → "préparez" (2/4 PASS)
-
-These fail because the reflexive pronoun is pre-filled for nous/vous (identical to subject pronoun), so LLMs say it "only tests conjugation, not pronominal verb mechanics." Attempted fix: removing the reflexive pronoun from the prompt and requiring full pronominal answer — but LLMs then flag "vous promenez" as non-reflexive / grammatically incorrect. This is a structural limitation of fill-in-the-blank format for nous/vous pronominal verbs. Acceptable as-is.
+Fill-in-the-blank questions with nous/vous subjects for pronominal verbs are structurally problematic: the reflexive pronoun is identical to the subject pronoun (nous nous, vous vous), so when the pronoun is pre-filled, the question reduces to a conjugation exercise. LLM validators (and arguably students) can't demonstrate pronominal verb knowledge from such questions. Q004 (nous/se lever), Q005 (vous/se promener), Q010 (nous/se souvenir), Q017 (nous/se souvenir), Q023 INPUT (nous/se souvenir) still use this format and pass validation by majority, but they're weaker pedagogically than questions where the reflexive pronoun differs from the subject (je→me, tu→te, il→se).
 
 ## Weird questions
 
