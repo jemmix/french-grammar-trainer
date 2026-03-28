@@ -54,6 +54,13 @@
 
 - **Validation against DSL files** — `scripts/validate.ts` currently reads from compiled TypeScript (`src/data/{lang}/*.ts`), requiring `npm run compile-all` after every DSL edit before validation. Fix: have validation read directly from `questions/{lang}/*.txt` DSL files so no recompilation is needed during iterative content fixes.
 
+- **Optimize LLM validation runner** — `src/validation/runner.ts` can be improved:
+  1. **Early termination** (5 lines, high value): In `runLLMBatch`, after each attempt check `failCount >= 2` and break — can't reach 90% majority past that point
+  2. **Output polish** (optional, later):
+     - Pre-scan cache entries, print one-liner `"X results loaded from cache"` before fetching fresh data
+     - Expand "no clear majority" message to show per-attempt results (one line per attempt)
+  - Skip concurrent pool refactor (Stage 1.2/1.3) — current model saturates 10 workers fine, added complexity not worth it for edge cases
+
 - **compile-all default language** — currently requires `--lang fr` or `--lang en` flag; default should compile all available languages to avoid accidentally validating one language's DSL while the compiled TS is stale for another. Default to `--lang all` or or make this the default.
 
 - **DSL with LSP for question validation** — transition `questions/*.txt` and `src/data/*/*.ts` to a format with LSP support to catch structural/type inconsistencies in-editor. Options:
