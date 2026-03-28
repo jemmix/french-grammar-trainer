@@ -1,0 +1,47 @@
+{
+  "cacheKey": "c5e97285fb8d0e6e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Nous _____ notre chambre. »\nChoices:\nA. [CORRECT] rangeons\nB. rangons\nC. rangions\nD. rangerons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774720251398-lafx0g53"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the intercalary 'e' rule for -ger verbs like \"ranger\" in the \"nous\" form of the present tense, which is the core concept of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774720557071-ym7mcd99",
+      "timestamp": "2026-03-28T17:56:10.326Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"ranger\" ends in -ger but the e intercalaire rule is not relevant here because -ger verbs only need e before \"a\" or \"o\", not \"e\" - \"nous rangeons\" doesn't require the e modification, so this tests present tense conjugation, not the -ger spelling rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774726736656-kyj9a187",
+      "timestamp": "2026-03-28T19:39:10.712Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests whether the student knows to add the intercalary e in the nous form of -ger verbs (\"rangeons\" vs \"rangons\"), which is the core of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774726940237-l3zpr36d",
+      "timestamp": "2026-03-28T19:42:52.388Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nThe question properly tests the intercalary e rule for -ger verbs by requiring the student to recognize that \"ranger\" needs the extra e in the \"nous\" form (rangeons) to keep the soft g sound.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774727026779-go7yp175",
+      "timestamp": "2026-03-28T19:43:56.395Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests regular -er verb conjugation of \"ranger\" (which follows standard spelling), not the special orthographic rule requiring an \"e\" insertion before \"o\" in -ger verbs like \"mangeons\" or \"nageons\" — \"rangeons\" doesn't require this spelling change at all.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774727050348-rjxjxbx4",
+      "timestamp": "2026-03-28T19:44:22.400Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3f26fb80d115ac05",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Nous _____ l'anglais ensemble. »\nChoices:\nA. [CORRECT] prononçons\nB. prononcons\nC. prononçions\nD. prononcez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774720251397-c46gkbig"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the cedilla requirement for -cer verbs in the nous form (prononçons vs prononcons), which is the exact grammar rule stated.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774720494464-3dfu6ex0",
+      "timestamp": "2026-03-28T17:55:14.435Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Prononcer\" is a -cer verb requiring a cedilla before \"o\" in \"nous prononçons\", and the question specifically tests whether the student knows this spelling rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774726698378-2io6l58b",
+      "timestamp": "2026-03-28T19:38:28.980Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question specifically tests the cedilla rule for -cer verbs, as the only difference between the correct answer \"prononçons\" and the most plausible distractor \"prononcons\" is the required cedilla for \"nous\" forms of verbs ending in -cer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774726899492-lprsrb1w",
+      "timestamp": "2026-03-28T19:41:56.171Z"
+    }
+  ]
+}

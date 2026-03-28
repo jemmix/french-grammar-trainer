@@ -1,0 +1,47 @@
+{
+  "cacheKey": "7dd009df93a5a971",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Nous _____ de vêtements avant de sortir. »\nChoices:\nA. [CORRECT] changeons\nB. changons\nC. changions\nD. changerons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774720251397-evbv4elm"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"changer\" is a -ger verb and needs the \"e intercalaire\" before \"ons\" in the first person plural, which is the exact spelling rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774720372919-hhgy1msk",
+      "timestamp": "2026-03-28T17:53:08.101Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The verb \"changer\" is not a -ger verb requiring the e intercalaire rule (it's a regular -er verb), so the question doesn't test the stated rule about orthographic changes in verbs like \"manger\" or \"voyager\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774720767441-yvnyen8q",
+      "timestamp": "2026-03-28T17:59:48.203Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -cer spelling rule because \"changeons\" requires a cédille to maintain the soft /s/ sound before \"o\", and the wrong answer \"changons\" is a plausible error that occurs when students don't know this specific spelling rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774726560138-8rlrb3df",
+      "timestamp": "2026-03-28T19:36:32.277Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that -ger verbs add an intercalary 'e' in the nous form to preserve the soft g sound (changer → changeons), which is the core of the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774726816645-hnrj99ub",
+      "timestamp": "2026-03-28T19:40:48.332Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"changer\" is a regular -er verb that doesn't require spelling changes — the rule about cedilla (ç) and intercalary 'e' for -cer/-ger verbs only applies to verbs like commencer and manger, not to changer which keeps its soft 'g' sound naturally before 'o'.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774727011920-exe7lka1",
+      "timestamp": "2026-03-28T19:43:49.998Z"
+    }
+  ]
+}

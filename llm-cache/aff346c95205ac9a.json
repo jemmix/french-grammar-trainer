@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aff346c95205ac9a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Conjuguez « lancer » au présent : « Nous _____ le projet la semaine prochaine. »\nChoices:\nA. [CORRECT] lançons\nB. lancons\nC. lancions\nD. lancerons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774727698303-2jkfkmcx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"-cer\" verbs like \"lancer\" add a cédille (ç) in the nous form to maintain the soft sound, which is the core of rule 01-11.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774727849420-a4l03p0r",
+      "timestamp": "2026-03-28T19:57:39.769Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly tests the cédille rule for -cer verbs since the correct answer \"lançons\" requires knowing that -cer verbs need a ç before 'o' in the nous form, distinguishing it from the spelling error \"lancons.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774728210395-d24smuxn",
+      "timestamp": "2026-03-28T20:03:40.292Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the cédille rule for -cer verbs since \"lancer\" requires \"ç\" in the \"nous\" form (lançons) to maintain the /s/ sound, and the most plausible wrong answer (lancons) is exactly the error made without this knowledge.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774728276298-ilbmglgh",
+      "timestamp": "2026-03-28T20:04:49.758Z"
+    }
+  ]
+}

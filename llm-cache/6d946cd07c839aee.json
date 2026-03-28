@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6d946cd07c839aee",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Les métaux ___ l'électricité très bien. »\nChoices:\nA. [CORRECT] conduisent\nB. conduisaient\nC. ont conduit\nD. conduiront\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774715016522-o3smjahr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The sentence expresses a general scientific truth (\"metals conduct electricity\"), and choosing \"conduisent\" (present tense) requires knowing that the present tense is used for general truths, which is the exact grammar concept stated in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774715385593-eldbd3jn",
+      "timestamp": "2026-03-28T16:29:57.846Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question presents a general truth about metals, which directly requires applying the rule that present tense expresses general truths; the correct answer (conduisent) is only correct because of this rule application.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774715878560-eq80i9e5",
+      "timestamp": "2026-03-28T16:38:13.403Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The sentence expresses a scientific general truth (\"metals conduct electricity\"), and selecting the present tense \"conduisent\" directly requires applying the rule about using présent for vérités générales.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774716520486-yvyd3ad2",
+      "timestamp": "2026-03-28T16:49:09.385Z"
+    }
+  ]
+}

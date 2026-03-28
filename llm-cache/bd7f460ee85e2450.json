@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bd7f460ee85e2450",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-15-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-15 - Le présent pour exprimer une action en cours\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Regarde ! Les nuages ___ le soleil. »\nChoices:\nA. [CORRECT] cachent\nB. cachai\nC. ont caché\nD. cachaient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774716852197-mhz23qtg"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The sentence \"Regarde !\" indicates something happening in the present moment, and choosing \"cachent\" requires understanding that actions in progress use the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774717044004-vk42o14h",
+      "timestamp": "2026-03-28T16:57:39.298Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The \"Regarde!\" context signals an immediate action in progress, requiring the present tense \"cachent\" to correctly express that the clouds are currently hiding the sun.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774717950962-rrmwtqhh",
+      "timestamp": "2026-03-28T17:12:47.921Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The context \"Regarde!\" signals an action happening in the moment, requiring the present tense \"cachent\" to express that the clouds are currently hiding the sun, while the distractors test other tenses that would be inappropriate for an action in progress.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774718601920-ytnmy0av",
+      "timestamp": "2026-03-28T17:23:37.661Z"
+    }
+  ]
+}

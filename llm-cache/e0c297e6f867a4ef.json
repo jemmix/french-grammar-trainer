@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e0c297e6f867a4ef",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-15-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-15 - Le présent pour exprimer une action en cours\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Regarde ! Le bébé ___ et rit. »\nChoices:\nA. [CORRECT] sourit\nB. souriait\nC. a souri\nD. va sourire\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774716852197-ya1zqsdx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The phrase \"Regarde !\" creates a right-now context requiring the present tense to express an action in progress, and distinguishing \"sourit\" from past tenses and future proche directly tests using le présent for actions happening at the moment of speaking.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774717215354-pyy7a6ir",
+      "timestamp": "2026-03-28T17:00:48.774Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The context \"Regarde !\" clearly indicates an action happening right now, requiring the present tense \"sourit\" to correctly express an ongoing action in the moment.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774718095248-lhmqzeqa",
+      "timestamp": "2026-03-28T17:15:04.731Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests using the present tense to describe an action currently in progress, as indicated by the context marker \"Regarde !\" which signals the need for the present form \"sourit.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774718689222-34s6gt4d",
+      "timestamp": "2026-03-28T17:25:19.364Z"
+    }
+  ]
+}

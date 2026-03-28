@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7f304c7bb1520b06",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-15-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-15 - Le présent pour exprimer une action en cours\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Regarde ! Pierre ___ sous la pluie. »\nChoices:\nA. [CORRECT] court\nB. est en train de courir\nC. a couru\nD. courait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774716852196-yw3wj9jk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether students know that French simple present tense can express an action happening right now, as shown by choosing \"court\" over the more explicit \"est en train de courir\" or past tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774716852203-fx4s3cmw",
+      "timestamp": "2026-03-28T16:55:42.861Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests that the present indicative (court) can express an action in progress, with \"Regarde !\" indicating immediacy and distinguishing it from other tenses like passé composé (a couru) or imparfait (courait).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774717845661-qsdx4vpy",
+      "timestamp": "2026-03-28T17:11:02.952Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The context \"Regarde !\" signals an ongoing action, and choosing the simple present \"court\" requires knowing that le présent can express actions in progress rather than only habitual actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774718420523-ortqa707",
+      "timestamp": "2026-03-28T17:20:33.708Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9b5044591cf75f34",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Conjuguez « manger » au présent : « Nous _____ sainement depuis un an. »\nChoices:\nA. [CORRECT] mangeons\nB. mangons\nC. mangeions\nD. mangerons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774727698303-uzhlyh1m"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that -ger verbs require an intercalary 'e' before \"ons\" in the présent nous form, which is the central spelling rule of 01-11.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774727894416-0xcidpty",
+      "timestamp": "2026-03-28T19:58:28.958Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that -ger verbs like \"manger\" require an \"e\" before \"o\" in the nous form (e intercalaire), which is the exact rule stated.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774728250212-sfsh3n9h",
+      "timestamp": "2026-03-28T20:04:20.674Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the -ger verb rule requiring an \"e\" intercalaire in the \"nous\" form, as choosing between \"mangeons\" and \"mangons\" depends on knowing this specific orthographic rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774728321281-1fhhpjpo",
+      "timestamp": "2026-03-28T20:05:31.435Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "509fe40052810f7c",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-11-017",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nPrompt: Conjuguez « lancer » au présent : « Nous _____ le projet la semaine prochaine. »\nChoices:\nA. lançons\nB. lancons\nC. lancions\nD. lancerons\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1774727698303-cj1ng6or"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The explicit instruction \"Conjuguez « lancer » au présent\" clearly specifies the present tense despite the contextual \"la semaine prochaine\" which normally suggests future; in French grammar exercises, explicit tense instructions take precedence over contextual hints.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774727849778-ljk7wsn9",
+      "timestamp": "2026-03-28T19:57:49.018Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly states \"au présent\" (in the present tense), which is the primary grammatical instruction that determines the correct answer; the contextual phrase \"la semaine prochaine\" does not override the explicit conjugation instruction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774728213026-jo0vp70u",
+      "timestamp": "2026-03-28T20:03:55.085Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt explicitly requests the present tense (\"au présent\") but the sentence contains \"la semaine prochaine\" (next week), a clear future time marker that contradicts the instruction, creating confusion about which cue to follow.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774728285358-vongnz5h",
+      "timestamp": "2026-03-28T20:04:57.616Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The instruction to conjugate in the present tense conflicts with the temporal context \"la semaine prochaine\" (next week), which suggests future tense and may mislead learners about which tense to use.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774728339656-r3ylqwok",
+      "timestamp": "2026-03-28T20:05:53.440Z"
+    }
+  ]
+}

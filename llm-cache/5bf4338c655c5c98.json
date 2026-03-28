@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5bf4338c655c5c98",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Le soleil ___ l'énergie en chaleur et lumière. »\nChoices:\nA. [CORRECT] produit\nB. produisait\nC. a produit\nD. produira\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774715016521-hgsivaj9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence expresses a scientific truth about the sun, which is a classic example of a vérité générale requiring the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774715307316-xn1yoe8q",
+      "timestamp": "2026-03-28T16:28:38.012Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that general truths (scientific facts about the sun) are expressed in présent tense, which is exactly what rule 01-14 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774715791621-ql57wxyo",
+      "timestamp": "2026-03-28T16:36:43.942Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence states a scientific fact (\"the sun converts energy\"), which requires the present tense for vérités générales; choosing correctly requires understanding that French uses le présent for universal truths.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774716383416-o5j6l7qz",
+      "timestamp": "2026-03-28T16:46:38.180Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3fc6b677fd325332",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Conjuguez « manger » à l'imparfait : « Je _____ du chocolat noir. »\nChoices:\nA. [CORRECT] mangeais\nB. mangais\nC. mange\nD. mangerai\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774720251397-9o2lpfiv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests regular imparfait conjugation of a first-person singular form, where the -ger spelling rule (adding e before a/o/u) does not apply.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774720507867-9bbfqmi7",
+      "timestamp": "2026-03-28T17:55:42.316Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests imparfait conjugation (regular -er pattern), not the cédille/e intercalaire rule which only applies to présent tense forms (nous mangions, nous commençons).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774726708980-v8qjn1aw",
+      "timestamp": "2026-03-28T19:38:44.346Z"
+    }
+  ]
+}

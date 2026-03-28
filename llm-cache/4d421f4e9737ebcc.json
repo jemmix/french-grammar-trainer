@@ -1,0 +1,47 @@
+{
+  "cacheKey": "4d421f4e9737ebcc",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-15-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-15 - Le présent pour exprimer une action en cours\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au présent pour exprimer une action qui se déroule maintenant.\nPhrase: Regarde ! Les enfants ___ partout dans le parc.\nCorrect Answer: courent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774716852198-iopoay6p"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests basic present tense conjugation of \"courir\" (regular -ir verb), not the semantic distinction of using présent to express ongoing actions versus other uses of the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774717618484-lf76qfx6",
+      "timestamp": "2026-03-28T17:07:31.343Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using the present tense conjugation to express an action happening now (the children running), which directly tests the rule about using le présent for actions in progress, even though it also tests conjugation mechanics.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774718212878-uranaa1n",
+      "timestamp": "2026-03-28T17:17:24.194Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"courir\" in the present tense for an ongoing action, with both the prompt (\"une action qui se déroule maintenant\") and context (\"Regarde !\") explicitly pointing to using the présent to express an action in progress.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774718819175-5urqq67j",
+      "timestamp": "2026-03-28T17:27:11.058Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugating \"courir\" in the present tense for an ongoing action context (\"Regarde !\"), which directly requires knowledge of using le présent to express actions in progress.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774718950913-yx69jand",
+      "timestamp": "2026-03-28T17:29:23.851Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests verb conjugation and subject-verb agreement, not the conceptual understanding of when to use the present tense to express ongoing actions—the prompt already tells students to use the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774719022712-hmixokdh",
+      "timestamp": "2026-03-28T17:30:38.676Z"
+    }
+  ]
+}

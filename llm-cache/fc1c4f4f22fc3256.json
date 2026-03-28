@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fc1c4f4f22fc3256",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Nous _____ le cours maintenant. »\nChoices:\nA. [CORRECT] commençons\nB. commencons\nC. commencerons\nD. commencions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774720251396-58ek383c"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the cedilla requirement in the nous form of -cer verbs, which is the core concept of rule 01-11.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774720251413-x7zv9krs",
+      "timestamp": "2026-03-28T17:52:20.463Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the cédille requirement for -cer verbs in the first person plural (nous), which is the core of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774720690931-y20lqehu",
+      "timestamp": "2026-03-28T17:58:23.723Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the orthographic rule requiring a cedilla (ç) on -cer verbs like \"commencer\" in the nous form of the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774726475259-cj83o3to",
+      "timestamp": "2026-03-28T19:36:03.715Z"
+    }
+  ]
+}

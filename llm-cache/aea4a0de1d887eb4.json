@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aea4a0de1d887eb4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Conjuguez « commencer » au présent : « Nous _____ les préparatifs aujourd'hui. »\nChoices:\nA. [CORRECT] commençons\nB. commencons\nC. commencerons\nD. commencez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774727698297-dn3xe84b"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the cedilla rule for -cer verbs: choice A (commençons with ç) versus choice B (commencons without ç) tests the exact spelling rule, and other distractors test different concepts (tense, person) that must also be distinguished.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774727698316-59031crz",
+      "timestamp": "2026-03-28T19:57:36.068Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the cédille rule for -cer verbs, as the key distinction between the correct answer (commençons with ç) and the most plausible wrong answer (commencons without cédille) is precisely the orthographic change taught in this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774728043362-8lmvcp05",
+      "timestamp": "2026-03-28T20:00:55.820Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing between \"commençons\" (with cedilla) and \"commencons\" (without), which is the core spelling rule for -cer verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774728067656-6imjqc1t",
+      "timestamp": "2026-03-28T20:03:41.807Z"
+    }
+  ]
+}

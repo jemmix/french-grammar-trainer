@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c17fbf8f52f710b7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Conjuguez « changer » à l'imparfait : « Il _____ d'avis souvent. »\nChoices:\nA. [CORRECT] changeait\nB. changait\nC. change\nD. changera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774720251398-emo5d9p9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests imparfait conjugation (\"changeait\"), not the -ger verb spelling rule (e intercalaire) which only applies in the nous form of présent indicatif.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774720575586-w8x7z0we",
+      "timestamp": "2026-03-28T17:56:30.373Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests imparfait conjugation, not the -ger spelling rule; the 'e' in \"changeait\" is incidental from the stem \"change-\" and doesn't require knowing that \"nous changeons\" needs an intercalary 'e' before 'a/o/u'.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774726750712-nv81hixl",
+      "timestamp": "2026-03-28T19:39:28.961Z"
+    }
+  ]
+}

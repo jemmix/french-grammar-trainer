@@ -1,0 +1,47 @@
+{
+  "cacheKey": "f028c37be40cecfa",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Nous _____ du chocolat. »\nChoices:\nA. [CORRECT] partageons\nB. partagons\nC. partagerons\nD. partagions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774720251397-h55zn1ht"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nThe question tests the rule for -ger verbs requiring an \"e intercalaire\" before the \"a\" in the nous form (partageons not partagons) to maintain soft pronunciation, which is the exact concept in rule 01-11.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774720426550-cge5ns0e",
+      "timestamp": "2026-03-28T17:54:00.204Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question is about -ger verbs but uses \"partager\" which is a regular -er verb without spelling changes; the -ger spelling rule (intercalaire e) applies only to verbs like \"manger\", \"changer\", \"nager\" where the base form ends with -ger, not verbs ending in the sound /ʒe/ like \"partager\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774726611115-vcm9d2gt",
+      "timestamp": "2026-03-28T19:37:40.661Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The verb \"partager\" is an -ger verb, and the correct answer \"partageons\" requires inserting the intercalary 'e' to maintain the soft 'j' sound before 'o', which is exactly what the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774726843355-dbd4gjdt",
+      "timestamp": "2026-03-28T19:40:56.843Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that -ger verbs like \"partager\" require an intercalary \"e\" in the \"nous\" form (partageons vs. partagons), which is exactly the spelling rule stated.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774727017078-ijvi1xti",
+      "timestamp": "2026-03-28T19:43:46.768Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests whether you know the correct spelling of a -ger verb's \"nous\" form, but \"partager\" is not a verb that requires the e intercalaire (the root is \"partag-\" not \"partager-\"), so the rule being tested doesn't actually apply to this verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774727045218-4eedbdx7",
+      "timestamp": "2026-03-28T19:44:23.608Z"
+    }
+  ]
+}

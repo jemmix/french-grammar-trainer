@@ -1,0 +1,33 @@
+{
+  "cacheKey": "eeef34bf52dcc810",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Nous _____ du pain frais chaque jour. »\nChoices:\nA. [CORRECT] mangeons\nB. mangons\nC. mangeions\nD. mangerions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774720251397-pbg63uh3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the e intercalaire for -ger verbs in the nous form - the distinction between \"mangeons\" (correct) and \"mangons\" (incorrect) is precisely what this rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774720330001-0p1uiabf",
+      "timestamp": "2026-03-28T17:52:34.512Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the learner knows that -ger verbs require an intercalary \"e\" before \"ons\" in the nous form (mangeons vs mangons), which is the core concept of this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774720714684-gifnf0k7",
+      "timestamp": "2026-03-28T17:58:48.244Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the intercalary 'e' rule for -ger verbs in the nous form, distinguishing \"mangeons\" (correct with e) from \"mangons\" (incorrect without e).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774726537833-obrfn69g",
+      "timestamp": "2026-03-28T19:36:00.136Z"
+    }
+  ]
+}

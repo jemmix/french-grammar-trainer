@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f0f70be72f034bae",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Toujours, elle ___ ses devoirs avant de jouer. »\nChoices:\nA. [CORRECT] finit\nB. finissait\nC. a fini\nD. finira\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774715016521-leri5a5g"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"toujours\" indicates a habitual action, which must be expressed with the present tense (\"finit\") as specified by the rule; other tenses (imparfait, passé composé, futur) do not convey a present habitual meaning.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774715192673-67g4t0ch",
+      "timestamp": "2026-03-28T16:26:47.278Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The word \"Toujours\" clearly indicates a habitual action, so the student must recognize that present tense (finit) is used to express habits, which directly tests the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774715688025-z2z4x4ay",
+      "timestamp": "2026-03-28T16:34:59.483Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"Toujours\" with the context of a repeated action (\"before playing\"), which directly tests the use of present tense to express a habit, exactly matching the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774716272880-kv8pdfkw",
+      "timestamp": "2026-03-28T16:44:42.248Z"
+    }
+  ]
+}

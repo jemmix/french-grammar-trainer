@@ -1,0 +1,33 @@
+{
+  "cacheKey": "99bae5cd91da4f43",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Conjuguez « lancer » au présent : « Nous _____ ce projet avec enthousiasme. »\nChoices:\nA. [CORRECT] lançons\nB. lancons\nC. lancions\nD. lancez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774728535517-d5d1agaa"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -cer verb cédille rule (lancer → lançons), which is the exact concept covered by rule 01-11 — the wrong answer \"lancons\" represents the common mistake of omitting the cédille.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774728535531-32ivcge1",
+      "timestamp": "2026-03-28T20:09:17.809Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question specifically tests the -cer spelling rule by requiring the cedilla (ç) in \"nous lançons\" - without knowledge of this rule, students would incorrectly select \"lancons\" as a plausible answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774728593745-qjocwkg7",
+      "timestamp": "2026-03-28T20:10:44.231Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that -cer verbs add a cedilla (ç) before 'o' in the nous-form, and the most plausible wrong answer (lancons) is the form without this essential orthographic mark.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774728664945-hewzhivz",
+      "timestamp": "2026-03-28T20:11:31.604Z"
+    }
+  ]
+}

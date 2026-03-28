@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0bae66885db78d89",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Les oiseaux ___ vers le sud en automne. »\nChoices:\nA. [CORRECT] migrent\nB. migraient\nC. ont migré\nD. migreront\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774715016521-13fv1iq6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence expresses a general truth (birds migrate south in autumn), which in French requires the present tense, making the question directly test the stated rule about using le présent for vérités générales.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774715174593-w2ne1jne",
+      "timestamp": "2026-03-28T16:26:25.834Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The sentence expresses a general truth about bird migration, requiring the present tense (\"migrent\") rather than other tenses, which test the specific rule about using présent for general truths/habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774715660234-5wedtp6a",
+      "timestamp": "2026-03-28T16:34:43.561Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that regular, recurring natural patterns (birds migrating south each autumn) are expressed using the present tense to indicate a general truth, which is exactly what rule 01-14 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774716259947-7djt0kbs",
+      "timestamp": "2026-03-28T16:44:35.581Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "df906d611a987f2d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-15-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-15 - Le présent pour exprimer une action en cours\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « À l'instant, vous ___ une vidéo intéressante. »\nChoices:\nA. [CORRECT] regardez\nB. regardiez\nC. avez regardé\nD. êtes en train de regarder\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774716852197-a341k2w9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests identifying an action happening now rather than specifically testing the present tense's role in expressing actions in progress; choice D (\"êtes en train de regarder\") is also a valid expression for an action in progress, and the answer can be determined by recognizing the temporal context of \"À l'instant\" without needing to know the specific rule about using le présent for ongoing actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774717195392-jgq3b1e4",
+      "timestamp": "2026-03-28T17:00:16.694Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests English-French tense mapping (whether \"regardez\" corresponds to \"are watching\") rather than the French grammatical concept that the present tense can express an action in progress; the distinction between \"regardez\" and \"êtes en train de regarder\" is about translation patterns, not about whether you know the present tense is used for ongoing actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774718082537-iafvtv8w",
+      "timestamp": "2026-03-28T17:15:10.651Z"
+    }
+  ]
+}

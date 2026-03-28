@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6bbe0a5e821b8b88",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-15-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-15 - Le présent pour exprimer une action en cours\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Regarde ! Mon ami ___ une maison neuve. »\nChoices:\nA. [CORRECT] construit\nB. construisait\nC. a construit\nD. va construire\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774716852197-reovvv29"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires recognizing that \"Regarde !\" indicates an action happening right now and selecting the present tense \"construit\" to express an ongoing action, which directly tests the rule about using the present for actions in progress.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774717092568-lw0gdcmz",
+      "timestamp": "2026-03-28T16:58:27.080Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The context \"Regarde!\" indicates a current action, and choosing the present tense (construit) to express \"is building\" directly tests understanding of the present tense for actions in progress.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774718016780-8svvfqfx",
+      "timestamp": "2026-03-28T17:13:47.318Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the use of present tense to describe an action in progress at the moment of speaking, as cued by \"Regarde!\", which is precisely what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774718633157-6rsw8j8x",
+      "timestamp": "2026-03-28T17:24:09.554Z"
+    }
+  ]
+}

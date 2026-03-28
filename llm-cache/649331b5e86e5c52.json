@@ -1,0 +1,33 @@
+{
+  "cacheKey": "649331b5e86e5c52",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Nous _____ tous les jours. »\nChoices:\nA. [CORRECT] nageons\nB. nagons\nC. nageions\nD. nagerons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774720251397-wzlx5dr6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"nager\" ends in -ger, but the spelling rule (adding \"e\" before \"ons\") applies only to -ger verbs where the \"g\" would otherwise be hard before \"o\" — but \"nageons\" vs \"nagons\" wouldn't change pronunciation, so this doesn't actually test the rule about maintaining the soft \"g\" sound.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774720402901-ggsutebz",
+      "timestamp": "2026-03-28T17:53:40.187Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that verbs ending in -ger like \"nager\" need an intercalary 'e' before 'o' in the \"nous\" form to keep the 'g' soft (nageons vs nagons).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774726597907-osv7u8fw",
+      "timestamp": "2026-03-28T19:36:51.112Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"nager\" is a regular -er verb, not a -cer or -ger verb, so the question tests basic -er conjugation rather than the cédille and e intercalaire rules.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774726826046-pu64m56g",
+      "timestamp": "2026-03-28T19:45:36.031Z"
+    }
+  ]
+}

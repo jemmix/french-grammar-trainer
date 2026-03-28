@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8c7f7aa3f2d2f522",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe \"manger\" au présent avec \"nous\".\nPhrase: Nous ___ au restaurant ce soir.\nCorrect Answer: mangeons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774728535525-8mzb4kbk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the \"e\" intercalaire rule for -ger verbs in the nous form—without knowing this specific orthographic change, students would incorrectly answer \"mangons.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774728567063-8pmjpjpd",
+      "timestamp": "2026-03-28T20:09:40.138Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowledge of the intercalary 'e' in the nous form of -ger verbs like \"manger\" (mangeons), which is the core concept of the stated rule about cédille et e intercalaire.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774728610420-kje9mjth",
+      "timestamp": "2026-03-28T20:10:20.680Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the intercalary \"e\" required for -ger verbs like \"manger\" in the nous form of the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774728650626-zyjztfsk",
+      "timestamp": "2026-03-28T20:11:10.661Z"
+    }
+  ]
+}

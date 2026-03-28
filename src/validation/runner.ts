@@ -126,16 +126,6 @@ function formatStatus(result: { status: string; reason?: string }): string {
   return "\x1b[31m" + result.status.toUpperCase() + "\x1b[0m" + (result.reason ? ": " + result.reason : "");
 }
 
-function emitResult(
-  questionId: string,
-  predicateId: string,
-  attemptNumber: number,
-  result: { status: string; reason?: string },
-  progressSuffix?: string
-): string {
-  const status = formatStatus(result);
-  return "  " + questionId + " | " + predicateId + " | attempt " + attemptNumber + " | " + status + (progressSuffix || "");
-}
 
 interface LLMPendingTask {
   predicate: LLMPredicate;
@@ -165,17 +155,15 @@ interface TaskProgress {
 interface ProgressTracker {
   tasks: TaskProgress[];
   completedCalls: number;
-  startTime: number;
-  emaCallMs: number;
+  emaCallDuration: number;
   emaAlpha: number;
-  _lastTick: number;
+  concurrency: number;
 }
 
 class ProgressUI {
   tracker: ProgressTracker;
 
-  constructor(taskCount: number) {
-    const now = Date.now();
+  constructor(taskCount: number, concurrency: number) {
     const tasks: TaskProgress[] = [];
     for (let i = 0; i < taskCount; i++) {
       tasks.push({ completedCalls: 0, failCount: 0, done: false });
@@ -183,18 +171,14 @@ class ProgressUI {
     this.tracker = {
       tasks,
       completedCalls: 0,
-      startTime: now,
-      emaCallMs: 0,
-      emaAlpha: 0.3,
-      _lastTick: now,
+      emaCallDuration: 0,
+      emaAlpha: 0.1,
+      concurrency,
     };
   }
 
-  tick(taskIndex: number, failCount: number): void {
-    const now = Date.now();
-    const callMs = now - this.tracker._lastTick;
-    this.tracker.emaCallMs = this.tracker.emaAlpha * callMs + (1 - this.tracker.emaAlpha) * this.tracker.emaCallMs;
-    this.tracker._lastTick = now;
+  tick(taskIndex: number, failCount: number, callDuration: number): void {
+    this.tracker.emaCallDuration = this.tracker.emaAlpha * callDuration + (1 - this.tracker.emaAlpha) * this.tracker.emaCallDuration;
     this.tracker.completedCalls++;
     this.tracker.tasks[taskIndex]!.completedCalls++;
     this.tracker.tasks[taskIndex]!.failCount = failCount;
@@ -244,7 +228,7 @@ class ProgressUI {
     const total = this.estimatedTotal();
     const pct = total > 0 ? Math.round((this.tracker.completedCalls / total) * 100) : 0;
     const remaining = total - this.tracker.completedCalls;
-    const eta = this.tracker.completedCalls === 0 ? "..." : formatEta(remaining * this.tracker.emaCallMs);
+    const eta = this.tracker.completedCalls === 0 ? "..." : formatEta((remaining * this.tracker.emaCallDuration) / this.tracker.concurrency);
     process.stdout.write("\r  " + this.tracker.completedCalls + "/" + total + " LLM calls (" + pct + "%) | ETA " + eta + "    ");
   }
 }
@@ -252,11 +236,12 @@ class ProgressUI {
 async function runLLMBatch(
   tasks: LLMPendingTask[],
   updateCache: boolean,
+  concurrency: number,
   limitConcurrency: <T>(fn: () => Promise<T>) => Promise<T>,
   verbose: boolean,
   harness: LLMHarness
 ): Promise<void> {
-  const ui = new ProgressUI(tasks.length);
+  const ui = new ProgressUI(tasks.length, concurrency);
 
   const runTask = async (taskIndex: number) => {
     const task = tasks[taskIndex]!;
@@ -282,6 +267,7 @@ async function runLLMBatch(
       await limitConcurrency(async () => {
         const nonce = generateNonce();
         
+        const callStart = Date.now();
         const response = await runWithRetry(
           async () => {
             const res = await harness.run(spec, nonce);
@@ -294,6 +280,7 @@ async function runLLMBatch(
           "LLM call for " + ctx.question.id + "/" + predicate.id,
           (msg) => ui.write(msg)
         );
+        const callDuration = Date.now() - callStart;
         
         entry.responses.push(response);
         attemptNumber++;
@@ -301,7 +288,7 @@ async function runLLMBatch(
         const validResults = getValidResults();
         const failCount = validResults.filter(r => r.status === "fail").length;
         
-        ui.tick(taskIndex, failCount);
+        ui.tick(taskIndex, failCount, callDuration);
         
         if (verbose) {
           const interp = predicate.interpretResponse(ctx, response.raw);
@@ -502,7 +489,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
       console.log(cachedResponseCount + " results loaded from cache");
     }
     console.log("Running " + llmPendingTasks.length + " LLM tasks (max " + concurrency + " concurrent)...");
-    await runLLMBatch(llmPendingTasks, !!opts.updateCache, limitConcurrency, verbose, harness);
+    await runLLMBatch(llmPendingTasks, !!opts.updateCache, concurrency, limitConcurrency, verbose, harness);
   }
   
   if (opts.pruneCache) {
