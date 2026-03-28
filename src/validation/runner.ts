@@ -128,6 +128,7 @@ function emitResult(
   attemptNumber: number,
   result: { status: string; reason?: string }
 ): void {
+  process.stdout.write("\r\x1b[K");
   const status = formatStatus(result);
   console.log("  " + questionId + " | " + predicateId + " | attempt " + attemptNumber + " | " + status);
 }
@@ -138,6 +139,57 @@ interface LLMPendingTask {
   entry: CacheEntry;
   fromCache: boolean;
   resolve: (result: ValidPredicateResult & { responseCount: number; attemptDetails?: string[] }) => void;
+}
+
+function formatEta(ms: number): string {
+  if (ms < 1000 || !isFinite(ms)) return "...";
+  const s = Math.round(ms / 1000);
+  if (s < 60) return s + "s";
+  const m = Math.floor(s / 60);
+  const rem = s % 60;
+  return m + "m" + (rem > 0 ? rem + "s" : "");
+}
+
+interface ProgressTracker {
+  completed: number;
+  total: number;
+  startTime: number;
+  emaTaskMs: number;
+  emaAlpha: number;
+  _lastComplete: number;
+}
+
+function createProgressTracker(total: number): ProgressTracker {
+  const now = Date.now();
+  return { completed: 0, total, startTime: now, emaTaskMs: 0, emaAlpha: 0.3, _lastComplete: now };
+}
+
+function renderProgress(tracker: ProgressTracker): void {
+  const elapsed = Date.now() - tracker.startTime;
+  const pct = Math.round((tracker.completed / tracker.total) * 100);
+  const remaining = tracker.total - tracker.completed;
+  let eta: string;
+  if (tracker.completed === 0) {
+    eta = "...";
+  } else {
+    const estimatedRemaining = remaining * tracker.emaTaskMs;
+    eta = formatEta(estimatedRemaining);
+  }
+  const bar = "\r  " + tracker.completed + "/" + tracker.total + " tasks (" + pct + "%) | ETA " + eta + "    ";
+  process.stdout.write(bar);
+}
+
+function progressTick(tracker: ProgressTracker): void {
+  const now = Date.now();
+  const taskMs = now - (tracker.completed === 0 ? tracker.startTime : tracker._lastComplete);
+  tracker.emaTaskMs = tracker.emaAlpha * taskMs + (1 - tracker.emaAlpha) * tracker.emaTaskMs;
+  tracker._lastComplete = now;
+  tracker.completed++;
+  renderProgress(tracker);
+}
+
+function finishProgress(tracker: ProgressTracker): void {
+  process.stdout.write("\r\x1b[K");
 }
 
 async function runLLMBatch(
@@ -165,16 +217,6 @@ async function runLLMBatch(
     };
     
     let attemptNumber = 0;
-    
-    if (verbose && fromCache) {
-      for (const response of entry.responses) {
-        attemptNumber++;
-        const interp = predicate.interpretResponse(ctx, response.raw);
-        emitResult(ctx.question.id, predicate.id, attemptNumber, interp);
-      }
-    } else {
-      attemptNumber = entry.responses.length;
-    }
     
     while (updateCache && needsMore()) {
       await limitConcurrency(async () => {
@@ -240,7 +282,19 @@ async function runLLMBatch(
     }
   };
   
-  await Promise.all(tasks.map(runTask));
+  const tracker = createProgressTracker(tasks.length);
+  renderProgress(tracker);
+  
+  const trackedRunTask = async (task: LLMPendingTask) => {
+    try {
+      await runTask(task);
+    } finally {
+      progressTick(tracker);
+    }
+  };
+  
+  await Promise.all(tasks.map(trackedRunTask));
+  finishProgress(tracker);
 }
 
 export async function runValidation(opts: ValidationOptions): Promise<ValidationReport> {
