@@ -64,6 +64,11 @@ function parseArgs(): ValidationOptions & { json?: boolean } {
   return opts;
 }
 
+function extractRuleId(questionId: string): string {
+  const parts = questionId.split("-");
+  return parts.length >= 2 ? parts[0] + "-" + parts[1] : questionId;
+}
+
 function printReport(report: ValidationReport, json: boolean): void {
   if (json) {
     console.log(JSON.stringify(report, null, 2));
@@ -76,11 +81,31 @@ function printReport(report: ValidationReport, json: boolean): void {
   
   if (failed.length > 0) {
     console.log("FAILURES:\n");
+    
+    const byRule = new Map<string, Map<string, typeof failed>>();
     for (const r of failed) {
-    console.log("  [" + r.predicateId + "] " + r.questionId);
-    if (r.reason) console.log("    " + r.reason);
+      const ruleId = extractRuleId(r.questionId);
+      if (!byRule.has(ruleId)) byRule.set(ruleId, new Map());
+      const ruleMap = byRule.get(ruleId)!;
+      if (!ruleMap.has(r.questionId)) ruleMap.set(r.questionId, []);
+      ruleMap.get(r.questionId)!.push(r);
     }
-    console.log("");
+    
+    for (const [ruleId, questions] of byRule) {
+      console.log("  Rule " + ruleId + ":");
+      for (const [questionId, results] of questions) {
+        console.log("    " + questionId + ":");
+        for (const r of results) {
+          console.log("      [" + r.predicateId + "] " + (r.reason || "FAIL"));
+          if (r.attemptDetails) {
+            for (const line of r.attemptDetails) {
+              console.log("        " + line);
+            }
+          }
+        }
+      }
+      console.log("");
+    }
   }
   
   console.log("SUMMARY:");

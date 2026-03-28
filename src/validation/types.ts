@@ -79,6 +79,7 @@ export interface CheckResult {
   reason?: string;
   fromCache?: boolean;
   responseCount?: number;
+  attemptDetails?: string[];
 }
 
 export interface ValidationReport {

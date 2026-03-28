@@ -126,12 +126,10 @@ function emitResult(
   questionId: string,
   predicateId: string,
   attemptNumber: number,
-  fromCache: boolean,
   result: { status: string; reason?: string }
 ): void {
-  const cacheTag = fromCache ? "[cached]" : "[fresh] ";
   const status = formatStatus(result);
-  console.log("  " + questionId + " | " + predicateId + " | attempt " + attemptNumber + " | " + cacheTag + " " + status);
+  console.log("  " + questionId + " | " + predicateId + " | attempt " + attemptNumber + " | " + status);
 }
 
 interface LLMPendingTask {
@@ -139,7 +137,7 @@ interface LLMPendingTask {
   ctx: QuestionContext;
   entry: CacheEntry;
   fromCache: boolean;
-  resolve: (result: ValidPredicateResult & { responseCount: number }) => void;
+  resolve: (result: ValidPredicateResult & { responseCount: number; attemptDetails?: string[] }) => void;
 }
 
 async function runLLMBatch(
@@ -160,8 +158,9 @@ async function runLLMBatch(
     
     const needsMore = () => {
       const validResults = getValidResults();
-      if (validResults.length < INITIAL_RUNS) return true;
       const failCount = validResults.filter(r => r.status === "fail").length;
+      if (failCount >= 2) return false;
+      if (validResults.length < INITIAL_RUNS) return true;
       return failCount > 0 && validResults.length < INITIAL_RUNS + ADDITIONAL_RUNS;
     };
     
@@ -171,7 +170,7 @@ async function runLLMBatch(
       for (const response of entry.responses) {
         attemptNumber++;
         const interp = predicate.interpretResponse(ctx, response.raw);
-        emitResult(ctx.question.id, predicate.id, attemptNumber, true, interp);
+        emitResult(ctx.question.id, predicate.id, attemptNumber, interp);
       }
     } else {
       attemptNumber = entry.responses.length;
@@ -196,7 +195,7 @@ async function runLLMBatch(
         attemptNumber++;
         if (verbose) {
           const interp = predicate.interpretResponse(ctx, response.raw);
-          emitResult(ctx.question.id, predicate.id, attemptNumber, false, interp);
+          emitResult(ctx.question.id, predicate.id, attemptNumber, interp);
         }
         
         entry.responses.push(response);
@@ -206,7 +205,7 @@ async function runLLMBatch(
     
     if (entry.responses.length === 0) {
       if (verbose) {
-        emitResult(ctx.question.id, predicate.id, 0, fromCache, { status: "fail", reason: "No cached responses and cache update disabled" });
+        emitResult(ctx.question.id, predicate.id, 0, { status: "fail", reason: "No cached responses and cache update disabled" });
       }
       task.resolve({ status: "fail", reason: "No cached responses and cache update disabled", responseCount: 0 });
       return;
@@ -233,7 +232,11 @@ async function runLLMBatch(
       task.resolve({ status: "fail", reason, responseCount: totalValid });
     } else {
       const reason = "No clear majority: " + passCount + "/" + totalValid + " PASS";
-      task.resolve({ status: "fail", reason, responseCount: totalValid });
+      const attemptDetails = validResults.map((r, i) => {
+        const tag = r.status === "pass" ? "PASS" : "FAIL" + (r.reason ? ": " + r.reason : "");
+        return "attempt " + (i + 1) + ": " + tag;
+      });
+      task.resolve({ status: "fail", reason, responseCount: totalValid, attemptDetails });
     }
   };
   
@@ -350,6 +353,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
               reason: llmResult.status === "fail" ? llmResult.reason : undefined,
               fromCache,
               responseCount: llmResult.responseCount,
+              attemptDetails: (llmResult as any).attemptDetails,
             };
             results.push(result);
             if (result.pass) passed++;
@@ -377,6 +381,10 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   results.unshift(...structuralResults);
   
   if (llmPendingTasks.length > 0) {
+    const cachedResponseCount = llmPendingTasks.reduce((sum, t) => sum + t.entry.responses.length, 0);
+    if (cachedResponseCount > 0) {
+      console.log(cachedResponseCount + " results loaded from cache");
+    }
     console.log("Running " + llmPendingTasks.length + " LLM tasks (max " + concurrency + " concurrent)...");
     await runLLMBatch(llmPendingTasks, !!opts.updateCache, limitConcurrency, verbose, harness);
   }
