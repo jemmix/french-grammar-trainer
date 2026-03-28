@@ -41,7 +41,8 @@ function calculateDelay(attempt: number): number {
 
 async function runWithRetry<T>(
   fn: () => Promise<T>,
-  operation: string
+  operation: string,
+  onWarn?: (msg: string) => void
 ): Promise<T> {
   let lastError: Error | null = null;
 
@@ -60,10 +61,13 @@ async function runWithRetry<T>(
       }
 
       const delay = calculateDelay(attempt);
-      console.warn(
-        operation + " failed (attempt " + (attempt + 1) + "/" + (MAX_RETRIES + 1) + "), " +
-        "retrying in " + Math.round(delay) + "ms: " + lastError.message.split("\n")[0]
-      );
+      const msg = operation + " failed (attempt " + (attempt + 1) + "/" + (MAX_RETRIES + 1) + "), " +
+        "retrying in " + Math.round(delay) + "ms: " + lastError.message.split("\n")[0];
+      if (onWarn) {
+        onWarn(msg);
+      } else {
+        console.warn(msg);
+      }
       await sleep(delay);
     }
   }
@@ -127,18 +131,10 @@ function emitResult(
   predicateId: string,
   attemptNumber: number,
   result: { status: string; reason?: string },
-  progressSuffix?: string,
-  tracker?: ProgressTracker
-): void {
-  if (isInteractive) {
-    process.stdout.write("\r\x1b[K");
-  }
+  progressSuffix?: string
+): string {
   const status = formatStatus(result);
-  const line = "  " + questionId + " | " + predicateId + " | attempt " + attemptNumber + " | " + status;
-  console.log(line + (progressSuffix || ""));
-  if (isInteractive && tracker) {
-    renderInteractiveProgress(tracker);
-  }
+  return "  " + questionId + " | " + predicateId + " | attempt " + attemptNumber + " | " + status + (progressSuffix || "");
 }
 
 interface LLMPendingTask {
@@ -162,7 +158,6 @@ const isInteractive = process.stdout.isTTY;
 
 interface TaskProgress {
   completedCalls: number;
-  estimatedTotalCalls: number;
   failCount: number;
   done: boolean;
 }
@@ -176,79 +171,81 @@ interface ProgressTracker {
   _lastTick: number;
 }
 
-function createProgressTracker(taskCount: number): ProgressTracker {
-  const now = Date.now();
-  const tasks: TaskProgress[] = [];
-  for (let i = 0; i < taskCount; i++) {
-    tasks.push({ completedCalls: 0, estimatedTotalCalls: INITIAL_RUNS, failCount: 0, done: false });
-  }
-  const totalExpected = taskCount * INITIAL_RUNS;
-  return {
-    tasks,
-    completedCalls: 0,
-    startTime: now,
-    emaCallMs: 0,
-    emaAlpha: 0.3,
-    _lastTick: now,
-  };
-}
+class ProgressUI {
+  tracker: ProgressTracker;
 
-function estimatedTotalCalls(tracker: ProgressTracker): number {
-  let total = 0;
-  for (const t of tracker.tasks) {
-    if (t.done) {
-      total += t.completedCalls;
-    } else if (t.failCount >= 2) {
-      total += t.completedCalls;
-    } else if (t.failCount === 1) {
-      total += Math.max(t.completedCalls, INITIAL_RUNS + ADDITIONAL_RUNS);
-    } else {
-      total += Math.max(t.completedCalls, INITIAL_RUNS);
+  constructor(taskCount: number) {
+    const now = Date.now();
+    const tasks: TaskProgress[] = [];
+    for (let i = 0; i < taskCount; i++) {
+      tasks.push({ completedCalls: 0, failCount: 0, done: false });
+    }
+    this.tracker = {
+      tasks,
+      completedCalls: 0,
+      startTime: now,
+      emaCallMs: 0,
+      emaAlpha: 0.3,
+      _lastTick: now,
+    };
+  }
+
+  tick(taskIndex: number, failCount: number): void {
+    const now = Date.now();
+    const callMs = now - this.tracker._lastTick;
+    this.tracker.emaCallMs = this.tracker.emaAlpha * callMs + (1 - this.tracker.emaAlpha) * this.tracker.emaCallMs;
+    this.tracker._lastTick = now;
+    this.tracker.completedCalls++;
+    this.tracker.tasks[taskIndex]!.completedCalls++;
+    this.tracker.tasks[taskIndex]!.failCount = failCount;
+    this.render();
+  }
+
+  done(taskIndex: number): void {
+    this.tracker.tasks[taskIndex]!.done = true;
+  }
+
+  write(msg: string): void {
+    if (isInteractive) {
+      process.stdout.write("\r\x1b[K");
+    }
+    console.log(msg);
+    this.render();
+  }
+
+  finish(): void {
+    if (isInteractive) {
+      process.stdout.write("\r\x1b[K");
     }
   }
-  return total;
-}
 
-function formatProgressSuffix(tracker: ProgressTracker): string {
-  const total = estimatedTotalCalls(tracker);
-  const pct = total > 0 ? Math.round((tracker.completedCalls / total) * 100) : 0;
-  return " [" + tracker.completedCalls + "/" + total + " " + pct + "%]";
-}
-
-function renderInteractiveProgress(tracker: ProgressTracker): void {
-  const total = estimatedTotalCalls(tracker);
-  const pct = total > 0 ? Math.round((tracker.completedCalls / total) * 100) : 0;
-  const remaining = total - tracker.completedCalls;
-  let eta: string;
-  if (tracker.completedCalls === 0) {
-    eta = "...";
-  } else {
-    eta = formatEta(remaining * tracker.emaCallMs);
+  suffix(): string {
+    const total = this.estimatedTotal();
+    const pct = total > 0 ? Math.round((this.tracker.completedCalls / total) * 100) : 0;
+    return " [" + this.tracker.completedCalls + "/" + total + " " + pct + "%]";
   }
-  const bar = "\r  " + tracker.completedCalls + "/" + total + " LLM calls (" + pct + "%) | ETA " + eta + "    ";
-  process.stdout.write(bar);
-}
 
-function progressCallTick(tracker: ProgressTracker, taskIndex: number, failCount: number): void {
-  const now = Date.now();
-  const callMs = now - tracker._lastTick;
-  tracker.emaCallMs = tracker.emaAlpha * callMs + (1 - tracker.emaAlpha) * tracker.emaCallMs;
-  tracker._lastTick = now;
-  tracker.completedCalls++;
-  tracker.tasks[taskIndex]!.completedCalls++;
-  tracker.tasks[taskIndex]!.failCount = failCount;
-  if (isInteractive) {
-    renderInteractiveProgress(tracker);
+  private estimatedTotal(): number {
+    let total = 0;
+    for (const t of this.tracker.tasks) {
+      if (t.done || t.failCount >= 2) {
+        total += t.completedCalls;
+      } else if (t.failCount === 1) {
+        total += Math.max(t.completedCalls, INITIAL_RUNS + ADDITIONAL_RUNS);
+      } else {
+        total += Math.max(t.completedCalls, INITIAL_RUNS);
+      }
+    }
+    return total;
   }
-}
 
-function progressTaskDone(tracker: ProgressTracker, taskIndex: number): void {
-  tracker.tasks[taskIndex]!.done = true;
-}
-
-function finishProgress(tracker: ProgressTracker): void {
-  if (isInteractive) {
-    process.stdout.write("\r\x1b[K");
+  private render(): void {
+    if (!isInteractive) return;
+    const total = this.estimatedTotal();
+    const pct = total > 0 ? Math.round((this.tracker.completedCalls / total) * 100) : 0;
+    const remaining = total - this.tracker.completedCalls;
+    const eta = this.tracker.completedCalls === 0 ? "..." : formatEta(remaining * this.tracker.emaCallMs);
+    process.stdout.write("\r  " + this.tracker.completedCalls + "/" + total + " LLM calls (" + pct + "%) | ETA " + eta + "    ");
   }
 }
 
@@ -259,14 +256,11 @@ async function runLLMBatch(
   verbose: boolean,
   harness: LLMHarness
 ): Promise<void> {
-  const tracker = createProgressTracker(tasks.length);
-  if (isInteractive) {
-    renderInteractiveProgress(tracker);
-  }
+  const ui = new ProgressUI(tasks.length);
 
   const runTask = async (taskIndex: number) => {
     const task = tasks[taskIndex]!;
-    const { predicate, ctx, entry, fromCache } = task;
+    const { predicate, ctx, entry } = task;
     const spec = { systemPrompt: entry.spec.systemPrompt, userPrompt: entry.spec.userPrompt };
     
     const getValidResults = () => {
@@ -297,7 +291,8 @@ async function runLLMBatch(
             }
             return res;
           },
-          "LLM call for " + ctx.question.id + "/" + predicate.id
+          "LLM call for " + ctx.question.id + "/" + predicate.id,
+          (msg) => ui.write(msg)
         );
         
         entry.responses.push(response);
@@ -306,23 +301,26 @@ async function runLLMBatch(
         const validResults = getValidResults();
         const failCount = validResults.filter(r => r.status === "fail").length;
         
-        progressCallTick(tracker, taskIndex, failCount);
+        ui.tick(taskIndex, failCount);
         
         if (verbose) {
           const interp = predicate.interpretResponse(ctx, response.raw);
-          const suffix = !isInteractive ? formatProgressSuffix(tracker) : undefined;
-          emitResult(ctx.question.id, predicate.id, attemptNumber, interp, suffix, tracker);
+          if (isInteractive) {
+            ui.write("  " + ctx.question.id + " | " + predicate.id + " | attempt " + attemptNumber + " | " + formatStatus(interp));
+          } else {
+            console.log("  " + ctx.question.id + " | " + predicate.id + " | attempt " + attemptNumber + " | " + formatStatus(interp) + ui.suffix());
+          }
         }
         
         saveCacheEntry(entry);
       });
     }
     
-    progressTaskDone(tracker, taskIndex);
+    ui.done(taskIndex);
     
     if (entry.responses.length === 0) {
       if (verbose) {
-        emitResult(ctx.question.id, predicate.id, 0, { status: "fail", reason: "No cached responses and cache update disabled" }, undefined, tracker);
+        ui.write("  " + ctx.question.id + " | " + predicate.id + " | attempt 0 | " + formatStatus({ status: "fail", reason: "No cached responses and cache update disabled" }));
       }
       task.resolve({ status: "fail", reason: "No cached responses and cache update disabled", responseCount: 0 });
       return;
@@ -358,7 +356,7 @@ async function runLLMBatch(
   };
   
   await Promise.all(tasks.map((_, i) => runTask(i)));
-  finishProgress(tracker);
+  ui.finish();
 }
 
 export async function runValidation(opts: ValidationOptions): Promise<ValidationReport> {
