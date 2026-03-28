@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9efd33f514d336de",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-09 - Les verbes en -yer (payer, essayer, envoyer, nettoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Je ___ mon bureau chaque vendredi. »\nChoices:\nA. [CORRECT] nettoie\nB. nettoye\nC. nettoyons\nD. nettoyez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774652709262-r3tg9uja"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the key -yer verb characteristic where 'y' becomes 'i' before a silent 'e' (nettoie vs the incorrect nettoye), which is the central grammar point of this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774652839884-bsro5sbi",
+      "timestamp": "2026-03-27T23:07:51.646Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the distinctive -yer verb conjugation pattern (y→i before silent e) with \"nettoie\" as the correct form, and the key distractor \"nettoye\" directly targets the specific rule exception.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774682949366-momjwrcx",
+      "timestamp": "2026-03-28T07:29:23.986Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To choose \"nettoie\" over \"nettoye\", you must know the -yer verb spelling rule (y → i in the je form), which is the core of this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774683233692-nong3qkc",
+      "timestamp": "2026-03-28T07:34:12.480Z"
+    }
+  ]
+}

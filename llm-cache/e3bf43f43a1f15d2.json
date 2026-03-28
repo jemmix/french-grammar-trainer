@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e3bf43f43a1f15d2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Nous _____ à 9 heures demain. »\nChoices:\nA. [CORRECT] commençons\nB. commencons\nC. commencerons\nD. commencions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774644349286-5b3xzvtu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the core rule for -cer verbs: the cedilla on \"ç\" in the nous form to preserve the /s/ sound, which is essential to distinguish \"commençons\" from the misspelled \"commencons\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644561756-ywrcm9zm",
+      "timestamp": "2026-03-27T20:49:50.849Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the orthographic change for -cer verbs in the nous form (adding cedilla to maintain soft 'c' sound), which is the core concept of rule 01-11.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644931591-blprtscz",
+      "timestamp": "2026-03-27T20:56:33.519Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly tests the cédille rule for -cer verbs in the nous form of the present tense (commençons vs commencons), which is the core of rule 01-11.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774645308991-fb7k2czv",
+      "timestamp": "2026-03-27T21:02:08.809Z"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "cacheKey": "8720343ac7152498",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je ___ dans la rue. »\nChoices:\nA. [CORRECT] gèle\nB. gelle\nC. gelerai\nD. gelais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774641909919-kounnsvf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that geler (an -eler verb) takes an umlaut (ë) in the je form of the present indicative, which is a specific spelling rule for this verb family.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642071860-5dhzudxv",
+      "timestamp": "2026-03-27T20:08:11.275Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests \"geler,\" which is the exception to the -eler doubling rule (it adds è rather than doubling the consonant like appeler/jeter), so answering correctly doesn't require knowledge of the stated doubling rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642413071-3tm7pgix",
+      "timestamp": "2026-03-27T20:13:49.054Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests whether \"geler\" uses the accent grave (è) instead of doubling the consonant, which is actually an EXCEPTION to the -eler/-eter doubling rule, not an application of it.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642906078-waieqvke",
+      "timestamp": "2026-03-27T20:21:59.598Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the verb \"geler\" which uses a grave accent (gèle) instead of doubling the consonant, while the rule specifically covers verbs like appeler and jeter that DO double the consonant (j'appelle, je jette).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643183118-qxbz8jyq",
+      "timestamp": "2026-03-27T20:27:49.452Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests \"geler\" (which uses accent changes, not consonant doubling), while the rule specifically covers -eler/-eter verbs that double consonants (appeler, jeter) - answering correctly requires knowledge of a different verb pattern entirely.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643390813-gnyiqnrh",
+      "timestamp": "2026-03-27T20:30:09.865Z"
+    },
+    {
+      "raw": "I need to check if \"geler\" follows the doubling rule or is an exception to validate this alignment.\nVERDICT: MISALIGNED\nREASON: \"Geler\" is an exception to the -eler doubling rule (it adds è instead of doubling l), so this question tests the exception rather than the rule about consonant doubling.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643550403-znzqasca",
+      "timestamp": "2026-03-27T20:33:13.715Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the distinction between verbs that double the consonant (like appeler → j'appelle) and verbs that use a grave accent instead (like geler → je gèle), which is the core concept of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643692732-g98ejzrw",
+      "timestamp": "2026-03-27T20:35:13.770Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests \"geler\" (which uses accent grave to avoid mute e), not a verb that doubles consonants like \"appeler\" or \"jeter\" as the rule requires.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643810052-m0fzu8ig",
+      "timestamp": "2026-03-27T20:37:37.979Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the accent pattern in \"geler\" (je gèle) which is a different conjugation rule than the -eler/-eter double consonant pattern covered by rule 01-10 (e.g., j'appelle, je jette).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643949620-swufi375",
+      "timestamp": "2026-03-27T20:39:22.676Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"geler\" uses an accent (je gèle) instead of doubling the consonant, making this question test the exception to the rule rather than the rule itself (which covers verbs like appeler/jeter that do double consonants).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644049788-x57x1wb0",
+      "timestamp": "2026-03-27T20:41:05.812Z"
+    }
+  ]
+}

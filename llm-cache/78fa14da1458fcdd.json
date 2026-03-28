@@ -1,0 +1,33 @@
+{
+  "cacheKey": "78fa14da1458fcdd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-09 - Les verbes en -yer (payer, essayer, envoyer, nettoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Elles ___ de garder les enfants ce soir. »\nChoices:\nA. [CORRECT] essaient\nB. essayent\nC. essaie\nD. essayer\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774135618398-p80uo5lt"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the -yer verb spelling rule (y → i before a mute e) to distinguish between \"essaient\" (correct) and \"essayent\" (incorrect) for \"Elles.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774135649690-jxhnp6gw",
+      "timestamp": "2026-03-21T23:27:41.551Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires choosing between \"essaient\" and \"essayent\", which directly tests the -yer spelling rule (y → i before mute e).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774135916243-qx2kda9x",
+      "timestamp": "2026-03-21T23:32:12.486Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the -yer verb conjugation rule (y → i transformation for present tense forms except nous/vous) to correctly conjugate \"essayer\" with the subject \"Elles.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774136166537-umk7swx8",
+      "timestamp": "2026-03-21T23:36:22.347Z"
+    }
+  ]
+}

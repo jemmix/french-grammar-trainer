@@ -1,0 +1,33 @@
+{
+  "cacheKey": "adee1ee215a2e111",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-09 - Les verbes en -yer (payer, essayer, envoyer, nettoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Il ___ un message à ses parents chaque semaine. »\nChoices:\nA. [CORRECT] envoie\nB. envoye\nC. envoyer\nD. envoyait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774650461299-412sr6w1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the characteristic y→i spelling change in -yer verbs (envoie not envoye), which is the defining feature of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774650511115-fqs9hcc2",
+      "timestamp": "2026-03-27T22:28:44.385Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the y→i spelling change for -yer verbs like envoyer in present tense, distinguishing the correct conjugation from incorrect forms that miss this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774650788410-yel63nz0",
+      "timestamp": "2026-03-27T22:33:38.143Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -yer verb conjugation pattern where the correct present tense form \"envoie\" (with 'i') distinguishes it from the incorrect \"envoye\" spelling and requires knowledge of the specific -yer spelling rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774651077361-wclnhdn7",
+      "timestamp": "2026-03-27T22:38:23.478Z"
+    }
+  ]
+}

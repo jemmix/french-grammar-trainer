@@ -1,0 +1,82 @@
+{
+  "cacheKey": "432ac0e4f208fb69",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Tu ___ un manteau. »\nChoices:\nA. [CORRECT] achètes\nB. achetes\nC. achettes\nD. achetais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774641909919-jer8ahss"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of \"acheter\" (a verb in -eter), which requires knowledge that this family uses \"è\" accents rather than doubling the consonon like jeter/appeler.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642103510-ly633brk",
+      "timestamp": "2026-03-27T20:08:44.860Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"Acheter\" uses è accent (exception) instead of doubling the consonant (as appeler/jeter do), so this question tests spelling with accents, not the double-consonant rule stated.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642439087-3m7mxr2e",
+      "timestamp": "2026-03-27T20:14:21.821Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"Acheter\" doesn't follow the -eler/-eter doubling rule (it takes a grave accent: achètes), so this question tests accent placement rather than consonant doubling.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642936043-e9173iak",
+      "timestamp": "2026-03-27T20:22:37.203Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests \"acheter\" which uses an accent grave (achètes) instead of doubling the consonant, while the rule specifically focuses on -eler/-eter verbs that double consonants like appeler/appelle and jeter/jette.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643209405-ddkgdgbc",
+      "timestamp": "2026-03-27T20:27:10.149Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The rule specifically targets -eter verbs that double the consonant (like jeter → je jette), but \"acheter\" uses an accent grave (achètes) instead of doubling, so this question tests a different -eter pattern than the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643350475-ntt0ll1m",
+      "timestamp": "2026-03-27T20:29:41.871Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"acheter\" doesn't actually double the consonant in its conjugation (it adds an accent instead, e.g., \"achètes\"), so this question tests accent placement rather than the doubling consonant rule stated.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643530532-fmzz7xxa",
+      "timestamp": "2026-03-27T20:32:39.547Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the -eter verb conjugation rule requiring consonant doubling in the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643671954-tpfosdxv",
+      "timestamp": "2026-03-27T20:35:56.594Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"acheter\" takes an accent grave (achète/achètes) rather than doubling the consonant, so this question actually tests the -eter → -èter accent variation, not the double consonant pattern that is the core of rule 01-10.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643863130-qpmf6evx",
+      "timestamp": "2026-03-27T20:40:15.158Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"acheter\" is a -eter verb that adds an accent grave (è) instead of doubling the consonant, so it doesn't demonstrate the double consonant pattern that this rule specifically covers; the correct answer requires knowing an exception to the rule, not the rule itself.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644089605-1nptcowv",
+      "timestamp": "2026-03-27T20:41:50.217Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that -eter verbs like \"acheter\" double the 't' in the tu form (tu achètes), distinguishing it from the undoubled form (achetes) and misaccented forms (achettes).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644129693-myzqprvl",
+      "timestamp": "2026-03-27T20:42:34.921Z"
+    }
+  ]
+}

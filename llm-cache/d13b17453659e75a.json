@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d13b17453659e75a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je ___ un livre à terre. »\nChoices:\nA. [CORRECT] jette\nB. jete\nC. jète\nD. jetasse\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774641909919-9b375lg1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the conjugation of \"jeter\" (an -eter verb) for \"je\" in the present indicative, which requires knowing the consonant doubling rule (t → tt) that is the core of rule 01-10.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642168961-67w2n3my",
+      "timestamp": "2026-03-27T20:09:39.136Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To select \"jette\" (the correct answer), the learner must know that verbs ending in -eter like \"jeter\" double the consonant in the present indicative conjugations (je jette, tu jettes, etc.), which is the exact rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642501109-gr5juggf",
+      "timestamp": "2026-03-27T20:15:14.997Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the double consonne rule for -eter verbs in the present indicative (je jette), which is the core of rule 01-10.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642966560-zspu8br8",
+      "timestamp": "2026-03-27T20:27:29.627Z"
+    }
+  ]
+}

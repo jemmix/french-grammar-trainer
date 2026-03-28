@@ -1,0 +1,82 @@
+{
+  "cacheKey": "a0626f3077fb2ea5",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-12-019",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Les verbes pronominaux au présent (se lever, se souvenir, s'asseoir)\n\nQUESTION:\nPrompt: Complétez : « Vous ___ demain. »\nChoices:\nA. vous couchez\nB. vous couchiez\nC. nous couchons\nD. te couches\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1774647032468-e36n269d"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt doesn't specify which verb to complete with (only visible in choices), which tense (present/imperfect both offered despite \"demain\" suggesting future context), and the sentence subject \"Vous\" doesn't disambiguate the correct choice since multiple options could grammatically fit depending on unspecified constraints.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774647375165-2weeh8wl",
+      "timestamp": "2026-03-27T21:36:27.136Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nREASON: The rule describes reflexive verbs (se lever, se souvenir, s'asseoir) but the prompt uses \"coucher\" (not listed in the rule) without the required reflexive pronoun, and choices mix different subjects despite \"Vous\" being the sentence subject, making the task unclear and potentially unsolvable.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774647840729-wlfmjbfx",
+      "timestamp": "2026-03-27T21:44:15.255Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The time marker \"demain\" suggests future tense, but all available choices are in present or imperfect, creating a contradiction that makes the intended correct answer unclear.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774648302837-gq0e2wgc",
+      "timestamp": "2026-03-27T21:51:51.163Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt doesn't specify which verb to conjugate, the choices show \"coucher\" which isn't listed in the pronominal verbs rule, and the answers use inconsistent subjects (vous, nous, te) that don't match the prompt's \"Vous\" subject.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774648559731-3y9cucg4",
+      "timestamp": "2026-03-27T21:56:10.639Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt doesn't specify which verb to conjugate, the rule states \"pronominal verbs\" but the choices are non-pronominal forms of \"coucher\", and the blank suggests only the verb is needed yet choices include subject pronouns like \"vous\" and \"nous\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774648781634-1ey79fj1",
+      "timestamp": "2026-03-27T21:59:54.671Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt lacks context about which tense to use (present vs. imperfect), the verb \"coucher\" doesn't match the reflexive verb rule, and it doesn't specify whether the verb should be reflexive or not.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774649051229-bl5x7no9",
+      "timestamp": "2026-03-27T22:04:21.823Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt doesn't specify whether to conjugate for \"vous\" or change the subject, and \"demain\" suggests future tense but neither choice is a future form, making the required tense unclear.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774649270790-gn63jncf",
+      "timestamp": "2026-03-27T22:07:59.632Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt lacks necessary context - without reflexive pronouns or explicit instruction to use a pronominal verb form, it's unclear what grammatical construction is expected, especially since none of the provided choices are actually pronominal (all lack \"se\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774649492798-dqorlb0i",
+      "timestamp": "2026-03-27T22:11:47.831Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The question tests reflexive verbs but uses \"coucher\" without reflexive pronouns, creating confusion between transitive \"to put to bed\" and reflexive \"to go to bed\", and lacks context for what action \"Vous\" performs tomorrow.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774649732365-bd384gtn",
+      "timestamp": "2026-03-27T22:15:44.964Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The sentence has subject \"Vous\" but choices include \"nous couchons\" and \"te couches\" with different subjects, making it impossible to determine which verb form is intended to complete the sentence grammatically.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774649961819-qixs4r17",
+      "timestamp": "2026-03-27T22:19:34.125Z"
+    }
+  ]
+}

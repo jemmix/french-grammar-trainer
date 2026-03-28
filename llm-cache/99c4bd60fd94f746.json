@@ -1,0 +1,82 @@
+{
+  "cacheKey": "99c4bd60fd94f746",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Nous ___ du pain. »\nChoices:\nA. [CORRECT] achetons\nB. achètons\nC. achettions\nD. achetions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774641909919-2b8eyygu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Answering correctly requires knowing that -eter verbs like acheter do NOT double the consonant in the nous/vous forms.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642124860-e4kg8i7r",
+      "timestamp": "2026-03-27T20:08:56.002Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of how -eter verbs like \"acheter\" conjugate (doubling consonant vs adding accent grave), requiring the learner to know that in the \"nous\" présent form, acheter becomes \"achetons\" (no accent grave because no mute e follows).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642452191-f1ydmds0",
+      "timestamp": "2026-03-27T20:15:35.786Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the special case of acheter (which uses an accent grave instead of doubling consonants), which is an exception to the general rule about -eter/-eler verbs with double consonnes like jeter/appeler.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642992754-y48nqlrr",
+      "timestamp": "2026-03-27T20:24:05.377Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"Acheter\" is an exception to the -eter rule that uses grave accent (è) instead of doubling consonants, and the question asks for the \"nous\" form where neither the accent nor doubled consonant appear - so this doesn't test the doubling consonant rule at all.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643239151-mwmug7w0",
+      "timestamp": "2026-03-27T20:27:41.308Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question asks for the \"nous\" form of \"acheter\" which does NOT double the consonant, so answering correctly requires knowing when NOT to apply the rule rather than how to apply it; it tests the exception rather than the rule itself.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643387856-meeq1qs7",
+      "timestamp": "2026-03-27T20:30:02.476Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -eter verb conjugation rule where the nous/vous forms (achetons) do NOT double the consonant, distinguishing it from the singular forms that double the consonant (achète).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643549065-a81q22o7",
+      "timestamp": "2026-03-27T20:37:48.764Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowing the -eter verb conjugation rule, specifically that \"nous\" forms do not double the consonant or add an accent (achetons), and distinguishing this from other potential -eter forms like j'achète or nous achèterions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643960609-0uebr1xf",
+      "timestamp": "2026-03-27T20:39:46.062Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge that -eter verbs like \"acheter\" do NOT double the consonne or add an accent in the nous form, which is a specific exception covered by this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644065905-y8waz7tp",
+      "timestamp": "2026-03-27T20:41:54.339Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the conjugation of \"acheter\" (a -eter verb) in the present tense, requiring knowledge that the consonant-doubling rule doesn't apply to the \"nous\" form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644131958-7ps51hd9",
+      "timestamp": "2026-03-27T20:43:07.422Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests the present tense conjugation of \"acheter\" but uses the \"nous\" form, which does NOT double the consonant according to the rule about -eler/-eter verbs (doubling only occurs in stressed forms like je/tu/il/elle/ils/elles, not nous/vous).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644187423-z7mq0rxd",
+      "timestamp": "2026-03-27T20:43:17.697Z"
+    }
+  ]
+}

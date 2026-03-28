@@ -1,0 +1,82 @@
+{
+  "cacheKey": "0f970f04e17bd6ed",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « rappeler » au présent, 1ère personne du pluriel.\nPhrase: Nous ___ les enfants à dix-sept heures.\nCorrect Answer: rappelons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774641909920-d8tg05e9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question asks for the \"nous\" form of \"rappeler\", which does NOT double the consonant (rappelons), so it doesn't test the distinctive doubling rule - it only requires standard -er verb conjugation knowledge.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642282983-sm500p65",
+      "timestamp": "2026-03-27T20:11:39.198Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The \"nous\" form of -eler verbs follows the regular conjugation pattern without consonant doubling, so the question can be answered correctly using only basic -er verb knowledge without understanding the doubling rule or its exceptions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642628886-6p2ihs9v",
+      "timestamp": "2026-03-27T20:17:26.032Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question asks for \"nous rappelons\" which does NOT double the consonant, but the rule is specifically about -eler/-eter verbs that DO double consonons; a proper test would use je/tu/il/elle/ils/elles forms where doubling occurs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643110447-xkyvb830",
+      "timestamp": "2026-03-27T20:25:45.418Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the key pattern of -eler verbs: using single consonant in nous/vous forms (rappelons) vs doubled consonant in other forms (je rappelle, nous rappelons).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643279500-hq4poe7j",
+      "timestamp": "2026-03-27T20:28:25.059Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The rule is about when -eler/-eter verbs double their consonants, but the \"nous\" form (rappelons) is the exception where doubling does NOT occur, so answering correctly requires knowing the exception to the rule rather than the rule itself.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643435743-xjrr8b35",
+      "timestamp": "2026-03-27T20:30:48.662Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that -eler verbs like \"rappeler\" do NOT double the consonant in the \"nous\" form (\"nous rappelons\" vs \"nous appelons\"), demonstrating mastery of the conjugation pattern covered in rule 01-10.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643581334-ssubl2xq",
+      "timestamp": "2026-03-27T20:33:23.426Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The nous form of -eler/-eter verbs (rappelons) follows regular -er conjugation with no doubled consonant, so the answer can be determined without knowing the special doubling rule for je/tu/il/elle/on/ils/elles forms.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643696262-b4unxwji",
+      "timestamp": "2026-03-27T20:35:09.754Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question asks for the \"nous\" form of \"rappeler\", which does not double the consonant (rappelons), whereas the core rule being tested is the consonant doubling in -eler/-eter verbs like j'appelle/il appelle/ils appellent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643803661-ihf0aqo7",
+      "timestamp": "2026-03-27T20:36:57.746Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -eler verb doubling pattern, requiring knowledge that \"nous\" forms of -eler verbs like \"rappeler\" do not double the consonant.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643914584-3xdr7ws3",
+      "timestamp": "2026-03-27T20:38:49.551Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question asks for the \"nous\" form where no consonant doubling occurs, so it only tests basic -er verb conjugation rather than the specific rule about when to double consonants in -eler/-eter verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644024079-8gqtt7hp",
+      "timestamp": "2026-03-27T20:40:42.703Z"
+    }
+  ]
+}

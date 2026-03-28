@@ -1,0 +1,33 @@
+{
+  "cacheKey": "774a84c33b0f192a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « jeter » au présent, 3e personne du singulier.\nPhrase: Il ___ son argent par les fenêtres.\nCorrect Answer: jette\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774641909920-qwtg4vov"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that -eter verbs like \"jeter\" double the consonant in certain present tense conjugations (il jette, not il jete), which is the core of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642212825-7gqbq59y",
+      "timestamp": "2026-03-27T20:11:33.612Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"jeter\" is a -eter verb that doubles the 't' when conjugated in the present tense, which is exactly what rule 01-10 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642621571-vzyov3ao",
+      "timestamp": "2026-03-27T20:17:08.885Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"jeter\" (an -eter verb) doubles the consonant to become \"jette\" in the 3rd person singular present, which is exactly what rule 01-10 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643098172-wnqz41du",
+      "timestamp": "2026-03-27T20:25:10.446Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5a9db25cd0e061f9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Nous _____ le gâteau en trois parts. »\nChoices:\nA. [CORRECT] partageons\nB. partagons\nC. partagerons\nD. partagions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774644349285-5oc7q044"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the \"e intercalaire\" rule for -ger verbs: the correct answer \"partageons\" is distinguished from \"partagons\" precisely by the mandatory insertion of \"e\" between \"g\" and \"o\" in the nous form of the présent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644550484-a4g6afmw",
+      "timestamp": "2026-03-27T20:49:21.755Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the \"e intercalaire\" rule for -ger verbs—without knowing that -ger verbs require an extra \"e\" before \"o\" in the nous form, a learner would incorrectly choose \"partagons\" instead of the correct \"partageons.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644899539-cpcw34zi",
+      "timestamp": "2026-03-27T20:55:17.091Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The verb \"partager\" ends in -ger, and correctly answering requires knowing to add an 'e' before the 'a' to maintain the soft 'g' sound in the \"nous\" form (partageons vs. incorrect partagons).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774645237704-wamb3yms",
+      "timestamp": "2026-03-27T21:00:51.714Z"
+    }
+  ]
+}

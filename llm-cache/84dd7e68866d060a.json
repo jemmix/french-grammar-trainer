@@ -1,0 +1,82 @@
+{
+  "cacheKey": "84dd7e68866d060a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Elle ___ dans le froid. »\nChoices:\nA. [CORRECT] gèle\nB. gelle\nC. gelée\nD. gelait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774641909919-b5747z19"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests -eler verb conjugation (geler → elle gèle) with the double consonant pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642136003-ah43l67f",
+      "timestamp": "2026-03-27T20:09:48.145Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the specific -eler verb conjugation rule by presenting \"gelle\" (incorrect double L) as a distractor, requiring knowledge that the 3rd person singular of geler does NOT double the consonant.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642517976-8eiox7nw",
+      "timestamp": "2026-03-27T20:15:38.657Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests \"geler\" which adds a grave accent (è), not an -eler verb that doubles consonants like appeler or jeter.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642995749-tps9c4oi",
+      "timestamp": "2026-03-27T20:23:30.092Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"geler\" does not follow the -eler/-eter double consonant pattern (it uses a grave accent instead, like \"gèle\"), so this question tests a different irregular verb rule than the one stated.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643231380-r4rmfyyq",
+      "timestamp": "2026-03-27T20:27:28.226Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"Geler\" adds an accent grave (è) but does NOT double the consonant like appeler/jeter—the rule specifically tests doubling consonants in -eler/-eter verbs, which this question doesn't address.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643374515-m5klxrdx",
+      "timestamp": "2026-03-27T20:29:50.812Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the present tense conjugation of \"geler\", which is an -eler verb that uses è instead of doubling consonons, directly covered by the rule about -eler/-eter verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643539649-n3utdqqa",
+      "timestamp": "2026-03-27T20:32:34.602Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -eler verb \"geler\" (to freeze) in present tense, requiring knowledge that this particular -eler verb uses a grave accent on the e rather than doubling the consonant, which is the exact rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643668589-sotvoj69",
+      "timestamp": "2026-03-27T20:34:42.882Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the conjugation of \"geler\" (an -eler verb) in the present indicative, requiring knowledge of the special spelling rule where an accent grave is added instead of doubling the consonant.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643773155-2cetmkya",
+      "timestamp": "2026-03-27T20:36:43.394Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The verb \"geler\" ends in -eler and its present tense conjugation requires changing \"é\" to \"è\" (gèle vs. gelle), which is exactly what this rule covers for -eler/-eter verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643898249-io2ebioa",
+      "timestamp": "2026-03-27T20:38:34.584Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The verb \"geler\" is an -eler verb that requires consonne doubling in the present singular forms (je gèle, tu gèles, il/elle gèle), and the question tests knowledge of this spelling pattern alongside conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644009868-652ffv5f",
+      "timestamp": "2026-03-27T20:40:57.412Z"
+    }
+  ]
+}

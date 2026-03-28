@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0e72266f00985d60",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Nous _____ les meubles. »\nChoices:\nA. [CORRECT] plaçons\nB. placons\nC. placerons\nD. plaçions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774644349284-y5ox89aa"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the cedilla rule for -cer verbs in the nous form of present indicative, which is exactly what the rule covers — the distinction between \"placons\" and \"plaçons\" depends on knowledge of the cédille requirement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644499454-af6xwnoj",
+      "timestamp": "2026-03-27T20:48:34.817Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that verbs ending in -cer (like \"placer\") need a cédille (ç) before 'o' to maintain the soft 's' sound, distinguishing \"plaçons\" from \"placons\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644844578-hpegeqbq",
+      "timestamp": "2026-03-27T20:54:34.738Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that -cer verbs need a cedilla before -o to distinguish between correct \"plaçons\" and incorrect \"placons\" for the nous form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774645199601-olo6kkql",
+      "timestamp": "2026-03-27T21:00:15.891Z"
+    }
+  ]
+}

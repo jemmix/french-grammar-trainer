@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8ad775ccc0534986",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-09 - Les verbes en -yer (payer, essayer, envoyer, nettoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « En ce moment, elles ___ des colis à leurs clients. »\nChoices:\nA. [CORRECT] envoient\nB. envoyent\nC. envoyons\nD. envoyer\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774135618399-dk7dp9pz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -yer verb spelling rule where \"y\" changes to \"i\" in the ils/elles conjugation (envoient vs. envoyent), which is the central feature of this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774135760418-qfbqu0ym",
+      "timestamp": "2026-03-21T23:29:33.833Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that -yer verbs like \"envoyer\" change 'y' to 'i' in the ils/elles form (elles envoient, not envoyent), which is the core rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774136029855-sqkowctk",
+      "timestamp": "2026-03-21T23:34:10.454Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the -yer verb conjugation rule by requiring knowledge that \"envoyer\" changes y → i in the ils/elles form (\"elles envoient\"), with a plausible distractor (\"envoyent\") that would be chosen by someone who doesn't know this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774136448139-lj0cho2a",
+      "timestamp": "2026-03-21T23:41:03.241Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "91fc190ddc201768",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-09 - Les verbes en -yer (payer, essayer, envoyer, nettoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « En ce moment, elles ___ par carte bleue. »\nChoices:\nA. [CORRECT] paient\nB. payent\nC. payons\nD. payer\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774135618398-fifowwtb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the -yer spelling rule because choosing \"paient\" over \"payent\" requires knowing that the \"y\" changes to \"i\" before a silent \"e\" in the ils/elles conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774135677424-9cvk0u11",
+      "timestamp": "2026-03-21T23:28:12.431Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the characteristic y→i spelling change in -yer verbs, which is the core concept of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774135948805-6ulknjry",
+      "timestamp": "2026-03-21T23:32:42.369Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the y→i spelling change for -yer verbs by distinguishing between the correct \"paient\" and the incorrect \"payent\" for the elles form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774136362074-11ldgtrf",
+      "timestamp": "2026-03-21T23:39:33.030Z"
+    }
+  ]
+}

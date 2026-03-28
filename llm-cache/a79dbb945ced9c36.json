@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a79dbb945ced9c36",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-09 - Les verbes en -yer (payer, essayer, envoyer, nettoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Tu ___ les invitations pour la fête. »\nChoices:\nA. [CORRECT] envoies\nB. envoyes\nC. envoie\nD. envoyer\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774650461304-wr356u5m"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the -yer verb spelling rule (y→i change) by contrasting \"envoies\" (correct) with \"envoyes\" (incorrect spelling), which cannot be determined without knowledge of this specific rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774650559305-jusaxgqr",
+      "timestamp": "2026-03-27T22:29:33.926Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question tests the -yer verb spelling rule (y → i before silent e) by requiring learners to choose between \"envoies\" (correct -yer form) and \"envoyes\" (incorrect regular -er pattern).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774650835683-tgbszq0b",
+      "timestamp": "2026-03-27T22:34:11.768Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the y→i spelling change in \"envoyer\" (a -yer verb) in the present tense, which is exactly what rule 01-09 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774651115090-y1cmve4g",
+      "timestamp": "2026-03-27T22:38:53.587Z"
+    }
+  ]
+}

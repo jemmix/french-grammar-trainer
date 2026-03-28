@@ -1,0 +1,82 @@
+{
+  "cacheKey": "e6bc63cc0dc1b502",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-09 - Les verbes en -yer (payer, essayer, envoyer, nettoyer)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Tu ___ ta chambre avant l'arrivée des invités. »\nChoices:\nA. [CORRECT] nettoies\nB. nettoye\nC. nettoie\nD. nettoyer\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774650461299-dh04skpy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that -yer verbs like \"nettoyer\" change y to i in conjugation (tu nettoies), and the distractors specifically target this spelling rule versus the correct -er verb ending.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774650494852-qhab4vtd",
+      "timestamp": "2026-03-27T22:28:29.971Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"Nettoyer\" is a regular -er verb that doesn't undergo the y→i spelling change pattern covered by rule 01-09; the question tests basic -er conjugation, not the special -yer rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774650770395-0gu9b5jy",
+      "timestamp": "2026-03-27T22:33:11.369Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests basic present tense conjugation of \"nettoyer\" with \"tu\", but the -yer spelling rule (y → i before silent e) is not actually tested because both \"nettoies\" and \"nettoyes\" are accepted spellings for \"nettoyer\", so the question doesn't require knowledge of that specific orthographic change.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774651045637-88mj0lcs",
+      "timestamp": "2026-03-27T22:37:41.641Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests conjugation of \"nettoyer\" (an -yer verb) in the present tense, which is the exact topic of the rule about verbs ending in -yer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774651303070-d462y7ao",
+      "timestamp": "2026-03-27T22:42:42.678Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"nettoyer\" (a -yer verb) for the \"tu\" subject, which directly tests the rule for present tense conjugation of verbs ending in -yer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774651380266-nk6nhd39",
+      "timestamp": "2026-03-27T22:43:25.406Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests standard -er verb conjugation (nettoyer → nettoies), not the distinctive -yer verb patterns (i/j alternations) that define rule 01-09.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774651413803-vtau7oxy",
+      "timestamp": "2026-03-27T22:43:47.675Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly tests the -yer verb conjugation rule by requiring the student to choose \"nettoies\" over the incorrect spelling \"nettoye\", which tests the specific spelling rule for -yer verbs in the tu form of the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774651444962-m854celf",
+      "timestamp": "2026-03-27T22:44:20.569Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that verbs ending in -yer change \"y\" to \"i\" before silent \"e\" endings (nettoies) and the correct \"tu\" conjugation with -s suffix.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774651475720-u6a9j7lj",
+      "timestamp": "2026-03-27T22:44:47.857Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the correct conjugation of \"nettoyer\" (a -yer verb) with \"tu\" in the present tense, which requires knowing the special -yer verb conjugation pattern where y changes to i before silent e endings.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774651501906-06xmlkaj",
+      "timestamp": "2026-03-27T22:46:24.255Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: To correctly select \"nettoies\" instead of the regular -er conjugation \"nettoye,\" the learner must know the y→i spelling rule for -yer verbs in the tu form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774651584255-9mi8eobo",
+      "timestamp": "2026-03-27T22:46:36.972Z"
+    }
+  ]
+}

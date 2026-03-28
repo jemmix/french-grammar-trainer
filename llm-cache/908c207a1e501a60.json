@@ -1,0 +1,82 @@
+{
+  "cacheKey": "908c207a1e501a60",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « acheter » au présent, 2e personne du singulier.\nPhrase: Tu ___ ton cahier à la librairie.\nCorrect Answer: achètes\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774641909920-mhpqd0t6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests whether the student knows that \"acheter\" is the exception pattern for -eter verbs (adds accent rather than doubling the consonant), which is the core concept of rule 01-10.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642233280-iqken0ki",
+      "timestamp": "2026-03-27T20:10:49.055Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the spelling rule for verbs ending in -eter like \"acheter,\" which in the tu form requires the special \"achètes\" form (accent è rather than regular conjugation), which is the core concept of rule 01-10.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642577561-g9zlq9j7",
+      "timestamp": "2026-03-27T20:16:28.391Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question uses \"acheter\" which takes an accent grave (achètes) instead of doubling the consonant, but the rule tests -eter verbs that double consonants like \"jeter\" (jette).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643058741-yuc252f1",
+      "timestamp": "2026-03-27T20:24:39.266Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that -eter verbs like \"acheter\" double the consonant for \"tu\" (achètes vs. achetes), which is the core rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643248524-c20qo178",
+      "timestamp": "2026-03-27T20:28:15.542Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the specific conjugation pattern of \"acheter\" (tu achètes), which is covered by the rule for -eter verbs and their spelling modifications.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643421552-7m81dsil",
+      "timestamp": "2026-03-27T20:30:52.506Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the conjugation of \"acheter\" (an -eter verb) at tu form, which requires knowing that -eter verbs double the consonant (achètes not achete) — this is exactly what rule 01-10 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643584554-6omqqmh3",
+      "timestamp": "2026-03-27T20:35:35.613Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To correctly answer \"achètes\" instead of \"achetes\", the learner must know that -eter verbs like acheter double the consonant and add an accent in the singular forms, which is exactly what rule 01-10 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643836264-kzske1oh",
+      "timestamp": "2026-03-27T20:38:04.477Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the rule by requiring knowledge that \"acheter\" doubles the 't' to become \"achètes\" for the 2nd person singular, which cannot be answered correctly without understanding the -eter verb conjugation pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774643984686-vjfieyb4",
+      "timestamp": "2026-03-27T20:39:53.782Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"acheter\" doubles the consonant \"t\" in the tu form of the present tense, which is exactly what the rule about -eter verbs covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644074319-jica33hp",
+      "timestamp": "2026-03-27T20:41:27.967Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"acheter\" uses a grave accent (è) rather than doubling the consonant, which is a different orthographic pattern than the -eter verbs covered by this rule (e.g., jeter, appeler that double the consonant).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644116343-5zl7jygx",
+      "timestamp": "2026-03-27T20:42:37.148Z"
+    }
+  ]
+}

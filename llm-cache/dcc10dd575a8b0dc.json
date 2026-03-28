@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dcc10dd575a8b0dc",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Ils ___ les balles dans le jardin. »\nChoices:\nA. [CORRECT] jettent\nB. jètent\nC. jetent\nD. jetaient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774641909918-s31ik7tc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that -eter verbs like jeter double the consonant in present tense conjugations (jettent vs jetent), which is the core rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774641964803-u2ouwcbl",
+      "timestamp": "2026-03-27T20:06:25.501Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that jeter doubles the t before a mute e in the present tense (ils jettent), which is the core rule for verbs in -eter.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642332726-t3jk8hhi",
+      "timestamp": "2026-03-27T20:12:33.611Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the specific spelling rule for -eter verbs like \"jeter,\" requiring knowledge that the consonant doubles in the \"ils\" form (jettent vs jetent).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642766324-1yhc28ex",
+      "timestamp": "2026-03-27T20:24:50.615Z"
+    }
+  ]
+}

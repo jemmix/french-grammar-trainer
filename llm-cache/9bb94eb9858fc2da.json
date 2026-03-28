@@ -1,0 +1,82 @@
+{
+  "cacheKey": "9bb94eb9858fc2da",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-09 - Les verbes en -yer (payer, essayer, envoyer, nettoyer)\n\nQUESTION:\nType: Input\nPrompt: Complétez la phrase avec le verbe « nettoyer » au présent.\nPhrase: Il ___ la salle de bains avec des produits naturels.\nCorrect Answer: nettoie\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774688436126-qhonkahy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"Nettoyer\" doesn't follow the y→i change pattern that defines the -yer rule (it conjugates regularly as \"il nettoie\"), so the question doesn't actually test the special spelling rule it claims to test.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774688472159-ibupsbgw",
+      "timestamp": "2026-03-28T09:01:50.456Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"nettoyer\" (a -yer verb) in the present tense for \"il\", producing \"nettoie\", which tests the -yer verb conjugation pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774688561203-dggu1v5w",
+      "timestamp": "2026-03-28T09:03:06.400Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the characteristic -yer verb alternation (y→i) in the 3rd person singular, requiring knowledge specific to this verb family.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774688647626-40iuunfz",
+      "timestamp": "2026-03-28T09:04:22.147Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"nettoyer\" conjugates regularly in the present (il nettoie, keeping the y), so this tests regular -er verb conjugation, not the special -yer rule where y changes to i (as in payer, essayer, envoyer).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774688676504-m4578xww",
+      "timestamp": "2026-03-28T09:04:47.706Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the -yer rule where y changes to i before a silent e; without this rule, a learner would likely answer \"nettoye\" (regular -er pattern) instead of the correct \"nettoie\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774688692569-gq3ydwec",
+      "timestamp": "2026-03-28T09:05:16.464Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires conjugating \"nettoyer\" in the third person singular present tense, which demonstrates the characteristic y→i change pattern specific to -yer verbs that the rule teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774688716465-qvzkdzz0",
+      "timestamp": "2026-03-28T09:05:26.690Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The answer \"nettoie\" follows the regular -er verb pattern, so a student could answer correctly without knowing the special -yer verb rule (y→i in front of silent e).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774688726690-kv8tcxak",
+      "timestamp": "2026-03-28T09:05:39.393Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the -yer verb rule where 'y' changes to 'i' before a silent 'e' in the third person singular conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774688739393-orn686vs",
+      "timestamp": "2026-03-28T09:05:50.749Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that -yer verbs change 'y' to 'i' in singular forms (nettoie, not nettoye), which is the defining characteristic of this verb class.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774688750749-woj9qz6i",
+      "timestamp": "2026-03-28T09:06:04.501Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests standard -er verb conjugation (nettoyer → nettoie) without requiring knowledge of the specific -yer rule about whether \"y\" changes to \"i\" or stays as \"y\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774688764502-7qwbg68s",
+      "timestamp": "2026-03-28T09:06:21.708Z"
+    }
+  ]
+}

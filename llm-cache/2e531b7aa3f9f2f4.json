@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2e531b7aa3f9f2f4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-12-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-12 - Les verbes pronominaux au présent (se lever, se souvenir, s'asseoir)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je ___ de ce que tu as dit. »\nChoices:\nA. [CORRECT] me souviens\nB. me souvenais\nC. te souviens\nD. se souvient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774647032463-pdqvwyfu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the conjugation of \"se souvenir\", a reflexive verb listed in the rule, requiring knowledge of both the correct reflexive pronoun (me) and present tense form (souviens) for the subject \"Je\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774647154080-n9041i8k",
+      "timestamp": "2026-03-27T21:32:44.887Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct reflexive pronoun (me) matching the subject \"Je\" and the present tense conjugation of the reflexive verb se souvenir, which directly tests the rule about pronominal verbs in the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774647632218-3te17unw",
+      "timestamp": "2026-03-27T21:40:50.339Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"se souvenir\" is a reflexive verb, that \"je\" takes the reflexive pronoun \"me\", and that the present tense conjugation is \"me souviens\" — all central to the stated rule on reflexive verbs in the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774648099844-lf1h3ajt",
+      "timestamp": "2026-03-27T21:48:29.006Z"
+    }
+  ]
+}

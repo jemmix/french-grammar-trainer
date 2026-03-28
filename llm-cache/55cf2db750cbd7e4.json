@@ -1,0 +1,82 @@
+{
+  "cacheKey": "55cf2db750cbd7e4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-11-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-11 - Les verbes en -cer et -ger (commencer, manger) — cédille et e intercalaire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je _____ mon travail à midi. »\nChoices:\nA. [CORRECT] commence\nB. commençai\nC. commençait\nD. commencerai\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774644349275-uauu1jl0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests present tense conjugation of \"commencer\", not the cedilla rule which only applies before 'a' or 'o' (e.g., \"nous commençons\", \"il commençait\"), whereas \"commence\" uses standard 'c' before 'e'.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644349293-0pi54ild",
+      "timestamp": "2026-03-27T20:46:07.795Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests present tense conjugation and tense recognition, not the cédille rule (the correct answer \"commence\" has no cédille because the 'c' precedes 'e', not a/o/u).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774644669902-wyqod19m",
+      "timestamp": "2026-03-27T20:51:38.061Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests present tense conjugation and context comprehension (\"à midi\" indicates present), but all answer choices contain the cédille (ç), so the cédille rule is not relevant to determining the correct answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774645037737-c1dnaj5g",
+      "timestamp": "2026-03-27T20:57:57.904Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests present tense conjugation and tense selection, but the \"je\" form \"commence\" doesn't use the cédille rule (which only applies to \"nous commençons\"), so this can be answered correctly without knowing the -cer cédille spelling rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774645385224-s168sbbu",
+      "timestamp": "2026-03-27T21:03:19.710Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests present tense conjugation (je + present vs imparfait vs passé simple vs futur simple), but the correct form \"je commence\" doesn't require a cedilla; the cedilla rule only applies to forms like \"nous commençons\" where c is followed by a/o/u.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774645554974-i7tk7scr",
+      "timestamp": "2026-03-27T21:06:19.517Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests tense recognition (présent vs imparfait vs futur simple), not the cédille rule — \"commence\" is standard present tense conjugation with no special spelling since the 'c' is followed by 'e', not 'a', 'o', or 'u'.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774645712471-cgt1mo44",
+      "timestamp": "2026-03-27T21:09:57.982Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests present tense conjugation (je = -e) rather than the cédille rule—none of the options require applying cedilla since \"commence\" ends in 'e', not 'a' or 'o'.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774645919693-vmloo7lr",
+      "timestamp": "2026-03-27T21:12:23.431Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests present tense recognition (je + verb), and the correct answer \"commence\" doesn't require applying the cedilla rule since the -cer verb form ends in 'e', not a, o, or u.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774646063515-5ogwo50q",
+      "timestamp": "2026-03-27T21:14:55.904Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer \"commence\" doesn't contain a cédille, so the question can be answered correctly by knowing the present tense conjugation pattern without understanding the cédille rule for -cer verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774646209366-5e9a37v6",
+      "timestamp": "2026-03-27T21:17:00.951Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer \"commence\" (je form of présent) doesn't require any spelling modification — the cedilla rule only applies when -cer verbs are conjugated with a, o, or u (e.g., nous commençons), but this form simply tests present tense conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774646347302-336aggdm",
+      "timestamp": "2026-03-27T21:23:50.447Z"
+    }
+  ]
+}

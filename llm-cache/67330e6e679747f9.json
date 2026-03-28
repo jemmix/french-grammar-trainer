@@ -1,0 +1,33 @@
+{
+  "cacheKey": "67330e6e679747f9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-10 - Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Vous ___ vos parents demain. »\nChoices:\nA. [CORRECT] appelez\nB. appellez\nC. appèlez\nD. appelaient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774641909918-uvdroxga"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the conjugation of appeler (a verb ending in -eler) in the vous form, where the double consonant rule applies (appelez vs appelons).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774641951296-j20wfmgm",
+      "timestamp": "2026-03-27T20:06:10.536Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge that the \"vous\" form of -eler verbs like appeler does not double the consonant (appelez vs *appe**ll**ez), which is the core of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642323876-ddcuycq8",
+      "timestamp": "2026-03-27T20:12:14.602Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the specific conjugation pattern of appeler where \"vous\" forms keep the single L (appelez), distinguishing from forms that double the L or use wrong tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774642745493-p3c5d3s1",
+      "timestamp": "2026-03-27T20:19:37.339Z"
+    }
+  ]
+}
