@@ -1,6 +1,6 @@
 # Binary Question Storage — Design Doc
 
-**Status:** Draft v0.1
+**Status:** Draft v0.2
 **Goal:** Instantaneous cold starts on Vercel at 280K questions (28 sections × 20 rules × 500 questions).
 
 ## Problem
@@ -148,32 +148,44 @@ A typical MCQ question has ~60 words across prompt + 4 choices + 4 explanations.
 
 ### 3. `index-{lang}.bin` — Offset Index
 
-Maps section IDs, rule IDs, and question IDs to byte ranges in `questions.bin`. Uses a disk-layout hashmap for O(1) lookups.
+Three separate hashmaps in one file: sections, rules, and individual questions. The question hashmap is the largest but enables the hot path — pick a random question by ID and seek directly to it.
 
 ```
 ┌──────────────────────────────────────────────────┐
-│ Header (24 bytes)                                │
+│ Header (20 bytes)                                │
 │   magic         uint32   0x494E4458 ("INDX")     │
 │   version       uint8    1                       │
-│   bucketCount   uint32   # of hashmap buckets    │
-│   entryCount    uint32   total entries           │
-│   questionsOff  uint32   offset to question index│
-│   (padding)     7 bytes                          │
+│   sectionBuckets uint32   # of section hashmap   │
+│   ruleBuckets   uint32   # of rule hashmap       │
+│   questionBuckets uint32  # of question hashmap  │
+│   (padding)     3 bytes                          │
 ├──────────────────────────────────────────────────┤
-│ Section/Rule hashmap (bucketCount × 20 bytes)    │
+│ Section hashmap (sectionBuckets × 16 bytes)      │
 │   Per bucket:                                    │
-│     hash16     uint16   lower 16 bits of xxhash  │
+│     hash32     uint32   lower 32 bits of xxhash  │
 │     keyOff     uint32   offset to key string     │
 │     offset     uint32   byte offset in q.bin     │
 │     length     uint32   byte length in q.bin     │
-│     count      uint16   # of questions            │
-│     kind       uint8    0=section, 1=rule         │
+│   Section entries also embed metadata:           │
+│     title, description, rules list — stored as   │
+│     a small inline protobuf after the key string │
+├──────────────────────────────────────────────────┤
+│ Rule hashmap (ruleBuckets × 20 bytes)            │
+│   Per bucket:                                    │
+│     hash32     uint32   lower 32 bits of xxhash  │
+│     keyOff     uint32   offset to key string     │
+│     offset     uint32   byte offset in q.bin     │
+│     length     uint32   byte length in q.bin     │
+│     count      uint16   # of questions in rule   │
 │     (padding)  2 bytes                           │
 ├──────────────────────────────────────────────────┤
-│ Question hashmap (at questionsOff)               │
-│   Separate hashmap for question-by-ID lookup.    │
-│   Same structure but value is (offset, length)   │
-│   with count=1 implicit.                         │
+│ Question hashmap (questionBuckets × 12 bytes)    │
+│   Per bucket:                                    │
+│     hash32     uint32   lower 32 bits of xxhash  │
+│     keyOff     uint32   offset to key string     │
+│     offset     uint32   byte offset in q.bin     │
+│     length     uint16   byte length in q.bin     │
+│     (padding)  2 bytes                           │
 ├──────────────────────────────────────────────────┤
 │ Key strings (variable length)                    │
 │   Each entry:                                    │
@@ -182,47 +194,65 @@ Maps section IDs, rule IDs, and question IDs to byte ranges in `questions.bin`. 
 └──────────────────────────────────────────────────┘
 ```
 
-**Lookup (ruleId → questions):** hash the rule ID string, mod `bucketCount`, linear-probe. Returns `(offset, length, count)` — a byte range in `questions.bin` containing `count` consecutive protobuf-encoded questions.
+**Design decisions:**
+- Each question is individually indexed — the hot path can seek directly to a single question without scanning or decoding neighbors.
+- Rules store a `count` field so the app knows the range of question IDs to pick from.
+- Sections embed metadata (title, description, rules list) as a small protobuf, eliminating the need for a separate metadata file.
 
-**Assumption:** questions are written in rule-order within each section (rule 01-01, then 01-02, etc.). All questions for a given rule are contiguous. This is already the natural order from the DSL files.
+**Size estimate:** 280K question buckets × 12 bytes × (1/0.7 load factor) ≈ **4.8 MB** for the question hashmap. Rules: 560 × 20 × (1/0.7) ≈ 16 KB. Sections: negligible. Total: **~5 MB**.
 
-**Load strategy:** read entire file into `ArrayBuffer`. Build runtime `Map<string, {offset, length, count}>` during initialization.
-
-At 28 sections + 560 rules + 280K question entries ≈ 280K entries × 20 bytes ≈ **5.6 MB** for the index (before hashmap load factor). With a 0.7 load factor, ~8 MB. Acceptable for a one-time ramdisk read.
-
-**Optimization note:** question-by-ID lookups may not be needed at runtime (the app loads questions per-rule, not per-question). If unneeded, the question hashmap can be dropped, cutting the index to ~12KB (only sections + rules). Keep in the design for now as a maybe.
+**Load strategy:** read entire file into `ArrayBuffer`. Build runtime `Map`s during initialization. On a ramdisk this is a single ~5 MB read — sub-millisecond.
 
 ## Runtime Flow
 
 ### Initialization (once per cold start)
 
 ```
-1. Read dictionary-{lang}.bin → ArrayBuffer (≈500KB, one syscall)
-2. Parse dictionary: build words[] and wordToId map
-3. Read index-{lang}.bin → ArrayBuffer (≈8MB, one syscall)
+1. Read dictionary-{lang}.bin → ArrayBuffer (≈500KB)
+2. Parse dictionary: build words[] array for decoding
+3. Read index-{lang}.bin → ArrayBuffer (≈5MB)
 4. Parse index: build sectionMap, ruleMap, questionMap
-5. DO NOT read questions.bin yet — defer to first access
+5. DO NOT read questions.bin — defer to each request
 ```
 
-Steps 1–4 take < 5ms on a ramdisk (sequential reads + simple parsing).
+Steps 1–4 take < 5ms on a ramdisk (two sequential reads + simple struct parsing).
 
-### Loading questions for a rule
+### Hot path: pick a random question for a rule
+
+This is the most latency-sensitive operation in the app.
 
 ```
-1. Look up ruleId in ruleMap → (offset, length, count)
+1. Look up ruleId in ruleMap → { offset, length, count }
+2. Pick a random index i ∈ [0, count)
+3. Derive question ID from ruleId + i (e.g. "01-03-042")
+4. Look up questionId in questionMap → { offset, length }
+5. fseek to question offset in questions.bin (ramdisk: ≈ free)
+6. Read length bytes → single protobuf message
+7. Decode protobuf + resolve WordSeqs → Question object
+8. Return one question
+```
+
+This is **one disk seek + one small read + one protobuf decode** — all on ramdisk. Expected: < 1ms.
+
+### Warm path: load all questions for a rule
+
+Used when the app needs the full question set (e.g. shuffling, analytics).
+
+```
+1. Look up ruleId in ruleMap → { offset, length, count }
 2. Read questions.bin[offset..offset+length] → ArrayBuffer
-3. Decode count protobuf messages from the buffer
+3. Decode count protobuf messages
 4. For each message, resolve WordSeq fields → strings using words[]
-5. Return Question[] objects
+5. Return Question[]
 ```
 
-For a single rule (500 questions × 150 bytes ≈ 75KB), this is one seek + one read + protobuf decoding. Total: < 2ms.
+For a single rule (500 questions × ~150 bytes ≈ 75KB), this is one seek + one read + protobuf decoding. Expected: < 2ms.
 
 ### Memory-resident caching
 
-Once a rule's questions are decoded, cache the `Question[]` in a process-level `Map<string, Question[]>`. On Vercel, the function instance survives between requests, so subsequent requests for the same rule hit the in-memory cache.
-
-The index and dictionary stay resident for the lifetime of the function instance.
+- Dictionary and index: always resident in `ArrayBuffer` + parsed `Map`s.
+- Individual decoded questions: optional LRU cache. On Vercel, the function instance survives between requests, so hot rules stay decoded.
+- `questions.bin` file handle: kept open, rely on OS page cache / ramdisk. No need to duplicate 42MB into app memory — `fseek` on ramdisk is a pointer arithmetic, effectively free.
 
 ## Build Pipeline
 
@@ -247,11 +277,10 @@ public/data/               ← binary files land here as static assets
 
 ### Word splitting rules
 
-- Split on whitespace and punctuation boundaries.
-- Punctuation tokens (`,`, `.`, `?`, `!`, `:`, `;`, `"`, `«`, `»`, `(`, `)`, `-`, `'`) are separate words.
-- Special tokens: `___` (blank marker in input phrases) gets its own word ID.
-- Numbers are kept as-is (not split into digits).
-- This preserves exact round-tripping: `join(decode(encode(text))) === text`.
+- **Split by single space character.** No punctuation splitting, no special tokenization. Each space-delimited token is one word.
+- `l'homme` → `["l'homme"]` (one word). `je suis allé.` → `["je", "sui", "allé."]` (three words).
+- Join back with single space — exact round-trip by construction.
+- **Build-time validation:** unit test / build step rejects any source text containing consecutive spaces (`"  "`) or leading/trailing whitespace. Source files are the authority on spacing.
 
 ### Pseudo-Huffman word ID assignment
 
@@ -297,9 +326,13 @@ Recommendation: embed in index.bin for consistency. No separate file needed.
 ## Open Questions
 
 - **Protobuf library:** `protobufjs` (full-featured, ~40KB gzipped), `protoc` + `@protobuf-ts` (code-gen, smaller), or hand-rolled minimal decoder (smallest, most work)?
-- **Question-by-ID index:** needed at runtime, or can we drop it from index.bin?
-- **Lazy rule loading vs eager:** load all rules on first cold start, or truly defer until each rule is requested? Lazy is better for memory but adds latency on first quiz request.
 - **Multi-language:** one set of three files per language, sharing nothing? Or can we share the dictionary across languages (English and French have no common words)?
 - **Streaming decode:** for large rules (500 questions), decode protobuf messages in a tight loop with no allocations beyond the final objects? Or batch?
-- **Word splitting edge cases:** apostrophes in French (`l'homme`, `j'ai`) — split into `l'` + `homme` or keep as single token? Needs a decision.
 - **Verification:** how to validate binary files at build time? Round-trip comparison against current TypeScript output? Checksum?
+- **Benchmark alternatives:** the per-question index + random-seek approach needs benchmarks against alternatives: (a) mmap + offset jump, (b) storing rule question offsets as a flat array in the index (no per-question hashmap), (c) pre-computed shuffle order per rule in the index. Measure on Vercel-like cold start.
+
+## Resolved Decisions
+
+- **Word splitting:** split by single space, join by single space. No punctuation tokenization. Build validates no double spaces in source. (v0.2)
+- **Per-question indexing:** every question gets its own entry in the index hashmap. The hot path picks a random question ID, looks up its offset, seeks directly to that single protobuf. No need to decode a whole rule just to get one question. (v0.2)
+- **Lazy file reads:** `questions.bin` is never fully loaded into app memory. File handle kept open, individual questions read on demand via seek + read. Ramdisk makes seeks essentially free. (v0.2)
