@@ -41,7 +41,7 @@ Always use **`general-purpose`** subagents (not `Bash`) for question generation.
 
 ## Validation Gotchas
 - **Validation reads compiled TS, not DSL** — `scripts/validate.ts` loads questions from `src/data/{lang}/*.ts` (via `loadedSections`). You must run `npm run compile-all -- --lang {lang}` after editing `.txt` DSL files before validation sees your changes.
-- **Validation exit code** — the script exits 1 on any failure (including borderline "No clear majority" results). There is no `--strict`/`--allow-warnings` flag yet. See TODO.md for the fix.
+- **Validation exit code** — the script exits 1 on any failure, including borderline "No clear majority" results. This is intentional. "No clear majority" is a real failure, not a warning — fix it by redoing the content until all checks pass cleanly. Don't stop at "I improved things a lot."
 
 ## Content Quality Rules
 
