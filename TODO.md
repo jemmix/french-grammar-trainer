@@ -65,8 +65,6 @@
 
 - **Validation against DSL files** — `scripts/validate.ts` currently reads from compiled TypeScript (`src/data/{lang}/*.ts`), requiring `npm run compile-all` after every DSL edit before validation. Fix: have validation read directly from `questions/{lang}/*.txt` DSL files so no recompilation is needed during iterative content fixes.
 
-- **Validation exit code** — `scripts/validate.ts` exits with code 1 when any check fails, which prevents using it in CI or pre-commit hooks as a gate. Fix: add a `--strict` flag (or invert with `--allow-warnings`) so that "No clear majority" borderline results are treated as warnings by default and only hard failures cause a non-zero exit code. This would let the script pass cleanly once all hard failures are fixed, without requiring content changes that sacrifice pedagogical quality for validator approval.
-
 - **Optimize LLM validation runner** — **DONE**: early termination on failCount >= 2, cache summary one-liner, per-attempt breakdown for no-majority cases, failures grouped by rule/question in report.
 
 - **compile-all default language** — currently requires `--lang fr` or `--lang en` flag; default should compile all available languages to avoid accidentally validating one language's DSL while the compiled TS is stale for another. Default to `--lang all` or or make this the default.
