@@ -39,6 +39,10 @@ Always use **`general-purpose`** subagents (not `Bash`) for question generation.
 ## LLM Validation Cache
 - The `llm-cache/` directory is **content-addressable**: cache keys are computed from question content, so editing questions automatically invalidates old entries and generates new ones on the next run. There is no need to manually clear or prune cache entries after fixing questions.
 
+## Validation Gotchas
+- **Validation reads compiled TS, not DSL** — `scripts/validate.ts` loads questions from `src/data/{lang}/*.ts` (via `loadedSections`). You must run `npm run compile-all -- --lang {lang}` after editing `.txt` DSL files before validation sees your changes.
+- **Validation exit code** — the script exits 1 on any failure (including borderline "No clear majority" results). There is no `--strict`/`--allow-warnings` flag yet. See TODO.md for the fix.
+
 ## Content Quality Rules
 
 ### General
