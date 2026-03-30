@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0fee2c13e183f152",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Le roi ____. Ses ennemis tremblent. »\nChoices:\nA. [CORRECT] arrive\nB. est arrivé\nC. arrivait\nD. arrivera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774790823631-sgncxky1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests basic present tense agreement with \"Ses ennemis tremblent\" and can be answered without understanding the présent de narration, since the context doesn't clearly indicate this is a past event narrated in present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774791104079-qcgz6d8t",
+      "timestamp": "2026-03-29T13:32:45.234Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests general tense consistency (present vs. past vs. future) rather than the literary/journalistic present usage, which requires a clear narrative context recounting past events for vividness - without that context, it's just asking students to match tenses, not identify the présent de narration technique.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774792517445-z60puioq",
+      "timestamp": "2026-03-29T13:56:06.801Z"
+    }
+  ]
+}

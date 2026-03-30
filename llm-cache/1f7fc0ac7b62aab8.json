@@ -1,0 +1,26 @@
+{
+  "cacheKey": "1f7fc0ac7b62aab8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Le témoin ____ tout ce qu'il a vu ce jour-là. »\nChoices:\nA. [CORRECT] raconte\nB. a raconté\nC. racontait\nD. racontera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774790823637-y00g7ccj"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests basic tense choice (present vs. past) rather than the literary/journalistic technique of narrating past events in the present tense for dramatic effect — présent de narration requires a narrative context where past events are told vividly in the present (e.g., \"Il entre dans la salle et voit le corps\"), not just any present-tense statement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774791696947-sisrkfhz",
+      "timestamp": "2026-03-29T13:42:11.883Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence \"tout ce qu'il a vu ce jour-là\" uses the passé composé for the action of seeing, which is the typical past tense; using \"raconte\" for the witness's testimony in the present does not create a présent de narration because the witness is recounting in the present what happened in the past - this is simply a witness's current statement, not a narrative past event told in the present tense for dramatic effect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774792904784-isl40jo7",
+      "timestamp": "2026-03-29T14:02:28.956Z"
+    }
+  ]
+}

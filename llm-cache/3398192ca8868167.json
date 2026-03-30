@@ -1,0 +1,40 @@
+{
+  "cacheKey": "3398192ca8868167",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-19-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-19 - Les verbes impersonnels au présent (il faut, il pleut, il s'agit de)\n\nQUESTION:\nType: Input\nPrompt: Complétez avec l'expression impersonnelle correcte au présent.\nPhrase: Il ___ beaucoup de travail à faire avant la fin du mois.\nCorrect Answer: y a\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774796887339-psnzdemv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the learner knows \"il y a\" as an impersonal expression that remains unconjugated (\"Il ___\" → \"y a\"), which is the defining characteristic of impersonal verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774797886939-x959vnth",
+      "timestamp": "2026-03-29T15:25:24.575Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the impersonal expression \"Il y a\" (there is/are), which is a present-tense impersonal construction and belongs to the same grammatical family as the other impersonal verbs listed in the rule (il faut, il pleut, il s'agit de).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774798870490-e5a30i6t",
+      "timestamp": "2026-03-29T15:41:40.855Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer \"Il y a\" is an impersonal construction using the verb \"avoir\", but the rule specifically targets true impersonal verbs like \"il faut\", \"il pleut\", \"il s'agit de\" that exist only in the third person singular form with \"il\" as a dummy subject - \"il y a\" derives from a personal verb (\"avoir\") and represents a different type of impersonal expression.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774799659256-1l494w51",
+      "timestamp": "2026-03-29T15:56:11.751Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests \"il y a\" which is not among the specified impersonal verbs in the rule (il faut, il pleut, il s'agit de).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774799909395-cn1buv0v",
+      "timestamp": "2026-03-29T15:58:54.748Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3c8b2e9dc54e3dab",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-13-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-13 - Les verbes pronominaux réciproques (se parler, se regarder, se téléphoner)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Les deux équipes ___ après le match. » (se retrouver, action mutuelle)\nChoices:\nA. [CORRECT] se retrouvent\nB. retrouvent\nC. se retrouve\nD. se retrouver\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774858953634-piar6zd7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Answering correctly requires knowing that reciprocal actions like \"se retrouver\" use the pronominal form with \"se\" and must be conjugated in the plural to match \"les deux équipes.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774859476300-rrazjk96",
+      "timestamp": "2026-03-30T08:32:09.419Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires correctly conjugating \"se retrouver\" (a reciprocal pronominal verb) for third person plural subject \"Les deux équipes\" to express mutual action, which directly tests reciprocal pronominal verb usage and conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774861733544-ocbhxmtc",
+      "timestamp": "2026-03-30T09:14:49.796Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowing that \"se retrouver\" functions as a reciprocal verb in this mutual-action context and that reciprocal verbs use reflexive pronouns with proper conjugation—choosing B (\"retrouvent\") would be incorrect despite being grammatically valid for non-reciprocal actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774884057869-1d1221l2",
+      "timestamp": "2026-03-30T15:21:24.270Z"
+    }
+  ]
+}

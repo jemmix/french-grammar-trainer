@@ -1,0 +1,33 @@
+{
+  "cacheKey": "63e513a0fa82434e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Le bateau ____. Les passagers voient les côtes normandes. »\nChoices:\nA. [CORRECT] apparaît\nB. a apparu\nC. apparaissait\nD. apparaîtra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774790823638-h6qameoz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: Without contextual markers indicating a past event (e.g., \"Hier,\" \"En 1998,\" \"Au moment où...\"), the present tense \"apparaît\" could simply be describing current events rather than demonstrating the literary/journalistic usage of present for past narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774791799924-1rd0dc9x",
+      "timestamp": "2026-03-29T13:43:59.010Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the présent de narration because the correct answer (present tense) requires understanding that past events can be narrated in present tense for stylistic immediacy, and the surrounding context (\"Les passagers voient\") establishes the narrative frame in present tense rather than a standard past narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774795443498-uwsj741c",
+      "timestamp": "2026-03-29T14:45:00.389Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests simple present tense selection in an ambiguous context that could be literal present or narrative present, but lacks any past reference or narrative framing that would distinguish it as specifically testing the stylistic présent de narration usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774796011705-2ubgkz57",
+      "timestamp": "2026-03-29T14:54:28.428Z"
+    }
+  ]
+}

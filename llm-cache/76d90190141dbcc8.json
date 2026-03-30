@@ -1,0 +1,33 @@
+{
+  "cacheKey": "76d90190141dbcc8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Input\nPrompt: Écrivez la forme correcte au présent de narration.\nPhrase: L'incendie ____ le château et fait face à ses ennemis.\nCorrect Answer: atteint\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774790823639-4nxqaei8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence describes a dramatic historical event (a fire attacking a castle) in the present tense to create vivid, immediate narration, which is the defining purpose of the présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774791839010-q4cxlrzn",
+      "timestamp": "2026-03-29T13:45:45.207Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests basic present tense conjugation of \"atteindre\" (3rd person singular), not the narrative usage of present tense to describe past events; the student could answer correctly without understanding the présent de narration concept.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774795496886-vpr3hdcm",
+      "timestamp": "2026-03-29T14:45:22.282Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests present tense verb conjugation of \"atteindre,\" not the stylistic rule of when to use présent de narration for past events in literary/journalistic contexts.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774796014177-00pkrk5q",
+      "timestamp": "2026-03-29T14:55:10.077Z"
+    }
+  ]
+}

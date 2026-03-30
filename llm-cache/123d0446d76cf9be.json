@@ -1,0 +1,33 @@
+{
+  "cacheKey": "123d0446d76cf9be",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-19-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Les verbes impersonnels au présent (il faut, il pleut, il s'agit de)\n\nQUESTION:\nPrompt: Complétez avec le verbe impersonnel approprié au présent.\nPhrase: Il ___ neiger demain matin selon la météo.\nHint: aller\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1774796887338-3gu1arcn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\n\nREASON: Despite the prompt's slightly misleading reference to impersonal verbs (when it actually tests futur proche construction), the hint \"aller\" and the phrase structure make it unambiguous that the expected answer is \"va\" for the near future construction \"il va neiger\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774797817246-zalt6sh5",
+      "timestamp": "2026-03-29T15:24:33.950Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nThe prompt asks for an impersonal verb but the hint \"aller\" (expected answer: \"va\") is not impersonal—it's a regular conjugated verb in \"Il va + infinitive\" construction, unlike true impersonals like \"il faut\", \"il pleut\". The terminology conflicts with the actual grammar being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774798809769-sbepioc8",
+      "timestamp": "2026-03-29T15:40:28.096Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks for \"le verbe impersonnel approprié\" but the hint \"aller\" points to \"il va neiger\" which uses \"aller\" as a semi-auxiliary in a periphrastic future, not a true impersonal verb like il faut/il pleut/il s'agit de - the rule title and prompt don't match the actual grammatical construction being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774799639925-lsgimi9r",
+      "timestamp": "2026-03-29T15:54:19.256Z"
+    }
+  ]
+}

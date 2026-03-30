@@ -1,0 +1,40 @@
+{
+  "cacheKey": "ce6e66674e81c25f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-17-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-17 - Le présent dans les constructions avec depuis / il y a...que / ça fait...que\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle distinction est correcte ?\nChoices:\nA. [CORRECT] Depuis : présent pour une durée continue ; il y a : passé composé pour une action ponctuelle.\nB. Depuis : passé composé ; il y a : présent.\nC. Les deux utilisent le présent.\nD. Depuis : imparfait ; il y a que : présent.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774765612114-5v0d7f5s"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests understanding of when to use the present tense with \"depuis\" versus when to use passé composé with \"il y a\", which is the core distinction taught by this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774765957264-2i8i6lyn",
+      "timestamp": "2026-03-29T06:33:03.480Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question claims \"il y a\" uses passé composé for punctual actions, which contradicts the rule's focus on present tense usage with depuis/il y a...que/ça fait...que constructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774766705025-4gphsavl",
+      "timestamp": "2026-03-29T06:46:07.631Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests exactly what the rule covers—the distinction between using présent with \"depuis\" (continuous duration) versus passé composé with \"il y a...que\" (punctual completed action).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774767447043-gn41y1m4",
+      "timestamp": "2026-03-29T06:57:40.537Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the broader distinction between depuis (présent) and il y a (passé composé), but the rule focuses specifically on présent tense usage with these constructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774767849077-ndkx07os",
+      "timestamp": "2026-03-29T07:04:32.588Z"
+    }
+  ]
+}

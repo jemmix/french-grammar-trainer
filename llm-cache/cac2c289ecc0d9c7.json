@@ -1,0 +1,40 @@
+{
+  "cacheKey": "cac2c289ecc0d9c7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-13-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-13 - Les verbes pronominaux réciproques (se parler, se regarder, se téléphoner)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase est grammaticalement correcte et exprime une action réciproque ?\nChoices:\nA. [CORRECT] Ils se rencontrent au café.\nB. Ils rencontrent au café.\nC. Ils se rencontre au café.\nD. Il se rencontrent au café.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774858953634-witudxx9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the correct reciprocal form \"se rencontrent\" and rejecting both the non-reciprocal form (B) and forms with incorrect agreement (C, D), with the reciprocal pronominal structure being essential to the correct answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774859556511-q7k5s4co",
+      "timestamp": "2026-03-30T08:33:18.581Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests subject-verb agreement and basic pronominal verb structure (the presence of \"se\" and correct conjugation), but could be answered correctly without understanding that \"se rencontrer\" is specifically a reciprocal verb indicating mutual action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774861813255-jd5qvcdw",
+      "timestamp": "2026-03-30T09:17:00.656Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests understanding that reciprocal verbs like \"se rencontrer\" require the reflexive pronoun \"se\" with plural subjects and proper conjugation to express mutual action between subjects.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774884084271-lyan03zd",
+      "timestamp": "2026-03-30T15:21:46.015Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests basic reflexive verb conjugation and subject-verb agreement rather than the concept of reciprocity; choosing the correct form only requires knowing \"ils\" + \"se rencontrent\" is grammatically correct, not understanding that the action is mutual between subjects.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774884889733-elsz0kkd",
+      "timestamp": "2026-03-30T15:35:44.786Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "83270e9e16143463",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Le médecin ____ sa trousse et examine le patient. »\nChoices:\nA. [CORRECT] ouvre\nB. a ouvert\nC. ouvrait\nD. ouvrira\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774790823636-rjwsmd91"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The second verb \"examine\" being in present tense signals a narrative context where past events are described in present tense for immediacy, requiring knowledge of le présent de narration to select \"ouvre\" instead of a standard past tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774791552309-4qgzhogg",
+      "timestamp": "2026-03-29T13:39:32.485Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests basic present tense conjugation and coordination with \"examine\" in present, not the literary/journalistic usage of recounting past events in present tense for dramatic effect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774792769541-fyuxyi84",
+      "timestamp": "2026-03-29T14:00:36.044Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question can be answered correctly simply by matching the tense of \"examine\" without any context indicating the events are actually in the past, so it tests basic present tense usage, not the literary/journalistic présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774795256309-xp1h5lvr",
+      "timestamp": "2026-03-29T14:41:59.382Z"
+    }
+  ]
+}

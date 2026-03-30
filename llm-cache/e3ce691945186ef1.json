@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e3ce691945186ef1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Elles ___ leurs vacances en Italie cet été. »\nChoices:\nA. [CORRECT] passent\nB. passeront\nC. passaient\nD. vont passer\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774737051219-jojkfna3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that the present tense can express a near-future action (summer vacation), contrasting with explicit future constructions (futur simple, futur proche with aller).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774737136728-px35k93j",
+      "timestamp": "2026-03-28T22:32:28.332Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence \"Elles passent leurs vacances en Italie cet été\" is not idiomatic French for present-with-future-value; \"cet été\" (this summer) is too distant and requires either future simple (\"passeront\") or futur proche (\"vont passer\"), making the present tense answer grammatically incorrect rather than a valid example of the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774737671642-35oxezzp",
+      "timestamp": "2026-03-28T22:41:30.151Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"Cet été\" is temporally ambiguous—it could refer to the current ongoing summer (true present) or a future summer—so \"passent\" could be correct without necessarily expressing future value.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774738119666-zagdiq0q",
+      "timestamp": "2026-03-28T22:49:25.388Z"
+    }
+  ]
+}

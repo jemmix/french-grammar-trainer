@@ -1,0 +1,40 @@
+{
+  "cacheKey": "e8aee14a9e0abc33",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-17-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-17 - Le présent dans les constructions avec depuis / il y a...que / ça fait...que\n\nQUESTION:\nType: Input\nPrompt: Complétez avec le présent de l'indicatif du verbe « habiter »\nPhrase: Elle _____ dans cet appartement depuis dix ans.\nCorrect Answer: habite\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774765612114-lavuatxs"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the rule that French uses the present tense with \"depuis\" for continuing actions, requiring knowledge that \"depuis dix ans\" triggers \"habite\" (present), not \"a habité\" (passé composé).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774766117351-8z3id2w1",
+      "timestamp": "2026-03-29T06:35:38.004Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowing that \"depuis + time period\" uses the present tense for ongoing actions starting in the past, which is the core concept of rule 01-17.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774766859924-uzx9lel4",
+      "timestamp": "2026-03-29T06:48:06.039Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the user to use the présent de l'indicatif, so answering correctly only requires conjugating \"habiter\" in present tense rather than knowing that present is required with depuis.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774767562278-xp8pgp4c",
+      "timestamp": "2026-03-29T06:59:40.466Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to use the présent de l'indicatif, so answering correctly doesn't require knowledge that present tense is used with \"depuis\" constructions—it only tests basic verb conjugation, not the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774767889652-f1z936pp",
+      "timestamp": "2026-03-29T07:05:06.794Z"
+    }
+  ]
+}

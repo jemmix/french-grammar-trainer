@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8629f139258d006a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-13-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-13 - Les verbes pronominaux réciproques (se parler, se regarder, se téléphoner)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel pronom complète correctement la phrase réciproque : « Nous ___ parlons tous les jours » ?\nChoices:\nA. [CORRECT] nous\nB. se\nC. vous\nD. me\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774889880078-ucwe01j7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question simply asks which reflexive pronoun matches the subject \"nous\" (subject-verb agreement for pronominal verbs), not the specific semantic concept of reciprocity - the correct answer \"nous\" would be the same for any reflexive verb with subject \"nous\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774889880098-55dkgxli",
+      "timestamp": "2026-03-30T17:03:37.044Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct reciprocal pronoun for \"nous\" and placing it before \"parler\", which is the core mechanic of French reciprocal verbs like \"se parler\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774890217045-xo8u4odw",
+      "timestamp": "2026-03-30T17:04:00.217Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the general pronominal verb pronoun agreement (nous→nous, vous→vous, etc.) rather than the reciprocal nature of the verb - any reflexive verb would require the same pronoun choice.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774890240217-0be7idtm",
+      "timestamp": "2026-03-30T17:04:17.179Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "a8a1b42bc1f06014",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Les enfants ___ l'école la semaine prochaine. »\nChoices:\nA. [CORRECT] reprennent\nB. reprendront\nC. reprenaient\nD. vont reprendre\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774737051222-1moky8b2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To answer correctly, the student must recognize that the present tense \"reprennent\" (not future tense) is appropriate with \"la semaine prochaine\" due to the rule of present tense expressing near future events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774737209065-70umvfjp",
+      "timestamp": "2026-03-28T22:33:49.345Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: Both \"reprennent\" (present with future value) and \"reprendront\" (future simple) are grammatically correct for \"la semaine prochaine,\" so the question can be answered correctly using knowledge of future simple tense rather than the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774737734211-i59nbv70",
+      "timestamp": "2026-03-28T22:42:26.924Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the rule by requiring students to choose the present tense (reprennent) with a future time marker (la semaine prochaine) rather than other future constructions like futur simple or periphrastic future.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774738144833-ncu3aksx",
+      "timestamp": "2026-03-28T22:49:18.318Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: Both \"reprennent\" (present) and \"reprendront\" (simple future) are grammatically correct for expressing an action occurring \"la semaine prochaine\", so the question cannot be answered by knowing only the rule about present with future value.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774738380007-mv8c9qpc",
+      "timestamp": "2026-03-28T22:53:18.173Z"
+    }
+  ]
+}

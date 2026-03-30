@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f6aa4ae64df1c5c6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il me ___ d'argent pour acheter ce livre. »\nChoices:\nA. [CORRECT] manque\nB. faut\nC. manques\nD. manquent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774800504617-88drvoxa"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the special construction of \"manquer\" where the missing thing (l'argent) is the subject and requires third person singular conjugation, which is central to the rule on verbs with particular constructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774801074355-f5d6ur6f",
+      "timestamp": "2026-03-29T16:19:32.780Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the special construction \"manquer à quelqu'un\" (to be missing/lacking to someone) which requires choosing the 3rd person singular form \"manque\" while rejecting \"faut\" from falloir, wrong person/number \"manques\", and wrong number \"manquent\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774802389114-dp9ufej8",
+      "timestamp": "2026-03-29T16:41:50.492Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the special construction of \"manquer\" where \"Il me manque d'argent\" means \"I lack money\" (literally \"Money is missing to me\"), and students must distinguish this from other construction-specific verbs in the list (like \"falloir\") while also knowing the correct conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774803367533-as1uot9k",
+      "timestamp": "2026-03-29T17:11:56.172Z"
+    }
+  ]
+}

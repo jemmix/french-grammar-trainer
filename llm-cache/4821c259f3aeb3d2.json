@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4821c259f3aeb3d2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « En 1914, la Grande Guerre ____. Millions de soldats partent au front. »\nChoices:\nA. [CORRECT] commence\nB. a commencé\nC. commençait\nD. commencera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774790823629-fl2lfw4d"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests recognition of the narrative present (using present tense to describe past events for vividness), which is impossible to answer correctly without knowing this rule—a learner would naturally choose \"a commencé\" without understanding the literary/journalistic convention.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774790939769-05xyxs1b",
+      "timestamp": "2026-03-29T13:29:18.402Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests présent de narration by requiring the student to use present tense (\"commence\") to describe a historical event in 1914, with distractors using past (passé composé, imparfait) and future tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774792394453-mnnbf922",
+      "timestamp": "2026-03-29T13:53:57.392Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests présent de narration by requiring students to choose the present tense to narrate a historical past event (\"En 1914\"), distinguishing it from past tenses that would be grammatically correct but stylistically inappropriate for narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774793121638-s70904us",
+      "timestamp": "2026-03-29T14:05:38.797Z"
+    }
+  ]
+}

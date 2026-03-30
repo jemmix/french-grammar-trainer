@@ -1,0 +1,33 @@
+{
+  "cacheKey": "74569a27d73c6b79",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il vous ___ finir ce projet aujourd'hui. »\nChoices:\nA. [CORRECT] faut\nB. fallait\nC. faut que vous\nD. doivent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774800504617-k330y1eh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests \"falloir\" in its impersonal construction \"il faut [indirect object] [infinitive]\", which is the defining particular construction of this verb mentioned in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774800919120-2d41u34d",
+      "timestamp": "2026-03-29T16:17:10.436Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the impersonal construction of falloir (\"il vous faut\"), which is a special construction verb explicitly covered in rule 01-20.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774802275984-kz8iy1t8",
+      "timestamp": "2026-03-29T16:38:27.328Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the particular construction of \"falloir\" (impersonal verb only conjugating in third person singular), which is exactly what rule 01-20 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774803175745-8mwtqefc",
+      "timestamp": "2026-03-29T16:53:51.383Z"
+    }
+  ]
+}

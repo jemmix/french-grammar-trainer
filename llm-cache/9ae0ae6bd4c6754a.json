@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9ae0ae6bd4c6754a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez en utilisant le verbe « plaire » : « Vous ___ beaucoup cette pièce de théâtre ? »\nChoices:\nA. [CORRECT] plaît-elle\nB. plaît-vous\nC. plaisez-vous\nD. aimez-vous\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774800504617-bp5ndbus"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question is grammatically incorrect - \"plaît-elle\" uses a feminine pronoun to refer to \"cette pièce\" (feminine) but places \"Vous\" as subject, creating a nonsensical construction that doesn't demonstrate the special indirect object construction of \"plaire\" (which should be \"Cette pièce de théâtre vous plaît-elle ?\" or \"Est-ce que cette pièce de théâtre vous plaît ?\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774800863506-cfk0r4z8",
+      "timestamp": "2026-03-29T16:14:54.548Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question is grammatically ill-formed (the prompt \"Vous ___ beaucoup cette pièce de théâtre ?\" has no clear subject for the verb), making it impossible to solve as a valid French sentence that tests plaire's special indirect object construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774802203460-vdww3xzq",
+      "timestamp": "2026-03-29T16:37:41.235Z"
+    }
+  ]
+}

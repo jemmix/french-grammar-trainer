@@ -1,0 +1,54 @@
+{
+  "cacheKey": "affcc22f448d826e",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-20-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Complétez avec « il faut » + infinitif ou « il faut que » + subjonctif selon le contexte.\n\nPHRASE: ___ que vous finissiez ce travail avant demain.\n\nHINT: falloir\n\nEXPECTED ANSWER: Il faut\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1774800504620-gpinw0u7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to complete with either \"il faut\" or \"il faut que\", the presence of \"que\" plus the subjunctive \"finissiez\" signals which form is needed, and the hint \"falloir\" confirms the verb to use.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774801988929-5c8otusk",
+      "timestamp": "2026-03-29T16:33:31.446Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt asks to complete with either \"il faut\" + infinitive OR \"il faut que\" + subjunctive, but since the phrase already contains \"que\", it's ambiguous whether the learner should type just \"Il faut\" (making \"Il faut que\" when combined with the existing \"que\") or the full \"Il faut que\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774802974354-6s0o6by7",
+      "timestamp": "2026-03-29T16:51:05.619Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly states the two options (il faut + infinitif OR il faut que + subjonctif), the presence of \"que\" after the blank plus the subjonctif verb \"finissiez\" uniquely identifies the correct construction, and the hint \"falloir\" confirms the verb to use.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774804326553-urde01g7",
+      "timestamp": "2026-03-29T17:12:26.161Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The learner can deduce they need to write \"Il faut\" (not \"Il faut que\") because the phrase already contains \"que\" followed by the subjunctive \"finissiez\", indicating the pattern is \"il faut que\" with the \"que\" pre-written.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774804483178-d5eubotv",
+      "timestamp": "2026-03-29T17:15:34.536Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt limits options to \"il faut\" or \"il faut que\", the phrase shows \"que vous finissiez\" (subjunctive), and \"que\" + subjunctive requires \"il faut que\", making \"Il faut\" the only logical choice.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774804638317-21uhr6ok",
+      "timestamp": "2026-03-29T17:17:52.633Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nREASON: The prompt instructs to use \"il faut\" + infinitive OR \"il faut que\" + subjunctive, but the phrase already contains \"que vous finissiez\" (subjunctive), making it unclear whether the learner should fill just \"il faut\" (creating \"il faut que\") or \"il faut que\" (creating \"il faut que que\"), and the expected answer doesn't align with either option given the prompt's instructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774804754064-i89dti4p",
+      "timestamp": "2026-03-29T17:21:21.576Z"
+    }
+  ]
+}

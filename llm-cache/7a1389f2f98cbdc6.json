@@ -1,0 +1,40 @@
+{
+  "cacheKey": "7a1389f2f98cbdc6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Input\nPrompt: Inversez le sens : « Ma mère aime les gâteaux » → Dites que les gâteaux plaisent à ma mère (utilisez « plaire »).\nPhrase: Les gâteaux lui ___ .\nCorrect Answer: plaisent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774800504619-30ymwoms"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests \"plaire\", a verb with a special construction (plaire à quelqu'un), which is the focus of the stated rule; while the blank is for conjugation, the context requires understanding this special verb's indirect object pattern with \"lui\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774801823898-inwogf6f",
+      "timestamp": "2026-03-29T16:32:15.369Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests standard present tense conjugation (third person plural \"plaisent\") rather than the special indirect object construction that makes \"plaire\" distinctive—the structure \"lui\" is already provided, so no knowledge of the \"plaire à quelqu'un\" pattern is required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774802941048-pki0sv40",
+      "timestamp": "2026-03-29T16:49:34.353Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the \"plaire\" construction's unique indirect object pronoun usage (lui/leur) and its present tense conjugation, which is the core of rule 01-20.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774804160409-jicz6hki",
+      "timestamp": "2026-03-29T17:10:37.854Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests conjugation of \"plaire\" for third person plural (\"plaisent\"), not the special indirect construction \"plaire à\" which is the actual rule topic—the indirect object pronoun \"lui\" is already provided, so students don't need to know the construction pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774804460428-0e3l66d2",
+      "timestamp": "2026-03-29T17:15:12.352Z"
+    }
+  ]
+}

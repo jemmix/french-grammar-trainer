@@ -1,0 +1,54 @@
+{
+  "cacheKey": "7c8ca9f7061fa972",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-20-003",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nPrompt: Complétez : « Je ___ ? » (asking if someone likes you)\nChoices:\nA. te plais\nB. te plaît\nC. t'aime\nD. te plaisant\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1774800504617-08q0oj3u"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly states the context \"(asking if someone likes you)\" which makes it clear the verb \"plaire\" should be used with \"je\" (first person singular), and among the choices only \"te plais\" fits both the grammatical structure and the semantic intent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774800760569-whxey45j",
+      "timestamp": "2026-03-29T16:13:33.132Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The parenthetical \"(asking if someone likes you)\" resolves any ambiguity about which sense of \"like\" is intended and clearly indicates the correct translation uses \"plaire\" (Je te plais = \"You like me\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774802112871-ryds94cx",
+      "timestamp": "2026-03-29T16:35:47.318Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The parenthetical \"(asking if someone likes you)\" is misleading - the sentence \"Je te plais ?\" means \"Do I please you?\" (you like me), not asking if someone else likes you; the parenthetical suggests a third person (someone) when the construction is first-second person.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774803057031-tlqirpo5",
+      "timestamp": "2026-03-29T16:56:30.566Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The parenthetical \"(asking if someone likes you)\" provides essential context that the speaker is asking the listener if they find the speaker pleasing, making the task unambiguous despite the reflexive pronoun's potential ambiguity.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774804420461-kprjpco0",
+      "timestamp": "2026-03-29T17:14:02.355Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The context \"(asking if someone likes you)\" provides sufficient guidance for learners familiar with French grammar to understand that the completed question means \"Do you like me?\" and select the correct conjugation of plaire with the proper indirect object.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774804575261-z575z78c",
+      "timestamp": "2026-03-29T17:22:10.853Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt mixes French and English, with the parenthetical clarification \"(asking if someone likes you)\" in English while the question and choices are in French, which creates language inconsistency and could confuse learners.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774804930854-7ils1m1h",
+      "timestamp": "2026-03-29T17:22:22.861Z"
+    }
+  ]
+}

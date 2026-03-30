@@ -1,0 +1,61 @@
+{
+  "cacheKey": "d61ad6d3135b9612",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Tu ___ tes devoirs ce soir ? »\nChoices:\nA. [CORRECT] fais\nB. feras\nC. faisais\nD. vas faire\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774737051227-4gm2rcwz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using present tense \"fais\" with future time marker \"ce soir\", which requires understanding that le présent can express near-future actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774737446676-941vwgrr",
+      "timestamp": "2026-03-28T22:37:37.941Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using present tense (\"fais\") with a future time marker (\"ce soir\") to express future intent, which is the core of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774737931064-1m1u8oml",
+      "timestamp": "2026-03-28T22:46:15.338Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question doesn't test the present tense with future meaning; \"Tu fais tes devoirs ce soir ?\" is a general question about plans, not the classic scheduled-future construction (e.g., \"Je pars demain\"), and includes \"vas faire\" which is a different construction (futur proche).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774738265429-ty8a0xxn",
+      "timestamp": "2026-03-28T22:51:22.240Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests that present tense (\"fais\") can express near-future meaning in contexts like \"ce soir\", distinguishing it from futur proche (\"vas faire\") and futur simple (\"feras\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774738401518-ruohpy6y",
+      "timestamp": "2026-03-28T22:53:31.480Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires selecting the present tense \"fais\" for a near-future action (\"ce soir\"), which is exactly the present-with-future-value concept that the rule teaches (e.g., \"je pars demain\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774738438810-a7tn6ibx",
+      "timestamp": "2026-03-28T22:54:21.323Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using present tense (\"fais\") with a temporal marker (\"ce soir\") to express a near-future action, which is the core concept of le présent à valeur de futur proche.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774738479412-8wnz6vpy",
+      "timestamp": "2026-03-28T22:54:55.405Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: While \"fais\" is theoretically possible as a present-with-future-value form, native speakers would typically use \"feras\" or \"vas faire\" for planned future actions; the question primarily tests choosing between three ways to express the future (futur simple, futur proche, and présent) rather than specifically testing the présent's future-value usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774738513223-ho8wg0yo",
+      "timestamp": "2026-03-28T22:55:32.036Z"
+    }
+  ]
+}

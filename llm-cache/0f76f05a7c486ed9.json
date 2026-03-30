@@ -1,0 +1,40 @@
+{
+  "cacheKey": "0f76f05a7c486ed9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Pendant la conférence, une personne ____ et crie « Non ! » »\nChoices:\nA. [CORRECT] se lève\nB. s'est levée\nC. se levait\nD. se lèvera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774790823637-csualjwd"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The sentence lacks the temporal anchoring or literary/journalistic context that would justify présent de narration (no clear past narrative framework), making \"se lève\" appear to be chosen simply to match \"crie\" rather than to make a past event vivid.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774791583680-eqzqpqum",
+      "timestamp": "2026-03-29T13:40:48.062Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests choosing the present tense to narrate a past event, which is the defining feature of the présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774792818751-31m08jtz",
+      "timestamp": "2026-03-29T14:02:16.970Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests whether the student recognizes that the present tense (\"se lève\") creates the vivid, immediate narration effect of the literary present, contrasting with past tenses that would standardly narrate past events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774795294334-y202xnyn",
+      "timestamp": "2026-03-29T14:42:16.192Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence uses present tense to describe actions happening simultaneously (\"se lève et crie\"), which is a standard present-tense usage, not a literary/journalistic narration of past events; présent de narration requires clear context that the events are in the past (e.g., \"Hier, pendant la conférence...\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774795787913-58i344bg",
+      "timestamp": "2026-03-29T14:51:03.991Z"
+    }
+  ]
+}

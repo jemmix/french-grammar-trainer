@@ -1,0 +1,33 @@
+{
+  "cacheKey": "029ce956b9a85e6f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Input\nPrompt: Complétez avec la forme correcte de « suffire » (impersonnel ou personnel).\nPhrase: Un verre d'eau me ___. Je n'ai pas besoin de plus.\nCorrect Answer: suffit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774800504620-ibqkg9p6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the verb \"suffire\" with its personal construction using an indirect object pronoun (\"me suffit\"), which requires knowledge of this verb's special construction pattern listed in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774801942019-3v6a0nuh",
+      "timestamp": "2026-03-29T16:32:51.205Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the personal construction of \"suffire\" with an indirect object (me/te/lui/nous/vous/leur), which is the defining feature of this verb in the \"construction particulière\" rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774802958556-wh9sg54q",
+      "timestamp": "2026-03-29T16:49:31.580Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the personal construction of \"suffire\" with an indirect object pronoun (me), which is exactly one of the special constructions covered by the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774804159148-xj3qhipe",
+      "timestamp": "2026-03-29T17:09:45.688Z"
+    }
+  ]
+}
