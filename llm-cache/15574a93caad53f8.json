@@ -1,0 +1,47 @@
+{
+  "cacheKey": "15574a93caad53f8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe entre parenthèses.\nPhrase: En général, nous (vivre) ___ une vie équilibrée.\nCorrect Answer: vivons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774893195303-jcsnypk4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires choosing the présent tense because \"En général\" signals a habit, not just conjugating the verb correctly.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774893584899-0zcpjp5k",
+      "timestamp": "2026-03-30T17:59:54.917Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The phrase \"En général\" signals a general truth requiring present tense, and correctly conjugating \"vivre\" for \"nous\" as \"vivons\" directly applies the rule about using present tense for general truths/habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774894091463-eompqeyg",
+      "timestamp": "2026-03-30T18:08:22.026Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests present tense conjugation of \"vivre\" with \"nous\", not when to use the present tense for habits or general truths - a student could answer correctly without understanding the rule about habitual/general contexts.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774894485303-xwv2aw7w",
+      "timestamp": "2026-03-30T18:15:41.089Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"En général\" signals a general truth and correctly conjugating \"vivre\" in the present tense, which directly tests using present tense to express general truths.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774894661677-m8kl1ngn",
+      "timestamp": "2026-03-30T18:19:33.280Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests verb conjugation for the subject \"nous\"; students can answer correctly without understanding that the present tense is used here to express a general truth.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774894773280-ibj0jmb8",
+      "timestamp": "2026-03-30T18:20:19.948Z"
+    }
+  ]
+}

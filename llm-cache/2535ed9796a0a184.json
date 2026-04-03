@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2535ed9796a0a184",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Actuellement, nous ___ toujours en famille le dimanche. »\nChoices:\nA. [CORRECT] déjeunons\nB. déjeunions\nC. avons déjeuné\nD. déjeunerons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774895464382-bx54pj4q"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence \"nous déjeunons toujours en famille le dimanche\" expresses a recurring habit (always on Sundays), which is precisely what the rule about using the present tense for habits describes, and the distractors (imparfait, passé composé, futur) test whether the student knows to choose the present tense for this habitual action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774895617533-j9143nc6",
+      "timestamp": "2026-03-30T18:34:03.257Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The word \"Actuellement\" (currently) in the prompt indicates an ongoing action in the present moment, not a habit or general truth, so the question tests present tense for current states rather than for expressing habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774895977797-i2pa8rjv",
+      "timestamp": "2026-03-30T18:39:59.467Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The adverb \"Actuellement\" (currently/at this moment) contradicts the rule about expressing habits or general truths; while \"déjeunons\" is the correct answer for the sentence's meaning, the prompt misrepresents the grammatical concept being tested by using a temporal adverb that suggests a current state rather than a habitual action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774896313106-2ul1xsms",
+      "timestamp": "2026-03-30T18:46:48.440Z"
+    }
+  ]
+}

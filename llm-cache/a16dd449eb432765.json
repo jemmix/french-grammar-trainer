@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a16dd449eb432765",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-14-001",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nPrompt: Complétez : « Actuellement, chaque matin, je ___ mon café. »\nChoices:\nA. prends\nB. prenais\nC. prendrais\nD. prendrai\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1774895464368-08akelqe"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt \"Actuellement, chaque matin\" combined with the rule about using present tense for habits clearly indicates the answer must be \"prends\" (present tense) to express a current habitual action; the other tenses (imparfait, conditional, future) are incompatible with the temporal markers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774895464401-v1nr6u83",
+      "timestamp": "2026-03-30T18:32:00.861Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The combination \"Actuellement, chaque matin\" creates tension - \"actuellement\" suggests something happening right now while \"chaque matin\" signals habit, and for habits, \"chaque matin\" alone would be clearer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774895845267-i8id77mz",
+      "timestamp": "2026-03-30T18:38:00.469Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The word \"actuellement\" (currently) creates confusion with the habitual marker \"chaque matin\" (every morning), making the temporal reference unclear - a habit would typically use just \"chaque matin\" without \"actuellement\", and the combination makes it ambiguous whether this describes a current habit, a temporary situation, or a general truth.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774896227817-n664h3xn",
+      "timestamp": "2026-03-30T18:44:03.182Z"
+    }
+  ]
+}

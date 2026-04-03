@@ -1,0 +1,33 @@
+{
+  "cacheKey": "879171f1c9c2eef7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Selon la biologie, le cœur humain ___ environ 100 000 fois par jour. »\nChoices:\nA. [CORRECT] bat\nB. battait\nC. a battu\nD. battra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775216843520-joodm3ul"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests using the present tense to express a general truth (a biological fact), requiring knowledge that general truths use le présent rather than past or future tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775216901033-dcjv0o6c",
+      "timestamp": "2026-04-03T11:48:50.888Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that the present tense expresses a general truth/fact (the heart beats 100,000 times per day), and the other tenses are inappropriate for this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775216993984-j1viwey7",
+      "timestamp": "2026-04-03T11:50:51.831Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that the present tense \"bat\" is used to express a general truth/fact about the human heart, which is the exact purpose of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775217097392-trib5x91",
+      "timestamp": "2026-04-03T11:51:51.537Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "2d3f570c8cab5ba1",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-14-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nPrompt: Complétez : « Actuellement, tu ___ ton café chaque matin. »\nChoices:\nA. prends\nB. prenais\nC. as pris\nD. prendras\nE. prendrais\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1774895464386-u9r4n019"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: \"chaque matin\" clearly signals a habit, making the present tense (prends) the only correct choice; \"Actuellement\" establishes the timeframe without creating ambiguity.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774895720563-q3n2qrrh",
+      "timestamp": "2026-03-30T18:36:01.985Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt provides a clear instruction (\"Complétez\") and sufficient context through \"chaque matin\" to indicate a habitual action requiring the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774896070602-725m8uv0",
+      "timestamp": "2026-03-30T18:41:38.853Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The rule specifies \"présent pour exprimer une habitude ou une vérité générale,\" but the prompt includes \"Actuellement\" (currently), which could suggest temporary present rather than a habit, making the connection between the rule and the correct answer unclear.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774896417956-ppx3chwp",
+      "timestamp": "2026-03-30T18:47:23.643Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: \"Actuellement\" (currently) and \"chaque matin\" (every morning) create conflicting temporal signals - the former suggests a present moment while the latter suggests a habitual action, making it unclear which aspect of the présent the question is testing.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774896536976-s8httn5g",
+      "timestamp": "2026-03-30T18:49:25.771Z"
+    }
+  ]
+}

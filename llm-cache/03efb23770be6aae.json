@@ -1,0 +1,33 @@
+{
+  "cacheKey": "03efb23770be6aae",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « À l'ère actuelle, nous ___ une vie équilibrée. »\nChoices:\nA. [CORRECT] vivons\nB. vivions\nC. avons vécu\nD. vivrons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775215022248-4uu1mtg7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence describes a contemporary situation with \"À l'ère actuelle,\" not a habit or general truth; it tests present tense for current circumstances rather than the specific use case of habits/general truths.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775215415724-l7y8jejv",
+      "timestamp": "2026-04-03T11:24:29.041Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using the present tense to describe a general truth about contemporary life (\"we live a balanced life at the current time\"), which directly aligns with expressing a vérité générale in the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775215896989-qcy15wws",
+      "timestamp": "2026-04-03T11:32:02.410Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The sentence describes a current factual situation in the present era, which uses simple present for stating a current state (a different rule), not specifically for expressing a habit or general truth - the distinction matters because \"nous vivons une vie équilibrée\" could mean \"we (now) live a balanced life\" rather than \"we generally/habitually live a balanced life.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775216193987-pgl8vp33",
+      "timestamp": "2026-04-03T11:38:00.644Z"
+    }
+  ]
+}

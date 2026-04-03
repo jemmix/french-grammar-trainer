@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0de5bb979b82bb74",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « À notre époque, en hiver, nous ___ souvent à la montagne. »\nChoices:\nA. [CORRECT] allons\nB. allions\nC. sommes allés\nD. irons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775215022248-3bss685z"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"souvent\" indicates a habitual action and that the present tense is used to express habits, which is precisely what the rule states.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775215383241-y2hnsvcf",
+      "timestamp": "2026-04-03T11:24:13.712Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests expressing habitual actions (\"souvent\") in the present tense, with the imparfait (allions), passé composé (sommes allés), and futur (irons) serving as plausible but incorrect distractors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775215874778-9yi7jqr0",
+      "timestamp": "2026-04-03T11:31:26.687Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using present tense to express a habitual action (we \"often\" go to the mountains), which is exactly what rule 01-14 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775216174406-8brvv0sr",
+      "timestamp": "2026-04-03T11:36:37.162Z"
+    }
+  ]
+}

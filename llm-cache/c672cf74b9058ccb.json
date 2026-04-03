@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c672cf74b9058ccb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « De nos jours, tu ___ à tes parents le dimanche. »\nChoices:\nA. [CORRECT] téléphones\nB. téléphonais\nC. as téléphoné\nD. téléphoneras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775215022247-j09o751s"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that present tense expresses current habits (\"téléphones le dimanche\"), as the context (\"De nos jours\") makes imparfait (past habit) and future tense inappropriate.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775215090202-xkf6gntc",
+      "timestamp": "2026-04-03T11:18:26.477Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"le dimanche\" (every Sunday) indicates a habitual action, and knowing that the present tense expresses habits in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775215511999-gpimzw94",
+      "timestamp": "2026-04-03T11:26:18.978Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires recognizing that \"le dimanche\" (habitual) + \"De nos jours\" (present) demands the present tense for expressing a current habit, which is precisely what rule 01-14 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775215954239-2amjvuzm",
+      "timestamp": "2026-04-03T11:32:55.196Z"
+    }
+  ]
+}

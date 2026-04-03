@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8766d97134bbb698",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Actuellement, elle ___ du sport tous les jours. »\nChoices:\nA. [CORRECT] fait\nB. faisait\nC. a fait\nD. ferait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774895464371-suwlbm22"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The word \"Actuellement\" indicates the present tense is being used to express what's happening NOW (current action), not to express a habit or general truth as the rule requires; removing \"Actuellement\" would properly test the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774895464433-hei53jnq",
+      "timestamp": "2026-03-30T18:31:30.699Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence expresses a current habit (\"tous les jours\"), which requires présent de l'indicatif; other tenses would indicate past, completed, or hypothetical actions rather than an ongoing habit.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774895823280-fn42sup2",
+      "timestamp": "2026-03-30T18:37:43.795Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question uses \"Actuellement\" (currently/at this moment), which signals the present moment rather than a habit or general truth; \"tous les jours\" is secondary context, but the adverb \"Actuellement\" determines the tense choice, making this about present progressive/immediate usage, not expressing habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774896203868-jgigzkvz",
+      "timestamp": "2026-03-30T18:43:44.790Z"
+    }
+  ]
+}

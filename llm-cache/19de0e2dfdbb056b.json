@@ -1,0 +1,33 @@
+{
+  "cacheKey": "19de0e2dfdbb056b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « De nos jours, le matin, tu ___ ton café. »\nChoices:\nA. [CORRECT] prends\nB. prenais\nC. as pris\nD. prendras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775215022248-mxgy1bo5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"De nos jours, le matin\" indicates a current habitual action, which can only be correctly expressed using the present tense (\"prends\"), directly testing the rule about using présent for habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775215350925-1mkglajr",
+      "timestamp": "2026-04-03T11:22:43.530Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The context \"De nos jours, le matin\" indicates a present-time habitual action, and only the present tense \"prends\" correctly expresses this regular occurrence while other tenses would place the action in the past or future.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775215784744-02tjd9j1",
+      "timestamp": "2026-04-03T11:30:06.391Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that present tense (\"prends\") expresses a current habit (drinking coffee each morning), while distinguishing it from imparfait for past habits, passé composé for completed actions, and futur simple for future actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775216128939-f7mclkbr",
+      "timestamp": "2026-04-03T11:35:41.813Z"
+    }
+  ]
+}

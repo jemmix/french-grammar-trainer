@@ -1,0 +1,26 @@
+{
+  "cacheKey": "07b049615ae54ba1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Actuellement, en hiver, nous ___ souvent à la montagne. »\nChoices:\nA. [CORRECT] allons\nB. allions\nC. sommes allés\nD. irons\nE. irions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775207795911-ofim0w0h"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The word \"Actuellement\" (currently/at the moment) indicates a present progressive situation rather than a general habit or timeless truth, so the question primarily tests present tense for current actions, not the stated rule about habits and general truths.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775208059914-ilkjs2r8",
+      "timestamp": "2026-04-03T09:21:31.896Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The phrase \"Actuellement\" (currently) makes this question test present tense for describing current actions/ongoing situations, not for expressing habits or general truths - the presence of \"souvent\" (often) doesn't change the fact that \"actuellement\" anchors the sentence to the present moment rather than habitual behavior or universal facts.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775208397198-d7t1tlpm",
+      "timestamp": "2026-04-03T09:27:18.808Z"
+    }
+  ]
+}

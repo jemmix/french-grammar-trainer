@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1c9a71073e36c727",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je ___ toujours une demi-heure pour me préparer le matin. »\nChoices:\nA. [CORRECT] mets\nB. mettais\nC. ai mis\nD. mettrai\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774893195302-gwzxawj3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"toujours\" and the context of a morning routine indicate a habitual action, which must be expressed using the present tense (\"mets\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774893458875-qkpy493d",
+      "timestamp": "2026-03-30T17:57:52.482Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that present tense expresses habitual actions (\"toujours\" + morning routine context) to select \"mets\" correctly.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774893969466-x6ikm1sr",
+      "timestamp": "2026-03-30T18:06:28.947Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the rule that present tense expresses habitual actions, as evidenced by \"toujours\" and the morning routine context, requiring the student to distinguish present from other tenses rather than just conjugating a verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774894381222-8kovw83n",
+      "timestamp": "2026-03-30T18:13:15.937Z"
+    }
+  ]
+}

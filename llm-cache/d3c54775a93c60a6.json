@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d3c54775a93c60a6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Selon les scientifiques, le soleil ___ de la lumière et de la chaleur. »\nChoices:\nA. [CORRECT] produit\nB. produisait\nC. produirait\nD. produire\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775247536404-ack85iz6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that the sun producing light and heat is a general truth/fact, which is expressed using the present tense (\"produit\") in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775247584573-e8kd0m2d",
+      "timestamp": "2026-04-03T20:19:58.037Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the use of present tense to express a general truth (scientific fact about the sun), which directly matches the rule \"le présent pour exprimer une habitude ou une vérité générale.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775247643311-8ln5pfjm",
+      "timestamp": "2026-04-03T20:20:55.496Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that the present tense is used to express a scientific fact/general truth about the sun, which is exactly what rule 01-14 covers (le présent pour exprimer une vérité générale).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775247691980-q4tzwrfg",
+      "timestamp": "2026-04-03T20:21:42.938Z"
+    }
+  ]
+}

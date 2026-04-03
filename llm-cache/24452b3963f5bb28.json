@@ -1,0 +1,33 @@
+{
+  "cacheKey": "24452b3963f5bb28",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « De nos jours, tu ___ au moins trois cafés par jour au bureau. »\nChoices:\nA. [CORRECT] bois\nB. buvais\nC. as bu\nD. boire\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775217827087-2e9n799u"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"de nos jours\" with a frequency expression (\"par jour\") signals a habitual action, which must be expressed in le présent — choosing \"bois\" correctly applies rule 01-14 about using the present tense for habits, while the distractors test knowledge of other tenses (imparfait, passé composé, infinitive).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775218092357-x96o668r",
+      "timestamp": "2026-04-03T12:08:23.340Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting present tense (\"bois\") to express a current habit (drinking three coffees per day), which directly tests the rule's focus on using présent for habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775246303312-ihwuh1e5",
+      "timestamp": "2026-04-03T19:58:36.032Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that present tense expresses habitual actions (indicated by \"De nos jours\" and \"par jour\"), which is the core of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775246514333-re2npam6",
+      "timestamp": "2026-04-03T20:02:13.366Z"
+    }
+  ]
+}

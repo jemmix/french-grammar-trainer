@@ -1,0 +1,33 @@
+{
+  "cacheKey": "90c5a1d00429c0a1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Actuellement, il ___ toujours une demi-heure pour se préparer le matin. »\nChoices:\nA. [CORRECT] met\nB. mettait\nC. a mis\nD. mettra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774895464384-j9jzvh0s"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the use of present tense to express an ongoing habit (\"il met toujours une demi-heure\"), with other options requiring knowledge of different tenses (imparfait for past habits, passé composé for completed actions, futur simple for future).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774895695294-p0yhns3o",
+      "timestamp": "2026-03-30T18:35:29.075Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt uses \"actuellement\" (currently) which indicates a temporary present situation, not a habit or general truth; this question tests understanding of \"actuellement\" as a present tense marker rather than the specific rule about expressing habits or general truths.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774896058889-b2xk7lc5",
+      "timestamp": "2026-03-30T18:41:15.251Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The presence of \"Actuellement\" (currently) makes this a question about using present tense for current situations, not specifically for habits or general truths — the correct answer can be determined without any knowledge of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774896405445-4q9ec8jb",
+      "timestamp": "2026-03-30T18:47:23.981Z"
+    }
+  ]
+}

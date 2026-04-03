@@ -1,0 +1,40 @@
+{
+  "cacheKey": "5d9d7fef521fb320",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Actuellement, tu ___ à tes parents le dimanche. »\nChoices:\nA. [CORRECT] téléphones\nB. téléphonais\nC. as téléphoné\nD. téléphoneras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775207795901-bk68x3k7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires recognizing that \"le dimanche\" indicates a habitual action (\"tu téléphones le dimanche\" = you call [every] Sunday) and selecting the present tense accordingly, which is exactly what the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775207882569-enwmaxhc",
+      "timestamp": "2026-04-03T09:18:39.219Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using present tense for a recurring action (\"le dimanche\"), which is a habitual use of the présent de l'indicatif, despite the potentially confusing \"Actuellement\" modifier.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775208203858-grs0l53v",
+      "timestamp": "2026-04-03T09:24:06.078Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt uses \"Actuellement\" (currently), which indicates an ongoing present action rather than a habit or general truth; while the correct answer uses present tense, the question tests present for current situations, not the specific rule about habits or general truths.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775208571731-hge6532s",
+      "timestamp": "2026-04-03T09:29:58.348Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests which tense matches the temporal indicator \"Actuellement\" (currently), not the rule about using present tense for habits or general truths; answering correctly requires only knowing that \"actuellement\" takes present tense, not knowledge of habitual usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775208827648-j8rsimjz",
+      "timestamp": "2026-04-03T09:34:31.114Z"
+    }
+  ]
+}

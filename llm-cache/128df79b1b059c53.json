@@ -1,0 +1,26 @@
+{
+  "cacheKey": "128df79b1b059c53",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Chaque matin, je ___ mon café. »\nChoices:\nA. [CORRECT] prends\nB. prenons\nC. prendrait\nD. prendrai\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775212277060-oi5mmi6x"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question primarily tests subject-verb agreement and present tense conjugation of \"prendre\" with \"je\", not the specific use of present tense to express habits; the distractors are eliminated based on person/tense, not because they fail to express habit.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775212277095-k2lj2dsx",
+      "timestamp": "2026-04-03T10:31:34.852Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests present tense conjugation of \"prendre\" for \"je\", not the use of present tense to express habits—you could select the correct form (\"prends\") based on subject-verb agreement without understanding the habit-specific rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775212294853-r75x2oqy",
+      "timestamp": "2026-04-03T10:31:51.116Z"
+    }
+  ]
+}

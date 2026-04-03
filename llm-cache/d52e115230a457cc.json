@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d52e115230a457cc",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « L'eau ___ à 100 degrés Celsius. »\nChoices:\nA. [CORRECT] bout\nB. bouillait\nC. a bouilli\nD. bouillira\nE. bouillirait\nF. bouille\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1774895464387-dh4ebocd"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests using the present tense for a general truth (water's boiling point), requiring recognition that vérités générales use le présent and knowledge of the correct conjugation of \"bouillir\" in the third person singular.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774895803337-6lbzvrmy",
+      "timestamp": "2026-03-30T18:37:01.539Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence expresses a scientific truth (\"water boils at 100 degrees Celsius\") which requires the present tense for vérité générale, and only the present form \"bout\" is correct among the choices.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774896134578-bmkxfaqh",
+      "timestamp": "2026-03-30T18:42:36.757Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"L'eau bout à 100 degrés Celsius\" is a general truth (scientific fact) and therefore must use the present tense \"bout\", which is exactly what rule 01-14 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1774896457928-wtr1huh9",
+      "timestamp": "2026-03-30T18:48:15.219Z"
+    }
+  ]
+}

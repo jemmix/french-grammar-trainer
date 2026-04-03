@@ -1,0 +1,33 @@
+{
+  "cacheKey": "66ca43e1a8c32805",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « De nos jours, je ___ mon café chaque matin. »\nChoices:\nA. [CORRECT] prends\nB. prenais\nC. prendrais\nD. prendrai\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775212501009-7gmxherj"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that present tense expresses a current habit, as \"chaque matin\" indicates repetition and \"De nos jours\" rules out the imparfait for past habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775212501045-x99b4xz2",
+      "timestamp": "2026-04-03T10:35:37.657Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests that present tense (\"prends\") expresses a current habit (\"chaque matin\"), distinguishing it from imparfait (past habits), futur (future), and conditionnel (hypothetical), which is exactly what rule 01-14 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775212537657-d8fps7l2",
+      "timestamp": "2026-04-03T10:36:03.278Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying a habitual action (\"chaque matin\") expressed in the present timeframe (\"de nos jours\"), which directly tests the rule's concept of using le présent to express habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775212563278-4c1csd6e",
+      "timestamp": "2026-04-03T10:36:14.674Z"
+    }
+  ]
+}
