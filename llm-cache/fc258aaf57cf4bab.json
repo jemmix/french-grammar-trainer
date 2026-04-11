@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fc258aaf57cf4bab",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au présent pour exprimer une habitude saisonnière.\nPhrase: De nos jours, en hiver, nous ___ (aller) souvent à la montagne.\nCorrect Answer: allons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775250753000-te43uyeh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This tests present tense conjugation of \"aller\" (nous form), not the semantic use of present tense to express habits—the habit context is merely incidental framing.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775250830615-v82nw70z",
+      "timestamp": "2026-04-03T21:14:20.498Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly asks to conjugate for a \"habitude saisonnière\" and the context with \"souvent\" requires present tense to express the habitual action, making knowledge of rule 01-14 essential.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775250932347-bvpdqx60",
+      "timestamp": "2026-04-03T21:15:45.955Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic present tense conjugation of \"aller\" for \"nous\", not the rule about using present tense to express habits, since the prompt explicitly tells the student to use present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775251000699-koi7gobh",
+      "timestamp": "2026-04-03T21:16:58.609Z"
+    }
+  ]
+}

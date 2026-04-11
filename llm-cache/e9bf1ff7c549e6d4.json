@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e9bf1ff7c549e6d4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Input\nPrompt: Complétez avec la forme verbale qui convient pour cette habitude.\nPhrase: De nos jours, en hiver, nous ___ souvent à la montagne.\nCorrect Answer: allons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775249324250-aczk723e"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the learner this is about a habit, so answering correctly only requires conjugating \"aller\" with \"nous\" in the present tense, not understanding that the present tense is the tense used to express habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775249408426-9pxrnvl5",
+      "timestamp": "2026-04-03T20:51:37.058Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests present tense conjugation of \"aller\" for \"nous\", not the rule about using present tense to express habits or general truths; the habit context is provided in the prompt and sentence structure (\"souvent\"), so the student doesn't need to understand that grammar principle to answer correctly.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775249567459-e7pr5vws",
+      "timestamp": "2026-04-03T20:53:06.722Z"
+    }
+  ]
+}

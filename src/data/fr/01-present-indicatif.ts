@@ -6,7 +6,7 @@ import type { Section } from "../types";
 // To regenerate: npm run compile-all -- --lang <fr|en>
 // =============================================================================
 // Source files: questions/fr/01-01.txt, questions/fr/01-02.txt, questions/fr/01-03.txt, questions/fr/01-04.txt, questions/fr/01-05.txt, questions/fr/01-06.txt, questions/fr/01-07.txt, questions/fr/01-08.txt, questions/fr/01-09.txt, questions/fr/01-10.txt, questions/fr/01-11.txt, questions/fr/01-12.txt, questions/fr/01-13.txt, questions/fr/01-14.txt, questions/fr/01-15.txt, questions/fr/01-16.txt, questions/fr/01-17.txt, questions/fr/01-18.txt, questions/fr/01-19.txt, questions/fr/01-20.txt
-// Total: 405 MCQ + 95 INPUT = 500 questions
+// Total: 400 MCQ + 100 INPUT = 500 questions
 
 const section: Section = {
   id: "01-present-indicatif",
@@ -4655,15 +4655,20 @@ const section: Section = {
     },
     {
       id: "01-14-004",
-      type: "mcq",
+      type: "input",
       ruleId: "01-14",
       generatedBy: "haiku",
-      prompt: "Complétez : « De nos jours, les chats ___ en moyenne seize heures par jour. »",
-      choices: [
-        { text: "dorment", correct: true, explanation: "Le présent énonce une vérité générale sur le comportement des chats. « Dorment » est la troisième personne du pluriel du verbe « dormir ». « De nos jours » situe le fait dans le présent." },
-        { text: "dormaient", correct: false, explanation: "L'imparfait suggère une habitude du passé qui n'est plus vraie, or il s'agit d'une vérité générale permanente." },
-        { text: "ont dormi", correct: false, explanation: "Le passé composé indique une action achevée au passé spécifique, non une vérité générale." },
-        { text: "dormir", correct: false, explanation: "L'infinitif n'est pas conjugué et ne s'accorde pas avec le sujet « les chats »." },
+      prompt: "Un élève a écrit « Les chats dormaient seize heures par jour » en utilisant l'imparfait à tort. Conjuguez le verbe dans le temps qui convient.",
+      phrase: { before: "De nos jours, les chats ", after: " (dormir) en moyenne seize heures par jour." },
+      hint: "dormir",
+      answer: "dorment",
+      explanation: "Le présent énonce une vérité générale sur le comportement des chats. « Dorment » est la troisième personne du pluriel du verbe « dormir ». « De nos jours » situe le fait dans le présent. L'élève avait utilisé l'imparfait « dormaient », qui décrit une habitude passée révolue.",
+      wrongAnswers: [
+        { text: "dormaient", explanation: "L'imparfait est justement l'erreur commise par l'élève. Il suggère une habitude du passé, or « de nos jours » ancre dans le présent." },
+        { text: "ont dormi", explanation: "Le passé composé indique une action achevée au passé spécifique, non une vérité générale." },
+        { text: "dormir", explanation: "L'infinitif n'est pas conjugué et ne s'accorde pas avec le sujet « les chats »." },
+        { text: "dort", explanation: "« Dort » est la troisième personne du singulier, mais le sujet « les chats » est pluriel. Il faut « dorment »." },
+        { text: "dormiraient", explanation: "Le conditionnel exprime une hypothèse ou une éventualité, pas une vérité générale établie." },
       ],
     },
     {
@@ -4707,15 +4712,20 @@ const section: Section = {
     },
     {
       id: "01-14-008",
-      type: "mcq",
+      type: "input",
       ruleId: "01-14",
       generatedBy: "haiku",
-      prompt: "Complétez : « De nos jours, tu ___ à tes parents le dimanche. »",
-      choices: [
-        { text: "téléphones", correct: true, explanation: "Le présent exprime une habitude dominicale actuelle. « Téléphones » est la deuxième personne du singulier du verbe « téléphoner ». « De nos jours » ancre l'habitude dans le présent." },
-        { text: "téléphonais", correct: false, explanation: "L'imparfait indique une ancienne habitude, or « de nos jours » situe la phrase dans le présent." },
-        { text: "as téléphoné", correct: false, explanation: "Le passé composé exprime un appel spécifique passé, pas une habitude générale." },
-        { text: "téléphoner", correct: false, explanation: "L'infinitif n'est pas conjugué et ne s'accorde pas avec le sujet « tu »." },
+      prompt: "Un élève a écrit « Tu téléphonais à tes parents le dimanche » en utilisant l'imparfait à tort. Conjuguez le verbe dans le temps qui convient.",
+      phrase: { before: "De nos jours, tu ", after: " (téléphoner) à tes parents le dimanche." },
+      hint: "téléphoner",
+      answer: "téléphones",
+      explanation: "Le présent exprime une habitude dominicale actuelle. « Téléphones » est la deuxième personne du singulier du verbe « téléphoner ». « De nos jours » ancre l'habitude dans le présent. L'élève avait utilisé l'imparfait « téléphonais », qui décrit une habitude passée révolue.",
+      wrongAnswers: [
+        { text: "téléphonais", explanation: "L'imparfait est justement l'erreur commise par l'élève. Il indique une ancienne habitude, or « de nos jours » situe la phrase dans le présent." },
+        { text: "as téléphoné", explanation: "Le passé composé exprime un appel spécifique passé, pas une habitude générale." },
+        { text: "téléphoner", explanation: "L'infinitif n'est pas conjugué et ne s'accorde pas avec le sujet « tu »." },
+        { text: "téléphone", explanation: "« Téléphone » est la troisième personne du singulier (il/elle). Pour « tu », il faut « téléphones »." },
+        { text: "téléphonez", explanation: "« Téléphonez » est la forme pour « vous ». Le sujet est « tu », il faut donc « téléphones »." },
       ],
     },
     {
@@ -4759,15 +4769,20 @@ const section: Section = {
     },
     {
       id: "01-14-012",
-      type: "mcq",
+      type: "input",
       ruleId: "01-14",
       generatedBy: "haiku",
-      prompt: "Complétez : « De nos jours, les gens ___ beaucoup de temps sur Internet. »",
-      choices: [
-        { text: "passent", correct: true, explanation: "Le présent exprime une habitude générale actuelle. « Passent » est la troisième personne du pluriel du verbe « passer ». « De nos jours » ancre la phrase dans le présent." },
-        { text: "passaient", correct: false, explanation: "L'imparfait exprime une habitude passée, or « de nos jours » situe la phrase dans le présent." },
-        { text: "ont passé", correct: false, explanation: "Le passé composé indique une action achevée, pas une habitude générale continue." },
-        { text: "passer", correct: false, explanation: "L'infinitif n'est pas conjugué et ne s'accorde pas avec le sujet « les gens »." },
+      prompt: "Un journaliste a écrit « Les gens passaient beaucoup de temps sur Internet » en utilisant l'imparfait à tort. Conjuguez le verbe dans le temps qui convient.",
+      phrase: { before: "De nos jours, les gens ", after: " (passer) beaucoup de temps sur Internet." },
+      hint: "passer",
+      answer: "passent",
+      explanation: "Le présent exprime une habitude générale actuelle. « Passent » est la troisième personne du pluriel du verbe « passer ». « De nos jours » ancre la phrase dans le présent. Le journaliste avait utilisé l'imparfait « passaient », qui décrit une habitude passée.",
+      wrongAnswers: [
+        { text: "passaient", explanation: "L'imparfait est justement l'erreur commise par le journaliste. Il exprime une habitude passée, or « de nos jours » situe la phrase dans le présent." },
+        { text: "ont passé", explanation: "Le passé composé indique une action achevée, pas une habitude générale continue." },
+        { text: "passer", explanation: "L'infinitif n'est pas conjugué et ne s'accorde pas avec le sujet « les gens »." },
+        { text: "passe", explanation: "« Passe » est la troisième personne du singulier, mais le sujet « les gens » est pluriel. Il faut « passent »." },
+        { text: "passeraient", explanation: "Le conditionnel exprime une hypothèse, pas une habitude réelle et observée." },
       ],
     },
     {
@@ -4824,15 +4839,20 @@ const section: Section = {
     },
     {
       id: "01-14-017",
-      type: "mcq",
+      type: "input",
       ruleId: "01-14",
       generatedBy: "haiku",
-      prompt: "Complétez : « De nos jours, tu ___ au moins trois cafés par jour au bureau. »",
-      choices: [
-        { text: "bois", correct: true, explanation: "Le présent exprime une habitude quotidienne actuelle. « Bois » est la deuxième personne du singulier du verbe « boire ». « De nos jours » et « par jour » ancrent clairement l'habitude dans le présent." },
-        { text: "buvais", correct: false, explanation: "L'imparfait indique une ancienne habitude, or « de nos jours » situe la phrase dans le présent." },
-        { text: "as bu", correct: false, explanation: "Le passé composé indique une action unique passée, pas une habitude répétée." },
-        { text: "boire", correct: false, explanation: "L'infinitif n'est pas conjugué et ne s'accorde pas avec le sujet « tu »." },
+      prompt: "Un élève a écrit « Tu buvais au moins trois cafés par jour au bureau » en utilisant l'imparfait à tort. Conjuguez le verbe dans le temps qui convient.",
+      phrase: { before: "De nos jours, tu ", after: " (boire) au moins trois cafés par jour au bureau." },
+      hint: "boire",
+      answer: "bois",
+      explanation: "Le présent exprime une habitude quotidienne actuelle. « Bois » est la deuxième personne du singulier du verbe « boire ». « De nos jours » et « par jour » ancrent clairement l'habitude dans le présent. L'élève avait utilisé l'imparfait « buvais », qui décrit une habitude passée.",
+      wrongAnswers: [
+        { text: "buvais", explanation: "L'imparfait est justement l'erreur commise par l'élève. Il indique une ancienne habitude, or « de nos jours » situe la phrase dans le présent." },
+        { text: "as bu", explanation: "Le passé composé indique une action unique passée, pas une habitude répétée." },
+        { text: "boire", explanation: "L'infinitif n'est pas conjugué et ne s'accorde pas avec le sujet « tu »." },
+        { text: "boit", explanation: "« Boit » est la troisième personne du singulier (il/elle). Pour « tu », il faut « bois »." },
+        { text: "buvez", explanation: "« Buvez » est la forme pour « vous ». Le sujet est « tu », il faut donc « bois »." },
       ],
     },
     {
@@ -4902,15 +4922,20 @@ const section: Section = {
     },
     {
       id: "01-14-023",
-      type: "mcq",
+      type: "input",
       ruleId: "01-14",
       generatedBy: "haiku",
-      prompt: "Complétez : « De nos jours, en hiver, nous ___ souvent à la montagne. »",
-      choices: [
-        { text: "allons", correct: true, explanation: "Le présent exprime une habitude saisonnière actuelle. « Allons » est la première personne du pluriel du verbe « aller ». « De nos jours » ancre l'habitude dans le présent." },
-        { text: "allions", correct: false, explanation: "L'imparfait indique une habitude du passé, or « de nos jours » situe la phrase dans le présent." },
-        { text: "sommes allés", correct: false, explanation: "Le passé composé décrit une action unique passée, non une habitude répétée." },
-        { text: "aller", correct: false, explanation: "L'infinitif n'est pas conjugué et ne s'accorde pas avec le sujet « nous »." },
+      prompt: "Un élève a écrit « Nous allions souvent à la montagne en hiver » en utilisant l'imparfait à tort. Conjuguez le verbe dans le temps qui convient.",
+      phrase: { before: "De nos jours, en hiver, nous ", after: " (aller) souvent à la montagne." },
+      hint: "aller",
+      answer: "allons",
+      explanation: "Le présent exprime une habitude saisonnière actuelle. « Allons » est la première personne du pluriel du verbe « aller ». « De nos jours » ancre l'habitude dans le présent. L'élève avait utilisé l'imparfait « allions », qui décrit une habitude passée.",
+      wrongAnswers: [
+        { text: "allions", explanation: "L'imparfait est justement l'erreur commise par l'élève. Il indique une habitude du passé, or « de nos jours » situe la phrase dans le présent." },
+        { text: "sommes allés", explanation: "Le passé composé décrit une action unique passée, non une habitude répétée." },
+        { text: "aller", explanation: "L'infinitif n'est pas conjugué et ne s'accorde pas avec le sujet « nous »." },
+        { text: "allez", explanation: "« Allez » est la forme pour « vous ». Le sujet est « nous », il faut donc « allons »." },
+        { text: "irions", explanation: "Le conditionnel exprime une hypothèse, pas une habitude réelle et régulière." },
       ],
     },
     {

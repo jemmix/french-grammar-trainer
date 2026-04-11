@@ -1,0 +1,26 @@
+{
+  "cacheKey": "25540bcaf597be04",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au présent pour exprimer une vérité générale.\nPhrase: De nos jours, les chats ___ (dormir) en moyenne seize heures par jour.\nCorrect Answer: dorment\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775250752971-4c3duhxq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use the present tense for a general truth, removing the need to identify when this rule applies; the question primarily tests conjugation of dormir, not the ability to recognize when to use present tense for general truths.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775250753020-itv5s42a",
+      "timestamp": "2026-04-03T21:13:09.268Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt tells the student to use the present tense, so the question tests present tense conjugation (dormir → dorment), not knowledge of when/why to use present for general truths.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775250857960-mb8ysccb",
+      "timestamp": "2026-04-03T21:14:33.098Z"
+    }
+  ]
+}

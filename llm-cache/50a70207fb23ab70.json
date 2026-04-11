@@ -1,0 +1,26 @@
+{
+  "cacheKey": "50a70207fb23ab70",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au présent pour exprimer cette habitude.\nPhrase: De nos jours, les gens ___ beaucoup de temps sur Internet.\nCorrect Answer: passent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775249791181-twvdiq21"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests verb conjugation (passer → passent), not the semantic use of present tense for habits or general truths—the student doesn't need to decide whether to use the présent tense, only how to conjugate a verb already in that tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775249826492-vv3s8ws7",
+      "timestamp": "2026-04-03T20:57:39.443Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests present tense conjugation of \"passer\" (morphology) rather than the rule's communicative function (when to use present tense for habits/truths), since the student only needs to conjugate correctly without understanding the \"habitude\" aspect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775249924461-p1xmmrz1",
+      "timestamp": "2026-04-03T20:58:58.682Z"
+    }
+  ]
+}

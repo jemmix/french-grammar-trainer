@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e7f627f599e1ecd8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Input\nPrompt: Un élève a écrit « Les chats dormaient seize heures par jour » en utilisant l'imparfait à tort. Conjuguez le verbe dans le temps qui convient.\nPhrase: De nos jours, les chats ___ (dormir) en moyenne seize heures par jour.\nCorrect Answer: dorment\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775930769480-xg5pvvul"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires understanding that present tense expresses general truths/habits (unlike imparfait which is for past habits), and correctly tests both the conceptual rule and its application through conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775930769519-3z7ftwbu",
+      "timestamp": "2026-04-11T18:06:28.259Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires distinguishing between present tense for present-time general truths/habits versus imparfait for past habits, which is precisely what rule 01-14 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775930788259-3vrya6ts",
+      "timestamp": "2026-04-11T18:06:55.437Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests using present tense for a general truth, signaled by \"en moyenne\" and \"par jour\" indicating a habitual fact about cats.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775930815437-pibsphpj",
+      "timestamp": "2026-04-11T18:07:07.114Z"
+    }
+  ]
+}
