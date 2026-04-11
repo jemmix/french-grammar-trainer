@@ -1,0 +1,33 @@
+{
+  "cacheKey": "502169d81cc30d36",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-15-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-15 - Le présent pour exprimer une action en cours\n\nQUESTION:\nType: Input\nPrompt: Corrigez l'erreur d'un élève qui a écrit « Elle mangeait un délicieux gâteau au chocolat » au lieu du présent pour décrire une action en cours. Conjuguez le verbe dans le temps qui convient.\nPhrase: Regarde ! Elle ___ un délicieux gâteau au chocolat.\nCorrect Answer: mange\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775935271863-ipgjml6x"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"Regarde !\" signals an action happening now, which is expressed using the present tense (mange) rather than the imparfait (mangeait), directly testing the rule about using the present for actions in progress.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775935308655-0cv776hf",
+      "timestamp": "2026-04-11T19:22:11.120Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that French uses the present tense (not imparfait) to describe actions happening at the moment of speaking, which is exactly what the rule states.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775935360134-gapvdofg",
+      "timestamp": "2026-04-11T19:23:10.811Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that the present tense expresses actions in progress, and the context \"Regarde !\" plus the explicit prompt about correcting the imparfait error both reinforce that the present tense is needed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775935396872-n5gt5adh",
+      "timestamp": "2026-04-11T19:23:37.463Z"
+    }
+  ]
+}

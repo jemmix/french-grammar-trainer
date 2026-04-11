@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bfef057f91fc7fe7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-15-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-15 - Le présent pour exprimer une action en cours\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Regarde ! Pierre ___ sous la pluie. »\nChoices:\nA. [CORRECT] court\nB. courra\nC. a couru\nD. courait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775933655894-13arndqv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The context \"Regarde !\" clearly indicates an action happening right now, requiring knowledge that the present tense \"court\" expresses an action in progress, while other tenses (future, past, imparfait) are inappropriate for this immediate observation context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775933655921-6tg7csfm",
+      "timestamp": "2026-04-11T18:54:32.586Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"Regarde!\" to establish a present-moment context, requiring the learner to select the present tense \"court\" to express an action currently in progress, which is precisely what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775933854590-23k23ybf",
+      "timestamp": "2026-04-11T18:57:53.045Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The prompt \"Regarde!\" indicates an action happening right now, requiring the learner to recognize that French uses the present tense (court) to express actions in progress, distinguishing it from future (courra), completed past (a couru), or past ongoing (courait) tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775934085330-4ndtkob1",
+      "timestamp": "2026-04-11T19:02:01.973Z"
+    }
+  ]
+}

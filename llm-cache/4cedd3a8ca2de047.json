@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4cedd3a8ca2de047",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-15-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-15 - Le présent pour exprimer une action en cours\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « En ce moment, mon voisin ___ sa voiture. »\nChoices:\nA. [CORRECT] lave\nB. lavait\nC. a lavé\nD. va laver\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775933655907-rnjhuf4r"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The phrase \"En ce moment\" specifically triggers the present tense to express an action in progress, and distinguishing this from past (lavait/a lavé) and future (va laver) tenses requires understanding this exact rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775933805908-uqgjwdvt",
+      "timestamp": "2026-04-11T18:57:17.856Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests using the present tense to express an action currently in progress, as signaled by \"En ce moment,\" and distinguishing it from other tenses (imparfait, passé composé, futur proche) that don't fit this temporal context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775934038413-yp36u8o9",
+      "timestamp": "2026-04-11T19:00:57.074Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the rule because \"en ce moment\" requires the present tense to express an action in progress; choosing between the four verb forms demands understanding that le présent de l'indicatif is used for actions happening right now, not just knowledge of verb conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775934500282-m9xivpco",
+      "timestamp": "2026-04-11T19:08:53.741Z"
+    }
+  ]
+}

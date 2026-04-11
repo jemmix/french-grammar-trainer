@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c5532306aae80dff",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-15-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-15 - Le présent pour exprimer une action en cours\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Regarde ! Le chat ___ sur le toit. »\nChoices:\nA. [CORRECT] dort\nB. dormait\nC. a dormi\nD. dormirait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775933655896-plc3g91f"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that \"Regarde!\" indicates an action happening at the moment of speaking, which is precisely what the rule about using présent for actions in progress covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775933682679-94y5alkc",
+      "timestamp": "2026-04-11T18:55:00.378Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core concept of using present tense (\"dort\") to express an action happening at the moment of speaking, as indicated by \"Regarde !\" — this is precisely what the rule teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775933877850-ksrk145q",
+      "timestamp": "2026-04-11T18:58:14.342Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests that the present tense (dort) expresses an action happening now, as indicated by \"Regarde !\" and requires distinguishing it from past/hypothetical tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775934101356-d8vwmras",
+      "timestamp": "2026-04-11T19:02:10.638Z"
+    }
+  ]
+}
