@@ -1,0 +1,26 @@
+{
+  "cacheKey": "900b7baf72480283",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Input\nPrompt: Écrivez la forme correcte. Un élève a écrit « Nous sortions demain matin. » pour décrire une action programmée. Conjuguez le verbe au présent.\nPhrase: Nous ___ demain matin.\nCorrect Answer: sortons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775943929521-68b6yzis"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using the present tense \"sortons\" with \"demain\" to express a scheduled near-future action, which is the exact concept of le présent à valeur de futur proche.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775944468590-7vc6uw5u",
+      "timestamp": "2026-04-11T21:54:54.549Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that present tense is used to express a scheduled future action (demain matin), which is precisely what the rule teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775945016483-dooc968x",
+      "timestamp": "2026-04-11T22:03:48.488Z"
+    }
+  ]
+}

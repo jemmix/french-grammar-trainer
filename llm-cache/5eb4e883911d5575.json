@@ -1,0 +1,26 @@
+{
+  "cacheKey": "5eb4e883911d5575",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Lequel de ces verbes convient pour décrire cette action programmée ? « Ma sœur ___ demain pour Londres. »\nChoices:\nA. [CORRECT] part\nB. partait\nC. est partie\nD. partirait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775943929520-5b9gjkbr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that the present tense is used with \"demain\" to express a scheduled/near future action, which is precisely what rule 01-16 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775944324046-584yfxw1",
+      "timestamp": "2026-04-11T21:52:20.122Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests exactly the concept of using present tense to express a near-future action (\"je pars demain\"), as \"demain\" indicates future but the correct answer \"part\" is in the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775944868716-wwxdu6fd",
+      "timestamp": "2026-04-11T22:01:20.920Z"
+    }
+  ]
+}

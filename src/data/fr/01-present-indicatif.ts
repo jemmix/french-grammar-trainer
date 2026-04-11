@@ -5319,7 +5319,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Je ___ demain pour Lyon. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Je ___ demain pour Lyon. »",
       choices: [
         { text: "pars", correct: true, explanation: "Le présent « pars » avec « demain » exprime un départ programmé et certain." },
         { text: "partais", correct: false, explanation: "L'imparfait « partais » décrit une action passée ou habituelle, incompatible avec « demain »." },
@@ -5332,7 +5332,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Nous ___ demain à Marseille. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Nous ___ demain à Marseille. »",
       choices: [
         { text: "arrivons", correct: true, explanation: "Le présent « arrivons » avec « demain » exprime une arrivée planifiée et certaine." },
         { text: "arrivions", correct: false, explanation: "L'imparfait « arrivions » situe l'action dans le passé, incompatible avec « demain »." },
@@ -5345,7 +5345,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Il ___ demain soir de Paris. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Il ___ demain soir de Paris. »",
       choices: [
         { text: "rentre", correct: true, explanation: "Le présent « rentre » avec « demain soir » exprime un retour à domicile programmé et certain." },
         { text: "rentrait", correct: false, explanation: "L'imparfait « rentrait » situe l'action dans le passé, incompatible avec « demain soir »." },
@@ -5358,7 +5358,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Elles ___ demain à la gare. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Elles ___ demain à la gare. »",
       choices: [
         { text: "viennent", correct: true, explanation: "Le présent « viennent » avec « demain » exprime une venue planifiée et certaine." },
         { text: "venaient", correct: false, explanation: "L'imparfait « venaient » décrit une habitude passée, incompatible avec un événement futur." },
@@ -5371,7 +5371,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Tu ___ demain matin. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Tu ___ demain matin. »",
       choices: [
         { text: "sors", correct: true, explanation: "Le présent « sors » avec « demain matin » exprime une sortie prévue et programmée." },
         { text: "sortais", correct: false, explanation: "L'imparfait « sortais » décrit une habitude passée, pas une sortie future planifiée." },
@@ -5384,7 +5384,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Vous ___ le train demain. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Vous ___ le train demain. »",
       choices: [
         { text: "prenez", correct: true, explanation: "Le présent « prenez » avec « demain » exprime un trajet en train programmé de manière certaine." },
         { text: "preniez", correct: false, explanation: "L'imparfait « preniez » décrit une habitude passée, pas un trajet futur planifié." },
@@ -5397,7 +5397,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « On ___ demain pour Bordeaux. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « On ___ demain pour Bordeaux. »",
       choices: [
         { text: "part", correct: true, explanation: "Le présent « part » avec « demain » exprime un départ programmé et certain." },
         { text: "partait", correct: false, explanation: "L'imparfait « partait » situe l'action dans le passé, incompatible avec « demain »." },
@@ -5410,7 +5410,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Elle ___ demain à Londres. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Elle ___ demain à Londres. »",
       choices: [
         { text: "arrive", correct: true, explanation: "Le présent « arrive » avec « demain » exprime une arrivée planifiée et certaine dans la capitale britannique." },
         { text: "arrivait", correct: false, explanation: "L'imparfait « arrivait » situe l'action dans le passé, ce qui est incompatible avec « demain »." },
@@ -5423,10 +5423,10 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Nous ___ demain soir à la maison. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Nous ___ demain soir à la maison. »",
       choices: [
         { text: "rentrons", correct: true, explanation: "Le présent « rentrons » avec « demain soir » exprime un retour à domicile programmé." },
-        { text: "rentrions", correct: false, explanation: "L'imparfait « rentrions » situe l'action dans le passé, incompatible avec « demain soir »." },
+        { text: "rentrios", correct: false, explanation: "L'imparfait « rentrions » situe l'action dans le passé, incompatible avec « demain soir »." },
         { text: "sommes rentrés", correct: false, explanation: "Le passé composé « sommes rentrés » décrit un retour déjà effectué, pas un retour prévu." },
         { text: "rentrerions", correct: false, explanation: "Le conditionnel « rentrerions » exprime une hypothèse, pas un retour planifié avec certitude." },
       ],
@@ -5436,7 +5436,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Ils ___ demain matin de l'aéroport. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Ils ___ demain matin de l'aéroport. »",
       choices: [
         { text: "partent", correct: true, explanation: "Le présent « partent » avec « demain matin » exprime un départ programmé depuis l'aéroport." },
         { text: "partaient", correct: false, explanation: "L'imparfait « partaient » décrit une habitude passée, incompatible avec un événement futur." },
@@ -5449,7 +5449,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Tu ___ demain à l'école. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Tu ___ demain à l'école. »",
       choices: [
         { text: "viens", correct: true, explanation: "Le présent « viens » avec « demain » exprime une venue planifiée à l'école." },
         { text: "venais", correct: false, explanation: "L'imparfait « venais » décrit une habitude passée, pas un événement futur programmé." },
@@ -5462,7 +5462,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Vous ___ demain pour Paris. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Vous ___ demain pour Paris. »",
       choices: [
         { text: "partez", correct: true, explanation: "Le présent « partez » avec « demain » exprime un départ programmé pour la capitale." },
         { text: "partiez", correct: false, explanation: "L'imparfait « partiez » situe l'action dans le passé, incompatible avec « demain »." },
@@ -5475,7 +5475,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Mon frère ___ demain à Marseille. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Mon frère ___ demain à Marseille. »",
       choices: [
         { text: "arrive", correct: true, explanation: "Le présent « arrive » avec « demain » exprime une arrivée planifiée et certaine." },
         { text: "arrivait", correct: false, explanation: "L'imparfait « arrivait » situe l'action dans le passé, ce qui ne convient pas avec « demain »." },
@@ -5488,7 +5488,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Nous ___ demain après-midi. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Nous ___ demain après-midi. »",
       choices: [
         { text: "sortons", correct: true, explanation: "Le présent « sortons » avec « demain après-midi » exprime une sortie prévue et programmée." },
         { text: "sortions", correct: false, explanation: "L'imparfait « sortions » situe l'action dans le passé, incompatible avec « demain après-midi »." },
@@ -5501,7 +5501,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Il ___ le train demain matin. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Il ___ le train demain matin. »",
       choices: [
         { text: "prend", correct: true, explanation: "Le présent « prend » avec « demain matin » exprime un trajet en train programmé de manière certaine." },
         { text: "prenait", correct: false, explanation: "L'imparfait « prenait » décrit une habitude passée, pas un trajet futur planifié." },
@@ -5514,7 +5514,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Elles ___ demain de l'aéroport. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Elles ___ demain de l'aéroport. »",
       choices: [
         { text: "rentrent", correct: true, explanation: "Le présent « rentrent » avec « demain » exprime un retour à domicile planifié et certain." },
         { text: "rentraient", correct: false, explanation: "L'imparfait « rentraient » situe l'action dans le passé, incompatible avec « demain »." },
@@ -5527,7 +5527,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Vous ___ demain matin à la gare. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Vous ___ demain matin à la gare. »",
       choices: [
         { text: "venez", correct: true, explanation: "Le présent « venez » avec « demain matin » exprime une venue planifiée à la gare." },
         { text: "veniez", correct: false, explanation: "L'imparfait « veniez » situe l'action dans le passé, incompatible avec « demain matin »." },
@@ -5540,7 +5540,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Ma sœur ___ demain pour Londres. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Ma sœur ___ demain pour Londres. »",
       choices: [
         { text: "part", correct: true, explanation: "Le présent « part » avec « demain » exprime un départ programmé et certain pour la capitale britannique." },
         { text: "partait", correct: false, explanation: "L'imparfait « partait » situe l'action dans le passé, ce qui ne convient pas avec « demain »." },
@@ -5553,7 +5553,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « On ___ demain soir au bureau. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « On ___ demain soir au bureau. »",
       choices: [
         { text: "rentre", correct: true, explanation: "Le présent « rentre » avec « demain soir » exprime un retour au bureau programmé et certain." },
         { text: "rentrait", correct: false, explanation: "L'imparfait « rentrait » situe l'action dans le passé, incompatible avec « demain soir »." },
@@ -5566,7 +5566,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Complétez : « Mes parents ___ demain de Bordeaux. »",
+      prompt: "Conjuguez au présent pour exprimer une action programmée : « Mes parents ___ demain de Bordeaux. »",
       choices: [
         { text: "arrivent", correct: true, explanation: "Le présent « arrivent » avec « demain » exprime une arrivée planifiée et certaine depuis Bordeaux." },
         { text: "arrivaient", correct: false, explanation: "L'imparfait « arrivaient » situe l'action dans le passé, incompatible avec « demain »." },
@@ -5579,7 +5579,7 @@ const section: Section = {
       type: "input",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Corrigez l'erreur d'un élève qui a écrit « Nous partions demain pour Marseille. » au lieu du présent pour décrire une action programmée. Conjuguez le verbe dans le temps qui convient.",
+      prompt: "Corrigez l'erreur d'un élève qui a utilisé l'imparfait « partions » au lieu du présent pour décrire une action programmée. Conjuguez le verbe au présent.",
       phrase: { before: "Nous ", after: " demain pour Marseille." },
       hint: "partir",
       answer: "partons",
@@ -5588,8 +5588,8 @@ const section: Section = {
         { text: "partions", explanation: "L'imparfait « partions » situe l'action dans le passé, incompatible avec « demain »." },
         { text: "sommes partis", explanation: "Le passé composé « sommes partis » décrit un départ déjà effectué, pas un départ prévu." },
         { text: "partirions", explanation: "Le conditionnel « partirions » exprime une hypothèse, pas un voyage planifié." },
-        { text: "étions partis", explanation: "Le plus-que-parfait « étions partis » décrit une action antérieure à une autre action passée." },
         { text: "partez", explanation: "La forme « partez » est la deuxième personne du pluriel, qui ne s'accorde pas avec le sujet « nous »." },
+        { text: "pars", explanation: "La forme « pars » est la deuxième personne du singulier, qui ne s'accorde pas avec le sujet « nous »." },
       ],
     },
     {
@@ -5597,7 +5597,7 @@ const section: Section = {
       type: "input",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Corrigez l'erreur d'un élève qui a écrit « Il arrivait demain soir à Paris. » au lieu du présent pour décrire une action programmée. Conjuguez le verbe dans le temps qui convient.",
+      prompt: "Corrigez l'erreur d'un élève qui a utilisé l'imparfait « arrivait » au lieu du présent pour décrire une action programmée. Conjuguez le verbe au présent.",
       phrase: { before: "Il ", after: " demain soir à Paris." },
       hint: "arriver",
       answer: "arrive",
@@ -5606,8 +5606,8 @@ const section: Section = {
         { text: "arrivait", explanation: "L'imparfait « arrivait » situe l'action dans le passé, incompatible avec « demain soir »." },
         { text: "est arrivé", explanation: "Le passé composé « est arrivé » décrit une arrivée déjà effectuée, pas un événement programmé." },
         { text: "arriverait", explanation: "Le conditionnel « arriverait » exprime une éventualité, pas une arrivée certaine." },
-        { text: "était arrivé", explanation: "Le plus-que-parfait « était arrivé » décrit une action antérieure à un autre moment passé." },
         { text: "arrives", explanation: "La forme « arrives » est la deuxième personne du singulier, qui ne s'accorde pas avec le sujet « il »." },
+        { text: "arrivons", explanation: "La forme « arrivons » est la première personne du pluriel, qui ne s'accorde pas avec le sujet « il »." },
       ],
     },
     {
@@ -5615,7 +5615,7 @@ const section: Section = {
       type: "input",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Corrigez l'erreur d'un élève qui a écrit « Elles rentraient demain à la maison. » au lieu du présent pour décrire une action programmée. Conjuguez le verbe dans le temps qui convient.",
+      prompt: "Corrigez l'erreur d'un élève qui a utilisé l'imparfait « rentraient » au lieu du présent pour décrire une action programmée. Conjuguez le verbe au présent.",
       phrase: { before: "Elles ", after: " demain à la maison." },
       hint: "rentrer",
       answer: "rentrent",
@@ -5624,8 +5624,8 @@ const section: Section = {
         { text: "rentraient", explanation: "L'imparfait « rentraient » situe l'action dans le passé, incompatible avec « demain »." },
         { text: "sont rentrées", explanation: "Le passé composé « sont rentrées » décrit un retour déjà effectué, pas un retour prévu." },
         { text: "rentreraient", explanation: "Le conditionnel « rentreraient » exprime une hypothèse, pas un retour planifié." },
-        { text: "étaient rentrées", explanation: "Le plus-que-parfait « étaient rentrées » décrit une action antérieure à un autre moment passé." },
         { text: "rentre", explanation: "La forme « rentre » est la troisième personne du singulier, qui ne s'accorde pas avec le sujet pluriel « elles »." },
+        { text: "rentrez", explanation: "La forme « rentrez » est la deuxième personne du pluriel, qui ne s'accorde pas avec le sujet « elles »." },
       ],
     },
     {
@@ -5633,7 +5633,7 @@ const section: Section = {
       type: "input",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Corrigez l'erreur d'un élève qui a écrit « Nous sortions demain matin. » au lieu du présent pour décrire une action programmée. Conjuguez le verbe dans le temps qui convient.",
+      prompt: "Corrigez l'erreur d'un élève qui a utilisé l'imparfait « sortions » au lieu du présent pour décrire une action programmée. Conjuguez le verbe au présent.",
       phrase: { before: "Nous ", after: " demain matin." },
       hint: "sortir",
       answer: "sortons",
@@ -5642,8 +5642,8 @@ const section: Section = {
         { text: "sortions", explanation: "L'imparfait « sortions » situe l'action dans le passé, incompatible avec « demain matin »." },
         { text: "sommes sortis", explanation: "Le passé composé « sommes sortis » décrit une sortie déjà effectuée, pas un projet futur." },
         { text: "sortirions", explanation: "Le conditionnel « sortirions » exprime une hypothèse, pas une sortie programmée." },
-        { text: "étions sortis", explanation: "Le plus-que-parfait « étions sortis » décrit une action antérieure à un autre moment passé." },
         { text: "sortez", explanation: "La forme « sortez » est la deuxième personne du pluriel, qui ne s'accorde pas avec le sujet « nous »." },
+        { text: "sors", explanation: "La forme « sors » est la deuxième personne du singulier, qui ne s'accorde pas avec le sujet « nous »." },
       ],
     },
     {
@@ -5651,7 +5651,7 @@ const section: Section = {
       type: "input",
       ruleId: "01-16",
       generatedBy: "manual",
-      prompt: "Corrigez l'erreur d'un élève qui a écrit « Tu venais demain à l'école. » au lieu du présent pour décrire une action programmée. Conjuguez le verbe dans le temps qui convient.",
+      prompt: "Corrigez l'erreur d'un élève qui a utilisé l'imparfait « venais » au lieu du présent pour décrire une action programmée. Conjuguez le verbe au présent.",
       phrase: { before: "Tu ", after: " demain à l'école." },
       hint: "venir",
       answer: "viens",
@@ -5660,8 +5660,8 @@ const section: Section = {
         { text: "venais", explanation: "L'imparfait « venais » situe l'action dans le passé, incompatible avec « demain »." },
         { text: "es venu", explanation: "Le passé composé « es venu » décrit une visite déjà effectuée, pas un événement à venir." },
         { text: "viendrais", explanation: "Le conditionnel « viendrais » exprime une éventualité, pas une venue confirmée." },
-        { text: "étais venu", explanation: "Le plus-que-parfait « étais venu » décrit une action antérieure à un autre moment passé." },
         { text: "vient", explanation: "La forme « vient » est la troisième personne du singulier, qui ne s'accorde pas avec le sujet « tu »." },
+        { text: "venons", explanation: "La forme « venons » est la première personne du pluriel, qui ne s'accorde pas avec le sujet « tu »." },
       ],
     },
     {

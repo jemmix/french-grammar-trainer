@@ -1,0 +1,33 @@
+{
+  "cacheKey": "38ed375661a108bd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Input\nPrompt: Corrigez l'erreur d'un élève qui a utilisé l'imparfait « rentraient » au lieu du présent pour décrire une action programmée. Conjuguez le verbe au présent.\nPhrase: Elles ___ demain à la maison.\nCorrect Answer: rentrent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775941473350-t9ce1mek"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence \"Elles ___ demain à la maison\" requires using present tense (\"rentrent\") with the temporal marker \"demain\" to express a future action, which is exactly the grammar rule of présent à valeur de futur proche.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775941993622-h1xm1okc",
+      "timestamp": "2026-04-11T21:13:30.988Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests exactly when to use the present tense to express a planned future action (\"demain\"), which is the core of the présent à valeur de futur proche rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775942539544-lovb4n3y",
+      "timestamp": "2026-04-11T21:22:37.983Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using the present tense for a scheduled/programmed future action (indicated by \"demain\"), which is exactly what the rule \"Le présent à valeur de futur proche\" teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775943125499-7u0svp4f",
+      "timestamp": "2026-04-11T21:32:25.129Z"
+    }
+  ]
+}

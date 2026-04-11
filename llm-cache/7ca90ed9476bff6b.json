@@ -1,0 +1,26 @@
+{
+  "cacheKey": "7ca90ed9476bff6b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Conjuguez au présent pour exprimer une action programmée : « Elles ___ demain à la gare. »\nChoices:\nA. [CORRECT] viennent\nB. venaient\nC. sont venues\nD. viendraient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775941473348-89nvrivp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The prompt explicitly says \"Conjuguez au présent\" so students can answer correctly by simply selecting the present tense form without understanding that present tense can express future programmed actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775941513681-1q8kbwaq",
+      "timestamp": "2026-04-11T21:05:39.599Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question merely tests recognizing the present tense form after being explicitly told \"conjuguez au présent\", rather than testing understanding that present tense can express future scheduled actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775942142292-rj1n3wub",
+      "timestamp": "2026-04-11T21:16:05.792Z"
+    }
+  ]
+}
