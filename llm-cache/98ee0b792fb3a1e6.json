@@ -1,0 +1,40 @@
+{
+  "cacheKey": "98ee0b792fb3a1e6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Input\nPrompt: Un journaliste a écrit « Les gens passaient beaucoup de temps sur Internet » en utilisant l'imparfait à tort. Conjuguez le verbe dans le temps qui convient.\nPhrase: De nos jours, les gens ___ (passer) beaucoup de temps sur Internet.\nCorrect Answer: passent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775931510001-79o3yzww"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The sentence expresses a general truth/habit about contemporary behavior (\"people spend a lot of time on the internet nowadays\"), which requires the present tense per the rule, and cannot be correctly answered without understanding that the present tense is used for general truths rather than the imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775931550730-qwqmjcu8",
+      "timestamp": "2026-04-11T18:20:38.829Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests choosing between present and imperfect based on the temporal marker \"De nos jours\" (indicating current time), not using the present to express habits or general truths.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775931722570-n61jkca4",
+      "timestamp": "2026-04-11T18:22:48.267Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"De nos jours\" is a present-tense temporal marker indicating a current habit/general truth, then conjugating \"passer\" in the present to express this.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775931856447-ofkpmm05",
+      "timestamp": "2026-04-11T18:24:34.039Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests choosing the present tense based on the temporal marker \"De nos jours\", not the specific use of présent for habits or general truths.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775931881690-s5dn2zgz",
+      "timestamp": "2026-04-11T18:24:57.248Z"
+    }
+  ]
+}

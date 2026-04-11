@@ -1,0 +1,33 @@
+{
+  "cacheKey": "039f6184b5c123c8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-14 - Le présent pour exprimer une habitude ou une vérité générale\n\nQUESTION:\nType: Input\nPrompt: Un journaliste a écrit « Les gens passaient beaucoup de temps sur Internet » en décrivant une habitude d'aujourd'hui avec l'imparfait. Corrigez en conjuguant le verbe dans le temps qui exprime une habitude actuelle.\nPhrase: De nos jours, les gens ___ (passer) beaucoup de temps sur Internet.\nCorrect Answer: passent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775932144210-rz16qpfu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests using présent to express a current habit, requiring knowledge that présent (not imparfait) is the correct tense for \"une habitude actuelle\" as stated in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775932174191-umlmp769",
+      "timestamp": "2026-04-11T18:30:00.925Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires students to choose the present tense (passent) to express a current habit, which is the core concept of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775932223352-soxz1q11",
+      "timestamp": "2026-04-11T18:30:48.494Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"passer\" in the present tense to express a current habitual action with the context \"De nos jours,\" directly testing the rule that present tense expresses habits or general truths.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775932271610-62sw8cp6",
+      "timestamp": "2026-04-11T18:31:47.641Z"
+    }
+  ]
+}
