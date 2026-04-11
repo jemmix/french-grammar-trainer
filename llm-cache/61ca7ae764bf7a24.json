@@ -1,0 +1,54 @@
+{
+  "cacheKey": "61ca7ae764bf7a24",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Input\nPrompt: Corrigez l'erreur d'un élève qui a écrit « Le cours commençait à 9h. » au lieu du présent pour décrire une action programmée. Conjuguez le verbe dans le temps qui convient.\nPhrase: Le cours ___ à 9h.\nCorrect Answer: commence\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775936842781-1ylma10l"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the difference between imparfait and présent for scheduled/habitual events (\"Le cours commence à 9h\" expresses a general schedule), not the present tense used to express immediate future (\"je pars demain\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775937308829-4h4wtjix",
+      "timestamp": "2026-04-11T19:55:24.841Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using the present tense \"commence\" to express a scheduled future action, which is precisely what the rule \"le présent à valeur de futur proche\" covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775937902067-xxannn4c",
+      "timestamp": "2026-04-11T20:05:11.422Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using present tense (\"commence\") for a scheduled action (course starting at 9h), which is the precise definition of \"le présent à valeur de futur proche\" - expressing future meaning through present tense for planned events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775938306021-pdajg46m",
+      "timestamp": "2026-04-11T20:12:16.876Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires correcting the imparfait \"commençait\" to the present \"commence\" for a scheduled action (\"Le cours commence à 9h\"), which is exactly the same grammatical concept as the rule's example \"je pars demain\" - using the present tense to express a programmed/near-future action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775938442758-vppq7dgm",
+      "timestamp": "2026-04-11T20:14:14.444Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly tests using present tense (\"commence\") for a scheduled future event, which is precisely what \"présent à valeur de futur proche\" covers - expressing future meaning through present tense forms.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775938508965-5vxb2fb2",
+      "timestamp": "2026-04-11T20:15:28.627Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"Le cours commence à 9h\" describes a fixed schedule/recurring event (le présent pour les horaires), not a near future action like \"je pars demain\" — different present tense usage entirely.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775938559499-14zodt11",
+      "timestamp": "2026-04-11T20:16:19.254Z"
+    }
+  ]
+}

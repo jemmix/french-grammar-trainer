@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3b5c24dab68093b8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Vous ___ vos amis samedi soir. »\nChoices:\nA. [CORRECT] retrouvez\nB. retrouviez\nC. avez retrouvé\nD. retrouveriez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775936842780-cbj4oxzi"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests using present tense to express future actions (retrouvez with samedi soir), requiring knowledge that French uses présent à valeur de futur proche instead of future tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775937168040-b385k700",
+      "timestamp": "2026-04-11T19:53:43.029Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires understanding that \"retrouvez\" (present tense) is the correct form despite \"samedi soir\" indicating future, which directly tests the concept of using present tense to express near future meaning.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775937775804-3cjr9ob6",
+      "timestamp": "2026-04-11T20:03:10.656Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that the present tense \"retrouvez\" can express a future action with a time marker like \"samedi soir,\" which is exactly what the rule teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775938230355-fy2ld444",
+      "timestamp": "2026-04-11T20:11:01.347Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0fd60deb9b2343f1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Nous ___ demain après-midi. »\nChoices:\nA. [CORRECT] sortons\nB. sortions\nC. sommes sortis\nD. sortirions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775938951543-31evpyh9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence contains \"demain après-midi\" indicating a future action, so the student must know that the present tense (sortons) can express near future meaning, not just present time.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775939150321-yd9pasnr",
+      "timestamp": "2026-04-11T20:27:31.833Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that the present tense \"sortons\" is correct with the future time marker \"demain\" to express near future action, while the other tense options (imparfait, passé composé, conditionnel) are grammatically incompatible with this temporal context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775939764527-ogy6otx5",
+      "timestamp": "2026-04-11T20:36:21.396Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly requires understanding that present tense with \"demain\" expresses future meaning, distinguishing it from conditional, passé composé, and other tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775940288628-tze40cwy",
+      "timestamp": "2026-04-11T20:45:02.814Z"
+    }
+  ]
+}

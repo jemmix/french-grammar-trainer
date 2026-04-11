@@ -1,0 +1,40 @@
+{
+  "cacheKey": "033f1d510c6e1a69",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Nous ___ cet après-midi. »\nChoices:\nA. [CORRECT] rentrons\nB. rentrions\nC. sommes rentrés\nD. rentrerions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775936842779-inttgmww"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the present tense \"rentrons\" to express a near-future action (\"cet après-midi\"), which directly tests the concept of using present tense to indicate imminent future.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775936948344-0zdqv7lv",
+      "timestamp": "2026-04-11T19:49:27.242Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The time marker \"cet après-midi\" is ambiguous — it could refer to present (during this afternoon) or future (later this afternoon), and without explicit context like \"demain\" or a clear indication the action hasn't started yet, the question doesn't force learners to apply present-as-future meaning.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775937447488-c5lpnvuk",
+      "timestamp": "2026-04-11T19:57:51.513Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires understanding that \"cet après-midi\" (this afternoon) can be expressed using present tense \"rentrons\" rather than future tense, which is the defining characteristic of the present used to express near future.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775938046320-plsydvqc",
+      "timestamp": "2026-04-11T20:07:57.798Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that present tense can express near future events with time markers like \"cet après-midi\" - the core concept of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775938383959-h8lb4gvv",
+      "timestamp": "2026-04-11T20:13:14.827Z"
+    }
+  ]
+}

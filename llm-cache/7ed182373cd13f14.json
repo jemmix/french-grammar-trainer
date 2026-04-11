@@ -1,0 +1,40 @@
+{
+  "cacheKey": "7ed182373cd13f14",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-16-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nPrompt: Corrigez l'erreur d'un élève qui a écrit « Tu venais demain à l'école. » au lieu du présent pour décrire une action programmée. Conjuguez le verbe dans le temps qui convient.\nPhrase: Tu ___ demain à l'école.\nHint: venir\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1775938951546-2fa0jdll"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly states the student used the wrong tense (imparfait instead of présent) and clearly instructs to conjugate \"venir\" in the present tense to express a scheduled future action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775939379944-g2v770sk",
+      "timestamp": "2026-04-11T20:30:14.354Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\n\nREASON: The prompt clearly specifies the task (conjugate \"venir\" for \"tu\"), the required tense (present for a scheduled action), and provides unambiguous context with an example of the error to avoid.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775940012786-zogc7w3o",
+      "timestamp": "2026-04-11T20:40:25.804Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says the student wrote \"au lieu du présent\" but \"venais\" is imparfait, not present, creating a factual error that contradicts the context and makes the instruction confusing.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775940452384-s2b4unet",
+      "timestamp": "2026-04-11T20:47:46.390Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt contains a grammatical error: \"au lieu du présent\" suggests the student used the present tense instead of something else, but the student wrote \"venais\" (imperfect), and the instruction is to use the present tense for a scheduled action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775940531500-fzg4nb3s",
+      "timestamp": "2026-04-11T20:49:25.629Z"
+    }
+  ]
+}

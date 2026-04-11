@@ -1,0 +1,54 @@
+{
+  "cacheKey": "bc80403f2880c8b0",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-16-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Corrigez l'erreur d'un élève qui a écrit « Nous sommes sortis samedi. » au lieu du présent pour décrire une action programmée. Conjuguez le verbe dans le temps qui convient.\n\nPHRASE: Nous ___ samedi.\n\nHINT: sortir\n\nEXPECTED ANSWER: sortons\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1775936842781-ioynkbct"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly states to conjugate in the present tense, the hint provides the infinitive \"sortir\", and \"Nous\" in the phrase identifies the first person plural subject.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775937278671-pmbidubf",
+      "timestamp": "2026-04-11T19:54:55.193Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt contains a semantic contradiction - it describes the action as \"programmée\" (scheduled) but asks for present tense conjugation, creating confusion about whether the learner should use present (\"sortons\") or near-future (\"allons sortir\") to properly convey the meaning of a planned future action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775937863429-9dni04i1",
+      "timestamp": "2026-04-11T20:05:04.292Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs to use present tense (\"au lieu du présent\"), the hint provides the infinitive \"sortir\", and the phrase shows the subject \"nous\", making it clear the learner must conjugate \"nous sortir\" in the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775938304527-o930jjs6",
+      "timestamp": "2026-04-11T20:13:09.466Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly states to conjugate \"au présent\" (in the present tense) and the hint provides the verb \"sortir\" with the subject \"nous\" visible in the phrase.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775938457267-yzyhkh1s",
+      "timestamp": "2026-04-11T20:14:32.500Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to use the présent tense (says the student should have used présent), the hint provides the infinitive \"sortir\", and \"Nous\" in the phrase makes it clear this is first person plural conjugation, leading unambiguously to \"sortons\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775938515459-d4xxiay0",
+      "timestamp": "2026-04-11T20:15:33.672Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explains the required tense correction (présent for planned actions), the hint provides the verb \"sortir\", and the phrase shows the subject \"Nous\", making it clear what to conjugate.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775938568397-kwt9fwht",
+      "timestamp": "2026-04-11T20:16:18.973Z"
+    }
+  ]
+}
