@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a822175a6ee91e2d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-17-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-17 - Le présent dans les constructions avec depuis / il y a...que / ça fait...que\n\nQUESTION:\nType: Input\nPrompt: Un apprenant dit : « Il y a six mois qu'elle apprenait la guitare. » Corrigez le verbe incorrect.\nPhrase: Il y a six mois qu'elle ___ la guitare et elle progresse rapidement.\nCorrect Answer: apprend\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776019402475-mw2r3f1b"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that present tense (not imperfect) is used with \"il y a...que\" constructions to express continuing duration, which is the central grammar concept of rule 01-17.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776019402484-ov0q8pt4",
+      "timestamp": "2026-04-12T18:43:58.770Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the exact rule—using présent instead of imparfait in an \"il y a...que\" construction for an action that began in the past and continues now.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776019438771-xh4de14q",
+      "timestamp": "2026-04-12T18:44:13.318Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"il y a...que\" constructions take the present tense to describe actions that started in the past and continue into the present, which is exactly what rule 01-17 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776019453319-5uumndhc",
+      "timestamp": "2026-04-12T18:44:24.963Z"
+    }
+  ]
+}

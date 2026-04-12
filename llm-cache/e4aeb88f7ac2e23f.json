@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e4aeb88f7ac2e23f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-17-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-17 - Le présent dans les constructions avec depuis / il y a...que / ça fait...que\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il y a longtemps qu'on ___ dans ce quartier. »\nChoices:\nA. [CORRECT] habite\nB. a habité\nC. habitait\nD. habiterait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776016622803-trxq2ye0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that with \"il y a...que\" constructions, the present tense is used to express ongoing actions, which is precisely what rule 01-17 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776016967382-18c9sgrv",
+      "timestamp": "2026-04-12T18:03:22.216Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"il y a longtemps que\" which directly tests the rule about using présent in il y a...que constructions; only the present tense \"habite\" correctly indicates an ongoing action that started in the past and continues to the present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776017496160-3p8ok2wf",
+      "timestamp": "2026-04-12T18:12:21.846Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the specific rule that with \"il y a...que\" constructions indicating ongoing actions, the verb takes the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776018019776-i5jizt42",
+      "timestamp": "2026-04-12T18:20:46.349Z"
+    }
+  ]
+}

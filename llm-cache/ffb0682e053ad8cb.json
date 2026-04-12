@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ffb0682e053ad8cb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-17-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-17 - Le présent dans les constructions avec depuis / il y a...que / ça fait...que\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Ça fait deux heures que j'___ dans cette file d'attente. »\nChoices:\nA. [CORRECT] attends\nB. ai attendu\nC. attendais\nD. attendrais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776016622801-t03od42a"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that French uses the present tense in \"ça fait...que\" constructions to express actions that started in the past and continue into the present, requiring knowledge that \"attends\" (not \"ai attendu\") is correct.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776016824570-cshc9mhl",
+      "timestamp": "2026-04-12T18:00:39.635Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question specifically tests the rule that \"ça fait...que\" constructions require the present tense to indicate an action started in the past and still continuing.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776017401116-fc8wyeht",
+      "timestamp": "2026-04-12T18:10:11.975Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests that with \"ça fait...que\" constructions, the verb must be in the present tense to indicate an ongoing action, which is exactly what rule 01-17 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776017882563-77otdahf",
+      "timestamp": "2026-04-12T18:18:18.195Z"
+    }
+  ]
+}
