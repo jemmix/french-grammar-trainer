@@ -1,0 +1,68 @@
+{
+  "cacheKey": "8bec4d97b2553c38",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-16-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Les portes claquent, le quai tremble. Le chef de gare crie : « Attention, les trains ___ dans trente secondes ! » Conjuguez le verbe partir.\n\nPHRASE: Attention, les trains ___ dans trente secondes !\n\nHINT: partir\n\nEXPECTED ANSWER: partent\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1776010268853-5uo6dinv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs to conjugate \"partir\", the subject \"les trains\" clearly indicates 3rd person plural, and the immediate future context makes the present tense obvious.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776010268855-9h1f6na8",
+      "timestamp": "2026-04-12T16:11:21.840Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt says \"Conjuguez le verbe partir\" but doesn't specify the tense; while the context suggests présent, futur simple (\"partiront\") would also be grammatically valid for \"dans trente secondes,\" so the learner cannot be certain which tense is expected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776010281843-txcc8v5i",
+      "timestamp": "2026-04-12T16:11:38.398Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs to conjugate the verb \"partir\" and the phrase clearly shows the subject \"les trains\" (they, plural, 3rd person), making it unambiguous what form to input.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776010298398-7f9frulg",
+      "timestamp": "2026-04-12T16:12:11.356Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs \"Conjuguez le verbe partir\", the hint provides the verb, and the phrase shows the subject \"les trains\", making it clear what to conjugate.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776010331357-el33dgh9",
+      "timestamp": "2026-04-12T16:12:32.426Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs to conjugate \"partir\", the hint shows the infinitive verb, and the phrase clearly establishes the subject \"les trains\" (3rd person plural) with contextual timing for tense determination.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776010352426-mr3an7xv",
+      "timestamp": "2026-04-12T16:12:44.193Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs \"Conjuguez le verbe partir\", the hint confirms the verb, and the blank clearly marks where the conjugated form belongs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776010364193-myy5xidf",
+      "timestamp": "2026-04-12T16:12:54.158Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs \"Conjuguez le verbe partir\" and the hint confirms the infinitive \"partir\", making it clear the learner must conjugate this verb to fill the blank without seeing the answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776010374159-5n1mjhmu",
+      "timestamp": "2026-04-12T16:13:05.989Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks to conjugate \"partir\" but doesn't specify the tense; while \"partent\" (présent) is natural for scheduled future events, \"vont partir\" (futur proche) could also be valid in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776010385990-s53xpijz",
+      "timestamp": "2026-04-12T16:13:24.178Z"
+    }
+  ]
+}

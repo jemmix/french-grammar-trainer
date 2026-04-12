@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3bebc5a4ca00c115",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Input\nPrompt: Les portes du TGV se ferment, vous courez sur le quai. Le contrôleur vous crie : « Vite, le train ___ dans dix secondes ! » Conjuguez le verbe partir.\nPhrase: Vite, le train ___ dans dix secondes !\nCorrect Answer: part\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776009778888-co1wmp3t"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using present tense \"part\" with a future time marker (\"dans dix secondes\"), which is exactly the grammar concept of using le présent à valeur de futur proche; without knowing this rule, learners would incorrectly use futur proche (\"va partir\") or futur simple (\"partira\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776009778897-bi1647nl",
+      "timestamp": "2026-04-12T16:04:27.698Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The temporal context \"dans dix secondes\" requires the present tense \"part\" to express imminent future action, which is precisely the \"présent à valeur de futur proche\" concept.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776009867699-7a8skqz1",
+      "timestamp": "2026-04-12T16:04:41.201Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence uses the present tense \"part\" to describe an action happening in the immediate future (\"dans dix secondes\"), which is the core concept of le présent à valeur de futur proche.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776009881201-1wen08j0",
+      "timestamp": "2026-04-12T16:04:58.707Z"
+    }
+  ]
+}
