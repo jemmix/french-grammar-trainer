@@ -1,0 +1,40 @@
+{
+  "cacheKey": "88c1e748fe87d92a",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-16-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nPrompt: Corrigez cette phrase incorrecte en conjuguant le verbe au temps qui convient pour un TGV programmé : « Le TGV venait demain de Marseille. »\nPhrase: Le TGV ___ demain de Marseille.\nHint: venir\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1775998568433-10flwipe"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\n\nREASON: The prompt provides clear context (scheduled TGV), shows the incorrect sentence with the verb to conjugate (venir), and the blank makes it obvious what needs to be filled in.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775998815570-jobaxgh8",
+      "timestamp": "2026-04-12T13:00:31.141Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly asks to conjugate \"venir\" for a scheduled train, and the context \"un TGV programmé\" unambiguously signals that the present tense (\"vient\") is required for scheduled future events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775999069238-er60aj39",
+      "timestamp": "2026-04-12T13:09:57.156Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"Corrigez cette phrase incorrecte\" but the learner sees \"Le TGV ___ demain de Marseille.\" without the incorrect \"venait\" form shown - they must infer from context that they need to fill in the present tense form of \"venir\" rather than being shown what to correct.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775999455320-q4dqnrv5",
+      "timestamp": "2026-04-12T13:11:13.606Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"conjuguer le verbe au temps qui convient\" without explicitly stating that the present tense should be used to express near future - a learner might reasonably choose futur proche or futur simple instead.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775999486148-ocf67z6q",
+      "timestamp": "2026-04-12T13:12:05.468Z"
+    }
+  ]
+}

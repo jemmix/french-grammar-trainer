@@ -1,0 +1,33 @@
+{
+  "cacheKey": "84e002796e71e814",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-16-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nPrompt: Corrigez cette phrase incorrecte en conjuguant le verbe au temps qui convient pour un train programmé : « Le train venait demain de Marseille. »\nPhrase: Le train ___ demain de Marseille.\nHint: venir\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1775999969781-3sqqyj9p"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly instructs to correct the sentence using the appropriate tense for a scheduled train, and with the rule context (present as futur proche), the singular blank to fill, and the infinitive hint, the task is well-defined.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776000073302-n9h93dpz",
+      "timestamp": "2026-04-12T13:21:44.347Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"au temps qui convient\" (the appropriate tense) without explicitly specifying that the answer must be in the present tense, even though that's what the rule teaches; learners could reasonably interpret \"appropriate tense\" as allowing futur proche or futur simple for scheduled events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776000190707-6iw5fo81",
+      "timestamp": "2026-04-12T13:23:52.056Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"au temps qui convient pour un train programmé\" but doesn't explicitly clarify that the expected answer is the present tense (\"vient\"), leaving open possible confusion with futur proche (\"va venir\") or futur simple (\"viendra\") despite the rule title.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776000357099-hd940zpk",
+      "timestamp": "2026-04-12T13:26:15.929Z"
+    }
+  ]
+}

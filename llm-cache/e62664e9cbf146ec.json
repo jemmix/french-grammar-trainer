@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e62664e9cbf146ec",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-16-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nPrompt: Corrigez cette phrase incorrecte en conjuguant le verbe au temps qui convient pour des vacances terminées : « Elles rentraient demain à la maison. »\nPhrase: Elles ___ demain à la maison.\nHint: rentrer\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1775995761756-g3vd7gd4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt contains contradictory instructions - it references the \"présent à valeur de futur proche\" rule but asks to conjugate for \"des vacances terminées\" (past context), while the sentence contains \"demain\" (future marker), creating confusion about whether the answer should be in present (\"Elles rentrent\"), past (\"Elles sont rentrées\"), or imparfait (\"Elles rentraient\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775996165453-aya0vc8h",
+      "timestamp": "2026-04-12T12:17:32.328Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt is internally contradictory — it mentions \"vacations terminées\" (completed = past tense) while the sentence says \"demain\" (tomorrow) and the rule is about present tense as future proche, creating three conflicting interpretations of what tense is required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775996727362-7wbk9euw",
+      "timestamp": "2026-04-12T12:25:54.248Z"
+    }
+  ]
+}

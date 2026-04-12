@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1abcac84d966b6ec",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-16-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nPrompt: Corrigez cette phrase incorrecte en conjuguant le verbe au temps qui convient pour un vol programmé : « L'avion partait demain à 10h. »\nPhrase: L'avion ___ demain à 10h.\nHint: partir\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1776001783681-r6jp27rv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly instructs to correct the sentence for a scheduled flight context, and with the rule being \"présent à valeur de futur proche,\" the expected answer \"part\" (present tense) is unambiguous despite multiple future tense constructions existing in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776001933463-awu75zoa",
+      "timestamp": "2026-04-12T13:52:37.749Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"au temps qui convient pour un vol programmé\" without specifying present tense, so \"partira\" (futur simple) or \"va partir\" (futur proche) could also be considered correct for a scheduled flight.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776002205024-nsdo2i1v",
+      "timestamp": "2026-04-12T13:57:36.690Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nREASON: The phrase \"pour un vol programmé\" could reasonably suggest futur simple (canonical for scheduled events), conflicting with the rule's intended answer (present tense), making the correct interpretation unclear.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776002550084-w3u1oasu",
+      "timestamp": "2026-04-12T14:02:49.239Z"
+    }
+  ]
+}

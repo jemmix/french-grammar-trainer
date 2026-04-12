@@ -1,0 +1,40 @@
+{
+  "cacheKey": "73b4dc8f06d73b27",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-16-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Corrigez cette phrase incorrecte en conjuguant le verbe au temps qui convient pour un train programmé : « Le train arrivait demain soir à Paris. »\n\nPHRASE: Le train ___ demain soir à Paris.\n\nHINT: arriver\n\nEXPECTED ANSWER: arrive\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1775999969780-w1o0scs6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Both \"arrive\" (present with future meaning) and \"arrivera\" (futur simple) are valid for a scheduled train tomorrow evening, but only one is marked correct.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775999969809-ncdsg9hu",
+      "timestamp": "2026-04-12T13:20:10.369Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly states the task (conjugate the verb), the hint provides the infinitive (\"arriver\"), and the context (\"train programmé\") guides the tense choice, so the learner knows exactly what to input.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776000116513-2323pzr0",
+      "timestamp": "2026-04-12T13:22:21.800Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly states \"en conjuguant le verbe au temps qui convient pour un train programmé\" and the hint provides \"arriver,\" making it clear the learner must conjugate \"arriver\" in the présent tense for a scheduled future event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776000236326-8bw3jdu0",
+      "timestamp": "2026-04-12T13:24:43.722Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt doesn't specify which tense to use for a scheduled train (present vs futur simple vs futur proche), so a learner who doesn't already know this grammar rule cannot determine what to input.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776000358753-u5hlnbj8",
+      "timestamp": "2026-04-12T13:26:29.916Z"
+    }
+  ]
+}

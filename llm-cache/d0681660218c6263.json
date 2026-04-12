@@ -1,0 +1,26 @@
+{
+  "cacheKey": "d0681660218c6263",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-16-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nPrompt: Quel temps utilise-t-on normalement pour parler d'un événement programmé comme un train ? Remplacez le verbe entre guillemets par la forme correcte : « Le train partait demain à 8h. »\nPhrase: Le train ___ demain à 8h.\nHint: partir\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1775994679044-szvdazi2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt contradicts itself - it asks about the present tense for scheduled events (the rule being taught), but the quoted example \"Le train partait\" uses the imperfect tense, making it unclear whether the blank should follow the rule (present: \"part\") or match the quote (imperfect: \"partait\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775994679056-gye5yujj",
+      "timestamp": "2026-04-12T11:51:58.214Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks a theoretical question about tense (\"what tense is normally used for scheduled events?\"), then gives a confusing instruction to \"replace the verb in quotes with the correct form\" while the example sentence uses imparfait (partait), making it unclear what transformation is actually being requested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775994718215-vd00d1i7",
+      "timestamp": "2026-04-12T11:52:20.474Z"
+    }
+  ]
+}

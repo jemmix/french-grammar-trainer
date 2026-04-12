@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7dd99923a79a68e6",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-16-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Corrigez cette phrase incorrecte en conjuguant le verbe au temps qui convient pour des trains programmés : « Les trains partaient demain pour Lyon. »\n\nPHRASE: Les trains ___ demain pour Lyon.\n\nHINT: partir\n\nEXPECTED ANSWER: partent\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1776001783681-2yc1iz2u"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to conjugate \"partir\" (from hint) for scheduled trains; the phrase shows a sentence with \"demain\" indicating future context, and the learner can deduce the appropriate conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776001957749-4miwwn7h",
+      "timestamp": "2026-04-12T13:53:19.794Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to conjugate \"partir\" (given in HINT) for scheduled trains, the learner knows they need to type a conjugated form of this verb even if they must determine the correct tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776002337244-z6s9jpgm",
+      "timestamp": "2026-04-12T13:59:29.988Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs to conjugate the verb, gives the grammatical context (scheduled trains → present tense), the hint provides the infinitive, and the phrase shows the subject (\"Les trains\"), making the task clear without seeing the answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776002578039-m6v4bk1a",
+      "timestamp": "2026-04-12T14:03:26.906Z"
+    }
+  ]
+}

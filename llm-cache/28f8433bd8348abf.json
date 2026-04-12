@@ -1,0 +1,26 @@
+{
+  "cacheKey": "28f8433bd8348abf",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-16-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Corrigez cette phrase incorrecte en conjuguant le verbe au temps qui convient pour un vol programmé : « Le vol arrivait demain soir à Paris. »\n\nPHRASE: Le vol ___ demain soir à Paris.\n\nHINT: arriver\n\nEXPECTED ANSWER: arrive\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1775998568432-mpxz835a"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt doesn't clarify whether \"vol programmé\" requires présent (timetable future) or futur proche, leaving \"arrive\" vs \"va arriver\" as equally plausible answers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775998717218-h1av5p6k",
+      "timestamp": "2026-04-12T12:58:55.281Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Multiple conjugations are grammatically correct for scheduled flights (arrive, arrivera, va arriver), so a learner cannot uniquely determine which form is expected without seeing the answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775998959864-3t8nsnae",
+      "timestamp": "2026-04-12T13:03:20.622Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6bc6493a97b9219c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Input\nPrompt: Corrigez cette phrase incorrecte en conjuguant le verbe au temps qui convient pour des trains programmés : « Les trains partaient demain matin de Paris. »\nPhrase: Les trains ___ demain matin de Paris.\nCorrect Answer: partent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776003187025-32mv3hk2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the present tense form \"partent\" for a scheduled future event (trains departing tomorrow), which is the core application of le présent à valeur de futur proche.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776003283240-wggw2uyi",
+      "timestamp": "2026-04-12T14:15:26.651Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that present tense expresses scheduled future events, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776003402753-dhz554ke",
+      "timestamp": "2026-04-12T14:17:24.601Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using present tense (\"partent\") to express a future action (trains leaving tomorrow), which is exactly what the \"présent à valeur de futur proche\" rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776003558674-r9491faa",
+      "timestamp": "2026-04-12T14:20:21.904Z"
+    }
+  ]
+}

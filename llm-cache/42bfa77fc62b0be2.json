@@ -1,0 +1,33 @@
+{
+  "cacheKey": "42bfa77fc62b0be2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Input\nPrompt: Corrigez cette phrase incorrecte en conjuguant le verbe au temps qui convient pour un train programmé : « Le train partait demain soir à 20h. »\nPhrase: Le train ___ demain soir à 20h.\nCorrect Answer: part\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776006418368-njutfnb9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using the present tense \"part\" to express a scheduled future train departure, which is the core concept of présent à valeur de futur proche.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776006418379-j0lmk4fm",
+      "timestamp": "2026-04-12T15:13:25.988Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using the present tense \"part\" to express a scheduled future event (a train departure tomorrow evening), which is exactly the rule \"le présent à valeur de futur proche.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776006805989-1stafegb",
+      "timestamp": "2026-04-12T15:13:46.862Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using the present tense (\"part\") for a scheduled future event (train departure tomorrow), which is exactly what \"le présent à valeur de futur proche\" tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776006826862-oj2y0ld3",
+      "timestamp": "2026-04-12T15:14:10.620Z"
+    }
+  ]
+}

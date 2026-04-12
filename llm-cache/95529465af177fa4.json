@@ -1,0 +1,33 @@
+{
+  "cacheKey": "95529465af177fa4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Input\nPrompt: Corrigez cette phrase incorrecte en conjuguant le verbe au temps qui convient pour un train programmé : « Le train arrivait demain soir à Paris. »\nPhrase: Le train ___ demain soir à Paris.\nCorrect Answer: arrive\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1775999969780-xmafe1vb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using present tense (\"arrive\") to express a future scheduled event, which is exactly the rule \"le présent à valeur de futur proche\" - the student must recognize that present tense conveys future meaning for programmed events like train arrivals.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775999985571-mktv95ap",
+      "timestamp": "2026-04-12T13:20:24.933Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using the present tense to express a scheduled future event, which is exactly what the rule \"le présent à valeur de futur proche\" describes.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776000132407-nrj988rm",
+      "timestamp": "2026-04-12T13:22:23.339Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly requires knowledge that French uses the present tense for scheduled future events like trains; the incorrect \"arrivait\" (imparfait) must be corrected to \"arrive\" (present) to express that \"the train arrives tomorrow,\" which is a canonical example of présent à valeur de futur proche.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776000239878-qpru0oel",
+      "timestamp": "2026-04-12T13:28:37.930Z"
+    }
+  ]
+}

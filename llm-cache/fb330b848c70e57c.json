@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fb330b848c70e57c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-16 - Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nType: Input\nPrompt: Corrigez le temps verbal dans cette phrase prononcée par un voyageur paniqué à la gare : « Vite, les trains partaient dans dix minutes ! »\nPhrase: Vite, les trains ___ dans dix minutes !\nCorrect Answer: partent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776005657104-de5rfb6g"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the present tense used to express immediate future (partent = will leave), which is exactly what the rule covers - correcting the imperfect to present shows the present-as-future construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776005657116-w2zjuph9",
+      "timestamp": "2026-04-12T14:55:57.826Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that the present tense (\"partent\") is used to express an imminent future event (trains leaving in 10 minutes), which is exactly what the present-à-valeur-de-futur-proche rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776005757827-0p11gyob",
+      "timestamp": "2026-04-12T14:56:19.664Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using present tense (\"partent\") with a future temporal marker (\"dans dix minutes\") to express a near future event, which directly tests the rule about present tense having futur proche value.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776005779665-jdmqd5qa",
+      "timestamp": "2026-04-12T14:56:38.496Z"
+    }
+  ]
+}

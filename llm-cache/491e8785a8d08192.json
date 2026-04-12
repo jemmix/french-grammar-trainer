@@ -1,0 +1,47 @@
+{
+  "cacheKey": "491e8785a8d08192",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-16-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Complétez cette annonce du haut-parleur de la gare avec le temps verbal utilisé dans les annonces ferroviaires : « Les trains ___ dans dix minutes en voie 3. Dernier appel ! »\n\nPHRASE: Les trains ___ dans dix minutes en voie 3.\n\nHINT: partir\n\nEXPECTED ANSWER: partent\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1776005998361-qw01i44u"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs the learner to use the verb tense for railway announcements, the hint provides the infinitive \"partir\", and the blank in the phrase shows where to conjugate it for the subject \"Les trains\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776005998363-429yanra",
+      "timestamp": "2026-04-12T15:02:39.588Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt refers to \"the tense used in railway announcements\" without explicitly naming it, so learners unfamiliar with the French convention of using present tense for scheduled future events won't know which conjugation is expected (present \"partent\" vs futur simple \"partiront\" vs futur proche \"vont partir\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776006159588-a9sru2hv",
+      "timestamp": "2026-04-12T15:03:01.644Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The prompt explicitly indicates the verb to conjugate (hint: \"partir\"), identifies the subject (\"Les trains\"), and specifies the tense context (train station announcements), so the learner clearly knows what to input without seeing the answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776006181644-5ozhb6z9",
+      "timestamp": "2026-04-12T15:03:28.008Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt indicates railway announcements context (implying present tense), the hint provides the infinitive \"partir\", and the sentence structure shows conjugation for \"Les trains\" (3rd person plural) is required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776006208009-ehwb2e8q",
+      "timestamp": "2026-04-12T15:03:41.667Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"le temps verbal utilisé dans les annonces ferroviaires\" but railway announcements commonly use multiple tenses (présent: \"Les trains partent\", futur proche: \"Les trains vont partir\", futur simple: \"Les trains partiront\"), so a learner cannot uniquely determine that \"partent\" is the required answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776006221667-cjo6rfwd",
+      "timestamp": "2026-04-12T15:04:05.013Z"
+    }
+  ]
+}

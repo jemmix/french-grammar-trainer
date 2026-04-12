@@ -1,0 +1,26 @@
+{
+  "cacheKey": "163f4cecc93d221b",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-16-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Corrigez cette phrase incorrecte en conjuguant le verbe au temps qui convient pour un train programmé : « Les trains partaient demain à 14h. »\n\nPHRASE: Les trains ___ demain à 14h.\n\nHINT: partir\n\nEXPECTED ANSWER: partent\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1776006418370-rlfxodat"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: While the prompt mentions \"train programmé,\" a learner could reasonably use the futur simple (\"partiront\") for \"demain à 14h\" since future events typically trigger future tense; the grammatical nuance of using présent for scheduled/programmed events is not explicit enough to rule out the futur simple answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776006502662-pr8yh9nc",
+      "timestamp": "2026-04-12T15:08:43.965Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\n\nREASON: The prompt asks for \"le temps qui convient pour un train programmé\" but doesn't specify which tense that is, leaving learners uncertain between présent, futur simple, or futur proche.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776006618289-cf67mfx2",
+      "timestamp": "2026-04-12T15:11:31.923Z"
+    }
+  ]
+}

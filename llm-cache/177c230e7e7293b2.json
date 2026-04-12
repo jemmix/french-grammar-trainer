@@ -1,0 +1,26 @@
+{
+  "cacheKey": "177c230e7e7293b2",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-16-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Corrigez cette phrase incorrecte en conjuguant le verbe au temps qui convient pour un train programmé : « Le train venait demain de Marseille. »\n\nPHRASE: Le train ___ demain de Marseille.\n\nHINT: venir\n\nEXPECTED ANSWER: vient\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1775999969781-u4crv2u8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt says \"le temps qui convient pour un train programmé\" but doesn't specify which tense (present, futur proche, or futur simple), and learners unfamiliar with the French rule that scheduled events use the present tense cannot determine what to conjugate \"venir\" to.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776000064147-wsty1fls",
+      "timestamp": "2026-04-12T13:21:20.901Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nREASON: The prompt tells learners to conjugate \"venir\" in the appropriate tense, but without seeing that the answer is \"vient\" (present), learners might reasonably choose \"viendra\" (future) since \"demain\" is a future time marker and \"train programmé\" could support either tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776000183390-valeaeay",
+      "timestamp": "2026-04-12T13:23:25.213Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "8e2256f25e28211d",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-16-011",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le présent à valeur de futur proche (je pars demain)\n\nQUESTION:\nPrompt: Ton inscription est déjà validée. Lequel de ces verbes convient pour décrire ta venue programmée ? « Tu ___ demain à l'école. »\nChoices:\nA. viens\nB. venais\nC. es venu\nD. viendrais\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1775998568423-7jb51jwd"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The context of a confirmed registration (\"déjà validée\") and programmed future event, combined with the temporal marker \"demain,\" makes it unambiguous that the present tense \"viens\" expresses a scheduled future, demonstrating the exact rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775998628230-mfppyqxi",
+      "timestamp": "2026-04-12T12:57:30.045Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: \"Venue programmée\" conflates arrival (a state) with coming (an action), and it's unclear if the question tests the present tense rule or expects \"viens\" despite the verb's intransitivity, while \"Tu ___ demain à l'école\" is technically ungrammatical without a preposition.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775998880863-zbb7bvf9",
+      "timestamp": "2026-04-12T13:01:52.257Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly asks for a verb form to describe \"ta venue programmée\" (your scheduled arrival), making it unambiguous that a future/present-near-future meaning is required, and the present tense option \"viens\" is clearly distinguishable from the other tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775999214082-izmjaceb",
+      "timestamp": "2026-04-12T13:07:13.565Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: \"Venir\" can mean \"to come\" OR \"to happen\" in French, and the context doesn't make it clear whether the sentence describes the student physically arriving at school or the event taking place.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1775999380829-p99vp9km",
+      "timestamp": "2026-04-12T13:10:31.945Z"
+    }
+  ]
+}
