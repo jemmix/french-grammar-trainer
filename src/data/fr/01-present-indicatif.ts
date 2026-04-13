@@ -6023,8 +6023,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « En 1789, le peuple de Paris prend la Bastille, ____ les prisonniers et célèbre la victoire. »",
       choices: [
         { text: "libère", correct: true, explanation: "Le récit historique est au présent de narration : « prend », « célèbre » sont au présent, donc « libère » suit le même temps narratif." },
+        { text: "libéra", correct: false, explanation: "Le passé simple rompt la cohérence temporelle : les autres verbes sont au présent de narration." },
         { text: "libérait", correct: false, explanation: "L'imparfait rompt la cohérence temporelle du récit : les autres verbes sont au présent." },
-        { text: "libérez", correct: false, explanation: "La forme « libérez » est la 2e personne du pluriel, qui ne s'accorde pas avec le sujet « le peuple »." },
         { text: "libérera", correct: false, explanation: "Le futur est incohérent avec les verbes au présent qui encadrent le blanc." },
       ],
     },
@@ -6036,8 +6036,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « Hier soir, un incendie se déclare dans l'immeuble, ____ trois étages et provoque l'évacuation. »",
       choices: [
         { text: "ravage", correct: true, explanation: "Le style journalistique utilise le présent de narration : « se déclare » et « provoque » imposent le présent." },
+        { text: "ravagea", correct: false, explanation: "Le passé simple rompt la cohérence : les autres verbes sont au présent." },
         { text: "ravageait", correct: false, explanation: "L'imparfait ne maintient pas la cohérence avec les verbes au présent « se déclare » et « provoque »." },
-        { text: "ravages", correct: false, explanation: "La forme « ravages » est la 2e personne du singulier, qui ne s'accorde pas avec le sujet « un incendie »." },
         { text: "ravagera", correct: false, explanation: "Le futur est incohérent avec le contexte narratif au présent." },
       ],
     },
@@ -6049,8 +6049,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « Napoléon traverse les Alpes, ____ le pouvoir et réorganise l'Empire. »",
       choices: [
         { text: "prend", correct: true, explanation: "Le récit historique au présent de narration impose « prend » pour maintenir la cohérence avec « traverse » et « réorganise »." },
+        { text: "prit", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "prenait", correct: false, explanation: "L'imparfait rompt la série narrative au présent." },
-        { text: "prenons", correct: false, explanation: "La forme « prenons » est la 1re personne du pluriel, qui ne s'accorde pas avec le sujet « Napoléon »." },
         { text: "prendra", correct: false, explanation: "Le futur est incohérent avec les autres verbes au présent." },
       ],
     },
@@ -6062,8 +6062,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « Soudain, la porte s'ouvre, un homme ____, tire un coup de feu et disparaît. »",
       choices: [
         { text: "entre", correct: true, explanation: "La scène dramatique est au présent de narration : « s'ouvre », « tire », « disparaît » imposent le présent." },
+        { text: "entra", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "entrait", correct: false, explanation: "L'imparfait rompt la tension dramatique créée par la série au présent." },
-        { text: "entres", correct: false, explanation: "La forme « entres » est la 2e personne du singulier, qui ne s'accorde pas avec le sujet « un homme »." },
         { text: "entrera", correct: false, explanation: "Le futur est incohérent avec la séquence narrative au présent." },
       ],
     },
@@ -6075,8 +6075,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « En 1914, la guerre éclate, ____ des millions de vies et bouleverse l'Europe entière. »",
       choices: [
         { text: "détruit", correct: true, explanation: "Le récit historique est au présent de narration : « éclate » et « bouleverse » imposent le présent." },
+        { text: "détruisit", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "détruisait", correct: false, explanation: "L'imparfait ne maintient pas la cohérence avec « éclate » et « bouleverse » au présent." },
-        { text: "détruis", correct: false, explanation: "La forme « détruis » est la 2e personne du singulier, qui ne s'accorde pas avec le sujet « la guerre »." },
         { text: "détruira", correct: false, explanation: "Le futur est incohérent avec le contexte narratif au présent." },
       ],
     },
@@ -6088,8 +6088,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « Le roi arrive en grande pompe, ____ son trône et s'adresse au peuple. »",
       choices: [
         { text: "monte", correct: true, explanation: "Le récit littéraire au présent de narration impose « monte » pour suivre « arrive » et « s'adresse »." },
+        { text: "monta", correct: false, explanation: "Le passé simple rompt la cohérence temporelle avec les autres verbes au présent." },
         { text: "montait", correct: false, explanation: "L'imparfait rompt la cohérence temporelle avec les autres verbes au présent." },
-        { text: "montes", correct: false, explanation: "La forme « montes » est la 2e personne du singulier, qui ne s'accorde pas avec le sujet « le roi »." },
         { text: "montera", correct: false, explanation: "Le futur est incohérent avec les verbes au présent." },
       ],
     },
@@ -6101,8 +6101,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « Le criminel sort de l'ombre, ____ sa victime et s'enfuit dans la nuit. »",
       choices: [
         { text: "attaque", correct: true, explanation: "La scène dramatique au présent de narration impose « attaque » pour maintenir la cohérence avec « sort » et « s'enfuit »." },
+        { text: "attaqua", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "attaquait", correct: false, explanation: "L'imparfait ne convient pas dans une séquence d'actions ponctuelles au présent." },
-        { text: "attaques", correct: false, explanation: "La forme « attaques » est la 2e personne du singulier, qui ne s'accorde pas avec le sujet « le criminel »." },
         { text: "attaquera", correct: false, explanation: "Le futur est incohérent avec les autres verbes au présent." },
       ],
     },
@@ -6114,8 +6114,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « Elle ouvre l'enveloppe, ____ la lettre et comprend enfin la vérité. »",
       choices: [
         { text: "lit", correct: true, explanation: "Le récit au présent de narration impose « lit » pour suivre « ouvre » et « comprend »." },
+        { text: "lut", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "lisait", correct: false, explanation: "L'imparfait rompt la cohérence avec les verbes au présent." },
-        { text: "lisons", correct: false, explanation: "La forme « lisons » est la 1re personne du pluriel, qui ne s'accorde pas avec le sujet « Elle »." },
         { text: "lira", correct: false, explanation: "Le futur est incohérent avec la séquence narrative au présent." },
       ],
     },
@@ -6127,8 +6127,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « L'athlète s'élance, ____ la ligne d'arrivée en premier et lève les bras. »",
       choices: [
         { text: "franchit", correct: true, explanation: "Le récit sportif au présent de narration impose « franchit » pour maintenir la cohérence avec « s'élance » et « lève »." },
+        { text: "franchîmes", correct: false, explanation: "Le passé simple est incohérent avec les verbes au présent de narration." },
         { text: "franchissait", correct: false, explanation: "L'imparfait ne convient pas pour une action ponctuelle dans une série au présent." },
-        { text: "franchis", correct: false, explanation: "La forme « franchis » est la 2e personne du singulier, qui ne s'accorde pas avec le sujet « l'athlète »." },
         { text: "franchira", correct: false, explanation: "Le futur est incohérent avec les verbes au présent." },
       ],
     },
@@ -6140,8 +6140,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « Un jour, un inconnu frappe à la porte, ____ asile et obtient une réponse. »",
       choices: [
         { text: "demande", correct: true, explanation: "Le récit littéraire au présent de narration impose « demande » pour suivre « frappe » et « obtient »." },
+        { text: "demanda", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "demandait", correct: false, explanation: "L'imparfait rompt la cohérence avec les verbes au présent." },
-        { text: "demandons", correct: false, explanation: "La forme « demandons » est la 1re personne du pluriel, qui ne s'accorde pas avec le sujet « un inconnu »." },
         { text: "demandera", correct: false, explanation: "Le futur est incohérent avec la séquence au présent." },
       ],
     },
@@ -6153,8 +6153,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « Le témoin se lève, ____ sa version des faits et s'assied sous les applaudissements. »",
       choices: [
         { text: "raconte", correct: true, explanation: "Le récit au présent de narration impose « raconte » pour suivre « se lève » et « s'assied »." },
+        { text: "raconta", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "racontait", correct: false, explanation: "L'imparfait rompt la cohérence avec les verbes au présent." },
-        { text: "racontes", correct: false, explanation: "La forme « racontes » est la 2e personne du singulier, qui ne s'accorde pas avec le sujet « le témoin »." },
         { text: "racontera", correct: false, explanation: "Le futur est incohérent avec les autres verbes au présent." },
       ],
     },
@@ -6166,8 +6166,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « Soudain, la sirène retentit, les habitants se réveillent et ____ dans la rue. »",
       choices: [
         { text: "courent", correct: true, explanation: "Le récit dramatique au présent de narration impose « courent » pour suivre « retentit » et « se réveillent »." },
+        { text: "coururent", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "couraient", correct: false, explanation: "L'imparfait rompt la cohérence avec les verbes au présent." },
-        { text: "cours", correct: false, explanation: "La forme « cours » est la 2e personne du singulier, qui ne s'accorde pas avec le sujet « les habitants »." },
         { text: "courront", correct: false, explanation: "Le futur est incohérent avec la séquence au présent." },
       ],
     },
@@ -6179,8 +6179,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « Le bateau apparaît à l'horizon, ____ doucement vers le port et s'amarre. »",
       choices: [
         { text: "glisse", correct: true, explanation: "Le récit littéraire au présent de narration impose « glisse » pour suivre « apparaît » et « s'amarre »." },
+        { text: "glissa", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "glissait", correct: false, explanation: "L'imparfait rompt la cohérence avec les verbes au présent." },
-        { text: "glissons", correct: false, explanation: "La forme « glissons » est la 1re personne du pluriel, qui ne s'accorde pas avec le sujet « le bateau »." },
         { text: "glissera", correct: false, explanation: "Le futur est incohérent avec la séquence au présent." },
       ],
     },
@@ -6192,8 +6192,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « L'ouragan frappe la côte, ____ des maisons entières et provoque une inondation. »",
       choices: [
         { text: "emporte", correct: true, explanation: "Le récit journalistique au présent de narration impose « emporte » pour maintenir la cohérence avec « frappe » et « provoque »." },
+        { text: "emporta", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "emportait", correct: false, explanation: "L'imparfait ne convient pas dans une séquence d'actions ponctuelles au présent." },
-        { text: "emportons", correct: false, explanation: "La forme « emportons » est la 1re personne du pluriel, qui ne s'accorde pas avec le sujet « l'ouragan »." },
         { text: "emportera", correct: false, explanation: "Le futur est incohérent avec les autres verbes au présent." },
       ],
     },
@@ -6205,8 +6205,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « Le médecin ouvre sa trousse, ____ le patient et prescrit un traitement. »",
       choices: [
         { text: "examine", correct: true, explanation: "Le récit au présent de narration impose « examine » pour suivre « ouvre » et « prescrit »." },
+        { text: "examina", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "examinait", correct: false, explanation: "L'imparfait rompt la cohérence avec les verbes au présent." },
-        { text: "examinez", correct: false, explanation: "La forme « examinez » est la 2e personne du pluriel, qui ne s'accorde pas avec le sujet « le médecin »." },
         { text: "examinera", correct: false, explanation: "Le futur est incohérent avec la séquence au présent." },
       ],
     },
@@ -6218,8 +6218,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « Pendant le concert, une femme se lève, ____ « Bravo ! » et applaudit follement. »",
       choices: [
         { text: "crie", correct: true, explanation: "Le récit au présent de narration impose « crie » pour maintenir la cohérence avec « se lève » et « applaudit »." },
+        { text: "cria", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "criait", correct: false, explanation: "L'imparfait rompt la cohérence avec les verbes au présent." },
-        { text: "cries", correct: false, explanation: "La forme « cries » est la 2e personne du singulier, qui ne s'accorde pas avec le sujet « une femme »." },
         { text: "criera", correct: false, explanation: "Le futur est incohérent avec la séquence au présent." },
       ],
     },
@@ -6231,8 +6231,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « L'incendie se propage, ____ le toit et menace les bâtiments voisins. »",
       choices: [
         { text: "atteint", correct: true, explanation: "Le récit au présent de narration impose « atteint » pour suivre « se propage » et « menace »." },
+        { text: "atteignit", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "atteignait", correct: false, explanation: "L'imparfait rompt la cohérence avec les verbes au présent." },
-        { text: "atteignons", correct: false, explanation: "La forme « atteignons » est la 1re personne du pluriel, qui ne s'accorde pas avec le sujet « l'incendie »." },
         { text: "atteindra", correct: false, explanation: "Le futur est incohérent avec la séquence au présent." },
       ],
     },
@@ -6244,8 +6244,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « L'explorateur découvre une grotte, ____ un passage étroit et émerge dans une salle immense. »",
       choices: [
         { text: "emprunte", correct: true, explanation: "Le récit au présent de narration impose « emprunte » pour suivre « découvre » et « émerge »." },
+        { text: "emprunta", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "empruntait", correct: false, explanation: "L'imparfait rompt la cohérence avec les verbes au présent." },
-        { text: "empruntes", correct: false, explanation: "La forme « empruntes » est la 2e personne du singulier, qui ne s'accorde pas avec le sujet « l'explorateur »." },
         { text: "empruntera", correct: false, explanation: "Le futur est incohérent avec la séquence au présent." },
       ],
     },
@@ -6257,8 +6257,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « Le voleur repère le bijou, ____ la vitrine et s'enfuit à toute vitesse. »",
       choices: [
         { text: "brise", correct: true, explanation: "Le récit au présent de narration impose « brise » pour maintenir la cohérence avec « repère » et « s'enfuit »." },
+        { text: "brisa", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "brisait", correct: false, explanation: "L'imparfait rompt la cohérence avec les verbes au présent." },
-        { text: "brisons", correct: false, explanation: "La forme « brisons » est la 1re personne du pluriel, qui ne s'accorde pas avec le sujet « le voleur »." },
         { text: "brisera", correct: false, explanation: "Le futur est incohérent avec la séquence au présent." },
       ],
     },
@@ -6270,8 +6270,8 @@ const section: Section = {
       prompt: "Complétez la suite au présent de narration : « En 1870, la France déclare la guerre, ____ plusieurs batailles et signe un armistice. »",
       choices: [
         { text: "perd", correct: true, explanation: "Le récit historique au présent de narration impose « perd » pour maintenir la cohérence avec « déclare » et « signe »." },
+        { text: "perdit", correct: false, explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "perdait", correct: false, explanation: "L'imparfait rompt la cohérence avec les verbes au présent." },
-        { text: "perdez", correct: false, explanation: "La forme « perdez » est la 2e personne du pluriel, qui ne s'accorde pas avec le sujet « la France »." },
         { text: "perdra", correct: false, explanation: "Le futur est incohérent avec la séquence au présent." },
       ],
     },
@@ -6286,10 +6286,10 @@ const section: Section = {
       answer: "libère",
       explanation: "Le récit au présent de narration impose « libère » pour suivre « prend » et « célèbre ».",
       wrongAnswers: [
+        { text: "libéra", explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "libérait", explanation: "L'imparfait rompt la cohérence avec les verbes au présent." },
-        { text: "libérez", explanation: "La forme « libérez » est la 2e personne du pluriel, qui ne s'accorde pas avec le sujet « le peuple »." },
         { text: "libérera", explanation: "Le futur est incohérent avec la séquence au présent." },
-        { text: "libérons", explanation: "La forme « libérons » est la 1re personne du pluriel, qui ne s'accorde pas avec le sujet « le peuple »." },
+        { text: "libérions", explanation: "La forme « libérions » est l'imparfait du subjonctif ou la 1re personne du pluriel de l'imparfait de l'indicatif, incohérent ici." },
       ],
     },
     {
@@ -6303,10 +6303,10 @@ const section: Section = {
       answer: "monte",
       explanation: "Le récit au présent de narration impose « monte » pour suivre « arrive » et « s'adresse ».",
       wrongAnswers: [
+        { text: "monta", explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "montait", explanation: "L'imparfait rompt la cohérence avec les verbes au présent." },
-        { text: "montez", explanation: "La forme « montez » est la 2e personne du pluriel, qui ne s'accorde pas avec le sujet « le roi »." },
         { text: "montera", explanation: "Le futur est incohérent avec la séquence au présent." },
-        { text: "montes", explanation: "La forme « montes » est la 2e personne du singulier, qui ne s'accorde pas avec le sujet « le roi »." },
+        { text: "montassent", explanation: "L'imparfait du subjonctif est un temps littéraire rare, incohérent dans ce contexte." },
       ],
     },
     {
@@ -6320,10 +6320,10 @@ const section: Section = {
       answer: "franchit",
       explanation: "Le récit au présent de narration impose « franchit » pour suivre « s'élance » et « lève ».",
       wrongAnswers: [
+        { text: "franchîmes", explanation: "Le passé simple est incohérent avec les verbes au présent." },
         { text: "franchissait", explanation: "L'imparfait ne convient pas pour une action ponctuelle dans une série au présent." },
-        { text: "franchissez", explanation: "La forme « franchissez » est la 2e personne du pluriel, qui ne s'accorde pas avec le sujet « l'athlète »." },
         { text: "franchira", explanation: "Le futur est incohérent avec les verbes au présent." },
-        { text: "franchissons", explanation: "La forme « franchissons » est la 1re personne du pluriel, qui ne s'accorde pas avec le sujet « l'athlète »." },
+        { text: "franchissent", explanation: "La forme « franchissent » (3e personne du pluriel) ne s'accorde pas avec le sujet « l'athlète »." },
       ],
     },
     {
@@ -6337,10 +6337,10 @@ const section: Section = {
       answer: "emporte",
       explanation: "Le récit au présent de narration impose « emporte » pour suivre « frappe » et « provoque ».",
       wrongAnswers: [
+        { text: "emporta", explanation: "Le passé simple est incohérent avec les verbes au présent." },
         { text: "emportait", explanation: "L'imparfait ne convient pas dans une séquence d'actions ponctuelles au présent." },
-        { text: "emportez", explanation: "La forme « emportez » est la 2e personne du pluriel, qui ne s'accorde pas avec le sujet « l'ouragan »." },
         { text: "emportera", explanation: "Le futur est incohérent avec les autres verbes au présent." },
-        { text: "emportons", explanation: "La forme « emportons » est la 1re personne du pluriel, qui ne s'accorde pas avec le sujet « l'ouragan »." },
+        { text: "emportent", explanation: "La forme « emportent » (3e personne du pluriel) ne s'accorde pas avec le sujet « l'ouragan »." },
       ],
     },
     {
@@ -6354,10 +6354,10 @@ const section: Section = {
       answer: "brise",
       explanation: "Le récit au présent de narration impose « brise » pour suivre « repère » et « s'enfuit ».",
       wrongAnswers: [
+        { text: "brisa", explanation: "Le passé simple rompt la cohérence avec les verbes au présent." },
         { text: "brisait", explanation: "L'imparfait rompt la cohérence avec les verbes au présent." },
-        { text: "brisez", explanation: "La forme « brisez » est la 2e personne du pluriel, qui ne s'accorde pas avec le sujet « le voleur »." },
         { text: "brisera", explanation: "Le futur est incohérent avec la séquence au présent." },
-        { text: "brises", explanation: "La forme « brises » est la 2e personne du singulier, qui ne s'accorde pas avec le sujet « le voleur »." },
+        { text: "brisent", explanation: "La forme « brisent » (3e personne du pluriel) ne s'accorde pas avec le sujet « le voleur »." },
       ],
     },
     {
