@@ -5,29 +5,78 @@
   "spec": {
     "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
     "userPrompt": "PROMPT: Conjuguez le verbe étudier : « Nous ___ le français depuis trois ans. »\n\nPHRASE: Nous ___ le français depuis trois ans.\n\nHINT: étudier\n\nEXPECTED ANSWER: étudions\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
-    "nonce": "nonce-1776016622804-inxsz4n2"
+    "nonce": "nonce-1776021289845-0lancq0n"
   },
   "responses": [
     {
-      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to conjugate \"étudier\", the phrase shows \"Nous ___\" indicating the first-person plural form, and the hint confirms the verb.",
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt says \"Conjuguez le verbe\" but doesn't specify which tense (présent, imparfait, passé composé, etc.), and while \"depuis\" suggests présent, this requires grammatical knowledge that beginners may not have.",
       "model": "glm-4.7",
       "harness": "opencode",
-      "nonce": "nonce-1776017092389-re2skagj",
-      "timestamp": "2026-04-12T18:05:16.036Z"
+      "nonce": "nonce-1776021766521-5nqgw03u",
+      "timestamp": "2026-04-12T19:23:08.179Z"
     },
     {
-      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly asks to conjugate \"étudier\" for the subject \"nous\" (we), and \"depuis trois ans\" indicates the present tense, making it unambiguous what form to type.",
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to conjugate \"étudier\" for \"nous\", and \"depuis trois ans\" indicates present tense.",
       "model": "glm-4.7",
       "harness": "opencode",
-      "nonce": "nonce-1776017646577-4sie95ue",
-      "timestamp": "2026-04-12T18:14:25.354Z"
+      "nonce": "nonce-1776022226365-m0tfnjzm",
+      "timestamp": "2026-04-12T19:30:35.372Z"
     },
     {
-      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to conjugate \"étudier\", the hint provides the infinitive, and the phrase shows \"Nous\" as the subject with \"depuis trois ans\" indicating present tense — a learner can determine to conjugate for \"nous\" in present without seeing the answer.",
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly states \"Conjuguez le verbe étudier\", the subject \"Nous\" is clear from the sentence, and the hint reinforces the verb, making it obvious that the learner should provide the nous-form of étudier.",
       "model": "glm-4.7",
       "harness": "opencode",
-      "nonce": "nonce-1776018135438-5rrgi8jo",
-      "timestamp": "2026-04-12T18:22:28.980Z"
+      "nonce": "nonce-1776022668189-9e8xeu8r",
+      "timestamp": "2026-04-12T19:38:07.115Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to conjugate \"étudier\", the phrase shows the subject \"Nous\" and context \"depuis trois ans\" indicating present tense, and the hint confirms the verb — a learner can determine they need to type \"étudions\" without seeing the answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776022777518-b03nxx1u",
+      "timestamp": "2026-04-12T19:39:52.120Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly identifies the verb to conjugate (\"étudier\"), and the phrase contains \"depuis trois ans\" which indicates an ongoing action requiring the present tense conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776022807903-0w4hd0vf",
+      "timestamp": "2026-04-12T19:40:23.768Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly states \"Conjuguez le verbe étudier,\" the subject \"nous\" is clearly indicated in the phrase, and the hint provides the infinitive form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776022840462-jgyx0zgx",
+      "timestamp": "2026-04-12T19:40:54.241Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The prompt explicitly states \"Conjuguez le verbe étudier,\" making it clear which verb to conjugate, and the context with \"nous\" and \"depuis trois ans\" indicates present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776022860107-hcbn7c8w",
+      "timestamp": "2026-04-12T19:41:10.990Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly states \"Conjuguez le verbe étudier\" and the phrase shows the subject \"nous\" with the time marker \"depuis trois ans\" indicating present tense, so the learner knows exactly what verb form to supply.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776022873090-r0eoib8e",
+      "timestamp": "2026-04-12T19:41:25.692Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly states \"Conjuguez le verbe étudier\" and the phrase shows the subject \"nous\" with a blank, so the learner knows to conjugate \"étudier\" for \"nous\" (and \"depuis\" helps indicate present tense).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776022886478-gs6z0qe4",
+      "timestamp": "2026-04-12T19:42:07.599Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly states \"Conjuguez le verbe étudier\", the subject \"Nous\" is visible, and the context \"depuis trois ans\" indicates the present tense — a learner can determine to conjugate \"étudier\" for \"nous\" in the present without seeing the answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776022927601-3252qyet",
+      "timestamp": "2026-04-12T19:42:25.156Z"
     }
   ]
 }

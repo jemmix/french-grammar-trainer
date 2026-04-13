@@ -5,36 +5,43 @@
   "spec": {
     "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
     "userPrompt": "PROMPT: Conjuguez le verbe apprendre : « Il y a six mois qu'elle ___ la guitare et elle progresse rapidement. »\n\nPHRASE: Il y a six mois qu'elle ___ la guitare et elle progresse rapidement.\n\nHINT: apprendre\n\nEXPECTED ANSWER: apprend\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
-    "nonce": "nonce-1776016622804-nij6bk84"
+    "nonce": "nonce-1776021289845-0epclulw"
   },
   "responses": [
     {
-      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly states \"Conjuguez le verbe apprendre\", the hint provides the infinitive, and the context with subject \"elle\" and the ongoing action construction \"Il y a six mois que\" clearly indicates the present tense form.",
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly asks to conjugate \"apprendre\" and the context makes clear the subject (\"elle\") and tense (present tense in \"il y a...que\" construction), so the learner can determine to input the 3rd person singular present form.",
       "model": "glm-4.7",
       "harness": "opencode",
-      "nonce": "nonce-1776017127232-vn65n1sj",
-      "timestamp": "2026-04-12T18:05:48.837Z"
+      "nonce": "nonce-1776021788195-ey9u649c",
+      "timestamp": "2026-04-12T19:28:42.170Z"
     },
     {
-      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly states \"Conjuguez le verbe apprendre,\" the subject \"elle\" and present tense context make the 3rd person singular form clear, and the learner can determine to type \"apprend\" without seeing the answer.",
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt says \"Conjuguez le verbe apprendre\" but doesn't specify which tense, and while the context suggests présent (due to the \"il y a...que\" construction), this isn't explicitly stated in the prompt.",
       "model": "glm-4.7",
       "harness": "opencode",
-      "nonce": "nonce-1776017675135-uqcd3w1d",
-      "timestamp": "2026-04-12T18:14:46.434Z"
+      "nonce": "nonce-1776022542326-n1096rre",
+      "timestamp": "2026-04-12T19:36:01.235Z"
     },
     {
-      "raw": "VERDICT: UNCLEAR\nREASON: The prompt doesn't specify the tense to conjugate the verb in, so the learner can't determine whether to input apprend, apprenait, a appris, or another conjugation without seeing the answer.",
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to conjugate \"apprendre\" for subject \"elle\", and the sentence context (present tense \"progresse\") makes it clear that the present tense form is expected.",
       "model": "glm-4.7",
       "harness": "opencode",
-      "nonce": "nonce-1776018161486-hu3ubd5l",
-      "timestamp": "2026-04-12T18:23:01.972Z"
+      "nonce": "nonce-1776022759455-6pkz8gxa",
+      "timestamp": "2026-04-12T19:39:47.164Z"
     },
     {
-      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt and hint identify the verb but don't specify the tense, so a learner might reasonably choose \"apprend\" (present), \"apprenait\" (imparfait), or \"a appris\" (passé composé) without clear guidance.",
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to conjugate \"apprendre\", the hint provides the infinitive, and the subject \"elle\" with present-tense context makes the expected form \"apprend\" identifiable without seeing the answer.",
       "model": "glm-4.7",
       "harness": "opencode",
-      "nonce": "nonce-1776018259638-ojohl9jn",
-      "timestamp": "2026-04-12T18:24:45.082Z"
+      "nonce": "nonce-1776022805711-81mo7w2h",
+      "timestamp": "2026-04-12T19:40:37.159Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt and hint don't specify which tense to conjugate \"apprendre\" in; without explicit tense instruction, learners could reasonably input \"apprend\" (présent), \"apprenait\" (imparfait), or \"avait appris\" (plus-que-parfait).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776022845212-f9zfls0t",
+      "timestamp": "2026-04-12T19:40:59.046Z"
     }
   ]
 }

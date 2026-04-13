@@ -1,0 +1,61 @@
+{
+  "cacheKey": "e91786ca9ceb02ea",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-17-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Complétez la phrase que vous adressez à un collègue : « Il y a trois ans que nous ___ le français. »\n\nPHRASE: Il y a trois ans que nous ___ le français.\n\nHINT: étudier\n\nEXPECTED ANSWER: étudions\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1776028701275-x59ryn6m"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The learner knows to conjugate \"étudier\" for \"nous\" from the hint, but must infer that \"Il y a trois ans que\" requires present tense — a beginner might choose imparfait or passé composé without explicit tense direction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776028701278-kj7linpl",
+      "timestamp": "2026-04-12T21:19:22.979Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt, phrase, and hint provide all necessary context: \"nous\" is the subject, \"étudier\" is the infinitive to conjugate, and the structure \"Il y a trois ans que...\" clearly indicates present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776028762980-7s9aqnbj",
+      "timestamp": "2026-04-12T21:20:04.137Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt asks to complete the phrase, the hint provides the infinitive verb \"étudier\", and the phrase shows \"nous\" as the subject, making it clear the learner should conjugate the verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776029173453-po9giz63",
+      "timestamp": "2026-04-12T21:26:25.316Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt (\"Complétez la phrase\"), subject (\"nous\"), and verb hint (\"étudier\") clearly indicate the learner should conjugate \"étudier\" for the first-person plural \"nous\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776029185318-4tlc8cbt",
+      "timestamp": "2026-04-12T21:26:42.062Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly indicates to complete the sentence, the hint provides the infinitive verb \"étudier\", and the blank follows \"nous\" which unambiguously signals the need for the first-person plural present tense conjugation \"étudions\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776029202062-yznmhk6t",
+      "timestamp": "2026-04-12T21:26:59.142Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The hint \"étudier\" provides the infinitive verb, \"nous\" in the sentence identifies the subject, and the \"il y a...que\" structure clearly indicates the present tense conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776029219143-e29e1u2k",
+      "timestamp": "2026-04-12T21:27:23.115Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"complétez la phrase\" but doesn't specify which tense to conjugate the verb into; a learner could reasonably choose present, imparfait, or passé composé, yet only present (étudions) is marked correct.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776029243116-3cd4g5t6",
+      "timestamp": "2026-04-12T21:28:00.652Z"
+    }
+  ]
+}

@@ -85,6 +85,7 @@ export const answerHints: Record<string, string> = {
   "appellerait": "appeler",
   "appréciions": "apprécier",
   "apprenais": "apprendre",
+  "apprends": "apprendre",
   "apprend": "apprendre",
   "apprendrait": "apprendre",
   "appuieras": "appuyer",
@@ -913,6 +914,7 @@ export const answerHints: Record<string, string> = {
   "Donne-m'en": "donner",
   "polonais": "nom",
   "souvenons": "se souvenir",
+  "pratique": "pratiquer",
   "préparez": "se préparer",
   "Le mandarin": "nom",
 };

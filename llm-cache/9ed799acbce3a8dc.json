@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9ed799acbce3a8dc",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-17-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-17 - Le présent dans les constructions avec depuis / il y a...que / ça fait...que\n\nQUESTION:\nType: Input\nPrompt: Vous rencontrez un collègue qui vous demande depuis combien de temps vous étudiez ensemble. Complétez : « Il y a trois ans que nous ___ le français. »\nPhrase: Il y a trois ans que nous ___ le français.\nCorrect Answer: étudions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776027279312-pvpqgv2q"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests that present tense must be used with \"il y a...que\" constructions to express an action continuing from the past to the present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776027556697-dlnwa3wg",
+      "timestamp": "2026-04-12T20:59:32.867Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question specifically tests the present tense with the \"Il y a...que\" construction - this is the exact grammar point rule 01-17 covers, and answering correctly requires knowing that French uses present tense where English would use past/present perfect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776028000218-yucx4f2u",
+      "timestamp": "2026-04-12T21:07:17.488Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses the \"il y a...que\" construction and requires the present tense \"étudions\" despite referring to an action that began three years ago, directly testing the rule that these constructions use the present tense not past tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776028037489-1faxjqne",
+      "timestamp": "2026-04-12T21:07:30.067Z"
+    }
+  ]
+}

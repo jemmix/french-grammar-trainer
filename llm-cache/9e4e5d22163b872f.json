@@ -5,36 +5,29 @@
   "spec": {
     "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
     "userPrompt": "PROMPT: Conjuguez le verbe attendre : « Il y a deux heures qu'il ___ l'autobus. »\n\nPHRASE: Il y a deux heures qu'il ___ l'autobus.\n\nHINT: attendre\n\nEXPECTED ANSWER: attend\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
-    "nonce": "nonce-1776016622803-h296548s"
+    "nonce": "nonce-1776021289844-lzbdzags"
   },
   "responses": [
     {
-      "raw": "VERDICT: UNCLEAR\nREASON: The prompt instructs to conjugate \"attendre\" but doesn't specify which tense/mood, so the learner can't determine from context that the present tense is required.",
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly states \"Conjuguez le verbe attendre\", the hint confirms the infinitive, and the context \"il y a ... qu'il ___ l'autobus\" with subject \"il\" makes the third person singular present tense \"attend\" unambiguous.",
       "model": "glm-4.7",
       "harness": "opencode",
-      "nonce": "nonce-1776017041567-e48gjnth",
-      "timestamp": "2026-04-12T18:04:18.388Z"
+      "nonce": "nonce-1776021718223-yutgyu5n",
+      "timestamp": "2026-04-12T19:22:10.521Z"
     },
     {
-      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs to conjugate \"attendre\", the sentence shows \"il\" as the subject indicating 3rd person singular, and the temporal context \"Il y a deux heures qu'il\" suggests present tense for an ongoing action.",
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The construction \"Il y a [duration] que...\" is a standard French pattern that uses the present tense to indicate an ongoing action, making the tense clear from context.",
       "model": "glm-4.7",
       "harness": "opencode",
-      "nonce": "nonce-1776017594320-gnhy21yx",
-      "timestamp": "2026-04-12T18:13:27.783Z"
+      "nonce": "nonce-1776022170767-a99b80jz",
+      "timestamp": "2026-04-12T19:30:14.212Z"
     },
     {
-      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to conjugate \"attendre\", the hint confirms the verb, and the phrase provides the subject \"il\" with context that suggests present tense (ongoing action starting in the past).",
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt specifies conjugating \"attendre\", the phrase shows subject \"il\" with \"Il y a deux heures que\" indicating ongoing action (present tense), and the hint confirms the verb, allowing the learner to deduce \"attend\".",
       "model": "glm-4.7",
       "harness": "opencode",
-      "nonce": "nonce-1776018075623-5cztk3kx",
-      "timestamp": "2026-04-12T18:21:42.819Z"
-    },
-    {
-      "raw": "VERDICT: UNCLEAR\nREASON: The prompt says \"Conjuguez le verbe attendre\" without specifying the tense or person; while the sentence context clues suggest présent and 3rd person singular, this requires knowledge of the \"il y a...que...\" construction and shouldn't be inferred without explicit guidance.",
-      "model": "glm-4.7",
-      "harness": "opencode",
-      "nonce": "nonce-1776018242888-9uqbqpl3",
-      "timestamp": "2026-04-12T18:25:31.215Z"
+      "nonce": "nonce-1776022630997-ixfpz78y",
+      "timestamp": "2026-04-12T19:37:28.524Z"
     }
   ]
 }
