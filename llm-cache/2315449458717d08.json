@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2315449458717d08",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe entre parenthèses pour maintenir la cohérence temporelle du récit.\nPhrase: En 1610, le roi arrive en grande pompe à Paris, (monter) ____ sur son trône et s'adresse au peuple.\nCorrect Answer: monte\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776111622226-h58wtijg"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The sentence narrates a past historical event (En 1610) using present tense verbs (arrive, s'adresse), which is precisely the présent de narration; answering correctly requires conjugating \"monter\" in the present tense (monte) to maintain this narrative style.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776111668806-ab9ixban",
+      "timestamp": "2026-04-13T20:21:30.661Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests recognizing and maintaining the présent de narration in a historical narrative context (\"En 1610, le roi arrive...\"), where the learner must conjugate \"monter\" in the present tense to maintain temporal coherence rather than using a past tense like \"monta\" or \"est monté\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776111794733-8humjc3w",
+      "timestamp": "2026-04-13T20:24:06.754Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing the literary convention of using present tense to narrate past events (présent de narration), as evidenced by the historical context (1610) and the existing present-tense verbs in the narrative.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776111931661-7wavc07e",
+      "timestamp": "2026-04-13T20:25:44.843Z"
+    }
+  ]
+}

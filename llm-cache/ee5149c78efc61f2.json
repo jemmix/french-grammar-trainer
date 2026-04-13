@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ee5149c78efc61f2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe complète cette phrase ? « Le médecin ouvre sa trousse, ____ le patient et prescrit un traitement. »\nChoices:\nA. [CORRECT] examine\nB. examina\nC. examinait\nD. examinera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776097403658-bx9qhos9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic tense consistency (matching present with \"ouvre\" and \"prescrit\") without establishing any narrative context where past events are vividly recounted in the present tense—the defining characteristic of présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776097847099-kwxbk00d",
+      "timestamp": "2026-04-13T16:31:10.766Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests recognition of présent de narration by requiring the present tense to complete a sequence of past actions narrated in literary/journalistic style.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776098285065-4vpnknba",
+      "timestamp": "2026-04-13T16:38:22.469Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question can be answered simply by maintaining tense consistency with the surrounding verbs \"ouvre\" and \"prescrit\" (both present), without needing to understand the literary/journalistic narrative technique that defines the présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776098795949-mrx2bu0x",
+      "timestamp": "2026-04-13T16:47:11.263Z"
+    }
+  ]
+}

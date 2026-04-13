@@ -1,0 +1,33 @@
+{
+  "cacheKey": "95407b24e7209e19",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-18-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Complétez la phrase avec le verbe qui convient.\n\nPHRASE: Le voleur repère le bijou, (briser) ____ la vitrine et s'enfuit à toute vitesse.\n\nHINT: briser\n\nEXPECTED ANSWER: brise\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1776098020446-8s8mthvc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: UNCLEAR\n\nREASON: The subject for the verb \"briser\" is unclear — \"Le voleur\" could be the subject, but it's not explicitly stated as the agent of \"briser\" in this clause structure, and without knowing which person/number to conjugate for, the learner can't determine whether \"brise\", \"brisent\", or another form is expected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776098486530-tuq16avr",
+      "timestamp": "2026-04-13T16:41:58.442Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The parentheses \"(briser)\" in the phrase clearly indicates the infinitive to conjugate, and the surrounding verbs \"repère\" and \"s'enfuit\" establish present tense context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776098968659-cmisgsqr",
+      "timestamp": "2026-04-13T16:49:41.497Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt only says \"le verbe qui convient\" without specifying tense or person, and while the context suggests present tense conjugation, it's not explicitly stated, making it ambiguous whether to conjugate or simply insert the infinitive.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776099145197-ecq8s35i",
+      "timestamp": "2026-04-13T16:52:39.060Z"
+    }
+  ]
+}

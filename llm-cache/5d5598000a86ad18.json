@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5d5598000a86ad18",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe complète cette phrase ? « En 1870, la France déclare la guerre, ____ plusieurs batailles et signe un armistice. »\nChoices:\nA. [CORRECT] perd\nB. perdit\nC. perdait\nD. perdra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776097403658-wa4scqn3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question presents a historical narrative about 1870 where the other verbs are in present tense, requiring recognition that présent de narration uses present tense to describe past events instead of the logically expected past forms.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776097961354-rcysvhu9",
+      "timestamp": "2026-04-13T16:33:05.985Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that past events (1870) are described using the present tense, which is the defining characteristic of the présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776098374724-5fluer4j",
+      "timestamp": "2026-04-13T16:40:10.595Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that historical events narrated in the present tense (présent de narration) must use present tense forms despite the past temporal context established by \"En 1870.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776098882051-t4sm7owq",
+      "timestamp": "2026-04-13T16:48:19.757Z"
+    }
+  ]
+}

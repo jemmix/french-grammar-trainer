@@ -1,0 +1,40 @@
+{
+  "cacheKey": "3d63509409ccd7ee",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez la suite au présent de narration : « Pendant le concert, une femme se lève, ____ « Bravo ! » et applaudit follement. »\nChoices:\nA. [CORRECT] crie\nB. cria\nC. criait\nD. criera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776102171877-bemhbgym"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use \"présent de narration,\" so answering correctly only requires recognizing the present tense form of \"crier,\" not understanding when or why to use the narrative present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776102478861-woacluto",
+      "timestamp": "2026-04-13T17:48:54.258Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that in a narrative sequence describing past events, the \"présent de narration\" is used instead of other past tenses to create immediacy in literary/journalistic style.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776102840901-b0201n1k",
+      "timestamp": "2026-04-13T17:54:13.114Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that present tense narrates past events in literary contexts, matching the other present-tense verbs (\"se lève\", \"applaudit\") in the sequence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776103141249-p8aethcj",
+      "timestamp": "2026-04-13T17:59:18.159Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use \"le présent de narration,\" so the question tests basic present tense conjugation rather than the ability to recognize or correctly apply the narrative present usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776103257206-wg4sdn1y",
+      "timestamp": "2026-04-13T18:01:33.024Z"
+    }
+  ]
+}

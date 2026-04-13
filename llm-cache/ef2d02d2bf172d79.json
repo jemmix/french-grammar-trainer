@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ef2d02d2bf172d79",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Input\nPrompt: Complétez la phrase avec le verbe qui convient.\nPhrase: Le voleur repère le bijou, (briser) ____ la vitrine et s'enfuit à toute vitesse.\nCorrect Answer: brise\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776098020447-mve3f6ye"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sequence of actions (repère, brise, s'enfuit) exemplifies the présent de narration, and selecting the correct present tense form requires recognizing this narrative usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776098494112-9h5vw8f8",
+      "timestamp": "2026-04-13T16:41:48.002Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic present tense conjugation of \"briser,\" which can be answered correctly without any knowledge of the présent de narration (historical present) rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776098958436-a5c8ese1",
+      "timestamp": "2026-04-13T16:49:34.330Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests present tense conjugation and following the tense pattern established by other verbs in the sentence, but doesn't require understanding that this is a narrative present usage - a student could answer correctly without knowing the literary/journalistic distinction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776099142018-h4ufgntk",
+      "timestamp": "2026-04-13T16:52:49.738Z"
+    }
+  ]
+}

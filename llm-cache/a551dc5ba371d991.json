@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a551dc5ba371d991",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-18-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Complétez la phrase. Le présent de narration est aussi appelé présent ____.\n\nPHRASE: Le présent de narration est aussi appelé présent ____.\n\nHINT: adjectif\n\nEXPECTED ANSWER: historique\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1776100076443-yg7xrtzo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt only says \"complétez la phrase\" and the hint \"adjectif\" doesn't narrow down which specific adjective belongs to this terminology—learners need prior knowledge that \"présent de narration\" is also called \"présent historique\" rather than any other plausible adjective like \"littéraire\" or \"narratif\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776100553696-vblexfrq",
+      "timestamp": "2026-04-13T17:16:13.544Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly asks to complete the sentence, the blank is marked, and the hint specifies an adjective is needed to provide the alternative name for \"présent de narration\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776101061950-qswohbk8",
+      "timestamp": "2026-04-13T17:24:33.625Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The learner knows they need an adjective from the hint, but cannot determine which specific adjective without already knowing that \"présent de narration\" = \"présent historique\" – the question tests knowledge of a specific linguistic term rather than providing enough context to deduce the answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776101521817-1wpmj1ho",
+      "timestamp": "2026-04-13T17:32:23.042Z"
+    }
+  ]
+}

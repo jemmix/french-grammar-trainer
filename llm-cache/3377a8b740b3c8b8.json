@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3377a8b740b3c8b8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe entre parenthèses pour que la phrase reste cohérente avec le récit.\nPhrase: La nuit dernière, le voleur repère le bijou, (briser) ____ la vitrine et s'enfuit à toute vitesse.\nCorrect Answer: brise\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776112678003-j01kf3gz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the literary present tense by requiring the student to conjugate a verb in present tense (\"brise\") for a past event marked by \"La nuit dernière,\" matching the pattern of \"repère\" and \"s'enfuit\" which are already in présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776112773290-b2rg1ym4",
+      "timestamp": "2026-04-13T20:39:49.826Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing the present de narration style (past context \"La nuit dernière\" but verbs in present tense) and conjugating \"briser\" as \"brise\" to match the narrative present pattern, not use a past tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776112901349-2baeft8k",
+      "timestamp": "2026-04-13T20:41:58.410Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests understanding that despite \"La nuit dernière\" indicating past time, the présent de narration uses present tense (\"repère\", \"s'enfuit\") to make the narrative vivid, requiring \"brise\" not \"a brisé\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776113004470-rwbcj2ug",
+      "timestamp": "2026-04-13T20:43:35.713Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "75bdb483ce3c49f5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe entre parenthèses pour que la phrase reste cohérente avec le récit.\nPhrase: En 1610, le roi arrive en grande pompe à Paris, (monter) ____ sur son trône et s'adresse au peuple.\nCorrect Answer: monte\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776112678003-27if3v5m"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating the verb in present tense despite the historical past context \"En 1610\", directly testing the narrative present's use of present tense to vividly describe past events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776112705370-tk7erjpo",
+      "timestamp": "2026-04-13T20:38:42.845Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the present de narration by requiring students to conjugate \"monter\" in present tense despite the past context (En 1610), which is the defining feature of this literary usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776112810028-rvna4gwm",
+      "timestamp": "2026-04-13T20:40:59.793Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that historical events (1610) are narrated in present tense to create immediacy, which is exactly what le présent de narration does; copying the tense pattern from \"arrive\" and \"s'adresse\" demonstrates recognition of this literary convention.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776112955237-x71h86h6",
+      "timestamp": "2026-04-13T20:45:04.642Z"
+    }
+  ]
+}

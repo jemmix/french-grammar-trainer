@@ -1,0 +1,40 @@
+{
+  "cacheKey": "c9d64c747d982d75",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe complète cette phrase ? « Pendant le concert, une femme se lève, ____ « Bravo ! » et applaudit follement. »\nChoices:\nA. [CORRECT] crie\nB. cria\nC. criait\nD. criera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776097403658-j0oe471k"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the présent de narration by requiring recognition that a past event is narrated in the present tense for vividness, as seen in the sequence \"se lève... crie... applaudit\" all in present tense despite describing a past concert.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776097870766-8x76oae6",
+      "timestamp": "2026-04-13T16:32:04.038Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests recognizing the literary narrative present (présent de narration) where a sequence of events is recounted in the present tense for immediacy and vividness, as evidenced by the surrounding verbs in present tense (\"se lève\", \"applaudit\") creating a cohesive narrative style.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776098301288-q422a41y",
+      "timestamp": "2026-04-13T16:39:15.098Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question can be answered simply by matching the tense of the other verbs in the sentence and doesn't require understanding of présent de narration as a literary/journalistic device.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776098837724-xck28h4h",
+      "timestamp": "2026-04-13T16:47:39.975Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests basic verb tense consistency (matching \"se lève\" and \"applaudit\") rather than the specific literary/journalistic convention of using present tense to narrate past events, which is the actual concept of \"le présent de narration.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776099039434-09f59dst",
+      "timestamp": "2026-04-13T16:50:52.118Z"
+    }
+  ]
+}

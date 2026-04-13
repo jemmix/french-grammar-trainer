@@ -1,0 +1,33 @@
+{
+  "cacheKey": "815222531f5cca27",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez la suite au présent de narration : « En 1789, le peuple de Paris prend la Bastille, ____ les prisonniers et célèbre la victoire. »\nChoices:\nA. [CORRECT] libère\nB. libéra\nC. libérait\nD. libérera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776102171871-karvg3ia"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question presents a historical narration context where present tense is used for past events (présent de narration), and selecting the correct present tense form \"libère\" requires recognizing this literary/journalistic usage rather than using the passé simple that would normally narrate historical events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776102171889-r01564gl",
+      "timestamp": "2026-04-13T17:43:37.223Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that in a narrative sequence using présent de narration (established by \"prend\" and \"célèbre\" with the historical context), all verbs remain in the present tense regardless of the past timeframe being described.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776102603263-h76bn4c5",
+      "timestamp": "2026-04-13T17:50:20.476Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that despite the historical timeframe (\"En 1789\"), the présent de narration is used for vivid storytelling, and only students who understand this literary present will correctly choose \"libère\" instead of the expected past tense form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776102935689-qofh3nuj",
+      "timestamp": "2026-04-13T17:56:25.014Z"
+    }
+  ]
+}

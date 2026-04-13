@@ -1,0 +1,33 @@
+{
+  "cacheKey": "af68d46128adc4ea",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-19-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-19 - Les verbes impersonnels au présent (il faut, il pleut, il s'agit de)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Lequel de ces verbes est uniquement impersonnel (il n'existe qu'à la 3e personne du singulier avec « il ») ?\nChoices:\nA. [CORRECT] falloir\nB. pouvoir\nC. vouloir\nD. savoir\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776107596229-q2dsyrhj"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Answering correctly requires knowing that *falloir* is exclusively impersonal while *pouvoir*, *vouloir*, and *savoir* are not—directly testing the concept of impersonal verbs central to rule 01-19.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1776107719708-dcoj3iq1",
+      "timestamp": "2026-04-13T19:15:33.766Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Identifying which verbs are exclusively impersonal directly requires knowing the core concept of rule 01-19 — that certain verbs like *falloir* only conjugate in the 3rd person singular with *il*.",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1776108130419-xxwy0h14",
+      "timestamp": "2026-04-13T19:22:21.720Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student can identify which verb is exclusively impersonal, which is core knowledge of the rule about impersonal verbs (il faut, il pleut, il s'agit de).",
+      "model": "glm-5",
+      "harness": "opencode",
+      "nonce": "nonce-1776108557530-outxi4if",
+      "timestamp": "2026-04-13T19:29:28.426Z"
+    }
+  ]
+}

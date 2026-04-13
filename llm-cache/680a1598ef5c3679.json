@@ -1,0 +1,33 @@
+{
+  "cacheKey": "680a1598ef5c3679",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-18-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Quel effet le présent de narration produit-il sur le lecteur ?\n\nPHRASE: Le présent de narration rend le récit plus ____.\n\nHINT: adjectif\n\nEXPECTED ANSWER: vivant\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1776100076443-7kb9qxot"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Multiple adjectives could correctly complete the sentence (dynamique, intense, captivant, immédiat, etc.), but only \"vivant\" is accepted.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776100604487-kcjf2qkt",
+      "timestamp": "2026-04-13T17:16:56.688Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly asks about the effect of narrative present tense, the phrase shows where to type an adjective (confirmed by the hint), and the learner can determine they need an adjective describing how the present tense makes the story feel.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776101091466-0hcsv3mj",
+      "timestamp": "2026-04-13T17:25:24.296Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Multiple adjectives could logically complete the sentence (vivant, dynamique, captivant, engageant), so the learner cannot determine which specific answer is expected without seeing it.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776101566132-vyws1csg",
+      "timestamp": "2026-04-13T17:33:09.769Z"
+    }
+  ]
+}

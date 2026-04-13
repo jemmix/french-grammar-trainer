@@ -1,0 +1,40 @@
+{
+  "cacheKey": "cd01a7e9afb50d75",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe complète cette phrase ? « L'ouragan frappe la côte, ____ des maisons entières et provoque une inondation. »\nChoices:\nA. [CORRECT] emporte\nB. emporta\nC. emportait\nD. emportera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776097403657-hmx7z1d4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests recognizing that a past event (a hurricane's impact) is described using present tense verbs for narrative immediacy, which is the defining characteristic of the présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776097818865-3iqx570r",
+      "timestamp": "2026-04-13T16:30:43.850Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence describes a past event (hurricane) with vivid present tense narration, requiring the learner to select the present tense to maintain the présent de narration style across the sequence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776098272058-vgvpll0a",
+      "timestamp": "2026-04-13T16:38:09.235Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer can be deduced solely from parallel structure with the surrounding present-tense verbs \"frappe\" and \"provoque\" without needing to understand the present de narration literary usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776098775135-eklwv7q0",
+      "timestamp": "2026-04-13T16:46:32.312Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This is a parallel verb conjugation exercise requiring matching the present tense of surrounding verbs, not a test of présent de narration which describes past events in the present tense for literary immediacy and requires narrative context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776099023959-q0c656n5",
+      "timestamp": "2026-04-13T16:50:46.848Z"
+    }
+  ]
+}
