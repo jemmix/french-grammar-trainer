@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5e6a5166df8a1c24",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez la suite au présent de narration : « En 1830, la foule envahit la Bastille, ____ les chaînes des prisonniers et proclame la liberté. »\nChoices:\nA. [CORRECT] brise\nB. brisa\nC. brisait\nD. brisera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776114835344-qi4v0uus"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that historical events can be narrated in present tense for immediacy—without knowing this rule, students would logically choose past tense \"brisa.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776114835350-qglsy05g",
+      "timestamp": "2026-04-13T21:14:29.624Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The correct answer can be determined simply by matching the present tense of the surrounding verbs (\"envahit\", \"proclame\") without understanding that this is a specific literary/journalistic usage called \"présent de narration\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776114869625-sfnqmouu",
+      "timestamp": "2026-04-13T21:14:44.910Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly tells students to use \"présent de narration\" in the prompt, and the surrounding verbs already model the correct tense, so answering correctly requires only pattern-matching or following instructions, not understanding the rule's purpose or when to apply it.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776114884911-gfw65a7t",
+      "timestamp": "2026-04-13T21:14:59.382Z"
+    }
+  ]
+}
