@@ -80,16 +80,6 @@
   - Watch mode: add a `--watch` flag to `convert-txt` that re-emits a section's `.ts` whenever any of its source `.txt` files change. Run alongside `next dev`.
   - Git pre-commit hook: run codegen + `tsc --noEmit` in the existing pre-commit hook so a commit with stale `.ts` files fails loudly. Lightest-weight option but only catches it at commit time, not during dev.
 
-### 01-16 LLM validation — GLM-4.7 incompatible
-
-Rule 01-16 ("Le présent à valeur de futur proche — je pars demain") cannot achieve 285/285 LLM validation passes with GLM-4.7. Three prompt strategies were attempted:
-
-1. **"Complétez"** → 28 failures: LLM rejects present tense + "demain" as grammatically incorrect (mcq-correct-is-true, grammar-valid), says prompts are too vague (no-ambiguous-prompts), and sometimes accepts wrong answers (mcq-wrong-is-false).
-2. **"Conjuguez au présent pour exprimer une action programmée"** → 15 failures (best result): fixes grammar-valid and mcq-correct-is-true, but LLM now complains prompts "give away the tense" (question-rule-alignment).
-3. **"Lequel de ces verbes convient pour décrire cette action programmée ?"** → validation crashed mid-run due to excessive GLM-4.7 timeouts (10+ concurrent timeouts).
-
-Core issue: GLM-4.7 does not consistently accept present tense for future meaning with "demain." It alternates between "present + demain is wrong, use futur simple" and "you explicitly said present, so it doesn't test the rule." Current version (v2) has 270/285 passes with all unit tests passing. May need a different LLM model for this rule, or a fundamentally different question structure (e.g. sentence-selection MCQ instead of fill-in-the-blank).
-
 ### 01-18 INPUT questions — error-correction format for GLM-4.7
 
 Rule 01-18 ("Le présent de narration") INPUT questions were the hardest to validate. GLM-4.7 rejects fill-in-the-blank conjugation INPUT questions with ~50% probability on question-rule-alignment, saying "only tests conjugation, not understanding of the narrative present concept."
