@@ -1,0 +1,40 @@
+{
+  "cacheKey": "af26131dd663ed87",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Dans un style journalistique au présent de narration, complétez : « Le témoin ____ tout ce qu'il a vu ce jour-là. »\nChoices:\nA. [CORRECT] raconte\nB. racontes\nC. racontait\nD. racontera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776078998652-64gsciz0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly tests knowledge of présent de narration in a journalistic context, requiring the learner to select the present tense conjugation rather than past (imparfait) or future tenses, with the correct answer demonstrating understanding of this stylistic use of the present to narrate past events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776079222412-osmuznbu",
+      "timestamp": "2026-04-13T11:20:56.474Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests identifying the présent de narration by requiring the learner to recognize that a past event (\"ce jour-là\") is narrated in the present tense, with wrong answers testing different tenses (imparfait, future) and wrong person (2nd person).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776080568569-rqu8n2xz",
+      "timestamp": "2026-04-13T11:43:47.347Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This tests basic present tense conjugation for \"le témoin\" (3rd person singular), not the stylistic usage of présent de narration vs. other tenses—the prompt tells students which tense to use, so they don't need knowledge of when to apply this stylistic rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776081057608-tekz9dbc",
+      "timestamp": "2026-04-13T11:51:36.562Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic present tense conjugation (subject-verb agreement for \"le témoin\") rather than the stylistic use of présent de narration - the other choices are eliminated by standard conjugation rules, not by understanding the narrative present concept.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776081499525-h8ux6bc4",
+      "timestamp": "2026-04-13T11:59:12.308Z"
+    }
+  ]
+}

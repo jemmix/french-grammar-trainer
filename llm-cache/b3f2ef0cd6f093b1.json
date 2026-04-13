@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b3f2ef0cd6f093b1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Dans un récit historique, complétez : « En 1789, le peuple de Paris ____ la Bastille. Les révolutionnaires célèbrent leur victoire. »\nChoices:\nA. [CORRECT] prend\nB. prenez\nC. prenait\nD. prit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776076278049-v5dlhs0z"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that présent de narration uses present tense to describe past events in literary/journalistic contexts, and the correct answer \"prend\" is the only present-tense option that fits both the grammatical person (3rd singular) and the narrative style established by \"célèbrent\" in the second sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776076278059-y6ab5o0i",
+      "timestamp": "2026-04-13T10:32:22.744Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowledge of présent de narration to choose \"prend\" for a 1789 event over the expected past tenses \"prenait\" or \"prit\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776077094679-8qlahodm",
+      "timestamp": "2026-04-13T10:45:13.182Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly sets a historical narrative context (\"Dans un récit historique\") and models the narrative present in the second sentence (\"Les révolutionnaires célèbrent\"), requiring the learner to choose the present tense (\"prend\") over grammatically possible alternatives like imparfait or passé simple to demonstrate the literary convention of using present tense for vivid historical narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776077653412-pma6rbj2",
+      "timestamp": "2026-04-13T10:54:54.548Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4f8a26cdc7b532e5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Dans un style journalistique, complétez : « L'incendie ____ le château. Les flammes illuminent le ciel. »\nChoices:\nA. [CORRECT] atteint\nB. atteins\nC. atteignait\nD. atteignit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776076278052-x958u0zl"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the literary/journalistic use of present tense to describe past events, as signaled by \"Dans un style journalistique\" and reinforced by the present tense already used in the second clause (\"illuminent\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776076836914-y4tzg5a2",
+      "timestamp": "2026-04-13T10:41:11.722Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the specific journalistic/literary usage of present tense to narrate past events, and cannot be answered correctly without understanding the présent de narration rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776077466621-3ydz6dog",
+      "timestamp": "2026-04-13T10:51:25.553Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that journalistic narration uses present tense to describe past events, and distractors use both wrong tenses (imparfait, passé simple) and wrong conjugation to isolate this concept.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776077973103-g8z0ad9u",
+      "timestamp": "2026-04-13T10:59:46.093Z"
+    }
+  ]
+}

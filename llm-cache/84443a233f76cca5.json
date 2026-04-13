@@ -1,0 +1,26 @@
+{
+  "cacheKey": "84443a233f76cca5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au présent de narration pour ce récit sportif : « L'athlète ____ la ligne d'arrivée et gagne la médaille d'or. »\nPhrase: L'athlète ____ la ligne d'arrivée et gagne la médaille d'or.\nCorrect Answer: franchit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776076278053-2sllr937"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests standard present indicative conjugation, not the présent de narration usage—the verb form is identical for both, and the prompt explicitly labels the tense rather than requiring students to recognize the narrative context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776077041220-3na9ium2",
+      "timestamp": "2026-04-13T10:44:32.169Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests regular present tense conjugation of \"franchir\" (a basic -ir verb), not the stylistic concept of using present tense to narrate past events; the \"présent de narration\" label is merely a framing device, and the answer can be determined without any knowledge of that literary/journalistic usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776077614839-i4rg0u89",
+      "timestamp": "2026-04-13T10:56:07.946Z"
+    }
+  ]
+}

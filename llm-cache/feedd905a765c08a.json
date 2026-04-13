@@ -1,0 +1,33 @@
+{
+  "cacheKey": "feedd905a765c08a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez la suite au présent de narration : « En 1914, la guerre éclate, ____ des millions de vies et bouleverse l'Europe entière. »\nChoices:\nA. [CORRECT] détruit\nB. détruisait\nC. détruis\nD. détruira\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776094807251-3sx6izz9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires selecting the present tense verb form (\"détruit\") that maintains the narrative present style started with \"éclate\", distinguishing it from other tenses that would break this literary/journalistic technique.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776094884182-ydy72pxs",
+      "timestamp": "2026-04-13T15:41:57.963Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the literary/journalistic present tense used to narrate past events with dramatic immediacy — choosing \"détruit\" requires recognizing the narrative present context and maintaining stylistic consistency, not just basic conjugation knowledge.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776095464433-aiaoudqy",
+      "timestamp": "2026-04-13T15:51:43.257Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing the présent de narration pattern established by \"éclate\" and selecting the correct present tense form that agrees with \"la guerre.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776096143854-nhdccpl4",
+      "timestamp": "2026-04-13T16:02:55.230Z"
+    }
+  ]
+}

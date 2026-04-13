@@ -1,0 +1,40 @@
+{
+  "cacheKey": "97373518f5a5a6f2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Dans un récit littéraire au présent de narration, complétez : « Soudain, elle ____. Elle lève les bras au ciel. »\nChoices:\nA. [CORRECT] crie\nB. cries\nC. criait\nD. cria\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776078998651-sitrc5k9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question simply tests basic present tense conjugation and subject agreement (\"elle\" → \"crie\") without requiring knowledge of the literary/journalistic usage of present de narration - the prompt explicitly tells the student which tense to use, so answering correctly doesn't demonstrate understanding of when or why this tense would be chosen in a literary narrative.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776079058497-5gurkxt6",
+      "timestamp": "2026-04-13T11:18:03.217Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to identify the present tense form (\"crie\") that matches the explicitly stated context of \"présent de narration,\" distinguishing it from past tenses (imparfait, passé simple) and an invalid form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776079938061-armxx112",
+      "timestamp": "2026-04-13T11:34:09.551Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that présent de narration uses present tense forms (crie) instead of the standard literary past tenses (criait/cria) that would typically be used in narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776080899129-bcavhxvs",
+      "timestamp": "2026-04-13T11:48:47.945Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly states \"au présent de narration,\" telling learners to use the present tense, so the question only tests basic present tense conjugation for \"elle\" rather than knowledge of when and why to use the literary narrative present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776081423038-s3neu8ez",
+      "timestamp": "2026-04-13T11:58:10.712Z"
+    }
+  ]
+}

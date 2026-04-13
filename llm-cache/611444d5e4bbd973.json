@@ -1,0 +1,26 @@
+{
+  "cacheKey": "611444d5e4bbd973",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au présent de narration : « L'ouragan frappe la côte, ____ des maisons entières et provoque une inondation. »\nPhrase: L'ouragan frappe la côte, ____ des maisons entières et provoque une inondation.\nCorrect Answer: emporte\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776091979067-wjuarq6k"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question only tests standard present tense conjugation of \"emporter\" (3rd person singular), which requires no knowledge of the narrative present - any learner could correctly answer by knowing basic present tense conjugation rules, making the \"présent de narration\" aspect incidental rather than essential.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776092504878-6upkeilu",
+      "timestamp": "2026-04-13T15:04:26.130Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question only tests basic present tense conjugation, not the literary/journalistic usage of présent de narration; students can answer correctly by following the pattern of surrounding verbs without understanding the narrative convention.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776093358028-llvoou75",
+      "timestamp": "2026-04-13T15:16:13.387Z"
+    }
+  ]
+}

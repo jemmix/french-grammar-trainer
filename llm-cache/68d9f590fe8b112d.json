@@ -1,0 +1,33 @@
+{
+  "cacheKey": "68d9f590fe8b112d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Dans un récit sportif, complétez : « L'athlète ____ la ligne d'arrivée et gagne la médaille d'or. »\nChoices:\nA. [CORRECT] franchit\nB. franchissons\nC. franchissait\nD. franchira\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776076278051-nk0llcmy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that a sports narrative uses the présent de narration (franchit) rather than imparfait or futur, testing the literary/journalistic present usage directly.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776076662655-rfnjd39s",
+      "timestamp": "2026-04-13T10:38:06.532Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This tests basic present tense conjugation (3rd person singular of franchir) rather than the stylistic use of present to narrate past events—the sports context makes present feel natural, not specifically a narrative/literary device.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776077284215-w0gaktie",
+      "timestamp": "2026-04-13T10:48:35.843Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests basic subject-verb agreement (choosing 3rd person singular for \"l'athlète\") rather than the literary/journalistic use of present tense for past events—students can answer correctly without knowing the \"présent de narration\" concept.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776077851039-b3g9vbxw",
+      "timestamp": "2026-04-13T10:57:57.747Z"
+    }
+  ]
+}

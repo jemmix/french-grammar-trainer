@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3a4c2362025719db",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez la suite au présent de narration : « Un jour, un inconnu frappe à la porte, ____ asile et obtient une réponse. »\nChoices:\nA. [CORRECT] demande\nB. demandait\nC. a demandé\nD. demandera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776091979065-tn0uczl7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly references \"présent de narration\" and requires selecting the present tense form (demande) to maintain the literary present narrative style started by \"frappe\", making knowledge of this specific rule essential to answer correctly.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776092187823-xqvscht8",
+      "timestamp": "2026-04-13T14:57:01.031Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly tests the présent de narration by requiring selection of present tense (\"demande\") to continue a literary narrative that began in present tense, distinguishing this special literary/journalistic usage from standard past narrative tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776092721641-h6dui7a6",
+      "timestamp": "2026-04-13T15:05:48.329Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that \"Un jour\" establishes a past narrative context where present tense (présent de narration) is used stylistically for vividness, as evidenced by \"frappe\" already being in present, so \"demande\" must continue this pattern rather than using imparfait, passé composé, or futur.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776093450852-t9fai4ef",
+      "timestamp": "2026-04-13T15:18:27.096Z"
+    }
+  ]
+}

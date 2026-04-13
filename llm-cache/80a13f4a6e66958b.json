@@ -1,0 +1,26 @@
+{
+  "cacheKey": "80a13f4a6e66958b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Dans un récit littéraire au présent de narration, complétez : « Le criminel ____ et disparaît dans la nuit. »\nChoices:\nA. [CORRECT] fuit\nB. fuyons\nC. fuyait\nD. fuira\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776078998652-2c8d9fhi"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests tense recognition (matching \"disparaît\") and subject-verb agreement - it can be answered without understanding the literary/journalistic purpose of the présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776079119010-0svldmzh",
+      "timestamp": "2026-04-13T11:19:06.839Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tells the learner to use \"présent de narration\" and only tests basic verb conjugation/subject agreement, not understanding when or why to use narrative present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776080182247-bnxjx3u2",
+      "timestamp": "2026-04-13T11:42:21.635Z"
+    }
+  ]
+}

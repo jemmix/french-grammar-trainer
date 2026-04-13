@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1b5f47824d2a63e9",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-18-010",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nPrompt: Dans un récit historique, complétez : « Un jour, un jeune homme ____ à la porte. Il demande asile. »\nChoices:\nA. frappe\nB. frappez\nC. frappait\nD. frappa\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1776076278051-016wenj4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt provides clear context (\"dans un récit historique\"), the second sentence in present tense serves as a helpful hint for the présent de narration pattern being tested, and the choices clearly distinguish between the grammatical features being assessed (tense, subject agreement).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776076546628-981x1640",
+      "timestamp": "2026-04-13T10:40:36.912Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nREASON: In a \"récit historique\" (historical narrative), both \"froppe\" (présent de narration) and \"froppa\" (passé simple) are grammatically correct; the prompt doesn't explicitly require the narrative present, leaving the correct choice unclear without prior knowledge of the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776077444287-nsodvslf",
+      "timestamp": "2026-04-13T10:51:08.867Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"récit historique\" (historical narrative) and the correct answer is \"frappa\" (passé simple), but the rule is titled \"Le présent de narration (usage littéraire/journalistique)\" which suggests the answer should be present tense; the prompt context and rule title conflict, making it unclear whether this tests narrative present or passé simple narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776077960977-pm4grwap",
+      "timestamp": "2026-04-13T10:59:39.214Z"
+    }
+  ]
+}

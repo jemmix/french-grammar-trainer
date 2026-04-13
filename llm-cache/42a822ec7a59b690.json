@@ -1,0 +1,33 @@
+{
+  "cacheKey": "42a822ec7a59b690",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez la suite au présent de narration : « Soudain, la sirène retentit, les habitants se réveillent et ____ dans la rue. »\nChoices:\nA. [CORRECT] courent\nB. couraient\nC. ont couru\nD. courront\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776091979065-1ajg7bbx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that présent de narration uses present tense throughout a narrative sequence describing past events, and without this knowledge a student would likely choose couraient or ont couru to describe the past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776092244346-4h3b7oz8",
+      "timestamp": "2026-04-13T14:57:36.540Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that the narrative present maintains present tense throughout past narrative sequences, and correctly answering requires recognizing this literary convention rather than simply choosing based on temporal logic.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776092759558-nody6w0g",
+      "timestamp": "2026-04-13T15:06:43.194Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that présent de narration uses present tense consistently throughout a narrative sequence, not other tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776093503492-wkfr8159",
+      "timestamp": "2026-04-13T15:19:51.132Z"
+    }
+  ]
+}

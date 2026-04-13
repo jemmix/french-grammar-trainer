@@ -1,0 +1,33 @@
+{
+  "cacheKey": "07404c87164b9378",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez la suite au présent de narration : « Pendant le concert, une femme se lève, ____ « Bravo ! » et applaudit follement. »\nChoices:\nA. [CORRECT] crie\nB. criait\nC. a crié\nD. criera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776091979066-vxl77ivn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question can be answered correctly by simply matching the tense of the other verbs in the sentence (se lève, applaudit) or following the explicit instruction \"au présent de narration,\" without understanding the literary/journalistic usage of présent de narration or when to choose it over other tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776092325024-ea5siz2f",
+      "timestamp": "2026-04-13T14:59:08.522Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that a sequence of past events is being narrated in the present tense (présent de narration), and matching the blank verb to this established pattern with \"se lève\" and \"applaudit.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776092860833-lateo8t1",
+      "timestamp": "2026-04-13T15:07:57.746Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer can be determined by simple tense consistency (matching \"se lève\" and \"applaudit\" in the same sentence) without any knowledge of the literary narrative present rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776093591135-64823m62",
+      "timestamp": "2026-04-13T15:20:44.589Z"
+    }
+  ]
+}
