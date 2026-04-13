@@ -90,6 +90,14 @@ Rule 01-16 ("Le présent à valeur de futur proche — je pars demain") cannot a
 
 Core issue: GLM-4.7 does not consistently accept present tense for future meaning with "demain." It alternates between "present + demain is wrong, use futur simple" and "you explicitly said present, so it doesn't test the rule." Current version (v2) has 270/285 passes with all unit tests passing. May need a different LLM model for this rule, or a fundamentally different question structure (e.g. sentence-selection MCQ instead of fill-in-the-blank).
 
+### 01-18 INPUT questions — error-correction format for GLM-4.7
+
+Rule 01-18 ("Le présent de narration") INPUT questions were the hardest to validate. GLM-4.7 rejects fill-in-the-blank conjugation INPUT questions with ~50% probability on question-rule-alignment, saying "only tests conjugation, not understanding of the narrative present concept."
+
+**Solution**: Q024 uses error-correction format — the prompt states that "vainquit" is in passé simple instead of present, and the student must correct it. This frames the task as recognizing a tense mismatch (testing the concept), not just conjugating. Key prompt: "Dans ce récit au présent de narration, « vainquit » est au passé simple au lieu du présent. Conjuguez le verbe vaincre au présent pour corriger cette erreur."
+
+Q021-Q023 and Q025 use the standard format "Complétez le récit au présent de narration." which passes with 90%+ agreement for those sentences.
+
 ## Content scale
 
 - **Topic-sharded generation** — add a `topic` parameter to the generate-questions skill (e.g. work, travel, leisure, buying groceries, healthcare, education) so each generation batch stays within API response limits (25–50 questions) while covering the same grammar rule through varied real-world contexts. A rule like "présent des verbes en -er" could have one file per topic, all merged into the section. Lets the corpus grow incrementally without any single generation call getting too large.
