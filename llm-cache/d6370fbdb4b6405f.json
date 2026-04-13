@@ -1,0 +1,40 @@
+{
+  "cacheKey": "d6370fbdb4b6405f",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-18-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Quel temps est utilisé dans ce passage pour raconter un événement sportif passé ?\n\nPHRASE: Aux Jeux Olympiques, l'athlète s'élance, franchit la ligne d'arrivée en premier et lève les bras. » Ces verbes sont au ____.\n\nHINT: temps verbal\n\nEXPECTED ANSWER: présent\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1776116798144-riqzf4ph"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly asks \"Quel temps est utilisé\" (which tense is used), the phrase shows verbs in present tense, and the hint confirms we're looking for a \"temps verbal\" - a learner can determine they need to type \"présent\" without seeing the answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776116798205-2g6x7etc",
+      "timestamp": "2026-04-13T21:47:03.312Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly asks for the tense used, the phrase shows verbs in présent (s'élance, franchit, lève), and the hint confirms a verb tense is needed — the blank unambiguously requests \"présent\" as the answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776116865509-dqbdzt6f",
+      "timestamp": "2026-04-13T21:48:11.846Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Multiple valid answers exist (e.g., \"présent\", \"présent de l'indicatif\", \"présent historique\") and the learner cannot determine which exact form is expected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776116928208-w0z0g45x",
+      "timestamp": "2026-04-13T21:49:02.433Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt describes the event as \"passé\" (past) which may mislead learners into selecting a past tense, requiring careful analysis of the verbs themselves rather than just the prompt.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776116978811-zp2exder",
+      "timestamp": "2026-04-13T21:49:54.658Z"
+    }
+  ]
+}

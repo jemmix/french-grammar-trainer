@@ -1,0 +1,40 @@
+{
+  "cacheKey": "677dccae392823c1",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-18-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nPrompt: Poursuivez ce récit au présent de narration.\nPhrase: En 1805, Napoléon ____ les troupes autrichiennes à Austerlitz et remporte une victoire décisive.\nHint: vaincre\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1776118404320-gf8qjbpo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"Poursuivez ce récit\" (continue this narrative), but there's no preceding narrative to continue - this is just a single-sentence completion task where the verb \"remporte\" is already in the présent de narration, making the instruction misleading.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776118404349-betlyzmg",
+      "timestamp": "2026-04-13T22:13:45.026Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly asks to conjugate \"vaincre\" using the présent de narration, with a clear blank position, subject (Napoléon), and historical context that defines the task unambiguously.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776118425027-dzk1jno3",
+      "timestamp": "2026-04-13T22:14:27.678Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly asks to conjugate \"vaincre\" for \"Napoléon\" (3rd person singular) in the present de narration (historical present), and the context shows a narrative sentence where the verb should go.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776118467679-2hvrpo5z",
+      "timestamp": "2026-04-13T22:15:46.232Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: \"Poursuivez ce récit\" suggests continuing a story rather than completing a single blank; a clearer prompt would be \"Complétez la phrase au présent de narration.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776118546233-q3aw2o4c",
+      "timestamp": "2026-04-13T22:16:31.970Z"
+    }
+  ]
+}

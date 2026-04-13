@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aa9492a1f9fb9bf1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Input\nPrompt: Ce récit historique relate un événement passé au présent pour le rendre vivant. Complétez le blanc pour maintenir la cohérence du texte.\nPhrase: En 1610, le roi arrive en grande pompe à Paris, ____ sur son trône et s'adresse au peuple.\nCorrect Answer: monte\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776116312897-77g71o7l"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question can be answered by simply following the pattern of surrounding verbs (\"arrive\" and \"s'adresse\" are already in present tense) rather than demonstrating understanding of when to use the historical present specifically.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776116312906-vp1fmy37",
+      "timestamp": "2026-04-13T21:43:12.264Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that a historical event narrated in the present tense uses the présent de narration, and correctly conjugating \"monter\" in the 3rd person singular present to maintain coherence with \"arrive\" and \"s'adresse.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776116592264-vybuwj1d",
+      "timestamp": "2026-04-13T21:43:25.603Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The student can arrive at \"monte\" by simply pattern-matching the existing present tense verbs (\"arrive\", \"s'adresse\") and conjugating \"monter\" in present 3rd singular, without understanding that using present tense for past events is a specific literary/journalistic narrative device.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776116605604-knwgcwip",
+      "timestamp": "2026-04-13T21:43:35.805Z"
+    }
+  ]
+}

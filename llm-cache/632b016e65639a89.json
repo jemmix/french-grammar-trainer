@@ -1,0 +1,33 @@
+{
+  "cacheKey": "632b016e65639a89",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Input\nPrompt: Complétez la suite au présent de narration.\nPhrase: En 1610, le roi arrive en grande pompe à Paris, ____ sur son trône et s'adresse au peuple.\nCorrect Answer: monte\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776115527415-3lp7k56t"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests understanding that present tense can narrate past events in literary contexts; the historical framing (1610) combined with present-tense narrative verbs requires distinguishing present de narration from standard present usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776115527432-5tdlu3ad",
+      "timestamp": "2026-04-13T21:26:23.328Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: Answering correctly only requires conjugating a verb to fit the sequence of present-tense actions, not recognizing or understanding that the present tense is being used in a special literary/journalistic way to describe past events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776115680485-duqbvlr7",
+      "timestamp": "2026-04-13T21:28:29.794Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer \"monte\" is simply the standard present tense conjugation of \"monter\"; students can answer correctly using basic present-tense knowledge without understanding the narrative present concept, and the explicit prompt to use \"présent de narration\" makes the question test whether they follow instructions rather than whether they know the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776115827973-6boi5rn7",
+      "timestamp": "2026-04-13T21:31:35.655Z"
+    }
+  ]
+}

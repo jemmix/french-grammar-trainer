@@ -1,0 +1,26 @@
+{
+  "cacheKey": "107ab8733c51e330",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-18-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Quel temps est utilisé dans ce passage pour raconter une catastrophe naturelle passée ?\n\nPHRASE: En 2005, l'ouragan Katrina frappe la côte, emporte des maisons entières et provoque une inondation catastrophique. » Ces verbes sont au ____.\n\nHINT: temps verbal\n\nEXPECTED ANSWER: présent\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1776116798144-op37a13y"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt refers to a \"catastrophe naturelle passée\" (past natural disaster) while the verbs (frappe, emporte, provoque) are clearly in présent tense - this is \"présent historique\", but a learner who focuses on the past event context might not understand that the expected answer is the grammatical tense form rather than the narrative time frame.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776116830169-bxszekxb",
+      "timestamp": "2026-04-13T21:48:25.806Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt mentions \"une catastrophe naturelle passée\" which conflicts with the present tense form of the verbs, and a learner might reasonably expect the technical term \"présent historique\" or \"présent de narration\" rather than just \"présent\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776116950594-kxzxqkie",
+      "timestamp": "2026-04-13T21:49:31.930Z"
+    }
+  ]
+}

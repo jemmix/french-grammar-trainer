@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aa7428c528a5d522",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Input\nPrompt: Poursuivez ce récit au présent de narration.\nPhrase: En 1805, Napoléon ____ les troupes autrichiennes à Austerlitz et remporte une victoire décisive.\nCorrect Answer: vainc\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776118404320-ofo6klf6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the present tense (\"vainc\") for a historical event (1805, Austerlitz), which is precisely the usage pattern of the présent de narration—narrating past events in the present for vividness, as also modeled by the existing verb \"remporte\" in the same sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776118404329-csafwhwf",
+      "timestamp": "2026-04-13T22:17:21.137Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly asks to use the présent de narration to tell a historical event, and the second verb \"remporte\" being in present tense confirms this tests narrative present usage for past events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776118641137-a6dt1eu4",
+      "timestamp": "2026-04-13T22:18:20.938Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly requires using present tense to narrate a historical past event (1805), which directly tests the literary/journalistic usage of present de narration that would otherwise call for a past tense like passé composé or imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776118700939-74r95cij",
+      "timestamp": "2026-04-13T22:19:48.307Z"
+    }
+  ]
+}

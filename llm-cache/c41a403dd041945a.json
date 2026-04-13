@@ -1,0 +1,40 @@
+{
+  "cacheKey": "c41a403dd041945a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-18 - Le présent de narration (usage littéraire/journalistique)\n\nQUESTION:\nType: Input\nPrompt: Complétez le récit au présent de narration.\nPhrase: En 1805, Napoléon ____ les troupes autrichiennes à Austerlitz et remporte une victoire décisive.\nCorrect Answer: vainc\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776118102666-3f891hw8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using present tense (\"vainc\") to narrate a past historical event (1805), which cannot be correctly answered without understanding that French uses présent de narration for literary/journalistic accounts of past events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776118102675-mdeu5yvc",
+      "timestamp": "2026-04-13T22:10:13.547Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question primarily tests the conjugation of \"vaincre\" in the 3rd person singular present tense, not the stylistic usage of présent de narration; the present tense context is provided by \"remporte\" in the question itself, so the student doesn't need to understand when or why to use the présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776118213548-kndm694a",
+      "timestamp": "2026-04-13T22:10:52.947Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"vaincre\" in the present tense to describe a past historical event (Napoléon at Austerlitz), which is precisely the core concept of the présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776118252948-8tley1iz",
+      "timestamp": "2026-04-13T22:11:44.058Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic present tense conjugation of \"vaincre\" with subject \"Napoléon\" (3rd person singular), which can be answered using only standard present tense conjugation knowledge; the \"présent de narration\" context is merely the setting, not the grammar concept being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776118304058-f3hbyz1m",
+      "timestamp": "2026-04-13T22:11:58.702Z"
+    }
+  ]
+}
