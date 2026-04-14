@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e66d9762ba6966b2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-19-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-19 - Les verbes impersonnels au présent (il faut, il pleut, il s'agit de)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « pleuvoir » au présent pour compléter la phrase.\nPhrase: Il ___ sans arrêt depuis ce matin.\nCorrect Answer: pleut\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776168545454-s5o4jn95"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugating \"pleuvoir\" to \"pleut\", which requires understanding it is an impersonal verb used only in the third person singular, directly matching rule 01-19.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776169154104-v1o09dws",
+      "timestamp": "2026-04-14T12:19:32.354Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to conjugate \"pleuvoir\" in the present tense, and since this verb only exists in the impersonal third person singular form (\"il pleut\"), answering correctly inherently tests knowledge of its impersonal nature.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776169877955-8z4ec7ya",
+      "timestamp": "2026-04-14T12:31:42.853Z"
+    }
+  ]
+}
