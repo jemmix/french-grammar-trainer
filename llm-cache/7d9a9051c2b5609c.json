@@ -1,0 +1,26 @@
+{
+  "cacheKey": "7d9a9051c2b5609c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-19-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-19 - Les verbes impersonnels au présent (il faut, il pleut, il s'agit de)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « N'oublie pas ton manteau, il ___. »\nChoices:\nA. [CORRECT] pleut\nB. pleuvait\nC. pleuvra\nD. pleuvrait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776368335991-nn6omdan"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the present tense conjugation of \"pleuvoir,\" which is an impersonal verb that only exists in the third person singular form (\"il pleut\"), and selecting the correct answer requires knowing this unique conjugation pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776368659387-jkwp0w9x",
+      "timestamp": "2026-04-16T19:44:46.204Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests tense recognition (present vs. other tenses) rather than the impersonal nature of the verb; a student could answer correctly by selecting the present tense form without understanding that pleuvoir is an impersonal verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776369389947-mp2t5i0d",
+      "timestamp": "2026-04-16T19:57:54.318Z"
+    }
+  ]
+}

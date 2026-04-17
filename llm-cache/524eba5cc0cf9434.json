@@ -1,0 +1,40 @@
+{
+  "cacheKey": "524eba5cc0cf9434",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-19-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-19 - Les verbes impersonnels au présent (il faut, il pleut, il s'agit de)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe impersonnel convient au présent dans cette phrase ? « Il ___ ce matin, l'eau du bassin est devenue solide. »\nChoices:\nA. [CORRECT] gèle\nB. faut\nC. s'agit\nD. neige\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776427736962-dgohbb9o"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question primarily tests vocabulary recognition (understanding that water becoming solid means freezing) rather than the grammatical concept of impersonal verbs specifically.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776427803892-1lgventv",
+      "timestamp": "2026-04-17T12:10:20.584Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct impersonal verb (\"gèle\") based on both grammatical knowledge (impersonal verbs in the present) and semantic context (water becoming solid indicates freezing), which is central to the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776428038227-ax8fgp7r",
+      "timestamp": "2026-04-17T12:14:26.378Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of impersonal verb meanings and context to correctly select \"gèle\" from the options, testing understanding of il faut, il s'agit de, il neige, and il gèle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776428197640-wicpb2bt",
+      "timestamp": "2026-04-17T12:33:55.805Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question primarily tests vocabulary/semantics (knowing that \"il gèle\" means freezing) rather than the grammatical rule about impersonal verbs' structure and usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776429235805-qh7ip0e3",
+      "timestamp": "2026-04-17T12:34:07.931Z"
+    }
+  ]
+}

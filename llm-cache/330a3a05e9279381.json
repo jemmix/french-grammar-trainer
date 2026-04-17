@@ -1,0 +1,33 @@
+{
+  "cacheKey": "330a3a05e9279381",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-19-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-19 - Les verbes impersonnels au présent (il faut, il pleut, il s'agit de)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe impersonnel « falloir » au présent pour compléter la phrase.\nPhrase: Il ___ que tu viennes à l'heure.\nCorrect Answer: faut\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776370405860-389mj0u5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"falloir\" is an impersonal verb that conjugates as \"il faut\" in the present tense, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776371350458-z8ohmaqb",
+      "timestamp": "2026-04-16T20:29:35.727Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests knowledge that falloir is an impersonal verb that only conjugates in the third person singular form (il faut) in the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776372164189-w9sr6ska",
+      "timestamp": "2026-04-16T20:43:08.783Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating the impersonal verb \"falloir\" in the present tense as \"il faut,\" which is directly testing the impersonal verbs rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776373024739-koh9gtc6",
+      "timestamp": "2026-04-16T20:57:32.740Z"
+    }
+  ]
+}

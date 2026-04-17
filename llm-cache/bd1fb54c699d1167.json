@@ -1,0 +1,26 @@
+{
+  "cacheKey": "bd1fb54c699d1167",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-19-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-19 - Les verbes impersonnels au présent (il faut, il pleut, il s'agit de)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au présent : « Il ___ sur les toits, attention aux routes glissantes. »\nChoices:\nA. [CORRECT] gèle\nB. gelait\nC. gèlera\nD. gèlerait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776368335992-ztue4htu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests present tense conjugation of the verb \"geler\" across different tenses (présent vs imparfait vs futur vs conditionnel), not the concept of impersonal verbs or their specific grammatical characteristics.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776368813721-p7mmd4ql",
+      "timestamp": "2026-04-16T19:47:34.765Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests tense discrimination (present vs. imperfect vs. future vs. conditional) rather than the concept of impersonal verbs, which is incidental here.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776369946469-hsfsj4k0",
+      "timestamp": "2026-04-16T20:06:05.379Z"
+    }
+  ]
+}
