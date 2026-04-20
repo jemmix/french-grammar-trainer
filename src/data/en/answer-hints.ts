@@ -5,6 +5,9 @@
 // - Other words: word type (conjunction, pronoun, etc.)
 
 export const answerHints: Record<string, string> = {
+  "Am": "am/is/are",
+  "Are": "verb to be",
+  "Is": "am/is/are",
   "Was he reading": "read",
   "Was the cat sleeping": "sleep",
   "Were they sleeping": "sleep",
@@ -12,6 +15,8 @@ export const answerHints: Record<string, string> = {
   "Were you working": "work",
   "When": "conjunction",
   "While": "conjunction",
+  "am": "am/is/are",
+  "aren't": "negative form",
   "arrived": "arrive",
   "believe": "believe",
   "believed": "believe",
@@ -33,6 +38,8 @@ export const answerHints: Record<string, string> = {
   "flies": "fly",
   "has": "have",
   "id": "pronunciation",
+  "is": "am/is/are",
+  "isn't": "negative form",
   "knew": "know",
   "landed": "land",
   "like": "like",
