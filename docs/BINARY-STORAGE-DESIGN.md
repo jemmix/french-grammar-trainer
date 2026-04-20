@@ -288,6 +288,42 @@ The tradeoff: per-request lookups do `DataView` reads instead of `Map.get()`. Bu
 - `indexBuf`: ~5MB, always resident, hot pages stay cached
 - `questions.bin`: 42MB on disk, never fully loaded. Individual ~150 byte reads via file descriptor. OS page cache handles the rest — only touched pages are in RAM.
 
+### Warm-up: graduated upgrade to in-memory structures
+
+After the first request is served (cold start preserved), kick off a background warm-up that parses the Buffers into native JS structures. Once complete, all subsequent requests on the same worker use the faster path.
+
+```typescript
+let warm: WarmIndex | null = null;
+
+// Call via setImmediate() after first request — non-blocking
+function warmUp() {
+  warm = {
+    dictWords: parseDictWords(dictBuf),          // string[] by wordId
+    rules: new Map<string, RuleEntry>(),         // ruleId → {offset, count}
+    questions: new Map<string, QuestionEntry>(), // questionId → {offset, length}
+    sections: new Map<string, SectionMeta>(),    // sectionId → metadata
+  };
+  // populate by scanning indexBuf hashmaps into Maps (~5–15ms on warm JIT)
+  scanIntoMaps(indexBuf, warm);
+}
+```
+
+**Lookup path with auto-graduation:**
+```typescript
+function lookupRule(ruleId: string) {
+  if (warm) return warm.rules.get(ruleId);   // Map.get — fastest
+  return probeRule(indexBuf, ruleId);         // DataView probe — zero-init
+}
+```
+
+**Why this works:**
+- First request on a cold worker: DataView probes. No init penalty.
+- Background `setImmediate` / `setTimeout(0)` runs after the response is sent. V8 is now warm (JIT'd the probe functions, string allocation is optimized).
+- Subsequent requests: `Map.get()` — ~50ns vs ~150ns for DataView probe. Difference is marginal, but the real win is for **bulk operations** (load all questions for a rule) where the warm dictionary avoids repeated DataView reads per word, replacing them with direct array indexing.
+- Warm-up is idempotent and race-free: `warm` is either `null` or fully populated. No partial state.
+
+**Tradeoff:** ~10–15ms of background CPU after first request. On Vercel, this runs within the same serverless invocation if the worker stays alive. If the worker dies before warm-up completes, no harm — the next cold start just does DataView probes again.
+
 ## Build Pipeline
 
 ```
@@ -371,3 +407,4 @@ Recommendation: embed in index.bin for consistency. No separate file needed.
 - **Per-question indexing:** every question gets its own entry in the index hashmap. The hot path picks a random question ID, looks up its offset, seeks directly to that single protobuf. No need to decode a whole rule just to get one question. (v0.2)
 - **Lazy file reads:** `questions.bin` is never fully loaded into app memory. File handle kept open, individual questions read on demand via seek + read. Ramdisk makes seeks essentially free. (v0.2)
 - **Zero-init:** no parsing of binary files into JS objects at cold start. `fs.readFileSync` into Buffer (points to kernel page cache on ramdisk), file descriptor for questions. All lookups probe the Buffer directly via `DataView`. Dictionary uses flat offset table (sequential word IDs → no hashmap needed at runtime). Init cost: 3 syscalls, ~0ms. (v0.3)
+- **Background warm-up:** after first request, `setImmediate` parses Buffers into JS `Map`s / `string[]`. Lookups auto-graduate: DataView probes on cold worker, `Map.get()` on warm worker. Best of both worlds — zero cold start cost, faster path for long-lived workers. (v0.3)
