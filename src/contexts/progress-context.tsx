@@ -48,7 +48,6 @@ interface ProgressProviderProps {
   initialPowers?: number[];
   initialUserId?: string | null;
   initialIsLoggedIn?: boolean;
-  allRuleIds: string[];
 }
 
 export function ProgressProvider({
@@ -56,7 +55,6 @@ export function ProgressProvider({
   initialPowers,
   initialUserId,
   initialIsLoggedIn,
-  allRuleIds,
 }: ProgressProviderProps) {
   const [powers, setPowers] = useState<Uint16Array>(() => {
     if (initialPowers) return new Uint16Array(initialPowers);
@@ -181,8 +179,8 @@ export function ProgressProvider({
   );
 
   const getGlobalPower = useCallback((): number => {
-    return getGlobalDisplayPower(powers, allRuleIds);
-  }, [powers, allRuleIds]);
+    return getGlobalDisplayPower(powers);
+  }, [powers]);
 
   const login = useCallback(async (): Promise<void> => {
     const r = await fetch("/api/auth/dev-login", { method: "POST" });

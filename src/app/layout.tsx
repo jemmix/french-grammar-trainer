@@ -7,7 +7,6 @@ import { getSession, getProgressPowers } from "~/lib/server-session";
 import { signCookie, COOKIE_MAX_AGE_S } from "~/lib/session-cookie";
 import { env } from "~/env";
 import { t } from "~/lang";
-import { getAllRuleIds } from "~/data/sections-index";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -56,7 +55,6 @@ export default async function RootLayout({
           initialPowers={initialPowers}
           initialUserId={session.isLoggedIn ? session.userId : null}
           initialIsLoggedIn={session.isLoggedIn}
-          allRuleIds={getAllRuleIds()}
         >
           {children}
         </ProgressProvider>

@@ -92,7 +92,8 @@ export function getDisplayPower(raw: number): number {
 }
 
 /**
- * Mean display power of attempted rules in the given section.
+ * Mean display power of all 20 rule slots in the given section.
+ * Unattempted slots (raw === 0) count as 0.
  * sectionId must start with a two-digit number, e.g. "01-present-indicatif".
  */
 export function getSectionDisplayPower(
@@ -103,41 +104,21 @@ export function getSectionDisplayPower(
   if (!match) return 0;
   const n = parseInt(match[1]!, 10);
   const start = (n - 1) * 20;
-  const end = start + 20;
   let sum = 0;
-  let count = 0;
-  for (let i = start; i < end; i++) {
-    const raw = powers[i] ?? 0;
-    if (raw !== 0) {
-      sum += raw / 65535;
-      count++;
-    }
+  for (let i = start; i < start + 20; i++) {
+    sum += (powers[i] ?? 0) / 65535;
   }
-  return count > 0 ? sum / count : 0;
+  return sum / 20;
 }
 
 /**
- * Mean display power across all rules that have questions in the course.
- * If validRuleIds is provided, averages across those rules (including unattempted as 0).
- * If not provided, falls back to averaging only attempted rules for backward compatibility.
+ * Mean display power across all 28 sections (each section's score is itself
+ * the average of its 20 rule slots). Content-independent: always /28.
  */
-export function getGlobalDisplayPower(
-  powers: Uint16Array,
-  validRuleIds: string[],
-): number {
-  if (validRuleIds.length == 0) {
-    // unlikely but let's just pretend everything's learned
-    return 1;
-  }
-
-  // Average across all rules with questions, including unattempted (as 0)
+export function getGlobalDisplayPower(powers: Uint16Array): number {
   let sum = 0;
-  for (const ruleId of validRuleIds) {
-    const idx = getRuleSlotIndex(ruleId);
-    if (idx >= 0) {
-      const raw = powers[idx] ?? 0;
-      sum += raw / 65535;
-    }
+  for (let s = 1; s <= 28; s++) {
+    sum += getSectionDisplayPower(powers, String(s).padStart(2, "0"));
   }
-  return sum / validRuleIds.length;
+  return sum / 28;
 }
