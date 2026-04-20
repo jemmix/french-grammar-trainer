@@ -293,9 +293,10 @@ The tradeoff: per-request lookups do `DataView` reads instead of `Map.get()`. Bu
 After the first request is served (cold start preserved), kick off a background warm-up that parses the Buffers into native JS structures. Once complete, all subsequent requests on the same worker use the faster path.
 
 ```typescript
+import { after } from "next/server";
+
 let warm: WarmIndex | null = null;
 
-// Call via setImmediate() after first request — non-blocking
 function warmUp() {
   warm = {
     dictWords: parseDictWords(dictBuf),          // string[] by wordId
@@ -305,6 +306,13 @@ function warmUp() {
   };
   // populate by scanning indexBuf hashmaps into Maps (~5–15ms on warm JIT)
   scanIntoMaps(indexBuf, warm);
+}
+
+// In the request handler:
+export async function GET(req: Request) {
+  const result = lookupAndDecode(req);           // DataView probe path
+  after(() => { if (!warm) warmUp(); });         // guaranteed post-response
+  return Response.json(result);
 }
 ```
 
@@ -316,13 +324,16 @@ function lookupRule(ruleId: string) {
 }
 ```
 
+**Why `after()` and not `setImmediate`:**
+`setImmediate` / `setTimeout(0)` are just macrotask callbacks — Vercel can suspend the worker the instant the response is flushed, before the callback fires. The warm-up would only run when the next request wakes the worker, defeating the purpose. `after()` from `next/server` is explicitly designed for this: guaranteed to run after the response is sent, within the same serverless invocation, before the worker is eligible for suspension.
+
 **Why this works:**
 - First request on a cold worker: DataView probes. No init penalty.
-- Background `setImmediate` / `setTimeout(0)` runs after the response is sent. V8 is now warm (JIT'd the probe functions, string allocation is optimized).
+- `after()` callback fires post-response. V8 is now warm (JIT'd the probe functions, string allocation is optimized).
 - Subsequent requests: `Map.get()` — ~50ns vs ~150ns for DataView probe. Difference is marginal, but the real win is for **bulk operations** (load all questions for a rule) where the warm dictionary avoids repeated DataView reads per word, replacing them with direct array indexing.
-- Warm-up is idempotent and race-free: `warm` is either `null` or fully populated. No partial state.
+- Warm-up is idempotent and race-free: `warm` is either `null` or fully populated. No partial state. `if (!warm)` guard ensures only one warm-up runs even if multiple requests arrive before it completes.
 
-**Tradeoff:** ~10–15ms of background CPU after first request. On Vercel, this runs within the same serverless invocation if the worker stays alive. If the worker dies before warm-up completes, no harm — the next cold start just does DataView probes again.
+**Tradeoff:** ~10–15ms of background CPU after first request. Guaranteed to complete within the invocation thanks to `after()`. If the worker dies anyway (e.g. max duration), no harm — the next cold start does DataView probes and triggers another warm-up.
 
 ## Build Pipeline
 
