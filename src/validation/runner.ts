@@ -112,7 +112,8 @@ async function loadSections(lang: "fr" | "en"): Promise<Map<string, { section: a
 function matchesFilters(q: { id: string; ruleId: string }, sectionId: string, opts: ValidationOptions): boolean {
   if (opts.questions && !opts.questions.includes(q.id)) return false;
   if (opts.rules && !opts.rules.includes(q.ruleId)) return false;
-  if (opts.sections && !opts.sections.includes(sectionId)) return false;
+  const sectionNum = sectionId.split("-")[0]!;
+  if (opts.sections && !opts.sections.includes(sectionNum)) return false;
   return true;
 }
 
