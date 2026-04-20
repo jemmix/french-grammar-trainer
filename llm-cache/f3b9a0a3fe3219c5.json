@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f3b9a0a3fe3219c5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ que tout le monde participe à la réunion. »\nChoices:\nA. [CORRECT] faut\nB. plaît\nC. manque\nD. suffit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776631088677-71nnb932"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of the four special construction verbs' meanings and contexts; selecting \"faut\" requires understanding that falloir expresses necessity (\"Il faut que\"), which cannot be determined without knowing these specific verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776631150536-x3lxw5rp",
+      "timestamp": "2026-04-19T20:39:29.248Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying which of the four special construction verbs (falloir, plaire, manquer, suffire) fits the impersonal structure \"Il ___ que...\" and the semantic context of necessity, which can only be answered by understanding falloir's unique impersonal construction and meaning.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776631570919-3tts1nt8",
+      "timestamp": "2026-04-19T20:46:31.909Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the impersonal construction \"il faut que\" and distinguishes between four special-structure verbs, directly testing the rule about verbes à construction particulière.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776631979517-f5whpcgt",
+      "timestamp": "2026-04-19T20:53:30.071Z"
+    }
+  ]
+}

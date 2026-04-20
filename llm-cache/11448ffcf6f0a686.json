@@ -1,0 +1,33 @@
+{
+  "cacheKey": "11448ffcf6f0a686",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ d'une seule phrase pour tout expliquer. »\nChoices:\nA. [CORRECT] suffit\nB. plaît\nC. manque\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776632939710-edof36rj"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: To select the correct verb, the student must know that these verbs have particular constructions (which preposition each takes: \"suffire de\", \"manquer de\", \"plaire à\") and also understand their meanings to choose the semantically appropriate one from this specific verb family.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776633027645-qvw1onn6",
+      "timestamp": "2026-04-19T21:10:44.308Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"suffire\" uses the impersonal construction \"il suffit de\" while \"plaire\" takes \"à\" and \"manquer\" has different meanings/constructions, which is exactly what the rule about special verb constructions covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776633290152-zbfurrqx",
+      "timestamp": "2026-04-19T21:15:03.756Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the impersonal construction \"il suffit de...\" (suffire is used with impersonal \"il\" + \"de\"), which is the special construction being tested, and the correct answer cannot be determined without understanding this grammatical pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776633572949-stwhiu06",
+      "timestamp": "2026-04-19T21:19:44.415Z"
+    }
+  ]
+}

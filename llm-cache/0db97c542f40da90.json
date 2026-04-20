@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0db97c542f40da90",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-20-009",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ de vérifier les sources avant de publier. »\nChoices:\nA. suffit\nB. plaît\nC. faut\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1776637943862-690hyjyt"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt doesn't clarify whether the \"de\" before \"vérifier\" is part of the sentence structure to be preserved or should be removed - if \"de\" is kept, \"faut\" creates an ungrammatical structure (\"Il faut de vérifier\"), making it unclear if the question is testing verb meaning, grammar structure, or both.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638059246-7d66j0ey",
+      "timestamp": "2026-04-19T22:34:53.493Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks \"which verb fits\" but the sentence structure (\"Il ___ de vérifier\") grammatically requires \"suffit\" because \"falloir\" is used with the infinitive directly (\"Il faut vérifier\", not \"Il faut de vérifier\"), making the answer predetermined by grammar rules rather than testing verb knowledge.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638452840-xzim0izv",
+      "timestamp": "2026-04-19T22:41:08.169Z"
+    }
+  ]
+}

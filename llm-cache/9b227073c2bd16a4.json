@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9b227073c2bd16a4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ que tout le monde participe à la réunion. »\nChoices:\nA. [CORRECT] faut\nB. plaît\nC. manque\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776632939708-qnigk316"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of \"falloir\" which is a special construction verb (used only impersonally as \"il faut\"), and selecting the correct answer requires understanding which verb fits the impersonal construction pattern among the listed special verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776632992257-x1utxkq4",
+      "timestamp": "2026-04-19T21:10:09.568Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing which verb with special construction fits the \"Il ___ que\" pattern and understanding falloir's conjugation (il faut) and its unique construction with the subjunctive.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776633246796-v9htrzpe",
+      "timestamp": "2026-04-19T21:14:37.298Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To answer correctly, the learner must recognize that only \"falloir\" fits the \"Il ___ que...\" construction and expresses necessity, which is central to the rule about verbs with special constructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776633545563-fj3dajd2",
+      "timestamp": "2026-04-19T21:19:19.481Z"
+    }
+  ]
+}

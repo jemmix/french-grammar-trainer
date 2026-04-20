@@ -1,0 +1,61 @@
+{
+  "cacheKey": "cef6fd875835289a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ deux pages à votre rapport. »\nChoices:\nA. [CORRECT] manque\nB. faut\nC. plaît\nD. suffit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776629084688-9gweu91u"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"manquer à\" means \"to be missing/lacking from\", which is the special construction being tested; other verbs either don't fit the sentence structure or convey wrong meanings.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776629175787-1qxgotbq",
+      "timestamp": "2026-04-19T20:06:44.708Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests semantic meaning (which verb makes sense in context), not the \"construction particulière\" of these verbs - a learner could correctly select \"manque\" by knowing it means \"missing\" without understanding its special grammatical construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776629575692-fj4kxq32",
+      "timestamp": "2026-04-19T20:14:26.905Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of which special-construction verb (plaire, falloir, manquer, suffire) is semantically appropriate in context and correctly conjugated for \"il\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776630062087-lm2sze43",
+      "timestamp": "2026-04-19T20:21:11.949Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the specific indirect construction of \"manquer à\" meaning \"to be missing/lacking from\", which is precisely what the rule about verbes à construction particulière covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776630341882-jrsh3hzr",
+      "timestamp": "2026-04-19T20:25:58.052Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding the meanings and constructions of all four verbs to select \"manque\" for \"to be missing/lacking\" in the context \"Il ___ deux pages à votre rapport.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776630412379-y94kt3yw",
+      "timestamp": "2026-04-19T20:27:12.135Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that \"manquer\" (in its special construction with \"à\") means \"to be missing/lacking\" in the context of a report being incomplete, and cannot be answered by knowing only regular verb conjugations.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776630474402-t6he9d2t",
+      "timestamp": "2026-04-19T20:28:23.951Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests semantic meaning (choosing the verb that means \"to be missing\") rather than the particular grammatical constructions (impersonal use of falloir, indirect object use of manquer in \"Tu me manques\", etc.) that define the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776630528755-c94rl5nt",
+      "timestamp": "2026-04-19T20:29:24.592Z"
+    }
+  ]
+}

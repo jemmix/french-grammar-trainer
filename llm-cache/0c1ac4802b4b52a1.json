@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0c1ac4802b4b52a1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ un joueur pour compléter l'équipe. »\nChoices:\nA. [CORRECT] manque\nB. pleut\nC. s'agit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776640116802-6pwiukdo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question can be answered through basic semantic fit (\"a player is missing\") without demonstrating knowledge of \"manquer à\" (to miss someone) or other particular constructions listed in the rule, and the distractors (\"pleut\" from pleuvoir, \"s'agit\" from s'agir) are not from the specified verb family.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776640234702-oadzh844",
+      "timestamp": "2026-04-19T23:10:55.494Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question can be answered correctly by choosing the verb that fits the sentence context semantically (\"Il manque un joueur\" makes sense, while \"Il pleut\" and \"Il s'agit\" do not), without needing to know that manquer has a special construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776645702837-ast5z3ri",
+      "timestamp": "2026-04-20T00:41:58.214Z"
+    }
+  ]
+}

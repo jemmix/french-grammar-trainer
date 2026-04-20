@@ -1,0 +1,47 @@
+{
+  "cacheKey": "2f7d676b4232996f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Ce plat ___ de sel. »\nChoices:\nA. [CORRECT] manque\nB. plaît\nC. s'agit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776637943863-rwj9gsne"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: While the question correctly tests that \"manque de\" is a special construction with \"de\", it includes \"s'agit\" as a choice, which is not one of the four verbs listed in the rule (plaire, falloir, manquer, suffire).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638237858-dugzp5vy",
+      "timestamp": "2026-04-19T22:37:56.525Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of special constructions like \"manquer de\" (to lack), requiring the learner to distinguish it from \"plaire à\" and the impersonal \"il s'agit de\" constructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638620779-wgvzoxoq",
+      "timestamp": "2026-04-19T22:48:53.961Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the \"manquer de\" construction (to lack) which is one of the particular constructions listed in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776639115370-jffgf3e0",
+      "timestamp": "2026-04-19T22:52:10.218Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: To correctly fill in the blank with \"manque\", the learner must know that \"manquer de\" is the special construction meaning \"to lack\" - this is exactly the grammar concept the rule teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776639164440-qn4cgk22",
+      "timestamp": "2026-04-19T22:52:55.606Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The rule focuses on constructions with \"à\" (plaire à, manquer à, suffire à) or the impersonal use of falloir, but this question tests \"manquer de\" (to lack), which is not one of the constructions covered by the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776639194550-okgycleu",
+      "timestamp": "2026-04-19T22:53:29.828Z"
+    }
+  ]
+}

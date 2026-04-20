@@ -1,0 +1,33 @@
+{
+  "cacheKey": "530dad5a39c52eab",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ d'une seule phrase pour tout expliquer. »\nChoices:\nA. [CORRECT] suffit\nB. faut\nC. plaît\nD. manque\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776631088677-qahvlku8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of which verb from the special-construction set correctly completes the impersonal construction \"Il ___ d'une...\" - only \"suffit\" forms the grammatically correct expression \"Il suffit de\" meaning \"It is enough to/I need only\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776631205148-sj10xn25",
+      "timestamp": "2026-04-19T20:40:20.204Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the specific impersonal construction \"il suffit de + noun\" which is unique to \"suffire\" among the listed special-construction verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776631641904-k3r2ztcv",
+      "timestamp": "2026-04-19T20:47:53.577Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the specific meaning and usage of \"suffire\" in the construction \"Il suffit de\" to correctly complete the sentence, which is the core of the rule about these special-construction verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776632030889-ra6xsxl6",
+      "timestamp": "2026-04-19T20:54:12.339Z"
+    }
+  ]
+}

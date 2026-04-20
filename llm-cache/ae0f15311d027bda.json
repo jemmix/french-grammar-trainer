@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ae0f15311d027bda",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ absolument que nous signions ce contrat aujourd'hui. »\nChoices:\nA. [CORRECT] faut\nB. plaît\nC. manque\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776637943862-jkulicgd"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the specific constructions of falloir, plaire, and manquer to identify that only \"falloir\" fits the impersonal structure \"il ___ que...\" followed by a subjunctive clause.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776637994839-0texgkw2",
+      "timestamp": "2026-04-19T22:33:27.831Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that falloir is an impersonal verb meaning \"to be necessary\" used in the construction \"il faut que\" followed by a subjunctive clause, which is the core characteristic of this special-construction verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638387813-9b6fvr9f",
+      "timestamp": "2026-04-19T22:40:26.090Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"falloir\" is the verb meaning \"it is necessary\" and fits in the impersonal structure \"il faut que,\" which is precisely what the rule about \"verbes à construction particulière\" covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638760293-bw9q3qjp",
+      "timestamp": "2026-04-19T22:46:21.964Z"
+    }
+  ]
+}

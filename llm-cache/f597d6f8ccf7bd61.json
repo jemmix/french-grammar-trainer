@@ -1,0 +1,47 @@
+{
+  "cacheKey": "f597d6f8ccf7bd61",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ de fermer les fenêtres avant de sortir. »\nChoices:\nA. [CORRECT] suffit\nB. pleut\nC. neige\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776640116795-4spjrlk3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge that \"suffire\" is a verb with special construction and that it conjugates to \"suffit\" in the third person singular, which is essential for correctly completing the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776640173057-ajvnkvq3",
+      "timestamp": "2026-04-19T23:10:04.725Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question can be solved purely through semantic meaning - \"suffit\" is the only verb that makes sense contextually (\"It's sufficient to close the windows\"), so learners can answer correctly without any knowledge of special verb constructions or how \"suffire\" is used impersonally with \"de + infinitive\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776645644232-klcfkron",
+      "timestamp": "2026-04-20T00:41:32.543Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence \"Il ___ de fermer les fenêtres\" requires the impersonal construction \"il suffit de + infinitif\", which is precisely the special construction of suffire being tested in rule 01-20.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776645781837-ik1s268b",
+      "timestamp": "2026-04-20T00:43:22.592Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests knowledge of \"suffire\" (one of the special construction verbs in the rule) by requiring the learner to recognize its conjugation and proper usage in a sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776645816848-z54640wv",
+      "timestamp": "2026-04-20T00:43:50.599Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests semantic fit (which verb means \"to be enough\" in context) rather than the special grammatical construction of suffire (il suffit de + infinitive vs il faut que + subjunctive).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776645831148-1nf514b2",
+      "timestamp": "2026-04-20T00:44:07.079Z"
+    }
+  ]
+}

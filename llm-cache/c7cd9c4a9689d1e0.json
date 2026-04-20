@@ -1,0 +1,40 @@
+{
+  "cacheKey": "c7cd9c4a9689d1e0",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-20-019",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ un joueur pour compléter l'équipe. »\nChoices:\nA. manque\nB. pleut\nC. s'agit\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1776640116802-mes37gbv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly asks for a special construction verb in present tense, and only one choice (\"manque\") is grammatically and semantically correct for the sentence structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776640237487-rfa0b6nq",
+      "timestamp": "2026-04-19T23:10:51.471Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly asks which verb fits grammatically in the blank, and only \"manque\" is grammatically valid (impersonal \"il manque\" = \"is missing/are missing\"), while \"pleut\" cannot take an object and \"s'agit\" requires the preposition \"de\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776645704169-1k3xl1ty",
+      "timestamp": "2026-04-20T00:41:56.745Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The phrase \"verbe à construction particulière\" is too vague and doesn't specify which verbs are being tested, potentially confusing learners about the scope of acceptable answers despite the rule only covering plaire, falloir, manquer, and suffire.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776645797015-ubz2spoj",
+      "timestamp": "2026-04-20T00:44:50.326Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nREASON: \"Convient au présent\" could mean \"can be conjugated in present\" (all three can) rather than \"fits grammatically and semantically in this context\"; the prompt lacks precision about whether it's asking for grammatical correctness or semantic fit.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776645890326-hkabzezk",
+      "timestamp": "2026-04-20T00:45:02.116Z"
+    }
+  ]
+}

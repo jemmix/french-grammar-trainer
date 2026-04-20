@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d81d627617c6606a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe exige la préposition « de » devant l'infinitif dans cette phrase ? « Il ___ de fermer les fenêtres avant de sortir. »\nChoices:\nA. [CORRECT] suffit\nB. faut\nC. plaît\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776648863519-krmk9qys"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests knowledge of which verb requires the preposition \"de\" before an infinitive, which is the special construction pattern for suffire versus falloir that the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776648913847-wba6wecp",
+      "timestamp": "2026-04-20T01:35:27.788Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests which verb from the special construction rule requires the preposition \"de\" before the infinitive, which is the core grammatical distinction for these verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776648982069-x841h5jz",
+      "timestamp": "2026-04-20T01:36:34.087Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge of which special-construction verb (suffire) requires the preposition \"de\" before an infinitive, distinguishing it from falloir and plaire which have different constructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776649092819-xq7j9j9y",
+      "timestamp": "2026-04-20T01:38:33.031Z"
+    }
+  ]
+}

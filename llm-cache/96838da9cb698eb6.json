@@ -1,0 +1,33 @@
+{
+  "cacheKey": "96838da9cb698eb6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ d'une seule phrase pour tout expliquer. »\nChoices:\nA. [CORRECT] suffit\nB. faut\nC. plaît\nD. manque\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776629084689-5u5jcl61"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the unique \"il suffit de + [noun/infinitive]\" construction that distinguishes suffire from falloir (il faut + [direct object]), manquer, and plaire.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776629261585-36wkypjf",
+      "timestamp": "2026-04-19T20:07:57.255Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the special construction \"suffire de + infinitive\" (to be enough to do something), which is the defining characteristic of these verbes à construction particulière.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776629655317-hdie1s0g",
+      "timestamp": "2026-04-19T20:14:40.374Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests knowledge of the special constructions of plaire/falloir/manquer/suffire, requiring selection of the correct verb based on both meaning (\"to be enough\") and its proper prepositional construction (\"Il suffit de\" vs \"Il faut une phrase\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776630063381-wenyycjc",
+      "timestamp": "2026-04-19T20:21:57.937Z"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "cacheKey": "1987cdeffe625bff",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe convient au présent dans cette phrase ? « Il ___ deux pages à votre rapport. »\nChoices:\nA. [CORRECT] manque\nB. faut\nC. plaît\nD. suffit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776626988463-hhba7b5z"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"manquer\" is the only verb among these that can be used in the impersonal structure \"Il manque X à Y\" meaning \"X is missing from Y\" — the core construction particulière being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776627262310-up1wh2wn",
+      "timestamp": "2026-04-19T19:34:47.720Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests vocabulary/semantic meaning (choosing \"manquer\" as \"to be missing\" fits the context) rather than the particular grammatical constructions of plaire, falloir, manquer, and suffire.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776627677904-t31j2gqj",
+      "timestamp": "2026-04-19T19:41:31.034Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the special construction of \"manquer\" (impersonal \"il\" + missing thing as subject + \"à\" + possessor) to distinguish it from the other listed verbs with different constructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776628057576-m9qc60k1",
+      "timestamp": "2026-04-19T19:48:03.045Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying which of the four special-construction verbs (manquer, falloir, plaire, suffire) correctly completes the sentence in the present tense, with the answer \"manque à\" demonstrating knowledge of manquer's unique meaning in this construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776628222575-pn0bm6k5",
+      "timestamp": "2026-04-19T19:50:34.184Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic vocabulary/semantics (understanding the meaning of \"manque\" in context), not the special constructions of these verbs (plaire à, falloir impersonal, manquer à/de, suffire à). The sentence structure \"Il ___ deux pages à votre rapport\" doesn't use the special construction form that the rule focuses on.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776628261462-3mszzwfh",
+      "timestamp": "2026-04-19T19:51:22.895Z"
+    }
+  ]
+}

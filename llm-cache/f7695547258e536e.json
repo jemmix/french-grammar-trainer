@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f7695547258e536e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ d'un mot pour tout gâcher. »\nChoices:\nA. [CORRECT] suffit\nB. faut\nC. plaît\nD. manque\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776629084689-12dx9rfb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that \"suffire\" is the only verb among these options that correctly fits the impersonal construction \"il ___ de\" meaning \"it is enough/it takes\", which requires understanding its special construction pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776629310636-y0cn59qo",
+      "timestamp": "2026-04-19T20:08:49.709Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Answering correctly requires understanding that suffire is used in the construction \"il suffit de\" meaning \"it suffices to\", which is central to the rule about verbs with particular constructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776629719610-s1t82s5p",
+      "timestamp": "2026-04-19T20:15:32.270Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the unique construction pattern of suffire (\"suffire de\" + noun), which is central to the rule about verbs with special constructions; the wrong options either use incorrect constructions or semantically don't fit the context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776630117938-k8257fu9",
+      "timestamp": "2026-04-19T20:22:58.028Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "18f4685c1d34c9d5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ d'un seul mot pour tout gâcher. »\nChoices:\nA. [CORRECT] suffit\nB. plaît\nC. faut\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776637943862-i0q4w2bm"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the learner's knowledge that \"suffire\" specifically requires the preposition \"de\" in its construction (\"Il suffit de quelque chose\"), distinguishing it from other special construction verbs like \"falloir\" (direct object) and \"plaire\" (uses \"à\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638125144-5o3s1cqz",
+      "timestamp": "2026-04-19T22:35:55.807Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To answer correctly, the learner must know that suffire takes \"il suffit de + noun\" construction, while falloir would be \"il faut [noun]\" without the preposition \"de\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638514669-7758jiyp",
+      "timestamp": "2026-04-19T22:42:12.445Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct verb from the special construction set (plaire, falloir, manquer, suffire) that fits both the impersonal structure \"Il ___ de...\" and the contextual meaning of \"taking/being enough to ruin everything.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638877896-vi18v0dp",
+      "timestamp": "2026-04-19T22:50:34.587Z"
+    }
+  ]
+}

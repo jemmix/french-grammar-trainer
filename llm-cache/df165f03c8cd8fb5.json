@@ -1,0 +1,33 @@
+{
+  "cacheKey": "df165f03c8cd8fb5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ de reconnaître ses erreurs pour progresser. »\nChoices:\nA. [CORRECT] suffit\nB. plaît\nC. faut\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776637943862-azutwhhv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the specific constructions of \"suffire\" (\"il suffit de\"), \"plaire\", and \"falloir\" - distinguishing between these requires knowing their particular construction rules, which is exactly what the stated rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638078748-rqoy74e7",
+      "timestamp": "2026-04-19T22:34:53.854Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of special construction verbs (plaire, falloir, suffire) by requiring selection of the verb that both fits the semantic context (\"suffire\" = \"to be enough\") and follows the correct grammatical pattern (\"Il suffit de\" + infinitive), distinguishing it from \"falloir\" which would use \"Il faut\" without \"de\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638453882-vkm32cia",
+      "timestamp": "2026-04-19T22:41:25.056Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting \"suffit\" from the special-construction verbs (plaire, falloir, suffire) to complete the phrase \"Il suffit de...\" in the present tense, which directly tests knowledge of this specific grammar rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638824529-6ogq25q6",
+      "timestamp": "2026-04-19T22:47:20.441Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bade28253345c612",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il leur ___ un billet pour entrer au musée. »\nChoices:\nA. [CORRECT] manque\nB. faut\nC. plaît\nD. suffit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776629084689-0ysdhqub"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying which verb in the set fits the sentence structure and meaning, which depends on knowing each verb's special construction pattern (e.g., manquer à quelqu'un = \"to be missing to someone\", falloir + infinitif = \"to be necessary\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776629352221-1d5brko8",
+      "timestamp": "2026-04-19T20:09:26.403Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests vocabulary and semantic meaning (choosing \"manque\" for \"missing/needed\") rather than the grammatical rule about special constructions of plaire, falloir, manquer, and suffire—all four options are special construction verbs, so the distinction is purely semantic.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776629761274-4q0y32st",
+      "timestamp": "2026-04-19T20:16:13.318Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question primarily tests semantic understanding (which verb fits the meaning) rather than the special grammatical constructions that make these verbs unique; students could choose correctly by understanding that \"they lack a ticket\" uses \"manquer\" without knowing that plaire is impersonal, falloir is impersonal with indirect objects, or suffire uses à to mark the person affected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776630169868-cjbtwd0t",
+      "timestamp": "2026-04-19T20:23:07.342Z"
+    }
+  ]
+}

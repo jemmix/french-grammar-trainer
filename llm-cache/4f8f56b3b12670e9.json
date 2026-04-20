@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4f8f56b3b12670e9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Parmi les verbes plaire, falloir, manquer et suffire, lequel convient au présent dans cette construction impersonnelle ? « Il ___ un joueur pour compléter l'équipe. »\nChoices:\nA. [CORRECT] manque\nB. plaît\nC. suffit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776646844815-t589wtco"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests whether students know which of these four special-construction verbs fits the context and can correctly use its impersonal form \"Il + verb\" in the present tense, which is exactly what rule 01-20 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776647127711-zj1zogjz",
+      "timestamp": "2026-04-20T01:05:48.070Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of which verb from this set works in an impersonal construction and conveys the correct meaning (\"to be missing/lacking\"), requiring understanding of manquer's special impersonal use.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776647284068-tloyhxts",
+      "timestamp": "2026-04-20T01:08:30.012Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Answering correctly requires knowledge that \"manquer\" can be used impersonally to mean \"to be missing/needed\" with a direct object, while \"plaire\" and \"suffire\" have different impersonal constructions, which is the core of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776647430912-oip8oisy",
+      "timestamp": "2026-04-20T01:10:43.075Z"
+    }
+  ]
+}

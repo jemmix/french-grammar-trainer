@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1db447022c5bd3b9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ d'un simple clic pour envoyer le message. »\nChoices:\nA. [CORRECT] suffit\nB. plaît\nC. manque\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776632939709-ai3m50ig"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the impersonal construction \"il suffit de\" specific to the verb \"suffire,\" distinguishing it from other special-construction verbs listed in the rule that would not fit the sentence grammatically.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776633006696-h1pf8dpg",
+      "timestamp": "2026-04-19T21:10:18.295Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To answer correctly, the student must know that \"suffire\" uses the construction \"il suffit de + noun/infinitif\" whereas \"manquer\" uses \"il manque quelque chose\" and \"plaire\" uses \"quelque chose plaît à quelqu'un\" - this directly tests the particular construction patterns of these verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776633253160-i9rrnxb3",
+      "timestamp": "2026-04-19T21:14:44.418Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding the impersonal constructions of plaire, manquer, and suffire, which is exactly what rule 01-20 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776633551201-ry8dpl07",
+      "timestamp": "2026-04-19T21:19:27.985Z"
+    }
+  ]
+}

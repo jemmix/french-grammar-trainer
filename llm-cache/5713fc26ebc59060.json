@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5713fc26ebc59060",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe convient au présent dans cette phrase ? « La musique ne leur ___ pas du tout. »\nChoices:\nA. [CORRECT] plaît\nB. faut\nC. pleut\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776648108443-scj4ic52"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of *plaire*'s special construction (subject + indirect object pronoun + verb), and none of the incorrect choices work grammatically with \"leur\" in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776648220100-thirqyqh",
+      "timestamp": "2026-04-20T01:24:08.907Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests \"plaire\" which is one of the verbs in the rule group, and answering correctly requires knowing that \"plaire\" constructs with an indirect object (\"leur plaît\") unlike impersonal verbs like \"falloir\" or \"pleuvoir\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776648379328-8bmu7mcd",
+      "timestamp": "2026-04-20T01:26:35.006Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To select \"plaît\" (from \"plaire\"), the learner must know that \"plaire\" is one of the special construction verbs requiring an indirect object, and that it takes the form \"plaît\" with a third-person singular subject like \"La musique\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776648532020-9jqk9h1g",
+      "timestamp": "2026-04-20T01:29:20.903Z"
+    }
+  ]
+}

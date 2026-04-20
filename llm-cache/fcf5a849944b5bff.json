@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fcf5a849944b5bff",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe convient au présent dans cette phrase ? « Il ___ que tu partes immédiatement. »\nChoices:\nA. [CORRECT] faut\nB. plaît\nC. suffit\nD. manque\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776626988462-htp4h599"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of the specific meaning and usage of the four verbs with special construction listed in the rule, and \"falloir\" is fundamentally defined by its unique impersonal construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776627036200-zgplpa6c",
+      "timestamp": "2026-04-19T19:31:12.504Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of falloir as a third-person-only verb with a special construction requiring \"que\" + subjunctive, which is exactly what rule 01-20 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776627429495-pjyychxz",
+      "timestamp": "2026-04-19T19:37:19.409Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly tests the special construction of \"il faut\" (falloir) with the subjunctive clause, which cannot be answered without knowing this verb's unique impersonal third-person form and \"il faut que + subjonctif\" pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776627839888-usn1ck6k",
+      "timestamp": "2026-04-19T19:44:10.962Z"
+    }
+  ]
+}

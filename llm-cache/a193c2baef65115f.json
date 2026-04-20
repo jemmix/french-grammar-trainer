@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a193c2baef65115f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ d'un seul mot pour tout gâcher. »\nChoices:\nA. [CORRECT] suffit\nB. pleut\nC. neige\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776640116797-w1oeshwt"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that \"suffir\" is one of the special construction verbs and can use \"Il suffit de...\" correctly in context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776640192511-8wu6r7hi",
+      "timestamp": "2026-04-19T23:10:04.550Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To correctly identify that \"suffit\" completes \"Il ___ d'un seul mot\", one must recognize the specific impersonal construction \"Il suffit de\" from the set of verbs with particular construction listed in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776645657321-xr3jxhqn",
+      "timestamp": "2026-04-20T00:41:23.649Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The sentence \"Il ___ d'un seul mot pour tout gâcher\" requires recognizing the impersonal construction \"il suffit de\" (to be enough to), which is the defining characteristic of suffire mentioned in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776645776444-uv77rely",
+      "timestamp": "2026-04-20T00:43:13.139Z"
+    }
+  ]
+}

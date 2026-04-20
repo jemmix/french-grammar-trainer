@@ -1,0 +1,47 @@
+{
+  "cacheKey": "6557fd3310ba7866",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ faire attention en traversant la route. »\nChoices:\nA. [CORRECT] faut\nB. plaît\nC. manque\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776637943862-gxv599vy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge that \"falloir\" expresses necessity/obligation and takes the impersonal form \"il faut\" + infinitive, which is precisely the \"construction particulière\" aspect of this verb from the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638028623-y7tu6xyc",
+      "timestamp": "2026-04-19T22:34:06.352Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the verb \"falloir\" (il faut) in its impersonal construction, which is one of the four verbs specified in the rule (plaire, falloir, manquer, suffire) and requires recognizing its unique meaning and third-person singular usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638426090-qox6oc1n",
+      "timestamp": "2026-04-19T22:40:41.206Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests semantic meaning (choosing which verb fits the context) rather than the special construction of falloir; while falloir has a special construction, the correct answer can be determined by knowing what the sentence means without understanding the construction's unique properties.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638778160-g5z8n964",
+      "timestamp": "2026-04-19T22:46:35.419Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the meanings and usage of the specific special construction verbs (plaire, falloir, manquer) to select \"faut\" as the correct fit for the semantic context of the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776639090793-awhwplz9",
+      "timestamp": "2026-04-19T22:51:52.976Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests semantic meaning (which verb means \"to be necessary\") rather than the special grammatical constructions of these verbs; answering correctly requires knowing what \"faut\" means, not understanding the impersonal nature of \"falloir\" or the \"à quelqu'un\" constructions of \"plaire/manquer/suffire\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776639150831-7epplb93",
+      "timestamp": "2026-04-19T22:52:55.671Z"
+    }
+  ]
+}

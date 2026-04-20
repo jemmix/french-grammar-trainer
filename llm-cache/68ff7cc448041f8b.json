@@ -1,0 +1,33 @@
+{
+  "cacheKey": "68ff7cc448041f8b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Input\nPrompt: Complétez avec le verbe « plaire » conjugué au présent de l'indicatif dans la construction avec un complément d'objet indirect.\nPhrase: Ce cadeau lui ___ beaucoup.\nCorrect Answer: plaît\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776637943864-xzaouke8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"plaire\" uses an indirect object construction (\"ce cadeau lui plaît\" rather than \"il lui plaît\"), which is the defining characteristic of this rule's focus on special construction verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638336627-04lqv5dd",
+      "timestamp": "2026-04-19T22:39:14.855Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the conjugation of \"plaire\" in the present tense with an indirect object construction (\"lui plaît\"), which is exactly what rule 01-20 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776638691721-7p0hmyk5",
+      "timestamp": "2026-04-19T22:45:06.991Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the conjugation of \"plaire\" with an indirect object construction (\"lui\"), which is precisely what the specified rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776639079207-6zla2d3h",
+      "timestamp": "2026-04-19T22:51:26.033Z"
+    }
+  ]
+}

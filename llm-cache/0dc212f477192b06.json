@@ -1,0 +1,47 @@
+{
+  "cacheKey": "0dc212f477192b06",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe exprime la suffisance dans cette construction impersonnelle ? « Il ___ d'un simple regard pour comprendre la situation. »\nChoices:\nA. [CORRECT] suffit\nB. plaît\nC. faut\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776652727227-yes5whbn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests knowledge that \"suffire\" (il suffit de) expresses sufficiency in impersonal constructions, distinguishing it from \"falloir\" (necessity) and \"plaire\" (to please), which are the other verbs covered in this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776652727231-1c8tvo1x",
+      "timestamp": "2026-04-20T02:39:35.853Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests vocabulary (knowing that \"suffire\" means \"to be sufficient\") rather than the special grammatical constructions of these verbs; it can be answered correctly without knowing anything about their \"construction particulière.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776652775853-8nb7odfv",
+      "timestamp": "2026-04-20T02:39:55.742Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests knowledge of \"suffire\" in its impersonal construction, requiring the learner to identify the correct verb meaning and distinguish it from other impersonal verbs (plaire, falloir) covered in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776652795743-8pc2xuv2",
+      "timestamp": "2026-04-20T02:40:13.964Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting \"suffit\" from the rule's verb list based on its semantic meaning (sufficiency) and its impersonal construction pattern (il suffit), directly testing knowledge of the suffire verb's usage and conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776652813964-5rre2ryf",
+      "timestamp": "2026-04-20T02:40:49.789Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly asks \"Quel verbe exprime la suffisance\", allowing students to answer by matching \"suffisance\" to \"suffit\" without knowing the impersonal construction patterns or proper usage of these verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776652849789-s1hwml8d",
+      "timestamp": "2026-04-20T02:41:05.805Z"
+    }
+  ]
+}

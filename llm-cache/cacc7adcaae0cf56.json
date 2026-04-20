@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cacc7adcaae0cf56",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe convient au présent dans cette phrase ? « Il ___ que nous soyons prêts avant midi. »\nChoices:\nA. [CORRECT] faut\nB. plaît\nC. suffit\nD. manque\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776626988463-59jlq01e"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of falloir's impersonal third-person construction (\"il faut que\") and its use to express necessity, which is exactly what rule 01-20 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776627235472-3a5tmcyc",
+      "timestamp": "2026-04-19T19:34:47.017Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge that \"falloir\" is an impersonal verb used with a subjunctive clause to express necessity, which is its distinctive construction among the verbs listed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776627671970-7rdqlgzo",
+      "timestamp": "2026-04-19T19:41:24.721Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly requires knowledge of falloir's impersonal construction \"Il faut que + subjonctif\", which is a special construction covered by the stated rule, and cannot be answered without knowing this specific grammatical pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776628050699-34vh2ewg",
+      "timestamp": "2026-04-19T19:47:41.125Z"
+    }
+  ]
+}

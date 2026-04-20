@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b1de0058c2297375",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe impersonnel « falloir » au présent de l'indicatif pour compléter la phrase.\nPhrase: Il ___ que nous soyons prêts avant midi.\nCorrect Answer: faut\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776631088681-9i738jvq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests basic conjugation of falloir in présent de l'indicatif, not the special construction patterns (impersonal use, subjunctive requirement, indirect object syntax) that characterize the rule's focus on verbes à construction particulière.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776631502054-3pxxy064",
+      "timestamp": "2026-04-19T20:45:17.684Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question only tests present tense conjugation of falloir, not the \"construction particulière\" aspect of the rule (i.e., that falloir is impersonal and only exists in third-person singular form - which is already given away in the prompt saying \"verbe impersonnel\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776631910022-f6mzzop1",
+      "timestamp": "2026-04-19T20:52:23.976Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3349bc65eb35bd87",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe convient au présent dans cette phrase ? « Il ___ de vérifier les sources avant de publier. »\nChoices:\nA. [CORRECT] suffit\nB. faut\nC. plaît\nD. manque\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776626988463-q4aveade"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting \"suffire de\" meaning \"to be enough to,\" which directly tests the special construction and sense of one of the four listed verbs (plaire, falloir, manquer, suffire).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776627179211-62jmsybu",
+      "timestamp": "2026-04-19T19:33:15.056Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of both the meaning and the correct impersonal construction of \"suffire\" (Il suffit de + infinitive) to identify it as the only appropriate choice among the four special construction verbs listed in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776627557406-xryi6quf",
+      "timestamp": "2026-04-19T19:40:41.257Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of \"suffire\" construction (il suffit de + infinitive) and distinguishes it from \"falloir\" (il faut + infinitive without \"de\"), which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776628022177-ud5ki2v3",
+      "timestamp": "2026-04-19T19:47:21.315Z"
+    }
+  ]
+}

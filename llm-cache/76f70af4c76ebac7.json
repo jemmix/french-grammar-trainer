@@ -1,0 +1,54 @@
+{
+  "cacheKey": "76f70af4c76ebac7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Parmi les verbes plaire, falloir, manquer et suffire, lequel convient au présent dans cette phrase ? « Il ___ d'un simple clic pour envoyer le message. »\nChoices:\nA. [CORRECT] suffit\nB. plaît\nC. faut\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776646844811-gnidwl6z"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests semantic meaning/fit in context rather than the special construction patterns (impersonal usage, personal constructions) that distinguish these four verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776647047388-dchq44d1",
+      "timestamp": "2026-04-20T01:04:21.140Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the specific constructions and prepositions used with suffire, plaire, and falloir to correctly complete the sentence \"Il ___ d'un simple clic\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776647212879-yv18uxoj",
+      "timestamp": "2026-04-20T01:07:17.154Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To correctly identify \"suffit\" as the appropriate verb, the student must understand the special impersonal construction \"il suffit de + infinitif\" that distinguishes suffire from the other verbs in this group.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776647385571-svxik0ip",
+      "timestamp": "2026-04-20T01:10:14.475Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: Answering correctly requires knowing that \"suffire\" takes the construction \"suffire de + [nom]\" whereas \"falloir\" takes a direct object (falloir quelque chose) and \"plaire\" uses \"plaire à quelqu'un\" - you cannot determine the right choice without understanding these particular constructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776647473766-j2d1mb38",
+      "timestamp": "2026-04-20T01:11:25.573Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the specific construction \"il suffit de\" is unique to the verb suffire among the listed special construction verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776647485573-zsxph254",
+      "timestamp": "2026-04-20T01:11:39.939Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests semantic choice and vocabulary (which verb makes sense in context), not the special grammatical constructions of plaire, falloir, manquer, and suffire.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776647499939-4hfu73in",
+      "timestamp": "2026-04-20T01:12:01.197Z"
+    }
+  ]
+}

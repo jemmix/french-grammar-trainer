@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9dd57f87976bc486",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ prendre le train de 8 heures. »\nChoices:\nA. [CORRECT] faut\nB. plaît\nC. manque\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776632939711-7exfcosu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing which verb means \"to be necessary/have to\" among the four special construction verbs, and the sentence context demands the meaning that only \"falloir\" provides.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776633136169-5j5dj7se",
+      "timestamp": "2026-04-19T21:12:29.721Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge that falloir is impersonal (only used with \"il\") and expresses necessity, which are the defining features of its \"construction particulière\" compared to plaire, manquer, and suffire.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776633417917-05fo9dk5",
+      "timestamp": "2026-04-19T21:17:13.886Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowledge that \"falloir\" is an impersonal verb meaning \"to be necessary\" and is followed by an infinitive, which distinguishes it from \"plaire\" and \"manquer\" in the context of expressing necessity.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776633660805-i4zynfxd",
+      "timestamp": "2026-04-19T21:21:15.841Z"
+    }
+  ]
+}

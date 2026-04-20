@@ -1,0 +1,33 @@
+{
+  "cacheKey": "94553734857e59e5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe convient au présent dans cette phrase ? « Il leur ___ trois euros pour payer l'entrée. »\nChoices:\nA. [CORRECT] manque\nB. faut\nC. plaît\nD. suffit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776626988462-v2u90zmq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"manquer à quelqu'un\" means \"to be missing to/lack for someone\", distinguishing it from \"falloir\" (need), \"plaire à\" (please), and \"suffire à\" (be sufficient) - all verbs with special indirect object constructions covered in rule 01-20.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776627145852-vu9akq2m",
+      "timestamp": "2026-04-19T19:32:41.857Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the special construction \"manquer à quelqu'un quelque chose\" (something is missing to/lacked by someone), which is one of the four irregular constructions listed in the rule, and the correct answer requires recognizing this specific usage pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776627533027-84xrh3bp",
+      "timestamp": "2026-04-19T19:39:05.186Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the special construction \"manquer à quelqu'un\" in the sense of lacking/being short of something, which is exactly what rule 01-20 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776627933309-3qlewzmk",
+      "timestamp": "2026-04-19T19:46:06.136Z"
+    }
+  ]
+}

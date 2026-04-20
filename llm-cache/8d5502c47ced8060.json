@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8d5502c47ced8060",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe convient au présent dans cette phrase ? « Son sourire ___ à tout le monde dans la salle. »\nChoices:\nA. [CORRECT] plaît\nB. manque\nC. suffit\nD. faut\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776626988463-ls7ddi1e"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests whether students can recognize that \"plaire à quelqu'un\" (to please someone) is the only verb among these special constructions that fits the context of a smile being pleasing to everyone.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776627248567-ylqu1v4c",
+      "timestamp": "2026-04-19T19:34:22.310Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests semantic understanding of verb meanings rather than the grammatical constructions special to these verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776627642440-tvcn6sh9",
+      "timestamp": "2026-04-19T19:41:06.782Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests vocabulary/semantic meaning (knowing what \"plaire\" means in context) rather than the special construction pattern of these verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776628040215-6xuc45yn",
+      "timestamp": "2026-04-19T19:47:37.575Z"
+    }
+  ]
+}

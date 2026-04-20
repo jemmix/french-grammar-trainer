@@ -1,0 +1,33 @@
+{
+  "cacheKey": "302ab94d14d67a03",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ absolument que nous signions ce contrat aujourd'hui. »\nChoices:\nA. [CORRECT] faut\nB. plaît\nC. manque\nD. suffit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776631088679-oczbncyi"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing between the four special construction verbs and recognizing that \"il faut\" is the correct form for expressing necessity, which is the distinctive pattern tested by rule 01-20.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776631276481-miwlzz9y",
+      "timestamp": "2026-04-19T20:41:39.608Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct special-construction verb (falloir) based on the meaning \"it is necessary\" in the context \"absolument que nous signions\", and cannot be answered correctly without knowing the specific constructions and semantic distinctions among plaire, falloir, manquer, and suffire.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776631730304-lfr9j9r0",
+      "timestamp": "2026-04-19T20:49:02.575Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying \"falloir\" as the only verb among the special construction verbs that expresses necessity and fits the impersonal \"il faut que\" pattern with subjunctive, which is precisely what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776632082677-uh2mtbgv",
+      "timestamp": "2026-04-19T20:55:34.182Z"
+    }
+  ]
+}

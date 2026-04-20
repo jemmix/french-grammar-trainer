@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c363a72e601d6d9d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le présent de l'indicatif\n\nRULE BEING TESTED: 01-20 - Les verbes à construction particulière : plaire, falloir, manquer, suffire\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez avec le seul verbe qui se construit avec un infinitif sans préposition : « Il ___ faire attention en traversant la route. »\nChoices:\nA. [CORRECT] faut\nB. plaît\nC. manque\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776650601487-u7ypfbno"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge that \"falloir\" uniquely constructs with an infinitive without preposition (\"il faut faire\") vs. the other listed verbs which require prepositions, requiring specific knowledge of this rule's special construction pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776650601517-0nhn3gwj",
+      "timestamp": "2026-04-20T02:05:57.488Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"il faut\" (from falloir) is the only one of these special construction verbs that takes an infinitive without preposition, while plaît and manque do not, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776650757488-ju1r5d28",
+      "timestamp": "2026-04-20T02:06:09.122Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the specific construction pattern of \"falloir\" (direct infinitive) versus the other verbs in the rule (plaire à, manquer de, suffire à) which require prepositions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776650769122-omnktn7r",
+      "timestamp": "2026-04-20T02:06:34.544Z"
+    }
+  ]
+}
