@@ -1,0 +1,40 @@
+{
+  "cacheKey": "178a251f4ee2f15f",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-07-023",
+  "spec": {
+    "systemPrompt": "You are a English language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: In present simple, frequency adverbs go after \"be.\" Write the adverb that matches the context.\n\nPHRASE: She is ___ on time. She has not been late once in five years.\n\nHINT: frequency adverb\n\nEXPECTED ANSWER: always\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1776797134305-eyp7zllr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: While \"always\" is the best fit given \"has not been late once in five years,\" other frequency adverbs like \"almost always\" could also be grammatically correct and contextually plausible, but only one is accepted.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776797134307-58z5hnal",
+      "timestamp": "2026-04-21T18:46:19.891Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly identifies a frequency adverb after \"be,\" the phrase provides unambiguous context (never late in 5 years), and \"always\" is the only logical choice among frequency adverbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776797179894-hqj3hhsi",
+      "timestamp": "2026-04-21T18:46:37.533Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The prompt clearly asks for a frequency adverb, the phrase shows the blank location after \"is,\" and the context of \"has not been late once in five years\" uniquely identifies \"always\" as the intended answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776797197533-7zt7q6xp",
+      "timestamp": "2026-04-21T18:46:53.253Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: While \"always\" is the best fit for \"not been late once in five years,\" other frequency adverbs like \"usually,\" \"regularly,\" or \"often\" could also be considered valid by learners, making the question ambiguous since only one answer is marked correct.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776797213254-yllttfpx",
+      "timestamp": "2026-04-21T18:47:10.261Z"
+    }
+  ]
+}

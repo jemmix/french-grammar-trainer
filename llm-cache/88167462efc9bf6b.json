@@ -1,0 +1,47 @@
+{
+  "cacheKey": "88167462efc9bf6b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-023",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Input\nPrompt: Complete the sentence. Use the tense that the frequency adverb \"rarely\" requires.\nPhrase: He rarely ___ TV before bedtime.\nCorrect Answer: watches\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776797577246-pedp0lod"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The prompt explicitly tells the student to \"use the tense that the frequency adverb 'rarely' requires,\" which removes the need to know WHEN to use present simple with frequency adverbs—so the question only tests third-person singular conjugation (\"he watches\"), not the rule about frequency adverb usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776797577252-d5nnldcq",
+      "timestamp": "2026-04-21T18:53:48.100Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that frequency adverbs like \"rarely\" pair with present simple tense and applying third person singular conjugation, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776797628100-hc5b7mj6",
+      "timestamp": "2026-04-21T18:54:02.476Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core knowledge that frequency adverbs like \"rarely\" require the present simple tense, which is the central concept of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776797642477-hctrj58g",
+      "timestamp": "2026-04-21T18:54:13.593Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that frequency adverbs like \"rarely\" are used with present simple tense (not present continuous), which is the core rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776797653594-nz4sv3eg",
+      "timestamp": "2026-04-21T18:54:28.824Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly states to use the tense that \"rarely\" requires, giving away the rule rather than testing it; the question actually tests third-person singular present simple conjugation (\"he watches\"), not the relationship between adverbs of frequency and present simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776797668824-yldzg7gt",
+      "timestamp": "2026-04-21T18:54:42.372Z"
+    }
+  ]
+}
