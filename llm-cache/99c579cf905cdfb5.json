@@ -1,0 +1,40 @@
+{
+  "cacheKey": "99c579cf905cdfb5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-010",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the present simple sentence: \"I ___ happy to help.\"\nChoices:\nA. [CORRECT] am always\nB. does always\nC. are always\nD. always was\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776754973952-rusfc9g0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that adverbs of frequency like \"always\" come AFTER the verb \"to be\" in present simple (am always, not always am), in addition to proper subject-verb agreement for \"I\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776755188713-6q6x4x5q",
+      "timestamp": "2026-04-21T07:06:54.310Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires identifying both the correct present simple verb form for the subject \"I\" (am) and the proper placement of the adverb \"always\" after the verb in a present simple sentence structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776755806915-f8r62if6",
+      "timestamp": "2026-04-21T07:17:10.181Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: All choices contain the adverb \"always\", so answering correctly only requires subject-verb agreement and present tense recognition, not knowledge of adverbs of frequency or their position in the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776756285746-szhfy015",
+      "timestamp": "2026-04-21T07:25:34.479Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question can be answered correctly using only subject-verb agreement knowledge (eliminating \"does\" and \"are\" for \"I\") and tense recognition (eliminating \"was\" as past), without requiring understanding of adverb of frequency placement with the verb \"be\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776756854385-uqnolg03",
+      "timestamp": "2026-04-21T07:35:26.227Z"
+    }
+  ]
+}

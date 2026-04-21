@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0326bc5fbb69fa09",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-003",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the present simple sentence: \"She ___ coffee.\"\nChoices:\nA. [CORRECT] never drinks\nB. never drink\nC. does never drinks\nD. never drinking\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776754973951-bvvu6b2i"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question primarily tests subject-verb agreement (she → drinks) and basic present simple conjugation, not the rule about adverb of frequency placement—the adverb \"never\" appears identically in all answer choices.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776755011935-ga8rzh8f",
+      "timestamp": "2026-04-21T07:04:23.197Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests present simple construction with the frequency adverb \"never\" — the correct answer requires knowing that frequency adverbs go before the main verb in present simple, and the wrong choices test errors specific to this construction (wrong conjugation, incorrect auxiliary form, wrong tense).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776755539540-4jtnk2jk",
+      "timestamp": "2026-04-21T07:12:55.101Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests subject-verb agreement (drinks vs drink) and auxiliary verb formation (does never drinks), not the specific rule about adverbs of frequency placement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776756177159-y1zvyeyi",
+      "timestamp": "2026-04-21T07:23:55.154Z"
+    }
+  ]
+}

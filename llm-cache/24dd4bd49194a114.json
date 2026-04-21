@@ -1,0 +1,33 @@
+{
+  "cacheKey": "24dd4bd49194a114",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-007",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the present simple sentence: \"She ___ late for meetings.\"\nChoices:\nA. [CORRECT] is rarely\nB. does rarely\nC. are rarely\nD. rarely was\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776754973952-kh721yjw"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the present simple form of \"to be\" (is) and the correct placement of adverbs of frequency with \"to be\" (after the verb).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776755109980-9q7r8t1u",
+      "timestamp": "2026-04-21T07:06:04.424Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question primarily tests subject-verb agreement (She → is, not are) and present simple form of \"to be\", while the adverb of frequency appears in all options and is not the focus of the distinction being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776755651571-n91t41es",
+      "timestamp": "2026-04-21T07:16:46.914Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The adverb of frequency \"rarely\" appears in all four choices, so the question actually tests present simple verb formation with \"to be\" and subject-verb agreement, not adverb of frequency knowledge.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776756268056-zdlsmlip",
+      "timestamp": "2026-04-21T07:24:54.428Z"
+    }
+  ]
+}
