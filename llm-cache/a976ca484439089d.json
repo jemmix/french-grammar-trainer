@@ -1,0 +1,40 @@
+{
+  "cacheKey": "a976ca484439089d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-025",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Input\nPrompt: Fill in the blank with the present simple form of the verb (habitual action).\nPhrase: She is taking a taxi today, but she usually ___ the bus.\nCorrect Answer: takes\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776719414572-dp7noiv3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The prompt explicitly instructs to use the present simple form, so answering correctly only requires present simple conjugation (rule 01-01), not knowledge that adverbs of frequency trigger present simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776720062042-22rrlblq",
+      "timestamp": "2026-04-20T21:21:27.541Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly tests the relationship between adverbs of frequency and present simple tense, as \"usually\" signals the habitual action that requires the present simple form \"takes.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776720410284-caei9ed6",
+      "timestamp": "2026-04-20T21:29:23.032Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student understands that present simple is required with the adverb \"usually\" to express habitual action, which is the core concept of the rule about present simple with adverbs of frequency.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776720883307-jftkc95h",
+      "timestamp": "2026-04-20T21:34:58.197Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests the contrast between present simple and present continuous (habitual vs ongoing action) and present simple conjugation, while the adverb of frequency \"usually\" is merely contextual—students can answer correctly by recognizing the habitual action context without needing specific knowledge of adverbs of frequency rules.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776720959383-pmf6doxv",
+      "timestamp": "2026-04-20T21:36:14.883Z"
+    }
+  ]
+}

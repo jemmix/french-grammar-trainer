@@ -1,0 +1,33 @@
+{
+  "cacheKey": "803e9edf012654bf",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-007",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the present simple sentence: \"I ___ drink coffee in the evening. It keeps me awake.\"\nChoices:\nA. [CORRECT] never\nB. always\nC. often\nD. usually\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776717785260-e56k1gjm"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To answer correctly, the learner must know the meanings of adverbs of frequency (always, usually, often, never) and select the one that fits the context \"keeps me awake\" - this requires knowledge of the specific frequency terms listed in the rule, not just general comprehension.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776717894431-ovn9bta7",
+      "timestamp": "2026-04-20T20:45:21.256Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests semantic comprehension (which adverb makes sense given \"keeps me awake\"), not the grammatical rule—all choices are grammatically correct adverbs of frequency that could occupy that position in a present simple sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776718319093-akstzjp8",
+      "timestamp": "2026-04-20T20:52:10.033Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests vocabulary/semantics (choosing the adverb that fits the context) rather than the grammatical rule about present simple with adverbs of frequency.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776718607052-je1yiveg",
+      "timestamp": "2026-04-20T20:56:58.470Z"
+    }
+  ]
+}

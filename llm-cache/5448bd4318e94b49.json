@@ -1,0 +1,47 @@
+{
+  "cacheKey": "5448bd4318e94b49",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-021",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Input\nPrompt: The adverb \"usually\" signals a habitual action. Write the present simple form of the verb.\nPhrase: She is working from home today, but she usually ___ at the office.\nCorrect Answer: works\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776721534740-9noxu3aw"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests present simple vs present continuous tense contrast, not the specific behavior of adverbs of frequency - a student could answer \"works\" correctly using only knowledge of third-person singular formation and temporal contrast (\"today\" vs \"usually\") without understanding that frequency adverbs specifically require present simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776721872021-td9onkzb",
+      "timestamp": "2026-04-20T21:51:30.195Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the rule that adverbs of frequency like \"usually\" are used with present simple tense to describe habitual actions, requiring the student to provide \"works\" (not \"is working\") based on the adverb's presence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776722264474-s6lg7ey2",
+      "timestamp": "2026-04-20T21:58:03.547Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires understanding that the adverb of frequency \"usually\" signals habitual action, which necessitates present simple (works), distinguishing it from present continuous (is working).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776722604553-yae6wht2",
+      "timestamp": "2026-04-20T22:03:38.994Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"usually\" is an adverb of frequency that signals habitual action, which must be expressed using present simple conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776722717745-apqiyhq8",
+      "timestamp": "2026-04-20T22:05:30.555Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The adverb \"usually\" is already placed in the sentence, so the learner only needs to choose present simple vs present continuous forms rather than demonstrating knowledge of how to use adverbs of frequency with present simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776722744093-18fgs7hn",
+      "timestamp": "2026-04-20T22:05:54.529Z"
+    }
+  ]
+}

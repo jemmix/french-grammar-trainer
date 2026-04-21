@@ -1,0 +1,33 @@
+{
+  "cacheKey": "746ba83f83bbdbb2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-019",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the present simple sentence: \"The children are ___ noisy during playtime.\"\nChoices:\nA. [CORRECT] sometimes\nB. never\nC. always\nD. rarely\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776717785261-qhadbusl"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the appropriate adverb of frequency to complete a present simple sentence, which directly tests the rule's core concept of using frequency adverbs with present simple tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776718100640-msyg3ubd",
+      "timestamp": "2026-04-20T20:48:28.856Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: All choices are grammatically correct in this sentence structure; the \"correct\" answer is determined by semantic plausibility (what makes sense about children's behavior) rather than any grammatical rule, so this tests meaning/context, not present simple with adverbs of frequency.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776718456771-6obkoqub",
+      "timestamp": "2026-04-20T20:54:27.473Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests vocabulary/semantics (knowing the meanings of sometimes/never/always/rarely) rather than the grammatical rule about present simple with adverbs of frequency, as the correct answer can be determined purely through contextual reasoning without any knowledge of present simple grammar or adverb positioning rules.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776718693526-pu70ktl1",
+      "timestamp": "2026-04-20T20:58:27.957Z"
+    }
+  ]
+}

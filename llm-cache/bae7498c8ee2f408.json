@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bae7498c8ee2f408",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-015",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Put the words in the correct order for a present simple sentence: \"never / satisfied / they / with the results / are\"\nChoices:\nA. [CORRECT] They are never satisfied with the results.\nB. They never are satisfied with the results.\nC. They are satisfied never with the results.\nD. They are satisfied with the results never.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776723130022-9sbnnjqe"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the general rule for adverb placement with the verb \"to be\" (adverb comes after the verb), not present simple specifically; the same word order would apply to other tenses like past simple (\"They were never satisfied\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776723316011-up31kpr1",
+      "timestamp": "2026-04-20T22:15:32.513Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the correct placement of the frequency adverb \"never\" in a present simple sentence with the auxiliary verb \"are\", which is a core aspect of the stated rule about adverb position.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776723540146-lchec16b",
+      "timestamp": "2026-04-20T22:19:16.687Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence uses a passive construction (\"are satisfied\"), not present simple, and tests adverb placement rules rather than present simple with frequency adverbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776723779091-awa66wzr",
+      "timestamp": "2026-04-20T22:23:11.671Z"
+    }
+  ]
+}

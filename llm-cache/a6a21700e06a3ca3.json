@@ -1,0 +1,40 @@
+{
+  "cacheKey": "a6a21700e06a3ca3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-009",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the present simple sentence: \"He ___ tired after work.\"\nChoices:\nA. [CORRECT] is usually\nB. does usually\nC. are usually\nD. usually was\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776727332247-ydo58n9e"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question can be answered correctly by eliminating wrong choices based on basic subject-verb agreement and tense (not present simple), without requiring knowledge of adverb of frequency placement rules.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776727450129-xckdgkku",
+      "timestamp": "2026-04-20T23:25:03.030Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowing how to place adverbs of frequency with \"to be\" in present simple (after the verb), and the distractors test common errors like wrong word order, subject-verb agreement, and wrong tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776727758183-f3308dpp",
+      "timestamp": "2026-04-20T23:29:30.662Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that adverbs of frequency like \"usually\" are placed after the verb \"be\" in present simple tense, which is the core concept of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776728043959-zyq5v3cc",
+      "timestamp": "2026-04-20T23:34:19.832Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question primarily tests subject-verb agreement (He = is, not are) and auxiliary verb usage (not \"does\" with adjectives), not adverb placement with present simple - the distractors B, C, and D are eliminated by these other rules without needing knowledge of adverb of frequency positioning.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776728233541-cas1pouo",
+      "timestamp": "2026-04-20T23:37:45.091Z"
+    }
+  ]
+}

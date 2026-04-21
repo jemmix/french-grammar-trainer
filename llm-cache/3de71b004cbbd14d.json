@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3de71b004cbbd14d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-004",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the present simple sentence: \"They ___ football after school.\"\nChoices:\nA. [CORRECT] often play\nB. plays often\nC. does often play\nD. often playing\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1776727332246-r4mput1w"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question primarily tests subject-verb agreement (play vs. plays) and present simple form, while adverb of frequency placement is only incidental and could be bypassed by eliminating clearly wrong choices.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776727377346-e5xaws9c",
+      "timestamp": "2026-04-20T23:23:13.155Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: You can get the right answer by eliminating \"plays often\" on subject-verb agreement, \"often playing\" because the prompt specifies present simple, and \"does often play\" as ungrammatical—no knowledge of adverb positioning required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776727692378-p94396m6",
+      "timestamp": "2026-04-20T23:28:39.050Z"
+    }
+  ]
+}

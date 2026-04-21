@@ -1,0 +1,40 @@
+{
+  "cacheKey": "744e5dc36b2fe545",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-07-010",
+  "spec": {
+    "systemPrompt": "You are a English language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nPrompt: In present simple, where does \"always\" go with the verb \"be\"? \"I ___ am ___ happy ___ to help.\"\nChoices:\nA. Position B (after \"be\": \"I am always happy\")\nB. Position A (before \"be\": \"I always am happy\")\nC. Position C (after the adjective: \"I am happy always\")\nD. At the end: \"I am happy to help always.\"\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1776721534739-35twtd5s"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Positions A, B, C are referenced in choices but not defined in the prompt, and choice D references \"at the end\" which doesn't match the three-blank template shown.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776721684902-5bbxxzqt",
+      "timestamp": "2026-04-20T21:48:19.636Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly establishes the context (present simple with verb \"be\"), asks a specific question about adverb placement, provides a concrete example with marked positions, and maps choices explicitly to those positions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776722090846-ql09mrjx",
+      "timestamp": "2026-04-20T21:55:14.308Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The template clearly marks three positions with blanks and each choice explicitly explains what selecting that position means in the sentence, making it unambiguous which position the learner should identify.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776722421039-pfy5jzts",
+      "timestamp": "2026-04-20T22:00:33.269Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt shows a sentence with three blanks (labeled A, B, C in choices), but choice D places \"always\" \"at the end\" which would be a fourth position not shown as a blank in the sentence; it's unclear whether \"at the end\" means after \"to help\" or elsewhere, and the blank numbering system doesn't match the full set of positions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1776722687483-bjruef7d",
+      "timestamp": "2026-04-20T22:05:48.301Z"
+    }
+  ]
+}
