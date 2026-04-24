@@ -1,0 +1,47 @@
+{
+  "cacheKey": "bc2fdb58f079855c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-023",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Input\nPrompt: Frequency adverbs like \"usually\" signal present simple habits, not present continuous. Write the verb in the present simple form.\nPhrase: She is eating at a restaurant tonight, but she usually ___ at home.\nCorrect Answer: eats\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777028457927-hww3tirq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires students to recognize that the frequency adverb \"usually\" signals a habitual action that must be expressed in present simple tense (eats), not present continuous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777028457932-70ezh2hn",
+      "timestamp": "2026-04-24T11:03:38.396Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the user to \"Write the verb in the present simple form,\" so the adverb \"usually\" and the rule it signals are not needed to answer correctly; the question merely tests verb conjugation in present simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777028618397-jox2xdba",
+      "timestamp": "2026-04-24T11:04:09.168Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the rule by requiring students to conjugate \"eat\" in present simple (eats) in a sentence with the frequency adverb \"usually,\" distinguishing habitual present simple from present continuous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777028649169-lry8hdbn",
+      "timestamp": "2026-04-24T11:05:24.395Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests that frequency adverbs like \"usually\" require present simple tense, as shown by the contrast with the present continuous clause.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777028724395-msxkf330",
+      "timestamp": "2026-04-24T11:06:39.622Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells students that frequency adverbs signal present simple, so they can answer correctly by following instructions rather than applying the rule themselves—it's testing instruction-following, not the grammar rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777028799623-pl7qzni4",
+      "timestamp": "2026-04-24T11:07:08.679Z"
+    }
+  ]
+}

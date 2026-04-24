@@ -1,0 +1,40 @@
+{
+  "cacheKey": "a3e0dbf1de398152",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-023",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Input\nPrompt: Frequency adverbs like \"rarely\" describe habits, not actions happening right now. Write the appropriate verb form.\nPhrase: Nowadays he rarely ___ TV before bedtime.\nCorrect Answer: watches\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777021652689-2p5nfd43"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the rule because the adverb \"rarely\" requires the student to use present simple (\"watches\") rather than present continuous (\"is watching\"), which is the core distinction of this grammar rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777021652694-xb6qmtn9",
+      "timestamp": "2026-04-24T09:08:23.935Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that frequency adverbs like \"rarely\" are used with present simple tense (not continuous) for habits, which is the core of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777021703935-hhbt38up",
+      "timestamp": "2026-04-24T09:09:11.691Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt already states that frequency adverbs describe habits, so the question only tests subject-verb agreement (he → watches) rather than the rule about using present simple with adverbs of frequency.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777021751691-gd536w0i",
+      "timestamp": "2026-04-24T09:10:12.823Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests subject-verb agreement (adding -s for third person singular), not the rule about using present simple with adverbs of frequency—the adverb \"rarely\" is already correctly positioned, so the student only needs to conjugate the verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777021812824-spphqcry",
+      "timestamp": "2026-04-24T09:10:49.096Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "d11e2dab3c562ec3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-023",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Input\nPrompt: Frequency adverbs like \"rarely\" signal present simple habits, not present continuous. Write the verb in the present simple form.\nPhrase: Nowadays she rarely ___ on weekends.\nCorrect Answer: works\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777022011717-yhibig1m"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing \"rarely\" as a frequency adverb and applying the rule that such adverbs take present simple (works), not present continuous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777022011723-5cy8ea7n",
+      "timestamp": "2026-04-24T09:14:02.183Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires recognizing that \"rarely\" is a frequency adverb that signals present simple for habitual actions, which is exactly what the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777022042183-ptqigqnv",
+      "timestamp": "2026-04-24T09:15:12.044Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the user that frequency adverbs signal present simple, so the question only tests basic verb conjugation (\"works\" for \"she\") rather than knowledge of the relationship between adverbs of frequency and present simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777022112045-peklbhjw",
+      "timestamp": "2026-04-24T09:17:15.625Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly states the rule (\"frequency adverbs signal present simple\"), so the question only tests basic present simple conjugation (she + work → works), not the student's knowledge of when to use present simple with adverbs of frequency.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777022235626-qbsitfxp",
+      "timestamp": "2026-04-24T09:18:26.345Z"
+    }
+  ]
+}

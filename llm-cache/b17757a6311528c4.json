@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b17757a6311528c4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-023",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Input\nPrompt: Frequency adverbs like \"rarely\" signal present simple habits, not present continuous. Write the verb in the present simple form.\nPhrase: She is staying with her parents this week, but she rarely ___ alone.\nCorrect Answer: lives\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777023999341-kfuh9y6v"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly requires applying the rule that frequency adverbs signal present simple; without knowing that \"rarely\" triggers present simple, a learner might incorrectly use present continuous given the temporary context (\"this week\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777023999348-pv2lg9wb",
+      "timestamp": "2026-04-24T09:48:56.252Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells students the rule (\"Frequency adverbs like 'rarely' signal present simple habits\"), so answering correctly only requires conjugating \"to live\" in 3rd person, not actually understanding when to use present simple with frequency adverbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777024136253-y2if7phb",
+      "timestamp": "2026-04-24T09:50:36.074Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells students to use present simple form, so they can answer correctly by following instructions rather than knowing the rule that frequency adverbs signal present simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777024236075-75ly9n0y",
+      "timestamp": "2026-04-24T09:51:46.362Z"
+    }
+  ]
+}

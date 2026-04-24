@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c1e888ca2bc8e1a1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-023",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Input\nPrompt: Write the adverb of frequency that fits the blank in this present simple sentence.\nPhrase: She ___ arrives late. In fact, she has been on time every single day this year.\nCorrect Answer: never\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777024490002-mb3d92vn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The context \"she has been on time every single day this year\" makes the answer obvious through logical deduction, so the question primarily tests reading comprehension rather than knowledge of present simple with adverbs of frequency.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777024490007-twf7q2fe",
+      "timestamp": "2026-04-24T09:55:30.707Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires understanding the meaning of adverbs of frequency and selecting the correct one (\"never\") based on the context, which directly tests present simple with frequency adverbs as specified in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777024530710-6qetbzvg",
+      "timestamp": "2026-04-24T09:55:54.686Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The contextual clue \"she has been on time every single day this year\" makes the answer obvious without requiring knowledge of present simple structure with adverbs of frequency—the question only tests basic vocabulary and logical inference.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777024554686-7280831v",
+      "timestamp": "2026-04-24T09:56:29.548Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "8c4045183f456194",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-023",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Input\nPrompt: Frequency adverbs like \"never\" signal present simple habits, not present continuous. Write the verb in the present simple form.\nPhrase: He is having coffee today, but he never ___ coffee after 6 p.m.\nCorrect Answer: drinks\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777025405417-wtgbs3bn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"never\" signals present simple (not present continuous) and then applying that knowledge to conjugate \"drink\" correctly as \"drinks\" - directly testing the relationship between frequency adverbs and present simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777025405423-r7j25si1",
+      "timestamp": "2026-04-24T10:11:25.498Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the learner to \"write the verb in the present simple form,\" so the question only tests basic third-person singular conjugation (\"drink\" → \"drinks\"), not the rule about frequency adverbs signaling present simple habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777025485499-kzb3gx5t",
+      "timestamp": "2026-04-24T10:12:42.454Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that frequency adverbs like \"never\" require present simple tense (not present continuous), which is the core concept of rule 01-07.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777025562455-s293ibmn",
+      "timestamp": "2026-04-24T10:12:55.009Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use present simple form, so the question only tests verb conjugation (he → drinks), not whether they recognize that frequency adverbs require present simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777025575009-5duj1g76",
+      "timestamp": "2026-04-24T10:13:41.395Z"
+    }
+  ]
+}

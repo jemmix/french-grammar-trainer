@@ -1,0 +1,47 @@
+{
+  "cacheKey": "5a87a7bb7c00b81d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-023",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-07 - Present simple with adverbs of frequency (always, usually, often, sometimes, rarely, never)\n\nQUESTION:\nType: Input\nPrompt: Frequency adverbs like \"rarely\" signal present simple habits, not present continuous. Write the verb in the present simple form.\nPhrase: He is having lunch at his desk today, but he rarely ___ at his desk.\nCorrect Answer: eats\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777025029519-u54g9ee8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"rarely\" is a frequency adverb that triggers present simple tense, which is the core of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777025029525-u6bz5y9p",
+      "timestamp": "2026-04-24T10:04:31.834Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The prompt gives away the answer (\"Frequency adverbs like 'rarely' signal present simple habits... Write the verb in the present simple form\"), so the question tests basic verb conjugation rather than the rule about when/why frequency adverbs require present simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777025071839-fzx98r7d",
+      "timestamp": "2026-04-24T10:05:07.431Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowledge that frequency adverbs like \"rarely\" signal present simple for habits, not present continuous, which is the core of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777025107431-jp3c61fi",
+      "timestamp": "2026-04-24T10:05:35.151Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core concept of using present simple with frequency adverbs like \"rarely\" by requiring students to apply present simple conjugation (eats) in a context where the frequency adverb signals the appropriate tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777025135152-lfv7u1l7",
+      "timestamp": "2026-04-24T10:06:45.678Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The prompt explicitly tells the user to use present simple (\"Frequency adverbs like 'rarely' signal present simple habits\"), so the question only tests verb conjugation, not knowledge that frequency adverbs trigger present simple versus present continuous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777025205678-g2mv75v3",
+      "timestamp": "2026-04-24T10:07:31.886Z"
+    }
+  ]
+}
