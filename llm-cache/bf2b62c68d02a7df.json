@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bf2b62c68d02a7df",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-004",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-10 - Present simple with stative verbs (know, believe, want, like, need, understand, belong)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Which verb form is correct for this present-tense sentence? \"They ___ Italian food.\"\nChoices:\nA. [CORRECT] like\nB. are liking\nC. liked\nD. have liked\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777236366617-2picmty9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests that \"like\" (a stative verb) should be used in present simple rather than continuous form, with \"are liking\" serving as the key distractor that validates the rule's core concept.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777236399869-d0pi39cb",
+      "timestamp": "2026-04-26T20:47:08.291Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that \"like\" (a stative verb) should be used in present simple form, not present continuous (\"are liking\"), which is exactly what rule 01-10 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777236804924-6lrhbr7r",
+      "timestamp": "2026-04-26T20:54:00.768Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the rule because choosing between \"like\" and \"are liking\" requires knowing that \"like\" is a stative verb that doesn't take the continuous form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777237347314-pharepx2",
+      "timestamp": "2026-04-26T21:03:38.961Z"
+    }
+  ]
+}

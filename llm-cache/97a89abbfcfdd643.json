@@ -1,0 +1,26 @@
+{
+  "cacheKey": "97a89abbfcfdd643",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-023",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-10 - Present simple with stative verbs (know, believe, want, like, need, understand, belong)\n\nQUESTION:\nType: Input\nPrompt: Stative verbs describe states, not actions, and use present simple, not present continuous. Write the verb in the present simple form.\nPhrase: The chef is tasting the sauce, and it ___ wonderful.\nCorrect Answer: tastes\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777235518976-arvsnrvo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to \"write the verb in the present simple form,\" so a student can answer correctly by following the instruction without understanding that stative verbs use present simple—not present continuous—which defeats the purpose of testing the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777235770251-w6x8f03q",
+      "timestamp": "2026-04-26T20:36:33.501Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question uses \"taste,\" which is not listed among the stative verbs (know, believe, want, like, need, understand, belong) in the stated rule, and \"taste\" can function as both a stative and dynamic verb, making it a poor example for testing this specific rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777235987220-ku01oyod",
+      "timestamp": "2026-04-26T20:40:04.903Z"
+    }
+  ]
+}

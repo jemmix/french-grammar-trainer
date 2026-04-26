@@ -1,0 +1,33 @@
+{
+  "cacheKey": "adf62837a8e1d3ee",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-014",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-10 - Present simple with stative verbs (know, believe, want, like, need, understand, belong)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Which verb form is grammatically correct? \"The bag ___ five kilograms.\"\nChoices:\nA. [CORRECT] weighs\nB. is weighing\nC. weighed\nD. will weigh\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777235518975-8xt05kt4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The rule specifies stative verbs (know, believe, want, like, need, understand, belong), but \"weigh\" is not listed in this set, making the question test a different verb than what the rule actually covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777235662473-dlo4eglb",
+      "timestamp": "2026-04-26T20:35:07.601Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core principle that stative verbs (like \"weigh\" when describing a property/attribute) take present simple, not present continuous forms, which is the essence of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777235907302-4xbwnrje",
+      "timestamp": "2026-04-26T20:38:56.089Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The rule explicitly lists stative verbs (know, believe, want, like, need, understand, belong) and \"weigh\" is not among them, even though the question correctly tests the stative vs. dynamic verb concept.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777236036012-uqh10vvv",
+      "timestamp": "2026-04-26T20:43:12.258Z"
+    }
+  ]
+}

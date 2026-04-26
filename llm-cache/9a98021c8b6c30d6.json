@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9a98021c8b6c30d6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-002",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-10 - Present simple with stative verbs (know, believe, want, like, need, understand, belong)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Stative verbs use present simple, not continuous. Which form is correct? \"I ___ that Paris is the capital of France.\"\nChoices:\nA. [CORRECT] believe\nB. am believing\nC. believes\nD. is believing\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777240124052-xlh23y5h"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that \"believe\" is a stative verb and must be used in present simple form with first person subject \"I\" rather than present continuous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777240124060-rnxaaong",
+      "timestamp": "2026-04-26T21:49:03.522Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core rule that stative verbs like \"believe\" use present simple, not continuous forms - choosing the correct answer requires knowing that \"am believing\" is incorrect specifically because stative verbs don't take continuous forms, not just subject-verb agreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777240426624-cji3xv8i",
+      "timestamp": "2026-04-26T21:55:20.776Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that stative verbs like \"believe\" use present simple, not continuous - a student must apply the stative verb rule to select the correct form from the mixed present simple and continuous choices.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777240696174-nr13ov9e",
+      "timestamp": "2026-04-26T21:58:43.364Z"
+    }
+  ]
+}

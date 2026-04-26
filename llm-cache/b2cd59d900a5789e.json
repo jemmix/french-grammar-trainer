@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b2cd59d900a5789e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-024",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-10 - Present simple with stative verbs (know, believe, want, like, need, understand, belong)\n\nQUESTION:\nType: Input\nPrompt: Stative verbs describe states, not actions, and use present simple, not present continuous. Write the verb in the present simple form.\nPhrase: She is weighing the flour, and it ___ exactly 250 grams.\nCorrect Answer: weighs\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777235518977-45ut6wvp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the stative verb \"weigh\" (meaning \"has a particular weight\"), but the rule only lists the stative verbs \"know, believe, want, like, need, understand, belong\" - \"weigh\" is not among them, so this does not test the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777235770793-8s4y98d5",
+      "timestamp": "2026-04-26T20:36:45.399Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The rule being tested specifically lists stative verbs (know, believe, want, like, need, understand, belong), but the question uses \"weigh\" which is not on that list, making it test a different verb concept than the rule claims to assess.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777236004904-aan93w10",
+      "timestamp": "2026-04-26T20:40:40.399Z"
+    }
+  ]
+}

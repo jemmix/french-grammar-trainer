@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6a26cb51141938c7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-005",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-10 - Present simple with stative verbs (know, believe, want, like, need, understand, belong)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Stative verbs use present simple, not continuous. Which form is correct? \"We ___ more time to complete the task.\"\nChoices:\nA. [CORRECT] need\nB. are needing\nC. needs\nD. is needing\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777241731418-qgrxiaki"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly requires knowledge that stative verbs like \"need\" use present simple (\"need\") not present continuous (\"are needing\"), even though some distractors also have subject-verb agreement errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777241731451-y5sftvjt",
+      "timestamp": "2026-04-26T22:16:43.896Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests that \"need\" (a listed stative verb) must be present simple, not continuous, by contrasting \"need\" vs \"are needing\" — which is exactly the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777241803896-fwh01esq",
+      "timestamp": "2026-04-26T22:17:05.456Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core rule that \"need\" (a stative verb) uses present simple instead of continuous, with the correct choice requiring knowledge of this stative verb exception.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777241825456-k1r2l75r",
+      "timestamp": "2026-04-26T22:17:20.020Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "7f281d576532c217",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-009",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-10 - Present simple with stative verbs (know, believe, want, like, need, understand, belong)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Which verb form is grammatically correct? \"The soup ___ delicious.\"\nChoices:\nA. [CORRECT] tastes\nB. is tasting\nC. tasted\nD. will taste\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777235518975-ayden4k7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The verb \"taste\" is not listed in the rule's specified stative verbs (know, believe, want, like, need, understand, belong), so this question tests a broader stative verb concept rather than the specific rule with its targeted vocabulary set.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777235593316-7amepvik",
+      "timestamp": "2026-04-26T20:33:30.150Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the stative verb usage of \"taste\" in \"The soup tastes delicious,\" which follows the same principle as the listed verbs: stative verbs use present simple, not present continuous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777235849503-25wdd1gc",
+      "timestamp": "2026-04-26T20:38:27.302Z"
+    }
+  ]
+}

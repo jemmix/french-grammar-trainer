@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0afc07f7e8375fcb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-020",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-10 - Present simple with stative verbs (know, believe, want, like, need, understand, belong)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Stative verbs use present simple, not continuous. Which form is correct? \"She ___ to the local sports club.\"\nChoices:\nA. [CORRECT] belongs\nB. is belonging\nC. belong\nD. are belonging\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777240124054-c5xi6nfp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"belong\" is a stative verb that uses present simple (\"belongs\") instead of present continuous (\"is belonging\"), which is exactly what the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777240382921-69sgspem",
+      "timestamp": "2026-04-26T21:53:16.544Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the learner knows that \"belong\" is a stative verb that uses present simple (\"belongs\") instead of continuous forms (\"is belonging\", \"are belonging\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777240582357-8f5honyz",
+      "timestamp": "2026-04-26T21:58:52.064Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question specifically tests the stative verb \"belong\" (explicitly listed in the rule) and requires knowledge that stative verbs use present simple, not continuous forms.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777240826386-h87iobi6",
+      "timestamp": "2026-04-26T22:00:42.312Z"
+    }
+  ]
+}

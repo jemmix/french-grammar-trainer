@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fbdeb839de46a600",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-025",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-10 - Present simple with stative verbs (know, believe, want, like, need, understand, belong)\n\nQUESTION:\nType: Input\nPrompt: Stative verbs describe states, not actions, and use present simple, not present continuous. Write the verb in the present simple form.\nPhrase: The doctor is seeing patients today, but she ___ that you need more rest.\nCorrect Answer: sees\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777235518977-fv0905d5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether students recognize that \"see\" is used statively (meaning \"understand\") in the second clause and therefore requires present simple \"sees\" rather than present continuous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777235780977-uapkhlex",
+      "timestamp": "2026-04-26T20:36:43.810Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"See\" is not a stative verb from the listed set (know, believe, want, like, need, understand, belong), and the correct answer should be a verb like \"knows\" or \"understands\" to actually test the rule about stative verbs using present simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777236001850-83efw9jl",
+      "timestamp": "2026-04-26T20:40:18.495Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The rule lists specific stative verbs (know, believe, want, like, need, understand, belong), but the question uses \"see\" which is not on the list, so answering correctly requires knowledge outside the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777236066345-1lotva9j",
+      "timestamp": "2026-04-26T20:41:24.657Z"
+    }
+  ]
+}
