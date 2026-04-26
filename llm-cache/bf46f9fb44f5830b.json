@@ -1,0 +1,26 @@
+{
+  "cacheKey": "bf46f9fb44f5830b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-08-016",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-08 - Present simple: time expressions (every day, on Mondays, twice a week, in the morning)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Which sentence is grammatically correct?\nChoices:\nA. [CORRECT] He meets his friends twice a week.\nB. He is meeting his friends twice a week.\nC. He meet his friends twice a week.\nD. He met his friends twice a week.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777207861084-dmenfvpa"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests subject-verb agreement (meets vs meet) rather than the relationship between present simple and time expressions; the time expression is incidental since option C fails conjugation, which doesn't require knowledge of rule 01-08 to identify as incorrect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777208070922-nqpc80q7",
+      "timestamp": "2026-04-26T12:57:23.828Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests subject-verb agreement (meets vs meet) and tense choice, not specifically time expressions—all distractors fail for multiple unrelated grammar reasons, so \"twice a week\" being a habitual time expression is not the central skill required to identify the correct answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777208571907-63y0f5kg",
+      "timestamp": "2026-04-26T13:03:10.348Z"
+    }
+  ]
+}

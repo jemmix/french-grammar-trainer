@@ -24,6 +24,7 @@ export const answerHints: Record<string, string> = {
   "believed": "believe",
   "called": "call",
   "carries": "carry",
+  "cooks": "cook",
   "d": "pronunciation",
   "do": "do/does",
   "Do": "do/does",
@@ -132,6 +133,13 @@ export const answerHints: Record<string, string> = {
   "wears": "wear",
   "takes": "take",
   "lives": "live",
+  "walks": "walk",
+  "goes": "go",
+  "leaves": "leave",
+  "finishes": "finish",
+  "uses": "use",
+  "trains": "train",
+  "practises": "practise",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;

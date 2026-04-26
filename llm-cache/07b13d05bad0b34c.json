@@ -1,0 +1,47 @@
+{
+  "cacheKey": "07b13d05bad0b34c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-08-023",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-08 - Present simple: time expressions (every day, on Mondays, twice a week, in the morning)\n\nQUESTION:\nType: Input\nPrompt: Time expressions like \"on weekdays\" signal present simple habits, not present continuous. Write the verb in the present simple form.\nPhrase: She is working from home today, but she ___ to work on weekdays.\nCorrect Answer: walks\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777225177306-uoqgoxhk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests recognizing \"on weekdays\" as a time expression that signals present simple tense, which is precisely what the rule covers, even though the prompt provides explicit guidance.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777225177311-n5xjd07a",
+      "timestamp": "2026-04-26T17:40:40.340Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells students that \"on weekdays\" signals present simple, so the question actually tests present simple verb conjugation (\"to walk\" → \"walks\") rather than the rule about time expressions signaling the tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777225240341-chjgnb3z",
+      "timestamp": "2026-04-26T17:40:59.928Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student recognizes that \"on weekdays\" signals a habitual action requiring present simple, which is exactly what the rule covers (time expressions that signal present simple habits).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777225259928-wtkb18wb",
+      "timestamp": "2026-04-26T17:41:51.197Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that \"on weekdays\" (a time expression) signals present simple for habitual actions, which is exactly what rule 01-08 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777225311197-p45u26nz",
+      "timestamp": "2026-04-26T17:42:38.918Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The prompt explicitly tells the student the rule being tested (\"Time expressions like 'on weekdays' signal present simple habits\"), so they don't need to know or apply the rule themselves - they're just conjugating a verb based on explicit instructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777225358918-ow91k3e2",
+      "timestamp": "2026-04-26T17:43:08.234Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6eae2aea0a8f9d0e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-08-009",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-08 - Present simple: time expressions (every day, on Mondays, twice a week, in the morning)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choose the correct sentence.\nChoices:\nA. [CORRECT] They go to church on Sundays.\nB. They are going to church on Sundays.\nC. They goes to church on Sundays.\nD. They going to church on Sundays.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777207861083-fxxj1gpk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests that recurring time expressions like \"on Sundays\" require present simple tense rather than present continuous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777207969740-zle7q6yz",
+      "timestamp": "2026-04-26T12:53:03.450Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires students to select present simple (vs present continuous) with the time expression \"on Sundays\", which is the core of rule 01-08; while options C and D introduce basic verb form errors, eliminating option B requires knowing the rule about present simple's relationship to time expressions like \"on Sundays.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777208340283-yfc0o6ud",
+      "timestamp": "2026-04-26T12:59:33.673Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests whether present simple or present continuous is used for habitual/repeated actions (\"They go to church\"), which is about tense usage for habits rather than specifically testing how time expressions like \"on Sundays\" work with present simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777208642038-7im781df",
+      "timestamp": "2026-04-26T13:06:24.631Z"
+    }
+  ]
+}

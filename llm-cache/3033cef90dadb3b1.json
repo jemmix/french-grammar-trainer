@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3033cef90dadb3b1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-08-006",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-08 - Present simple: time expressions (every day, on Mondays, twice a week, in the morning)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Which time expression indicates a recurring habit? \"She reads the newspaper ___.\"\nChoices:\nA. [CORRECT] in the morning\nB. this morning\nC. right now\nD. at this moment\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777220672683-ceeafx4l"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"in the morning\" is a time-of-day expression, not a frequency-based time expression like \"every day\" or \"on Mondays\" that clearly indicates a recurring habit.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777220706867-6vp4cgcx",
+      "timestamp": "2026-04-26T16:25:23.884Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests which time expression can indicate a recurring habit with present simple tense - \"in the morning\" (A) is the only choice compatible with habitual present simple, while \"this morning\" (B) refers to a specific instance and \"right now/at this moment\" (C, D) require present continuous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777220972134-8p8y23h0",
+      "timestamp": "2026-04-26T16:30:59.282Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"In the morning\" is ambiguous (could be habitual or specific) and doesn't clearly indicate recurrence like the rule's examples (every day, on Mondays, twice a week) - the question tests general present simple vs continuous distinction rather than the specific time expressions rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777221308665-1u0mfoaj",
+      "timestamp": "2026-04-26T16:35:31.058Z"
+    }
+  ]
+}
