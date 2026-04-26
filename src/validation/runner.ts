@@ -426,6 +426,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   const priorityTasks: LLMPendingTask[] = [];
   const restTasks: LLMPendingTask[] = [];
   const structuralResults: CheckResult[] = [];
+  const taskSettlePromises: Promise<void>[] = [];
   const verbose = opts.llm === true;
 
   for (const [sectionId, { section, rules }] of sections) {
@@ -510,7 +511,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
             });
           });
 
-          taskPromise.then(llmResult => {
+          taskSettlePromises.push(taskPromise.then(llmResult => {
             const result: CheckResult = {
               questionId: question.id,
               predicateId: predicate.id,
@@ -525,7 +526,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
             if (result.pass) passed++;
             else if (predicate.category === "pedagogical") { warnings++; failed++; }
             else failed++;
-          });
+          }));
 
         } else {
           const predicateResult = predicate.check(ctx);
@@ -583,6 +584,8 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
       }
     }
   }
+
+  await Promise.all(taskSettlePromises);
 
   if (opts.pruneCache) {
     const removed = pruneCache(cacheKeysUsed);
