@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3c52dfccfa2b348b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-12-018",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-12 - Present continuous: spelling rules for -ing (drop -e, double consonant, -ie → -ying)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complete the sentence: \"The girl is ___ at the camera.\"\nChoices:\nA. [CORRECT] smiling\nB. smileing\nC. smilling\nD. smiles\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777246414478-8vl64mxn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the spelling rule for dropping final -e before adding -ing, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777246537500-o56hlq8j",
+      "timestamp": "2026-04-26T23:35:58.279Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the present continuous spelling rule for dropping the final 'e' before adding -ing, with distractors covering common mistakes (keeping the 'e', incorrectly doubling consonants, wrong tense).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777246684388-kwptrau4",
+      "timestamp": "2026-04-26T23:38:19.087Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the spelling rule of dropping the final -e before adding -ing, which is the core of rule 01-12; the distractor \"smileing\" specifically targets knowledge of this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777246827399-mugjff35",
+      "timestamp": "2026-04-26T23:40:39.887Z"
+    }
+  ]
+}
