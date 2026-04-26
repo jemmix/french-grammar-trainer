@@ -150,6 +150,11 @@ export const answerHints: Record<string, string> = {
   "wants": "want",
   "believes": "believe",
   "belongs": "belong",
+  "am reading": "reading",
+  "are playing": "playing",
+  "is working": "work",
+  "are studying": "studying",
+  "is sleeping": "sleeping",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
