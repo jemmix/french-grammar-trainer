@@ -140,6 +140,11 @@ export const answerHints: Record<string, string> = {
   "uses": "use",
   "trains": "train",
   "practises": "practise",
+  "boils": "boil",
+  "orbits": "orbit",
+  "pulls": "pull",
+  "travels": "travel",
+  "rusts": "rust",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;

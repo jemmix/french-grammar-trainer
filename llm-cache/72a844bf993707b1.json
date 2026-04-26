@@ -1,0 +1,33 @@
+{
+  "cacheKey": "72a844bf993707b1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-020",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-09 - Present simple for habits, routines, and general truths\n\nQUESTION:\nType: Multiple Choice\nPrompt: Which sentence states a general truth?\nChoices:\nA. [CORRECT] Three plus seven equals ten.\nB. The numbers are equal on the display.\nC. The result equalled ten last time.\nD. The total will equal ten if you add correctly.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777232025604-cmiyswg4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: A student can identify choice A as a general truth purely from semantic content (recognizing \"3+7=10\" as a universal mathematical fact) without any knowledge of the present simple tense's function for general truths.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777232208723-ndnmy4be",
+      "timestamp": "2026-04-26T19:37:02.068Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying present simple (\"equals\") used for a timeless mathematical truth, distinguishing it from present continuous, past, and future tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777232445024-36e5r7cl",
+      "timestamp": "2026-04-26T19:41:04.353Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question can be answered correctly by identifying which sentence expresses a general truth based on semantic meaning alone, without needing to understand that present simple is used for general truths.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777232633167-h4fg2t15",
+      "timestamp": "2026-04-26T19:44:24.501Z"
+    }
+  ]
+}
