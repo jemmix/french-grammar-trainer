@@ -29,6 +29,12 @@ const INITIAL_DELAY_MS = 1000;
 const MAX_DELAY_MS = 30000;
 const BACKOFF_MULTIPLIER = 2;
 
+const PRIORITY_PREDICATE_IDS = new Set([
+  "question-rule-alignment",
+  "no-ambiguous-prompts",
+  "mcq-wrong-is-false",
+]);
+
 function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -78,7 +84,7 @@ async function runWithRetry<T>(
 function createConcurrencyLimiter(maxConcurrent: number) {
   let running = 0;
   const queue: (() => void)[] = [];
-  
+
   return async <T>(fn: () => Promise<T>): Promise<T> => {
     while (running >= maxConcurrent) {
       await new Promise<void>(resolve => queue.push(resolve));
@@ -97,7 +103,7 @@ function createConcurrencyLimiter(maxConcurrent: number) {
 async function loadSections(lang: "fr" | "en"): Promise<Map<string, { section: any; rules: Map<string, any> }>> {
   const { loadedSections } = await import("../data/" + lang + "/index.ts");
   const result = new Map<string, { section: any; rules: Map<string, any> }>();
-  
+
   for (const section of loadedSections) {
     const rules = new Map<string, any>();
     for (const rule of section.rules || []) {
@@ -105,7 +111,7 @@ async function loadSections(lang: "fr" | "en"): Promise<Map<string, { section: a
     }
     result.set(section.id, { section, rules });
   }
-  
+
   return result;
 }
 
@@ -134,6 +140,21 @@ interface LLMPendingTask {
   entry: CacheEntry;
   fromCache: boolean;
   resolve: (result: ValidPredicateResult & { responseCount: number; attemptDetails?: string[] }) => void;
+}
+
+function preCheckDoomedQuestions(tasks: LLMPendingTask[]): Set<string> {
+  const doomed = new Set<string>();
+  for (const task of tasks) {
+    if (task.entry.responses.length === 0) continue;
+    const validResults = task.entry.responses
+      .map(r => task.predicate.interpretResponse(task.ctx, r.raw))
+      .filter((r): r is ValidPredicateResult => r.status !== "invalid");
+    const failCount = validResults.filter(r => r.status === "fail").length;
+    if (failCount >= 2) {
+      doomed.add(task.ctx.question.id);
+    }
+  }
+  return doomed;
 }
 
 function formatEta(ms: number): string {
@@ -234,13 +255,40 @@ class ProgressUI {
   }
 }
 
+function resolveFromCache(tasks: LLMPendingTask[]): void {
+  for (const task of tasks) {
+    if (task.entry.responses.length > 0) {
+      const validResults = task.entry.responses
+        .map(r => task.predicate.interpretResponse(task.ctx, r.raw))
+        .filter((r): r is ValidPredicateResult => r.status !== "invalid");
+      if (validResults.length > 0) {
+        const passCount = validResults.filter(r => r.status === "pass").length;
+        const totalValid = validResults.length;
+        if (passCount / totalValid >= MAJORITY_THRESHOLD) {
+          task.resolve({ status: "pass", responseCount: totalValid });
+        } else if ((totalValid - passCount) / totalValid >= MAJORITY_THRESHOLD) {
+          const failedResult = validResults.find(r => r.status === "fail");
+          task.resolve({ status: "fail", reason: failedResult?.reason || "Majority FALSE", responseCount: totalValid });
+        } else {
+          task.resolve({ status: "fail", reason: "No clear majority: " + passCount + "/" + totalValid + " PASS", responseCount: totalValid });
+        }
+      } else {
+        task.resolve({ status: "fail", reason: "Skipped: question already failed another check", responseCount: 0 });
+      }
+    } else {
+      task.resolve({ status: "fail", reason: "Skipped: question already failed another check", responseCount: 0 });
+    }
+  }
+}
+
 async function runLLMBatch(
   tasks: LLMPendingTask[],
   updateCache: boolean,
   concurrency: number,
   limitConcurrency: <T>(fn: () => Promise<T>) => Promise<T>,
   verbose: boolean,
-  harness: LLMHarness
+  harness: LLMHarness,
+  doomedQuestions: Set<string>
 ): Promise<void> {
   const ui = new ProgressUI(tasks.length, concurrency);
 
@@ -248,12 +296,12 @@ async function runLLMBatch(
     const task = tasks[taskIndex]!;
     const { predicate, ctx, entry } = task;
     const spec = { systemPrompt: entry.spec.systemPrompt, userPrompt: entry.spec.userPrompt };
-    
+
     const getValidResults = () => {
       const all = entry.responses.map(r => predicate.interpretResponse(ctx, r.raw));
       return all.filter((r): r is ValidPredicateResult => r.status !== "invalid");
     };
-    
+
     const needsMore = () => {
       const validResults = getValidResults();
       const failCount = validResults.filter(r => r.status === "fail").length;
@@ -261,13 +309,17 @@ async function runLLMBatch(
       if (validResults.length < INITIAL_RUNS) return true;
       return failCount > 0 && validResults.length < INITIAL_RUNS + ADDITIONAL_RUNS;
     };
-    
+
     let attemptNumber = 0;
-    
+
     while (updateCache && needsMore()) {
+      if (doomedQuestions.has(ctx.question.id)) break;
+
       await limitConcurrency(async () => {
+        if (doomedQuestions.has(ctx.question.id)) return;
+
         const nonce = generateNonce();
-        
+
         const callStart = Date.now();
         const response = await runWithRetry(
           async () => {
@@ -282,15 +334,15 @@ async function runLLMBatch(
           (msg) => ui.write(msg)
         );
         const callDuration = Date.now() - callStart;
-        
+
         entry.responses.push(response);
         attemptNumber++;
-        
+
         const validResults = getValidResults();
         const failCount = validResults.filter(r => r.status === "fail").length;
-        
+
         ui.tick(taskIndex, failCount, callDuration);
-        
+
         if (verbose) {
           const interp = predicate.interpretResponse(ctx, response.raw);
           if (isInteractive) {
@@ -299,23 +351,30 @@ async function runLLMBatch(
             console.log("  " + ctx.question.id + " | " + predicate.id + " | attempt " + attemptNumber + " | " + formatStatus(interp) + ui.suffix());
           }
         }
-        
+
         saveCacheEntry(entry);
+
+        if (failCount >= 2) {
+          doomedQuestions.add(ctx.question.id);
+        }
       });
     }
-    
+
     ui.done(taskIndex);
-    
+
     if (entry.responses.length === 0) {
+      const reason = doomedQuestions.has(ctx.question.id)
+        ? "Skipped: question already failed another check"
+        : "No cached responses and cache update disabled";
       if (verbose) {
-        ui.write("  " + ctx.question.id + " | " + predicate.id + " | attempt 0 | " + formatStatus({ status: "fail", reason: "No cached responses and cache update disabled" }));
+        ui.write("  " + ctx.question.id + " | " + predicate.id + " | attempt 0 | " + formatStatus({ status: "fail", reason }));
       }
-      task.resolve({ status: "fail", reason: "No cached responses and cache update disabled", responseCount: 0 });
+      task.resolve({ status: "fail", reason, responseCount: 0 });
       return;
     }
-    
+
     const validResults = getValidResults();
-    
+
     if (validResults.length === 0) {
       throw new Error(
         "All LLM responses were invalid for " + ctx.question.id + " / " + predicate.id + ". " +
@@ -323,10 +382,10 @@ async function runLLMBatch(
         "Last response: " + (entry.responses[entry.responses.length - 1]?.raw?.slice(0, 200) || "none")
       );
     }
-    
+
     const passCount = validResults.filter(r => r.status === "pass").length;
     const totalValid = validResults.length;
-    
+
     if (passCount / totalValid >= MAJORITY_THRESHOLD) {
       task.resolve({ status: "pass", responseCount: totalValid });
     } else if ((totalValid - passCount) / totalValid >= MAJORITY_THRESHOLD) {
@@ -342,7 +401,7 @@ async function runLLMBatch(
       task.resolve({ status: "fail", reason, responseCount: totalValid, attemptDetails });
     }
   };
-  
+
   await Promise.all(tasks.map((_, i) => runTask(i)));
   ui.finish();
 }
@@ -355,7 +414,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   let warnings = 0;
   let cacheHits = 0;
   let cacheMisses = 0;
-  
+
   const lang = opts.lang || "en";
   const model = opts.model || "glm-5";
   const harness = createOpencodeHarness(model);
@@ -363,39 +422,40 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   const cacheKeysUsed = new Set<string>();
   const concurrency = opts.concurrency || DEFAULT_CONCURRENCY;
   const limitConcurrency = createConcurrencyLimiter(concurrency);
-  
-  const llmPendingTasks: LLMPendingTask[] = [];
+
+  const priorityTasks: LLMPendingTask[] = [];
+  const restTasks: LLMPendingTask[] = [];
   const structuralResults: CheckResult[] = [];
   const verbose = opts.llm === true;
-  
+
   for (const [sectionId, { section, rules }] of sections) {
     for (const question of section.questions || []) {
       if (!matchesFilters(question, sectionId, opts)) continue;
-      
+
       const rule = rules.get(question.ruleId);
       if (!rule) continue;
-      
+
       const ctx: QuestionContext = {
         question,
         rule,
         section,
         lang,
       };
-      
+
       for (const predicate of allPredicates) {
         if (!categoryMatches(predicate, opts)) continue;
         if (isLLMPredicate(predicate) && opts.llm !== true) continue;
-        
+
         if (isLLMPredicate(predicate)) {
           if (!predicate.appliesTo(ctx)) continue;
-          
+
           const spec = predicate.generatePrompt(ctx);
           const cacheKey = computeCacheKey(predicate.id, question.id, spec);
           cacheKeysUsed.add(cacheKey);
-          
+
           let entry = loadCacheEntry(cacheKey);
           const fromCache = entry !== null;
-          
+
           if (!entry) {
             if (opts.dryRun) {
               cacheMisses++;
@@ -417,7 +477,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
               });
               continue;
             }
-            
+
             if (!opts.updateCache) {
               cacheMisses++;
               results.push({
@@ -430,16 +490,18 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
               });
               continue;
             }
-            
+
             const nonce = generateNonce();
             entry = createCacheEntry(cacheKey, predicate.id, question.id, spec, nonce);
             cacheMisses++;
           } else {
             cacheHits++;
           }
-          
+
+          const target = PRIORITY_PREDICATE_IDS.has(predicate.id) ? priorityTasks : restTasks;
+
           const taskPromise = new Promise<ValidPredicateResult & { responseCount: number }>(resolve => {
-            llmPendingTasks.push({
+            target.push({
               predicate,
               ctx,
               entry: entry!,
@@ -447,7 +509,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
               resolve,
             });
           });
-          
+
           taskPromise.then(llmResult => {
             const result: CheckResult = {
               questionId: question.id,
@@ -464,7 +526,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
             else if (predicate.category === "pedagogical") { warnings++; failed++; }
             else failed++;
           });
-          
+
         } else {
           const predicateResult = predicate.check(ctx);
           const checkResult: CheckResult = {
@@ -481,23 +543,52 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
       }
     }
   }
-  
+
   results.unshift(...structuralResults);
-  
-  if (llmPendingTasks.length > 0) {
-    const cachedResponseCount = llmPendingTasks.reduce((sum, t) => sum + t.entry.responses.length, 0);
+
+  const allLLMTasks = [...priorityTasks, ...restTasks];
+
+  if (allLLMTasks.length > 0) {
+    const cachedResponseCount = allLLMTasks.reduce((sum, t) => sum + t.entry.responses.length, 0);
     if (cachedResponseCount > 0) {
       console.log(cachedResponseCount + " results loaded from cache");
     }
-    console.log("Running " + llmPendingTasks.length + " LLM tasks (max " + concurrency + " concurrent)...");
-    await runLLMBatch(llmPendingTasks, !!opts.updateCache, concurrency, limitConcurrency, verbose, harness);
+
+    const doomedQuestions = preCheckDoomedQuestions(allLLMTasks);
+    const doomedCount = doomedQuestions.size;
+    if (doomedCount > 0) {
+      console.log(doomedCount + " question(s) already doomed by cache");
+    }
+
+    const totalLLM = priorityTasks.length + restTasks.length;
+    console.log("Running " + totalLLM + " LLM tasks (max " + concurrency + " concurrent)...");
+
+    if (priorityTasks.length > 0) {
+      console.log("  Phase 1: " + priorityTasks.length + " priority checks");
+      await runLLMBatch(priorityTasks, !!opts.updateCache, concurrency, limitConcurrency, verbose, harness, doomedQuestions);
+    }
+
+    if (restTasks.length > 0) {
+      const activeRest = restTasks.filter(t => !doomedQuestions.has(t.ctx.question.id));
+      const skippedRest = restTasks.filter(t => doomedQuestions.has(t.ctx.question.id));
+
+      if (skippedRest.length > 0) {
+        console.log("  " + skippedRest.length + " remaining tasks skipped (question already doomed)");
+        resolveFromCache(skippedRest);
+      }
+
+      if (activeRest.length > 0) {
+        console.log("  Phase 2: " + activeRest.length + " remaining checks");
+        await runLLMBatch(activeRest, !!opts.updateCache, concurrency, limitConcurrency, verbose, harness, doomedQuestions);
+      }
+    }
   }
-  
+
   if (opts.pruneCache) {
     const removed = pruneCache(cacheKeysUsed);
     console.log("Pruned " + removed.length + " orphaned cache entries");
   }
-  
+
   return {
     results,
     passed,
