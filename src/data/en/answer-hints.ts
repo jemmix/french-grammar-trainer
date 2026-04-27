@@ -177,6 +177,20 @@ export const answerHints: Record<string, string> = {
   "is eating": "eat",
   "are giving": "give",
   "are selling": "sell",
+  "am always forgetting": "forget",
+  "am working": "work",
+  "are always leaving": "leave",
+  "are living": "live",
+  "departs": "depart",
+  "drives": "drive",
+  "is always borrowing": "borrow",
+  "is always barking": "bark",
+  "is always losing": "lose",
+  "is meeting": "meet",
+  "needs": "need",
+  "prefers": "prefer",
+  "starts": "start",
+  "am seeing": "see",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;

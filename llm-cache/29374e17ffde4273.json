@@ -1,0 +1,26 @@
+{
+  "cacheKey": "29374e17ffde4273",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-021",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-18 - Present simple vs. present continuous: habits vs. temporary actions\n\nQUESTION:\nType: Input\nPrompt: Complete the sentence with the correct present simple form.\nPhrase: She ___ in a bookshop. She has worked there for five years.\nCorrect Answer: works\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777326556448-sivgez4y"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs to use the present simple form, so students don't need to apply the rule distinguishing habits from temporary actions to answer correctly.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777326778335-2jghy4zf",
+      "timestamp": "2026-04-27T21:53:10.328Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs students to use \"the correct present simple form,\" removing any need to choose between present simple and present continuous, so it only tests basic verb conjugation rather than the habits vs. temporary actions distinction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777326972767-l6909wy4",
+      "timestamp": "2026-04-27T21:56:25.808Z"
+    }
+  ]
+}

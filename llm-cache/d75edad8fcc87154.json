@@ -1,0 +1,40 @@
+{
+  "cacheKey": "d75edad8fcc87154",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-013",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-20 - Present simple vs. present continuous: scheduled events vs. personal arrangements\n\nQUESTION:\nType: Multiple Choice\nPrompt: Which sentence uses present simple for an official schedule?\nChoices:\nA. [CORRECT] The exam begins at 9 am in the main hall.\nB. My sister is taking the exam tomorrow morning.\nC. The exam began at 9 am last Monday.\nD. The exam will begin once everyone is seated.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777330943106-t68bjqbc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question can be answered by simply identifying present simple tense among the choices without understanding the distinction between scheduled events vs personal arrangements that the rule is meant to teach.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777331048064-l8rd2et2",
+      "timestamp": "2026-04-27T23:04:45.081Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires identifying present simple usage in an official schedule context, directly testing the distinction between scheduled events and personal arrangements stated in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777331247853-uwnlephc",
+      "timestamp": "2026-04-27T23:07:39.427Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between present simple for scheduled events (choice A: \"The exam begins at 9 am\") versus present continuous for personal arrangements (choice B: \"is taking\") and other tenses, requiring knowledge of the rule to identify the correct usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777331436395-5at75cap",
+      "timestamp": "2026-04-27T23:10:47.559Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests only tense identification (recognizing present simple vs past/future), not the distinction between scheduled events and personal arrangements - choice A can be selected by spotting \"begins\" is present simple without understanding why present simple is used for schedules.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777331518166-jrob6rle",
+      "timestamp": "2026-04-27T23:12:23.926Z"
+    }
+  ]
+}

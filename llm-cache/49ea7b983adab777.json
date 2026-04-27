@@ -1,0 +1,33 @@
+{
+  "cacheKey": "49ea7b983adab777",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-18-004",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-18 - Present simple vs. present continuous: habits vs. temporary actions\n\nQUESTION:\nType: Multiple Choice\nPrompt: \"They ___ in a rented flat this month while their house is being repaired.\"\nChoices:\nA. [CORRECT] are living\nB. live\nC. lived\nD. is living\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777326556446-3y55n9ix"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing between present simple for habits and present continuous for temporary actions—choosing \"are living\" depends on recognizing that living in a rented flat \"this month\" is a temporary situation, not a permanent habit.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777326578008-ydexvq8y",
+      "timestamp": "2026-04-27T21:49:51.749Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying a temporary situation (\"this month,\" \"while being repaired\") to correctly choose present continuous over present simple, which is exactly the distinction the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777326827347-w2qt1o86",
+      "timestamp": "2026-04-27T21:54:00.339Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly requires distinguishing present continuous (\"are living\") for the temporary situation described (\"this month while their house is being repaired\") from present simple (\"live\") for habits, which is the core distinction tested by this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777327033369-8zrp0qlp",
+      "timestamp": "2026-04-27T21:57:30.906Z"
+    }
+  ]
+}
