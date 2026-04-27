@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ba8c43b014e89cfa",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-16-021",
+  "spec": {
+    "systemPrompt": "You are a English language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Complete the sentence with the correct verb form. The plan has already been confirmed.\n\nPHRASE: She ___ her grandparents this Sunday.\n\nHINT: visit\n\nEXPECTED ANSWER: is visiting\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1777310606965-pw78yyzo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly states \"correct verb form\" with the context \"The plan has already been confirmed,\" the hint provides the base verb \"visit,\" and together these clearly indicate the learner should use present continuous tense for a future arrangement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777312080967-6xo8rj10",
+      "timestamp": "2026-04-27T17:48:35.314Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Multiple grammatically correct verb forms could complete the sentence (is visiting, will visit, visits) - the context clue about a \"confirmed plan\" points to present continuous but doesn't definitively rule out other future forms, so a learner cannot be certain which single form is expected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777312180965-q84710uh",
+      "timestamp": "2026-04-27T17:50:16.389Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt's clue about \"plan confirmed\" is too subtle to clearly indicate present continuous over future simple; a learner could reasonably answer \"will visit\" and be correct.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777312278577-w306w9f8",
+      "timestamp": "2026-04-27T17:52:26.757Z"
+    }
+  ]
+}

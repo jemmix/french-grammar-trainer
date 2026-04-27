@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1c2dc32c884cd886",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-018",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-16 - Present continuous for future arrangements\n\nQUESTION:\nType: Multiple Choice\nPrompt: The students ___ their end-of-year play next Wednesday. They have been rehearsing for weeks.\nChoices:\nA. [CORRECT] are performing\nB. is performing\nC. performed\nD. performs\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777312991375-pcn14d4y"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly requires knowledge of present continuous for future arrangements, as \"next Wednesday\" is a clear future time marker and the context describes a planned/rehearsed event, not something happening now.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777313227027-iqmswb1b",
+      "timestamp": "2026-04-27T18:07:29.550Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that present continuous is used for pre-arranged future plans (not just general future reference), as evidenced by the contextual clue \"They have been rehearsing for weeks\" indicating a scheduled arrangement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777313444622-faini2h1",
+      "timestamp": "2026-04-27T18:11:03.885Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The context \"next Wednesday\" combined with \"have been rehearsing for weeks\" indicates a planned future arrangement, requiring the student to recognize that present continuous (\"are performing\") is the correct tense for talking about scheduled future events rather than present simple or past tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777313773750-nng65g67",
+      "timestamp": "2026-04-27T18:16:54.961Z"
+    }
+  ]
+}

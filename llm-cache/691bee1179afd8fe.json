@@ -1,0 +1,26 @@
+{
+  "cacheKey": "691bee1179afd8fe",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-007",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-16 - Present continuous for future arrangements\n\nQUESTION:\nType: Multiple Choice\nPrompt: The team ___ a new product on Tuesday. The press invites went out yesterday.\nChoices:\nA. [CORRECT] is launching\nB. will launch\nC. are launching\nD. am launching\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777310606963-45pi38qv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: Both A and C are present continuous forms, so the question is primarily testing subject-verb agreement with collective nouns rather than the distinction between present continuous for future arrangements vs other future forms.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777310742408-e3j787gu",
+      "timestamp": "2026-04-27T17:26:33.302Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The context \"The press invites went out yesterday\" signals a pre-arranged event, requiring students to choose present continuous for fixed future arrangements rather than future simple (which is used for predictions or spontaneous decisions).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777311339570-od1pjroo",
+      "timestamp": "2026-04-27T17:36:16.871Z"
+    }
+  ]
+}

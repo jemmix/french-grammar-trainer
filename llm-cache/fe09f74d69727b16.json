@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fe09f74d69727b16",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-16-001",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-16 - Present continuous for future arrangements\n\nQUESTION:\nType: Multiple Choice\nPrompt: \"What are your plans for Saturday?\" — \"I ___ lunch with Sarah at 1 pm.\"\nChoices:\nA. [CORRECT] am having\nB. have\nC. is having\nD. does have\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777309353754-4exvhi4f"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core concept of using present continuous (\"am having\") to describe fixed future arrangements with a specific time mentioned, and cannot be answered correctly without knowledge of this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777309353757-erqt3ppn",
+      "timestamp": "2026-04-27T17:04:03.384Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that present continuous (\"am having\") is used for fixed future arrangements, which cannot be determined without understanding the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777309443385-dhcn62m7",
+      "timestamp": "2026-04-27T17:05:23.823Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of present continuous for future arrangements to distinguish between \"am having\" (correct for a fixed plan) and other options; the context of \"plans for Saturday\" and specific time \"at 1 pm\" makes it a classic test of this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777309523824-9puumrb5",
+      "timestamp": "2026-04-27T17:06:16.295Z"
+    }
+  ]
+}

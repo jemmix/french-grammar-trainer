@@ -1,0 +1,26 @@
+{
+  "cacheKey": "a461682ba964242f",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-16-022",
+  "spec": {
+    "systemPrompt": "You are a English language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Complete the sentence with the correct verb form. The event has been arranged between the people involved.\n\nPHRASE: I ___ a presentation at the meeting tomorrow morning.\n\nHINT: give\n\nEXPECTED ANSWER: am giving\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1777312991377-85y98oom"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nREASON: Multiple future forms are grammatically possible (\"will give\", \"am going to give\", \"am giving\"), and the clue about arranged plans is too subtle to clearly signal present continuous without prior grammatical knowledge.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777314388187-wpw5d8yr",
+      "timestamp": "2026-04-27T18:26:58.080Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The prompt clearly indicates a verb form is needed, the hint provides the base verb \"give\", the context clue about arranged plans signals present continuous tense, and the subject \"I\" with \"tomorrow morning\" confirms \"am giving\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777314529582-20yfshbe",
+      "timestamp": "2026-04-27T18:29:04.904Z"
+    }
+  ]
+}

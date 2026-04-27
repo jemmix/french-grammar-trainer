@@ -170,6 +170,13 @@ export const answerHints: Record<string, string> = {
   "am studying": "study",
   "are taking": "take",
   "are eating": "eat",
+  "is visiting": "visit",
+  "am giving": "give",
+  "are going": "go",
+  "is eating at": "eat",
+  "is eating": "eat",
+  "are giving": "give",
+  "are selling": "sell",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
