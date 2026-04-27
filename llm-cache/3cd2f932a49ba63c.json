@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3cd2f932a49ba63c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-15-010",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-15 - Present continuous for temporary situations\n\nQUESTION:\nType: Multiple Choice\nPrompt: \"Is John still at the same school?\" — \"No, he ___ a private tutor this term instead.\"\nChoices:\nA. [CORRECT] is using\nB. uses\nC. are using\nD. does use\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777279414665-00tv58h3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the choice between present continuous for a temporary situation (\"this term\") vs. present simple for habitual/permanent actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777279542756-c4thy7r1",
+      "timestamp": "2026-04-27T08:47:38.057Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires choosing between present simple and present continuous based on the temporary nature of having a tutor \"this term,\" which is the core concept of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777280230743-p3sibian",
+      "timestamp": "2026-04-27T09:03:04.010Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires distinguishing present continuous (temporary) from present simple (habitual/permanent) based on the context \"this term instead,\" which is precisely what rule 01-15 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777280983547-v56jmnv9",
+      "timestamp": "2026-04-27T09:10:35.713Z"
+    }
+  ]
+}

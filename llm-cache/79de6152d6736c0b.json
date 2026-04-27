@@ -1,0 +1,33 @@
+{
+  "cacheKey": "79de6152d6736c0b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-15-007",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-15 - Present continuous for temporary situations\n\nQUESTION:\nType: Multiple Choice\nPrompt: \"Why are you learning Spanish?\" — \"I ___ for a project in Madrid next month.\"\nChoices:\nA. [CORRECT] am preparing\nB. prepare\nC. is preparing\nD. does prepare\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777279414663-vyw01fc2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing present continuous (for temporary situations) from present simple (for habitual actions) based on the contextual clue that the preparation is specifically for an upcoming project, making it a temporary activity.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777279468713-wuynrtnp",
+      "timestamp": "2026-04-27T08:50:00.690Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests present continuous for future arrangements (\"next month\"), not for temporary situations happening now.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777280338223-11pjdtp0",
+      "timestamp": "2026-04-27T09:00:27.115Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using present continuous to describe an ongoing, temporary activity (preparing for a project) with a specific time frame, which is the core of the \"temporary situations\" rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777280857695-ngems0s4",
+      "timestamp": "2026-04-27T09:09:27.229Z"
+    }
+  ]
+}

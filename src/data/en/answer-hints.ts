@@ -166,6 +166,10 @@ export const answerHints: Record<string, string> = {
   "am shopping": "shop",
   "is leaving": "leave",
   "is cheering": "cheer",
+  "is staying": "stay",
+  "am studying": "study",
+  "are taking": "take",
+  "are eating": "eat",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
