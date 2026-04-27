@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b12f892bdde91027",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-024",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-14 - Present continuous for actions happening now or around now\n\nQUESTION:\nType: Input\nPrompt: Fill in the blank with the correct present continuous form.\nPhrase: Hurry! The train ___ right now!\nCorrect Answer: is leaving\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777264049749-a4et53uv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires forming the present continuous tense (\"is leaving\") to describe an action happening \"right now\", which directly tests the rule's core concept.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777264049750-gu21auvy",
+      "timestamp": "2026-04-27T04:27:52.014Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells students to use present continuous form, so they don't need to know when to choose this tense over others - they're only tested on forming it from \"leave\", not on distinguishing it from other tenses based on context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777264072016-845fhzz7",
+      "timestamp": "2026-04-27T04:28:17.287Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The prompt explicitly tells the learner to \"Fill in the blank with the correct present continuous form,\" so they don't need to recognize when to use present continuous - they're just told to use it and then tested only on how to form it (is leaving), which misses the rule's core purpose of teaching when to apply this tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777264097287-un9alg6j",
+      "timestamp": "2026-04-27T04:30:17.880Z"
+    }
+  ]
+}

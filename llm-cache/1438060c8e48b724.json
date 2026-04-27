@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1438060c8e48b724",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-14-008",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-14 - Present continuous for actions happening now or around now\n\nQUESTION:\nType: Multiple Choice\nPrompt: \"Can I speak to Mark?\" — \"Sorry, he ___ lunch at the moment.\"\nChoices:\nA. [CORRECT] is having\nB. has\nC. had\nD. is going to have\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777250679082-86gjgrd1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires choosing present continuous (\"is having\") to describe an action happening at this moment, which directly tests the rule for actions happening now or around now.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777250723463-8jkrk145",
+      "timestamp": "2026-04-27T00:45:32.622Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The marker \"at the moment\" signals an action happening now, so selecting \"is having\" requires knowing when to use present continuous versus other tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777250880969-14mijpqq",
+      "timestamp": "2026-04-27T00:48:10.880Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"at the moment\" signals an action happening now, which must be expressed using the present continuous form \"is having\" — this is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777251035011-iptmzejy",
+      "timestamp": "2026-04-27T00:50:48.666Z"
+    }
+  ]
+}

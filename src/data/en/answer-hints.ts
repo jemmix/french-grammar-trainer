@@ -161,6 +161,11 @@ export const answerHints: Record<string, string> = {
   "swimming": "swim",
   "writing": "write",
   "am not": "negative form",
+  "is raining": "rain",
+  "is speaking": "speak",
+  "am shopping": "shop",
+  "is leaving": "leave",
+  "is cheering": "cheer",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
