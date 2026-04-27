@@ -1,0 +1,33 @@
+{
+  "cacheKey": "570fc91f6f615146",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-15-018",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-15 - Present continuous for temporary situations\n\nQUESTION:\nType: Multiple Choice\nPrompt: \"Why do you have a bicycle?\" — \"My car broke down, so I ___ it until the garage fixes it.\"\nChoices:\nA. [CORRECT] am riding\nB. ride\nC. is riding\nD. are riding\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777306148051-0pggmot0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests present continuous for a temporary action (riding the bicycle only until the car is fixed), which is the core concept of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777306148054-yvu5hlzw",
+      "timestamp": "2026-04-27T16:09:53.711Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests present continuous in a clearly temporary context (\"until the garage fixes it\"), which is exactly what the rule specifies.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777306193712-rh6jf8w0",
+      "timestamp": "2026-04-27T16:10:19.592Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The context explicitly describes a temporary situation (using a bicycle until the car is fixed), requiring knowledge that present continuous (\"am riding\") is used for temporary actions rather than present simple (\"ride\") for permanent or habitual actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777306219592-yhsyy9gs",
+      "timestamp": "2026-04-27T16:12:07.861Z"
+    }
+  ]
+}
