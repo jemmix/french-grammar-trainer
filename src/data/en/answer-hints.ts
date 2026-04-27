@@ -160,6 +160,7 @@ export const answerHints: Record<string, string> = {
   "running": "run",
   "swimming": "swim",
   "writing": "write",
+  "am not": "negative form",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
