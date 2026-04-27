@@ -1,0 +1,47 @@
+{
+  "cacheKey": "701b750bc2fd669d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-024",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-20 - Present simple vs. present continuous: scheduled events vs. personal arrangements\n\nQUESTION:\nType: Input\nPrompt: Complete the sentence with the correct form of the verb. Use present simple for timetabled events or present continuous for personal arrangements.\nPhrase: I ___ my bedroom this weekend.\nCorrect Answer: am painting\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777333607996-rqocrttx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires students to categorize \"painting my bedroom\" as a personal arrangement rather than a timetabled event, then apply the rule that personal arrangements use present continuous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777333607997-k9is67o8",
+      "timestamp": "2026-04-27T23:47:47.960Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests that present continuous can be used for future plans, but doesn't actually test the distinction between timetabled events (present simple) vs personal arrangements (present continuous) - a timetabled/scheduled event interpretation of \"paint my bedroom\" would be implausible, so the correct answer can be determined without knowing the rule's specific categorization.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777333667961-ybblseli",
+      "timestamp": "2026-04-27T23:48:09.155Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying \"painting my bedroom this weekend\" as a personal arrangement (not a timetabled event) and selecting present continuous accordingly, which is the core distinction of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777333689156-tmzb3sgv",
+      "timestamp": "2026-04-27T23:49:39.719Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student can identify \"painting my bedroom this weekend\" as a personal arrangement requiring present continuous (\"am painting\") rather than a timetabled event that would use present simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777333779720-27zbk66d",
+      "timestamp": "2026-04-27T23:50:13.937Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The phrase \"I ___ my bedroom this weekend\" with the answer \"am painting\" presents a scenario that unambiguously uses present continuous for a personal arrangement, but doesn't test the distinction between scheduled events and personal arrangements since there's no competing present simple option to consider.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777333813938-n2rugpie",
+      "timestamp": "2026-04-27T23:51:35.345Z"
+    }
+  ]
+}

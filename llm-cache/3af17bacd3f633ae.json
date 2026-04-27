@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3af17bacd3f633ae",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-20-024",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-20 - Present simple vs. present continuous: scheduled events vs. personal arrangements\n\nQUESTION:\nType: Input\nPrompt: Complete the sentence with the correct present continuous form. Personal arrangements use present continuous.\nPhrase: I ___ my grandmother this weekend.\nCorrect Answer: am visiting\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777333336927-bqp5ukzg"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs to use present continuous for personal arrangements, eliminating the need to distinguish between scheduled events and personal arrangements, so the question only tests present continuous conjugation, not the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777333336928-z8cdhlb2",
+      "timestamp": "2026-04-27T23:43:52.762Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to use the present continuous form and states \"Personal arrangements use present continuous,\" so the question doesn't require distinguishing between present simple and present continuous based on whether the event is scheduled or a personal arrangement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777333432763-nu7rbco6",
+      "timestamp": "2026-04-27T23:44:15.897Z"
+    }
+  ]
+}

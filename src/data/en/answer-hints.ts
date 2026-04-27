@@ -186,11 +186,10 @@ export const answerHints: Record<string, string> = {
   "is always borrowing": "borrow",
   "is always barking": "bark",
   "is always losing": "lose",
-  "is meeting": "meet",
+  "are throwing": "throw",
+  "opens": "open",
   "needs": "need",
   "prefers": "prefer",
-  "starts": "start",
-  "am seeing": "see",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
