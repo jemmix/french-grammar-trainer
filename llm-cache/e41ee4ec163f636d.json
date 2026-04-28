@@ -1,0 +1,47 @@
+{
+  "cacheKey": "e41ee4ec163f636d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-19-025",
+  "spec": {
+    "systemPrompt": "You are a English grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Present Simple & Present Continuous\n\nRULE BEING TESTED: 01-19 - Present simple vs. present continuous: stative verbs\n\nQUESTION:\nType: Input\nPrompt: Complete the sentence with the correct form of the verb. Stative verbs are not normally used in the continuous form.\nPhrase: The ticket ___ ten pounds.\nCorrect Answer: costs\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777340525475-ijsp3bp1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires recognizing that \"cost\" is a stative verb that must be used in present simple (\"costs\") rather than present continuous (\"is costing\"), which is the exact distinction defined by the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777340525476-lc3aa4u9",
+      "timestamp": "2026-04-28T01:44:43.624Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question only works because \"is costing\" is grammatically incorrect for any interpretation of \"The ticket\", not because \"cost\" is a stative verb; to test the stative verb rule, the continuous form would need to be plausible but incorrect for that specific context (e.g., \"I'm knowing the answer\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777340683625-akt0jp89",
+      "timestamp": "2026-04-28T01:46:00.831Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests that \"cost\" is a stative verb, which cannot be used in continuous form (no \"is costing\"), requiring present simple instead.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777340760831-ecw1g35o",
+      "timestamp": "2026-04-28T01:46:26.350Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests that \"cost\" is a stative verb and must be in present simple form, not present continuous (\"is costing\"), which is the core concept of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777340786350-7vjn2zr7",
+      "timestamp": "2026-04-28T01:46:44.226Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only asks for the present simple form without offering a continuous alternative, so it doesn't test whether students know that stative verbs avoid the continuous form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777340804227-dny7y3yu",
+      "timestamp": "2026-04-28T01:47:09.982Z"
+    }
+  ]
+}

@@ -188,8 +188,8 @@ export const answerHints: Record<string, string> = {
   "is always losing": "lose",
   "are throwing": "throw",
   "opens": "open",
-  "needs": "need",
   "prefers": "prefer",
+  "weighs": "weigh",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
