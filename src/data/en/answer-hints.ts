@@ -182,7 +182,7 @@ export const answerHints: Record<string, string> = {
   "are always leaving": "leave",
   "are living": "live",
   "departs": "depart",
-  "drives": "drive",
+  "rides": "ride",
   "is always borrowing": "borrow",
   "is always barking": "bark",
   "is always losing": "lose",
