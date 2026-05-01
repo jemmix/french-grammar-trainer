@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e5521327d32fab5a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-04-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-04 - Les verbes qui acceptent avoir et être avec changement de sens (monter, descendre, sortir, passer, retourner)\n\nQUESTION:\nType: Input\nPrompt: Complétez le passé composé avec la forme correcte de l'auxiliaire.\nPhrase: Le gardien ___ sorti les clés du coffre.\nCorrect Answer: a\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777669691902-a3emxsmp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that \"sortir\" with a direct object (\"les clés\") is transitive and takes \"avoir\" as its auxiliary, which is the core distinction taught in this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777669840826-7uovi2u8",
+      "timestamp": "2026-05-01T21:11:51.928Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"sortir\" with a direct object takes \"avoir\", which is exactly the distinction covered by the rule about verbs that change auxiliary based on transitivity.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777670091149-1lcjsx0t",
+      "timestamp": "2026-05-01T21:15:27.992Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the learner knows that \"sortir\" takes \"avoir\" when used transitively with a direct object (les clés), which is the exact meaning-change distinction covered by the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777670319959-ps0oqao0",
+      "timestamp": "2026-05-01T21:18:59.811Z"
+    }
+  ]
+}

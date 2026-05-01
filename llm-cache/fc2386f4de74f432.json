@@ -1,0 +1,40 @@
+{
+  "cacheKey": "fc2386f4de74f432",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-04-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-04 - Les verbes qui acceptent avoir et être avec changement de sens (monter, descendre, sortir, passer, retourner)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez le bon auxiliaire au passé composé : « L'enfant ___ monté au troisième étage. »\nChoices:\nA. [CORRECT] est\nB. a\nC. sera\nD. sont\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777671362753-358c54kq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the basic rule that intransitive \"monter\" uses \"être\" (a standard être-verb rule), not the specific nuance that \"monter\" can use either auxiliary with a change of meaning.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777671362786-d5sqjkcy",
+      "timestamp": "2026-05-01T21:37:35.893Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests that \"monter\" uses \"être\" when used intransitively (child going up to third floor), which is central to the rule about verbs that take different auxiliaries with change of meaning.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777671538066-5wskn17t",
+      "timestamp": "2026-05-01T21:39:16.249Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests whether the student knows that \"monter\" takes \"être\" when used intransitively with directional meaning (the child moved upward) vs. \"avoir\" when used transitively, which is the exact distinction covered by rule 02-04.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777671648878-j0n5o9yo",
+      "timestamp": "2026-05-01T21:41:23.892Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To choose \"est\" correctly, the student must recognize that \"monter\" is used intransitively here (the child moves themselves) and therefore requires \"être\" as the auxiliary, distinguishing it from the transitive \"a monté\" (taking something up).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777671716372-xox0buz9",
+      "timestamp": "2026-05-01T21:42:22.507Z"
+    }
+  ]
+}

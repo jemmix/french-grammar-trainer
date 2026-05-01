@@ -1,0 +1,33 @@
+{
+  "cacheKey": "528b1695c8418f00",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-04-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-04 - Les verbes qui acceptent avoir et être avec changement de sens (monter, descendre, sortir, passer, retourner)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Sophie ___ passé un examen difficile. »\nChoices:\nA. [CORRECT] a\nB. est\nC. aura\nD. ont\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777667532243-lkl99drn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the specific rule about \"passer\" taking \"avoir\" when used transitively (with direct object \"un examen difficile\"), which is exactly what this rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777667601581-dtihlncg",
+      "timestamp": "2026-05-01T20:35:11.989Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that \"passer un examen\" (to take/pass an exam) uses \"avoir\" rather than \"être\" — exactly the distinction covered by this rule for the verb \"passer\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777667968635-5zm9urmt",
+      "timestamp": "2026-05-01T20:40:25.589Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests \"passer\" (listed in the rule) and requires choosing \"avoir\" because the verb is used transitively with a direct object (\"un examen difficile\"), which is the core distinction this rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777668347063-o1pv9b8g",
+      "timestamp": "2026-05-01T20:46:05.409Z"
+    }
+  ]
+}

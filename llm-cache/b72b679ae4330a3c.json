@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b72b679ae4330a3c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-04-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-04 - Les verbes qui acceptent avoir et être avec changement de sens (monter, descendre, sortir, passer, retourner)\n\nQUESTION:\nType: Input\nPrompt: Complétez le passé composé avec la forme correcte de l'auxiliaire.\nPhrase: Les supporters ___ sortis du stade.\nCorrect Answer: sont\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777672745169-vvl8xxps"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests that \"sortir\" uses \"être\" in passé composé when used intransitively, but the rule specifically concerns verbs that use both \"avoir\" and \"être\" with different meanings (\"avec changement de sens\"), a nuance not addressed by this single-answer question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777672745192-96dhabfu",
+      "timestamp": "2026-05-01T21:59:38.219Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether students recognize that \"sortir\" used intransitively (les supporters are performing the action of leaving) requires \"être\" as auxiliary, which is the core distinction taught in rule 02-04.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777672812666-pwv1rycr",
+      "timestamp": "2026-05-01T22:00:45.369Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests basic auxiliary selection (être vs avoir) for intransitive sortir, but the rule is about verbs that accept both auxiliaries with distinct meaning changes—this question doesn't require understanding or distinguishing between the two meanings of sortir.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777672854145-3e1za871",
+      "timestamp": "2026-05-01T22:01:27.036Z"
+    }
+  ]
+}

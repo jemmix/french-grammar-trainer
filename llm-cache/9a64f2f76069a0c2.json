@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9a64f2f76069a0c2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-04-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-04 - Les verbes qui acceptent avoir et être avec changement de sens (monter, descendre, sortir, passer, retourner)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Le verbe monter change de sens selon l'auxiliaire. Complétez au passé composé : « Le singe ___ monté dans l'arbre. »\nChoices:\nA. [CORRECT] est\nB. a\nC. sera\nD. sont\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777672745151-i7cnponb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that monter uses être when the subject ascends (movement of the subject) versus avoir when the subject moves something up (transitive with object), which is the core distinction tested by this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777672745187-ypux0abo",
+      "timestamp": "2026-05-01T21:59:25.017Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct auxiliary (être vs avoir) for \"monter\" based on its meaning in context, which is exactly what the rule about verbs that accept both auxiliaries with meaning change tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777672782125-squ50hz5",
+      "timestamp": "2026-05-01T22:00:15.872Z"
+    }
+  ]
+}

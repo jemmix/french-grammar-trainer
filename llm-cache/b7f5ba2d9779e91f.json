@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b7f5ba2d9779e91f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-04-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-04 - Les verbes qui acceptent avoir et être avec changement de sens (monter, descendre, sortir, passer, retourner)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Les enfants ___ sorti le chien. »\nChoices:\nA. [CORRECT] ont\nB. sont\nC. auront\nD. est\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777667532242-8x8e8r8q"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that \"sortir\" with a direct object (\"le chien\") uses \"avoir\" as its auxiliary in passé composé (meaning \"took out\"), versus using \"être\" when used intransitively (meaning \"went out\")—this is exactly the distinction taught in rule 02-04.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777667532257-qfjuaqrh",
+      "timestamp": "2026-05-01T20:32:39.279Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the transitive use of \"sortir\" (taking the dog out, requiring avoir) versus the intransitive use (going out, requiring être), which directly applies the rule about auxiliary choice based on meaning change for these specific verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777667822727-9xs33rpa",
+      "timestamp": "2026-05-01T20:37:31.877Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that \"sortir\" uses \"avoir\" when it has a direct object (\"le chien\") versus \"être\" when intransitive, which is the exact meaning change described in rule 02-04.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777668184558-sultv4jw",
+      "timestamp": "2026-05-01T20:43:37.485Z"
+    }
+  ]
+}

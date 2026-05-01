@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3aecddf7dfaa8fd2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-04-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-04 - Les verbes qui acceptent avoir et être avec changement de sens (monter, descendre, sortir, passer, retourner)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Le verbe monter change de sens selon l'auxiliaire. Complétez au passé composé : « Le petit ___ monté au troisième étage. »\nChoices:\nA. [CORRECT] est\nB. a\nC. sera\nD. sont\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777673365440-suecgk1q"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question can be answered correctly simply by recognizing that \"monté\" with the participle ending in -é requires \"être\" (the standard intransitive usage of monter), without needing to understand that monter's meaning actually changes with different auxiliaries (the core of the stated rule).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777673365474-c3nte9d6",
+      "timestamp": "2026-05-01T22:10:07.961Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests exactly what the rule covers - choosing between \"avoir\" and \"être\" as auxiliaries for \"monter\" based on whether the meaning involves movement with a destination (\"au troisième étage\" = \"est\") or action with a direct object.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777673421705-rbgujns7",
+      "timestamp": "2026-05-01T22:10:45.381Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To answer correctly, the student must understand that \"monter\" without a direct object uses \"être\" (est monté = the subject went up themselves), not \"avoir\" (a monté = subject carried something up).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777673448368-k7hyatny",
+      "timestamp": "2026-05-01T22:11:32.732Z"
+    }
+  ]
+}

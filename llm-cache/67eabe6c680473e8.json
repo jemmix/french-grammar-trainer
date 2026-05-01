@@ -1,0 +1,33 @@
+{
+  "cacheKey": "67eabe6c680473e8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-04-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-04 - Les verbes qui acceptent avoir et être avec changement de sens (monter, descendre, sortir, passer, retourner)\n\nQUESTION:\nType: Input\nPrompt: Complétez le passé composé avec la forme correcte de l'auxiliaire.\nPhrase: L'oiseau ___ monté sur la branche.\nCorrect Answer: est\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777672274523-w95c915m"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"monter\" is used intransitively without a direct object (\"l'oiseau\" is the subject, not an object being carried), so it must take \"être\" rather than \"avoir\" — the core distinction taught in rule 02-04.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777672301416-nctmazru",
+      "timestamp": "2026-05-01T21:51:57.648Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the learner understands that monter uses être when describing movement/going up versus avoir when carrying something up, which is exactly the rule about auxiliary-dependent meaning changes.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777672330558-vicz32av",
+      "timestamp": "2026-05-01T21:53:20.115Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly requires identifying that \"monter\" is used intransitively (no direct object) with movement/direction, which necessitates the auxiliary \"être\" rather than \"avoir\", directly testing the auxiliary distinction central to rule 02-04.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777672417433-2y7argui",
+      "timestamp": "2026-05-01T21:53:53.841Z"
+    }
+  ]
+}

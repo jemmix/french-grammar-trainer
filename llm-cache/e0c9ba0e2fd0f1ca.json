@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e0c9ba0e2fd0f1ca",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-04-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-04 - Les verbes qui acceptent avoir et être avec changement de sens (monter, descendre, sortir, passer, retourner)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Le serveur ___ retourné l'omelette. »\nChoices:\nA. [CORRECT] a\nB. est\nC. aura\nD. sont\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777667532244-adkpogl2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nThe question tests the rule by requiring students to recognize that \"retourner\" is used transitively here (with direct object \"l'omelette\"), which demands \"avoir\" as the auxiliary rather than \"être\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777667744683-4c1ci8en",
+      "timestamp": "2026-05-01T20:35:59.453Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The direct object \"l'omelette\" forces the transitive meaning, so choosing \"avoir\" requires only recognizing transitivity, not understanding how \"retourner\" changes meaning between auxiliaries.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777668021381-3i6dh55r",
+      "timestamp": "2026-05-01T20:41:02.159Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether \"retourner\" takes \"avoir\" (transitive with direct object \"l'omelette\") or \"être\" (intransitive), which is the core concept of the rule about verbs that change meaning based on auxiliary choice.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777668370487-qi3izyvi",
+      "timestamp": "2026-05-01T20:46:31.781Z"
+    }
+  ]
+}

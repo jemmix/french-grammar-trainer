@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0a0c0222afa899cd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-04-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-04 - Les verbes qui acceptent avoir et être avec changement de sens (monter, descendre, sortir, passer, retourner)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Les touristes ___ passés par Lyon. »\nChoices:\nA. [CORRECT] sont\nB. ont\nC. seront\nD. est\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777667532243-u4kjpukr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing between \"passer\" with être vs. avoir based on the locative meaning \"passer par Lyon\", which directly tests the rule about verbs that change meaning with different auxiliaries.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777667621141-kir5oxbg",
+      "timestamp": "2026-05-01T20:33:57.765Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that \"passer par\" (to pass through) uses \"être\" as the auxiliary in passé composé, which is exactly what the rule covers for verbs with different meanings based on auxiliary choice.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777667895364-m9n80v44",
+      "timestamp": "2026-05-01T20:38:51.612Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the specific rule that \"passer\" uses \"être\" (sont) when meaning \"to pass through/stop by\" with a preposition like \"par\", versus \"avoir\" (ont) for other meanings.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777668259791-cfjyoh06",
+      "timestamp": "2026-05-01T20:44:53.194Z"
+    }
+  ]
+}

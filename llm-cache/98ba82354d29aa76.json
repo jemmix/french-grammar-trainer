@@ -1,0 +1,54 @@
+{
+  "cacheKey": "98ba82354d29aa76",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-04-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-04 - Les verbes qui acceptent avoir et être avec changement de sens (monter, descendre, sortir, passer, retourner)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Thomas ___ monté au deuxième étage. »\nChoices:\nA. [CORRECT] est\nB. a\nC. sera\nD. sont\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777669691894-gjxu4jjf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires choosing between \"être\" and \"avoir\" as auxiliaries for \"monter\" based on transitivity — since \"au deuxième étage\" is not a direct object, the verb is used intransitively and must take \"être\", which is precisely the concept the rule teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777669691909-w1c8z9bf",
+      "timestamp": "2026-05-01T21:09:11.789Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the choice between \"être\" and \"avoir\" as auxiliary for \"monter\", which is precisely what rule 02-04 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777669942171-5mro5xhz",
+      "timestamp": "2026-05-01T21:12:39.200Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question only tests intransitive \"monter\" (which always uses \"être\") without contrasting it with a transitive usage that would use \"avoir\", so it doesn't demonstrate the meaning change that defines this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777670144664-4gcy2l15",
+      "timestamp": "2026-05-01T21:16:56.238Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether students know that intransitive \"monter\" (movement without direct object) takes \"être\" as auxiliary, which is the core concept of this rule about verbs that accept both \"avoir\" and \"être\" with changing meanings.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777670347483-wdsmd8b6",
+      "timestamp": "2026-05-01T21:19:37.058Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the learner knows that \"monter\" takes \"être\" (not \"avoir\") when used intransitively for movement, which is the core concept of this rule about verbs that can take either auxiliary depending on context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777670421001-fnod99yh",
+      "timestamp": "2026-05-01T21:21:14.773Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: This question only tests whether \"monter\" is used transitively or intransitively here (which is obvious from the context - no direct object), not the actual change in meaning between using avoir vs être with this verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777670485974-tpcrh3uw",
+      "timestamp": "2026-05-01T21:21:45.153Z"
+    }
+  ]
+}
