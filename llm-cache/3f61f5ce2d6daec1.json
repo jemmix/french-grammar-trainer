@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3f61f5ce2d6daec1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-03-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-03 - Le choix de l'auxiliaire : avoir vs être (règle de base)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Mon frère ___ construit une cabane dans le jardin. »\nChoices:\nA. [CORRECT] a\nB. est\nC. aura\nD. ont\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777657249952-t0wj7pxn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires choosing between \"a\" (avoir) and \"est\" (être) as the auxiliary for \"construire\" in passé composé, which is exactly what the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777658023551-99f5kxcr",
+      "timestamp": "2026-05-01T17:54:08.525Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"construire\" conjugates with \"avoir\" (not \"être\") in passé composé, and the primary distractor \"est\" tests exactly this auxiliary choice rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777658309359-hyf99p5a",
+      "timestamp": "2026-05-01T17:59:07.584Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires choosing between \"a\" (avoir) and \"est\" (être) for the transitive verb \"construire\", which directly tests the auxiliary selection rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777658649937-ljdg34yr",
+      "timestamp": "2026-05-01T18:04:32.752Z"
+    }
+  ]
+}

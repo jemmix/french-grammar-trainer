@@ -1,0 +1,54 @@
+{
+  "cacheKey": "c735341e8c70b187",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-03-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le choix de l'auxiliaire : avoir vs être (règle de base)\n\nQUESTION:\nPrompt: Complétez au passé composé.\nPhrase: Marc ___ monté les meubles au deuxième étage.\nHint: avoir\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1777662425899-ey5ox0uv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The hint \"avoir\" reveals the auxiliary choice, making it unclear whether the question tests auxiliary selection or merely conjugation practice, contradicting the stated rule of choosing between avoir vs être.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777662425902-z7ax6u88",
+      "timestamp": "2026-05-01T19:07:34.902Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt \"Complétez au passé composé\" has a single clear interpretation: complete the sentence using the passé composé tense, with the blank positioned exactly where the auxiliary verb belongs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777662454902-5aneul28",
+      "timestamp": "2026-05-01T19:07:54.269Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The instruction \"Complétez au passé composé\" is precise and unambiguous - it clearly directs the learner to fill in the blank with the correct auxiliary verb form in passé composé, and the hint \"avoir\" further clarifies the expected answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777662474270-1ao6h603",
+      "timestamp": "2026-05-01T19:08:11.449Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The context \"monté les meubles\" (transitive use) + hint \"avoir\" makes it obvious that the blank requires the conjugated auxiliary verb \"a\" to form the passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777662491449-8y1s0rwp",
+      "timestamp": "2026-05-01T19:08:34.742Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The instruction \"Complétez au passé composé\" combined with the blank before \"monté\" clearly indicates filling in the auxiliary verb, and the hint \"avoir\" further clarifies the expected auxiliary to conjugate with the subject \"Marc\" (→ \"a\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777662514743-rainrkwu",
+      "timestamp": "2026-05-01T19:10:02.775Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The hint \"avoir\" conflicts with the learning objective of testing auxiliary choice (avoir vs être) - if the hint is provided, it's not testing the rule; if the hint is removed, the sentence alone doesn't clearly indicate whether \"monter\" should be transitive or intransitive without additional context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777662602776-7u0ne3r5",
+      "timestamp": "2026-05-01T19:10:21.379Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0583a066c64eb259",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-03-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-03 - Le choix de l'auxiliaire : avoir vs être (règle de base)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase utilise correctement le passé composé ?\nChoices:\nA. [CORRECT] Elle est restée à la bibliothèque jusqu'à 18 heures.\nB. Elle a restée à la bibliothèque jusqu'à 18 heures.\nC. Elle est resté à la bibliothèque jusqu'à 18 heures.\nD. Elle restait à la bibliothèque jusqu'à 18 heures.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777657249952-e4yx7aei"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether students know that \"rester\" uses \"être\" as its auxiliary in passé composé, which is the core concept of the auxiliary choice rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777658071095-5l9xhwse",
+      "timestamp": "2026-05-01T17:54:50.531Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: To identify the correct answer (A), a student must also know the past participle agreement rule (feminine \"restée\"), so the question tests agreement in addition to auxiliary selection—choices B and C each fail different rules, making it impossible to isolate the avoir vs être distinction as the sole deciding factor.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777658357872-q9n9weqq",
+      "timestamp": "2026-05-01T18:00:36.630Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question primarily tests past participle agreement with \"elle\" (choosing \"restée\" vs \"resté\"), not the choice between \"avoir\" and \"être\" as auxiliary—the agreement difference between choices A and C is the deciding factor, not the auxiliary verb itself.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777658715500-zv9nk7ud",
+      "timestamp": "2026-05-01T18:11:15.197Z"
+    }
+  ]
+}

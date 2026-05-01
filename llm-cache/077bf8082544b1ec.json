@@ -1,0 +1,33 @@
+{
+  "cacheKey": "077bf8082544b1ec",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-03-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-03 - Le choix de l'auxiliaire : avoir vs être (règle de base)\n\nQUESTION:\nType: Input\nPrompt: Complétez au passé composé.\nPhrase: Marc ___ monté les meubles au deuxième étage.\nCorrect Answer: a\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777662425898-lbgvyfw4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying that \"monter\" uses \"avoir\" when transitively carrying an object (les meubles) rather than \"être\", which is the core distinction taught in this auxiliary choice rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777662425900-ij0k63uh",
+      "timestamp": "2026-05-01T19:07:26.871Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student recognizes that \"monter\" is used transitively with direct object \"les meubles\" and therefore requires \"avoir\" as the auxiliary, which is exactly what the stated rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777662446874-0sq4oplu",
+      "timestamp": "2026-05-01T19:07:43.263Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether learners can choose between \"a\" (avoir) and \"est\" (être) with \"monter\" when it has a direct object (les meubles), which is exactly what rule 02-03 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777662463263-f4ggwoqw",
+      "timestamp": "2026-05-01T19:07:59.723Z"
+    }
+  ]
+}

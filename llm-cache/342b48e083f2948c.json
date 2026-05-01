@@ -1,0 +1,33 @@
+{
+  "cacheKey": "342b48e083f2948c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-03-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-03 - Le choix de l'auxiliaire : avoir vs être (règle de base)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase utilise correctement le passé composé ?\nChoices:\nA. [CORRECT] Il est resté à la maison hier.\nB. Il a resté à la maison hier.\nC. Il est reste à la maison hier.\nD. Il restait à la maison hier.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777662126094-ib907fk4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The key distinction between the correct answer (A: \"Il est resté\") and the primary distractor (B: \"Il a resté\") is precisely the choice between \"être\" and \"avoir\" as the auxiliary for the verb \"rester\", which is the core of the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777662126097-c2y8r1z7",
+      "timestamp": "2026-05-01T19:02:28.757Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"rester\" takes \"être\" (not \"avoir\") as its auxiliary in passé composé, which is exactly what the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777662148758-7kst5ofr",
+      "timestamp": "2026-05-01T19:02:50.923Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests auxiliary verb selection—choosing \"être\" over \"avoir\" for the verb \"rester\" is the core grammatical concept being assessed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777662170923-59jik8ve",
+      "timestamp": "2026-05-01T19:03:22.946Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dce0ffb6fcc22ace",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-03-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-03 - Le choix de l'auxiliaire : avoir vs être (règle de base)\n\nQUESTION:\nType: Input\nPrompt: Complétez le passé composé avec la forme correcte de l'auxiliaire.\nPhrase: Ma voisine ___ née à Paris en 1990.\nCorrect Answer: est\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777665373723-9ag3bgc7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly requires choosing between \"a\" (avoir) and \"est\" (être) as the auxiliary for \"naître\" in the passé composé, which is exactly what the auxiliary choice rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777665373725-fn384oo2",
+      "timestamp": "2026-05-01T19:56:28.421Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"naître\" uses \"être\" as its auxiliary in passé composé, which is precisely what the avoir vs être selection rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777665388423-yrulo5gd",
+      "timestamp": "2026-05-01T19:57:04.025Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests whether the learner knows that \"naître\" conjugates with être as its auxiliary in passé composé, which is the core of the avoir vs être selection rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777665424026-yazttt8a",
+      "timestamp": "2026-05-01T19:57:22.925Z"
+    }
+  ]
+}

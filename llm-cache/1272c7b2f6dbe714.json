@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1272c7b2f6dbe714",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-03-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-03 - Le choix de l'auxiliaire : avoir vs être (règle de base)\n\nQUESTION:\nType: Input\nPrompt: Complétez au passé composé avec la forme correcte de l'auxiliaire.\nPhrase: Les étudiants ___ passé l'examen de français.\nCorrect Answer: ont\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777657249953-ikcy0za1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether students know that \"passer un examen\" requires \"avoir\" as its auxiliary, which is precisely the core of the avoir vs être choice rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777658122036-i182ir2m",
+      "timestamp": "2026-05-01T17:55:39.428Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires students to recognize that \"passer\" is used transitively with \"un examen\" as a direct object, which determines that \"avoir\" (ont) is the correct auxiliary—this is the core distinction the rule teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777658399472-n0h6bbxm",
+      "timestamp": "2026-05-01T18:01:34.262Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct auxiliary (avoir vs être) for \"passer\" with a direct object, which directly tests the auxiliary choice rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777658752208-88yfx7tk",
+      "timestamp": "2026-05-01T18:06:03.761Z"
+    }
+  ]
+}
