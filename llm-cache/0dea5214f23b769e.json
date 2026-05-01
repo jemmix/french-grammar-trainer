@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0dea5214f23b769e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-01-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-01 - Formation du passé composé avec l'auxiliaire avoir (règle générale)\n\nQUESTION:\nType: Input\nPrompt: Complétez le passé composé avec la forme correcte de l'auxiliaire.\nPhrase: Vous ___ bien dormi cette nuit.\nCorrect Answer: avez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777649269925-na0nwwp1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugating the auxiliary \"avoir\" for \"vous\" in passé composé, which is central to the rule of forming passé composé with avoir.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777649659415-z3utylf6",
+      "timestamp": "2026-05-01T15:35:19.653Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"dormir\" forms passé composé with \"avoir\" (not \"être\") and conjugating it correctly for \"vous\", which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777649840078-fryds29h",
+      "timestamp": "2026-05-01T15:37:42.797Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the conjugation of the auxiliary avoir for the subject vous, which is central to the general rule for forming passé composé with avoir.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777649973554-59398viz",
+      "timestamp": "2026-05-01T15:39:51.560Z"
+    }
+  ]
+}

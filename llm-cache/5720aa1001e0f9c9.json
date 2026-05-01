@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5720aa1001e0f9c9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-01-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-01 - Formation du passé composé avec l'auxiliaire avoir (règle générale)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Ma sœur ___ appris l'italien en voyageant. »\nChoices:\nA. [CORRECT] a\nB. ai\nC. est\nD. avait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777649269913-m8jlouo0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the auxiliary \"avoir\" for \"apprendre\" and conjugating it for third person singular (\"ma sœur\" → \"a\"), which directly tests forming passé composé with \"avoir\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777649517813-q7r5phag",
+      "timestamp": "2026-05-01T15:33:54.954Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires choosing the correct auxiliary verb \"avoir\" and conjugating it as \"a\" for third person singular subject \"ma sœur\", which is exactly what the general passé composé with avoir rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777649812239-dc43xkrw",
+      "timestamp": "2026-05-01T15:37:44.135Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires choosing the correct auxiliary (avoir) and conjugating it properly for the subject \"ma sœur\" in passé composé, which directly tests the rule's core concept.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777649977056-obgnt0ni",
+      "timestamp": "2026-05-01T15:39:56.841Z"
+    }
+  ]
+}

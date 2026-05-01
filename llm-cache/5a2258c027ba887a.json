@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5a2258c027ba887a",
+  "predicateId": "french-language",
+  "questionId": "02-01-009",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT\nEXPLANATION\n\nWhere:\n- VERDICT is exactly one word: FRENCH or ENGLISH_DETECTED\n- EXPLANATION is a brief sentence describing what you found\n\nExamples:\nFRENCH\nAll content is in French with no English detected.\n\nFRENCH\nContent uses allowed English exception for false friend contrast (actuellement/actually).\n\nENGLISH_DETECTED\nPrompt uses English instruction \"Conjugate the verb\" instead of French.\n\nENGLISH_DETECTED\nExplanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Formation du passé composé avec l'auxiliaire avoir (règle générale)\n\nQUESTION CONTENT:\nPrompt: Quelle phrase est au passé composé avec l'auxiliaire avoir ?\nChoices:\nA. [correct] Elle a terminé son projet vendredi dernier.\n   Explanation: « a terminé » est le passé composé de « terminer » avec l'auxiliaire avoir (a + terminé).\nB. Elle terminera son projet vendredi prochain.\n   Explanation: « terminera » est au futur simple, pas au passé composé.\nC. Elle est allée au cinéma hier soir.\n   Explanation: « est allée » utilise l'auxiliaire être, pas avoir.\nD. Elle avait terminé son projet avant la deadline.\n   Explanation: « avait terminé » est au plus-que-parfait, pas au passé composé.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1777647113496-85ekjrr0"
+  },
+  "responses": [
+    {
+      "raw": "FRENCH\nAll content is in French with only common loanword \"deadline\" in choice D, which is widely accepted in French usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777647792771-ozg99buz",
+      "timestamp": "2026-05-01T15:04:00.075Z"
+    },
+    {
+      "raw": "FRENCH\nAll content is in French. The English word \"deadline\" in choice D is a commonly used loanword in French technical/professional contexts and doesn't violate the language policy.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777648130591-wepkgihy",
+      "timestamp": "2026-05-01T15:09:48.855Z"
+    },
+    {
+      "raw": "FRENCH\nAll content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777648583762-0gzdjv1z",
+      "timestamp": "2026-05-01T15:19:12.248Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e7e1f284412d2227",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-01-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-01 - Formation du passé composé avec l'auxiliaire avoir (règle générale)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Mes parents ___ acheté une maison à la campagne. »\nChoices:\nA. [CORRECT] ont\nB. avons\nC. avez\nD. sont\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777645193239-1z7pcdve"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To select \"ont\", the student must know that \"acheté\" takes the auxiliary \"avoir\" (not \"être\") and conjugate it correctly for \"mes parents\" (3rd person plural), which directly tests formation of passé composé with avoir.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777645343155-30bqzaxu",
+      "timestamp": "2026-05-01T14:23:07.958Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"acheter\" uses \"avoir\" as its auxiliary (not être) and conjugating \"avoir\" correctly for the 3rd person plural subject \"parents\" - both core aspects of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777645840664-lp8jtmk2",
+      "timestamp": "2026-05-01T14:30:58.678Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the learner to correctly select the auxiliary avoir and conjugate it for \"mes parents\" (ils/elles), which is exactly what the formation rule with avoir tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777646315974-2q1md13e",
+      "timestamp": "2026-05-01T14:38:54.951Z"
+    }
+  ]
+}

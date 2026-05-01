@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bc90ac9360e06f6d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-01-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-01 - Formation du passé composé avec l'auxiliaire avoir (règle générale)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je n'___ pas compris les instructions. »\nChoices:\nA. [CORRECT] ai\nB. aie\nC. avais\nD. a\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777649269900-qa20epxz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that passé composé uses auxiliary + past participle, that \"comprendre\" uses \"avoir\" as its auxiliary, and that \"ai\" is the correct first-person singular conjugation of avoir.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777649270000-8z7w3w5m",
+      "timestamp": "2026-05-01T15:29:58.250Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"comprendre\" uses \"avoir\" as its auxiliary and that \"je\" + \"avoir\" in passé composé is \"ai\", which is exactly what rule 02-01 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777649743628-nd5m7qnr",
+      "timestamp": "2026-05-01T15:36:33.319Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests forming passé composé with \"avoir\" by requiring the correct auxiliary form for \"Je\" (first person singular), distinguishing \"ai\" from incorrect options like \"aie\" (present subjunctive), \"avais\" (imperfect), or \"a\" (third person).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777649894330-k58gi3vc",
+      "timestamp": "2026-05-01T15:38:56.795Z"
+    }
+  ]
+}

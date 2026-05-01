@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b8acd2d298c5c6e2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-01-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-01 - Formation du passé composé avec l'auxiliaire avoir (règle générale)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Les enfants ___ joué dans le parc toute l'après-midi. »\nChoices:\nA. [CORRECT] ont\nB. avons\nC. sont\nD. avaient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777645193240-xw8wi575"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct auxiliary (avoir not être), correct person/number (ont for \"les enfants\"), and correct tense (passé composé not imparfait), which is exactly what the rule on forming passé composé with avoir tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777645600442-unu7zy5w",
+      "timestamp": "2026-05-01T14:28:08.815Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of passé composé formation with auxiliary avoir (correct conjugation \"ont\" for third person plural with \"jouer\") and cannot be answered correctly without understanding this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777646160568-rk3bah9k",
+      "timestamp": "2026-05-01T14:36:37.316Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Answering correctly requires knowing that \"jouer\" takes \"avoir\" (not \"être\") as its auxiliary and conjugating avoir to \"ont\" for the third person plural subject \"les enfants\", which are both core components of the passé composé formation rule with avoir.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777646567094-211ak9kx",
+      "timestamp": "2026-05-01T14:43:14.233Z"
+    }
+  ]
+}

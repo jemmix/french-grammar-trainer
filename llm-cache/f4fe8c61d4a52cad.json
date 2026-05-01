@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f4fe8c61d4a52cad",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-01-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-01 - Formation du passé composé avec l'auxiliaire avoir (règle générale)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Les enfants ___ joué dans le jardin toute l'après-midi. »\nChoices:\nA. [CORRECT] ont\nB. a\nC. est\nD. auront\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777651771816-o7g6jjmo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct auxiliary (avoir) and conjugating it properly to match the plural subject \"Les enfants\" in passé composé, which directly tests the formation rule with avoir.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777651808610-rvkdg1ct",
+      "timestamp": "2026-05-01T16:10:46.240Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To answer correctly, students must know that \"jouer\" uses \"avoir\" as its auxiliary in passé composé, not \"être\" — this is exactly what rule 02-01 tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777651855266-oelr97mx",
+      "timestamp": "2026-05-01T16:11:21.855Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying both that \"jouer\" uses \"avoir\" as its auxiliary and conjugating it correctly for the plural subject \"Les enfants\" → \"ont\", which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777651888499-wdcalb0m",
+      "timestamp": "2026-05-01T16:11:48.743Z"
+    }
+  ]
+}
