@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c6abc474f204f209",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-02-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-02 - Formation du passé composé avec l'auxiliaire être (les 14 verbes + dérivés)\n\nQUESTION:\nType: Input\nPrompt: Complétez le passé composé avec la forme correcte de l'auxiliaire.\nPhrase: Ils ___ partis en voyage la semaine dernière.\nCorrect Answer: sont\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777652594274-j8yy9nlz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that \"partir\" uses \"être\" as its auxiliary and that \"être\" conjugates to \"sont\" with \"ils\" — exactly what rule 02-02 covers for the 14 être verbs and derivatives.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777652892206-i95i5zcg",
+      "timestamp": "2026-05-01T16:28:26.298Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"partir\" uses être as auxiliary (not avoir) in the passé composé and selecting the correct conjugated form \"sont\" for the subject \"ils\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777653275118-ve0p359e",
+      "timestamp": "2026-05-01T16:35:14.476Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"partir\" uses \"être\" as its auxiliary (not \"avoir\") and conjugating \"sont\" for the subject \"Ils\", which directly tests the rule's core concept of identifying which verbs use \"être\" in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777653569211-bppqu7kk",
+      "timestamp": "2026-05-01T16:39:56.230Z"
+    }
+  ]
+}

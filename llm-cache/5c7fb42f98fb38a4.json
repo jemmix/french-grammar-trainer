@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5c7fb42f98fb38a4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-02-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-02 - Formation du passé composé avec l'auxiliaire être (les 14 verbes + dérivés)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Nous ___ partis en vacances en août. »\nChoices:\nA. [CORRECT] sommes\nB. avons\nC. étions\nD. serons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777652594273-ut0yglfq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"partir\" is one of the 14 verbs that uses être as its auxiliary in passé composé and correctly conjugating être for nous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777652859073-2vgu1uqx",
+      "timestamp": "2026-05-01T16:28:13.058Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"partir\" is one of the 14 verbs that uses \"être\" (not \"avoir\") as the auxiliary in passé composé, which is the exact grammar concept the rule teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777653268372-nex7emgg",
+      "timestamp": "2026-05-01T16:35:29.889Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"partir\" (one of the 14 être verbs) requires \"sommes\" from être as its auxiliary in passé composé, not \"avons\" from avoir.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777653583281-ftz1n90r",
+      "timestamp": "2026-05-01T16:44:37.298Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d700f407807c4791",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-02-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-02 - Formation du passé composé avec l'auxiliaire être (les 14 verbes + dérivés)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Nous ___ arrivés à la gare en retard. »\nChoices:\nA. [CORRECT] sommes\nB. avons\nC. étions\nD. serons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777652594271-k2k7ssjh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"arriver\" uses être (not avoir) as its auxiliary in passé composé, which is the core concept of the stated rule about être verbs in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777652594357-osvsd5w6",
+      "timestamp": "2026-05-01T16:24:17.539Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the learner knows that \"arriver\" (one of the 14 DR MRS VANDERTRAMP verbs) uses \"sommes\" as its auxiliary in passé composé rather than \"avons,\" which is exactly the core distinction this rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777652948954-f1mu1aw6",
+      "timestamp": "2026-05-01T16:29:58.508Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests whether students know that \"arriver\" uses \"être\" as its auxiliary in passé composé (one of the 14 verbs) and can conjugate it properly with \"nous\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777653350981-7s2lk822",
+      "timestamp": "2026-05-01T16:40:37.491Z"
+    }
+  ]
+}
