@@ -1,0 +1,40 @@
+{
+  "cacheKey": "1839b7f853e4fc0b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-05-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-05 - Formation du participe passé des verbes en -er → -é\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Nous avons ___ nos amis à l'aéroport. »\nChoices:\nA. [CORRECT] retrouvé\nB. retrouver\nC. retrouvait\nD. retrouvés\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777747167657-wn313oix"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests direct object agreement with past participles (why \"retrouvés\" is wrong despite the plural object), which is a different rule from the simple formation of -er past participiples ending in -é.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777747182042-srn6345z",
+      "timestamp": "2026-05-02T18:40:29.519Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To answer correctly, the learner must know that -er verbs form their past participle by replacing -er with -é (retrouver → retrouvé), which is the exact rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777747238659-nxq2w7rp",
+      "timestamp": "2026-05-02T18:40:52.731Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To answer correctly, the learner must form the past participle of the -er verb \"retrouver\" by replacing -er with -é, which is exactly what rule 02-05 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777747263886-0dgrzueb",
+      "timestamp": "2026-05-02T18:41:23.686Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests the auxiliary agreement rule for passé composé with \"avoir\" (why it's retrouvé not retrouvés), not the -er to -é past participle formation rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777747283687-jfge36s5",
+      "timestamp": "2026-05-02T18:41:45.178Z"
+    }
+  ]
+}

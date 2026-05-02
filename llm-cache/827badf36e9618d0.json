@@ -1,0 +1,26 @@
+{
+  "cacheKey": "827badf36e9618d0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-05-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-05 - Formation du participe passé des verbes en -er → -é\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Marie a ___ son examen hier. »\nChoices:\nA. [CORRECT] réussi\nB. réussé\nC. réussir\nD. réussissait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777747167638-1zzj9ksi"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"réussir\" is an -ir verb, not an -er verb, so the question tests past participle formation for -ir verbs (réussir → réussi), not the -er → -é rule stated.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777747167671-p478992f",
+      "timestamp": "2026-05-02T18:39:43.690Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The verb \"réussir\" is a second-group -ir verb (past participle ends in -i), not an -er verb, so the question tests -ir verb conjugation, not the -er → -é rule stated.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777747204564-m80m22y7",
+      "timestamp": "2026-05-02T18:40:21.038Z"
+    }
+  ]
+}

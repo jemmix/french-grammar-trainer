@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6aa27c1d5e40a7fb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-05-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-05 - Formation du participe passé des verbes en -er → -é\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Sophie a ___ sa chambre avant de sortir. »\nChoices:\nA. [CORRECT] rangé\nB. ranger\nC. rangeait\nD. rangée\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777744758707-3q2li3k7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires applying the rule that -er verbs form their past participle by replacing -er with -é (ranger → rangé) to complete the passé composé construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777744882055-o5ukuqj7",
+      "timestamp": "2026-05-02T18:01:58.203Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires forming the past participle of \"ranger\" (a regular -er verb) by removing the -er and adding -é, which is exactly what the rule states.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777745150927-6unhvlwc",
+      "timestamp": "2026-05-02T18:08:25.656Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that -er verbs form their past participle with -é to correctly choose \"rangé\" over the infinitive \"ranger\" or imparfait \"rangeait\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777745488017-cjla4dfm",
+      "timestamp": "2026-05-02T18:12:25.953Z"
+    }
+  ]
+}
