@@ -1,0 +1,33 @@
+{
+  "cacheKey": "de419735e6dea77e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-07-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-07 - Formation du participe passé des verbes en -re → -u (et exceptions)\n\nQUESTION:\nType: Input\nPrompt: Complétez avec le participe passé de l'exception.\nPhrase: Qu'est-ce que tu as ___ (mettre) dans ce panier ?\nCorrect Answer: mis\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777751959930-lvjue2yc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question explicitly tests the exception form of \"mettre\" (past participle \"mis\"), which is a direct application of the rule covering exceptions to the regular -re → -u pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777752131220-ehylbais",
+      "timestamp": "2026-05-02T20:02:43.109Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The rule explicitly covers exceptions to the -re → -u pattern, and \"mettre\" (past participle \"mis\") is one such exception that requires knowledge of this specific rule to answer correctly.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777752344417-sdfbcub6",
+      "timestamp": "2026-05-02T20:05:58.341Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the \"mettre → mis\" exception mentioned in the rule title, which cannot be answered by applying the regular -re → -u pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777752511516-10dx5bkf",
+      "timestamp": "2026-05-02T20:08:59.329Z"
+    }
+  ]
+}

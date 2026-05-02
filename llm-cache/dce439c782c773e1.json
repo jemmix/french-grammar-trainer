@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dce439c782c773e1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-07-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-07 - Formation du participe passé des verbes en -re → -u (et exceptions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel est le participe passé du verbe « étendre » ?\nChoices:\nA. [CORRECT] étendu\nB. étendra\nC. étendé\nD. étendi\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777753695970-rrvvyv3a"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the -re → -u past participle formation rule by asking for the past participle of étendre, a standard -re verb that follows this pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777753749319-vwq1q034",
+      "timestamp": "2026-05-02T20:29:48.768Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the formation rule by requiring knowledge that regular -re verbs like \"étendre\" take the -u ending in their past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777753811598-vp41kbyg",
+      "timestamp": "2026-05-02T20:31:49.438Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that -re verbs form their past participle with -u (not -é or -i), which is the exact rule being tested; \"étendre\" follows the regular pattern, and distinguishing \"étendu\" from plausible alternatives like \"étendé\" or \"étendi\" requires this specific grammar knowledge.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777753909439-b7dr7hhm",
+      "timestamp": "2026-05-02T20:32:10.613Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "abe0c91e89292894",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-07-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-07 - Formation du participe passé des verbes en -re → -u (et exceptions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel est le participe passé du verbe « répondre » ?\nChoices:\nA. [CORRECT] répondu\nB. répondé\nC. répondi\nD. répond\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777751959927-h2qbnz1z"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the specific -re → -u past participle formation rule to identify that \"répondre\" becomes \"répondu,\" and the distractors test common mistakes from other verb conjugation patterns.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777751959936-c5w2y66k",
+      "timestamp": "2026-05-02T20:06:47.646Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge that -re verbs form their past participle by changing -re to -u, which is the core of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777752560166-nuve1ml5",
+      "timestamp": "2026-05-02T20:09:35.192Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly requires applying the -re → -u past participle pattern to \"répondre\" → \"répondu\", and the wrong answers test recognition of other verb patterns (-é for -er verbs, -i for -ir verbs), so the rule is essential to selecting the correct answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777752582004-iv2vew2t",
+      "timestamp": "2026-05-02T20:10:08.307Z"
+    }
+  ]
+}

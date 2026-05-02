@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4f9ebeb8a28c9a3e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-07-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-07 - Formation du participe passé des verbes en -re → -u (et exceptions)\n\nQUESTION:\nType: Input\nPrompt: Complétez le passé composé avec le participe passé du verbe donné.\nPhrase: Avez-vous ___ (prendre) votre parapluie avant de partir ?\nCorrect Answer: pris\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777753695960-75kp4s7k"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"prendre\" is an exception to the regular -re → -u past participle pattern (which would give \"prendu\"), which is precisely what the rule's exception clause covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777753739176-3o0zkcdb",
+      "timestamp": "2026-05-02T20:29:35.278Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowledge that \"prendre\" is an exception to the regular -re → -u pattern (taking \"pris\" instead of \"predu\"), which is exactly what the rule covers (regular -re verbs and their exceptions).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777753796636-zi9c57y8",
+      "timestamp": "2026-05-02T20:30:25.377Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the past participle of \"prendre\" (→ \"pris\"), which is a key exception to the -re → -u rule that the rule explicitly covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777753841735-8vh32cbu",
+      "timestamp": "2026-05-02T20:31:04.242Z"
+    }
+  ]
+}
