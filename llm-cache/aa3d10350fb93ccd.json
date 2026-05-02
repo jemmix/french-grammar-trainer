@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aa3d10350fb93ccd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-08-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-08 - Les participes passés irréguliers courants (fait, dit, mis, pris, écrit, lu, bu, vu, su, pu, voulu, dû)\n\nQUESTION:\nType: Input\nPrompt: Complétez le passé composé avec le participe passé du verbe donné.\nPhrase: Elle a ___ trois verres d'eau après le sport.\nCorrect Answer: bu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777756046435-w9qqegkl"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the irregular past participle \"bu\" of \"boire\", which is explicitly listed in the rule's set of common irregular past participles (fait, dit, mis, pris, écrit, lu, bu, vu, su, pu, voulu, dû).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777756230496-mgaz3wmd",
+      "timestamp": "2026-05-02T21:10:53.234Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge that \"bu\" is the irregular past participle of \"boire\", which is explicitly listed among the common irregular past participles covered by this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777756425868-5keif249",
+      "timestamp": "2026-05-02T21:13:57.522Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the irregular past participle \"bu\" of the verb \"boire,\" which is explicitly listed in the rule being tested and cannot be deduced from regular patterns or other grammar rules.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777756535087-t1p4so17",
+      "timestamp": "2026-05-02T21:16:17.176Z"
+    }
+  ]
+}

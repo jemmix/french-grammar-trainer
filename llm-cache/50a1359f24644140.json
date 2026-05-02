@@ -1,0 +1,33 @@
+{
+  "cacheKey": "50a1359f24644140",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-08-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-08 - Les participes passés irréguliers courants (fait, dit, mis, pris, écrit, lu, bu, vu, su, pu, voulu, dû)\n\nQUESTION:\nType: Input\nPrompt: Complétez le passé composé avec le participe passé du verbe donné.\nPhrase: Il a ___ cet argent au magasin.\nCorrect Answer: dû\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777757335083-p5sbjysa"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the learner knows that \"dû\" is the irregular past participle of \"devoir\", which is one of the irregular past participles explicitly listed in rule 02-08.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777757384422-tpxsqgmm",
+      "timestamp": "2026-05-02T21:30:02.185Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"dû\" is the irregular past participle of \"devoir,\" which is explicitly listed in the rule's set of common irregular participes passés.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777757444635-73lyizu4",
+      "timestamp": "2026-05-02T21:31:13.026Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"devoir\" has the irregular past participle \"dû\" (not the regular \"deu\"), which is exactly the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777757527711-3evqkc80",
+      "timestamp": "2026-05-02T21:32:22.768Z"
+    }
+  ]
+}
