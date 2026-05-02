@@ -1,0 +1,54 @@
+{
+  "cacheKey": "d4814b5640bd2d46",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-06-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-06 - Formation du participe passé des verbes en -ir → -i\n\nQUESTION:\nType: Input\nPrompt: Complétez le passé composé avec le participe passé du verbe donné.\nPhrase: Ils ont ___ un nouveau système.\nCorrect Answer: établi\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777750692138-lhat63ih"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests vocabulary (knowing that the missing verb is \"établir\") rather than the stated grammar rule, since the prompt doesn't provide the verb and cannot be answered by applying the -ir → -i past participle formation rule alone.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777750692175-bt9g40sa",
+      "timestamp": "2026-05-02T19:41:34.373Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires forming the past participle of \"établir\" (an -ir verb), which ends in -i, directly testing the rule that -ir verbs form participles ending in -i.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777750894374-jujaqhbl",
+      "timestamp": "2026-05-02T19:42:10.541Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that -ir verbs form their past participle with -i ending, which is exactly what the rule states.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777750930541-8osf196f",
+      "timestamp": "2026-05-02T19:42:24.462Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests forming the past participle of an -ir verb (établir → établi), which is precisely the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777750944462-e59ym38j",
+      "timestamp": "2026-05-02T19:42:43.562Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that établir (an -ir verb) forms its past participle as établi, which is exactly the -ir → -i pattern the rule describes.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777750963562-rvdt75qz",
+      "timestamp": "2026-05-02T19:43:20.181Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question doesn't provide the infinitive form of the verb, so it tests recall of the specific word \"établi\" rather than knowledge of the rule that -ir verbs form past participles ending in -i.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777751000182-28bnffzl",
+      "timestamp": "2026-05-02T19:43:38.566Z"
+    }
+  ]
+}

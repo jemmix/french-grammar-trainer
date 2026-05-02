@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b23b5a3ec7d1517f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-06-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-06 - Formation du participe passé des verbes en -ir → -i\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel est le participe passé du verbe « rougir » ?\nChoices:\nA. [CORRECT] rougi\nB. rougé\nC. rougit\nD. rougissait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777748100371-hku4075s"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the rule by asking for the past participle of an -ir verb, which requires knowing that -ir verbs form their past participle with -i to distinguish the correct answer (rougi) from incorrect forms that test other tenses (rougit, rougissait) or verb patterns (rougé).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777748208354-ivmg5v4s",
+      "timestamp": "2026-05-02T18:57:06.593Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the past participle formation rule for -ir verbs by asking for the past participle of a regular -ir verb (rougir), which can only be answered correctly by knowing that -ir verbs form their past participle with -i.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777748401264-f4ay849m",
+      "timestamp": "2026-05-02T19:00:25.015Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that -ir verbs form their past participle with -i to identify \"rougi\" as the correct past participle of \"rougir.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777748626102-uhhno70x",
+      "timestamp": "2026-05-02T19:04:00.586Z"
+    }
+  ]
+}
