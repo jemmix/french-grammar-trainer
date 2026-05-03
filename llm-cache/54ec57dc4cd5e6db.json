@@ -1,0 +1,33 @@
+{
+  "cacheKey": "54ec57dc4cd5e6db",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-10-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-10 - L'accord du participe passé avec être (accord avec le sujet)\n\nQUESTION:\nType: Input\nPrompt: Complétez au passé composé avec le participe passé accordé du verbe donné. Avec être, le participe passé s'accorde avec le sujet.\nPhrase: Ils sont ___ en même temps.\nCorrect Answer: nés\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777838020419-83nswfvg"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To correctly answer \"nés\" instead of \"né\", the learner must know that with être, the past participle agrees with the masculine plural subject \"Ils\" — this is the core concept of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777838020421-lgjk6nnk",
+      "timestamp": "2026-05-03T19:53:56.203Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying the agreement rule to the masculine plural subject \"Ils\", distinguishing between the singular \"né\" and the correct plural \"nés\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777838036206-x5oyakad",
+      "timestamp": "2026-05-03T19:54:04.095Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires writing \"nés\" instead of \"né\", which depends entirely on knowing that past participles with être must agree with the subject's gender and number.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777838044096-hywhk9s8",
+      "timestamp": "2026-05-03T19:54:17.800Z"
+    }
+  ]
+}

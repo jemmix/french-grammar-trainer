@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f2f3c937052bb802",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-10-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-10 - L'accord du participe passé avec être (accord avec le sujet)\n\nQUESTION:\nType: Input\nPrompt: Complétez au passé composé avec le participe passé accordé du verbe donné. Avec être, le participe passé s'accorde avec le sujet.\nPhrase: Lucie est ___ très forte en mathématiques.\nCorrect Answer: devenue\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777837968987-k3fe6dql"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires recognizing the feminine subject \"Lucie\" and applying the agreement rule to transform \"devenu\" → \"devenue\", which is the core concept of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777837968988-tacp4cdj",
+      "timestamp": "2026-05-03T19:53:00.617Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that the past participle \"devenu\" must agree with the feminine singular subject \"Lucie\" when used with \"être\", resulting in \"devenue\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777837980618-jqm62l3k",
+      "timestamp": "2026-05-03T19:53:17.182Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowledge that past participles agree with the subject when using être, and the student must recognize that \"Lucie\" is feminine singular to correctly answer \"devenue\" instead of \"devenu\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777837997182-m9bdnqlv",
+      "timestamp": "2026-05-03T19:53:30.960Z"
+    }
+  ]
+}

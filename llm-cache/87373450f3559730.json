@@ -1,0 +1,33 @@
+{
+  "cacheKey": "87373450f3559730",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-10-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-10 - L'accord du participe passé avec être (accord avec le sujet)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Les enfants sont ___ très vite grands. »\nChoices:\nA. [CORRECT] devenus\nB. devenu\nC. devenue\nD. devenait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777835605337-wa4whmw4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires applying past participle agreement with the subject when the auxiliary is \"être\" — \"Les enfants\" is masculine plural, so \"devenir\" must become \"devenus.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777835694337-5brdsktc",
+      "timestamp": "2026-05-03T19:15:15.710Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that past participles agree with the subject in gender and number when used with être as the auxiliary verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777835948282-u2daci75",
+      "timestamp": "2026-05-03T19:20:00.435Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that the past participle \"devenu\" must agree with the plural masculine subject \"les enfants\" when used with the auxiliary \"être\", which is exactly the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777836264304-c3bpsib1",
+      "timestamp": "2026-05-03T19:24:46.249Z"
+    }
+  ]
+}

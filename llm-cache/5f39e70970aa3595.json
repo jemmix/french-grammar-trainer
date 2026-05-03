@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5f39e70970aa3595",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-10-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-10 - L'accord du participe passé avec être (accord avec le sujet)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Elle est ___ de son voyage hier soir. »\nChoices:\nA. [CORRECT] revenue\nB. revenu\nC. revenus\nD. revenait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777835605338-0m65wzx7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that past participles with être must agree with the subject in gender and number—choosing \"revenue\" (fem. sing.) over \"revenu\" (masc. sing.) directly tests this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777835709741-t26hnvdv",
+      "timestamp": "2026-05-03T19:15:48.170Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests whether the past participle with \"être\" agrees in gender and number with the feminine singular subject \"Elle\", requiring knowledge of the agreement rule to choose \"revenue\" over \"revenu\" or \"revenus\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777835965440-8yrqtnfp",
+      "timestamp": "2026-05-03T19:19:42.541Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that past participles with \"être\" agree with the subject—students must recognize \"Elle\" is feminine and add -e to \"revenu\" → \"revenue\", while \"revenu\" is the tempting wrong answer for those who miss the agreement rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777836251879-r9i1i8rh",
+      "timestamp": "2026-05-03T19:24:34.039Z"
+    }
+  ]
+}
