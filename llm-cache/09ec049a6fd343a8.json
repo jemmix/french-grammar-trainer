@@ -1,0 +1,47 @@
+{
+  "cacheKey": "09ec049a6fd343a8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-09-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-09 - Les participes passés irréguliers moins courants (ouvert, offert, couvert, souffert, mort, né, peint, craint, joint)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Elle a ___ tout l'hiver. »\nChoices:\nA. [CORRECT] souffert\nB. souffrait\nC. souffrant\nD. souffrira\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777834160806-utr04h8x"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question can be answered correctly by simply knowing that \"Elle a ___\" requires a past participle in passé composé, without needing to know that \"souffrir\" has an irregular past participle form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777834160837-f441b6pq",
+      "timestamp": "2026-05-03T18:50:56.452Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that the past participle of \"souffrir\" is \"souffert\" (an irregular form ending in -fert instead of -i), which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777834279230-1ibwzny1",
+      "timestamp": "2026-05-03T18:51:37.514Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"souffrir\" has the irregular past participle \"souffert\" to complete the passé composé structure, which directly tests the stated rule about less common irregular past participles.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777834312312-onqn6mss",
+      "timestamp": "2026-05-03T18:52:12.186Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: To correctly answer, students must identify that \"souffert\" is the irregular past participle of souffrir to complete the passé composé construction, which directly tests rule 02-09's coverage of irregular past participles.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777834332187-m8j55d5c",
+      "timestamp": "2026-05-03T18:52:27.922Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The student can answer correctly simply by identifying which form is a past participle (required for passé composé) without needing to know that \"souffrir\" has an irregular \"-ert\" ending rather than the regular \"-i\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777834347929-6nufpach",
+      "timestamp": "2026-05-03T18:52:44.487Z"
+    }
+  ]
+}

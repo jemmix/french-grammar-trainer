@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2740f84ae5f5d3d8",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-09-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Les participes passés irréguliers moins courants (ouvert, offert, couvert, souffert, mort, né, peint, craint, joint)\n\nQUESTION:\nPrompt: Complétez le passé composé avec le participe passé du verbe donné.\nPhrase: Le bébé est ___ ce matin à 6 heures.\nHint: naître\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1777758678659-xfldn64m"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"Complétez le passé composé\" but the auxiliary \"est\" is already provided, making it unclear whether the student should write just the past participle or the full passé composé construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777758916396-do6jdi9k",
+      "timestamp": "2026-05-02T21:56:10.977Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt precisely instructs to complete the passé composé with the past participle of \"naître\", and the context (\"Le bébé\" - masculine) makes it clear that the answer should be \"né\" with proper gender agreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777759177524-707suqfz",
+      "timestamp": "2026-05-02T21:59:57.711Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"Complétez le passé composé\" but the passé composé is the entire verb form \"est né\", not just the participle; asking to \"complete the passé composé\" could confuse learners about whether they're completing the tense or just inserting the participle into the partially constructed verb phrase.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777759365573-vj9z6nh5",
+      "timestamp": "2026-05-02T22:03:24.576Z"
+    }
+  ]
+}
