@@ -597,6 +597,7 @@ export const answerHints: Record<string, string> = {
   "partent": "partir",
   "parte": "partir",
   "partie": "partir",
+  "préparé": "préparer",
   "partions": "partir",
   "partiras": "partir",
   "passais": "passer",

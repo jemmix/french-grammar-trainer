@@ -1,0 +1,40 @@
+{
+  "cacheKey": "d2116212b6022290",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-11-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-11 - L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nType: Input\nPrompt: Complétez au passé composé avec le participe passé du verbe donné. Observez la différence d'accord entre « être » et « avoir ».\nPhrase: Elle est sortie à dix heures. Puis elle a ___ un gâteau pour ses amis.\nCorrect Answer: préparé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777844824873-p6fbjeo4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The past participle \"préparé\" would be written the same regardless of whether agreement applies (the direct object \"un gâteau\" is masculine singular, same as the base form), so the question cannot distinguish between applying or ignoring the agreement rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777844824875-hk6pzgv6",
+      "timestamp": "2026-05-03T21:47:59.426Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests whether the learner knows that with \"a\" (avoir), the participle \"préparé\" does NOT agree with the feminine subject \"elle\" (not \"préparée\"), which is the core of the stated rule about absence of agreement with avoir.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777844879429-9bcwj45f",
+      "timestamp": "2026-05-03T21:48:13.691Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying the general rule that past participles conjugated with avoir do not agree with the subject (élle would require \"préparée\" with agreement, but the correct answer is \"préparé\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777844893691-mexayejw",
+      "timestamp": "2026-05-03T21:48:30.318Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the rule that past participiples with \"avoir\" don't agree with the subject (default masculine singular \"préparé\", not \"préparée\"), which is the core of the stated rule about l'absence d'accord du participe passé avec avoir.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777844910319-fxcblsa6",
+      "timestamp": "2026-05-03T21:49:01.587Z"
+    }
+  ]
+}
