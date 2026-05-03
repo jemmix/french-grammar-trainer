@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2deb6c5c65b37ee3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-11-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-11 - L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Les étudiantes ont ___ l'examen. »\nChoices:\nA. [CORRECT] terminé\nB. terminées\nC. terminés\nD. terminait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777838826963-rv1wxc3k"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the core rule that past participles don't agree with the subject when used with \"avoir\" - the correct answer \"terminé\" (no agreement) distinguishes it from the tempting distractor \"terminées\" which would incorrectly apply agreement with \"les étudiantes.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777838917167-3p0qs3nx",
+      "timestamp": "2026-05-03T20:08:50.398Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that past participes with auxiliary \"avoir\" do not agree with the subject (choosing \"terminé\" over \"terminées\" requires knowing this specific rule).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839144764-4e7kb8p7",
+      "timestamp": "2026-05-03T20:12:46.106Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the learner knows that past participles with \"avoir\" don't agree with the subject, even when the subject (\"les étudiantes\") is feminine plural.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839375912-868v7w7i",
+      "timestamp": "2026-05-03T20:16:29.517Z"
+    }
+  ]
+}

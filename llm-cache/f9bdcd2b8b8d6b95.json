@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f9bdcd2b8b8d6b95",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-11-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-11 - L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Elles ont ___ leur maison. »\nChoices:\nA. [CORRECT] peint\nB. peinte\nC. peintes\nD. peignait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777838826963-u8fqq0g4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that with the auxiliary \"avoir\", the past participle does not agree with the subject, as demonstrated by the tempting wrong answer \"peintes\" which incorrectly agrees with \"Elles\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777838962207-lwo08c1b",
+      "timestamp": "2026-05-03T20:09:35.090Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that past participles with \"avoir\" (ont) do not agree with the subject, so the correct answer is the invariable form \"peint\" rather than \"peinte\" or \"peintes.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839185512-ssb16kjx",
+      "timestamp": "2026-05-03T20:13:21.957Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests that the past participle with avoir does not agree with the subject \"Elles\" when the direct object follows the verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839396889-nz02ms0i",
+      "timestamp": "2026-05-03T20:16:53.564Z"
+    }
+  ]
+}

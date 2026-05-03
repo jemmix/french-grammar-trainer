@@ -1,0 +1,26 @@
+{
+  "cacheKey": "303c3c06036b7794",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-11-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-11 - L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nType: Input\nPrompt: Complétez au passé composé avec avoir : écrivez le participe passé du verbe donné, sans accord avec le sujet.\nPhrase: Vous avez ___ cette décision importante.\nCorrect Answer: pris\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777842112662-1b0j3y6m"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to write the participle \"sans accord avec le sujet,\" giving away the rule instead of testing whether they know when to apply it.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777842112671-x5al5l4m",
+      "timestamp": "2026-05-03T21:02:19.409Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to write the participle \"without agreement with the subject,\" so the student doesn't need to know the rule about absent agreement—they just follow instructions and only need to know the past participle of \"prendre.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777842139413-27lzh1r6",
+      "timestamp": "2026-05-03T21:02:37.368Z"
+    }
+  ]
+}

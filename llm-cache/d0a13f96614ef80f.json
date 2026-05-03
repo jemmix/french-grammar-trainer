@@ -1,0 +1,26 @@
+{
+  "cacheKey": "d0a13f96614ef80f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-11-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-11 - L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nType: Input\nPrompt: Complétez le passé composé avec le participe passé du verbe donné. Avec « avoir », le participe passé ne s'accorde jamais avec le sujet.\nPhrase: Vous avez ___ cette décision importante.\nCorrect Answer: pris\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777838826965-5syyfoig"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question gives away the answer by explicitly stating \"le participe passé ne s'accorde jamais avec le sujet\" in the prompt, so students don't need to apply knowledge of the rule - they just follow the instruction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839040673-as2srdcs",
+      "timestamp": "2026-05-03T20:11:12.139Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests vocabulary (knowing that the past participle of \"prendre\" is \"pris\") but does not actually test agreement since \"Vous\" is gender-neutral and masculine, meaning \"pris\" would be correct even if the student incorrectly believed agreement was required with \"avoir\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839293154-jcr0ieji",
+      "timestamp": "2026-05-03T20:15:25.723Z"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "cacheKey": "76950c8e245cda39",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-11-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-11 - L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nType: Input\nPrompt: Complétez le passé composé avec le participe passé du verbe donné. Avec « avoir », le participe passé ne s'accorde jamais avec le sujet.\nPhrase: Ils ont ___ la maison en bleu.\nCorrect Answer: peint\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777838826965-32pzxkf9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests knowledge of the past participle form \"peint\" without requiring any application of the agreement rule—the direct object comes after the verb, so no agreement decision is needed regardless of whether the student knows the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839036312-5uw3olno",
+      "timestamp": "2026-05-03T20:10:54.437Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that with \"avoir\", the past participle does not agree with the subject (\"Ils\"), and they must provide the masculine singular form \"peint\" rather than \"peints\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839263099-gp950mt8",
+      "timestamp": "2026-05-03T20:19:59.346Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests that the past participle doesn't agree with the subject \"Ils\" when using avoir—correcting the common learner error of writing \"peints\" to match the plural subject.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839599347-f5z5i93g",
+      "timestamp": "2026-05-03T20:20:23.274Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that with \"avoir\", the past participle does not agree with the subject—answering \"peint\" (not \"peints\") demonstrates this knowledge, and the prompt explicitly references the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839623274-jgvvbsl1",
+      "timestamp": "2026-05-03T20:20:38.291Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests that the past participle \"peint\" has no agreement with the subject \"Ils\" (they) or the post-verbal direct object \"la maison\", which is the core of the general rule with \"avoir\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839638291-duh4q5cr",
+      "timestamp": "2026-05-03T20:20:59.083Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: This question tests the exception rule (agreement with direct object placed before the auxiliary) since \"la maison\" precedes the verb, but the prompt misleadingly references the general no-agreement rule and the provided answer \"peint\" (no agreement) is actually grammatically incorrect—it should be \"peinte\" to agree with the direct object.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839659083-8ejbxtrp",
+      "timestamp": "2026-05-03T20:21:13.247Z"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "cacheKey": "c6cdc36ffe89ee9b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-11-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-11 - L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nType: Input\nPrompt: Complétez au passé composé avec le participe passé invariable du verbe donné. Avec l'auxiliaire « avoir », le participe passé ne prend pas d'accord avec le sujet.\nPhrase: Elle a ___ ses amis hier soir.\nCorrect Answer: invité\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777841898847-nop5llpj"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The sentence uses a feminine subject (\"Elle\") and a masculine direct object (\"ses amis\") that appears after the verb, so \"invité\" would be correct even if agreement rules were different; the question doesn't create a scenario where knowing \"no agreement with subject\" is necessary to arrive at the correct answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777841898850-z2sctqj8",
+      "timestamp": "2026-05-03T20:58:48.833Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires the student to recognize that despite the feminine subject \"Elle\", the past participle with \"avoir\" remains invariable (base form \"invité\" not \"invitée\"), which is the core concept of the general rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777841928835-9zynjzho",
+      "timestamp": "2026-05-03T20:59:17.297Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that with \"avoir\" as auxiliary, the past participle must remain invariable (no \"e\" for agreement with \"Elle\" and no \"s\" for \"ses amis\"), which is precisely the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777841957298-jr8qduro",
+      "timestamp": "2026-05-03T20:59:36.231Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests whether the student knows that with \"avoir\", the past participle \"invité\" does NOT agree with the subject \"Elle\" (the correct answer is not \"invitée\"), which is the exact rule stated.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777841976232-9qkibdmo",
+      "timestamp": "2026-05-03T21:00:03.618Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs students to use the \"invariable\" past participle, giving away the rule rather than testing it; a correct answer can be achieved just by knowing the verb form (invité) without understanding why it shouldn't agree with the subject \"Elle\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777842003618-bnpwoxzb",
+      "timestamp": "2026-05-03T21:00:18.262Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6f2f45e7147a1aa9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-11-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-11 - L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Les étudiants ont ___ le roman. »\nChoices:\nA. [CORRECT] lu\nB. lisaient\nC. liront\nD. lirait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777840601593-tcz0f3sr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests tense recognition (passé composé) and past participle formation, but the wrong choices are different tenses entirely rather than agreement variants like \"lus\"; the student doesn't need to know the agreement rule to answer correctly.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777840601596-tsqs97tz",
+      "timestamp": "2026-05-03T20:36:54.738Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests recognition of the passé composé tense versus other tenses (imparfait, futur), not the rule about the absence of agreement of the past participle with avoir; the choices don't include agreed forms to test the agreement rule, and \"lu\" is invariant anyway.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777840614738-vopv18qf",
+      "timestamp": "2026-05-03T20:37:18.947Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dce711a65500bc7f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-11-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-11 - L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Les enfants ont ___ patiemment. »\nChoices:\nA. [CORRECT] attendu\nB. attendus\nC. attendues\nD. attendait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777838826963-xxwaxjz6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule by contrasting \"attendu\" (no agreement, correct) with \"attendus\" (incorrect agreement with plural subject), requiring knowledge that past participes with avoir do not agree with the subject.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777838947427-gsav1ko1",
+      "timestamp": "2026-05-03T20:09:22.207Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question specifically tests that past participes with \"avoir\" do not agree with the subject, offering a tempting distractor (\"attendus\") that would be correct only if agreement were required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839166106-70onuhco",
+      "timestamp": "2026-05-03T20:13:30.525Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Answering correctly requires knowing that with \"avoir\" as the auxiliary, the past participle does not agree with the subject in the absence of a preceding direct object.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839400999-6y85yrhm",
+      "timestamp": "2026-05-03T20:17:02.341Z"
+    }
+  ]
+}

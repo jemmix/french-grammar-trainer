@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0e08babc3fe8c7b3",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-11-003",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nPrompt: Complétez au passé composé : « Ma sœur a ___ deux livres. »\nChoices:\nA. écrit\nB. écrite\nC. écrivait\nD. écrira\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1777838826962-8dh7yzrh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The instruction specifies passé composé, eliminating two wrong tenses, and the verb écrire is clearly inferable from \"deux livres\", with agreement rule (no agreement after avoir) determining between the remaining options.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777838826981-ox5pmbpv",
+      "timestamp": "2026-05-03T20:07:42.108Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The verb \"écrire\" (to write) is semantically incompatible with \"deux livres\" in this context - you would \"lu\" (read) or \"acheté\" (bought) books, not \"écrit\" them, making the question confusing even though the grammatical rule test is clear.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839075641-i3g4cj3c",
+      "timestamp": "2026-05-03T20:11:39.943Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The sentence \"Ma sœur a ___ deux livres\" semantically doesn't make sense with the verb \"écrire\" - a sister cannot \"write\" books that she \"has\", making it unclear whether this is testing participle agreement with avoir or if there's a missing/wrong verb context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777839321916-i5oqsk6v",
+      "timestamp": "2026-05-03T20:15:39.298Z"
+    }
+  ]
+}
