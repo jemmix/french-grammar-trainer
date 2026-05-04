@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a152dbbb428e7cfb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-13-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-13 - La place de la négation au passé composé (ne + auxiliaire + pas + participe)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé négatif : « Ils ___ restés à la maison. »\nChoices:\nA. [CORRECT] ne sont pas\nB. ne pas sont\nC. sont pas ne\nD. ne sont restés pas\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777927839956-fso1j0qr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the correct placement of negation markers around the auxiliary verb in passé composé, requiring knowledge that \"ne\" precedes \"sont\" and \"pas\" follows it, with the participle appearing after the negation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777927839967-z43lqb6z",
+      "timestamp": "2026-05-04T20:51:15.552Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding the specific order ne + auxiliary + pas in negating passé composé, which is the core of rule 02-13.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777928091100-f9ayx1jf",
+      "timestamp": "2026-05-04T20:55:08.111Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires students to know that negation in passé composé goes ne + auxiliary + pas, with the past participle following (not included in the blank choices), making the rule essential to select \"ne sont pas\" over the incorrect placements.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777928299432-a6ihtbnt",
+      "timestamp": "2026-05-04T20:58:31.023Z"
+    }
+  ]
+}

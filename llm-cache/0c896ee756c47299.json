@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0c896ee756c47299",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-13-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-13 - La place de la négation au passé composé (ne + auxiliaire + pas + participe)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé négatif : « Marie ___ plus téléphoné à sa mère. »\nChoices:\nA. [CORRECT] n'a\nB. a\nC. n'a pas\nD. plus n'a\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777927839958-ey8ba7p6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests \"ne...plus\" (no longer) instead of the specified rule \"ne...pas\" (not), making it test a different negation structure than claimed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777928009410-ntqvydsf",
+      "timestamp": "2026-05-04T20:53:49.362Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests placement of negation in passé composé structure, requiring knowledge that \"ne\" precedes the auxiliary and contracts to \"n'\" before a vowel.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777928224466-sv5p39k7",
+      "timestamp": "2026-05-04T20:57:39.137Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "5d23367543bf5a32",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-13-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: La place de la négation au passé composé (ne + auxiliaire + pas + participe)\n\nQUESTION:\nPrompt: Complétez au passé composé négatif. Le blanc contient « ne/n' » + l'auxiliaire avoir conjugué + « pas ».\nPhrase: Vous ___ aimé ce cadeau.\nHint: avoir\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1777930132931-im3trfwe"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly states the tense (passé composé), the negation structure (ne/n' + auxiliaire avoir conjugué + pas), identifies the auxiliary verb, and provides the subject, leaving no ambiguity about what's being asked.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777930133068-35r3b1mm",
+      "timestamp": "2026-05-04T21:30:25.786Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says the blank contains \"ne/n'\" + \"auxiliaire conjugué\" + \"pas\" but only provides one \"___\" space, making it unclear whether students should write all three components separated by spaces in a single blank or if there should be multiple blanks.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777930225786-pllaf55l",
+      "timestamp": "2026-05-04T21:30:54.662Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly specifies that the blank contains \"ne/n'\" + conjugated auxiliary \"avoir\" + \"pas\", and the subject \"Vous\" makes it unambiguous which conjugation to use.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777930254663-jj0jkuc5",
+      "timestamp": "2026-05-04T21:31:04.691Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nREASON: The prompt contradicts itself by stating the blank should contain both \"ne/n'\" AND the auxiliary AND \"pas\", but French negative constructions place the subject between \"ne\" and the auxiliary (e.g., \"Vous n'avez pas aimé\"), making the blank content unclear.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777930264692-rap72amd",
+      "timestamp": "2026-05-04T21:31:18.994Z"
+    }
+  ]
+}

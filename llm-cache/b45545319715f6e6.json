@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b45545319715f6e6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-13-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-13 - La place de la négation au passé composé (ne + auxiliaire + pas + participe)\n\nQUESTION:\nType: Input\nPrompt: Au passé composé négatif, l'auxiliaire se place entre « ne/n' » et « pas ». Conjuguez l'auxiliaire être.\nPhrase: Ils ne ___ pas sortis ensemble hier.\nCorrect Answer: sont\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777929873096-uxiii0m3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests conjugation of \"être\" with subject-verb agreement (Ils → sont), not the placement of negation, which is already shown in the sentence structure and explicitly given in the prompt.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777929873098-bf9d68dt",
+      "timestamp": "2026-05-04T21:24:50.348Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests conjugation of the auxiliary verb être (choosing \"sont\" for \"ils\"), not the position of negation — the negation structure is already provided in the prompt and visible in the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777929890351-v2ihh8a9",
+      "timestamp": "2026-05-04T21:25:04.559Z"
+    }
+  ]
+}

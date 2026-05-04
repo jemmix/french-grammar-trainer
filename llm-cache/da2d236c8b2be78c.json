@@ -1,0 +1,26 @@
+{
+  "cacheKey": "da2d236c8b2be78c",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-13-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: La place de la négation au passé composé (ne + auxiliaire + pas + participe)\n\nQUESTION:\nPrompt: Complétez au passé composé négatif. Écrivez la négation complète dans le blanc : « ne/n' » + auxiliaire conjugué + « pas ».\nPhrase: Nous ___ reçu votre message.\nHint: avoir\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1777929408606-edh0bibi"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"Écrivez la négation complète dans le blanc\" (singular), but French negation is split around the verb (\"n'avons pas\"), so it's unclear whether the blank expects just the auxiliary (\"avons\") or the full negation (\"n'avons pas\"), and the single blank placement doesn't match the two-part structure required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777929408625-ybvd6cow",
+      "timestamp": "2026-05-04T21:17:18.293Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The notation \"« ne/n' »\" doesn't explicitly tell the student whether to write \"ne\" or \"n'\" - they must infer elision rules, and the expected answer format isn't clearly defined as either \"n'avons pas\" (with space before \"pas\") or \"n'avonspas\" (without space).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777929438300-2nn8mlpe",
+      "timestamp": "2026-05-04T21:17:46.230Z"
+    }
+  ]
+}

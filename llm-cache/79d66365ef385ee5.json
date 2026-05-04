@@ -1,0 +1,33 @@
+{
+  "cacheKey": "79d66365ef385ee5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-13-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-13 - La place de la négation au passé composé (ne + auxiliaire + pas + participe)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase est correcte avec un verbe pronominal au passé composé négatif ?\nChoices:\nA. [CORRECT] Elle ne s'est pas promenée hier.\nB. Elle s'ne est pas promenée hier.\nC. Elle ne s'est promenée pas hier.\nD. Elle ne pas s'est promenée hier.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777927839957-g4fcxnqu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests negation placement in passé composé with a pronominal verb, requiring knowledge that \"ne\" comes before the auxiliary (after the reflexive pronoun) and \"pas\" comes after the auxiliary but before the past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777927920306-urm3y2nu",
+      "timestamp": "2026-05-04T20:52:18.724Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question requires knowledge of reflexive pronoun placement (before the auxiliary), which is a separate grammar rule from negation placement; a proper test of rule 02-13 would use regular verbs with consistent auxiliary placement so only the negation structure varies.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777928143739-o4fdl9o6",
+      "timestamp": "2026-05-04T20:56:28.821Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the placement of negation elements (ne and pas) in passé composé, which is the core of the stated rule, even though the example uses a reflexive verb where the reflexive pronoun comes between ne and the auxiliary.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777928358174-7g5rabq8",
+      "timestamp": "2026-05-04T20:59:54.660Z"
+    }
+  ]
+}

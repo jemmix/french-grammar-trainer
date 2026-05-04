@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0c6b7b8952949cd4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-13-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-13 - La place de la négation au passé composé (ne + auxiliaire + pas + participe)\n\nQUESTION:\nType: Input\nPrompt: Complétez au passé composé négatif. Le blanc contient « ne/n' » + l'auxiliaire avoir conjugué + « pas ».\nPhrase: Tu ___ répondu au téléphone.\nCorrect Answer: n'as pas\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777930132931-6staae61"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the negation structure (ne + auxiliary + pas) and that the negation wraps around the auxiliary verb in passé composé, which is exactly what the rule specifies.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777930133086-1hs23209",
+      "timestamp": "2026-05-04T21:29:17.107Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that passé composé negation places \"ne/n' + auxiliary + pas\" around the auxiliary verb, which is exactly what rule 02-13 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777930157107-2gwi9u5b",
+      "timestamp": "2026-05-04T21:30:42.431Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires students to produce the negated auxiliary \"n'as pas\" which must be placed BEFORE the past participle \"répondu\", directly testing the rule's structure of \"ne + auxiliaire + pas + participe\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777930242431-rxufze5o",
+      "timestamp": "2026-05-04T21:31:06.822Z"
+    }
+  ]
+}

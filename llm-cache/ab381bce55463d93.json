@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ab381bce55463d93",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "02-13-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Complétez au passé composé négatif. Le blanc contient « ne/n' » + l'auxiliaire avoir conjugué + « pas ».\n\nPHRASE: Nous ___ compris la leçon.\n\nHINT: avoir\n\nEXPECTED ANSWER: n'avons pas\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1777930132931-ln9c1pvo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The prompt explicitly states the structure (ne/n' + auxiliary avoir conjugated + pas), the subject \"Nous\" determines the conjugation \"avons\", and the vowel in \"avons\" triggers the elision to \"n'avons pas\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777930467640-fij1uv9x",
+      "timestamp": "2026-05-04T21:34:55.060Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly states to complete with negative passé composé using \"ne/n'\" + conjugated avoir + \"pas\", the subject \"Nous\" determines the conjugation \"avons\", and the hint confirms the auxiliary, making it clear what to type.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777930677225-a00lz1d6",
+      "timestamp": "2026-05-04T21:38:22.322Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly specifies the blank should contain \"ne/n'\" + conjugated \"avoir\" + \"pas\", and the subject \"Nous\" determines the auxiliary form (\"avons\") and that no elision occurs, making \"n'avons pas\" uniquely identifiable from the instructions alone.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777931230683-eolb7c10",
+      "timestamp": "2026-05-04T21:47:27.347Z"
+    }
+  ]
+}

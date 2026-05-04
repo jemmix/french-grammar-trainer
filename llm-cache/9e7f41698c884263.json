@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9e7f41698c884263",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-13-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-13 - La place de la négation au passé composé (ne + auxiliaire + pas + participe)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase est correcte avec un verbe pronominal au passé composé négatif ?\nChoices:\nA. [CORRECT] Ils ne se sont pas rencontrés.\nB. Ils se ne sont pas rencontrés.\nC. Ils ne se sont rencontrés pas.\nD. Ils ne pas se sont rencontrés.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777927839957-j32yleyq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question primarily tests the placement of reflexive pronouns with negation in pronominal verbs, not the standard ne + auxiliary + pas + participle rule for regular passé composé, as the unique positioning of the reflexive pronoun (between ne and the auxiliary) is the central grammar concept being evaluated.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777928000390-6jdiwu50",
+      "timestamp": "2026-05-04T20:54:10.673Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests negation placement with reflexive verbs (where the reflexive pronoun \"se\" appears between \"ne\" and the auxiliary), but rule 02-13 only covers the basic pattern ne + auxiliary + pas + participle without addressing how reflexive pronouns interact with negation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777928234807-wn7hzq8c",
+      "timestamp": "2026-05-04T20:57:46.439Z"
+    }
+  ]
+}

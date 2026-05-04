@@ -1,0 +1,40 @@
+{
+  "cacheKey": "5c5c8066df96badb",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-13-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: La place de la négation au passé composé (ne + auxiliaire + pas + participe)\n\nQUESTION:\nPrompt: Complétez au passé composé négatif.\nPhrase: Ils ___ restés à la maison hier.\nHint: être\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1777928675736-zmby6txs"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt doesn't specify whether the blank should contain just the negation markers (\"ne...pas\") or the complete negation structure including the auxiliary verb conjugated with the subject (\"ne sont pas\"/\"n' sont pas\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777928800790-j9mjz6es",
+      "timestamp": "2026-05-04T21:07:23.671Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\n\nREASON: The prompt precisely specifies the tense (passé composé), mood (négatif), and task (complétez), while the blank positioning before the participe passé and the hint \"être\" make it unambiguous that the user must provide the full negation \"ne sont pas\" for the subject \"ils\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777928955942-785t412y",
+      "timestamp": "2026-05-04T21:09:59.370Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly specifies the task (complete in negative passé composé), provides the sentence context, gives the auxiliary verb (être) as a hint, and the blank placement makes it unambiguous that the negative auxiliary form needs to be inserted before the past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777929108259-4ih7zz8h",
+      "timestamp": "2026-05-04T21:12:16.190Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The blank is placed before \"restés\" but the negative passé composé structure requires the auxiliary \"sont\" before the participle, making it unclear what exactly belongs in the blank.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777929136191-1qtnft3x",
+      "timestamp": "2026-05-04T21:12:33.433Z"
+    }
+  ]
+}
