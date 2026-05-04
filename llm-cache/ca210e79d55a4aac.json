@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ca210e79d55a4aac",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-12-010",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le passé composé des verbes pronominaux (auxiliaire être + accord)\n\nQUESTION:\nPrompt: Complétez au passé composé : « Lucie ___ les dents après le repas. »\nChoices:\nA. s'est brossé\nB. s'est brossée\nC. a brossé\nD. s'est brossés\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1777911273031-rv1v7f5f"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt asks to complete a specific sentence with clear context (Lucie brushing teeth), making it obvious that the reflexive verb \"se brosser\" is needed and the blank position indicates where the auxiliary + past participle should go.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777911363788-98qxo3gn",
+      "timestamp": "2026-05-04T16:16:41.175Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The question tests a subtle exception (agreement with subject despite intervening direct object) that isn't explicitly stated, creating ambiguity about which agreement rule learners should apply.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777911637115-qxu6cvml",
+      "timestamp": "2026-05-04T16:20:57.254Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt doesn't specify that a reflexive/pronominal construction is required, making it unclear whether \"a brossé\" (transitive with avoir) or \"s'est brossé\" (pronominal with être) is the intended answer when both are grammatically valid French constructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777913157242-x13kc8hz",
+      "timestamp": "2026-05-04T16:46:47.530Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4910233a4748789e",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-12-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le passé composé des verbes pronominaux (auxiliaire être + accord)\n\nQUESTION:\nPrompt: Complétez au passé composé avec le verbe pronominal donné.\nPhrase: Ma sœur ___ les cheveux avant l'école.\nHint: se peigner\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1777911273033-8bhf59nu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly instructs to complete in passé composé with the given pronominal verb, the subject \"ma sœur\" is clear, and the task is well-defined with only one grammatically correct answer (\"s'est peignée\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777911520388-7jc9hgaf",
+      "timestamp": "2026-05-04T16:18:58.554Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt doesn't clarify whether the student should include agreement rules for pronominal verbs (past participle agreement with the subject when the direct object is external), making it unclear whether the expected answer is \"s'est peigné\" or \"s'est peignée\" for the feminine subject \"Ma sœur\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777911768470-om61010e",
+      "timestamp": "2026-05-04T16:23:36.140Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt doesn't clarify whether past participle agreement is required with the subject, which is the key challenge of this rule (no agreement because direct object \"les cheveux\" follows the verb).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777916662772-r0ha8rla",
+      "timestamp": "2026-05-04T17:44:49.056Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a9fa757831d6d271",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-12-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-12 - Le passé composé des verbes pronominaux (auxiliaire être + accord)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe pronominal « se dépêcher » au passé composé. Écrivez le pronom réfléchi, l'auxiliaire être et le participe passé accordé.\nPhrase: Nathalie ___ pour ne pas rater le train.\nCorrect Answer: s'est dépêchée\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777921164938-qzd8hh9q"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that pronominal verbs use être as the auxiliary and the past participle must agree with the subject (feminine here), which directly tests the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777921164939-ijv2haby",
+      "timestamp": "2026-05-04T19:00:00.039Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using être as the auxiliary and applying past participle agreement with the feminine subject Nathalie (dépêchée), which are the two core components of the stated rule for pronominal verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777921200042-a65iichu",
+      "timestamp": "2026-05-04T19:00:31.642Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the learner to know that pronominal verbs use être as auxiliary and that the past participle must agree with the feminine subject (Nathalie → dépêchée), which directly tests the rule's core concepts.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777921231642-ztsmj687",
+      "timestamp": "2026-05-04T19:00:45.011Z"
+    }
+  ]
+}

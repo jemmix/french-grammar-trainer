@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f9af5caad115d17b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-12-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-12 - Le passé composé des verbes pronominaux (auxiliaire être + accord)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Pierre et Anne ___ au café. » (se retrouver)\nChoices:\nA. [CORRECT] se sont retrouvés\nB. ont retrouvés\nC. se sont retrouver\nD. se sont retrouvé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777913618845-h854a0d5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To answer correctly, students must know that reflexive verbs use auxiliary être (not avoir) and that the past participle must agree with the plural subject \"Pierre et Anne\" - both core aspects of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777913618848-mj77mk3h",
+      "timestamp": "2026-05-04T16:54:03.240Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: To answer correctly, students must know both that pronominal verbs use être as their auxiliary (eliminating B) and that the past participle agrees with the subject (eliminating D).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777913643241-np6wqav4",
+      "timestamp": "2026-05-04T16:54:21.817Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests both key aspects of the rule: that pronominal verbs use auxiliary \"être\" (distinguishing A from B) and that the past participle agrees with the subject (distinguishing A from D).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777913661817-oeho05en",
+      "timestamp": "2026-05-04T16:54:40.124Z"
+    }
+  ]
+}

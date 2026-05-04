@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3f3d36b8d3e71a60",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-12-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-12 - Le passé composé des verbes pronominaux (auxiliaire être + accord)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Lucie ___ les dents après le repas. »\nChoices:\nA. [CORRECT] s'est brossé\nB. s'est brossée\nC. a brossé\nD. s'est brossés\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777911273031-fl6nigf5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the key aspect of pronominal verbs in passé composé - whether the past participle agrees with the subject when the direct object \"les dents\" follows the verb, and also that pronominal verbs use \"être\" as auxiliary.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777911358625-umay2jb1",
+      "timestamp": "2026-05-04T16:16:25.889Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"se brosser\" uses auxiliary être and that past participle agreement does not occur when the reflexive pronoun is an indirect object (which is the case here with \"les dents\" as the direct object).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777911626852-f6r97tsh",
+      "timestamp": "2026-05-04T16:20:45.934Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests core aspects of pronominal verbs in passé composé: using \"être\" as auxiliary and understanding that past participle agreement doesn't occur when the direct object follows the verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777913157241-4fpmeynd",
+      "timestamp": "2026-05-04T16:46:16.808Z"
+    }
+  ]
+}

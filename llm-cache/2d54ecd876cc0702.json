@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2d54ecd876cc0702",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-12-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-12 - Le passé composé des verbes pronominaux (auxiliaire être + accord)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe pronominal au passé composé. Écrivez le pronom réfléchi, l'auxiliaire être et le participe passé accordé.\nPhrase: Les garçons ___ en jouant au foot.\nCorrect Answer: se sont blessés\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777919501437-zifvx2ua"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that reflexive verbs use être as auxiliary and that the past participle must agree with the subject, which are the core concepts of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777919501439-4nlf8sbv",
+      "timestamp": "2026-05-04T18:32:02.497Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of pronominal verbs using être as auxiliary and past participle agreement with the subject (\"blessés\" matches \"les garçons\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777919522498-epqoxbj2",
+      "timestamp": "2026-05-04T18:32:22.053Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowledge that reflexive verbs use être as auxiliary and the past participle must agree with the subject, which are exactly the concepts in rule 02-12.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777919542053-q5ryjkt9",
+      "timestamp": "2026-05-04T18:33:37.454Z"
+    }
+  ]
+}

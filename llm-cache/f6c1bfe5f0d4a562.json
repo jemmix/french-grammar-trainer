@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f6c1bfe5f0d4a562",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-12-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-12 - Le passé composé des verbes pronominaux (auxiliaire être + accord)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Le bébé ___ à dix-huit heures. » (s'endormir)\nChoices:\nA. [CORRECT] s'est endormi\nB. s'est endormir\nC. s'est endormis\nD. s'endormira\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777915140569-yksrf519"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the passé composé of a pronominal verb (s'endormir) using auxiliary être and requires proper agreement with the subject (\"le bébé\"), which directly matches the rule's focus on auxiliary être + accord for pronominal verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777915140572-cpi9g2x8",
+      "timestamp": "2026-05-04T17:19:18.155Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests reflexive verbs in passé composé, requiring both use of être as auxiliary and proper masculine singular agreement (\"endormi\" for \"Le bébé\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777915158156-coc6jj1k",
+      "timestamp": "2026-05-04T17:19:42.045Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that pronominal verbs use être as auxiliary and the past participle agrees with the subject (\"Le bébé\" is singular masculine → \"endormi\", not \"endormis\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777915182045-ocybekmd",
+      "timestamp": "2026-05-04T17:19:57.310Z"
+    }
+  ]
+}

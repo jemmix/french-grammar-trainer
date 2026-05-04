@@ -1,0 +1,33 @@
+{
+  "cacheKey": "66ee11b64c90a9f1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-12-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-12 - Le passé composé des verbes pronominaux (auxiliaire être + accord)\n\nQUESTION:\nType: Input\nPrompt: Complétez au passé composé avec le verbe pronominal donné.\nPhrase: Camille ___ à six heures du matin.\nCorrect Answer: s'est réveillée\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777911273033-jx7dzdj6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires constructing a pronominal verb in passé composé with the auxiliary être and applying feminine gender agreement with the subject, which directly tests the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777911504571-z7conq1j",
+      "timestamp": "2026-05-04T16:18:56.984Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that reflexive verbs use \"être\" as auxiliary and the past participle must agree with the feminine subject \"Camille\" → \"réveillée\", which is precisely what rule 02-12 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777911752004-1fg0bj15",
+      "timestamp": "2026-05-04T16:23:02.049Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To correctly complete \"Camille ___ à six heures du matin\" with \"s'est réveillée,\" the learner must know that pronominal verbs use \"être\" as auxiliary in passé composé and that the past participle agrees with the subject—both core concepts of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777916620271-ewj67wvn",
+      "timestamp": "2026-05-04T17:43:52.330Z"
+    }
+  ]
+}
