@@ -1,0 +1,33 @@
+{
+  "cacheKey": "031efb993a4d1d3b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-11-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-11 - L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nType: Input\nPrompt: Corrigez le participe passé. La phrase « Elle a dormie tard » contient une erreur d'accord. Écrivez le participe passé correct.\nPhrase: Elle a ___ tard.\nCorrect Answer: dormi\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777908566728-sxzayju6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests that past participles with \"avoir\" do not agree with the subject (dormie → dormi).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777908566729-u1k10p8f",
+      "timestamp": "2026-05-04T15:29:40.187Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that the past participle does not agree with the subject when the auxiliary is \"avoir\", which is exactly what rule 02-11 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777908580188-lz0s5kid",
+      "timestamp": "2026-05-04T15:29:56.754Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that past participles conjugated with \"avoir\" do not agree with the subject—the incorrect \"dormie\" has a feminine agreement marker that must be removed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777908596754-of5owc56",
+      "timestamp": "2026-05-04T15:30:11.258Z"
+    }
+  ]
+}

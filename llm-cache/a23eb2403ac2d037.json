@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a23eb2403ac2d037",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-11-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-11 - L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nType: Input\nPrompt: Corrigez le participe passé. La phrase « Elles ont courues vite » contient une erreur d'accord. Écrivez le participe passé correct.\nPhrase: Elles ont ___ vite.\nCorrect Answer: couru\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777908774610-xw4q3yux"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that past participles with \"avoir\" don't agree with the subject by requiring the student to remove the incorrect \"-es\" ending from \"courues\" to produce the correct invariable form \"couru\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777908774622-aa73ub6z",
+      "timestamp": "2026-05-04T15:33:10.572Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying that the past participle with \"avoir\" must not agree with the subject, which is precisely what the rule states.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777908790574-hhi7e0ip",
+      "timestamp": "2026-05-04T15:35:45.093Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To correct \"courues\" to \"couru,\" the student must apply the rule that past participles with \"avoir\" do not agree.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777908945094-yh8vhslx",
+      "timestamp": "2026-05-04T15:35:55.737Z"
+    }
+  ]
+}

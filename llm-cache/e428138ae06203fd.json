@@ -1,0 +1,40 @@
+{
+  "cacheKey": "e428138ae06203fd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-11-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-11 - L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nType: Input\nPrompt: Complétez au passé composé avec l'auxiliaire avoir et le participe passé du verbe donné.\nPhrase: Sophie est partie à huit heures. Ensuite elle ___ au téléphone avec sa sœur.\nCorrect Answer: a parlé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777907247380-xolop9mu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests basic passé composé formation (auxiliary + past participle) but \"parlé\" is invariable for gender/number, so the answer doesn't reveal whether the student knows the agreement rule with avoir.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777907247382-5zlcuyem",
+      "timestamp": "2026-05-04T15:07:58.615Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests that with the auxiliary \"avoir\", the past participle \"parlé\" does not agree with the feminine subject \"elle\" (it remains \"parlé\", not \"parlée\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777907278617-dvigf696",
+      "timestamp": "2026-05-04T15:08:19.667Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests that with \"avoir\" as auxiliary, the past participle \"parlé\" does not agree with the feminine subject \"elle\" (it would be \"a parlée\" if agreement applied), which is precisely the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777907299667-l8wi67er",
+      "timestamp": "2026-05-04T15:09:12.810Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests forming passé composé with avoir and an intransitive verb (parler), but there is no direct object that could trigger agreement, so the rule about absence of agreement cannot be demonstrated or tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777907352811-01aof8ur",
+      "timestamp": "2026-05-04T15:09:54.157Z"
+    }
+  ]
+}

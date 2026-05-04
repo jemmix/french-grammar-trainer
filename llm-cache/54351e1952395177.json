@@ -1,0 +1,26 @@
+{
+  "cacheKey": "54351e1952395177",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-11-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-11 - L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nType: Input\nPrompt: Complétez au passé composé avec le participe passé du verbe donné. Comparez les deux auxiliaires : avec « être », le participe s'accorde ; avec « avoir », il ne s'accorde pas.\nPhrase: Sophie est partie à huit heures. Ensuite elle a ___ au téléphone avec sa sœur.\nCorrect Answer: parlé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777906639721-pedrdl12"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question simply asks for the past participle of \"parler\" with \"avoir\", which can be answered correctly without any knowledge of agreement rules since \"parlé\" is the invariable form and there's no scenario where agreement would apply.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777906639722-7ktwd4gu",
+      "timestamp": "2026-05-04T14:57:39.491Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests past participle formation of \"parler\" and knowing the auxiliary is \"avoir\", but doesn't require knowledge of the agreement rule since there's no direct object before the participle to potentially trigger agreement, so \"parlé\" works regardless of whether you know the agreement rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777906659492-vnfx2q3c",
+      "timestamp": "2026-05-04T14:58:06.888Z"
+    }
+  ]
+}

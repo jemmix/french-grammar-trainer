@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7b1bc28aae0ce06a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-11-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-11 - L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nType: Input\nPrompt: Corrigez le participe passé. La phrase « Ma sœur a chantée toute la nuit » contient une erreur d'accord. Écrivez le participe passé correct.\nPhrase: Ma sœur a ___ toute la nuit.\nCorrect Answer: chanté\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777908774610-jxtu8qk9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that with \"avoir\" as the auxiliary, the participe passé does not agree with the subject—the error to be corrected is precisely the incorrect subject agreement that this rule prohibits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777908774623-1y25foxr",
+      "timestamp": "2026-05-04T15:33:20.293Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the rule that past participles with \"avoir\" do not agree with the subject, requiring students to reject the feminine \"chantée\" for the masculine \"chanté\" despite the feminine subject \"ma sœur.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777908800293-nhvs5ghv",
+      "timestamp": "2026-05-04T15:34:12.440Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule by requiring students to identify that \"chantée\" incorrectly agrees with the subject \"sœur\" and provide the correct invariable form \"chanté\" used with the auxiliary \"avoir.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777908852441-1uqu4ec6",
+      "timestamp": "2026-05-04T15:34:39.924Z"
+    }
+  ]
+}

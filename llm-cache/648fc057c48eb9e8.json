@@ -1,0 +1,33 @@
+{
+  "cacheKey": "648fc057c48eb9e8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-11-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-11 - L'absence d'accord du participe passé avec avoir (règle générale)\n\nQUESTION:\nType: Input\nPrompt: Complétez au passé composé avec l'auxiliaire avoir et le participe passé du verbe donné. Attention au sujet féminin.\nPhrase: Sophie est partie à huit heures. Ensuite elle ___ au téléphone avec sa sœur.\nCorrect Answer: a parlé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777907023950-6vge4k51"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the learner knows that with avoir as auxiliary, the participle does not agree with the feminine subject (parlé not parlée).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777907023952-2nj8rffn",
+      "timestamp": "2026-05-04T15:04:15.820Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question uses the auxiliary \"être\" in the first sentence (\"Sophie est partie\"), not \"avoir\" with the verb to be completed (\"a parlé\"), and the rule about agreement absence with \"avoir\" is irrelevant since the verb \"parler\" has no inherent gender that would be marked in the past participle regardless of auxiliary.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777907055824-lfqu647m",
+      "timestamp": "2026-05-04T15:04:35.187Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question provides the auxiliary \"a\" in the prompt (\"elle ___\"), so the learner cannot demonstrate knowledge of when NOT to add agreement - the blank only requires inserting \"parlé\" with no opportunity to incorrectly add \"e\" for feminine agreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777907075188-dhniy978",
+      "timestamp": "2026-05-04T15:04:55.063Z"
+    }
+  ]
+}

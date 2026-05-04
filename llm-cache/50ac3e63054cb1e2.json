@@ -1,0 +1,33 @@
+{
+  "cacheKey": "50ac3e63054cb1e2",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "02-11-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Corrigez le participe passé. La phrase « Mes sœurs ont mangées des crêpes » contient une erreur d'accord. Écrivez le participe passé correct.\n\nPHRASE: Mes sœurs ont ___ des crêpes.\n\nHINT: manger\n\nEXPECTED ANSWER: mangé\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1777909691587-a1mcemwq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly asks to \"correct the past participle\" and even shows the incorrect form, making it clear the learner must type the past participle of \"manger\" in the blank.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777909749530-z16dj0rl",
+      "timestamp": "2026-05-04T15:49:31.136Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly asks to correct the past participle, mentions the error \"mangées\" (with the extra 'e'), and the hint \"manger\" identifies the verb, making it clear the learner must type the properly conjugated past participle without agreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777909771137-p3ssbiw9",
+      "timestamp": "2026-05-04T15:49:52.497Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly asks to correct the past participle of \"manger\" shown in the hint, and the learner can determine the correct form \"mangé\" by applying the rule that past participives with \"avoir\" don't agree with the subject.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777909792497-8glrkcfc",
+      "timestamp": "2026-05-04T15:50:33.864Z"
+    }
+  ]
+}
