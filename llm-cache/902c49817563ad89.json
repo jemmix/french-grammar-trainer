@@ -1,0 +1,33 @@
+{
+  "cacheKey": "902c49817563ad89",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-14-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise l'adverbe « beaucoup » au passé composé dans la position la plus neutre et standard ?\n\nChoices:\nA. [CORRECT] Tu as beaucoup lu ce roman.\nB. [WRONG] Tu beaucoup as lu ce roman.\nC. [WRONG] Tu as lu beaucoup ce roman.\nD. [WRONG] Beaucoup tu as lu ce roman.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778247755887-jpp0b6y5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B separates auxiliary from subject, C puts the adverb after the participle (not neutral position), and D improperly fronts the adverb before the subject.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778247891124-ncu5ez8c",
+      "timestamp": "2026-05-08T13:46:03.818Z"
+    },
+    {
+      "raw": "FALSE|C|C \"Tu as lu beaucoup ce roman\" is grammatically correct; placing \"beaucoup\" after the past participle is valid French (though less neutral than the standard position). B and D are indeed incorrect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778248283486-lwh0mj48",
+      "timestamp": "2026-05-08T13:51:47.562Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate standard French word order rules for adverbs in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778249402605-rv8c41v4",
+      "timestamp": "2026-05-08T14:16:45.235Z"
+    }
+  ]
+}

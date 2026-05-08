@@ -1,0 +1,33 @@
+{
+  "cacheKey": "90f46813a175bd89",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-14-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-14 - La place des adverbes au passé composé (déjà, encore, toujours, bien, mal, beaucoup)\n\nQUESTION:\nType: Input\nPrompt: Complétez au passé composé. Le blanc contient l'auxiliaire avoir conjugué suivi de l'adverbe « bien ».\nPhrase: Il ___ chanté cette chanson.\nCorrect Answer: a bien\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777984624779-hftkn5mb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core rule of adverb placement in passé composé (between auxiliary and past participle), requiring knowledge of where \"bien\" must be positioned relative to the conjugated auxiliary \"a\" and the past participle \"chanté\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777985001952-fpwcf66a",
+      "timestamp": "2026-05-05T12:43:40.414Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells students the word order (\"l'auxiliaire avoir conjugué suivi de l'adverbe 'bien'\"), so the question only tests conjugation of \"avoir\" for \"Il\", not adverb placement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777986985670-qyf7om5g",
+      "timestamp": "2026-05-05T13:19:49.188Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly states the auxiliary comes before the adverb, so students only conjugate avoir without demonstrating knowledge of where adverbs belong in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777987189189-phb1exiz",
+      "timestamp": "2026-05-05T13:20:02.203Z"
+    }
+  ]
+}

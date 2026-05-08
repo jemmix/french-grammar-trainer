@@ -1,0 +1,26 @@
+{
+  "cacheKey": "59dcb462e5b26845",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-14-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-14 - La place des adverbes au passé composé (déjà, encore, toujours, bien, mal, beaucoup)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé avec l'adverbe « déjà » : « Ils ___ vendu leur voiture. »\nChoices:\nA. [CORRECT] ont déjà\nB. ont bien\nC. ont jamais\nD. ont beaucoup\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777999008214-7w5x6636"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests adverb selection, not adverb placement—all choices position the adverb in the same correct location (between auxiliary and past participle), so answering only requires following the prompt's instruction to use \"déjà,\" not understanding the placement rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777999093853-5febskki",
+      "timestamp": "2026-05-05T16:38:57.761Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly provides \"déjà\" in the prompt, so students don't need to know WHERE adverbs go in passé composé; they only need to select the option that contains \"déjà\" among the choices, making the placement rule incidental rather than central to solving the problem.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777999407409-d5fqlb2r",
+      "timestamp": "2026-05-05T16:44:09.914Z"
+    }
+  ]
+}

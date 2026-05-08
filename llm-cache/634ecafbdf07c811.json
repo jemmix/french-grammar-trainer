@@ -1,0 +1,47 @@
+{
+  "cacheKey": "634ecafbdf07c811",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-14-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: La place des adverbes au passé composé (déjà, encore, toujours, bien, mal, beaucoup)\n\nQUESTION:\nPrompt: Complétez au passé composé avec l'auxiliaire avoir conjugué et l'adverbe « mal ». Écrivez l'auxiliaire suivi de l'adverbe dans le bon ordre.\nPhrase: Nous ___ compris les instructions.\nHint: adverbe\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1777992162708-aus2ky6t"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt precisely instructs the student to write the auxiliary \"avoir\" conjugated for \"nous\" (which must be \"avons\") followed by the adverb \"mal\" in that order, and the three-underscore blank indicates a space for both words.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777992162716-mk3jkf5y",
+      "timestamp": "2026-05-05T14:44:18.030Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The blank in \"Nous ___ compris\" is positioned to receive only the auxiliary \"avons\", but the prompt asks for both auxiliary AND adverb, making it unclear whether the student should write \"avons\" or \"avons mal\" in the single blank space.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777992258030-85q9caqo",
+      "timestamp": "2026-05-05T14:44:38.788Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly states to write the auxiliary conjugated in passé composé followed by the adverb \"mal\" in the correct order, and the sentence structure with the blank between the subject and the past participle makes it obvious the user should type \"avons mal\" (auxiliary + adverb).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777992278788-4rv1i4ve",
+      "timestamp": "2026-05-05T14:45:49.118Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt precisely specifies what to write (conjugated auxiliary \"avoir\" + adverb \"mal\" in correct order) and the sentence context makes the expected answer \"avons mal\" unambiguous for learners studying adverb placement in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777992349119-l4tvzhri",
+      "timestamp": "2026-05-05T14:47:19.425Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks to \"complete\" one blank but instructs writing \"l'auxiliaire suivi de l'adverbe\" (two words), yet the past participle \"compris\" is already present — it's unclear whether the blank contains just the auxiliary, just the adverb, or both, and the instruction conflates the two tasks.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777992439425-viciezru",
+      "timestamp": "2026-05-05T14:47:52.778Z"
+    }
+  ]
+}

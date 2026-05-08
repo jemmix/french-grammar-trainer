@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fa54fa92f6ffc343",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-14-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-14 - La place des adverbes au passé composé (déjà, encore, toujours, bien, mal, beaucoup)\n\nQUESTION:\nType: Input\nPrompt: Au passé composé, l'adverbe se place entre l'auxiliaire et le participe passé. Conjuguez avec l'adverbe « mal ». Écrivez l'auxiliaire, puis l'adverbe, puis le participe passé.\nPhrase: Nous ___ les instructions.\nCorrect Answer: avons mal compris\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778268095608-eujxk2nn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The prompt explicitly tells the student \"l'adverbe se place entre l'auxiliaire et le participe passé\" and instructs them to write \"l'auxiliaire, puis l'adverbe, puis le participe passé,\" so answering correctly requires knowing passé composé formation rules (auxiliary selection, conjugation, participle), not the adverb placement rule itself.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778268095610-6veupt84",
+      "timestamp": "2026-05-08T19:21:56.044Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires placing the adverb \"mal\" between the auxiliary and past participle in passé composé, which is the exact concept the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778268116045-0pxw6xhx",
+      "timestamp": "2026-05-08T19:22:09.607Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The prompt explicitly tells students where to place the adverb (\"l'adverbe se place entre l'auxiliaire et le participe passé. Écrivez l'auxiliaire, puis l'adverbe, puis le participe passé\"), so answering correctly doesn't require knowledge of the rule—it only tests passé composé conjugation and following instructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778268129607-n3m0e9ob",
+      "timestamp": "2026-05-08T19:22:25.914Z"
+    }
+  ]
+}

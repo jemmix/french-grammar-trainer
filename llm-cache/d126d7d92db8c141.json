@@ -1,0 +1,47 @@
+{
+  "cacheKey": "d126d7d92db8c141",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-14-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase place correctement l'adverbe « déjà » au passé composé ?\n\nChoices:\nA. [CORRECT] Elle a déjà lu ce livre.\nB. [WRONG] Elle déjà a lu ce livre.\nC. [WRONG] Elle a lu déjà ce livre.\nD. [WRONG] Déjà elle a lu ce livre.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778246834831-7w4lv8oj"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers place déjà in non-standard positions relative to the auxiliary and past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778246834833-uh90a6om",
+      "timestamp": "2026-05-08T13:27:30.143Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers incorrectly place the adverb: B places it before the auxiliary, C after the past participle, and D at sentence start—déjà should be between the auxiliary and past participle in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778246850145-d8d3ijzi",
+      "timestamp": "2026-05-08T13:27:44.689Z"
+    },
+    {
+      "raw": "FALSE|C,D|Both C and D are grammatically correct in French - C places \"déjà\" after the past participle for emphasis, and D places it at the beginning of the sentence for stylistic variation, though A is the standard neutral position.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778246864690-qd6ioyhj",
+      "timestamp": "2026-05-08T13:28:42.515Z"
+    },
+    {
+      "raw": "TRUE||All three wrong answers violate the standard rule: \"déjà\" must be placed between the auxiliary verb and past participle in passé composé (position B), not before the auxiliary (C), after the past participle (D), or at the sentence start for emphasis (E).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778246922516-eom62g12",
+      "timestamp": "2026-05-08T13:29:08.734Z"
+    },
+    {
+      "raw": "FALSE|C,D|C could be correct for emphasis in spoken French; D could be stylistically correct for focus at sentence start.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778246948735-mr2xvcu3",
+      "timestamp": "2026-05-08T13:33:17.715Z"
+    }
+  ]
+}

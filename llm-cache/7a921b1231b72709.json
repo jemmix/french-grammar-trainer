@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7a921b1231b72709",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-14-009",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: La place des adverbes au passé composé (déjà, encore, toujours, bien, mal, beaucoup)\n\nQUESTION:\nPrompt: Complétez au passé composé avec l'adverbe « toujours » : « Elle ___ habité à Lyon. »\nChoices:\nA. a toujours\nB. a toujours habité\nC. as toujours\nD. a souvent\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1777987933906-uzhlzxl0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\n\nREASON: The prompt specifies to use \"toujours\" in passé composé form, and with \"habité\" already present after the blank, it's clear that only the auxiliary + adverb (a toujours) belongs in the blank to form the complete phrase \"Elle a toujours habité à Lyon.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777988096637-4h78gp79",
+      "timestamp": "2026-05-05T13:35:26.922Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"Complétez\" (complete) but doesn't clearly state whether the answer should fill only the blank or replace \"habité\" as well, and the choice B (\"a toujours habité\") would create \"Elle a toujours habité habité à Lyon.\" which is grammatically incorrect given the existing text.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777988493461-3oz1v6db",
+      "timestamp": "2026-05-05T13:42:56.929Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt is unclear about whether the blank represents the entire auxiliary+adverb phrase or just a position marker, and choices A (\"a toujours\") and B (\"a toujours habité\") suggest different interpretations of what should fill the blank.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777989275841-f6pke768",
+      "timestamp": "2026-05-05T13:55:10.031Z"
+    }
+  ]
+}

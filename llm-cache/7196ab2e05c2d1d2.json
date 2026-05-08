@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7196ab2e05c2d1d2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-14-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Au passé composé, l'adverbe se place entre l'auxiliaire et le participe passé. Parmi ces phrases avec « toujours », laquelle respecte cette règle ?\n\nChoices:\nA. [CORRECT] Tu as toujours respecté tes parents.\nB. [WRONG] Tu toujours as respecté tes parents.\nC. [WRONG] Tu as respecté toujours tes parents.\nD. [WRONG] Tu as tes toujours parents respecté.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778265816827-4lwbmfv6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the rule by placing \"toujours\" outside the auxiliary-participle structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778265900652-6etjalgj",
+      "timestamp": "2026-05-08T18:45:35.697Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the word order rule: B places the adverb before the auxiliary, C places it after the participle, and D completely scrambles the sentence structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778266143382-cd5mcoh3",
+      "timestamp": "2026-05-08T18:54:43.457Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to place the adverb between the auxiliary and past participle as required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778266483458-bvvqf6x4",
+      "timestamp": "2026-05-08T18:54:55.956Z"
+    }
+  ]
+}

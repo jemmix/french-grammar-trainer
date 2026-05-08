@@ -1,0 +1,33 @@
+{
+  "cacheKey": "481f5ffdf3f3761b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-14-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise l'adverbe « beaucoup » au passé composé dans la position la plus neutre et standard ?\n\nChoices:\nA. [CORRECT] Ils ont beaucoup aimé ce film.\nB. [WRONG] Ils beaucoup ont aimé ce film.\nC. [WRONG] Ils ont aimé beaucoup ce film.\nD. [WRONG] Beaucoup ils ont aimé ce film.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778247755887-ashbvrab"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers place \"beaucoup\" in non-standard positions (before auxiliary, after participle, or sentence-initial), whereas the standard neutral position in passé composé is between auxiliary and past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778247929675-lefuf41q",
+      "timestamp": "2026-05-08T13:45:45.339Z"
+    },
+    {
+      "raw": "TRUE||B and D have incorrect word order (adverb placed between subject and auxiliary, or before subject); C places the adverb after the past participle which is not the standard neutral position for modifying the verb phrase in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778248304407-42g3lauu",
+      "timestamp": "2026-05-08T13:52:45.540Z"
+    },
+    {
+      "raw": "FALSE|C|C is valid in spoken/emphatic French where \"beaucoup\" can follow the past participle; B and D have genuinely incorrect word order.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778249468611-9o7piwva",
+      "timestamp": "2026-05-08T14:11:56.135Z"
+    }
+  ]
+}

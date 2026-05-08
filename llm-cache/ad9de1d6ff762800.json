@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ad9de1d6ff762800",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-14-011",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: La place des adverbes au passé composé (déjà, encore, toujours, bien, mal, beaucoup)\n\nQUESTION:\nPrompt: Complétez au passé composé avec l'adverbe « bien » : « Il ___ réussi son examen. »\nChoices:\nA. a bien\nB. a bien réussi\nC. ont bien\nD. a mal\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1777987933907-ggb0xmiy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nREASON: The prompt says \"complétez\" but doesn't specify whether the blank should contain just the auxiliary + adverb (\"a bien\") or also include the verb \"réussi\", and the sentence has \"réussi\" written after the blank which makes option B (\"a bien réussi\") grammatically nonsensical (it would produce \"Il a bien réussi réussi\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777988147489-v070nf3g",
+      "timestamp": "2026-05-05T13:36:29.023Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The instruction unambiguously asks to complete the passé composé construction with \"bien\" for the sentence \"Il ___ réussi son examen\", and only choice A (\"a bien\") correctly fills the blank with the auxiliary and adverb while respecting that \"réussi\" is already in the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777988556998-kls5m49m",
+      "timestamp": "2026-05-05T13:44:02.886Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt doesn't clarify whether the blank represents the entire verb phrase (auxiliary + adverb + participle) or just the auxiliary + adverb, and \"bien\" can validly appear before or after the auxiliary in passé composé, making choice A (\"a bien\") and B (\"a bien réussi\") both structurally plausible answers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777989300663-5vmtdror",
+      "timestamp": "2026-05-05T13:55:31.094Z"
+    }
+  ]
+}

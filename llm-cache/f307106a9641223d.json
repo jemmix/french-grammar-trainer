@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f307106a9641223d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-14-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-14 - La place des adverbes au passé composé (déjà, encore, toujours, bien, mal, beaucoup)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé avec l'adverbe « bien » : « Vous ___ compris la leçon. »\nChoices:\nA. [CORRECT] avez bien\nB. avez bien compris\nC. as bien\nD. avez déjà\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777987933907-hm724sn3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The correct answer \"avez bien\" requires knowing that \"bien\" goes between the auxiliary \"avez\" and the past participle \"compris\" in the passé composé - this is precisely what the rule on adverb placement in passé composé teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777988163172-brhqc7ws",
+      "timestamp": "2026-05-05T13:36:31.699Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that adverbs like \"bien\" are placed between the auxiliary and past participle in passé composé (Vous **avez bien** compris).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777988573541-haz36vwc",
+      "timestamp": "2026-05-05T13:43:44.860Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that adverbs like \"bien\" must be placed between the auxiliary verb and past participle in passé composé, which is the core concept of the stated rule about adverb placement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777989277530-zipoegj3",
+      "timestamp": "2026-05-05T13:55:16.306Z"
+    }
+  ]
+}

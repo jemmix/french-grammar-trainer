@@ -1,0 +1,33 @@
+{
+  "cacheKey": "692e08df6ce9feff",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-14-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Au passé composé, l'adverbe se place entre l'auxiliaire et le participe passé. Parmi ces phrases avec « beaucoup », laquelle respecte cette règle ?\n\nChoices:\nA. [CORRECT] Tu as beaucoup lu ce roman.\nB. [WRONG] Tu beaucoup as lu ce roman.\nC. [WRONG] Tu as lu beaucoup ce roman.\nD. [WRONG] Tu as ce beaucoup roman lu.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778265816827-ohd2r9m3"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the correct word order for adverbs in the passé composé, which requires placement between the auxiliary and past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778265816855-5fyd8ecu",
+      "timestamp": "2026-05-08T18:44:02.704Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the correct placement of \"beaucoup\" between the auxiliary and past participle in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778266055803-qjxhkh7v",
+      "timestamp": "2026-05-08T18:47:50.228Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the standard passé composé word order rule: B places the adverb before the auxiliary, C places it after the participle (non-standard position), and D incorrectly splits the direct object \"ce roman\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778266272639-e4hogjay",
+      "timestamp": "2026-05-08T18:51:27.803Z"
+    }
+  ]
+}

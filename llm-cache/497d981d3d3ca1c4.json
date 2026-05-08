@@ -1,0 +1,33 @@
+{
+  "cacheKey": "497d981d3d3ca1c4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-14-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-14 - La place des adverbes au passé composé (déjà, encore, toujours, bien, mal, beaucoup)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au passé composé avec l'adverbe « bien ».\nPhrase: Il ___ son examen.\nCorrect Answer: a bien réussi\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777995059616-ub38t04u"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The correct answer requires placing \"bien\" between the auxiliary \"a\" and the past participle \"réussi\", which is the core concept of the adverb placement rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777995414814-gvqc74mu",
+      "timestamp": "2026-05-05T15:38:00.054Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires the student to conjugate the verb in passé composé and correctly place the adverb \"bien\" between the auxiliary and past participle (a bien réussi), which is exactly what the rule about adverb placement in passé composé tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777995756782-km8i6p2q",
+      "timestamp": "2026-05-05T15:42:53.530Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To correctly place \"bien\" in \"a bien réussi\", a student must know that adverbs are positioned between the auxiliary \"avoir\" and the past participle in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777996045659-d5zckg5y",
+      "timestamp": "2026-05-05T15:47:57.385Z"
+    }
+  ]
+}

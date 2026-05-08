@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e7c8d8b6e0d078d3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-14-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-14 - La place des adverbes au passé composé (déjà, encore, toujours, bien, mal, beaucoup)\n\nQUESTION:\nType: Input\nPrompt: Complétez au passé composé avec l'adverbe « toujours ». Le blanc contient l'auxiliaire avoir conjugué et l'adverbe.\nPhrase: Tu ___ respecté tes parents.\nCorrect Answer: as toujours\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777993304633-x6hoah3v"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The blank position between subject and past participle makes placing \"toujours\" anywhere other than between the auxiliary and past participle grammatically impossible, so answering correctly doesn't demonstrate knowledge of the rule about where adverbs should be placed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777993760786-x9341p64",
+      "timestamp": "2026-05-05T15:09:58.157Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the rule of adverb placement in passé composé with avoir (auxiliary + adverb + past participle), which is exactly what the stated rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777994166767-374vbzjs",
+      "timestamp": "2026-05-05T15:16:48.615Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowing that short adverbs like \"toujours\" are placed between the conjugated auxiliary and the past participle in passé composé constructions with avoir (Tu as toujours respecté tes parents).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777994358564-t1nfa6ax",
+      "timestamp": "2026-05-05T15:24:36.876Z"
+    }
+  ]
+}

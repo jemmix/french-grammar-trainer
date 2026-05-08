@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b88c36fb2f55fa6f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-14-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-14 - La place des adverbes au passé composé (déjà, encore, toujours, bien, mal, beaucoup)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé avec l'adverbe « toujours » : « Nous ___ aimé la musique classique. »\nChoices:\nA. [CORRECT] avons toujours\nB. avons toujours aimé\nC. a toujours\nD. avons jamais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777987933906-xpx5ibb2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests placement of \"toujours\" in passé composé, requiring knowledge that this adverb goes between the auxiliary and past participle (avons + toujours + aimé).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777988054247-fmjasogw",
+      "timestamp": "2026-05-05T13:34:56.635Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests auxiliary verb conjugation (nous → avons) and wrong person/number (a instead of avons), not adverb placement — \"toujours\" is provided in the prompt and both choice A and the grammatically incorrect choice B place it in the correct position (between auxiliary and past participle).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777988443308-5fwt7cdq",
+      "timestamp": "2026-05-05T13:41:33.471Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer can be determined by knowing the auxiliary verb for \"nous\" in passé composé without understanding the specific rule about adverb placement (all options use standard auxiliary + adverb word order except choice C, and option D uses a different auxiliary verb entirely).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777989187452-9529nlzt",
+      "timestamp": "2026-05-05T13:53:39.275Z"
+    }
+  ]
+}

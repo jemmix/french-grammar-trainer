@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d365c7f1fe570db0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-14-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-14 - La place des adverbes au passé composé (déjà, encore, toujours, bien, mal, beaucoup)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé avec l'adverbe « déjà » : « Ils ___ vendu leur voiture. »\nChoices:\nA. [CORRECT] ont déjà\nB. ont déjà vendu\nC. a déjà\nD. ont bien\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777987933905-fp7856yh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires placing \"déjà\" between the auxiliary verb \"ont\" and the past participle \"vendu\" in a passé composé construction, which is exactly what rule 02-14 about adverb placement tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777987974570-kmmzcuc8",
+      "timestamp": "2026-05-05T13:33:28.775Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires placing the adverb \"déjà\" between the auxiliary verb and past participle in a passé composé construction, which is exactly what the rule teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777988376192-pg07elqz",
+      "timestamp": "2026-05-05T13:40:07.509Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests subject-verb agreement (ils → ont) and auxiliary verb selection rather than adverb placement in passé composé, as choosing between \"ont déjà\" vs \"a déjà\" requires knowing the auxiliary form for plural subjects, not the adverb rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777989113349-b2z407za",
+      "timestamp": "2026-05-05T13:58:26.185Z"
+    }
+  ]
+}

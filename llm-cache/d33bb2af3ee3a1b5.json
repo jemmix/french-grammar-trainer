@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d33bb2af3ee3a1b5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-14-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Au passé composé, l'adverbe se place entre l'auxiliaire et le participe passé. Parmi ces phrases avec « déjà », laquelle respecte cette règle ?\n\nChoices:\nA. [CORRECT] Il a déjà répondu à cette lettre.\nB. [WRONG] Il déjà a répondu à cette lettre.\nC. [WRONG] Il a répondu déjà à cette lettre.\nD. [WRONG] Il a à déjà cette lettre répondu.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778267160600-ctmbhmpd"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the stated rule: B places the adverb before the auxiliary, C places it after the past participle, and D scrambles word order with an incorrect preposition.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778267160601-uj4xcjei",
+      "timestamp": "2026-05-08T19:06:37.522Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers incorrectly place \"déjà\" - B puts it before the auxiliary, C puts it after the participle, and D has scrambled word order with no grammatical sense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778267197522-a68okplk",
+      "timestamp": "2026-05-08T19:06:53.594Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the standard rule of placing \"déjà\" between the auxiliary and past participle in the passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778267213594-6tqhefnw",
+      "timestamp": "2026-05-08T19:08:17.117Z"
+    }
+  ]
+}

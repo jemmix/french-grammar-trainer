@@ -1,0 +1,40 @@
+{
+  "cacheKey": "7df7c3fc332552d8",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-14-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: La place des adverbes au passé composé (déjà, encore, toujours, bien, mal, beaucoup)\n\nQUESTION:\nPrompt: Complétez au passé composé avec l'adverbe « toujours ». Le blanc contient l'auxiliaire avoir conjugué et l'adverbe.\nPhrase: Tu ___ respecté tes parents.\nHint: adverbe\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1777993304633-a0zcg08w"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The hint \"adverbe\" contradicts the instruction that the blank contains both the auxiliary verb AND the adverb, potentially confusing learners who might fill in only \"toujours\" instead of \"as toujours\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777993760977-a9yks4ct",
+      "timestamp": "2026-05-05T15:09:42.390Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly specifies that the blank must contain both the conjugated auxiliary \"avoir\" AND the adverb \"toujours\", making the expected answer \"as toujours\" unambiguous for students learning this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777994134113-ucquhcbi",
+      "timestamp": "2026-05-05T15:16:07.882Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly states that the blank must contain both the conjugated auxiliary avoir and the adverb \"toujours\", making the expected answer unambiguous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777994357285-b21l4u91",
+      "timestamp": "2026-05-05T15:20:00.077Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt states \"Le blanc contient l'auxiliaire avoir conjugué et l'adverbe\" but the hint only says \"adverbe\", creating confusion about whether the student should fill in just the adverb (\"toujours\") or both the auxiliary and adverb together (\"as toujours\"), and the phrase structure doesn't clearly indicate the answer format.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777994447765-2vxxcz3w",
+      "timestamp": "2026-05-05T15:21:04.028Z"
+    }
+  ]
+}

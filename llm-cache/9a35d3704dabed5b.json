@@ -1,0 +1,40 @@
+{
+  "cacheKey": "9a35d3704dabed5b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-14-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-14 - La place des adverbes au passé composé (déjà, encore, toujours, bien, mal, beaucoup)\n\nQUESTION:\nType: Input\nPrompt: Complétez au passé composé. Le blanc contient l'auxiliaire avoir conjugué suivi de l'adverbe « beaucoup ».\nPhrase: Elle ___ aimé ce cadeau.\nCorrect Answer: a beaucoup\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1777984624779-2lzv800w"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core rule that adverbs like \"beaucoup\" are placed between the auxiliary verb (\"a\") and the past participle (\"aimé\") in the passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777985016917-650ndusu",
+      "timestamp": "2026-05-05T12:44:59.546Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the placement of the adverb \"beaucoup\" in passé composé, which is exactly what rule 02-14 covers—students must know that adverbs like beaucoup are placed after the auxiliary in this tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777987015200-thbv8itg",
+      "timestamp": "2026-05-05T13:17:14.638Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells students to place \"beaucoup\" after the auxiliary, so the question only tests conjugation of avoir, not knowledge of adverb placement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777987041629-7jhskyqt",
+      "timestamp": "2026-05-05T13:17:42.874Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells students that the blank contains \"l'auxiliaire avoir conjugué suivi de l'adverbe « beaucoup »\", so students don't need to know the adverb placement rule to answer correctly - they just need to conjugate \"avoir\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1777987062875-4bpm98pt",
+      "timestamp": "2026-05-05T13:18:07.224Z"
+    }
+  ]
+}
