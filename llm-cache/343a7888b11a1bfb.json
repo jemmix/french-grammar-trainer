@@ -1,0 +1,33 @@
+{
+  "cacheKey": "343a7888b11a1bfb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-15-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase décrit correctement une action ponctuelle au passé ?\n\nChoices:\nA. [CORRECT] La semaine dernière, Thomas a acheté un vélo neuf.\nB. [WRONG] Thomas achetait un vélo chaque été.\nC. [WRONG] Thomas achète un vélo aujourd'hui.\nD. [WRONG] Thomas achètera un vélo le mois prochain.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778274913380-q53ru2u1"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait for a habitual action (not punctual), C is in the present tense, and D is in the future tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778274913381-2bsbr4in",
+      "timestamp": "2026-05-08T21:15:38.568Z"
+    },
+    {
+      "raw": "TRUE||B uses imparfait for a habitual action, C uses present tense, and D uses future tense - none describe a punctual action in the past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778274938569-aekgvt7w",
+      "timestamp": "2026-05-08T21:15:52.345Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers either use the wrong tense (imparfait, présent, futur) or describe a habitual rather than punctual action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778274952345-ubvs3rxz",
+      "timestamp": "2026-05-08T21:16:04.439Z"
+    }
+  ]
+}

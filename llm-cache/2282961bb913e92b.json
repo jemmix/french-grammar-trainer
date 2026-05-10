@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2282961bb913e92b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-15-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-15 - Le passé composé pour exprimer une action ponctuelle dans le passé\n\nQUESTION:\nType: Input\nPrompt: La phrase suivante utilise l'imparfait, mais l'action est ponctuelle et soudaine. Corrigez en conjuguant le verbe au passé composé.\nPhrase: Soudain, vous trouviez la réponse. » → « Soudain, vous ___ la réponse.\nCorrect Answer: avez trouvé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778420997895-2ml875vf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The prompt explicitly tells the student to use passé composé, so the question tests verb conjugation with \"vous\" rather than the rule of recognizing when to choose passé composé for punctual actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778420997897-otmc2r0f",
+      "timestamp": "2026-05-10T13:50:23.149Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tells the user the action is punctual and explicitly asks them to use the passé composé, so it only tests conjugation skills (auxiliary avoir + past participle) rather than the ability to recognize when passé composé should be used for punctual actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778421023150-wpou1h9r",
+      "timestamp": "2026-05-10T13:50:41.849Z"
+    }
+  ]
+}

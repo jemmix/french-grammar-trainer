@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9d8b274f917b4d48",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-15-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase décrit une action ponctuelle au passé ?\n\nChoices:\nA. [CORRECT] Tout à coup, la pluie a commencé à tomber.\nB. [WRONG] Il pleuvait tous les jours pendant le mois de novembre.\nC. [WRONG] En ce moment, la pluie tombe doucement.\nD. [WRONG] Demain, la pluie tombera toute la journée.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778269618744-2yvz2b7d"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use different tenses (imparfait, present, future) or describe habitual/durational actions, not punctual past actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778269618746-psgn2ylx",
+      "timestamp": "2026-05-08T19:47:11.475Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are clearly incorrect: B uses imparfait for habitual action not punctual, C is present tense not past, D is future not past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778269631479-r5zdzg2m",
+      "timestamp": "2026-05-08T19:47:32.426Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B describes a habitual past action (not punctual), C is in the present tense, and D is in the future tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778269652427-objefiai",
+      "timestamp": "2026-05-08T19:47:44.419Z"
+    }
+  ]
+}

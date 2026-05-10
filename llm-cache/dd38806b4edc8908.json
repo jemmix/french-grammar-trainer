@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dd38806b4edc8908",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-15-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour quelle raison le passé composé est-il employé ici ? « Le mois dernier, ils ont vendu leur voiture. »\n\nChoices:\nA. [CORRECT] La vente est un événement ponctuel et achevé, situé dans un passé défini.\nB. [WRONG] Ils vendaient des voitures régulièrement.\nC. [WRONG] Ils vont vendre leur voiture bientôt.\nD. [WRONG] L'action est encore en cours.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778271889617-wqia8pu4"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers describe different temporal contexts (habitual actions with imparfait, future with futur proche, ongoing actions) that don't explain why passé composé is used for a completed past event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778271889618-sbdcwjhg",
+      "timestamp": "2026-05-08T20:25:21.362Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers describe different tenses or contexts (regular habits, future actions, ongoing actions) that do not apply to the completed past action in the original sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778271921363-7k0d704r",
+      "timestamp": "2026-05-08T20:25:37.327Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers describe different tenses or aspects (habitual past, future, ongoing action) that are not the reason for using passé composé to mark a completed, defined past event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778271937327-ev6oc12s",
+      "timestamp": "2026-05-08T20:25:50.337Z"
+    }
+  ]
+}

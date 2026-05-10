@@ -1,0 +1,47 @@
+{
+  "cacheKey": "588a4e72545d8409",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-15-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-15 - Le passé composé pour exprimer une action ponctuelle dans le passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Hier soir, elle ___ un message important sur son téléphone. »\nChoices:\nA. [CORRECT] a reçu\nB. recevait\nC. reçoit\nD. recevra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778269708930-tz48c7g0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the passé composé form of \"recevoir\" and understanding that \"hier soir\" indicates a punctual past action, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778269708933-gzmwpcew",
+      "timestamp": "2026-05-08T19:48:42.857Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly asks to complete the sentence in the passé composé, and answering correctly requires producing the correct passé composé form (\"a reçu\") rather than other tenses, directly testing the rule about using passé composé for punctual past actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778269722857-juw8x329",
+      "timestamp": "2026-05-08T19:48:55.494Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use passé composé (\"Complétez au passé composé\"), so the question only tests conjugation form, not whether the student can identify that a punctual past action requires passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778269735494-a11o0yza",
+      "timestamp": "2026-05-08T19:49:12.177Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the passé composé form (\"a reçu\") to express a completed, punctual action in the past context (\"Hier soir\"), directly testing the rule's core concept.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778269752178-nrlepaok",
+      "timestamp": "2026-05-08T19:49:25.019Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests tense identification (recognizing passé composé) because the prompt explicitly asks for \"au passé composé\" rather than requiring the learner to distinguish when to use passé composé vs imparfait based on context, which is the core of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778269765020-dtzktzmz",
+      "timestamp": "2026-05-08T19:49:39.537Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c13df2f633ff9506",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-15-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-15 - Le passé composé pour exprimer une action ponctuelle dans le passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « La semaine dernière, nous ___ ce restaurant pour la première fois. »\nChoices:\nA. [CORRECT] avons découvert\nB. découvrions\nC. découvrons\nD. découvrirons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778269504587-1gso0m1c"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that passé composé is used for punctual actions in the past, which is exactly what the rule teaches, and cannot be answered correctly without understanding this concept.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778269504590-z63nxut0",
+      "timestamp": "2026-05-08T19:45:35.137Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"la semaine dernière\" and \"pour la première fois\" indicate a punctual completed action in the past, which must be expressed with passé composé rather than imparfait, présent, or futur.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778269535138-ap49jskv",
+      "timestamp": "2026-05-08T19:45:51.106Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the rule because it explicitly requires choosing the passé composé form to describe a completed, punctual action (\"la semaine dernière\", \"pour la première fois\"), and the distractors present other tenses that a learner might confuse with passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778269551106-cwoir8im",
+      "timestamp": "2026-05-08T19:46:05.271Z"
+    }
+  ]
+}

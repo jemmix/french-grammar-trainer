@@ -1,0 +1,40 @@
+{
+  "cacheKey": "482e715265a4cfa6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-15-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-15 - Le passé composé pour exprimer une action ponctuelle dans le passé\n\nQUESTION:\nType: Input\nPrompt: L'action décrite est ponctuelle et soudaine. Conjuguez le verbe au passé composé.\nPhrase: Soudain, le professeur ___ la porte du bureau.\nCorrect Answer: a ouvert\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778280137715-lyhx8jfy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests passé composé conjugation with \"avoir\" and past participle formation of \"ouvrir\", which can be answered correctly without understanding the distinction between punctual and non-punctual actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778280137717-j5td37gx",
+      "timestamp": "2026-05-08T22:42:33.585Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to recognize that \"Soudain\" (Suddenly) indicates a punctual action and apply the passé composé (a ouvert) accordingly - the concept of punctual vs. continuous action is central to answering correctly.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778280153586-77w3mqz4",
+      "timestamp": "2026-05-08T22:42:52.542Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly asks for passé composé conjugation while emphasizing the action is \"ponctuelle et soudaine\", and the context \"Soudain\" reinforces that this tests using passé composé for punctual past actions, not just conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778280172543-ww11w7w6",
+      "timestamp": "2026-05-08T22:43:07.412Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests passé composé formation (auxiliary choice + past participle), not when to use passé composé for punctual actions vs. other tenses like imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778280187412-qaw0kf32",
+      "timestamp": "2026-05-08T22:43:22.484Z"
+    }
+  ]
+}

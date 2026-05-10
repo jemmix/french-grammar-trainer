@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0673d969fecdb325",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-15-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Tout à coup, le vent ___ la porte. » Quelle forme verbale décrit une action ponctuelle et soudaine ?\n\nChoices:\nA. [CORRECT] a fermé\nB. [WRONG] fermait\nC. [WRONG] allait fermer\nD. [WRONG] fermera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778271094746-x4fvder0"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incompatible with \"Tout à coup\" and fail to describe a sudden, completed past action: B (imparfait) describes ongoing/habitual actions, C (allait fermer) expresses an intention in the past, and D (fermera) places the action in the future.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778271094748-5ukj9h04",
+      "timestamp": "2026-05-08T20:12:06.905Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use verb forms that describe ongoing, future, or intended actions rather than sudden, punctual actions as required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778271126906-bk1uo4nr",
+      "timestamp": "2026-05-08T20:12:27.247Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers describe ongoing, future, or future-in-the-past actions rather than the sudden, punctual past action required by \"Tout à coup.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778271147248-iuuagb76",
+      "timestamp": "2026-05-08T20:12:46.786Z"
+    }
+  ]
+}

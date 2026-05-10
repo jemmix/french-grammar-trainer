@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3a1293f0e80039d2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-15-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase décrit correctement une action ponctuelle au passé ?\n\nChoices:\nA. [CORRECT] Soudain, le chat a renversé le vase sur la table.\nB. [WRONG] Le chat renversait souvent le vase.\nC. [WRONG] Le chat renverse le vase en ce moment.\nD. [WRONG] Le chat renversera le vase demain.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778273497917-taackufu"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail the two requirements: they don't describe past actions (C is present, D is future), and B's imparfait with \"souvent\" describes habitual actions, not punctual ones.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778273497918-hwn6dqdm",
+      "timestamp": "2026-05-08T20:51:53.300Z"
+    },
+    {
+      "raw": "TRUE||B describes habitual not punctual action; C is present tense; D is future tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778273513301-87mo0xij",
+      "timestamp": "2026-05-08T20:52:05.243Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait for habitual action (not punctual), C is present tense, D is future tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778273525243-j35aq54p",
+      "timestamp": "2026-05-08T20:52:16.131Z"
+    }
+  ]
+}

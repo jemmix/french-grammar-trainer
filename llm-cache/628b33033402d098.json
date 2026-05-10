@@ -1,0 +1,33 @@
+{
+  "cacheKey": "628b33033402d098",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "02-15-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Corrigez l'erreur d'un élève qui a écrit « Soudain, elle allumait la lumière. » au lieu du passé composé pour une action ponctuelle. Conjuguez le verbe dans le temps qui convient.\n\nPHRASE: Soudain, elle ___ la lumière.\n\nHINT: allumer\n\nEXPECTED ANSWER: a allumé\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1778431372442-g8hdf2sc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly states the error (using imparfait instead of passé composé for a punctual action), directs the learner to conjugate the verb \"allumer\" (from the hint), and the phrase shows the subject \"elle\", making it clear what to conjugate and in which tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778431501394-3cb3fpac",
+      "timestamp": "2026-05-10T16:45:34.214Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly indicates to use the passé composé, the hint provides the infinitive \"allumer\", and the phrase shows the subject \"elle\", making it clear the learner must conjugate \"allumer\" in passé composé for the third person singular.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778431562745-el5w1vq1",
+      "timestamp": "2026-05-10T16:47:31.200Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The prompt explicitly states the student incorrectly used imparfait (\"allumait\") instead of passé composé for a punctual action, the hint provides the infinitive \"allumer\", and the phrase shows \"elle\" with a blank, making it clear to conjugate in passé composé 3rd person singular.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778431662956-pvn1dtz0",
+      "timestamp": "2026-05-10T16:48:10.197Z"
+    }
+  ]
+}

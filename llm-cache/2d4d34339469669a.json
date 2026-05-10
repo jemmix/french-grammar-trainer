@@ -1,0 +1,40 @@
+{
+  "cacheKey": "2d4d34339469669a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-15-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-15 - Le passé composé pour exprimer une action ponctuelle dans le passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au passé composé : « Hier, ma sœur ___ un gâteau pour l'anniversaire de Marie. »\nChoices:\nA. [CORRECT] a préparé\nB. préparait\nC. prépare\nD. préparera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778269341346-e0aois18"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting passé composé (\"a préparé\") for a specific, completed action that happened yesterday, which directly tests the rule about using passé composé to express punctual actions in the past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778269341350-o69icqgf",
+      "timestamp": "2026-05-08T19:42:36.199Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The prompt explicitly instructs \"Complétez au passé composé\", so students can select the correct answer without understanding when passé composé should be used for punctual past actions — they just need to identify which conjugation is in that tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778269356201-2odeenv5",
+      "timestamp": "2026-05-08T19:42:52.999Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the passé composé form to express a punctual past action (preparing a cake yesterday), and the distractors test knowledge of other tenses (imparfait, présent, futur simple), requiring the learner to know both the form and when to use passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778269373000-sr4php0o",
+      "timestamp": "2026-05-08T19:43:07.562Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs students to use \"au passé composé,\" so the question tests tense identification rather than when/why to use passé composé for punctual past actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778269387563-pwu11nqw",
+      "timestamp": "2026-05-08T19:43:20.959Z"
+    }
+  ]
+}
