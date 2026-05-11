@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9cb5c3fdfbe05ef5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-16-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise correctement le passé composé pour exprimer une succession d'actions ?\n\nChoices:\nA. [CORRECT] La pluie a cessé, le soleil est apparu et les oiseaux ont chanté.\nB. [WRONG] La pluie cessait, le soleil apparaissait et les oiseaux chantaient.\nC. [WRONG] La pluie cessera, le soleil apparaîtra et les oiseaux chanteront.\nD. [WRONG] La pluie cessait, le soleil est apparu et les oiseaux chantaient.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778435627596-tl1nebz6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use different tenses (imparfait, futur simple, or mixed) instead of the required passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778435882459-p9fd5am4",
+      "timestamp": "2026-05-10T17:58:24.613Z"
+    },
+    {
+      "raw": "TRUE||B uses imparfait which describes ongoing past actions, not a completed succession; C uses future tense; D mixes tenses and doesn't express a clear succession using passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778447260456-b5rvin5x",
+      "timestamp": "2026-05-10T21:08:32.817Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different tenses (B uses imparfait, C uses futur simple, D mixes tenses) and do not express a succession of actions in the passé composé as the question requires.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778447834645-n5pkmbql",
+      "timestamp": "2026-05-10T21:17:37.552Z"
+    }
+  ]
+}

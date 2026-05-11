@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0b7f1de89dc458b8",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "02-16-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Un élève a écrit « Le voleur a brisé la vitre, a ouvert le coffre et prenait les bijoux. » en utilisant l'imparfait à tort pour décrire une succession d'actions. Conjuguez le verbe au passé composé.\n\nPHRASE: Le voleur a brisé la vitre, a ouvert le coffre et ___ les bijoux.\n\nHINT: prendre\n\nEXPECTED ANSWER: a pris\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1778530560455-1m3ochpp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The prompt explicitly instructs to conjugate the verb to passé composé, the hint provides the infinitive \"prendre\", and the context pattern (a brisé, a ouvert) clearly shows the expected structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778530725935-74jck45v",
+      "timestamp": "2026-05-11T20:19:01.447Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly specifies passé composé, the hint provides the infinitive \"prendre\", and the phrase context (matching pattern \"a brisé, a ouvert, et ___\") makes it unambiguous that the auxiliary is \"a\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778530741448-sivsufk0",
+      "timestamp": "2026-05-11T20:19:42.267Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly requests passé composé conjugation, the hint provides the infinitive \"prendre\", and the phrase context clearly identifies the subject as \"le voleur\" (il), making the expected answer \"a pris\" determinable without seeing it.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778530782268-hlnaui7e",
+      "timestamp": "2026-05-11T20:19:56.465Z"
+    }
+  ]
+}

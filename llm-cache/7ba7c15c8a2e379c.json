@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7ba7c15c8a2e379c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-16-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-16 - Le passé composé pour exprimer une succession d'actions\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au passé composé pour compléter cette succession d'actions.\nPhrase: D'abord, nous ___ (aller) à la gare, puis nous avons acheté nos billets et nous avons pris le train.\nCorrect Answer: sommes allés / sommes allées\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778433795157-i1y2n1qe"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question presents a clear succession of actions using temporal markers (\"D'abord\", \"puis\") and requires conjugating the verb in passé composé to complete the sequence, which directly tests the rule of using passé composé to express a succession of actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434208732-f5ffrwwc",
+      "timestamp": "2026-05-10T17:30:39.739Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests passé composé conjugation of \"aller\" (auxiliary être, past participle formation, agreement), not the concept of using passé composé to express succession of actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434582324-nrfgx75n",
+      "timestamp": "2026-05-10T17:36:46.551Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic passé composé conjugation of \"aller\" (auxiliary choice and agreement), not the rule about using passé composé to express succession of actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434807221-odc12ly1",
+      "timestamp": "2026-05-10T17:40:48.459Z"
+    }
+  ]
+}

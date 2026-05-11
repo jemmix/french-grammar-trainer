@@ -1,0 +1,33 @@
+{
+  "cacheKey": "90ff7aeb0eaf0639",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-16-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-16 - Le passé composé pour exprimer une succession d'actions\n\nQUESTION:\nType: Input\nPrompt: Un élève a écrit « Soudain, le vent a ouvert la porte, a renversé les chaises et les vitres tremblaient. » en utilisant l'imparfait à tort dans la succession d'actions. Conjuguez le verbe au passé composé.\nPhrase: Soudain, le vent a ouvert la porte, a renversé les chaises et les vitres ___.\nCorrect Answer: ont brisé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778528558553-bmwkvago"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the rule by requiring the student to recognize that in a succession of actions (opening door, overturning chairs, breaking windows), all verbs must be in passé composé, not imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778528558555-9zwqeps7",
+      "timestamp": "2026-05-11T19:42:55.110Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question asks students to change the verb from \"trembler\" to \"briser\" (semantic change), not just correct the tense from imparfait to passé composé, so it tests vocabulary/semantic choice rather than the rule about using passé composé for successive actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778528575112-bt2vnqoy",
+      "timestamp": "2026-05-11T19:43:17.940Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question requires students to conjugate a single verb based on explicit instructions to use the passé composé, whereas the rule is about recognizing and using the passé composé to narrate a sequence of successive past actions—a conceptual understanding that cannot be demonstrated when the prompt directly dictates the tense choice.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778528597940-yw9amn2c",
+      "timestamp": "2026-05-11T19:45:28.426Z"
+    }
+  ]
+}

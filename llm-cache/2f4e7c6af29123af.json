@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2f4e7c6af29123af",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-16-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-16 - Le passé composé pour exprimer une succession d'actions\n\nQUESTION:\nType: Input\nPrompt: Un élève a écrit « D'habitude, je lisais tranquillement le journal. Mais hier, j'ai ouvert le journal, j'ai vu la une et je lisais l'article principal. » en utilisant l'imparfait à tort dans la succession d'actions. Conjuguez le verbe dans le temps qui convient.\nPhrase: D'habitude, je lisais tranquillement le journal. Mais hier, j'ai ouvert le journal, j'ai vu la une et je ___ l'article principal.\nCorrect Answer: ai lu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778449580559-c7marhzr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests exactly the stated rule by presenting a sequence of three actions that happened yesterday (opened, saw, read), where the student must recognize that all actions in a succession require passé composé (\"ai lu\"), not imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778449580561-1cvtklhw",
+      "timestamp": "2026-05-10T21:51:13.425Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that a sequence of actions (opened → saw → read) must be expressed in passé composé, and cannot be answered correctly without knowing the rule about succession of actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778449873426-04o72wpa",
+      "timestamp": "2026-05-10T21:51:30.330Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that in a sequence of completed actions (opened → saw → read), passé composé should be used instead of imparfait, which is exactly what the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778449890332-zxlcfe3g",
+      "timestamp": "2026-05-10T21:51:45.619Z"
+    }
+  ]
+}

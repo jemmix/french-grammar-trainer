@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0e3aeff6a394d41c",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "02-16-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Un élève a écrit « Le chien aboyait, courait après le chat et revenait vers son maître. » en utilisant l'imparfait à tort pour décrire une succession d'actions. Conjuguez le verbe dans le temps qui convient.\n\nPHRASE: Le chien a aboyé, a couru après le chat et ___ vers son maître.\n\nHINT: revenir\n\nEXPECTED ANSWER: est revenu\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1778448272575-k4mks5i0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explains the context (succession of actions, not imparfait), the phrase shows two verbs in passé composé establishing the pattern, and the hint provides the infinitive \"revenir\" to conjugate in the same tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778448703065-xz9km142",
+      "timestamp": "2026-05-10T21:32:54.926Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The prompt states the student used imparfait incorrectly for a succession of actions, the phrase shows the passé composé pattern (\"a aboyé, a couru\"), and the hint provides the infinitive \"revenir\", making it clear the learner must conjugate in the same tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778449109221-0w30cpul",
+      "timestamp": "2026-05-10T21:39:09.604Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly asks to conjugate \"revenir\" in the appropriate tense, the phrase shows a sequence of actions in passé composé, making \"est revenu\" the only logical answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778525083787-9sej962c",
+      "timestamp": "2026-05-11T18:45:26.079Z"
+    }
+  ]
+}

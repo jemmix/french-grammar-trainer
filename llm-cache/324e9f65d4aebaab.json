@@ -1,0 +1,33 @@
+{
+  "cacheKey": "324e9f65d4aebaab",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-16-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-16 - Le passé composé pour exprimer une succession d'actions\n\nQUESTION:\nType: Input\nPrompt: Un élève a écrit « Je me levais, je prenais mon petit-déjeuner et je sortais de la maison. » en utilisant l'imparfait à tort pour décrire une succession d'actions ce matin-là. Conjuguez le verbe dans le temps qui convient.\nPhrase: Ce matin-là, je me suis levé, j'ai pris mon petit-déjeuner et je ___ de la maison.\nCorrect Answer: suis sorti\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778447053088-5k7789ux"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that a sequence of completed actions uses passé composé throughout, and the correct answer must maintain the tense pattern established by the preceding actions in the succession.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778447383133-p8irjg5j",
+      "timestamp": "2026-05-10T21:15:14.450Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires recognizing that a sequence of completed actions (levé, pris, sortir) must be expressed in passé composé, not imparfait—this is the exact concept the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778447999598-0ywuzjpu",
+      "timestamp": "2026-05-10T21:20:27.285Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question presents a clear succession of completed actions and requires recognizing that passé composé (not imparfait) must be used for the third action to maintain the sequence established by the first two passé composé verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778448070400-1to686c0",
+      "timestamp": "2026-05-10T21:21:41.073Z"
+    }
+  ]
+}

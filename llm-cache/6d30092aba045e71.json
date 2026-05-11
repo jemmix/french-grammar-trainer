@@ -1,0 +1,47 @@
+{
+  "cacheKey": "6d30092aba045e71",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-16-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « D'abord, on ___ les courses, ensuite on ___ et finalement on ___ »\n\nChoices:\nA. [CORRECT] a fait / a cuisiné / a mangé\nB. [WRONG] faisait / cuisinait / mangeait\nC. [WRONG] a fait / cuisine / a mangé\nD. [WRONG] ferait / cuisinerait / mangerait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778433795155-p5hzcxl6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778433970295-b8nhapc5",
+      "timestamp": "2026-05-10T17:26:30.153Z"
+    },
+    {
+      "raw": "FALSE|B|B uses the imparfait which is not appropriate for describing a sequential series of completed past events with \"D'abord... ensuite... finalement\"; the imparfait would only work if describing habitual past actions, which the temporal markers do not indicate.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434363952-jsmucmzc",
+      "timestamp": "2026-05-10T17:33:18.160Z"
+    },
+    {
+      "raw": "TRUE|B,C,D|B uses imperfect tense which describes ongoing/habitual past, inappropriate for a sequential narrative; C mixes past and present tenses inconsistently; D uses conditional tense for hypothetical situations, not describing actual past events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434709399-r5yiqjxg",
+      "timestamp": "2026-05-10T17:40:31.061Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use inappropriate tenses: B uses imparfait for completed actions, C mixes present with past tenses, and D uses conditional instead of past narrative for actual events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434920875-mb0qoq4y",
+      "timestamp": "2026-05-10T17:42:21.908Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use inappropriate tenses for a chronological sequence of completed past events (B uses imperfect for completed actions, C mixes present with past tenses, D uses conditional for factual past events).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434959090-b00sew0w",
+      "timestamp": "2026-05-10T17:43:10.514Z"
+    }
+  ]
+}

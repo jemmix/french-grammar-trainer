@@ -1,0 +1,40 @@
+{
+  "cacheKey": "ed55edd28dcbde5c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-16-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-16 - Le passé composé pour exprimer une succession d'actions\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au passé composé pour compléter cette succession d'actions.\nPhrase: Ensuite, elle a mis sa robe, elle ___ ses chaussures et elle est partie de la maison.\nCorrect Answer: a mis\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778433795157-cfnaaqd3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question presents a clear sequence of actions (a mis sa robe, ___ ses chaussures, est partie) and explicitly references \"cette succession d'actions\" in the prompt, making knowledge that passé composé is used for sequential actions central to understanding the grammatical context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434239744-bq5jxi9f",
+      "timestamp": "2026-05-10T17:31:26.776Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests standard passé composé conjugation of \"mettre\" rather than the specific rule about using passé composé to express a succession of actions; a student could answer correctly using only conjugation knowledge without understanding that the rule concerns temporal sequencing.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434616788-1e6on9c3",
+      "timestamp": "2026-05-10T17:37:57.187Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using passé composé to express a chronological sequence of actions (\"Ensuite,\" the structure \"elle a mis...elle ___...elle est partie\"), and the correct answer \"a mis\" demonstrates knowledge that sequential past events are expressed in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434854262-qray468m",
+      "timestamp": "2026-05-10T17:41:31.002Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests verb selection (\"mettre\") and standard passé composé conjugation, not the specific use of passé composé for expressing succession of actions; the sequential context provides narrative flavor but is incidental to solving it.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434925846-55dod57t",
+      "timestamp": "2026-05-10T17:42:41.101Z"
+    }
+  ]
+}

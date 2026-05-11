@@ -1,0 +1,33 @@
+{
+  "cacheKey": "65462a3b2002456d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-16-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour quelle raison utilise-t-on le passé composé dans cette phrase ? « Nous avons commandé, avons mangé et avons payé l'addition. »\n\nChoices:\nA. [CORRECT] Pour exprimer une succession d'actions achevées qui s'enchaînent.\nB. [WRONG] Pour décrire une action en cours.\nC. [WRONG] Pour exprimer un souhait.\nD. [WRONG] Pour indiquer une vérité générale.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778435627595-086zc615"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B describes an action in progress (requires imparfait), C expresses a wish (requires conditionnel or subjonctif), and D states a general truth (requires présent).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778435627613-l2tsviy5",
+      "timestamp": "2026-05-10T17:54:27.293Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers describe uses that require other tenses (imparfait for actions in progress, conditionnel/subjonctif for wishes, présent for general truths), not the passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778447053142-hdn4o2gl",
+      "timestamp": "2026-05-10T21:10:07.947Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect because passé composé expresses completed past actions, not actions in progress (present), wishes (conditional/subjunctive), or general truths (present).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778447883883-t8lc34b6",
+      "timestamp": "2026-05-10T21:18:28.830Z"
+    }
+  ]
+}

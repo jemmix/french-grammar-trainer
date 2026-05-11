@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cd1e6e54574b9951",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-16-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-16 - Le passé composé pour exprimer une succession d'actions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Identifiez la phrase qui représente correctement une succession d'actions implicitement liées :\nChoices:\nA. [CORRECT] Elle a acheté les billets, a commandé un taxi et a quitté la maison rapidement.\nB. Elle achetait les billets, commandait un taxi et quittait la maison rapidement.\nC. Elle va acheter les billets, va commander un taxi et va quitter la maison rapidement.\nD. Elle avait acheté les billets, avait commandé un taxi et avait quitté la maison rapidement.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778433795155-qmk67x5c"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing passé composé (used for a sequence of implicitly related actions) from imparfait (ongoing actions), futur proche (future actions), and plus-que-parfait (actions anterior to another past action).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778433956407-mmkvu6sb",
+      "timestamp": "2026-05-10T17:26:58.952Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowledge that passé composé (not imparfait, futur proche, or plus-que-parfait) is the correct tense for expressing a succession of completed, sequentially linked actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434378332-2j9shx7k",
+      "timestamp": "2026-05-10T17:33:28.122Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the distinction between passé composé (completed sequence) and other tenses (imparfait, futur proche, plus-que-parfait), and only the passé composé option correctly expresses a succession of implicitly linked past actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434715312-exp1n8vo",
+      "timestamp": "2026-05-10T17:39:07.973Z"
+    }
+  ]
+}

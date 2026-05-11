@@ -1,0 +1,40 @@
+{
+  "cacheKey": "d43cb0bb0e70a236",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-16-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-16 - Le passé composé pour exprimer une succession d'actions\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au passé composé pour compléter cette succession d'actions.\nPhrase: Le matin, j'ai arrêté mon réveil, je me suis dépêché et je ___ de la maison.\nCorrect Answer: suis sorti / suis sortie\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778433795157-9pghgnt5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question primarily tests conjugation of \"sortir\" in passé composé and matching the tense of preceding verbs; answering correctly doesn't require understanding that passé composé expresses a succession of actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434223952-vswrcsr5",
+      "timestamp": "2026-05-10T17:31:21.029Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that the blank must be filled with a passé composé verb to complete a sequence of morning actions, directly testing the use of passé composé for expressing a succession of actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434608042-l0xlbbq7",
+      "timestamp": "2026-05-10T17:37:37.339Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that a sequence of past actions (arrêter → dépêcher → sortir) must all be expressed in passé composé, and the student must correctly conjugate \"sortir\" to complete this succession.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434850874-szmks4ee",
+      "timestamp": "2026-05-10T17:41:14.482Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating a verb in passé composé within an explicit succession of actions context, testing both the conjugation knowledge and understanding that passé composé is used to express completed sequential actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434923130-aax2ytzi",
+      "timestamp": "2026-05-10T17:42:48.287Z"
+    }
+  ]
+}

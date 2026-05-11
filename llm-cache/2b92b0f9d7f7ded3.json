@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2b92b0f9d7f7ded3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-16-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-16 - Le passé composé pour exprimer une succession d'actions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Laquelle de ces phrases utilise incorrectement le temps pour exprimer une succession ?\nChoices:\nA. [CORRECT] J'ai ouvert la porte, j'allais entrer dans la maison, j'ai fermé la porte derrière moi.\nB. D'abord, j'ai préparé les ingrédients, puis j'ai mélangé, ensuite j'ai cuit le gâteau.\nC. Tout à coup, j'ai entendu un bruit, alors j'ai sauté et j'ai crié.\nD. Après avoir regardé le film, j'ai fait mes devoirs, puis j'ai dormi.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778433795155-m2efbhor"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether students understand that to express a succession of completed actions in the past, all actions must be in the passé composé - option A breaks this by using the imparfait (\"j'allais entrer\") which represents an interrupted/ongoing action, not a completed one in the succession.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778433898228-7vki8jty",
+      "timestamp": "2026-05-10T17:25:54.941Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: This question tests whether the learner can spot the *incorrect* use of tenses in a succession (where option A uses imparfait \"j'allais\" instead of passé composé), not whether they can identify or construct a *correct* succession of actions using the passé composé as the rule states.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434327520-hhibyo82",
+      "timestamp": "2026-05-10T17:33:56.314Z"
+    }
+  ]
+}

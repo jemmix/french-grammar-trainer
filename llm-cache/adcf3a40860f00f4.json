@@ -1,0 +1,33 @@
+{
+  "cacheKey": "adcf3a40860f00f4",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-16-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise correctement le passé composé pour raconter une succession d'événements ?\n\nChoices:\nA. [CORRECT] L'avion a atterri, les passagers ont récupéré leurs bagages et sont sortis.\nB. [WRONG] L'avion atterrissait, les passagers récupéraient leurs bagages et sortaient.\nC. [WRONG] L'avion atterrira, les passagers récupéreront leurs bagages et sortiront.\nD. [WRONG] L'avion avait atterri, les passagers avaient récupéré leurs bagages et étaient sortis.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778526064600-p52g67tb"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use the wrong tense: imparfait (ongoing past), futur simple (future), and plus-que-parfait (prior past) instead of the required passé composé for a succession of completed events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778526064627-d8wgi50h",
+      "timestamp": "2026-05-11T19:08:13.179Z"
+    },
+    {
+      "raw": "TRUE||B uses imparfait (descriptions/habits), C uses futur simple (future), and D uses plus-que-parfait (events before other past events), none of which are passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778526710176-j95wwpi3",
+      "timestamp": "2026-05-11T19:12:41.503Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different tenses (imparfait, futur simple, plus-que-parfait) instead of the requested passé composé for recounting a succession of events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778526982027-le4oo1ed",
+      "timestamp": "2026-05-11T19:16:45.605Z"
+    }
+  ]
+}

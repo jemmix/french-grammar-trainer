@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a21a7dbcff8d4c50",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-16-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-16 - Le passé composé pour exprimer une succession d'actions\n\nQUESTION:\nType: Input\nPrompt: Un élève a écrit « Chaque été, nous allions à la plage. Mais l'été dernier, nous avons loué une voiture, avons pris l'autoroute et nous arrivions à la montagne. » en utilisant l'imparfait à tort dans la succession d'actions. Conjuguez le verbe au passé composé.\nPhrase: Chaque été, nous allions à la plage. Mais l'été dernier, nous avons loué une voiture, avons pris l'autoroute et nous ___ à la montagne.\nCorrect Answer: sommes arrivés\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778531049109-wlc7j3cp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires students to recognize that \"loué une voiture, pris l'autoroute, et ___ à la montagne\" forms a succession of completed actions that must all be in passé composé, directly testing the rule for expressing sequential actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778531049111-2z7i6j4g",
+      "timestamp": "2026-05-11T20:24:22.535Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question presents a succession of three completed actions and requires the learner to conjugate \"arriver\" in passé composé (not imparfait) as the final step in the sequence, which directly tests the rule that passé composé expresses successions of actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778531062538-hetfob0l",
+      "timestamp": "2026-05-11T20:24:37.027Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nThe question presents a clear sequence of past actions (loué, pris, ___) where the established pattern of passé composé makes it evident that the rule about succession of actions is being tested, and answering correctly requires applying this rule to conjugate the final verb appropriately.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778531077028-367dv5e7",
+      "timestamp": "2026-05-11T20:24:50.285Z"
+    }
+  ]
+}

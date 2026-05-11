@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f96aca3c4e04ed84",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-16-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-16 - Le passé composé pour exprimer une succession d'actions\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au passé composé pour compléter cette succession d'actions.\nPhrase: Tout à coup, l'orage a éclaté, les enfants sont entrés dedans, j'___ les fenêtres et nous nous sommes réunis.\nCorrect Answer: ai fermé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778433795158-udb87fk3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question presents a clear sequence of past actions (storm broke, children entered, I closed windows, we gathered) and requires conjugating \"fermer\" in passé composé to complete the chronological succession, directly testing the rule about using passé composé for sequential actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434245512-chaca6y2",
+      "timestamp": "2026-05-10T17:31:12.990Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests conjugation of \"fermer\" in the passé composé, not the concept of using passé composé to express a succession of actions—the sequence is given in the prompt, so the student can fill in the blank using only conjugation knowledge without understanding how passé composé indicates chronological order.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434599991-rinqt78f",
+      "timestamp": "2026-05-10T17:37:08.702Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt already instructs to use passé composé, so the question only tests conjugation mechanics (how to conjugate \"fermer\" with \"je\") rather than whether the student knows when and why to use passé composé to express succession of actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778434828361-h4x23b7u",
+      "timestamp": "2026-05-10T17:40:54.260Z"
+    }
+  ]
+}

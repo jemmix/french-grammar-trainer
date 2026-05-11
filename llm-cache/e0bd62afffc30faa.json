@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e0bd62afffc30faa",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-16-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-16 - Le passé composé pour exprimer une succession d'actions\n\nQUESTION:\nType: Input\nPrompt: Un élève a écrit « Le chien aboyait, courait après le chat et revenait vers son maître. » en utilisant l'imparfait à tort pour décrire une succession d'actions. Conjuguez le verbe au passé composé.\nPhrase: Le chien a aboyé, a couru après le chat et ___ vers son maître.\nCorrect Answer: est revenu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778525405598-rax4hoqb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests exactly the stated rule by requiring the student to conjugate a verb in passé composé within a succession of actions, distinguishing it from the incorrectly used imparfait for sequential completed actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778525405600-jc9jxlsh",
+      "timestamp": "2026-05-11T18:51:49.077Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that a sequence of actions (aboyait → a aboyé, courait → a couru, revenait → ___) uses passé composé, and the correct answer depends on understanding this succession rule, not just conjugation patterns.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778525509081-r88gto0u",
+      "timestamp": "2026-05-11T18:52:30.679Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests using passé composé for a succession of actions by contrasting it with an incorrect imparfait usage and requiring the student to provide the correct past tense conjugation in a sequence of events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778525550679-vanusexm",
+      "timestamp": "2026-05-11T18:52:49.388Z"
+    }
+  ]
+}
