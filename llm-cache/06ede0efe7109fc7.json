@@ -1,0 +1,33 @@
+{
+  "cacheKey": "06ede0efe7109fc7",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "02-17-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Un élève a écrit « Le gâteau disparaissait. » en utilisant l'imparfait à tort pour décrire un résultat présent. Conjuguez le verbe au passé composé.\n\nPHRASE: Le gâteau ___. L'assiette est vide.\n\nHINT: disparaître\n\nEXPECTED ANSWER: a disparu\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1778534184389-hfjo457y"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly states to conjugate in passé composé, the hint provides the verb \"disparaître\", and the phrase establishes the subject \"Le gâteau\" — the learner has all information needed to produce the correct conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778535020202-23svt3ss",
+      "timestamp": "2026-05-11T21:30:39.665Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to conjugate in passé composé, the hint provides the verb \"disparaître\", and the phrase context shows 3rd person singular, so the learner knows to type \"a disparu\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778536762111-iwvnw92p",
+      "timestamp": "2026-05-11T21:59:45.926Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs to conjugate in passé composé, the hint provides the infinitive \"disparaître\", and the context sentence clearly indicates what needs to be filled in.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778536961306-zuc3u7bv",
+      "timestamp": "2026-05-11T22:02:57.029Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3c51b695595cfe14",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-17-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour quelle raison le passé composé est-il employé dans cette phrase ? « Le soleil s'est couché. »\n\nChoices:\nA. [CORRECT] Pour exprimer qu'il fait nuit maintenant.\nB. [WRONG] Pour décrire un coucher de soleil habituel.\nC. [WRONG] Pour indiquer que le soleil se couche en ce moment.\nD. [WRONG] Pour raconter une succession d'actions.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778532843655-o858hiwm"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers describe uses for other tenses (imparfait for habitual actions, présent for current actions) or contexts (narrative sequences) that don't apply to this isolated completed action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778533219992-6bwi3972",
+      "timestamp": "2026-05-11T21:00:51.463Z"
+    },
+    {
+      "raw": "TRUE||B, C, and D are all incorrect: B describes habitual actions (requires imparfait), C describes ongoing actions (requires présent), and D describes narrative sequences (not the case here).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778533633535-l9h618i0",
+      "timestamp": "2026-05-11T21:07:40.394Z"
+    },
+    {
+      "raw": "TRUE||B would require imparfait for habitual actions, C would require présent for current action, and D describes a sequence narrative purpose not applicable to this single isolated completed action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778534246023-0swkwv8c",
+      "timestamp": "2026-05-11T21:17:59.653Z"
+    }
+  ]
+}

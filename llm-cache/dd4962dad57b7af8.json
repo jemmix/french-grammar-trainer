@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dd4962dad57b7af8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-17-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-17 - Le passé composé pour exprimer un résultat présent d'une action passée\n\nQUESTION:\nType: Input\nPrompt: Un élève a écrit « Le train partait. » en utilisant l'imparfait à tort pour décrire un résultat présent. Conjuguez le verbe dans le temps qui convient.\nPhrase: Le train ___. Il n'y a plus personne sur le quai.\nCorrect Answer: est parti\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778535545370-7d5pzz4d"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core distinction between imparfait and passé composé for present results - the train is gone now, so its departure must be expressed with passé composé (est parti), not imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778535545372-5aizz3e2",
+      "timestamp": "2026-05-11T21:39:23.469Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question presents a clear present result (empty platform) from a completed past action (train leaving), and requires choosing passé composé over imparfait to correctly express this ongoing consequence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778535563469-00vzqepn",
+      "timestamp": "2026-05-11T21:39:38.632Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The empty platform (\"Il n'y a plus personne sur le quai\") is the present result of the train's past departure, requiring passé composé to express this connection between past action and present state.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778535578632-w720vobb",
+      "timestamp": "2026-05-11T21:39:51.507Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "729734b1313c9673",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-17-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-17 - Le passé composé pour exprimer un résultat présent d'une action passée\n\nQUESTION:\nType: Input\nPrompt: Un élève a écrit « Il perdait ses clés. » en utilisant l'imparfait à tort pour décrire un résultat présent. Conjuguez le verbe au passé composé.\nPhrase: Il ___ ses clés. Il ne peut pas ouvrir la porte.\nCorrect Answer: a perdu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778537405552-art5apj2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that losing the keys (past action) creates a present result (cannot open the door), which must be expressed with passé composé instead of imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778537405636-cka4l17o",
+      "timestamp": "2026-05-11T22:10:46.674Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests using passé composé to express a past action (losing keys) that has a present result (cannot open the door), which is the core of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778537446725-z639gcfs",
+      "timestamp": "2026-05-11T22:12:19.084Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests exactly the concept of expressing a present result (cannot open door) of a past action (losing keys) with passé composé, and explicitly contrasts it with the incorrect imparfait usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778537539085-7xkxoeyu",
+      "timestamp": "2026-05-11T22:13:50.975Z"
+    }
+  ]
+}

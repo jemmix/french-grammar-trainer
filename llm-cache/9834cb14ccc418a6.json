@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9834cb14ccc418a6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-17-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-17 - Le passé composé pour exprimer un résultat présent d'une action passée\n\nQUESTION:\nType: Input\nPrompt: Un élève a écrit « Nous terminions le devoir. » en utilisant l'imparfait à tort pour décrire un résultat présent. Conjuguez le verbe au passé composé.\nPhrase: Nous ___ le devoir. Nous pouvons maintenant le remettre au professeur.\nCorrect Answer: avons terminé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778532843656-1secoj9a"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests exactly the rule - using passé composé (not imparfait) when a past action (completing the homework) has present consequences (being able to hand it in now).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778533295977-u5a130v0",
+      "timestamp": "2026-05-11T21:02:06.545Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between passé composé (for actions with present results) and imparfait (for past states/habits), requiring the learner to recognize the present relevance (\"maintenant le remettre\") and choose the appropriate tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778533688697-uxm4e1o2",
+      "timestamp": "2026-05-11T21:08:24.906Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using passé composé instead of imparfait to express that finishing the homework has present consequences (can now turn it in), which is exactly what the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778534299115-mpvxmwvv",
+      "timestamp": "2026-05-11T21:19:14.404Z"
+    }
+  ]
+}

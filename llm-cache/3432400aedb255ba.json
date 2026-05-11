@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3432400aedb255ba",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-17-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour quelle raison utilise-t-on le passé composé dans cette phrase ? « La voiture est tombée en panne. »\n\nChoices:\nA. [CORRECT] Pour exprimer que la voiture ne fonctionne plus actuellement.\nB. [WRONG] Pour décrire une panne habituelle.\nC. [WRONG] Pour indiquer que la voiture est en train de tomber en panne.\nD. [WRONG] Pour exprimer un souhait.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778532843654-lq7cvh2w"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers misuse the passé composé: B requires imparfait for habitual actions, C requires présent for actions in progress, and D requires conditionnel or subjonctif for wishes.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778533143117-mn7km0ws",
+      "timestamp": "2026-05-11T20:59:30.944Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers describe grammatical contexts that would require different tenses or structures (imparfait for habitual actions, présent/en train de for ongoing actions, conditionnel/vouloir for wishes), not the passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778533598267-j63honzx",
+      "timestamp": "2026-05-11T21:06:59.294Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers describe grammatical functions (habits, ongoing actions, wishes) that are never expressed with the passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778534011745-7gqmz4os",
+      "timestamp": "2026-05-11T21:14:01.842Z"
+    }
+  ]
+}
