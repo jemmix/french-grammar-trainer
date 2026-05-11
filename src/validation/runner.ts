@@ -557,15 +557,25 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
     }
 
     const doomedQuestions = preCheckDoomedQuestions(allLLMTasks);
+    for (const r of structuralResults) {
+      if (!r.pass) doomedQuestions.add(r.questionId);
+    }
     if (doomedQuestions.size > 0) {
-      console.log(doomedQuestions.size + " question(s) already doomed by cache");
+      console.log(doomedQuestions.size + " question(s) doomed before LLM checks");
     }
 
     console.log("Running " + allLLMTasks.length + " LLM tasks (max " + concurrency + " concurrent)...");
 
-    if (priorityTasks.length > 0) {
-      console.log("  Phase 1: " + priorityTasks.length + " priority checks");
-      const results = await runLLMBatch(priorityTasks, !!opts.updateCache, concurrency, limitConcurrency, verbose, harness, doomedQuestions);
+    const activePriority = priorityTasks.filter(t => !doomedQuestions.has(t.ctx.question.id));
+    const skippedPriority = priorityTasks.filter(t => doomedQuestions.has(t.ctx.question.id));
+
+    if (skippedPriority.length > 0) {
+      llmResults.push(...skippedPriority.map(t => resolveTask(t, doomedQuestions)));
+    }
+
+    if (activePriority.length > 0) {
+      console.log("  Phase 1: " + activePriority.length + " priority checks");
+      const results = await runLLMBatch(activePriority, !!opts.updateCache, concurrency, limitConcurrency, verbose, harness, doomedQuestions);
       llmResults.push(...results);
     }
 
