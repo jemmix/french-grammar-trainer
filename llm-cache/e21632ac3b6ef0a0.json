@@ -1,0 +1,40 @@
+{
+  "cacheKey": "e21632ac3b6ef0a0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-18-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel marqueur temporel est compatible avec le passé composé ?\n\nChoices:\nA. [CORRECT] « Il y a deux jours »\nB. [WRONG] « Tous les matins »\nC. [WRONG] « Pendant que »\nD. [WRONG] « Depuis toujours »\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778538212299-6tmuu9tv"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are indeed incorrect: B indicates habitual action requiring imparfait, C is a conjunction not a temporal marker and would more naturally use imparfait for simultaneous past actions, and D indicates ongoing duration requiring present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778538423168-yu7bpeay",
+      "timestamp": "2026-05-11T22:30:21.344Z"
+    },
+    {
+      "raw": "FALSE|B,C|B \"Tous les matins\" can be used with passé composé to summarize repeated completed actions (e.g., \"J'ai fait du sport tous les matins l'an dernier\"); C \"Pendant que\" can introduce passé composé clauses (e.g., \"J'ai mangé pendant que tu étudies\") and functions as a temporal conjunction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778581323234-0jlyi4vz",
+      "timestamp": "2026-05-12T10:24:08.852Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incompatible with passé composé: \"tous les matins\" is habitual (présent/impératif), \"pendant que\" is a conjunction not a temporal marker, \"depuis toujours\" indicates ongoing state (présent).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778581838312-qmzlemes",
+      "timestamp": "2026-05-12T10:31:38.288Z"
+    },
+    {
+      "raw": "FALSE|C|\"Pendant que\" is compatible with passé composé (e.g., \"Pendant que je mangeais, il a appelé\") and could be correct.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778582114575-f76jhspt",
+      "timestamp": "2026-05-12T10:35:59.388Z"
+    }
+  ]
+}

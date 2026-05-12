@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b7f178a75cc16000",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-18-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour quelle raison le passé composé est-il utilisé dans cette phrase ? « Hier matin, il a plu pendant deux heures. »\n\nChoices:\nA. [CORRECT] Parce que « hier matin » situe l'événement dans une période révolue du passé.\nB. [WRONG] Parce qu'il pleut tous les matins.\nC. [WRONG] Parce qu'il pleut en ce moment.\nD. [WRONG] Parce qu'il pleuvra demain.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778584990018-ddz8klpa"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers describe different time frames (habitual present, ongoing present, future) that do not justify the use of passé composé for a completed past event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778585046937-vd2anpsp",
+      "timestamp": "2026-05-12T11:24:31.988Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers reference present or future tenses, not the completed past action described by passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778585210000-w2913tt7",
+      "timestamp": "2026-05-12T11:27:34.667Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers describe different time contexts (habitual, present, future) that would not use the passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778585399357-als99gh0",
+      "timestamp": "2026-05-12T11:30:22.810Z"
+    }
+  ]
+}

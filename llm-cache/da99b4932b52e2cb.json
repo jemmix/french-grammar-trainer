@@ -1,0 +1,33 @@
+{
+  "cacheKey": "da99b4932b52e2cb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-18-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour quelle raison le passé composé est-il employé dans cette phrase ? « L'année dernière, ils ont acheté une nouvelle voiture. »\n\nChoices:\nA. [CORRECT] Parce que « l'année dernière » désigne une période achevée du passé.\nB. [WRONG] Parce que l'action se répète chaque année.\nC. [WRONG] Parce que l'action est en cours en ce moment.\nD. [WRONG] Parce que l'action aura lieu l'année prochaine.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778586719516-gikthama"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is incorrect because the sentence indicates a single past action, not a repeated one; C is incorrect because passé composé denotes completed actions, not ongoing ones; D is incorrect because \"l'année dernière\" and the verb form both indicate the past, not the future.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778586719518-2ud6r4sh",
+      "timestamp": "2026-05-12T11:52:12.352Z"
+    },
+    {
+      "raw": "TRUE||All three wrong answers are grammatically incorrect: B describes a habitual action (would require imperfect or present), C describes an ongoing action (would require present), and D describes a future action (would require future tense), whereas the passé composé is correctly used here for a completed action in the past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778586732355-evb1905g",
+      "timestamp": "2026-05-12T11:52:26.329Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B describes a repeated action (not a one-time past event), C describes an ongoing action (would need présent or être en train de), and D describes a future action (would need futur simple/proximal).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778586746329-2pxexw6u",
+      "timestamp": "2026-05-12T11:52:38.583Z"
+    }
+  ]
+}

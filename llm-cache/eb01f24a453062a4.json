@@ -1,0 +1,33 @@
+{
+  "cacheKey": "eb01f24a453062a4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-18-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-18 - Le passé composé avec les marqueurs temporels (hier, la semaine dernière, il y a deux jours)\n\nQUESTION:\nType: Input\nPrompt: Un élève a écrit « Il y a une semaine, il allait à Paris. » en utilisant l'imparfait à tort avec le marqueur « il y a une semaine ». Conjuguez le verbe au passé composé.\nPhrase: Il y a une semaine, il ___ à Paris avec ses parents.\nCorrect Answer: est allé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778584990026-150fzl18"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"il y a une semaine\" is a completed-time temporal marker that mandates passé composé, directly testing the rule's core concept.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778585128739-249sovy4",
+      "timestamp": "2026-05-12T11:25:58.504Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core concept that temporal markers like \"il y a une semaine\" require passé composé, which is precisely what rule 02-18 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778585299888-p11qlk52",
+      "timestamp": "2026-05-12T11:28:42.668Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge that the temporal marker \"il y a une semaine\" requires passé composé instead of imparfait, which is the exact focus of rule 02-18.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778585452273-pymgwhrf",
+      "timestamp": "2026-05-12T11:31:29.929Z"
+    }
+  ]
+}

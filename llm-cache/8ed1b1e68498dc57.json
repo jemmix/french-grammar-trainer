@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8ed1b1e68498dc57",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-18-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-18 - Le passé composé avec les marqueurs temporels (hier, la semaine dernière, il y a deux jours)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Pour quelle raison utilise-t-on le passé composé dans cette phrase ? « Il y a longtemps, elle est arrivée dans cette ville pour la première fois. »\nChoices:\nA. [CORRECT] Parce que « il y a longtemps » situe l'événement à un point précis du passé.\nB. Parce qu'elle arrive régulièrement dans cette ville.\nC. Parce que l'action est en cours en ce moment.\nD. Parce que l'action aura lieu plus tard.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778538212299-vitw8a3o"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests understanding that \"il y a + time expression\" (like \"il y a deux jours\" in the rule) triggers the passé composé, which is the core concept of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778538408741-os1uhkcu",
+      "timestamp": "2026-05-11T22:32:37.707Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: \"Il y a longtemps\" (a long time ago) is a vague, indefinite temporal marker, not a specific past marker like \"hier, la semaine dernière, il y a deux jours\" that the rule is about.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778581307250-ptew2vz7",
+      "timestamp": "2026-05-12T10:22:26.583Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d34f4cd1d37d96c1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-18-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour quelle raison le passé composé est-il employé dans cette phrase ? « Il y a trois jours, nous avons commencé nos vacances. »\n\nChoices:\nA. [CORRECT] Parce que « il y a trois jours » situe l'action à un moment précis du passé.\nB. [WRONG] Parce que l'action dure depuis trois jours.\nC. [WRONG] Parce que l'action se répète tous les trois jours.\nD. [WRONG] Parce que l'action est en cours en ce moment.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778538212297-0eafsxq1"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers misinterpret the tense: B suggests ongoing duration (would require present), C claims repetition (no evidence of frequency), and D describes current action (passé composé is for completed past actions).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778538212340-6clwn1ql",
+      "timestamp": "2026-05-11T22:24:15.538Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers misinterpret the temporal marker \"il y a\" and the completed nature of the passé composé action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778538673280-hteprvgg",
+      "timestamp": "2026-05-11T22:31:35.942Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers describe situations requiring different tenses (imparfait for ongoing/habitual actions, présent for current actions) rather than the completed action indicated by passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778581031468-qm7ry5qj",
+      "timestamp": "2026-05-12T10:20:02.253Z"
+    }
+  ]
+}

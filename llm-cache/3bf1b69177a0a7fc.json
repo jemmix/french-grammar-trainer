@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3bf1b69177a0a7fc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-18-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour quelle raison utilise-t-on le passé composé dans cette phrase ? « Le week-end dernier, ils sont partis en vacances. »\n\nChoices:\nA. [CORRECT] Parce que « le week-end dernier » situe l'événement dans une période révolue.\nB. [WRONG] Parce qu'ils partent en vacances tous les week-ends.\nC. [WRONG] Parce que le voyage est en cours en ce moment.\nD. [WRONG] Parce que le voyage aura lieu le week-end prochain.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778587127848-21qkht0p"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are clearly incorrect: B suggests a habitual action but the sentence refers to a specific past event, C claims the trip is ongoing but passé composé indicates a completed action, and D refers to the future while \"le week-end dernier\" is explicitly past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778587127870-yhyekp93",
+      "timestamp": "2026-05-12T11:59:21.900Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778587161901-ex7ktug2",
+      "timestamp": "2026-05-12T11:59:49.165Z"
+    },
+    {
+      "raw": "TRUE||B doesn't explain the tense choice, C describes an ongoing action (not passé composé), and D describes a future action (not passé composé).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778587189166-sycbngkp",
+      "timestamp": "2026-05-12T11:59:59.928Z"
+    }
+  ]
+}

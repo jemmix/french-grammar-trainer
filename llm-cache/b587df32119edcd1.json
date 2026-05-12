@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b587df32119edcd1",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "02-18-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Un élève a écrit « La semaine dernière, nous visitions un musée. » en utilisant l'imparfait à tort avec le marqueur « la semaine dernière ». Conjuguez le verbe au passé composé.\n\nPHRASE: La semaine dernière, nous ___ un musée.\n\nHINT: visiter\n\nEXPECTED ANSWER: avons visité\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1778581031433-62ignspl"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs to conjugate in the passé composé, the hint provides the infinitive \"visiter\", and the phrase shows the subject \"nous\", making it clear what to type.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778583436657-39zt8sa2",
+      "timestamp": "2026-05-12T10:57:39.243Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly specifies to conjugate the verb in passé composé, the hint provides the infinitive \"visiter\", and the phrase shows the subject \"nous\", so the learner knows exactly what conjugation to produce.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778583816518-p51qsdcb",
+      "timestamp": "2026-05-12T11:04:13.507Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The prompt explicitly says to conjugate in passé composé, the hint provides the infinitive \"visiter\", and the phrase shows \"nous\" as the subject, which uniquely determines \"avons visité\" as the correct form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778584218980-ia1u11yg",
+      "timestamp": "2026-05-12T11:10:37.916Z"
+    }
+  ]
+}

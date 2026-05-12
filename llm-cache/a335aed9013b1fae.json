@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a335aed9013b1fae",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-18-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-18 - Le passé composé avec les marqueurs temporels (hier, la semaine dernière, il y a deux jours)\n\nQUESTION:\nType: Input\nPrompt: Un élève a écrit « Hier, ma grand-mère faisait un gâteau. » en utilisant l'imparfait à tort avec le marqueur « hier ». Conjuguez le verbe au passé composé.\nPhrase: Hier, ma grand-mère ___ un gâteau délicieux.\nCorrect Answer: a fait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778538212300-rcwfrajk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the relationship between the temporal marker \"hier\" and the required use of passé composé, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778538634819-wzrofbog",
+      "timestamp": "2026-05-11T22:30:54.632Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"hier\" is a temporal marker that triggers the passé composé (not the imparfait), which is the central concept of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778581588803-fkjlztda",
+      "timestamp": "2026-05-12T10:27:00.927Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"hier\" is a temporal marker that triggers passé composé, which is the exact rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778581927604-atu71f15",
+      "timestamp": "2026-05-12T10:32:58.256Z"
+    }
+  ]
+}

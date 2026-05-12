@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f1715a525e5ad973",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-18-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour quelle raison le passé composé est-il utilisé dans cette phrase ? « À 8 heures ce matin, Paul est parti de la maison. »\n\nChoices:\nA. [CORRECT] Parce que l'heure précise indique un moment déterminé du passé.\nB. [WRONG] Parce que Paul part à la même heure tous les jours.\nC. [WRONG] Parce que l'action est en cours en ce moment.\nD. [WRONG] Parce que l'action aura lieu à 8 heures demain.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778538212298-ad3xb94h"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B describes habitual actions (which use présent/imparfait), C describes ongoing actions (which use présent), and D describes future actions (which use future tenses), while passé composé is only for completed past actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778538275550-mp5k5uig",
+      "timestamp": "2026-05-11T22:26:32.603Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers describe scenarios requiring different tenses (present/imperfect for habits, present for ongoing actions, future for future actions), not the passé composé used for a specific completed past action with a precise time.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778581098946-nk6e0c5y",
+      "timestamp": "2026-05-12T10:18:38.043Z"
+    },
+    {
+      "raw": "TRUE||B is incorrect because habitual actions use présent/imparfait, not passé composé; C is incorrect because ongoing actions use présent, not passé composé; D is incorrect because future actions use future tenses, not passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778581758170-2pkdvpg4",
+      "timestamp": "2026-05-12T10:30:07.658Z"
+    }
+  ]
+}

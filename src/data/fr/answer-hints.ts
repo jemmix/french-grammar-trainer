@@ -33,6 +33,8 @@ export const answerHints: Record<string, string> = {
   "a perdu": "perdre",
   "a oublié": "oublier",
   "avons terminé": "terminer",
+  "avons visité": "visiter",
+  "est allé": "aller",
   "a disparu": "disparaître",
   "a pris": "prendre",
   "ont brisé": "briser",

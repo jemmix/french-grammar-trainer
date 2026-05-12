@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1fbb3ea68372c5cf",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-18-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour quelle raison utilise-t-on le passé composé dans cette phrase ? « Hier soir, Marie a reçu un appel de sa mère. »\n\nChoices:\nA. [CORRECT] Parce que « hier soir » situe l'événement dans un moment précis du passé révolu.\nB. [WRONG] Parce que l'appel a lieu tous les soirs.\nC. [WRONG] Parce que Marie est au téléphone en ce moment.\nD. [WRONG] Parce que l'appel aura lieu ce soir.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778587127838-emcfxtgo"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers describe habitual, present, or future actions rather than the specific completed past action that requires the passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778587127866-yx5esk03",
+      "timestamp": "2026-05-12T11:59:04.356Z"
+    },
+    {
+      "raw": "TRUE||B describes a habitual action requiring présent/imparfait, C describes a current action requiring présent, and D describes a future action requiring futur simple—all incompatible with the completed past action in the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778587144360-5jtdw733",
+      "timestamp": "2026-05-12T11:59:23.820Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers describe different time contexts (repetitive, present, future) that would require different tenses, not the passé composé used for a completed past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778587163821-yxls0kbd",
+      "timestamp": "2026-05-12T11:59:49.724Z"
+    }
+  ]
+}
