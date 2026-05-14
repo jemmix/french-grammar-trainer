@@ -1,0 +1,26 @@
+{
+  "cacheKey": "4de88207a9c949fb",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "02-19-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Transformez en question au passé composé avec « est-ce que » : « Il est allé à l'école. »\n\nPHRASE: ___ à l'école ?\n\nHINT: aller\n\nEXPECTED ANSWER: Est-ce qu'il est allé\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1778594073519-gu0tziab"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to transform \"Il est allé à l'école\" into a question in passé composé using \"est-ce que\", and the blank at the start of \"___ à l'école ?\" combined with the hint \"aller\" makes it unambiguous what to fill in.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778594392332-wxokl5py",
+      "timestamp": "2026-05-12T14:00:27.509Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt asks to transform into a question and shows \"___ à l'école ?\" with a question mark already present, but the expected answer \"Est-ce qu'il est allé\" lacks the question mark, creating ambiguity about whether the learner should input the complete question including the question mark or just the beginning phrase.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778594473520-wwpx1jsl",
+      "timestamp": "2026-05-12T14:06:12.377Z"
+    }
+  ]
+}

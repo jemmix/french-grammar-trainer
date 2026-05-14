@@ -1,0 +1,33 @@
+{
+  "cacheKey": "11ce45f0de6db033",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-10-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Tu ___ les enfants pour dîner. »\n\nChoices:\nA. [CORRECT] rappelles\nB. [WRONG] rappeles\nC. [WRONG] rappèles\nD. [WRONG] rappelais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702101-00uakihj"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is a misspelling (rappeler doubles the consonant: tu rappelles), C has wrong accent placement (no accent on first e in tu rappelles), and D is imperfect tense (rappelais) instead of present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761237807-npeceep7",
+      "timestamp": "2026-05-14T12:22:00.886Z"
+    },
+    {
+      "raw": "TRUE||B is misspelled (missing one 's'), C has an incorrect accent on 'è', and D uses the imparfait tense instead of présent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762221375-36ikh5rm",
+      "timestamp": "2026-05-14T12:38:26.967Z"
+    },
+    {
+      "raw": "TRUE||B uses single 'l' instead of double 'l', C adds an incorrect accent and uses single 'l', D uses imparfait tense instead of présent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763228565-oz5tagmn",
+      "timestamp": "2026-05-14T12:54:35.665Z"
+    }
+  ]
+}

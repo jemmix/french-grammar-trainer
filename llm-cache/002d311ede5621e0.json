@@ -1,0 +1,33 @@
+{
+  "cacheKey": "002d311ede5621e0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-19-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel verbe impersonnel convient au présent dans cette phrase ? « Il ___ beaucoup de courage pour surmonter cette épreuve. »\n\nChoices:\nA. [CORRECT] faut\nB. [WRONG] s'agit\nC. [WRONG] pleut\nD. [WRONG] neige\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702369-qztj21rp"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically or semantically incompatible: \"s'agit\" requires \"de\" and doesn't fit context; \"pleut\" and \"neige\" are weather verbs that don't work with \"beaucoup de courage\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761669060-hzmfur2h",
+      "timestamp": "2026-05-14T12:28:02.217Z"
+    },
+    {
+      "raw": "TRUE||B uses \"s'agir\" incorrectly with \"beaucoup de\" as this verb means \"to be about\" not \"to require\"; C and D are weather verbs (\"to rain\", \"to snow\") that make no semantic sense in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762571869-pi8xa4v3",
+      "timestamp": "2026-05-14T12:43:43.910Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors - \"s'agit\" requires different syntax and is misused with abstract concepts, while \"pleut\" and \"neige\" are weather-only verbs that cannot apply to courage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763597807-kajel7ad",
+      "timestamp": "2026-05-14T13:01:41.826Z"
+    }
+  ]
+}

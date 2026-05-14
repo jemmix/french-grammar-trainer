@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fbc2817ef33c056e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-19-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel registre de langue correspond à la question « Tu as compris ? » ?\n\nChoices:\nA. [CORRECT] Informel (intonation montante)\nB. [WRONG] Formel (inversion sujet-verbe)\nC. [WRONG] Neutre (avec « est-ce que »)\nD. [WRONG] Soutenu (passé simple)\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778588189948-v108h5mk"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers describe different registers or structures that do not match the informal subject-verb word order and \"tu\" pronoun used in \"Tu as compris ?\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778588189952-2n4n3zjd",
+      "timestamp": "2026-05-12T12:16:56.949Z"
+    },
+    {
+      "raw": "TRUE||The sentence \"Tu as compris ?\" is informal (uses \"tu\", no inversion, no \"est-ce que\"), so B (formal inversion), C (neutral with \"est-ce que\"), and D (literary passé simple) are all clearly incorrect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778588518446-z13zgmh6",
+      "timestamp": "2026-05-12T12:23:42.735Z"
+    },
+    {
+      "raw": "TRUE||B lacks inversion, C lacks est-ce que, and D uses wrong tense and register.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778589182223-mfewdog6",
+      "timestamp": "2026-05-12T12:33:53.894Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c561649136eac687",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-20-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ d'un seul mot pour tout gâcher. »\n\nChoices:\nA. [CORRECT] suffit\nB. [WRONG] pleut\nC. [WRONG] neige\n\nVerify these WRONG answers are incorrect (letters: B, C)",
+    "nonce": "nonce-1778760702408-0bwqjmy2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||Both \"pleut\" and \"neige\" are impersonal weather verbs that make no semantic sense in this context about ruining something with a single word.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761747257-prrh7icn",
+      "timestamp": "2026-05-14T12:29:28.800Z"
+    },
+    {
+      "raw": "TRUE|B,C|Both \"pleut\" and \"neige\" are impersonal weather verbs that cannot take \"d'un seul mot\" as a complement, unlike \"suffit\" which correctly uses this construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762649452-aek2eb03",
+      "timestamp": "2026-05-14T12:49:25.846Z"
+    },
+    {
+      "raw": "TRUE||Both pleut and neige are impersonal weather verbs that cannot take d'un seul mot as a complement and make no semantic sense in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763809097-w1yjgw7p",
+      "timestamp": "2026-05-14T13:04:01.935Z"
+    }
+  ]
+}

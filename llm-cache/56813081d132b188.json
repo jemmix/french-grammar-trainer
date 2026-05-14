@@ -1,0 +1,40 @@
+{
+  "cacheKey": "56813081d132b188",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-20-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Le pronom « me » est un complément d'objet indirect. Quel verbe se construit avec un COI pour exprimer le goût au présent ? « Cette idée me ___ énormément. »\n\nChoices:\nA. [CORRECT] plaît\nB. [WRONG] faut\nC. [WRONG] pleut\n\nVerify these WRONG answers are incorrect (letters: B, C)",
+    "nonce": "nonce-1778760702413-hvd27rkn"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B|\"Faut\" is grammatically correct (from falloir) and uses COI, but expresses necessity not taste; however, the question is specifically asking which verb expresses taste, so B is wrong for the context but not grammatically impossible. \"Pleut\" is grammatically incorrect as pleuvoir is impersonal and cannot take \"me\" as indirect object.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761755431-wxrh49go",
+      "timestamp": "2026-05-14T12:29:34.881Z"
+    },
+    {
+      "raw": "TRUE||Both wrong answers use impersonal verbs that don't accept COI complements: \"falloir\" expresses necessity (not taste) and is used as \"il me faut\", while \"pleuvoir\" is a weather verb that never takes objects.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762668821-7hqsz4y3",
+      "timestamp": "2026-05-14T12:47:02.675Z"
+    },
+    {
+      "raw": "TRUE||B is incorrect because \"falloir\" requires an impersonal subject \"il\" and cannot take \"cette idée\" as its subject; C is incorrect because \"pleuvoir\" is an impersonal weather verb that only uses \"il\" as its subject and never takes a personal object.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763736225-oio6x7y6",
+      "timestamp": "2026-05-14T13:03:13.236Z"
+    },
+    {
+      "raw": "FALSE|B|\"Faut\" is not grammatically impossible here—\"Cette idée me faut\" is a valid albeit uncommon construction meaning \"This idea is necessary to me\"—though awkward in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778764066916-ke4h9cds",
+      "timestamp": "2026-05-14T13:09:24.944Z"
+    }
+  ]
+}

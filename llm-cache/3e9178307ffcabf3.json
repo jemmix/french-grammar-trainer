@@ -1,0 +1,40 @@
+{
+  "cacheKey": "3e9178307ffcabf3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-18-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez la suite au présent de narration : « En 1914, l'archiduc François-Ferdinand descend de sa voiture, ____ vers la foule et s'effondre, mortellement blessé. »\n\nChoices:\nA. [CORRECT] s'avance\nB. [WRONG] s'avança\nC. [WRONG] s'avançait\nD. [WRONG] s'avancera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702329-8m777b1m"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses inappropriate for the présent de narration, which requires present tense throughout.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761603129-ezrxu01n",
+      "timestamp": "2026-05-14T12:32:36.127Z"
+    },
+    {
+      "raw": "FALSE|B|B uses the passé simple form \"s'avança\", which is grammatically correct in literary French narratives even though the question asks for présent de narration specifically.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762933409-b2qx8d9x",
+      "timestamp": "2026-05-14T12:49:14.763Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that break the present de narration pattern (passé simple, imparfait, and futur simple respectively) when the context requires consistent present tense to match \"descend\" and \"s'effondre\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763802760-qptkzajn",
+      "timestamp": "2026-05-14T13:04:06.487Z"
+    },
+    {
+      "raw": "FALSE|B|While s'avança (passé simple) is a past tense not used in présent de narration, it's actually grammatically consistent with the historical context of 1914, and many learners would reasonably choose this as the narrative tense for historical events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778764087964-0w6grb6d",
+      "timestamp": "2026-05-14T13:08:35.291Z"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "cacheKey": "bdb712e2e883535c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-14-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À notre époque, tous les soirs, les enfants ___ leurs jouets avant de dormir. »\n\nChoices:\nA. [CORRECT] rangent\nB. [WRONG] rangeaient\nC. [WRONG] rangeaient toujours\nD. [WRONG] ranger\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702227-z0d2bsmk"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B and C use imperfect tense which conflicts with \"à notre époque\" (present era) and \"tous les soirs\" (present habitual), while D is infinitive form that cannot serve as the main verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761425919-0g385vb0",
+      "timestamp": "2026-05-14T12:24:43.920Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb forms (imparfait instead of present tense for current habits, or infinitive instead of conjugated verb).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762353805-foqq8270",
+      "timestamp": "2026-05-14T12:39:28.078Z"
+    },
+    {
+      "raw": "FALSE|B|\"À notre époque\" can encompass the recent past within our contemporary era, so the imperfect \"rangeaient\" (habitual past action) is grammatically valid and could be correct in contexts describing a recent past habit.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763300527-vnolhf2p",
+      "timestamp": "2026-05-14T12:56:14.119Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B and C are past tense (imparfait) which contradicts \"À notre époque\" (present time), and D is infinitive which cannot serve as the conjugated verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763954254-kz7damzj",
+      "timestamp": "2026-05-14T13:06:42.501Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B and C use imperfect tense which conflicts with \"À notre époque\" (present), and D uses infinitive which doesn't fit the sentence structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778764232981-8pfgrli0",
+      "timestamp": "2026-05-14T13:26:28.827Z"
+    },
+    {
+      "raw": "FALSE|B|The imparfait \"rangeaient\" suggests a past habit, but \"À notre époque\" (in our time) indicates the present period, so present tense \"rangent\" is appropriate; C has the same issue as B, D is an infinitive that doesn't agree with the subject \"les enfants\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778765265733-c5nrdu68",
+      "timestamp": "2026-05-14T13:29:06.428Z"
+    }
+  ]
+}

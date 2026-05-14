@@ -1,0 +1,47 @@
+{
+  "cacheKey": "8f7c76337dd0c0f9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-15-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Regarde ! Pierre ___ sous la pluie. »\n\nChoices:\nA. [CORRECT] court\nB. [WRONG] courra\nC. [WRONG] a couru\nD. [WRONG] courait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702241-l4kldvfx"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses future tense instead of present; C uses passé composé for completed action instead of ongoing present; D uses imparfait which describes past habitual actions, not immediate present context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761441739-ag08513i",
+      "timestamp": "2026-05-14T12:24:33.554Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't fit the context of \"Regarde!\" (present observation).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762349324-70i4gn78",
+      "timestamp": "2026-05-14T12:39:35.672Z"
+    },
+    {
+      "raw": "FALSE|C|C (a couru) could work in a context where \"Regarde !\" draws attention to a past action the speaker just noticed or wants to point out; D (courait) is similarly contextually plausible for a past ongoing action being highlighted.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763312392-0e6xwzj0",
+      "timestamp": "2026-05-14T12:55:26.204Z"
+    },
+    {
+      "raw": "TRUE|B,C,D|All three wrong answers use inappropriate tenses: future (B) and past tenses (C, D) contradict \"Regarde !\" indicating a present moment observation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763927219-iy9yu4sz",
+      "timestamp": "2026-05-14T13:11:20.628Z"
+    },
+    {
+      "raw": "FALSE|C|C is correct when observing the result of the action (e.g., pointing to wet footprints or a soaked person), whereas A describes the ongoing action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778764510042-05fuea42",
+      "timestamp": "2026-05-14T13:19:51.739Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "94c37a5829802394",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-17-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Ça fait deux heures que j'___ dans cette file d'attente. »\n\nChoices:\nA. [CORRECT] attends\nB. [WRONG] attendais\nC. [WRONG] attendrais\nD. [WRONG] attendez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702306-lar35r4z"
+  },
+  "responses": [
+    {
+      "raw": "TRUE|B,C,D|B uses imparfait which doesn't work with duration construction \"Ça fait...que\", C uses conditionnel which is inappropriate for factual statements, and D uses 2nd person plural instead of 1st person singular required by \"je\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761572259-yg6ncvyj",
+      "timestamp": "2026-05-14T12:26:34.824Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors (B uses wrong tense, C uses conditional which doesn't fit the construction, D uses wrong person/number).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762474986-bqx46sbx",
+      "timestamp": "2026-05-14T12:41:26.075Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses imparfait instead of required present tense, C uses conditional which indicates hypothetical situations, and D uses 2nd person conjugation with a 1st person subject.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763405822-em6ussu7",
+      "timestamp": "2026-05-14T12:57:02.105Z"
+    }
+  ]
+}

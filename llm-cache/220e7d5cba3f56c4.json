@@ -1,0 +1,40 @@
+{
+  "cacheKey": "220e7d5cba3f56c4",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-19-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel verbe impersonnel convient au présent dans cette phrase ? « Il ___ de trouver une solution rapidement. »\n\nChoices:\nA. [CORRECT] s'agit\nB. [WRONG] faut\nC. [WRONG] pleut\nD. [WRONG] neige\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702362-l9c87ebh"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically or semantically incorrect: \"faut\" doesn't take \"de + infinitive\", while \"pleut\" and \"neige\" are weather verbs that cannot be used in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761650648-8bkxxp1d",
+      "timestamp": "2026-05-14T12:27:49.059Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"faut\" doesn't take \"de\" before infinitives, and \"pleut\"/\"neige\" are weather verbs that can't be followed by \"de\" + infinitive.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762552648-otde2x9k",
+      "timestamp": "2026-05-14T12:42:43.139Z"
+    },
+    {
+      "raw": "FALSE|B|B is incorrect because \"il faut\" takes an infinitive directly (\"il faut trouver\") without \"de\", but the sentence structure includes \"de\" after the blank, making \"il faut de\" grammatically wrong; however, the user might intend to use \"falloir\" with the preposition, showing the ambiguity in constructing the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763512353-o71jbnb8",
+      "timestamp": "2026-05-14T12:58:56.618Z"
+    },
+    {
+      "raw": "FALSE|B|\"Il faut\" takes a direct infinitive without \"de\", not \"de + infinitive\", so \"Il faut de trouver\" is grammatically incorrect (should be \"Il faut trouver\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763993514-xsx36dxq",
+      "timestamp": "2026-05-14T13:07:08.063Z"
+    }
+  ]
+}

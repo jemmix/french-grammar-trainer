@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6de094d489cb6692",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-16-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Mon frère arrive demain à Marseille. » Le verbe « arrive » est au présent. Le présent a ici une valeur de :\n\nChoices:\nA. [CORRECT] une action programmée dans le futur\nB. [WRONG] une habitude régulière\nC. [WRONG] une action en cours\nD. [WRONG] une vérité générale\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702275-cap2aovq"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect for this specific context of a scheduled future event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761528660-gq9rvccr",
+      "timestamp": "2026-05-14T12:25:45.343Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers describe different present tense uses (habitual, in-progress, general truth) that don't apply to a sentence with \"demain\" indicating a planned future action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762407176-3m2upron",
+      "timestamp": "2026-05-14T12:40:18.050Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B would require repeated action (e.g., \"tous les mardis\"), C would mean happening now (not \"demain\"), D would require a universal fact rather than a specific future event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763352318-4r818kha",
+      "timestamp": "2026-05-14T12:57:28.543Z"
+    }
+  ]
+}

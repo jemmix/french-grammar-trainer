@@ -1,0 +1,33 @@
+{
+  "cacheKey": "895d3fe63736872d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-13-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise « s'offrir » avec un sens réciproque (échange mutuel entre les personnes) ?\n\nChoices:\nA. [CORRECT] Les collègues s'offrent des cadeaux à Noël.\nB. [WRONG] Elle s'offre un voyage pour son anniversaire.\nC. [WRONG] Les collègues offrent des cadeaux à Noël.\nD. [WRONG] Il offre des fleurs à sa mère.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702189-5e40322k"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is reflexive (one person to herself) not reciprocal, C and D are transitive without reflexive form at all.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761370384-vsm3g0vs",
+      "timestamp": "2026-05-14T12:23:46.931Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers correctly fail the criteria: B uses reflexive not reciprocal sense, C and D don't use \"s'offrir\" at all.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762306539-0jj43615",
+      "timestamp": "2026-05-14T12:38:43.024Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is reflexive (not reciprocal), C and D don't use the reflexive form at all.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763242926-i0z8j6y2",
+      "timestamp": "2026-05-14T12:54:36.807Z"
+    }
+  ]
+}

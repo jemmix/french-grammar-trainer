@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6a1954d6221e1df3",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-19-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Les questions au passé composé (est-ce que, inversion, registres)\n\nQUESTION:\nPrompt: Complétez la question au passé composé avec « est-ce que », le sujet « tu » et le verbe « comprendre ».\nPhrase: ___ compris la leçon ?\nHint: comprendre\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1778621854969-evo8zalx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says to use \"est-ce que\" but the phrase shows only one blank \"___\" at the beginning, making it unclear whether the blank should contain \"Est-ce que tu as\", just \"Est-ce que tu\", or something else—the blank structure doesn't match the full question construction required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778621854973-io00i055",
+      "timestamp": "2026-05-12T21:38:05.926Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly specifies all required elements (est-ce que, subject \"tu\", verb \"comprendre\" in passé composé) and the task is well-defined - fill in the blank to form a proper question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778621885929-m03a9gp7",
+      "timestamp": "2026-05-12T21:38:31.298Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says to complete the question with \"est-ce que\", subject \"tu\", and verb \"comprendre\", which would produce \"Est-ce que tu as compris la leçon ?\", but the blank is positioned before \"compris\" in \"___ compris la leçon ?\", creating a mismatch between the instruction (which suggests a full question starting with \"est-ce que\") and the blank placement (which suggests filling in just the auxiliary \"as\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778621911299-kycma6rq",
+      "timestamp": "2026-05-12T21:39:57.609Z"
+    }
+  ]
+}

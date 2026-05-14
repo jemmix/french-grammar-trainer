@@ -1,0 +1,33 @@
+{
+  "cacheKey": "79f8c588e52f396a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-15-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « En ce moment, mon collègue ___ un email à son patron. »\n\nChoices:\nA. [CORRECT] envoie\nB. [WRONG] envoyait\nC. [WRONG] a envoyé\nD. [WRONG] enverrait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702247-6zxv722c"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use different tenses (imparfait, passé composé, conditionnel) that contradict \"En ce moment\" which requires présent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761453703-hkkche7o",
+      "timestamp": "2026-05-14T12:24:30.802Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't match the present moment context indicated by \"En ce moment\" - B is imparfait (past ongoing), C is passé composé (past completed), and D is conditionnel (hypothetical).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762344820-4lk0h4x7",
+      "timestamp": "2026-05-14T12:39:19.407Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses (imparfait, passé composé, conditionnel) that are incompatible with the present-time marker \"En ce moment\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763292844-v7qytfag",
+      "timestamp": "2026-05-14T12:57:30.738Z"
+    }
+  ]
+}

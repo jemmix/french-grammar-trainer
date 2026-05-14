@@ -1,0 +1,33 @@
+{
+  "cacheKey": "746c83888ccfa88e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-07-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Ils ___ nous voir ce week-end. »\n\nChoices:\nA. [CORRECT] viennent\nB. [WRONG] venaient\nC. [WRONG] viendront\nD. [WRONG] venez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760701990-pooxr5el"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use either the wrong tense (imparfait, futur) or the wrong subject person (vous instead of ils).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761034772-hs61eg7f",
+      "timestamp": "2026-05-14T12:17:25.134Z"
+    },
+    {
+      "raw": "TRUE||B is imparfait (not présent), C is futur simple (not présent), and D uses wrong person (vous instead of ils).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761998643-88u3bx50",
+      "timestamp": "2026-05-14T12:33:28.761Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use wrong tense (imparfait/future) or wrong person (2nd person instead of 3rd person) for the subject \"Ils\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762969576-eoldcl3t",
+      "timestamp": "2026-05-14T12:49:38.999Z"
+    }
+  ]
+}

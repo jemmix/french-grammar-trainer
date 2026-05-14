@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a68d9f949320ed9c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-03-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Conjuguez « attendre » au présent à la 2ème personne du singulier : « Tu ___ tes amis à la gare. »\n\nChoices:\nA. [CORRECT] attends\nB. [WRONG] attend\nC. [WRONG] attendais\nD. [WRONG] attendiez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760701860-534nlkr5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use either the wrong person (B uses 3rd person singular) or wrong tense (C and D use imparfait instead of présent).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778760810835-4hkeohfe",
+      "timestamp": "2026-05-14T12:13:55.177Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect person or tense: B is 3rd person singular, C and D use imperfect tense instead of present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761853090-u5mtqo5r",
+      "timestamp": "2026-05-14T12:31:14.922Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762854748-w38tnv3g",
+      "timestamp": "2026-05-14T12:48:03.602Z"
+    }
+  ]
+}

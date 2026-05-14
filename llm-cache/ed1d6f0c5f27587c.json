@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ed1d6f0c5f27587c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-11-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Nous _____ le cours maintenant. »\n\nChoices:\nA. [CORRECT] commençons\nB. [WRONG] commencons\nC. [WRONG] commencerons\nD. [WRONG] commencions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702110-lv0oydv8"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B lacks the cedilla (ç) making it misspelled, C is future tense, and D is imperfect tense instead of present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761237985-za8bkf8z",
+      "timestamp": "2026-05-14T12:20:49.749Z"
+    },
+    {
+      "raw": "TRUE||B is missing the cedilla on 'ç', C is future tense, D is imperfect tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762173560-ic012lh7",
+      "timestamp": "2026-05-14T12:36:20.943Z"
+    },
+    {
+      "raw": "TRUE||B is misspelled (missing cedilla), C is future tense, and D is imperfect tense, none of which match the requested present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763102693-bgjzr78y",
+      "timestamp": "2026-05-14T12:51:55.816Z"
+    }
+  ]
+}

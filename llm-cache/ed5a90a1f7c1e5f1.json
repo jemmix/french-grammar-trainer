@@ -1,0 +1,54 @@
+{
+  "cacheKey": "ed5a90a1f7c1e5f1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-05-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Tu n'___ pas de chance. »\n\nChoices:\nA. [CORRECT] as\nB. [WRONG] es\nC. [WRONG] a\nD. [WRONG] est\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760701933-b5mx30pd"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778760957069-d3ayme9w",
+      "timestamp": "2026-05-14T12:16:08.452Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly uses 2nd person singular of être instead of avoir; C incorrectly uses 3rd person singular of avoir with tu; D incorrectly uses 3rd person singular of être with tu instead of as.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761932079-p5axe9oy",
+      "timestamp": "2026-05-14T12:32:31.382Z"
+    },
+    {
+      "raw": "FALSE|B,C,D|B and D incorrectly use être instead of avoir; C uses wrong conjugation of avoir (3rd person instead of 2nd person for tu).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762927190-evk62y0l",
+      "timestamp": "2026-05-14T12:49:04.930Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B and D use être (to be) which doesn't work with de chance, and C uses wrong person (3rd instead of 2nd).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763783935-frdgb3cn",
+      "timestamp": "2026-05-14T13:03:22.758Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb forms: B and D use être instead of avoir, C uses third person singular a with second person subject Tu.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778764067903-y6qy9v08",
+      "timestamp": "2026-05-14T13:09:34.686Z"
+    },
+    {
+      "raw": "FALSE|C|The answer C (\"a\") is the 3rd person singular form of \"avoir\" used with \"tu\" (2nd person), which is grammatically incorrect; it should be \"as\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778764419455-hpfg01dy",
+      "timestamp": "2026-05-14T13:14:18.506Z"
+    }
+  ]
+}

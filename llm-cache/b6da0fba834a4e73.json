@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b6da0fba834a4e73",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-19-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle question au passé composé est au registre neutre ?\n\nChoices:\nA. [CORRECT] Est-ce que tu as compris la règle ?\nB. [WRONG] Comprenais-tu la règle ?\nC. [WRONG] Est-ce que tu as comprendre la règle ?\nD. [WRONG] As-tu compris la règle ?\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778596670968-a1ro41w4"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses imparfait instead of passé composé; C has an incorrect verb form (\"as comprendre\" should be \"as compris\"); D uses formal inversion (As-tu...) rather than neutral register (Est-ce que...).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778596670969-93ddbvhz",
+      "timestamp": "2026-05-12T14:38:26.581Z"
+    },
+    {
+      "raw": "FALSE|D|D is grammatically correct and uses passé composé, but inversion (\"As-tu...\") is formal register, not neutral (which uses \"est-ce que\" like the correct answer A).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778596706582-t87uo6u8",
+      "timestamp": "2026-05-12T14:38:47.924Z"
+    },
+    {
+      "raw": "FALSE|D|D (\"As-tu compris la règle ?\") is a valid passé composé question in neutral register using inversion, making it also correct.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778596727925-z8aaq2dd",
+      "timestamp": "2026-05-12T14:39:21.070Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "a5f92246b3b48880",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-19-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle question informelle au passé composé est correctement formée ?\n\nChoices:\nA. [CORRECT] Vous êtes rentrés tard hier ?\nB. [WRONG] Vous avez rentrés tard hier ?\nC. [WRONG] Êtes-vous rentrés tard hier ?\nD. [WRONG] Vous rentrer tard hier ?\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778598326813-90knvbtv"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B,C|B uses auxiliary \"avoir\" instead of \"être\" for this verb (rentrer uses être), C is grammatically correct but uses formal inversion instead of the requested informal register.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778598326814-sp99ybzp",
+      "timestamp": "2026-05-12T15:06:02.322Z"
+    },
+    {
+      "raw": "FALSE|C|C is grammatically correct and uses inversion, which makes it formal rather than informal, but it's not \"incorrect\" in the sense of containing grammar errors—it just doesn't match the \"informelle\" criterion of the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778598362324-gajkya10",
+      "timestamp": "2026-05-12T15:06:39.428Z"
+    }
+  ]
+}

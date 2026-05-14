@@ -1,0 +1,33 @@
+{
+  "cacheKey": "257348380dff6e74",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-04-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Vous ___ au bureau tous les jours. »\n\nChoices:\nA. [CORRECT] allez\nB. [WRONG] allons\nC. [WRONG] vas\nD. [WRONG] irez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760701882-uzw9539e"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is 1st person plural (we go), C is 2nd person singular (you go - tu), and D is future tense instead of present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778760839992-0tfx2twa",
+      "timestamp": "2026-05-14T12:14:30.793Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: \"allons\" is for \"nous,\" \"vas\" is for \"tu\" (informal), and \"irez\" is future tense not present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761865986-ldd3rvwf",
+      "timestamp": "2026-05-14T12:31:17.546Z"
+    },
+    {
+      "raw": "TRUE||B is the nous form not vous form, C is the tu form not vous form, D is not a valid present tense conjugation of aller.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762857658-ts27717x",
+      "timestamp": "2026-05-14T12:47:52.598Z"
+    }
+  ]
+}

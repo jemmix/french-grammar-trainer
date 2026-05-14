@@ -1,0 +1,54 @@
+{
+  "cacheKey": "aaca7e09053feac5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-14-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À notre époque, ils ___ souvent au restaurant le samedi. »\n\nChoices:\nA. [CORRECT] mangent\nB. [WRONG] mangeaient\nC. [WRONG] ont mangé\nD. [WRONG] manger\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702217-8wctk7fs"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses past imperfect tense when the context indicates present time, C expresses a completed past action rather than a habitual present action, and D is an unconjugated infinitive that cannot serve as the main verb with the subject \"ils\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761407254-fr1rmgmo",
+      "timestamp": "2026-05-14T12:24:20.247Z"
+    },
+    {
+      "raw": "FALSE|B|\"mangeaient\" and \"ont mangé\" could both be correct depending on whether the speaker is comparing present-day habits to past ones—while \"À notre époque\" typically suggests present tense, it can also frame a historical comparison where imperfect or past compound tenses would fit grammatically.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762334964-oh85lrob",
+      "timestamp": "2026-05-14T12:40:20.958Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses past tense contradicting the present time marker, C uses completed past tense for a habitual present action, and D is an infinitive that doesn't agree with the subject.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763357507-6djm47nh",
+      "timestamp": "2026-05-14T12:56:21.618Z"
+    },
+    {
+      "raw": "TRUE|B,C,D|B is imparfait (past habitual) but context requires present; C is passé composé (completed past) incompatible with habitual \"souvent le samedi\"; D is infinitive after a subject.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763956535-8rcs5riq",
+      "timestamp": "2026-05-14T13:12:53.156Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use inappropriate tenses or forms: B is imperfect past when present is required for \"notre époque\"; C is completed past incompatible with \"souvent\"; D is infinitive which cannot follow the subject \"ils\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778764638549-bs2wjpr7",
+      "timestamp": "2026-05-14T13:20:38.759Z"
+    },
+    {
+      "raw": "FALSE|B,C|B and C are grammatically correct conjugations (imperfect and passé composé) that create valid French sentences, though they don't fit the present tense context as well as A.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778765038112-1piupkwr",
+      "timestamp": "2026-05-14T13:25:08.347Z"
+    }
+  ]
+}

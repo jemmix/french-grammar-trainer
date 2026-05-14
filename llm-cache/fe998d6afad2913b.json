@@ -1,0 +1,47 @@
+{
+  "cacheKey": "fe998d6afad2913b",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-19-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Les questions au passé composé (est-ce que, inversion, registres)\n\nQUESTION:\nPrompt: Complétez la question négative au passé composé avec inversion du sujet « vous » et le verbe « terminer ».\nPhrase: Vous avez terminé le rapport. » → « N'___ pas terminé le rapport ?\nHint: avoir\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1778623108089-m2a36ir5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly specifies the task (complete a negative question), tense (passé composé), grammatical structure (inversion of subject \"vous\"), and the blank position in the target sentence makes it unambiguous what needs to be filled in (\"avez-vous\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778623108093-skvjm76j",
+      "timestamp": "2026-05-12T21:58:50.076Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks for inversion of the subject but the target phrase \"N'___ pas terminé le rapport ?\" doesn't show inversion, creating a contradiction between the instruction and the expected answer format.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778623130078-d4hy34r9",
+      "timestamp": "2026-05-12T21:59:04.925Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt specifies all necessary elements: the type of transformation (negative question with inversion), the tense (passé composé), the subject (vous), the verb (terminer), the starting and expected format, and provides a helpful hint about the auxiliary verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778623144926-11qlfzk9",
+      "timestamp": "2026-05-12T21:59:20.437Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\n\nREASON: The prompt clearly specifies the exact grammatical transformation needed (negative question in passé composé with subject inversion), and the blank correctly expects \"avez-vous\" to complete \"N'avez-vous pas terminé le rapport ?\" — the hint \"avoir\" and the existing \"N'\" make the expected answer unambiguous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778623160437-cd13k890",
+      "timestamp": "2026-05-12T22:00:03.861Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nREASON: The prompt requests \"inversion du sujet\" but the example shows no inversion (blank in wrong position for \"avez-vous\"), making it impossible to determine where the answer should go or what form is expected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778623203862-gdzx2sng",
+      "timestamp": "2026-05-12T22:00:34.413Z"
+    }
+  ]
+}

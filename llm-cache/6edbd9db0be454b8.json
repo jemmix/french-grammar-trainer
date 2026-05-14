@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6edbd9db0be454b8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-12-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Ils ___ sur les chaises. » (verbe : s'asseoir — conjugaison moderne)\n\nChoices:\nA. [CORRECT] s'assoient\nB. [WRONG] se assoient\nC. [WRONG] s'assoit\nD. [WRONG] nous asseyons\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702146-lv5bpjp0"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B lacks elision (must be s' before a vowel), C uses singular agreement instead of plural for \"Ils\", D uses the wrong person (nous instead of ils).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761309940-g5yost2y",
+      "timestamp": "2026-05-14T12:22:42.347Z"
+    },
+    {
+      "raw": "TRUE||B uses the unelided form \"se\" before a vowel instead of \"s'\"; C is singular instead of plural for \"Ils\"; D is 1st person plural and uses traditional conjugation instead of modern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762256830-628y9qvw",
+      "timestamp": "2026-05-14T12:37:54.284Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for the subject \"ils\" in the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763199163-gnl87aj4",
+      "timestamp": "2026-05-14T12:53:31.292Z"
+    }
+  ]
+}

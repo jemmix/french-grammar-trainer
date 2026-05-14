@@ -1,0 +1,47 @@
+{
+  "cacheKey": "140e0db73fbf5ca0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-15-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Regarde ! Les nuages ___ le soleil. »\n\nChoices:\nA. [CORRECT] cachent\nB. [WRONG] cacheraient\nC. [WRONG] ont caché\nD. [WRONG] cachaient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702247-6kd86xdj"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't match the immediate present context \"Regarde !\" - B is conditional (hypothetical), C is passé composé (past), D is imparfait (ongoing past).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761460248-q10o7i10",
+      "timestamp": "2026-05-14T12:25:11.023Z"
+    },
+    {
+      "raw": "FALSE|C|C (ont caché) could be correct in contexts where \"Regarde!\" points out that the sun has just been hidden by the clouds, making the question ambiguous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762375674-xpy7fgtm",
+      "timestamp": "2026-05-14T12:40:00.915Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't fit the present observation context of \"Regarde !\" (imperative indicating right now).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763336454-zqygmhvm",
+      "timestamp": "2026-05-14T12:55:59.093Z"
+    },
+    {
+      "raw": "TRUE||The \"Regarde !\" context requires present tense; B (conditional) and D (imparfait) indicate non-present situations, and C (passé composé) conflicts with the immediate observation frame.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763948998-bdal0rl9",
+      "timestamp": "2026-05-14T13:06:23.760Z"
+    },
+    {
+      "raw": "FALSE|C|B and D use wrong tenses for the context, but C (ont caché - \"have hidden\") is grammatically correct and could reasonably describe pointing out a completed action/result, even if present tense is more natural.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778764211761-5q344ln9",
+      "timestamp": "2026-05-14T13:16:39.434Z"
+    }
+  ]
+}

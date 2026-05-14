@@ -1,0 +1,33 @@
+{
+  "cacheKey": "70227513fad2de64",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-07-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Tu ___ souvent à la fête avec nous. »\n\nChoices:\nA. [CORRECT] viens\nB. [WRONG] venais\nC. [WRONG] viendras\nD. [WRONG] vienne\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760701996-jp0xrdt7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are in non-present tenses (B is imparfait, C is futur simple, D is subjonctif with incorrect person).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761046176-p7ml4kai",
+      "timestamp": "2026-05-14T12:17:58.095Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are in incorrect tenses (imparfait, futur simple, subjonctif) when the question explicitly requests the présent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762011652-egwtvge9",
+      "timestamp": "2026-05-14T12:33:46.563Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different verb tenses (B imparfait, C futur simple) or moods (D subjunctive) instead of the required présent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762981150-208kdflj",
+      "timestamp": "2026-05-14T12:50:15.628Z"
+    }
+  ]
+}

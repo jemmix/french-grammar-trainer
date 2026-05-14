@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a05a0c6747d0aa85",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-15-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Regarde ! Tu ___ ma question. »\n\nChoices:\nA. [CORRECT] écoutes\nB. [WRONG] écouterais\nC. [WRONG] écoutais\nD. [WRONG] as écouté\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702248-7ntv9bdl"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is conditional (hypothetical) not present; C is imperfect (past) not present; D is passé composé (completed action) not present ongoing action indicated by \"Regarde!\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761464227-smjkiutl",
+      "timestamp": "2026-05-14T12:25:09.817Z"
+    },
+    {
+      "raw": "TRUE|B,C,D|B uses conditional which would mean \"you would listen\", C uses imperfect meaning \"you were listening\", D uses passé composé meaning \"you have listened\" - none fit the present moment context established by \"Regarde !\" pointing to an ongoing action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762374547-958sqv9g",
+      "timestamp": "2026-05-14T12:40:11.393Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses (conditional, imparfait, passé composé) that don't fit the present context indicated by \"Regarde !\" which requires the present indicative \"écoutes.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763351593-xb8fdn6e",
+      "timestamp": "2026-05-14T12:56:28.596Z"
+    }
+  ]
+}

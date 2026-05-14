@@ -1,0 +1,33 @@
+{
+  "cacheKey": "df37c3aa7fad33e2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-19-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle est la forme inversée correcte de « Vous avez compris. » ?\n\nChoices:\nA. [CORRECT] Avez-vous compris ?\nB. [WRONG] Avez vous compris ?\nC. [WRONG] Compris avez-vous ?\nD. [WRONG] Vous-avez compris ?\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778588189948-11ojc5op"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778588189956-vq05iar9",
+      "timestamp": "2026-05-12T12:16:50.571Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is missing the required hyphen between \"avez\" and \"vous\", C has incorrect word order with the past participle first, and D is not a proper inversion with the hyphen in the wrong place.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778588514628-jk4da2n3",
+      "timestamp": "2026-05-12T12:22:36.401Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors (missing hyphen in B, incorrect word order in C, lack of inversion and wrong hyphen placement in D).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778589113805-pf0157tu",
+      "timestamp": "2026-05-12T12:32:38.485Z"
+    }
+  ]
+}

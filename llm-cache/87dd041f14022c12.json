@@ -1,0 +1,33 @@
+{
+  "cacheKey": "87dd041f14022c12",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-19-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle question au passé composé est correctement formée avec inversion pour « vous » ?\n\nChoices:\nA. [CORRECT] Avez-vous envoyé le courriel ?\nB. [WRONG] Avez vous envoyé le courriel ?\nC. [WRONG] As-tu envoyé le courriel ?\nD. [WRONG] Envoyé avez-vous le courriel ?\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778589961170-3qk6pk19"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B lacks the required hyphen in standard written inversion; C uses \"tu\" instead of \"vous\"; D has incorrect word order.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778590080433-j7fxn7eh",
+      "timestamp": "2026-05-12T12:48:34.035Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B lacks the required hyphen in inversion, C uses the wrong pronoun (tu instead of vous), and D has incorrect word order with the participle placed before the auxiliary.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778590359040-87jzxziv",
+      "timestamp": "2026-05-12T12:59:20.958Z"
+    },
+    {
+      "raw": "TRUE||B lacks the required hyphen in inversion, C uses \"tu\" instead of the required \"vous\", and D has incorrect word order with the participle before the auxiliary.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778591071699-9ffnpmg0",
+      "timestamp": "2026-05-12T13:05:00.970Z"
+    }
+  ]
+}

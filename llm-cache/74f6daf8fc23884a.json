@@ -1,0 +1,26 @@
+{
+  "cacheKey": "74f6daf8fc23884a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-19-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle série présente les trois registres d'une même question au passé composé, du plus informel au plus formel ?\n\nChoices:\nA. [CORRECT] « Tu as fini ? » / « Est-ce que tu as fini ? » / « As-tu fini ? »\nB. [WRONG] « As-tu fini ? » / « Est-ce que tu as fini ? » / « Tu as fini ? »\nC. [WRONG] « Tu as fini ? » / « As-tu fini ? » / « Est-ce que tu as fini ? »\nD. [WRONG] « As-tu fini ? » / « Tu as fini ? » / « Est-ce que tu as fini ? »\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778588189950-ukgijm13"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to present the correct informal (intonation) → standard (est-ce que) → formal (inversion) order.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778588370540-a090fqey",
+      "timestamp": "2026-05-12T12:19:48.783Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers have incorrect ordering: B is reversed (formal to informal), C jumps from informal to formal then back to intermediate, and D has no logical progression.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778588869975-c1sh09n3",
+      "timestamp": "2026-05-12T12:29:12.505Z"
+    }
+  ]
+}

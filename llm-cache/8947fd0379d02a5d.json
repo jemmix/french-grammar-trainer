@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8947fd0379d02a5d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-18-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez la suite au présent de narration : « En 1789, le peuple de Paris prend la Bastille, ____ les prisonniers et célèbre la victoire. »\n\nChoices:\nA. [CORRECT] libère\nB. [WRONG] libéra\nC. [WRONG] libérait\nD. [WRONG] libérera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702325-zp5qsb9l"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for présent de narration: B is passé simple, C is imparfait, D is futur simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761594825-9fkj8dvn",
+      "timestamp": "2026-05-14T12:26:55.636Z"
+    },
+    {
+      "raw": "TRUE||The wrong answers use passé simple, imparfait, and futur simple, which are inconsistent with the présent de narration style requested and the surrounding present-tense verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762500271-cm68ahfq",
+      "timestamp": "2026-05-14T12:42:03.189Z"
+    },
+    {
+      "raw": "TRUE||The question specifies présent de narration, so only present tense works: libéra (B) is passé simple, libérait (C) is imparfait which describes ongoing states not punctual actions, and libérera (D) is future tense inappropriate for a historical event already completed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763461096-b4z4hf1p",
+      "timestamp": "2026-05-14T12:58:32.351Z"
+    }
+  ]
+}

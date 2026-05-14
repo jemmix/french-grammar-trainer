@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4c95a128c075aec9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-02-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je ___ mes devoirs avant le dîner. »\n\nChoices:\nA. [CORRECT] finis\nB. [WRONG] fini\nC. [WRONG] finisse\nD. [WRONG] finie\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760701804-sp8vkeys"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"fini\" is a past participle, \"finisse\" is subjunctive, and \"finie\" is feminine; the correct present indicative form for \"je\" is \"finis\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778760723072-5vsk7frd",
+      "timestamp": "2026-05-14T12:12:39.030Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb forms (B is past participle, C is subjunctive, D is feminine past participle) instead of the required present indicative conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761800561-xe8punkn",
+      "timestamp": "2026-05-14T12:30:12.404Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B is the past participle (needs auxiliary), C is subjunctive (inappropriate for this declarative sentence), and D is the feminine past participle (wrong gender and tense).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762782292-x4ighi2d",
+      "timestamp": "2026-05-14T12:46:34.911Z"
+    }
+  ]
+}

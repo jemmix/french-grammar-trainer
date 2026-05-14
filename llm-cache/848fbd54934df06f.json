@@ -1,0 +1,33 @@
+{
+  "cacheKey": "848fbd54934df06f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-19-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-19 - Les questions au passé composé (est-ce que, inversion, registres)\n\nQUESTION:\nType: Input\nPrompt: Complétez la question au passé composé avec inversion en reprenant le sujet « Mes frères » par un pronom inversé. Le verbe est « rentrer ».\nPhrase: Mes frères ___ rentrés de voyage ?\nCorrect Answer: sont-ils\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778623485664-jlcfv0an"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires applying the inversion structure specifically to form a question in the passé composé, which is the core skill of the stated rule about question formation with est-ce que, inversion, and registers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778623485666-49v7oabh",
+      "timestamp": "2026-05-12T22:05:05.236Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of passé composé formation with être, inversion structure (verb + hyphen + subject pronoun), and subject pronoun agreement to correctly produce \"sont-ils.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778623505236-g1x6zzi7",
+      "timestamp": "2026-05-12T22:05:18.296Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests forming questions in the passé composé using inversion, requiring the student to replace \"Mes frères\" with the pronoun \"ils\", identify the auxiliary \"sont\" from être, and apply inversion to produce \"sont-ils\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778623518296-1qx567km",
+      "timestamp": "2026-05-12T22:11:16.804Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3824487d08325a10",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-19-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle question au passé composé correspond au registre informel ?\n\nChoices:\nA. [CORRECT] Il est parti sans dire au revoir ?\nB. [WRONG] Est-ce qu'il a parti sans dire au revoir ?\nC. [WRONG] Est-il parti sans dire au revoir ?\nD. [WRONG] Il partait sans dire au revoir ?\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778597633107-zh628umx"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B|B uses the incorrect auxiliary \"a\" instead of \"est\" for \"partir\" in passé composé, making it grammatically wrong.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778597633108-bkwuxuzd",
+      "timestamp": "2026-05-12T14:54:17.193Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly uses \"a parti\" instead of \"est parti\"; C is formal inversion, not informal; D uses imparfait instead of passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778597657195-9zvxhbzv",
+      "timestamp": "2026-05-12T14:55:13.835Z"
+    },
+    {
+      "raw": "FALSE|C|While B uses the wrong auxiliary (avoir instead of être for partir) and D uses the wrong tense (imparfait instead of passé composé), C is grammatically correct and uses passé composé—it's only wrong because it uses formal inversion (est-il...) rather than the informal word order, but it could be correct in a different context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778597713836-qzl7pf4n",
+      "timestamp": "2026-05-12T14:55:34.501Z"
+    }
+  ]
+}

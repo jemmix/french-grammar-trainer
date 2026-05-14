@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2ebc812a1ca3562d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-11-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Nous _____ l'anglais ensemble. »\n\nChoices:\nA. [CORRECT] prononçons\nB. [WRONG] prononcons\nC. [WRONG] prononçions\nD. [WRONG] prononcez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702124-ipium8bb"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is incorrect due to missing cedilla (ç) required before \"o\" to maintain pronunciation; C is the imperfect form, not present tense as requested; D is the \"vous\" conjugation, not the \"nous\" form needed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761278428-x8xxt0c6",
+      "timestamp": "2026-05-14T12:22:14.040Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B lacks the required cedilla (ç), C uses imperfect subjunctive instead of present indicative, and D uses the wrong person (vous instead of nous).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762232700-62ht7e00",
+      "timestamp": "2026-05-14T12:37:46.546Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B misses the required cedilla on ç, C uses the imparfait instead of présent, and D is the vous form instead of nous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763189295-iow8hlvq",
+      "timestamp": "2026-05-14T12:53:19.163Z"
+    }
+  ]
+}

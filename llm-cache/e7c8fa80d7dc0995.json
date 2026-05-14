@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e7c8fa80d7dc0995",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-11-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Conjuguez « prononcer » au présent : « Nous _____ chaque mot avec soin. »\n\nChoices:\nA. [CORRECT] prononçons\nB. [WRONG] prononcons\nC. [WRONG] prononcions\nD. [WRONG] prononcerons\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702120-5fzkom0o"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B lacks the cedilla on 'c' (prononcons vs prononçons), C uses imparfait instead of présent, and D uses futur simple instead of présent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761261072-4fsupkdr",
+      "timestamp": "2026-05-14T12:22:25.531Z"
+    },
+    {
+      "raw": "TRUE||B lacks required cedilla (ç), C is imparfait not présent, D is future tense not présent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762242096-5bim2cts",
+      "timestamp": "2026-05-14T12:37:36.634Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B lacks the required cedilla (ç), C is the imparfait form not présent, and D is the futur simple form not présent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763176761-9ibvuzb9",
+      "timestamp": "2026-05-14T12:53:09.509Z"
+    }
+  ]
+}

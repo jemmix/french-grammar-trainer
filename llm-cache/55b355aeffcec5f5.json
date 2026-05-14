@@ -1,0 +1,33 @@
+{
+  "cacheKey": "55b355aeffcec5f5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-07-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Nous ___ le bus chaque matin pour aller au travail. »\n\nChoices:\nA. [CORRECT] prenons\nB. [WRONG] prennent\nC. [WRONG] preniez\nD. [WRONG] prenez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760701987-8sgiwi0y"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"prennent\" is 3rd person plural, \"preniez\" is not a valid conjugation (and would be imperfect even with correct spelling), \"prenez\" is 2nd person plural — none match \"nous\" in present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761028762-3ymt74jb",
+      "timestamp": "2026-05-14T12:17:33.760Z"
+    },
+    {
+      "raw": "TRUE||All three wrong answers use incorrect subject-verb agreement: B is 3rd person plural, D is 2nd person plural, and C is not a valid present tense form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762011030-o56sx3pf",
+      "timestamp": "2026-05-14T12:33:49.961Z"
+    },
+    {
+      "raw": "TRUE||B is the ils/elles form (3rd person plural), C doesn't exist in présent (it's imparfait), and D is the vous form (2nd person plural) — none match the required nous form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762993816-or086hec",
+      "timestamp": "2026-05-14T12:50:11.745Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d3ff88c9b897dd04",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-18-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez la suite au présent de narration : « Hier, le médecin ouvre sa trousse, ____ le patient et prescrit un traitement. »\n\nChoices:\nA. [CORRECT] examine\nB. [WRONG] examina\nC. [WRONG] a examiné\nD. [WRONG] examinera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702345-jp9e5nkh"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are in different tenses (passé simple, passé composé, futur simple) rather than the required présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761635740-69pxl0zg",
+      "timestamp": "2026-05-14T12:27:29.500Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that break the narrative present style: B is passé simple, C is passé composé, D is futur simple, none of which match the requested \"présent de narration\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762534608-9x8srlnq",
+      "timestamp": "2026-05-14T12:42:31.910Z"
+    },
+    {
+      "raw": "TRUE||B uses passé simple (past), C uses passé composé (past), and D uses futur (future); none of these tenses are acceptable when the question explicitly requests the présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763489763-oilybnhj",
+      "timestamp": "2026-05-14T13:03:55.529Z"
+    }
+  ]
+}

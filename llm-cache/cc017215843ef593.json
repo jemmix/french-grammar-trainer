@@ -1,0 +1,47 @@
+{
+  "cacheKey": "cc017215843ef593",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-19-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-19 - Les questions au passé composé (est-ce que, inversion, registres)\n\nQUESTION:\nType: Input\nPrompt: Complétez la question au passé composé avec « est-ce que », le sujet « tu » et le verbe « comprendre ».\nPhrase: ___ compris la leçon ?\nCorrect Answer: Est-ce que tu as\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778621854969-jyjuqttc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests passé composé conjugation (choosing \"as\" as the auxiliary for \"tu\") rather than question formation techniques, since the prompt explicitly tells the student to use \"est-ce que\" and provides the structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778621854971-62nlz4op",
+      "timestamp": "2026-05-12T21:38:06.614Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires combining the \"est-ce que\" structure with passé composé conjugation of \"comprendre\" with \"tu\", directly testing the rule's core concept of forming passé composé questions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778621886615-o1hu23s7",
+      "timestamp": "2026-05-12T21:38:30.471Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires constructing a passé composé question using \"est-ce que\" structure, which directly tests the rule about question formation in passé composé with different registers and structures.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778621910472-426gwoyc",
+      "timestamp": "2026-05-12T21:38:59.658Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires constructing a passé composé question with \"est-ce que,\" which is the exact skill stated in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778621939659-vwqbm74r",
+      "timestamp": "2026-05-12T21:39:28.824Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the learner to use \"est-ce que\" and provides the subject \"tu\", so they only need to fill in the auxiliary verb \"as\" - this tests auxiliary verb knowledge, not how to form questions in passé composé with est-ceque/inversion/registers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778621968826-spyi9yjs",
+      "timestamp": "2026-05-12T21:40:13.713Z"
+    }
+  ]
+}

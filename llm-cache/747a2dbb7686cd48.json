@@ -1,0 +1,40 @@
+{
+  "cacheKey": "747a2dbb7686cd48",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-03-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Conjuguez « défendre » à la 3ème personne du singulier : « Il ___ ses enfants. »\n\nChoices:\nA. [CORRECT] défend\nB. [WRONG] défends\nC. [WRONG] défendait\nD. [WRONG] défendre\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760701856-qnj9af2x"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|C|\"défendait\" is grammatically correct as the imperfect tense \"Il défendait ses enfants\" (He was defending his children).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778760805347-9ato91yu",
+      "timestamp": "2026-05-14T12:13:45.107Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the wrong person, tense, or form for the requested conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761843675-75lzc6d7",
+      "timestamp": "2026-05-14T12:30:53.089Z"
+    },
+    {
+      "raw": "TRUE||B is 1st person singular, C is imperfect tense (question expects présent de l'indicatif), D is infinitive form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762826789-dyx6kgp3",
+      "timestamp": "2026-05-14T12:47:32.355Z"
+    },
+    {
+      "raw": "FALSE|C|C (\"défendait\") is a valid 3rd person singular conjugation in the imperfect tense, making the question ambiguous since it doesn't specify the tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763741477-hvg13slq",
+      "timestamp": "2026-05-14T13:02:51.552Z"
+    }
+  ]
+}

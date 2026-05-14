@@ -1,0 +1,33 @@
+{
+  "cacheKey": "764933c5a9b007dc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-11-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Conjuguez « manger » au présent : « Nous _____ au restaurant ce soir. »\n\nChoices:\nA. [CORRECT] mangeons\nB. [WRONG] mangons\nC. [WRONG] mangez\nD. [WRONG] mangerons\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702116-7a330qts"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B incorrectly omits the 'e' after 'mang', C is the 'vous' form instead of 'nous', and D is future tense instead of present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761249749-x9r94qfc",
+      "timestamp": "2026-05-14T12:21:03.699Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762179181-dka4707j",
+      "timestamp": "2026-05-14T12:36:37.570Z"
+    },
+    {
+      "raw": "TRUE||B is misspelled (should be mangeons), C is the vous form, D is future tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763115817-0ltrfkgu",
+      "timestamp": "2026-05-14T12:52:44.658Z"
+    }
+  ]
+}

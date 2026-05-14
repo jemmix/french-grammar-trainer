@@ -1,0 +1,33 @@
+{
+  "cacheKey": "589a54649e0dfcaa",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-14-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À notre époque, chaque matin, il ___ à 6 heures. »\n\nChoices:\nA. [CORRECT] se lève\nB. [WRONG] se levait\nC. [WRONG] se lèverait\nD. [WRONG] se leva\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702216-v15s1kvb"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use past tenses or conditional mood, which contradict the present-time context of \"À notre époque\" and the habitual nature of \"chaque matin\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761400387-fpf26f0j",
+      "timestamp": "2026-05-14T12:25:54.600Z"
+    },
+    {
+      "raw": "TRUE||B is imparfait (past habitual) but \"À notre époque\" indicates present time; C is conditional which requires a hypothetical context not present; D is passé simple (completed past action) which conflicts with the recurring present context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762429631-3l4ahryp",
+      "timestamp": "2026-05-14T12:43:13.226Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use past/conditional tenses which don't match the present-day habitual context established by \"À notre époque\" and \"chaque matin\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763550571-gszbfn4f",
+      "timestamp": "2026-05-14T12:59:26.265Z"
+    }
+  ]
+}

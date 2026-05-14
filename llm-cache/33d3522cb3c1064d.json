@@ -1,0 +1,33 @@
+{
+  "cacheKey": "33d3522cb3c1064d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-17-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elles _____ au même endroit depuis qu'elles se sont rencontrées. »\n\nChoices:\nA. [CORRECT] travaillent\nB. [WRONG] travailleraient\nC. [WRONG] travaillât\nD. [WRONG] ont travaillé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702308-xd7dzux7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses incompatible with \"depuis\" for an action continuing from the past: conditional (hypothetical), imperfect subjunctive (rare, not for this context), and passé composé (action completed, not ongoing).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761573222-fi1lieic",
+      "timestamp": "2026-05-14T12:26:28.891Z"
+    },
+    {
+      "raw": "TRUE||The conditional (B) is incorrect with \"depuis\"; imperfect subjunctive (C) is wrong person/number and archaic; passé composé (D) contradicts the ongoing action of \"depuis\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762465628-j4gubkbx",
+      "timestamp": "2026-05-14T12:41:51.326Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors - B uses conditional for an ongoing factual situation, C is singular with a plural subject and uses an inappropriate literary subjunctive, and D uses a completed past tense when the action continues to the present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763437470-mdy9wgtt",
+      "timestamp": "2026-05-14T12:57:43.660Z"
+    }
+  ]
+}

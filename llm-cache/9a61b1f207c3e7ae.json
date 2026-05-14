@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9a61b1f207c3e7ae",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-04-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Je ___ à l'école. »\n\nChoices:\nA. [CORRECT] vais\nB. [WRONG] vas\nC. [WRONG] vont\nD. [WRONG] va\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760701876-wcqvfqvi"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All three wrong answers use incorrect verb conjugations for the first person singular subject \"Je\": vas is 2nd person singular, vont is 3rd person plural, and va is 3rd person singular.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778760827984-41yqxhd1",
+      "timestamp": "2026-05-14T12:18:32.397Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use conjugations that don't agree with the subject \"Je\" (1st person singular).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762050146-33hipkjb",
+      "timestamp": "2026-05-14T12:34:38.530Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect conjugations - vas is for \"tu\", vont is for \"ils/elles\", and va is for \"il/elle/on\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763022298-dujwmbuk",
+      "timestamp": "2026-05-14T12:50:32.613Z"
+    }
+  ]
+}

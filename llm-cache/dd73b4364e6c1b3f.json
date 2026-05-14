@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dd73b4364e6c1b3f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-04-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Nous ___ un email à nos collègues. »\n\nChoices:\nA. [CORRECT] envoyons\nB. [WRONG] envoions\nC. [WRONG] envoyez\nD. [WRONG] enverrons\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760701887-snus3dxh"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B has a spelling error (missing 'y'), C is the 'vous' conjugation not 'nous', and D is future tense not present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778760863366-f7tvu4mh",
+      "timestamp": "2026-05-14T12:14:36.167Z"
+    },
+    {
+      "raw": "TRUE||B is a misspelling (correct is envoyons), C uses the vous form instead of nous, D is future tense instead of present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761867972-mqvip57w",
+      "timestamp": "2026-05-14T12:31:24.023Z"
+    },
+    {
+      "raw": "TRUE||B is a spelling error (missing 'y'), C is the wrong person (vous instead of nous), and D is the wrong tense (futur simple instead of présent).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762864353-owd7s3wn",
+      "timestamp": "2026-05-14T12:48:30.130Z"
+    }
+  ]
+}

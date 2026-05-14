@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b3eb257e4e4748cc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-08-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Conjuguez le verbe « croire » au présent : « Tu ___ que c'est vrai ? »\n\nChoices:\nA. [CORRECT] crois\nB. [WRONG] croit\nC. [WRONG] croyons\nD. [WRONG] croyez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702012-y9dvch6g"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are conjugated for different persons: croit (il/elle), croyons (nous), and croyez (vous) instead of the required second person singular form for tu.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761079164-jepcqpgu",
+      "timestamp": "2026-05-14T12:18:22.468Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are conjugated for different subjects (il/elle for B, nous for C, vous for D) rather than the required \"tu\" form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762035798-4175kgn4",
+      "timestamp": "2026-05-14T12:34:10.145Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are conjugations for different persons (il/elle, nous, vous) rather than tu.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763013992-5j57tas9",
+      "timestamp": "2026-05-14T12:50:24.811Z"
+    }
+  ]
+}

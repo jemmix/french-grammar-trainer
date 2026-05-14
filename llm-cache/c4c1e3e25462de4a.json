@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c4c1e3e25462de4a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-01-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Nous ___ des vacances en été. »\n\nChoices:\nA. [CORRECT] profitons\nB. [WRONG] profite\nC. [WRONG] profitent\nD. [WRONG] profitais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760701786-8c2f3hrn"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: \"profite\" is third person singular, \"profitent\" is third person plural, and \"profitais\" is first person singular imperfect tense—none match the first person plural present tense required for \"nous.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778760702445-1am72g92",
+      "timestamp": "2026-05-14T12:16:35.994Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect person/number or tense for \"nous\" in the present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761947817-t8ky1750",
+      "timestamp": "2026-05-14T12:33:15.817Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B and C use wrong person/number conjugations, D is in the imparfait instead of the présent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762957730-2lvug19a",
+      "timestamp": "2026-05-14T12:49:32.652Z"
+    }
+  ]
+}

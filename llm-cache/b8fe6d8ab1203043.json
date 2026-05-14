@@ -1,0 +1,40 @@
+{
+  "cacheKey": "b8fe6d8ab1203043",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-18-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez la suite au présent de narration : « Hier soir, un incendie se déclare dans l'immeuble, ____ trois étages et provoque l'évacuation. »\n\nChoices:\nA. [CORRECT] ravage\nB. [WRONG] ravagea\nC. [WRONG] ravageait\nD. [WRONG] ravagera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702327-wtzuaieb"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses passé simple instead of present, C uses imparfait which breaks the parallel narrative sequence, D uses futur simple which contradicts the past temporal marker \"Hier soir.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761599742-asrbwmv6",
+      "timestamp": "2026-05-14T12:27:02.186Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers break the narrative present sequence by using past or future tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762507327-j3t1fmqb",
+      "timestamp": "2026-05-14T12:46:57.211Z"
+    },
+    {
+      "raw": "FALSE|B|While ravagea is grammatically correct as passé simple, the question asks for présent de narration and the surrounding verbs \"se déclare\" and \"provoque\" establish that tense pattern; ravagea breaks narrative consistency even though it could work if the entire sentence used passé simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763726221-ba82ir94",
+      "timestamp": "2026-05-14T13:03:45.038Z"
+    },
+    {
+      "raw": "FALSE|B|B uses passé simple, which is grammatically correct for historical narrative but does not fulfill the question's specific requirement for présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778764081668-u7dqu21u",
+      "timestamp": "2026-05-14T13:14:09.998Z"
+    }
+  ]
+}

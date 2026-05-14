@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2b08348e0ef54f48",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-08-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Conjuguez le verbe « voir » au présent : « Elle ___ ses amies chaque jour. »\n\nChoices:\nA. [CORRECT] voit\nB. [WRONG] voyons\nC. [WRONG] voient\nD. [WRONG] voyez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702028-i4867ae2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are conjugations for different grammatical persons (nous, vous, ils/elles) and do not match the 3rd person singular subject \"elle\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761111616-245iq7fe",
+      "timestamp": "2026-05-14T12:23:43.139Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use verb forms (voyons, voient, voyez) that don't agree with the third person singular subject \"Elle\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762303237-svmm16qj",
+      "timestamp": "2026-05-14T12:38:38.747Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use conjugations for different subjects (nous, elles, vous) rather than the correct third-person singular form for \"elle\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763236378-edeebcic",
+      "timestamp": "2026-05-14T12:54:14.936Z"
+    }
+  ]
+}

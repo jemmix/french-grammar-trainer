@@ -1,0 +1,47 @@
+{
+  "cacheKey": "6a3be3ebfefd3163",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-19-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez la question négative au passé composé avec inversion du sujet « tu » : « N'___ pas envoyé la lettre ? »\n\nChoices:\nA. [CORRECT] as-tu\nB. [WRONG] as tu\nC. [WRONG] es-tu\nD. [WRONG] a-t-il\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778589961170-3k7u924f"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B|B lacks the required hyphen between \"as\" and \"tu\" in inversion (must be \"as-tu\", not \"as tu\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778590149499-cnjukamn",
+      "timestamp": "2026-05-12T12:49:31.647Z"
+    },
+    {
+      "raw": "TRUE||B lacks required elision after inversion; C uses wrong auxiliary être instead of avoir; D uses wrong subject il instead of tu.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778590448954-2zz3qv2y",
+      "timestamp": "2026-05-12T12:59:41.860Z"
+    },
+    {
+      "raw": "TRUE||B is missing the required hyphen for inversion; C uses être instead of avoir as the auxiliary; D uses the wrong subject pronoun (il instead of tu).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778591072249-wc9stfao",
+      "timestamp": "2026-05-12T13:05:04.483Z"
+    },
+    {
+      "raw": "TRUE||B lacks the hyphen required for inversion, C uses the wrong auxiliary verb \"être\" instead of \"avoir\", and D uses the wrong subject \"il\" instead of the specified \"tu\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778592671266-rzucxu2e",
+      "timestamp": "2026-05-12T13:32:11.751Z"
+    },
+    {
+      "raw": "FALSE|B|B is missing the required hyphen for inversion (as tu → as-tu), a mandatory grammatical rule in formal French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778592765873-auxx54ni",
+      "timestamp": "2026-05-12T13:33:18.751Z"
+    }
+  ]
+}

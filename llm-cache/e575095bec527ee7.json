@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e575095bec527ee7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-13-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Mes parents ___ tous les soirs. » (se téléphoner, action mutuelle)\n\nChoices:\nA. [CORRECT] se téléphonent\nB. [WRONG] téléphonent\nC. [WRONG] se téléphone\nD. [WRONG] téléphonons\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702175-e8lrfbtq"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B|B is grammatically correct as a simple verb form, though it loses the reciprocal meaning specified by the hint \"(action mutuelle)\"; C and D are clearly incorrect due to wrong person/number agreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761346223-so3yw5bx",
+      "timestamp": "2026-05-14T12:23:00.954Z"
+    },
+    {
+      "raw": "FALSE|B|B could be grammatically correct if the context meant \"My parents call [someone else] every evening\" rather than the specified mutual action \"se téléphoner\" (to call each other), though it lacks the reflexive construction the question explicitly requires.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762274284-ts7gy708",
+      "timestamp": "2026-05-14T12:38:14.701Z"
+    }
+  ]
+}

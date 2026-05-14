@@ -1,0 +1,33 @@
+{
+  "cacheKey": "63793783d195b700",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-08-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je ___ le ciel étoilé depuis mon balcon. »\n\nChoices:\nA. [CORRECT] vois\nB. [WRONG] voyez\nC. [WRONG] voyons\nD. [WRONG] crois\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702026-4fq1sb0b"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B and C use wrong verb conjugations (voyez=vous, voyons=nous) for the subject \"Je\"; D is semantically incorrect as \"crois\" means \"I believe\" not \"I see\" and doesn't fit the context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761110055-wq2vpkn0",
+      "timestamp": "2026-05-14T12:19:09.305Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B is second person, C is first person plural, D uses the wrong verb \"croire\" instead of \"voir\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762100608-tqsp1lqm",
+      "timestamp": "2026-05-14T12:36:19.180Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B and C use wrong conjugations for \"je\" (vous/nous forms), and D uses a semantically inappropriate verb (\"croire\" instead of \"voir\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763100189-hd5wiqiu",
+      "timestamp": "2026-05-14T12:51:52.568Z"
+    }
+  ]
+}

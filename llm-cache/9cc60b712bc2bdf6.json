@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9cc60b712bc2bdf6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-19-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-19 - Les questions au passé composé (est-ce que, inversion, registres)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle question informelle au passé composé est correctement formée ?\nChoices:\nA. [CORRECT] Vous êtes rentrés tard hier ?\nB. Vous avez rentrés tard hier ?\nC. Êtes-vous rentrés tard hier ?\nD. Vous rentrer tard hier ?\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778598326813-rnaulu4x"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests auxiliary verb selection (être vs. avoir) for \"rentrer\" rather than question formation methods — the correct answer can be identified by eliminating the grammatically incorrect auxiliary in choice B, and the informal vs. formal distinction is tested only secondarily.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778598326816-1sgtdrq3",
+      "timestamp": "2026-05-12T15:06:14.302Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the informal register of passé composé question formation, which is one of the three key registers (est-ce que, inversion, intonation) specified in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778598374302-gw1v3677",
+      "timestamp": "2026-05-12T15:06:38.358Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the \"registres\" aspect of the rule by requiring the learner to identify an informal question form in passé composé, where the correct answer uses intonation alone without inversion or est-ce que.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778598398359-9hl8dpmc",
+      "timestamp": "2026-05-12T15:06:59.491Z"
+    }
+  ]
+}

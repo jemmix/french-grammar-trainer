@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b700330e5f569f94",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-15-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Regarde ! Mon ami ___ une maison neuve. »\n\nChoices:\nA. [CORRECT] construit\nB. [WRONG] construisait\nC. [WRONG] a construit\nD. [WRONG] construirait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702249-36azcyld"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is incorrect because \"Regarde !\" indicates present action, not past ongoing (imparfait); C is incorrect because passé composé expresses completed past action; D is incorrect because conditionnel expresses hypothetical situations, not real actions being observed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761465291-0vv86l10",
+      "timestamp": "2026-05-14T12:24:48.415Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses (imparfait, passé composé, conditionnel) that don't match the present context of \"Regarde !\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762362765-lmh58sta",
+      "timestamp": "2026-05-14T12:39:34.480Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't fit the immediate present context \"Regarde !\": B is imperfect (past), C is passé composé (completed action), D is conditional (hypothetical).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763310513-mpvuppjh",
+      "timestamp": "2026-05-14T12:55:22.451Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "895bfe6f5ab183ad",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-19-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel verbe impersonnel convient au présent dans cette phrase ? « Il ___ d'un malentendu, ne t'inquiète pas. »\n\nChoices:\nA. [CORRECT] s'agit\nB. [WRONG] pleut\nC. [WRONG] faut\nD. [WRONG] neige\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702368-j8ysy6f8"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are semantically incorrect: pleut/neige only describe weather, and faut never takes de as a preposition.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761663156-wkpgk1gl",
+      "timestamp": "2026-05-14T12:28:00.291Z"
+    },
+    {
+      "raw": "TRUE||All three wrong answers are grammatically incorrect: \"Il pleut de\" and \"Il neige de\" are nonsensical weather constructions, and \"Il faut de\" is grammatically invalid as \"faut\" takes a direct object, not \"de + noun\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762568598-21wtilh7",
+      "timestamp": "2026-05-14T12:43:09.906Z"
+    },
+    {
+      "raw": "TRUE||B, C, and D are all grammatically incorrect: \"pleut\" and \"neige\" are weather verbs that cannot be followed by \"de + noun\", while \"faut\" requires an infinitive verb, not \"de + noun\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763548838-dy1dpx8o",
+      "timestamp": "2026-05-14T12:59:28.652Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "291c3cb54fda233c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-19-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle question au passé composé utilise correctement « est-ce que » avec le sujet « nous » ?\n\nChoices:\nA. [CORRECT] Est-ce que nous avons fini le travail ?\nB. [WRONG] Est-ce qu' nous avons fini le travail ?\nC. [WRONG] Est-ce que nous avez fini le travail ?\nD. [WRONG] Est-ce que nous ont fini le travail ?\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778600318662-wslmm5zr"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar or punctuation errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778600318663-5ky07o3j",
+      "timestamp": "2026-05-12T15:38:53.707Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly elides \"que\" before a consonant; C and D use wrong auxiliary verb forms (avez/ont instead of avons) for subject \"nous\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778600333710-jqfifwk9",
+      "timestamp": "2026-05-12T15:39:41.713Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses elision before a consonant, C and D use wrong auxiliary verbs for the subject \"nous\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778600381714-5clsvyof",
+      "timestamp": "2026-05-12T15:39:57.521Z"
+    }
+  ]
+}

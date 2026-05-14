@@ -1,0 +1,33 @@
+{
+  "cacheKey": "42d36a94ee96f2b5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-02-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elles ___ toujours de bons restaurants. »\n\nChoices:\nA. [CORRECT] choisissent\nB. [WRONG] choisissons\nC. [WRONG] choisit\nD. [WRONG] choisisse\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760701819-c8zmk4wp"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is first person plural instead of third person plural; C is singular instead of plural; D is subjunctive mood but the sentence requires indicative present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778760751342-pwpu8z0b",
+      "timestamp": "2026-05-14T12:12:49.155Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain incorrect conjugations that don't match the plural subject \"elles\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761812406-2ujeu9sy",
+      "timestamp": "2026-05-14T12:30:23.613Z"
+    },
+    {
+      "raw": "TRUE||B uses 1st person plural (nous) instead of 3rd person plural (elles); C uses 3rd person singular instead of plural; D uses subjunctive form which has no trigger and is singular instead of plural.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762793009-gb273122",
+      "timestamp": "2026-05-14T12:46:46.488Z"
+    }
+  ]
+}

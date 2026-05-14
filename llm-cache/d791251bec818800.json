@@ -1,0 +1,47 @@
+{
+  "cacheKey": "d791251bec818800",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-19-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Les questions au passé composé (est-ce que, inversion, registres)\n\nQUESTION:\nPrompt: Complétez la question au passé composé avec inversion du sujet « vous » dans une phrase négative.\nPhrase: N'___ pas terminé le rapport ?\nHint: avoir\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1778622647198-127ja1js"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The blank placement in \"N'___ pas terminé le rapport ?\" makes it impossible to insert the required inverted subject-verb form \"avez-vous\" while maintaining correct negative question syntax, creating a structural contradiction between the instruction and the answer format.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778622647202-70xzc0ap",
+      "timestamp": "2026-05-12T21:51:38.071Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt precisely specifies the grammatical construction required (passé composé, inversion of \"vous\", negative), the blank position shows where the inverted auxiliary+subject goes, and the hint \"avoir\" confirms which auxiliary to conjugate.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778622698072-8ueoc8qh",
+      "timestamp": "2026-05-12T21:52:01.684Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly requires inversion of the subject \"vous\", which mandates inserting both the auxiliary verb and the pronoun (i.e., \"avez-vous\") into the blank to form a grammatically correct negative structure (\"N'avez-vous pas...\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778622721685-4ez4e1mm",
+      "timestamp": "2026-05-12T21:52:55.458Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt precisely specifies the grammatical structure (passé composé, inversion of \"vous\", negative form) and the hint \"avoir\" makes it unambiguous that the answer should be \"avez-vous\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778622775460-4q08x15e",
+      "timestamp": "2026-05-12T21:53:12.491Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The blank \"N'___ pas\" suggests a single word, but inversion requires two words (\"avez-vous\"), making it unclear whether to fill just the auxiliary or the full inverted structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778622792493-tbaoqrwi",
+      "timestamp": "2026-05-12T21:53:33.516Z"
+    }
+  ]
+}

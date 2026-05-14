@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d0f48525396f56e8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-19-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-19 - Les questions au passé composé (est-ce que, inversion, registres)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Pourquoi le -t- euphonique est-il nécessaire dans « a-t-on répondu » au passé composé ?\nChoices:\nA. [CORRECT] Parce que l'auxiliaire « a » du passé composé finit par une voyelle et « on » commence par une voyelle.\nB. Parce que le participe passé « répondu » finit par une voyelle.\nC. Parce que le -t- euphonique s'ajoute uniquement quand le participe passé commence par une voyelle.\nD. Parce que le verbe « répondre » est irrégulier au passé composé.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778596814238-ncyp3dan"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the mechanics of inverted questions in passé composé, specifically the euphonic -t- insertion with the auxiliary \"avoir\" and vowel-initial pronouns, which is a core part of the stated rule on question formation (inversion).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778596814241-ktbl9ylu",
+      "timestamp": "2026-05-12T14:40:33.509Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: This question tests euphonic insertion rules (why -t- is added between vowels), not how to form questions in passé composé using est-ce que, inversion, or different registers - you could answer correctly without knowing anything about question formation or registers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778596833512-q0tmm0x9",
+      "timestamp": "2026-05-12T14:41:07.771Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests a general French inversion mechanics rule (euphonic -t- insertion between vowels) that applies to all tenses with \"avoir\" + vowel-starting pronoun, not a concept specific to forming questions in the passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778596867772-t9a4wf2d",
+      "timestamp": "2026-05-12T14:41:43.104Z"
+    }
+  ]
+}

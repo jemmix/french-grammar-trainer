@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4b32aa0fd860d1e6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-17-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Ça fait dix ans qu'il ___ le piano. »\n\nChoices:\nA. [CORRECT] joue\nB. [WRONG] jouait\nC. [WRONG] jouerait\nD. [WRONG] jouera\nE. [WRONG] joues\n\nVerify these WRONG answers are incorrect (letters: B, C, D, E)",
+    "nonce": "nonce-1778760702314-fdyf4dis"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761590684-znw61udj",
+      "timestamp": "2026-05-14T12:26:43.128Z"
+    },
+    {
+      "raw": "TRUE||The structure \"Ça fait [duration] que\" requires the present tense; B uses imparfait, C uses conditional, D uses future, and E uses the wrong person (2nd person instead of 3rd person).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762485725-ybm8u7wv",
+      "timestamp": "2026-05-14T12:41:41.503Z"
+    },
+    {
+      "raw": "TRUE||The construction \"Ça fait X temps que...\" requires the present tense; B (imparfait) would imply a past habitual action, C (conditionnel) is hypothetical, D (futur) contradicts the duration marker, and E (2nd person) mismatches the subject \"il\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763417075-104ltbkk",
+      "timestamp": "2026-05-14T12:57:58.941Z"
+    }
+  ]
+}

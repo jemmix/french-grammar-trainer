@@ -1,0 +1,75 @@
+{
+  "cacheKey": "1121a2fcbe06ca0f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-19-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pourquoi y a-t-il un -t- euphonique dans « a-t-elle pris » mais pas dans « est-elle partie » au passé composé ?\n\nChoices:\nA. [CORRECT] Parce que l'auxiliaire « a » finit par une voyelle et l'auxiliaire « est » finit par la consonne -t.\nB. [WRONG] Parce que « prendre » est irrégulier mais « partir » est régulier.\nC. [WRONG] Parce que « elle » change de genre selon le verbe au passé composé.\nD. [WRONG] Parce que l'auxiliaire « être » ne prend jamais de -t- euphonique au passé composé.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778589961170-j0uxv4eq"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B confuses verb regularity with euphonic rules, C is false because elle is always feminine, and D is false because est already ends in -t (the auxiliary être does take -t- euphonique when needed, e.g. a-t-il).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778590043528-h0h1a22z",
+      "timestamp": "2026-05-12T12:47:49.848Z"
+    },
+    {
+      "raw": "FALSE|D|D is technically correct: the auxiliary \"être\" (in the form \"est\") already ends with -t, so an additional euphonic -t- is never added, making this a valid explanation for the absence of -t- in \"est-elle partie\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778590330398-s4yj4vam",
+      "timestamp": "2026-05-12T12:54:04.147Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is irrelevant to the vowel-ending rule, C is factually wrong about pronoun gender, and D is false because être can take -t- euphonique (e.g., \"sera-t-il\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778590836631-f1vi2mkt",
+      "timestamp": "2026-05-12T13:02:45.012Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: regularity of the main verb is irrelevant (B), \"elle\" doesn't change gender (C), and \"être\" auxiliaries can take -t- euphonique when they end in a vowel (D).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778591087258-3tdhv8hq",
+      "timestamp": "2026-05-12T13:05:34.737Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain grammatical errors or unrelated explanations.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778592671250-nxpd1i7a",
+      "timestamp": "2026-05-12T13:37:01.705Z"
+    },
+    {
+      "raw": "TRUE||All three wrong answers are grammatically and factually incorrect: regularity of the main verb (B) is irrelevant to -t- euphonic, \"elle\" never changes gender (C), and \"être\" can take -t- euphonic (e.g., \"a-t-il été\") — the absence here is because \"est\" already ends in -t (D).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778593021706-039t7krk",
+      "timestamp": "2026-05-12T13:37:25.426Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778593045426-95vjuppv",
+      "timestamp": "2026-05-12T13:37:43.827Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B confuses verb regularity with auxiliary phonetics, C incorrectly claims subject pronouns change gender, and D is false since être takes -t- euphonique in other tenses (e.g., \"était-il\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778593063828-2pispyq2",
+      "timestamp": "2026-05-12T13:38:01.685Z"
+    },
+    {
+      "raw": "FALSE|D|D is actually correct because the auxiliary \"est\" already ends in the consonant -t, so no additional euphonic -t is needed when it precedes a vowel-initial pronoun.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778593081687-pi9cvs4b",
+      "timestamp": "2026-05-12T13:38:16.604Z"
+    }
+  ]
+}

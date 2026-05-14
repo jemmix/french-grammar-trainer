@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9fd80f56a19f918d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-12-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Ils ___ à table pour manger. » (verbe : s'asseoir — conjugaison moderne)\n\nChoices:\nA. [CORRECT] s'assoient\nB. [WRONG] se assoient\nC. [WRONG] s'assoit\nD. [WRONG] nous asseyons\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778760702157-60cjm3vl"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B violates elision rules (should be s' not se before a vowel), C uses singular conjugation with plural subject, D uses wrong person entirely (nous instead of ils).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761334040-ulc23qvb",
+      "timestamp": "2026-05-14T12:22:30.032Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly uses \"se\" instead of \"s'\" before a vowel; C is singular form instead of plural; D uses first person \"nous\" instead of third person \"ils\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762249125-vgrw631a",
+      "timestamp": "2026-05-14T12:37:44.354Z"
+    },
+    {
+      "raw": "TRUE||B lacks required elision (should be s'assoient), C uses singular form for plural subject, D uses wrong person/number (nous instead of ils).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763184802-10f63uq0",
+      "timestamp": "2026-05-14T12:53:35.627Z"
+    }
+  ]
+}

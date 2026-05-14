@@ -1,0 +1,47 @@
+{
+  "cacheKey": "8859e3995a996557",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-20-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ que nous soyons prêts avant midi. »\n\nChoices:\nA. [CORRECT] faut\nB. [WRONG] plaît\nC. [WRONG] manque\n\nVerify these WRONG answers are incorrect (letters: B, C)",
+    "nonce": "nonce-1778760702393-z3jywyi0"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||Both \"plaît\" and \"manque\" do not form valid French constructions with \"que + subjunctive\" in the third person singular; only \"faut\" (il faut que + subjunctive) is grammatically correct.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761702643-wukz82za",
+      "timestamp": "2026-05-14T12:28:46.338Z"
+    },
+    {
+      "raw": "FALSE|B|B is incorrect but the explanation is wrong - \"plaît\" cannot take \"que\" + subjunctive at all, and \"manque\" is also grammatically impossible in this construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762610198-aecpacbt",
+      "timestamp": "2026-05-14T12:49:06.382Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763792533-tf7ms6uu",
+      "timestamp": "2026-05-14T13:08:39.268Z"
+    },
+    {
+      "raw": "TRUE||Both \"plaît\" and \"manque\" are grammatically incorrect with the \"que + subjunctive\" construction; \"plaît\" typically uses indirect object \"à\" and \"manquer\" is used with direct objects, not subordinate clauses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778764364863-6vw45op0",
+      "timestamp": "2026-05-14T13:13:18.280Z"
+    },
+    {
+      "raw": "FALSE|B|\"il plaît que\" is not a standard French construction; \"plaire\" typically uses indirect object pronouns like \"il me plaît\" rather than impersonal \"il plaît que\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778764672611-yv0yqirw",
+      "timestamp": "2026-05-14T13:18:31.766Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bd11f79d1a92f5bc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-20-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel verbe indique l'absence d'un élément dans cette construction impersonnelle ? « Il ___ un bouton à cette veste. »\n\nChoices:\nA. [CORRECT] manque\nB. [WRONG] suffit\nC. [WRONG] plaît\n\nVerify these WRONG answers are incorrect (letters: B, C)",
+    "nonce": "nonce-1778760702415-n7u1wnz6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B \"suffit\" is grammatically incorrect because \"il suffit\" requires \"de\" (il suffit de...), not a direct object with \"à\"; C \"plaît\" is grammatically incorrect because \"plaire\" is not used in impersonal constructions with \"il\" and would require a different subject structure like \"ce bouton plaît\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778761760129-k59vr4ic",
+      "timestamp": "2026-05-14T12:29:57.683Z"
+    },
+    {
+      "raw": "TRUE||Both \"Il suffit\" and \"Il plaît\" produce ungrammatical constructions that don't make sense with \"un bouton à cette veste.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778762749699-tdzkmxvy",
+      "timestamp": "2026-05-14T12:46:16.902Z"
+    },
+    {
+      "raw": "TRUE||Both \"suffit\" and \"plaît\" are grammatically incorrect in the impersonal construction \"Il ___ un bouton à cette veste\" - only \"manquer\" works in this structure to indicate the absence of something.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778763685121-eecr6opg",
+      "timestamp": "2026-05-14T13:07:10.945Z"
+    }
+  ]
+}
