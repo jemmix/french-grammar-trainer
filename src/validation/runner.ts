@@ -205,15 +205,22 @@ function resolveTask(task: LLMPendingTask, doomedQuestions: Set<string>): CheckR
   }
 
   if ((totalValid - passCount) / totalValid >= MAJORITY_THRESHOLD) {
-    const failedResult = validResults.find(r => r.status === "fail");
+    const failReasons = [...new Set(
+      validResults.filter((r): r is ValidPredicateResult & { reason: string } => r.status === "fail" && "reason" in r && !!r.reason).map(r => r.reason)
+    )];
+    const attemptDetails = validResults.map((r, i) => {
+      const tag = r.status === "pass" ? "PASS" : "FAIL" + ("reason" in r && r.reason ? ": " + r.reason : "");
+      return "attempt " + (i + 1) + ": " + tag;
+    });
     return {
       questionId: ctx.question.id,
       predicateId: predicate.id,
       category: predicate.category,
       pass: false,
-      reason: failedResult?.reason || "Majority FALSE",
+      reason: failReasons.join(" | ") || "Majority FALSE",
       fromCache,
       responseCount: totalValid,
+      attemptDetails,
     };
   }
 
