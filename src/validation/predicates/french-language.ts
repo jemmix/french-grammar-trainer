@@ -78,6 +78,19 @@ Explanation contains untranslated English: "This is wrong because the subject is
     const firstLine = lines[0]?.trim().toUpperCase() || "";
     const explanation = lines.slice(1).join(" ").trim();
 
+    const keywordLine = rawResponse.match(/(?:^|\n)\s*(FRENCH|ENGLISH_DETECTED)\s*$/im);
+    if (keywordLine) {
+      const kw = keywordLine[1]!.toUpperCase();
+      const kwIdx = lines.findIndex(l => l.trim().toUpperCase() === kw);
+      const kwExplanation = lines.slice(kwIdx + 1).join(" ").trim();
+      if (kw === "FRENCH") {
+        return { status: "pass" };
+      }
+      if (kw === "ENGLISH_DETECTED") {
+        return { status: "fail", reason: kwExplanation || "English content detected without pedagogical justification" };
+      }
+    }
+
     if (firstLine === "FRENCH") {
       return { status: "pass" };
     }

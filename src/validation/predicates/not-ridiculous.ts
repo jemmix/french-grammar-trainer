@@ -37,6 +37,19 @@ export const notRidiculousPredicate: LLMPredicate = {
     const lines = rawResponse.trim().split("\n");
     const firstLine = lines[0]?.trim().toUpperCase() || "";
 
+    const keywordLine = rawResponse.match(/(?:^|\n)\s*(REASONABLE|RIDICULOUS)\s*$/im);
+    if (keywordLine) {
+      const kw = keywordLine[1]!.toUpperCase();
+      const kwIdx = lines.findIndex(l => l.trim().toUpperCase() === kw);
+      if (kw === "REASONABLE") {
+        return { status: "pass" };
+      }
+      if (kw === "RIDICULOUS") {
+        const reason = lines.slice(kwIdx + 1).join(" ").trim();
+        return { status: "fail", reason: reason || "Question is ridiculous or inappropriate" };
+      }
+    }
+
     if (firstLine === "REASONABLE") {
       return { status: "pass" };
     }

@@ -59,6 +59,23 @@ export const mcqWrongIsFalsePredicate: LLMPredicate = {
   interpretResponse(ctx: QuestionContext, rawResponse: string): PredicateResult {
     const cleaned = rawResponse.trim();
 
+    const anywhere = cleaned.match(/(TRUE|FALSE|UNCLEAR)\s*\|([^|]*)\|(.+)/i);
+    if (anywhere) {
+      const verdict = anywhere[1]!.toUpperCase();
+      const flaggedLetters = anywhere[2]!.trim();
+      const explanation = anywhere[3]!.trim();
+      if (verdict === "TRUE") {
+        return { status: "pass" };
+      } else if (verdict === "FALSE") {
+        const reason = flaggedLetters
+          ? "Wrong answer(s) may be correct: " + flaggedLetters + (explanation ? " — " + explanation : "")
+          : "At least one wrong answer may be correct" + (explanation ? " — " + explanation : "");
+        return { status: "fail", reason };
+      } else if (verdict === "UNCLEAR") {
+        return { status: "fail", reason: "Question is ambiguous" + (explanation ? " — " + explanation : "") };
+      }
+    }
+
     const pipeParts = cleaned.split("|");
     const verdict = (pipeParts[0] ?? "").trim().toUpperCase();
     const flaggedLetters = pipeParts.length > 1 ? (pipeParts[1] ?? "").trim() : "";

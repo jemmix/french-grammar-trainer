@@ -33,6 +33,19 @@ export const grammarValidPredicate: LLMPredicate = {
     const lines = rawResponse.trim().split("\n");
     const firstLine = lines[0]?.trim().toUpperCase() || "";
 
+    const keywordLine = rawResponse.match(/(?:^|\n)\s*(VALID|INVALID)\s*$/im);
+    if (keywordLine) {
+      const kw = keywordLine[1]!.toUpperCase();
+      const kwIdx = lines.findIndex(l => l.trim().toUpperCase() === kw);
+      if (kw === "VALID") {
+        return { status: "pass" };
+      }
+      if (kw === "INVALID") {
+        const reason = lines.slice(kwIdx + 1).join(" ").trim();
+        return { status: "fail", reason: reason || "Correct answer has grammar issues" };
+      }
+    }
+
     if (firstLine === "VALID") {
       return { status: "pass" };
     }
