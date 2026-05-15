@@ -32,12 +32,13 @@ Examples of GOOD prompts (well-formed):
 - "Fill in the blank with the correct article."
 - "Conjugate the verb in parentheses."
 
-Respond with exactly one word: WELL-FORMED or NOT-WELL-FORMED.
+First output your verdict, then a brief explanation.
+
+Format: VERDICT: <WELL-FORMED|NOT-WELL-FORMED>
+REASON: <one sentence explaining why>
 
 - WELL-FORMED: The prompt is a clear imperative instruction that tells the learner what to do
-- NOT-WELL-FORMED: The prompt is narrative/context, or lacks a clear instruction
-
-Your response must contain ONLY one of these two words in all caps. No explanation.`,
+- NOT-WELL-FORMED: The prompt is narrative/context, or lacks a clear instruction`,
       userPrompt: `PROMPT: ${q.prompt}
 
 PHRASE: ${phrase}
@@ -51,6 +52,19 @@ Is this prompt well-formed? Does it give the learner a clear imperative instruct
   },
 
   interpretResponse(_ctx: QuestionContext, rawResponse: string): PredicateResult {
+    const verdictMatch = rawResponse.match(/VERDICT:\s*(WELL-FORMED|NOT-WELL-FORMED)/i);
+    const reasonMatch = rawResponse.match(/REASON:\s*(.+)/i);
+    const extractedReason = reasonMatch?.[1]?.trim() ?? null;
+
+    if (verdictMatch?.[1]) {
+      const verdict = verdictMatch[1].toUpperCase().replace(/-/g, "");
+      if (verdict === "WELLFORMED") {
+        return { status: "pass" };
+      } else if (verdict === "NOTWELLFORMED") {
+        return { status: "fail", reason: extractedReason || "Prompt is not a clear imperative instruction" };
+      }
+    }
+
     const cleaned = rawResponse.trim().toUpperCase();
     if (cleaned === "WELL-FORMED") {
       return { status: "pass" };

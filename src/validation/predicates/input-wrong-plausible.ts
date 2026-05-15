@@ -20,14 +20,26 @@ export const inputWrongPlausiblePredicate: LLMPredicate = {
     }).join("\n");
 
     return {
-      systemPrompt: "You are a " + lang + " language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nRespond with exactly one word: PLAUSIBLE or IMPLAUSIBLE.\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)\n\nYour response must contain ONLY one of these two words in all caps. No explanation.",
+      systemPrompt: "You are a " + lang + " language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
       userPrompt: "Question context:\nRULE: " + ctx.rule.title + "\nPROMPT: " + q.prompt + "\nPHRASE: " + phrase + "\nCORRECT ANSWER: " + q.answer + "\n\nWRONG ANSWERS to evaluate:\n" + wrongAnswersText + "\n\nAre these wrong answers plausible mistakes that learners might make?",
     };
   },
 
   interpretResponse(_ctx: QuestionContext, rawResponse: string): PredicateResult {
-    const verdict = parseVerdict(rawResponse);
+    const verdictMatch = rawResponse.match(/VERDICT:\s*(PLAUSIBLE|IMPLAUSIBLE)/i);
+    const reasonMatch = rawResponse.match(/REASON:\s*(.+)/i);
+    const extractedReason = reasonMatch?.[1]?.trim() ?? null;
 
+    if (verdictMatch?.[1]) {
+      const verdict = verdictMatch[1].toUpperCase();
+      if (verdict === "PLAUSIBLE") {
+        return { status: "pass" };
+      } else if (verdict === "IMPLAUSIBLE") {
+        return { status: "fail", reason: extractedReason || "Wrong answers contain implausible options" };
+      }
+    }
+
+    const verdict = parseVerdict(rawResponse);
     if (verdict === "TRUE" || rawResponse.trim().toUpperCase() === "PLAUSIBLE") {
       return { status: "pass" };
     }

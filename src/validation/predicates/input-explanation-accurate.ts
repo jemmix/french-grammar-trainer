@@ -20,14 +20,26 @@ export const inputExplanationAccuratePredicate: LLMPredicate = {
     }).join("\n\n");
 
     return {
-      systemPrompt: "You are a " + lang + " grammar expert. Your task is to verify that the explanations for wrong answers are ACCURATE and EDUCATIONALLY SOUND.\n\nAn accurate explanation:\n- Correctly identifies WHY the answer is wrong\n- References the relevant grammar rule or concept\n- Does NOT contain factual errors about the language\n- Helps the learner understand their mistake\n\nRespond with exactly one word: ACCURATE or INACCURATE.\n\n- ACCURATE: All explanations correctly explain why each wrong answer is wrong\n- INACCURATE: At least one explanation contains a factual error or misleads the learner\n\nYour response must contain ONLY one of these two words in all caps. No explanation.",
+      systemPrompt: "You are a " + lang + " grammar expert. Your task is to verify that the explanations for wrong answers are ACCURATE and EDUCATIONALLY SOUND.\n\nAn accurate explanation:\n- Correctly identifies WHY the answer is wrong\n- References the relevant grammar rule or concept\n- Does NOT contain factual errors about the language\n- Helps the learner understand their mistake\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ACCURATE|INACCURATE>\nREASON: <one sentence explaining why>\n\n- ACCURATE: All explanations correctly explain why each wrong answer is wrong\n- INACCURATE: At least one explanation contains a factual error or misleads the learner",
       userPrompt: "Question context:\nRULE: " + ctx.rule.title + "\nPROMPT: " + q.prompt + "\nPHRASE: " + phrase + "\nCORRECT ANSWER: " + q.answer + "\n\nWRONG ANSWERS AND THEIR EXPLANATIONS:\n" + wrongAnswersText + "\n\nAre these explanations accurate?",
     };
   },
 
   interpretResponse(_ctx: QuestionContext, rawResponse: string): PredicateResult {
-    const cleaned = rawResponse.trim().toUpperCase();
+    const verdictMatch = rawResponse.match(/VERDICT:\s*(ACCURATE|INACCURATE)/i);
+    const reasonMatch = rawResponse.match(/REASON:\s*(.+)/i);
+    const extractedReason = reasonMatch?.[1]?.trim() ?? null;
 
+    if (verdictMatch?.[1]) {
+      const verdict = verdictMatch[1].toUpperCase();
+      if (verdict === "ACCURATE") {
+        return { status: "pass" };
+      } else if (verdict === "INACCURATE") {
+        return { status: "fail", reason: extractedReason || "At least one wrong answer explanation is inaccurate" };
+      }
+    }
+
+    const cleaned = rawResponse.trim().toUpperCase();
     if (cleaned === "ACCURATE") {
       return { status: "pass" };
     }

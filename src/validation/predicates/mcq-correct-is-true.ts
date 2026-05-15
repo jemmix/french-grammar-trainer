@@ -24,14 +24,28 @@ export const mcqCorrectIsTruePredicate: LLMPredicate = {
     }).join("\n");
 
     return {
-      systemPrompt: "You are a " + lang + " grammar verifier. Given a multiple choice question with one answer marked as correct, verify if that answer is indeed the correct choice.\n\nRespond with exactly one word: TRUE, FALSE, or UNCLEAR.\n\n- TRUE if the marked-correct answer is indeed the correct/best answer\n- FALSE if the marked-correct answer is wrong (another option is correct)\n- UNCLEAR if multiple answers could be correct or the question is ambiguous\n\nYour response must contain ONLY one of these three words in all caps. No explanation.",
+      systemPrompt: "You are a " + lang + " grammar verifier. Given a multiple choice question with one answer marked as correct, verify if that answer is indeed the correct choice.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <TRUE|FALSE|UNCLEAR>\nREASON: <one sentence explaining why>\n\n- TRUE if the marked-correct answer is indeed the correct/best answer\n- FALSE if the marked-correct answer is wrong (another option is correct)\n- UNCLEAR if multiple answers could be correct or the question is ambiguous",
       userPrompt: "Question: " + ctx.question.prompt + "\n\nChoices:\n" + choicesText,
     };
   },
 
   interpretResponse(_ctx: QuestionContext, rawResponse: string): PredicateResult {
-    const verdict = parseVerdict(rawResponse);
+    const verdictMatch = rawResponse.match(/VERDICT:\s*(TRUE|FALSE|UNCLEAR)/i);
+    const reasonMatch = rawResponse.match(/REASON:\s*(.+)/i);
+    const extractedReason = reasonMatch?.[1]?.trim() ?? null;
 
+    if (verdictMatch?.[1]) {
+      const verdict = verdictMatch[1].toUpperCase();
+      if (verdict === "TRUE") {
+        return { status: "pass" };
+      } else if (verdict === "FALSE") {
+        return { status: "fail", reason: extractedReason || "LLM says correct answer is FALSE" };
+      } else if (verdict === "UNCLEAR") {
+        return { status: "fail", reason: extractedReason || "LLM says answer is UNCLEAR - may need review" };
+      }
+    }
+
+    const verdict = parseVerdict(rawResponse);
     if (verdict === "TRUE") {
       return { status: "pass" };
     }
