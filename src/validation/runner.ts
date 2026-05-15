@@ -24,10 +24,11 @@ const INITIAL_RUNS = 3;
 const ADDITIONAL_RUNS = 7;
 const MAJORITY_THRESHOLD = 0.9;
 const DEFAULT_CONCURRENCY = 10;
-const MAX_RETRIES = 3;
-const INITIAL_DELAY_MS = 1000;
-const MAX_DELAY_MS = 30000;
-const BACKOFF_MULTIPLIER = 2;
+const MAX_RETRIES = 10;
+const RETRY_DELAYS_MS = [
+  1_000, 2_000, 5_000, 10_000, 30_000,
+  60_000, 120_000, 300_000, 600_000, 600_000,
+];
 
 const PRIORITY_PREDICATE_IDS = new Set([
   "question-rule-alignment",
@@ -39,10 +40,10 @@ function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function calculateDelay(attempt: number): number {
-  const baseDelay = INITIAL_DELAY_MS * Math.pow(BACKOFF_MULTIPLIER, attempt);
-  const jitter = Math.random() * baseDelay * 0.3;
-  return Math.min(baseDelay + jitter, MAX_DELAY_MS);
+function getRetryDelay(attempt: number): number {
+  const base = RETRY_DELAYS_MS[Math.min(attempt, RETRY_DELAYS_MS.length - 1)]!;
+  const jitter = Math.random() * base * 0.3;
+  return base + jitter;
 }
 
 async function runWithRetry<T>(
@@ -66,7 +67,7 @@ async function runWithRetry<T>(
         throw lastError;
       }
 
-      const delay = calculateDelay(attempt);
+      const delay = getRetryDelay(attempt);
       const msg = operation + " failed (attempt " + (attempt + 1) + "/" + (MAX_RETRIES + 1) + "), " +
         "retrying in " + Math.round(delay) + "ms: " + lastError.message.split("\n")[0];
       if (onWarn) {
