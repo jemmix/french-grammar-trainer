@@ -205,9 +205,6 @@ function resolveTask(task: LLMPendingTask, doomedQuestions: Set<string>): CheckR
   }
 
   if ((totalValid - passCount) / totalValid >= MAJORITY_THRESHOLD) {
-    const failReasons = [...new Set(
-      validResults.filter((r): r is ValidPredicateResult & { reason: string } => r.status === "fail" && "reason" in r && !!r.reason).map(r => r.reason)
-    )];
     const attemptDetails = validResults.map((r, i) => {
       const tag = r.status === "pass" ? "PASS" : "FAIL" + ("reason" in r && r.reason ? ": " + r.reason : "");
       return "attempt " + (i + 1) + ": " + tag;
@@ -217,16 +214,15 @@ function resolveTask(task: LLMPendingTask, doomedQuestions: Set<string>): CheckR
       predicateId: predicate.id,
       category: predicate.category,
       pass: false,
-      reason: failReasons.join(" | ") || "Majority FALSE",
+      reason: passCount + "/" + totalValid + " runs passed",
       fromCache,
       responseCount: totalValid,
       attemptDetails,
     };
   }
 
-  const reason = "No clear majority: " + passCount + "/" + totalValid + " PASS";
   const attemptDetails = validResults.map((r, i) => {
-    const tag = r.status === "pass" ? "PASS" : "FAIL" + (r.reason ? ": " + r.reason : "");
+    const tag = r.status === "pass" ? "PASS" : "FAIL" + ("reason" in r && r.reason ? ": " + r.reason : "");
     return "attempt " + (i + 1) + ": " + tag;
   });
   return {
@@ -234,7 +230,7 @@ function resolveTask(task: LLMPendingTask, doomedQuestions: Set<string>): CheckR
     predicateId: predicate.id,
     category: predicate.category,
     pass: false,
-    reason,
+    reason: passCount + "/" + totalValid + " runs passed",
     fromCache,
     responseCount: totalValid,
     attemptDetails,
