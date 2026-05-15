@@ -30,6 +30,7 @@ export function isRetryableError(err: Error): boolean {
   if (msg.includes("signal:")) return true;
   if (msg.includes("killed")) return true;
   if (msg.includes("crashed")) return true;
+  if (msg.includes("maxbuffer")) return true;
   return false;
 }
 
@@ -48,7 +49,7 @@ export function createOpencodeHarness(modelId: string): LLMHarness {
       return new Promise<LLMResponse>((resolve, reject) => {
         const child = execFile(
           "opencode",
-          ["run", "--model", "zai-coding-plan/" + modelId, fullPrompt],
+          ["run", "--agent", "validation-judge", "--model", "zai-coding-plan/" + modelId, fullPrompt],
           { timeout: HARNESS_TIMEOUT_MS, maxBuffer: 10 * 1024 },
           (err, stdout, stderr) => {
             if (err) {
