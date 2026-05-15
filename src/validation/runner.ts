@@ -557,11 +557,16 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
     }
 
     const doomedQuestions = preCheckDoomedQuestions(allLLMTasks);
+    const structDoomed = new Set<string>();
     for (const r of structuralResults) {
-      if (!r.pass) doomedQuestions.add(r.questionId);
+      if (!r.pass) structDoomed.add(r.questionId);
     }
+    for (const id of structDoomed) doomedQuestions.add(id);
     if (doomedQuestions.size > 0) {
-      console.log(doomedQuestions.size + " question(s) doomed before LLM checks");
+      const parts: string[] = [];
+      if (structDoomed.size > 0) parts.push(structDoomed.size + " structural");
+      if (doomedQuestions.size > structDoomed.size) parts.push((doomedQuestions.size - structDoomed.size) + " from cache");
+      console.log(doomedQuestions.size + " question(s) doomed before LLM checks (" + parts.join(", ") + ")");
     }
 
     console.log("Running " + allLLMTasks.length + " LLM tasks (max " + concurrency + " concurrent)...");
