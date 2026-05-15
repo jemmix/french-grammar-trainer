@@ -31,6 +31,10 @@ export const mcqWrongIsFalsePredicate: LLMPredicate = {
         "You are a " +
         lang +
         " grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\n" +
+        "Evaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. " +
+        "If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. " +
+        "Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies " +
+        "the requirements explicitly stated in the question.\n\n" +
         "Respond with a single line in this exact format:\n" +
         "VERDICT|letter1,letter2,...|explanation\n\n" +
         "Where:\n" +
