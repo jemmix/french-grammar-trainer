@@ -2,7 +2,7 @@ import { execFile } from "child_process";
 import type { ExecFileException } from "child_process";
 import type { LLMRequestSpec, LLMResponse } from "./types";
 
-const HARNESS_TIMEOUT_MS = 60_000;
+const HARNESS_TIMEOUT_MS = 600_000;
 
 export class InvalidResponseError extends Error {
   constructor(message: string) {
