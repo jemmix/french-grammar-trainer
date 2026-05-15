@@ -15,30 +15,28 @@ export const inputPromptWellFormedPredicate: LLMPredicate = {
     const phrase = q.phrase.before + "___" + q.phrase.after;
 
     return {
-      systemPrompt: `You are a ${lang} language learning quality checker. Your task is to verify that INPUT question prompts are WELL-FORMED.
+      systemPrompt: `You are a ${lang} language learning quality checker. Your task is to verify that INPUT question prompts contain a clear CALL TO ACTION.
 
-A well-formed prompt for an INPUT question must:
-1. Be IMPERATIVE - give the learner a clear instruction (e.g., "Complete the sentence...", "Fill in the blank...", "Conjugate the verb...")
-2. Be SPECIFIC enough - tell the learner what kind of word/form to provide (verb, article, tense, etc.)
-3. NOT be mere context or narrative - it should tell the learner WHAT TO DO, not describe a situation
+A WELL-FORMED prompt must contain at least one clear imperative instruction telling the learner exactly what to type (e.g. "Complete...", "Fill in...", "Conjugate...", "Correct the error and write..."). The prompt MAY include context, framing, or a scenario before or alongside the instruction — that is perfectly fine. What matters is that the learner can read the prompt and know exactly what to do.
 
-Examples of BAD prompts (NOT well-formed):
-- "My brother works from nine to five. I do the same as my brother." (narrative, no instruction)
-- "Running is great exercise. You perform that activity in the park." (context, no instruction)
+A NOT-WELL-FORMED prompt is one where the learner cannot tell what to do — e.g. pure narrative with no instruction, or vague context that doesn't specify what form/tense/word to provide.
+
+Examples of NOT-WELL-FORMED prompts:
+- "My brother works from nine to five. I do the same as my brother." (no instruction at all)
+- "Running is great exercise. You perform that activity in the park." (context only, no instruction)
 - "That was a beautiful song." (just context)
 
-Examples of GOOD prompts (well-formed):
+Examples of WELL-FORMED prompts:
 - "Complete the sentence with the present simple form of the verb."
 - "Fill in the blank with the correct article."
 - "Conjugate the verb in parentheses."
+- "A student wrote this sentence with the wrong tense. Correct the error and conjugate the verb in the present." (context + clear instruction — this is fine)
+- "Corrigez l'erreur et conjuguez le verbe dans le temps qui convient." (context + clear instruction — this is fine)
 
 First output your verdict, then a brief explanation.
 
 Format: VERDICT: <WELL-FORMED|NOT-WELL-FORMED>
-REASON: <one sentence explaining why>
-
-- WELL-FORMED: The prompt is a clear imperative instruction that tells the learner what to do
-- NOT-WELL-FORMED: The prompt is narrative/context, or lacks a clear instruction`,
+REASON: <one sentence explaining why>`,
       userPrompt: `PROMPT: ${q.prompt}
 
 PHRASE: ${phrase}
