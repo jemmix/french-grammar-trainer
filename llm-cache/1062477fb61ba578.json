@@ -1,0 +1,26 @@
+{
+  "cacheKey": "1062477fb61ba578",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel verbe brise la cohérence temporelle dans ce récit ? « Le marin hisse la voile. Le vent a soufflé dans les voiles. Le bateau quitte le port. »\n\nChoices:\nA. [CORRECT] a soufflé\nB. [WRONG] hisse\nC. [WRONG] quitte\nD. [WRONG] naviguait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778787064622-simdfne7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are indeed incorrect: B and C maintain consistent present tense with the narrative structure, and D is not even present in the original text.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778787157489-vl0q3qw2",
+      "timestamp": "2026-05-14T19:33:14.501Z"
+    },
+    {
+      "raw": "FALSE|D|D is not in the text at all - a valid wrong answer should be a choice from the passage that doesn't break coherence, not a word that doesn't exist in the narrative.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778787399652-qeg5zzb3",
+      "timestamp": "2026-05-14T19:38:01.950Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1267eff1cddc4859",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-20-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-20 - Le passé composé vs le présent dans un récit (alternance et cohérence temporelle)\n\nQUESTION:\nType: Input\nPrompt: Corrigez l'incohérence temporelle dans ce récit en conjuguant le verbe au passé composé.\nPhrase: Nous avons organisé une fête surprise. Les invités ___ à l'improviste et nous avons tous célébré ensemble.\nCorrect Answer: sont arrivés\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778791820781-a662ki31"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the user to conjugate in passé composé, so the question only tests conjugation knowledge (auxiliary selection and agreement) rather than the ability to recognize when to alternate between passé composé and présent in a narrative.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778791820833-hchg2dgh",
+      "timestamp": "2026-05-14T20:51:29.944Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests temporal coherence by requiring students to recognize that a narrative already in passé composé must continue in the same tense (\"sont arrivés\") to maintain consistency.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778791889945-qzvhbug3",
+      "timestamp": "2026-05-14T20:52:12.228Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests maintaining passé composé consistency and auxiliary verb conjugation, not the alternation between passé composé and présent or when to switch between these tenses in a narrative.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778791932229-35702r2h",
+      "timestamp": "2026-05-14T20:52:32.589Z"
+    }
+  ]
+}

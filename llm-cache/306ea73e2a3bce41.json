@@ -1,0 +1,33 @@
+{
+  "cacheKey": "306ea73e2a3bce41",
+  "predicateId": "french-language",
+  "questionId": "02-20-015",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT\nEXPLANATION\n\nWhere:\n- VERDICT is exactly one word: FRENCH or ENGLISH_DETECTED\n- EXPLANATION is a brief sentence describing what you found\n\nExamples:\nFRENCH\nAll content is in French with no English detected.\n\nFRENCH\nContent uses allowed English exception for false friend contrast (actuellement/actually).\n\nENGLISH_DETECTED\nPrompt uses English instruction \"Conjugate the verb\" instead of French.\n\nENGLISH_DETECTED\nExplanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le passé composé vs le présent dans un récit (alternance et cohérence temporelle)\n\nQUESTION CONTENT:\nPrompt: Ce récit mélange passé composé et présent. Quel verbe faut-il corriger pour rétablir la cohérence au passé composé ? « Paul a appelé son frère. Il lui raconte les dernières nouvelles. Ils ont ri ensemble. »\nChoices:\nA. [correct] raconte → a raconté\n   Explanation: « Raconte » est au présent. Il faut le passé composé « a raconté » pour maintenir la cohérence avec « a appelé » et « ont ri ».\nB. raconte → racontes\n   Explanation: « Racontes » est la forme du tu, pas du il. La correction correcte est « a raconté ».\nC. raconte → racontera\n   Explanation: Le futur « racontera » ne convient pas pour un événement passé.\nD. raconte → racontions\n   Explanation: Le subjonctif « racontions » n'a pas sa place dans un récit au passé composé.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1778847726924-srcdd4z0"
+  },
+  "responses": [
+    {
+      "raw": "FRENCH\nAll content is in French. The only English is \"[correct]\" which appears to be a metadata marker for the correct answer, not pedagogical content.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778848288246-erk4dbz7",
+      "timestamp": "2026-05-15T12:32:23.715Z"
+    },
+    {
+      "raw": "FRENCH\nAll content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778848343715-stzd1bj5",
+      "timestamp": "2026-05-15T12:32:48.127Z"
+    },
+    {
+      "raw": "FRENCH\nAll content is in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778848368128-z6q247rc",
+      "timestamp": "2026-05-15T12:33:01.349Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "de9fd402976e599f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-03-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au passé composé : « Mon frère ___ construit une cabane dans le jardin. »\n\nChoices:\nA. [CORRECT] a\nB. [WRONG] est\nC. [WRONG] aura\nD. [WRONG] ont\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770728744-utol4jep"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses wrong auxiliary (être not avoir), C uses future tense not present, D uses plural not singular.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778770867331-e04mle70",
+      "timestamp": "2026-05-14T15:02:37.484Z"
+    },
+    {
+      "raw": "FALSE|B,C|B uses être when construire requires avoir as auxiliary; C is future tense (aura) instead of present auxiliary (a) needed for passé composé; D is plural ont when subject mon frère is singular.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772131429-dd17d2q6",
+      "timestamp": "2026-05-14T15:22:54.209Z"
+    },
+    {
+      "raw": "FALSE|B|\"Est\" would form present passive voice (\"est construit\"), not passé composé as requested.\n\nUser asks: \"Given a multiple choice question, verify that the wrong answers are indeed incorrect. Respond with a single line in this exact format: VERDICT|letter1,letter2,...|explanation\"\n\nThe user provided a specific format and wants a single-line response. The question asks to complete in passé composé, and B \"est\" could form present passive \"est construit\", which is technically valid French (just not passé composé). However, since the question explicitly asks for passé composé, I should consider whether this makes it incorrect.\n\nActually, re-reading: the question says \"Complétez au passé composé\" - it explicitly requests the passé composé tense. \"Est construit\" would be passive voice present indicative, not passé composé. So B is incorrect for the specific request.\n\nLet me reconsider:\n- \"aura\" (C) is futur antérieur if used with the past participle, not passé composé\n- \"ont\" (D) is wrong person/number agreement\n\nAll three wrong answers are indeed incorrect for forming a valid passé composé with \"construire\" and the subject \"Mon frère\".\n\nBut wait - I need to be careful about what \"incorrect\" means. If the question asks specifically for passé composé, then \"aura\" creates futur antérieur which is a different tense, making it incorrect. Similarly \"ont\" creates wrong agreement.\n\nHowever, I'm second-guessing B again. \"est construit\" could be interpreted as passive present, which is a valid grammatical construction in French, just not what was asked for (passé composé). The question explicitly says \"au passé composé\", so B is indeed incorrect for this specific request.\n\nActually, I think I'm overcomplicating this. The question explicitly asks for passé composé. Let me check:\n- \"aura construit\" = futur antérieur (not passé composé) - incorrect\n- \"est construit\" = passive present (not passé composé) - incorrect\n- \"ont construit\" = passé composé but wrong agreement (subject is singular) - incorrect\n\nAll three are indeed wrong answers. But B \"est\" is tricky because \"est construit\" is grammatically valid French, just not the requested tense.\n\nHmm, let me think about what \"incorrect\" means here. The choices are labeled [WRONG], and I need to verify if they're indeed wrong. If B could form a valid French sentence (even if it's a different tense than requested), should I consider it \"incorrect\"?\n\nThe instruction says \"verify that the wrong answers are indeed incorrect\". If B creates a valid French sentence (present passive), even though it's not passé composé, is it truly \"incorrect\"?\n\nI think the safest interpretation is: since the question explicitly asks for passé composé, any answer that doesn't produce passé composé is incorrect for that question. \"Est construit\" is present passive, not passé composé, so it's incorrect for this specific question.\n\nFinal verdict: All wrong answers are indeed incorrect for the specific request (passé composé with the correct auxiliary and agreement).\n\nActually, I keep going back and forth. Let me be more careful. The question says \"Complétez au passé composé\". The choices are:\n- A. a → \"a construit\" (passé composé with avoir, correct)\n- B. est → \"est construit\" (present passive voice, NOT passé composé)\n- C. aura → \"aura construit\" (futur antérieur, NOT passé composé)\n- D. ont → \"ont construit\" (passé composé but wrong agreement)\n\nB and C don't produce passé composé. D produces passé composé but with wrong agreement. All are incorrect for this question.\n\nBut \"est construit\" is valid French grammar (present passive), just not the tense requested. Should I flag B as potentially correct because it's grammatically valid French?\n\nI think the key phrase is \"verify that the wrong answers are indeed incorrect\". An answer is \"incorrect\" for a question if it doesn't correctly answer that question. Since the question specifically asks for passé composé, and B produces present passive (a different tense), B is indeed an incorrect answer to this question.\n\nSo my final verdict is TRUE - all wrong answers are indeed incorrect.\n\nTRUE||All wrong answers fail to form passé composé: B is present passive, C is futur antérieur, D has wrong agreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773154267-xtd51n2i",
+      "timestamp": "2026-05-14T15:40:03.355Z"
+    }
+  ]
+}

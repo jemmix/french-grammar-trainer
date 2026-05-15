@@ -1,0 +1,68 @@
+{
+  "cacheKey": "ee4502b476aeb717",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ce récit mélange passé composé et présent. Quel verbe faut-il corriger pour rétablir la cohérence au passé composé ? « Le professeur a expliqué la leçon. Les étudiants prennent des notes. Ils ont posé des questions. »\n\nChoices:\nA. [CORRECT] prennent → ont pris\nB. [WRONG] expliqué → explique\nC. [WRONG] posé → posent\nD. [WRONG] Aucun verbe ne nécessite de correction.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778790158153-h23oarso"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B and C would make the inconsistency worse by changing past tense to present, and D is false because the text clearly has tense inconsistency with \"prennent\" in present while other verbs are in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778790249189-r56v9ppn",
+      "timestamp": "2026-05-14T20:24:30.168Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers incorrectly suggest changing verbs already in passé composé or claim no correction is needed, when \"prennent\" clearly needs to be changed to \"ont pris\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778790465471-gj2wwv0p",
+      "timestamp": "2026-05-14T20:28:03.138Z"
+    },
+    {
+      "raw": "FALSE|D|D is incorrect because the narrative does require a correction: \"prennent\" is in présent while \"a expliqué\" and \"ont posé\" are in passé composé, so changing \"prennent\" to \"ont pris\" is needed for coherence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778790646370-tfxzb7ol",
+      "timestamp": "2026-05-14T20:31:17.451Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically and logically incorrect: B and C would change correct passé composé verbs to present tense, making the narrative more inconsistent, while D incorrectly claims no correction is needed despite the clear tense inconsistency with \"prennent\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778790748577-5roxynkk",
+      "timestamp": "2026-05-14T20:33:07.427Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers either maintain the current tense inconsistency or move away from the requested passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778790787429-okcfw8jh",
+      "timestamp": "2026-05-14T20:33:31.581Z"
+    },
+    {
+      "raw": "TRUE||The question asks to restore coherence to passé composé, so changing \"a expliqué\" to \"explique\" or \"ont posé\" to \"posent\" would move away from that goal, and D is false because the text clearly has mixed tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778790811581-64w4dqeg",
+      "timestamp": "2026-05-14T20:33:49.728Z"
+    },
+    {
+      "raw": "TRUE||The wrong answers either change correct passé composé forms to présent or incorrectly claim no correction is needed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778790829728-2dbxmk8m",
+      "timestamp": "2026-05-14T20:34:11.882Z"
+    },
+    {
+      "raw": "FALSE|B,C|B and C change already-correct passé composé verbs to present tense, which would make the narrative more inconsistent instead of restoring passé composé coherence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778790851883-eqymqphr",
+      "timestamp": "2026-05-14T20:34:35.219Z"
+    }
+  ]
+}

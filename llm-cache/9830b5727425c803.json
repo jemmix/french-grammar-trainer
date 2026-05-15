@@ -1,0 +1,54 @@
+{
+  "cacheKey": "9830b5727425c803",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ce récit mélange deux temps. Quel verbe est au mauvais temps ? « Hier soir, elle a préparé le dîner. Elle met la table. Ils ont mangé en famille. »\n\nChoices:\nA. [CORRECT] met\nB. [WRONG] préparé\nC. [WRONG] mangé\nD. [WRONG] a\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778788904926-rewxuqow"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|D|\"a\" is an auxiliary verb (not a main verb) so it cannot be \"the wrong tense\" - only \"met\", \"préparé\", and \"mangé\" are main verbs in the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778788904927-w90f2whs",
+      "timestamp": "2026-05-14T20:02:43.950Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers (B: préparé, C: mangé, D: a) are in the correct passé composé tense for a past narrative, so they are not the verb in the wrong tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778788963951-c7n23f21",
+      "timestamp": "2026-05-14T20:03:14.134Z"
+    },
+    {
+      "raw": "TRUE||All three wrong answers (préparé, mangé, a) are correctly in passé composé and are not the verb in the wrong tense; only \"met\" is incorrectly in present tense instead of passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778788994136-1m1q9ip2",
+      "timestamp": "2026-05-14T20:03:49.941Z"
+    },
+    {
+      "raw": "TRUE||B, C, and D are correctly formed passé composé constructions for past tense, while the question correctly identifies A (\"met\") as the verb in the wrong (present) tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778789029942-pnombe3e",
+      "timestamp": "2026-05-14T20:04:30.382Z"
+    },
+    {
+      "raw": "TRUE||The narrative context \"Hier soir\" requires past tense verbs, so only the present tense \"met\" is incorrect while all other options (préparé, mangé, a) are properly conjugated in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778789070383-ck61brru",
+      "timestamp": "2026-05-14T20:05:07.163Z"
+    },
+    {
+      "raw": "FALSE|B,C|B and C are past participles used correctly in passé composé for completed past actions; D is an auxiliary verb that correctly forms passé composé in this past narrative context, so only A (met) is actually wrong.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778789107164-5n0q61vn",
+      "timestamp": "2026-05-14T20:05:47.150Z"
+    }
+  ]
+}

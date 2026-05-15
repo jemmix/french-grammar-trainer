@@ -1,0 +1,40 @@
+{
+  "cacheKey": "ce885b1beb6ae554",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-04-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au passé composé : « Hugo ___ monté les colis au troisième étage. »\n\nChoices:\nA. [CORRECT] a\nB. [WRONG] est\nC. [WRONG] aura\nD. [WRONG] ont\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770728761-yyq43rmo"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the wrong auxiliary verb (être instead of avoir for transitive monter), C is futur simple instead of passé composé, and D is plural conjugation for singular subject Hugo.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778770894238-f5bihh17",
+      "timestamp": "2026-05-14T15:03:05.560Z"
+    },
+    {
+      "raw": "TRUE||B is wrong because \"monter\" takes \"avoir\" when followed by a direct object (les colis); C is the futur antérieur not passé composé; D is plural but the subject \"Hugo\" is singular.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772151858-1ohfkb8m",
+      "timestamp": "2026-05-14T15:22:52.259Z"
+    },
+    {
+      "raw": "FALSE|B|Answer B could be correct in French when \"monter\" is used without a direct object, making it an intransitive verb that requires \"être\" as the auxiliary; however, in this context \"les colis\" is the direct object, so \"avoir\" is indeed correct.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773139030-u01a85vy",
+      "timestamp": "2026-05-14T15:39:30.124Z"
+    },
+    {
+      "raw": "FALSE|B|\"Est monté\" could be grammatically correct if interpreted as Hugo going up himself (intransitive) rather than carrying packages (transitive).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773870375-c0bvo9to",
+      "timestamp": "2026-05-14T15:51:44.739Z"
+    }
+  ]
+}

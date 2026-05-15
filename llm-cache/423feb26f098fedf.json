@@ -1,0 +1,33 @@
+{
+  "cacheKey": "423feb26f098fedf",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-20-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-20 - Le passé composé vs le présent dans un récit (alternance et cohérence temporelle)\n\nQUESTION:\nType: Input\nPrompt: Complétez la phrase en conjuguant le verbe au présent de narration pour maintenir la cohérence du récit.\nPhrase: Le prince entre dans la forêt enchantée. Il ___ une sorcière mystérieuse et elle lui offre une potion magique.\nCorrect Answer: rencontre\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778770729293-r1coj8ar"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the use of présent de narration for temporal coherence in a narrative context, which is the core concept of the stated rule about alternating passé composé and présent in a récit.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771830484-ml6n3ite",
+      "timestamp": "2026-05-14T15:17:50.740Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use \"présent de narration,\" and all surrounding verbs are already in present tense, so there's no actual alternation or choice between passé composé and présent being tested—it's merely a verb conjugation task.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772913898-aor0zmhi",
+      "timestamp": "2026-05-14T15:35:47.426Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The prompt explicitly tells the user to use \"le présent de narration,\" so the question only tests conjugation in a tense that's already been specified, rather than testing understanding of when to use present vs passé composé in a narrative.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773798991-usxxpp5t",
+      "timestamp": "2026-05-14T15:51:32.074Z"
+    }
+  ]
+}

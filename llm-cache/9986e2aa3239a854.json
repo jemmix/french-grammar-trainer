@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9986e2aa3239a854",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-01-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase contient un passé composé correctement formé avec avoir ?\n\nChoices:\nA. [CORRECT] Ils ont lu ce roman en deux jours.\nB. [WRONG] Ils avaient lu ce roman en deux jours.\nC. [WRONG] Ils sont lu ce roman en deux jours.\nD. [WRONG] Ils ont lis ce roman en deux jours.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770728689-yxbdi732"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors (B uses plus-que-parfait instead of passé composé, C incorrectly uses être as auxiliary, D uses present stem instead of past participle).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778770729532-7rmlm64i",
+      "timestamp": "2026-05-14T15:05:23.433Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses imparfait auxiliary (avait) forming plus-que-parfait instead of passé composé, C uses the wrong auxiliary verb (être instead of avoir), and D incorrectly uses the present tense conjugation \"lis\" instead of the past participle \"lu\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772294874-bgiiwdzz",
+      "timestamp": "2026-05-14T15:25:16.093Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773271923-1qmbzhv4",
+      "timestamp": "2026-05-14T15:43:44.854Z"
+    }
+  ]
+}

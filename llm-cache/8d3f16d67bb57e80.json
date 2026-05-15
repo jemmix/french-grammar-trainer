@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8d3f16d67bb57e80",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-20-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-20 - Le passé composé vs le présent dans un récit (alternance et cohérence temporelle)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel énoncé démontre correctement comment mélanger le présent de narration avec des énoncés de vérité générale ?\nChoices:\nA. [CORRECT] Elle entre dans la maison. La maison est vieille. Elle trouve ses clés. (La maison est vieille est une vérité générale, pas une action narrative.)\nB. Elle entre dans la maison. La maison était vieille. Elle trouve ses clés.\nC. Elle a entré dans la maison. La maison est vieille. Elle a trouvé ses clés.\nD. Elle entre dans la maison. La maison a été vieille. Elle trouve ses clés.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778770438125-7dk6wp3p"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests mixing narrative present with general truths, not the alternation between passé composé and present tenses in narratives.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778770525615-5grthnmf",
+      "timestamp": "2026-05-14T14:55:50.411Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests présent de narration vs présent for general truths, not the alternation between présent de narration and passé composé that the rule specifies.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771651566-tlijv9xy",
+      "timestamp": "2026-05-14T15:14:44.587Z"
+    }
+  ]
+}

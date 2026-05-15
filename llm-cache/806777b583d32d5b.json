@@ -1,0 +1,33 @@
+{
+  "cacheKey": "806777b583d32d5b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ce récit mélange passé composé et présent. Quel verbe faut-il corriger pour rétablir la cohérence au passé composé ? « Le professeur a expliqué la leçon. Les étudiants prennent des notes. Ils ont posé des questions. »\n\nChoices:\nA. [CORRECT] prennent → ont pris\nB. [WRONG] prennent → prenez\nC. [WRONG] prennent → prendront\nD. [WRONG] prennent → ont prendre\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778795983591-458qs0gg"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers either use a different tense or are grammatically invalid and do not restore passé composé consistency.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778795983609-64rbhuue",
+      "timestamp": "2026-05-14T22:08:51.042Z"
+    },
+    {
+      "raw": "TRUE||B changes to 2nd person form not matching \"les étudiants\"; C changes to future not passé composé; D uses infinitive after auxiliary which is grammatically incorrect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778846389348-xzhh4m6o",
+      "timestamp": "2026-05-15T12:01:08.110Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to create a valid passé composé form: B stays in present (wrong person), C changes to future, and D uses an incorrect infinitive after the auxiliary instead of the past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778846536531-mm2vtsj7",
+      "timestamp": "2026-05-15T12:03:13.908Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "6a103ad00afa4f09",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour maintenir la cohérence avec ce récit au passé composé, quel temps convient pour le verbe manquant ? « Marie a ouvert la lettre. Elle ___ la nouvelle à son ami. »\n\nChoices:\nA. [CORRECT] a annoncé (passé composé)\nB. [WRONG] annonce (présent)\nC. [WRONG] annonçait (imparfait)\nD. [WRONG] annoncera (futur)\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778775359760-4ubpyomi"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers break narrative coherence: présent (B) shifts to present, imparfait (C) creates inappropriate aspect for a discrete completed action, and futur (D) jumps to future tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778775359815-14yvb1a4",
+      "timestamp": "2026-05-14T16:17:04.784Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers break the past narrative coherence: présent and futur introduce wrong tenses entirely, while imparfait doesn't fit a completed sequential action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778775679954-m2322ezx",
+      "timestamp": "2026-05-14T16:21:46.823Z"
+    },
+    {
+      "raw": "FALSE|C|While B and D clearly break past tense coherence, C (annonçait) could be valid in certain narrative contexts where imparfait describes simultaneous action or background detail.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778775972320-z0d60gcc",
+      "timestamp": "2026-05-14T16:26:41.842Z"
+    },
+    {
+      "raw": "FALSE|C|While the imparfait creates a different narrative meaning (ongoing/background action), \"Elle annonçait la nouvelle à son ami\" is grammatically correct and could plausibly fit a past narrative describing an ongoing process of announcing, making it not clearly incorrect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778776142521-keex395d",
+      "timestamp": "2026-05-14T16:31:03.922Z"
+    }
+  ]
+}

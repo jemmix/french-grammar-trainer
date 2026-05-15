@@ -1,0 +1,68 @@
+{
+  "cacheKey": "4b055ebdeeeb5fb8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ce récit mélange passé composé et présent. Quel verbe faut-il corriger pour rétablir la cohérence au passé composé ? « Paul a appelé son frère. Il lui raconte les dernières nouvelles. Ils ont ri ensemble. »\n\nChoices:\nA. [CORRECT] raconte → a raconté\nB. [WRONG] a appelé → appelait\nC. [WRONG] ont ri → riaient\nD. [WRONG] Aucun verbe ne nécessite de correction.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778793507252-69y49xh2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B changes a correct passé composé to imparfait which doesn't achieve the stated goal; C changes a correct passé composé to imparfait which also fails; D is false because \"raconte\" needs correction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778793507267-ilystzui",
+      "timestamp": "2026-05-14T21:20:34.250Z"
+    },
+    {
+      "raw": "FALSE|B,C|All three wrong answers fail to address the requirement: changing a correct passé composé to imparfait (B and C) doesn't restore passé composé coherence, and denying a correction is needed (D) ignores that \"raconte\" is present tense while the other verbs are passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778793719578-ka91kf9n",
+      "timestamp": "2026-05-14T21:22:53.062Z"
+    },
+    {
+      "raw": "TRUE||The question asks to correct the narrative to consistent passé composé; B and C propose imparfait forms which would introduce a third tense instead of fixing the inconsistency, and D is false because \"raconte\" is present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778793853176-lcewb4vw",
+      "timestamp": "2026-05-14T21:26:38.964Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B and C propose changing passé composé to imparfait which would create more inconsistency rather than fix the present tense problem, and D incorrectly claims no verb needs correction when \"raconte\" is clearly in the present tense while the narrative should be in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778793998965-qroqzouo",
+      "timestamp": "2026-05-14T21:28:44.900Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers either change already-correct passé composé verbs to imparfait or incorrectly deny that any correction is needed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778794124901-72iinnpo",
+      "timestamp": "2026-05-14T21:29:27.572Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to restore passé composé consistency: B and C introduce imparfait, while D incorrectly claims no correction is needed despite the mixed tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778794167573-tj8k7yt5",
+      "timestamp": "2026-05-14T21:31:31.288Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers either change correctly formed passé composé verbs to imparfait (B, C) or falsely claim no correction is needed despite the clear presence mismatched tenses (D).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778794291289-3hfsb3lu",
+      "timestamp": "2026-05-14T21:32:12.623Z"
+    },
+    {
+      "raw": "FALSE|B,C|B and C propose changing to imparfait (appelait, riaient), which doesn't restore coherence to passé composé as the question specifically requests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778794332623-wovoce72",
+      "timestamp": "2026-05-14T21:33:26.143Z"
+    }
+  ]
+}

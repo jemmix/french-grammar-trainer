@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8bb89f98a4ebaae7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Laquelle de ces phrases maintient correctement la cohérence en présent de narration malgré la présence d'une action habituelle ?\n\nChoices:\nA. [CORRECT] Elle traverse la rue. Elle regarde toujours des deux côtés avant de traverser. Elle arrive à l'autre côté.\nB. [WRONG] Elle a traversé la rue. Elle regarde toujours des deux côtés avant de traverser. Elle arrive à l'autre côté.\nC. [WRONG] Elle traverse la rue. Elle regardait toujours des deux côtés avant de traverser. Elle arrive à l'autre côté.\nD. [WRONG] Elle traverse la rue. Elle a regardé des deux côtés. Elle arrive à l'autre côté.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770438125-o9hd2jfp"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers incorrectly switch to past tenses (passé composé in B and D, imparfait in C) which breaks the narrative present consistency requested in the question; narrative present requires staying in présent de narration even for habitual actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778770587567-kivexgmn",
+      "timestamp": "2026-05-14T14:57:02.439Z"
+    },
+    {
+      "raw": "TRUE||B mixes passé composé with present tense breaking narrative coherence; C uses imparfait which is for past narration not present; D uses passé composé breaking the present tense flow.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771732636-ebqiddx1",
+      "timestamp": "2026-05-14T15:16:30.953Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use past tenses (passé composé in B and D, imparfait in C) which break the narration présent coherence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772838659-qwtwqjxv",
+      "timestamp": "2026-05-14T15:38:48.070Z"
+    }
+  ]
+}

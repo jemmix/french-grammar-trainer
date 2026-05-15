@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9d60e39c57c54bab",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ce récit mélange passé composé et présent. Quel verbe faut-il corriger pour rétablir la cohérence au passé composé ? « La fusée a décollé. Les astronautes observent la Terre. Ils ont réalisé un rêve. »\n\nChoices:\nA. [CORRECT] observent → ont observé\nB. [WRONG] décollé → décollent\nC. [WRONG] réalisé → réalisent\nD. [WRONG] Aucun verbe ne nécessite de correction.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778790158158-ui3u8v5h"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers either create more inconsistency (B,C) or deny the clear problem (D).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778790302144-c3i92xr0",
+      "timestamp": "2026-05-14T20:25:22.671Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B and C change to present tense instead of passé composé, and D is false because \"observent\" clearly needs correction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778790507168-fx93kc35",
+      "timestamp": "2026-05-14T20:28:44.225Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers either change correct passé composé verbs to present tense or incorrectly claim no correction is needed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778790683438-eymhztlc",
+      "timestamp": "2026-05-14T20:31:55.027Z"
+    }
+  ]
+}

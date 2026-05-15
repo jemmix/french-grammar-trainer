@@ -1,0 +1,47 @@
+{
+  "cacheKey": "98dd2730c4045dda",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-20-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-20 - Le passé composé vs le présent dans un récit (alternance et cohérence temporelle)\n\nQUESTION:\nType: Input\nPrompt: Dans ce récit, un verbe est au mauvais temps : « La policière examine la scène de crime. Elle a repéré un suspect et elle s'approche prudemment. » Conjuguez le verbe incorrect au temps qui convient.\nPhrase: La policière examine la scène de crime. Elle ___ un suspect et elle s'approche prudemment.\nCorrect Answer: repère\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778851619392-gep0kdli"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding temporal coherence in a narrative, recognizing when passé composé disrupts présent-tense flow, and correctly conjugating to restore consistency.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778851619400-zpohsi8j",
+      "timestamp": "2026-05-15T13:27:38.000Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying and correcting a verb that breaks temporal coherence in a narrative, directly testing the learner's understanding of when to use présent vs passé composé to maintain consistency in a story.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778851658003-0w0rj3ur",
+      "timestamp": "2026-05-15T13:28:17.281Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The narrative is entirely in présent (\"examine\", \"s'approche\", \"repère\"), so answering only requires matching tense consistency rather than understanding alternation between passé composé and présent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778851697281-hh83p2yf",
+      "timestamp": "2026-05-15T13:29:12.107Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying that \"a repéré\" (passé composé) breaks temporal coherence in a present-tense narrative, and choosing the correct present tense form to restore it.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778851752107-e3qom0y4",
+      "timestamp": "2026-05-15T13:29:51.568Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests tense choice within a narrative (choosing présent de narration vs passé composé), which is properly governed by rule 02-21 on présent vs passé composé usage, not rule 02-20 which focuses specifically on temporal alternation patterns and coherence when both tenses are intentionally used together in a story.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778851791568-jjkixyk0",
+      "timestamp": "2026-05-15T13:30:43.581Z"
+    }
+  ]
+}

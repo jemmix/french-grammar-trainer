@@ -1,0 +1,75 @@
+{
+  "cacheKey": "811ab26d35d348ca",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ce récit mélange présent et passé composé. Quel verbe faut-il corriger pour rétablir la cohérence au présent de narration ? « L'explorateur avance dans la jungle. Il a entendu un bruit étrange. Il se retourne brusquement. »\n\nChoices:\nA. [CORRECT] a entendu → entend\nB. [WRONG] a entendu → entendons\nC. [WRONG] a entendu → entendra\nD. [WRONG] a entendu → ait entendu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778847726911-7z4eli74"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B has wrong person/number (1st plural instead of 3rd singular), C has wrong tense (future instead of present), and D has wrong mood without a trigger.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778847726939-n8cc686p",
+      "timestamp": "2026-05-15T12:25:10.608Z"
+    },
+    {
+      "raw": "FALSE|B|B uses \"entendons\" which is 1st person plural form, but the subject is \"Il\" (3rd person singular), so this creates a subject-verb agreement error.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778847911761-b3rq62v3",
+      "timestamp": "2026-05-15T12:26:36.044Z"
+    },
+    {
+      "raw": "TRUE||B is first person plural with a third person singular subject, C uses future tense instead of required present, and D uses subjunctive mood instead of required present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778847996046-ew8g6avq",
+      "timestamp": "2026-05-15T12:27:22.513Z"
+    },
+    {
+      "raw": "TRUE||B uses wrong person (nous instead of il), C switches to future tense instead of present, and D uses subjunctive which doesn't fit narrative context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778848042513-9d0lpuxg",
+      "timestamp": "2026-05-15T12:27:57.051Z"
+    },
+    {
+      "raw": "TRUE||B uses a plural verb for a singular subject, C uses the future tense instead of the required present, and D uses the subjunctive mood inappropriately.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778848077051-8qre5wan",
+      "timestamp": "2026-05-15T12:29:24.263Z"
+    },
+    {
+      "raw": "TRUE||B creates a subject-verb agreement error (il + entendons), C changes to future tense which doesn't match the narrative present, D uses subjunctive which is inappropriate for this narrative context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778848164264-s4k39dm5",
+      "timestamp": "2026-05-15T12:30:02.958Z"
+    },
+    {
+      "raw": "TRUE||B is wrong because \"Il entendons\" uses the wrong person (3rd person singular with 1st person plural conjugation), C breaks the required narrative present by using future tense, D uses subjunctive which is inappropriate for a simple narrative sequence without a que subordinator.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778848202959-t4636dek",
+      "timestamp": "2026-05-15T12:30:31.733Z"
+    },
+    {
+      "raw": "TRUE||B is grammatically wrong (person mismatch: nous form with il subject), C is future tense not present, D is subjunctive not present indicative.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778848231734-fietbtd6",
+      "timestamp": "2026-05-15T12:31:01.092Z"
+    },
+    {
+      "raw": "FALSE|B|The verdict is FALSE with issue on choice B only: \"entendons\" is 1st person plural but the subject is \"Il\" (3rd person singular), making it grammatically incorrect due to wrong person/number agreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778848261093-ozh276x6",
+      "timestamp": "2026-05-15T12:31:28.243Z"
+    }
+  ]
+}

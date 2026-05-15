@@ -1,0 +1,26 @@
+{
+  "cacheKey": "dbc499e09103acfc",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-20-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-20 - Le passé composé vs le présent dans un récit (alternance et cohérence temporelle)\n\nQUESTION:\nType: Input\nPrompt: Dans ce récit, un verbe est au mauvais temps : « Nous avons organisé une fête surprise. Les invités arrivent à l'improviste et nous avons tous célébré ensemble. » Conjuguez le verbe incorrect au temps qui convient.\nPhrase: Nous avons organisé une fête surprise. Les invités ___ à l'improviste et nous avons tous célébré ensemble.\nCorrect Answer: sont arrivés\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778793507260-fzh33k5q"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that in a narrative describing completed past events, the présent \"arrivent\" disrupts temporal coherence and must be changed to passé composé \"sont arrivés\" to match the narrative's temporal frame.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778793586368-440d7usp",
+      "timestamp": "2026-05-14T21:20:31.288Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests temporal coherence in narratives by requiring the learner to identify and fix an inconsistent present tense verb that should be passé composé to maintain the sequence of past events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778793690548-0n3lz0f0",
+      "timestamp": "2026-05-14T21:27:57.163Z"
+    }
+  ]
+}

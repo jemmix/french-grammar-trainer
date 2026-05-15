@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1d55131dc591e011",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-20-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-20 - Le passé composé vs le présent dans un récit (alternance et cohérence temporelle)\n\nQUESTION:\nType: Input\nPrompt: Ce récit au présent de narration contient un verbe au mauvais temps : « Le prince entre dans la forêt enchantée. Il a rencontré une sorcière mystérieuse et elle lui offre une potion magique. » Conjuguez le verbe incorrect au présent.\nPhrase: Le prince entre dans la forêt enchantée. Il ___ une sorcière mystérieuse et elle lui offre une potion magique.\nCorrect Answer: rencontre\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778850527217-uycqhh6z"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests maintaining temporal coherence in a narrative by requiring the student to recognize and fix an incorrectly placed passé composé verb (\"a rencontré\") that should be in the present tense (\"rencontre\") to match the narrative context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778850527219-2q92w7ez",
+      "timestamp": "2026-05-15T13:09:14.408Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question only tests basic tense consistency (maintaining présent de narration), not the nuanced rule about when to alternate between passé composé and présent for temporal coherence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778850554410-htsn079r",
+      "timestamp": "2026-05-15T13:09:56.034Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only requires knowing how to conjugate \"rencontrer\" in the present tense, not understanding when to alternate between passé composé and présent or how to maintain temporal coherence in narratives.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778850596034-2ysi9uum",
+      "timestamp": "2026-05-15T13:11:33.056Z"
+    }
+  ]
+}

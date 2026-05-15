@@ -1,0 +1,26 @@
+{
+  "cacheKey": "5bfd72f2fa784601",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Laquelle de ces phrases utilise correctement le passé composé pour les actions et l'imparfait pour un état ou une description ?\n\nChoices:\nA. [CORRECT] Les enfants sont arrivés à l'école. Ils étaient excités. Ils ont couru vers la cour.\nB. [WRONG] Les enfants arrivent à l'école. Ils sont excités. Ils courent vers la cour.\nC. [WRONG] Les enfants sont arrivés à l'école. Ils arrivent excités. Ils ont couru vers la cour.\nD. [WRONG] Les enfants arrivaient à l'école. Ils étaient excités. Ils courent vers la cour.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770438126-s1mvkv2x"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers either use the present tense instead of passé composé/imparfait, or mix them incorrectly (B uses only present; C uses \"arrivent\" with present tense instead of \"étaient\" with imparfait; D uses present \"courent\" instead of passé composé).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778770655791-65eh6m5w",
+      "timestamp": "2026-05-14T14:58:03.071Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: B is entirely in present tense, C uses present instead of imparfait in the middle sentence, and D uses imparfait for an action and present tense instead of passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771793662-muvn8h8n",
+      "timestamp": "2026-05-14T15:17:12.905Z"
+    }
+  ]
+}

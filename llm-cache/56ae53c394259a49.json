@@ -1,0 +1,33 @@
+{
+  "cacheKey": "56ae53c394259a49",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-20-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-20 - Le passé composé vs le présent dans un récit (alternance et cohérence temporelle)\n\nQUESTION:\nType: Input\nPrompt: Dans ce récit, un verbe est au mauvais temps : « Nous avons quitté la maison à six heures. Nous prenons le bus et nous sommes arrivés à l'école à sept heures. » Conjuguez le verbe incorrect au temps qui convient.\nPhrase: Nous avons quitté la maison à six heures. Nous ___ le bus et nous sommes arrivés à l'école à sept heures.\nCorrect Answer: avons pris\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778792641306-fen8hsq4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests temporal coherence in a past-tense narrative by requiring the student to recognize that sequential completed actions (leaving at 6am, taking bus, arriving at 7am) must all be in passé composé to maintain narrative flow.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778792641308-odt126p2",
+      "timestamp": "2026-05-14T21:04:42.406Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing and correcting a temporal inconsistency where présent incorrectly interrupts a narrative that should stay in passé composé, directly testing the alternation and coherence between these tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778792682407-cbzavfxg",
+      "timestamp": "2026-05-14T21:05:23.632Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that the narrative describes a completed sequence of past events, so the present tense \"prenons\" breaks temporal coherence and must be changed to \"avons pris\" in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778792723633-tjezrhxc",
+      "timestamp": "2026-05-14T21:05:56.861Z"
+    }
+  ]
+}

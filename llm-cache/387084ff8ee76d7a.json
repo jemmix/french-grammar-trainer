@@ -1,0 +1,33 @@
+{
+  "cacheKey": "387084ff8ee76d7a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-13-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au passé composé négatif : « Elle ___ lu ce livre. »\n\nChoices:\nA. [CORRECT] n'a pas\nB. [WRONG] a pas n'\nC. [WRONG] n'a lu pas\nD. [WRONG] pas n'a\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770729042-cymo0s8b"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All choices violate standard negation word order (ne auxiliary pas).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771502656-erc9777y",
+      "timestamp": "2026-05-14T15:12:33.934Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the required negation structure (ne...pas must surround the auxiliary verb).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772723157-m2rz6ccf",
+      "timestamp": "2026-05-14T15:32:47.946Z"
+    },
+    {
+      "raw": "TRUE||All three answers violate the correct negation structure n' + auxiliary + pas in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773716007-9mu2sqot",
+      "timestamp": "2026-05-14T15:49:04.450Z"
+    }
+  ]
+}

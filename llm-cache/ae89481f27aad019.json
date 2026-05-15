@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ae89481f27aad019",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-11-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au passé composé : « Les étudiantes ont ___ l'examen. »\n\nChoices:\nA. [CORRECT] terminé\nB. [WRONG] terminées\nC. [WRONG] terminés\nD. [WRONG] terminait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770728980-0haj7azo"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B and C incorrectly add participle agreement with \"avoir\" when the direct object follows the verb; D uses the imparfait instead of the required passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771370387-62oz4u27",
+      "timestamp": "2026-05-14T15:12:08.139Z"
+    },
+    {
+      "raw": "TRUE||The participle \"terminé\" does not agree with the subject because the direct object \"l'examen\" follows the verb; \"terminées\" (B) and \"terminés\" (C) incorrectly add agreement, and \"terminait\" (D) is in the wrong tense (imparfait instead of passé composé).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772692510-h54y1qlk",
+      "timestamp": "2026-05-14T15:38:07.423Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect because B and C incorrectly add gender/number agreement (with avoir as auxiliary and no preceding direct object, the past participle remains invariable), and D uses the imparfait tense instead of the required passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773839227-2cf34sx0",
+      "timestamp": "2026-05-14T15:50:59.812Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0276559d8b3a93c2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ce récit mélange présent et passé composé. Quel verbe faut-il corriger pour rétablir la cohérence au présent de narration ? « Le détective entre dans la pièce. Il a trouvé un indice sur la table. Il appelle son collègue. »\n\nChoices:\nA. [CORRECT] a trouvé → trouve\nB. [WRONG] entre → est entré\nC. [WRONG] appelle → a appelé\nD. [WRONG] Tous les verbes sont cohérents.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778789771493-njn0mtvu"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers would increase inconsistency or incorrectly claim the verbs are already consistent when they are not.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778789771495-jxju3rgj",
+      "timestamp": "2026-05-14T20:16:30.779Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are indeed incorrect: B and C would break narrative coherence by changing correct present verbs to past tense, and D incorrectly claims the verbs are already coherent when \"a trouvé\" is in the wrong tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778789790782-si0ddda1",
+      "timestamp": "2026-05-14T20:16:51.662Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers would move away from narrative present coherence: B and C would introduce more past tense verbs, and D incorrectly claims mixed tenses are already coherent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778789811663-gqamq4jo",
+      "timestamp": "2026-05-14T20:17:13.739Z"
+    }
+  ]
+}

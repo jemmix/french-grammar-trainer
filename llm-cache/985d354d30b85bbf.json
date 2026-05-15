@@ -1,0 +1,33 @@
+{
+  "cacheKey": "985d354d30b85bbf",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Dans ce passage au présent de narration, quel verbe est incohérent ? « L'enfant aperçoit un papillon. Il a couru après lui. Il le rattrape. »\n\nChoices:\nA. [CORRECT] a couru\nB. [WRONG] aperçoit\nC. [WRONG] rattrape\nD. [WRONG] lui\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778775359761-309xl67l"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||The question asks which VERB is incoherent, so 'lui' (D) is not a verb and cannot be the answer; 'aperçoit' (B) and 'rattrape' (C) are both correctly in present tense and consistent with the présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778775518068-66bjjl0c",
+      "timestamp": "2026-05-14T16:20:14.800Z"
+    },
+    {
+      "raw": "TRUE||B (\"aperçoit\") and C (\"rattrape\") are both present tense verbs that fit narrative present style; D (\"lui\") is a pronoun not a verb so cannot be the answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778775865468-79759loc",
+      "timestamp": "2026-05-14T16:24:50.399Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are indeed incorrect: aperçoit and rattrape are properly conjugated in the present tense, and lui is a pronoun not a verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778776113415-p0rygg81",
+      "timestamp": "2026-05-14T16:30:43.641Z"
+    }
+  ]
+}

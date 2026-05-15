@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a9790f45a455b8a4",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ce récit mélange passé composé et présent. Quel verbe faut-il corriger pour rétablir la cohérence au passé composé ? « Nous avons pris le métro. Nous descendons à la station Opéra. Nous avons marché jusqu'au théâtre. »\n\nChoices:\nA. [CORRECT] descendons → sommes descendus\nB. [WRONG] pris → prenons\nC. [WRONG] marché → marchons\nD. [WRONG] Aucun verbe ne nécessite de correction.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778775359761-u4mi84t2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers would not restore coherence in passé composé; B and C would introduce more present tense verbs, while D incorrectly claims no correction is needed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778775459662-pi14qf3f",
+      "timestamp": "2026-05-14T16:18:03.011Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect because B and C would introduce more present tense instead of fixing the coherence, and D incorrectly denies that a correction is needed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778775774003-ku06glgu",
+      "timestamp": "2026-05-14T16:23:22.337Z"
+    },
+    {
+      "raw": "TRUE||B and C would change passé composé verbs to présent, which is the opposite of what the question asks; D incorrectly claims no verb needs correction when \"descendons\" is clearly inconsistent with the other passé composé verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778776041474-f08b95ab",
+      "timestamp": "2026-05-14T16:27:42.405Z"
+    }
+  ]
+}

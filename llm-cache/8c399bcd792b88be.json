@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8c399bcd792b88be",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-20-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-20 - Le passé composé vs le présent dans un récit (alternance et cohérence temporelle)\n\nQUESTION:\nType: Input\nPrompt: Dans ce récit, un verbe est au mauvais temps : « Soudain, elle sort de la maison. Elle est venue vers sa mère et elles se serrent dans les bras. » Conjuguez le verbe incorrect au temps qui convient.\nPhrase: Soudain, elle sort de la maison. Elle ___ vers sa mère et elles se serrent dans les bras.\nCorrect Answer: vient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778849598352-c5d7djga"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests maintaining narrative coherence in the present tense by requiring the learner to recognize that \"sort\" and \"se serrent\" establish present-tense context, so \"est venue\" must become \"vient\" to preserve temporal consistency.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778849598354-jc4bl9we",
+      "timestamp": "2026-05-15T12:54:33.767Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests temporal coherence in a narrative, requiring the learner to identify when présent vs passé composé creates logical inconsistency and select the correct tense for the sequence of events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778849673770-1qqzf6zp",
+      "timestamp": "2026-05-15T12:55:20.496Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The narrative is written entirely in the present tense (\"sort\", \"se serrent\"), so using \"vient\" is simply maintaining the same tense throughout — there is no alternation between passé composé and présent, which is what the rule is about.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778849720497-y4359ccr",
+      "timestamp": "2026-05-15T12:56:12.941Z"
+    }
+  ]
+}

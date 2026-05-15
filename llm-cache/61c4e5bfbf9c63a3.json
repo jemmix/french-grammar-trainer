@@ -1,0 +1,26 @@
+{
+  "cacheKey": "61c4e5bfbf9c63a3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-20-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-20 - Le passé composé vs le présent dans un récit (alternance et cohérence temporelle)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Laquelle de ces phrases respecte la cohérence temporelle dans un récit au passé composé ?\nChoices:\nA. [CORRECT] Le metteur en scène est arrivé tôt, il a vérifié les éclairages et tout était prêt.\nB. Le metteur en scène arrivait tôt, il a vérifié les éclairages et il était prêt.\nC. Le metteur en scène est arrivé tôt, il vérifiait les éclairages et tout était prêt.\nD. Le metteur en scène arrivait tôt, il vérifiait les éclairages et il était prêt.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778770438125-0hvzagcq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests the alternation between passé composé and imparfait for narrative coherence, not the alternation between passé composé and présent as stated in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778770545868-c3he50mz",
+      "timestamp": "2026-05-14T14:56:13.590Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests passé composé vs imparfait, but the rule is about passé composé vs présent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771663809-fcvm1afj",
+      "timestamp": "2026-05-14T15:16:01.020Z"
+    }
+  ]
+}

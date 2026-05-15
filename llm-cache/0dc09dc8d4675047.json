@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0dc09dc8d4675047",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour compléter ce récit au passé composé, quel temps faut-il choisir ? « La fusée a décollé. Les astronautes ___ la Terre depuis l'espace. »\n\nChoices:\nA. [CORRECT] ont observé (passé composé)\nB. [WRONG] observent (présent)\nC. [WRONG] observant (participe présent)\nD. [WRONG] observeront (futur)\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778775359761-o1532ufr"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||The question explicitly requests completing the narrative in passé composé; B uses present tense (présent historique is stylistic but contradicts the instruction), C is a participle phrase without a main verb (incomplete sentence), and D uses future tense which breaks the narrative timeline established by the first clause in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778775524427-of9dkmvo",
+      "timestamp": "2026-05-14T16:20:23.088Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers do not use the passé composé as explicitly required by the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778775890399-7qvo5fmg",
+      "timestamp": "2026-05-14T16:25:10.083Z"
+    }
+  ]
+}

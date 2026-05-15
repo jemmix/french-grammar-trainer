@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6c68e713abe7742b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Identifiez le verbe qui crée une incohérence dans ce passage au passé composé : « Samedi soir, nous avons organisé une fête pour nos amis. Ils arrivent à vingt heures et nous avons servi des tapas et du champagne. »\n\nChoices:\nA. [CORRECT] arrivent\nB. [WRONG] organisé\nC. [WRONG] servi\nD. [WRONG] Les trois verbes maintiennent la cohérence.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770438124-4azomhh8"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers (B, C, D) are indeed incorrect because B and C correctly use passé composé, and D incorrectly claims consistency when \"arrivent\" breaks the tense unity.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778770478892-w3ksd39u",
+      "timestamp": "2026-05-14T14:55:07.304Z"
+    },
+    {
+      "raw": "TRUE||B and C refer to correctly conjugated passé composé verbs that maintain coherence; D falsely claims all verbs maintain coherence when \"arrivent\" is in the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771604687-ng67jbwa",
+      "timestamp": "2026-05-14T15:13:53.860Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B and C identify verbs in passé composé which are consistent with the passage, and D falsely claims the passage maintains coherence when \"arrivent\" creates a tense inconsistency.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772770380-djms062f",
+      "timestamp": "2026-05-14T15:34:22.536Z"
+    }
+  ]
+}

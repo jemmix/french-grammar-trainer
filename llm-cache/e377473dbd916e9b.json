@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e377473dbd916e9b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-11-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au passé composé : « Vous avez ___ vos clés. »\n\nChoices:\nA. [CORRECT] oublié\nB. [WRONG] oubliés\nC. [WRONG] oubliées\nD. [WRONG] oubliait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770728979-q21g9r3q"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B and C incorrectly add agreement which only occurs when the direct object precedes the auxiliary; D is the imparfait form instead of the required past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771369111-c64gnjko",
+      "timestamp": "2026-05-14T15:09:56.977Z"
+    },
+    {
+      "raw": "TRUE||B has wrong gender (clés is feminine) and no agreement needed since object follows verb; C has no agreement needed since object follows verb; D is imparfait not passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772563425-5z5aac1n",
+      "timestamp": "2026-05-14T15:29:45.724Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B and C incorrectly apply feminine/plural agreement when the direct object \"vos clés\" follows the verb (no agreement needed), and D uses the imparfait form instead of the required past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773544338-ik6ds17n",
+      "timestamp": "2026-05-14T15:46:07.993Z"
+    }
+  ]
+}

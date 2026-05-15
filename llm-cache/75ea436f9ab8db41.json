@@ -1,0 +1,26 @@
+{
+  "cacheKey": "75ea436f9ab8db41",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Laquelle de ces continuations maintient correctement la cohérence du récit en présent de narration ?\n\nChoices:\nA. [CORRECT] Il marche pendant des heures et il découvre finalement une grotte cachée.\nB. [WRONG] Il marche pendant des heures et il a découvert une grotte cachée.\nC. [WRONG] Il marchait pendant des heures et il a découvert une grotte cachée.\nD. [WRONG] Il a marché pendant des heures et il a découvert une grotte cachée.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770438124-oao6gvv8"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers either use past tenses or mix tenses, failing to maintain the narrative present (présent de narration).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778770438146-jmz69vb8",
+      "timestamp": "2026-05-14T14:54:34.646Z"
+    },
+    {
+      "raw": "TRUE||B, C, and D all break the présent de narration by introducing past tenses (passé composé and/or imparfait), violating the stylistic coherence requested by mixing narrative voices or abandoning the present tense narrative style entirely.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771576166-lvtxrb7v",
+      "timestamp": "2026-05-14T15:18:50.595Z"
+    }
+  ]
+}

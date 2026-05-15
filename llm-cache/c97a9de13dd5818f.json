@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c97a9de13dd5818f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-20-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-20 - Le passé composé vs le présent dans un récit (alternance et cohérence temporelle)\n\nQUESTION:\nType: Input\nPrompt: Dans ce récit mêlant passé composé et présent, un verbe est au mauvais temps : « Nous avons organisé une fête surprise. Les invités arrivent à l'improviste et nous avons tous célébré ensemble. » Identifiez le verbe mal conjugué et conjuguez-le au temps qui convient.\nPhrase: Nous avons organisé une fête surprise. Les invités ___ à l'improviste et nous avons tous célébré ensemble.\nCorrect Answer: sont arrivés\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778847726936-5o591thy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing temporal incoherence in a narrative and fixing it by switching présent to passé composé to maintain consistent past narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778847765317-3wvyl5y2",
+      "timestamp": "2026-05-15T12:23:31.211Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying and correcting the incorrect temporal alternation between passé composé and présent, which is the core of rule 02-20 about maintaining narrative coherence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778847824079-vecrfs31",
+      "timestamp": "2026-05-15T12:23:54.324Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question's prompt is misleading because it claims the narrative \"mixes\" passé composé and présent as a deliberate alternation, but the present tense \"arrivent\" is simply an error that breaks temporal coherence, not an intentional narrative choice.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778847876431-bo528gt8",
+      "timestamp": "2026-05-15T12:26:43.608Z"
+    }
+  ]
+}

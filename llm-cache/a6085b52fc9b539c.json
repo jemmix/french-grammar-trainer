@@ -1,0 +1,47 @@
+{
+  "cacheKey": "a6085b52fc9b539c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ce récit mélange présent et passé composé. Quel verbe faut-il corriger pour rétablir la cohérence au présent de narration ? « L'explorateur avance dans la jungle. Il a entendu un bruit étrange. Il se retourne brusquement. »\n\nChoices:\nA. [CORRECT] a entendu → entend\nB. [WRONG] a entendu → entendait\nC. [WRONG] a entendu → entendra\nD. [WRONG] a entendu → ait entendu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778795279655-p9i1adl3"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B|\"entendait\" (imparfait) is grammatically correct in isolation and can be used in mixed-tense narratives; while it doesn't maintain strict \"présent de narration\" coherence, it's not inherently incorrect like the future tense or subjunctive forms.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778795279656-5omerk35",
+      "timestamp": "2026-05-14T21:50:08.963Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers break the présent de narration coherence: B uses imparfait, C uses futur simple, D uses subjonctif, none of which fit with the narrative present context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778795408964-zgy5p1gm",
+      "timestamp": "2026-05-14T21:50:32.110Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use non-present tenses: imparfait (B), futur simple (C), and subjonctif passé (D) instead of the required présent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778795432111-fmg6cl5d",
+      "timestamp": "2026-05-14T21:50:53.625Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use inappropriate tenses for narrative present: imparfait (B) is past, futur (C) is future, and subjonctif (D) requires a trigger not present in the text.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778795453625-zp2pf8ca",
+      "timestamp": "2026-05-14T21:51:24.299Z"
+    },
+    {
+      "raw": "FALSE|B|The imperfect \"entendait\" is a past tense that doesn't restore présent de narration coherence; it keeps the verb in the past, just in a different tense, while the narrative requires all verbs in the present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778795484300-dvg28q92",
+      "timestamp": "2026-05-14T21:51:53.764Z"
+    }
+  ]
+}

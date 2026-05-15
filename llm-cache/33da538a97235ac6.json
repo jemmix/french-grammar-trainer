@@ -1,0 +1,33 @@
+{
+  "cacheKey": "33da538a97235ac6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise correctement le présent de narration pour raconter une histoire au passé ?\n\nChoices:\nA. [CORRECT] Elle arrive à la gare, elle voit son ami et elle lui saute au cou.\nB. [WRONG] Elle arrivait à la gare, elle voit son ami et elle lui saute au cou.\nC. [WRONG] Elle a arrivé à la gare, elle voit son ami et elle lui saute au cou.\nD. [WRONG] Elle arrive à la gare, elle a vu son ami et elle lui saute au cou.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770438124-ad85f495"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B mixes imparfait with present, C has incorrect passé composé form and mixes tenses, and D mixes passé composé with present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778770438133-cs7nh2ya",
+      "timestamp": "2026-05-14T14:55:00.768Z"
+    },
+    {
+      "raw": "FALSE|B|While B uses imperfect tense, which breaks the narrative present style, it's not strictly grammatically incorrect - it's a valid tense choice (imparfait) that describes ongoing past actions, just not the requested présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771561474-5ypeggfr",
+      "timestamp": "2026-05-14T15:15:24.626Z"
+    },
+    {
+      "raw": "FALSE|C|Answer C is grammatically incorrect because \"arriver\" uses \"être\" as auxiliary, so it should be \"Elle est arrivée\" not \"Elle a arrivé\"; however, B and D are correctly identified as wrong because they mix tenses inconsistently with the présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772797530-zi2eb3jk",
+      "timestamp": "2026-05-14T15:34:16.662Z"
+    }
+  ]
+}

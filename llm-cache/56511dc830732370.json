@@ -1,0 +1,33 @@
+{
+  "cacheKey": "56511dc830732370",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-01-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Vous n'___ pas dit bonjour aux voisins. »\n\nChoices:\nA. [CORRECT] avez\nB. [WRONG] as\nC. [WRONG] avons\nD. [WRONG] êtes\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770728688-aqtl6zec"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: \"as\" and \"avons\" don't agree with \"vous\" as the subject, and \"êtes\" uses the wrong auxiliary verb since \"dire\" requires \"avoir\" in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778770729485-0q774yje",
+      "timestamp": "2026-05-14T15:00:03.275Z"
+    },
+    {
+      "raw": "TRUE||B uses the wrong conjugation (as is for tu, not vous), C uses the wrong conjugation (avons is for nous, not vous), and D uses the wrong auxiliary verb (dire uses avoir, not être).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771927794-deo02ic4",
+      "timestamp": "2026-05-14T15:19:26.529Z"
+    },
+    {
+      "raw": "TRUE||B uses \"as\" for tu instead of \"avez\" for vous, C uses \"avons\" for nous instead of \"avez\" for vous, D uses \"être\" auxiliary instead of \"avoir\" which is required for dire in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772970691-9odixjel",
+      "timestamp": "2026-05-14T15:37:43.379Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "71b33aa720d3f7d4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-20-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-20 - Le passé composé vs le présent dans un récit (alternance et cohérence temporelle)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe dans le temps qui convient pour maintenir la cohérence du récit au passé composé.\nPhrase: Nous avons quitté la maison à six heures. Nous ___ le bus et nous sommes arrivés à l'école à sept heures.\nCorrect Answer: avons pris\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778775359762-w3pi5cw2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires maintaining narrative temporal coherence by using the passé composé consistently, which is the central concept of the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778775598538-mctkf9zd",
+      "timestamp": "2026-05-14T16:20:30.719Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The prompt explicitly tells students to use passé composé (\"maintenir la cohérence du récit au passé composé\"), removing any need to decide between passé composé and présent, so it tests conjugation (rule 02-01/02-02) rather than the alternation rule it claims to test.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778775909416-74ix079n",
+      "timestamp": "2026-05-14T16:28:33.637Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly mandates using the passé composé, eliminating the choice between passé composé and présent that the rule is designed to test.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778776187045-nqzuza5a",
+      "timestamp": "2026-05-14T16:30:27.474Z"
+    }
+  ]
+}

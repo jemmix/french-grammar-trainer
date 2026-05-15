@@ -1,0 +1,33 @@
+{
+  "cacheKey": "28d5fa3cc1a3d07a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-20-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-20 - Le passé composé vs le présent dans un récit (alternance et cohérence temporelle)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel énoncé explique correctement la règle de cohérence temporelle dans une narration ?\nChoices:\nA. [CORRECT] Une fois qu'on a choisi un temps principal (passé composé ou présent de narration), tous les verbes narratifs doivent rester dans ce temps pour maintenir la cohérence.\nB. On peut mélanger librement le passé composé et le présent de narration dans une même phrase.\nC. Le présent de narration ne peut jamais coexister avec l'imparfait.\nD. La cohérence temporelle n'est pas importante dans un récit littéraire.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778770729293-snbh6lp5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests knowledge of the rule's EXPLANATION (metacognitive awareness of what the rule states), not the ability to APPLY the rule by choosing correct tenses in a narrative context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771821670-aspgtrdp",
+      "timestamp": "2026-05-14T15:17:21.944Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the temporal consistency rule for narration by asking about maintaining either passé composé or présent de narration, which is exactly what rule 02-20 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772876776-kykjjl28",
+      "timestamp": "2026-05-14T15:35:09.035Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests a general narrative coherence principle (maintaining consistency once a tense is chosen) rather than the specific alternation between passé composé and présent de narration—students could answer correctly without knowing when or how to properly alternate between these two tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773778442-il42wsmx",
+      "timestamp": "2026-05-14T15:50:05.582Z"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "cacheKey": "c99a1b45b1cd0289",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-02-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au passé composé : « Camille ___ restée à la maison toute la semaine. »\n\nChoices:\nA. [CORRECT] est\nB. [WRONG] a\nC. [WRONG] sont\nD. [WRONG] sera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770728709-eiq8z5yn"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses wrong auxiliary (rester takes être), C is plural for singular subject Camille, D is future tense not passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778770788634-fyckufad",
+      "timestamp": "2026-05-14T15:00:08.379Z"
+    },
+    {
+      "raw": "FALSE|B|B could be correct if using \"rester\" as a transitive verb with \"avoir\" as auxiliary (e.g., \"Camille a resté ses affaires\" - Camille kept her things), though intransitive \"rester\" takes \"être\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771930596-b2np1ti7",
+      "timestamp": "2026-05-14T15:25:04.510Z"
+    },
+    {
+      "raw": "TRUE||B uses \"avoir\" instead of required auxiliary \"être\", C uses plural \"sont\" with singular subject \"Camille\", D uses future tense instead of required passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773264932-a1qbyp35",
+      "timestamp": "2026-05-14T15:41:27.420Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly uses avoir instead of être as auxiliary; C is plural form but subject is singular; D is future tense not passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773893428-efj9i7o7",
+      "timestamp": "2026-05-14T15:52:05.735Z"
+    },
+    {
+      "raw": "FALSE|B,C,D|B uses \"avoir\" which is not the correct auxiliary for \"rester\"; C uses plural \"sont\" for singular subject \"Camille\"; D uses future tense \"sera\" instead of present tense \"est\" required for passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778774029500-sz6tk1hz",
+      "timestamp": "2026-05-14T15:54:12.046Z"
+    }
+  ]
+}

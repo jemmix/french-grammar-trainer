@@ -1,0 +1,47 @@
+{
+  "cacheKey": "12f3c40c604be054",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-20-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le passé composé vs le présent dans un récit (alternance et cohérence temporelle)\n\nQUESTION:\nPrompt: Dans ce récit, un verbe est au mauvais temps : « Elle sort de la maison. Elle est venue vers sa mère et elles se serrent dans les bras. » Corrigez ce verbe en le conjuguant au temps qui convient.\nPhrase: Elle sort de la maison. Elle ___ vers sa mère et elles se serrent dans les bras.\nHint: venir\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1778848971401-8wtjc554"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The blank is positioned where \"est venue\" appears in the example, and the context of alternating present tense verbs with a single passé composé makes it obvious which verb needs correcting to \"vient\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778848971411-gdqh8oaz",
+      "timestamp": "2026-05-15T12:45:55.216Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\n\nREASON: The prompt clearly indicates the narrative context and task, with the blank and hint (\"venir\") making it obvious the student should conjugate \"venir\" appropriately for the narrative flow.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778849155217-t2af6cfs",
+      "timestamp": "2026-05-15T12:47:21.483Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nREASON: The prompt refers to \"un verbe est au mauvais temps\" (one verb is in the wrong tense), but the example shows a verb that's not in the exercise phrase, and the exercise phrase has a blank with no verb at all - it's unclear whether the learner should understand this as conjugating the blank to match the present-tense narrative or fix a different verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778849241487-hw7pce8e",
+      "timestamp": "2026-05-15T12:47:56.540Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The context makes it obvious that \"est venue\" is in the wrong tense (it's passé composé while the narrative is in présent), the blank shows where to write the correction, and the hint \"venir\" confirms which verb to use.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778849276541-ikcwcmz6",
+      "timestamp": "2026-05-15T12:48:22.330Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt states \"un verbe est au mauvais temps\" but doesn't specify which tense the narrative should use (present or past), and without explicit temporal markers like \"hier\" or \"maintenant,\" it's impossible to determine whether \"est venue\" should become \"vient\" (to stay in present) or \"sort/se serrent\" should change to passé composé (to stay in past).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778849302330-yqta0nrx",
+      "timestamp": "2026-05-15T12:49:36.569Z"
+    }
+  ]
+}

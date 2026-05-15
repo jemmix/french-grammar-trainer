@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d98c8b4edc2aaec4",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Dans ce récit au présent de narration, quel verbe est au mauvais temps ? « Le chat saute par la fenêtre. Il a atterri sur le toit. Il court se cacher. »\n\nChoices:\nA. [CORRECT] a atterri\nB. [WRONG] saute\nC. [WRONG] court\nD. [WRONG] cacher\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778775359761-adkkr6a8"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B and C are in the present tense (correct for présent de narration), and D is an infinitive used in the reflexive construction \"se cacher,\" so none are in the wrong tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778775423750-zmuhmw7q",
+      "timestamp": "2026-05-14T16:17:47.547Z"
+    },
+    {
+      "raw": "FALSE|D|D is an infinitive (not a conjugated verb), so it cannot be said to be in the \"wrong tense\" - infinitives lack tense entirely. B and C are correctly identified as being in the correct tense for présent de narration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778775735268-p8qqntlr",
+      "timestamp": "2026-05-14T16:26:01.534Z"
+    },
+    {
+      "raw": "FALSE|D|D is an infinitive, not a conjugated verb with a tense; while the infinitive form is grammatically correct here, the question asks for the verb \"au mauvais temps\" (in the wrong tense), and an infinitive has no tense, making this choice mismatched with the question's criteria.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778776132633-yxuxvbnc",
+      "timestamp": "2026-05-14T16:29:38.647Z"
+    }
+  ]
+}

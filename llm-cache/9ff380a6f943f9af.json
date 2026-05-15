@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9ff380a6f943f9af",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-12-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au passé composé : « Elles ___ tard hier soir. »\n\nChoices:\nA. [CORRECT] se sont couchées\nB. [WRONG] se sont couché\nC. [WRONG] se sont couchés\nD. [WRONG] ont couchées\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770729005-wtco960n"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B and C lack the feminine plural agreement (should be couchées); D incorrectly uses the transitive auxiliary ont instead of the reflexive se sont.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771419389-j6qcobmj",
+      "timestamp": "2026-05-14T15:10:46.839Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772612908-sowmq2cx",
+      "timestamp": "2026-05-14T15:30:43.785Z"
+    },
+    {
+      "raw": "TRUE||All three wrong answers contain clear errors: B and C lack the feminine plural agreement for \"couchées\" to match \"Elles\", while D incorrectly omits the reflexive pronoun \"se\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773599263-24y7vd3a",
+      "timestamp": "2026-05-14T15:47:04.716Z"
+    }
+  ]
+}

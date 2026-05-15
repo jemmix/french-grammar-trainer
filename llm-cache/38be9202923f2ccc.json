@@ -1,0 +1,33 @@
+{
+  "cacheKey": "38be9202923f2ccc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ce récit mêle passé composé et présent. Quel verbe faut-il corriger pour rétablir la cohérence au passé composé ? « J'ai acheté les billets. J'attends le train. Je suis monté dans le wagon. »\n\nChoices:\nA. [CORRECT] attends → ai attendu\nB. [WRONG] acheté → achète\nC. [WRONG] monté → monte\nD. [WRONG] Aucun verbe ne nécessite de correction.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778793507256-5mznhjqu"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers suggest incorrect modifications: B and C change correctly conjugated passé composé verbs to present tense (making inconsistency worse), and D falsely claims no correction is needed when \"J'attends\" clearly requires changing to \"J'ai attendu\" for passé composé consistency.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778793507271-aggr0jsy",
+      "timestamp": "2026-05-14T21:19:17.005Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers either move the inconsistency without fixing it or incorrectly deny the need for correction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778793622663-iby4rbj1",
+      "timestamp": "2026-05-14T21:21:18.121Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect for the goal of restoring coherence to passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778793773062-g9c2de1u",
+      "timestamp": "2026-05-14T21:23:41.231Z"
+    }
+  ]
+}

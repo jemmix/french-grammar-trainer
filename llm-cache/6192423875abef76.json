@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6192423875abef76",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-04-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au passé composé : « Le train ___ passé sous le pont. »\n\nChoices:\nA. [CORRECT] est\nB. [WRONG] a\nC. [WRONG] sera\nD. [WRONG] sont\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770728782-nlhsrzgx"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses wrong auxiliary (avoir instead of être for intransitive passer), C is future perfect not passé composé, D is plural form with singular subject.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778770950470-pebk5s0y",
+      "timestamp": "2026-05-14T15:03:02.418Z"
+    },
+    {
+      "raw": "FALSE|B|\"a\" could be correct in a transitive use of passer (e.g., \"Le train a passé l'heure\"), while C and D are incorrect due to wrong tense and number agreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772147135-m79uc6h0",
+      "timestamp": "2026-05-14T15:22:50.227Z"
+    },
+    {
+      "raw": "FALSE|B|B uses \"avoir\" as auxiliary, but \"passer\" used intransitively takes \"être\" in passé composé; \"a\" would be correct only in the transitive sense (e.g., \"Le train a passé un pont\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773133581-mp84wjp6",
+      "timestamp": "2026-05-14T15:39:13.960Z"
+    }
+  ]
+}

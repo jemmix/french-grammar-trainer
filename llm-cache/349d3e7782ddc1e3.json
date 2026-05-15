@@ -1,0 +1,26 @@
+{
+  "cacheKey": "349d3e7782ddc1e3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Dans ce récit au passé composé, quel verbe est au mauvais temps ? « J'ai rencontré Sophie au marché. Elle me parle de son voyage. J'ai répondu que j'étais content de la voir. »\n\nChoices:\nA. [CORRECT] parle\nB. [WRONG] rencontré\nC. [WRONG] répondu\nD. [WRONG] dormait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778787064614-evnguys5"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|C|\"j'ai répondu que j'étais\" uses valid aspect shifting where imperfect tense sets background context within passé composé narrative, making C a plausible alternative rather than clearly wrong.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778787102376-24sq79lf",
+      "timestamp": "2026-05-14T19:32:35.605Z"
+    },
+    {
+      "raw": "FALSE|B,C,D|B and C are marked [WRONG] but they are actually correct (rencontré and répondu are in passé composé); D doesn't appear in the sentence at all.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778787345067-nd0j9iem",
+      "timestamp": "2026-05-14T19:37:53.254Z"
+    }
+  ]
+}

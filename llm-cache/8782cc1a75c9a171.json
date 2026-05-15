@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8782cc1a75c9a171",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "02-20-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Dans ce récit, un verbe est au mauvais temps : « Nous avons quitté la maison à six heures. Nous prenons le bus et nous sommes arrivés à l'école à sept heures. » Conjuguez le verbe incorrect au temps qui convient.\n\nPHRASE: Nous avons quitté la maison à six heures. Nous ___ le bus et nous sommes arrivés à l'école à sept heures.\n\nHINT: prendre\n\nEXPECTED ANSWER: avons pris\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1778792641306-ikvfvsl9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly states there's a verb in the wrong tense, the hint provides the infinitive \"prendre\", and the narrative context (passé composé throughout) makes it unambiguous that the learner should conjugate this verb in the same past tense as the surrounding verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778793018120-9e5fwlex",
+      "timestamp": "2026-05-14T21:11:04.664Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The prompt states a verb is in the wrong tense, the hint provides \"prendre,\" and the surrounding context (avons quitté, sommes arrivés) clearly indicates passé composé is needed, making \"avons pris\" the unambiguously correct answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778793064664-a2qkefqg",
+      "timestamp": "2026-05-14T21:12:07.193Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The surrounding verbs (\"avons quitté\", \"sommes arrivés\") clearly establish the Passé Composé context, and the prompt explicitly instructs the learner to conjugate the hinted verb (\"prendre\") in the appropriate tense for the subject \"Nous\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778793127193-w6k8krwb",
+      "timestamp": "2026-05-14T21:13:04.396Z"
+    }
+  ]
+}

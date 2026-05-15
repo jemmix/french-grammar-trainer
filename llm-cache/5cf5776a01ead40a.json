@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5cf5776a01ead40a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-20-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le passé composé\n\nRULE BEING TESTED: 02-20 - Le passé composé vs le présent dans un récit (alternance et cohérence temporelle)\n\nQUESTION:\nType: Input\nPrompt: Ce récit au présent de narration contient un verbe au mauvais temps : « L'enfant aperçoit un papillon. Il a couru après lui et il l'attrape au bord de la rivière. » Conjuguez le verbe incorrect au présent.\nPhrase: L'enfant aperçoit un papillon. Il ___ après lui et il l'attrape au bord de la rivière.\nCorrect Answer: court\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778850527221-0t8ys1ik"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that in a présent de narration, all verbs must maintain present tense for temporal coherence, which is exactly what the rule addresses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778850527223-uqr3ven1",
+      "timestamp": "2026-05-15T13:09:13.598Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding temporal coherence in narration, as the student must recognize that \"a couru\" breaks the present narrative consistency and should be conjugated to the present tense (\"court\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778850553600-aid6v18u",
+      "timestamp": "2026-05-15T13:09:36.530Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests temporal coherence in a narrative, requiring the student to recognize that consecutive actions in présent de narration must maintain the present tense rather than switching to passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778850576531-qba21ra1",
+      "timestamp": "2026-05-15T13:09:59.149Z"
+    }
+  ]
+}

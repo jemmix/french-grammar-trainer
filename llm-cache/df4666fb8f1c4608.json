@@ -1,0 +1,33 @@
+{
+  "cacheKey": "df4666fb8f1c4608",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ce récit mélange passé composé et présent. Quel verbe faut-il corriger pour rétablir la cohérence au passé composé ? « Ils ont réservé une table. Ils vont au restaurant. Ils ont dîné aux chandelles. »\n\nChoices:\nA. [CORRECT] vont → sont allés\nB. [WRONG] réservé → réservent\nC. [WRONG] dîné → dînent\nD. [WRONG] Aucun verbe ne nécessite de correction.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778790158150-9k2drf4k"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B and C suggest changing to présent instead of passé composé, and D incorrectly claims no correction is needed when \"vont\" breaks the tense consistency.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778790227259-2uoxrlhd",
+      "timestamp": "2026-05-14T20:24:10.668Z"
+    },
+    {
+      "raw": "TRUE||B and C change verbs from passé composé to present, which doesn't restore coherence to the passé composé as requested; D is incorrect because there is a clear inconsistency with \"vont\" in present while the other verbs are in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778790441690-q5vx49s8",
+      "timestamp": "2026-05-14T20:27:45.470Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers either change the wrong verb (B, C) or incorrectly claim no correction is needed (D), while A correctly identifies the present-tense \"vont\" that needs changing to passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778790626605-im414zkm",
+      "timestamp": "2026-05-14T20:31:02.095Z"
+    }
+  ]
+}

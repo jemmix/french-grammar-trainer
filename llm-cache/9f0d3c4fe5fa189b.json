@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9f0d3c4fe5fa189b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ce texte mélange passé composé et présent : « J'ai acheté les billets. J'attends le train. Je suis monté dans le wagon. » Quelle version corrige l'incohérence en utilisant un seul temps ?\n\nChoices:\nA. [CORRECT] « J'ai acheté les billets. J'ai attendu le train. Je suis monté dans le wagon. »\nB. [WRONG] « J'achète les billets. J'attends le train. Je monte dans le wagon. »\nC. [WRONG] « J'ai acheté les billets. J'attends le train. Je monte dans le wagon. »\nD. [WRONG] « J'achète les billets. J'ai attendu le train. Je suis monté dans le wagon. »\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778789910041-jf43pyxi"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B|B uses présent throughout, which could be valid if describing current actions rather than past events. The question doesn't specify whether the narrator is recounting past events or describing present actions, so both all-passé composé (A) and all-présent (B) are grammatically consistent options.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778789910044-08138b3v",
+      "timestamp": "2026-05-14T20:18:58.474Z"
+    },
+    {
+      "raw": "TRUE||The wrong answers B, C, and D all contain clear issues: B changes the meaning by shifting entirely to present tense, C and D still mix tenses inconsistently.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778789938475-o86cbv3h",
+      "timestamp": "2026-05-14T20:19:32.481Z"
+    }
+  ]
+}

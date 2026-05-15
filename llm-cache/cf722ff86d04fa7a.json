@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cf722ff86d04fa7a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-05-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au passé composé : « Le jardinier a ___ les fleurs ce matin. »\n\nChoices:\nA. [CORRECT] arrosé\nB. [WRONG] arroser\nC. [WRONG] arrosait\nD. [WRONG] arrosa\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770728814-lupn7wnk"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is infinitive, C is imparfait, and D is passé simple, none of which are the required passé composé form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771031044-khcbph1n",
+      "timestamp": "2026-05-14T15:04:08.011Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use verb forms other than the past participle required for passé composé: B is the infinitive, C is imparfait, D is passé simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772208843-1fvmsliv",
+      "timestamp": "2026-05-14T15:23:51.744Z"
+    },
+    {
+      "raw": "TRUE||B uses the infinitive instead of past participle after the auxiliary; C and D combine the auxiliary \"a\" with imparfait and passé simple respectively, which is grammatically impossible in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773203357-ri1c9pxo",
+      "timestamp": "2026-05-14T15:40:31.202Z"
+    }
+  ]
+}

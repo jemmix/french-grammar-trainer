@@ -1,0 +1,33 @@
+{
+  "cacheKey": "21d2ae74117741bf",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Dans ce récit au passé composé, quel verbe est au mauvais temps ? « J'ai rencontré Sophie au marché. Elle me parle de son voyage. J'ai répondu que j'étais content de la voir. »\n\nChoices:\nA. [CORRECT] parle\nB. [WRONG] rencontré\nC. [WRONG] répondu\nD. [WRONG] content\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778775359760-umwqfe6g"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B, C, and D are all correctly conjugated: \"rencontré\" and \"répondu\" are appropriately in passé composé, and \"content\" is correctly part of the imparfait construction \"j'étais content.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778775410232-yk1bo9jd",
+      "timestamp": "2026-05-14T16:17:13.548Z"
+    },
+    {
+      "raw": "TRUE||All marked wrong answers are grammatically correct in the narrative context; only A (parle) is incorrectly in present tense instead of passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778775692106-z8gr6d3y",
+      "timestamp": "2026-05-14T16:23:47.339Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are indeed incorrect: B (rencontré) and C (répondu) are in correct passé composé, D (content) is an adjective not a verb, while A (parle) is the only verb incorrectly in present tense instead of passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778776071586-qub3emwg",
+      "timestamp": "2026-05-14T16:28:15.299Z"
+    }
+  ]
+}

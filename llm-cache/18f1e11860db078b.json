@@ -1,0 +1,33 @@
+{
+  "cacheKey": "18f1e11860db078b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-08-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au passé composé : « Elle a ___ la réponse à la question. »\n\nChoices:\nA. [CORRECT] su\nB. [WRONG] savait\nC. [WRONG] sachant\nD. [WRONG] saura\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770728902-1azkaz1k"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are not past participles: savait is imparfait, sachant is present participle, and saura is futur simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771206764-0qulf050",
+      "timestamp": "2026-05-14T15:07:03.947Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are clearly incorrect: B uses imparfait, C uses present participle, and D uses futur simple instead of the required past participle \"su\" for passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772404372-lnrnjqws",
+      "timestamp": "2026-05-14T15:31:32.509Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use verb forms other than the past participle required for passé composé (imparfait, present participle, and future simple respectively).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773646565-chjguspa",
+      "timestamp": "2026-05-14T15:54:04.578Z"
+    }
+  ]
+}

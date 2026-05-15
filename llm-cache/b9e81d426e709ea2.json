@@ -1,0 +1,54 @@
+{
+  "cacheKey": "b9e81d426e709ea2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-20-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel verbe brise la cohérence temporelle dans ce récit ? « Le chat saute par la fenêtre. Il atterrit sur le toit. Il a couru se cacher derrière la cheminée. »\n\nChoices:\nA. [CORRECT] a couru\nB. [WRONG] saute\nC. [WRONG] atterrit\nD. [WRONG] miaulait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778787064615-xvz0zxme"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B and C are in the present tense (consistent with the narrative), D is not present in the narrative at all.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778787122084-svxfa2c7",
+      "timestamp": "2026-05-14T19:32:37.489Z"
+    },
+    {
+      "raw": "TRUE||B and C are present tense verbs consistent with the narrative, and D does not appear in the text.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778787356508-xzupz4q8",
+      "timestamp": "2026-05-14T19:37:18.083Z"
+    },
+    {
+      "raw": "FALSE|C|\"atterrit\" is in the present tense like \"saute\", so both maintain temporal coherence and neither breaks it; the true break is \"a couru\" shifting to passé composé in the third sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778787598475-3g96uzgy",
+      "timestamp": "2026-05-14T19:43:09.890Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers (B, C) maintain the present tense and thus don't break temporal coherence; D is not even in the text.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778787789891-6xxctd2a",
+      "timestamp": "2026-05-14T19:44:03.755Z"
+    },
+    {
+      "raw": "TRUE||B and C maintain the present tense of the narrative, and D doesn't appear in the text at all.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778787843756-vazos7w7",
+      "timestamp": "2026-05-14T19:44:36.036Z"
+    },
+    {
+      "raw": "FALSE|D|D (\"miaulait\") is a past tense (imparfait) that would break temporal coherence if substituted in the narrative, unlike B and C which are present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778787876036-byvn596b",
+      "timestamp": "2026-05-14T19:45:59.933Z"
+    }
+  ]
+}

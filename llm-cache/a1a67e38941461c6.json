@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a1a67e38941461c6",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "02-20-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Ce récit mêle passé composé et présent : « Nous avons organisé une fête surprise. Les invités arrivent à l'improviste et nous avons tous célébré ensemble. » Le verbe « arrivent » casse la cohérence temporelle. Conjuguez-le au temps qui convient.\n\nPHRASE: Nous avons organisé une fête surprise. Les invités ___ à l'improviste et nous avons tous célébré ensemble.\n\nHINT: arriver\n\nEXPECTED ANSWER: sont arrivés\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1778795279654-0tvwcxnf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly states the temporal coherence issue and asks to conjugate \"arriver\" at the appropriate time, while the narrative context with surrounding passé composé verbs (\"avons organisé\", \"avons célébré\") makes it clear what tense to use.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778795437938-l95kgv0x",
+      "timestamp": "2026-05-14T21:51:12.710Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly states the verb creates temporal incoherence and should be conjugated to fit the surrounding past tense context, the hint provides the infinitive \"arriver\", and the subject \"Les invités\" in the phrase makes it clear that passé composé for 3rd person plural is required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778795472711-rphf88m9",
+      "timestamp": "2026-05-14T21:51:42.055Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt identifies the tense incoherence (present breaks the pattern), the surrounding context shows passé composé (ont organisé, avons célébré), the hint gives the infinitive \"arriver\", and the instruction to conjugate \"au temps qui convient\" makes it clear to use passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778795502055-ofcvxyl6",
+      "timestamp": "2026-05-14T21:51:58.667Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "433c1d3cfcc7b8db",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-11-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au passé composé : « Nous avons ___ une nouvelle passion. »\n\nChoices:\nA. [CORRECT] découvert\nB. [WRONG] découverte\nC. [WRONG] découvertes\nD. [WRONG] découvrait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770728982-xvaljb6i"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B incorrectly adds feminine agreement when the direct object follows the verb, C uses plural for singular noun, and D is imperfect tense not past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771375681-sak975w3",
+      "timestamp": "2026-05-14T15:10:32.405Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B and C incorrectly add feminine/plural agreement when the direct object follows the verb, and D uses the imparfait tense instead of a past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772602978-46634fay",
+      "timestamp": "2026-05-14T15:35:33.345Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B and C incorrectly add gender/number agreement to a past participle that doesn't need it (direct object follows the verb), and D uses the imparfait tense instead of the required past participle for passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773789165-qrzh60er",
+      "timestamp": "2026-05-14T15:55:11.949Z"
+    }
+  ]
+}

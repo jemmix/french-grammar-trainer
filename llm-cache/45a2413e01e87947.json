@@ -1,0 +1,33 @@
+{
+  "cacheKey": "45a2413e01e87947",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-02-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au passé composé : « Nous ___ arrivés à la gare en retard. »\n\nChoices:\nA. [CORRECT] sommes\nB. [WRONG] avons\nC. [WRONG] étions\nD. [WRONG] serons\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770728701-v7c7qct9"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect auxiliary verb or tense form for passé composé: B uses \"avoir\" instead of \"être\" as the auxiliary for \"arriver\"; C uses imparfait \"étions\" instead of present \"sommes\"; D uses futur simple \"serons\" instead of present \"sommes\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778770765532-l6vi2puz",
+      "timestamp": "2026-05-14T14:59:48.633Z"
+    },
+    {
+      "raw": "TRUE||B uses the wrong auxiliary verb 'avoir' (arriver takes 'être'); C is the plus-que-parfait and D is the futur antérieur, not the requested passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771896295-ja1l5nvi",
+      "timestamp": "2026-05-14T15:19:24.509Z"
+    },
+    {
+      "raw": "TRUE||B uses \"avoir\" which is not the auxiliary for \"arriver\"; C uses imparfait instead of passé composé; D uses futur simple instead of passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772969058-std8f60m",
+      "timestamp": "2026-05-14T15:36:28.685Z"
+    }
+  ]
+}

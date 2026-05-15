@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bd41a0d90aba7b7a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-13-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est correcte au passé composé négatif ?\n\nChoices:\nA. [CORRECT] Elle n'est pas venue à la réunion.\nB. [WRONG] Elle n'est venue pas à la réunion.\nC. [WRONG] Elle pas n'est venue à la réunion.\nD. [WRONG] Elle ne est pas venue à la réunion.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778770729037-347qul37"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the standard negation structure in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778771482865-6zxh9jw7",
+      "timestamp": "2026-05-14T15:11:45.610Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B has incorrect word order for \"pas\", C places \"pas\" before the negative particle, and D is missing the elision \"n'\" before a vowel.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778772670681-d4e600hy",
+      "timestamp": "2026-05-14T15:31:47.201Z"
+    },
+    {
+      "raw": "TRUE||All three wrong answers violate the negative construction rules in French: B places \"pas\" after the participle instead of before it, C reverses the negation markers entirely, and D fails to contract \"ne\" to \"n'\" before a vowel.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778773656363-t9un37j9",
+      "timestamp": "2026-05-14T15:50:17.147Z"
+    }
+  ]
+}
