@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e6d9865a9edfd0b8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-12-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Ils ___ à table pour manger. » (verbe : s'asseoir — conjugaison moderne)\n\nChoices:\nA. [CORRECT] s'assoient\nB. [WRONG] se assoient\nC. [WRONG] s'assoit\nD. [WRONG] nous asseyons\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840292-zthkznq7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is grammatically incorrect because \"se\" must elide to \"s'\" before the vowel in \"assoient\"; C uses singular \"assoit\" instead of plural for \"ils\"; D uses 1st person plural \"nous\" instead of 3rd person plural required for \"ils\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778870851060-f4yzx4qx",
+      "timestamp": "2026-05-15T18:49:37.437Z"
+    },
+    {
+      "raw": "TRUE||B uses uncontracted \"se\" before a vowel; C is singular form instead of plural; D is 1st person plural form instead of 3rd person plural.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778873006374-ec4iftbf",
+      "timestamp": "2026-05-15T19:26:58.649Z"
+    },
+    {
+      "raw": "TRUE||B is wrong because 'se' requires elision to 's' before a vowel; C is wrong because 's'assoit' is singular not plural; D is wrong because 'nous asseyons' is for first person plural not third person plural.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778878217397-s6gsha45",
+      "timestamp": "2026-05-15T20:51:44.855Z"
+    }
+  ]
+}

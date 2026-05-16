@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ece4bf2640a221de",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "01-03-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Conjugaison des verbes réguliers en -re (attendre, vendre, répondre, etc.)\nPROMPT: Conjuguez le verbe « attendre » au présent de l'indicatif\nPHRASE: J'___ ma copine à la gare ce soir.\nCORRECT ANSWER: attends\n\nWRONG ANSWERS to evaluate:\n1. attend\n2. attendais\n3. attendrons\n4. attendre\n5. attendrais\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1778860557286-d7gayinf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers are reasonable errors: attend (infinitive/3rd person confusion), attendais (imperfect tense confusion), attendrons (future tense confusion), attendre (infinitive), attendrais (conditional confusion).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778860814613-c8ax5wit",
+      "timestamp": "2026-05-15T16:00:48.844Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\n\nREASON: All wrong answers are real forms of attendre representing common learner errors: tense confusion (imparfait, futur simple, conditionnel), wrong person/number (attendrons), and failure to conjugate (attendre/attend).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778863163087-m4hik5pr",
+      "timestamp": "2026-05-15T16:39:44.921Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner mistakes: infinitive (attendre), wrong tense forms (attendais - imparfait, attendrons - futur, attendrais - conditionnel), and bare stem (attend).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778865497902-rrokehu1",
+      "timestamp": "2026-05-15T17:18:30.710Z"
+    }
+  ]
+}

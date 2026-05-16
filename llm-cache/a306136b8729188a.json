@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a306136b8729188a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-10-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « J'___ les lettres avant d'envoyer. »\n\nChoices:\nA. [CORRECT] épelle\nB. [WRONG] épele\nC. [WRONG] épèle\nD. [WRONG] épelais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840213-60vmwp3d"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B and C have invalid present-tense conjugations, and D uses the imperfect tense instead of the present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778870660980-pj73lto0",
+      "timestamp": "2026-05-15T18:44:42.468Z"
+    },
+    {
+      "raw": "TRUE|B,D|C uses the standard pattern (je épèle) which is a valid conjugation of épeler in the present tense; B and D are incorrect because B is misspelled and D is imperfect not present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778872738252-ci4ankki",
+      "timestamp": "2026-05-15T19:29:52.052Z"
+    },
+    {
+      "raw": "Maximum steps reached for this agent.\n\nI was asked to verify that the wrong answers in a French grammar question are indeed incorrect. The question asks to complete a sentence in the present tense with the verb \"épeler\" (to spell): \"J'___ les lettres avant d'envoyer.\"\n\nThe analysis shows:\n- Answer B (\"épele\") is incorrect because it's missing the required double 'l' in the first person singular present conjugation of -eler verbs\n- Answer C (\"épèle\") is incorrect because it uses the wrong accent (grave instead of acute) on the first 'e'\n- Answer D (\"épelais\") is incorrect because it's in the imperfect tense, not the present tense as explicitly required by the question prompt\n\nAll wrong answers are genuinely incorrect within the grammatical constraints specified in the question.\n\nVerdict: TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778876687210-tug67o57",
+      "timestamp": "2026-05-15T20:25:28.647Z"
+    }
+  ]
+}

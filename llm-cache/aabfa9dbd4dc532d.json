@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aabfa9dbd4dc532d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-05-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Vous ___ occupés ce soir. »\n\nChoices:\nA. [CORRECT] êtes\nB. [WRONG] avez\nC. [WRONG] faites\nD. [WRONG] dites\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840044-68umbm3m"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use verbs (avoir, faire, dire) that cannot grammatically link the subject \"vous\" to the adjective \"occupés\" — only \"être\" creates the correct construction \"Vous êtes occupés.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778870215615-bezxaqjr",
+      "timestamp": "2026-05-15T18:37:22.053Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"avez\" requires direct objects not adjectives, \"faites\" and \"dites\" do not take \"occupés\" as complements in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778872225393-pgo53thr",
+      "timestamp": "2026-05-15T19:10:59.616Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was evaluating a French grammar MCQ to verify that the wrong answers are indeed incorrect. The question asked to complete the sentence \"Vous ___ occupés ce soir.\" with the correct verb form.\n\nThe verification was nearly complete:\n\n- A [êtes] is correct: \"Vous êtes occupés ce soir\" (You are busy this evening) - uses \"être\" as the copula with the adjective\n- B [avez] is incorrect: \"Vous avez occupés ce soir\" is grammatically wrong as \"avoir\" cannot serve as the copula for the adjective \"occupés\"\n- C [faites] is incorrect: \"Vous faites occupés ce soir\" has no valid meaning in French\n- D [dites] is incorrect: \"Vous dites occupés ce soir\" has no valid meaning in French\n\nThe verdict is TRUE - all wrong answers are indeed incorrect within the grammatical constraints of the question.\n\nRemaining tasks that were not completed:\n- Provide the final verdict in the exact requested format: VERDICT|letter1,letter2,...|explanation\n\nRecommendations for what should be done next:\nThe verdict should be: TRUE||All wrong answers contain clear grammar errors and cannot serve as the copula for the adjective \"occupés\" in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778876115642-quqoc39w",
+      "timestamp": "2026-05-15T20:15:56.155Z"
+    }
+  ]
+}

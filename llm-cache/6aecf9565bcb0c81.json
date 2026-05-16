@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6aecf9565bcb0c81",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-20-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel verbe à construction particulière convient au présent dans cette phrase ? « Ce cadeau lui ___ beaucoup. »\n\nChoices:\nA. [CORRECT] plaît\nB. [WRONG] faut\nC. [WRONG] pleut\n\nVerify these WRONG answers are incorrect (letters: B, C)",
+    "nonce": "nonce-1778869840554-jo0qdgr6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||Both B and C are grammatically incorrect: \"faut\" doesn't work with \"lui\" in this construction (falloir is impersonal), and \"pleut\" is a weather verb that can't refer to a gift pleasing someone.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778871797335-7c58o3dq",
+      "timestamp": "2026-05-15T19:08:44.909Z"
+    },
+    {
+      "raw": "TRUE||Both wrong answers use impersonal verbs (falloir and pleuvoir) that cannot take \"ce cadeau\" as a subject - these verbs only exist in the third person singular form (il faut, il pleut).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778879499537-gu8q5tcs",
+      "timestamp": "2026-05-15T21:12:01.789Z"
+    },
+    {
+      "raw": "TRUE||Both \"faut\" and \"pleut\" are impersonal verbs that cannot be used with an indirect object pronoun like \"lui\" in this context.\n\nI have reached the maximum number of steps for this task. I successfully verified the French grammar question about special construction verbs in the present tense. The correct answer is \"plaît\" (from the verb \"plaire\" which uses the construction \"plaire à quelqu'un\"), while the wrong answers \"faut\" (from \"falloir\") and \"pleut\" (from \"pleuvoir\") are indeed incorrect as they are impersonal verbs that cannot be used with the indirect object pronoun \"lui\" in this context.\n\nThere are no remaining tasks to complete for this verification, and no further recommendations are needed as the question and answer set have been properly validated.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778879920881-znu59djl",
+      "timestamp": "2026-05-15T21:19:04.338Z"
+    }
+  ]
+}

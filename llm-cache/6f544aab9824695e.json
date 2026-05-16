@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6f544aab9824695e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-11-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Conjuguez « prononcer » au présent : « Nous _____ les noms sur la liste. »\n\nChoices:\nA. [CORRECT] prononçons\nB. [WRONG] prononcons\nC. [WRONG] prononcerons\nD. [WRONG] prononcions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840251-6vulnkft"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778870765377-ghej8c0j",
+      "timestamp": "2026-05-15T18:46:26.583Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is misspelled (missing accent), C is futur simple not présent, D is imparfait not présent.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778872828660-bmhofrdj",
+      "timestamp": "2026-05-15T19:21:06.137Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B lacks the required cedilla, C is in the future simple tense, and D is in the imparfait tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778876880607-84gw2ue6",
+      "timestamp": "2026-05-15T20:28:41.734Z"
+    }
+  ]
+}

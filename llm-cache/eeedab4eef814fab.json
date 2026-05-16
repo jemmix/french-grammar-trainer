@@ -1,0 +1,33 @@
+{
+  "cacheKey": "eeedab4eef814fab",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-07-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Ils ___ la table pour le dîner. »\n\nChoices:\nA. [CORRECT] mettent\nB. [WRONG] mettaient\nC. [WRONG] mets\nD. [WRONG] mettront\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840114-r28k2s6r"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is imparfait (not présent), D is futur simple (not présent), and C is présent but conjugated for je/tu instead of ils.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778870386279-9a63kygb",
+      "timestamp": "2026-05-15T18:40:24.886Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is imperfect tense, C is wrong person/number, D is future tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778872397885-t4b611ob",
+      "timestamp": "2026-05-15T19:14:25.384Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was evaluating a French grammar question to verify that the wrong answers are indeed incorrect:\n\nQuestion: \"Complétez au présent : « Ils ___ la table pour le dîner. »\"\n\nI analyzed each wrong answer:\n- B: \"mettaient\" (imperfect tense) - incorrect because question requires present tense\n- C: \"mets\" (wrong subject-verb agreement) - incorrect because \"Ils\" (they) needs \"mettent\" not \"mets\"\n- D: \"mettront\" (future tense) - incorrect because question requires present tense\n\nAll wrong answers are indeed incorrect for the given grammatical constraints.\n\nVERDICT: TRUE||All wrong answers are grammatically incorrect for the present tense requirement and subject agreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778876308622-s6tn2xdh",
+      "timestamp": "2026-05-15T20:18:56.288Z"
+    }
+  ]
+}

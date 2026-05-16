@@ -1,0 +1,75 @@
+{
+  "cacheKey": "eccd4b9c79e9f848",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-20-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ que nous signions ce contrat aujourd'hui. »\n\nChoices:\nA. [CORRECT] faut\nB. [WRONG] plaît\nC. [WRONG] manque\n\nVerify these WRONG answers are incorrect (letters: B, C)",
+    "nonce": "nonce-1778869840542-fu7e7txw"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||\"Il plaît que\" and \"il manque que\" are not valid impersonal constructions with que + subjunctive in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778871737221-srdhycgv",
+      "timestamp": "2026-05-15T19:02:53.563Z"
+    },
+    {
+      "raw": "FALSE|B|B could be grammatically correct in a different construction like \"Il me plaît que...\" though \"Il plaît que...\" alone is awkward; \"manque\" in C is indeed incorrect as it doesn't take a que-clause.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778873643258-3knaeh46",
+      "timestamp": "2026-05-15T19:34:58.451Z"
+    },
+    {
+      "raw": "TRUE||Both \"plaît\" and \"manque\" are followed by prepositions or indirect objects, not by \"que\" + subjunctive clauses as required in this construction; neither verb allows the subordinate clause structure shown.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778879437604-rjijxpix",
+      "timestamp": "2026-05-15T21:11:17.478Z"
+    },
+    {
+      "raw": "TRUE||Both wrong answers contain clear grammatical errors: \"plaît\" would require an indirect object (Il plaît à quelqu'un) rather than a que-clause, and \"manque\" cannot be followed by a que-clause in this construction (Il manque à... or Il manque quelque chose would be correct).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778879880347-qso2trkz",
+      "timestamp": "2026-05-15T21:18:21.782Z"
+    },
+    {
+      "raw": "TRUE||Both wrong answers use constructions that are grammatically invalid in French: \"plaît\" cannot be used with \"Il plaît que\" (the verb plaire requires an indirect object like \"Il plaît à quelqu'un\"), and \"manque\" cannot be used with \"Il manque que\" followed by a subjunctive clause (the impersonal construction \"il manque\" is used differently, typically as \"Il ne manque que\" or with direct objects).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778880129506-jv6hb3vq",
+      "timestamp": "2026-05-15T21:22:39.619Z"
+    },
+    {
+      "raw": "TRUE||Both \"plaît\" and \"manque\" lack the required impersonal verb construction with \"que\" + subjunctive that \"falloir\" uses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778880338204-qyg6uxn4",
+      "timestamp": "2026-05-15T21:26:01.155Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Completed\n\nI was tasked with verifying that the wrong answers (B and C) in a French grammar MCQ are indeed incorrect.\n\n**Question analyzed:**\n\"Quel verbe à construction particulière convient au présent dans cette phrase ? « Il ___ que nous signions ce contrat aujourd'hui. »\"\n\n**Analysis performed:**\n- **Correct answer A (faut)**: \"Il faut que...\" is a valid impersonal construction requiring the subjunctive (\"que nous signions\"). This is grammatically correct.\n- **Wrong answer B (plaît)**: \"Il plaît que...\" is not a standard French construction. The verb \"plaire\" is used with indirect objects (\"Il plaît à quelqu'un\"), not with \"que\" + subjunctive. This is clearly incorrect.\n- **Wrong answer C (manque)**: \"Il manque que...\" is not a valid French construction. \"Manquer\" is used intransitively or with direct/indirect objects, but never with \"que\" + subjunctive. The confusion likely stems from English \"It lacks that...\" which doesn't translate this way. This is clearly incorrect.\n\n## Remaining Tasks\n\nNone - the verification analysis is complete.\n\n## Recommendation\n\nThe verdict should be:\n\n```\nTRUE||All wrong answers are grammatically incorrect - neither \"plaît\" nor \"manque\" forms a valid construction with \"que\" + subjunctive.\n```\n\nBoth wrong answers B and C are indeed incorrect within the grammatical constraints of the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778880545937-bx4ia8cz",
+      "timestamp": "2026-05-15T21:30:36.040Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors; \"plaît\" is not followed by \"que\" + subjunctive, and \"manque\" does not take this construction in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778880944782-0s0x1pf6",
+      "timestamp": "2026-05-15T21:37:34.788Z"
+    },
+    {
+      "raw": "FALSE|B,C|B (\"plaît\") would require a different construction like \"Il plaît à...\" not \"Il plaît que...\", and C (\"manque\") does not grammatically allow a \"que\" clause but rather takes a direct object like \"Il manque quelque chose\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778881266805-da5peh8c",
+      "timestamp": "2026-05-15T21:42:20.859Z"
+    }
+  ]
+}

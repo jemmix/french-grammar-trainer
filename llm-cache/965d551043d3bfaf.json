@@ -1,0 +1,33 @@
+{
+  "cacheKey": "965d551043d3bfaf",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-16-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « On rentre demain soir au bureau. » Le verbe « rentre » est au présent. Quelle est la valeur du présent dans cette phrase ?\n\nChoices:\nA. [CORRECT] une action programmée dans le futur\nB. [WRONG] une habitude régulière\nC. [WRONG] une action en cours\nD. [WRONG] une vérité générale\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840420-e3hhqfc9"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is incorrect because the sentence specifies a unique future event (demain soir) not a recurring habit; C is incorrect because the action is not happening now but refers to tomorrow; D is incorrect because the sentence is a specific statement about a future event, not a universal truth.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778871314622-b87hpno3",
+      "timestamp": "2026-05-15T18:56:15.627Z"
+    },
+    {
+      "raw": "TRUE||B, C, and D are all incorrect because the sentence with \"demain soir\" clearly indicates a scheduled future action, not a habit, ongoing action, or general truth.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778873332761-z0h5dg43",
+      "timestamp": "2026-05-15T19:29:17.203Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect - the sentence uses the present tense to indicate a scheduled future action (\"demain soir\"), not a habit, ongoing action, or general truth.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778879047338-nsg04avd",
+      "timestamp": "2026-05-15T21:04:21.087Z"
+    }
+  ]
+}

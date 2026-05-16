@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0fea3bc22ac20097",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-17-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il ___ ce livre depuis hier. »\n\nChoices:\nA. [CORRECT] lit\nB. [WRONG] lisez\nC. [WRONG] lisait\nD. [WRONG] lira\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840453-eiqo58b5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: \"lisez\" is wrong person/number agreement with \"il\", \"lisait\" is imperfect which doesn't work with \"depuis\" in this context (present tense is required), and \"lira\" is future tense incompatible with \"depuis hier\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778871418156-9m0zf2q3",
+      "timestamp": "2026-05-15T19:02:43.141Z"
+    },
+    {
+      "raw": "TRUE||B has wrong person-number agreement (lisez is 2nd person plural for il), C incorrectly uses imparfait with depuis (present tense required for ongoing past-to-present action), D creates a logical contradiction (future action cannot have started \"since yesterday\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778873623482-qwxhkn99",
+      "timestamp": "2026-05-15T19:34:32.075Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors. \"Lisez\" is the 2nd person plural form while the subject is \"Il\" (3rd person singular); \"lisait\" uses the imperfect tense incorrectly with \"depuis\" which requires the present tense for continuing action; \"lira\" uses the future tense which contradicts the temporal indicator \"depuis hier\" indicating ongoing action from past to present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778879153392-u6vhze3l",
+      "timestamp": "2026-05-15T21:06:35.230Z"
+    }
+  ]
+}

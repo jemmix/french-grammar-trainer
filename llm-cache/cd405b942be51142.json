@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cd405b942be51142",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-12-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Tu t'___ sur cette chaise ? » (verbe : s'asseoir — conjugaison moderne)\n\nChoices:\nA. [CORRECT] assois\nB. [WRONG] assoit\nC. [WRONG] asseyons\nD. [WRONG] asseyez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840298-5oheir9b"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is 3rd person singular (il s'assoit), C is 1st person plural (nous nous asseyons), D is 2nd person plural (vous vous asseyez) — none match the subject \"tu\" (2nd person singular).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778870873811-ajm7u1kk",
+      "timestamp": "2026-05-15T18:53:55.378Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are conjugated for different subjects (B for il/elle, C for nous, D for vous) and do not match the required \"tu\" subject.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778873228673-shqslxyo",
+      "timestamp": "2026-05-15T19:27:38.993Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain incorrect verb conjugations for the second person singular subject \"Tu\" in the present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778878245924-ytv7lmjx",
+      "timestamp": "2026-05-15T20:52:13.090Z"
+    }
+  ]
+}

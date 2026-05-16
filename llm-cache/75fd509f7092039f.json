@@ -1,0 +1,33 @@
+{
+  "cacheKey": "75fd509f7092039f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-16-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Je pars demain pour Lyon. » Le verbe « pars » est au présent. Dans cette phrase, le présent exprime :\n\nChoices:\nA. [CORRECT] une action programmée dans le futur\nB. [WRONG] une habitude régulière\nC. [WRONG] une action en cours\nD. [WRONG] une vérité générale\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840396-06c83bmi"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are clearly incorrect: \"demain\" indicates a specific future event, not a habit (B), an ongoing action (C), or a general truth (D).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778871217443-zv4a00az",
+      "timestamp": "2026-05-15T18:54:08.532Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly suggests a habitual action (the sentence describes a specific one-time event), C incorrectly suggests an action happening now (the departure is tomorrow), and D incorrectly suggests a universal truth (it's a personal future plan).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778873234971-s7vvlj82",
+      "timestamp": "2026-05-15T19:27:37.084Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached. I'll provide the validation response directly:\n\nTRUE||All wrong answers are incorrect because the sentence \"Je pars demain pour Lyon\" describes a specific one-time future event (leaving tomorrow), not a regular habit (B), an action currently in progress (C), or a general truth (D). The present tense here correctly expresses an action programmed in the future.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778878941464-5luh61xy",
+      "timestamp": "2026-05-15T21:04:53.231Z"
+    }
+  ]
+}

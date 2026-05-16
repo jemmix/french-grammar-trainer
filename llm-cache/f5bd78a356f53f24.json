@@ -1,0 +1,47 @@
+{
+  "cacheKey": "f5bd78a356f53f24",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-01-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Julie et Marc ___ préparé un gâteau pour la fête. »\n\nChoices:\nA. [CORRECT] ont\nB. [WRONG] avons\nC. [WRONG] avez\nD. [WRONG] avaient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778885114885-0600p6w9"
+  },
+  "responses": [
+    {
+      "raw": "The maximum number of steps allowed for this task has been reached.\n\nSummary of what has been accomplished so far:\nI analyzed the French grammar question: \"Complétez : « Julie et Marc ___ préparé un gâteau pour la fête. »\". I evaluated the wrong answers B (\"avons\"), C (\"avez\"), and D (\"avaient\"). I determined that choices B and C are incorrect because \"avons\" (1st person plural) and \"avez\" (2nd person plural) do not agree with the subject \"Julie et Marc\" (3rd person plural). However, choice D (\"avaient\") is the 3rd person plural imperfect of \"avoir\" and forms a grammatically correct sentence in the plus-que-parfait tense (\"avaient préparé\"). Since the question prompt does not explicitly specify the passé composé, choice D is not strictly incorrect.\n\nList of any remaining tasks that were not completed:\nGenerating the final response in the specific \"VERDICT|letter1,letter2,...|explanation\" format requested by the user.\n\nRecommendations for what should be done next:\nThe validation verdict is FALSE|D|D creates a valid sentence in the plus-que-parfait tense; the prompt does not specify the passé composé. The question should be revised to specify the tense (e.g., \"au passé composé\") if \"ont\" is intended to be the only correct answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778885114979-ven38xhb",
+      "timestamp": "2026-05-15T22:49:50.378Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"avons\" and \"avez\" do not agree with the third person plural subject \"Julie et Marc\", and \"avaient\" uses the imperfect tense instead of the present tense required for passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778885390378-jzqwla13",
+      "timestamp": "2026-05-15T22:56:07.430Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors (B and C use wrong person, D uses wrong tense).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778885767431-5g38mpid",
+      "timestamp": "2026-05-15T22:56:31.606Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb forms: \"avons\" and \"avez\" are wrong persons (1st and 2nd person plural instead of 3rd person plural), while \"avaient\" uses the imparfait/pluperfect tense which doesn't match the context of a completed past action for the fête.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778885791607-0od29lsy",
+      "timestamp": "2026-05-15T22:57:48.787Z"
+    },
+    {
+      "raw": "FALSE|D|D results in a grammatically correct sentence in the plus-que-parfait tense (\"Julie et Marc avaient préparé un gâteau\"), which the question does not explicitly exclude by specifying the passé composé tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778885868788-vi85ufwf",
+      "timestamp": "2026-05-15T23:03:13.811Z"
+    }
+  ]
+}

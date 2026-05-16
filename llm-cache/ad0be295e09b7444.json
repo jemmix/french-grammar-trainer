@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ad0be295e09b7444",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-02-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Tu ___ toujours tes légumes. »\n\nChoices:\nA. [CORRECT] finis\nB. [WRONG] finisses\nC. [WRONG] finishes\nD. [WRONG] finit\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869839928-wnntg8lf"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses subjunctive instead of indicative, C is not a valid French form, D uses 3rd person instead of 2nd.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778869868257-6nx6tv19",
+      "timestamp": "2026-05-15T18:31:37.748Z"
+    },
+    {
+      "raw": "TRUE||B is subjunctive mood which is not appropriate for this simple declarative statement; C is not a valid French verb form (mixes English \"finish\" with French ending); D is third-person singular form but the subject is \"tu\" (second-person singular).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778871861577-8xriw7tz",
+      "timestamp": "2026-05-15T19:10:01.871Z"
+    },
+    {
+      "raw": "TRUE||B uses the subjunctive form incorrect for the indicative main clause, C is an English word, and D uses the third-person singular conjugation instead of the second-person singular.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778875746440-l9gbmwgz",
+      "timestamp": "2026-05-15T20:09:41.497Z"
+    }
+  ]
+}

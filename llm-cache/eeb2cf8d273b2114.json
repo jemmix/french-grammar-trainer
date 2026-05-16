@@ -1,0 +1,33 @@
+{
+  "cacheKey": "eeb2cf8d273b2114",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-08-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Nous ___ le journal chaque matin. »\n\nChoices:\nA. [CORRECT] lisons\nB. [WRONG] lis\nC. [WRONG] lisent\nD. [WRONG] voyons\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840140-eqwee4p2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B and C use incorrect person/number for \"Nous\", and D uses a different verb (\"voir\" instead of the implied \"lire\") that, while grammatically possible, is semantically inappropriate in the context of \"le journal\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778870465622-ev12rlsg",
+      "timestamp": "2026-05-15T18:42:51.766Z"
+    },
+    {
+      "raw": "TRUE||B and C are wrong conjugations for \"nous\", and D uses the verb \"voir\" (to see) instead of \"lire\" (to read) which doesn't fit the context of reading a newspaper.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778872581995-lbjb3rzq",
+      "timestamp": "2026-05-15T19:18:12.794Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is the je form (not nous), C is the ils/elles form (not nous), and D uses \"voir\" which doesn't make semantic sense in context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778876381938-47pkzhhj",
+      "timestamp": "2026-05-15T20:20:19.378Z"
+    }
+  ]
+}

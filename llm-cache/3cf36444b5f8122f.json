@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3cf36444b5f8122f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-16-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise correctement le présent pour décrire un trajet en train programmé ?\n\nChoices:\nA. [CORRECT] Vous prenez le train demain.\nB. [WRONG] Vous preniez le train demain.\nC. [WRONG] Vous avez pris le train demain.\nD. [WRONG] Vous prendriez le train demain.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840402-3zf0hysx"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses imparfait (past tense) with future marker \"demain\"; C uses passé composé (past tense) with \"demain\"; D uses conditionnel which is for hypothetical situations, not scheduled/certain events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778871248532-v2c4ain1",
+      "timestamp": "2026-05-15T18:55:13.541Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached. \n\nSummary of work accomplished:\n- I evaluated the French grammar question asking which sentence correctly uses the present tense to describe a scheduled train trip\n- I analyzed each wrong answer (B, C, D) to verify they are incorrect according to the grammatical constraints\n- Answer B uses the imparfait tense (\"preniez\"), not the present tense\n- Answer C uses the passé composé tense (\"avez pris\"), not the present tense\n- Answer D uses the conditionnel présent tense (\"prendriez\"), not the present tense\n- All wrong answers fail to meet the explicit requirement of using the present tense (\"le présent\")\n\nTask completed:\nThe verification analysis is complete. All wrong answers are indeed incorrect as they do not use the present tense as specified in the question prompt.</think>TRUE||All wrong answers (B, C, D) use different tenses (imparfait, passé composé, conditionnel présent) instead of the required present tense to describe a scheduled trip.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778878977350-48l6u25l",
+      "timestamp": "2026-05-15T21:03:24.949Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses other than the present tense specified in the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778879692857-8taj1n24",
+      "timestamp": "2026-05-15T21:15:05.179Z"
+    }
+  ]
+}

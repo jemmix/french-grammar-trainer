@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a071d7274a2e184f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-20-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Le pronom « me » est un complément d'objet indirect. Quel verbe se construit avec un COI pour exprimer le goût au présent ? « Cette idée me ___ énormément. »\n\nChoices:\nA. [CORRECT] plaît\nB. [WRONG] faut\nC. [WRONG] pleut\n\nVerify these WRONG answers are incorrect (letters: B, C)",
+    "nonce": "nonce-1778869840556-sq84it7e"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||Both wrong answers are clearly incorrect: B is incorrect because \"falloir\" is impersonal and cannot take \"Cette idée\" as a subject in this structure; C is incorrect because \"pleuvoir\" is an impersonal weather verb that doesn't fit the context or grammar of expressing taste.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778871820921-itrtcv6s",
+      "timestamp": "2026-05-15T19:04:08.946Z"
+    },
+    {
+      "raw": "TRUE||B uses falloir which expresses necessity not goût, and C uses pleuvoir which cannot take a COI.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778873713470-9ik6b8v8",
+      "timestamp": "2026-05-15T19:35:54.029Z"
+    },
+    {
+      "raw": "TRUE||Both \"faut\" (from falloir) and \"pleut\" (from pleuvoir) are impersonal verbs that don't take an indirect object complement with \"me,\" making them grammatically incorrect in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778879517629-av8cgli2",
+      "timestamp": "2026-05-15T21:12:30.286Z"
+    }
+  ]
+}

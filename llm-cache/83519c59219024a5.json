@@ -1,0 +1,33 @@
+{
+  "cacheKey": "83519c59219024a5",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "01-12-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Les verbes pronominaux au présent (se lever, se souvenir, s'asseoir)\nPROMPT: Conjuguez le verbe se souvenir au présent pour « nous ». Le pronom réfléchi est déjà dans la phrase — donnez le verbe conjugué.\nPHRASE: Nous nous ___ de cette belle époque.\nCORRECT ANSWER: souvenons\n\nWRONG ANSWERS to evaluate:\n1. souvenir\n2. souviens\n3. souvient\n4. souvenez\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1778860557550-qidezpge"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers are conjugated forms of the same verb in different persons/numbers (je, il/elle, vous) or the infinitive, which are common errors learners make when confusing personal pronouns or forgetting to conjugate.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778861746270-5md4p7qh",
+      "timestamp": "2026-05-15T16:18:31.711Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers are actual conjugations of se souvenir for different persons (infinitive, je, il/elle, vous), representing common person-number confusion errors that learners frequently make.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778864565946-l7fkec7j",
+      "timestamp": "2026-05-15T17:03:40.058Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers are common learner mistakes: the infinitive form (forgetting to conjugate) and wrong person conjugations (je, il/elle, vous instead of nous).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778866543846-o0uinocc",
+      "timestamp": "2026-05-15T17:36:05.309Z"
+    }
+  ]
+}

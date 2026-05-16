@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6cfb383a92b3b4f2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-10-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Il ___ son frère au téléphone chaque soir. »\n\nChoices:\nA. [CORRECT] appelle\nB. [WRONG] apelle\nC. [WRONG] appèle\nD. [WRONG] appellent\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840204-5nltrm30"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778870635642-n7zew5vf",
+      "timestamp": "2026-05-15T18:44:13.066Z"
+    },
+    {
+      "raw": "TRUE||B is a misspelling (single p instead of double), C has an incorrect accent placement, and D is the plural form (ils/elles) not matching the singular subject \"Il\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778872679436-o37dic1v",
+      "timestamp": "2026-05-15T19:18:58.251Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear spelling errors: B is missing a 'p', C has the accent on the wrong 'e', and D is the plural form instead of the singular required for \"Il\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778876608569-dxtdvggj",
+      "timestamp": "2026-05-15T20:23:58.319Z"
+    }
+  ]
+}

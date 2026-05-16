@@ -1,0 +1,33 @@
+{
+  "cacheKey": "47c65099d321ce62",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-01-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Mes parents ___ acheté une maison à la campagne. »\n\nChoices:\nA. [CORRECT] ont\nB. [WRONG] avons\nC. [WRONG] avez\nD. [WRONG] sont\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778885114883-t75f0osb"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778885114913-zz4mgxia",
+      "timestamp": "2026-05-15T22:47:52.670Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb forms for the subject \"Mes parents\" or the wrong auxiliary verb.\n\nThis completes the verification task for the given French grammar question. The wrong answers (B, C, and D) are all indeed incorrect because:\n- B \"avons\" is first person plural, not third person plural needed for \"Mes parents\"\n- C \"avez\" is second person plural, not third person plural needed for \"Mes parents\"\n- D \"sont\" is the wrong auxiliary verb (être instead of avoir) for \"acheter\" in passé composé",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778885272670-73lrapu6",
+      "timestamp": "2026-05-15T22:48:20.474Z"
+    },
+    {
+      "raw": "TRUE||B and C use the wrong conjugation of avoir for the 3rd person plural subject \"Mes parents\", and D uses the auxiliary \"être\" which is incorrect for the verb \"acheter\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778885300474-vky33dgo",
+      "timestamp": "2026-05-15T22:48:47.552Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1ae9f2d5c3af9ce2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-09-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « On ___ les vitres du magasin chaque matin. »\n\nChoices:\nA. [CORRECT] nettoie\nB. [WRONG] nettoye\nC. [WRONG] nettoyons\nD. [WRONG] nettoient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840186-gwij3n3g"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers either use incorrect conjugations for the subject \"on\" or misspell the verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778870602450-fey2i8u6",
+      "timestamp": "2026-05-15T18:43:52.054Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is not a valid verb form, C is the nous form (wrong for \"on\"), and D is the ils/elles form (wrong for \"on\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778872657738-pfb8fzul",
+      "timestamp": "2026-05-15T19:17:58.254Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B is not a valid French conjugation, while C and D have incorrect subject-verb agreement with \"on\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778876537592-u5m7x5xg",
+      "timestamp": "2026-05-15T20:23:07.714Z"
+    }
+  ]
+}

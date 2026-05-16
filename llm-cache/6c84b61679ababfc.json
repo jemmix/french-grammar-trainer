@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6c84b61679ababfc",
+  "predicateId": "input-prompt-well-formed",
+  "questionId": "01-15-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT question prompts are WELL-FORMED.\n\nA well-formed prompt for an INPUT question must:\n1. Be IMPERATIVE - give the learner a clear instruction (e.g., \"Complete the sentence...\", \"Fill in the blank...\", \"Conjugate the verb...\")\n2. Be SPECIFIC enough - tell the learner what kind of word/form to provide (verb, article, tense, etc.)\n3. NOT be mere context or narrative - it should tell the learner WHAT TO DO, not describe a situation\n\nExamples of BAD prompts (NOT well-formed):\n- \"My brother works from nine to five. I do the same as my brother.\" (narrative, no instruction)\n- \"Running is great exercise. You perform that activity in the park.\" (context, no instruction)\n- \"That was a beautiful song.\" (just context)\n\nExamples of GOOD prompts (well-formed):\n- \"Complete the sentence with the present simple form of the verb.\"\n- \"Fill in the blank with the correct article.\"\n- \"Conjugate the verb in parentheses.\"\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <WELL-FORMED|NOT-WELL-FORMED>\nREASON: <one sentence explaining why>\n\n- WELL-FORMED: The prompt is a clear imperative instruction that tells the learner what to do\n- NOT-WELL-FORMED: The prompt is narrative/context, or lacks a clear instruction",
+    "userPrompt": "PROMPT: Corrigez l'erreur d'un élève qui a écrit « Actuellement, tu dessinais un beau dessin au crayon. » au lieu du présent pour décrire une action en cours. Conjuguez le verbe dans le temps qui convient.\n\nPHRASE: Actuellement, tu ___ un beau dessin au crayon.\n\nHINT: dessiner\n\nEXPECTED ANSWER: dessines\n\nIs this prompt well-formed? Does it give the learner a clear imperative instruction?",
+    "nonce": "nonce-1778860557633-skdsk6yi"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: NOT-WELL-FORMED\nREASON: The prompt contains narrative context about correcting an error that is unnecessary; a well-formed prompt should be a direct imperative instruction like \"Conjuguez le verbe au présent\" without the storytelling wrapper.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778862106846-i6ajxh1i",
+      "timestamp": "2026-05-15T16:23:24.229Z"
+    },
+    {
+      "raw": "VERDICT: WELL-FORMED\nREASON: The prompt ends with a clear imperative instruction (\"Conjuguez le verbe dans le temps qui convient\") that tells the learner exactly what to do, despite including some contextual context at the beginning.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778864857307-bhuj881l",
+      "timestamp": "2026-05-15T17:13:00.090Z"
+    },
+    {
+      "raw": "I'll analyze whether this prompt is well-formed.\n\nThe prompt is: \"Corrigez l'erreur d'un élève qui a écrit « Actuellement, tu dessinais un beau dessin au crayon. » au lieu du présent pour décrire une action en cours. Conjuguez le verbe dans le temps qui convient.\"\n\nThis prompt has an imperative instruction at the end (\"Conjuguez le verbe dans le temps qui convient.\"), but it's preceded by a long narrative setup about correcting someone else's error. While it does tell the learner what to do, it's more context-heavy than a clean, direct imperative instruction.\n\nVERDICT: NOT-WELL-FORMED\nREASON: The prompt starts with narrative context about correcting an error instead of beginning with a direct imperative instruction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778867076385-njsdc7e0",
+      "timestamp": "2026-05-15T17:45:06.017Z"
+    }
+  ]
+}

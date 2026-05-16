@@ -1,0 +1,47 @@
+{
+  "cacheKey": "b731112f1f4a6060",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "01-10-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Les verbes en -eler/-eter (appeler, jeter) et les doubles consonnes\nPROMPT: Conjuguez le verbe « appeler » au présent, 1ère personne du singulier.\nPHRASE: J'___ un taxi pour rentrer à la maison.\nCORRECT ANSWER: appelle\n\nWRONG ANSWERS to evaluate:\n1. appele\n2. appelas\n3. appèle\n4. appellais\n5. appelé\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1778860557490-xurf7quf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\n\nREASON: All five wrong answers represent common learner errors: forgetting the double consonant (appele), confusing tenses (appelas = passé simple, appellais = imparfait), confusing with past participle (appelé), or accent placement errors (appèle).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778861481493-3g89lr40",
+      "timestamp": "2026-05-15T16:11:44.933Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: Two of the wrong answers are clearly wrong verb tenses (appellais is imparfait, appelé is a past participle) that no learner would mistakenly use when asked for present tense; while appele (single L) is a very plausible mistake, the presence of tense errors that are fundamentally inconsistent with the prompt makes the overall set implausible.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778864183693-j1bwckke",
+      "timestamp": "2026-05-15T16:56:53.440Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: forgetting the double consonant (appele), confusing with passé simple (appelas), mixing up the accent pattern for -eler verbs (appèle), confusing tenses (appellais - imparfait), and using past participle instead of present conjugation (appelé).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778866160367-9acz4erv",
+      "timestamp": "2026-05-15T17:29:47.051Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: missing accent (appele), wrong tense/person (appelas, appellais, appelé), and incorrect accent placement (appèle).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778867473509-pqmbh84n",
+      "timestamp": "2026-05-15T17:52:37.031Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: `appelas` is the passé simple form, an obscure literary tense that learners are unlikely to spontaneously produce when asked for present tense conjugation; the other four answers (`appele`, `appèle`, `appellais`, `appelé`) are plausible mistakes (missing double consonant, wrong accent, imparfait confusion, past participle confusion).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778868089714-migv4xfl",
+      "timestamp": "2026-05-15T18:02:12.122Z"
+    }
+  ]
+}

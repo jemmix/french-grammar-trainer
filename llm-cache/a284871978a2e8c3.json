@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a284871978a2e8c3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-06-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent de l'indicatif : « Vous ___ entrer dans la salle. »\n\nChoices:\nA. [CORRECT] pouvez\nB. [WRONG] peuvent\nC. [WRONG] pouvons\nD. [WRONG] pouviez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840070-h3akr9br"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B and C use incorrect subject-verb agreement (ils/elles and nous instead of vous); D uses the imparfait tense instead of the required présent de l'indicatif.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778870262187-8thghn0u",
+      "timestamp": "2026-05-15T18:40:26.950Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B and C use wrong person/number (peuvent for ils/elles, pouvons for nous), and D uses the imperfect tense instead of present indicative.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778872412353-tznreuc3",
+      "timestamp": "2026-05-15T19:16:18.925Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\n\nI was tasked with verifying that the wrong answers for a French grammar question are indeed incorrect. I analyzed a multiple choice question about conjugating \"pouvoir\" in the présent de l'indicatif with the subject \"Vous.\"\n\n## Analysis Performed\n\nI evaluated the three wrong answers:\n\n- **B. peuvent** - This is the 3rd person plural (ils/elles) form, which is grammatically incorrect with \"Vous\"\n- **C. pouvons** - This is the 1st person plural (nous) form, which is grammatically incorrect with \"Vous\"  \n- **D. pouviez** - This is the 2nd person plural form but in the imparfait tense, not présent de l'indicatif as required by the question\n\n## Result\n\nTRUE||All wrong answers are grammatically incorrect: B and C use the wrong person/number, and D uses the wrong tense (imparfait instead of présent).\n\n## Remaining Tasks\n\nNo remaining tasks — this verification was completed successfully.\n\n## Recommendations\n\nThe question and answer choices are well-formed. All wrong answers correctly represent common learner mistakes that violate the grammatical constraints specified in the question prompt.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778876173504-q9nipl8k",
+      "timestamp": "2026-05-15T20:27:03.489Z"
+    }
+  ]
+}

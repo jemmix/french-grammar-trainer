@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ba3507e1c76bce6f",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "01-05-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Les verbes irréguliers courants : être, avoir, faire, dire\nPROMPT: Conjuguez le verbe « être » au présent de l'indicatif à la personne indiquée dans la phrase.\nPHRASE: Tu ___ heureux.\nCORRECT ANSWER: es\n\nWRONG ANSWERS to evaluate:\n1. suis\n2. est\n3. sommes\n4. étais\n5. serai\n6. sois\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1778860557344-e11v8ae7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers are valid conjugations of être representing common learner errors (wrong person, wrong tense, or wrong mood).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778860977873-gbqpqanj",
+      "timestamp": "2026-05-15T16:03:24.730Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers are actual conjugations of \"être\" at different persons, tenses, or moods that a learner could reasonably confuse with the correct present tense form \"es\" for \"tu\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778863433871-ea0o0spj",
+      "timestamp": "2026-05-15T16:44:38.035Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent real conjugations of \"être\" at different persons/tenses that learners commonly confuse with the target form: \"suis\" (je form), \"est\" (il/elle form), \"sommes\" (nous form), \"étais\" (imperfect tu form), \"serai\" (future tu form), and \"sois\" (subjunctive/imperative tu form).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778865678710-3kwyufpy",
+      "timestamp": "2026-05-15T17:22:52.256Z"
+    }
+  ]
+}

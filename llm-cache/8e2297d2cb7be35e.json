@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8e2297d2cb7be35e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-07-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Je ___ toujours du café au petit-déjeuner. »\n\nChoices:\nA. [CORRECT] prends\nB. [WRONG] prenais\nC. [WRONG] prendrai\nD. [WRONG] prendre\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840116-yg1k5edr"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are not in the present tense as requested by the question: B is imparfait, C is futur simple, and D is the infinitive.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778870404001-v6nvkx20",
+      "timestamp": "2026-05-15T18:42:39.969Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are in different tenses or forms not matching the required present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778872565097-8ob4bheq",
+      "timestamp": "2026-05-15T19:16:37.065Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect because the question specifically requires the present tense (\"au présent\"), and B is imperfect (je prenais), C is future (je prendrai), and D is infinitive (prendre).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778876317342-digkw9ma",
+      "timestamp": "2026-05-15T20:19:00.496Z"
+    }
+  ]
+}

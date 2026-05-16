@@ -1,0 +1,33 @@
+{
+  "cacheKey": "442126d2980fd5d1",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "01-03-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Conjugaison des verbes réguliers en -re (attendre, vendre, répondre, etc.)\nPROMPT: Conjuguez le verbe « perdre » au présent de l'indicatif\nPHRASE: Vous ne ___ jamais patience avec vos élèves.\nCORRECT ANSWER: perdez\n\nWRONG ANSWERS to evaluate:\n1. perdons\n2. perdent\n3. perdiez\n4. perdais\n5. perdre\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1778860557284-4bmtumzx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner mistakes: confusing subject pronouns (perdons for nous, perdent for ils), mixing tenses (perdais from imperfect), or using the infinitive instead of conjugating (perdre).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778860800182-raquv2he",
+      "timestamp": "2026-05-15T16:00:37.733Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: confusing \"vous\" with other persons (perdons/perdent), mixing present and imparfait tenses (perdiez/perdais), or forgetting to conjugate and using the infinitive (perdre).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778863155060-1s9ouico",
+      "timestamp": "2026-05-15T16:40:55.803Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common errors (wrong person, wrong tense, or infinitive form) that learners frequently make when conjugating -re verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778865532279-3zvskc6v",
+      "timestamp": "2026-05-15T17:19:29.211Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7c9f3447a74c55ec",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "01-02-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Conjugaison des verbes réguliers en -ir (finir, choisir, réussir, etc.)\nPROMPT: Conjuguez le verbe « agir » au présent de l'indicatif avec le sujet proposé.\nPHRASE: Vous ___ rapidement pour résoudre le problème.\nCORRECT ANSWER: agissez\n\nWRONG ANSWERS to evaluate:\n1. agissons\n2. agit\n3. agissent\n4. agisse\n5. agiriez\n6. agirez\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1778860557251-5lndwtjr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers are different conjugations of the same verb (agir) representing common learner confusions: wrong person (agissons, agit, agissent), wrong mood (agisse), or wrong tense (agiriez, agirez).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778860706227-vx0td3c6",
+      "timestamp": "2026-05-15T15:59:26.441Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers are real conjugations of \"agir\" from different persons, numbers, or tenses that learners commonly confuse with the present indicative \"vous\" form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778863089895-3jiil868",
+      "timestamp": "2026-05-15T16:38:31.692Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All six wrong answers are conjugations of the same verb in different moods/tenses/persons that learners commonly mix up (nous vs vous forms, treating vous as singular, confusing present with subjunctive/conditional/future).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778865442678-l6psur6z",
+      "timestamp": "2026-05-15T17:17:46.002Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c4b1924b3c0a16fc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-13-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise le verbe « se parler » avec un sens réciproque ?\n\nChoices:\nA. [CORRECT] Les deux sœurs se parlent pendant des heures au téléphone.\nB. [WRONG] Elle se parle toute seule dans sa chambre.\nC. [WRONG] Les deux sœurs parlent pendant des heures au téléphone.\nD. [WRONG] Il parle avec son professeur après le cours.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840329-3eo9s95q"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers either lack the reflexive form \"se parler\" or use it with a reflexive rather than reciprocal meaning.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778870960756-fok8roh4",
+      "timestamp": "2026-05-15T18:54:52.788Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses reflexive not reciprocal sense, C and D don't use \"se parler\" at all.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778873261123-shw68z1s",
+      "timestamp": "2026-05-15T19:28:17.105Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to verify that the wrong answers in a French grammar question about the reciprocal use of \"se parler\" are indeed incorrect.\n\nI have analyzed all three wrong answers:\n- B: \"Elle se parle toute seule dans sa chambre\" - This uses \"se parler\" in a reflexive sense (talking to herself), not reciprocal (talking to each other), so it's correctly marked as wrong.\n- C: \"Les deux sœurs parlent pendant des heures au téléphone\" - This doesn't use the reflexive verb \"se parler\" at all, so it's correctly marked as wrong.\n- D: \"Il parle avec son professeur après le cours\" - This also doesn't use the reflexive verb \"se parler,\" so it's correctly marked as wrong.\n\nAll wrong answers fail to meet the requirement of using \"se parler\" with reciprocal meaning.\n\nMy verdict: TRUE||All wrong answers either don't use the reflexive verb \"se parler\" or use it in a reflexive rather than reciprocal sense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778878425320-8ke06mvg",
+      "timestamp": "2026-05-15T20:54:46.998Z"
+    }
+  ]
+}

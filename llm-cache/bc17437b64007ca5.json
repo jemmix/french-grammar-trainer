@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bc17437b64007ca5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-20-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel verbe indique l'absence d'un élément dans cette construction impersonnelle ? « Il ___ un bouton à cette veste. »\n\nChoices:\nA. [CORRECT] manque\nB. [WRONG] suffit\nC. [WRONG] plaît\n\nVerify these WRONG answers are incorrect (letters: B, C)",
+    "nonce": "nonce-1778869840559-nyfeosa6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||Both B and C are grammatically incorrect or semantically nonsensical in this impersonal construction: \"Il suffit un bouton\" uses the wrong structure for \"suffire\" (would require \"de\"), and \"Il plaît un bouton à cette veste\" is semantically illogical as buttons cannot please jackets.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778871835347-j276q0oq",
+      "timestamp": "2026-05-15T19:04:16.494Z"
+    },
+    {
+      "raw": "TRUE||Both B (suffit) and C (plaît) are incorrect because they don't indicate absence; \"suffit\" means sufficiency and \"plaît\" means to please, neither of which fit the semantic requirement of indicating missing elements.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778879523322-wuk0dnez",
+      "timestamp": "2026-05-15T21:22:19.833Z"
+    },
+    {
+      "raw": "TRUE||Both \"suffit\" and \"plaît\" are grammatically incorrect in this impersonal construction and do not indicate the absence of an element as required by the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778880285263-0gjus2r1",
+      "timestamp": "2026-05-15T21:26:13.219Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4dcd14a7e4bfc9cc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-16-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Vous venez demain matin à la gare. » Le verbe « venez » est au présent. Dans cette phrase, le présent exprime :\n\nChoices:\nA. [CORRECT] une action programmée dans le futur\nB. [WRONG] une habitude régulière\nC. [WRONG] une action en cours\nD. [WRONG] une vérité générale\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840418-89k4ev0n"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"demain matin\" indicates a future event, not a habit (B), an ongoing action (C), or a general truth (D).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778871313116-2i8b432a",
+      "timestamp": "2026-05-15T18:56:00.532Z"
+    },
+    {
+      "raw": "TRUE||B, C, and D are all incompatible with \"demain matin\" which indicates a specific future time, not a habit, ongoing action, or general truth.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778873317284-vbtvxzbv",
+      "timestamp": "2026-05-15T19:29:01.330Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was asked to verify whether the wrong answers (B, C, D) in the given multiple choice question are indeed incorrect. I analyzed the question about the French sentence \"Vous venez demain matin à la gare\" and determined what the present tense expresses in this context.\n\nThe correct answer is A (an action scheduled for the future), and I verified that:\n- B (a regular habit) is incorrect because the sentence refers to a specific future event\n- C (an action in progress) is incorrect because the action will happen tomorrow, not currently\n- D (a general truth) is incorrect because this is about a specific event, not a general fact\n\nAll three wrong answers are indeed incorrect under the grammatical constraints stated in the question.\n\nVERDICT|TRUE||All wrong answers are incorrect within the grammatical context of the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778879028719-7pac4i8h",
+      "timestamp": "2026-05-15T21:04:11.661Z"
+    }
+  ]
+}

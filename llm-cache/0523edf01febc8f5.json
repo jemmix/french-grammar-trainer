@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0523edf01febc8f5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-10-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au présent : « Je ___ les papiers à la poubelle. »\n\nChoices:\nA. [CORRECT] jette\nB. [WRONG] jete\nC. [WRONG] jètte\nD. [WRONG] jetais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840209-01t9tkxc"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain grammar errors: B misses the required double consonant, C uses an incorrect accent, and D is in the wrong tense (imparfait instead of présent).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778870645572-ly6woikc",
+      "timestamp": "2026-05-15T18:44:26.095Z"
+    },
+    {
+      "raw": "TRUE||B is misspelled (single t), C has an incorrect accent (è instead of e), and D is imperfect tense not present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778872696078-e3ld5yg8",
+      "timestamp": "2026-05-15T19:23:06.336Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.\n\nMaximum steps for this agent have been reached.\n\nSummary of work done:\nI analyzed the French grammar question \"Complétez au présent : « Je ___ les papiers à la poubelle. »\" and evaluated the three wrong answers (B, C, D). I confirmed that:\n- B (\"jete\") is incorrect because it's missing the required double 't' in the first person singular of \"jeter\"\n- C (\"jètte\") is incorrect because it has an improper accent mark\n- D (\"jetais\") is incorrect because it's in the imperfect tense, not the present tense as requested\n\nRemaining tasks:\nNone. I have completed the validation task as requested.\n\nRecommendations for next steps:\nThe question validation is complete with a TRUE verdict. If this is part of a larger validation process, you can proceed to validate the next question in the sequence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778876639329-99kuwxzq",
+      "timestamp": "2026-05-15T20:24:59.784Z"
+    }
+  ]
+}

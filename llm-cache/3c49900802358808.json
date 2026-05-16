@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3c49900802358808",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "01-08-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Les verbes irréguliers courants : voir, croire, boire, écrire, lire\nPROMPT: Conjuguez le verbe « écrire » au présent.\nPHRASE: Tu ___ une lettre à ta mère.\nCORRECT ANSWER: écris\n\nWRONG ANSWERS to evaluate:\n1. écrit\n2. écrivons\n3. écrivez\n4. écrivais\n5. lis\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1778860557435-b7xqrql4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: person/number confusion (écrit/écrivons/écrivez), tense confusion (écrivais for imparfait), and verb confusion (lis from lire, another -ir verb in the same rule set).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778861316182-pnrixiue",
+      "timestamp": "2026-05-15T16:15:10.411Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers are common learner mistakes: conjugation errors (wrong person/plural), tense confusion (present vs imperfect), and verb confusion within the same irregular group taught in the lesson.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778864344066-i1dot8of",
+      "timestamp": "2026-05-15T16:59:36.112Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers are reasonable errors: 1-3 are conjugation person/number mistakes, 4 is a tense confusion (imparfait), and 5 is a verb confusion (lire vs. écrire from the same lesson).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778866325606-ycv1uayc",
+      "timestamp": "2026-05-15T17:34:46.043Z"
+    }
+  ]
+}

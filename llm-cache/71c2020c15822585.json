@@ -1,0 +1,33 @@
+{
+  "cacheKey": "71c2020c15822585",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-13-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Dans quelle phrase le pronom « se » a-t-il une valeur réciproque (action mutuelle entre les personnes) ?\n\nChoices:\nA. [CORRECT] Les deux amis se téléphonent chaque semaine.\nB. [WRONG] Elle se lave les mains avant le repas.\nC. [WRONG] La porte s'ouvre lentement.\nD. [WRONG] Il se peut qu'il pleuve demain.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778869840324-07f6q6j2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use reflexive or impersonal constructions without mutual action between people.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778870930356-8ko97b86",
+      "timestamp": "2026-05-15T18:49:20.754Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use \"se\" in non-reciprocal contexts: B is reflexive (self-action), C is middle voice (subject undergoes action), D is impersonal expression (no mutual action between people).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778872999107-gqa1bib1",
+      "timestamp": "2026-05-15T19:24:02.158Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers correctly demonstrate non-reciprocal usage: B is reflexive action on self (single subject), C is middle voice (inanimate subject cannot have mutual action), D is impersonal expression with no mutual action between people.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778878388463-b9ueavep",
+      "timestamp": "2026-05-15T20:54:02.170Z"
+    }
+  ]
+}
