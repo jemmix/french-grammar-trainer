@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a121afba95daa685",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez à l'imparfait : « Elle ___ à pleurer en regardant ce film. » (commencer)\nChoices:\nA. [CORRECT] commençait\nB. commence\nC. commencera\nD. commencerait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778938889939-rjk0k5q1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests general imparfait tense recognition (distinguishing imparfait from présent, futur, conditionnel) rather than the specific spelling rule for -cer and -ger verbs at imparfait, which would require showing the cedilla maintenance or testing the nous form where the special rule applies.\n\n**Maximum steps for this agent have been reached.**\n\n**Summary of what has been accomplished:**\n- Analyzed the grammar validation question for rule 03-03 (Les verbes en -cer et -ger à l'imparfait)\n- Evaluated whether the question \"Elle ___ à pleurer en regardant ce film.\" with verb \"commencer\" actually tests the stated rule\n- Determined the question is MISALIGNED because it tests imparfait tense identification rather than the specific -cer/-ger verb conjugation rules\n\n**Remaining tasks:**\n- None - the validation task is complete\n\n**Recommendations for next steps:**\n- If you need this question to properly test rule 03-03, rewrite it to focus on the nous form (where the spelling change is critical) or include distractor choices that test the cedilla rule (e.g., \"commancait\" without cedilla as a wrong choice)\n- A better aligned question might test \"nous commencions\" vs \"nous commancons\" or include spelling-based distractors that directly target the -cer/-ger rule",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778939029356-yxxiony9",
+      "timestamp": "2026-05-16T13:46:13.802Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the specific imparfait conjugation of the -cer verb \"commencer,\" requiring knowledge of the spelling rule (adding cedilla ç before 'a' endings) that is the core of this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778939625572-7h6tk1e9",
+      "timestamp": "2026-05-16T13:54:23.295Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the imperfect tense of a -cer verb (commencer), requiring knowledge of both the imperfect formation (-ait ending) and the cedilla (ç) needed for -cer verbs before -a endings.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778939991288-bbxoxbkh",
+      "timestamp": "2026-05-16T14:04:51.172Z"
+    }
+  ]
+}

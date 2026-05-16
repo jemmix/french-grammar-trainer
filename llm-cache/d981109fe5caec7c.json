@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d981109fe5caec7c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez à l'imparfait : « Elle ___ le journal chaque matin. » (lancer)\nChoices:\nA. [CORRECT] lançait\nB. lanceait\nC. lancait\nD. lancerait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778941794872-hbc9w8ul"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the imparfait conjugation of \"lancer\" with the elle form (\"lançait\"), but the rule for -cer verbs (adding ç) applies specifically to the nous/vous forms in the imparfait (nous lancions, vous lanciez), not to the elle form which is a regular conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778942078792-8nek3kif",
+      "timestamp": "2026-05-16T14:35:27.892Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the -cer verb conjugation rule at the imparfait, requiring knowledge that \"lancer\" becomes \"lançait\" with a cedilla to maintain the soft \"c\" sound.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778942518393-t1oep7he",
+      "timestamp": "2026-05-16T14:42:21.950Z"
+    },
+    {
+      "raw": "I cannot perform this task as I've reached the maximum number of steps allowed for this agent.\n\nThe question asks me to validate whether a French grammar question properly tests the stated rule about verbs ending in -cer and -ger in the imperfect tense.\n\nTo properly complete this validation task, I would need to:\n1. Analyze the rule being tested (verbs ending in -cer and -ger at the imperfect)\n2. Examine the question and its multiple choice options\n3. Determine if answering correctly requires knowledge of the specific grammar rule\n4. Provide a verdict (ALIGNED or MISALIGNED) with a one-sentence explanation\n\nBased on the information provided, I can see that:\n- The rule is about -cer and -ger verbs in the imperfect tense\n- The question asks to complete \"Elle ___ le journal\" with the verb \"lancer\" in imperfect\n- The correct answer is \"lançait\" which requires the cedilla on the c\n\nFor next steps, you would need to run a new agent instance to complete this validation task.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778942951856-c3k38dvc",
+      "timestamp": "2026-05-16T14:49:47.126Z"
+    }
+  ]
+}

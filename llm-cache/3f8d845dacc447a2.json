@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3f8d845dacc447a2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-03-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Verbe en -cer : « nous ___ les résultats » (annoncer). Choisissez la bonne graphie à l'imparfait.\n\nChoices:\nA. [CORRECT] annoncions\nB. [WRONG] annonçons\nC. [WRONG] annoncerons\nD. [WRONG] annonçâmes\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778953185987-ubs9ujfm"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are in different tenses than what was requested: \"annonçons\" is present tense, \"annoncerons\" is future simple, and \"annonçâmes\" is passé simple, while the question explicitly asks for the imperfect tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778953316021-z3jlpg2x",
+      "timestamp": "2026-05-16T17:42:54.635Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are not in the imparfait tense as requested: B is présent, C is futur simple, and D is passé simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778953606066-niu8bro6",
+      "timestamp": "2026-05-16T17:47:09.293Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached. I have completed the verification task by analyzing the French grammar question about the verb \"annoncer\" at imparfait.\n\nSummary of what has been accomplished:\n- Analyzed the multiple choice question about conjugating \"annoncer\" (to announce) for \"nous\" at imparfait\n- Verified each wrong answer:\n  - B (\"annonçons\") is present tense, not imparfait\n  - C (\"annoncerons\") is futur simple, not imparfait  \n  - D (\"annonçâmes\") is passé simple, not imparfait\n- All wrong answers are indeed incorrect for the specified context (imparfait)\n- The correct answer A (\"annoncions\") is the proper imparfait conjugation\n\nFinal verdict: TRUE||All wrong answers are in different tenses (present, future, passé simple) rather than the imparfait requested in the question.\n\nNo remaining tasks - the verification is complete. The response format requested is:\n\nTRUE||All wrong answers are in different tenses (present, future, passé simple) rather than the imparfait requested in the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778953822888-j6ohsdyl",
+      "timestamp": "2026-05-16T17:50:57.101Z"
+    }
+  ]
+}

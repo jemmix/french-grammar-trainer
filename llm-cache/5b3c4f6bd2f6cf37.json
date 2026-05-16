@@ -1,0 +1,26 @@
+{
+  "cacheKey": "5b3c4f6bd2f6cf37",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez à l'imparfait : « Tu ___ beaucoup de légumes. » (manger)\nChoices:\nA. [CORRECT] mangeais\nB. manges\nC. mangeras\nD. mangé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778938889938-5u0zp3n8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question only tests recognition of imparfait tense endings (-ais for tu) rather than the special -ger spelling rule which would require identifying the -e- preservation from \"nous mangeons\" as the stem. None of the distractors include \"mangais\" (incorrect -ger spelling) that would actually test this specific rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778938889974-f9aka7md",
+      "timestamp": "2026-05-16T13:44:59.129Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests general imparfait conjugation of regular -er verbs, not the specific orthographic change (adding an 'e' before 'a' or 'o') that makes -cer and -ger verbs special at imparfait (visible only in the 'nous' form: nous mangions, nous commencions).\n\n---\n\n**Maximum steps for this agent have been reached.**\n\n**Work accomplished:**\n- Analyzed one validation question for French grammar alignment\n- Determined the question tests regular imparfait conjugation rather than the specific -cer/-ger orthographic rule\n- Provided formatted verdict with explanation\n\n**Remaining tasks:**\n- This appears to be a single-question validation task, so no further work was pending\n\n**Recommendation:**\nThe question should be revised to test the distinctive feature of -cer/-ger verbs at imparfait (the 'nous' form with its orthographic change) or reclassified under a more general imparfait conjugation rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778939571712-q3zrhani",
+      "timestamp": "2026-05-16T13:53:45.572Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "75d4e6fc0c2fba80",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez à l'imparfait : « Vous ___ des fruits au marché. » (manger)\nChoices:\nA. [CORRECT] mangiez\nB. mangez\nC. mangerez\nD. mangé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778938889939-id3lhevw"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached. Here is the response you requested:\n\nVERDICT: MISALIGNED\nREASON: The question tests basic imparfait conjugation for \"vous\" form, not the special spelling rule for -ger verbs which only applies to the \"nous\" form (mangions).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778939002227-8yqudl2t",
+      "timestamp": "2026-05-16T13:44:04.323Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: This question tests general imparfait conjugation but not the specific -ger spelling rule, which only applies to the \"nous\" form (nous mangions), whereas the \"vous\" form (mangiez) follows regular conjugation patterns.\n\n---\n\n**MAXIMUM STEPS REACHED**\n\nI have completed the validation task for the single question provided. The question was determined to be MISALIGNED because it tests general imparfait conjugation rather than the specific spelling rule for -ger verbs at imparfait, which only applies to the \"nous\" form.\n\nRemaining tasks: None - only one question was provided for validation in this prompt.\n\nRecommendations: If you have more questions to validate for this or other grammar rules, please submit them in subsequent prompts. For this particular question, you might want to redesign it to use the \"nous\" form (e.g., \"Nous ___ des fruits au marché\") which would properly test the -ger spelling rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778939546917-4jj6fb9p",
+      "timestamp": "2026-05-16T13:53:12.522Z"
+    }
+  ]
+}

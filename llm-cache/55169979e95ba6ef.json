@@ -1,0 +1,40 @@
+{
+  "cacheKey": "55169979e95ba6ef",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Verbe en -ger : « vous ___ vos vêtements » (ranger). Choisissez la bonne graphie à l'imparfait.\nChoices:\nA. [CORRECT] rangeiez\nB. rangez\nC. rangerez\nD. rangâtes\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778953185988-5ecobx29"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question properly tests the -ger spelling rule in the imperfect tense, as answering correctly requires knowledge that we add an \"e\" after \"g\" to maintain the soft sound (rangeiez vs. rangez).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778953467205-8w151u9c",
+      "timestamp": "2026-05-16T17:44:57.375Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests general imparfait conjugation for the \"vous\" form (rangeiez), but the rule is specifically about the orthographic changes required for -ger verbs when followed by \"a\" or \"o\" to maintain the soft \"g\" sound (e.g., \"nous mangeons\"), which doesn't apply to this question since the vowel after \"g\" is \"i\".\n\nMaximum steps for this agent have been reached. I've completed the validation task for the French grammar question, determining that it is misaligned with the stated rule about -ger verbs at the imparfait. The question tests general imparfait conjugation rather than the specific orthographic rule about adding an \"e\" after \"g\" before \"a\" or \"o\" sounds.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778953724939-khj9q8jp",
+      "timestamp": "2026-05-16T17:49:19.558Z"
+    },
+    {
+      "raw": "I've reached the maximum number of steps allowed for this agent. I can no longer use tools, but I can provide a text response with my validation assessment.\n\n---\n\nVERDICT: ALIGNED\nREASON: The question tests the imperfect conjugation of \"ranger\" (a -ger verb) for \"vous\", which correctly requires preserving the \"e\" before the -iez ending, directly testing the orthographic rule for -ger verbs.\n\n---\n\n**Summary of work completed:**\n- Analyzed the question against rule 03-03 (Les verbes en -cer et -ger à l'imparfait)\n- Verified that \"rangeiez\" correctly preserves the \"e\" required for -ger verbs\n- Confirmed the question requires knowledge of the stated rule to answer correctly\n\n**Remaining tasks:** None — this validation is complete.\n\n**Recommendation:** While the question is correctly aligned, it's worth noting that the distractors test different tenses rather than orthographic variations. Future questions could include distractors like \"rangiez\" (missing the \"e\") to more thoroughly test the -ger rule. However, this question is valid as-is.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778953965134-3k4kweyu",
+      "timestamp": "2026-05-16T17:54:14.155Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question doesn't effectively test the -ger spelling rule because the ending -iez naturally contains an 'e' before the 'i', making the spelling modification invisible; the \"vous\" form doesn't actually demonstrate the required 'e' insertion that distinguishes -ger verbs in imparfait.\n\n---\n\n**Summary**: I have completed the validation task for the French grammar question. After analyzing the question, I determined that while the question is technically about a -ger verb in imparfait, the specific \"vous\" form (rangeiez) doesn't actually demonstrate the spelling modification that defines the rule (the 'e' insertion before 'a' or 'o' endings to keep the 'g' soft). The correct answer would look the same for a regular verb, so students could answer correctly without knowing the -ger rule.\n\n**Remaining tasks**: None - the validation verdict has been provided.\n\n**Recommendations**: To properly test the -ger rule in imparfait, use the \"nous\" form (e.g., \"nous rangions\") where the 'e' insertion is visible and distinctive. This makes the spelling rule immediately apparent and cannot be confused with regular verb conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778954054156-7e56wnp1",
+      "timestamp": "2026-05-16T17:55:47.900Z"
+    }
+  ]
+}

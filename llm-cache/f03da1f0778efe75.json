@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f03da1f0778efe75",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez à l'imparfait : « Vous ___ vos vêtements dans l'armoire. » (ranger)\nChoices:\nA. [CORRECT] rangeiez\nB. rangez\nC. rangerez\nD. rangâtes\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778941794873-bz6qbyoa"
+  },
+  "responses": [
+    {
+      "raw": "I need to analyze whether this question properly tests the stated rule.\n\nVERDICT: ALIGNED\nREASON: The question correctly tests the imparfait conjugation of -ger verbs by requiring knowledge of the spelling rule where \"ranger\" becomes \"rangeiez\" (with an inserted \"e\" to maintain the soft \"g\" sound), and the wrong answers test other tenses (present, future, and passé simple).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778942188550-7pyiiiq9",
+      "timestamp": "2026-05-16T14:37:15.689Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"ranger\" is a regular -er verb that doesn't end in -cer or -ger, so answering this question only requires knowing regular imperfect conjugation, not the specific spelling changes for -cer and -ger verbs that this rule is about.\n\n---\n\n**Maximum steps for this agent have been reached.**\n\n**Summary of work accomplished:**\n- Analyzed one question validation task for the French grammar trainer project\n- Determined that the question about conjugating \"ranger\" at the imperfect tense is misaligned with rule 03-03 (verbs ending in -cer and -ger at the imperfect)\n\n**Remaining tasks:**\n- No tasks were in progress - this was a single validation query\n\n**Recommendations for next steps:**\n- This question should be reassigned to a different rule (likely a general imperfect conjugation rule for regular -er verbs)\n- To properly test rule 03-03, the question should use a verb ending in -cer (e.g., commencer, placer) or -ger (e.g., manger, nager) to test the cedilla addition for -cer verbs or the -e insertion for -ger verbs",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778942625009-bl22ykrb",
+      "timestamp": "2026-05-16T14:48:52.086Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached. I cannot use any tools.\n\nI was evaluating whether a French grammar question properly tests the stated rule about -cer and -ger verbs in the imperfect tense.\n\nMy verdict is:\n\nVERDICT: MISALIGNED\nREASON: The question tests general imperfect conjugation of regular -er verbs (ranger → rangeiez), not the specific orthographic rule for -cer/-ger verbs (adding ç before a/o for -cer verbs, or e before a/o for -ger verbs to maintain soft sounds), which is not applicable to the 2nd person plural ending \"-iez\".\n\nThe question asks to conjugate \"ranger\" in the imperfect with the subject \"vous,\" resulting in \"rangeiez.\" While \"ranger\" is indeed a -ger verb, the special rule about inserting 'e' before 'a' or 'o' is not being tested here, since the ending is \"-iez.\" Any regular -er verb would follow the same pattern regardless of whether it ends in -cer, -ger, or something else.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778943277801-d8nz88cw",
+      "timestamp": "2026-05-16T14:55:27.782Z"
+    }
+  ]
+}

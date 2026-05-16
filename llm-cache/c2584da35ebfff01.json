@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c2584da35ebfff01",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Verbe en -cer : « elles ___ les résultats » (annoncer). Choisissez la bonne graphie à l'imparfait.\nChoices:\nA. [CORRECT] annonçaient\nB. annoncèrent\nC. annonceront\nD. annonceraient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778953185988-em13zphw"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The rule is about the special spelling changes for -cer and -ger verbs in the imparfait (which only affects the \"nous\" form where you add \"e\" before the ending to preserve the soft sound), but the question asks for the \"elles\" form where no special spelling change occurs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778953450437-4s327z74",
+      "timestamp": "2026-05-16T17:46:52.918Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of Work Accomplished**:\nI analyzed the validation question to determine whether the question about the imparfait of \"annoncer\" actually tests the stated grammar rule about -cer verbs requiring spelling changes.\n\n**Remaining Tasks**:\nNone - this was a single validation task that I completed.\n\n**Recommendations for Next Steps**:\nThe validation is complete. Based on my analysis:\n\nVERDICT: MISALIGNED\nREASON: The question tests knowledge of imparfait tense endings, not the spelling rule for -cer verbs where \"c\" becomes \"ç\" before \"a\" or \"o\" — all choices are in different tenses, so a learner can answer correctly by simply recognizing the imparfait ending \"-aient\" without understanding the orthographic change required for -cer verbs.\n\nTo properly test this rule, the question should include distractors that differ only in the spelling (e.g., \"annonçaient\" vs \"annoncaient\" vs \"annoncent\" vs \"annonçais\") while keeping the tense constant, forcing the learner to recognize when the cedilla is required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778953798694-v5rleduu",
+      "timestamp": "2026-05-16T17:51:08.217Z"
+    }
+  ]
+}

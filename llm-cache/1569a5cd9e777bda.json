@@ -1,0 +1,26 @@
+{
+  "cacheKey": "1569a5cd9e777bda",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Le verbe « annoncer » est en -cer. Le « c » est-il doux ou dur devant « i » ? Quelle est la graphie correcte à l'imparfait (nous) ?\nChoices:\nA. [CORRECT] annoncions\nB. annonçions\nC. annonçons\nD. annoncerons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778970752286-3eabaroq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the spelling rule for -cer verbs in the imparfait tense, where the \"ç\" cedilla is only used before \"o\" and \"a\" but not before \"i\", making \"annoncions\" the correct \"nous\" form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778970752291-gdu2k7mr",
+      "timestamp": "2026-05-16T22:33:25.730Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question contains a fundamental error — it marks \"annoncions\" as correct when the correct imparfait form is \"annonçions\" (the cedilla is retained from the present tense \"nous\" stem). A student who correctly applies the rule being tested would be marked wrong, making this question invalid for testing the stated grammar concept.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778970805731-jt42iw9o",
+      "timestamp": "2026-05-16T22:39:11.350Z"
+    }
+  ]
+}

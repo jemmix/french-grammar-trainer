@@ -1,0 +1,47 @@
+{
+  "cacheKey": "4bcdfbdb31317bde",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez à l'imparfait (attention à la graphie pour les verbes en -cer).\nPhrase: Vous ___ à comprendre la situation. » (commencer)\nCorrect Answer: commenciez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778966036498-wejpud99"
+  },
+  "responses": [
+    {
+      "raw": "# Maximum Steps Reached\n\nI have reached the maximum number of steps allowed for this validation task. I cannot make any tool calls, but I can provide my analysis:\n\n---\n\n## Summary of Work Completed\n\nI was asked to validate whether a French grammar question is aligned with the rule it claims to test.\n\n**Analysis performed:**\n- Rule: \"Les verbes en -cer et -ger à l'imparfait\" — tests the spelling rule where verbs ending in -cer use ç before a/o, and verbs ending in -ger add an e after g before a/o\n- Question: Conjugate \"commencer\" in imparfait for \"vous\" — answer: \"commenciez\"\n- Evaluation: This is **MISALIGNED** because the \"vous\" form (ending in -iez) does not trigger the cedilla change. The spelling rule only applies to forms with \"a\" or \"o\" (je commençais, il commençait, ils commençaient). The \"vous\" form tests general imparfait conjugation, not the specific -cer spelling nuance.\n\n---\n\n## Remaining Tasks\n\nNone — the validation judgment is complete.\n\n---\n\n## Recommendations\n\nThe question should be modified to use a person that actually triggers the -cer spelling rule, such as:\n- \"Je ___ à comprendre la situation.\" → Answer: \"commençais\" (c → ç before a)\n- \"Ils ___ à comprendre la situation.\" → Answer: \"commençaient\" (c → ç before a)",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778966138653-a97y1tbm",
+      "timestamp": "2026-05-16T21:16:14.032Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests the imparfait conjugation of -cer verbs; while the 'vous' form doesn't require the ç spelling rule, the prompt explicitly draws attention to -cer verbs in imparfait, making the concept central to solving the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778966297359-z87x0inm",
+      "timestamp": "2026-05-16T21:18:37.794Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the spelling rule for -cer verbs in the imperfect tense by requiring the student to add the \"e\" after the \"c\" in the conjugation of \"commencer\" for the subject \"vous\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778966386243-seslh0uv",
+      "timestamp": "2026-05-16T21:20:38.245Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the imperfect conjugation of the -cer verb \"commencer\" for \"vous,\" which requires knowledge of the specific spelling rule (using \"ç\") for -cer verbs in this tense, exactly as stated in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778966477921-enuydgs8",
+      "timestamp": "2026-05-16T21:21:44.988Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question asks for the \"vous\" form of the imperfect, which doesn't require the special spelling rule for -cer verbs (which only applies to the \"nous\" form), so it doesn't actually test the stated rule about -cer and -ger verbs at the imperfect tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778966507363-puivas4l",
+      "timestamp": "2026-05-16T21:22:30.168Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "fc6a4bd2d6963393",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Verbe en -ger : « vous ___ des gâteaux » (manger). Choisissez la bonne graphie à l'imparfait.\nChoices:\nA. [CORRECT] mangiez\nB. mangez\nC. mangâtes\nD. mangerez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778953185986-d5sf6x7t"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\n\nI have analyzed the validation request for the French grammar question and determined the alignment with the stated rule.\n\n**Analysis:**\n- **Section**: L'imparfait\n- **Rule being tested**: 03-03 - Les verbes en -cer et -ger à l'imparfait (special spelling in \"nous\" form)\n- **Question**: Tests \"vous\" form conjugation of \"manger\" in imperfect\n\n**Verdict:**\n\nVERDICT: MISALIGNED\nREASON: The question tests general imperfect tense conjugation for the \"vous\" form (mangiez), but the rule about -ger verbs specifically concerns the required spelling change in the \"nous\" form (nous mangions) to preserve the soft \"g\" sound, which is not relevant to this question.\n\n**No remaining tasks** - this was a single validation request that has been completed.\n\n**Recommendation**: To properly test this rule, the question should ask for the \"nous\" form and include distractors that would require knowing the spelling rule (e.g., \"mangeons\" as a wrong answer).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778953186008-jl6is3in",
+      "timestamp": "2026-05-16T17:40:38.321Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests recognition of the imperfect tense (\"mangiez\") versus present, passé simple, and future, but the vous form \"mangiez\" doesn't demonstrate the special spelling rule for -ger verbs (which is most visible in the nous form \"nous mangions\" where the \"e\" is added to maintain the soft \"g\" sound).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778953497376-zwgiai04",
+      "timestamp": "2026-05-16T17:45:34.883Z"
+    }
+  ]
+}

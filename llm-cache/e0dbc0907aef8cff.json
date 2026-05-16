@@ -1,0 +1,40 @@
+{
+  "cacheKey": "e0dbc0907aef8cff",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Verbe en -cer : « nous ___ la balle » (lancer). Choisissez la bonne graphie à l'imparfait.\nChoices:\nA. [CORRECT] lancions\nB. lançâmes\nC. lancerons\nD. lancerions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778967821320-1h1ku8du"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests recognition of verb tenses (imparfait vs. passé simple, futur simple, conditionnel) through conjugation endings rather than the -cer cedilla spelling rule, and the correct answer \"lancions\" doesn't actually demonstrate -cer knowledge since the cedilla is only needed before \"a\" or \"o\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778967821346-8m3bo1o1",
+      "timestamp": "2026-05-16T21:44:38.196Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question directly tests the -cer spelling rule at the imparfait by requiring the learner to choose \"lancions\" with the cedilla (ç), distinguishing it from both other tenses (passé simple, future, conditional) and the incorrect conditional form \"lancerions\" that lacks the required cedilla.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778967878197-qeod66x1",
+      "timestamp": "2026-05-16T21:45:09.323Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question directly tests the spelling rule for -cer verbs in the imperfect tense, where the cedilla (ç) must be used to maintain the soft \"c\" sound before the vowel (nous lancions).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778967909324-0tt2duce",
+      "timestamp": "2026-05-16T21:45:30.288Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests general imparfait conjugation (recognizing -ions as the \"nous\" imparfait ending) rather than the specific -cer spelling rule, since the correct answer \"lancions\" doesn't require the cedilla (ç) that characterizes the rule — the \"c\" is followed by \"i\", not \"a\" or \"o\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778967930289-xdaz8yhn",
+      "timestamp": "2026-05-16T21:47:13.164Z"
+    }
+  ]
+}

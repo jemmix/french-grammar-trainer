@@ -1,0 +1,26 @@
+{
+  "cacheKey": "69066898d4db60e2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez à l'imparfait (attention à la graphie pour les verbes en -cer).\nPhrase: Tu ___ à courir dès le matin. » (commencer)\nCorrect Answer: commençais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778944849192-ssc4pcwy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question asks for the \"tu\" form (commençais), but the special orthographic rule for -cer verbs at the imperfect (adding \"e\" before ç) only applies to the \"nous\" form (nous commencions), so this doesn't test the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778946361794-ubx28r5u",
+      "timestamp": "2026-05-16T15:46:23.862Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary\n\nI was asked to validate whether a French grammar question properly tests the stated rule about verbs ending in -cer and -ger in the imparfait tense. The question asks for the conjugation of \"commencer\" in the imparfait for \"tu\".\n\n## Validation Analysis\n\n**VERDICT: MISALIGNED**\n\n**REASON:** The correct answer \"commençais\" does not actually require the cedilla (ç) before the letter \"a\", since \"c\" is already soft before \"a\" - the cedilla is only needed before \"o\" and \"u\" (e.g., \"nous commencions\"), making this question a poor test of the -cer spelling rule it claims to assess.\n\n## Issue Identified\n\nThe question is designed to test the special orthographic rules for -cer verbs in imparfait, but the specific form requested (tu commençais) doesn't actually demonstrate the spelling change that characterizes this rule. A better aligned question would have tested the \"nous\" form (nous commencions) or used a different context where the cedilla change is actually necessary.\n\n## Recommendation\n\nReplace this question with one that tests the \"nous\" form or another form where the cedilla is actually required to maintain the soft \"c\" sound. Alternatively, keep the question if the pedagogical goal is simply to reinforce imparfait conjugation generally, but reclassify it under a more general imparfait rule rather than the specific -cer/-ger orthography rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778947109304-002r694t",
+      "timestamp": "2026-05-16T15:59:56.080Z"
+    }
+  ]
+}

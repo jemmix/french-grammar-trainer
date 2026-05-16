@@ -1,0 +1,26 @@
+{
+  "cacheKey": "a7c30aa8fd470bbd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Verbe en -ger : « elle ___ du poisson » (manger). Choisissez la bonne graphie à l'imparfait.\nChoices:\nA. [CORRECT] mangeait\nB. mangait\nC. mangea\nD. mangera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778968247606-8njfflu1"
+  },
+  "responses": [
+    {
+      "raw": "**Maximum steps for this agent have been reached.**\n\nI have completed the validation task for the given question. Here is my verdict:\n\nVERDICT: MISALIGNED\nREASON: The question tests the general imperfect conjugation of \"manger\" for \"elle\" (which uses the regular ending \"-ait\"), not the specific orthographic rule about adding 'e' before 'a' or 'o' endings that applies to \"nous\" forms (nous mangions vs nous mangeons) to maintain the soft g sound.\n\n**Summary**: I evaluated whether the question aligned with rule 03-03 about -ger verbs in the imperfect tense. The rule specifically concerns spelling modifications needed in the \"nous\" form (adding 'e' before \"-ions\" to preserve the soft 'g' sound). However, the question uses \"elle\" as the subject, where no such spelling modification occurs because the \"-ait\" ending doesn't trigger the rule.\n\n**Recommendations**: To properly test this rule, the question should use \"nous\" as the subject and contrast the imperfect form \"mangions\" with incorrect forms like \"mangions\" (without 'e') or forms from other tenses. The current question should be reassigned to a general imperfect conjugation rule instead.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778968247634-e46s943i",
+      "timestamp": "2026-05-16T21:52:22.251Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question asks for the \"elle\" form of \"manger\" in the imperfect, which uses the standard ending \"-ait\" without any spelling change; the distinctive -ger rule (adding an \"e\" before \"a/o\" sounds) only applies to the \"nous\" form (nous mangions), not to elle/ille forms.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778968342251-ut45dyfa",
+      "timestamp": "2026-05-16T21:52:39.723Z"
+    }
+  ]
+}
