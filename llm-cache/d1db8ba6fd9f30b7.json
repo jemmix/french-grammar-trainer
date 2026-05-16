@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d1db8ba6fd9f30b7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-01-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-01 - Formation de l'imparfait : radical du présent (nous) + terminaisons (-ais, -ais, -ait, -ions, -iez, -aient)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez à l'imparfait avec le verbe entre parenthèses.\nPhrase: Il ___ ses enfants à l'école en voiture. » (emmener)\nCorrect Answer: emmenait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778929076841-ynj2ayl6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying the imperfect formation rule by deriving the radical from the \"nous\" present form (emmenons → emmen-) and adding the correct ending for \"il\" (-ait), which directly tests the stated grammar rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778929471207-zu5hq3fd",
+      "timestamp": "2026-05-16T11:04:59.669Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying the exact rule specified: finding the \"nous\" form radical (emmen-) and adding the correct imperfect ending (-ait for \"il\") to form \"emmenait.\"\n\nStatement: Maximum steps for this agent have been reached.\n\nSummary: I have completed the validation task for the French grammar question. I analyzed whether the question about conjugating \"emmener\" in the imperfect tense properly tests the rule about forming the imperfect using the \"nous\" form radical plus endings (-ais, -ais, -ait, -ions, -iez, -aient). I determined that the question is well-aligned with the rule because answering correctly requires knowledge of the specific formation pattern described.\n\nRemaining Tasks: None for this validation task.\n\nRecommendations: The question is properly aligned and can be kept as-is for the curriculum.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778929981347-dxn89v4i",
+      "timestamp": "2026-05-16T11:13:38.595Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires applying the imperfect formation rule (taking the \"nous\" present stem \"emmen-\" and adding the -ait ending for third person singular), which directly tests the stated formation rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778930627762-ifcu9j0z",
+      "timestamp": "2026-05-16T11:24:22.828Z"
+    }
+  ]
+}

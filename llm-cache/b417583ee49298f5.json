@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b417583ee49298f5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-01-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez à l'imparfait : « Elle ___ ses devoirs avec beaucoup de soin. » (finir)\n\nChoices:\nA. [CORRECT] finissait\nB. [WRONG] finit\nC. [WRONG] finira\nD. [WRONG] fini\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1778929076838-bdy8saoe"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use different tenses or forms (présent, futur simple, past participle) instead of the required imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778929076871-2w3o1qt3",
+      "timestamp": "2026-05-16T10:58:28.566Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nFor this task, I evaluated whether the wrong answers in the given multiple choice question were indeed incorrect.\n\nThe question asked to complete the sentence \"Elle ___ ses devoirs avec beaucoup de soin\" using the imparfait tense of the verb \"finir\".\n\nAfter examining each wrong answer:\n- B (finit): This is the 3rd person singular of \"finir\" in présent tense, not imparfait\n- C (finira): This is the 3rd person singular of \"finir\" in futur simple tense, not imparfait\n- D (fini): This is the past participle of \"finir\", not a conjugated imparfait form\n\nAll wrong answers are correctly identified as wrong because they don't match the imparfait tense requirement.\n\nVERDICT: TRUE||All wrong answers are not in the imparfait tense as required by the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778929506677-dhixqxt6",
+      "timestamp": "2026-05-16T11:06:06.056Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the imparfait: B is présent, C is futur simple, and D is a past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778930054064-7m7ahfga",
+      "timestamp": "2026-05-16T11:14:41.924Z"
+    }
+  ]
+}

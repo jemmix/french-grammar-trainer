@@ -1,0 +1,40 @@
+{
+  "cacheKey": "ee8a16312a1aad49",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez à l'imparfait : « Tu ___ ta chambre chaque semaine. » (ranger)\nChoices:\nA. [CORRECT] rangeais\nB. ranges\nC. rangeras\nD. rangé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778938889940-f6y2dd4g"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the -ger spelling rule in the imparfait by requiring the student to know that \"ranger\" conjugates as \"rangeais\" (with an added 'e' after 'g' to maintain the soft sound before adding the imparfait ending).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778939319384-iepfplmq",
+      "timestamp": "2026-05-16T13:49:59.236Z"
+    },
+    {
+      "raw": "# Validation Verdict\n\nVERDICT: ALIGNED\nREASON: The question correctly tests the -cer/-ger spelling rule at imparfait, as \"rangeais\" demonstrates the required 'e' insertion after 'g' before 'a' that defines this grammar pattern.\n\nThe maximum number of steps for this agent has been reached. I have completed the validation task and determined that the question is properly aligned with the stated rule about -cer and -ger verbs in the imparfait tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778939798912-sdp0zqel",
+      "timestamp": "2026-05-16T13:57:28.149Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"ranger\" does not end in -cer or -ger, so the question tests regular imperfect conjugation rather than the special spelling changes required for -cer/-ger verbs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778940118854-s4g281vx",
+      "timestamp": "2026-05-16T14:02:17.443Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary\nI was in the process of validating whether a French grammar question properly tests the stated rule about verbs ending in -cer and -ger in the imperfect tense.\n\n## Analysis Completed\nThe question asks students to conjugate \"ranger\" (to tidy) in the imperfect tense for \"tu\":\n- Prompt: \"Tu ___ ta chambre chaque semaine.\" (ranger)\n- Correct answer: \"rangeais\"\n\n**My assessment: MISALIGNED**\n\nThe rule being tested (03-03) specifically covers the orthographic spelling changes required for -cer and -ger verbs in the imperfect tense:\n- For -cer verbs: add cedilla (ç) before a/o (e.g., nous commencions)\n- For -ger verbs: add e before a/o (e.g., nous mangeons → nous mangions)\n\nHowever, the \"tu\" form of ranger is \"rangeais,\" which does NOT require any special orthographic change. The special spelling only applies in the \"nous\" form (nous rangions). \n\nThis question simply tests general imperfect tense conjugation, not the specific -cer/-ger orthographic rule it claims to test. A student could answer correctly without any knowledge of the special spelling rule, because this form doesn't require it.\n\n## Recommendation\nThis question should be revised to test a form where the spelling change is actually required (e.g., \"Nous ___ la table.\" (ranger) → \"rangions\"), or it should be assigned to a different rule that covers general imperfect tense conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778940256025-ef8u9wxi",
+      "timestamp": "2026-05-16T14:05:36.980Z"
+    }
+  ]
+}

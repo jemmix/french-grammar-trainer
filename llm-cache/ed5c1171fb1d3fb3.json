@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ed5c1171fb1d3fb3",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "03-01-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Formation de l'imparfait : radical du présent (nous) + terminaisons (-ais, -ais, -ait, -ions, -iez, -aient)\nPROMPT: Conjuguez à l'imparfait avec le verbe entre parenthèses.\nPHRASE: Vous ___ toujours du fromage après le repas. » (manger)\nCORRECT ANSWER: mangiez\n\nWRONG ANSWERS to evaluate:\n1. mangez\n2. mangerez\n3. mangé\n4. mangeriez\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1778930311151-qh51emo5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\n\nREASON: All wrong answers represent common tense confusion errors (présent \"mangez\", futur simple \"mangerez\", past participle \"mangé\", conditionnel \"mangeriez\") that learners frequently make when conjugating imparfait with \"vous\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778931711813-arlew982",
+      "timestamp": "2026-05-16T11:42:32.474Z"
+    },
+    {
+      "raw": "# Maximum Steps Reached\n\nI've reached the maximum number of steps allowed for this task.\n\n## Summary of Work Completed\n\nI was evaluating whether the wrong answers provided for a French grammar input question were plausible mistakes. The question was about conjugating the verb \"manger\" to the imperfect tense for \"vous\" (correct answer: \"mangiez\").\n\nThe wrong answers to evaluate were:\n1. mangez (present tense)\n2. mangerez (future tense)\n3. mangé (past participle)\n4. mangerez (conditional tense)\n\n## My Evaluation\n\nVERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner mistakes when conjugating the imperfect tense - the present tense \"mangez\", future tense \"mangerez\", past participle \"mangé\", and conditional tense \"mangeriez\" are all plausible confusions a learner might make when first learning imperfect conjugations.\n\n## Next Steps\n\nSince I cannot continue with this validation task, the recommended next steps would be:\n\n1. If this question is part of a batch validation, continue with the remaining questions\n2. If this question passed validation, it can proceed through the merge and compile steps\n3. If there are failed questions in the batch, they would need manual fixing before proceeding\n\nThe workflow would then continue with:\n- Merge: `npm run merge-txt -- --output questions/{lang}/<rule-id>.txt ...`\n- Compile: `npm run compile-all -- --lang {lang}`\n- Register in `src/data/sections-index.ts`\n- Commit and push the changes",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778933029250-llmt4ere",
+      "timestamp": "2026-05-16T12:04:34.088Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common tense confusion errors learners make when conjugating French verbs: present tense (mangez), future simple (mangerez), past participle (mangé), and conditional (mangeriez) are all plausible mistakes when trying to form the imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778933505689-d7if5192",
+      "timestamp": "2026-05-16T12:12:50.762Z"
+    }
+  ]
+}

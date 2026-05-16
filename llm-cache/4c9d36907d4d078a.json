@@ -1,0 +1,26 @@
+{
+  "cacheKey": "4c9d36907d4d078a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez à l'imparfait : « Elles ___ très bien. » (manger)\nChoices:\nA. [CORRECT] mangeaient\nB. mangent\nC. mangeront\nD. mangeraient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778938889939-j0dd4zqn"
+  },
+  "responses": [
+    {
+      "raw": "I need to analyze this question alignment based on the rule about -cer and -cer verbs in the imperfect tense.\n\nLooking at the question:\n- Rule: Les verbes en -cer et -ger à l'imparfait (special orthographic changes in the \"nous\" form)\n- Question: Conjugate \"manger\" with \"Elles\" in imperfect\n- Correct answer: mangeaient\n\nThe rule about -ger and -cer verbs specifically requires special spelling only in the \"nous\" form (nous mangions, nous commencions) to preserve pronunciation. All other forms use regular imperfect endings. Since this question uses \"Elles\" (3rd person plural), the answer \"mangeaient\" uses the standard ending -aient and does NOT involve any special -ger spelling. The question only tests general imperfect conjugation, not the specific -ger/-cer rule.\n\nVERDICT: MISALIGNED\nREASON: The rule requires the \"nous\" form to show the special -ger spelling (mangions), but the question uses \"Elles\" which uses the regular imperfect ending (-aient) and doesn't test any -ger-specific behavior.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778939161630-9l4pv0ko",
+      "timestamp": "2026-05-16T13:47:57.981Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests general imperfect conjugation of -er verbs in the third person plural (elles mangeaient), but the rule specifically concerns orthographic changes in the \"nous\" form of -cer and -ger verbs (nous mangions, nous commencions) where spelling modifications are required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778939685167-qtcs30nb",
+      "timestamp": "2026-05-16T13:55:30.656Z"
+    }
+  ]
+}

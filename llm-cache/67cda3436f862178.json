@@ -1,0 +1,26 @@
+{
+  "cacheKey": "67cda3436f862178",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-03-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-03 - Les verbes en -cer et -ger à l'imparfait (je mangeais, je commençais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez à l'imparfait : « Elles ___ la maison pour Noël. » (décorer)\nChoices:\nA. [CORRECT] décoraient\nB. décorent\nC. décoreront\nD. décoré\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778938889939-ob7nbu3l"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"décorer\" is a regular -er verb that does not end in -cer or -ger, so answering correctly requires knowledge of general imperfect conjugation rather than the specific spelling rules covered by this topic.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778939277982-1wmo4be3",
+      "timestamp": "2026-05-16T13:48:39.383Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"décorer\" is a regular -er verb with no special spelling changes in the imperfect tense, so this question tests general imperfect conjugation rather than the specific -cer/-ger spelling rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778939730657-wpktxo6g",
+      "timestamp": "2026-05-16T13:55:50.461Z"
+    }
+  ]
+}
