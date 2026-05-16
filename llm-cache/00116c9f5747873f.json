@@ -1,0 +1,33 @@
+{
+  "cacheKey": "00116c9f5747873f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-02-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-02 - L'imparfait du verbe être (seul verbe au radical irrégulier : ét-)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « être » à l'imparfait.\nPhrase: Les livres ___ sur la table de la bibliothèque.\nCorrect Answer: étaient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778934861279-rwk9c1kk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the irregular stem \"ét-\" of the verb être in the imparfait, which is the central concept of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778935220993-35g5nu91",
+      "timestamp": "2026-05-16T12:41:53.437Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question explicitly asks to conjugate \"être\" in the imperfect tense, and the correct answer \"étaient\" requires knowledge of the irregular imperfect conjugation of être (ét- + endings).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778935706157-5mw7ijnn",
+      "timestamp": "2026-05-16T12:48:46.900Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the irregular imperfect conjugation of \"être\" with the irregular stem \"ét-\", as students must recognize that \"Les livres\" requires 3rd person plural \"étaient\" (ét- + -aient), which is unique to this rule.\n\n---\n\n**Note:** I reached the maximum step limit for this task. I have completed the validation assessment as requested. No tools were used.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778936085046-sbx473z1",
+      "timestamp": "2026-05-16T12:55:35.814Z"
+    }
+  ]
+}

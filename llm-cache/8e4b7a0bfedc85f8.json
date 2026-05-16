@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8e4b7a0bfedc85f8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-02-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-02 - L'imparfait du verbe être (seul verbe au radical irrégulier : ét-)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez à l'imparfait : « Tu ___ toujours le premier à arriver. »\nChoices:\nA. [CORRECT] étais\nB. es\nC. seras\nD. fus\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1778934861276-v2xdoy2r"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly requires completing the sentence in imparfait tense, and the correct answer \"étais\" uses the irregular stem \"ét-\" of être with the proper imparfait ending for \"tu\", which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778934861340-crlvbiln",
+      "timestamp": "2026-05-16T12:35:28.732Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowing the imperfect conjugation of être for \"tu\" (étais), which is exactly what the rule covers, and the distractors are other tenses of être that would be incorrect in an imperfect context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778935278782-6eu66t28",
+      "timestamp": "2026-05-16T12:41:49.334Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the imperfect conjugation of \"être\" for \"tu\" (étais), which is exactly what the rule covers, and the distractors are other tenses of the same verb, making knowledge of the imperfect form essential to answer correctly.\n\n---\nMaximum steps for this agent have been reached.\n\n**Summary:**\nI analyzed whether a French grammar question properly tests the stated rule (L'imparfait du verbe être). The question asks to complete \"Tu ___ toujours le premier à arriver\" in the imperfect tense, with choices including étais (correct), es (present), seras (future), and fus (passé simple). I determined the question is ALIGNED because it directly tests knowledge of the imperfect conjugation of \"être\" with the irregular root \"ét-\".\n\n**Remaining tasks:**\nNone - the validation task has been completed.\n\n**Recommendations:**\nNo further action needed on this question. The validation is complete and the question properly tests the stated grammar rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1778935696183-28ukoxa4",
+      "timestamp": "2026-05-16T12:48:50.461Z"
+    }
+  ]
+}
