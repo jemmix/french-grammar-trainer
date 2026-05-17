@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3399715f86399fad",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-06-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Chaque matin, quand il travaillait là-bas, il ___ une douche avant de partir. »\n\nChoices:\nA. [CORRECT] prenait\nB. [WRONG] a pris\nC. [WRONG] prend\nD. [WRONG] prendrait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779036765758-emsopwyy"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for the habitual past context: B (passé composé) doesn't convey the repeated nature of \"chaque matin\" with the background imparfait context, C (présent) inappropriately mixes past and present tenses, and D (conditionnel) expresses a hypothetical situation rather than describing an actual past routine.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779036872883-u8vijkdn",
+      "timestamp": "2026-05-17T16:55:30.167Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for the given context: the imparfait \"travaillait\" and \"chaque matin\" indicate a habitual past action requiring the imperfect \"prenait\"; \"a pris\" (passé composé) would indicate a single completed action rather than a habit, \"prend\" is present tense conflicting with the past context, and \"prendrait\" (conditional) implies a hypothetical scenario rather than a past habit.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779037323507-p1vr5m6p",
+      "timestamp": "2026-05-17T17:02:41.087Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use inappropriate tenses for the past habitual context described in the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779037737814-o12ngpf2",
+      "timestamp": "2026-05-17T17:10:30.781Z"
+    }
+  ]
+}

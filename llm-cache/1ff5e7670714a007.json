@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1ff5e7670714a007",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-06-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand j'étais jeune, je ___ du vélo dans le quartier. »\n\nChoices:\nA. [CORRECT] faisais\nB. [WRONG] fis\nC. [WRONG] fais\nD. [WRONG] ferais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779039550328-92476nz9"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Completed\n\nI have analyzed the French grammar verification task but was unable to complete the final response due to the step limit being reached. The question required evaluating whether wrong answers in a multiple choice question are indeed incorrect:\n\n**Question:** \"Complétez : « Quand j'étais jeune, je ___ du vélo dans le quartier. »\"\n\n**Correct Answer (A):** \"faisais\" (imparfait - habitual past action)\n\n**Wrong Answers to Verify:**\n- B: \"fis\" (passé simple - literary past tense)\n- C: \"fais\" (present tense)\n- D: \"ferais\" (conditional)\n\n## Analysis Performed\n\nI carefully evaluated each wrong answer:\n- **Answer C (\"fais\")** is clearly incorrect - present tense cannot work with \"j'étais\" (past)\n- **Answer D (\"ferais\")** is clearly incorrect - conditional requires a hypothetical context not present in the sentence\n- **Answer B (\"fis\")** required deeper analysis - while it's the passé simple (completed action), the context \"Quand j'étais jeune\" strongly implies a habitual childhood activity, which requires the imparfait. In pedagogical contexts, \"fis\" would be considered wrong here.\n\n## Recommended Verdict\n\nThe recommended response is:\n\n```\nTRUE||All wrong answers contain clear grammar errors within the stated context of describing a habitual past action during childhood.\n```\n\nThe context establishes that we're describing what the subject \"used to do\" when young, making the imparfait (\"faisais\") the only grammatically correct choice. Even though \"fis\" could theoretically describe a single past event in a literary context, the question's framing strongly points to a habitual action interpretation.\n\n## Remaining Tasks\n\nNone - the verification analysis is complete and ready to be formatted as requested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779039550366-ckz51pbz",
+      "timestamp": "2026-05-17T17:41:02.305Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't match the habitual past context: B uses passé simple (completed action), C uses present (tense mismatch), D uses conditional (mood mismatch).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779039662306-oal0wxbp",
+      "timestamp": "2026-05-17T17:43:11.255Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb tenses for the context of describing a habitual past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779039791256-4hbeqxa8",
+      "timestamp": "2026-05-17T17:43:49.896Z"
+    }
+  ]
+}

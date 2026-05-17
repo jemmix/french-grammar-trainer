@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e58942948981e920",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-06-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand nous vivions à Paris, nous ___ souvent au café. »\n\nChoices:\nA. [CORRECT] allions\nB. [WRONG] sommes allés\nC. [WRONG] allons\nD. [WRONG] irions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779036765759-2x9oea24"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses the passé composé which describes a completed event rather than a past habit, C uses the present tense, and D uses the conditional mood which implies a hypothetical situation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779037001527-hoc3ft42",
+      "timestamp": "2026-05-17T16:58:58.347Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to verify that the wrong answers (B, C, D) in a French grammar multiple choice question are indeed incorrect. The question asks to complete the sentence: \"Quand nous vivions à Paris, nous ___ souvent au café.\" (When we were living in Paris, we ___ often to the café.)\n\nThe correct answer is A: \"allions\" (imparfait of \"aller\" for \"nous\").\n\nI was analyzing each wrong answer to ensure they're incorrect within the grammatical constraints of the question:\n\n- B (sommes allés): Passé composé - doesn't fit with the imparfait context and habitual meaning\n- C (allons): Présent - doesn't match the past tense established by \"vivions\"\n- D (irions): Conditionnel - doesn't express the factual past habit the sentence describes\n\nThe verdict is that all wrong answers are indeed incorrect, and the response should be:\n\nTRUE||All wrong answers use tenses that don't match the imparfait context of describing habitual past actions.\n\nThis task is complete. No further steps are needed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779037561200-zcozqe46",
+      "timestamp": "2026-05-17T17:06:51.833Z"
+    },
+    {
+      "raw": "TRUE||B uses passé composé which describes completed actions rather than habitual actions during an ongoing past period; C is present tense but the context requires past; D is conditional mood which is used for hypothetical situations, not describing real past habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779037836266-cfnysdp9",
+      "timestamp": "2026-05-17T17:11:18.031Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dbe036484248ee8c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-06-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand elle était au collège, le soir, elle ___ toujours ses devoirs avant de se coucher. »\n\nChoices:\nA. [CORRECT] faisait\nB. [WRONG] a fait\nC. [WRONG] ferait\nD. [WRONG] fit\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779038187586-a2j4p1nf"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use verb tenses that are inappropriate for describing habitual past actions in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779038251901-v8vgefnz",
+      "timestamp": "2026-05-17T17:18:46.465Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses passé composé instead of imparfait for a habitual past action, C incorrectly uses conditional for a past routine, and D uses passé simple which doesn't convey the repeated nature of the action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779038426502-yasr14e8",
+      "timestamp": "2026-05-17T17:21:24.379Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached. I cannot use any tools at this point.\n\nWork completed:\nI have analyzed the French grammar verification task and evaluated the three wrong answers (B, C, D) for the question about habitual past actions.\n\nAnalysis summary:\n- The question requires the imparfait tense to express a habitual past action (\"Quand elle était au collège\")\n- Choice A (faisait) correctly uses the imparfait\n- Choice B (a fait) uses passé composé, which is incorrect for habitual actions\n- Choice C (ferait) uses conditionnel, which doesn't refer to past actions\n- Choice D (fit) uses passé simple, which is inappropriate for this context\n\nThe verdict is TRUE - all wrong answers are indeed incorrect given the grammatical constraints in the question.\n\nRecommendations for next steps:\nThe verification is complete for this question. The correct response format would be:\nTRUE||All wrong answers use incorrect tenses for expressing habitual past actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779038560866-etkrcj71",
+      "timestamp": "2026-05-17T17:24:51.579Z"
+    }
+  ]
+}

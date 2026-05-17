@@ -1,0 +1,47 @@
+{
+  "cacheKey": "b1076cb95ee60c53",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-06-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Pendant l'hiver, ils ___ du ski tous les weekends. »\n\nChoices:\nA. [CORRECT] faisaient\nB. [WRONG] ont fait\nC. [WRONG] font\nD. [WRONG] feraient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779036765759-z4lvb2m2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B incorrectly uses passé composé instead of imparfait for a past habit; C uses present tense which doesn't match the past context; D uses conditional without hypothetical context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779037052640-98b9uyy0",
+      "timestamp": "2026-05-17T17:00:03.977Z"
+    },
+    {
+      "raw": "FALSE|B,C|B (ont fait) is acceptable for summarizing a completed winter period; C (font) is acceptable if referring to present or general winter habits, as the question doesn't specify past tense context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779037618633-vtscgz26",
+      "timestamp": "2026-05-17T17:08:21.779Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for a repeated past action during winter; \"ont fait\" is for completed actions, \"font\" is present tense, and \"feraient\" is conditional with no context requiring it.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779037862550-sy1jfd7j",
+      "timestamp": "2026-05-17T17:11:31.747Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use inappropriate tenses or moods: 'ont fait' treats the habit as a completed event rather than a state, 'font' is the present tense, and 'feraient' is the conditional mood, none of which fit the context of describing a past habitual action like the imparfait 'faisaient'.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779037891749-6u2n8aai",
+      "timestamp": "2026-05-17T17:12:15.518Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779037935519-kxdw518s",
+      "timestamp": "2026-05-17T17:12:30.592Z"
+    }
+  ]
+}

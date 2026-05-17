@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b6db7bec7cc184dc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-06-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À l'époque, elle ___ un café chaque matin. »\n\nChoices:\nA. [CORRECT] prenait\nB. [WRONG] a pris\nC. [WRONG] prendrait\nD. [WRONG] prit\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779038187576-ne8tuw8s"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't express the meaning of \"habit or ongoing state in the past\" that's appropriate for the context established by \"À l'époque\" + \"chaque matin\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779038187592-l27w8j0d",
+      "timestamp": "2026-05-17T17:19:59.984Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors - B uses passé composé for a habitual action, C uses conditional for a factual past event, and D uses passé simple which is also inappropriate for describing past habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779038484380-s8o3wlsb",
+      "timestamp": "2026-05-17T17:22:13.406Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Completed\n\nI analyzed the French grammar verification task, evaluating a multiple-choice question about completing a sentence in the past tense: \"À l'époque, elle ___ un café chaque matin.\"\n\nThe question asks for the most appropriate verb form to describe a habitual past action (\"used to have a coffee every morning\"), which correctly requires the imparfait tense (\"prenait\").\n\n## Verification Results\n\nI evaluated the three wrong answers:\n\n- **B. a pris** (passé composé): Incorrect because passé composé is used for completed actions, not habits. This cannot properly convey \"every morning\" repetition with \"à l'époque.\"\n\n- **C. prendrait** (conditional): Incorrect because the conditional expresses hypothetical situations, not factual past habits. No hypothetical context exists in this sentence.\n\n- **D. prit** (passé simple): Incorrect because passé simple is a literary tense for completed actions, not for describing ongoing past habits. Additionally, this tense is rarely used in the same construction as \"à l'époque.\"\n\n## Final Verdict\n\n**TRUE||All wrong answers contain clear grammar errors.**\n\nAll three wrong options are unequivocally incorrect for expressing a habitual past action in French as required by the question's context. No remaining tasks exist for this verification.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779038584979-ujgn0cbo",
+      "timestamp": "2026-05-17T17:23:49.210Z"
+    }
+  ]
+}
