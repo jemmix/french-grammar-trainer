@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1becfcf0a145f85e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-07-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À cette époque, le marché ___ animé et coloré le matin. »\n\nChoices:\nA. [CORRECT] était\nB. [WRONG] sera\nC. [WRONG] serait\nD. [WRONG] avait été\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779051183740-2b7w7j5d"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses or moods that don't match the past context established by \"À cette époque\"; B is future, C is conditional (hypothetical), and D is pluperfect (which would require an anterior past context not present in the sentence).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779051407723-c5670o41",
+      "timestamp": "2026-05-17T20:57:12.196Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is future tense (sera), C is conditional (serait) which requires a hypothetical context not present, and D is pluperfect (avait été) which requires another past time reference not provided in the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779051597639-5wm3zefy",
+      "timestamp": "2026-05-17T21:00:18.610Z"
+    },
+    {
+      "raw": "I've reached the maximum number of steps allowed for this task. Tools are now disabled.\n\n## Work Accomplished\n\nI have analyzed the French grammar question and verified all wrong answers:\n\n**Question**: \"Complétez : « À cette époque, le marché ___ animé et coloré le matin. »\"\n\n**Analysis of wrong answers**:\n- **B. \"sera\"** (future tense) - Incorrect because \"À cette époque\" establishes a past context, not future\n- **C. \"serait\"** (conditional) - Incorrect because the sentence states a past fact, not a hypothetical situation\n- **D. \"avait été\"** (pluperfect) - Incorrect because this tense requires a subsequent past action for comparison, which is absent; the imparfait is correct for describing an ongoing past state\n\n## Final Verdict\n\n**TRUE||All wrong answers contain clear grammar errors incompatible with the past tense context established by \"À cette époque\".**\n\n## Remaining Tasks\n\nNo additional tasks remain - the validation is complete.\n\n## Recommendation\n\nThe question passes validation and can be included in the training material as is.</think>TRUE||All wrong answers contain clear grammar errors incompatible with the past tense context established by \"À cette époque\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779051907145-n0r9f8rk",
+      "timestamp": "2026-05-17T21:05:41.691Z"
+    }
+  ]
+}

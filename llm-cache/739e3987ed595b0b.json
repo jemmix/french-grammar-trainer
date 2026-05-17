@@ -1,0 +1,26 @@
+{
+  "cacheKey": "739e3987ed595b0b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-07-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À cette époque, elle ___ une silhouette fine et gracieuse. »\n\nChoices:\nA. [CORRECT] avait\nB. [WRONG] a eu\nC. [WRONG] a\nD. [WRONG] aura\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779048174827-mdsditpp"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect because they use inappropriate tenses: B uses passé composé instead of imparfait for a continuous state, C uses present tense instead of past, and D uses future tense instead of past, all contradicting the \"À cette époque\" context which requires imparfait.\n\n---\n\nMaximum steps for this agent have been reached.\n\n## Summary of work completed:\n- Successfully analyzed the French grammar question to verify that wrong answers are indeed incorrect.\n- Evaluated each wrong answer (B, C, D) within the grammatical constraints stated in the question prompt.\n- Determined that all wrong answers contain clear grammar errors based on tense usage and the context \"À cette époque\".\n- Provided the verification in the exact requested format.\n\n## Remaining tasks:\nNone - the verification task was completed successfully.\n\n## Recommendations for next steps:\nIf this question is part of a larger validation process, the next step would be to validate the next question in the queue. If this is the last question, the validation process is complete and the results can be used to update the question data as needed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779048678523-omnqgb1z",
+      "timestamp": "2026-05-17T20:12:13.417Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect in the context: B is passé composé (indicates a specific event, not a continuous state), C is present tense (conflicts with \"À cette époque\"), and D is future tense (conflicts with the past temporal marker).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779049087188-p6sn4mnh",
+      "timestamp": "2026-05-17T20:18:37.850Z"
+    }
+  ]
+}

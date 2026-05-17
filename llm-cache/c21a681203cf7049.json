@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c21a681203cf7049",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-07-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Dans la description, il ___ environ quarante ans et un sourire chaleureux. »\n\nChoices:\nA. [CORRECT] avait\nB. [WRONG] eut\nC. [WRONG] aurait\nD. [WRONG] aura\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779049750337-cxfz0cxw"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779049808617-9xzoq8jm",
+      "timestamp": "2026-05-17T20:30:22.855Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary\n\nI was evaluating a French grammar verification task for a multiple choice question. The question asks to complete the sentence \"Dans la description, il ___ environ quarante ans et un sourire chaleureux.\" (In the description, he ___ about forty years old and a warm smile.)\n\nI analyzed each wrong answer:\n\n- **B. eut** (passé simple): Incorrect because passé simple describes completed actions, not ongoing descriptive states\n- **C. aurait** (conditionnel): Incorrect because conditional implies uncertainty or hypothesis, not factual description\n- **D. aura** (futur simple): Incorrect because the context is a past description, not a future prediction\n\nThe correct answer is A. \"avait\" (imparfait), which is the proper tense for descriptive statements about past states/characteristics.\n\n## Remaining Tasks\n\nThe verdict needs to be formatted and returned in the exact format requested:\n```\nVERDICT|letter1,letter2,...|explanation\n```\n\n## Recommendation\n\nThe analysis is complete and ready to return. Based on the evaluation, all wrong answers (B, C, D) are indeed grammatically incorrect within the given context, so the verdict should be:\n```\nTRUE||All wrong answers contain clear grammar errors.\n```",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779050243388-15wimdge",
+      "timestamp": "2026-05-17T20:39:13.855Z"
+    }
+  ]
+}

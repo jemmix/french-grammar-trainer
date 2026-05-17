@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ee0935dcd313edb7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-07-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Le ciel ___ gris et couvert ce matin-là. »\n\nChoices:\nA. [CORRECT] était\nB. [WRONG] sera\nC. [WRONG] serait\nD. [WRONG] avait été\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779051183738-542t4abx"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context: B uses future tense incompatible with past reference, C uses conditional without hypothetical context, and D uses pluperfect where simple past is required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779051183799-q0r9ljax",
+      "timestamp": "2026-05-17T20:54:07.339Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses (future, conditional, pluperfect) that don't match the imperfect tense required for describing a past state indicated by \"ce matin-là.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779051457362-rn2roaw3",
+      "timestamp": "2026-05-17T20:58:02.075Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying a French grammar question. Here's what I accomplished:\n\n- Analyzed the question \"Complétez : « Le ciel ___ gris et couvert ce matin-là. »\"\n- Evaluated the wrong answers:\n  - B. sera (future tense) - Incorrect because \"ce matin-là\" indicates past time, not future\n  - C. serait (conditional) - Incorrect because there's no hypothetical context; this describes a factual past state\n  - D. avait été (pluperfect) - Incorrect because there's no sequence of past events requiring the pluperfect\n\nAll wrong answers are grammatically incorrect given the context marker \"ce matin-là\" which requires the imperfect tense \"était\" (choice A).\n\nVERDICT: TRUE||All wrong answers are incompatible with the past context marker \"ce matin-là\" which requires the imperfect tense.\n\nNo further work was required on this task.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779051683824-4kgh7m7w",
+      "timestamp": "2026-05-17T21:02:54.043Z"
+    }
+  ]
+}

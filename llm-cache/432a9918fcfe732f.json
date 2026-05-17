@@ -1,0 +1,33 @@
+{
+  "cacheKey": "432a9918fcfe732f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-07-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À l'époque, la maison ___ très vieille et abandonnée. »\n\nChoices:\nA. [CORRECT] était\nB. [WRONG] aurait été\nC. [WRONG] avait été\nD. [WRONG] sera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779051183738-xvfyw33z"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incompatible with the past temporal marker \"À l'époque\": B uses conditional past which requires a hypothetical context, C uses plus-que-parfait which requires a prior past event that isn't referenced, and D uses future tense which contradicts the past context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779051221401-6qyjg8hi",
+      "timestamp": "2026-05-17T20:54:17.808Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Completed\n\nI analyzed the French grammar multiple-choice question and verified the incorrectness of all wrong answers:\n\n- **Question**: \"Complétez : « À l'époque, la maison ___ très vieille et abandonnée. »\"\n- The phrase \"À l'époque\" establishes a clear past context requiring a past tense\n\n### Analysis of wrong answers:\n- **B. aurait été** (conditional perfect): Incorrect - expresses hypothetical past situations, but this is a straightforward factual description with no conditional context\n- **C. avait été** (pluperfect): Incorrect - used for actions completed before another past action, but there's no secondary past event to establish this temporal relationship\n- **D. sera** (future simple): Incorrect - future tense contradicts the past marker \"À l'époque\"\n\n### Verdict:\nTRUE||All wrong answers are grammatically incorrect given the past context established by \"À l'époque\" and the straightforward descriptive nature of the sentence.\n\n## Remaining Tasks\n\nNone - the verification is complete.\n\n## Recommendations\n\nThe question is valid and ready for use. All wrong answers are correctly identified as incorrect within the stated grammatical constraints.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779051463703-hs63e57h",
+      "timestamp": "2026-05-17T20:58:08.930Z"
+    },
+    {
+      "raw": "TRUE||B requires a condition which is absent, C implies anteriority to another past event that is not referenced, and D contradicts the past timeframe established by the introductory phrase.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779051690478-5xqukldd",
+      "timestamp": "2026-05-17T21:03:02.876Z"
+    }
+  ]
+}
