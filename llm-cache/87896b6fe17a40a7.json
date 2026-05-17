@@ -1,0 +1,33 @@
+{
+  "cacheKey": "87896b6fe17a40a7",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "03-04-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Les verbes en -ier à l'imparfait (nous étudiions, vous criiez)\nPROMPT: Conjuguez à l'imparfait avec le verbe entre parenthèses.\nPHRASE: Nous ___ le texte sur l'ordinateur. » (copier)\nCORRECT ANSWER: copiions\n\nWRONG ANSWERS to evaluate:\n1. copions\n2. copiiez\n3. copierons\n4. copiais\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1779024661596-4ie7yjzr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\n\nREASON: All four wrong answers are properly conjugated forms of \"copier\" that represent common learner errors: \"copions\" is the present tense, \"copiiez\" is the imparfait for \"vous\" instead of \"nous\", \"copierons\" is the future tense, and \"copiais\" is the imparfait for \"je\" instead of \"nous\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779026089362-iyvkq0a9",
+      "timestamp": "2026-05-17T13:55:08.471Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common confusion points for learners: mixing tenses (present \"copions\", future \"copierons\") and mixing person forms (vous \"copiiez\", je \"copiais\") instead of the correct nous imperfect form \"copiions\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779026479997-d76kvjc7",
+      "timestamp": "2026-05-17T14:01:40.378Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors including present/imperfect confusion (copions), person confusion (copiiez, copiais), and tense confusion (copierons), with copions being particularly relevant for -ier verbs where learners often drop the second 'i' in the imperfect tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779026974702-unv70mod",
+      "timestamp": "2026-05-17T14:09:59.960Z"
+    }
+  ]
+}
