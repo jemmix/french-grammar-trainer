@@ -1,0 +1,26 @@
+{
+  "cacheKey": "50827bd908b2f118",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-05-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-05 - L'imparfait des verbes pronominaux\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe pronominal « se dépêcher » à l'imparfait avec « nous ».\nPhrase: Chaque jour, nous ___ pour arriver à l'école à temps.\nCorrect Answer: nous dépêchions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779030719914-qm6i3fsp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question does not properly test the imperfect of pronominal verbs because the correct answer \"nous dépêchions\" is missing the reflexive pronoun \"nous\" before the verb, making it a test of regular imperfect conjugation rather than the specific rule about pronominal verbs.\n\nMaximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\n- Analyzed the alignment of a question with the stated grammar rule about imperfect tense of pronominal verbs\n- Identified that the question is misaligned because the answer lacks the necessary reflexive pronoun\n\nRecommendations for next steps:\n- Correct the answer to include the full pronominal form: \"nous nous dépêchions\"\n- Ensure all questions testing pronominal verbs include the reflexive pronoun in their answers\n- Re-validate the corrected question to confirm it properly tests the stated rule",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779031060383-tvphyasd",
+      "timestamp": "2026-05-17T15:19:22.699Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the imperfect conjugation of a pronominal verb (se dépêcher) with nous, requiring knowledge of both the imperfect tense formation and pronominal verb structure (reflexive pronoun placement) as specified in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779031520400-326fsomu",
+      "timestamp": "2026-05-17T15:25:36.894Z"
+    }
+  ]
+}
