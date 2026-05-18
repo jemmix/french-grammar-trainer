@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cb467bca56d61c55",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-08-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand j'étais enfant, j'___ peur des orages. »\n\nChoices:\nA. [CORRECT] avais\nB. [WRONG] aurais\nC. [WRONG] aurai\nD. [WRONG] avais eu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779058646820-gn9pclt7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for the past habitual context established by \"Quand j'étais enfant\" - aurais (conditional), aurai (future), and avais eu (pluperfect) don't match the required imparfait tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779058646825-quw027r0",
+      "timestamp": "2026-05-17T22:58:16.413Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: B is conditional, C is future, and D is pluperfect - none match the imperfect tense required for describing a past state during childhood.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779059139409-ngya0yjp",
+      "timestamp": "2026-05-17T23:06:02.128Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI have completed the verification of the French grammar question. The analysis found:\n\n- **Question**: \"Quand j'étais enfant, j'___ peur des orages.\" (When I was a child, I ___ afraid of storms.)\n- **Context**: The sentence uses imparfait (\"j'étais\"), requiring a past tense describing a habitual state\n\n**Verification results**:\n- **B. aurais** (conditional) - Incorrect. Conditional expresses hypothetical situations, not actual past states.\n- **C. aurai** (future) - Incorrect. Future tense doesn't agree with past context \"j'étais\".\n- **D. avais eu** (plus-que-parfait) - Incorrect. Pluperfect describes a completed action before another past event, not a state. Without a subsequent past clause, this construction is grammatically inappropriate.\n\nAll three wrong answers (B, C, D) are correctly identified as incorrect for the grammatical context specified.\n\n**Final verdict**: TRUE||All wrong answers use tenses or aspects incompatible with the imparfait context established by \"j'étais.\"\n\nNo additional tasks remain. The verification is complete.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779059602306-2g28bsfj",
+      "timestamp": "2026-05-17T23:14:09.023Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "5ecbf34626ee23ac",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "03-08-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Conjuguez le verbe dans le temps qui convient : « À dix ans, je ne ___ pas nager. »\n\nPHRASE: À dix ans, je ne ___ pas nager.\n\nHINT: pouvoir\n\nEXPECTED ANSWER: pouvais\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1779059897897-3jb8kqj6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly asks to conjugate the verb in the appropriate tense, the hint provides the verb \"pouvoir\", and the temporal context \"À dix ans\" indicates a past tense is needed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779060854373-fqoz205e",
+      "timestamp": "2026-05-17T23:34:30.284Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to conjugate the verb, the hint provides \"pouvoir\" as the infinitive, and the context \"À dix ans\" (at ten years old) clearly indicates a past description requiring the imparfait tense, making it obvious the learner should type the first person singular form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779061503909-vi5mz53j",
+      "timestamp": "2026-05-17T23:45:39.842Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The phrase \"À dix ans, je ne ___ pas nager\" creates a past context, but the prompt \"Conjuguez le verbe dans le temps qui convient\" with hint \"pouvoir\" doesn't clearly specify whether to use the imparfait (\"pouvais\") for a habitual state or the passé composé (\"pas pu\") for a specific ability, creating ambiguity about which tense is expected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779061930299-udajxyqc",
+      "timestamp": "2026-05-17T23:52:37.286Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Multiple past tenses could grammatically fit the context \"À dix ans\" (imparfait for a general childhood state, or passé composé for a specific occasion), but only \"pouvais\" (imparfait) is marked correct.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779061997852-xx1vpi72",
+      "timestamp": "2026-05-17T23:53:51.499Z"
+    }
+  ]
+}

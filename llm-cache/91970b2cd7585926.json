@@ -1,0 +1,26 @@
+{
+  "cacheKey": "91970b2cd7585926",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-08-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Autrefois, les enfants ___ toujours leur grand-mère. »\n\nChoices:\nA. [CORRECT] adoraient\nB. [WRONG] adoreraient\nC. [WRONG] adoreront\nD. [WRONG] avaient adoré\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779058646822-pzs7lpwl"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use verb tenses that don't match the past context indicated by \"Autrefois\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779058837073-1pkew0ms",
+      "timestamp": "2026-05-17T23:01:30.497Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Accomplishments\n\nI was tasked with evaluating a French grammar MCQ question to verify that all wrong answers are indeed incorrect. I successfully analyzed the question:\n\n**Question**: \"Autrefois, les enfants ___ toujours leur grand-mère.\" (Complete: \"In the past, the children ___ their grandmother always.\")\n\n**Key contextual analysis**: The word \"Autrefois\" (in the past/formerly) clearly indicates we need a past tense describing habitual action in the past.\n\n**Evaluation of wrong answers**:\n\n- **B. adoreraient** (conditional present tense): INCORRECT - The conditional is for hypothetical situations, not describing what actually happened in the past\n- **C. adoreront** (simple future tense): INCORRECT - Future tense directly contradicts the past time marker \"Autrefois\"\n- **D. avaient adoré** (plus-que-parfait/pluperfect): INCORRECT - This tense describes an action completed before another past action, but there's no second past event referenced. The plus-que-parfait requires an \"antecedent past\" context that doesn't exist here.\n\n**Verified result**: All wrong answers are grammatically incorrect within the stated context.\n\n## Recommended Verdict\n\nTRUE||All wrong answers are grammatically incorrect: B uses conditional for a past reality, C uses future tense with a past marker, and D uses plus-que-parfait without the required antecedent past event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779059375034-37dtm9g2",
+      "timestamp": "2026-05-17T23:11:13.397Z"
+    }
+  ]
+}

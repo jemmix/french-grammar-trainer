@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bbc3b7b56edea9e6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-08-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À cause du diabète, mon grand-père ___ souvent malade. »\n\nChoices:\nA. [CORRECT] était\nB. [WRONG] serait\nC. [WRONG] sera\nD. [WRONG] avait été\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779058646822-nh9oe4h8"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: B is conditional (hypothetical), C is future (wrong temporal reference), and D is pluperfect (implies completed state before another past event, not recurring condition).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779058871400-pcf93xn9",
+      "timestamp": "2026-05-17T23:11:41.231Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI have analyzed the French grammar question and evaluated each wrong answer:\n\n**Question Analysis:**\nThe sentence \"À cause du diabète, mon grand-père ___ souvent malade.\" requires completing with a verb that describes a past habitual or ongoing state. The correct answer \"était\" (imperfect of être) fits this context perfectly.\n\n**Evaluation of Wrong Answers:**\n\n- **B. serait** (conditional) - Incorrect. The conditional \"would be\" is hypothetical and doesn't match the factual statement about the grandfather's condition due to diabetes.\n\n- **C. sera** (future) - Incorrect. The future tense \"will be\" contradicts the past context established by the correct answer and the nature of describing a historical/recurring condition.\n\n- **D. avait été** (pluperfect) - Incorrect. The pluperfect \"had been\" indicates a completed state before another past event, whereas the imperfect is needed for a habitual or ongoing past condition.\n\n**No remaining tasks** - The verification is complete.\n\n**Recommendation:** This question is grammatically sound and ready for use. All wrong answers are definitively incorrect within the stated context.\n\nTRUE||All wrong answers (B, C, D) use tenses or moods that are inappropriate for describing a past habitual state.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779059941458-cicsfw2m",
+      "timestamp": "2026-05-17T23:19:48.164Z"
+    },
+    {
+      "raw": "TRUE||The wrong answers use incorrect tenses: \"serait\" is conditional (not a past factual statement), \"sera\" is future (contradicts past context), and \"avait été\" is pluperfect (implies completion before another past event, which isn't present in this sentence about an ongoing past state).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779060094305-p75qermm",
+      "timestamp": "2026-05-17T23:24:13.622Z"
+    }
+  ]
+}
