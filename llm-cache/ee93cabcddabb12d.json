@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ee93cabcddabb12d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-09-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle ___ sa robe quand elle a vu la tache. »\n\nChoices:\nA. [CORRECT] portait\nB. [WRONG] allait porter\nC. [WRONG] porterait\nD. [WRONG] avait porté\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779063443634-6a8f212h"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B|B is grammatically correct as \"was going to wear\" (future in the past construction), which makes semantic sense as an interrupted intention to wear the dress.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779063720429-g296nexp",
+      "timestamp": "2026-05-18T00:26:10.146Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for the context: \"allait porter\" means \"was going to wear\" (wrong aspect), \"porterait\" is conditional (wrong mood), and \"avait porté\" is pluperfect (wrong tense for describing what she was wearing when she saw the stain).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779064802317-w2v8rttm",
+      "timestamp": "2026-05-18T00:40:19.078Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\n\nI was analyzing a French grammar verification question. The task was to evaluate whether three wrong answers (B, C, D) for a multiple-choice question are indeed incorrect.\n\nThe question is: \"Complétez : « Elle ___ sa robe quand elle a vu la tache. »\"\n\n## Analysis Completed\n\nI analyzed each wrong answer:\n\n- **B. allait porter** (was going to wear): This is grammatically correct in French and could make contextual sense - she was about to put on her dress when she noticed the stain. It's a valid futur proche in the past construction.\n\n- **C. porterait** (would wear): This is the conditionnel présent. Without a condition clause (si clause) or clear hypothetical context, this doesn't fit naturally. While grammatically well-formed, it lacks appropriate context.\n\n- **D. avait porté** (had worn): This is the plus-que-parfait (pluperfect). Grammatically correct and could make sense in some contexts - she had worn/was wearing her dress when she saw the stain.\n\n## Verdict\n\n**FALSE|B|** Answer B \"allait porter\" is grammatically correct French and could be a valid completion in an appropriate context (she was about to put on her dress when she saw the stain).\n\n## Remaining Tasks\n\nThe verification was essentially complete - I had determined that at least one wrong answer (B) could be correct under a reasonable interpretation of the context.\n\n## Recommendations\n\nThe question could be improved by making the context more explicit, such as adding \"déjà\" to clarify the ongoing action nature, or by ensuring all distractors are clearly grammatically incompatible with the intended meaning.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779065260629-h4ujrsga",
+      "timestamp": "2026-05-18T00:48:17.088Z"
+    }
+  ]
+}

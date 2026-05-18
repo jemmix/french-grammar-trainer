@@ -1,0 +1,47 @@
+{
+  "cacheKey": "30a97217c1421fb9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-09-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Tu ___ un gâteau quand tu as reçu l'appel. »\n\nChoices:\nA. [CORRECT] préparais\nB. [WRONG] allais préparer\nC. [WRONG] préparerais\nD. [WRONG] avais préparé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779063443635-ta96b8x0"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B describes an intention to prepare rather than an ongoing action in progress, C uses the conditional tense which doesn't fit with the definite past event, and D uses the pluperfect which describes a completed action rather than one happening at the moment of the call.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779063850014-hsfwz1el",
+      "timestamp": "2026-05-18T00:26:59.461Z"
+    },
+    {
+      "raw": "I have reached the maximum number of steps allowed for this task. I cannot use any tools at this time.\n\n## Summary of work:\n\nI was asked to verify that the wrong answers in a French grammar MCQ are indeed incorrect. I analyzed the question:\n\n**Question:** \"Complétez : « Tu ___ un gâteau quand tu as reçu l'appel. »\"\n\nThe question presents a past context with an interruption structure (\"quand\" clause in passé composé), which typically calls for either imparfait (action in progress) or plus-que-parfait (action completed before).\n\n**Analysis of wrong answers:**\n\n- **B. allais préparer**: \"Tu allais préparer un gâteau quand tu as reçu l'appel\" is grammatically correct. It uses the \"imparfait de aller\" + infinitive to indicate a future intention in the past that was interrupted by the call. This is a valid French construction.\n\n- **D. avais préparé**: \"Tu avais préparé un gâteau quand tu as reçu l'appel\" is grammatically correct. This uses plus-que-parfait to indicate the cake preparation was already completed when the call was received. This is a valid French construction.\n\n- **C. préparerais**: \"Tu préparerais un gâteau quand tu as reçu l'appel\" is incorrect. The conditionnel présent doesn't work here - you wouldn't describe an interrupted past event using conditional tense.\n\n## Remaining tasks:\n\nI have completed the verification. The verdict format would be:\n\nFALSE|B,D|B is grammatically correct as \"you were going to prepare\" (interrupted future intention in the past); D is grammatically correct as \"you had prepared\" (action completed before receiving the call).\n\n## Recommendation:\n\nThis question should be revised to remove the plausible alternative answers. The context could be made more specific (e.g., adding \"(en train de)\" to emphasize the ongoing action) or the distractors should be replaced with answers that are unambiguously incorrect grammatically.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779064895081-grqgs7lb",
+      "timestamp": "2026-05-18T00:43:13.501Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors within the context of the sentence. \"allais préparer\" (B) is a near future construction that doesn't match the ongoing past action context; \"préparerais\" (C) is conditional tense which is grammatically incompatible with the specific past event; and \"avais préparé\" (D) is plus-que-parfait indicating a completed action, not an ongoing one interrupted by receiving the call.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779065323696-79jedglh",
+      "timestamp": "2026-05-18T00:49:14.406Z"
+    },
+    {
+      "raw": "TRUE||The wrong answers are grammatically incorrect in the context of the sentence: B uses a future-in-the-past construction (allais préparer) that doesn't match the interrupted ongoing action context, C incorrectly uses the conditional tense (préparerais) for a completed past event, and D uses the plus-que-parfait (avais préparé) which indicates an action completed before receiving the call, not an ongoing one.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779065425945-h8pxdbyy",
+      "timestamp": "2026-05-18T00:51:58.139Z"
+    },
+    {
+      "raw": "FALSE|B,D|B (allais préparer) is grammatically correct and describes an intention to prepare that was interrupted; D (avais préparé) is grammatically correct and describes an action completed before receiving the call.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779065878702-rr9fiyez",
+      "timestamp": "2026-05-18T01:05:17.475Z"
+    }
+  ]
+}

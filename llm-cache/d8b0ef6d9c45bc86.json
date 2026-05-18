@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d8b0ef6d9c45bc86",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-09-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Ils ___ la télé quand l'alarme a retenti. »\n\nChoices:\nA. [CORRECT] regardaient\nB. [WRONG] regarderont\nC. [WRONG] regarderaient\nD. [WRONG] regardent\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779067078112-hg60jpo7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779067078127-vv1xkw74",
+      "timestamp": "2026-05-18T01:18:24.156Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use verb tenses that are incompatible with the past context established by \"l'alarme a retenti\" (passé composé); B is future, C is conditional, and D is present, none of which properly describe an ongoing past action interrupted by another event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779067451662-os2xnj69",
+      "timestamp": "2026-05-18T01:25:01.433Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached. I need to provide a text response only without using any tools.\n\n**Summary of work completed:**\n\nI analyzed the French grammar verification task for the multiple choice question:\n\"Complétez : « Ils ___ la télé quand l'alarme a retenti. »\"\n\nThe question context is clearly past tense (\"a retenti\" - passé composé indicates a past event), and the blank requires a verb form that indicates an ongoing action at that time (imparfait).\n\n**Analysis of wrong answers:**\n\n- **B. regarderont** (futur simple) - Incorrect because the sentence context is in the past, not future\n- **C. regarderaient** (conditionnel présent) - Incorrect because the sentence describes a factual past event, not a hypothetical situation\n- **D. regardent** (présent) - Incorrect because the sentence context is in the past, not present\n\nAll three wrong answers are grammatically incorrect within the constraints of the question. The correct answer (A. regardaient - imparfait) properly indicates an ongoing past action that was happening when the alarm rang.\n\n**Verdict:**\nTRUE||All wrong answers are incorrect tense forms for the past context described in the sentence.\n\n**Recommendations:**\nThis question is correctly formulated with all wrong answers being grammatically invalid for the given context. No further validation needed for this question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779067815328-ommgo5gn",
+      "timestamp": "2026-05-18T01:31:14.350Z"
+    }
+  ]
+}

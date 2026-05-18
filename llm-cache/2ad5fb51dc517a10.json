@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2ad5fb51dc517a10",
+  "predicateId": "french-language",
+  "questionId": "03-09-024",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT\nEXPLANATION\n\nWhere:\n- VERDICT is exactly one word: FRENCH or ENGLISH_DETECTED\n- EXPLANATION is a brief sentence describing what you found\n\nExamples:\nFRENCH\nAll content is in French with no English detected.\n\nFRENCH\nContent uses allowed English exception for false friend contrast (actuellement/actually).\n\nENGLISH_DETECTED\nPrompt uses English instruction \"Conjugate the verb\" instead of French.\n\nENGLISH_DETECTED\nExplanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: L'imparfait pour une action en cours interrompue\n\nQUESTION CONTENT:\nPrompt: Conjuguez le verbe pour décrire l'action en cours : « Vous ___ une réunion quand nous avons eu des problèmes informatiques. »\nPhrase: Vous ___ une réunion quand nous avons eu des problèmes informatiques.\nAnswer: teniez\nHint: tenir\nExplanation: L'imparfait (teniez) pour l'action de fond interrompue par les problèmes informatiques (passé composé).\nWrong answers:\n  - alliez tenir (Le futur proche dans le passé exprime une intention, pas une réunion en cours.)\n  - auriez tenu (Le conditionnel passé n'exprime pas une action réelle en cours.)\n  - aviez tenu (Le plus-que-parfait indique que la réunion était déjà terminée.)\n  - tenez (Le présent n'exprime pas une action passée interrompue.)\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779065878694-wmiw4sy9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT\nFRENCH\n\nEXPLANATION\nAll content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779066435205-tckc1t5d",
+      "timestamp": "2026-05-18T01:07:40.180Z"
+    },
+    {
+      "raw": "FRENCH\nAll content is in French with no English detected.\n\nMaximum steps for this agent have been reached. I have completed the validation task by checking all fields in the French language content (prompt, phrase, answer, hint, explanation, and wrong answers). No remaining tasks were left incomplete in this validation. The recommendation is to proceed with the next steps in the question generation workflow or validate additional content as needed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779066576319-e1zpk749",
+      "timestamp": "2026-05-18T01:10:55.092Z"
+    }
+  ]
+}

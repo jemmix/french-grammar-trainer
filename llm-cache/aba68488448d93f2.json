@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aba68488448d93f2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-09-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Sophie ___ une décision quand vous êtes intervenu. »\n\nChoices:\nA. [CORRECT] prenait\nB. [WRONG] prendra\nC. [WRONG] prendrait\nD. [WRONG] prend\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779067078114-8mbp74uz"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers (B, C, D) are incorrect for the sentence structure which requires the imparfait tense to describe an ongoing past action when another past event occurred.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779067292212-l26bajru",
+      "timestamp": "2026-05-18T01:23:11.978Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses (future, conditional, present) that don't match the past context established by \"êtes intervenu\", making them grammatically incorrect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779067693823-6s0f92it",
+      "timestamp": "2026-05-18T01:29:03.477Z"
+    },
+    {
+      "raw": "TRUE||The question requires the imparfait tense to describe an ongoing past action that was interrupted when the other person intervened, making the futur, conditionnel, and présent incorrect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779068085372-6lnsvlyj",
+      "timestamp": "2026-05-18T01:36:29.098Z"
+    }
+  ]
+}

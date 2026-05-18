@@ -1,0 +1,33 @@
+{
+  "cacheKey": "512c99bcb8109612",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-09-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-09 - L'imparfait pour une action en cours interrompue\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe pour décrire l'action en cours : « Marie ___ quand son frère est entré dans sa chambre. »\nPhrase: Marie ___ quand son frère est entré dans sa chambre.\nCorrect Answer: dormait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779063443635-oq2vm3yg"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires students to use the imparfait tense to describe an ongoing action (\"dormait\") that gets interrupted by another action (\"est entré\"), which directly tests the grammar rule for using imparfait to express an action in progress that is interrupted.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779063990762-9hgkn60w",
+      "timestamp": "2026-05-18T00:26:58.574Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests the rule by requiring students to use l'imparfait (\"dormait\") to describe the ongoing action (Marie sleeping) that was interrupted by another past action (her brother entering), which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779065080963-9ze428wx",
+      "timestamp": "2026-05-18T00:46:20.774Z"
+    },
+    {
+      "raw": "I need to validate whether this French grammar question properly tests the rule about using the imparfait for an ongoing action that is interrupted.\n\n**VERDICT: ALIGNED**\n\n**REASON:** The question presents the classic imparfait structure where an ongoing action (\"dormir\") is interrupted by another action in the passé composé (\"son frère est entré\"), requiring knowledge that the imparfait specifically describes the background/ongoing action to correctly answer \"dormait\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779065389978-ojphc4ef",
+      "timestamp": "2026-05-18T00:50:04.736Z"
+    }
+  ]
+}

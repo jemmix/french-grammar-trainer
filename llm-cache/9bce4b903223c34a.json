@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9bce4b903223c34a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-09-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-09 - L'imparfait pour une action en cours interrompue\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Sophie ___ une décision quand vous êtes intervenu. »\nChoices:\nA. [CORRECT] prenait\nB. allait prendre\nC. prendrait\nD. avait pris\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779063443635-czdv3hc8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the imparfait for an ongoing action (\"prenait une décision\") that is interrupted by another event (\"quand vous êtes intervenu\"), which is exactly the grammar concept described by rule 03-09.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779063803600-yb3xbv9p",
+      "timestamp": "2026-05-18T00:23:52.548Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached. I must respond with text only and cannot use any tools.\n\n---\n\n## Work Summary\n\nI was asked to validate whether a French grammar question correctly tests the stated rule about using the imparfait for an interrupted ongoing action.\n\n**Analysis Completed:**\n\nThe question asks to complete the sentence: \"Sophie ___ une décision quand vous êtes intervenu.\"\n\nThe correct answer is \"prenait\" (imparfait), which describes an action in progress that was interrupted by \"vous êtes intervenu\" (passé composé).\n\nThis question is **ALIGNED** with the rule because:\n- It uses the classic structure \"[imparfait] quand [passé composé]\" \n- The action (taking a decision) was in progress when interrupted\n- The distractors test other tenses (futur proche, conditionnel, plus-que-parfait)\n- Answering correctly requires understanding the imparfait's use for ongoing actions interrupted by another event\n\n**VERDICT: ALIGNED**\n**REASON: This question correctly tests the imparfait for an ongoing action that was interrupted, as shown by the structure \"prenait...quand vous êtes intervenu\" which matches the rule's core concept.**",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779064500662-xm958f3s",
+      "timestamp": "2026-05-18T00:35:48.634Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the imparfait for an ongoing action interrupted by another event (classic \"X imparfait quand Y passé composé\" construction), with \"prenait\" correctly indicating Sophie's in-progress decision-making when the interruption occurred.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779064853031-fvt1r1zg",
+      "timestamp": "2026-05-18T00:41:12.344Z"
+    }
+  ]
+}

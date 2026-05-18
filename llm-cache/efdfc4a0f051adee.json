@@ -1,0 +1,33 @@
+{
+  "cacheKey": "efdfc4a0f051adee",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-09-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle ___ dans le parc quand il a commencé à pleuvoir. »\n\nChoices:\nA. [CORRECT] se promenait\nB. [WRONG] se promènera\nC. [WRONG] se promènerait\nD. [WRONG] se promène\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779067078112-215y9bhw"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses (future, conditional, or present) that don't match the past narrative context established by \"quand il a commencé à pleuvoir,\" which requires the imparfait to describe an ongoing past action interrupted by another past event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779067078136-c2957r9f",
+      "timestamp": "2026-05-18T01:19:44.698Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that are grammatically incorrect for this context: B uses future tense for a past situation, C uses conditional which indicates hypothetical rather than past ongoing actions, and D uses present tense which cannot describe an action interrupted by a past event as required by the passé composé \"a commencé\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779067521064-tvowz0ec",
+      "timestamp": "2026-05-18T01:25:56.436Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use verb tenses (future, conditional, present) that are incompatible with the past temporal context established by \"quand il a commencé à pleuvoir.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779067929070-obdushnd",
+      "timestamp": "2026-05-18T01:33:19.260Z"
+    }
+  ]
+}

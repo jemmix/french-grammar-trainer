@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5e50b8626e30672d",
+  "predicateId": "french-language",
+  "questionId": "03-09-025",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT\nEXPLANATION\n\nWhere:\n- VERDICT is exactly one word: FRENCH or ENGLISH_DETECTED\n- EXPLANATION is a brief sentence describing what you found\n\nExamples:\nFRENCH\nAll content is in French with no English detected.\n\nFRENCH\nContent uses allowed English exception for false friend contrast (actuellement/actually).\n\nENGLISH_DETECTED\nPrompt uses English instruction \"Conjugate the verb\" instead of French.\n\nENGLISH_DETECTED\nExplanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: L'imparfait pour une action en cours interrompue\n\nQUESTION CONTENT:\nPrompt: Conjuguez le verbe pour décrire l'action en cours : « Ils ___ un film quand il a commencé à pleuvoir très fort. »\nPhrase: Ils ___ un film quand il a commencé à pleuvoir très fort.\nAnswer: regardaient\nHint: regarder\nExplanation: L'imparfait (regardaient) pour l'action de fond interrompue par le début de la pluie (passé composé).\nWrong answers:\n  - regarderont (Le futur simple ne peut pas décrire une action en cours dans un contexte passé.)\n  - regarderaient (Le conditionnel n'exprime pas une action réelle en cours.)\n  - regardent (Le présent ne convient pas pour un événement passé.)\n  - regarder (L'infinitif n'est pas conjugué ; il faut accorder le verbe avec le sujet « ils ».)\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779070481938-9mjbae1g"
+  },
+  "responses": [
+    {
+      "raw": "FRENCH\nAll content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779070481956-4j4k2mkx",
+      "timestamp": "2026-05-18T02:16:21.333Z"
+    },
+    {
+      "raw": "VERDICT\nFRENCH\n\nEXPLANATION\nAll content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779070581334-xwokihbc",
+      "timestamp": "2026-05-18T02:16:56.851Z"
+    },
+    {
+      "raw": "FRENCH\nAll content, including prompts, explanations, and wrong answers, is in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779070616852-nmctxxxm",
+      "timestamp": "2026-05-18T02:18:16.395Z"
+    }
+  ]
+}

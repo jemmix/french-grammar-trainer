@@ -417,6 +417,7 @@ export const answerHints: Record<string, string> = {
   "dorment": "dormir",
   "dont": "pronom relatif",
   "dormais": "dormir",
+  "dormait": "dormir",
   "dormions": "dormir",
   "du": "article",
   "duquel": "pronom relatif",

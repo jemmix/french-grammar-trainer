@@ -1,0 +1,26 @@
+{
+  "cacheKey": "f6fd58d5b317a016",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-09-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-09 - L'imparfait pour une action en cours interrompue\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Nous ___ quand on a frappé à la porte. »\nChoices:\nA. [CORRECT] mangions\nB. allions manger\nC. mangerions\nD. avions mangé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779063443634-h6zi4e5p"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that the imparfait describes an ongoing action (mangions = \"were eating\") that was interrupted by another event expressed in passé composé (a frappé), which is precisely the grammar point being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779063488462-jrdo5a7i",
+      "timestamp": "2026-05-18T00:18:36.257Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the imperfect tense for an interrupted action - the sentence structure \"Nous ___ quand on a frappé à la porte\" requires learners to identify that the first verb should be in the imperfect tense (mangions) to describe an ongoing action (eating) that was interrupted by another past event (knocking on the door).\n\nThis question demonstrates the exact grammar point of l'imparfait pour une action en cours interrompue. The correct answer \"mangions\" shows the ongoing action that gets interrupted by \"on a frappé à la porte\" (passé composé). The distractors test knowledge of other tenses and constructions:\n- \"allions manger\" (imperfect of aller + infinitive - changes meaning to \"were going to eat\")\n- \"mangerions\" (conditional - wrong tense for this context)\n- \"avions mangé\" (pluperfect - indicates completed action, not interrupted one)",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779064128551-dnc4u6xr",
+      "timestamp": "2026-05-18T00:29:11.143Z"
+    }
+  ]
+}
