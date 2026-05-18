@@ -1,0 +1,33 @@
+{
+  "cacheKey": "68f1b0db1f68c170",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "03-10-009",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: L'imparfait de politesse\n\nQUESTION:\nPrompt: Complétez : « Je ___ passer vous voir ce week-end, si vous aviez le temps. »\nChoices:\nA. venais\nB. viens\nC. viendrais\nD. viendrai\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1779071311377-3dxbjtej"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: AMBIGUOUS\n\nREASON: The prompt asks to complete \"Je ___ passer vous voir ce week-end, si vous aviez le temps\" but all choices (venais, viens, viendrais, viendrai) are forms of \"venir\" which cannot grammatically precede \"passer vous voir\" in French, making it impossible to select a correct answer.\n\nThis is a generation error where the verb forms provided do not match the sentence structure being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779071445582-5tz9ts54",
+      "timestamp": "2026-05-18T02:31:22.240Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The instruction \"Complétez\" clearly asks to fill in the blank, and the context \"si vous aviez le temps\" (imperfect tense) unambiguously cues the use of conditional for polite expression of intention.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779072164189-x7flz9uv",
+      "timestamp": "2026-05-18T02:43:08.890Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt contains a critical grammatical error - the verb in the sentence (\"passer\") doesn't match any of the conjugated choices (which are all forms of \"venir\"), making it unclear what verb the student should be conjugating.\n\n---\n\n**Maximum steps for this agent have been reached.**\n\n**Summary of what has been accomplished:**\nI was asked to evaluate whether a French language learning question prompt is clear and unambiguous. I analyzed the question about \"L'imparfait de politesse\" and identified that the prompt contains a mismatch between the verb used in the sentence (\"passer\") and the verb conjugated in all answer choices (which are all forms of \"venir\").\n\n**Remaining tasks:**\nNone for this specific task.\n\n**Recommendations:**\nThe question should be corrected by either:\n1. Changing the prompt to use \"venir\" instead of \"passer\": \"Je ___ venir vous voir ce week-end, si vous aviez le temps.\"\n2. Or providing conjugations of \"passer\" if that was the intended verb\n\nOnce corrected, the question would test the conditional tense in a polite request context, which is grammatically appropriate for the rule \"L'imparfait de politesse\" since the conditional is often used for polite requests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779072681071-tcawa83s",
+      "timestamp": "2026-05-18T02:52:03.816Z"
+    }
+  ]
+}

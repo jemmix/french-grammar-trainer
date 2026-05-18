@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1ecadaf958912af8",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "03-10-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: L'imparfait de politesse\nPROMPT: Complétez avec l'imparfait du verbe « vouloir » pour adoucir l'annonce.\nPHRASE: Je ___ vous signaler un problème de livraison.\nCORRECT ANSWER: voulais\n\nWRONG ANSWERS to evaluate:\n1. veux\n2. voulus\n3. voudrai\n4. comptais vouloir\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1779079794855-gugjunb4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common verb tense confusion or misunderstandings of French politeness forms that learners frequently make when trying to use vouloir.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779079942331-h0p1bft9",
+      "timestamp": "2026-05-18T04:52:43.894Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: While \"veux\", \"voulus\", and \"vordrai\" are plausible tense confusions a learner might make, \"comptais vouloir\" is not a plausible error as it introduces an entirely new verb that wasn't part of the original sentence structure and changes the meaning significantly.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779080032965-24fckhzf",
+      "timestamp": "2026-05-18T04:54:31.857Z"
+    },
+    {
+      "raw": "# Maximum Steps Reached - Summary\n\nMaximum steps for this agent have been reached. I cannot make any tool calls at this point, but I can provide my text-only response.\n\n## Validation Assessment\n\nVERDICT: IMPLAUSIBLE\n\nREASON: \"comptais vouloir\" is structurally incompatible with the single blank in the sentence and doesn't represent a common learner error related to the imperfect of politeness; the other three options (veux, voulus, voudrai) are plausible tense confusions.\n\n## Analysis\n\nThe question tests the \"imparfait de politesse\" (polite imperfect) of \"vouloir\". I evaluated each wrong answer:\n\n1. **veux** - PLAUSIBLE: Present tense confusion (very common for learners not familiar with politeness rules)\n2. **voulus** - PLAUSIBLE: Passé simple confusion (literary past tense, less common but plausible)\n3. **voudrai** - PLAUSIBLE: Future tense confusion (common tense confusion)\n4. **comptais vouloir** - IMPLAUSIBLE: Two-word phrase that doesn't fit the single blank; not a typical learner error for this grammar point\n\n## Recommendation\n\nReplace \"comptais vouloir\" with a more plausible wrong answer such as:\n- \"voulais\" (already the correct answer, so not suitable)\n- \"voudrais\" (conditional - another plausible tense confusion)\n- \"voulois\" (incorrect conjugation that mimics imperfect ending)\n- \"a voulu\" (passé composé with wrong auxiliary)",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779080172968-h4wr2v66",
+      "timestamp": "2026-05-18T04:56:57.637Z"
+    }
+  ]
+}

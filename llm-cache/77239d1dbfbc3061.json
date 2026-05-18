@@ -1,0 +1,33 @@
+{
+  "cacheKey": "77239d1dbfbc3061",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-10-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-10 - L'imparfait de politesse\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe à l'imparfait pour adoucir la demande : « Je ___ vous voir pour discuter du projet. »\nPhrase: Je ___ vous voir pour discuter du projet.\nCorrect Answer: venais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779074258231-zhmx97xn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question primarily tests basic imparfait conjugation of \"venir\" rather than the polite use of imparfait to soften requests, and the prompt explicitly tells learners to conjugate at imparfait so they don't need to recognize when this tense is appropriate for politeness.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779074630559-o29azywl",
+      "timestamp": "2026-05-18T03:24:39.013Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests l'imparfait de politesse by requiring the learner to conjugate \"venir\" in the imperfect tense (\"venais\") to create a softened, more polite request, which is exactly what this grammar rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779075083170-xxunbqhs",
+      "timestamp": "2026-05-18T03:31:46.745Z"
+    },
+    {
+      "raw": "The maximum number of steps for this task has been reached.\n\nThis appears to be the start of a new validation task, so no work has been accomplished yet.\n\nThe task is to evaluate whether a French grammar question about \"l'imparfait de politesse\" (the polite use of the imperfect tense) is properly aligned with the rule it claims to test. The question asks students to conjugate \"venir\" in the imperfect to soften a request.\n\nNext steps would be to provide the validation verdict (ALIGNED or MISALIGNED) with a brief explanation as requested in the format.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779075639448-zwofgbk9",
+      "timestamp": "2026-05-18T03:41:12.424Z"
+    }
+  ]
+}

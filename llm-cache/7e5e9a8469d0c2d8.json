@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7e5e9a8469d0c2d8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-10-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel énoncé utilise l'imparfait de politesse avec « vouloir » ?\n\nChoices:\nA. [CORRECT] Je voulais savoir si vous aviez d'autres coloris.\nB. [WRONG] Je veux savoir si vous aviez d'autres coloris.\nC. [WRONG] Je voulus savoir si vous aviez d'autres coloris.\nD. [WRONG] Je saurai si vous aviez d'autres coloris.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779078062028-me9sh48y"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use either the wrong tense (present, passé simple, or future instead of imperfect) or a different verb entirely.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779078102475-0t3pv7tx",
+      "timestamp": "2026-05-18T04:23:10.226Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the imparfait de politesse with the verb \"vouloir\" - B uses present tense, C uses passé simple, and D uses a different verb entirely.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779078240346-2vlxu1fe",
+      "timestamp": "2026-05-18T04:24:38.547Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the imparfait de politesse with vouloir as required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779078308130-mshg25ee",
+      "timestamp": "2026-05-18T04:25:43.764Z"
+    }
+  ]
+}

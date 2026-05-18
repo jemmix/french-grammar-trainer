@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fb2b2f0195e31ddb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-10-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel énoncé utilise l'imparfait de politesse pour annoncer quelque chose ?\n\nChoices:\nA. [CORRECT] Je venais vous informer que le délai a changé.\nB. [WRONG] Je viens vous informer que le délai a changé.\nC. [WRONG] Je viendrai vous informer que le délai a changé.\nD. [WRONG] Je venait vous informer que le délai a changé.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779074258229-g48i2rt4"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses present tense instead of imperfect, C uses future tense instead of imperfect, and D has an incorrect verb conjugation (third person singular form \"venait\" with first person subject \"Je\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779074438538-56i67d52",
+      "timestamp": "2026-05-18T03:21:16.773Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses present tense instead of politeness imperfect, C uses future tense, and D has an incorrect conjugation (third person instead of first person).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779074902692-n2l4x9bn",
+      "timestamp": "2026-05-18T03:28:45.466Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI was tasked with verifying that the wrong answers in a French grammar question about \"l'imparfait de politesse\" are indeed incorrect. I analyzed the question and each wrong answer:\n\n**Question analysis**: The question asks which statement uses the polite imperfect tense (imparfait de politesse) to announce something. This is a specific French grammatical construction where the imparfait replaces the présent to make an announcement more polite.\n\n**Wrong answers evaluation**:\n- **B**: \"Je viens vous informer que le délai a changé.\" — Uses présent tense (viens), not imparfait de politesse. Incorrect.\n- **C**: \"Je viendrai vous informer que le délai a changé.\" — Uses futur simple (viendrai), not imparfait de politesse. Incorrect.\n- **D**: \"Je venait vous informer que le délai a changé.\" — Contains a conjugation error (venait instead of venais for 1st person singular). Incorrect.\n\n**Result**: TRUE||All wrong answers either use the wrong tense (B, C) or contain a grammatical conjugation error (D), and none use the imparfait de politesse as specified in the question.\n\n**Remaining tasks**: None — the verification was completed.\n\n**Recommendations**: No further action required for this question validation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779075334844-me3bvnbd",
+      "timestamp": "2026-05-18T03:36:10.223Z"
+    }
+  ]
+}

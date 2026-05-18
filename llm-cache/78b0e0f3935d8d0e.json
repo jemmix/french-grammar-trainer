@@ -1,0 +1,33 @@
+{
+  "cacheKey": "78b0e0f3935d8d0e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-10-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je ___ vous demander une petite faveur. »\n\nChoices:\nA. [CORRECT] voulais\nB. [WRONG] veux\nC. [WRONG] voudrais\nD. [WRONG] voulus\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779071311377-ivowxrlt"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B (veux) is grammatically correct for \"I want to ask\", C (voudrais) is the polite conditional form \"I would like to ask\", and D (voulus) is the passé simple form \"I wanted\" - all are grammatically valid completions of the sentence, making them incorrect as wrong answers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779071829638-gkv2ikh6",
+      "timestamp": "2026-05-18T02:37:39.559Z"
+    },
+    {
+      "raw": "FALSE|B,C,D|All three wrong answers are grammatically valid French: B (\"Je veux\") is correct present tense, C (\"Je voudrais\") is correct conditional tense commonly used for polite requests, and D (\"Je voulus\") is correct passé simple (literary past tense).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779072913256-3c3bajc1",
+      "timestamp": "2026-05-18T02:55:31.669Z"
+    },
+    {
+      "raw": "FALSE|B,D|\"Je veux\" is too direct and demanding for politely asking a favor; \"je voulus\" uses the passé simple which is stylistically inappropriate for this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779072987210-5rksfw75",
+      "timestamp": "2026-05-18T02:58:12.118Z"
+    }
+  ]
+}

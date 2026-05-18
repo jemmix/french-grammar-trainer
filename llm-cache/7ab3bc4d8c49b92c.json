@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7ab3bc4d8c49b92c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-10-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel énoncé utilise l'imparfait de politesse pour demander un remboursement ?\n\nChoices:\nA. [CORRECT] Je voulais vous demander si c'était possible de rembourser.\nB. [WRONG] Je veux vous demander si c'était possible de rembourser.\nC. [WRONG] Je voudrais vous demander si c'était possible de rembourser.\nD. [WRONG] Je demanderai si c'était possible de rembourser.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779074258230-da3votew"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the imparfait de politesse as required: B uses présent \"veux\", C uses conditionnel \"voudrais\" (different tense), and D uses futur simple \"demanderai\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779074509554-jx6oo7wy",
+      "timestamp": "2026-05-18T03:22:19.299Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Completed\n\nI analyzed a French grammar multiple choice question asking about \"l'imparfait de politesse\" (imperfect tense used for politeness) when requesting a refund. I evaluated all the wrong answers (B, C, D) to verify they are indeed incorrect according to the grammatical constraints specified in the question.\n\n## Analysis Results\n\nAll wrong answers are indeed incorrect:\n\n- **Answer B**: Uses \"veux\" (present tense of \"vouloir\") instead of the imperfect \"voulais\"\n- **Answer C**: Uses \"voudrais\" (conditional of \"vouloir\") instead of the imperfect \"voulais\" — while conditional is also polite, it's not the imparfait de politesse specifically requested\n- **Answer D**: Uses \"demanderai\" (future tense) instead of any form of \"vouloir\" in the imperfect\n\nThe question specifically requires the imparfait de politesse (imperfect tense for politeness), which is correctly used only in answer A with \"Je voulais vous demander...\"\n\n## Final Verdict\n\nTRUE||All wrong answers do not use the imparfait de politesse as specifically requested in the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779074944289-8xo4o9au",
+      "timestamp": "2026-05-18T03:30:11.825Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different verb tenses or moods that are not the imparfait de politesse: B uses the present tense (veux), C uses the conditional (voudrais), and D uses the future tense (demanderai), while the question specifically requires the imperfect tense for polite requests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779075402480-wh4v0q0h",
+      "timestamp": "2026-05-18T03:37:08.858Z"
+    }
+  ]
+}

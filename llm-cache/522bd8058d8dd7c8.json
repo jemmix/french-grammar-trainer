@@ -1,0 +1,33 @@
+{
+  "cacheKey": "522bd8058d8dd7c8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-10-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-10 - L'imparfait de politesse\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je ___ simplement vérifier mon numéro de commande. »\nChoices:\nA. [CORRECT] venais\nB. viens\nC. viendrai\nD. viendrais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779071311377-04q6f640"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests l'imparfait de politesse, where the imperfect \"venais\" softens the statement \"Je venais simplement vérifier\" to sound more polite than the direct present or future forms, and the distractors correctly contrast with alternative tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779071574439-hydzjjpm",
+      "timestamp": "2026-05-18T02:34:16.750Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question tests l'imparfait de politesse, where the imparfait form \"venais\" is used to soften a request in a customer service context, requiring students to distinguish this polite usage from présent, futur simple, and conditionnel forms.\n\nMaximum steps for this agent have been reached. I have completed the validation of the single question provided, determining that it is properly aligned with the stated rule about l'imparfait de politesse. No additional tasks were requested beyond this validation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779072291778-yqma45c0",
+      "timestamp": "2026-05-18T02:46:06.876Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"venir\" is not typically used in the \"imparfait de politesse\" construction, which is primarily reserved for verbs of volition, ability, or knowing (e.g., vouloir, pouvoir, savoir), and the sentence functions as a normal past statement rather than a polite request.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779072849083-2zvfcpf1",
+      "timestamp": "2026-05-18T02:54:20.578Z"
+    }
+  ]
+}

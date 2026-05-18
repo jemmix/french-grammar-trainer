@@ -1,0 +1,33 @@
+{
+  "cacheKey": "39fbd192df7b8f1d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-10-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je ___ vous proposer une autre couleur. »\n\nChoices:\nA. [CORRECT] venais\nB. [WRONG] viens\nC. [WRONG] viendrais\nD. [WRONG] viendrai\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779071311376-u7zglspi"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use different tenses than the required imperfect, and without additional context specifying a change in temporal frame, they do not satisfy the grammatical constraints implied by the correct answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779071348993-728l3ca5",
+      "timestamp": "2026-05-18T02:30:01.279Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to verify the wrong answers (B, C, D) for a French grammar multiple-choice question. The question asked to complete the sentence \"Je ___ vous proposer une autre couleur.\"\n\nI analyzed each wrong answer:\n- B. viens (present tense) - \"Je viens vous proposer une autre couleur\" is grammatically valid\n- C. viendrais (conditional tense) - \"Je viendrais vous proposer une autre couleur\" is grammatically valid\n- D. viendrai (future tense) - \"Je viendrai vous proposer une autre couleur\" is grammatically valid\n\nAll three wrong answers are actually grammatically correct French, just in different tenses than the marked correct answer A (venais, imperfect tense). Without additional context specifying which tense is required, these forms could be correct.\n\nThe verdict is:\nFALSE|B,C,D|All three wrong answers are grammatically valid in French, just in different tenses (present, conditional, future) than the marked correct answer (imperfect).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779072066390-ue7o53ao",
+      "timestamp": "2026-05-18T02:42:17.719Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was analyzing a French grammar question to verify if the wrong answers are indeed incorrect:\n\nQuestion: \"Complétez : « Je ___ vous proposer une autre couleur. »\"\nChoices:\nA. [CORRECT] venais\nB. [WRONG] viens  \nC. [WRONG] viendrais\nD. [WRONG] viendrai\n\nThe question asks to verify whether B, C, and D are incorrect. However, the question prompt lacks explicit grammatical constraints (tense, mood, register, or specific context). All four choices represent valid French verb forms that could be grammatically correct depending on the situation:\n\n- \"venais\" (imparfait) - I was coming to propose\n- \"viens\" (présent) - I come/am coming to propose\n- \"viendrais\" (conditionnel) - I would come to propose\n- \"viendrai\" (futur simple) - I will come to propose\n\nVERDICT: UNCLEAR||The question does not specify the required tense, mood, or context, making it impossible to definitively rule out any of the wrong answers without additional constraints.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779072563952-dodu0xfl",
+      "timestamp": "2026-05-18T02:50:18.264Z"
+    }
+  ]
+}

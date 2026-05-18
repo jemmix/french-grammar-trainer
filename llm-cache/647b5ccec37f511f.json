@@ -1,0 +1,47 @@
+{
+  "cacheKey": "647b5ccec37f511f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-10-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la version la plus polie : demander de l'aide en boutique.\n\nChoices:\nA. [CORRECT] Je souhaitais un conseil sur les tailles.\nB. [WRONG] Je souhaite un conseil sur les tailles.\nC. [WRONG] Je souhaiterai un conseil sur les tailles.\nD. [WRONG] Je souhaitais à un conseil sur les tailles.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779071311376-5wqe6l4r"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors or are less polite than the correct answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779071406781-caacq9l7",
+      "timestamp": "2026-05-18T02:31:15.100Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the present indicative which is less polite than the imparfait in A, C uses the future tense \"souhaiterai\" instead of the conditional \"souhaiterais\" for politeness, and D incorrectly adds the preposition \"à\" which is grammatically wrong with \"souhaiter\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779072157631-ivwmzjgu",
+      "timestamp": "2026-05-18T02:43:29.938Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached. I have completed the verification of the given French grammar question and analyzed the incorrect answers based on the grammatical constraints and politeness requirements specified in the question.\n\nSummary of what has been accomplished:\n- Analyzed the question \"Choisissez la version la plus polie : demander de l'aide en boutique.\"\n- Evaluated the three wrong answers (B, C, D) to determine if they are indeed incorrect\n- Answered in the required format: VERDICT|letter1,letter2,...|explanation\n\nRemaining tasks that were not completed:\n- None relevant to this specific validation task\n\nRecommendations for what should be done next:\n- The evaluation has been completed and the verdict provided below:\n\nFALSE|B,C|While A uses the imperfect conditional (\"Je souhaitais\") which is the most polite form in this context, B uses present indicative (\"Je souhaite\") and C uses future simple (\"Je souhaiterai\"), which are grammatically correct but less polite ways to express the request; D is clearly grammatically incorrect due to the unnecessary preposition \"à\" before \"un conseil\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779072633808-jkbmnk5y",
+      "timestamp": "2026-05-18T02:52:29.849Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to meet the requirement of being the most polite version: B uses present tense which is less polite than imperfect, C uses future simple which is not typical for polite requests, and D has a grammatical error with the preposition \"à\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779072971797-eeym10ox",
+      "timestamp": "2026-05-18T02:56:55.195Z"
+    },
+    {
+      "raw": "FALSE|C|The question asks for \"la version la plus polie\" (the most polite version), and \"Je souhaiterai\" (conditional) is a more polite and tentative form than \"Je souhaitais\" (imperfect). Both are grammatically correct, but the conditional tense is standard for polite requests in French, making C potentially correct rather than wrong.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779073025312-gjv8eq53",
+      "timestamp": "2026-05-18T02:58:51.039Z"
+    }
+  ]
+}

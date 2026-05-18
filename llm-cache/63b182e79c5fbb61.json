@@ -1,0 +1,33 @@
+{
+  "cacheKey": "63b182e79c5fbb61",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-10-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel énoncé utilise l'imparfait de politesse avec « vouloir » ?\n\nChoices:\nA. [CORRECT] Excusez-moi, je voulais vous demander un renseignement.\nB. [WRONG] Excusez-moi, je veux vous demander un renseignement.\nC. [WRONG] Excusez-moi, je demanderai un renseignement.\nD. [WRONG] Excusez-moi, je voulus vous demander un renseignement.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779078062010-prdjk0mh"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use different tenses or verbs than the imperfect of \"vouloir\" requested in the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779078062036-9bw7wn46",
+      "timestamp": "2026-05-18T04:21:28.494Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect - B uses present tense instead of imperfect, C uses future simple of a different verb, and D uses passé simple which is a literary past tense not used for politeness.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779078155008-l6yy6o13",
+      "timestamp": "2026-05-18T04:22:53.976Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI have completed the analysis of the French grammar question and verified the wrong answers.\n\nQuestion analysis:\n- The question asks for a statement using the \"imparfait de politesse\" (polite imperfect) with the verb \"vouloir\" (to want)\n- The \"imparfait de politesse\" is a French construction using the imperfect tense to express polite requests\n\nMy verdict:\nTRUE||All wrong answers are incorrect. B uses present tense \"veux\" instead of imperfect, C uses future simple of \"demander\" not \"vouloir\", and D uses passé simple \"voulus\" instead of imperfect.\n\nAll wrong answers (B, C, D) fail to meet the grammatical requirements specified in the question, which explicitly asks for the imperfect tense of \"vouloir\" used for politeness.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779078230083-dreh9tcm",
+      "timestamp": "2026-05-18T04:24:16.654Z"
+    }
+  ]
+}
