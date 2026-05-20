@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d396fab74fbba482",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-11-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si elle ___ plus, elle réussirait ses examens. »\n\nChoices:\nA. [CORRECT] travaillait\nB. [WRONG] travaillerait\nC. [WRONG] travaille\nD. [WRONG] travaillera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779082075905-uwpbvj54"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors. The sentence requires the imperfect tense in the si clause (conditionnel présent in the main clause), but B uses conditional, C uses present, and D uses future - all incorrect in this conditional structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779082075912-ulfaf4og",
+      "timestamp": "2026-05-18T05:28:50.676Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the required \"si + imparfait, conditionnel présent\" structure for hypothetical conditions - B and D use tenses (conditionnel, futur) never permitted in si-clauses, and C (présent) creates an invalid tense sequence since it must pair with futur simple, not conditionnel.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779082566215-rtxdp4rn",
+      "timestamp": "2026-05-18T05:37:49.542Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI analyzed a French grammar multiple-choice question testing conditional sentence structure (Si + imparfait → conditionnel présent). The question asks to complete \"Si elle ___ plus, elle réussirait ses examens.\"\n\nI verified each wrong answer:\n- B (travaillerait): Incorrect - conditionnel présent is never used after \"si\" in conditional sentences\n- C (travaille): Incorrect - présent would require \"réussira\" (futur) in the result clause, not \"réussirait\"\n- D (travaillera): Incorrect - futur simple is never used after \"si\" in conditional sentences\n\nVerdict: TRUE||All wrong answers are grammatically incorrect for the required si + imparfait structure.\n\nNo remaining tasks for this specific validation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779083091461-r6iyam4a",
+      "timestamp": "2026-05-18T05:45:47.890Z"
+    }
+  ]
+}

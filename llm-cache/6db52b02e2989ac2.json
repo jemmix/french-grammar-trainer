@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6db52b02e2989ac2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-11-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si vous ___ la vérité, vous seriez surpris. »\n\nChoices:\nA. [CORRECT] saviez\nB. [WRONG] sauriez\nC. [WRONG] savez\nD. [WRONG] saurez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779082075905-esm7gyfs"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb tenses for the conditional structure required in this hypothetical sentence (should use imperfect in the si-clause with conditional in the main clause).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779082130633-aejiye9u",
+      "timestamp": "2026-05-18T05:29:11.791Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are indeed incorrect: \"saurez\" (futur simple), \"savez\" (présent indicatif), and \"saurez\" (futur simple) are not the imparfait form required in the si-clause for a hypothetical condition.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779082605361-ggdqsy73",
+      "timestamp": "2026-05-18T05:37:38.446Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers (sauriez, savez, saurez) are grammatically incorrect because the si clause requires the imparfait, not the conditionnel, présent, or futur simple.\n\nNOTE: Maximum steps for this agent have been reached. I have verified that all wrong answers (B, C, D) in the conditional sentence question are indeed grammatically incorrect within the specified context. The verdict is TRUE because none of the wrong answers use the imparfait tense required for the si clause of a hypothetical conditional sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779083303299-gc9sb2qg",
+      "timestamp": "2026-05-18T05:49:11.780Z"
+    }
+  ]
+}

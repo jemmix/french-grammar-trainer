@@ -1,0 +1,40 @@
+{
+  "cacheKey": "d8f7eae215a82d69",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "03-11-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Complétez la phrase avec le temps qui convient.\n\nPHRASE: Si tu ___ à ma place, tu changerais de travail.\n\nHINT: être\n\nEXPECTED ANSWER: étais\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1779115162326-w38kejfu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The hint provides the verb \"être\" and the sentence structure \"Si tu ___... tu changerais\" clearly indicates this is a second conditional requiring the imparfait tense, making it determinable what to input without seeing the answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779115253389-rdfbaoh5",
+      "timestamp": "2026-05-18T14:42:51.814Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: While the sentence structure and conditional main clause suggest the imperfect tense is required, the prompt doesn't specify which tense to use, and technically both \"étais\" (imparfait) and \"fusses\" (imparfait du subjonctif) could be grammatically valid completions for this hypothetical conditional structure, making the question ambiguous without seeing the expected answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779115371814-m4foej7v",
+      "timestamp": "2026-05-18T14:43:11.371Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt asks for the appropriate tense, the sentence structure (si-clause followed by conditional main clause) clearly indicates this is a hypothetical condition requiring the imperfect tense, and the hint provides the verb \"être\" to conjugate for the subject \"tu\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779115391372-1cxkagfi",
+      "timestamp": "2026-05-18T14:43:23.635Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\n\nREASON: While the hint provides the infinitive verb, the prompt doesn't specify which tense to use; learners need prior knowledge of the \"Si + imparfait, conditionnel\" grammar pattern to know that \"étais\" (imperfect) is the correct form rather than \"es\" (present) or other conjugations.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779115403636-qtgnb6m7",
+      "timestamp": "2026-05-18T14:43:37.164Z"
+    }
+  ]
+}

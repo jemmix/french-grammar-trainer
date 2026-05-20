@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1e456e686e7d0832",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-11-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si elle ___ riche, elle aiderait les pauvres. »\n\nChoices:\nA. [CORRECT] était\nB. [WRONG] serait\nC. [WRONG] est\nD. [WRONG] sera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779082075906-nsrqad7t"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for expressing a hypothetical condition in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779082257906-1gu5emoz",
+      "timestamp": "2026-05-18T05:32:32.070Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far:\nI was asked to evaluate a French grammar question to verify that the wrong answers are indeed incorrect. The question asked to complete the sentence \"Si elle ___ riche, elle aiderait les pauvres.\" with the appropriate verb form. I analyzed the grammar rules for conditional sentences in French.\n\nThe verdict is:\nTRUE||All wrong answers use tenses that don't match the second conditional structure required by the conditional in the main clause.\n\nThis is because the sentence is a second conditional (unreal condition in the present), which requires the imperfect tense (\"était\") in the \"si\" clause, not the conditional (\"serait\"), present (\"est\"), or future (\"sera\").\n\nRemaining tasks:\n- None - the verification is complete.\n\nRecommendations:\nThe question is grammatically correct, and all wrong answers are indeed incorrect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779082804216-secyh26g",
+      "timestamp": "2026-05-18T05:40:46.317Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this conditional structure: \"si\" cannot be followed by conditional (B), present (C) which would require a different main clause tense, or future (D) - only imparfait correctly forms the si clause with the conditional main clause.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779083332696-oj6jf759",
+      "timestamp": "2026-05-18T05:49:23.291Z"
+    }
+  ]
+}

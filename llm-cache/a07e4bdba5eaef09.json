@@ -1,0 +1,54 @@
+{
+  "cacheKey": "a07e4bdba5eaef09",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "03-11-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: L'imparfait dans les hypothèses avec si\nPROMPT: Complétez la phrase avec le verbe pouvoir à l'imparfait.\nPHRASE: Si vous ___ venir demain, ce serait merveilleux.\nCORRECT ANSWER: pouviez\n\nWRONG ANSWERS to evaluate:\n1. pourriez\n2. pouvez\n3. pourrez\n4. puissant\n5. pouvoir\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1779115162327-0fx096tz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: While pourriez, pouvez, pourrez, and pouvoir are common verb form mistakes, \"puissant\" is an adjective (meaning \"powerful\") rather than a verb conjugation, making it an implausible error when the learner is explicitly asked to conjugate a verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779115253400-5ridujuz",
+      "timestamp": "2026-05-18T14:41:49.171Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: pourriez (conditional confusion with imperfect), pouvez/pourrez (present/future tense confusion), puissant (adjacent form from same root), pouvoir (failure to conjugate/infinitive error).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779115333590-qvd1mnrs",
+      "timestamp": "2026-05-18T14:42:42.960Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors when conjugating pouvoir in the imperfect tense: pourriez (conditional often confused in si-clauses), pouvez (present tense confusion), pourrez (future tense confusion), pouvoir (infinitive as fallback), and puissant (adjective that resembles a verb form).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779115362961-rskhg8i6",
+      "timestamp": "2026-05-18T14:43:04.292Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: pourriez (confusing conditional with imparfait in si-clauses, the classic trap), pouvez (using present instead of imparfait), pourrez (associating future with \"demain\"), puissant (confusing with participle/adjective), and pouvoir (forgetting to conjugate).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779115384292-9vfmhcoz",
+      "timestamp": "2026-05-18T14:43:15.600Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent realistic errors a learner might make: \"pourriez\" confuses conditional with imperfect, \"pouvez\" defaults to present tense, \"pourrez\" incorrectly uses future tense, \"pouvoir\" uses infinitive when uncertain of conjugation, and while \"puissant\" (an adjective) is less likely, it represents a vocabulary confusion a beginner might make.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779115395601-vv7bmuxx",
+      "timestamp": "2026-05-18T14:43:29.108Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: While pourriez, pouvez, pourrez, and pouvoir are all plausible conjugation errors (conditional, present, future, and infinitive respectively), \"puissant\" is an adjective/participle form that doesn't function as a conjugated verb — no learner attempting to conjugate pouvoir would reasonably type this as a verb form in the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779115409109-ccmijx9c",
+      "timestamp": "2026-05-18T14:43:56.082Z"
+    }
+  ]
+}

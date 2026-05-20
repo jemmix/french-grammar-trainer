@@ -1,0 +1,33 @@
+{
+  "cacheKey": "256f05b2f4f71b72",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-11-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-11 - L'imparfait dans les hypothèses avec si\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Si elle ___ riche, elle aiderait les pauvres. »\nChoices:\nA. [CORRECT] était\nB. serait\nC. est\nD. sera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779082075906-pxem1bxu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question directly tests the rule that French uses the imperfect tense in the si-clause of hypothetical/unreal conditional structures (si + imparfait → conditionnel), requiring knowledge of this specific grammar pattern to correctly choose \"était\" over \"serait,\" \"est,\" or \"sera.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779082259407-nfkw8dsh",
+      "timestamp": "2026-05-18T05:31:20.670Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that hypothetical \"si\" clauses referring to the present use the imparfait, not the conditionnel — which is exactly what rule 03-11 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779082736875-9mxxbto7",
+      "timestamp": "2026-05-18T05:43:43.140Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the specific rule that imperfect is used in the si-clause of hypothetical conditions (second conditional structure), where students must distinguish between \"était\" (imperfect, correct) and \"serait\" (conditional, incorrect for the si-clause).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779083333893-uye3awxq",
+      "timestamp": "2026-05-18T05:49:24.726Z"
+    }
+  ]
+}

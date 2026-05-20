@@ -865,6 +865,7 @@ export const answerHints: Record<string, string> = {
   "sauras": "savoir",
   "saurons": "savoir",
   "savez": "savoir",
+  "savais": "savoir",
   "se sent": "se sentir",
   "se sera perdu": "se perdre",
   "se sera réveillée": "se réveiller",
