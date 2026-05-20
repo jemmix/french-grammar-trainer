@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1780175fd7da5402",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-12-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-12 - L'imparfait vs le passé composé : arrière-plan vs événement\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe dans le temps qui convient (arrière-plan ou événement).\nPhrase: Pendant qu'il ___ l'ascenseur, un collègue est arrivé.\nCorrect Answer: attendait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779308414763-34mej3yp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between imparfait (background action \"attendait\") and passé composé (event \"est arrivé\") within the same sentence, requiring the student to recognize which action provides context versus which is the discrete event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308572901-z8hn5yc9",
+      "timestamp": "2026-05-20T20:23:25.695Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: This question directly tests the imparfait vs passé composé distinction by requiring students to recognize that \"attendait\" (imperfect) provides the ongoing background action that frames the foreground event \"un collègue est arrivé\" (passé composé).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308755194-bop7nr8z",
+      "timestamp": "2026-05-20T20:26:25.441Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the imparfait vs passé composé distinction by requiring the learner to identify that waiting for the elevator is a background action (ongoing context) while \"est arrivé\" is an event, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308909764-1mg22isl",
+      "timestamp": "2026-05-20T20:28:58.258Z"
+    }
+  ]
+}

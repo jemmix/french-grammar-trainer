@@ -1,0 +1,26 @@
+{
+  "cacheKey": "a4039c1e3c99fbd3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-12-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-12 - L'imparfait vs le passé composé : arrière-plan vs événement\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il neigeait dehors quand nous ___ la décision de partir. »\nChoices:\nA. [CORRECT] avons pris\nB. prendrons\nC. prenions\nD. allons prendre\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779308414760-jvdsc1of"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between imparfait as background state (neigeait) and passé composé as an interrupting event (avons pris), which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308476468-mbohae33",
+      "timestamp": "2026-05-20T20:21:27.925Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly requires understanding that \"neigeait\" (imperfect) provides the ongoing background context, while \"avons pris\" (passé composé) represents the specific event that occurred, directly testing the distinction between arrière-plan and événement as stated in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308653029-fb9dn8fh",
+      "timestamp": "2026-05-20T20:24:48.716Z"
+    }
+  ]
+}

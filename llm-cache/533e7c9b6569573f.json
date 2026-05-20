@@ -1,0 +1,33 @@
+{
+  "cacheKey": "533e7c9b6569573f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-12-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-12 - L'imparfait vs le passé composé : arrière-plan vs événement\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Pendant qu'elle ___ à ses devoirs, son téléphone a vibré. »\nChoices:\nA. [CORRECT] travaillait\nB. a travaillé\nC. travaille\nD. avait travaillé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779307010592-f80jv4xt"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: This question correctly tests the imparfait vs passé composé distinction by presenting a background action (working on homework) interrupted by a discrete event (phone vibrating), requiring knowledge that ongoing actions use imparfait while one-time events use passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307065085-nq1b0x20",
+      "timestamp": "2026-05-20T19:58:17.337Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question directly tests the distinction between imparfait for background actions and passé composé for discrete events - the homework (\"travaillait\") was the ongoing background activity interrupted by the sudden event (\"a vibré\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307334242-jtkjwx5h",
+      "timestamp": "2026-05-20T20:02:30.260Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question correctly tests the imparfait vs passé composé distinction for background vs event, where \"travaillait\" (imparfait) represents the ongoing background action interrupted by \"a vibré\" (passé composé), the specific event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307543749-2mkddnwg",
+      "timestamp": "2026-05-20T20:05:54.429Z"
+    }
+  ]
+}

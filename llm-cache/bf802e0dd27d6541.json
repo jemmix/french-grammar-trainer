@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bf802e0dd27d6541",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-12-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il ___ très froid ce matin-là quand nous avons commencé notre randonnée. »\n\nChoices:\nA. [CORRECT] faisait\nB. [WRONG] a fait\nC. [WRONG] fait\nD. [WRONG] ferait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779312824301-0c2uglnm"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers break tense requirements: \"fait\" is present tense, \"ferait\" is conditional, and \"a fait\" would incorrectly frame the weather as a completed action rather than the ongoing state required by the narrative context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779312824330-pv4jls05",
+      "timestamp": "2026-05-20T21:36:35.938Z"
+    },
+    {
+      "raw": "FALSE|B|\"Il a fait très froid ce matin-là\" is grammatically correct for reporting past weather conditions (passé composé can describe the overall weather of a day), making choice B a potentially correct answer in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779313010428-29gc9hfl",
+      "timestamp": "2026-05-20T21:37:56.369Z"
+    },
+    {
+      "raw": "FALSE|B|B (\"a fait\") is the passé composé form which can legitimately describe past weather in French (\"Il a fait très froid\" is a common expression), making it grammatically acceptable in this context even though the imparfait is more idiomatic for describing conditions as a backdrop to another past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779313076369-vhoj4epn",
+      "timestamp": "2026-05-20T21:38:18.524Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8de54ba0814a9880",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-12-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle ___ soudain sa mère appeler du rez-de-chaussée. »\n\nChoices:\nA. [CORRECT] a entendu\nB. [WRONG] entendait\nC. [WRONG] entendra\nD. [WRONG] avait entendu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779307010593-rl3k6ir2"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B|With \"soudain\" placed after the verb, the imparfait \"entendait\" could be grammatically acceptable in a narrative context describing a background action; the other choices are clearly incorrect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307116732-nc3q1mng",
+      "timestamp": "2026-05-20T19:58:56.517Z"
+    },
+    {
+      "raw": "FALSE||\n\nB: \"entendait\" (imparfait) is not inherently incorrect - the imparfait can be used to describe background or ongoing past states. While \"soudain\" typically suggests a sudden punctual event favoring passé composé, the imparfait isn't strictly grammatically wrong here in all contexts.\n\nC: \"entendra\" (futur simple) is definitively incorrect as the context is past-oriented with no temporal markers indicating future reference.\n\nD: \"avait entendu\" (plus-que-parfait) is not inherently incorrect - while it implies an action anterior to another past event, without explicit context establishing what the reference past action is, this tense is grammatically valid and could make sense if the mother's calling established a temporal reference point.\n\nThe question prompt does not specify exact temporal relationships or register constraints that would definitively rule out imparfait or plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307378081-36is7vik",
+      "timestamp": "2026-05-20T20:03:24.698Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5582d249ceb9f21b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-12-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Les lumières ___ progressivement quand le film a commencé. »\n\nChoices:\nA. [CORRECT] s'éteignaient\nB. [WRONG] s'éteignent\nC. [WRONG] s'éteindraient\nD. [WRONG] vont s'éteindre\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779308414760-w7dqhcth"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers create tense or mood mismatches with the passé composé context of \"a commencé\" - B uses présent, C uses conditionnel, and D uses futur proche, none of which appropriately describe a past progressive action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308479438-mcvtqrel",
+      "timestamp": "2026-05-20T20:22:07.759Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308675327-qqvkuhee",
+      "timestamp": "2026-05-20T20:24:55.959Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers create tense or mood incompatibilities with the past context established by \"quand le film a commencé\" - B uses present instead of past tense, C uses conditional mood which requires hypothetical context not present here, and D uses near future which cannot occur simultaneously with a past event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308825769-0bpakn61",
+      "timestamp": "2026-05-20T20:27:39.236Z"
+    }
+  ]
+}

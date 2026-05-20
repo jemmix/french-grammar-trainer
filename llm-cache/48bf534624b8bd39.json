@@ -1,0 +1,33 @@
+{
+  "cacheKey": "48bf534624b8bd39",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-12-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-12 - L'imparfait vs le passé composé : arrière-plan vs événement\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe pour marquer l'événement principal (la sortie) dans ce récit.\nPhrase: Il pleuvait quand Marie ___ précipitamment de la maison.\nCorrect Answer: est sortie\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779313435698-ejxjqd7f"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the distinction between l'imparfait (background/ongoing situation) and le passé composé (discrete event), as the student must recognize that Marie's exit is the main event interrupting the ongoing weather background.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779313435699-thffk8bk",
+      "timestamp": "2026-05-20T21:44:06.564Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing between background action (imparfait \"pleuvait\") and the main event (passé composé \"est sortie\"), which is exactly what the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779313446566-xhffwj6a",
+      "timestamp": "2026-05-20T21:44:19.695Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that \"sortir\" (the leaving) is the main discrete event in the narrative, which must be expressed in passé composé, contrasting with the ongoing background action \"Il pleuvait\" in imparfait — this is exactly the arrière-plan vs événement distinction the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779313459695-c4hf04zu",
+      "timestamp": "2026-05-20T21:44:30.614Z"
+    }
+  ]
+}

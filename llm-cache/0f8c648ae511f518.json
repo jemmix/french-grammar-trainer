@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0f8c648ae511f518",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-12-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il neigeait dehors quand nous ___ la decision de partir. »\n\nChoices:\nA. [CORRECT] avons pris\nB. [WRONG] prenions\nC. [WRONG] prendrons\nD. [WRONG] prenions pas\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779307010593-vfcsyb1d"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B|B is the imparfait form of \"prendre\" and could be correct in this context as it describes an ongoing action simultaneous with \"il neigeait\" (imparfait), making the sequence \"Il neigeait dehors quand nous prenions la décision de partir\" grammatically valid.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307069660-r142cqjr",
+      "timestamp": "2026-05-20T19:58:32.246Z"
+    },
+    {
+      "raw": "FALSE|B|While C and D are clearly incorrect (wrong tense and improper negation), B (\"prenions\" - imparfait) could be interpreted as \"we were in the process of making the decision,\" which is grammatically possible in a past context even though it changes the meaning from a completed action to an ongoing one.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307358031-t45yvvsc",
+      "timestamp": "2026-05-20T20:03:28.580Z"
+    }
+  ]
+}

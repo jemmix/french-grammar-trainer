@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f8095a76b9d8257a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-12-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-12 - L'imparfait vs le passé composé : arrière-plan vs événement\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe dans le temps qui convient (arrière-plan ou événement).\nPhrase: Il faisait nuit quand les pompiers ___ à l'incendie.\nCorrect Answer: sont arrivés\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779308414764-bg9zm5oh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question perfectly tests the imparfait vs passé composé distinction by contrasting the ongoing background situation (\"faisait nuit\") with the specific interruptive event (\"les pompiers sont arrivés\"), requiring understanding of when each tense should be used.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308593963-635k7x5v",
+      "timestamp": "2026-05-20T20:23:22.991Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the imparfait/passé composé distinction by requiring students to recognize that \"Il faisait nuit\" sets the background context (imparfait) while the firefighters' arrival is a discrete event (passé composé \"sont arrivés\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308752579-6b6xt26t",
+      "timestamp": "2026-05-20T20:26:05.654Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between imparfait for background description (\"Il faisait nuit\" - ongoing state) and passé composé for discrete events (\"sont arrivés\" - the firefighters arriving), which is exactly what the rule states.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308893032-09dgpvz6",
+      "timestamp": "2026-05-20T20:28:27.896Z"
+    }
+  ]
+}

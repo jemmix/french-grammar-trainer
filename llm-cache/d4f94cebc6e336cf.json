@@ -1,0 +1,61 @@
+{
+  "cacheKey": "d4f94cebc6e336cf",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-12-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Soudain, un chien ___ dans la rue et les piétons se sont enfuis. »\n\nChoices:\nA. [CORRECT] a aboyé\nB. [WRONG] aboyait\nC. [WRONG] aboie\nD. [WRONG] aboyera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779313628859-325hvps4"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in the context of a sudden past event followed by a completed past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779313628860-kji7zvcr",
+      "timestamp": "2026-05-20T21:47:20.060Z"
+    },
+    {
+      "raw": "FALSE|B|\"aboyait\" (imparfait) could be correct here as it can establish a background action that was interrupted by the sudden event, especially since \"soudain\" can introduce a sudden interruption of an ongoing state; while \"a aboyé\" (passé composé) is more natural for a punctual event, the imperfect is not grammatically incorrect in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779313640063-o6jxom1v",
+      "timestamp": "2026-05-20T21:47:44.674Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait which describes ongoing/habitual actions, not sudden events marked by \"soudain\"; C uses present tense incompatible with the past tense of \"se sont enfuis\"; D uses future tense creating a logical contradiction with the past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779313664675-p018rp7f",
+      "timestamp": "2026-05-20T21:49:06.241Z"
+    },
+    {
+      "raw": "TRUE||B (imparfait) implies ongoing/habitual past action not matching the sudden context; C (present) creates tense inconsistency with \"se sont enfuis\" (past); D (future) is temporally impossible as pedestrians already fled in the past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779313746241-dpqfm1gu",
+      "timestamp": "2026-05-20T21:49:18.219Z"
+    },
+    {
+      "raw": "TRUE||B uses imparfait which is for ongoing actions, not sudden events marked by \"soudain\"; C uses présent and D uses futur, neither of which agree with the past tense \"se sont enfuis\" in the second clause.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779313758220-ou5p4gqm",
+      "timestamp": "2026-05-20T21:49:42.558Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect because the question requires the passé composé to match the past narrative context established by \"se sont enfuis\" and the sudden action marker \"soudain\"; imparfait (B) would indicate an ongoing action, présent (C) creates a tense mismatch, and futur (D) contradicts the past timeframe.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779313782559-r28phnv9",
+      "timestamp": "2026-05-20T21:49:52.382Z"
+    },
+    {
+      "raw": "FALSE|B|The imparfait \"aboyait\" (B) is not incorrect in this context - \"Soudain, un chien aboyait et les piétons se sont enfuis\" is grammatically valid French describing what was happening when the sudden event occurred; C and D are indeed incorrect due to tense inconsistency with the passé composé in the second clause.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779313792382-hdt060a6",
+      "timestamp": "2026-05-20T21:50:09.652Z"
+    }
+  ]
+}

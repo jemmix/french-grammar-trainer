@@ -1,0 +1,54 @@
+{
+  "cacheKey": "cd4f6003426a0cd1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-12-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Les musiciens ___ une symphonie quand l'électricité s'est coupée. »\n\nChoices:\nA. [CORRECT] jouaient\nB. [WRONG] ont joué\nC. [WRONG] joueront\nD. [WRONG] jouent\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779307010592-b2s3zvyi"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect within the context of an action interrupted by a past event, which requires the imparfait tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307045685-p5hvzk60",
+      "timestamp": "2026-05-20T19:57:49.650Z"
+    },
+    {
+      "raw": "FALSE|B|B (\"ont joué\") is grammatically correct in French and could mean \"The musicians played a symphony when the electricity went out\" - this is a valid past tense construction that doesn't violate any explicit grammatical constraints in the question prompt, even if the imparfait (jouaient) better conveys the ongoing nature of the interrupted action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307298997-d2nj8yp7",
+      "timestamp": "2026-05-20T20:04:09.778Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect because they do not express an ongoing action in the past (imparfait) which is the appropriate tense for describing an action that was in progress when the electricity went out; B uses passé composé which indicates a completed action, C uses futur simple which is a future tense, and D uses présent which is a present tense, none of which match the required past continuous context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307608819-141z9yqt",
+      "timestamp": "2026-05-20T20:08:29.617Z"
+    },
+    {
+      "raw": "TRUE||The interruption context established by \"quand\" + passé composé (\"s'est coupée\") requires imparfait for the ongoing action; B uses passé composé (wrong aspect for interruption), C uses futur simple (wrong time reference), and D uses présent (wrong time reference).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307712196-c5a6i930",
+      "timestamp": "2026-05-20T20:09:55.186Z"
+    },
+    {
+      "raw": "TRUE||The imparfait \"jouaient\" is the correct tense for an ongoing past action interrupted by another event; \"ont joué\" implies a completed action, \"joueront\" is future tense, and \"jouent\" is present tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307795187-jk5wr1sz",
+      "timestamp": "2026-05-20T20:10:02.844Z"
+    },
+    {
+      "raw": "FALSE|B|\"Ont joué\" (passé composé) could be correct as it could mean the musicians had just finished playing the symphony when the power went out, representing a completed action in the past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307802844-f5eqdmwh",
+      "timestamp": "2026-05-20T20:11:42.292Z"
+    }
+  ]
+}

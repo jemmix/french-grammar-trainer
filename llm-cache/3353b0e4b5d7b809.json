@@ -1,0 +1,54 @@
+{
+  "cacheKey": "3353b0e4b5d7b809",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "03-12-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Conjuguez le verbe dans le temps qui convient (arrière-plan ou événement).\n\nPHRASE: Il pleuvait quand Marie ___ précipitamment de la maison.\n\nHINT: sortir\n\nEXPECTED ANSWER: est sortie\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1779312386086-ubg9k25q"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: UNCLEAR\n\nREASON: While the question provides the infinitive verb \"sortir\" and context about choosing between background or event, it doesn't indicate that \"sortir\" uses être as its auxiliary in passé composé, so learners might incorrectly conjugate it as \"a sorti\" (avoir) instead of the expected \"est sortie\" (être).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779312533532-4w20grkh",
+      "timestamp": "2026-05-20T21:30:23.807Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to conjugate the verb in the appropriate tense (background or event), the hint provides the infinitive \"sortir\", and the context of \"Il pleuvait\" (imparfait for background) indicates the blank requires an event tense (passé composé), making it clear what should be typed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779312627496-actm9g0q",
+      "timestamp": "2026-05-20T21:30:39.835Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt instructs to choose between background (imparfait) or event (passé composé) tense, the hint provides the infinitive verb \"sortir\", and the phrase context with \"Il pleuvait\" (ongoing background action) followed by Marie's action clearly indicates a sudden event requiring passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779312639835-ubo761ct",
+      "timestamp": "2026-05-20T21:30:55.589Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt instructs conjugation with tense choice (background vs. event), the hint provides the infinitive \"sortir\", and the context (imparfait \"pleuvait\" as ongoing background, sudden exit as discrete event) clearly indicates passé composé is required for Marie's departure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779312655589-cqq9hhbm",
+      "timestamp": "2026-05-20T21:31:06.031Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to conjugate the verb, the hint provides the infinitive \"sortir\", and the context of \"Il pleuvait quand...\" with the parenthetical note \"(arrière-plan ou événement)\" gives enough information to understand that passé composé is expected for the event action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779312666032-0dvpzh5z",
+      "timestamp": "2026-05-20T21:31:14.785Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Both \"est sortie\" (passé composé) and \"sortait\" (imparfait) could be valid interpretations; the prompt doesn't provide enough guidance to determine which tense is required without seeing the answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779312674786-jeqafwll",
+      "timestamp": "2026-05-20T21:31:28.004Z"
+    }
+  ]
+}

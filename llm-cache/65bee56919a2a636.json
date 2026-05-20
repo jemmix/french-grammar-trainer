@@ -1,0 +1,33 @@
+{
+  "cacheKey": "65bee56919a2a636",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-12-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-12 - L'imparfait vs le passé composé : arrière-plan vs événement\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Tandis que les ouvriers ___ la route, un automobiliste a eu un accident. »\nChoices:\nA. [CORRECT] réparaient\nB. réparent\nC. répareraient\nD. vont réparer\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779308414762-wp4ogymt"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between imperfect (ongoing background action) and passé composé (sudden event), which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308547713-uuvt64eh",
+      "timestamp": "2026-05-20T20:22:41.055Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the imperfect for ongoing background actions (workers repairing) versus passé composé for discrete events (the accident), which is the core concept of the stated rule about background vs event distinction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308709310-z82az1qw",
+      "timestamp": "2026-05-20T20:25:23.623Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question correctly tests the imparfait vs passé composé distinction by presenting a classic \"background action interrupted by a sudden event\" scenario where the workers' ongoing road repair (imparfait \"réparaient\") serves as the backdrop to the motorist's accident (passé composé).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308848596-28s1rm9p",
+      "timestamp": "2026-05-20T20:27:40.837Z"
+    }
+  ]
+}

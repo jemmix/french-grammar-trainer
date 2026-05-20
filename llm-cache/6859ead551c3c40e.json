@@ -1,0 +1,47 @@
+{
+  "cacheKey": "6859ead551c3c40e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-12-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Le serveur ___ quand un client a versé de l'eau sur la nappe. »\n\nChoices:\nA. [CORRECT] apportait le dessert\nB. [WRONG] a apporté le dessert\nC. [WRONG] apporte le dessert\nD. [WRONG] avait apporté le dessert\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779307010593-rs263grm"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B|B could be correct in certain contexts; \"a apporté\" (passé composé) is grammatically valid, though less natural than the imparfait for describing an ongoing action interrupted by another event in this specific sentence structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307162038-g55rh7ha",
+      "timestamp": "2026-05-20T19:59:53.078Z"
+    },
+    {
+      "raw": "TRUE||The context requires an action in progress when interrupted by another event (imparfait); B describes a completed action at that moment and D indicates the action was already completed before the interruption.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307424539-kpwg60n5",
+      "timestamp": "2026-05-20T20:11:45.008Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: C uses present tense instead of past, D uses pluperfect which places the action before the spilling (not simultaneous), and B uses passé composé which treats the action as completed rather than ongoing/interrupted.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307905008-m3jk4vt0",
+      "timestamp": "2026-05-20T20:11:59.972Z"
+    },
+    {
+      "raw": "I'll analyze the question and verify each wrong answer is indeed incorrect.\n\nTRUE||All wrong answers are grammatically incorrect in this context: B uses passé composé which creates a sequence of events rather than an interrupted ongoing action; C uses present tense which is inconsistent with the past context; D uses plus-que-parfait which would indicate the action was completed before, not during, the spilling.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307919973-kwug9vca",
+      "timestamp": "2026-05-20T20:12:09.183Z"
+    },
+    {
+      "raw": "FALSE|B,D|B (passé composé) and D (plus-que-parfait) are incorrect for an interrupted ongoing action context, which requires imparfait to convey \"was doing X when Y happened\"; only C (présent) is clearly wrong since the context is past tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307929184-2gwf60wi",
+      "timestamp": "2026-05-20T20:12:17.791Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6f2f57c3432ab702",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-12-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Soudain, la porte ___ et tout le monde a sursauté. »\n\nChoices:\nA. [CORRECT] a claqué\nB. [WRONG] claquait\nC. [WRONG] claque\nD. [WRONG] claquerait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779314065432-50s0rm74"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use verb tenses or moods that don't match the past context of the sentence, where the passé composé \"a claqué\" correctly describes a sudden, completed action that caused everyone to startle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779314065433-ydbt9t42",
+      "timestamp": "2026-05-20T21:54:46.007Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't match the narrative context: B (imparfait) describes ongoing past actions rather than a sudden completed event, C (présent) doesn't agree with the past tense of the second clause, and D (conditionnel) introduces hypothetical meaning where none exists.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779314086008-u1a4n0q4",
+      "timestamp": "2026-05-20T21:54:59.373Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779314099373-n2m1bvko",
+      "timestamp": "2026-05-20T21:55:10.849Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "27183c377c42b5bd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-12-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-12 - L'imparfait vs le passé composé : arrière-plan vs événement\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Hier, il ___ beau quand j'ai décidé d'aller à la plage. »\nChoices:\nA. [CORRECT] faisait\nB. fait\nC. ferait\nD. va faire\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779308414762-ywb99n9q"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the imparfait vs passé composé distinction by requiring students to recognize that weather descriptions (\"il faisait beau\") serve as ongoing background situations when contrasted with a specific event (\"j'ai décidé\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308561056-jieg3kgb",
+      "timestamp": "2026-05-20T20:23:01.410Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that ongoing background states (weather) take imparfait while specific completed actions (deciding to go) take passé composé, which is precisely the distinction taught by this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308735350-bxfzkwqz",
+      "timestamp": "2026-05-20T20:25:49.048Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: This question directly tests the imparfait vs passé composé distinction by requiring students to identify that the weather (ongoing background state) should use \"faisait\" (imparfait) while the decision to go to the beach is marked as an event with \"j'ai décidé\" (passé composé).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308869266-nwv2xdpr",
+      "timestamp": "2026-05-20T20:28:07.197Z"
+    }
+  ]
+}

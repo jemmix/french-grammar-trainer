@@ -1,0 +1,47 @@
+{
+  "cacheKey": "36a5e95bfacbc7d5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-12-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-12 - L'imparfait vs le passé composé : arrière-plan vs événement\n\nQUESTION:\nType: Input\nPrompt: Conjuguez à l'imparfait pour décrire l'action de fond\nPhrase: Tandis que je ___ (lire) mon livre, quelqu'un a frappé à la porte.\nCorrect Answer: lisais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779307010594-imy0kps4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the imparfait vs passé composé distinction by requiring the student to identify the ongoing background action (reading a book) that is interrupted by a specific event (someone knocked), which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307221436-r81a0x7i",
+      "timestamp": "2026-05-20T20:00:41.902Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly tells the student to use l'imparfait in the prompt, so it doesn't test the student's ability to distinguish between background actions and events (the core of the rule) — it only tests conjugation knowledge.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307468309-yew0lb5c",
+      "timestamp": "2026-05-20T20:04:44.157Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the imparfait vs passé composé distinction by requiring students to identify the background action (\"lire\" happening while someone knocked) and conjugate it in the imparfait, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307642231-io8zp1fc",
+      "timestamp": "2026-05-20T20:07:43.770Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the rule by presenting a classic background action (reading) interrupted by a discrete event (knocking), requiring the student to identify which verb represents the ongoing background and conjugate it in the imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307698298-79r2i8ue",
+      "timestamp": "2026-05-20T20:08:27.042Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to conjugate in the imparfait for the background action, so the question only tests imparfait conjugation rather than the ability to distinguish between background (imparfait) and event (passé composé) based on context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307708459-hu4vaxgo",
+      "timestamp": "2026-05-20T20:08:47.060Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "63d46f1720bb6d8b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-12-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-12 - L'imparfait vs le passé composé : arrière-plan vs événement\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Les lumières ___ progressivement quand le film a commencé. »\nChoices:\nA. [CORRECT] s'éteignaient\nB. se sont éteintes\nC. s'éteindront\nD. s'éteignent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779307010593-y1vgm92y"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: This question perfectly tests the imparfait vs passé composé distinction for background vs event — the ongoing action of lights dimming (imparfait) serves as the background setting against which the discrete event of the film starting (passé composé) occurs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307095625-d5ewvyil",
+      "timestamp": "2026-05-20T19:58:32.162Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question tests the rule perfectly—the correct answer \"s'éteignaient\" (imparfait) is required because the lights gradually going out is a background action in progress when the sudden event of the film starting (passé composé) occurs, directly testing the arrière-plan vs événement distinction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307354987-bl5sgd8x",
+      "timestamp": "2026-05-20T20:02:49.472Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: This question directly tests the distinction between imparfait (ongoing background action) and passé composé (specific event) - the lights progressively dimming was a background action (s'éteignaient) interrupted by the specific event of the movie starting (a commencé).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307557202-u32k8ohu",
+      "timestamp": "2026-05-20T20:06:10.941Z"
+    }
+  ]
+}

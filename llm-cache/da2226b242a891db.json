@@ -1,0 +1,33 @@
+{
+  "cacheKey": "da2226b242a891db",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-12-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-12 - L'imparfait vs le passé composé : arrière-plan vs événement\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il ___ très froid ce matin-là quand nous avons commencé notre randonnée. »\nChoices:\nA. [CORRECT] faisait\nB. a fait\nC. fait\nD. ferait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779312824301-tk0mbo3p"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between l'imparfait (faisait) for background states vs passé composé (a fait) for specific events, as the weather describes an ongoing condition when the specific event (starting the hike) occurred.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779312824331-k9qxcgo5",
+      "timestamp": "2026-05-20T21:35:37.822Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: This question perfectly tests the imparfait vs passé composé distinction by presenting a sentence where \"faisait\" (imparfait) describes ongoing background weather conditions and \"avons commencé\" (passé composé) marks a specific event, requiring knowledge that ongoing states use imparfait while discrete actions use passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779312982061-bq56ugg5",
+      "timestamp": "2026-05-20T21:36:42.596Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly tests the imparfait vs passé composé distinction for background vs event—the weather description (faisait) provides the ongoing background context when the specific event of starting the hike (avons commencé) occurred.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779313014823-7rp8qccc",
+      "timestamp": "2026-05-20T21:37:12.626Z"
+    }
+  ]
+}

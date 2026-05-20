@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ac308e37a2b24970",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-12-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Nous ___ la maison quand la tempête a éclaté. »\n\nChoices:\nA. [CORRECT] quittions\nB. [WRONG] quittons\nC. [WRONG] quitterions\nD. [WRONG] allons quitter\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779308414762-hhj76hmh"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't match the past context established by \"quand la tempête a éclaté\" - B is present tense, C is conditional, and D is futur proche.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308533747-a2xvfw05",
+      "timestamp": "2026-05-20T20:22:30.610Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers (B, C, D) are grammatically incorrect in the context of a past narrative: B uses present tense, C uses conditional mood, and D uses future proche, none of which can properly follow \"quand la tempête a éclaté\" (passé composé) to describe an ongoing action in the past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308701887-3hp9xjhv",
+      "timestamp": "2026-05-20T20:25:15.749Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in the past context established by \"la tempête a éclaté\": B is present tense, C is conditional, and D is near future, none of which fit the imperfect required for an ongoing past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779308841337-q8b2wv6k",
+      "timestamp": "2026-05-20T20:27:34.210Z"
+    }
+  ]
+}

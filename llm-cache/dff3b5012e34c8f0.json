@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dff3b5012e34c8f0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-12-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-12 - L'imparfait vs le passé composé : arrière-plan vs événement\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Pendant qu'elle ___ ses amis, son patron a appelé. »\nChoices:\nA. [CORRECT] écoutait\nB. a écouté\nC. écoutera\nD. avait écouté\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779307010593-rx4k9kzv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question tests exactly the distinction between imparfait (background/ongoing action: \"Pendant qu'elle écoutait ses amis\") and passé composé (discrete event: \"son patron a appelé\"), which is the core of rule 03-12.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307193079-s1bdvv6f",
+      "timestamp": "2026-05-20T20:00:24.316Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that the action described in the clause with \"pendant que\" (while) is ongoing background action interrupted by an event, making the imparfait the correct choice over the passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307457570-6ttn515y",
+      "timestamp": "2026-05-20T20:04:28.307Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the exact distinction described in the rule - the blank requires the imparfait (écoutait) to describe the ongoing background action that was happening when the foreground event (a appelé - passé composé) occurred, and the distractor a écouté directly tests the wrong use of passé composé in a background context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779307626817-5x51xctm",
+      "timestamp": "2026-05-20T20:07:22.230Z"
+    }
+  ]
+}
