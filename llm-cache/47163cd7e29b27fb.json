@@ -1,0 +1,40 @@
+{
+  "cacheKey": "47163cd7e29b27fb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-17-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-17 - Les marqueurs temporels de l'imparfait (tous les jours, souvent, d'habitude, à cette époque)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Avant, quand il vivait à Lyon, il ___ toujours ses vacances en Bretagne. »\nChoices:\nA. [CORRECT] passait\nB. a passé\nC. passera\nD. passerait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779374685692-hnfoyjcn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests when to use imparfait vs other tenses in a past context, not recognition of temporal markers like \"tous les jours, souvent, d'habitude, à cette époque\" that signal imparfait usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374837275-3zapechy",
+      "timestamp": "2026-05-21T14:47:47.662Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly tests the use of temporal markers (\"toujours\" and \"Avant, quand il vivait\") that indicate when to use the imparfait tense for describing repeated/habitual past actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374999631-f2pcbu7u",
+      "timestamp": "2026-05-21T14:50:12.868Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly tests imparfait temporal markers through \"toujours\" (always), which signals a habitual past action just like \"souvent\" or \"d'habitude\", and the context \"Avant, quand il vivait\" establishes the past timeframe requiring imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779375150321-h8xecojp",
+      "timestamp": "2026-05-21T14:56:23.167Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests when to use the imperfect tense for habitual past actions, but the temporal marker \"Avant\" alone isn't one of the specific markers listed in the rule (tous les jours, souvent, d'habitude, à cette époque), and the question focuses more on recognizing habitual action patterns than on identifying temporal markers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779375383168-89v5zw1c",
+      "timestamp": "2026-05-21T14:57:00.803Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9584fcf26b8693e6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-17-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel marqueur temporel de l'imparfait trouve-t-on dans : « À l'époque, tout le monde allait à vélo au travail. » ?\n\nChoices:\nA. [CORRECT] à l'époque\nB. [WRONG] tout le monde\nC. [WRONG] allait\nD. [WRONG] à vélo\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779376477318-xdbzr1b8"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are not temporal markers: B is the subject \"tout le monde\", C is the verb \"allait\" itself in imparfait, D is a means of transport \"à vélo\", whereas the question asks specifically for a temporal marker of the imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779376528209-fkxf6xwd",
+      "timestamp": "2026-05-21T15:15:40.847Z"
+    },
+    {
+      "raw": "TRUE||B is the subject, not a temporal marker; C is the verb in imparfait tense but not a temporal marker; D indicates manner of transportation, not time.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779376677215-2gorcbs5",
+      "timestamp": "2026-05-21T15:18:06.547Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"tout le monde\" is a subject, \"allait\" is the verb itself not a time marker, and \"à vélo\" indicates manner of transport rather than time.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779376815171-azchc16m",
+      "timestamp": "2026-05-21T15:20:28.111Z"
+    }
+  ]
+}

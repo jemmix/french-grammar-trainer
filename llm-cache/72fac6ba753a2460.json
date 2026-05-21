@@ -1,0 +1,26 @@
+{
+  "cacheKey": "72fac6ba753a2460",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-17-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-17 - L'imparfait avec les marqueurs temporels (tous les jours, souvent, d'habitude, à cette époque)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel est le marqueur temporel de l'imparfait dans : « Avant, il écrivait toujours ses lettres à la main. » ?\nChoices:\nA. [CORRECT] avant / toujours\nB. il écrivait\nC. ses lettres\nD. à la main\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779376477320-li8016ee"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question directly tests the student's ability to identify temporal markers that indicate the use of imparfait (\"avant\" and \"toujours\"), which is exactly what the rule covers - the relationship between imparfait and its characteristic time expressions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779376586914-dgxamtp1",
+      "timestamp": "2026-05-21T15:16:41.496Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: While \"toujours\" is a valid imparfait temporal marker consistent with the rule's focus on habitual/repetitive markers (e.g., \"souvent\"), including \"avant\" in the correct answer is problematic because \"avant\" is a generic past-time indicator that doesn't specifically signal the habitual nature of imparfait usage and could work with other past tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779376749177-6aa28nmj",
+      "timestamp": "2026-05-21T15:20:53.267Z"
+    }
+  ]
+}

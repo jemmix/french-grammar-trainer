@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0dabdc9a43388df7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-17-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase associe correctement un marqueur temporel de l'imparfait au verbe conjugué à l'imparfait ?\n\nChoices:\nA. [CORRECT] « Autrefois, les gens parlaient davantage le français. »\nB. [WRONG] « Soudain, les gens parlaient davantage le français. »\nC. [WRONG] « Hier, les gens parlaient davantage le français. »\nD. [WRONG] « En deux heures, les gens parlaient davantage le français. »\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779379230339-gboj7ls7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use temporal markers that don't correctly associate with the imparfait: \"soudain\" typically introduces passé composé events, \"hier\" is usually for specific past moments with passé composé, and \"en deux heures\" indicates a fixed duration for completed actions with passé composé rather than the ongoing/habitual nature of imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779379230389-tlew83ye",
+      "timestamp": "2026-05-21T16:01:07.742Z"
+    },
+    {
+      "raw": "FALSE|C|\"Hier\" can be used with the imparfait when describing ongoing states or habits in the past (e.g., \"Hier, il faisait beau\"), not just completed actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779379363604-hpkn9duj",
+      "timestamp": "2026-05-21T16:03:26.126Z"
+    },
+    {
+      "raw": "FALSE||B (soudain marks sudden action, not habitual past), C (hier doesn't inherently support habitual imparfait usage), D (en deux heures marks duration of completed action, not ongoing description). Only A uses a proper imparfait temporal marker (autrefois).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779379446204-i4siac09",
+      "timestamp": "2026-05-21T16:06:51.035Z"
+    }
+  ]
+}

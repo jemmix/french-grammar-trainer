@@ -74,7 +74,7 @@ Chaque section contient 20 règles de grammaire. Chaque règle dispose de ~500 q
 14. L'imparfait vs le passé composé : **simultanéité vs succession**
 15. L'imparfait vs le passé composé : **pendant que + imparfait**
 16. L'imparfait vs le passé composé dans un **récit** (choix narratif)
-17. Les marqueurs temporels de l'imparfait (tous les jours, souvent, d'habitude, à cette époque)
+17. L'imparfait avec les **marqueurs temporels** (tous les jours, souvent, d'habitude, à cette époque)
 18. L'imparfait avec **depuis** (il pleuvait depuis trois jours)
 19. L'imparfait dans le discours indirect au passé (il a dit qu'il **était** fatigué)
 20. L'imparfait de suggestion (si on **allait** au cinéma ?)

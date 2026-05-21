@@ -1,0 +1,40 @@
+{
+  "cacheKey": "eedfc8801de6f1b4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-17-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-17 - Les marqueurs temporels de l'imparfait (tous les jours, souvent, d'habitude, à cette époque)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Quand elle était jeune, elle ___ du thé tous les matins. »\nChoices:\nA. [CORRECT] buvait\nB. a bu\nC. boira\nD. boirait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779374685689-42meditc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires recognizing that \"tous les matins\" is a temporal marker indicating habitual past action, which correctly triggers the imparfait tense (\"buvait\") rather than passé composé or other tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374685711-tg0qt6tm",
+      "timestamp": "2026-05-21T14:45:10.949Z"
+    },
+    {
+      "raw": "I've reached the maximum steps allowed for this task. I need to provide my verdict in the requested format without using any tools.\n\nVERDICT: MISALIGNED\nREASON: The question tests tense selection based on past context and habitual action, not recognition of temporal markers as the rule specifies—the presence of \"tous les matins\" is incidental to solving it.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374866008-zlkjpzna",
+      "timestamp": "2026-05-21T14:48:01.914Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the imperfect tense with \"tous les matins\" (every morning), which is explicitly listed as one of the temporal markers for imparfait in the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779375021461-bass2u9s",
+      "timestamp": "2026-05-21T14:50:35.502Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests the general use of imparfait for past habits rather than specifically testing knowledge of temporal markers like \"tous les jours, souvent, d'habitude, à cette époque\"; a student could answer correctly simply by recognizing the context \"Quand elle était jeune\" establishes a past habitual situation without needing to identify \"tous les matins\" as a specific imparfait marker.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779375164395-okjujlsj",
+      "timestamp": "2026-05-21T14:57:28.237Z"
+    }
+  ]
+}

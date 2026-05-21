@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4fbdd3cf9c14192c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-17-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand ils étaient jeunes, tous les matins, ils ___ avant le lever du soleil. »\n\nChoices:\nA. [CORRECT] se levaient\nB. [WRONG] se sont levés\nC. [WRONG] se lèveront\nD. [WRONG] se lèveraient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779374685690-xpqfr1s4"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect because they use wrong tenses (passé composé for completed actions, futur for future, conditionnel for hypothetical) that don't match the habitual past context requiring imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374763514-qf1o58ng",
+      "timestamp": "2026-05-21T14:46:37.716Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect within the past habitual context: B uses passé composé for a habitual action, C uses future tense, and D uses conditional mood where none are grammatically appropriate.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374910954-pr3mr0j2",
+      "timestamp": "2026-05-21T14:48:47.224Z"
+    },
+    {
+      "raw": "TRUE||The context \"Quand ils étaient jeunes\" establishes a past timeframe, and \"tous les matins\" indicates a habitual repeated action, which requires the imperfect tense (se levaient). The passé composé (se sont levés) describes completed rather than habitual actions, the future tense (se lèveront) is wrong for past context, and the conditional (se lèveraient) introduces uncertainty inappropriate for this factual description of past habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779375078063-x1y23trf",
+      "timestamp": "2026-05-21T14:51:33.463Z"
+    }
+  ]
+}

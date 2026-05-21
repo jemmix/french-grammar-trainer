@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f28c10d5766f65f7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-17-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-17 - L'imparfait avec les marqueurs temporels (tous les jours, souvent, d'habitude, à cette époque)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Parmi ces phrases, laquelle utilise correctement un marqueur temporel de l'imparfait ?\nChoices:\nA. [CORRECT] « Autrefois, les gens parlaient davantage le français. »\nB. « Autrefois, les gens ont parlé davantage le français. »\nC. « Soudain, les gens parlaient davantage le français. »\nD. « Hier, les gens parlaient davantage le français. »\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779376477319-biitdejn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the use of imparfait with temporal markers by requiring students to identify that \"autrefois\" (formerly/in the past) is a temporal marker that properly triggers the imperfect tense for habitual past actions, while distinguishing it from other tenses and temporal expressions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779376540848-bwvcmd79",
+      "timestamp": "2026-05-21T15:15:57.339Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the correct combination of a temporal marker indicating habitual past action (\"autrefois\", similar to \"à cette époque\" from the rule) with the imperfect tense, distinguishing it from passé composé and markers that indicate sudden or specific events.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779376695522-64ymbe4c",
+      "timestamp": "2026-05-21T15:18:28.961Z"
+    },
+    {
+      "raw": "I need to analyze whether this question tests the stated rule.\n\nLooking at the question:\n- The question asks students to identify which sentence correctly uses a temporal marker with the imperfect tense\n- Choice A uses \"autrefois\" (a temporal marker for imperfect) with \"parlaient\" (imperfect tense) - CORRECT\n- Choice B uses \"autrefois\" (imperfect marker) with \"ont parlé\" (passé composé) - WRONG TENSE\n- Choice C uses \"soudain\" (NOT an imperfect marker) with \"parlaient\" - WRONG MARKER\n- Choice D uses \"hier\" (NOT an imperfect marker) with \"parlaient\" - WRONG MARKER\n\nVERDICT: ALIGNED\nREASON: To answer correctly, students must recognize that \"autrefois\" is a temporal marker associated with the imperfect tense and distinguish it from markers like \"soudain\" or \"hier\" that are typically used with other tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779376836056-cb51h1zk",
+      "timestamp": "2026-05-21T15:20:51.739Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2504b8a62ed8478a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-17-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Autrefois, nous ___ tous les dimanches au marché. »\n\nChoices:\nA. [CORRECT] allions\nB. [WRONG] sommes allés\nC. [WRONG] irons\nD. [WRONG] irions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779374685688-eqxxdjv7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||The imparfait \"allions\" correctly expresses a habitual past action; \"sommes allés\" is passé composé for completed actions, \"irons\" is future tense, and \"irions\" is conditional tense, all mismatched with the habitual past context of \"Autrefois\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374685695-t644ep3o",
+      "timestamp": "2026-05-21T14:45:16.925Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for the context: B uses passé composé for a habitual past action (requires imperfect), C is future tense when past is needed, D is conditional which doesn't fit with \"autrefois\" for describing past habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374867662-vquwkgsd",
+      "timestamp": "2026-05-21T14:48:13.199Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses or moods that are inappropriate for \"autrefois\" with a habitual action (B is completed past, C is future, D is conditional).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779375030430-w7uy5if2",
+      "timestamp": "2026-05-21T14:50:57.969Z"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "cacheKey": "06753afa98ae5539",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-17-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-17 - Les marqueurs temporels de l'imparfait (tous les jours, souvent, d'habitude, à cette époque)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Quand il était enfant, il ___ toujours ses devoirs avant de jouer. »\nChoices:\nA. [CORRECT] faisait\nB. a fait\nC. fait\nD. ferait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779373568587-hk6vhp1j"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: While \"toujours\" appears in the rule as a marker, the question primarily tests the difference between imparfait and passé composé tenses using the context \"Quand il était enfant\" rather than specifically testing recognition of temporal markers like \"tous les jours, souvent, d'habitude, à cette époque\" which are the focus of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779373616425-dz6khmiw",
+      "timestamp": "2026-05-21T14:27:11.489Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence contains the time markers \"toujours\" (equivalent to \"souvent/d'habitude\") and \"Quand il était enfant\" (equivalent to \"à cette époque\"), which directly signal the habitual past action context that imparfait with these markers describes, and choosing correctly requires recognizing that \"toujours\" in a past context calls for imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779373782404-59sb8q8w",
+      "timestamp": "2026-05-21T14:30:04.614Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the ability to recognize temporal markers (\"toujours\" combined with \"Quand il était enfant\") that indicate a habitual/repeated past action requiring the imparfait tense, which is exactly what rule 03-17 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779373940962-0znvvowe",
+      "timestamp": "2026-05-21T14:32:38.459Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests identifying the correct verb tense for habitual past actions using the temporal marker \"toujours\" (always) and the context \"Quand il était enfant\" (When he was a child), which signals the need for imparfait - directly aligning with the rule about temporal markers that indicate imparfait usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374069271-9tpbtjyt",
+      "timestamp": "2026-05-21T14:35:20.796Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: While the question tests imparfait usage, it does not primarily test temporal markers—\"toujours\" is present but the key cue \"Quand il était enfant\" is a context-setting clause rather than a listed temporal marker (tous les jours, souvent, d'habitude, à cette époque).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374120797-yyj04etr",
+      "timestamp": "2026-05-21T14:35:33.298Z"
+    }
+  ]
+}

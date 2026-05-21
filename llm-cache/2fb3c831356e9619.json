@@ -1,0 +1,40 @@
+{
+  "cacheKey": "2fb3c831356e9619",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-17-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-17 - Les marqueurs temporels de l'imparfait (tous les jours, souvent, d'habitude, à cette époque)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Quand il était enfant, il ___ toujours ses devoirs avant de jouer. »\nChoices:\nA. [CORRECT] faisait\nB. a fait\nC. fera\nD. ferait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779374685690-jkyo3fhk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the general use of imparfait for past habitual actions indicated by \"toujours\" and \"Quand il était enfant,\" but the specific rule listed focuses on explicit temporal markers like \"tous les jours, souvent, d'habitude, à cette époque,\" and \"toujours\" is not among the markers specified in this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374701560-g8wcpi8r",
+      "timestamp": "2026-05-21T14:45:43.360Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using the temporal marker \"toujours\" (always) and the context phrase \"Quand il était enfant\" (when he was a child) to determine that the imperfect tense describes a habitual past action, which is exactly what rule 03-17 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374870331-1wplrrkc",
+      "timestamp": "2026-05-21T14:48:09.335Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests recognition of temporal markers (\"toujours\" combined with \"Quand il était enfant\") that signal habitual past actions requiring the imperfect tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779375028699-vdpcapwm",
+      "timestamp": "2026-05-21T14:50:45.632Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: This question tests the imparfait tense itself (choosing between tenses) rather than specifically testing temporal markers that indicate when to use the imparfait, which is what rule 03-17 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779375166142-r0ib2af3",
+      "timestamp": "2026-05-21T14:53:05.573Z"
+    }
+  ]
+}

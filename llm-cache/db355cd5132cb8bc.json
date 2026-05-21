@@ -1,0 +1,33 @@
+{
+  "cacheKey": "db355cd5132cb8bc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-17-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel expression dans cette phrase est un marqueur temporel de l'imparfait ? « Autrefois, nous allions au marché. »\n\nChoices:\nA. [CORRECT] autrefois\nB. [WRONG] nous allions\nC. [WRONG] au marché\nD. [WRONG] la\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779378005042-mtcrvrjw"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are not temporal markers: B is the verb itself in imparfait, C indicates location (\"au marché\"), and D is an article.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779378005069-4poo01fl",
+      "timestamp": "2026-05-21T15:40:26.499Z"
+    },
+    {
+      "raw": "TRUE||B is the conjugated verb itself, not a temporal marker; C is a prepositional phrase indicating location; D is an article; none of these are temporal markers of the imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779378040766-it0da3r2",
+      "timestamp": "2026-05-21T15:45:16.812Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect - B is the verb in imparfait form, not a temporal marker; C is a prepositional phrase indicating destination; D is a definite article.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779378316813-px325bo1",
+      "timestamp": "2026-05-21T15:45:23.604Z"
+    }
+  ]
+}

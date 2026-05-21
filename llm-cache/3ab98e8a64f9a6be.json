@@ -1,0 +1,40 @@
+{
+  "cacheKey": "3ab98e8a64f9a6be",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-17-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « D'habitude, elle ___ du thé le matin. »\n\nChoices:\nA. [CORRECT] buvait\nB. [WRONG] a bu\nC. [WRONG] boit\nD. [WRONG] boirait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779373568586-apa83yqv"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses that do not fit the context of expressing a habitual past action - B is completed past (passé composé), C is present habitual (présent), and D is conditional.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779373568611-j9qo5btz",
+      "timestamp": "2026-05-21T14:29:21.586Z"
+    },
+    {
+      "raw": "FALSE|C|C (\"boit\") is grammatically correct - \"D'habitude, elle boit du thé le matin\" properly expresses a current habitual action using present tense with \"d'habitude\", which is standard French usage for describing regular present-time habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779373905821-kadrj06q",
+      "timestamp": "2026-05-21T14:32:12.382Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect given the requirement to describe a habitual past action with \"d'habitude.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374062919-nqgbukv8",
+      "timestamp": "2026-05-21T14:34:36.727Z"
+    },
+    {
+      "raw": "FALSE|C|\"boit\" (present tense) is grammatically correct with \"D'habitude\" to express a current habitual action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374087835-tywuqauq",
+      "timestamp": "2026-05-21T14:35:05.817Z"
+    }
+  ]
+}

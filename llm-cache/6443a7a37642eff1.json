@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6443a7a37642eff1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-17-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-17 - Les marqueurs temporels de l'imparfait (tous les jours, souvent, d'habitude, à cette époque)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Le dimanche, ma grand-mère ___ des crêpes pour toute la famille. »\nChoices:\nA. [CORRECT] préparait\nB. a préparé\nC. prépare\nD. préparerait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779373568587-2hpr6mk6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: This question tests the general rule that imparfait is used for habitual past actions, not the specific rule about recognizing temporal markers like \"tous les jours, souvent, d'habitude, à cette époque.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779373635559-9yhc2g15",
+      "timestamp": "2026-05-21T14:27:35.926Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of temporal markers for the imperfect tense, as \"Le dimanche\" (on Sundays) indicates a repeated/habitual past action that requires the imperfect tense \"préparait,\" directly applying the rule concept.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779373810984-l42uvsyk",
+      "timestamp": "2026-05-21T14:30:24.914Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly tests the rule because \"Le dimanche\" functions as a habitual temporal marker (similar to \"tous les jours\" in the rule) that signals a repeated past action requiring the imparfait tense (\"préparait\"), and answering correctly requires recognizing this connection between temporal markers and imparfait usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779373960818-d0p8ushu",
+      "timestamp": "2026-05-21T14:33:03.089Z"
+    }
+  ]
+}

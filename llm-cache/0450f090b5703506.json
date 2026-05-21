@@ -1,0 +1,54 @@
+{
+  "cacheKey": "0450f090b5703506",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-17-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À cette époque, souvent, il ___ des promenades dans la forêt après le déjeuner. »\n\nChoices:\nA. [CORRECT] faisait\nB. [WRONG] a fait\nC. [WRONG] fera\nD. [WRONG] ferait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779374685690-li61f83d"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors - B is passé composé (used for completed actions, not habits), C is futur (wrong time reference), D is conditionnel (implies hypothetical, not actual habitual action).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374768402-u0lk2ubp",
+      "timestamp": "2026-05-21T14:46:22.766Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses inappropriate for describing habitual past actions; B uses passé composé for habitual context, C is future tense, and D is conditional mood, none matching the imparfait required by \"à cette époque\" with \"souvent.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374899500-xe0cjoog",
+      "timestamp": "2026-05-21T14:49:30.043Z"
+    },
+    {
+      "raw": "FALSE|B|B (a fait - passé composé) is inappropriate because \"souvent\" indicates a habitual action in the past, which requires the imparfait; C (fera - future) and D (ferait - conditional) do not match the past tense context established by \"À cette époque\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779375119054-4li95rs7",
+      "timestamp": "2026-05-21T14:52:31.234Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for the context: B uses passé composé for a habitual action, C uses future tense for a past context, and D uses conditional which doesn't fit the description of past habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779375202294-p3hpmvgl",
+      "timestamp": "2026-05-21T14:53:36.016Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect because they violate the tense constraints: \"À cette époque\" and \"souvent\" require the imparfait for habitual past actions, while B is the passé composé (for completed actions), and C/D are future/conditional tenses that contradict the past context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779375240765-y5ud8ru8",
+      "timestamp": "2026-05-21T14:54:43.921Z"
+    },
+    {
+      "raw": "FALSE|D|While 'a fait' (passé composé) and 'fera' (future) are clearly incorrect because they don't match the past habit context, 'ferait' (conditional) could be grammatically correct when used to express habitual past actions in French, as in \"À cette époque, souvent, il ferait des promenades\" meaning \"At that time, often, he would take walks.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779375287830-8rk7s5lr",
+      "timestamp": "2026-05-21T14:55:08.088Z"
+    }
+  ]
+}

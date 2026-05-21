@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d8bbd1bb6efefb08",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-17-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-17 - Les marqueurs temporels de l'imparfait (tous les jours, souvent, d'habitude, à cette époque)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Chaque été, quand nous étions petits, la famille ___ à la campagne. »\nChoices:\nA. [CORRECT] partait\nB. est partie\nC. partira\nD. partirait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779374685690-2fdmrhac"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the relationship between temporal markers (\"Chaque été\", \"quand nous étions petits\") and the imparfait tense, which is exactly what rule 03-17 covers - these markers are direct examples of the temporal expressions that trigger the use of the imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374710951-ibu0pifu",
+      "timestamp": "2026-05-21T14:45:57.808Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The temporal marker \"Chaque été\" (every summer) signals a habitual past action that requires the imperfect tense, directly testing the rule about temporal markers for the imperfect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374885288-34ek7pos",
+      "timestamp": "2026-05-21T14:48:19.030Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The temporal marker \"Chaque été\" indicates a habitual past action, which is exactly the type of marker (along with \"tous les jours\", \"souvent\", \"d'habitude\") that triggers imparfait, so selecting \"partait\" requires recognizing this marker and applying the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779375042958-15hqo2li",
+      "timestamp": "2026-05-21T14:51:04.182Z"
+    }
+  ]
+}

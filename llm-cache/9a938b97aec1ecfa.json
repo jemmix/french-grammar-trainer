@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9a938b97aec1ecfa",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-17-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-17 - Les marqueurs temporels de l'imparfait (tous les jours, souvent, d'habitude, à cette époque)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe à l'imparfait.\nPhrase: Quand elle habitait à Nice, en général, elle ___ du piano pendant des heures.\nCorrect Answer: jouait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779374685694-jbb4ccog"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests imparfait verb conjugation rather than recognition or application of temporal markers, even though temporal markers appear in the sentence context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374851014-x1bolv6x",
+      "timestamp": "2026-05-21T14:47:46.007Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question explicitly instructs the user to conjugate to the imparfait, testing verb conjugation skills rather than the ability to recognize temporal markers like \"en général\" that indicate when imparfait should be used.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779374989191-ge9qt5uu",
+      "timestamp": "2026-05-21T14:49:59.630Z"
+    }
+  ]
+}
