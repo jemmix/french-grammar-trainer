@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e3dd3b099155e9a0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-15-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Ce jour-là, il ___ furieux en découvrant la trahison. »\n\nChoices:\nA. [CORRECT] est devenu\nB. [WRONG] devenait\nC. [WRONG] devient\nD. [WRONG] deviendra\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779362676838-hbo69rbf"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: B (imparfait) suggests a continuing state rather than a completed change, while C (présent) and D (futur) don't match the past context of \"Ce jour-là.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779362808573-8idjmnir",
+      "timestamp": "2026-05-21T11:27:03.154Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context: B uses imparfait which describes ongoing states rather than the one-time completed action of becoming furious; C uses present tense which contradicts the past time marker \"Ce jour-là\"; D uses future tense which also contradicts the past time marker.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779363003303-17y1571l",
+      "timestamp": "2026-05-21T11:32:14.812Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: B is imperfective (imparfait) for a completed past action, C is present tense while the context requires past tense, and D is future tense which contradicts \"Ce jour-là\" indicating a past event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779363315251-1xe141i6",
+      "timestamp": "2026-05-21T11:35:23.964Z"
+    }
+  ]
+}

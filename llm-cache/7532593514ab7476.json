@@ -1,0 +1,47 @@
+{
+  "cacheKey": "7532593514ab7476",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-15-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À l'époque, le village ___ petit et isolé. »\n\nChoices:\nA. [CORRECT] était\nB. [WRONG] a été\nC. [WRONG] est\nD. [WRONG] sera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779362676837-twwyql54"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||The question specifies \"À l'époque\" (at that time), indicating the past, so present (C) and future (D) are incorrect; the imparfait (A) is required for descriptive states in the past, not the passé composé (B).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779362713264-kb7ysgnz",
+      "timestamp": "2026-05-21T11:25:37.080Z"
+    },
+    {
+      "raw": "I need to analyze this question about French verb tenses.\n\nThe question asks to complete \"À l'époque, le village ___ petit et isolé.\" with \"À l'époque\" clearly indicating a past context.\n\n**Analysis of wrong answers:**\n\n- **B (a été - passé composé)**: While this is a past tense, the imparfait (\"était\") is the standard tense for describing a state or condition in the past. The passé composé emphasizes a completed action or change. \"Le village a été petit et isolé à l'époque\" is grammatically possible but stylistically awkward and not idiomatic for this descriptive context. It emphasizes completion rather than description, which clashes with the descriptive intent.\n\n- **C (est - présent)**: Present tense is incompatible with \"À l'époque\" (at that time/in the past). This is clearly incorrect.\n\n- **D (sera - futur)**: Future tense is incompatible with \"À l'époque\" (at that time/in the past). This is clearly incorrect.\n\n**VERDICT:**\n\nFALSE|B|While C and D are clearly wrong due to tense mismatch with the past context \"À l'époque\", B (a été) could be considered grammatically acceptable as it is a past tense, though stylistically the imparfait would be preferred for describing a state in the past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779362915529-dowo9787",
+      "timestamp": "2026-05-21T11:29:01.058Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect given the past context \"À l'époque\": B uses passé composé (for completed actions, not states), C uses present tense, and D uses future tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779363154944-3n2wq96v",
+      "timestamp": "2026-05-21T11:32:53.712Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect because they don't match the past continuous state indicated by \"À l'époque\" - \"a été\" suggests a completed action, \"est\" is present tense, and \"sera\" is future tense, none of which fit the context of describing a state that existed in the past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779363323965-w340vnj1",
+      "timestamp": "2026-05-21T11:35:34.499Z"
+    },
+    {
+      "raw": "FALSE|B|\"a été\" (passé composé) is a valid past tense that correctly matches the temporal marker \"À l'époque\" (at that time), making \"À l'époque, le village a été petit et isolé\" grammatically acceptable, even if imparfait would be more typical for descriptive states.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779363343685-yo3hexv5",
+      "timestamp": "2026-05-21T11:35:52.760Z"
+    }
+  ]
+}

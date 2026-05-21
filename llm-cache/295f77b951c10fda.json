@@ -1,0 +1,33 @@
+{
+  "cacheKey": "295f77b951c10fda",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-15-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-15 - L'imparfait vs le passé composé : état vs changement d'état\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Cette année-là, elle a réussi son concours et ___ professeure. »\nChoices:\nA. [CORRECT] est devenue\nB. devenait\nC. devient\nD. deviendra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779364512933-9rqyqvx9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing between \"devenait\" (imparfait - ongoing state) and \"est devenue\" (passé composé - change of state), which directly tests the rule about state vs. change of state; the other tenses (présent, futur) serve as plausible distractors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779364512987-7qh4qflr",
+      "timestamp": "2026-05-21T11:57:12.876Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between imparfait (ongoing state) and passé composé (completed change of state) - becoming a teacher after passing an exam is a specific change of state that must be expressed with passé composé, not imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779364830779-fk9oavjc",
+      "timestamp": "2026-05-21T12:00:45.985Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting between imparfait (ongoing state) and passé composé (completed change of state), and the correct answer \"est devenue\" properly reflects the state change of becoming a professor after passing an exam.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779364929954-as2pxkcd",
+      "timestamp": "2026-05-21T12:02:37.679Z"
+    }
+  ]
+}

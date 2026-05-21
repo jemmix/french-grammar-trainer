@@ -1,0 +1,33 @@
+{
+  "cacheKey": "263d4f2fb9053869",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-15-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « L'année de ses 30 ans, il ___ chef d'entreprise. »\n\nChoices:\nA. [CORRECT] est devenu\nB. [WRONG] devenait\nC. [WRONG] devient\nD. [WRONG] deviendra\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779362676838-96glu0l0"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect because they use the wrong tense (imparfait, présent, futur) instead of the required passé composé for a completed past action that occurred during the specific year of his 30th birthday.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779362767065-exaulj3b",
+      "timestamp": "2026-05-21T11:26:22.181Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't fit the past timeframe of \"L'année de ses 30 ans\" - present and future are clearly wrong for a past event, and imparfait describes ongoing states rather than the completed action of becoming something.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779362951282-64za0c81",
+      "timestamp": "2026-05-21T11:29:52.241Z"
+    },
+    {
+      "raw": "TRUE||The temporal context \"L'année de ses 30 ans\" establishes a specific past event, making imparfait (ongoing/habitual), présent (current), and futur (future) tenses grammatically incorrect - only the passé composé appropriately conveys a completed action at a specific past time.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779363191485-baa9wxai",
+      "timestamp": "2026-05-21T11:33:43.176Z"
+    }
+  ]
+}

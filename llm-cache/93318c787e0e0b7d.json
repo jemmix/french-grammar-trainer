@@ -1,0 +1,26 @@
+{
+  "cacheKey": "93318c787e0e0b7d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-15-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-15 - L'imparfait vs le passé composé : état vs changement d'état\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe dans le temps qui convient.\nPhrase: Le lendemain de l'accident, il ___ aveugle.\nCorrect Answer: est devenu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779362676841-dctcbej9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the exact distinction the rule teaches - choosing \"est devenu\" (passé composé) to express a change of state (becoming blind) rather than \"était\" (imparfait) to describe a continuing state.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779362869869-zbp36lqv",
+      "timestamp": "2026-05-21T11:28:02.429Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires choosing passé composé to describe a change of state (becoming blind after an accident), which is exactly what the imparfait vs passé composé state vs change-of-state rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779363075340-3ao5am5w",
+      "timestamp": "2026-05-21T11:31:41.164Z"
+    }
+  ]
+}

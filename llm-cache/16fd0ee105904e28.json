@@ -1,0 +1,40 @@
+{
+  "cacheKey": "16fd0ee105904e28",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-15-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-15 - L'imparfait vs le passé composé : état vs changement d'état\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe dans le temps qui convient.\nPhrase: Dès qu'il a rencontré Marie, il ___ amoureux.\nCorrect Answer: est tombé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779364512966-8mospwl5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: This question does not actually test imparfait vs passé composé for state vs change of state - it's a simple fill-in-the-blank with only one grammatically possible correct answer (passé composé for the change of state \"tomber amoureux\"), offering no opportunity for the learner to demonstrate understanding of the distinction between the two tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779364730251-540csohv",
+      "timestamp": "2026-05-21T12:02:18.992Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the distinction between state (imparfait) and change of state (passé composé) by requiring the student to recognize that falling in love is a change of state, necessitating the passé composé \"est tombé\" rather than the imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779365099130-ietu46sh",
+      "timestamp": "2026-05-21T12:05:34.006Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the distinction between imparfait (ongoing state: \"il était amoureux\") and passé composé (change of state: \"il est tombé amoureux\") in the context \"Dès qu'il a rencontré Marie,\" which marks the specific moment of becoming in love rather than describing an existing state.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779365141662-mk7rfrub",
+      "timestamp": "2026-05-21T12:05:59.693Z"
+    },
+    {
+      "raw": "I need to validate whether this question tests the stated rule.\n\nVERDICT: ALIGNED\nREASON: The question tests the distinction between describing a completed change of state (passé composé: \"est tombé\" - fell in love, a sudden event) versus an ongoing state (imparfait: \"était\" - was in love), which is exactly what rule 03-15 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779365159693-996wkqtt",
+      "timestamp": "2026-05-21T12:07:21.159Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "eaecb0bb03807f7d",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "03-15-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: L'imparfait vs le passé composé : état vs changement d'état\nPROMPT: Conjuguez le verbe à l'imparfait ou au passé composé selon le contexte.\nPHRASE: Le lendemain de l'accident, il s'est réveillé et ___ soudainement aveugle.\nCORRECT ANSWER: est devenu\n\nWRONG ANSWERS to evaluate:\n1. devenait\n2. devient\n3. deviendra\n4. devenais\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1779366003564-0n7sa5g8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors that align with the grammar rule being tested: devenait tests the main imparfait vs passé composé distinction (the core of the question), devient reflects common default to present tense, deviendra shows tense confusion about prediction vs completed event, and devenais is a typical person-number conjugation error.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779366201450-710yyg1i",
+      "timestamp": "2026-05-21T12:23:38.993Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: \"devenait\" uses the imperfect when passé composé is needed for a change of state, \"devient\" defaults to present tense, \"deviendra\" incorrectly uses future tense, and \"devenais\" is a person agreement error (using 1st person instead of 3rd person).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779366236068-amjzc2q9",
+      "timestamp": "2026-05-21T12:24:06.228Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"devenait\" (incorrectly using imparfait for a sudden change), \"devenais\" (wrong person agreement), \"devient\" (wrong tense - present instead of past), and \"deviendra\" (incorrectly using future in a past context).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779366252125-yia5i66m",
+      "timestamp": "2026-05-21T12:24:34.117Z"
+    }
+  ]
+}

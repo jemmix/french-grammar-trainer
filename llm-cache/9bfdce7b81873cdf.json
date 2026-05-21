@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9bfdce7b81873cdf",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-15-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-15 - L'imparfait vs le passé composé : état vs changement d'état\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Un jour, il ___ riche du jour au lendemain. »\nChoices:\nA. [CORRECT] est devenu\nB. devenait\nC. devient\nD. deviendra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779362676836-5rf4b9jp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the precise distinction between state (imparfait) vs change of state (passé composé), where \"du jour au lendemain\" signals a sudden completed transformation requiring the passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779362694194-m6ph4lc0",
+      "timestamp": "2026-05-21T11:25:05.252Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the distinction between imparfait (describing an ongoing state like \"devenait\") and passé composé (describing a sudden change of state like \"est devenu\"), which is exactly what the rule \"état vs changement d'état\" covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779362887075-ck1lz6dr",
+      "timestamp": "2026-05-21T11:28:24.728Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between passé composé (change of state - \"est devenu\" for suddenly becoming rich) and imparfait (ongoing state), with \"du jour au lendemain\" clearly indicating a sudden change that requires passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779363101271-w3fpt35n",
+      "timestamp": "2026-05-21T11:33:40.881Z"
+    }
+  ]
+}

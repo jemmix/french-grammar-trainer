@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aaad5f9a4afc2692",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-15-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Après des mois d'efforts, il ___ bilingue. »\n\nChoices:\nA. [CORRECT] est devenu\nB. [WRONG] devenait\nC. [WRONG] devient\nD. [WRONG] deviendra\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779362676838-k4vo8vf1"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||The wrong answers B (imparfait), C (présent), and D (futur) use tenses that are grammatically incompatible with the temporal context \"Après des mois d'efforts\" which requires a completed past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779362785067-jlzrj6g8",
+      "timestamp": "2026-05-21T11:26:47.827Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use inappropriate tenses: \"devenait\" (imparfait) implies an ongoing process rather than a completed result, \"devient\" (présent) contradicts the past time marker \"Après des mois d'efforts,\" and \"deviendra\" (futur) places the outcome in the future rather than as a completed result of past efforts.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779362989489-4t96bflf",
+      "timestamp": "2026-05-21T11:30:03.303Z"
+    },
+    {
+      "raw": "TRUE||B uses the imperfect which indicates an ongoing past action rather than a completed result; C uses present tense which contradicts the past context established by \"Après des mois d'efforts\"; D uses future tense which is incompatible with the temporal marker indicating the action has already occurred.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779363201916-796ha7ep",
+      "timestamp": "2026-05-21T11:33:50.613Z"
+    }
+  ]
+}

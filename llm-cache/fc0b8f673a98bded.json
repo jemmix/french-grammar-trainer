@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fc0b8f673a98bded",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-15-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À 30 ans, il ___ enfin chef d'entreprise. »\n\nChoices:\nA. [CORRECT] est devenu\nB. [WRONG] devenait\nC. [WRONG] devient\nD. [WRONG] deviendra\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779364512943-kg2186u7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||The imparfait \"devenait\" implies ongoing/repeated action which conflicts with the specific point in time \"À 30 ans\" and the completion marker \"enfin\"; present \"devient\" is grammatically incompatible with past time reference; future \"deviendra\" incorrectly places the event in the future despite the past context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779364589468-30695gjm",
+      "timestamp": "2026-05-21T11:59:35.226Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses; B is imperfect (used for ongoing/habitual actions, not a specific completed event), C is present tense (conflicts with the past time reference \"À 30 ans\"), D is future tense (also conflicts with the past time reference).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779364862315-panfyowa",
+      "timestamp": "2026-05-21T12:01:20.245Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use verb tenses that don't match the context of describing a specific past achievement at a specific age (30 years old).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779365057867-tri2ricb",
+      "timestamp": "2026-05-21T12:07:56.978Z"
+    }
+  ]
+}

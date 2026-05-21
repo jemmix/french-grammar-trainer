@@ -1,0 +1,33 @@
+{
+  "cacheKey": "db5e5cefe27eb2f3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-15-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-15 - L'imparfait vs le passé composé : état vs changement d'état\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Après son mariage, elle ___ soudain plus confiante. »\nChoices:\nA. [CORRECT] est devenue\nB. devenait\nC. devient\nD. deviendra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779364512926-tiuqoz8a"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between passé composé (change of state) and imparfait (ongoing state), as the context \"soudain\" and \"Après son mariage\" clearly marks a completed transformation requiring \"est devenue.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779364512974-cftyoqyh",
+      "timestamp": "2026-05-21T12:04:59.129Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between passé composé (change of state indicated by \"soudain\" and \"Après son mariage\") and imparfait (ongoing state), which is precisely the rule's focus.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779365119300-zwjdpw6z",
+      "timestamp": "2026-05-21T12:05:41.660Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the core distinction between imparfait (ongoing state) and passé composé (change of state), where \"soudain\" signals a sudden change requiring \"est devenue\" (passé composé) rather than \"devenait\" (imparfait).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779365146098-ei2lcb2d",
+      "timestamp": "2026-05-21T12:06:09.647Z"
+    }
+  ]
+}

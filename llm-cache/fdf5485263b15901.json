@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fdf5485263b15901",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-15-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-15 - L'imparfait vs le passé composé : état vs changement d'état\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Autrefois, les gens du village ___ toujours très accueillants. »\nChoices:\nA. [CORRECT] étaient\nB. ont été\nC. est\nD. sera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779365707052-tnmitwv0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the distinction between imperfect (describing an ongoing state \"toujours très accueillants\") and passé composé (describing a change of state), which directly corresponds to the rule about état vs changement d'état.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779365707133-4mhgzz57",
+      "timestamp": "2026-05-21T12:16:04.413Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question correctly tests the distinction between imparfait (used for ongoing states in the past, like \"les gens étaient accueillants\") and passé composé (used for completed actions or changes of state), requiring the learner to recognize that \"toujours très accueillants\" describes a continuous state rather than a specific event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779365764415-e41y7mpe",
+      "timestamp": "2026-05-21T12:16:48.656Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the imparfait vs passé composé distinction correctly by requiring the learner to recognize that describing a habitual state in the past (\"toujours très accueillants\") with \"autrefois\" calls for the imparfait \"étaient\" rather than the change-of-state passé composé \"ont été.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779365808661-j80g1l44",
+      "timestamp": "2026-05-21T12:17:04.025Z"
+    }
+  ]
+}

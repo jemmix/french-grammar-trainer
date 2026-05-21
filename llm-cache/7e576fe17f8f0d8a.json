@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7e576fe17f8f0d8a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-15-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-15 - L'imparfait vs le passé composé : état vs changement d'état\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « En 2020, il ___ père pour la première fois. »\nChoices:\nA. [CORRECT] est devenu\nB. devenait\nC. devient\nD. deviendra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779362676837-1t5bp35i"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence requires identifying that \"pour la première fois\" indicates a completed change of state, which correctly calls for the passé composé (\"est devenu\") rather than the imparfait (\"devenait\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779362707829-ef7xpen0",
+      "timestamp": "2026-05-21T11:25:18.621Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the distinction between completed change of state (passé composé \"est devenu\") vs. ongoing state (imparfait \"devenait\"), which is exactly what the rule covers, and \"pour la première fois\" clearly indicates a change of state rather than a continuing condition.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779362905929-uitqiic2",
+      "timestamp": "2026-05-21T11:28:39.700Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the distinction between passé composé (change of state - \"est devenu\" marks the specific moment of becoming a father) and imparfait (ongoing state - \"devenait\" would incorrectly suggest a continuous process), which is exactly what the rule targets.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779363132176-ekturz2a",
+      "timestamp": "2026-05-21T11:32:25.756Z"
+    }
+  ]
+}

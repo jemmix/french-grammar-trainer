@@ -1,0 +1,26 @@
+{
+  "cacheKey": "f68dad4d9d3f6f10",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "03-15-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: L'imparfait vs le passé composé : état vs changement d'état\nPROMPT: Conjuguez le verbe à l'imparfait ou au passé composé selon le contexte.\nPHRASE: Pendant toute notre enfance, nous ___ inséparables.\nCORRECT ANSWER: étions\n\nWRONG ANSWERS to evaluate:\n1. avons été\n2. sommes\n3. serons\n4. étiez\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1779366003553-2jf154f1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: While \"avons été\" (wrong tense choice), \"sommes\" (present instead of past), and \"étiez\" (wrong person conjugation) are common learner errors, \"serons\" (future tense) is implausible because the context \"Pendant toute notre enfance\" clearly indicates a past timeframe, making a future tense choice highly unlikely.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779366177035-hz5tszy6",
+      "timestamp": "2026-05-21T12:24:56.655Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\n\nREASON: While \"avons été\", \"sommes\", and \"étiez\" are plausible mistakes (confusing passé composé vs imparfait, using present tense instead of past, or wrong person conjugation), \"serons\" (future tense) is highly implausible because \"enfance\" clearly indicates the past, making this too obviously wrong for any learner to reasonably select.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779366296655-h4nj10fx",
+      "timestamp": "2026-05-21T12:25:11.038Z"
+    }
+  ]
+}

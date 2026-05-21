@@ -1,0 +1,33 @@
+{
+  "cacheKey": "426e9c5600fc7e6e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-15-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-15 - L'imparfait vs le passé composé : état vs changement d'état\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe à l'imparfait ou au passé composé selon le contexte.\nPhrase: Pendant notre enfance, nous ___ très complices.\nCorrect Answer: étions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779365707096-kld7pt4c"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the imparfait (\"étions\") to describe an ongoing state (being complices) during a period of time, which directly tests the distinction between expressing a state (imparfait) versus a change of state (passé composé).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779365707160-cxoafand",
+      "timestamp": "2026-05-21T12:16:07.254Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"Pendant notre enfance\" indicates a continuous period describing a state (being complices), which correctly calls for the imparfait rather than a completed action or state change that would use passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779365767255-3264xg2u",
+      "timestamp": "2026-05-21T12:16:46.802Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires choosing between imparfait and passé composé based on the distinction that \"pendant notre enfance\" indicates an ongoing state over a period of time, which correctly triggers imparfait (étions) rather than a change of state that would require passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779365806804-9gnpad49",
+      "timestamp": "2026-05-21T12:16:59.700Z"
+    }
+  ]
+}

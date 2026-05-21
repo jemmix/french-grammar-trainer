@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3afb8c6b143fddad",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-15-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-15 - L'imparfait vs le passé composé : état vs changement d'état\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Quand elle habitait à Paris, elle ___ très heureuse. »\nChoices:\nA. [CORRECT] était\nB. a été\nC. est\nD. sera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779362676837-t3p30cxf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between imparfait (state) and passé composé (change of state) - the context \"when she lived in Paris\" indicates an ongoing condition during that period, requiring \"était\" (imparfait) to describe her state of being happy throughout that time, not a one-time event which would use \"a été\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779362751496-ppfbmcxv",
+      "timestamp": "2026-05-21T11:26:25.067Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between imperfect (used for ongoing states) and passé composé (used for changes of state), as the sentence requires describing a continuous state of being during a past period.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779362954813-rt61vrcy",
+      "timestamp": "2026-05-21T11:29:33.363Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between imparfait (describing an ongoing state \"était\") and passé composé (describing a change of state \"a été\"), where the context of \"habitait\" requires the state interpretation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779363180500-ii6ir109",
+      "timestamp": "2026-05-21T11:33:11.484Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "33fcf29bd94febf9",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "03-15-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: L'imparfait vs le passé composé : état vs changement d'état\nPROMPT: Conjuguez le verbe dans le temps qui convient.\nPHRASE: À cette époque, ils ___ inséparables.\nCORRECT ANSWER: étaient\n\nWRONG ANSWERS to evaluate:\n1. ont été\n2. sont\n3. seront\n4. étiez\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1779362676840-8ookhlye"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers are real conjugations of être representing common learner errors: tense confusion (ont être), defaulting to present tense (sont), person/number agreement error (étiez), and future tense overgeneralization (seront).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779363626846-jhjnp0dn",
+      "timestamp": "2026-05-21T11:41:15.727Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors with the verb \"être\": confusion between imparfait and passé composé (ont été), using present tense instead of past (sont), misinterpreting time reference (seront), and subject-verb agreement error (étiez).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779363801895-te9gmiy3",
+      "timestamp": "2026-05-21T11:43:38.906Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent realistic mistakes learners might make - mixing up imparfait/passé composé for states, confusing past with present/future, and using wrong person agreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779364037888-rimr2usm",
+      "timestamp": "2026-05-21T11:48:18.573Z"
+    }
+  ]
+}

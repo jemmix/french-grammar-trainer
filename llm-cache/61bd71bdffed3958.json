@@ -1,0 +1,33 @@
+{
+  "cacheKey": "61bd71bdffed3958",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-15-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Du jour au lendemain, la ville ___ tristement célèbre. »\n\nChoices:\nA. [CORRECT] est devenue\nB. [WRONG] devenait\nC. [WRONG] devient\nD. [WRONG] deviendra\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779362676839-bi26ihsx"
+  },
+  "responses": [
+    {
+      "raw": "I need to validate whether the wrong answers for this French grammar question are indeed incorrect.\n\nLet me analyze the question:\n- \"Du jour au lendemain, la ville ___ tristement célèbre.\" means \"Overnight, the city ___ sadly famous.\"\n- The expression \"Du jour au lendemain\" indicates a sudden, completed change in the past.\n\nAnalyzing each wrong answer:\n- **B (devenait)**: Imparfait describes ongoing/habitual past actions. A sudden, one-time transformation (\"overnight\") requires a completed past tense, not an ongoing state. Incorrect.\n\n- **C (devient)**: Présent tense indicates a present action, but the temporal expression \"Du jour au lendemain\" refers to a past event. Incorrect.\n\n- **D (deviendra)**: Futur simple indicates a future action. The city becoming \"tristement célèbre\" is presented as an accomplished fact, not a future possibility. Incorrect.\n\nTRUE||All wrong answers use inappropriate tenses that don't match the sudden, completed past action required by the temporal context of \"Du jour au lendemain.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779362824317-mqoeisvt",
+      "timestamp": "2026-05-21T11:27:59.897Z"
+    },
+    {
+      "raw": "TRUE||The imparfait \"devenait\" implies an ongoing process which contradicts the sudden transformation indicated by \"Du jour au lendemain\", the present \"devient\" and future \"deviendra\" do not match the past temporal context of the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779363073714-i1h9qvll",
+      "timestamp": "2026-05-21T11:31:36.139Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect within the context: B uses imparfait which doesn't fit the sudden change implied by \"du jour au lendemain,\" C uses présent which refers to current time not past, and D uses futur simple which refers to future time not past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779363296157-jpk1tou2",
+      "timestamp": "2026-05-21T11:35:06.333Z"
+    }
+  ]
+}
