@@ -1,0 +1,40 @@
+{
+  "cacheKey": "361297d5291009b3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-20-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si on ___ une pizza ce soir ? »\n\nChoices:\nA. [CORRECT] commandait\nB. [WRONG] commande\nC. [WRONG] commanderait\nD. [WRONG] commander\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779390842151-1miwzmjo"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B|\"commande\" is grammatically acceptable in this informal \"Si on...\" suggestion construction (\"Si on commande...?\" = \"Shall we order...?\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390842217-qqm676vf",
+      "timestamp": "2026-05-21T19:25:12.610Z"
+    },
+    {
+      "raw": "TRUE||All three wrong answers are grammatically incorrect: B uses present tense which introduces a real condition rather than a suggestion, C incorrectly places conditional after \"si\" (conditional never follows \"si\"), and D uses infinitive which cannot follow the subject pronoun \"on\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391517175-kiic9rbg",
+      "timestamp": "2026-05-21T19:25:54.302Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb forms for a \"si\" clause which requires the imperfect tense in French conditional structures.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391554303-tyed8gx7",
+      "timestamp": "2026-05-21T19:26:11.570Z"
+    },
+    {
+      "raw": "FALSE|B,C|B is acceptable in colloquial/spoken French where present indicative commonly replaces imperfect in \"si on\" suggestions; C uses the conditional form which can express possibility/suggestion in informal contexts.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391571571-rghx65e6",
+      "timestamp": "2026-05-21T19:26:49.705Z"
+    }
+  ]
+}

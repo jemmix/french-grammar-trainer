@@ -1,0 +1,40 @@
+{
+  "cacheKey": "02b1d51119fa944c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-20-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si on ___ au musée demain ? »\n\nChoices:\nA. [CORRECT] visitait\nB. [WRONG] visite\nC. [WRONG] visiterait\nD. [WRONG] visiter\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779390842152-vk5u5f5r"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: \"visite\" doesn't follow the standard grammatical rule for a \"Si\" clause expressing a hypothesis, \"visiterait\" incorrectly uses the conditional in a \"Si\" clause (which requires present or imperfect), and \"visiter\" uses the infinitive instead of a conjugated verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390944307-2uybll8g",
+      "timestamp": "2026-05-21T19:18:22.764Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for the si + imparfait construction being tested: B uses present tense instead of imparfait for hypothetical, C incorrectly uses conditional in a si-clause (only allowed in the main clause), and D is an unconjugated infinitive form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391234457-e0ehw98o",
+      "timestamp": "2026-05-21T19:21:07.322Z"
+    },
+    {
+      "raw": "FALSE|B|B (visite) is grammatically correct in the suggestion structure \"Si on...?\" meaning \"Shall we visit...?\", which can use present tense for a direct suggestion, though the imperfect (visitait) is more common for a softer feel.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391369780-9aw1c880",
+      "timestamp": "2026-05-21T19:24:14.190Z"
+    },
+    {
+      "raw": "FALSE|B|B (visite) uses the present tense, which is grammatically correct in French for making suggestions with \"si on\" about future activities (e.g., \"Si on va au cinéma demain?\" — \"What if we go to the cinema tomorrow?\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391483810-wuu7sn0h",
+      "timestamp": "2026-05-21T19:25:39.593Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "29b9fc8a9e875292",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-19-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Il pleut. » → Elle a expliqué qu'il ___ .\n\nChoices:\nA. [CORRECT] pleuvait\nB. [WRONG] pleut\nC. [WRONG] pleuvra\nD. [WRONG] a plu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779390176426-dmruq8mu"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B violates the sequence of tenses rule for reported speech (présent should become imparfait when reporting verb is in the past), C uses the future tense which doesn't fit the context of reporting a current statement, and D changes the aspect from ongoing rain (pleut) to completed rain (a plu).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390216107-2kwk2slh",
+      "timestamp": "2026-05-21T19:04:10.212Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the sequence of tenses rule for reported speech explanations: \"pleut\" incorrectly preserves present tense, \"pleuvra\" incorrectly shifts to future tense, and \"a plu\" incorrectly shifts to past tense when transforming \"Il pleut\" to indirect speech with \"Elle a expliqué qu'il ___\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390430106-43yc7qm8",
+      "timestamp": "2026-05-21T19:08:13.900Z"
+    },
+    {
+      "raw": "TRUE||The sequence of tenses in French requires the imparfait in the subordinate clause after \"a expliqué\" (passé composé) when the original statement was in présent. \"pleut\" breaks the required tense sequence, \"pleuvra\" incorrectly shifts to future, and \"a plu\" incorrectly changes the meaning from ongoing rain to completed rain.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390630763-p23ofnl7",
+      "timestamp": "2026-05-21T19:10:47.713Z"
+    }
+  ]
+}

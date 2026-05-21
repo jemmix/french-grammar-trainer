@@ -1,0 +1,40 @@
+{
+  "cacheKey": "0775f373ae457023",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "03-20-003",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: L'imparfait de suggestion (si on allait au cinéma ?)\n\nQUESTION:\nPrompt: Complétez : « Si nous ___ en vacances le mois prochain ? »\nChoices:\nA. partions\nB. partons\nC. partirions\nD. partir\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1779390842151-k0flbylu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt \"Complétez\" lacks the necessary context to indicate this is testing the imparfait de suggestion pattern, leaving ambiguity about whether to use présent, imparfait, or conditionnel without relying on lesson material context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390842211-1bzq2hqj",
+      "timestamp": "2026-05-21T19:16:16.528Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly asks to complete the sentence with the appropriate verb form for a suggestion, and the rule explicitly states we're testing the imperfect tense for suggestions (l'imparfait de suggestion), making it unambiguous that \"partions\" is the correct answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391157199-3kboipcz",
+      "timestamp": "2026-05-21T19:19:30.194Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly asks to complete a sentence in a suggestion context (indicated by \"Si nous...?\" construction), and for someone learning the imperfect suggestion rule, the task of selecting the appropriate verb form is well-defined with a single correct answer (partions).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391296135-8cqg8nvj",
+      "timestamp": "2026-05-21T19:21:52.201Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt \"Si nous ___ en vacances le mois prochain ?\" without additional context doesn't clearly indicate it's testing the suggestion form (imparfait de suggestion) rather than a conditional construction, which could lead learners to incorrectly choose \"partirions\" instead of the correct \"partions.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391404748-r9jp9fsu",
+      "timestamp": "2026-05-21T19:23:37.341Z"
+    }
+  ]
+}

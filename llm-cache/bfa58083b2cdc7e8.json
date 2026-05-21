@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bfa58083b2cdc7e8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-20-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si nous ___ en vacances le mois prochain ? »\n\nChoices:\nA. [CORRECT] partions\nB. [WRONG] partons\nC. [WRONG] partirions\nD. [WRONG] partir\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779390842151-xqx4txlq"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses present indicative which is non-standard in a suggestion construction requiring imperfect; C violates the rule that conditional is never used after \"si\"; D incorrectly uses infinitive with a subject pronoun.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390842193-ql3ntts2",
+      "timestamp": "2026-05-21T19:19:15.469Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses present indicative instead of the imperfect subjunctive required in a conditional \"si\" clause, C incorrectly places the conditional form in the \"si\" clause (conditional only appears in the main clause), and D is the infinitive rather than a conjugated verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391273612-euooavjt",
+      "timestamp": "2026-05-21T19:21:37.442Z"
+    },
+    {
+      "raw": "TRUE||B uses present tense instead of imperfect for hypothetical context; C incorrectly places conditional directly after 'si'; D uses infinitive instead of conjugated verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391401874-eg8lgqvt",
+      "timestamp": "2026-05-21T19:24:52.093Z"
+    }
+  ]
+}

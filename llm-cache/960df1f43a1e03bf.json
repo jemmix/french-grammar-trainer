@@ -1,0 +1,33 @@
+{
+  "cacheKey": "960df1f43a1e03bf",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-19-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-19 - L'imparfait dans le discours indirect au passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: « Je me sens mieux. » → Elle a confirmé qu'elle ___ mieux.\nChoices:\nA. [CORRECT] se sentait\nB. me sens\nC. me sentirai\nD. me suis senti\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779390176427-5iowd3qk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: This question correctly tests the transformation from direct speech (present tense \"je me sens\") to indirect speech in the past (imperfect \"se sentait\"), which requires knowledge of backshifting tenses in indirect discourse as specified in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390269616-oldoy8fx",
+      "timestamp": "2026-05-21T19:04:45.892Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the transformation from present tense in direct speech (\"Je me sens\") to imparfait in indirect speech in the past (\"Elle a confirmé qu'elle se sentait\"), which is exactly what the rule \"L'imparfait dans le discours indirect au passé\" covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390466977-qwp2tsnr",
+      "timestamp": "2026-05-21T19:08:13.189Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the required tense shift from present (\"se sens\") to imperfect (\"se sentait\") when converting direct to indirect speech with a reporting verb in the past (\"a confirmé\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390628816-uh5b4exl",
+      "timestamp": "2026-05-21T19:11:05.965Z"
+    }
+  ]
+}

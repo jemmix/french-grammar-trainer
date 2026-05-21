@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a7c03002a2f482b7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-19-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-19 - L'imparfait dans le discours indirect au passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: « Il pleut. » → Elle a expliqué qu'il ___ .\nChoices:\nA. [CORRECT] pleuvait\nB. pleut\nC. pleuvra\nD. a plu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779390176426-fehtysc4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the backshift from present tense to imparfait when converting direct speech to indirect speech with a past reporting verb (\"a expliqué\"), which is the core concept of the rule \"L'imparfait dans le discours indirect au passé.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390216327-y5rr2rxn",
+      "timestamp": "2026-05-21T19:03:54.053Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the transformation of direct speech (present tense \"pleut\") to indirect speech with a past reporting verb (\"a expliqué\"), requiring knowledge that the present becomes imperfect (\"pleuvait\") in discours indirect au passé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390415932-35sh7q5p",
+      "timestamp": "2026-05-21T19:07:10.105Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowledge that when using a reporting verb in the past (a expliqué), a present tense statement in direct speech (pleut) must be backshifted to the imperfect (pleuvait) in indirect speech.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390597960-5i1010jy",
+      "timestamp": "2026-05-21T19:10:10.807Z"
+    }
+  ]
+}

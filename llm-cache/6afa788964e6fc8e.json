@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6afa788964e6fc8e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-20-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-20 - L'imparfait de suggestion (si on allait au cinéma ?)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Si nous ___ à la plage demain ? »\nChoices:\nA. [CORRECT] allions\nB. allons\nC. irions\nD. aller\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779390842152-e7rq3lqy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the use of the imperfect tense (imparfait) for making suggestions, requiring the student to identify that \"allions\" is the correct imperfect form of \"aller\" for the \"nous\" subject in a suggestion construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390884068-22neiunf",
+      "timestamp": "2026-05-21T19:14:57.731Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the imparfait de suggestion construction using \"Si nous [imparfait]...\" to make a proposal, which requires recognizing \"allions\" as the appropriate form for a suggestion structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391112883-cnph9tqo",
+      "timestamp": "2026-05-21T19:19:00.432Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the use of the imperfect tense to form a suggestion with \"Si nous...\" (a direct variation of \"Si on...\" mentioned in the rule title), and only knowing this grammar rule allows the student to select \"allions\" over the present \"allons\", conditional \"irions\", or infinitive \"aller\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391269931-5x7bvnmq",
+      "timestamp": "2026-05-21T19:21:22.177Z"
+    }
+  ]
+}

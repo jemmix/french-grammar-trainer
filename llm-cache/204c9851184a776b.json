@@ -1,0 +1,40 @@
+{
+  "cacheKey": "204c9851184a776b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-20-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si on ___ au restaurant italien ce soir ? »\n\nChoices:\nA. [CORRECT] mangeait\nB. [WRONG] mange\nC. [WRONG] mangerait\nD. [WRONG] manger\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779390842152-zk1ot5h6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in the required \"Si on + imparfait\" suggestion structure: \"Si on mange\" (B) uses present tense instead of imparfait for suggestions, \"Si on mangerait\" (C) incorrectly combines si with conditional, and \"Si on manger\" (D) improperly uses infinitive after the subject.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390894562-2ww0pxw1",
+      "timestamp": "2026-05-21T19:15:30.501Z"
+    },
+    {
+      "raw": "FALSE|B|In this context \"Si on mange\" is a grammatically correct construction used to make a suggestion (\"What if we eat...?\"), even though the expected answer uses the imperfect tense to convey a more tentative conditional nuance.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391120145-soznwz45",
+      "timestamp": "2026-05-21T19:19:26.564Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb forms for the \"si on...\" proposal construction, which requires the imperfect tense, not the present, conditional, or infinitive.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391294419-hfn1jy2z",
+      "timestamp": "2026-05-21T19:23:05.287Z"
+    },
+    {
+      "raw": "FALSE|B|The phrase \"Si on mange...\" is a common spoken French construction used to make suggestions (\"What if we ate...?\"), so B is actually correct in informal contexts.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391445249-o411ut2o",
+      "timestamp": "2026-05-21T19:24:33.718Z"
+    }
+  ]
+}

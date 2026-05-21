@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d7586ff5e62fccb1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-20-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si nous ___ à la plage demain ? »\n\nChoices:\nA. [CORRECT] allions\nB. [WRONG] allons\nC. [WRONG] irions\nD. [WRONG] aller\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779390842152-u091h20g"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the present indicative instead of the required imperfect subjunctive for the hypothetical/suggestion structure, C incorrectly uses conditional in the si-clause (only imperfect is valid), and D incorrectly uses infinitive after the subject \"nous.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390880612-jczl1egl",
+      "timestamp": "2026-05-21T19:25:31.539Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors in the context of this conditional construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391533768-z7likkwn",
+      "timestamp": "2026-05-21T19:27:16.505Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for a \"Si\" clause about the future: \"allons\" uses present indicative instead of required imperfect, \"irions\" incorrectly places conditional in the \"Si\" clause (it belongs in the main clause), and \"aller\" is infinitive which cannot serve as the conjugated verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391636506-a1b0bfa5",
+      "timestamp": "2026-05-21T19:27:29.143Z"
+    }
+  ]
+}

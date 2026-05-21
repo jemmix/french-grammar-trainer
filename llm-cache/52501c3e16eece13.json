@@ -1,0 +1,33 @@
+{
+  "cacheKey": "52501c3e16eece13",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-19-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Je pars demain. » → Elle a dit qu'elle ___ le lendemain.\n\nChoices:\nA. [CORRECT] partait\nB. [WRONG] pars\nC. [WRONG] partirai\nD. [WRONG] est partie\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779390176427-mx4r8fva"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers (B, C, D) are grammatically incorrect in indirect speech with a past reporting verb: B uses present tense instead of required imperfect, C uses future simple instead of the proper backshifted form, and D incorrectly uses passé composé which doesn't fit the indirect speech context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390244962-6lbey2rc",
+      "timestamp": "2026-05-21T19:06:18.314Z"
+    },
+    {
+      "raw": "TRUE|B,C,D|B uses present tense instead of required imperfect and wrong conjugation for \"elle\"; C uses future tense instead of required imperfect and is first person instead of third person; D uses passé composé instead of required imperfect for reported speech.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390572147-6t6olc0e",
+      "timestamp": "2026-05-21T19:09:46.706Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses or persons for reported speech after a past reporting verb; B keeps present instead of backshifting to imperfect, C uses future instead of conditional with wrong person, and D uses passé composé instead of imperfect for future-in-the-past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390698033-i8szbc79",
+      "timestamp": "2026-05-21T19:11:49.200Z"
+    }
+  ]
+}

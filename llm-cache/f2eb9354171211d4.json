@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f2eb9354171211d4",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-20-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Laquelle de ces phrases est une suggestion avec l'imparfait ?\n\nChoices:\nA. [CORRECT] Si on restait ici ?\nB. [WRONG] Si on resterait ici, c'est bien.\nC. [WRONG] On reste ici ?\nD. [WRONG] On resterait ici.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779390842152-bn8vw1mz"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers either use present tense (C), conditional mood (B, D), or have incorrect grammatical structure (B) and thus do not satisfy the requirement of being a suggestion with the imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779390932301-fpuxebh1",
+      "timestamp": "2026-05-21T19:15:44.306Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the imparfait as required: B and D use the conditional, C uses the present tense; additionally B contains the grammatically incorrect structure \"Si on resterait.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391128071-0wqv1hmp",
+      "timestamp": "2026-05-21T19:19:23.493Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers do not use the imparfait as required by the question: B uses the conditional \"resterait\" with incorrect structure, C uses the present \"reste\", and D uses the conditional \"resterait\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779391282178-an9g608y",
+      "timestamp": "2026-05-21T19:22:04.730Z"
+    }
+  ]
+}
