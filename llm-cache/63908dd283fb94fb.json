@@ -1,0 +1,33 @@
+{
+  "cacheKey": "63908dd283fb94fb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-18-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il ___ de la fièvre depuis trois jours quand sa mère a décidé de l'emmener à l'hôpital. »\n\nChoices:\nA. [CORRECT] avait\nB. [WRONG] a eu\nC. [WRONG] a\nD. [WRONG] aurait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779384326981-61lijhg6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses passé composé which doesn't work with \"depuis\" for an ongoing state in the past, C incorrectly mixes present tense with a past narrative, and D uses conditionnel which expresses hypothetical situations not appropriate for this factual past context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779384358012-iyvqdn60",
+      "timestamp": "2026-05-21T17:26:17.030Z"
+    },
+    {
+      "raw": "TRUE||The wrong answers use incorrect tenses: \"a eu\" indicates a completed action rather than ongoing state, \"a\" is present tense incompatible with past context, and \"aurait\" introduces hypothetical meaning not present in the factual narrative.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779384400355-4wzplc6f",
+      "timestamp": "2026-05-21T17:27:04.147Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for describing an ongoing state in the past when another action occurred. The imparfait \"avait\" is required here because it indicates a continuing state (having fever) that was happening when another past action occurred (mother deciding to take him to hospital). \"a eu\" (passé composé) describes a completed action, \"a\" is present tense which conflicts with the past context, and \"aurait\" (conditional) expresses hypothetical situations rather than facts.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779384462148-sc8vgr9f",
+      "timestamp": "2026-05-21T17:28:17.422Z"
+    }
+  ]
+}

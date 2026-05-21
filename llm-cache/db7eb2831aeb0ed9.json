@@ -1,0 +1,33 @@
+{
+  "cacheKey": "db7eb2831aeb0ed9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-18-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle ___ dans ce magasin depuis deux ans quand elle a été promue. »\n\nChoices:\nA. [CORRECT] travaillait\nB. [WRONG] a travaillé\nC. [WRONG] travaille\nD. [WRONG] avait travaillé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779381753601-gqmsb5k5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for the specified context: B uses passé composé which doesn't convey the ongoing nature required by \"depuis\" with past interruption, C uses present tense incompatible with the past temporal clause, and D uses plus-que-parfait which indicates a completed action rather than one in progress.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779381904440-4yohbtma",
+      "timestamp": "2026-05-21T16:46:12.019Z"
+    },
+    {
+      "raw": "FALSE||B,C,D|All wrong answers (B, C, D) are grammatically correct in different contexts, but only A fits the specific past progressive meaning of this sentence where she had been working continuously for two years when the promotion occurred.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382184786-htwusol4",
+      "timestamp": "2026-05-21T16:50:03.151Z"
+    },
+    {
+      "raw": "FALSE||D (avait travaillé) uses the plus-que-parfait which expresses an action completed before another past action, but \"depuis deux ans\" requires an ongoing action at the moment of promotion, making the imparfait the only correct choice; B and C are incorrect because passé composé expresses a completed action and présent doesn't match the past context of the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382390855-3j3ov9mu",
+      "timestamp": "2026-05-21T16:53:51.470Z"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "cacheKey": "d5eaae90671f6b15",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-18-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle ___ depuis une heure quand il est arrivé. »\n\nChoices:\nA. [CORRECT] attendait\nB. [WRONG] a attendu\nC. [WRONG] attend\nD. [WRONG] attendis\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779381753599-32wppfq2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors or use inappropriate tenses for the context of an ongoing action in the past when interrupted by another event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779381753608-hru9eq4l",
+      "timestamp": "2026-05-21T16:44:13.405Z"
+    },
+    {
+      "raw": "FALSE|B|The passé composé \"a attendu\" with \"depuis\" can indicate an action that started in the past and has relevance to the present, and in narrative contexts, it could grammatically complete this sentence structure even if less idiomatic than imparfait for describing ongoing past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382032299-p59pv815",
+      "timestamp": "2026-05-21T16:47:44.004Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses the passé composé which expresses a completed action rather than an ongoing one interrupted by arrival, C uses present tense which doesn't match the past context, and D is the wrong person (first person) and uses passé simple which is inappropriate for ongoing action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382286479-a95cq5g7",
+      "timestamp": "2026-05-21T16:52:01.715Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382460801-l18p83ga",
+      "timestamp": "2026-05-21T16:54:40.723Z"
+    },
+    {
+      "raw": "FALSE|B|The passé composé \"a attendu\" is actually acceptable in this context as it can indicate the duration up to a point in the past (elle a attendu depuis une heure quand il est arrivé), which is a valid alternative construction in French to express the same temporal relationship.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382515228-z6j6x6s8",
+      "timestamp": "2026-05-21T16:55:31.107Z"
+    }
+  ]
+}

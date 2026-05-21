@@ -1,0 +1,40 @@
+{
+  "cacheKey": "e41764b5868de3fb",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "03-18-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: L'imparfait avec depuis (il pleuvait depuis trois jours)\n\nQUESTION:\nPrompt: Conjuguez le verbe au temps approprié pour compléter cette phrase avec « depuis ».\nPhrase: J'___ cette langue depuis trois ans quand j'ai décidé de l'abandonner.\nHint: apprendre\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1779381753603-mursx43b"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The context \"depuis trois ans quand j'ai décidé\" creates a clear grammatical situation where an ongoing action in the past was interrupted, making imparfait the only appropriate tense despite not being explicitly named.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779381972031-vvj7k9r6",
+      "timestamp": "2026-05-21T16:46:26.017Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly instructs to conjugate the verb in the appropriate tense for use with \"depuis,\" and the rule and sentence structure make it clear that the imperfect tense is expected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382209496-gim9bcqn",
+      "timestamp": "2026-05-21T16:50:26.434Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The phrase \"pour compléter cette phrase avec « depuis »\" is confusing because it suggests adding \"depuis\" when it's already present in the sentence - the preposition \"avec\" doesn't clearly indicate whether it refers to a sentence containing \"depuis\" or adding \"depuis\" as part of the completion.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382428538-8df4c7s0",
+      "timestamp": "2026-05-21T16:54:11.656Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"Conjuguez le verbe au temps approprié\" which asks students to determine which tense is appropriate rather than explicitly stating they should use imparfait, and while the context clues (depuis + past interruption point to imparfait), the phrasing leaves room for interpretation as to what exactly is being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382500912-pnaqc7im",
+      "timestamp": "2026-05-21T16:55:16.020Z"
+    }
+  ]
+}

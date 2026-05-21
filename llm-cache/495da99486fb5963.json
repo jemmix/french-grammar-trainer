@@ -1,0 +1,33 @@
+{
+  "cacheKey": "495da99486fb5963",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "03-18-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: L'imparfait avec depuis (il pleuvait depuis trois jours)\nPROMPT: Conjuguez le verbe à l'imparfait pour exprimer une action durative avec « depuis » dans un contexte passé.\nPHRASE: Il ___ à cet endroit depuis très longtemps quand nous l'avons découvert.\nCORRECT ANSWER: vivait\n\nWRONG ANSWERS to evaluate:\n1. a vécu\n2. vivra\n3. vit\n4. avait vécu\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1779383526865-5arbudke"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent legitimate tense confusions that learners commonly make when using \"depuis\" - using passé composé (a vécu) instead of imparfait is the most frequent error, while present tense (vit) often results from English present perfect interference, and both future (vivra) and plus-que-parfait (avait vécu) reflect understandable confusion about temporal sequencing.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779383951891-jy9qipg0",
+      "timestamp": "2026-05-21T17:20:29.202Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent plausible learner mistakes: a vécu (confusing with passé composé), vivra (tense confusion), vit (applying the \"depuis + present\" pattern incorrectly), and avait vécu (over-analyzing the temporal relationship).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779384053461-fpv69ja0",
+      "timestamp": "2026-05-21T17:21:04.253Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common tense confusions learners make: \"a vécu\" (passé composé confusion, the most common error since it's learners' default past tense), \"vit\" (present tense overgeneralization from the common present + depuis pattern), \"avait vécu\" (pluperfect confusion when expressing anteriority), and \"vivra\" (future tense confusion, less likely but still represents a legitimate grammatical error).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779384089965-jt8nfuyl",
+      "timestamp": "2026-05-21T17:21:46.700Z"
+    }
+  ]
+}

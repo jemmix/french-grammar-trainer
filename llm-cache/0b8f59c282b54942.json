@@ -1,0 +1,40 @@
+{
+  "cacheKey": "0b8f59c282b54942",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-18-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Nous ___ cette langue depuis deux ans quand nous avons commencé à voyager. »\n\nChoices:\nA. [CORRECT] étudiions\nB. [WRONG] avons étudié\nC. [WRONG] étudions\nD. [WRONG] avions étudié\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779381753600-d64d9kdg"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use verb tenses that do not correctly express an ongoing action (depuis deux ans) that was happening when another past event occurred.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779381836535-ysgmdeq3",
+      "timestamp": "2026-05-21T16:44:35.069Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers create incorrect grammar for this specific context: B uses passé composé which doesn't work with \"depuis\" in past narratives, C creates a tense mismatch with the passé composé subordinate clause, and D uses plus-que-parfait which expresses completion rather than ongoing duration required by \"depuis.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382053892-npkdjifa",
+      "timestamp": "2026-05-21T16:48:15.507Z"
+    },
+    {
+      "raw": "FALSE|B,D|B uses the passé composé which doesn't express the anteriority required before \"quand nous avons commencé\"; D uses the plus-que-parfait \"avions étudié\" which is the correct tense to express an action completed before another past action, making it grammatically correct in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382309314-6s5rkspf",
+      "timestamp": "2026-05-21T16:52:48.855Z"
+    },
+    {
+      "raw": "FALSE|D|While B and C are clearly incorrect (B uses passé composé which doesn't work with \"depuis\" for ongoing past actions, C mixes present with past), D uses plus-que-parfait which is actually grammatically correct in French and commonly used to express \"we had been studying for two years when we started traveling.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382478165-wtavkb9e",
+      "timestamp": "2026-05-21T16:55:07.238Z"
+    }
+  ]
+}

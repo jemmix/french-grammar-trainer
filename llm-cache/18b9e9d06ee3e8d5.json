@@ -1,0 +1,33 @@
+{
+  "cacheKey": "18b9e9d06ee3e8d5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-18-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-18 - L'imparfait avec depuis (il pleuvait depuis trois jours)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il ___ ce roman depuis deux semaines quand il a perdu le livre. »\nChoices:\nA. [CORRECT] lisait\nB. a lu\nC. lit\nD. avait lu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779383526855-f2gejt5p"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the correct use of the imperfect tense with \"depuis\" to express an ongoing action that had been happening for a duration before being interrupted, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779383526872-dn1qd9an",
+      "timestamp": "2026-05-21T17:12:55.808Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the imparfait with \"depuis\" construction, where an ongoing past action (\"reading for two weeks\") is interrupted by another past event (\"lost the book\"), requiring the imparfait form \"lisait\" rather than other tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779383575809-qxv7x2of",
+      "timestamp": "2026-05-21T17:13:14.647Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the imparfait with depuis construction, requiring knowledge that ongoing past actions with a duration expressed with depuis take the imparfait (lisait), not the passé composé (a lu), présent (lit), or plus-que-parfait (avait lu).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779383594647-kouuwt87",
+      "timestamp": "2026-05-21T17:13:25.657Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "be6ee01587840634",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-18-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-18 - L'imparfait avec depuis (il pleuvait depuis trois jours)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Les étudiants ___ ce sujet depuis plusieurs semaines quand l'examen a été reporté. »\nChoices:\nA. [CORRECT] étudiaient\nB. ont étudié\nC. étudient\nD. avaient étudié\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779381753602-8z1991sy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the rule \"L'imparfait avec depuis\" by requiring the imperfect tense \"étudiaient\" to express an ongoing past action with \"depuis plusieurs semaines\" when interrupted by another event (\"quand l'examen a été reporté\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779381916760-9uutb99j",
+      "timestamp": "2026-05-21T16:45:44.868Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the imperfect tense with \"depuis\" to express an ongoing past action (étudiaient depuis plusieurs semaines) that was interrupted by another event (quand l'examen a été reporté), which is the exact grammar concept described by the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382151131-7hwsbm0i",
+      "timestamp": "2026-05-21T16:49:41.186Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests the rule about using imparfait with \"depuis\" to express an ongoing action in the past that was interrupted by another event (\"quand l'examen a été reporté\"), requiring students to choose the continuous past form rather than completed tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382368856-zlyon4du",
+      "timestamp": "2026-05-21T16:53:02.296Z"
+    }
+  ]
+}

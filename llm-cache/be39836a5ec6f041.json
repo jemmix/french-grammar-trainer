@@ -1,0 +1,33 @@
+{
+  "cacheKey": "be39836a5ec6f041",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-18-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-18 - L'imparfait avec depuis (il pleuvait depuis trois jours)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il ___ dans cette entreprise depuis cinq ans quand il a été licencié. »\nChoices:\nA. [CORRECT] travaillait\nB. a travaillé\nC. travaille\nD. travaillerait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779384326972-6crro470"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly tests the rule of using imparfait with \"depuis\" to express an ongoing action in the past when another event occurred.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779384327039-n1ycffdk",
+      "timestamp": "2026-05-21T17:25:46.302Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the imperfect with \"depuis\" in an interrupted duration context, which is exactly what rule 03-18 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779384385686-an5d6mip",
+      "timestamp": "2026-05-21T17:26:40.354Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests using the imparfait with \"depuis\" to express an ongoing action in the past (travaillait depuis cinq ans) that was interrupted by another event (quand il a été licencié).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779384443102-fgbj3xh1",
+      "timestamp": "2026-05-21T17:27:42.147Z"
+    }
+  ]
+}

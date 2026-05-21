@@ -1,0 +1,33 @@
+{
+  "cacheKey": "87bdd3800d063569",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-18-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Nous ___ cette tradition depuis des générations quand nous avons décidé de la modifier. »\n\nChoices:\nA. [CORRECT] observions\nB. [WRONG] avons observé\nC. [WRONG] observons\nD. [WRONG] avions observé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779381753602-kmz5su1g"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to match the required grammatical context: B uses passé composé (completed action), C uses present (tense mismatch), and D uses plus-que-parfait (which doesn't work with depuis for interrupted ongoing actions).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779381944857-ruw0vjzh",
+      "timestamp": "2026-05-21T16:46:05.306Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses passé composé which doesn't fit with depuis in past context, C uses présent which contradicts the past tense of \"quand nous avons décidé\", and D uses plus-que-parfait which conflicts with the durative nature of \"depuis\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382177397-fmlg6b0q",
+      "timestamp": "2026-05-21T16:49:56.759Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses passé composé which doesn't work with \"depuis\" for ongoing past actions; C uses présent which is incompatible with the past temporal clause \"quand nous avons décidé\"; D uses plus-que-parfait which indicates a completed action, conflicting with \"depuis\" which requires an ongoing/continuous aspect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382375513-tk6zjscl",
+      "timestamp": "2026-05-21T16:53:17.184Z"
+    }
+  ]
+}

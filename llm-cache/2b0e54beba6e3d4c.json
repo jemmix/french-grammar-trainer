@@ -1,0 +1,68 @@
+{
+  "cacheKey": "2b0e54beba6e3d4c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-18-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Nous ___ à Paris depuis deux ans lorsque nous avons déménagé. »\n\nChoices:\nA. [CORRECT] vivions\nB. [WRONG] avons vécu\nC. [WRONG] vivons\nD. [WRONG] avions vécu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779381753600-sp4f1wwf"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses passé composé which doesn't fit the ongoing state context with \"depuis\", C is present tense in a past context, and D uses plus-que-parfait which is awkward/incorrect for the state verb \"vivre\" with \"depuis\" when describing an ongoing state leading up to a past moment.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779381753610-zvq7jtih",
+      "timestamp": "2026-05-21T16:43:40.035Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: B uses passé composé instead of imparfait with \"depuis\" (requires ongoing state), C uses present tense in a past context, D uses plus-que-parfait which indicates completed action before another past event rather than ongoing action at the time of another event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382007224-12ehmqwi",
+      "timestamp": "2026-05-21T16:47:01.581Z"
+    },
+    {
+      "raw": "FALSE||Both A (vivions - imparfait) and D (avions vécu - plus-que-parfait) are grammatically valid for this context: imparfait describes an ongoing state of living in Paris that was interrupted by the move, while plus-que-parfait indicates the completed duration of that living before the move.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382238638-npo0dmeu",
+      "timestamp": "2026-05-21T16:55:02.704Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses passé composé which doesn't convey the ongoing duration, C is present tense in a past context, and D uses plus-que-parfait which suggests completion rather than ongoing action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382525830-s9jw90fi",
+      "timestamp": "2026-05-21T16:55:39.469Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect within the specified past tense context requiring imparfait for an ongoing state with \"depuis\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382549914-mxmpb3m1",
+      "timestamp": "2026-05-21T16:56:10.833Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses passé composé which is incompatible with \"depuis\" for an ongoing state, C incorrectly uses present tense with a past event, and D uses plus-que-parfait which indicates a completed action rather than an ongoing state.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382579663-tz07577s",
+      "timestamp": "2026-05-21T16:59:12.131Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors - B is passé composé (not for ongoing past states), C is present tense (doesn't match past context), and D is plus-que-parfait (for completed actions before another past action, not ongoing states).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382752132-whfmq5kq",
+      "timestamp": "2026-05-21T16:59:51.341Z"
+    },
+    {
+      "raw": "FALSE|B,C|B is grammatically incorrect because passé composé doesn't work with \"depuis\" to express ongoing past duration; C is incorrect because present tense doesn't match the past context established by \"lorsque nous avons déménagé\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382791343-b9c5l79t",
+      "timestamp": "2026-05-21T17:00:20.584Z"
+    }
+  ]
+}

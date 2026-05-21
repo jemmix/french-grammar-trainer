@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fc13ba5eb83aa782",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-18-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il ___ mal depuis une semaine quand il a consulté un docteur. »\n\nChoices:\nA. [CORRECT] allait\nB. [WRONG] est allé\nC. [WRONG] va\nD. [WRONG] était allé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779381753600-4petf80q"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors - B uses passé composé which doesn't work with \"depuis\" for duration, C uses present tense conflicting with past context \"quand il a consulté\", and D uses plus-que-parfait which places the action too early relative to the consultation event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779381846312-pyw5jnn2",
+      "timestamp": "2026-05-21T16:44:29.239Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is passé composé (wrong tense), C is present (wrong tense), and D uses wrong verb form (plus-que-parfait of aller instead of imparfait).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382047623-d44yv182",
+      "timestamp": "2026-05-21T16:52:03.579Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses passé composé which indicates a completed action rather than an ongoing state; C uses present tense which contradicts the past context; D uses plus-que-parfait which is for actions completed before another past action, not for ongoing states expressed with \"depuis.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382464583-q78xiop5",
+      "timestamp": "2026-05-21T16:58:11.492Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "75e5b7f0f0b4a085",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-18-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-18 - L'imparfait avec depuis (il pleuvait depuis trois jours)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « La pluie ___ depuis quatre jours quand le soleil est apparu. »\nChoices:\nA. [CORRECT] tombait\nB. est tombée\nC. tombe\nD. était tombée\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779381753600-qhz1tu6t"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question correctly tests the use of the imperfect tense with \"depuis\" to express an ongoing action in the past up to a specific moment, and distinguishing it from other tenses that don't work in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779381856172-enhrfei5",
+      "timestamp": "2026-05-21T16:44:30.484Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying the rule that \"depuis\" + ongoing past action = imparfait, distinguishing it from passé composé (single completed action), présent (wrong tense context), and plus-que-parfait (action completed before another past action).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382048677-i4edzate",
+      "timestamp": "2026-05-21T16:47:39.610Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule about using l'imparfait with \"depuis\" to describe an ongoing past action that started before a specific point, requiring the student to recognize that \"tombait\" is the correct imperfect form in the construction \"La pluie tombait depuis quatre jours quand...\" which exactly mirrors the rule's example pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779382284939-ddfcc1tp",
+      "timestamp": "2026-05-21T16:51:50.942Z"
+    }
+  ]
+}
