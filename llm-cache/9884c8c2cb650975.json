@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9884c8c2cb650975",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-16-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-16 - L'imparfait vs le passé composé dans un récit (choix narratif)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Pierre avait froid. Tout à coup, il ___ près du feu de cheminée. »\nChoices:\nA. [CORRECT] s'est assis\nB. s'asseyait\nC. s'assied\nD. s'assiérait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779370663494-dpfg7vbx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the narrative distinction between passé composé (for sudden, completed actions like \"s'est assis\" triggered by \"Tout à coup\") and imparfait (for ongoing states), which is exactly what rule 03-16 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779370689514-q314mtc8",
+      "timestamp": "2026-05-21T13:38:19.506Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests the imperfect vs passé composé narrative distinction, where \"Tout à coup\" signals a sudden completed action (passé composé) interrupting the ongoing background state (imperfect \"avait froid\"), requiring understanding of the foreground/background contrast in narrative contexts.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779370875400-ctzrt74l",
+      "timestamp": "2026-05-21T13:42:38.215Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: This question directly tests the narrative distinction between imparfait (background state \"avait froid\") and passé composé (completed action \"s'est assis\"), where \"tout à coup\" signals an interrupting event that requires the passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779371127449-9zh9z7mv",
+      "timestamp": "2026-05-21T13:45:44.728Z"
+    }
+  ]
+}

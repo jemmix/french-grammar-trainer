@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f55d9389dfdb0714",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-16-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Lucie ___ dans son lit quand sa mère a brusquement éteint la lumière. »\n\nChoices:\nA. [CORRECT] lisait\nB. [WRONG] a lu\nC. [WRONG] lit\nD. [WRONG] lira\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779370663495-ds0owvu7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use wrong tenses (passé composé, présent, and futur) which cannot coexist with the passé composé interruption in the \"quand\" clause.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779370733039-uvblnn3f",
+      "timestamp": "2026-05-21T13:39:21.673Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the wrong tense for a past ongoing action interrupted by another past event; B uses passé composé (completed action), C uses présent (wrong timeframe), and D uses futur (wrong timeframe).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779371021736-djbzcyfe",
+      "timestamp": "2026-05-21T13:44:02.967Z"
+    },
+    {
+      "raw": "TRUE||The wrong answers use incorrect tenses - \"a lu\" (past) is a completed action not ongoing, \"lit\" (present) creates tense inconsistency with the past event, and \"lira\" (future) is illogical in a past context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779371207669-ndkrl3bp",
+      "timestamp": "2026-05-21T13:47:04.330Z"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "cacheKey": "d090fff437dddfcf",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-16-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Lucie lisait dans son lit quand sa mère a brusquement éteint la lumière. » — Pourquoi « lisait » est-il à l'imparfait et « a éteint » au passé composé ?\n\nChoices:\nA. [CORRECT] La lecture était l'action de fond, l'extinction est l'événement soudain\nB. [WRONG] Les deux actions sont simultanées et continues\nC. [WRONG] L'imparfait est obligatoire après « quand »\nD. [WRONG] Le passé composé indique une action plus longue\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779368259068-xpnq9452"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B incorrectly states both actions are continuous, C falsely claims imparfait is obligatory after \"quand\", and D incorrectly reverses the typical tense usage (passé composé marks shorter actions, not longer).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779368375504-bo4o2bx4",
+      "timestamp": "2026-05-21T12:59:52.453Z"
+    },
+    {
+      "raw": "FALSE||The question is asking why \"lisait\" is in imparfait and \"a éteint\" is in passé composé. Let me verify each wrong answer:\n\nB: \"Les deux actions sont simultanées et continues\" - This is INCORRECT because the two actions are NOT simultaneous/continuous. \"Lisait\" describes an ongoing background action (Lucie was reading), while \"a éteint\" describes a sudden, punctual event that interrupts the reading. The tenses specifically show this interruption relationship, not simultaneity.\n\nC: \"L'imparfait est obligatoire après « quand »\" - This is INCORRECT because there is NO grammatical rule requiring imparfait after \"quand\". The tense after \"quand\" depends entirely on the temporal relationship being expressed. For example, \"Quand elle a éteint la lumière, j'ai dormi\" uses passé composé after \"quand\".\n\nD: \"Le passé composé indique une action plus longue\" - This is INCORRECT because it's the OPPOSITE of the truth. Passé composé typically indicates completed, punctual actions (like extinguishing a light), while imparfait indicates ongoing or continuous states/actions (like reading).\n\nVERDICT: TRUE|B,C,D|All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779368582794-tbe6z2ql",
+      "timestamp": "2026-05-21T13:03:22.417Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779368788551-nmstkzrn",
+      "timestamp": "2026-05-21T13:06:44.225Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B misstates the temporal relationship (the actions are not simultaneous), C falsely claims imparfait is mandatory after \"quand\" (tense depends on context), and D reverses the typical duration of passé composé vs imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779368895850-ylca45uq",
+      "timestamp": "2026-05-21T13:08:40.333Z"
+    },
+    {
+      "raw": "FALSE|B|B incorrectly claims both actions are continuous, but \"a éteint\" is a punctual/passé composé event that interrupts the ongoing imparfait action \"lisait,\" so the actions are not both continuous.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779368956414-37bo4w9n",
+      "timestamp": "2026-05-21T13:09:40.556Z"
+    }
+  ]
+}

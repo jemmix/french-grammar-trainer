@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ba288579100ceffe",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-16-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-16 - L'imparfait vs le passé composé dans un récit (choix narratif)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Le chat ___ paisiblement sur le canapé quand soudain il a sauté par la fenêtre ouverte. »\nChoices:\nA. [CORRECT] dormait\nB. a dormi\nC. dort\nD. dormirait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779370663495-p9m8n62w"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This is a classic narrative context requiring the distinction between background action (imparfait) and interrupting action (passé composé); the structure \"X [imparfait] quand soudain Y [passé composé]\" is precisely what the imparfait vs passé composé narrative choice rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779370775030-qwl5emkk",
+      "timestamp": "2026-05-21T13:40:01.236Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question tests the classic narrative pattern of using imparfait for an ongoing background action that is interrupted by a sudden event expressed in passé composé; choosing correctly requires understanding this distinction, not just basic tense knowledge.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779371043961-p6ymjjgr",
+      "timestamp": "2026-05-21T13:44:30.544Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question presents a classic narrative context where the student must recognize that the ongoing action (dormir) being interrupted by a sudden action (sauter) requires the imparfait, not the passé composé or other tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779371242783-wz4pg6ei",
+      "timestamp": "2026-05-21T13:47:38.784Z"
+    }
+  ]
+}

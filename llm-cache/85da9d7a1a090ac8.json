@@ -1,0 +1,33 @@
+{
+  "cacheKey": "85da9d7a1a090ac8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-16-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-16 - L'imparfait vs le passé composé dans un récit (choix narratif)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « L'enfant pleurait. Sa mère s'est approchée, l'a serré dans ses bras et lui ___ un baiser. »\nChoices:\nA. [CORRECT] a donné\nB. donnait\nC. donne\nD. donnerait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779372226799-d326wvic"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires choosing between imparfait and passé composé in a narrative sequence, where the mother's actions (s'est approchée, a serré) establish a pattern of completed actions that necessitates \"a donné\" rather than the ongoing \"donnait.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779372226828-ag7959fb",
+      "timestamp": "2026-05-21T14:04:23.351Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding the narrative distinction between imparfait (for ongoing states) and passé composé (for completed actions), which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779372263352-sspbpk2a",
+      "timestamp": "2026-05-21T14:04:33.658Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the narrative distinction between imparfait (background states/descriptions) and passé composé (discrete completed actions), requiring knowledge that giving a kiss is a discrete action that advances the story rather than a background state, which is exactly what rule 03-16 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779372273659-0o5xhkwe",
+      "timestamp": "2026-05-21T14:04:47.521Z"
+    }
+  ]
+}

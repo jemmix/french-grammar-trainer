@@ -1,0 +1,61 @@
+{
+  "cacheKey": "b7a158ac22263166",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-16-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Dans ce récit, quel temps convient ? « Il était tard. Marc ___ dans son fauteuil quand la porte s'est ouverte. »\n\nChoices:\nA. [CORRECT] dormait\nB. [WRONG] a dormi\nC. [WRONG] dort\nD. [WRONG] dormirait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779366806215-rdmcefd9"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is in passé composé which doesn't work for describing an ongoing action in the past when another event occurred; C is in présent which is inconsistent with the past-tense narrative context; D is in conditionnel which introduces a hypothetical meaning not supported by the narrative context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779366806219-vcx1u4sd",
+      "timestamp": "2026-05-21T12:33:58.743Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors within the narrative context requiring imparfait for an ongoing past action interrupted by passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779367034545-tr2gr7te",
+      "timestamp": "2026-05-21T12:37:41.352Z"
+    },
+    {
+      "raw": "FALSE|B|In this narrative context, \"a dormi\" (passé composé) is grammatically valid as it could be interpreted as \"Marc had slept in his armchair when the door opened\" (a completed action occurring before the door opening), though \"dormait\" (imparfait) better describes an ongoing state interrupted by the door opening; the question's phrasing \"quel temps convient\" is slightly ambiguous as it doesn't explicitly specify whether the action should be ongoing or completed relative to the door opening.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779367241973-awisveit",
+      "timestamp": "2026-05-21T12:41:09.025Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use verb tenses that don't fit the past narrative context requiring imparfait + passé composé structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779367425027-mqj6pdy1",
+      "timestamp": "2026-05-21T12:44:02.270Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: \"a dormi\" (passé composé) suggests a completed action rather than an ongoing state, \"dort\" (present) creates a tense inconsistency with the past narrative context, and \"dormirait\" (conditional) introduces a hypothetical meaning that doesn't fit the factual past description.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779367452778-esc747ti",
+      "timestamp": "2026-05-21T12:44:31.044Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this narrative context - B uses passé composé for a durative action that should be in imparfait, C incorrectly uses present tense in a past narrative, and D inappropriately uses conditional for a factual past event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779367471044-9692unys",
+      "timestamp": "2026-05-21T12:44:40.829Z"
+    },
+    {
+      "raw": "FALSE||B is incorrect because passé composé doesn't describe an ongoing interrupted action; C is incorrect because the present tense doesn't match the past narrative context; D is incorrect because conditional is inappropriate for this descriptive narrative context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779367480830-zydc4g5z",
+      "timestamp": "2026-05-21T12:44:52.041Z"
+    }
+  ]
+}

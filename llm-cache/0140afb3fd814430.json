@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0140afb3fd814430",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-16-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-16 - L'imparfait vs le passé composé dans un récit (choix narratif)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Dans ce récit, quel temps convient ? « Elle ___ la route en chantonnant quand un chien a traversé devant elle. »\nChoices:\nA. [CORRECT] suivait\nB. a suivi\nC. suit\nD. suivrait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779366806217-i15zzgg0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that imparfait describes an ongoing background action (\"suivait\") that was interrupted by a sudden event (\"a traversé\"), which is exactly the imparfait vs passé composé narrative distinction taught in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779366941460-rxhrkvnm",
+      "timestamp": "2026-05-21T12:36:00.884Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the core narrative distinction of imparfait vs passé composé — recognizing that \"she was following the road\" is an ongoing background action interrupted by \"a dog crossed,\" which is exactly the grammar concept rule 03-16 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779367180621-prw1nhri",
+      "timestamp": "2026-05-21T12:39:52.930Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question correctly tests the distinction between imparfait (ongoing background action \"suivait\" while humming) and passé composé (interrupting event \"a traversé\") in narrative context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779367379576-zxuipuw2",
+      "timestamp": "2026-05-21T12:43:16.162Z"
+    }
+  ]
+}

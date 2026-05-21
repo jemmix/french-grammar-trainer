@@ -1,0 +1,26 @@
+{
+  "cacheKey": "12a942c365d0371e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-16-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « La neige tombait doucement. Paul admirait la vue depuis la fenêtre et n' ___ pas froid. » — L'imparfait ou le passé composé ?\n\nChoices:\nA. [CORRECT] avait (imparfait)\nB. [WRONG] a eu (passé composé)\nC. [WRONG] a (présent)\nD. [WRONG] aurait (conditionnel)\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779368259071-tbegxoc9"
+  },
+  "responses": [
+    {
+      "raw": "FALSE||B (\"a eu\") could be correct as it's grammatically valid and means \"did not feel cold\" in the passé composé; while imparfait better fits the narrative flow, the question only asks to choose between the two tenses without explicitly requiring narrative consistency. C (\"a\") and D (\"aurait\") use tenses not requested by the question (présent and conditionnel respectively).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779368430595-a0yr0bp0",
+      "timestamp": "2026-05-21T13:00:59.662Z"
+    },
+    {
+      "raw": "FALSE|C|While B and D are grammatically incorrect in this context, C (\"n'a pas froid\") is a grammatically valid construction in French, just in the present tense rather than the past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779368651388-glbl52aa",
+      "timestamp": "2026-05-21T13:04:36.331Z"
+    }
+  ]
+}

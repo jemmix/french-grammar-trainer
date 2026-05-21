@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f1761eb100c1b9d9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-16-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-16 - L'imparfait vs le passé composé dans un récit (choix narratif)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe à l'imparfait ou au passé composé selon le contexte.\nPhrase: Le train ___ depuis vingt minutes quand Paul est arrivé en courant.\nCorrect Answer: attendait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779366806218-41ctuo47"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the classic narrative distinction where imparfait describes an ongoing background action (\"waiting\") that was in progress when a specific event interrupted it (passé composé: \"est arrivé\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779366974305-cn8uyl0o",
+      "timestamp": "2026-05-21T12:36:58.365Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the learner to distinguish between ongoing background action (imparfait \"attendait\") and an interrupting completed action (passé composé \"est arrivé\"), which is the core of narrative tense choice.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779367217042-2srigx41",
+      "timestamp": "2026-05-21T12:40:49.107Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the classic narrative structure where an ongoing background action (imparfait) is interrupted by a completed event (passé composé), which is the core of imparfait vs passé composé narrative choice.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779367418201-9k5u1sok",
+      "timestamp": "2026-05-21T12:43:51.054Z"
+    }
+  ]
+}

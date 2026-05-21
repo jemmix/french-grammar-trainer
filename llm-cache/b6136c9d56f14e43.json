@@ -1,0 +1,40 @@
+{
+  "cacheKey": "b6136c9d56f14e43",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-16-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Il faisait nuit. Une voiture ___ au bord de la route depuis un moment. » — Le narrateur décrit ce qu'il voit. L'imparfait ou le passé composé ?\n\nChoices:\nA. [CORRECT] était garée (imparfait)\nB. [WRONG] s'est garée (passé composé)\nC. [WRONG] est garée (présent)\nD. [WRONG] sera garée (futur)\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779368259068-1gw99d4c"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses other than the imparfait: B uses passé composé incorrectly with \"depuis un moment\" (would require a time limit like \"jusqu'à\"), while C and D use présent and futur which contradict the past context of \"Il faisait nuit.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779368362128-m7vadiql",
+      "timestamp": "2026-05-21T13:00:06.916Z"
+    },
+    {
+      "raw": "FALSE|B|B is grammatically incorrect because \"se garée\" uses a reflexive construction that is not appropriate for a car (cars do not \"park themselves\" in this reflexive sense), and passé composé describes a completed action rather than the ongoing state indicated by \"depuis un moment\" in a descriptive context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779368592507-7wlw29mf",
+      "timestamp": "2026-05-21T13:03:29.430Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the action verb \"se garer\" instead of the state verb \"être garé\" and passé composé doesn't work with \"depuis un moment,\" while C and D use mismatched tenses (present and future) with the past narrative context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779368792054-vgnt0zkr",
+      "timestamp": "2026-05-21T13:07:15.025Z"
+    },
+    {
+      "raw": "FALSE||B is grammatically possible here since \"depuis un moment\" can work with passé composé for an action completed at a recent point that has present relevance; C (present tense) creates a valid contrast narrative where the narrator shifts to present for vivid description; D (future) would require a different temporal framework but is not inherently grammatically incorrect within the sentence itself.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779368918501-odpuz5v7",
+      "timestamp": "2026-05-21T13:09:00.603Z"
+    }
+  ]
+}

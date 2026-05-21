@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e5c3975b67c334a8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-16-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Le café ___ de clients habituels. L'ambiance était calme et détendue. »\n\nChoices:\nA. [CORRECT] était plein\nB. [WRONG] a été plein\nC. [WRONG] est plein\nD. [WRONG] serait plein\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779370663494-ya6oh4vl"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779370663520-3n7ephs6",
+      "timestamp": "2026-05-21T13:38:33.423Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect because B uses passé composé which doesn't match the narrative setting, C is present tense which contradicts the past context, and D is conditional without any hypothetical condition to justify it.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779370958216-o2lqjcw5",
+      "timestamp": "2026-05-21T13:43:08.434Z"
+    },
+    {
+      "raw": "TRUE||The imparfait \"était\" in the second sentence establishes the narrative context as a past description requiring imparfait in the first sentence; passé composé (B) indicates a completed state rather than an ongoing description, while présent (C) and conditionnel (D) have clear tense/mood mismatches with the past descriptive context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779371145394-xvd7bnpe",
+      "timestamp": "2026-05-21T13:51:18.483Z"
+    }
+  ]
+}
