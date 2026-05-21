@@ -1,0 +1,26 @@
+{
+  "cacheKey": "7d29d3cc928288ff",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-13-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-13 - L'imparfait vs le passé composé : durée indéfinie vs durée définie\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Autrefois, les gens ___ toujours leurs courses au marché du village. »\nChoices:\nA. [CORRECT] faisaient\nB. faisiez\nC. font\nD. feront\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779354946454-nej3f1ut"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question primarily tests conjugation and person agreement with \"les gens\" (faisaient vs faisiez), not the distinction between indefinite and definite duration; since there's no passé composé option among the choices, students can answer correctly without understanding the nuanced duration rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779355031150-tr5sgp4k",
+      "timestamp": "2026-05-21T09:18:09.889Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question can be answered correctly by simply recognizing that \"Autrefois\" indicates past tense and matching \"les gens\" to 3rd person plural, without needing to understand the distinction between indefinite vs defined duration (no passé composé option is even present).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779355241376-6rjnrx0v",
+      "timestamp": "2026-05-21T09:21:05.943Z"
+    }
+  ]
+}

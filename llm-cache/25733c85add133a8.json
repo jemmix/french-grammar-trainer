@@ -1,0 +1,33 @@
+{
+  "cacheKey": "25733c85add133a8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-13-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand elle était étudiante, elle ___ ses vacances à la mer chaque été. »\n\nChoices:\nA. [CORRECT] passait\nB. [WRONG] a passé\nC. [WRONG] passe\nD. [WRONG] passerait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779357060571-h2qh8hl3"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors - B uses passé composé instead of imparfait for habitual past actions, C uses present tense when the context is past, and D uses conditional without any hypothetical context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779357220763-z587byr5",
+      "timestamp": "2026-05-21T09:54:02.700Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect for the context: B uses passé composé which indicates completed actions not repeated habits, C is present tense incompatible with the past timeframe, and D uses conditional mood which expresses hypothetical situations not past habits.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779357429877-ure8auuk",
+      "timestamp": "2026-05-21T09:57:22.310Z"
+    },
+    {
+      "raw": "TRUE||The context \"Quand elle était étudiante\" establishes a past tense frame; B uses passé composé for a habitual action (requires imparfait), C uses present tense (inconsistent with past context), and D uses conditional tense (inappropriate for factual past description).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779357639921-rtubhzfn",
+      "timestamp": "2026-05-21T10:01:00.249Z"
+    }
+  ]
+}

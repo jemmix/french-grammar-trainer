@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8701c2534b496cc9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-13-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-13 - L'imparfait vs le passé composé : durée indéfinie vs durée définie\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « La saison dernière, l'équipe ___ le projet en trois mois. »\nChoices:\nA. [CORRECT] a terminé\nB. terminait\nC. termine\nD. terminera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779357060538-bbz0dxom"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires choosing between imparfait and passé composé based on the definite time markers \"La saison dernière\" and \"en trois mois,\" which establish a completed action with a defined duration — the core distinction the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779357167877-70gixlma",
+      "timestamp": "2026-05-21T09:53:20.017Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between imparfait and passé composé based on definite vs. indefinite duration, as \"La saison dernière\" and \"en trois mois\" clearly indicate a completed action within a defined time frame, making passé composé the appropriate choice.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779357367939-prz2fhi4",
+      "timestamp": "2026-05-21T09:56:23.179Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: This question correctly tests the distinction between passé composé (completed action with defined duration \"en trois mois\" at a specific past time \"la saison dernière\") and imparfait (ongoing/habitual action with indefinite duration), which is exactly what rule 03-13 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779357575686-25n49ncv",
+      "timestamp": "2026-05-21T10:00:01.309Z"
+    }
+  ]
+}

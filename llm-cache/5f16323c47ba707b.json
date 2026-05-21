@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5f16323c47ba707b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-13-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-13 - L'imparfait vs le passé composé : durée indéfinie vs durée définie\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « En ce temps-là, tu ___ dans cette région. »\nChoices:\nA. [CORRECT] cherchais\nB. as cherché\nC. cherches\nD. chercherais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779343042998-khow4p5b"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The phrase \"En ce temps-là\" (in those days/at that time) marks an indefinite past period, requiring knowledge that imparfait is used for indefinite durations while passé composé is for defined/completed actions - which is exactly what rule 03-13 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779343198457-s8q9kkm1",
+      "timestamp": "2026-05-21T06:00:41.974Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The temporal marker \"En ce temps-là\" establishes an indefinite past period, requiring the imparfait for an ongoing or habitual action, whereas the passé composé choice represents a completed action with defined duration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779343850262-a69w2y4g",
+      "timestamp": "2026-05-21T06:11:22.738Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the imparfait vs passé composé distinction by using \"En ce temps-là\" (at that time) to indicate an ongoing past situation, requiring the imparfait \"cherchais\" rather than the completed action form \"as cherché.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779344617138-b2al1zei",
+      "timestamp": "2026-05-21T06:23:55.154Z"
+    }
+  ]
+}

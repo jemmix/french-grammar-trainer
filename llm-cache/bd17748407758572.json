@@ -1,0 +1,40 @@
+{
+  "cacheKey": "bd17748407758572",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "03-13-006",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: L'imparfait vs le passé composé : durée indéfinie vs durée définie\n\nQUESTION:\nPrompt: Complétez : « L'équipe ___ le projet en trois mois. »\nChoices:\nA. a terminé\nB. terminait\nC. termine\nD. terminera\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1779354946445-7mtb4r3l"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The sentence contains the specific duration expression \"en trois mois\" which unambiguously indicates a completed past action with a defined timeframe, making the passé composé (a terminé) the only correct choice according to the lesson's distinction between defined and indefinite duration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779354995819-becktggl",
+      "timestamp": "2026-05-21T09:17:00.497Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt provides sufficient context with the time expression \"en trois mois\" which clearly indicates a defined duration, making passé composé the correct choice according to the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779355168292-y48a2w41",
+      "timestamp": "2026-05-21T09:19:56.344Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The temporal relationship in \"en trois mois\" could be interpreted as \"within three months\" (completed action, passé composé) or \"in three months' time\" (future action, futur), making the correct answer dependent on unstated context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779355323991-mbfvlulb",
+      "timestamp": "2026-05-21T09:22:27.766Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nREASON: The prompt lacks sufficient temporal context to establish this as a past situation; \"en trois mois\" could indicate either a completed past action or a future deadline, and while the rule focuses on imparfait vs passé composé, the sentence itself doesn't explicitly restrict the answer to past tenses, allowing for multiple valid interpretations.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779355437742-ro804vlj",
+      "timestamp": "2026-05-21T09:24:34.353Z"
+    }
+  ]
+}

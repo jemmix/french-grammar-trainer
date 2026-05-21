@@ -1,0 +1,26 @@
+{
+  "cacheKey": "07aa8a001ef82fc0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-13-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-13 - L'imparfait vs le passé composé : durée indéfinie vs durée définie\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Elle ___ toute la journée, puis elle est rentrée se reposer. »\nChoices:\nA. [CORRECT] a travaillé\nB. travaillait\nC. travaille\nD. travaillerait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779347154938-pk1xc3oo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence structure \"puis elle est rentrée\" indicates a sequence of completed events, which inherently calls for passé composé regardless of the \"toute la journée\" duration marker — this tests chronological sequencing rather than the distinction between defined vs undefined duration.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779347154948-nntzd7o5",
+      "timestamp": "2026-05-21T07:06:57.593Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests choosing the appropriate past tense (passé composé vs imparfait) but the key factor is that the action is completed before another past event (sequence of events indicated by \"puis\"), not specifically about indefinite vs definite duration - the rule mentions duration, but the decisive grammatical feature here is chronological sequence/anteriority, not duration boundedness.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779347860182-r7c7j4v0",
+      "timestamp": "2026-05-21T07:18:21.136Z"
+    }
+  ]
+}

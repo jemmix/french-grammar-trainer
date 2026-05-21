@@ -1,0 +1,54 @@
+{
+  "cacheKey": "4badcd4ba975f4cf",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-13-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « En ce temps-là, elle ___ souvent du travail dans cette région. »\n\nChoices:\nA. [CORRECT] cherchait\nB. [WRONG] a cherché\nC. [WRONG] cherche\nD. [WRONG] chercherait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779357060558-3eyozlzv"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779357200017-ma9rrhgi",
+      "timestamp": "2026-05-21T09:53:33.958Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses passé composé for a habitual past action (needs imparfait), C is present tense (past required), and D uses conditional tense (not appropriate for describing past reality).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779357382209-znjvrsz6",
+      "timestamp": "2026-05-21T09:57:05.097Z"
+    },
+    {
+      "raw": "FALSE|B|B (a cherché) is the passé composé which could be grammatically valid in this context to indicate multiple completed instances of job searching during that past period.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779357587200-lvuokagw",
+      "timestamp": "2026-05-21T10:01:31.521Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for the context: B uses passé composé (completed action) instead of imparfait for habitual past action with \"souvent\"; C uses present tense which contradicts \"En ce temps-là\"; D uses conditional which would imply a hypothetical situation rather than a factual past statement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779357729480-0u9a2fk8",
+      "timestamp": "2026-05-21T10:02:26.602Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses passé composé for habitual action, C uses present incompatible with \"En ce temps-là\", D uses conditional for factual past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779357746603-idgsr4xy",
+      "timestamp": "2026-05-21T10:02:52.142Z"
+    },
+    {
+      "raw": "FALSE|B|B is grammatically acceptable because passé composé with \"souvent\" can express repeated completed actions in the past, which fits with \"En ce temps-là\"; C and D are correctly identified as wrong due to tense mismatch.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779357772144-5u8weljw",
+      "timestamp": "2026-05-21T10:03:05.144Z"
+    }
+  ]
+}

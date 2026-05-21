@@ -1,0 +1,33 @@
+{
+  "cacheKey": "32ffbe77ecf78ebf",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-13-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « L'an dernier, l'artiste ___ le portrait en une semaine. »\n\nChoices:\nA. [CORRECT] a peint\nB. [WRONG] peignait\nC. [WRONG] peint\nD. [WRONG] peindra\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779357060533-yww0te9m"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for the context: B (imparfait) indicates ongoing/habitual action incompatible with \"en une semaine\" (completed action), C (present) contradicts \"L'an dernier\" (past), and D (future) contradicts the past time marker.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779357060700-uzykp7zq",
+      "timestamp": "2026-05-21T09:54:46.548Z"
+    },
+    {
+      "raw": "TRUE||B uses imparfait which doesn't work with a completed action; C is just a past participle without auxiliary; D uses future tense contradicting \"L'an dernier\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779357483652-ziw0ebbx",
+      "timestamp": "2026-05-21T09:58:18.615Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors. B (peignait) is imparfait for ongoing/habitual actions, but \"en une semaine\" indicates a completed action. C (peint) lacks auxiliary for past tense context. D (peindra) is future tense, incompatible with \"l'an dernier.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779357662755-egwhl9fp",
+      "timestamp": "2026-05-21T10:01:27.591Z"
+    }
+  ]
+}

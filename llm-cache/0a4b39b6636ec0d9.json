@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0a4b39b6636ec0d9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-13-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-13 - L'imparfait vs le passé composé : durée indéfinie vs durée définie\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Elles ___ trois jours et trois nuits. »\nChoices:\nA. [CORRECT] ont dormi\nB. dormaient\nC. dormiront\nD. avaient dormi\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779343042999-1wmynogw"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly tests the distinction between indefinite and definite duration — the specific counted duration \"trois jours et trois nuits\" indicates a completed action requiring passé composé (\"ont dormi\") rather than the ongoing or habitual aspect of imparfait (\"dormaient\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779343308160-0gm36ksl",
+      "timestamp": "2026-05-21T06:02:15.982Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between passé composé and imparfait based on definite vs indefinite duration, as the phrase \"trois jours et trois nuits\" provides a concrete, defined duration that requires passé composé (\"ont dormi\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779343929345-k0s5e3c1",
+      "timestamp": "2026-05-21T06:12:27.049Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the distinction between passé composé (definite/determined duration) vs imparfait (indefinite/ongoing duration), and the time expression \"trois jours et trois nuits\" indicates a completed, defined duration, which correctly requires the passé composé form \"ont dormi.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779344644809-cn7oxuki",
+      "timestamp": "2026-05-21T06:24:23.494Z"
+    }
+  ]
+}

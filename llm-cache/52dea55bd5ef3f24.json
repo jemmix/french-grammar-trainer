@@ -1,0 +1,33 @@
+{
+  "cacheKey": "52dea55bd5ef3f24",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-13-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-13 - L'imparfait vs le passé composé : durée indéfinie vs durée définie\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe dans le temps qui convient.\nPhrase: Elle ___ à Londres pendant deux ans, puis elle a trouvé un poste à Rome.\nCorrect Answer: a habité\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779347154942-j3sm89wm"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between indefinite (imparfait) and definite (passé composé) duration, as \"pendant deux ans\" indicates a completed time period requiring \"a habité\" rather than \"habitait.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779347665112-onkf8oqn",
+      "timestamp": "2026-05-21T07:14:57.007Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing between passé composé and imparfait based on whether the duration is defined (pendant deux ans = specific, completed duration) vs indefinite, which is exactly what the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779348580100-u5xpblh7",
+      "timestamp": "2026-05-21T07:30:57.548Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between imparfait and passé composé based on definite vs indefinite duration, as the specified completed time frame (\"pendant deux ans\") requires the passé composé rather than the imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779349673559-elc8nhst",
+      "timestamp": "2026-05-21T07:49:08.039Z"
+    }
+  ]
+}

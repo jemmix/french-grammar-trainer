@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2d171e09a3b8e2b3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-13-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-13 - L'imparfait vs le passé composé : durée indéfinie vs durée définie\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe dans le temps qui convient.\nPhrase: Nous ___ le rapport en trois heures, puis nous l'avons envoyé.\nCorrect Answer: avons rédigé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779354946458-grr7pnxb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"en trois heures\" indicates a definite/completed duration, which is exactly what the rule teaches (definite duration = passé composé).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779355097706-6nf4nl2n",
+      "timestamp": "2026-05-21T09:18:41.280Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student recognizes that \"en trois heures\" indicates a defined/determinate duration, which requires the passé composé rather than the imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779355274133-407kw9j6",
+      "timestamp": "2026-05-21T09:21:29.227Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question properly tests the distinction between defined and indefinite duration — \"en trois heures\" indicates a specific, completed time frame that requires the passé composé (\"avons rédigé\"), exactly matching the rule's focus on duration définie vs indéfinie.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779355390166-s9q8y2wd",
+      "timestamp": "2026-05-21T09:25:52.658Z"
+    }
+  ]
+}

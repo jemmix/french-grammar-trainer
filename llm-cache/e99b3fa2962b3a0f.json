@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e99b3fa2962b3a0f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-13-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand il était jeune, il ___ à la campagne. »\n\nChoices:\nA. [CORRECT] habitait\nB. [WRONG] a habité\nC. [WRONG] habite\nD. [WRONG] habitera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779347154939-ear7albu"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses passé composé which doesn't match the ongoing state/habit context requiring imparfait; C is present tense when the context is past; D is future tense when the context is past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779347373080-c25fy620",
+      "timestamp": "2026-05-21T07:10:08.134Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't match the past context established by \"Quand il était jeune\" (imparfait).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779348283085-gxg7gfcp",
+      "timestamp": "2026-05-21T07:29:40.098Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use inappropriate tenses: B is passé composé (completed action), C is present, D is future - none fit the context of describing a state in the past set by \"Quand il était jeune\" which requires imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779349633030-8j85lqgg",
+      "timestamp": "2026-05-21T07:50:26.217Z"
+    }
+  ]
+}

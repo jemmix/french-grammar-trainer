@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b288d8b605ffa39f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-13-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Nous ___ la toiture en deux jours. »\n\nChoices:\nA. [CORRECT] avons refait\nB. [WRONG] refaisions\nC. [WRONG] refaisons\nD. [WRONG] referons\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779354946444-b3ljaxbn"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B|B is the imparfait form \"we were redoing/would redo\" which describes an ongoing or habitual action, but the context \"en deux jours\" (in two days) requires a completed past action (passé composé), making B grammatically mismatched but not technically incorrect French — it just doesn't fit the semantic context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779354946470-dhz9g8nm",
+      "timestamp": "2026-05-21T09:16:19.311Z"
+    },
+    {
+      "raw": "FALSE|D|D (referons) is grammatically correct in a future context as \"Nous referons la toiture en deux jours\" means \"We will redo the roofing in two days,\" which is a valid construction with the duration marker.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779355135709-8gw88mlw",
+      "timestamp": "2026-05-21T09:19:59.557Z"
+    }
+  ]
+}

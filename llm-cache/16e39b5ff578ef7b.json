@@ -1,0 +1,33 @@
+{
+  "cacheKey": "16e39b5ff578ef7b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-13-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-13 - L'imparfait vs le passé composé : durée indéfinie vs durée définie\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il ___ à Paris pendant cinq ans. »\nChoices:\nA. [CORRECT] a habité\nB. habitait\nC. avait habité\nD. habita\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779343042995-j9fbt8v8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction that definite duration (\"pendant cinq ans\") requires passé composé, while the distractor \"habitait\" (imparfait) represents the incorrect choice for this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779343043011-s307o2nq",
+      "timestamp": "2026-05-21T05:58:14.446Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question correctly tests the distinction between passé composé and imparfait by requiring the learner to recognize that \"pendant cinq ans\" (for five years) indicates a defined duration, which is properly expressed with the passé composé (\"a habité\") rather than the imparfait (\"habitait\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779343677020-i90he87p",
+      "timestamp": "2026-05-21T06:08:46.632Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The sentence \"pendant cinq ans\" indicates a completed, definite duration of time that has ended, requiring passé composé rather than imparfait, which tests exactly the distinction between defined and undefined duration stated in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779344329549-vy52q8gl",
+      "timestamp": "2026-05-21T06:29:37.278Z"
+    }
+  ]
+}

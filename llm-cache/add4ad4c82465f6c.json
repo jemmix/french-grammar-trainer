@@ -1,0 +1,33 @@
+{
+  "cacheKey": "add4ad4c82465f6c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-13-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-13 - L'imparfait vs le passé composé : durée indéfinie vs durée définie\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Les vacances, elle ___ à la mer chaque année. »\nChoices:\nA. [CORRECT] passait\nB. a passé\nC. passe\nD. passera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779343043001-2m87w1jn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether students recognize that habitual past actions (\"chaque année\") require l'imparfait (passait) rather than passé composé, directly testing the indefinite vs definite duration distinction between these two tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779343494704-1htr4z9a",
+      "timestamp": "2026-05-21T06:05:44.494Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the distinction between habitual/repeated actions (imperfect with \"chaque année\" indicating indefinite duration) and specific completed actions (passé composé), which is exactly what the rule about durée indéfinie vs durée définie covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779344051557-bu06r20l",
+      "timestamp": "2026-05-21T06:14:38.191Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests the imparfait for habitual actions in the past vs. passé composé for completed events, which is a different distinction (aspectual: habituated vs. completed) rather than the stated rule about duration (undefined duration vs. defined duration - indefinite time period vs. specific timeframe). The rule \"durée indéfinie vs durée définie\" refers to how long an action lasted, not whether it was habitual.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779344764075-1rr5f2an",
+      "timestamp": "2026-05-21T06:32:17.706Z"
+    }
+  ]
+}

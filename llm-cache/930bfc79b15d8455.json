@@ -1,0 +1,61 @@
+{
+  "cacheKey": "930bfc79b15d8455",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-13-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-13 - L'imparfait vs le passé composé : durée indéfinie vs durée définie\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Elles ___ toute la nuit et sont arrivées à l'aube. »\nChoices:\nA. [CORRECT] ont marché\nB. marchaient\nC. marcheront\nD. vont marcher\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779343043000-o6bsvlkb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between defined duration (passé composé with \"ont marché\" for a completed action that lasted \"toute la nuit\" until dawn) and indefinite/ongoing duration (imparfait with \"marchaient\"), which is the exact focus of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779343443181-689nyci8",
+      "timestamp": "2026-05-21T06:04:18.620Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: This question tests the distinction between sequential past actions (passé composé) versus simultaneous/ongoing actions (imparfait) rather than the specific concept of defined vs undefined duration—while \"toute la nuit\" implies duration, the context \"et sont arrivées à l'aube\" makes it a question about action completion and sequencing, not duration definiteness.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779343993082-qj7ye4f6",
+      "timestamp": "2026-05-21T06:13:57.287Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying that \"toute la nuit\" indicates a defined, completed duration of action, which correctly calls for the passé composé rather than the imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779344719307-l2aks6yn",
+      "timestamp": "2026-05-21T06:26:17.122Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between defined duration (passé composé with \"ont marché\" for a completed action bounded by the arrival at dawn) vs indefinite duration (imparfait with \"marchaient\" for ongoing action), which is the core concept of rule 03-13.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779344913917-jn0xj9n7",
+      "timestamp": "2026-05-21T06:29:03.250Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the learner can identify that \"toute la nuit\" (all night) indicates a defined, completed duration requiring the passé composé, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779344955392-grzk5ur6",
+      "timestamp": "2026-05-21T06:29:40.107Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between imparfait (indefinite duration) and passé composé (defined duration) - \"toute la nuit\" is a defined period and \"sont arrivées à l'aube\" shows the action was completed, making passé composé the correct choice.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779344980108-jjsgjrgn",
+      "timestamp": "2026-05-21T06:30:48.681Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests narrative sequence (completed actions) rather than the distinction between undefined and defined duration; \"toute la nuit\" (all night) can represent either duration depending on context, and the correct answer is determined by the sequential relationship with \"sont arrivées,\" not by the durée définie vs durée indéfinie rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779345048682-y29e5kdy",
+      "timestamp": "2026-05-21T06:33:21.094Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6d35f3781fae69b1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-13-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-13 - L'imparfait vs le passé composé : durée indéfinie vs durée définie\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Quand elle était étudiante, elle ___ ses vacances à la mer chaque été. »\nChoices:\nA. [CORRECT] passait\nB. passais\nC. passe\nD. passerait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779354946457-agi4a3vm"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests verb conjugation (person agreement: \"elle\" requires 3rd person singular, not 1st person \"passais\") and distinguishes between tenses (présent, imparfait, conditionnel), but it doesn't actually test the distinction between imparfait vs passé composé regarding defined vs undefined duration since no passé composé option is provided.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779355054056-2bdx27d2",
+      "timestamp": "2026-05-21T09:17:52.164Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question properly tests the distinction between the imparfait and passé composé by presenting a habitual action in the past (\"chaque été\") that requires the imperfect tense for its indefinite duration, rather than the completed action conveyed by passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779355228986-sdfebc6d",
+      "timestamp": "2026-05-21T09:20:49.962Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests person agreement and tense selection more than the distinction between indefinite vs defined duration, and none of the wrong choices are passé composé, which would be the direct comparison needed to test this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779355361465-iovtepwi",
+      "timestamp": "2026-05-21T09:24:04.588Z"
+    }
+  ]
+}

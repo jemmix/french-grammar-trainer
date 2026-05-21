@@ -1,0 +1,33 @@
+{
+  "cacheKey": "02831b3c50fabdc0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-13-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-13 - L'imparfait vs le passé composé : durée indéfinie vs durée définie\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « En ce temps-là, elle ___ du travail dans cette région. »\nChoices:\nA. [CORRECT] cherchait\nB. a cherché\nC. cherche\nD. chercherait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779347154939-iul6drmb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between imparfait (ongoing action with indefinite duration) and passé composé (completed action with definite duration), as \"chercher du travail\" describes an ongoing process without definite endpoints that properly requires the imperfect form \"cherchait.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779347454432-y85crpy0",
+      "timestamp": "2026-05-21T07:34:00.583Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests the distinction between imperfect (ongoing, indefinite duration) and passé composé (completed, definite duration) through the temporal marker \"En ce temps-là\" combined with \"cherchait\" as an ongoing state rather than a completed action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779349761874-06clvvcn",
+      "timestamp": "2026-05-21T07:50:53.665Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests the imparfait vs passé composé distinction because \"En ce temps-là\" (at that time) indicates an ongoing past timeframe requiring imparfait, while the passé composé option incorrectly suggests a specific completed action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779350040607-s71vov9m",
+      "timestamp": "2026-05-21T07:57:54.619Z"
+    }
+  ]
+}
