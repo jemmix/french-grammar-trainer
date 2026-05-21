@@ -1,0 +1,33 @@
+{
+  "cacheKey": "40e4102f9812640f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-01-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-01 - Formation du plus-que-parfait : auxiliaire à l'imparfait + participe passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez avec la forme correcte du plus-que-parfait : « Ils ___ en France plusieurs fois avant ce voyage. »\nChoices:\nA. [CORRECT] étaient allés\nB. sont allés\nC. avaient allé\nD. allaient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779399918231-2hj98uuy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests formation of the plus-que-parfait (auxiliary être in imparfait + participe passé of aller), with distractors targeting common errors (passé composé, wrong auxiliary, simple imparfait).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779399939611-jrou8rqi",
+      "timestamp": "2026-05-21T21:45:48.951Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the correct pluperfect form, which demands knowing to use the auxiliary \"être\" in the imperfect (\"étaient\") combined with the past participle \"allés\" with proper subject agreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779400098508-9pxnspke",
+      "timestamp": "2026-05-21T21:48:31.614Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question requires knowledge of the plus-que-parfait formation rule to identify that the correct answer uses the auxiliary être in the imperfect tense (étaient) combined with the past participle (allés), while the distractors test other tenses or incorrectly use avoir as auxiliary.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779400274403-al78x6fs",
+      "timestamp": "2026-05-21T21:51:51.774Z"
+    }
+  ]
+}

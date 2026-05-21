@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6149cbf0c17b2910",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-01-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-01 - Formation du plus-que-parfait : auxiliaire à l'imparfait + participe passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Laquelle de ces phrases contient une erreur dans la formation du plus-que-parfait ?\nChoices:\nA. [CORRECT] « Il avait arrivé en retard. »\nB. « Elle avait préparé le repas. »\nC. « Nous étions partis tôt. »\nD. « Ils avaient compris la leçon. »\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779399918232-ll1f8xpb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The error in choice A (« Il avait arrivé en retard. ») is about selecting the correct auxiliary verb (avoir vs être for *arriver*), not about the formation structure of the plus-que-parfait itself (auxiliary in imparfait + past participle). All choices correctly use an auxiliary in the imparfait followed by a past participle, so none actually violate the stated formation rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779399975448-47ujr3kx",
+      "timestamp": "2026-05-21T21:47:45.839Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests which verbs use être versus avoir as their auxiliary (auxiliary selection), not the formation rule of imparfait auxiliary + participle passé.\n\nThe question incorrectly identifies \"Il avait arrivé\" as having an error, but the error is not in the formation structure—it's using the wrong auxiliary verb (arriver uses être, not avoir). None of the choices actually demonstrate an error in the formation structure itself (imparfait auxiliary + past participle). All four choices correctly apply the formation rule; the question tests a different grammar concept entirely.\n\nTo properly test this formation rule, the question should include examples where the auxiliary is in the wrong tense (e.g., present instead of imparfait) or the participle is incorrectly formed, not examples testing auxiliary selection.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779400220096-ixkel97x",
+      "timestamp": "2026-05-21T21:51:10.590Z"
+    }
+  ]
+}

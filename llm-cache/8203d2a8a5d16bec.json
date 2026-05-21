@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8203d2a8a5d16bec",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-01-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-01 - Formation du plus-que-parfait : auxiliaire à l'imparfait + participe passé\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe entre parenthèses au plus-que-parfait\nPhrase: Quand le train est parti, nous ___ (arriver) depuis une heure.\nCorrect Answer: étions arrivés\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779399918233-ly6nxt58"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"arriver\" in the plus-que-parfait, which directly tests the formation rule: the student must use the auxiliary \"être\" in the imparfait (\"étions\") combined with the past participle (\"arrivés\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779400060149-hhfhtcb2",
+      "timestamp": "2026-05-21T21:47:51.819Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires forming the plus-que-parfait of \"arriver\" with subject \"nous,\" directly testing the rule's components: auxiliary verb \"être\" conjugated in the imperfect (\"étions\") plus the past participle (\"arrivés\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779400223413-7xad4dmd",
+      "timestamp": "2026-05-21T21:50:42.965Z"
+    }
+  ]
+}

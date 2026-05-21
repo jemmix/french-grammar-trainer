@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a29a7df66004f8ed",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-01-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Laquelle de ces phrases contient une erreur dans la formation du plus-que-parfait ?\n\nChoices:\nA. [CORRECT] « Nous avions prenons le train. »\nB. [WRONG] « Elle avait écrit une lettre. »\nC. [WRONG] « Ils étaient restés à la maison. »\nD. [WRONG] « Tu avais compris la leçon. »\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779401629634-mc11ji29"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers (B, C, D) use correct plus-que-parfait formation with proper auxiliary verbs in imparfait and correctly conjugated past participles, so none of them contain the grammatical error that the question asks to identify.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779401629656-8nsznk80",
+      "timestamp": "2026-05-21T22:14:04.085Z"
+    },
+    {
+      "raw": "FALSE|B,C,D|B, C, and D are all correctly formed plus-que-parfait with no grammatical errors; the question asks which sentence contains an error, so these are correctly marked as wrong answers, but they are not linguistically incorrect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779401644086-q9uv5564",
+      "timestamp": "2026-05-21T22:15:58.102Z"
+    },
+    {
+      "raw": "FALSE||The question asks which sentence contains an error in plus-que-parfait formation. The choices marked [WRONG] (B, C, D) are actually grammatically correct: \"avait écrit\", \"étaient restés\", and \"avais compris\" are all properly formed plus-que-parfait constructions with correct auxiliary verbs and past participles. Since they don't contain errors in plus-que-parfait formation, they shouldn't be marked as wrong - they're valid answers to \"which sentence has an error?\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779401758102-qdiqqdno",
+      "timestamp": "2026-05-21T22:16:21.830Z"
+    }
+  ]
+}
