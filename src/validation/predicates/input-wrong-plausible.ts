@@ -1,6 +1,5 @@
 import type { LLMPredicate, QuestionContext, PredicateResult, LLMRequestSpec } from "../types";
 import type { InputQuestion } from "../../data/types";
-import { parseVerdict } from "../harness";
 
 export const inputWrongPlausiblePredicate: LLMPredicate = {
   id: "input-wrong-plausible",
@@ -26,33 +25,19 @@ export const inputWrongPlausiblePredicate: LLMPredicate = {
   },
 
   interpretResponse(_ctx: QuestionContext, rawResponse: string): PredicateResult {
-    const verdictMatch = rawResponse.match(/VERDICT:\s*(PLAUSIBLE|IMPLAUSIBLE)/i);
+    const matches = [...rawResponse.matchAll(/VERDICT:\s*(PLAUSIBLE|IMPLAUSIBLE)/gi)];
+
+    if (matches.length !== 1) {
+      return { status: "invalid", reason: "Expected exactly one VERDICT: PLAUSIBLE|IMPLAUSIBLE, found " + matches.length + " in: " + rawResponse.slice(0, 100) };
+    }
+
+    const verdict = matches[0]![1]!.toUpperCase();
     const reasonMatch = rawResponse.match(/REASON:\s*(.+)/i);
     const extractedReason = reasonMatch?.[1]?.trim() ?? null;
 
-    if (verdictMatch?.[1]) {
-      const verdict = verdictMatch[1].toUpperCase();
-      if (verdict === "PLAUSIBLE") {
-        return { status: "pass" };
-      } else if (verdict === "IMPLAUSIBLE") {
-        return { status: "fail", reason: extractedReason || "Wrong answers contain implausible options" };
-      }
-    }
-
-    const verdict = parseVerdict(rawResponse);
-    if (verdict === "TRUE" || rawResponse.trim().toUpperCase() === "PLAUSIBLE") {
+    if (verdict === "PLAUSIBLE") {
       return { status: "pass" };
     }
-    if (verdict === "FALSE" || rawResponse.trim().toUpperCase() === "IMPLAUSIBLE") {
-      return { status: "fail", reason: "Wrong answers contain implausible options" };
-    }
-    const cleaned = rawResponse.trim().toUpperCase();
-    if (cleaned.includes("PLAUSIBLE") && !cleaned.includes("IMPLAUSIBLE")) {
-      return { status: "pass" };
-    }
-    if (cleaned.includes("IMPLAUSIBLE")) {
-      return { status: "fail", reason: "Wrong answers contain implausible options" };
-    }
-    return { status: "invalid", reason: "Unexpected response: " + rawResponse.slice(0, 100) };
+    return { status: "fail", reason: extractedReason || "Wrong answers contain implausible options" };
   },
 };

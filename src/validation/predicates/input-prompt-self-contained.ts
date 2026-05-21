@@ -21,29 +21,21 @@ export const inputPromptSelfContainedPredicate: LLMPredicate = {
   },
 
   interpretResponse(_ctx: QuestionContext, rawResponse: string): PredicateResult {
-    const verdictMatch = rawResponse.match(/VERDICT:\s*(SELF-CONTAINED|UNCLEAR|AMBIGUOUS)/i);
+    const matches = [...rawResponse.matchAll(/VERDICT:\s*(SELF-CONTAINED|UNCLEAR|AMBIGUOUS)/gi)];
+
+    if (matches.length !== 1) {
+      return { status: "invalid", reason: "Expected exactly one VERDICT: SELF-CONTAINED|UNCLEAR|AMBIGUOUS, found " + matches.length + " in: " + rawResponse.slice(0, 100) };
+    }
+
+    const verdict = matches[0]![1]!.toUpperCase();
     const reasonMatch = rawResponse.match(/REASON:\s*(.+)/i);
     const extractedReason = reasonMatch?.[1]?.trim() ?? null;
-    
-    if (verdictMatch?.[1]) {
-      const verdict = verdictMatch[1].toUpperCase();
-      if (verdict === "SELF-CONTAINED") {
-        return { status: "pass" };
-      } else if (verdict === "UNCLEAR") {
-        return { status: "fail", reason: extractedReason || "Prompt does not clearly identify what to input" };
-      } else if (verdict === "AMBIGUOUS") {
-        return { status: "fail", reason: extractedReason || "Multiple valid answers possible" };
-      }
-    }
-    
-    const cleaned = rawResponse.trim().toUpperCase();
-    if (cleaned === "SELF-CONTAINED") {
+
+    if (verdict === "SELF-CONTAINED") {
       return { status: "pass" };
-    } else if (cleaned === "UNCLEAR") {
-      return { status: "fail", reason: "Prompt does not clearly identify what to input" };
-    } else if (cleaned === "AMBIGUOUS") {
-      return { status: "fail", reason: "Multiple valid answers possible" };
+    } else if (verdict === "UNCLEAR") {
+      return { status: "fail", reason: extractedReason || "Prompt does not clearly identify what to input" };
     }
-    return { status: "invalid", reason: "Unexpected response: " + rawResponse };
+    return { status: "fail", reason: extractedReason || "Multiple valid answers possible" };
   },
 };

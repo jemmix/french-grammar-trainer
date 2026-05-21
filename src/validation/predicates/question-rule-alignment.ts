@@ -1,6 +1,5 @@
 import type { LLMPredicate, QuestionContext, PredicateResult, LLMRequestSpec } from "../types";
 import type { MultipleChoiceQuestion, InputQuestion } from "../../data/types";
-import { parseVerdict } from "../harness";
 
 export const questionRuleAlignmentPredicate: LLMPredicate = {
   id: "question-rule-alignment",
@@ -34,40 +33,19 @@ export const questionRuleAlignmentPredicate: LLMPredicate = {
   },
 
   interpretResponse(_ctx: QuestionContext, rawResponse: string): PredicateResult {
-    const verdictMatch = rawResponse.match(/VERDICT:\s*(ALIGNED|MISALIGNED)/i);
+    const matches = [...rawResponse.matchAll(/VERDICT:\s*(ALIGNED|MISALIGNED)/gi)];
+
+    if (matches.length !== 1) {
+      return { status: "invalid", reason: "Expected exactly one VERDICT: ALIGNED|MISALIGNED, found " + matches.length + " in: " + rawResponse.slice(0, 100) };
+    }
+
+    const verdict = matches[0]![1]!.toUpperCase();
     const reasonMatch = rawResponse.match(/REASON:\s*(.+)/i);
     const extractedReason = reasonMatch?.[1]?.trim() ?? null;
 
-    if (verdictMatch?.[1]) {
-      const verdict = verdictMatch[1].toUpperCase();
-      if (verdict === "ALIGNED") {
-        return { status: "pass" };
-      } else if (verdict === "MISALIGNED") {
-        return { status: "fail", reason: extractedReason || "Question does not test the stated grammar rule" };
-      }
-    }
-
-    const cleaned = rawResponse.trim().toUpperCase();
-
-    if (cleaned === "ALIGNED") {
+    if (verdict === "ALIGNED") {
       return { status: "pass" };
     }
-    if (cleaned === "MISALIGNED") {
-      return { status: "fail", reason: "Question does not test the stated grammar rule" };
-    }
-    if (cleaned.includes("ALIGNED") && !cleaned.includes("MISALIGNED")) {
-      return { status: "pass" };
-    }
-    if (cleaned.includes("MISALIGNED")) {
-      return { status: "fail", reason: "Question does not test the stated grammar rule" };
-    }
-    const verdict = parseVerdict(rawResponse);
-    if (verdict === "TRUE") {
-      return { status: "pass" };
-    }
-    if (verdict === "FALSE") {
-      return { status: "fail", reason: "Question does not test the stated grammar rule" };
-    }
-    return { status: "invalid", reason: "Unexpected response: " + rawResponse.slice(0, 100) };
+    return { status: "fail", reason: extractedReason || "Question does not test the stated grammar rule" };
   },
 };

@@ -1,6 +1,5 @@
 import type { LLMPredicate, QuestionContext, PredicateResult, LLMRequestSpec } from "../types";
 import type { InputQuestion } from "../../data/types";
-import { parseVerdict } from "../harness";
 
 export const inputExplanationAccuratePredicate: LLMPredicate = {
   id: "input-explanation-accurate",
@@ -26,39 +25,19 @@ export const inputExplanationAccuratePredicate: LLMPredicate = {
   },
 
   interpretResponse(_ctx: QuestionContext, rawResponse: string): PredicateResult {
-    const verdictMatch = rawResponse.match(/VERDICT:\s*(ACCURATE|INACCURATE)/i);
+    const matches = [...rawResponse.matchAll(/VERDICT:\s*(ACCURATE|INACCURATE)/gi)];
+
+    if (matches.length !== 1) {
+      return { status: "invalid", reason: "Expected exactly one VERDICT: ACCURATE|INACCURATE, found " + matches.length + " in: " + rawResponse.slice(0, 100) };
+    }
+
+    const verdict = matches[0]![1]!.toUpperCase();
     const reasonMatch = rawResponse.match(/REASON:\s*(.+)/i);
     const extractedReason = reasonMatch?.[1]?.trim() ?? null;
 
-    if (verdictMatch?.[1]) {
-      const verdict = verdictMatch[1].toUpperCase();
-      if (verdict === "ACCURATE") {
-        return { status: "pass" };
-      } else if (verdict === "INACCURATE") {
-        return { status: "fail", reason: extractedReason || "At least one wrong answer explanation is inaccurate" };
-      }
-    }
-
-    const cleaned = rawResponse.trim().toUpperCase();
-    if (cleaned === "ACCURATE") {
+    if (verdict === "ACCURATE") {
       return { status: "pass" };
     }
-    if (cleaned === "INACCURATE") {
-      return { status: "fail", reason: "At least one wrong answer explanation is inaccurate" };
-    }
-    if (cleaned.includes("ACCURATE") && !cleaned.includes("INACCURATE")) {
-      return { status: "pass" };
-    }
-    if (cleaned.includes("INACCURATE")) {
-      return { status: "fail", reason: "At least one wrong answer explanation is inaccurate" };
-    }
-    const verdict = parseVerdict(rawResponse);
-    if (verdict === "TRUE") {
-      return { status: "pass" };
-    }
-    if (verdict === "FALSE") {
-      return { status: "fail", reason: "At least one wrong answer explanation is inaccurate" };
-    }
-    return { status: "invalid", reason: "Unexpected response: " + rawResponse.slice(0, 100) };
+    return { status: "fail", reason: extractedReason || "At least one wrong answer explanation is inaccurate" };
   },
 };

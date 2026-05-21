@@ -50,31 +50,19 @@ Is this prompt well-formed? Does it give the learner a clear imperative instruct
   },
 
   interpretResponse(_ctx: QuestionContext, rawResponse: string): PredicateResult {
-    const verdictMatch = rawResponse.match(/VERDICT:\s*(WELL-FORMED|NOT-WELL-FORMED)/i);
+    const matches = [...rawResponse.matchAll(/VERDICT:\s*(WELL-FORMED|NOT-WELL-FORMED)/gi)];
+
+    if (matches.length !== 1) {
+      return { status: "invalid", reason: "Expected exactly one VERDICT: WELL-FORMED|NOT-WELL-FORMED, found " + matches.length + " in: " + rawResponse.slice(0, 100) };
+    }
+
+    const verdict = matches[0]![1]!.toUpperCase();
     const reasonMatch = rawResponse.match(/REASON:\s*(.+)/i);
     const extractedReason = reasonMatch?.[1]?.trim() ?? null;
 
-    if (verdictMatch?.[1]) {
-      const verdict = verdictMatch[1].toUpperCase().replace(/-/g, "");
-      if (verdict === "WELLFORMED") {
-        return { status: "pass" };
-      } else if (verdict === "NOTWELLFORMED") {
-        return { status: "fail", reason: extractedReason || "Prompt is not a clear imperative instruction" };
-      }
-    }
-
-    const cleaned = rawResponse.trim().toUpperCase();
-    if (cleaned === "WELL-FORMED") {
-      return { status: "pass" };
-    } else if (cleaned === "NOT-WELL-FORMED") {
-      return { status: "fail", reason: "Prompt is not a clear imperative instruction" };
-    }
-    if (cleaned.includes("WELL-FORMED") && !cleaned.includes("NOT")) {
+    if (verdict === "WELL-FORMED") {
       return { status: "pass" };
     }
-    if (cleaned.includes("NOT") || cleaned.includes("BAD") || cleaned.includes("NARRATIVE")) {
-      return { status: "fail", reason: "Prompt is not a clear imperative instruction" };
-    }
-    return { status: "invalid", reason: "Unexpected response: " + rawResponse };
+    return { status: "fail", reason: extractedReason || "Prompt is not a clear imperative instruction" };
   },
 };

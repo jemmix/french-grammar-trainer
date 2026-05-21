@@ -1,6 +1,5 @@
 import type { LLMPredicate, QuestionContext, PredicateResult, LLMRequestSpec } from "../types";
 import type { MultipleChoiceQuestion, InputQuestion } from "../../data/types";
-import { parseVerdict } from "../harness";
 
 export const frenchLanguagePredicate: LLMPredicate = {
   id: "french-language",
@@ -12,7 +11,7 @@ export const frenchLanguagePredicate: LLMPredicate = {
 
   generatePrompt(ctx: QuestionContext): LLMRequestSpec {
     let questionContent: string;
-    
+
     if (ctx.question.type === "mcq") {
       const q = ctx.question as MultipleChoiceQuestion;
       const choicesText = q.choices.map((c, i) => {
@@ -49,67 +48,31 @@ NOT ALLOWED:
 - English hints or instructions
 - Mixing English and French sentences in explanations without clear pedagogical purpose
 
-Format your response as:
-VERDICT
-EXPLANATION
+First output your verdict, then a brief explanation.
 
-Where:
-- VERDICT is exactly one word: FRENCH or ENGLISH_DETECTED
-- EXPLANATION is a brief sentence describing what you found
+Format: VERDICT: <FRENCH|ENGLISH_DETECTED>
+REASON: <one sentence explaining why>
 
-Examples:
-FRENCH
-All content is in French with no English detected.
-
-FRENCH
-Content uses allowed English exception for false friend contrast (actuellement/actually).
-
-ENGLISH_DETECTED
-Prompt uses English instruction "Conjugate the verb" instead of French.
-
-ENGLISH_DETECTED
-Explanation contains untranslated English: "This is wrong because the subject is plural."`,
+- FRENCH: All content is appropriately in French
+- ENGLISH_DETECTED: Unjustified English content was found`,
       userPrompt: "RULE: " + ctx.rule.title + "\n\nQUESTION CONTENT:\n" + questionContent + "\n\nIs all content appropriately in French?",
     };
   },
 
   interpretResponse(_ctx: QuestionContext, rawResponse: string): PredicateResult {
-    const lines = rawResponse.trim().split("\n");
-    const firstLine = lines[0]?.trim().toUpperCase() || "";
-    const explanation = lines.slice(1).join(" ").trim();
+    const matches = [...rawResponse.matchAll(/VERDICT:\s*(FRENCH|ENGLISH_DETECTED)/gi)];
 
-    const keywordLine = rawResponse.match(/(?:^|\n)\s*(FRENCH|ENGLISH_DETECTED)\s*$/im);
-    if (keywordLine) {
-      const kw = keywordLine[1]!.toUpperCase();
-      const kwIdx = lines.findIndex(l => l.trim().toUpperCase() === kw);
-      const kwExplanation = lines.slice(kwIdx + 1).join(" ").trim();
-      if (kw === "FRENCH") {
-        return { status: "pass" };
-      }
-      if (kw === "ENGLISH_DETECTED") {
-        return { status: "fail", reason: kwExplanation || "English content detected without pedagogical justification" };
-      }
+    if (matches.length !== 1) {
+      return { status: "invalid", reason: "Expected exactly one VERDICT: FRENCH|ENGLISH_DETECTED, found " + matches.length + " in: " + rawResponse.slice(0, 100) };
     }
 
-    if (firstLine === "FRENCH") {
+    const verdict = matches[0]![1]!.toUpperCase();
+    const reasonMatch = rawResponse.match(/REASON:\s*(.+)/i);
+    const extractedReason = reasonMatch?.[1]?.trim() ?? null;
+
+    if (verdict === "FRENCH") {
       return { status: "pass" };
     }
-    if (firstLine === "ENGLISH_DETECTED") {
-      return { status: "fail", reason: explanation || "English content detected without pedagogical justification" };
-    }
-    if (firstLine.includes("FRENCH") && !firstLine.includes("ENGLISH")) {
-      return { status: "pass" };
-    }
-    if (firstLine.includes("ENGLISH")) {
-      return { status: "fail", reason: explanation || "English content detected without pedagogical justification" };
-    }
-    const verdict = parseVerdict(rawResponse);
-    if (verdict === "TRUE") {
-      return { status: "pass" };
-    }
-    if (verdict === "FALSE") {
-      return { status: "fail", reason: explanation || "English content detected without pedagogical justification" };
-    }
-    return { status: "invalid", reason: "Unexpected response: " + rawResponse.slice(0, 100) };
+    return { status: "fail", reason: extractedReason || "English content detected without pedagogical justification" };
   },
 };

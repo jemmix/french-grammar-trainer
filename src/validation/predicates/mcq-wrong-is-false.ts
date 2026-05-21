@@ -59,27 +59,15 @@ export const mcqWrongIsFalsePredicate: LLMPredicate = {
   interpretResponse(ctx: QuestionContext, rawResponse: string): PredicateResult {
     const cleaned = rawResponse.trim();
 
-    const anywhere = cleaned.match(/(TRUE|FALSE|UNCLEAR)\s*\|([^|]*)\|(.+)/i);
-    if (anywhere) {
-      const verdict = anywhere[1]!.toUpperCase();
-      const flaggedLetters = anywhere[2]!.trim();
-      const explanation = anywhere[3]!.trim();
-      if (verdict === "TRUE") {
-        return { status: "pass" };
-      } else if (verdict === "FALSE") {
-        const reason = flaggedLetters
-          ? "Wrong answer(s) may be correct: " + flaggedLetters + (explanation ? " — " + explanation : "")
-          : "At least one wrong answer may be correct" + (explanation ? " — " + explanation : "");
-        return { status: "fail", reason };
-      } else if (verdict === "UNCLEAR") {
-        return { status: "fail", reason: "Question is ambiguous" + (explanation ? " — " + explanation : "") };
-      }
+    const matches = [...cleaned.matchAll(/(TRUE|FALSE|UNCLEAR)\s*\|([^|]*)\|(.+)/gi)];
+
+    if (matches.length !== 1) {
+      return { status: "invalid", reason: "Expected exactly one VERDICT|letters|explanation line, found " + matches.length + " in: " + rawResponse.slice(0, 100) };
     }
 
-    const pipeParts = cleaned.split("|");
-    const verdict = (pipeParts[0] ?? "").trim().toUpperCase();
-    const flaggedLetters = pipeParts.length > 1 ? (pipeParts[1] ?? "").trim() : "";
-    const explanation = pipeParts.length > 2 ? (pipeParts[2] ?? "").trim() : "";
+    const verdict = matches[0]![1]!.toUpperCase();
+    const flaggedLetters = matches[0]![2]!.trim();
+    const explanation = matches[0]![3]!.trim();
 
     if (verdict === "TRUE") {
       return { status: "pass" };
@@ -88,24 +76,7 @@ export const mcqWrongIsFalsePredicate: LLMPredicate = {
         ? "Wrong answer(s) may be correct: " + flaggedLetters + (explanation ? " — " + explanation : "")
         : "At least one wrong answer may be correct" + (explanation ? " — " + explanation : "");
       return { status: "fail", reason };
-    } else if (verdict === "UNCLEAR") {
-      return {
-        status: "fail",
-        reason: "Question is ambiguous" + (explanation ? " — " + explanation : ""),
-      };
     }
-
-    const firstWord = (cleaned.split(/\s|\|/)[0] ?? "").toUpperCase();
-    if (firstWord === "TRUE") {
-      return { status: "pass" };
-    } else if (firstWord === "FALSE") {
-      const rest = cleaned.slice(cleaned.indexOf(firstWord) + firstWord.length).trim();
-      return { status: "fail", reason: "At least one wrong answer may be correct — " + (rest || "no details") };
-    } else if (firstWord === "UNCLEAR") {
-      const rest = cleaned.slice(cleaned.indexOf(firstWord) + firstWord.length).trim();
-      return { status: "fail", reason: "Question is ambiguous — " + (rest || "no details") };
-    }
-
-    return { status: "invalid", reason: "Unexpected response: " + rawResponse };
+    return { status: "fail", reason: "Question is ambiguous" + (explanation ? " — " + explanation : "") };
   },
 };

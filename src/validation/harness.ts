@@ -90,13 +90,3 @@ export function createOpencodeHarness(modelId: string): LLMHarness {
 }
 
 export const opencodeHarness: LLMHarness = createOpencodeHarness("glm-5");
-
-export function parseVerdict(raw: string): "TRUE" | "FALSE" | "UNCLEAR" | "PARSE_ERROR" {
-  const upper = raw.toUpperCase().trim();
-  if (upper === "TRUE") return "TRUE";
-  if (upper === "FALSE") return "FALSE";
-  if (upper === "UNCLEAR") return "UNCLEAR";
-  const match = raw.match(/\b(TRUE|FALSE|UNCLEAR)\b/i);
-  if (match) return match[1]!.toUpperCase() as "TRUE" | "FALSE" | "UNCLEAR";
-  return "PARSE_ERROR";
-}

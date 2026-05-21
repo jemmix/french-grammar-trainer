@@ -1,6 +1,5 @@
 import type { LLMPredicate, QuestionContext, PredicateResult, LLMRequestSpec } from "../types";
 import type { MultipleChoiceQuestion } from "../../data/types";
-import { parseVerdict } from "../harness";
 
 export const mcqCorrectIsTruePredicate: LLMPredicate = {
   id: "mcq-correct-is-true",
@@ -30,31 +29,21 @@ export const mcqCorrectIsTruePredicate: LLMPredicate = {
   },
 
   interpretResponse(_ctx: QuestionContext, rawResponse: string): PredicateResult {
-    const verdictMatch = rawResponse.match(/VERDICT:\s*(TRUE|FALSE|UNCLEAR)/i);
+    const matches = [...rawResponse.matchAll(/VERDICT:\s*(TRUE|FALSE|UNCLEAR)/gi)];
+
+    if (matches.length !== 1) {
+      return { status: "invalid", reason: "Expected exactly one VERDICT: TRUE|FALSE|UNCLEAR, found " + matches.length + " in: " + rawResponse.slice(0, 100) };
+    }
+
+    const verdict = matches[0]![1]!.toUpperCase();
     const reasonMatch = rawResponse.match(/REASON:\s*(.+)/i);
     const extractedReason = reasonMatch?.[1]?.trim() ?? null;
 
-    if (verdictMatch?.[1]) {
-      const verdict = verdictMatch[1].toUpperCase();
-      if (verdict === "TRUE") {
-        return { status: "pass" };
-      } else if (verdict === "FALSE") {
-        return { status: "fail", reason: extractedReason || "LLM says correct answer is FALSE" };
-      } else if (verdict === "UNCLEAR") {
-        return { status: "fail", reason: extractedReason || "LLM says answer is UNCLEAR - may need review" };
-      }
-    }
-
-    const verdict = parseVerdict(rawResponse);
     if (verdict === "TRUE") {
       return { status: "pass" };
+    } else if (verdict === "FALSE") {
+      return { status: "fail", reason: extractedReason || "LLM says correct answer is FALSE" };
     }
-    if (verdict === "FALSE") {
-      return { status: "fail", reason: "LLM says correct answer is FALSE" };
-    }
-    if (verdict === "UNCLEAR") {
-      return { status: "fail", reason: "LLM says answer is UNCLEAR - may need review" };
-    }
-    return { status: "invalid", reason: "Failed to parse LLM response: " + rawResponse.slice(0, 100) };
+    return { status: "fail", reason: extractedReason || "LLM says answer is UNCLEAR - may need review" };
   },
 };
