@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ce8fa8f75c4bb33a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-14-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Un soir, il ___ dans l'escalier et s'est cassé le bras. »\n\nChoices:\nA. [CORRECT] est tombé\nB. [WRONG] tomberait\nC. [WRONG] tombe\nD. [WRONG] tombera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779361669560-zu3yobmg"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779361669582-lg2nhmh3",
+      "timestamp": "2026-05-21T11:08:02.207Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: \"tomberait\" is conditional (not suitable for past events), \"tombe\" is present tense (doesn't match the passé composé context), and \"tombera\" is future tense (doesn't describe a past occurrence).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779361682209-bi0c3gf6",
+      "timestamp": "2026-05-21T11:08:49.831Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is conditional (tomberait), C is present (tombe), and D is future (tombera), none of which fit the past tense narrative context established by \"s'est cassé le bras\" (he broke his arm).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779361729831-7942i1a3",
+      "timestamp": "2026-05-21T11:09:07.177Z"
+    }
+  ]
+}

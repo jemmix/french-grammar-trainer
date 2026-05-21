@@ -1,0 +1,33 @@
+{
+  "cacheKey": "69c84d4730d53b28",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-14-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Un jour, elle ___ au marché et a acheté des fleurs. »\n\nChoices:\nA. [CORRECT] est allée\nB. [WRONG] allait\nC. [WRONG] va\nD. [WRONG] ira\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779359311389-l741fzz8"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B (allait) creates an improper imparfait/passé composé sequence without necessary contextual markers like \"pendant que\"; C (va) incorrectly uses present tense alongside past \"a acheté\"; D (ira) incorrectly uses future tense alongside past \"a acheté\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779359311396-abthw24c",
+      "timestamp": "2026-05-21T10:29:11.005Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are inconsistent with the past context established by \"Un jour\" and \"a acheté\" — the imparfait (B) conflicts with the sequential completed action indicated by \"et\", while present (C) and future (D) tenses don't match the past narrative framework.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779359515417-o2e4d7ey",
+      "timestamp": "2026-05-21T10:32:09.945Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors (allait creates tense mismatch with a acheté, va and ira are different tenses than the completed past action required).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779359710250-2loxr8cr",
+      "timestamp": "2026-05-21T10:36:02.228Z"
+    }
+  ]
+}

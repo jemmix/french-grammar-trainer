@@ -1,0 +1,33 @@
+{
+  "cacheKey": "87acc6316d60f396",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-14-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-14 - L'imparfait vs le passé composé : habitude vs action ponctuelle\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Soudain, la porte ___ et un inconnu est entré. »\nChoices:\nA. [CORRECT] s'est ouverte\nB. s'ouvrirait\nC. s'ouvre\nD. ouvrirait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779361669569-uyugwyi7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question requires choosing between passé composé and conditional/present tenses, but does not include any imparfait option, so it cannot test the distinction between imparfait vs. passé composé (habitude vs action ponctuelle).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779361669586-7np7go6s",
+      "timestamp": "2026-05-21T11:08:05.692Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the rule because \"Soudain\" marks a punctual, completed action requiring passé composé, and answering correctly requires understanding this temporal distinction central to the imperfect vs passé composé rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779361685692-31e33qwm",
+      "timestamp": "2026-05-21T11:08:29.668Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question does not include an imparfait option as a distractor, so answering correctly only requires recognizing that a sudden action (\"Soudain\") needs a past tense, not distinguishing between imparfait (habitual) and passé composé (punctual).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779361709669-7pjd2q3n",
+      "timestamp": "2026-05-21T11:09:14.437Z"
+    }
+  ]
+}

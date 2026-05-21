@@ -1,0 +1,33 @@
+{
+  "cacheKey": "06b61b6249d0a0d3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-14-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-14 - L'imparfait vs le passé composé : habitude vs action ponctuelle\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Pour son anniversaire, ses amis lui ___ une fête surprise. »\nChoices:\nA. [CORRECT] ont organisé\nB. organisaient\nC. organisent\nD. organiseront\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779359311390-4rfdanbp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires understanding that a surprise birthday party is a one-time, completed action (punctual) rather than a habit, which is exactly the imparfait vs passé composé distinction being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779359417555-df9hsgse",
+      "timestamp": "2026-05-21T10:30:27.675Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that organizing a surprise party for a birthday is a specific, completed action (passé composé), not a habitual or ongoing action (imparfait), which directly tests the core distinction of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779359579220-cxrqct2j",
+      "timestamp": "2026-05-21T10:35:24.158Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question properly tests the imparfait vs passé composé distinction because the context \"Pour son anniversaire\" indicates a specific, one-time event (punctual action) requiring passé composé, while the imparfait distractor would be appropriate for a habitual action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779359882288-85i6afom",
+      "timestamp": "2026-05-21T10:38:11.891Z"
+    }
+  ]
+}

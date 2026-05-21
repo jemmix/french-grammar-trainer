@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1f276d6e824ef0ef",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-14-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « En 2015, ils ___ en vacances en Grèce pour la première fois. »\n\nChoices:\nA. [CORRECT] sont partis\nB. [WRONG] partaient\nC. [WRONG] partent\nD. [WRONG] partiront\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779359311390-07yp3jku"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses (imparfait, présent, futur simple) that do not match the past time marker \"En 2015\" and the specific completed event indicated by \"pour la première fois\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779359376860-wcm34rmg",
+      "timestamp": "2026-05-21T10:30:20.728Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use inappropriate tenses: imparfait (B) and présent (C) don't express a completed past action, and futur simple (D) incorrectly places the event in the future instead of 2015.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779359570742-zj2d853z",
+      "timestamp": "2026-05-21T10:33:09.524Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for a completed action in 2015 with the time marker \"pour la première fois\": imparfait (B) describes ongoing/habitual past actions, présent (C) is for current time, and futur (D) is for future time.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779359774325-nll2xa8v",
+      "timestamp": "2026-05-21T10:36:24.024Z"
+    }
+  ]
+}

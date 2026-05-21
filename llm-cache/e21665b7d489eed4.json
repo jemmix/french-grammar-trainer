@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e21665b7d489eed4",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-14-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Pour son anniversaire, ses amis lui ___ une fête surprise. »\n\nChoices:\nA. [CORRECT] ont organisé\nB. [WRONG] organisaient\nC. [WRONG] organisent\nD. [WRONG] organiseront\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779359311390-zsimqqla"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect because the sentence context indicates a completed past event (surprise party for a birthday), requiring passé composé (\"ont organisé\"), while B implies ongoing past action, C implies present/general action, and D implies future action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779359415429-zypywaps",
+      "timestamp": "2026-05-21T10:30:39.007Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use inappropriate tenses - imparfait (B) suggests ongoing/repeated action, présent (C) indicates current action, and futur simple (D) refers to future - none match the completed past event that requires passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779359595749-r3dmeql8",
+      "timestamp": "2026-05-21T10:33:24.901Z"
+    },
+    {
+      "raw": "VERDICT|TRUE||All wrong answers use tenses (imparfait, présent, futur) that are inappropriate for a completed past event, creating a logical mismatch with the context of a surprise party that has already occurred.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779359787228-0v9897m7",
+      "timestamp": "2026-05-21T10:36:46.215Z"
+    }
+  ]
+}
