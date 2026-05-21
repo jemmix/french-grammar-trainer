@@ -1,6 +1,5 @@
 import type { LLMPredicate, QuestionContext, PredicateResult, LLMRequestSpec } from "../types";
 import type { MultipleChoiceQuestion, InputQuestion } from "../../data/types";
-import { parseVerdict } from "../harness";
 
 export const noAmbiguousPromptsPredicate: LLMPredicate = {
   id: "no-ambiguous-prompts",
@@ -33,40 +32,19 @@ export const noAmbiguousPromptsPredicate: LLMPredicate = {
   },
 
   interpretResponse(_ctx: QuestionContext, rawResponse: string): PredicateResult {
-    const verdictMatch = rawResponse.match(/VERDICT:\s*(CLEAR|AMBIGUOUS)/i);
+    const matches = [...rawResponse.matchAll(/VERDICT:\s*(CLEAR|AMBIGUOUS)/gi)];
+
+    if (matches.length !== 1) {
+      return { status: "invalid", reason: "Expected exactly one VERDICT: CLEAR|AMBIGUOUS, found " + matches.length + " in: " + rawResponse.slice(0, 100) };
+    }
+
+    const verdict = matches[0]![1]!.toUpperCase();
     const reasonMatch = rawResponse.match(/REASON:\s*(.+)/i);
     const extractedReason = reasonMatch?.[1]?.trim() ?? null;
 
-    if (verdictMatch?.[1]) {
-      const verdict = verdictMatch[1].toUpperCase();
-      if (verdict === "CLEAR") {
-        return { status: "pass" };
-      } else if (verdict === "AMBIGUOUS") {
-        return { status: "fail", reason: extractedReason || "Prompt is ambiguous or unclear" };
-      }
-    }
-
-    const cleaned = rawResponse.trim().toUpperCase();
-
-    if (cleaned === "CLEAR") {
+    if (verdict === "CLEAR") {
       return { status: "pass" };
     }
-    if (cleaned === "AMBIGUOUS") {
-      return { status: "fail", reason: "Prompt is ambiguous or unclear" };
-    }
-    if (cleaned.includes("CLEAR") && !cleaned.includes("AMBIGUOUS") && !cleaned.includes("UNCLEAR")) {
-      return { status: "pass" };
-    }
-    if (cleaned.includes("AMBIGUOUS") || cleaned.includes("UNCLEAR")) {
-      return { status: "fail", reason: "Prompt is ambiguous or unclear" };
-    }
-    const verdict = parseVerdict(rawResponse);
-    if (verdict === "TRUE") {
-      return { status: "pass" };
-    }
-    if (verdict === "FALSE") {
-      return { status: "fail", reason: "Prompt is ambiguous or unclear" };
-    }
-    return { status: "invalid", reason: "Unexpected response: " + rawResponse.slice(0, 100) };
+    return { status: "fail", reason: extractedReason || "Prompt is ambiguous or unclear" };
   },
 };
