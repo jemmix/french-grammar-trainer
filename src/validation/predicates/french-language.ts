@@ -48,31 +48,64 @@ NOT ALLOWED:
 - English hints or instructions
 - Mixing English and French sentences in explanations without clear pedagogical purpose
 
-First output your verdict, then a brief explanation.
+Format your response as:
+VERDICT
+EXPLANATION
 
-Format: VERDICT: <FRENCH|ENGLISH_DETECTED>
-REASON: <one sentence explaining why>
+Where:
+- VERDICT is exactly one word: FRENCH or ENGLISH_DETECTED
+- EXPLANATION is a brief sentence describing what you found
 
-- FRENCH: All content is appropriately in French
-- ENGLISH_DETECTED: Unjustified English content was found`,
+Examples:
+FRENCH
+All content is in French with no English detected.
+
+FRENCH
+Content uses allowed English exception for false friend contrast (actuellement/actually).
+
+ENGLISH_DETECTED
+Prompt uses English instruction "Conjugate the verb" instead of French.
+
+ENGLISH_DETECTED
+Explanation contains untranslated English: "This is wrong because the subject is plural."`,
       userPrompt: "RULE: " + ctx.rule.title + "\n\nQUESTION CONTENT:\n" + questionContent + "\n\nIs all content appropriately in French?",
     };
   },
 
   interpretResponse(_ctx: QuestionContext, rawResponse: string): PredicateResult {
-    const matches = [...rawResponse.matchAll(/VERDICT:\s*(FRENCH|ENGLISH_DETECTED)/gi)];
+    const lines = rawResponse.trim().split("\n");
 
-    if (matches.length !== 1) {
-      return { status: "invalid", reason: "Expected exactly one VERDICT: FRENCH|ENGLISH_DETECTED, found " + matches.length + " in: " + rawResponse.slice(0, 100) };
+    const verdictMatches = [...rawResponse.matchAll(/VERDICT:\s*(FRENCH|ENGLISH_DETECTED)/gi)];
+    if (verdictMatches.length > 1) {
+      return { status: "invalid", reason: "Multiple VERDICT lines found in: " + rawResponse.slice(0, 100) };
     }
 
-    const verdict = matches[0]![1]!.toUpperCase();
-    const reasonMatch = rawResponse.match(/REASON:\s*(.+)/i);
-    const extractedReason = reasonMatch?.[1]?.trim() ?? null;
+    let verdict: string;
+    let reasonLines: string[];
+
+    if (verdictMatches.length === 1) {
+      verdict = verdictMatches[0]![1]!.toUpperCase();
+      const reasonMatch = rawResponse.match(/REASON:\s*(.+)/i);
+      const extractedReason = reasonMatch?.[1]?.trim();
+      if (extractedReason) {
+        return verdict === "FRENCH"
+          ? { status: "pass" }
+          : { status: "fail", reason: extractedReason };
+      }
+      reasonLines = lines;
+    } else {
+      const firstLine = lines[0]?.trim().toUpperCase() || "";
+      if (firstLine !== "FRENCH" && firstLine !== "ENGLISH_DETECTED") {
+        return { status: "invalid", reason: "No VERDICT: line and first line is not FRENCH/ENGLISH_DETECTED: " + rawResponse.slice(0, 100) };
+      }
+      verdict = firstLine;
+      reasonLines = lines.slice(1);
+    }
 
     if (verdict === "FRENCH") {
       return { status: "pass" };
     }
-    return { status: "fail", reason: extractedReason || "English content detected without pedagogical justification" };
+    const reason = reasonLines.join(" ").trim();
+    return { status: "fail", reason: reason || "English content detected without pedagogical justification" };
   },
 };
