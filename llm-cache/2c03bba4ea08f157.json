@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2c03bba4ea08f157",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-02-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la forme correcte du plus-que-parfait : « Il ___ en retard au rendez-vous. » (arriver)\n\nChoices:\nA. [CORRECT] était arrivé\nB. [WRONG] avait arrivé\nC. [WRONG] est arrivé\nD. [WRONG] arrivait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779403757347-vp9x9hqj"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779403773160-sm039064",
+      "timestamp": "2026-05-21T22:50:05.459Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses the wrong auxiliary verb (avoir instead of être for arriver), C uses passé composé instead of plus-que-parfait, and D uses imparfait instead of plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779403983180-2eillz5i",
+      "timestamp": "2026-05-21T22:53:13.870Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses wrong auxiliary (avoir instead of être), C is passé composé not plus-que-parfait, and D is imparfait not plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779404151956-sf12msut",
+      "timestamp": "2026-05-21T22:56:33.761Z"
+    }
+  ]
+}

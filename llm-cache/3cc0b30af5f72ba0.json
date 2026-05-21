@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3cc0b30af5f72ba0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-02-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-02 - Le choix de l'auxiliaire avoir ou être au plus-que-parfait\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la forme correcte du plus-que-parfait : « Elle ___ à Lyon en 1990. » (naître)\nChoices:\nA. [CORRECT] était née\nB. avait née\nC. est née\nD. naissait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779403757348-jgkq4pf7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that the verb \"naître\" uses the auxiliary \"être\" in the plus-que-parfait, making the auxiliary choice the central grammatical concept being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779403834682-vdf4xyw3",
+      "timestamp": "2026-05-21T22:50:47.603Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowing that \"naître\" is one of the verbs that requires être as its auxiliary in the plus-que-parfait, and distractor B incorrectly uses avoir.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779404025370-fwcc5gx8",
+      "timestamp": "2026-05-21T22:54:16.673Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question directly tests whether the learner knows that the verb \"naître\" uses \"être\" as its auxiliary in the plus-que-parfait (choice A), distinguishing it from the incorrect use of \"avoir\" (choice B), which is the core concept of rule 04-02.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779404214268-4lz8rw7l",
+      "timestamp": "2026-05-21T22:57:05.403Z"
+    }
+  ]
+}

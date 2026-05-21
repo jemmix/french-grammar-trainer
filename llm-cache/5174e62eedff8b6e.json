@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5174e62eedff8b6e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-02-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la forme correcte du plus-que-parfait : « Elles ___ dans l'escalier. » (tomber)\n\nChoices:\nA. [CORRECT] étaient tombées\nB. [WRONG] avaient tombé\nC. [WRONG] sont tombées\nD. [WRONG] tombaient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779403757347-5g20he2r"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses the wrong auxiliary (avoir instead of être), C is passé composé not plus-que-parfait, and D is imparfait not plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779403794413-222z0f0m",
+      "timestamp": "2026-05-21T22:50:08.613Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are indeed incorrect for the plus-que-parfait tense: B uses the wrong auxiliary (avoir instead of être), C is in the passé composé tense rather than plus-que-parfait, and D is in the simple imparfait tense rather than the compound plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779403988586-wa4gn0tf",
+      "timestamp": "2026-05-21T22:53:18.312Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the wrong auxiliary verb (tomber requires être not avoir), C uses passé composé instead of the requested plus-que-parfait, and D uses imparfait instead of the requested plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779404153311-1zpa423d",
+      "timestamp": "2026-05-21T22:56:03.237Z"
+    }
+  ]
+}

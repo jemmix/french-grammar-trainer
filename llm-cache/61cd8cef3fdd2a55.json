@@ -1,0 +1,26 @@
+{
+  "cacheKey": "61cd8cef3fdd2a55",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-02-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-02 - Le choix de l'auxiliaire avoir ou être au plus-que-parfait\n\nQUESTION:\nType: Input\nPrompt: Choisissez l'auxiliaire correct pour « sortir » au plus-que-parfait selon le contexte.\nPhrase: Le soir, il ___ sorti les poubelles avant de se coucher.\nCorrect Answer: avait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779402391421-lwax60l0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests exactly the stated rule by requiring students to identify that \"sortir\" uses \"avoir\" when used transitively with a direct object (\"les poubelles\"), which is the core distinction the rule teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779402664155-6cob2194",
+      "timestamp": "2026-05-21T22:31:15.076Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the learner to determine that \"sortir\" is transitive here (takes a direct object \"les poubelles\") and therefore requires \"avoir\" as its auxiliary, which is exactly what the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779402954303-th6rt6ol",
+      "timestamp": "2026-05-21T22:36:12.902Z"
+    }
+  ]
+}

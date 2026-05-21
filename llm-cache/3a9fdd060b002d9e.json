@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3a9fdd060b002d9e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-02-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-02 - Le choix de l'auxiliaire avoir ou être au plus-que-parfait\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Elle ___ longtemps à Paris avant de revenir au village. »\nChoices:\nA. [CORRECT] avait vécu\nB. était vécu\nC. avait vécue\nD. était vécue\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779402391419-or4hm1j4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests whether the student knows that \"vivre\" uses \"avoir\" as its auxiliary in the plus-que-parfait, with choice B presenting the wrong auxiliary \"être\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779402406598-c26dyq6c",
+      "timestamp": "2026-05-21T22:26:57.222Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the choice between avoir and être as auxiliary verbs in the plus-que-parfait - \"vivre\" uses avoir, so the correct answer \"avait vécu\" requires knowledge of this specific auxiliary choice.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779402682391-7mz5mrbo",
+      "timestamp": "2026-05-21T22:31:36.140Z"
+    }
+  ]
+}

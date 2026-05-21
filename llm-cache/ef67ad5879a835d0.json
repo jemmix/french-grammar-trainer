@@ -1,0 +1,54 @@
+{
+  "cacheKey": "ef67ad5879a835d0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-02-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la forme correcte du plus-que-parfait : « Nous ___ la lettre avant de la poster. » (écrire)\n\nChoices:\nA. [CORRECT] avions écrit\nB. [WRONG] étions écrit\nC. [WRONG] avons écrit\nD. [WRONG] écrivions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779403757349-1pflg4nh"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses the wrong auxiliary verb (être instead of avoir), C is in passé composé not plus-que-parfait, and D is in imparfait not plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779403886721-kha0965q",
+      "timestamp": "2026-05-21T22:51:44.371Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect given the plus-que-parfait constraint: B uses être instead of avoir as auxiliary; C is passé composé not plus-que-parfait; D is imparfait not plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779404062830-u1ps69aa",
+      "timestamp": "2026-05-21T22:54:44.222Z"
+    },
+    {
+      "raw": "FALSE||C is incorrect because \"avons écrit\" is the passé composé, not the plus-que-parfait as specified in the question. The question explicitly requires the plus-que-parfait tense, so \"avons écrit\" cannot be the correct answer despite being grammatically valid in a different context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779404242864-trwsqtnl",
+      "timestamp": "2026-05-21T22:57:33.118Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses être as auxiliary instead of avoir, C is passé composé not plus-que-parfait, and D is simple imperfect not plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779404304236-ry891ust",
+      "timestamp": "2026-05-21T22:58:32.879Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the wrong auxiliary verb (être instead of avoir), C uses passé composé instead of plus-que-parfait, and D uses the imparfait tense instead of plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779404379570-jvpjdazq",
+      "timestamp": "2026-05-21T23:00:24.841Z"
+    },
+    {
+      "raw": "FALSE|C|Choice C \"avons écrit\" is the passé composé, which is grammatically correct French but does not satisfy the specific requirement for the plus-que-parfait tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779404424841-5yyvxvuq",
+      "timestamp": "2026-05-21T23:00:36.258Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "57d246f29264ac77",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-02-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-02 - Le choix de l'auxiliaire avoir ou être au plus-que-parfait\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe pronominal « se souvenir » au plus-que-parfait.\nPhrase: Elle ___ souvenue de la date exacte.\nCorrect Answer: s'était\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779402391421-bkzd5e3p"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question uses a pronominal verb (« se souvenir »), which always conjugates with \"être\" as auxiliary, so there is no actual choice between avoir or être to make—the question doesn't test the selection rule it claims to test.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779402650220-6df7ubv4",
+      "timestamp": "2026-05-21T22:30:59.539Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that pronominal verbs like \"se souvenir\" use \"être\" as their auxiliary in compound tenses including the plus-que-parfait, which is precisely what rule 04-02 tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779402925888-c994qdgh",
+      "timestamp": "2026-05-21T22:35:54.303Z"
+    }
+  ]
+}

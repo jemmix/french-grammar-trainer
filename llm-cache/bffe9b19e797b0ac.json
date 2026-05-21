@@ -1,0 +1,26 @@
+{
+  "cacheKey": "bffe9b19e797b0ac",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-02-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-02 - Le choix de l'auxiliaire avoir ou être au plus-que-parfait\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Elle ___ descendu les escaliers en courant. »\nChoices:\nA. [CORRECT] avait\nB. était\nC. avait descendue\nD. était descendue\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779402391420-5zbexawj"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests whether \"descendre\" is used transitively or intransitively to choose the auxiliary, which is a different grammatical concept than the stated rule about simply choosing between avoir or être for plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779402617954-rnkfp4u8",
+      "timestamp": "2026-05-21T22:30:50.219Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question structure is flawed - if \"descendu\" is part of the prompt (not the blank), then choice A (\"avait\") is grammatically incomplete as an answer, but if the blank represents the entire verb phrase, then choice A lacks the past participle while other options include it, making the question test whether the blank represents \"just the auxiliary\" or \"the full verb phrase\" rather than the stated rule about choosing between avoir/être.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779402916198-d8mvarzz",
+      "timestamp": "2026-05-21T22:36:14.626Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8f9f3bb4a16331d4",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "04-02-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le choix de l'auxiliaire avoir ou être au plus-que-parfait\nPROMPT: Conjuguez le verbe « rentrer » au plus-que-parfait (emploi intransitif, sans complément d'objet).\nPHRASE: Elles ___ avant minuit.\nCORRECT ANSWER: étaient rentrées\n\nWRONG ANSWERS to evaluate:\n1. avaient rentré\n2. sont rentrées\n3. rentraient\n4. étaient rentré\n5. seraient rentrées\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1779405155431-rcqhm2j4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: using the wrong auxiliary (avaient instead of étaient), confusing with other tenses (sont rentrées/passé composé, rentraient/imparfait, seraient rentrées/conditionnel), and forgetting subject-verb agreement (étaient rentré).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779405421701-j0y58m8r",
+      "timestamp": "2026-05-21T23:17:15.892Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\n\nREASON: All five wrong answers represent common learner mistakes: using \"avoir\" instead of \"être\" (#1), confusing passé composé with plus-que-parfait (#2), using imperfect directly instead of compound form (#3), missing feminine plural agreement (#4), and confusing conditional with imperfect (#5).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779405471386-455boxaf",
+      "timestamp": "2026-05-21T23:18:06.855Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common mistakes learners make with pluperfect tense: choosing the wrong auxiliary (avaient vs étaient), using the wrong tense (passé composé, imparfait, or conditional), or forgetting agreement (étaient rentré vs étaient rentrées).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779405518222-479f3n3w",
+      "timestamp": "2026-05-21T23:18:52.424Z"
+    }
+  ]
+}

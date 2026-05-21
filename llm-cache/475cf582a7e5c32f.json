@@ -1,0 +1,33 @@
+{
+  "cacheKey": "475cf582a7e5c32f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-02-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-02 - Le choix de l'auxiliaire avoir ou être au plus-que-parfait\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « retourner » au plus-que-parfait (emploi intransitif, sans complément d'objet).\nPhrase: Elle ___ au magasin le lendemain.\nCorrect Answer: était retournée\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779405155431-36mvonll"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires knowledge that intransitive \"retourner\" uses \"être\" as its auxiliary in the plus-que-parfait tense, which is exactly what the rule tests — the choice between avoir and être as auxiliaries.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779405171417-2njh7ccg",
+      "timestamp": "2026-05-21T23:13:08.611Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires choosing between \"avoir\" and \"être\" as the auxiliary for \"retourner\" based on its intransitive usage (going somewhere without a direct object), which is exactly what rule 04-02 tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779405210281-kq2k4a70",
+      "timestamp": "2026-05-21T23:13:41.378Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"retourner\" takes \"être\" as auxiliary when used intransitively (returning to a place), which is exactly what the stated rule tests, and the correct answer \"était retournée\" demonstrates this auxiliary choice.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779405233338-q6nxq1yr",
+      "timestamp": "2026-05-21T23:15:48.626Z"
+    }
+  ]
+}

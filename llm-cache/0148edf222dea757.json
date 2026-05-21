@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0148edf222dea757",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-02-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la forme correcte du plus-que-parfait : « Tu ___ ton devoir avant le cours. » (finir)\n\nChoices:\nA. [CORRECT] avais fini\nB. [WRONG] étais fini\nC. [WRONG] as fini\nD. [WRONG] finissais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779403757347-sm2u2l07"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is incorrect because finir uses avoir as auxiliary in compound tenses, not être; C is passé composé, not plus-que-parfait; D is imparfait, not plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779403757358-5egiz6ls",
+      "timestamp": "2026-05-21T22:49:40.424Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses wrong auxiliary être, C is passé composé not plus-que-parfait, D is imperfect tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779403960003-gc9naf17",
+      "timestamp": "2026-05-21T22:53:08.585Z"
+    },
+    {
+      "raw": "TRUE||B uses être as auxiliary instead of avoir, C is passé composé not plus-que-parfait, and D is imparfait not plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779404141233-pnso732e",
+      "timestamp": "2026-05-21T22:55:56.150Z"
+    }
+  ]
+}
