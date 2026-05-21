@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5bb78956ac224c62",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-20-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-20 - L'imparfait de suggestion (si on allait au cinéma ?)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Conjuguez à l'imparfait pour former une suggestion : « Si on ___ un film ce weekend ? »\nChoices:\nA. [CORRECT] regardait\nB. a regardé\nC. regarderait\nD. regarder\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779394172170-ccz7yhzl"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the \"si on + imparfait\" construction for making polite suggestions, which is the core concept of rule 03-20.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779394206897-d8l3a0hg",
+      "timestamp": "2026-05-21T20:10:25.646Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question specifically tests the knowledge that the \"Si on\" construction for making suggestions uses the imparfait tense (not the conditional, which is used for suggestions in different constructions), with choice C (regarderait) serving as a key distractor that tests this distinction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779394360656-fh7ppsit",
+      "timestamp": "2026-05-21T20:13:11.505Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule \"si on + imparfait\" for making suggestions, as the correct answer requires conjugating \"regarder\" in the imperfect tense (\"regardait\") to complete the suggestion structure, while the distractors represent other tenses/moods that don't fit this specific pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779394495295-o2hd6hzk",
+      "timestamp": "2026-05-21T20:15:12.594Z"
+    }
+  ]
+}

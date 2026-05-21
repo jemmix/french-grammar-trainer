@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d2109df335a69ab2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-20-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Conjuguez à l'imparfait pour former une suggestion : « Si on ___ un concert ce vendredi ? »\n\nChoices:\nA. [CORRECT] donnait\nB. [WRONG] a donné\nC. [WRONG] donnerait\nD. [WRONG] donner\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779395612333-mqdp6rt7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the grammatical constraints: B uses passé composé instead of imparfait, C uses conditionnel présent instead of imparfait, and D is an infinitive which is grammatically incorrect after \"si on.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779395612368-awbfttqg",
+      "timestamp": "2026-05-21T20:33:46.912Z"
+    },
+    {
+      "raw": "FALSE||B is passé composé not imparfait; C uses conditionnel which is common for suggestions but violates the explicit requirement to use imparfait; D is infinitive not a conjugated form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779395658026-18k674yf",
+      "timestamp": "2026-05-21T20:34:30.307Z"
+    },
+    {
+      "raw": "FALSE|C|\"donnerait\" uses the conditional tense, which is a valid way to form suggestions in French (e.g., \"Si on ferait un concert ?\"), even though the question explicitly requests the imparfait for this construction. While B (a donné) and D (donner) are clearly incorrect, C represents a grammatically valid alternative construction for making suggestions that a French learner might reasonably encounter.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779395706047-eiiwivmf",
+      "timestamp": "2026-05-21T20:35:28.241Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f5e429a24f52aa33",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-20-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: L'imparfait\n\nRULE BEING TESTED: 03-20 - L'imparfait de suggestion (si on allait au cinéma ?)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe à l'imparfait pour faire une suggestion avec « si nous ».\nPhrase: Si nous ___ en vacances la semaine prochaine ?\nCorrect Answer: partions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779394172176-8k9n4rdk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the use of the imperfect tense to make suggestions with \"si nous\" constructions, which is exactly what the rule about \"l'imparfait de suggestion\" covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779394295597-loao6gcp",
+      "timestamp": "2026-05-21T20:11:45.250Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests using the imperfect tense to make suggestions with a \"si\" construction (using \"si nous\" instead of \"si on\" as shown in the rule title, but both are valid suggestion constructions in French).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779394430134-egfhdn8c",
+      "timestamp": "2026-05-21T20:14:13.165Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the imparfait de suggestion with \"si nous,\" requiring students to conjugate \"partir\" in the imparfait to form a tentative suggestion (\"Si nous partions en vacances la semaine prochaine ?\"), which directly matches the rule's focus on using the imparfait for suggestions in \"si\" constructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779394568316-j71zy7vf",
+      "timestamp": "2026-05-21T20:16:17.843Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "d08f2a8174301cfd",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "03-20-017",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: L'imparfait de suggestion (si on allait au cinéma ?)\n\nQUESTION:\nPrompt: Conjuguez à l'imparfait pour former une suggestion : « Si nous ___ l'appeler maintenant ? »\nChoices:\nA. appelions\nB. avons appelé\nC. appellerions\nD. appeler\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1779394172173-vcogz55h"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly specifies the tense to use (\"à l'imparfait\") and the purpose (\"pour former une suggestion\"), making the task unambiguous despite the slightly unusual sentence construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779394259483-05jilurx",
+      "timestamp": "2026-05-21T20:11:32.750Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly specifies the tense (imperfect), the purpose (forming a suggestion), and provides a clear sentence structure with a blank to fill, leaving only one interpretation: conjugate \"appeler\" to imperfect nous form for the suggestion \"Si nous l'appelions maintenant?\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779394411445-c4shy28b",
+      "timestamp": "2026-05-21T20:13:50.133Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks to use imparfait to form a suggestion, but in French, polite suggestions with \"si\" typically use the conditional tense (e.g., \"Si nous appellerions\"), making the grammatical instruction contradictory to standard usage and potentially confusing to learners.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779394533988-stlpg7nx",
+      "timestamp": "2026-05-21T20:16:20.566Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks students to use the imparfait \"pour former une suggestion\" (to form a suggestion), but the imparfait in \"Si\" clauses like \"Si nous appelions maintenant ?\" technically creates a hypothetical scenario rather than a recommendation/suggestion. The suggestion mechanism in French typically works through the conditional (e.g., \"Si nous l'appelerions maintenant ?\"), or through the imparfait with \"on\" creating a provisional context (e.g., \"Si on allait au cinéma ?\"). The prompt is ambiguous because it conflates these two different suggestion mechanisms—using \"nous\" with imparfait—which doesn't naturally align with the stated goal of forming a suggestion in the way learners would expect from the rule title \"L'imparfait de suggestion.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779394607325-u60xuch0",
+      "timestamp": "2026-05-21T20:18:25.594Z"
+    }
+  ]
+}

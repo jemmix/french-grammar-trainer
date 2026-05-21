@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2f35f965afcbc8dd",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "03-20-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: L'imparfait de suggestion (si on allait au cinéma ?)\nPROMPT: Conjuguez le verbe « partir » à l'imparfait pour faire une suggestion avec « si nous ».\nPHRASE: Si nous ___ en vacances ?\nCORRECT ANSWER: partions\n\nWRONG ANSWERS to evaluate:\n1. sommes partis\n2. partirions\n3. partir\n4. partaient\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1779395612334-qjtt6az8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common mistakes a learner might make when conjugating verbs in the imperfect for suggestions: using passé composé instead of imperfect, confusing imperfect with conditional, using the infinitive instead of conjugating, or using the wrong person/number agreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779395867801-nb33rhvv",
+      "timestamp": "2026-05-21T20:38:02.465Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors when conjugating \"partir\" in the imperfect tense: using the passé composé (sommes partis), incorrectly combining infinitive with imperfect ending (partirions), leaving the verb unconjugated (partir), or using the wrong person conjugation (partaient - ils/elles form instead of nous).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779395934216-trpt0ipw",
+      "timestamp": "2026-05-21T20:39:12.948Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent plausible learner errors: \"sommes partis\" is the passé composé form learners might confuse with the suggestion form, \"partirions\" is the conditional with similar ending to imparfait, \"partir\" is the infinitive learners often default to when uncertain, and \"partaient\" is the correct imparfait tense but wrong person (ils/elles instead of nous).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779396002283-ip328iau",
+      "timestamp": "2026-05-21T20:40:21.674Z"
+    }
+  ]
+}

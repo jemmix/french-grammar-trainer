@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4cf1956911526229",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "03-20-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: L'imparfait de suggestion (si on allait au cinéma ?)\n\nQUESTION:\nPrompt: Conjuguez le verbe « prendre » à l'imparfait pour faire une suggestion avec « si on » (troisième personne du singulier).\nPhrase: Si on ___ un café sur la terrasse ?\nHint: prendre\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1779396189157-iwt9fhuz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt is confusing because it asks for \"third person singular\" when \"si on\" is an idiom that semantically means \"we\" (first person plural), which could mislead learners about which conjugation to use despite the hint.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779396206369-5jo9t1vg",
+      "timestamp": "2026-05-21T20:43:50.592Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly specifies the verb (prendre), the tense (imparfait), the construction (si on suggestion), and the grammatical person (3rd person singular), leading to a single unambiguous answer (prenait).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779396231741-id5es89z",
+      "timestamp": "2026-05-21T20:44:19.828Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: While the prompt asks for the third person singular form, there's a potential confusion because \"si on\" in suggestions often replaces \"nous\" (first person plural), which might lead learners to incorrectly use \"prenions\" instead of the correct \"prenait.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779396259829-069nr6yc",
+      "timestamp": "2026-05-21T20:44:40.062Z"
+    }
+  ]
+}
