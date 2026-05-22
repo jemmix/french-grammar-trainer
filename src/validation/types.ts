@@ -69,6 +69,7 @@ export interface ValidationOptions {
   pruneCache: boolean;
   concurrency?: number;
   model?: string;
+  rateLimit: number;
 }
 
 export interface CheckResult {

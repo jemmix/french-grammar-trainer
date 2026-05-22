@@ -101,6 +101,24 @@ function createConcurrencyLimiter(maxConcurrent: number) {
   };
 }
 
+function createRateLimiter(intervalMs: number) {
+  let nextLaunchTime = 0;
+  let chain: Promise<void> = Promise.resolve();
+
+  return (): Promise<void> => {
+    const prev = chain;
+    let release!: () => void;
+    chain = new Promise<void>(r => { release = r; });
+    return prev.then(async () => {
+      const now = Date.now();
+      if (nextLaunchTime > now) {
+        await sleep(nextLaunchTime - now);
+      }
+      nextLaunchTime = Date.now() + intervalMs;
+    }).finally(release);
+  };
+}
+
 async function loadSections(lang: "fr" | "en"): Promise<Map<string, { section: any; rules: Map<string, any> }>> {
   const { loadedSections } = await import("../data/" + lang + "/index.ts");
   const result = new Map<string, { section: any; rules: Map<string, any> }>();
@@ -340,6 +358,7 @@ async function runLLMBatch(
   updateCache: boolean,
   concurrency: number,
   limitConcurrency: <T>(fn: () => Promise<T>) => Promise<T>,
+  waitForRateLimit: () => Promise<void>,
   verbose: boolean,
   harness: LLMHarness,
   doomedQuestions: Set<string>
@@ -368,6 +387,10 @@ async function runLLMBatch(
     let attemptNumber = 0;
 
     while (updateCache && needsMore()) {
+      if (doomedQuestions.has(ctx.question.id)) break;
+
+      await waitForRateLimit();
+
       if (doomedQuestions.has(ctx.question.id)) break;
 
       await limitConcurrency(async () => {
@@ -456,6 +479,8 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   const cacheKeysUsed = new Set<string>();
   const concurrency = opts.concurrency || DEFAULT_CONCURRENCY;
   const limitConcurrency = createConcurrencyLimiter(concurrency);
+  const rateLimitMs = opts.rateLimit * 1000;
+  const waitForRateLimit = rateLimitMs > 0 ? createRateLimiter(rateLimitMs) : async () => {};
 
   const priorityTasks: LLMPendingTask[] = [];
   const restTasks: LLMPendingTask[] = [];
@@ -584,7 +609,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
 
     if (activePriority.length > 0) {
       console.log("  Phase 1: " + activePriority.length + " priority checks");
-      const results = await runLLMBatch(activePriority, !!opts.updateCache, concurrency, limitConcurrency, verbose, harness, doomedQuestions);
+      const results = await runLLMBatch(activePriority, !!opts.updateCache, concurrency, limitConcurrency, waitForRateLimit, verbose, harness, doomedQuestions);
       llmResults.push(...results);
     }
 
@@ -599,7 +624,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
 
       if (activeRest.length > 0) {
         console.log("  Phase 2: " + activeRest.length + " remaining checks");
-        const results = await runLLMBatch(activeRest, !!opts.updateCache, concurrency, limitConcurrency, verbose, harness, doomedQuestions);
+        const results = await runLLMBatch(activeRest, !!opts.updateCache, concurrency, limitConcurrency, waitForRateLimit, verbose, harness, doomedQuestions);
         llmResults.push(...results);
       }
     }
