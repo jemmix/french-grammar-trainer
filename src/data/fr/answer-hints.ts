@@ -294,7 +294,7 @@ export const answerHints: Record<string, string> = {
   "avait fait": "faire",
   "avait fermé": "fermer",
   "avait gonflé": "gonfler",
-  "avait laissées": "laisser",
+  "avait pris": "prendre",
   "avait laissé": "laisser",
   "avait laissés": "laisser",
   "avait lu": "lire",
