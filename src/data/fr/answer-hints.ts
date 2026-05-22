@@ -674,7 +674,7 @@ export const answerHints: Record<string, string> = {
   "n'ont pas": "négation",
   "n'a pas": "négation",
   "n'avez pas": "négation",
-  "n'était pas encore partie": "partir",
+  "n'avait pas lu": "lire",
   "n'y va pas": "aller",
   "n'y": "pronom",
   "Nage": "nager",
