@@ -49,25 +49,21 @@ NOT ALLOWED:
 - Mixing English and French sentences in explanations without clear pedagogical purpose
 
 Format your response as:
-VERDICT
-EXPLANATION
-
-Where:
-- VERDICT is exactly one word: FRENCH or ENGLISH_DETECTED
-- EXPLANATION is a brief sentence describing what you found
+VERDICT: <FRENCH|ENGLISH_DETECTED>
+REASON: <brief explanation>
 
 Examples:
-FRENCH
-All content is in French with no English detected.
+VERDICT: FRENCH
+REASON: All content is in French with no English detected.
 
-FRENCH
-Content uses allowed English exception for false friend contrast (actuellement/actually).
+VERDICT: FRENCH
+REASON: Content uses allowed English exception for false friend contrast (actuellement/actually).
 
-ENGLISH_DETECTED
-Prompt uses English instruction "Conjugate the verb" instead of French.
+VERDICT: ENGLISH_DETECTED
+REASON: Prompt uses English instruction "Conjugate the verb" instead of French.
 
-ENGLISH_DETECTED
-Explanation contains untranslated English: "This is wrong because the subject is plural."`,
+VERDICT: ENGLISH_DETECTED
+REASON: Explanation contains untranslated English: "This is wrong because the subject is plural."`,
       userPrompt: "RULE: " + ctx.rule.title + "\n\nQUESTION CONTENT:\n" + questionContent + "\n\nIs all content appropriately in French?",
     };
   },
