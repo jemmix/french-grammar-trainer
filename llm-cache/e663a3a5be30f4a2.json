@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e663a3a5be30f4a2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-08-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand Marc est sorti, la pluie ___ une heure plus tôt. »\n\nChoices:\nA. [CORRECT] avait commencé\nB. [WRONG] a commencé\nC. [WRONG] commençait\nD. [WRONG] allait commencer\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779478504234-qfr63q5s"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI analyzed the French grammar multiple choice question: \"Complétez : « Quand Marc est sorti, la pluie ___ une heure plus tôt. »\"\n\n**Analysis of the WRONG answers:**\n- **B. a commencé** (passé composé): Incorrect because it fails to express the anteriority (past-before-past) relationship that \"une heure plus tôt\" requires when the main clause is in passé composé. The plus-que-parfait (\"avait commencé\") is the correct tense for this temporal context.\n- **C. commençait** (imparfait): Incorrect because the imparfait describes ongoing states or habitual actions, not a completed action that occurred before another past action.\n- **D. allait commencer** (futur proche in the past): Incorrect because this means \"was about to start,\" which contradicts the logical meaning that the rain had already started an hour earlier.\n\n**Verdict:** TRUE - All wrong answers are indeed incorrect within the grammatical constraints of the question.\n\n**Response format:**\nTRUE||All wrong answers fail to express the anteriority required by \"une heure plus tôt\" after a passé composé main clause; the plus-que-parfait is the only correct tense for this past-before-past context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779478504278-9xonmwsl",
+      "timestamp": "2026-05-22T19:35:49.601Z"
+    },
+    {
+      "raw": "TRUE||The plus-que-parfait is the only correct tense because the action of the rain starting occurred before the action of Marc going out, as indicated by the temporal marker \"une heure plus tôt.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779478604407-nlhnbbh8",
+      "timestamp": "2026-05-22T19:38:06.385Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect within the grammatical constraints. B uses passé composé which doesn't properly express the anteriority required by \"une heure plus tôt\" (the rain had started before Marc went out, requiring plus-que-parfait); C uses imparfait which describes ongoing states not completed actions at a specific point in the past; D uses futur proche in the past which changes the meaning to \"was about to start\" rather than \"had started.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779478748338-eiat9o5y",
+      "timestamp": "2026-05-22T19:41:18.289Z"
+    }
+  ]
+}

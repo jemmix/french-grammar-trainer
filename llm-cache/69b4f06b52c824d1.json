@@ -1,0 +1,33 @@
+{
+  "cacheKey": "69b4f06b52c824d1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-08-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-08 - Le plus-que-parfait vs le passé composé : la chronologie des événements\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Après qu'ils ___ à Lyon, ils ont vendu leur appartement à Paris. »\nChoices:\nA. [CORRECT] avaient déménagé\nB. ont pu déménager\nC. déménageaient\nD. allaient déménager\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779480569626-2j16z9sr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that plus-que-parfait (\"avaient déménagé\") is used for an action that occurred before another past action (\"ont vendu\"), with \"Après\" clearly signaling this chronological relationship.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779480570694-e1mgh0iu",
+      "timestamp": "2026-05-22T20:09:50.523Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the plus-que-parfait vs passé composé distinction by using \"Après\" to indicate that moving to Lyon happened before selling the apartment, requiring the pluperfect \"avaient déménagé\" rather than the compound past \"ont pu déménager.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779480590529-imftn9c1",
+      "timestamp": "2026-05-22T20:10:13.903Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the chronological relationship between past events, requiring recognition that \"Après qu'ils\" establishes the first action in a sequence, which must be expressed in plus-que-parfait when followed by a main clause in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779480613907-vg25dxiq",
+      "timestamp": "2026-05-22T20:10:36.985Z"
+    }
+  ]
+}
