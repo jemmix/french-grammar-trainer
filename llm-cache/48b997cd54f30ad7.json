@@ -1,0 +1,33 @@
+{
+  "cacheKey": "48b997cd54f30ad7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-04-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-04 - Le plus-que-parfait des verbes pronominaux\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Avant le réveil, il ___ tranquillement. »\nChoices:\nA. [CORRECT] s'était endormi\nB. s'avait endormi\nC. s'est endormi\nD. se dormait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779409398835-z1z6ok5s"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the plus-que-parfait of a pronominal verb (\"s'endormir\") with the context \"Avant le réveil\" requiring the pluperfect tense, while distractors test wrong auxiliary (\"s'avait\"), wrong past tense (passé composé), and an incorrect pronominal form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779409398841-nitp0gea",
+      "timestamp": "2026-05-22T00:23:30.630Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"s'endormir\" is a pronominal verb formed with \"être\" as auxiliary in the pluperfect tense, and that \"avant le réveil\" sets a context requiring pluperfect rather than passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779409587299-bkuaoc5f",
+      "timestamp": "2026-05-22T00:26:37.353Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly tests the plus-que-parfait of pronominal verbs since the student must identify that \"s'était endormi\" is the proper formation (être auxiliary in imparfait + past participle) and distinguish it from incorrect formations like \"s'avait endormi\" (wrong auxiliary), \"s'est endormi\" (passé composé instead of plus-que-parfait), and \"se dormait\" (invalid verb construction).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779409780495-bpsrycep",
+      "timestamp": "2026-05-22T00:29:54.981Z"
+    }
+  ]
+}

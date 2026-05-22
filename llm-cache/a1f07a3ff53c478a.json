@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a1f07a3ff53c478a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-07-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Après qu'il ___ pendant une heure, les secours sont enfin arrivés. »\n\nChoices:\nA. [CORRECT] avait attendu\nB. [WRONG] attendait\nC. [WRONG] avait attendu depuis\nD. [WRONG] ait attendu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779456756985-tjn336ni"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.\n\nLet me explain:\n\nThe question asks to complete the sentence \"Après qu'il ___ pendant une heure, les secours sont enfin arrivés.\" The correct answer is A. \"avait attendu\" (plus-que-parfait), which is appropriate for an action completed before another past action.\n\nB. \"attendait\" is incorrect because the imparfait suggests an ongoing action, not a completed one as required by the context.\n\nC. \"avait attendu depuis\" is incorrect because \"depuis\" creates a grammatically incorrect construction with \"pendant une heure\" already present.\n\nD. \"ait attendu\" is incorrect because \"après que\" requires the indicative mood, not the subjunctive.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779457171744-ph9tkgf0",
+      "timestamp": "2026-05-22T13:40:59.983Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the imperfect which doesn't convey completed action required by \"après que\", C incorrectly adds \"depuis\" to a duration already expressed with \"pendant\", and D uses the subjunctive which is not used with \"après que\" (requires indicative).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779457681151-sprlrs54",
+      "timestamp": "2026-05-22T13:48:21.058Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses the imparfait instead of the required plus-que-parfait, C incorrectly adds \"depuis\" which creates redundancy with \"après que\", and D uses the subjunctive mood (required for \"avant que\" not \"après que\") instead of the indicative.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779458124052-j6z1dxae",
+      "timestamp": "2026-05-22T13:56:15.229Z"
+    }
+  ]
+}

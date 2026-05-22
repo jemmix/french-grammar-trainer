@@ -1,0 +1,61 @@
+{
+  "cacheKey": "631cd0d9d330d2cc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-07-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand il rentrait du travail, ses enfants ___ déjà. »\n\nChoices:\nA. [CORRECT] avaient dîné\nB. [WRONG] dînaient déjà\nC. [WRONG] ont dîné déjà\nD. [WRONG] auront dîné\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779456756984-rujxyp1l"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779457084096-7wvl04y7",
+      "timestamp": "2026-05-22T13:47:00.720Z"
+    },
+    {
+      "raw": "I need to respond with the requested format:\n\nTRUE|B|B uses the imparfait \"dînaient déjà\" which is grammatically correct French; it conveys that the children were already eating (rather than had finished), which is a valid alternative interpretation within the grammatical constraints.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779458059196-c7jgj2cu",
+      "timestamp": "2026-05-22T13:55:43.419Z"
+    },
+    {
+      "raw": "FALSE|B|B is grammatically correct and makes sense in the context; the imparfait \"dînaient déjà\" means \"were already dining\" and is valid in this past-tense setting, conveying that the children were in the process of eating when he came home.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779458213549-c1o0jvsz",
+      "timestamp": "2026-05-22T14:02:08.474Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't correctly express an action completed before another past action.\n\nThe correct answer is A (\"avaient dîné\") which uses the plus-que-parfait tense, appropriately indicating that the children's dinner was completed before the father's arrival (rentrait = imparfait). Answer B uses imparfait (ongoing action), C uses passé composé with incorrect adverb placement, and D uses futur antérieur (future), none of which satisfy the grammatical constraint of expressing a completed action prior to another past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779458528475-stvvqc9n",
+      "timestamp": "2026-05-22T14:02:33.663Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait instead of the required plus-que-parfait to express anteriority; C has non-standard word order (\"déjà\" should precede the participle in passé composé) and uses the wrong tense for expressing anteriority; D uses futur antérieur which is a future tense, not appropriate for this past context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779458553664-hq3emed0",
+      "timestamp": "2026-05-22T14:04:52.806Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in the given context: B uses imparfait which conflicts with the completion sense of \"déjà\", C uses passé composé which doesn't properly convey the anteriority needed with \"quand\" + imparfait, and D uses futur antérieur which refers to a future context rather than the past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779458692807-pojtdkdg",
+      "timestamp": "2026-05-22T14:05:22.255Z"
+    },
+    {
+      "raw": "FALSE|B,C|B is grammatically correct in imparfait tense for ongoing actions; C could work in certain narrative contexts despite not being the most natural choice with \"rentrait\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779458722255-23fra34x",
+      "timestamp": "2026-05-22T14:05:49.740Z"
+    }
+  ]
+}

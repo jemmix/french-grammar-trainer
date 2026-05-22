@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6892f52db3b4b525",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "04-08-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le plus-que-parfait vs le passé composé : la chronologie des événements\nPROMPT: Conjuguez le verbe entre parenthèses au plus-que-parfait ou au passé composé selon la chronologie.\nPHRASE: Les médecins ont diagnostiqué une maladie qu'ils ___ (voir) auparavant.\nCORRECT ANSWER: n'avaient jamais vue\n\nWRONG ANSWERS to evaluate:\n1. ont vue\n2. avaient vu\n3. avaient vues\n4. auraient vue\n5. avait vue\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1779477284812-jz1s0fs5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors including incorrect tense selection (passé composé or conditionnel instead of plus-que-parfait), missing negative particle \"ne/n'\", and incorrect agreement (wrong gender or number with the past participle).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779477534356-qqa9x7gb",
+      "timestamp": "2026-05-22T19:19:09.331Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: Each wrong answer represents a common error learners might make: using the passé composé instead of plus-que-parfait (ont vue), forgetting gender agreement (avaient vu), over-agreeing (avaient vues), confusing tenses (auraient vue), or using singular instead of plural auxiliary (avait vue).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779477749894-sdq1qypo",
+      "timestamp": "2026-05-22T19:22:53.872Z"
+    }
+  ]
+}

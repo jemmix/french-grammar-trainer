@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fdac1ceb9a64e666",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-08-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Ils ont quitté le musée car ils ___ déjà toutes les œuvres. »\n\nChoices:\nA. [CORRECT] avaient vu\nB. [WRONG] ont vu\nC. [WRONG] voyaient\nD. [WRONG] allaient voir\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779465484034-yfyuyqs0"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context; B uses passé composé instead of required plus-que-parfait for anteriority, C uses imperfect which describes ongoing rather than completed action, and D uses aller + infinitive meaning \"were going to see\" rather than \"had already seen.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779465656719-59nk1est",
+      "timestamp": "2026-05-22T16:01:18.187Z"
+    },
+    {
+      "raw": "I'm unable to use any tools or continue with multi-step operations, as I've reached the maximum allowed steps for this task. Let me provide my text-only assessment of the question:\n\nTRUE||All wrong answers contain clear grammar errors.\n\nExplanation: The question requires the plus-que-parfait (pluperfect) tense because it expresses an action completed before another past action (leaving the museum). Choice B uses passé composé which doesn't convey the anteriority required. Choice C uses imparfait which is for ongoing/habitual actions. Choice D uses aller + infinitive construction meaning \"were going to see,\" which contradicts \"déjà\" (already). All three fail to express the completed action that occurred before leaving the museum.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779466119086-h4lmfywr",
+      "timestamp": "2026-05-22T16:09:07.225Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in the context of expressing a completed action prior to another past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779466479826-60kgg4nk",
+      "timestamp": "2026-05-22T16:15:57.942Z"
+    }
+  ]
+}

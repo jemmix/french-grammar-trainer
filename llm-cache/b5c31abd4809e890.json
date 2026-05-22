@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b5c31abd4809e890",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-08-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À son retour, Antoine a découvert que sa femme ___ en voyage. »\n\nChoices:\nA. [CORRECT] était partie\nB. [WRONG] est partie\nC. [WRONG] partait\nD. [WRONG] allait partir\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779469344318-656aa9wv"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the proper sequence of tenses in indirect discourse with a past main verb (plus-que-parfait is required for anteriority, not passé composé, imparfait, or aller de + infinitive).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779469471321-5k8mx199",
+      "timestamp": "2026-05-22T17:05:11.113Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work completed:\n- Analyzed a French grammar verification question about verb tenses\n- Evaluated four answer choices for the sentence: « À son retour, Antoine a découvert que sa femme ___ en voyage. »\n- Assessed whether each wrong answer (B, C, D) is indeed grammatically incorrect within the context\n\nAnalysis performed:\n- Choice A (était partie) is the correct plus-que-parfait form indicating the wife had already left when Antoine returned\n- Choice B (est partie) uses passé composé which doesn't properly show anteriority to \"a découvert\"\n- Choice C (partait) uses imparfait which would mean \"was leaving\" rather than \"had left,\" not fitting the context\n- Choice D (allait partir) uses immediate future construction meaning \"was about to leave,\" changing the meaning\n\nThe verdict is: TRUE||All wrong answers are incorrect because they either fail to show the proper tense relationship (B), don't match the context of discovering an absence (C), or change the semantic meaning (D).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779469754741-vxz9xorf",
+      "timestamp": "2026-05-22T17:10:01.563Z"
+    },
+    {
+      "raw": "I've reached the maximum number of steps for this task.\n\nI've analyzed the French grammar question about verb tenses in a complex sentence. The sentence \"Antoine a découvert que sa femme ___ en voyage\" requires the plus-que-parfait tense in the subordinate clause because it describes an action that occurred before the main action (Antoine's discovery).\n\nAll the wrong answers (B, C, D) are indeed incorrect:\n- B (est partie) is passé composé, which would imply the wife left at the same time as the discovery\n- C (partait) is imparfait, which would describe an ongoing action, not a completed one\n- D (allait partir) means \"was going to leave,\" which contradicts the context of him returning to find her already gone\n\nThe verdict for this question is:\nTRUE||All wrong answers contain clear grammar errors or don't match the temporal context of the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779469967772-g0akif8c",
+      "timestamp": "2026-05-22T17:13:47.215Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "cb41e67be8121499",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-04-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez (le locuteur est un homme) : « Tu ___ avant de partir en vacances. »\n\nChoices:\nA. [CORRECT] t'étais reposé\nB. [WRONG] t'étais reposée\nC. [WRONG] te étais reposé\nD. [WRONG] t'avais reposé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779411234841-612dyxmm"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B incorrectly uses the feminine form \"reposée\" when the speaker is specified as male; C has an incorrect reflexive pronoun form \"te\" instead of \"t'\" before a vowel; D uses the wrong auxiliary verb \"avais\" instead of \"étais\" for the reflexive verb \"se reposer\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779411234862-hmh4m5nx",
+      "timestamp": "2026-05-22T00:56:53.803Z"
+    },
+    {
+      "raw": "FALSE|D|D uses the auxiliary \"avais\" with the reflexive verb \"se reposer\" - reflexive verbs in compound tenses must use \"être\" as the auxiliary, so \"t'avais reposé\" is grammatically incorrect. B is incorrect because it uses feminine agreement despite the question specifying the speaker is male, and C is incorrect because \"te\" does not elide before \"étais\" (should be \"t'étais\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779411472413-0lpnnkps",
+      "timestamp": "2026-05-22T00:58:58.995Z"
+    }
+  ]
+}

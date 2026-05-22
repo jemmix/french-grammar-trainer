@@ -270,6 +270,7 @@ export const answerHints: Record<string, string> = {
   "avaient décidé": "décider",
   "avaient déjà étudié": "étudier",
   "avaient fini": "finir",
+  "avaient observée": "observer",
   "avaient le droit": "avoir",
   "avaient lu": "lire",
   "avaient oublié": "oublier",

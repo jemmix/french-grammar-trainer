@@ -1,0 +1,33 @@
+{
+  "cacheKey": "41311680d5b26206",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-05-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au plus-que-parfait : « Avant ce voyage, il ___ nulle part. »\n\nChoices:\nA. [CORRECT] n'avait voyagé nulle part\nB. [WRONG] n'avait nulle part voyagé\nC. [WRONG] n'avait pas voyagé nulle part\nD. [WRONG] avait voyagé nulle part\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779446691904-zgtmxrn9"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B incorrectly places \"nulle part\" between auxiliary and past participle (adverbs of place go after the participle), C redundantly combines \"ne...pas\" with \"nulle part\" (standard French uses only \"ne...nulle part\" for place negation), and D lacks the required \"ne\" for negation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779446691929-1ed2k3pf",
+      "timestamp": "2026-05-22T10:51:13.582Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI've analyzed the French grammar question about the plus-que-parfait tense: \"Avant ce voyage, il ___ nulle part.\"\n\nThe correct answer is A: \"n'avait voyagé nulle part,\" which properly uses the plus-que-parfait with the negative expression \"nulle part.\"\n\nAll the wrong answers are indeed incorrect:\n- B: \"n'avait nulle part voyagé\" - Incorrect word order (negative adverb should not come between auxiliary and past participle)\n- C: \"n'avait pas voyagé nulle part\" - Redundant negation (adding \"pas\" when \"nulle part\" already provides negation)\n- D: \"avait voyagé nulle part\" - Missing negation entirely, changing the meaning of the sentence\n\nVERDICT: TRUE||All wrong answers violate word order or negation rules in the plus-que-parfait construction with negative expressions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779447073583-aofrj8lk",
+      "timestamp": "2026-05-22T10:53:00.859Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779447180861-tird1yds",
+      "timestamp": "2026-05-22T10:53:16.968Z"
+    }
+  ]
+}

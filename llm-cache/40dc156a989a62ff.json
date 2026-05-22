@@ -1,0 +1,33 @@
+{
+  "cacheKey": "40dc156a989a62ff",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-07-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand il rentrait du travail, ses enfants ___ déjà . »\n\nChoices:\nA. [CORRECT] avaient dîné\nB. [WRONG] dînent\nC. [WRONG] ont dîné\nD. [WRONG] auront dîné\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779463833349-1ssh7iqp"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached. I've analyzed the French grammar question to verify if the wrong answers are indeed incorrect.\n\nFor the question \"Complétez : « Quand il rentrait du travail, ses enfants ___ déjà . »\" with choices:\n- B. dînent (present tense) - Incorrect because the context requires past tense\n- C. ont dîné (passé composé) - Incorrect as it doesn't properly express the anteriority to \"rentrait\" (plus-que-parfait is needed)\n- D. auront dîné (future anterior) - Incorrect because the context is past, not future\n\nVERDICT|TRUE||All wrong answers contain clear grammar errors - B is in wrong tense, C doesn't show proper anteriority, and D is in wrong temporal frame.\n\nNo additional work was completed beyond this analysis.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779463836376-hgp6p6s9",
+      "timestamp": "2026-05-22T15:31:04.844Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect given the past context of the question: B is present tense, C is passé composé (doesn't express anteriority), and D is a future tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779463864845-2w0899zq",
+      "timestamp": "2026-05-22T15:31:17.097Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI was asked to verify that the wrong answers in a French grammar multiple choice question are indeed incorrect. I analyzed the question:\n\n\"Complétez : « Quand il rentrait du travail, ses enfants ___ déjà . »\"\n\nThe question uses \"rentrait\" (imparfait) to describe an ongoing past action, and requires filling in what the children had ALREADY done before that moment. This context requires the plus-que-parfait tense.\n\nI evaluated all three wrong answers:\n- **B (dînent)**: Present tense — incorrect because the temporal context is past, not present\n- **C (ont dîné)**: Passé composé — incorrect because it doesn't properly express anteriority to the ongoing past action described by \"rentrait\" with \"déjà\"\n- **D (auront dîné)**: Future tense — incorrect because it refers to a future action that hasn't happened yet, which contradicts \"déjà\" in a past context\n\n**VERDICT:**\nTRUE||All wrong answers use tenses that are grammatically incompatible with the plus-que-parfait construction required by the context of an ongoing past action (\"rentrait\") with anteriority (\"déjà\").\n\n**Remaining tasks:**\nNone — the verification task was completed.\n\n**Recommendations:**\nThe verdict (TRUE) can be returned to indicate that all wrong answers are correctly identified as incorrect. The question is grammatically sound.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779463877098-apqit9fk",
+      "timestamp": "2026-05-22T15:34:03.116Z"
+    }
+  ]
+}

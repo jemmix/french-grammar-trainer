@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d19afd1f4dd2bd24",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-08-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Le directeur a annulé la réunion parce que tous les participants ___ déjà. »\n\nChoices:\nA. [CORRECT] étaient partis\nB. [WRONG] sont partis\nC. [WRONG] partaient\nD. [WRONG] allaient partir\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779469344311-exxpzncs"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context because B uses passé composé instead of the required plus-que-parfait for anteriority, C uses imparfait which describes ongoing action not completed before the meeting cancellation, and D uses \"aller + infinitive\" which expresses future intention rather than completed action, and contradicts \"déjà.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779469362148-2nl2cn4d",
+      "timestamp": "2026-05-22T17:03:10.484Z"
+    },
+    {
+      "raw": "I need to analyze the grammatical correctness of each wrong answer choice for this French grammar question.\n\nThe question asks to complete the sentence: \"Le directeur a annulé la réunion parce que tous les participants ___ déjà.\"\n\nLet's analyze each wrong answer:\n\n- Choice B: \"sont partis\" - This uses the passé composé (past perfect). In this sentence, the director's action (a annulé) is in the passé composé, and the participants' leaving happened BEFORE this action. The word \"déjà\" (already) reinforces this anteriority. For an action completed before another past action, French requires the plus-que-parfait, not the passé composé. This is grammatically incorrect for the temporal relationship described.\n\n- Choice C: \"partaient\" - This uses the imparfait (imperfect), which describes ongoing or habitual actions in the past. The word \"déjà\" (already) contradicts this, indicating the action was completed, not in progress. This is grammatically incorrect in this context.\n\n- Choice D: \"allaient partir\" - This means \"were going to leave\" (future in the past). This contradicts \"déjà\" (already) which clearly indicates the action was completed, not just intended. This is grammatically incorrect for the context.\n\nTRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779469652430-t302cqgi",
+      "timestamp": "2026-05-22T17:08:06.911Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work\nI analyzed a French grammar question as a verifier. The question asked to complete the sentence: \"Le directeur a annulé la réunion parce que tous les participants ___ déjà.\"\n\nI evaluated all three wrong answers:\n- B: \"sont partis\" (passé composé) - Incorrect because it doesn't show the action was completed before the director canceled the meeting\n- C: \"partaient\" (imparfait) - Incorrect because it shows ongoing action, not completed before the meeting was canceled\n- D: \"allaient partir\" (futur proche in past) - Incorrect because it shows they were about to leave, not that they had already left\n\nThe correct answer \"étaient partis\" (plus-que-parfait) is appropriate because it properly indicates an action completed before another past action, consistent with the word \"déjà\" (already).\n\n## Remaining Tasks\n- Provide the formatted response as requested (VERDICT|letters|explanation)\n\n## Recommendations\nThe verdict should be TRUE because all wrong answers (B, C, D) are indeed incorrect given the grammatical constraints of the sentence. The response format should be:\n```\nTRUE||All wrong answers do not use the plus-que-parfait tense required to express an action completed before another past action.\n```",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779469875841-sie8cw0f",
+      "timestamp": "2026-05-22T17:11:40.700Z"
+    }
+  ]
+}

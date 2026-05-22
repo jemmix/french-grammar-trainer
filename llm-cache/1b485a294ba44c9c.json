@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1b485a294ba44c9c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-07-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-07 - Le plus-que-parfait avec quand / lorsque / après que (antériorité)\n\nQUESTION:\nType: Input\nPrompt: Complétez avec la forme correcte du plus-que-parfait pour marquer l'antériorité avec « quand ».\nPhrase: Quand il a cherché ses clés, il s'est rappelé qu'il les ___ chez son frère.\nCorrect Answer: avait laissées\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779456756986-c1rf4co4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests a different grammatical construct than the stated rule — the \"quand\" clause here introduces the temporal event (\"Quand il a cherché\") which would normally trigger passé composé as the first event, but the question requires plus-que-parfait in a subordinate clause; this structure (main clause in passé composé + \"quand\" clause also in passé composé) does not properly demonstrate the rule about using plus-que-parfait with quand/lorsque/après que to express anteriority, where the plus-que-parfait action should precede the action in the temporal clause.\n\n---\nMAXIMUM STEPS REACHED\n\nThe maximum number of steps allowed for this task has been reached. Tools are disabled until next user input.\n\nSummary of work accomplished:\n- Evaluated one grammar question from the French Grammar Trainer validation queue\n- Analyzed whether the question properly tests rule \"04-07 - Le plus-que-parfait avec quand / lorsque / après que (antériorité)\"\n- Determined the question is MISALIGNED because the sentence structure does not demonstrate the intended grammatical rule\n\nRemaining tasks:\n- No additional tasks were in progress for this single-question validation\n\nRecommendations for next step:\n- The question should be reformulated to properly demonstrate the rule — either restructure the sentence so the \"quand\" clause expresses the later event (e.g., \"Quand il est rentré, il a vu qu'il avait laissé ses clés...\") or choose a different example that clearly shows anteriority between the plus-que-parfait action and the quand/lorsque/après que action",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779457259984-3udo6v3o",
+      "timestamp": "2026-05-22T13:43:03.303Z"
+    },
+    {
+      "raw": "I've reached the maximum number of steps for this task. Here's a summary:\n\n## Work Completed\nI've analyzed the French grammar question to determine whether it tests the stated rule about using the plus-que-parfait with temporal markers like \"quand\" to express anteriority.\n\n## Analysis Summary\n\n**VERDICT: ALIGNED**\n\n**REASON:** The question correctly tests the plus-que-parfait to express anteriority—the action of leaving the keys (avait laissées) happened before he remembered them, and the prompt explicitly instructs the learner to use the plus-que-parfait for this purpose.\n\nThe sentence structure \"Quand il a cherché ses clés, il s'est rappelé qu'il les ___ chez son frère\" has the chronological sequence:\n1. He left the keys (first action - requires plus-que-parfait)\n2. He looked for them\n3. He remembered\n\nThe correct answer \"avait laissées\" properly demonstrates anteriority before another past action.\n\n## Recommendations\nThe question is valid and properly tests the stated rule. It can be used as-is in the curriculum.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779457789968-26z8l2eu",
+      "timestamp": "2026-05-22T13:50:18.996Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question uses \"quand\" in a passé composé temporal clause (Quand il a cherché ses clés) where the pluperfect appears in a separate subordinate clause (qu'il les avait laissées), which does not test the rule about expressing anteriority with \"quand/lorsque/après que\" where the pluperfect action occurs before the main clause action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779458175189-tziudldc",
+      "timestamp": "2026-05-22T13:56:50.288Z"
+    }
+  ]
+}

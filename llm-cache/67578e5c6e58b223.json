@@ -1,0 +1,33 @@
+{
+  "cacheKey": "67578e5c6e58b223",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-05-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-05 - La négation au plus-que-parfait (ne + auxiliaire + négation + participe)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Martine et Pierre ___ de leur voyage avant mon arrivée. »\nChoices:\nA. [CORRECT] n'avaient rien dit\nB. n'avaient dit rien\nC. avaient rien dit\nD. n'avaient pas rien dit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779429714288-ot1b1j5g"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the correct placement of negation elements (ne + auxiliary + negation word + past participle) in the plus-que-parfait tense, which is exactly what the rule states.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779429863091-1gmk84i2",
+      "timestamp": "2026-05-22T06:04:46.140Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the correct placement of negation elements in plus-que-parfait (ne + auxiliary + rien + past participle), and all wrong answers violate this specific negation structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779430096484-zydokjjh",
+      "timestamp": "2026-05-22T06:08:29.640Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the negation structure in pluperfect tense by requiring knowledge that \"ne\" must precede the auxiliary verb and \"rien\" must follow it, with the past participle at the end.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779430285320-e6qph24z",
+      "timestamp": "2026-05-22T06:11:46.229Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a8c33b31b335cd02",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-08-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Laquelle de ces phrases exprime correctement la chronologie : d'abord le déménagement, ensuite la vente ?\n\nChoices:\nA. [CORRECT] Ils avaient déménagé avant de vendre leur ancien appartement.\nB. [WRONG] Ils avaient déménagé après avoir vendu leur ancien appartement.\nC. [WRONG] Ils ont vendu leur appartement avant de déménager.\nD. [WRONG] Ils déménageaient avant de vendre leur ancien appartement.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779465484034-9d53ngwn"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached. I was asked to evaluate a French grammar multiple choice question and verify that the wrong answers are indeed incorrect.\n\n## Work Completed\n\nI analyzed the French grammar question about expressing chronological order (move first, then sale) and evaluated the three wrong answers:\n\n- **Answer B**: \"Ils avaient déménagé après avoir vendu...\" - Incorrect because \"après avoir vendu\" reverses the required order (sale before move)\n- **Answer C**: \"Ils ont vendu leur appartement avant de déménager.\" - Incorrect because \"avant de déménager\" places the sale before the move\n- **Answer D**: \"Ils déménageaient avant de vendre...\" - Incorrect because imparfait tense describes an ongoing/habitual action, not a completed event in a chronological sequence\n\n## Verdict\n\nTRUE||All wrong answers violate the required chronological order (move first, then sale) either through incorrect prepositions or inappropriate verb tense usage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779465690195-7w7rscks",
+      "timestamp": "2026-05-22T16:02:03.133Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was asked to verify that wrong answers B, C, and D in a multiple choice French grammar question are indeed incorrect. The question asks: \"Laquelle de ces phrases exprime correctement la chronologie : d'abord le déménagement, ensuite la vente ?\" (Which of these sentences correctly expresses the chronology: first the move, then the sale?)\n\nI analyzed each wrong answer:\n\n- **B** (\"Ils avaient déménagé après avoir vendu leur ancien appartement\") — clearly incorrect because it uses \"après\" (after), indicating the opposite chronology.\n\n- **C** (\"Ils ont vendu leur appartement avant de déménager\") — clearly incorrect because it expresses selling BEFORE moving, the opposite of what's required.\n\n- **D** (\"Ils déménageaient avant de vendre leur ancien appartement\") — uses the imparfait tense \"déménageaient\" to describe an ongoing action. While \"avant de vendre\" places selling after the moving action, the imparfait doesn't clearly express a completed sequence of events. The question requires a clear statement that the move happened first THEN the sale, which the imparfait construction does not definitively convey.\n\n## Remaining Tasks\n- Provide the final verdict response in the requested format\n\n## Recommendation\nThe verdict should be TRUE, as all three wrong answers fail to satisfy the grammatical requirement of clearly expressing \"first moving, then selling\" as a completed sequence. Answer D is particularly subtle but incorrect due to the imparfait tense not conveying a completed past event sequence.\n\n**Final response:**\nTRUE||All wrong answers fail to correctly express the chronology of first moving, then selling.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779466148607-magdzltk",
+      "timestamp": "2026-05-22T16:12:48.056Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers reverse the chronological order (moving first, then selling) or use an inappropriate tense that doesn't clearly establish the required sequence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779466717718-2hukc5ly",
+      "timestamp": "2026-05-22T16:19:10.073Z"
+    }
+  ]
+}

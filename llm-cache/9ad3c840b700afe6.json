@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9ad3c840b700afe6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-07-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Lorsqu'on nous a annoncé la nouvelle, nous ___ déjà qu'il ___ en vacances. »\n\nChoices:\nA. [CORRECT] savions / était parti\nB. [WRONG] avons su / est parti\nC. [WRONG] savions / partait\nD. [WRONG] savions / est parti\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779461809910-qmzskhyu"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the pluperfect context established by \"déjà\": B incorrectly uses passé composé \"avons su\" which contradicts \"déjà\", and C and D both fail to express anteriority with \"partait\" and \"est parti\" instead of the required plus-que-parfait \"était parti\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779461809919-fx1umcag",
+      "timestamp": "2026-05-22T14:57:11.578Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb tenses for the context: B uses passé composé instead of imparfait/plus-que-parfait; C uses imparfait for an action completed before another past event; D uses passé composé instead of plus-que-parfait for an action that occurred before the time of knowing.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779461831578-gg6eb6d2",
+      "timestamp": "2026-05-22T14:59:39.558Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear tense errors that violate the chronological sequence required by the context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779461980516-j2zprg4o",
+      "timestamp": "2026-05-22T15:00:39.015Z"
+    }
+  ]
+}

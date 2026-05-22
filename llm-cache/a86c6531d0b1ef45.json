@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a86c6531d0b1ef45",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-04-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle ___ les mains avant de manger. »\n\nChoices:\nA. [CORRECT] s'était lavé\nB. [WRONG] s'était lavée\nC. [WRONG] s'est lavé\nD. [WRONG] avait lavé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779411234843-ofgpx2ib"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to meet grammatical requirements: B adds unnecessary feminine agreement (no agreement needed with direct object \"les mains\" present), C uses present perfect instead of required plus-que-parfait, and D omits the reflexive pronoun required by \"se laver.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779411234865-m4x66rs0",
+      "timestamp": "2026-05-22T00:55:30.775Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B incorrectly agrees the past participle with the feminine subject instead of leaving it invariable since the direct object follows the verb; C uses passé composé instead of the more appropriate plus-que-parfait for an action occurring before another past action; D lacks the required reflexive pronoun for se laver.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779411403635-lvexuo0w",
+      "timestamp": "2026-05-22T00:58:52.645Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly adds feminine agreement (the reflexive pronoun is an indirect object in this construction), C uses passé composé instead of plus-que-parfait which is required for anteriority in this context, and D omits the reflexive pronoun needed for washing one's own hands.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779411558796-acqjydpd",
+      "timestamp": "2026-05-22T00:59:44.780Z"
+    }
+  ]
+}

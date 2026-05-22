@@ -1,0 +1,33 @@
+{
+  "cacheKey": "436ae32619c71750",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-05-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il ___ la lettre avant de partir. »\n\nChoices:\nA. [CORRECT] n'avait pas lu\nB. [WRONG] avait pas lu\nC. [WRONG] n'avait lu pas\nD. [WRONG] ne avait pas lu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779414315081-jtrtvt5x"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B lacks the required \"ne\" for negation, C has incorrect word order with \"pas\" after the past participle, and D violates elision rules (should be \"n'avait\" not \"ne avait\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779414315085-61x9ebpf",
+      "timestamp": "2026-05-22T01:45:28.167Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B is missing the required \"ne\" particle for standard negation, C has incorrect word order (\"pas\" must follow the past participle), and D fails to contract \"ne\" with \"avait\" (should be \"n'avait\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779414537475-uxy9utr7",
+      "timestamp": "2026-05-22T01:49:11.374Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is missing the \"ne\" part of negation, C incorrectly places \"pas\" after the past participle instead of the auxiliary verb, and D fails to contract \"ne\" to \"n'\" before a vowel.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779414764275-wkh9wqvg",
+      "timestamp": "2026-05-22T01:52:59.392Z"
+    }
+  ]
+}

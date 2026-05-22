@@ -1,0 +1,33 @@
+{
+  "cacheKey": "93674999a9550b6c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-07-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand je lui ai posé la question, il ___ déjà y répondre cent fois. »\n\nChoices:\nA. [CORRECT] avait dû\nB. [WRONG] a dû\nC. [WRONG] devait\nD. [WRONG] aurait dû\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779456756984-g2z2vt85"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are indeed incorrect - B uses passé composé which doesn't express anteriority with \"déjà,\" C uses imparfait which indicates ongoing obligation not completed action, and D uses conditionnel passé which expresses hypothetical/regret meaning that doesn't fit the factual context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779456914456-lr5mh9n0",
+      "timestamp": "2026-05-22T13:35:32.025Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors when considering the temporal context requiring plus-que-parfait to indicate an action completed before the questioning.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779457435626-gy18wkda",
+      "timestamp": "2026-05-22T13:46:33.946Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for the temporal sequence; the sentence requires pluperfect (avait dû) to show an action already completed before another past action, but a dû lacks anteriority, devait is ongoing/habitual, and aurait dû introduces a hypothetical element not present in the context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779457973575-err2v40d",
+      "timestamp": "2026-05-22T13:53:46.297Z"
+    }
+  ]
+}

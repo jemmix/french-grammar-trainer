@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ae5528ccf42dec51",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-05-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-05 - La négation au plus-que-parfait (ne + auxiliaire + pas + participe)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Ils ___ depuis des années. »\nChoices:\nA. [CORRECT] n'étaient plus partis\nB. n'avaient plus partis\nC. n'étaient partis plus\nD. n'étaient plus partir\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779414315082-yatbb0lh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests negation with \"ne...plus\" (meaning \"no longer\"), but the rule specifically covers negation with \"ne...pas\" (meaning \"not\") - these are different negation constructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779414354462-4eduw2ft",
+      "timestamp": "2026-05-22T01:46:20.542Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests negation in the plus-que-parfait tense, requiring knowledge of both the correct auxiliary verb for \"partir\" (être) and the proper word order for negation with \"plus.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779414582565-0verjjyh",
+      "timestamp": "2026-05-22T01:50:00.912Z"
+    }
+  ]
+}

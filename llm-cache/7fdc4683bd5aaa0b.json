@@ -1,0 +1,47 @@
+{
+  "cacheKey": "7fdc4683bd5aaa0b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-05-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-05 - La négation au plus-que-parfait (structure et place des éléments négatifs)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au plus-que-parfait : « Avant ce voyage, il ___ en vacances. »\nChoices:\nA. [CORRECT] n'était allé nulle part\nB. n'était nulle part allé\nC. n'avait allé nulle part\nD. n'était pas allé nulle part\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779433966624-k5juh85e"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the correct structure and placement of negative elements (\"nulle part\" vs \"pas\") in the plus-que-parfait tense, which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779433966651-02he1ghh",
+      "timestamp": "2026-05-22T07:13:36.060Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests the placement of the negative adverb \"nulle part\" (nowhere) rather than the standard negation structure (ne...pas) around the pluperfect auxiliary verb; it also requires knowing that \"aller\" uses \"être\" as its auxiliary, making it test multiple concepts beyond just negation placement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779434081240-dynzeip8",
+      "timestamp": "2026-05-22T07:15:40.751Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding the structure of negation in the plus-que-parfait with \"nulle part\" as the negative element, including its correct placement after the past participle and the distinction between simple negation (\"ne...pas\") and alternative negation (\"nulle part\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779434191525-lqrhrvph",
+      "timestamp": "2026-05-22T07:19:42.509Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: This question tests the structure and placement of negative elements in the plus-que-parfait, specifically requiring knowledge that \"nulle part\" is placed after the past participle rather than between the auxiliary and past participle like \"pas\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779434382510-zgjvmf6e",
+      "timestamp": "2026-05-22T07:20:04.414Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question primarily tests auxiliary verb selection (choosing \"être\" instead of \"avoir\" with \"aller\") and the idiomatic negation \"nulle part\" (nowhere) versus \"pas\", which are separate grammar rules from the basic structure and placement of negation in the plus-que-parfait that the rule states.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779434404415-l87vpld3",
+      "timestamp": "2026-05-22T07:22:05.444Z"
+    }
+  ]
+}

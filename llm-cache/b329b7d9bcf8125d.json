@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b329b7d9bcf8125d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-05-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle ___ son mémoire avant la date limite. »\n\nChoices:\nA. [CORRECT] n'avait pas fini\nB. [WRONG] avait pas fini\nC. [WRONG] n'avait fini pas\nD. [WRONG] ne avait pas fini\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779430805891-9bjm0rd9"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B omits the required \"ne\" negation particle, C has incorrect word order with \"pas\" after the past participle instead of before, and D fails to elide \"ne\" to \"n'\" before a vowel.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779430805905-p8v5yc3a",
+      "timestamp": "2026-05-22T06:20:21.855Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly omits \"ne\" from the negative construction, C uses incorrect word order (\"n'avait fini pas\" instead of \"n'avait pas fini\"), and D incorrectly fails to contract \"ne\" to \"n'\" before a vowel.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779430986133-stur7tzk",
+      "timestamp": "2026-05-22T06:23:36.367Z"
+    },
+    {
+      "raw": "TRUE||All three wrong answers contain clear grammatical errors: B omits the required \"ne/n'\" in negation, C places \"pas\" after the past participle instead of the auxiliary verb, and D fails to elide \"ne\" to \"n'\" before a vowel.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779431216944-4q7eak0l",
+      "timestamp": "2026-05-22T06:27:13.969Z"
+    }
+  ]
+}

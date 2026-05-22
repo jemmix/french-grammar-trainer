@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0bf96458c92c7ace",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-08-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Le directeur ___ la réunion parce que tous les participants ___ déjà. »\n\nChoices:\nA. [CORRECT] a annulé / étaient partis\nB. [WRONG] a annulé / sont partis\nC. [WRONG] avait annulé / étaient partis\nD. [WRONG] a annulé / partaient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779465484034-augxuz0i"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B incorrectly uses passé composé instead of plus-que-parfait for the earlier action; C incorrectly uses plus-que-parfait for the main action instead of passé composé; D incorrectly uses imparfait instead of plus-que-parfait to indicate a completed prior action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779465613368-qy5xu4zt",
+      "timestamp": "2026-05-22T16:00:32.178Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers either use incorrect tenses that don't match the timeline (B uses passé composé instead of plus-que-parfait with \"déjà\", D uses imparfait which doesn't convey a completed action) or create illogical sequences of events (C implies the director canceled before participants even arrived, contradicting \"déjà\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779466059279-zj3pk0ey",
+      "timestamp": "2026-05-22T16:08:44.796Z"
+    },
+    {
+      "raw": "I have reached the maximum number of steps allowed for this task. Here is my verification of the French grammar question:\n\nTRUE||All wrong answers use incorrect tenses for the grammatical context of anteriority.\n\n**Analysis:**\n\nThe question requires showing anteriority - the participants left BEFORE the director canceled the meeting, indicated by \"déjà\" (already). The correct tenses are passé composé for the main action (\"a annulé\") and plus-que-parfait for the earlier action (\"étaient partis\").\n\n- **B** is incorrect: Uses \"sont partis\" (passé composé) instead of plus-que-parfait, failing to show the participants left before the cancellation.\n- **C** is incorrect: Uses \"avait annulé\" (plus-que-parfait) for the main action instead of passé composé; plus-que-parfait is used for prior actions, not the main past event.\n- **D** is incorrect: Uses \"partaient\" (imparfait) which describes an ongoing/continuous action rather than a completed prior action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779466466390-hxcwwn0y",
+      "timestamp": "2026-05-22T16:15:34.517Z"
+    }
+  ]
+}

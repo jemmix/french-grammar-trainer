@@ -1,0 +1,19 @@
+{
+  "cacheKey": "9abf0e992cc3189a",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "04-05-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Mettez le verbe « partir » au plus-que-parfait négatif (ne...pas) avec le sujet « elle ».\n\nPHRASE: Quand je suis arrivé, elle ___ encore.\n\nHINT: partir\n\nEXPECTED ANSWER: n'était pas encore partie\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1779414315084-nyzp5ri7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nREASON: The PHRASE already contains \"encore\" after the blank, but the EXPECTED ANSWER also includes \"encore\", creating confusion about whether the learner should type \"n'était pas partie\" (leaving \"encore\" in the sentence) or \"n'était pas encore partie\" (duplicating \"encore\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779415195706-b93obi8u",
+      "timestamp": "2026-05-22T02:00:12.244Z"
+    }
+  ]
+}

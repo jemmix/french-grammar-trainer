@@ -1,0 +1,26 @@
+{
+  "cacheKey": "497364b58799a67f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-07-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-07 - Le plus-que-parfait avec quand / lorsque / après que (antériorité)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la forme correcte : « Lorsqu'on nous ___ la nouvelle, nous ___ déjà que quelque chose s'était passé. »\nChoices:\nA. [CORRECT] a annoncé / savions\nB. avait annoncé / savions\nC. a annoncé / avions su\nD. annonçait / savions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779456756985-2bfmsvkf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests when to use the passé composé with \"lorsque\" rather than the plus-que-parfait, which contradicts the stated rule about anteriority with temporal conjunctions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779457191089-qwyo8c6n",
+      "timestamp": "2026-05-22T13:40:19.501Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests the use of plus-que-parfait in a subordinate clause with \"que\" rather than specifically testing the rule about using plus-que-parfait directly with \"lorsque/quand/après que\" to express anteriority between two main events.\n\nMaximum steps for this agent have been reached.\n\nSummary of work completed:\n- Analyzed whether the French grammar question aligns with its stated rule\n- Determined the question is misaligned because it tests plus-que-parfait in a different grammatical context than the rule specifies\n\nRemaining tasks:\n- None specific to this evaluation\n\nRecommendations:\n- To properly test this rule, the question should place the plus-que-parfait verb directly after \"lorsque/quand/après que\" (e.g., \"Lorsqu'on nous avait annoncé la nouvelle...\") rather than using plus-que-parfait in a subordinate clause with \"que\"\n- Consider creating a new question that directly tests the rule's intended focus on temporal anteriority with these specific conjunctions",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779457649391-y1i4j4i5",
+      "timestamp": "2026-05-22T13:47:52.825Z"
+    }
+  ]
+}

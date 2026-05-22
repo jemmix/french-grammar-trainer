@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ae50a487dd5ec723",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-07-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-07 - Le plus-que-parfait avec quand / lorsque / après que (antériorité)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Lorsqu'on nous a annoncé la nouvelle, nous ___ déjà qu'il ___ ses valises. »\nChoices:\nA. [CORRECT] savions / avait faites\nB. savions / a faites\nC. avons su / avait faites\nD. savions / avait fait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779460586008-bi5jb04o"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: While the question tests the concept of anteriority with plus-que-parfait, it does not test the specific structure of using plus-que-parfait directly with temporal conjunctions (quand/lorsque/après que) — instead, the plus-que-parfait appears in a separate clause while \"lorsque\" is paired with passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779460640137-8dfqgpir",
+      "timestamp": "2026-05-22T14:43:09.096Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question tests the plus-que-parfait with \"lorsque\" to express anteriority - the action of packing (avait fait) must precede the main past action (a annoncé), and the answer choices test recognition of this temporal sequence.\n\nMaximum steps for this agent have been reached. I have completed the validation task by analyzing whether the French grammar question is aligned with the stated rule about using the plus-que-parfait with temporal conjunctions to express anteriority. No further tasks remain for this validation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779460989097-ec8fc7v1",
+      "timestamp": "2026-05-22T14:43:53.604Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests the rule by requiring the plus-que-parfait \"avait fait\" to express an action (packing bags) that occurred before the moment when \"lorsqu'on nous a annoncé la nouvelle\" (passé composé), demonstrating the anteriority relationship central to this rule.\n\n---\n\n**NOTE: Maximum steps for this agent have been reached.**\n\n**Summary of what has been accomplished:**\n- I validated the alignment of a French grammar question about the plus-que-parfait with temporal connectors (quand/lorsque/après que)\n- Analyzed whether the question actually tests the stated rule about anteriority\n- Determined that despite a potential grammatical issue with the marked correct answer (\"avait faites\" should likely be \"avait fait\" for proper past participle agreement), the question's core purpose is to test understanding of the plus-que-parfait tense in an anteriority context\n\n**Remaining tasks:**\n- None for this specific validation task - the verdict was provided\n\n**Recommendations:**\n- The question should be reviewed for the past participle agreement issue (\"avait faites\" → \"avait fait\" since \"ses valises\" comes after the verb)\n- Consider flagging this question for correction in the question generation workflow before it's included in the final curriculum\n- The alignment verdict stands, but the question needs a grammar fix before deployment",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779461033615-8t66yn24",
+      "timestamp": "2026-05-22T14:44:55.288Z"
+    }
+  ]
+}

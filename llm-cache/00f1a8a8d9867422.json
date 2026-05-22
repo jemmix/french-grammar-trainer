@@ -1,0 +1,33 @@
+{
+  "cacheKey": "00f1a8a8d9867422",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-07-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Après qu'ils ___ leur accord, les deux entreprises ont annoncé la fusion. »\n\nChoices:\nA. [CORRECT] avaient signé\nB. [WRONG] signaient\nC. [WRONG] ont signé\nD. [WRONG] auraient signé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779460585997-m5rsysky"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to verify that the wrong answers in a French grammar question are indeed incorrect. The question asks to complete the sentence \"Après qu'ils ___ leur accord, les deux entreprises ont annoncé la fusion.\" with the correct verb form.\n\nThe correct answer is \"avaient signé\" (pluperfect tense), and I need to verify the wrong answers:\n- B. signaient (imparfait)\n- C. ont signé (passé composé)\n- D. auraient signé (conditionnel passé)\n\nAfter analyzing each wrong answer:\n\nTRUE||All wrong answers use verb tenses that don't properly express the sequence of events - imparfait implies ongoing action, passé composé doesn't indicate anteriority to another past action, and conditionnel passé is for hypothetical situations.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779460589034-16wxu2dd",
+      "timestamp": "2026-05-22T14:37:20.136Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers either use the wrong tense to properly express anteriority (B, C) or use a conditional mood that doesn't fit the factual context (D).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779460707171-zl340zqa",
+      "timestamp": "2026-05-22T14:38:47.420Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect as they do not properly express the anteriority required after \"Après que\" in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779460804597-frvqdbps",
+      "timestamp": "2026-05-22T14:42:41.615Z"
+    }
+  ]
+}

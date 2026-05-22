@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1e4e1fc008b00c3a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-08-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Sophie ___ ses clés, alors elle est entrée par la fenêtre. »\n\nChoices:\nA. [CORRECT] avait perdu\nB. [WRONG] perdait\nC. [WRONG] allait perdre\nD. [WRONG] a perdue\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779469344309-wi4x8wjp"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors. The context requires the plus-que-parfait tense since losing keys happened before entering through the window, but B uses imparfait which describes ongoing actions, C uses \"allait perdre\" (was going to lose) which makes no sense as a past-future explanation for a present action, and D incorrectly uses feminine agreement \"perdue\" when no preceding direct object exists and also uses passé composé instead of the correct plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779469353340-yzrim81g",
+      "timestamp": "2026-05-22T17:02:57.617Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Completed\n\nI was asked to verify whether the wrong answers (B, C, D) in a French grammar multiple-choice question are indeed incorrect within the grammatical constraints stated in the question prompt.\n\nThe question asks to complete: \"Sophie ___ ses clés, alors elle est entrée par la fenêtre.\"\n\nI analyzed each wrong answer:\n- **B (perdait)** - Imparfait: \"was losing\" - doesn't fit logically because losing keys in progress doesn't explain the window entry\n- **C (allait perdre)** - Future proche in past: \"was going to lose\" - doesn't fit because if she hadn't lost them yet, why enter through window?\n- **D (a perdue)** - Passé composé: \"lost\" - while grammatically correct, the sequence doesn't establish the key loss as the REASON for entering through the window\n\n## Verdict\n\nTRUE||All wrong answers either contain grammar errors or don't establish the logical sequence required by the context \"alors\" (so/therefore), which demands that losing keys precede and explain the window entry.\n\n## Remaining Tasks\n\nNone - this was a single verification task that has been completed.\n\n## Recommendations\n\nThis appears to be a content validation exercise for the French Grammar Trainer project. The question and its distractors are working as intended. If this is part of a batch validation process, continue with the next question to validate.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779469630216-nxf0xyxy",
+      "timestamp": "2026-05-22T17:09:14.741Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the wrong tense for the chronological sequence of events described in the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779469916597-lltltrih",
+      "timestamp": "2026-05-22T17:12:20.006Z"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "cacheKey": "97ec8c1e7605b26d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-07-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Après qu'il ___ la salle, la réunion a commencé. »\n\nChoices:\nA. [CORRECT] avait quitté\nB. [WRONG] quittait\nC. [WRONG] a quitté\nD. [WRONG] ait quitté\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779460586000-afgidxx8"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers do not correctly use the sequence of tenses with \"après que\" for an action completed before another past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779460595050-gbynxql3",
+      "timestamp": "2026-05-22T14:37:43.254Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for the \"après que\" construction, which requires the indicative mood and a tense indicating an action completed before another past action; B uses imperfect (describing ongoing action), C uses passé composé (not appropriate for this construction), and D uses subjunctive mood (which is incorrect after \"après que\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779460734598-7up96ngc",
+      "timestamp": "2026-05-22T14:41:25.189Z"
+    },
+    {
+      "raw": "FALSE|C|Using \"a quitté\" (passé composé) instead of \"avait quitté\" (plus-que-parfait) is grammatically acceptable; the temporal relationship is clear from the context of \"après.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779460938807-cnm8cgo5",
+      "timestamp": "2026-05-22T14:50:45.080Z"
+    },
+    {
+      "raw": "The maximum number of steps for this agent has been reached.\n\n## Summary of work done:\n\nI was asked to verify that the wrong answers in a French grammar multiple choice question are indeed incorrect. The question was:\n\n\"Complétez : « Après qu'il ___ la salle, la réunion a commencé. »\"\n\nWith choices:\nA. [CORRECT] avait quitté\nB. [WRONG] quittait\nC. [WRONG] a quitté\nD. [WRONG] ait quitté\n\n## Remaining tasks:\n\nNone — I have analyzed all the wrong answers and am ready to provide the verdict.\n\n## Recommendation:\n\nBased on my analysis:\n\nTRUE||All wrong answers are incorrect within the specified grammatical constraints: B (quittait) is the imperfect indicating an ongoing action, which doesn't fit \"après que\"; C (a quitté) is passé composé, which is not standard after \"après que\" for past events; D (ait quitté) is subjunctive, which is grammatically incorrect after \"après que\" in prescriptive French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779461445081-y8z7t2ph",
+      "timestamp": "2026-05-22T14:51:25.092Z"
+    },
+    {
+      "raw": "The maximum number of steps for this agent has been reached.\n\nSummary of work:\nI was analyzing a French grammar question about the correct verb form to use with \"après que\" in the sentence \"Après qu'il ___ la salle, la réunion a commencé.\" I needed to verify if the wrong answers (B, C, D) are indeed incorrect.\n\nAnalysis completed:\n- B (quittait) - Incorrect because imperfect tense is inappropriate for an action completed before another past action\n- C (a quitté) - Technically incorrect in formal French due to sequence of tenses, but commonly used in spoken French\n- D (ait quitté) - Incorrect because \"après que\" requires indicative, not subjunctive\n\nVerdict: FALSE|C|While B and D are clearly incorrect, C (a quitté) is commonly accepted in spoken French despite not being the formally correct sequence of tenses, making the question's strict correctness dependent on register specification.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779461485095-2ikkeume",
+      "timestamp": "2026-05-22T14:51:41.949Z"
+    }
+  ]
+}

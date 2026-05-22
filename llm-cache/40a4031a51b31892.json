@@ -1,0 +1,33 @@
+{
+  "cacheKey": "40a4031a51b31892",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-05-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au plus-que-parfait : « Tu ___ la vérité. »\n\nChoices:\nA. [CORRECT] n'avais pas dit la vérité\nB. [WRONG] n'avais dit pas la vérité\nC. [WRONG] ne avais pas dit la vérité\nD. [WRONG] avais pas dit la vérité\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779433966618-1o93lgda"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers have clear grammatical errors: B places \"pas\" after the past participle (wrong position), C fails to elide \"ne\" before \"avais\" (should be \"n'avais\"), and D omits the \"ne\" entirely (incomplete negation).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779433966646-o2hlafig",
+      "timestamp": "2026-05-22T07:13:18.478Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B has incorrect negation word order (dit pas instead of pas dit), C uses \"ne\" instead of the elided \"n'\" before a vowel, and D is missing the first part of the negation entirely.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779434058510-8bx5palv",
+      "timestamp": "2026-05-22T07:14:56.190Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly places \"pas\" after the past participle, C fails to elide \"ne\" to \"n'\" before a vowel, and D omits the required \"ne\" part of the negation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779434143426-iu3prnhf",
+      "timestamp": "2026-05-22T07:17:04.721Z"
+    }
+  ]
+}

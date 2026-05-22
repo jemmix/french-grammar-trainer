@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aab082955ba22438",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-04-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Vous ___ avant l'arrivée de vos invités. »\n\nChoices:\nA. [CORRECT] vous vous étiez habillés\nB. [WRONG] vous vous aviez habillés\nC. [WRONG] vous vous étiez habillé\nD. [WRONG] vous vous habilliez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779409398836-obmtv1oc"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses wrong auxiliary (avoir instead of être) for reflexive verbs; C lacks proper plural agreement on past participle; D uses imparfait instead of required plus-que-parfait to express anteriority.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779409470990-h4vvju3s",
+      "timestamp": "2026-05-22T00:24:57.104Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are indeed incorrect: B uses the wrong auxiliary verb (avoir instead of être), C lacks proper plural agreement for \"vous\", and D uses the imparfait tense instead of the required plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779409664360-lqevkw4r",
+      "timestamp": "2026-05-22T00:27:56.116Z"
+    },
+    {
+      "raw": "TRUE||The question context requires pluperfect tense for an action completed before another past event; B incorrectly uses 'avoir' as auxiliary for a reflexive verb; C lacks required plural agreement; D uses imperfect tense which indicates an ongoing action rather than one completed before the guests arrived.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779409838377-e7uwptx5",
+      "timestamp": "2026-05-22T00:30:56.091Z"
+    }
+  ]
+}

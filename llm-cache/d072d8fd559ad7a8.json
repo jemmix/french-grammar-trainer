@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d072d8fd559ad7a8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-08-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-08 - Le plus-que-parfait vs le passé composé : la chronologie des événements\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « J'ai compris que tu ___ dès le début. »\nChoices:\nA. [CORRECT] avais menti\nB. mentais\nC. as menti\nD. mentirais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779465484034-ap1sw7xu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that the action of lying preceded the understanding, which is exactly what the plus-que-parfait expresses in relation to passé composé, making the chronology of events essential for selecting the correct answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779465648328-gq024r0u",
+      "timestamp": "2026-05-22T16:01:15.019Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question correctly tests the chronological distinction: the lying happened \"dès le début\" (before the understanding expressed in \"J'ai compris\"), so plus-que-parfait is required, which is exactly what the rule about pluperfect vs passé composé chronology tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779466109504-ma53llef",
+      "timestamp": "2026-05-22T16:08:50.592Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached. I've completed the validation task for you.\n\n## Summary\n\nI was asked to validate whether a French grammar question properly tests the rule \"04-08 - Le plus-que-parfait vs le passé composé : la chronologie des événements\" (The pluperfect vs the passé composé: the chronology of events).\n\nThe question analyzed was:\n- **Prompt**: \"Complétez : « J'ai compris que tu ___ dès le début. »\"\n- **Correct answer**: \"avais menti\" (pluperfect)\n- **Other options**: \"mentais\" (imparfait), \"as menti\" (passé composé), \"mentirais\" (conditionnel)\n\n## Verdict\n\n**VERDICT: ALIGNED**\n\n**REASON: The sentence requires the pluperfect because the act of lying (\"tu as menti\") occurred BEFORE the act of understanding (\"J'ai compris\"), which is the exact temporal relationship that distinguishes plus-que-parfait from passé composé.**\n\nThe question properly tests the rule because:\n1. Students must recognize the chronological sequence: action (lying) → understanding (later)\n2. The pluperfect (avais menti) is the only tense that expresses an action completed before another past action\n3. The passé composé option (as menti) would incorrectly place the lying and understanding at the same time\n4. Other distractors test different tenses but the core distinction is between pluperfect and compound past\n\nNo further tasks remain — this validation is complete.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779466477627-iyns0fq0",
+      "timestamp": "2026-05-22T16:15:24.214Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "387f5fe02ebc0e0a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-08-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « La police ___ l'appartement juste après que le voleur ___. »\n\nChoices:\nA. [CORRECT] a fouillé / était parti\nB. [WRONG] a fouillé / est parti\nC. [WRONG] avait fouillé / était parti\nD. [WRONG] fouillait / était parti\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779465484034-grpa860x"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached. I need to verify the wrong answers (B, C, D) in the given French grammar question.\n\nThe question tests temporal sequence with \"juste après que\":\n- A. a fouillé / était parti [CORRECT] - Passé composé + plus-que-parfait correctly shows the thief left before police searched\n- B. a fouillé / est parti - Passé composé + passé composé doesn't clearly establish anteriority\n- C. avait fouillé / était parti - Plus-que-parfait + plus-que-parfait suggests both actions happened before some unstated event\n- D. fouillait / était parti - Imparfait describes ongoing action, not the specific completed action needed\n\nTRUE||All wrong answers fail to properly express the temporal sequence: B lacks clear anteriority, C incorrectly places both actions in plus-que-parfait, and D uses imparfait for a specific completed action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779465675020-9uce3g21",
+      "timestamp": "2026-05-22T16:11:50.662Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done:\n- Analyzed a French grammar question about verb tense sequencing\n- Examined the correct answer (A): \"a fouillé / était parti\" (passé composé / plus-que-parfait)\n- Evaluated three wrong answers:\n  - B: \"a fouillé / est parti\" - both verbs in passé composé, fails to establish anteriority\n  - C: \"avait fouillé / était parti\" - both verbs in plus-que-parfait, doesn't make police action the main event\n  - D: \"fouillait / était parti\" - imparfait not appropriate for a specific completed action\n\nRemaining tasks:\n- None - the verification is complete\n\nRecommendation:\nThe verdict is TRUE||All wrong answers contain clear grammar errors in verb tense sequencing. Each wrong answer fails to properly express that the thief's departure was completed before the police searched the apartment.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779466642651-a5wbe23c",
+      "timestamp": "2026-05-22T16:17:56.986Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tense combinations: B uses passé composé instead of plus-que-parfait for the anterior action, C uses plus-que-parfait for both verbs when the sequence requires passé composé/plus-que-parfait, and D incorrectly uses imparfait instead of passé composé for the completed police action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779466706438-ebsmegu0",
+      "timestamp": "2026-05-22T16:19:07.486Z"
+    }
+  ]
+}

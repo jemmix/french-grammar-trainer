@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aee9f6a086717118",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-07-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-07 - Le plus-que-parfait avec quand / lorsque / après que (antériorité)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Quand nous sommes revenus de vacances, le jardin ___ complètement. »\nChoices:\nA. [CORRECT] avait séché\nB. a séché\nC. séchait\nD. aura séché\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779460585997-g17d977l"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the rule because it requires understanding that when an action (le jardin séché) occurred before another past action introduced by \"quand\" (nous sommes revenus), the plus-que-parfait tense must be used to express this anteriority.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779460593046-ru1vgvff",
+      "timestamp": "2026-05-22T14:37:18.699Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the plus-que-parfait used with \"quand\" to express anteriority—the garden drying (first action) occurred before returning from vacation (second action), requiring the pluperfect tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779460689613-hvj0i8zz",
+      "timestamp": "2026-05-22T14:38:32.086Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests exactly the stated rule of using plus-que-parfait with \"quand\" to express anteriority, as the garden must have dried BEFORE returning from vacation (revenir is passé composé, so the earlier action requires plus-que-parfait).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779460773808-95srw4o9",
+      "timestamp": "2026-05-22T14:40:04.595Z"
+    }
+  ]
+}

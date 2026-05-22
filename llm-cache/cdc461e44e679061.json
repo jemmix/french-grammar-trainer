@@ -1,0 +1,26 @@
+{
+  "cacheKey": "cdc461e44e679061",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-05-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-05 - La négation au plus-que-parfait (ne + auxiliaire + pas + participe)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il ___ nulle part avant ce voyage. »\nChoices:\nA. [CORRECT] n'était allé nulle part\nB. n'était nulle part allé\nC. n'avait allé nulle part\nD. n'était pas allé nulle part\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779414315083-tne5bgsk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the special negation rule with \"nulle part\" (where \"pas\" is omitted), which is a more advanced exception to the rule rather than the standard negation pattern \"ne + auxiliaire + pas + participe\" that the rule statement describes.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779414394307-nkzg1jea",
+      "timestamp": "2026-05-22T01:46:52.059Z"
+    },
+    {
+      "raw": "I need to provide my verdict on whether this question tests the stated rule.\n\nVERDICT: MISALIGNED\n\nREASON: The question tests negation with \"nulle part\" (negative adverb meaning \"nowhere\") and requires knowledge that \"aller\" uses \"être\" as auxiliary, not the standard \"ne + aux + pas + participle\" negation structure specified in the rule.\n\nThe question is also structurally flawed - the prompt contains \"Il ___ nulle part\" with \"nulle part\" already placed after the blank, meaning students must fill in \"n'était allé\" without the \"pas\" that the rule focuses on. The question tests auxiliary selection (être vs avoir for \"aller\") and word order with negative adverbs, not the standard \"ne...pas\" negation pattern of the plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779414616164-dmgia5tw",
+      "timestamp": "2026-05-22T01:50:42.062Z"
+    }
+  ]
+}
