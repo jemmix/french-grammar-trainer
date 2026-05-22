@@ -14,6 +14,7 @@
  *   --update-cache         Run LLM and update cache for misses
  *   --prune-cache          Remove orphaned cache entries
  *   --concurrency <n>      Max concurrent LLM calls (default: 10)
+ *   --ratelimit <seconds>  Min gap between LLM call starts (default: 1, 0=disabled)
  *   --model <model>        LLM model to use (default: glm-5)
  *   --json                 Output as JSON
  */
@@ -23,11 +24,14 @@ import type { ValidationOptions, ValidationReport } from "../src/validation/type
 
 function parseArgs(): ValidationOptions & { json?: boolean } {
   const args = process.argv.slice(2);
+  const DEFAULT_RATELIMIT = 1;
+
   const opts: ValidationOptions & { json?: boolean } = {
     llm: false,
     dryRun: false,
     updateCache: false,
     pruneCache: false,
+    rateLimit: DEFAULT_RATELIMIT,
   };
   
   for (let i = 0; i < args.length; i++) {
@@ -53,6 +57,8 @@ function parseArgs(): ValidationOptions & { json?: boolean } {
       opts.json = true;
     } else if (arg === "--concurrency" && args[i + 1]) {
       opts.concurrency = parseInt(args[++i]!, 10);
+    } else if (arg === "--ratelimit" && args[i + 1]) {
+      opts.rateLimit = parseFloat(args[++i]!);
     } else if (arg === "--model" && args[i + 1]) {
       opts.model = args[++i];
     } else if (arg && arg.startsWith("--")) {
