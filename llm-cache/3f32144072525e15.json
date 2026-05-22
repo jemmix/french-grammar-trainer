@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3f32144072525e15",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-09-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-09 - Le plus-que-parfait vs l'imparfait : action accomplie vs état\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au plus-que-parfait ou à l'imparfait selon le contexte.\nPhrase: Elle ___ (lire) dans le jardin quand tout à coup il s'est mis à pleuvoir.\nCorrect Answer: lisait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779488440288-plnio9gk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing between an ongoing background action (imparfait/état) interrupted by a sudden event versus a completed action prior to that event (plus-que-parfait/action accomplie), which is the core distinction defined by the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779488440298-cpxji7ai",
+      "timestamp": "2026-05-22T22:22:56.595Z"
+    },
+    {
+      "raw": "# Analysis of Question Alignment\n\nMaximum steps for this agent have been reached.\n\n## What has been accomplished:\nI have analyzed the alignment of the question with rule 04-09 (Le plus-que-parfait vs l'imparfait : action accomplie vs état).\n\n## My verdict:\n\nVERDICT: ALIGNED\nREASON: The question correctly tests the distinction between plus-que-parfait (action accomplished before another past event) and imparfait (ongoing state/action), as \"lisait\" correctly identifies the reading as an ongoing activity interrupted by a sudden event.\n\nThe question properly tests the rule because:\n- The context clearly presents an ongoing state/action (reading) that is interrupted by a sudden event (\"il s'est mis à pleuvoir\")\n- A student must understand that this scenario requires imparfait, not plus-que-parfait (which would incorrectly imply the reading was completed before it started to rain)\n- The distinction between \"action accomplie\" (requiring plus-que-parfait) vs \"état/action en cours\" (requiring imparfait) is central to solving this question\n\nNo tool use was required for this validation task, and my analysis is complete.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779488576595-yelarjpa",
+      "timestamp": "2026-05-22T22:23:17.114Z"
+    }
+  ]
+}

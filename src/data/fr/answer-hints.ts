@@ -522,7 +522,7 @@ export const answerHints: Record<string, string> = {
   "fini": "finir",
   "finirai": "finir",
   "finiras": "finir",
-  "finissait": "finir",
+  "avait arrosé": "arroser",
   "finissent": "finir",
   "finissions": "finir",
   "Fournissez": "fournir",

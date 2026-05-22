@@ -1,0 +1,33 @@
+{
+  "cacheKey": "103fe073687912f6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-09-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle ne savait pas que Marc ___ la ville trois jours auparavant. »\n\nChoices:\nA. [CORRECT] avait quitté\nB. [WRONG] quittait\nC. [WRONG] a quitté\nD. [WRONG] partait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779482177788-l5ufjg0a"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI analyzed a French grammar question that asks to complete a sentence with the correct verb form. The question is: \"Complétez : « Elle ne savait pas que Marc ___ la ville trois jours auparavant. »\"\n\nI verified the incorrectness of the three wrong answers:\n\nB. [WRONG] quittait - This uses the imperfect tense, which describes ongoing or habitual actions in the past, not completed actions that happened before another past action.\n\nC. [WRONG] a quitté - This uses the passé composé, which is for completed actions but doesn't convey the necessary timeline (an action that occurred before another past action).\n\nD. [WRONG] partait - This is the imperfect of a different verb (\"partir\" instead of \"quitter\"), and again uses the wrong tense for the timeline.\n\nThe correct answer is A. \"avait quitté\" which correctly uses the pluperfect tense to describe an action that happened before the main past action (\"ne savait pas\").\n\nRemaining tasks:\nNone - the verification is complete.\n\nRecommendations:\nThe question appears grammatically sound. All wrong answers are indeed incorrect within the specified context (a sentence requiring the pluperfect tense to show an action occurring before another past action).</think>TRUE||All wrong answers are grammatically incorrect in this context: B and D use the imperfect tense (which describes ongoing/habitual actions), and C uses passé composé (which doesn't show the correct timeline relation to the main past action). The pluperfect (A) is required because the sentence describes an action that occurred before another past event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779482245322-9qu5rwcc",
+      "timestamp": "2026-05-22T20:38:25.630Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses or verbs for the context of describing an action that happened before another past action.\n\nThe question requires the plus-que-parfait tense to express that Marc left the city three days before the moment when she didn't know it. \n\n- B (quittait) uses the imparfait, which describes ongoing or habitual past actions, not actions completed before another past action.\n- C (a quitté) uses the passé composé, which indicates a completed past action but doesn't establish the necessary temporal relationship of occurring before the past moment of \"savait pas.\"\n- D (partait) also incorrectly uses the imparfait tense and additionally uses a different verb (partir instead of quitter) that doesn't properly convey the intended meaning in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779482570431-xw2ff9yu",
+      "timestamp": "2026-05-22T20:51:49.049Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context. B and D use imparfait which doesn't work with \"trois jours auparavant\" indicating a completed action; C uses passé composé which doesn't correctly sequence the action before the main clause's past tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779483236729-lg7i85gd",
+      "timestamp": "2026-05-22T20:54:14.450Z"
+    }
+  ]
+}

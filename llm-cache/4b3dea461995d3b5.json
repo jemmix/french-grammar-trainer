@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4b3dea461995d3b5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-09-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand je suis arrivé, Paul ___ déjà son dîner. »\n\nChoices:\nA. [CORRECT] avait fini\nB. [WRONG] allait finir\nC. [WRONG] finira\nD. [WRONG] finirait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779487009133-vxs8tk2l"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B (imparfait + infinitive) conflicts with \"déjà\"; C (future) and D (conditional) do not match the past context requiring plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779487009167-qxt3p1tu",
+      "timestamp": "2026-05-22T21:57:03.605Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses futur proche in the past (was going to finish) which contradicts \"déjà\", C uses future tense incompatible with past narrative, and D uses conditional which doesn't express a completed action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779487023608-pmpury1n",
+      "timestamp": "2026-05-22T21:57:24.619Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI have evaluated the French grammar question asking to complete the sentence \"Quand je suis arrivé, Paul ___ déjà son dîner.\"\n\nThe analysis shows:\n- The correct answer (A) \"avait fini\" uses the plus-que-parfait tense, which is appropriate for an action completed before another past action\n- Wrong answer B \"allait finir\" is incorrect because it indicates an action about to happen, not already completed\n- Wrong answer C \"finira\" is incorrect because it uses the future tense in a clearly past context\n- Wrong answer D \"finirait\" is incorrect because it uses the conditional tense without any conditional context\n\nAll wrong answers are grammatically incorrect within the constraints of the question.\n\nTRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779487044619-ag4b33x0",
+      "timestamp": "2026-05-22T21:57:43.217Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "66d58ce9f345bed0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-09-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-09 - Le plus-que-parfait vs l'imparfait : action accomplie vs état\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au plus-que-parfait (l'action est accomplie et explique l'état de soif).\nPhrase: Les joueurs avaient soif : ils ___ pendant plus d'une heure sans s'arrêter.\nCorrect Answer: avaient couru\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779485438569-rw0dd0s5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the distinction between plus-que-parfait (accomplished action \"avaient couru\") and imparfait (state \"avaient soif\"), which is exactly what rule 04-09 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779485481633-4xzk1e4m",
+      "timestamp": "2026-05-22T21:31:53.320Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to conjugate in the plus-que-parfait, so answering correctly doesn't require distinguishing between action accomplie (plus-que-parfait) and état (imparfait) — it only requires knowing how to conjugate in the specified tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779485575990-bq2c7bjj",
+      "timestamp": "2026-05-22T21:33:11.584Z"
+    },
+    {
+      "raw": "Maximum steps reached - work cannot be completed using tools.\n\n---\n\n## Summary\n\nI was tasked with validating a French grammar question to determine if it properly tests the stated rule.\n\n**The Question:**\n- Rule: 04-09 - Le plus-que-parfait vs l'imparfait : action accomplie vs état\n- Prompt: \"Conjuguez le verbe au plus-que-parfait (l'action est accomplie et explique l'état de soif).\"\n- Phrase: \"Les joueurs avaient soif : ils ___ pendant plus d'une heure sans s'arrêter.\"\n- Answer: \"avaient couru\"\n\n## Verdict\n\n**VERDICT: MISALIGNED**\n\n**REASON:** The prompt explicitly tells the student to use the plus-que-parfait tense, so they don't need to decide between plus-que-parfait and imparfait based on the action/state distinction - the question only tests conjugation, not tense selection.\n\n## Analysis Complete\n\nThe validation assessment is complete. The question does not properly test the grammar rule because it removes the key decision point (choosing between pluperfect and imperfect) by specifying the tense in the instructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779485689648-d5gougr1",
+      "timestamp": "2026-05-22T21:35:29.850Z"
+    }
+  ]
+}

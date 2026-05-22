@@ -1,0 +1,33 @@
+{
+  "cacheKey": "206e1e8562455ac6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-09-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-09 - Le plus-que-parfait vs l'imparfait : action accomplie vs état\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il était épuisé : il ___ sans s'arrêter pendant dix heures avant de rentrer. »\nChoices:\nA. [CORRECT] avait travaillé\nB. travaillait\nC. allait travailler\nD. travaillerait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779485438556-m8fjkzge"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student can identify that \"avait travaillé\" (plus-que-parfait) is required because the action was completed before the past state of being exhausted, distinguishing it from \"travaillait\" (imparfait) which would describe an ongoing state rather than an accomplished action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779485459553-f9xc9lg4",
+      "timestamp": "2026-05-22T21:31:15.949Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing between plus-que-parfait (action completed before another past action, \"avant de rentrer\") and imparfait (ongoing state/action), which is exactly what the rule tests; the temporal marker \"avant de rentrer\" makes plus-que-parfait the only grammatically appropriate choice to express an accomplished action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779485545266-uy4jnxss",
+      "timestamp": "2026-05-22T21:32:57.149Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question presents a scenario where an action (working for ten hours) was completed BEFORE a past state (being exhausted), which is exactly what the plus-que-parfait tense indicates, and the context clues (\"avant de rentrer\") make this temporal relationship the deciding factor between the correct plus-que-parfait answer and the imparfait distractor.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779485660627-tbnzo30p",
+      "timestamp": "2026-05-22T21:34:49.647Z"
+    }
+  ]
+}

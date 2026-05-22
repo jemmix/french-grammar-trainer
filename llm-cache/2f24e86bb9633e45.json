@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2f24e86bb9633e45",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "04-09-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Conjuguez le verbe au plus-que-parfait ou à l'imparfait selon le contexte.\n\nPHRASE: Le match a été annulé parce que le jardinier ___ déjà la pelouse la veille et le terrain était détrempé.\n\nHINT: arroser\n\nEXPECTED ANSWER: avait arrosé\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1779489170454-t8f63glx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt instructs to conjugate a verb, the hint provides \"arroser\", and the phrase contains \"déjà\" and \"la veille\" which clearly indicate the plus-que-parfait tense is needed.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779489233743-cayhuxvv",
+      "timestamp": "2026-05-22T22:34:04.622Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to conjugate the verb, the hint provides the infinitive \"arroser\", and the context with \"déjà\" clearly indicates the pluperfect tense is required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779489244622-evix6fj2",
+      "timestamp": "2026-05-22T22:35:12.251Z"
+    },
+    {
+      "raw": "# Self-Contained Question Validation\n\nVERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs learners to conjugate the verb in either pluperfect or imperfect, the hint provides the infinitive \"arroser\", and the context with \"déjà\" plus the sequence of past events makes it clear which tense to use.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779489312251-s9pazhu3",
+      "timestamp": "2026-05-22T22:35:27.451Z"
+    }
+  ]
+}

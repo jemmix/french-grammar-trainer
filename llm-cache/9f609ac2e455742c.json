@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9f609ac2e455742c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-09-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Nous savions qu'il ___ déjà la réponse avant la fin du cours. »\n\nChoices:\nA. [CORRECT] avait trouvé\nB. [WRONG] trouvait\nC. [WRONG] a trouvé\nD. [WRONG] allait trouver\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779482177790-4xo7gzea"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in the context of a sentence requiring the pluperfect tense (plus-que-parfait) to describe an action completed before another past event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779482405816-oux51ov3",
+      "timestamp": "2026-05-22T20:40:21.973Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors that violate the tense requirements for anteriority in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779482773615-4ly5cjzw",
+      "timestamp": "2026-05-22T20:47:37.449Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThis task is a verification of wrong answers in a multiple choice question about French grammar. I have analyzed the question but have not yet provided the verdict in the requested format.\n\nThe question asks to complete: \"Nous savions qu'il ___ déjà la réponse avant la fin du cours.\" with the correct answer being \"avait trouvé\" (plus-que-parfait).\n\nAll three wrong answers (B: trouvait, C: a trouvé, D: allait trouver) are indeed incorrect because:\n- The context requires the plus-que-parfait (pluperfect) tense due to the sequence of tenses with \"savions\" (imperfect) and the action being completed before the past moment\n- B (imparfait) would indicate ongoing/habitual action, incompatible with \"déjà\"\n- C (passé composé) is the wrong sequence of tenses for an action preceding the main clause's past timeline\n- D (imperfect of aller + infinitive) would mean \"was going to find,\" incompatible with \"déjà\" indicating completion\n\nThe verdict should be: TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779483119560-8yte3vje",
+      "timestamp": "2026-05-22T20:52:16.554Z"
+    }
+  ]
+}

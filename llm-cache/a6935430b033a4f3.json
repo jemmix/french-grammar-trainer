@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a6935430b033a4f3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-09-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-09 - Le plus-que-parfait vs l'imparfait : action accomplie vs état\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au plus-que-parfait ou à l'imparfait selon le contexte. La course explique la soif (action accomplie antérieure).\nPhrase: Les joueurs avaient soif : ils ___ pendant plus d'une heure sans s'arrêter.\nCorrect Answer: avaient couru\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779486578232-jolxze86"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires students to use the plus-que-parfait (avaient couru) for an action completed before the state described in the imparfait (avaient soif), which is precisely the distinction between accomplished action vs. state that the rule targets.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779486586254-bxkbjg49",
+      "timestamp": "2026-05-22T21:50:03.145Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between plus-que-parfait (accomplished action anterior to a state) and imparfait (state) by requiring students to identify that running (\"avaient couru\") is the completed action that explains the state of thirst (\"avaient soif\").\n\nMaximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI validated one question from section 04-09 about le plus-que-parfait vs l'imparfait (action accomplie vs état). The question asks students to fill in \"Les joueurs avaient soif : ils ___ pendant plus d'une heure sans s'arrêter\" with either plus-que-parfait or imparfait. The correct answer is \"avaient couru\" (plus-que-parfait) because the running is an accomplished action that explains the state of thirst. I determined this question is ALIGNED with the rule because it directly tests the distinction between accomplished anterior actions (plus-que-parfait) and states (imparfait).\n\n**Remaining tasks:**\nNone - this was a single-question validation task.\n\n**Recommendations:**\nNo action needed. This question properly tests the stated grammar rule and can be included in the curriculum.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779486603145-p5phrf2q",
+      "timestamp": "2026-05-22T21:51:37.221Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the distinction between plus-que-parfait (accomplished action) and imparfait (state) by requiring students to identify that the running occurred before the state of being thirsty, necessitating the plus-que-parfait form \"avaient couru\" rather than the imparfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779486697221-cvnvy7o2",
+      "timestamp": "2026-05-22T21:52:07.832Z"
+    }
+  ]
+}

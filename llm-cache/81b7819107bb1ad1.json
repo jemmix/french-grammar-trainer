@@ -1,0 +1,33 @@
+{
+  "cacheKey": "81b7819107bb1ad1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-09-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-09 - Le plus-que-parfait vs l'imparfait : action accomplie vs état\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au plus-que-parfait ou à l'imparfait selon le contexte.\nPhrase: Les joueurs avaient soif : ils ___ pendant plus d'une heure sans s'arrêter.\nCorrect Answer: avaient couru\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779482177791-hpwzo77p"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: This question correctly tests the distinction between the pluperfect (completed action) and the imperfect (state), as the action of running was completed before the state of being thirsty.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779482439831-a50wlr2n",
+      "timestamp": "2026-05-22T20:41:09.697Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"courir\" (to run) is an action, not a state, and selecting the pluperfect \"avaient couru\" to indicate this completed action happened before the players became thirsty, directly testing the distinction between action (plus-que-parfait) and state (imparfait).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779482857449-uo9837k1",
+      "timestamp": "2026-05-22T20:48:24.791Z"
+    },
+    {
+      "raw": "I need to validate if this question is aligned with the rule it claims to test.\n\nVERDICT: ALIGNED\nREASON: The question requires choosing between plus-que-parfait (action accomplished: avaient couru) and imparfait (state or ongoing action), with the context clearly indicating that the running was a completed action prior to the state of being thirsty, directly testing the distinction between accomplished action and state.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779483157755-tyy1d5j0",
+      "timestamp": "2026-05-22T20:52:57.176Z"
+    }
+  ]
+}
