@@ -708,6 +708,7 @@ export const answerHints: Record<string, string> = {
   "nous inquiétons": "s'inquiéter",
   "nous les montrez": "montrer",
   "nous les": "pronom",
+  "nous nous étions dépêchés": "se dépêcher",
   "nous nous étions rendu compte": "se rendre compte",
   "nous reposerions": "se reposer",
   "se brossait": "se brosser",
