@@ -981,6 +981,7 @@ export const answerHints: Record<string, string> = {
   "t'assois": "s'asseoir",
   "t'étais blessé": "se blesser",
   "avait choisi": "choisir",
+  "avait cueillies": "cueillir",
   "avions attendu": "attendre",
   "te couche": "se coucher",
   "te couches": "se coucher",

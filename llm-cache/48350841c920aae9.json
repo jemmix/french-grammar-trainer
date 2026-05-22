@@ -1,0 +1,33 @@
+{
+  "cacheKey": "48350841c920aae9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-03-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-03 - L'accord du participe passé au plus-que-parfait (mêmes règles qu'au passé composé)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « J'___ la vérité avant qu'il me la dise. »\nChoices:\nA. [CORRECT] avais su\nB. avais sue\nC. étais su\nD. avais sus\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779408007456-fg0m3f1f"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: This question tests the agreement rule for the past participle \"su\" with auxiliary \"avoir\" - choices include both correct agreement (avais su, no agreement because direct object \"la vérité\" follows the verb) and incorrect agreement attempts (avais sue, avais sus, étais su).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779408054392-a6ni8lhb",
+      "timestamp": "2026-05-22T00:01:08.233Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests agreement rules for past participle with avoir in plus-que-parfait by including distractors with incorrect feminine, plural, and auxiliary agreement, requiring knowledge that the participle \"su\" should not agree because the direct object \"la vérité\" follows the verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779408113587-7i0f8rc6",
+      "timestamp": "2026-05-22T00:02:08.228Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that with the auxiliary avoir, the past participle agrees with the direct object only when it precedes the verb, which is central to the stated rule about participle agreement in pluperfect tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779408167780-56qxhpnb",
+      "timestamp": "2026-05-22T00:03:00.560Z"
+    }
+  ]
+}

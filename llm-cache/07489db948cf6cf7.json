@@ -1,0 +1,47 @@
+{
+  "cacheKey": "07489db948cf6cf7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-03-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-03 - L'accord du participe passé au plus-que-parfait (mêmes règles qu'au passé composé)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il ___ travailler toute sa vie. »\nChoices:\nA. [CORRECT] avait dû\nB. avait due\nC. avait dus\nD. était dû\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779406386181-vaicrr04"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests agreement of the past participle \"dû\" with \"avoir\" as the auxiliary in the plus-que-parfait, requiring the learner to recognize that no agreement is needed since there is no preceding direct object.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779406479340-tbzxpjf1",
+      "timestamp": "2026-05-21T23:34:55.445Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests how to form the pluperfect tense of \"devoir\" (choosing auxiliary \"avoir\" vs \"être\", knowing the past participle \"dû\"), but does not test past participle agreement since the subject \"Il\" requires no agreement in this sentence structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779406695674-yqd9g0gk",
+      "timestamp": "2026-05-21T23:38:40.182Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question tests agreement of the past participle with the auxiliary \"avoir\" in plus-que-parfait, as the correct answer \"avait dû\" requires understanding that no agreement is made without a preceding direct object, which is the core concept of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779406911798-cznysxoo",
+      "timestamp": "2026-05-21T23:42:03.599Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests understanding that with \"avoir\" as auxiliary in plus-que-parfait, the past participle only agrees with a preceding direct object; since \"travailler\" is an infinitive complement (not a direct object), \"dû\" remains in its default masculine singular form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779407041205-aud04yvz",
+      "timestamp": "2026-05-21T23:44:31.523Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests which auxiliary verb (avoir vs. être) to use with \"devoir\" in the plus-que-parfait, not the agreement rules of the past participle — agreement is only a secondary concern in the wrong answer options, not the core concept being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779407092762-95q2er2f",
+      "timestamp": "2026-05-21T23:45:07.266Z"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "cacheKey": "a0d6dc458f509525",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-03-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Paul et moi ___ avant que la réunion commence. »\n\nChoices:\nA. [CORRECT] étions arrivés\nB. [WRONG] étions arrivées\nC. [WRONG] avions arrivé\nD. [WRONG] étions arrivé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779406386181-1f767ln7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses feminine plural agreement but \"Paul et moi\" requires masculine; C uses imperfect tense instead of pluperfect; D uses singular instead of plural agreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779406418227-3iq9umva",
+      "timestamp": "2026-05-21T23:34:04.198Z"
+    },
+    {
+      "raw": "TRUE||B uses feminine plural agreement but \"Paul et moi\" is masculine; C uses the wrong auxiliary \"avoir\" instead of \"être\"; D uses singular past participle with a plural subject when \"être\" requires agreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779406617688-yfkf7omj",
+      "timestamp": "2026-05-21T23:37:11.528Z"
+    },
+    {
+      "raw": "FALSE|D|D is incorrect because with the auxiliary \"être\" and a plural subject like \"Paul et moi\" (masculine plural), the past participle \"arrivé\" must agree and become \"arrivés\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779406858181-rhbd5tmk",
+      "timestamp": "2026-05-21T23:41:23.748Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses feminine plural agreement with a mixed-gender subject \"Paul et moi\" (which defaults to masculine), C incorrectly uses \"avoir\" as auxiliary instead of \"être\" for \"arriver\", and D lacks the required plural \"-s\" ending for the past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779407030345-cv0m2tz6",
+      "timestamp": "2026-05-21T23:44:42.943Z"
+    },
+    {
+      "raw": "TRUE||B is incorrect because \"Paul et moi\" is masculine plural, not feminine; C is incorrect because \"arriver\" takes \"être\" as the auxiliary, not \"avoir\"; D is incorrect because the participle must be plural (arrivés) to agree with \"Paul et moi\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779407101897-l6oail2j",
+      "timestamp": "2026-05-21T23:45:11.563Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses feminine agreement despite Paul being male, C incorrectly uses \"avoir\" instead of \"être\" as the auxiliary verb for \"arriver\", and D incorrectly uses singular agreement instead of plural for \"nous\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779407117633-zzbfl3sz",
+      "timestamp": "2026-05-21T23:45:28.464Z"
+    },
+    {
+      "raw": "FALSE|B,C|B could be correct if the speaker is female (Paul et moi = mixed group but the agreement could be made with the feminine subject \"moi\"), C uses \"avoir\" as auxiliary which is incorrect for \"arriver\", D uses singular instead of plural agreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779407128464-wn9qrxz2",
+      "timestamp": "2026-05-21T23:45:47.068Z"
+    }
+  ]
+}

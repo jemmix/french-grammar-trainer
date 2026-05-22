@@ -1,0 +1,33 @@
+{
+  "cacheKey": "86b9b6a4c3dbc4e8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-03-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-03 - L'accord du participe passé au plus-que-parfait (mêmes règles qu'au passé composé)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez au plus-que-parfait (auxiliaire + participe passé accordé).\nPhrase: Quand nous sommes arrivés, les actrices ___ déjà.\nCorrect Answer: étaient parties\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779408007458-ocn2y1le"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests past participle agreement with être in the plus-que-parfait, as answering requires adding the feminine plural ending \"-es\" to \"parties\" to agree with \"les actrices\", which is the core concept of rule 04-03.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779408055869-qb37xfh5",
+      "timestamp": "2026-05-22T00:01:16.386Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the user to apply agreement rules to the past participle \"parti\" to match the feminine plural subject \"les actrices\", which is the core of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779408118402-nf6hojla",
+      "timestamp": "2026-05-22T00:02:10.837Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests past participle agreement in the pluperfect tense because the auxiliary is \"être\" and the participle must agree with the feminine plural subject \"les actrices\" to produce \"parties\" rather than \"parti\" or \"partis\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779408173765-joqkftfh",
+      "timestamp": "2026-05-22T00:03:13.543Z"
+    }
+  ]
+}

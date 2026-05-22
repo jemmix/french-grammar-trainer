@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b0d0e04be32af13a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-03-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-03 - L'accord du participe passé au plus-que-parfait (mêmes règles qu'au passé composé)\n\nQUESTION:\nType: Input\nPrompt: Complétez avec le plus-que-parfait en accordant correctement le participe passé (attention au COD antéposé « que »).\nPhrase: Les romans que Marie ___ étaient passionnants.\nCorrect Answer: avait lus\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779408700033-xrnja46d"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that the past participle \"lu\" must agree with the preceding direct object \"Les romans\" (masculine plural), becoming \"lus\", which is precisely the agreement rule for pluperfect with antéposed COD that the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779408715489-0j57wqdb",
+      "timestamp": "2026-05-22T00:12:12.409Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the agreement rule for past participiple with a preposed direct object (COD) in the plus-que-parfait tense — learners must correctly conjugate \"avoir\" in the imparfait (\"avait\") AND add the \"-s\" agreement because \"romans\" (masc. plural COD) precedes the verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779408742580-g7jk192j",
+      "timestamp": "2026-05-22T00:12:36.593Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the agreement of the past participle in plus-que-parfait with an antéposed direct object (\"Les romans que\"), which is the core concept of the stated rule (same rules as passé composé).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779408767637-vqvsilio",
+      "timestamp": "2026-05-22T00:13:04.581Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6a248b1c70bb887f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-03-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-03 - L'accord du participe passé au plus-que-parfait (mêmes règles qu'au passé composé)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Paul et moi ___ avant que la réunion commence. »\nChoices:\nA. [CORRECT] étions arrivés\nB. étions arrivées\nC. avions arrivé\nD. étions arrivé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779406386181-12acghdq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests participle agreement with \"être\" in the plus-que-parfait, requiring students to recognize that the subject \"Paul et moi\" (masculine plural) demands \"arrivés\" rather than the other options.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779406418481-exi1zcxx",
+      "timestamp": "2026-05-21T23:42:39.823Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question directly tests the agreement of the past participle with the subject in the plus-que-parfait tense, requiring knowledge that with the auxiliary \"être\", the participle \"arrivé\" must agree in gender and number with \"Paul et moi\" (masculine plural → \"arrivés\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779407044342-93ljr7tq",
+      "timestamp": "2026-05-21T23:44:20.690Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests agreement of the past participle in the plus-que-parfait tense, with distractors covering wrong auxiliary (C), wrong gender agreement (B), and missing agreement (D), all directly related to the rule stated.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779407080010-87ed53xs",
+      "timestamp": "2026-05-21T23:45:01.897Z"
+    }
+  ]
+}

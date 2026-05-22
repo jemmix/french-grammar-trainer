@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f9851a45abba4a2e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-03-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « La valise qu'elle ___ était trop lourde. »\n\nChoices:\nA. [CORRECT] avait portée\nB. [WRONG] avait porté\nC. [WRONG] avait portés\nD. [WRONG] était portée\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779408007455-600ckb0n"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779408007473-vf12msvv",
+      "timestamp": "2026-05-22T00:00:35.176Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors - B lacks required agreement with the direct object \"la valise\" (should be \"portée\"), C incorrectly uses plural agreement (\"portés\"), and D incorrectly uses être as auxiliary instead of avoir for the transitive verb porter.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779408078195-hfxg5a03",
+      "timestamp": "2026-05-22T00:01:32.147Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B and C have incorrect agreement (porté/portés instead of portée), and D incorrectly uses a passive construction with \"que\" instead of \"qui\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779408130837-gtdpku0u",
+      "timestamp": "2026-05-22T00:02:43.766Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fc922e227d1fef37",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-03-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Laquelle de ces phrases est correcte ?\n\nChoices:\nA. [CORRECT] Elles s'étaient levées très tôt.\nB. [WRONG] Elles s'étaient levé très tôt.\nC. [WRONG] Elles s'avaient levées très tôt.\nD. [WRONG] Elles s'étaient levés très tôt.\nE. [WRONG] Elles étaient levées très tôt.\n\nVerify these WRONG answers are incorrect (letters: B, C, D, E)",
+    "nonce": "nonce-1779406386181-35ir8k7q"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B lacks feminine plural agreement, C uses wrong auxiliary verb (avoir instead of être), D uses masculine instead of feminine plural agreement, and E omits the reflexive pronoun.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779406462048-5d8s8q11",
+      "timestamp": "2026-05-21T23:34:35.196Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779406647349-l52tptzo",
+      "timestamp": "2026-05-21T23:39:25.556Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B lacks feminine agreement, C uses wrong auxiliary \"avaient\" instead of \"étaient\", D uses masculine agreement, and E omits the reflexive pronoun \"s'\" required for the verb \"se lever\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779406940974-2sfhp7br",
+      "timestamp": "2026-05-21T23:43:06.161Z"
+    }
+  ]
+}

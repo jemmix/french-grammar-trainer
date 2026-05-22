@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ae4773e7dfaee5ff",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "04-03-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: L'accord du participe passé au plus-que-parfait (mêmes règles qu'au passé composé)\nPROMPT: Conjuguez au plus-que-parfait (auxiliaire + participe passé accordé).\nPHRASE: Quand nous sommes arrivés, les actrices ___ déjà.\nCORRECT ANSWER: étaient parties\n\nWRONG ANSWERS to evaluate:\n1. étaient parti\n2. étaient partis\n3. étaient partie\n4. avaient parti\n5. étaient partied\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1779408007458-91ctzyco"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\n\nREASON: While most wrong answers represent common agreement errors (wrong gender, wrong number, wrong auxiliary), \"étaient partied\" is not a plausible mistake as it contains an English-style \"-ed\" suffix that no French learner would likely apply to a French verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779408334437-idzp63k7",
+      "timestamp": "2026-05-22T00:05:44.448Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: The wrong answer \"étaient partied\" is not a plausible learner mistake - it incorrectly adds English \"-ed\" to a French verb, which no French learner would realistically do when conjugating French verbs. The other four answers (wrong gender/number agreements and wrong auxiliary verb) are plausible, but having one implausible answer makes the set fail validation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779408392635-cp81g39y",
+      "timestamp": "2026-05-22T00:06:57.197Z"
+    }
+  ]
+}

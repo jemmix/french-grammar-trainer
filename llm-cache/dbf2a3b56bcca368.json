@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dbf2a3b56bcca368",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-03-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la forme correcte : « Elle ___ avant l'aube. »\n\nChoices:\nA. [CORRECT] était partie\nB. [WRONG] était parti\nC. [WRONG] était parties\nD. [WRONG] avait parti\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779406386180-da2eie3q"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses masculine participle with feminine subject, C uses plural participle with singular subject, D incorrectly uses 'avoir' as auxiliary with 'partir'.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779406386184-nkxbyl39",
+      "timestamp": "2026-05-21T23:33:18.143Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B lacks feminine agreement with \"Elle\", C incorrectly uses plural form for singular subject, and D uses wrong auxiliary verb \"avait\" instead of \"être\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779406561263-wqo1c763",
+      "timestamp": "2026-05-21T23:36:12.679Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B has wrong gender agreement (masculine participle with feminine subject), C has wrong number agreement (plural participle with singular subject), and D uses the wrong auxiliary verb (avoir instead of être for partir).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779406796356-pwgpvbry",
+      "timestamp": "2026-05-21T23:40:04.841Z"
+    }
+  ]
+}
