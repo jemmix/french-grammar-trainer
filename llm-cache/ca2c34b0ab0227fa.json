@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ca2c34b0ab0227fa",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-11-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si seulement tu ___ plus tôt ce matin ! »\n\nChoices:\nA. [CORRECT] avais appelé\nB. [WRONG] appelais\nC. [WRONG] as appelé\nD. [WRONG] appelleras\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779546424332-96gw1jer"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for expressing a past wish with \"si seulement.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779546433408-31wjts5u",
+      "timestamp": "2026-05-23T14:27:47.458Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses imparfait instead of required plus-que-parfait for past regret, C incorrectly uses passé composé with si seulement, and D inappropriately uses future tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779546665059-x0ood37k",
+      "timestamp": "2026-05-23T14:31:37.741Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors. B (appelais) uses the imparfait which expresses a present wish, not regret about a past action with \"ce matin\"; C (as appelé) uses passé composé which indicates a completed fact rather than a hypothetical wish; D (appelleras) uses future tense which is incompatible with the past time reference \"ce matin\" and doesn't express regret.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779546907030-jqxafthd",
+      "timestamp": "2026-05-23T14:35:41.946Z"
+    }
+  ]
+}

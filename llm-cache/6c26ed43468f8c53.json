@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6c26ed43468f8c53",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-11-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si seulement tu ___ tes devoirs hier soir ! »\n\nChoices:\nA. [CORRECT] avais fait\nB. [WRONG] faisais\nC. [WRONG] as fait\nD. [WRONG] feras\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779549130195-k9bo9l92"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses imperfect instead of plus-que-parfait for past regret, C uses passé composé instead of plus-que-parfait, and D uses future tense incompatible with \"hier soir\" (past time reference).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779549130292-olusyoc1",
+      "timestamp": "2026-05-23T15:12:34.472Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779549154473-k31y5sea",
+      "timestamp": "2026-05-23T15:15:00.023Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context: B uses imparfait which expresses present/future wishes rather than past regret; C uses passé composé which doesn't work in the \"si seulement\" construction; D uses future simple which contradicts the past time marker \"hier soir\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779549300024-8ayknn2k",
+      "timestamp": "2026-05-23T15:15:26.902Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e2c69c5d5a5e01b6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-11-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si seulement tu ___ attention en classe ! »\n\nChoices:\nA. [CORRECT] avais prêté\nB. [WRONG] prêtais\nC. [WRONG] as prêté\nD. [WRONG] prêteras\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779542716233-kyb9xo5y"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI have analyzed the French grammar question requiring verification of wrong answers.\n\n**Summary of work:**\nI evaluated the question \"Si seulement tu ___ attention en classe !\" with four answer choices:\n- A. avais prêté (correct)\n- B. prêtais (wrong)\n- C. as prêté (wrong)  \n- D. prêteras (wrong)\n\nMy analysis found that while choices C and D contain clear grammatical errors (passé composé and future simple are incompatible with \"si seulement\"), choice B could potentially be correct because \"Si seulement tu prêtais attention\" forms a grammatically valid structure expressing a wish about present behavior, which the question prompt doesn't explicitly rule out in favor of a past regret.\n\n**Remaining tasks:**\n- Provide the final verdict in the requested format\n\n**Recommendation:**\nFALSE|B|B forms a grammatically valid \"si seulement\" + imperfect structure for expressing a present wish, which the prompt doesn't exclude, while C and D are genuinely incorrect constructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779542716242-bpfpe43a",
+      "timestamp": "2026-05-23T13:25:53.776Z"
+    },
+    {
+      "raw": "FALSE|B|The answer \"prêtais\" forms a valid present wish with \"si seulement\" and could be correct in a different context, but it doesn't match the intended past regret meaning of the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779543036689-95mdmhil",
+      "timestamp": "2026-05-23T13:36:09.657Z"
+    }
+  ]
+}

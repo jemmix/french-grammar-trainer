@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dabcec221fda2106",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-11-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si seulement nous n'___ pas gaspillé notre temps ! »\n\nChoices:\nA. [CORRECT] avions\nB. [WRONG] avons\nC. [WRONG] aurions\nD. [WRONG] aurons\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779542716238-wt6ryavr"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses; the structure \"Si seulement\" expressing a past regret requires the plus-que-parfait, not the passé composé, conditionnel passé, or futur antérieur.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779542965510-3wfqiyp6",
+      "timestamp": "2026-05-23T13:29:57.919Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incompatible with \"Si seulement\" which requires the pluperfect indicative (avions) to express counterfactual regret about past events; the present perfect (avons), conditional perfect (aurions), and future perfect (aurons) cannot be used in this construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779543442360-00ejg5ap",
+      "timestamp": "2026-05-23T13:38:59.638Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for expressing regret with \"si seulement\" - \"avons\" uses passé composé instead of required pluperfect, \"aurions\" incorrectly uses conditional where pluperfect is required, and \"aurons\" incorrectly uses future antérieur.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779543848287-amn6sw5f",
+      "timestamp": "2026-05-23T13:44:44.169Z"
+    }
+  ]
+}

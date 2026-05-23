@@ -1,0 +1,33 @@
+{
+  "cacheKey": "532cc5ba5c852325",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-11-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-11 - Le plus-que-parfait pour exprimer un regret (si seulement j'avais étudié !)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Si seulement vous ___ à la fête samedi ! »\nChoices:\nA. [CORRECT] étiez venus\nB. veniez\nC. êtes venus\nD. viendrez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779546424332-vqtjd8vn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"si seulement\" expresses a past regret and must be followed by the plus-que-parfait tense (étiez venus), not other tenses like imparfait, passé composé, or futur simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779546468817-4rd5yp86",
+      "timestamp": "2026-05-23T14:28:17.028Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses the \"si seulement\" (if only) construction which specifically triggers the plus-que-parfait to express regret about a past event, and the correct answer \"étiez venus\" is indeed the plus-que-parfait form required by this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779546724202-g0bu5x87",
+      "timestamp": "2026-05-23T14:32:33.302Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests exactly the stated rule — using \"si seulement\" to express regret requires the pluperfect tense (\"étiez venus\"), and distractors test other tenses that don't convey this meaning.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779546966343-sx5kbor6",
+      "timestamp": "2026-05-23T14:36:46.375Z"
+    }
+  ]
+}

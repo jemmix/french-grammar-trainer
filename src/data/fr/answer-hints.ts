@@ -326,6 +326,7 @@ export const answerHints: Record<string, string> = {
   "avions étudié": "étudier",
   "avions organisé": "organiser",
   "avions retourné": "retourner",
+  "avions signé": "signer",
   "avions préparé": "préparer",
   "avions vendu": "vendre",
   "avions": "avoir",

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ff4b33aaf69a6c0d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-11-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-11 - Le plus-que-parfait pour exprimer un regret (si seulement j'avais étudié !)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Si seulement tu ___ ta démission avant de l'envoyer ! »\nChoices:\nA. [CORRECT] avais retiré\nB. retirais\nC. as retirée\nD. retireras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779548695776-5ulr2chx"
+  },
+  "responses": [
+    {
+      "raw": "# VERDICT: ALIGNED\n\n# REASON: The question correctly tests using the plus-que-parfait tense with \"si seulement\" to express regret about a past action, which is the exact concept covered by the rule.\n\nThe sentence structure \"Si seulement tu ___ ta démission avant de l'envoyer !\" requires knowledge that:\n- \"Si seulement\" (if only) introduces a past regret\n- The plus-que-parfait (avais retiré) is the appropriate tense for this construction\n- This matches the example pattern \"si seulement j'avais étudié !\" from the rule title\n\nThe distractor choices (retirais, as retirée, retireras) represent incorrect tenses that would not properly express a past regret with this construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779548699798-dvbrdyaq",
+      "timestamp": "2026-05-23T15:05:37.806Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests using the pluperfect tense with \"si seulement\" to express regret about a past action that didn't happen, which is exactly what the rule states.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779548737807-tdgzqu9d",
+      "timestamp": "2026-05-23T15:06:06.317Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached. I'll provide the validation verdict and explanation based on my analysis.\n\n---\n\nVERDICT: ALIGNED\nREASON: The question correctly tests the plus-que-parfait with \"si seulement\" to express a regret about a past event that didn't happen, and the distractors are plausible but grammatically incorrect alternatives from other tenses (imparfait, passé composé, futur simple) that don't fit this regret structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779548766317-quir2axf",
+      "timestamp": "2026-05-23T15:06:29.033Z"
+    }
+  ]
+}

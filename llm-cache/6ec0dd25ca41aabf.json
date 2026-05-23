@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6ec0dd25ca41aabf",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-11-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si seulement tu ___ ta démission ! »\n\nChoices:\nA. [CORRECT] avais retirée\nB. [WRONG] retirais\nC. [WRONG] as retirée\nD. [WRONG] retireras\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779542716237-2kx5gru9"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was analyzing a French grammar verification question. Here's what I accomplished:\n\nI carefully evaluated the multiple choice question asking to complete \"Si seulement tu ___ ta démission !\" with the correct answer being \"avais retirée\".\n\nAfter analyzing the context and grammar constraints, I determined:\n\n- Choice B \"retirais\" would create \"Si seulement tu retirais ta démission!\" which is grammatically correct French using the \"si seulement + imparfait\" construction for expressing a wish in the present\n- Choice C \"as retirée\" uses the wrong auxiliary (passé composé with \"as\" instead of plus-que-parfait with \"avais\") and incorrect agreement for a post-verbal object\n- Choice D \"retireras\" uses the future tense which is not appropriate with \"si seulement\"\n\nMy verdict was: FALSE|B|B creates a grammatically correct French sentence using \"si seulement + imparfait\" construction, so it's not actually a wrong answer.\n\nNo remaining tasks - the verification analysis is complete.\n\nRecommendation: The question needs to be revised because \"retirais\" (choice B) is actually a correct answer in this context, not a wrong answer. The question should specify that the plus-que-parfait is required (e.g., by adding context indicating a past wish) to avoid this ambiguity.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779542902572-kq9kcurv",
+      "timestamp": "2026-05-23T13:28:57.421Z"
+    },
+    {
+      "raw": "TRUE||The question expresses a past regret using \"si seulement\" which requires the plus-que-parfait. B uses imparfait which indicates a current wish rather than past regret, C incorrectly uses passé composé which doesn't work with \"si seulement\" in this context, and D uses future tense which is grammatically incompatible with expressing a past regret.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779543340046-ndhx8bs9",
+      "timestamp": "2026-05-23T13:36:13.564Z"
+    },
+    {
+      "raw": "FALSE|B|B (retirais) is the imperfect tense, which with \"si seulement\" expresses a wish about the present (\"Si seulement tu retirais ta démission !\" = \"If only you would resign now!\"), so it's grammatically correct in a different context than the pluperfect regret implied by the marked answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779543715541-mikpgqh0",
+      "timestamp": "2026-05-23T13:43:37.984Z"
+    }
+  ]
+}

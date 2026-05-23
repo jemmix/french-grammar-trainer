@@ -1,0 +1,54 @@
+{
+  "cacheKey": "d3d322d0342cf5f3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-11-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si seulement elle ___ sa chance ! »\n\nChoices:\nA. [CORRECT] avait saisi\nB. [WRONG] saisissait\nC. [WRONG] a saisi\nD. [WRONG] saisira\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779542716236-gdr4d9j8"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use inappropriate tenses for the \"Si seulement\" construction expressing regret about a past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779542769659-og99sbv8",
+      "timestamp": "2026-05-23T13:26:39.526Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for expressing a past regret with \"si seulement\" in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779543117282-wfdbp1xd",
+      "timestamp": "2026-05-23T13:32:35.313Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\n- Analyzed the French grammar question: \"Complétez : « Si seulement elle ___ sa chance ! »\"\n- Evaluated the grammatical validity of each wrong answer choice:\n  - B. saisissait (imparfait) - expresses a wish for the present\n  - C. a saisi (passé composé) - not valid with \"si seulement\"\n  - D. saisira (futur simple) - not valid with \"si seulement\"\n- Determined that \"si seulement\" can take either imparfait (present wish) or plus-que-parfait (past regret)\n- Identified that choice A (avait saisi, plus-que-parfait) expresses a regret about the past\n- Recognized that choice B (saisissait, imparfait) expresses a wish for the present, which is grammatically valid with \"si seulement\"\n\nRemaining tasks that were not completed:\n- Provide the final verdict in the requested format\n\nRecommendations for what should be done next:\nThe question is ambiguous because \"si seulement\" can take both imparfait (choice B) and plus-que-parfait (choice A) depending on temporal context, and the question prompt doesn't specify whether it refers to a present wish or a past regret.\n\nVERDICT: UNCLEAR||\"Si seulement\" can take both imparfait (present wish) and plus-que-parfait (past regret), and the prompt doesn't specify which context is intended.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779543559565-k6pmxk2q",
+      "timestamp": "2026-05-23T13:40:24.367Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb forms for expressing regret with \"Si seulement\" in French, which requires the pluperfect tense (\"avait saisi\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779543927408-7nghhzea",
+      "timestamp": "2026-05-23T13:47:21.692Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779544041693-nyw48afa",
+      "timestamp": "2026-05-23T13:47:47.070Z"
+    },
+    {
+      "raw": "FALSE|B|The \"si seulement\" construction allows both imparfait (for present wishes) and plus-que-parfait (for past regrets); without explicit context indicating a past regret, B \"saisissait\" is grammatically correct.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779544067072-ivhf41lm",
+      "timestamp": "2026-05-23T13:55:32.661Z"
+    }
+  ]
+}
