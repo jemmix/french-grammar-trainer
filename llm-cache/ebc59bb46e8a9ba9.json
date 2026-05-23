@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ebc59bb46e8a9ba9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-10-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si vous ___ mes conseils, vous n'auriez pas eu de regrets. »\n\nChoices:\nA. [CORRECT] aviez suivi\nB. [WRONG] auriez suivi\nC. [WRONG] avez suivi\nD. [WRONG] suiviez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779539988827-xaobtu6t"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in the context of a counterfactual condition in the past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779540020710-2r9bxw9n",
+      "timestamp": "2026-05-23T12:43:17.537Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect - B uses conditional in si-clause (should be imperfect), C uses passé composé (indicates real condition not hypothetical), and D is missing auxiliary \"aviez\" for past compound form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779540223416-o0jn5zmb",
+      "timestamp": "2026-05-23T12:43:57.819Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI analyzed a French grammar multiple choice question about conditional sentences. The question asks to complete: \"Si vous ___ mes conseils, vous n'auriez pas eu de regrets.\"\n\nI verified that:\n- Answer A (aviez suivi) is correct as it's the plus-que-parfait form needed in a hypothetical past si-clause\n- Answer B (auriez suivi) is incorrect because it uses conditionnel passé, which belongs in the main clause, not the si-clause\n- Answer C (avez suivi) is incorrect because it uses passé composé, which expresses real past actions, not hypothetical ones\n- Answer D (suiviez) is incorrect because it uses imparfait, which would be used for present hypotheticals, not past hypotheticals\n\nAll wrong answers are clearly incorrect within the grammatical constraints of the question.\n\nTRUE||All wrong answers use verb tenses that are incompatible with a hypothetical past si-clause.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779540237820-yex3nela",
+      "timestamp": "2026-05-23T12:44:27.670Z"
+    }
+  ]
+}

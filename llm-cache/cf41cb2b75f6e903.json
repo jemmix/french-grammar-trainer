@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cf41cb2b75f6e903",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-10-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si vous aviez suivi mes conseils, vous n'___ pas eu de regrets. »\n\nChoices:\nA. [CORRECT] auriez\nB. [WRONG] aviez\nC. [WRONG] aurez\nD. [WRONG] aurais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779537236879-deezigfa"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is imparfait, not conditionnel passé; C is futur simple, not conditionnel passé; D uses wrong subject pronoun (j' instead of vous).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779537390559-llhe0ipz",
+      "timestamp": "2026-05-23T11:56:57.907Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.\n\nMaximum steps for this agent have been reached.\n\nI've completed the grammar verification for the given French multiple-choice question. The verdict is TRUE, confirming that all the wrong answers (B, C, D) are indeed incorrect based on the grammatical constraints of the conditional sentence structure.\n\nNo remaining tasks are pending for this specific verification request.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779537743920-bmoz9g88",
+      "timestamp": "2026-05-23T12:03:19.719Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect - \"aviez\" doesn't form a valid construction with \"eu\" in this context, \"aurez\" uses the wrong tense (futur antérieur instead of conditionnel passé), and \"aurais\" has a person/number mismatch with the subject \"vous\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779537975320-83f7a218",
+      "timestamp": "2026-05-23T12:07:04.160Z"
+    }
+  ]
+}

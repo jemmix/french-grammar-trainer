@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8f1422460b6ebcb2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-10-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-10 - Le plus-que-parfait dans les hypothèses avec si (si j'avais su, j'aurais agi)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Si nous avions travaillé plus dur, nous ___ une solution. »\nChoices:\nA. [CORRECT] aurions trouvé\nB. trouvions\nC. trouverions\nD. avions trouvé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779537236878-65i105w2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question has the plus-que-parfait already completed in the si clause (\"avions travaillé\") and asks for the main clause verb form (conditionnel passé), so it tests the conditionnel passé structure rather than the rule about using plus-que-parfait in si clauses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779537243892-h6hl67mp",
+      "timestamp": "2026-05-23T11:54:47.673Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the conditionnel passé in the main clause of a past hypothetical, not the use of plus-que-parfait in the \"si\" clause which is the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779537627519-8fwkos5n",
+      "timestamp": "2026-05-23T12:00:46.019Z"
+    }
+  ]
+}

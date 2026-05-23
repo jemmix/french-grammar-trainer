@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a67d341ab027e1d4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-10-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-10 - Le plus-que-parfait dans les hypothèses avec si (si j'avais su, j'aurais agi)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Si nous avions organisé la fête, tout ___ merveilleux. »\nChoices:\nA. [CORRECT] aurait été\nB. serait\nC. avait été\nD. a été\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779537236879-9hyayb0k"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the exact structure taught by the rule: when the si clause uses plus-que-parfait, the main clause requires conditionnel passé (aurait été), and the distractors test knowledge of alternative si-clause constructions (imparfait → conditionnel présent).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779537417908-ycuguusi",
+      "timestamp": "2026-05-23T11:57:14.601Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the exact structure described in the rule - a hypothetical conditional with \"si\" clause in plus-que-parfait requiring the main clause in conditionnel passé (aurait été). To answer correctly, students must know this specific grammar pattern, as all distractors represent common errors (would be using conditionnel présent, would be duplicating plus-que-parfait in main clause, or would be using passé composé).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779537777846-iau01iyv",
+      "timestamp": "2026-05-23T12:03:22.996Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the conditional structure where \"si\" + plus-que-parfait (\"avions organisé\") requires the conditionnel passé (\"aurait été\") to express a hypothetical situation in the past that didn't actually occur.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779537987053-2i13chti",
+      "timestamp": "2026-05-23T12:06:44.564Z"
+    }
+  ]
+}

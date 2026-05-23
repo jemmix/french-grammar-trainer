@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6eed3262bbc2d2d6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-10-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si nous avions parlé à temps, nous ___ ce problème. »\n\nChoices:\nA. [CORRECT] aurions évité\nB. [WRONG] éviterions\nC. [WRONG] avions évité\nD. [WRONG] évitions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779537236878-v1lxua18"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors within the conditional structure of the sentence.\n\nAnalysis:\n- B uses conditionnel présent (éviterions) instead of required conditionnel passé for a past hypothetical\n- C uses plus-que-parfait (avions évité) which creates two past perfect clauses without proper conditional relationship\n- D uses imparfait (évitions) which doesn't correctly follow the plus-que-parfait clause for conditional sentences",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779537313499-ayuii8kq",
+      "timestamp": "2026-05-23T11:56:41.839Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI was asked to verify that the wrong answers in a French grammar multiple choice question are indeed incorrect. The question asks to complete a third conditional sentence: \"Si nous avions parlé à temps, nous ___ ce problème.\" \n\n**Analysis performed:**\n- Choice B (éviterions) is the conditionnel présent, not the conditionnel passé required by the si + plus-que-parfait structure\n- Choice C (avions évité) is the plus-que-parfait, which cannot serve as the consequence clause in this conditional construction\n- Choice D (évitions) is the subjonctif imparfait, which does not fit the conditional pattern at all\n\n**Verdict:**\nTRUE||All wrong answers contain clear grammar errors - none match the conditionnel passé form required by the third conditional structure.\n\n**Remaining tasks:**\nNone - the verification task is complete.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779537742938-b32j02d9",
+      "timestamp": "2026-05-23T12:03:17.602Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses/moods for a si + plus-que-parfait conditional sentence; B is conditionnel présent instead of passé, C is plus-que-parfait instead of conditionnel passé, and D is a malformed form that is neither the correct tense nor a properly conjugated verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779537907398-i5rxvj81",
+      "timestamp": "2026-05-23T12:05:31.026Z"
+    }
+  ]
+}
