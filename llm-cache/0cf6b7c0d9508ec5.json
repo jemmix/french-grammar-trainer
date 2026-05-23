@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0cf6b7c0d9508ec5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-12-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle a expliqué qu'elle ___ prendre le train. »\n\nChoices:\nA. [CORRECT] avait décidé de\nB. [WRONG] a décidé de\nC. [WRONG] décidait de\nD. [WRONG] décidera de\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779550012323-tfs2lruj"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||The question asks to complete a sentence in indirect speech (discours indirect) where the main verb \"a expliqué\" is in the passé composé, requiring the subordinate verb to be in the pluperfect to indicate the decision occurred before the explanation. B is wrong because passé composé is incorrect for sequence of tenses; C is wrong because imparfait describes ongoing states, not completed decisions; D is wrong because futur does not match the past context of indirect speech.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779550101904-ic8vkt3j",
+      "timestamp": "2026-05-23T15:29:08.328Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: \"a décidé de\" (passé composé) doesn't show anteriority, \"décidait de\" (imparfait) is for ongoing actions, and \"décidera de\" (futur simple) is for future events, but the context requires plus-que-parfait for an action preceding another past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779550501913-rcmro8l8",
+      "timestamp": "2026-05-23T15:35:18.763Z"
+    },
+    {
+      "raw": "I need to analyze this French grammar question without using tools, as I've reached the maximum steps allowed.\n\nLooking at the question: \"Complétez : « Elle a expliqué qu'elle ___ prendre le train. »\"\n\nThis is an indirect speech structure where the reporting verb (\"a expliqué\") is in the passé composé, indicating the explanation happened in the past. The blank requires a verb form that logically precedes the explanation.\n\nAnalysis of wrong answers:\n\n**B. a décidé de** - Incorrect because in indirect speech, when the action of deciding happened before the explanation, the plus-que-parfait (pluperfect) tense is required, not the passé composé.\n\n**C. décidait de** - Incorrect because the imparfait would indicate an ongoing state or habit, not a completed decision that preceded the explanation.\n\n**D. décidera de** - Incorrect because the futur simple would indicate the decision happens after the explanation, which creates an illogical sequence of events.\n\nTRUE||All wrong answers violate the sequence of tenses rule in French indirect speech where actions preceding the reporting verb require plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779550840835-kffk1w5d",
+      "timestamp": "2026-05-23T15:41:01.547Z"
+    }
+  ]
+}

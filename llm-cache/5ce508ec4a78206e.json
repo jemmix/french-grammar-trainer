@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5ce508ec4a78206e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-12-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Les enfants ont dit qu'ils ___ au parc. »\n\nChoices:\nA. [CORRECT] avaient joué\nB. [WRONG] ont joué\nC. [WRONG] jouaient\nD. [WRONG] joueront\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779550012322-50k6odnq"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect based on standard French grammar rules for reported speech in the past context.</think>TRUE||All wrong answers are incorrect based on standard French grammar rules for reported speech in the past context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779550021808-qx5b2pxq",
+      "timestamp": "2026-05-23T15:29:16.578Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the sequence of tenses required in indirect speech after \"ont dit\" - only the pluperfect \"avaient joué\" correctly indicates an action completed before the children spoke.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779550504983-gnk9k8gc",
+      "timestamp": "2026-05-23T15:35:30.953Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context of reported speech with a past reporting verb, where the plus-que-parfait \"avaient joué\" is required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779550851329-whaa9zot",
+      "timestamp": "2026-05-23T15:41:18.721Z"
+    }
+  ]
+}

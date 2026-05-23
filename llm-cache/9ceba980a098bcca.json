@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9ceba980a098bcca",
+  "predicateId": "french-language",
+  "questionId": "04-12-021",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le plus-que-parfait dans le discours indirect au passé (il a dit qu'il avait fini)\n\nQUESTION CONTENT:\nPrompt: Conjuguez le verbe au plus-que-parfait (discours indirect au passé).\nPhrase: Mon collègue a dit qu'il ___ le rapport.\nAnswer: avait terminé\nHint: terminer\nExplanation: Le passé composé « j'ai terminé » → plus-que-parfait « avait terminé » après le verbe introducteur au passé « a dit ».\nWrong answers:\n  - a terminé (Le passé composé ne se conserve pas quand le verbe introducteur est au passé.)\n  - terminait (L'imparfait transforme un imparfait du direct, pas un passé composé.)\n  - terminera (Le futur transforme un futur du direct, pas un passé composé.)\n  - terminé (Le participe passé seul manque l'auxiliaire « avait » ; il faut « avait terminé ».)\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779551824989-pbukdlda"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779552384913-urb036jx",
+      "timestamp": "2026-05-23T16:06:41.486Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\n---\nMaximum steps for this agent have been reached. I've completed the validation task by examining all fields of the French grammar question:\n\n- Prompt: \"Conjuguez le verbe au plus-que-parfait (discours indirect au passé).\" ✓ French\n- Phrase: \"Mon collègue a dit qu'il ___ le rapport.\" ✓ French\n- Answer: \"avait terminé\" ✓ French\n- Hint: \"terminer\" ✓ French\n- Explanation: \"Le passé composé « j'ai terminé » → plus-que-parfait « avait terminé » après le verbe introducteur au passé « a dit ».\" ✓ French\n- Wrong answers and their explanations ✓ All in French\n\nThe validation is complete with a verdict of FRENCH - all content is appropriately in French with no unauthorized English text.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779552736475-1ncime41",
+      "timestamp": "2026-05-23T16:12:41.477Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, phrase, answer, hint, explanation, and all wrong answer explanations are entirely in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779553126954-yzhb4w5m",
+      "timestamp": "2026-05-23T16:19:05.838Z"
+    }
+  ]
+}

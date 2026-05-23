@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c03ff5d78e9dc482",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-12-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Le professeur a expliqué que les élèves ___ bien compris. »\n\nChoices:\nA. [CORRECT] avaient\nB. [WRONG] ont\nC. [WRONG] auraient\nD. [WRONG] auront\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779550012323-86boq4pk"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect in this context: \"ont\" violates the sequence of tenses in indirect speech, \"auraient\" incorrectly introduces a conditional meaning, and \"auront\" incorrectly introduces a future meaning.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779550136781-frlfejk7",
+      "timestamp": "2026-05-23T15:30:35.365Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the required sequence of tenses for reported speech in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779550565429-bpyj5ct0",
+      "timestamp": "2026-05-23T15:36:42.198Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the sequence of tenses rule in French; \"ont\" is present tense, \"auraient\" expresses a hypothetical situation, and \"auront\" is future tense, none of which are appropriate after the main clause \"a expliqué\" (past tense).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779550912118-elnbowrx",
+      "timestamp": "2026-05-23T15:42:34.634Z"
+    }
+  ]
+}

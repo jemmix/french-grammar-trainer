@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1ccaa67acf7cce18",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-12-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Jean a dit « J'ai fini ». Complétez : « Jean a dit qu'il ___ son travail. »\n\nChoices:\nA. [CORRECT] avait fini\nB. [WRONG] finissait\nC. [WRONG] finira\nD. [WRONG] avait finir\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779554498704-l7r1wbo1"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779554498734-kvelkizx",
+      "timestamp": "2026-05-23T16:42:04.032Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait which doesn't match the completed action in the quote, C incorrectly uses future tense, and D has invalid grammar with infinitive after past auxiliary.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779554524032-skzkj6nn",
+      "timestamp": "2026-05-23T16:44:14.409Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for the reported speech construction required; B uses imparfait instead of plus-que-parfait, C uses future simple instead of plus-que-parfait, and D incorrectly uses infinitive instead of past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779554654410-da6o3elb",
+      "timestamp": "2026-05-23T16:44:27.954Z"
+    }
+  ]
+}
