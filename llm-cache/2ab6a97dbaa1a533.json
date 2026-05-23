@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2ab6a97dbaa1a533",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-13-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je ___ avant cet incident. »\n\nChoices:\nA. [CORRECT] ne m'en étais jamais rendu compte\nB. [WRONG] ne m'en suis jamais rendu compte\nC. [WRONG] ne m'en étais jamais rendant compte\nD. [WRONG] ne m'en aurais jamais rendu compte\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779566302845-47jke550"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.\n\n**Analysis of each wrong answer:**\n\n- **B**: Uses passé composé (\"sais rendu compte\") instead of the required plus-que-parfait to indicate an action completed before another past event (\"avant cet incident\")\n- **C**: Incorrectly uses the present participle \"rendant\" with être, which is not a valid construction for \"se rendre compte\" in this context\n- **D**: Uses conditionnel passé (\"aurais rendu compte\") which expresses a hypothetical past situation, not a completed action before another past event",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779566503657-njskd937",
+      "timestamp": "2026-05-23T20:02:15.179Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect because B uses the wrong tense (passé composé instead of plus-que-parfait), C uses a grammatically incorrect structure (present participle after auxiliary verb), and D uses the conditionnel passé which is inappropriate for stating facts about the past.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779566886107-mstppvtu",
+      "timestamp": "2026-05-23T20:10:43.178Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses passé composé instead of plus-que-parfait for anterior action; C incorrectly mixes auxiliary with present participle; D is incomplete conditional without required \"si\" clause.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779567344662-krnf9hm7",
+      "timestamp": "2026-05-23T20:16:37.613Z"
+    }
+  ]
+}

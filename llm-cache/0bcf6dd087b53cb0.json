@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0bcf6dd087b53cb0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-13-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-13 - Le plus-que-parfait avec déjà, encore, jamais, toujours\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Ils ___ les voyages en train. »\nChoices:\nA. [CORRECT] avaient toujours aimé\nB. ont toujours aimé\nC. avaient aimant\nD. avaient aimé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779566302845-u6h6jcw6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct pluperfect tense construction combined with the adverb \"toujours,\" distinguishing it from the passé composé and incorrect participle forms, which directly tests the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779566492773-s6v7yf63",
+      "timestamp": "2026-05-23T20:01:59.531Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question lacks necessary context to justify using plus-que-parfait specifically, making both \"avaient toujours aimé\" and \"ont toujours aimé\" potentially correct depending on unstated temporal relationships.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779566850464-b5mc5x7f",
+      "timestamp": "2026-05-23T20:08:10.823Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e2f47d544ff47de9",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "04-13-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Conjuguez au plus-que-parfait avec « ne…jamais » (auxiliaire + jamais + participe passé).\n\nPHRASE: Avant ce jour, je n'___ jamais ___ un tel spectacle.\n\nHINT: voir\n\nEXPECTED ANSWER: avais vu\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1779557855542-67zh445h"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The phrase contains two blanks (\"n'___ jamais ___\") but the expected answer is only one value (\"avais vu\"), making it impossible for a learner to determine which blank corresponds to which part of the answer or how to format their response.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779557897214-qbbfvyyz",
+      "timestamp": "2026-05-23T17:38:50.655Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The phrase contains two blanks but the expected answer is a single string \"avais vu\", making it unclear whether the learner should provide two separate answers (one per blank) or if \"avais vu\" is meant to span both inputs.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779557987106-cjv9dnqy",
+      "timestamp": "2026-05-23T17:41:48.243Z"
+    }
+  ]
+}

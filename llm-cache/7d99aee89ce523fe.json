@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7d99aee89ce523fe",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "04-13-014",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Le plus-que-parfait avec déjà, encore, jamais, toujours\n\nQUESTION:\nPrompt: Complétez : « Je ne m'___ jamais ___ avant cet incident. »\nChoices:\nA. étais rendu compte\nB. aurais rendu compte\nC. étais rendant compte\nD. avais rendu compte\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1779556043359-ee8phc3o"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt structure is grammatically unusual - placing \"m'\" before the blank for the auxiliary verb creates an awkward construction since \"se rendre compte\" uses être as its auxiliary, and the correct form would be \"je ne m'étais jamais rendu compte\" rather than the blank structure presented.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779556249342-5tsjsf9k",
+      "timestamp": "2026-05-23T17:12:19.559Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The instruction \"Complétez\" is straightforward, the blanks are clearly marked with underscores, and the standard MCQ format makes it unambiguous that each choice fills both blanks together as a complete verb phrase.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779557075763-vo2iyjgl",
+      "timestamp": "2026-05-23T17:25:25.755Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt contains a grammatical error - with the reflexive verb \"se rendre compte,\" the pluperfect uses \"être\" as the auxiliary (je m'étais rendu compte), but the choices only provide \"avais\" (avoir) forms, creating a mismatch between the expected tense and available options that could confuse learners.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779557373157-btrrnhh4",
+      "timestamp": "2026-05-23T17:30:10.421Z"
+    }
+  ]
+}

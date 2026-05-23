@@ -1,0 +1,26 @@
+{
+  "cacheKey": "f8a929539a91f2f1",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "04-13-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Conjuguez au plus-que-parfait avec « ne…pas encore » (auxiliaire + pas encore + participe passé).\n\nPHRASE: Quand l'ambulance est arrivée, le médecin n'___ pas encore ___ le patient.\n\nHINT: examiner\n\nEXPECTED ANSWER: avait examiné\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1779557855543-fkakfebc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly describes the grammatical structure required (auxiliary + participle) which maps perfectly to the two blanks in the phrase, and the hint provides the verb to conjugate, leaving no ambiguity about the required input.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779557911542-te39dbom",
+      "timestamp": "2026-05-23T17:42:32.691Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work\nI analyzed the provided INPUT question to verify whether it is self-contained according to the French language learning quality guidelines.\n\n## Analysis of the Question\nThe question has a fundamental design inconsistency:\n- The phrase contains TWO blanks: `n'___ pas encore ___`\n- The expected answer is a SINGLE response: `avait examiné`\n\nThis creates confusion for learners because:\n1. Two visual blanks typically imply two separate input fields\n2. But only one answer is expected\n3. It's unclear whether learners should type \"avait\" in the first blank and \"examiné\" in the second, or type the full \"avait examiné\" somewhere\n\n## Verdict\nVERDICT: UNCLEAR\nREASON: The phrase has two blanks but only one expected answer, making it unclear how the learner should format their input across the blanks.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779558152691-qe1dxcme",
+      "timestamp": "2026-05-23T17:43:13.219Z"
+    }
+  ]
+}

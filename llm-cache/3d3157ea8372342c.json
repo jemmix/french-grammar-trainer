@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3d3157ea8372342c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-13-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-13 - Le plus-que-parfait avec déjà, encore, jamais, toujours\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Quand le film a commencé, nous ___ nos billets. »\nChoices:\nA. [CORRECT] avions déjà acheté\nB. avons déjà acheté\nC. avions déjà achetant\nD. avaient déjà acheté\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779566302844-m3kvq8gu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to recognize that buying tickets occurred before another past event (the movie starting), necessitating the plus-que-parfait tense with \"déjà,\" which is exactly what rule 04-13 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779566382249-qgzlbrsd",
+      "timestamp": "2026-05-23T20:00:12.493Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the plus-que-parfait with \"déjà\" since the context requires expressing an action that happened before another past event (buying tickets before the movie started), and eliminating the passé composé distractor requires understanding this specific anteriority use case covered by the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779566757066-riyh0l0d",
+      "timestamp": "2026-05-23T20:06:15.011Z"
+    },
+    {
+      "raw": "# Validation Summary\n\nMaximum steps for this agent have been reached. Tools are now disabled.\n\n## Task Accomplished\n\nI was asked to validate whether a specific question correctly tests the stated grammar rule about the plus-que-parfait with temporal adverbs (déjà, encore, jamais, toujours).\n\n## Analysis Completed\n\nThe question presents a sentence completion exercise: \"Quand le film a commencé, nous ___ nos billets.\"\n\nThe correct answer is \"avions déjà acheté\" (plus-que-parfait with \"déjà\"), which requires:\n1. Recognizing that the ticket buying occurred before the movie started (triggering pluperfect)\n2. Using \"déjà\" with the plus-que-parfait\n3. Distinguishing it from passé composé (\"avons déjà acheté\")\n4. Selecting proper subject agreement (\"nous\" not \"ils/elles\")\n\n## Final Verdict\n\n**VERDICT: ALIGNED**\n\n**REASON: The question properly tests the plus-que-parfait with \"déjà\" by requiring learners to express an action (buying tickets) that was completed before another past event (the movie starting).**\n\nNo further tasks remain — the validation is complete.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779567175318-jun68g12",
+      "timestamp": "2026-05-23T20:13:23.186Z"
+    }
+  ]
+}

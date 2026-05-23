@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c14f8382898ea308",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-13-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Avant ce jour, je n'___ jamais ___ un tel spectacle. »\n\nChoices:\nA. [CORRECT] avais vu\nB. [WRONG] ai vu\nC. [WRONG] avais voyant\nD. [WRONG] aurais vu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779556043357-il1jyj9o"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses or verb forms for the pluperfect context indicated by \"avant ce jour\": B uses passé composé instead of plus-que-parfait; C incorrectly uses a present participle \"voyant\" instead of the past participle \"vu\"; D uses conditionnel passé which expresses a hypothetical situation rather than a completed past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779556049380-7znfx0qh",
+      "timestamp": "2026-05-23T17:08:39.672Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses passé composé instead of plus-que-parfait (the sentence requires anteriority to a past reference point), C incorrectly uses present participle \"voyant\" instead of past participle, and D uses conditional passé which doesn't fit the factual past context established by \"Avant ce jour.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779556462216-ezuk8nor",
+      "timestamp": "2026-05-23T17:26:04.388Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses wrong tense (passé composé instead of pluperfect), C uses present participle instead of past participle, and D uses conditional mood which doesn't fit the factual past context with \"Avant ce jour\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779557407623-8z3j8hop",
+      "timestamp": "2026-05-23T17:32:19.064Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "92228fe0b2b5c655",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-13-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-13 - Le plus-que-parfait avec déjà, encore, jamais, toujours\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Quand sa mère a appelé, l'enfant ___ ses devoirs. »\nChoices:\nA. [CORRECT] n'avait pas encore fini\nB. n'a pas encore fini\nC. n'avait pas encore finissant\nD. n'aurait pas encore fini\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779566302844-iuoxwh7m"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests general tense selection (choosing plus-que-parfait for anterior past actions) rather than the specific rule about using adverbs like déjà, encore, jamais, toujours with plus-que-parfait, since \"encore\" appears in all answer choices unchanged and is not the focus of the grammatical decision.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779566345561-58c471jq",
+      "timestamp": "2026-05-23T20:00:37.338Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests whether students can correctly use the plus-que-parfait with \"encore\" in a context where one past action (not finishing homework) occurred before another past action (mother calling), requiring knowledge of this specific tense-adverb combination.\n\n---\n\n**Maximum steps for this agent have been reached.**\n\nSummary of work accomplished:\n- Successfully analyzed the alignment between the question and the rule (04-13 - Le plus-que-parfait avec déjà, encore, jamais, toujours)\n- Determined the question is properly aligned as it requires knowledge of plus-que-parfait with \"encore\" to correctly answer\n\nNo remaining tasks - the validation was completed successfully.\n\nRecommendation for next steps:\n- Proceed with the next question validation or continue with whatever task follows in your workflow.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779566775012-jl4tyxo2",
+      "timestamp": "2026-05-23T20:06:33.476Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests the plus-que-parfait with \"encore\" by requiring students to select the tense that indicates an action (finishing homework) had not yet happened before another past event (mother calling), directly using \"n'avait pas encore fini\" which is the plus-que-parfait form with \"encore.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779567192180-ffy35wzf",
+      "timestamp": "2026-05-23T20:17:51.874Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests general plus-que-parfait usage (an action occurring before another past action) rather than any specific interaction with \"encore\" or the other adverbs mentioned in the rule; the presence of \"pas encore\" is incidental, and the question could be answered correctly using only knowledge of chronological tense relationships.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779567509377-us201ykp",
+      "timestamp": "2026-05-23T20:19:17.104Z"
+    }
+  ]
+}

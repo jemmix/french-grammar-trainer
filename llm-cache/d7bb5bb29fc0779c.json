@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d7bb5bb29fc0779c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-13-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il ___ pourquoi elle était partie. »\n\nChoices:\nA. [CORRECT] avait toujours compris\nB. [WRONG] a toujours compris\nC. [WRONG] avait comprenant\nD. [WRONG] aurait toujours compris\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779566302845-zujecaj2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.\n\nB is incorrect because it uses passé composé (\"a compris\") instead of the required plus-que-parfait to match \"était partie\". C is grammatically invalid as \"avait comprenant\" is not a correct conjugation. D is incorrect because it uses conditionnel passé (\"aurait compris\"), which doesn't fit the indicative context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779566581230-2bvfznqn",
+      "timestamp": "2026-05-23T20:03:50.239Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was evaluating a French grammar question about verb tenses. I was asked to verify that the wrong answers in a multiple choice question are indeed incorrect.\n\nThe question is: \"Complétez : « Il ___ pourquoi elle était partie. »\"\n\nAnalysis of the wrong answers:\n- B. [WRONG] a toujours compris: This is in passé composé, not plus-que-parfait. While not ideal with \"était partie\", this could be correct in some contexts.\n- C. [WRONG] avait comprenant: This is grammatically incorrect - combining imperfect auxiliary with present participle is not a valid French construction.\n- D. [WRONG] aurait toujours compris: This is conditional perfect, which changes the meaning to a hypothetical situation.\n\nRemaining tasks:\n- Complete the verification with a final verdict in the requested format\n- Provide recommendations for next steps\n\nRecommendations for what should be done next:\n- Complete the verification with: FALSE|B|While \"avait toujours compris\" is the best fit, \"a toujours compris\" could be grammatically correct in certain contexts where the temporal relationship isn't strictly established by the verb forms, making option B potentially correct in some interpretations.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779566996091-poy5cnzh",
+      "timestamp": "2026-05-23T20:10:51.287Z"
+    },
+    {
+      "raw": "FALSE|B|\"a toujours compris\" (passé composé) is grammatically valid with \"toujours\" and can express an understanding that has always been true, making it correct despite \"était partie\" being plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779567344666-2e56zpwh",
+      "timestamp": "2026-05-23T20:16:32.411Z"
+    }
+  ]
+}

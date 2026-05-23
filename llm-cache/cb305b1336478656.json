@@ -1,0 +1,26 @@
+{
+  "cacheKey": "cb305b1336478656",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-13-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Les témoins ___ un tel acte de violence. »\n\nChoices:\nA. [CORRECT] n'avaient jamais vu\nB. [WRONG] n'ont jamais vu\nC. [WRONG] n'avaient jamais voyant\nD. [WRONG] n'auraient jamais vu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779566302844-8iz7hrzd"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses passé composé instead of the required pluperfect; C incorrectly uses a present participle \"voyant\" instead of past participle \"vu\"; D inappropriately uses the conditional perfect tense for a factual statement about past experience.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779566360082-xnpenh0u",
+      "timestamp": "2026-05-23T20:00:02.089Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Completed\n\nI analyzed the French grammar question: \"Complétez : « Les témoins ___ un tel acte de violence. »\"\n\n## Analysis Performed\n\nI evaluated each of the three wrong answers (B, C, D) to determine if they are truly incorrect within the grammatical constraints of the question:\n\n- **B. n'ont jamais vu**: This is grammatically correct French (passé composé), meaning \"have never seen.\" Without specific contextual constraints, this could be valid.\n- **C. n'avaient jamais voyant**: This is grammatically incorrect - \"voyant\" is a present participle, not a past participle, so it cannot follow \"avaient\" in this construction.\n- **D. n'auraient jamais vu**: This is grammatically correct French (conditional perfect), meaning \"would have never seen.\" In hypothetical contexts, this could be valid.\n\n## Conclusion\n\nThe question is UNCLEAR because it doesn't specify the temporal context, narrative perspective, or specific grammatical construction required. Both B and D are grammatically correct French forms that could be appropriate in different contexts.\n\n## Recommendation\n\nThe next step would be to return the verdict:\n**UNCLEAR||The question does not specify the temporal context or narrative perspective needed to determine whether passé composé (B) or conditional perfect (D) would be inappropriate.**",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779566751452-gt2g9lqs",
+      "timestamp": "2026-05-23T20:09:24.296Z"
+    }
+  ]
+}

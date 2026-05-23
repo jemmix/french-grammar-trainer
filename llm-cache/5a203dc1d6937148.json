@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5a203dc1d6937148",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "04-13-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le plus-que-parfait avec déjà, encore, jamais, toujours\nPROMPT: Conjuguez le verbe au plus-que-parfait négatif avec « ne…pas encore ».\nPHRASE: Quand l'ambulance est arrivée, le médecin ___ le patient.\nCORRECT ANSWER: n'avait pas encore examiné\n\nWRONG ANSWERS to evaluate:\n1. n'a pas encore examiné\n2. n'avait pas encore examinée\n3. n'aurait pas encore examiné\n4. n'avait pas encore examinant\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1779568115774-50mh2itu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common errors French learners might make: tense confusion (present perfect instead of pluperfect), incorrect gender agreement, conditional instead of pluperfect, and using a participle form instead of the past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779568866473-twpdjshf",
+      "timestamp": "2026-05-23T20:41:18.628Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: tense confusion (passé composé vs plus-que-parfait, conditionnel passé vs plus-que-parfait), over-agreement errors, and participle confusion (present vs past).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779569000753-jluaizu8",
+      "timestamp": "2026-05-23T20:43:33.201Z"
+    },
+    {
+      "raw": "# Analysis Summary\n\nMaximum steps for this agent have been reached.\n\n## What was accomplished:\nI evaluated the wrong answers for a French grammar question about the pluperfect tense with \"ne...pas encore\".\n\n## Evaluation results:\n\n**VERDICT: PLAUSIBLE**\n**REASON: All four wrong answers represent common learner mistakes: confusing passé composé with pluperfect (n'a pas encore), incorrect gender agreement (examinée), confusing conditional perfect with pluperfect (aurait), and mixing participles (examinant).**\n\n## Question breakdown:\n1. **n'a pas encore examiné** - Plausible: Common tense confusion between perfect and pluperfect\n2. **n'avait pas encore examinée** - Plausible: Incorrect feminine agreement on past participle\n3. **n'aurait pas encore examiné** - Plausible: Confusing conditional perfect with pluperfect\n4. **n'avait pas encore examinant** - Plausible: Using present participle instead of past participle\n\nAll wrong answers are grammatically structured enough to represent authentic learner errors, not random or nonsensical inputs.\n\n## Remaining tasks:\nNone - the evaluation is complete.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779569153688-eeazbgiu",
+      "timestamp": "2026-05-23T20:46:17.377Z"
+    }
+  ]
+}

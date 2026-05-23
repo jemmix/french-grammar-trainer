@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4a0293e825b0e796",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-13-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez avec le plus-que-parfait : « Depuis leur enfance, ils ___ les voyages en train. » (persistance)\n\nChoices:\nA. [CORRECT] avaient toujours aimé\nB. [WRONG] ont toujours aimé\nC. [WRONG] avaient aimant\nD. [WRONG] avaient aimé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779569804156-8j2a5yc9"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the passé composé instead of the plus-que-parfait, C incorrectly uses the present participle \"aimant\" instead of the past participle \"aimé\", and D lacks the \"toujours\" adverb needed to convey the persistence specified in the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779569844342-6atglc2k",
+      "timestamp": "2026-05-23T21:00:11.118Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done so far:**\nI evaluated the French grammar question requiring completion with the plus-que-parfait tense. The sentence \"Depuis leur enfance, ils ___ les voyages en train.\" requires the pluperfect tense to express persistence of an action since childhood.\n\n**Findings on wrong answers:**\n- B (ont toujours aimé): Incorrect because it uses passé composé, not the requested plus-que-parfait\n- C (avaient aimant): Incorrect because it's grammatically invalid - you cannot use an auxiliary verb (avaient) followed by a present participle (aimant)\n- D (avaient aimé): This is actually CORRECT - it is the plus-que-parfait as requested. The missing \"toujours\" changes the meaning slightly but does not make it grammatically incorrect.\n\n**Verdict:**\nFALSE|D|Answer D \"avaient aimé\" is grammatically correct as it uses the plus-que-parfait tense as requested; the missing \"toujours\" affects the meaning slightly but does not constitute a grammatical error.\n\n**Remaining tasks:**\n- None - this was a single verification task.\n\n**Recommendations:**\nThe question creator should either:\n1. Remove answer D and replace it with a clearly incorrect option (e.g., \"avaient aimées\" with incorrect agreement), or\n2. Modify the question prompt to explicitly require the adverb \"toujours\" in the answer to make D incorrect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779570118728-8x9nv0hw",
+      "timestamp": "2026-05-23T21:02:23.267Z"
+    },
+    {
+      "raw": "FALSE|D|D is a valid plus-que-parfait form, which satisfies the only explicit requirement stated in the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779570226680-ckgalc92",
+      "timestamp": "2026-05-23T21:07:11.592Z"
+    }
+  ]
+}

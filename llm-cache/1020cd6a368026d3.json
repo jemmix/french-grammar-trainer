@@ -1,0 +1,26 @@
+{
+  "cacheKey": "1020cd6a368026d3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-13-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je ne m'___ jamais ___ avant cet incident. »\n\nChoices:\nA. [CORRECT] étais rendu compte\nB. [WRONG] aurais rendu compte\nC. [WRONG] étais rendant compte\nD. [WRONG] avais rendu compte\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779556043359-y55n0zt1"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was asked to verify a French grammar question asking to complete the sentence \"Je ne m'___ jamais ___ avant cet incident.\" with four choices:\n- A. étais rendu compte (marked correct)\n- B. aurais rendu compte (wrong)\n- C. étais rendant compte (wrong)\n- D. avais rendu compte (wrong)\n\nI analyzed all the wrong answers:\n\n- B is incorrect because it uses conditionnel présent of \"avoir\" without a conditional clause, and for the pronominal verb \"se rendre compte\", the auxiliary should be \"être\" not \"avoir\"\n- C is incorrect because French doesn't use \"être\" + present participle to form continuous tenses; a past participle is needed here\n- D is incorrect because it uses the wrong auxiliary \"avoir\" instead of \"être\" for the pronominal verb \"se rendre compte\"\n\nAll three wrong answers (B, C, D) contain clear grammar errors.\n\nRecommendations for what should be done next:\nNo tasks remain - the verification is complete. The verdict is TRUE: all wrong answers are indeed incorrect.\n\nVERDICT: TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779556241433-2s7mmkh1",
+      "timestamp": "2026-05-23T17:21:05.335Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors - B uses wrong tense (conditional perfect instead of plus-que-parfait), C is ungrammatical (invalid participle construction), and D uses wrong auxiliary verb (avoir instead of être).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779557273628-r3ebtxg4",
+      "timestamp": "2026-05-23T17:28:10.816Z"
+    }
+  ]
+}

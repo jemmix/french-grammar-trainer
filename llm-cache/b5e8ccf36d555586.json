@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b5e8ccf36d555586",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "04-13-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Conjuguez le verbe au plus-que-parfait et incluez « déjà ». La réponse doit contenir l'auxiliaire, « déjà » et le participe passé.\n\nPHRASE: Quand j'ai commencé le cours, les étudiants ___ la première leçon.\n\nHINT: étudier\n\nEXPECTED ANSWER: avaient déjà étudié\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1779569804161-77ebag33"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The prompt clearly specifies the pluperfect tense, the hint provides the verb \"étudier\", and the context reveals \"les étudiants\" as the subject, making it unambiguous that \"avaient déjà étudié\" is the expected input.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779570571341-kymb26tk",
+      "timestamp": "2026-05-23T21:09:54.050Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly specifies to conjugate in pluperfect with \"déjà\" included, the hint provides the infinitive verb \"étudier\", and the phrase context indicates third person plural subject \"les étudiants\", allowing learners to determine \"avaient déjà étudié\" as the required answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779570706206-g4isosgv",
+      "timestamp": "2026-05-23T21:12:01.011Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly instructs to conjugate the verb in pluperfect tense with \"déjà\", the hint provides the infinitive \"étudier\", and the phrase clearly shows \"les étudiants\" as the subject, making it unambiguous that the learner should input \"avaient déjà étudié\".\n\n---\n\nNOTE: I have reached the maximum number of steps allowed for this task as indicated in the system message. I have completed the validation of the provided input question as requested. No tools were used as instructed. If you have additional questions to validate, please submit them in a new prompt.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779570837167-8cj8z04w",
+      "timestamp": "2026-05-23T21:14:29.148Z"
+    }
+  ]
+}

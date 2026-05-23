@@ -1,0 +1,40 @@
+{
+  "cacheKey": "ccb8c19c709823a1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-13-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Nous ___ nos devoirs quand il a appelé. »\n\nChoices:\nA. [CORRECT] avions déjà finis\nB. [WRONG] avons déjà fini\nC. [WRONG] finissions déjà\nD. [WRONG] aurions déjà fini\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779569804160-1u0ll2w6"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B|B (\"avons déjà fini\") uses the passé composé with \"déjà\", which is acceptable in spoken/informal French to convey that an action was already completed before another past event, even though the plus-que-parfait is more precise in formal written French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779569889192-0o5d9gkh",
+      "timestamp": "2026-05-23T21:06:42.458Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context: B uses passé composé instead of the required plus-que-parfait to show completion before another past action, C uses imparfait which conveys an ongoing action not completion, and D uses conditionnel which expresses hypotheticality not fact.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779570402458-3ygjmu8a",
+      "timestamp": "2026-05-23T21:07:10.486Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: B uses passé composé (not plus-que-parfait for anterior action), C uses imparfait (describes ongoing not completed action), and D uses conditionnel passé (hypothetical not factual past action).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779570430487-v2hsf3sr",
+      "timestamp": "2026-05-23T21:07:23.660Z"
+    },
+    {
+      "raw": "I've reached the maximum number of steps for this task, so I cannot use any tools. Here's a summary of my work:\n\nI was analyzing the French grammar verification task for the given multiple choice question about completing the sentence \"Nous ___ nos devoirs quand il a appelé.\" The correct answer is A (\"avions déjà finis\"), which uses the plus-que-parfait tense correctly to indicate an action completed before another past action.\n\nI was evaluating the wrong answers:\n- B. \"avons déjà fini\" - uses passé composé, which while grammatically less standard than plus-que-parfait for indicating anteriority, is commonly accepted in spoken/informal French\n- C. \"finissions déjà\" - uses imparfait incorrectly in this context\n- D. \"aurions déjà fini\" - uses conditionnel which doesn't fit the context\n\nMy verdict was: FALSE|B|B uses passé composé which, while grammatically less standard than plus-que-parfait for anteriority, is commonly accepted in spoken/informal French.\n\nTo complete this task properly, you should:\n1. Run the verification task again with a fresh agent\n2. Consider whether the question should specify formal vs. informal register to make answer B clearly wrong\n3. Update the question if needed and revalidate before committing",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779570443660-6vpwopo6",
+      "timestamp": "2026-05-23T21:07:39.685Z"
+    }
+  ]
+}
