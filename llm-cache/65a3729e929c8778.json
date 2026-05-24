@@ -1,0 +1,40 @@
+{
+  "cacheKey": "65a3729e929c8778",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-14-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-14 - Le plus-que-parfait avec les marqueurs temporels (la veille, le mois précédent, avant)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Elle ___ la réunion une heure plus tôt parce qu'elle devait partir. » (verbe : quitter)\nChoices:\nA. [CORRECT] avait quitté\nB. quittait\nC. a quitté\nD. avait quittant\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779574548005-93p4vvot"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: This question tests the general use of plus-que-parfait for an action completed before another past action, not specifically its use with temporal markers like \"la veille,\" \"le mois précédent,\" or \"avant\" - the phrase \"une heure plus tôt\" indicates relative timing but is not one of the specified time markers that would uniquely identify this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779574605374-6k7loljm",
+      "timestamp": "2026-05-23T22:19:22.359Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the pluperfect tense with a temporal marker, as \"une heure plus tôt\" functions similarly to the examples given in the rule (la veille, le mois précédent, avant) to indicate an action completed before another past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779575241474-0ghu4xk8",
+      "timestamp": "2026-05-23T22:27:37.117Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the plus-que-parfait form \"avait quitté\" because \"une heure plus tôt\" functions as a temporal marker indicating anteriority, which is exactly what the rule tests.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779575623299-qk4x2na1",
+      "timestamp": "2026-05-23T22:34:05.495Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests general pluperfect usage but does not contain any of the temporal markers mentioned in the rule (la veille, le mois précédent, avant), instead using \"une heure plus tôt\" which is not part of the stated rule's scope.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779575837572-h9tjgqzj",
+      "timestamp": "2026-05-23T22:41:56.536Z"
+    }
+  ]
+}

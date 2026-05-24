@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3108bd04f8c195f0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-14-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez avec le plus-que-parfait : « Un mois avant son départ, il ___ sa décision à sa famille. » (verbe : annoncer)\n\nChoices:\nA. [CORRECT] avait annoncé\nB. [WRONG] annonçait\nC. [WRONG] a annoncé\nD. [WRONG] avait annonçant\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779572626146-4iaev0us"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect as they do not use the plus-que-parfait tense requested in the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779572743880-573d10z1",
+      "timestamp": "2026-05-23T21:45:57.316Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is imperfect tense (not pluperfect), C is passé composé (not pluperfect), and D is grammatically invalid (incorrect auxiliary + participle construction).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779572961977-73v4ik7o",
+      "timestamp": "2026-05-23T21:49:39.334Z"
+    },
+    {
+      "raw": "TRUE||B uses imparfait instead of plus-que-parfait; C uses passé composé instead of plus-que-parfait; D is grammatically incorrect with present participle \"annonçant\" instead of past participle \"annoncé\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779573145367-twtag7gi",
+      "timestamp": "2026-05-23T21:52:35.944Z"
+    }
+  ]
+}

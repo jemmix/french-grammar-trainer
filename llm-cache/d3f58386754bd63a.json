@@ -1,0 +1,40 @@
+{
+  "cacheKey": "d3f58386754bd63a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-14-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-14 - Le plus-que-parfait avec les marqueurs temporels (la veille, le mois précédent, avant)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au plus-que-parfait.\nPhrase: À l'hôpital, le médecin a constaté que le patient ___ des problèmes de santé longtemps avant l'accident.\nCorrect Answer: avait eu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779579984108-18pg8p61"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating the verb in the plus-que-parfait (\"avait eu\") to express an action occurring before another past event, directly applying the usage of the temporal marker \"avant\" defined in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779579988120-fw8w1mbu",
+      "timestamp": "2026-05-23T23:46:53.154Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question primarily tests the formation of the plus-que-parfait tense (using auxiliary \"avait\" + past participle \"eu\") rather than the specific rule about using plus-que-parfait with temporal markers, as the prompt explicitly states which tense to use and the temporal marker \"avant l'accident\" merely provides context rather than being the focus of the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779580013223-pij7vg2r",
+      "timestamp": "2026-05-23T23:47:07.893Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests the stated rule because it requires conjugating a verb in the pluperfect tense, and the temporal marker \"avant\" in the sentence is precisely what signals that pluperfect is the appropriate tense to use.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779580027893-mcqkawc2",
+      "timestamp": "2026-05-23T23:47:19.958Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly instructs students to conjugate in the plus-que-parfait in the prompt, so the student doesn't need to recognize \"avant\" as a temporal marker that triggers pluperfect usage—they're simply testing conjugation formation, not the rule about identifying when to use pluperfect based on temporal markers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779580039958-analtuff",
+      "timestamp": "2026-05-23T23:47:34.398Z"
+    }
+  ]
+}

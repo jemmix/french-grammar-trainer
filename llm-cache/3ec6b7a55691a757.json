@@ -1,0 +1,40 @@
+{
+  "cacheKey": "3ec6b7a55691a757",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-14-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-14 - Le plus-que-parfait avec les marqueurs temporels (la veille, le mois précédent, avant)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au plus-que-parfait.\nPhrase: Quelques jours avant la réunion, elle ___ le dossier.\nCorrect Answer: avait lu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779572626147-o767y81e"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the association between the temporal marker \"avant\" and the plus-que-parfait tense, requiring the student to conjugate \"lire\" as \"avait lu\" to express an action completed before another past event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779572790819-otngpimm",
+      "timestamp": "2026-05-23T21:46:44.980Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question properly tests the rule because the temporal marker \"avant\" is essential to understanding why the plus-que-parfait tense is required — it signals that reading the dossier happened before another past event (la réunion).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779573011163-klplyo5t",
+      "timestamp": "2026-05-23T21:50:28.369Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs students to conjugate in the plus-que-parfait tense, so answering correctly does not require understanding that temporal markers like \"avant\" signal when to use this tense—it only tests conjugation formation, not the relationship between temporal markers and the plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779573203369-8mvci0kg",
+      "timestamp": "2026-05-23T21:53:56.618Z"
+    },
+    {
+      "raw": "I've reached the maximum number of steps for this task. Here's my evaluation based on the information provided:\n\nVERDICT: MISALIGNED\nREASON: The question explicitly instructs students to conjugate the verb in the plus-que-parfait tense in the prompt, so students can answer correctly by simply knowing how to form this tense without understanding its relationship with temporal markers like \"avant\" — a proper test of this rule would require students to determine the appropriate tense from the temporal marker context without being told which tense to use.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779573272714-bww7wm34",
+      "timestamp": "2026-05-23T21:55:57.377Z"
+    }
+  ]
+}

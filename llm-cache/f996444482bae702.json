@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f996444482bae702",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-14-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle était fatiguée parce qu'elle ___ la veille. »\n\nChoices:\nA. [CORRECT] avait travaillé\nB. [WRONG] travaillait\nC. [WRONG] a travaillé\nD. [WRONG] avait travaillant\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779574548004-6mgqvoyh"
+  },
+  "responses": [
+    {
+      "raw": "The maximum number of steps for this agent has been reached.\n\n## Summary\n\nI was evaluating whether the wrong answers in a French grammar question are indeed incorrect based on the question's grammatical constraints.\n\n## Question Analysis\n\n**Question:** \"Complétez : « Elle était fatiguée parce qu'elle ___ la veille. »\"\n\n**Context:** This is a pluperfect (plus-que-parfait) sentence. The main clause is in imparfait (\"était fatiguée\") describing a state, and the subordinate clause needs to express a completed action that happened BEFORE that state, explaining the cause.\n\n**Grammar rule:** The sequence of tenses requires **plus-que-parfait** (avait travaillé) when:\n- Main clause is in imparfait (describing a past state)\n- Subordinate clause describes a cause/action completed before that state\n\n## Evaluation of Wrong Answers\n\n**B. travaillait** (imparfait)\n- Incorrect because imparfait indicates ongoing/habitual action, not completed action\n- Doesn't properly express the cause-effect temporal relationship\n- The work needed to be completed before \"la veille\" to cause the fatigue\n\n**C. a travaillé** (passé composé)\n- Incorrect because passé composé would imply a different temporal relationship\n- Breaks the narrative sequence - the work should be anterior to the imparfait\n- The sequence demands pluperfect, not passé composé\n\n**D. avait travaillant**\n- Grammatically incorrect construction\n- Cannot combine auxiliary \"avait\" with present participle \"travaillant\"\n- There is no such verb form in French\n\n## Verdict\n\nAll wrong answers (B, C, D) are indeed incorrect under the grammatical constraints of the question. The correct answer is the plus-que-parfait \"avait travaillé\" which properly expresses an action completed before the past state described in the main clause.\n\nTRUE||All wrong answers violate tense sequence rules or contain grammatical errors: B uses ongoing imperfect instead of completed pluperfect, C uses passé composé which breaks the temporal sequence, and D is a grammatically impossible construction combining an auxiliary with a participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779574548008-wulj16h5",
+      "timestamp": "2026-05-23T22:16:48.558Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait instead of required plus-que-parfait, C uses passé composé instead of plus-que-parfait, and D is not a valid French verb form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779574956367-zvtemjm6",
+      "timestamp": "2026-05-23T22:22:53.953Z"
+    },
+    {
+      "raw": "TRUE||B uses the imparfait which doesn't establish the correct anterior relationship to the pluperfect; C uses passé composé which lacks the required anteriority; D is grammatically invalid as it incorrectly uses a present participle after the auxiliary.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779575474398-eyfqa4hy",
+      "timestamp": "2026-05-23T22:31:30.303Z"
+    }
+  ]
+}

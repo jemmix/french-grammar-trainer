@@ -330,6 +330,7 @@ export const answerHints: Record<string, string> = {
   "aviez expliqué": "expliquer",
   "aviez relu": "relire",
   "avions eu": "avoir",
+  "avions défini": "définir",
   "avions étudié": "étudier",
   "avions organisé": "organiser",
   "avions retourné": "retourner",

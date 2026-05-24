@@ -1,0 +1,33 @@
+{
+  "cacheKey": "959b8c93243168de",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-14-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez avec le plus-que-parfait : « Il ___ le français auparavant, donc cet examen lui semblait facile. » (verbe : étudier)\n\nChoices:\nA. [CORRECT] avait étudié\nB. [WRONG] étudiait\nC. [WRONG] a étudié\nD. [WRONG] avait étudiés\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779572626145-d09n930k"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is imparfait instead of plus-que-parfait, C is passé composé instead of plus-que-parfait, and D has incorrect agreement (étudiés instead of étudié).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779572641907-3gyhyld5",
+      "timestamp": "2026-05-23T21:45:22.361Z"
+    },
+    {
+      "raw": "TRUE||B is the imparfait, not the requested plus-que-parfait; C is the passé composé, not the requested tense; D is a grammatically incorrect form of the plus-que-parfait (wrong agreement on the past participle).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779572899806-r9b8wh73",
+      "timestamp": "2026-05-23T21:48:58.092Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait instead of plus-que-parfait, C uses passé composé instead of plus-que-parfait, and D incorrectly adds agreement 's' to the past participle when the direct object follows the verb.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779573116537-kusev7km",
+      "timestamp": "2026-05-23T21:52:12.394Z"
+    }
+  ]
+}

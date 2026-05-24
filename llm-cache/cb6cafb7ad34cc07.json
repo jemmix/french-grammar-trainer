@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cb6cafb7ad34cc07",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-14-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Le jour avant la compétition, les athlètes ___ intensément. » (verbe pronominal : s'entraîner)\n\nChoices:\nA. [CORRECT] s'étaient entraînés\nB. [WRONG] s'entraînaient\nC. [WRONG] se sont entraînés\nD. [WRONG] avaient entraîné\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779574548006-t6qlw5qo"
+  },
+  "responses": [
+    {
+      "raw": "The maximum number of steps allowed for this task has been reached.\n\nSummary of work:\nI was asked to evaluate a French grammar question about completing a sentence with the pronominal verb \"s'entraîner\". The question tests the appropriate past tense in the context \"Le jour avant la compétition, les athlètes ___ intensément.\"\n\nQuestion analysis:\n- Correct answer A: \"s'étaient entraînés\" (plus-que-parfait/pluperfect tense) - This correctly indicates an action completed before another past event (the competition)\n\nWrong answers evaluation:\n- B: \"s'entraînaient\" (imparfait) - Incorrect because imparfait is for ongoing/habitual past actions, not actions completed before another past event\n- C: \"se sont entraînés\" (passé composé) - Incorrect because while grammatically valid, it doesn't convey the \"before\" temporal relationship as precisely as the pluperfect\n- D: \"avaient entraîné\" - Incorrect because it's missing the reflexive pronoun \"s'\" and uses non-pronominal form\n\nWhat was not completed:\nI was preparing to provide the final verdict in the required format but reached the step limit before finalizing.\n\nRecommendation for next step:\nProvide the final verdict: FALSE|C|C (se sont entraînés) is grammatically correct in French, just less precise than the pluperfect tense for conveying the temporal relationship \"before the competition.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779574800895-gx9nu1r1",
+      "timestamp": "2026-05-23T22:20:35.463Z"
+    },
+    {
+      "raw": "TRUE|B,D|B: \"s'entraînaient\" (imparfait) incorrectly implies ongoing/habitual action rather than completed action before the competition; D: \"avaient entraîné\" is grammatically incorrect as it omits the required reflexive pronoun \"se\" for the pronominal verb \"s'entraîner\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779575322827-qy0tiggl",
+      "timestamp": "2026-05-23T22:30:57.943Z"
+    },
+    {
+      "raw": "FALSE|B,C|B (imperfect tense) is a grammatically correct form of s'entraîner that could describe ongoing training; C (passé composé) is also grammatically correct and fits the context of actions completed before the competition.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779575772313-rnjpvojd",
+      "timestamp": "2026-05-23T22:36:33.075Z"
+    }
+  ]
+}

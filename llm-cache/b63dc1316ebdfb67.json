@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b63dc1316ebdfb67",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-14-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « La veille de son mariage, il ___ à ses parents. » (verbe : parler)\n\nChoices:\nA. [CORRECT] avait parlé\nB. [WRONG] parlait\nC. [WRONG] a parlé\nD. [WRONG] avait parlant\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779574548005-iyneqevj"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B,C|Both B (parlait) and C (a parlé) are valid past tense forms of parler that could be correct in the context of \"the day before his wedding,\" while D (avait parlant) is indeed grammatically incorrect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779574748498-g1rdmjsk",
+      "timestamp": "2026-05-23T22:19:37.140Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for the given context: B (parlait) uses the imparfait which describes ongoing past states, not a completed action before the wedding; C (a parlé) uses passé composé but doesn't convey the anteriority to the wedding that the context requires; D (avait parlant) is grammatically invalid as you can't combine \"avait\" with the present participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779575272029-9smam693",
+      "timestamp": "2026-05-23T22:28:09.185Z"
+    },
+    {
+      "raw": "FALSE|B,C|B (parlait - imparfait) could be correct if describing an ongoing action (e.g., \"il parlait à ses parents quand...\"), and C (a parlé - passé composé) could be correct as a simple completed action (\"il a parlé à ses parents\"). Neither tense contradicts the explicit requirements stated in the question prompt.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779575655453-dwid0t4c",
+      "timestamp": "2026-05-23T22:37:26.646Z"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "cacheKey": "1834c6737c5045cb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-14-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-14 - Le plus-que-parfait avec les marqueurs temporels (la veille, le mois précédent, avant)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe pronominal au plus-que-parfait.\nPhrase: Auparavant, ils ___ plusieurs fois.\nCorrect Answer: s'étaient rencontrés\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779572626147-64id2ub7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question properly tests the plus-que-parfait tense with the temporal marker \"Auparavant,\" which is directly relevant to the rule about using pluperfect with temporal markers like \"avant.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779572802006-jp6gblws",
+      "timestamp": "2026-05-23T21:46:56.149Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs students to conjugate \"au plus-que-parfait,\" so the question tests pronominal verb conjugation in that tense rather than the recognition of temporal markers (like \"avant\" / \"auparavant\") that signal when to use the plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779573017345-xvmxtpr8",
+      "timestamp": "2026-05-23T21:50:48.253Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question properly tests the pluperfect tense with temporal markers, as it requires conjugating a pronominal verb in the pluperfect when faced with the temporal marker \"Auparavant,\" which aligns with the rule's focus on temporal markers like \"avant.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779573240359-lm92vsr9",
+      "timestamp": "2026-05-23T21:54:13.779Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing the time marker \"Auparavant\" (which corresponds to \"avant\" in the rule) as a signal to use the pluperfect tense, and then correctly conjugating the pronominal verb in that tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779573285110-75w34ey4",
+      "timestamp": "2026-05-23T21:54:58.876Z"
+    },
+    {
+      "raw": "Maximum steps reached. I'll provide my analysis now.\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs students to use the plus-que-parfait tense, so the question tests conjugation of a pronominal verb rather than the ability to recognize temporal markers (like \"auparavant\") as triggers for the plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779573305383-d6oqfrc8",
+      "timestamp": "2026-05-23T21:55:19.653Z"
+    }
+  ]
+}

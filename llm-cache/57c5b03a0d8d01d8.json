@@ -1,0 +1,33 @@
+{
+  "cacheKey": "57c5b03a0d8d01d8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-14-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez avec le plus-que-parfait : « La veille, elle ___ la réunion parce qu'elle devait partir. » (verbe : quitter)\n\nChoices:\nA. [CORRECT] avait quitté\nB. [WRONG] quittait\nC. [WRONG] a quitté\nD. [WRONG] avait quittant\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779578058992-sqjb7f0d"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect because they either use the wrong tense (B uses imparfait, C uses passé composé) or are not a valid French verb construction (D is grammatically impossible).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779578062018-8cy258ab",
+      "timestamp": "2026-05-23T23:15:07.261Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Work Summary**:\nI analyzed the French grammar verification task for question nonce-1779578124080-sjjv2tb3. The question asks to complete a sentence with the **plus-que-parfait** (pluperfect) tense of \"quitter\" for the subject \"elle\".\n\n**Evaluation of Wrong Answers**:\n- **B. quittait**: This is the imparfait tense, not plus-que-parfait as required\n- **C. a quitté**: This is the passé composé, not plus-que-parfait as required  \n- **D. avait quittant**: This is a grammatically invalid form combining \"avait\" with a present participle \"quittant\" instead of a past participle\n\n**Verdict**: All three wrong answers are indeed incorrect within the strict grammatical constraints specified in the question.\n\n**Response**:\nTRUE||All wrong answers fail to use the plus-que-parfait as explicitly required: B uses imparfait, C uses passé composé, and D uses an invalid form with a present participle instead of a past participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779578124080-sjjv2tb3",
+      "timestamp": "2026-05-23T23:16:12.864Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect because they either use the wrong tense (B, C) or are grammatically invalid (D).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779578172865-pio7043s",
+      "timestamp": "2026-05-23T23:16:24.149Z"
+    }
+  ]
+}

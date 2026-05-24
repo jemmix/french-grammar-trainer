@@ -1,0 +1,33 @@
+{
+  "cacheKey": "434d79c4ce0cbc16",
+  "predicateId": "french-language",
+  "questionId": "04-14-002",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le plus-que-parfait avec les marqueurs temporels (la veille, le mois précédent, avant)\n\nQUESTION CONTENT:\nPrompt: Complétez avec le plus-que-parfait : « Il ___ le mois précédent, donc il connaissait bien la ville. »\nChoices:\nA. [correct] avait déménagé\n   Explanation: « Avait déménagé » : PQP. Le marqueur « le mois précédent » indique l'antériorité par rapport au moment où il connaissait la ville.\nB. déménageait\n   Explanation: L'imparfait décrit un processus continu, non une action achevée antérieure.\nC. a déménagé\n   Explanation: Le passé composé n'exprime pas l'antériorité marquée par « le mois précédent ».\nD. avait déménageant\n   Explanation: « Déménageant » est le participe présent, pas le participe passé.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779572626144-2zdg1fbx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, all choices, and all explanations are written entirely in French, with no English instructions or explanations that would violate the language policy.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779573537873-w09hyxf6",
+      "timestamp": "2026-05-23T21:59:11.036Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, choices, and explanations are entirely in French, using proper grammatical terminology (PQP = plus-que-parfait).\n\nNote: I've reached the maximum allowed steps for this task. I have completed the validation of the provided French content and determined that it appropriately contains only French text with no unauthorized English. No additional tasks remain for this specific validation request.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779573781784-6ypvt7x6",
+      "timestamp": "2026-05-23T22:07:43.142Z"
+    },
+    {
+      "raw": "I've reached the maximum number of steps for this agent session and tools are now disabled.\n\n## Summary of Work\nI was asked to validate French language content for a question about \"Le plus-que-parfait avec les marqueurs temporels\" and determine if all text is appropriately in French.\n\n## Completed Work\nI analyzed the provided question content:\n- **Prompt**: \"Complétez avec le plus-que-parfait...\" ✓ French\n- **All choice texts**: \"avait déménagé\", \"déménageait\", \"a déménagé\", \"avait déménageant\" ✓ All French\n- **All explanations**: Each explanation is written entirely in French with no English text ✓ All French\n\n## Validation Result\n\nVERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, all choices, and all explanations are written completely in French language appropriate for the target audience.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779574241358-n6xtjm22",
+      "timestamp": "2026-05-23T22:10:59.428Z"
+    }
+  ]
+}
