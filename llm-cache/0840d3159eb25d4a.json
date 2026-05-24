@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0840d3159eb25d4a",
+  "predicateId": "french-language",
+  "questionId": "04-15-025",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le plus-que-parfait dans les subordonnées de temps (après qu'il était parti...)\n\nQUESTION CONTENT:\nPrompt: Complétez avec le temps qui exprime l'antériorité par rapport au passé composé.\nPhrase: Après qu'ils ___ les fenêtres, ils sont sortis.\nAnswer: avaient fermé\nHint: fermer\nExplanation: « Avaient fermé » : PQP avec « avoir ». Avec « avoir » et COD postposé (« les fenêtres »), le participe reste invariable.\nWrong answers:\n  - fermaient (L'imparfait ne marque pas l'antériorité.)\n  - auraient fermé (Le conditionnel passé exprime une hypothèse, pas un fait antérieur.)\n  - ont fermé (Le passé composé ne marque pas l'antériorité dans la subordination.)\n  - avaient fermées (Avec « avoir » et COD postposé (« les fenêtres »), le participe « fermé » reste invariable.)\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779623480481-rcdrw8u2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779623636654-kgihn61o",
+      "timestamp": "2026-05-24T11:54:15.571Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, phrase, answer, hint, explanation, and all wrong answers are properly written in French without any English text that would fall outside the allowed exceptions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779623722404-x0p3yemm",
+      "timestamp": "2026-05-24T11:55:37.362Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779623748954-xm3krv3j",
+      "timestamp": "2026-05-24T11:56:03.806Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1a5cbe70d60fce29",
+  "predicateId": "french-language",
+  "questionId": "04-15-023",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le plus-que-parfait dans les subordonnées de temps (après qu'il était parti...)\n\nQUESTION CONTENT:\nPrompt: Conjuguez le verbe au plus-que-parfait.\nPhrase: Une fois qu'elle ___ son travail, elle s'est reposée.\nAnswer: avait terminé\nHint: terminer\nExplanation: « Avait terminé » : PQP avec « avoir ». « Une fois que » + PQP marque l'antériorité achevée.\nWrong answers:\n  - terminait (L'imparfait ne marque pas l'antériorité.)\n  - aurait terminé (Le conditionnel passé exprime une hypothèse, pas un fait antérieur.)\n  - a terminé (Le passé composé ne marque pas l'antériorité dans la subordination de temps.)\n  - aura terminé (Le futur antérieur exprime une antériorité future, pas passée.)\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779620797617-lhkz5mik"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779622038188-fnusoozy",
+      "timestamp": "2026-05-24T11:27:41.185Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, phrase, answer, hint, explanation, and all wrong answer explanations are properly written in French using appropriate grammar terminology (PQP, imparfait, conditionnel passé, etc.).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779622406685-sk6objm3",
+      "timestamp": "2026-05-24T11:33:59.473Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt \"Conjuguez le verbe au plus-que-parfait\", the phrase \"Une fois qu'elle ___ son travail, elle s'est reposée\", the answer \"avait terminé\", the hint \"terminer\", and all explanations (both for the correct answer and wrong answers) are entirely in French. No English words or translations are present.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779622849472-u8dte5iq",
+      "timestamp": "2026-05-24T11:41:06.758Z"
+    }
+  ]
+}

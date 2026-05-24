@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3d134ca0d755652f",
+  "predicateId": "french-language",
+  "questionId": "04-15-001",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le plus-que-parfait dans les subordonnées de temps (après qu'il était parti...)\n\nQUESTION CONTENT:\nPrompt: Complétez avec le plus-que-parfait : « Après qu'il ___ ses valises, il a quitté la maison. »\nChoices:\nA. [correct] avait fermé\n   Explanation: « Avait fermé » : PQP avec « avoir ». Avec « avoir » et COD postposé (« ses valises »), le participe reste invariable. « Après que » demande l'indicatif et le PQP marque l'antériorité.\nB. fermait\n   Explanation: L'imparfait ne marque pas l'antériorité. Le PQP est requis pour montrer que l'action est achevée avant le départ.\nC. avait fermant\n   Explanation: « Fermant » est le participe présent, pas le participe passé.\nD. aurait fermées\n   Explanation: Le conditionnel passé exprime une hypothèse, pas un fait antérieur certain.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779620797613-nyqwo1wd"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, all four choices, and their explanations are entirely in French, following the expected language policy for French course content.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779621718203-xg9rvaul",
+      "timestamp": "2026-05-24T11:22:12.495Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779622040662-dn353r6j",
+      "timestamp": "2026-05-24T11:28:08.350Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, all choices, and all explanations are in French, including standard French grammatical abbreviations (PQP for plus-que-parfait, COD for complément d'objet direct).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779622410722-ljxhv3u3",
+      "timestamp": "2026-05-24T11:33:45.200Z"
+    }
+  ]
+}
