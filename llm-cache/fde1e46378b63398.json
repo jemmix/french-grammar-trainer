@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fde1e46378b63398",
+  "predicateId": "french-language",
+  "questionId": "04-16-017",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le plus-que-parfait dans un récit : le retour en arrière (flashback)\n\nQUESTION CONTENT:\nPrompt: Complétez avec le plus-que-parfait : « Lorsqu'il reçut le prix, il pensa à sa mère qui ___ quelques mois auparavant. » (verbe : mourir)\nChoices:\nA. [correct] était morte\n   Explanation: « Était morte » : PQP avec « être ». « Mourir » se conjugue avec « être ». Le participe s'accorde au féminin singulier. La mort est antérieure à la réception du prix.\nB. mourait\n   Explanation: L'imparfait ne marque pas l'antériorité par rapport à la réception du prix.\nC. serait morte\n   Explanation: Le conditionnel passé exprime une hypothèse, pas un fait antérieur certain.\nD. était mourant\n   Explanation: « Mourant » est le participe présent, pas le participe passé.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779624506367-k4r892ur"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, choices, and explanations use proper French grammar terminology throughout.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779625820005-062hepx3",
+      "timestamp": "2026-05-24T12:30:45.186Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779626261828-xnx4exz9",
+      "timestamp": "2026-05-24T12:37:58.289Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, all choices, explanations, phrase context, and answer text are entirely in French. Even the \"(verbe : mourir)\" notation in the prompt uses the French word \"verbe\" rather than the English \"verb\". No English appears anywhere in the content.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779626889441-nx0p1fur",
+      "timestamp": "2026-05-24T12:48:44.733Z"
+    }
+  ]
+}

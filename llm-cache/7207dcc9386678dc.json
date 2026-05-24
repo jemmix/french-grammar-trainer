@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7207dcc9386678dc",
+  "predicateId": "french-language",
+  "questionId": "04-16-004",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le plus-que-parfait dans un récit : le retour en arrière (flashback)\n\nQUESTION CONTENT:\nPrompt: Complétez avec le plus-que-parfait : « Quand il ouvrit la porte, il comprit que sa femme ___ une surprise. » (verbe : préparer)\nChoices:\nA. [correct] avait préparé\n   Explanation: « Avait préparé » : PQP avec « avoir ». Avec « avoir » et COD postposé (« une surprise »), le participe reste invariable. La préparation est antérieure à l'ouverture de la porte.\nB. préparait\n   Explanation: L'imparfait ne marque pas l'antériorité par rapport au moment où il ouvrit la porte.\nC. aurait préparé\n   Explanation: Le conditionnel passé exprime une hypothèse, pas un fait antérieur certain.\nD. avait préparant\n   Explanation: « Préparant » est le participe présent, pas le participe passé.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779626383025-hp51ry8z"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, choices, and explanations are entirely in French. Abbreviations like \"PQP\" (plus-que-parfait) and \"COD\" (Complément d'Objet Direct) are French grammatical terminology, not English.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779626634969-10calrxg",
+      "timestamp": "2026-05-24T12:46:22.178Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779627112240-hic5ud17",
+      "timestamp": "2026-05-24T12:52:08.232Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was validating whether question content is in French. I analyzed a question about \"Le plus-que-parfait dans un récit : le retour en arrière (flashback)\" and checked all content fields:\n\n1. ✅ Prompt text - Fully in French\n2. ✅ Choice texts - All in French\n3. ✅ Answer text - In French\n4. ✅ Explanations - All in French\n5. ✅ Phrase context - Fully in French\n\n**VERDICT: FRENCH**\n\n**REASON:** All content is in French with no English detected. The prompt, all four choices (avant préparé, préparait, aurait préparé, avait préparant), and their corresponding explanations are written in proper French. No English appears except for technical terms like \"[correct]\" which are metadata markers, not user-facing content.\n\nNo remaining tasks - this content validation was completed successfully. The question can proceed to the next validation stage.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779627325893-8hj4e8jl",
+      "timestamp": "2026-05-24T12:55:49.864Z"
+    }
+  ]
+}

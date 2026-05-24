@@ -315,6 +315,7 @@ export const answerHints: Record<string, string> = {
   "avait volé": "voler",
   "avait vu": "voir",
   "avait écrites": "écrire",
+  "avait écrit": "écrire",
   "avait été accroché": "accrocher",
   "avait été": "être",
   "avait examiné": "examiner",

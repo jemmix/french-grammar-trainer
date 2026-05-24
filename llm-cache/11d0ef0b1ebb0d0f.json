@@ -1,0 +1,33 @@
+{
+  "cacheKey": "11d0ef0b1ebb0d0f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-16-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez avec le plus-que-parfait : « Quand il vit le prix, il se rappela que son professeur lui ___ ce succès. » (verbe : prédire)\n\nChoices:\nA. [CORRECT] avait prédit\nB. [WRONG] prédisait\nC. [WRONG] aurait prédit\nD. [WRONG] avait prédisant\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779624506367-3arbnms7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are not in the plus-que-parfait tense as required by the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779624686081-m1pqtdgv",
+      "timestamp": "2026-05-24T12:11:55.621Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is in imparfait (not plus-que-parfait), C is in conditionnel passé (not plus-que-parfait), and D uses a present participle with an auxiliary verb which is grammatically impossible.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779624936072-xhiy3313",
+      "timestamp": "2026-05-24T12:16:01.566Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is imperfect not pluperfect, C is conditional perfect not pluperfect, and D is grammatically impossible (auxiliary cannot combine with present participle).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779625239550-oz1n5aou",
+      "timestamp": "2026-05-24T12:20:58.787Z"
+    }
+  ]
+}
