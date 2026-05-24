@@ -1,0 +1,33 @@
+{
+  "cacheKey": "86bbac36b0af529c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-18-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-18 - Le plus-que-parfait passif (la maison avait été construite)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez avec le plus-que-parfait passif : « La villa _____ vendue par les propriétaires avant l'offre concurrente. »\nChoices:\nA. [CORRECT] avait été\nB. était\nC. aurait été\nD. avait vendu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779639455710-hmrs3cry"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the passive construction (using être as auxiliary, eliminating active voice \"avait vendu\") and selecting the correct pluperfect tense (\"avait été\" rather than imparfait \"était\" or conditional \"aurait été\"), which directly tests the pluperfect passive rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779639593295-6yx6sbtr",
+      "timestamp": "2026-05-24T16:21:25.548Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question correctly tests the pluperfect passive (avait été + past participle) because the correct answer \"avait été\" is the only option that combines the pluperfect auxiliary \"avait\" with the passive auxiliary \"été\", and all distractors represent different tenses or voices.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779640021858-8tuicuy2",
+      "timestamp": "2026-05-24T16:27:24.678Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the plus-que-parfait passif construction (auxiliary \"avoir\" + past participle of \"être\" + past participle of main verb) to complete a passive voice sentence where the action occurred before another past event.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779640435439-i1vk3xgg",
+      "timestamp": "2026-05-24T16:34:30.621Z"
+    }
+  ]
+}

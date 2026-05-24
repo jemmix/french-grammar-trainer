@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7d74af17b9740847",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-18-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez avec le plus-que-parfait passif : « La porte _____ ouverte par le gardien une heure plus tôt. »\n\nChoices:\nA. [CORRECT] avait été\nB. [WRONG] était\nC. [WRONG] aurait été\nD. [WRONG] avait ouvert\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779639455710-z7ctm3es"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers either use the wrong tense (B is imperfect, C is conditional), wrong voice (D is active not passive), or are grammatically incomplete for the specified pluperfect passive construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779639502503-tojzeknp",
+      "timestamp": "2026-05-24T16:18:34.523Z"
+    },
+    {
+      "raw": "TRUE||B is imparfait not plus-que-parfait passif; C is conditionnel passé not plus-que-parfait; D is active voice not passive voice.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779639834425-l3sze897",
+      "timestamp": "2026-05-24T16:28:30.164Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the required plus-que-parfait passif tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779640546236-khtyesw9",
+      "timestamp": "2026-05-24T16:36:02.230Z"
+    }
+  ]
+}

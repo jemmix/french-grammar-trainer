@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1c37e5596bca045b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-18-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez avec le plus-que-parfait passif : « Les ordres _____ transmis par le commandant avant l'assaut. »\n\nChoices:\nA. [CORRECT] avaient été\nB. [WRONG] étaient transmis\nC. [WRONG] auraient été\nD. [WRONG] avaient transmis\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779645628769-bif2ptre"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait passif instead of plus-que-parfait passif, C is conditionnel passé composé and missing the past participle, and D is plus-que-parfait actif instead of passif.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779645628796-iff63nok",
+      "timestamp": "2026-05-24T18:00:43.753Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of work completed:\nI was asked to evaluate a French grammar multiple choice question to verify that the wrong answers are indeed incorrect. The question asked to complete a sentence with the \"plus-que-parfait passif\" (pluperfect passive) form:\n\nQuestion: « Les ordres _____ transmis par le commandant avant l'assaut. »\n\nI analyzed each of the wrong answers (B, C, D):\n\n- **B: étaient transmis** - This is the imparfait passif (imperfect passive), not the plus-que-parfait passif as required by the question. Wrong tense.\n\n- **C: auraient été** - This is the conditionnel passé passif (conditional perfect passive), not the plus-que-parfait passif. Wrong mood.\n\n- **D: avaient transmis** - This is the plus-que-parfait actif (active voice), not a passive construction at all. Missing \"été\" to make it passive.\n\n## Tasks remaining:\n- Provide the final verdict in the requested format\n\n## Recommendation:\nThe verdict should be:\nTRUE||All wrong answers are incorrect: B is the wrong tense (imparfait instead of plus-que-parfait), C is the wrong mood (conditional instead of indicative), and D is not a passive construction at all.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779645643756-6qguvx5n",
+      "timestamp": "2026-05-24T18:01:05.135Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to meet the grammatical requirements: B is imparfait passif, C is conditionnel passif, and D is plus-que-parfait actif instead of the required plus-que-parfait passif.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779645665135-c3eiz2pg",
+      "timestamp": "2026-05-24T18:01:17.733Z"
+    }
+  ]
+}

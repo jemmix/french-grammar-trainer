@@ -1,0 +1,33 @@
+{
+  "cacheKey": "019fa52d51fb90af",
+  "predicateId": "french-language",
+  "questionId": "04-18-011",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le plus-que-parfait passif (la maison avait été construite)\n\nQUESTION CONTENT:\nPrompt: Complétez avec le plus-que-parfait passif : « Le contrat _____ signé par les deux parties avant la fin du mois. »\nChoices:\nA. [correct] avait été\n   Explanation: Plus-que-parfait passif : « avait été » + « signé » (accord masculin singulier avec « le contrat »). Antériorité par rapport à « la fin du mois ».\nB. était signé\n   Explanation: L'imparfait passif (était signé) décrit un état durable, non une action accomplie avant un point de référence passé.\nC. aurait été\n   Explanation: Le conditionnel passé passif (aurait été signé) exprime un doute ou une condition, pas une certitude.\nD. avait signé\n   Explanation: Voix active (les deux parties avaient signé le contrat). La phrase est au passif : « le contrat » subit l'action.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779643291748-4i9mlw1z"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779643297781-xxhz3x2f",
+      "timestamp": "2026-05-24T17:24:03.662Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, all choices, and their explanations are entirely in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779643507902-vxkjqjju",
+      "timestamp": "2026-05-24T17:25:24.631Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, choices, and explanations are all written in appropriate French for a grammar exercise.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779643545611-kfsdxtgg",
+      "timestamp": "2026-05-24T17:26:02.970Z"
+    }
+  ]
+}

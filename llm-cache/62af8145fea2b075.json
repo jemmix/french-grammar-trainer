@@ -1,0 +1,33 @@
+{
+  "cacheKey": "62af8145fea2b075",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-18-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-18 - Le plus-que-parfait passif (la maison avait été construite)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au plus-que-parfait passif.\nPhrase: Les maisons _____ construites par les ouvriers avant l'hiver.\nCorrect Answer: avaient été\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779639455712-yso3lert"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the plus-que-parfait passif structure (auxiliary verb in imparfait + été + past participle) and proper conjugation with the plural subject \"les maisons,\" making it a direct test of the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779639767375-x6duxwex",
+      "timestamp": "2026-05-24T16:23:03.335Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests the plus-que-parfait passif rule because answering correctly requires knowledge of both the passive voice construction (être + past participle) and the pluperfect tense (imperfect auxiliary + past participle), combined as \"avaient été construites\" - there is no way to determine the correct answer without understanding this specific grammar rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779640115674-slh89m2g",
+      "timestamp": "2026-05-24T16:29:09.196Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly requires conjugating the auxiliary verb in the plus-que-parfait passif construction (avoir/être in imparfait + été), and \"avaient été\" is the correct auxiliary formation that cannot be determined without knowledge of this specific rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779640590807-48dwkme8",
+      "timestamp": "2026-05-24T16:36:56.782Z"
+    }
+  ]
+}

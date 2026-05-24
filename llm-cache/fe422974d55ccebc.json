@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fe422974d55ccebc",
+  "predicateId": "french-language",
+  "questionId": "04-18-010",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le plus-que-parfait passif (la maison avait été construite)\n\nQUESTION CONTENT:\nPrompt: Complétez avec le plus-que-parfait passif : « Les fruits _____ cueillis par les agriculteurs avant la tempête. »\nChoices:\nA. [correct] avaient été\n   Explanation: Plus-que-parfait passif pluriel : « avaient été » + « cueillis » (accord masculin pluriel avec « les fruits »). L'action est antérieure à la tempête.\nB. étaient cueillis\n   Explanation: L'imparfait passif décrit un état ou un processus continu, sans la notion d'antériorité achevée.\nC. auraient été\n   Explanation: Le conditionnel passé passif exprime l'irréel du passé, incompatible avec un fait rapporté.\nD. avaient cueilli\n   Explanation: Voix active (les agriculteurs avaient cueilli les fruits). La phrase est construite au passif.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779645984030-7js52zvs"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779646042912-s3tg9jti",
+      "timestamp": "2026-05-24T18:07:33.770Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, all choice texts, and all explanations are properly written in French with appropriate grammatical terminology.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779646053770-4szfwiiy",
+      "timestamp": "2026-05-24T18:07:47.704Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779646067704-k1qfpil7",
+      "timestamp": "2026-05-24T18:07:59.072Z"
+    }
+  ]
+}
