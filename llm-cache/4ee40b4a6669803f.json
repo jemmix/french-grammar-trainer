@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4ee40b4a6669803f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-17-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-17 - La concordance des temps : présent → passé composé / imparfait → plus-que-parfait\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Nous croyons qu'ils ___ la solution. » (verbe : trouver)\nChoices:\nA. [CORRECT] ont trouvé\nB. trouvaient\nC. auraient trouvé\nD. auront trouvé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779627924391-gzscgzbc"
+  },
+  "responses": [
+    {
+      "raw": "I need to analyze whether this question actually tests the rule \"La concordance des temps : présent → passé composé / imparfait → plus-que-parfait.\"\n\nLooking at the question:\n- Main clause: \"Nous croyons\" (present tense)\n- Subordinate clause: \"qu'ils ___ la solution\" (verb \"trouver\")\n- Correct answer: \"ont trouvé\" (passé composé)\n\nThe rule indicates that when the main clause is in the present tense, the subordinate clause can use either passé composé or imparfait. The question requires understanding this concordance relationship between clauses.\n\nHowever, there's an issue: The rule notation \"présent → passé composé / imparfait\" suggests either tense could be correct depending on context, yet only \"ont trouvé\" is marked as correct. While context (finding a solution is typically a completed action) justifies choosing passé composé over imparfait, the question doesn't test the full rule - it tests selecting ONE of the two options the rule permits.\n\nVERDICT: MISALIGNED\n\nREASON: The rule permits either passé composé or imparfait for subordinate clauses when the main clause is present, but the question only tests the selection of passé composé based on contextual meaning rather than testing the concordance relationship itself.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779627979987-5mkucsci",
+      "timestamp": "2026-05-24T13:07:37.415Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests tense concordance by requiring students to recognize that the main clause \"Nous croyons\" (présent) requires the subordinate clause to be in passé composé or imparfait, and the context indicates a completed past action (passé composé).\n\nMaximum steps for this agent have been reached.\n\nSummary of work accomplished:\n- Validated whether the given question properly tests the French grammar rule about tense concordance (04-17)\n- Analyzed the relationship between the main clause in présent and the subordinate clause options\n- Determined that the question is aligned with the stated rule\n\nRemaining tasks:\n- None for this specific validation\n\nRecommendations:\n- The validation is complete. The question properly tests the concordance des temps rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779628461372-irj10kdk",
+      "timestamp": "2026-05-24T13:15:18.032Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests tense concordance where a main verb in présent (\"croyons\") requires a completed prior action in the subordinate clause to be expressed with passé composé (\"ont trouvé\"), which is exactly the présent → passé composé pattern specified in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779629008520-fyyad1wq",
+      "timestamp": "2026-05-24T13:24:45.953Z"
+    }
+  ]
+}

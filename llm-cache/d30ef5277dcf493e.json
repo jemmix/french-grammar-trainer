@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d30ef5277dcf493e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-17-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-17 - La concordance des temps : présent → passé composé / imparfait → plus-que-parfait\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il me disait qu'il ___ beaucoup l'année précédente. » (verbe : voyager)\nChoices:\nA. [CORRECT] avait voyagé\nB. voyageait\nC. aurait voyagé\nD. avait voyageant\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779631909869-yup8hodi"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached. I'll analyze the question alignment without using tools.\n\nVERDICT: ALIGNED\n\nREASON: The question correctly tests the imparfait → plus-que-parfait tense concordance rule, where the subordinate clause action (traveling the previous year) must precede the main clause verb in imparfait (disait), making the plus-que-parfait (avait voyagé) the only grammatically correct choice among the options provided.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779631916880-9nj2mhv0",
+      "timestamp": "2026-05-24T14:13:21.224Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question directly tests the sequence of tenses rule where an action in the imparfait (\"disait\") requires a preceding action to be in the plus-que-parfait (\"avait voyagé\") when completed before the main verb's timeframe.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779632467693-0ynvppiv",
+      "timestamp": "2026-05-24T14:21:28.983Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires understanding that when the main clause uses the imparfait (\"disait\"), the subordinate clause describing an earlier action must use the plus-que-parfait (\"avait voyagé\"), which is exactly what rule 04-17 teaches.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779632861725-0j5c4qda",
+      "timestamp": "2026-05-24T14:27:55.838Z"
+    }
+  ]
+}

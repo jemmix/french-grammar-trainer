@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d0c125e01b0efa0f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-17-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez avec le plus-que-parfait : « Il m'a dit que les lettres qu'il ___ étaient importantes. » (verbe : écrire)\n\nChoices:\nA. [CORRECT] avait écrites\nB. [WRONG] écrivait\nC. [WRONG] aurait écrites\nD. [WRONG] avait écrivant\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779629964137-huwr3g1l"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the imperfect tense instead of pluperfect, C uses the conditional past instead of pluperfect, and D is not a valid French verb form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779630136061-evn6onhu",
+      "timestamp": "2026-05-24T13:42:32.723Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use verb forms other than plus-que-parfait: B is imparfait, C is conditionnel passé, and D incorrectly mixes auxiliary with present participle.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779630446772-jhapjwqc",
+      "timestamp": "2026-05-24T13:47:43.528Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait instead of plus-que-parfait, C uses conditionnel passé instead of plus-que-parfait, and D incorrectly uses the present participle \"écrivant\" instead of the past participle \"écrites\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779630695119-xje18g54",
+      "timestamp": "2026-05-24T13:51:45.737Z"
+    }
+  ]
+}

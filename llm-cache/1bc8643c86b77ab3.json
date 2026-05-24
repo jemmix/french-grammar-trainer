@@ -1,0 +1,54 @@
+{
+  "cacheKey": "1bc8643c86b77ab3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-17-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « On m'assurait que vous ___ tous les documents. » (verbe : recevoir)\n\nChoices:\nA. [CORRECT] aviez reçu\nB. [WRONG] receviez\nC. [WRONG] auriez reçu\nD. [WRONG] aviez recevant\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779631909869-ea383ltp"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are indeed incorrect.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779632001226-zko0za0c",
+      "timestamp": "2026-05-24T14:21:41.108Z"
+    },
+    {
+      "raw": "Maximum steps reached for this agent. I need to provide a text-only summary.\n\n## What I've Accomplished\nI've analyzed the French grammar verification question and evaluated the three wrong answers:\n\n**Question**: Complétez : « On m'assurait que vous ___ tous les documents. » (verbe : recevoir)\n\n- **Answer B (receviez)**: This is the imperfect indicative of \"recevoir\" for \"vous\". Given the main clause \"On m'assurait\" (imperfect), the subordinate clause can use the imperfect to indicate simultaneous actions. While less common than the pluperfect \"aviez reçu\" for completed actions, it IS grammatically valid in contexts meaning \"were receiving.\"\n\n- **Answer C (auriez reçu)**: This is the conditional perfect, which is grammatically incompatible with the imperfect \"assurait\" in the main clause. The sequence of tenses doesn't support this combination here.\n\n- **Answer D (aviez recevant)**: This is an invalid construction in French—you cannot conjugate \"avoir\" in the imperfect and add a present participle. This form doesn't exist.\n\n## Remaining Tasks\nNone—this was a single verification task.\n\n## Recommendation\nBased on my analysis, the correct verdict is:\n\nFALSE|B|Answer B (\"receviez\") is grammatically valid as the imperfect tense can be used in the subordinate clause when the main verb is in the imperfect, particularly to indicate simultaneous ongoing actions, making it incorrect to mark it as wrong.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779632872159-e1s8q0pn",
+      "timestamp": "2026-05-24T14:28:15.563Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B (receviez) uses the imparfait which implies an ongoing action rather than a completed one before the assurance; C (auriez reçu) uses the conditionnel passé which would express a hypothetical action or future-in-the-past event, not the completed action that \"assurait\" naturally conveys; D (aviez recevant) is grammatically impossible as a participle cannot combine with the imparfait auxiliary \"aviez\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779633119965-qxjivdxn",
+      "timestamp": "2026-05-24T14:36:10.428Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors or don't fit the context of the sentence.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779633391117-jh7dt09z",
+      "timestamp": "2026-05-24T14:41:02.004Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers (B, C, D) contain clear grammar errors or use inappropriate tenses for the given context. B uses the imparfait which doesn't convey the completed action meaning; C uses the conditionnel passé which would require a conditional structure not present; D is grammatically invalid as \"recevant\" cannot directly follow \"aviez\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779633662004-gfuwobwg",
+      "timestamp": "2026-05-24T14:41:26.350Z"
+    },
+    {
+      "raw": "FALSE|B|The imparfait \"receviez\" is grammatically correct in this context, indicating an ongoing action simultaneous with the main clause, though it's less natural than the pluperfect for receiving \"all\" documents.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779633724154-ky9yz1hg",
+      "timestamp": "2026-05-24T14:45:00.242Z"
+    }
+  ]
+}

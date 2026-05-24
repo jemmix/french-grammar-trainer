@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3020ff5bd7cb33a2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-17-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle savait que nous ___ en retard hier soir. » (verbe : arriver)\n\nChoices:\nA. [CORRECT] étions arrivés\nB. [WRONG] arrivions\nC. [WRONG] serions arrivés\nD. [WRONG] serons arrivés\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779627924391-e2i5ffkl"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: B is imparfait (ongoing past), C is conditionnel passé (hypothetical), D is futur antérieur (future), but plus-que-parfait is required for an action completed before the past moment of knowing (\"savait\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779627933405-vh8nhf4n",
+      "timestamp": "2026-05-24T13:06:53.638Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use inappropriate tenses for the given context: B (imparfait) suggests an ongoing action rather than completed arrival; C (conditionnel passé) implies a hypothetical situation; D (futur antérieur) incorrectly mixes future tense with past time reference \"hier soir\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779628456102-0savad8u",
+      "timestamp": "2026-05-24T13:15:54.401Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\nI was asked to verify whether the wrong answers (B, C, D) in a French grammar question are indeed incorrect. I analyzed the question:\n\nQuestion: \"Complétez : « Elle savait que nous ___ en retard hier soir. » (verbe : arriver)\"\n- A. [CORRECT] étions arrivés (pluperfect)\n- B. [WRONG] arrivions (imparfait)\n- C. [WRONG] serions arrivés (conditional perfect)\n- D. [WRONG] serons arrivés (future perfect)\n\nMy analysis determined:\n- B (\"arrivions\") is incorrect because it expresses an ongoing or habitual action (imparfait), which doesn't fit the context of a single completed past event indicated by \"hier soir\"\n- C (\"serions arrivés\") is incorrect because the conditional perfect expresses a hypothetical past action, not a factual completed one\n- D (\"serons arrivés\") is incorrect because the future perfect refers to a future action, not a past one\n\nAll three wrong answers violate the grammatical constraints of the question context (reported speech about a completed past action).\n\nRecommendations:\nThe verdict should be: TRUE||All wrong answers contain clear grammar errors and violate the tense/context requirements of the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779629027289-dsy7gfej",
+      "timestamp": "2026-05-24T13:33:42.030Z"
+    }
+  ]
+}

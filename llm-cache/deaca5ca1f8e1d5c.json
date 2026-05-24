@@ -1,0 +1,40 @@
+{
+  "cacheKey": "deaca5ca1f8e1d5c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-17-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-17 - La concordance des temps : présent → passé composé / imparfait → plus-que-parfait\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je pense qu'il ___ ce projet hier. » (verbe : terminer)\nChoices:\nA. [CORRECT] a terminé\nB. terminait\nC. aurait terminé\nD. aura terminé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779627924390-dwe05qj5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question does not test the plus-que-parfait tense; the main clause \"Je pense\" is in the present tense, which triggers passé composé in the subordinate clause, not plus-que-parfait (which would require an imperfect or passé composé main clause).\n\n---\n\nMaximum steps for this agent have been reached.\n\nSummary of work completed:\n- Analyzed a grammar validation question about French sequence of tenses (concordance des temps)\n- Evaluated whether the question properly tests the stated rule (04-17 - La concordance des temps : présent → passé composé / imparfait → plus-que-parfait)\n- Determined that the question is misaligned because it uses a present-tense main clause (\"Je pense\") with a passé composé answer, which does not require knowledge of plus-que-parfait\n\nRemaining tasks:\n- No other tasks were pending for this validation request\n\nRecommendations:\n- The question could be made aligned by changing the main clause to imperfect or passé composé (e.g., \"Je pensais qu'il ___ ce projet hier.\" would correctly trigger plus-que-parfait: \"avait terminé\")",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779627925397-dt67krm1",
+      "timestamp": "2026-05-24T13:05:41.323Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the \"présent → passé composé\" sequence by requiring the student to identify that when the main clause verb is in the present (\"pense\") and the context refers to a completed past action (\"hier\"), the subordinate clause uses the passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779628394012-iglqz92z",
+      "timestamp": "2026-05-24T13:13:58.083Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests determining the correct past tense (passé composé vs. imparfait) in a subordinate clause when the main verb is in the present tense, which directly addresses the présent → passé composé / imparfait aspect of the stated concordance des temps rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779628972376-phbf4l80",
+      "timestamp": "2026-05-24T13:23:28.546Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question's prompt \"Je pense\" (present tense) with the correct answer \"a terminé\" (passé composé) does not test the stated rule (which covers imparfait → plus-que-parfait transformations), but rather tests the much simpler présent → passé composé concordance that is typically learned earlier.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779629433940-jnz2dba3",
+      "timestamp": "2026-05-24T13:30:51.525Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a04429e0c83c9216",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-17-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il affirmait que vous ___ une erreur dans ce rapport. » (verbe : faire)\n\nChoices:\nA. [CORRECT] aviez fait\nB. [WRONG] faisiez\nC. [WRONG] auriez fait\nD. [WRONG] aviez faisait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779631909869-9w98pw3d"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of analyzing a French grammar question to verify that the wrong answers are indeed incorrect.\n\nQuestion analysis completed:\n- \"Il affirmait que vous ___ une erreur dans ce rapport.\" (verbe : faire)\n- This is a reported speech context requiring sequence of tenses\n- The main clause \"Il affirmait\" is imparfait\n- The correct answer A is \"aviez fait\" (plus-que-parfait), indicating a completed action before the reporting moment\n\nFor the wrong answers:\n- B. \"faisiez\" (imparfait): Incorrect because it would mean \"you were making a mistake\" - wrong aspect, doesn't convey completed action\n- C. \"auriez fait\" (conditionnel passé): Incorrect because it introduces hypothetical meaning (\"would have made\") rather than factual past\n- D. \"aviez faisait\": Grammatically invalid - incorrect auxiliary verb combination\n\nVERDICT: TRUE||All wrong answers are grammatically incorrect within the context - B uses wrong aspect, C introduces inappropriate conditional meaning, and D is syntactically invalid.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779631951524-shiiijaa",
+      "timestamp": "2026-05-24T14:24:09.783Z"
+    },
+    {
+      "raw": "I've reached the maximum number of steps allowed for this task. Let me provide my verification result:\n\nTRUE||All wrong answers are grammatically incorrect for the intended meaning.\n\nAnalysis:\n- **B (faisiez)**: While grammatically possible as imparfait, it doesn't fit the context. The structure \"affirmer que X a fait Y\" is the standard pattern for asserting a completed action. Using imparfait here would change the meaning to \"He was asserting that you were making mistakes\" (ongoing action) rather than \"He was asserting that you had made a mistake\" (completed action).\n\n- **C (auriez fait)**: This is conditionnel passé, which introduces uncertainty or unreality (\"you would have made\"). This contradicts \"affirmer\" which denotes a definite assertion, not a hypothetical claim.\n\n- **D (avait faisait)**: This is a syntactic impossibility - two finite past-tense verbs cannot be concatenated like this. The correct form would be \"aviez fait\" (plus-que-parfait with \"vous\").\n\nThe question's intended meaning is clear: a report of a definite assertion about a completed past action, for which \"aviez fait\" is the only appropriate tense among the choices.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779632987601-s13bole9",
+      "timestamp": "2026-05-24T14:30:25.551Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B (faisiez) is imparfait expressing ongoing action not completed action; C (auriez fait) is conditional past not appropriate for stating facts; D (aviez faisait) is not a valid French verb form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779633154208-k4dl6pc6",
+      "timestamp": "2026-05-24T14:35:52.370Z"
+    }
+  ]
+}

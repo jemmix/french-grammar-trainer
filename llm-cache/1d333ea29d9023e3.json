@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1d333ea29d9023e3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-17-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-17 - La concordance des temps : présent → passé composé / imparfait → plus-que-parfait\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Elle savait que nous ___ en retard la veille. » (verbe : arriver)\nChoices:\nA. [CORRECT] étions arrivés\nB. arrivions\nC. serions arrivés\nD. étions arrivant\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779631909869-xdygswf6"
+  },
+  "responses": [
+    {
+      "raw": "**VERDICT: ALIGNED**\n\n**REASON:** The question requires understanding tense concordance: the main clause \"savait\" is in imparfait and the subordinate action (\"en retard la veille\") occurred before it, making plus-que-parfait (\"étions arrivés\") the only correct choice.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779632088069-v9201zz8",
+      "timestamp": "2026-05-24T14:15:00.167Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly tests tense concordance where the main verb \"savait\" (imparfait) requires the subordinate clause to use plus-que-parfait (\"étions arrivés\") because the arrival happened before the past moment being described.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779632541094-slx21icr",
+      "timestamp": "2026-05-24T14:23:20.537Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests tense concordance where the main verb \"savait\" (imparfait) requires the subordinate verb \"arriver\" to be in plus-que-parfait, which is precisely the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779632952686-sho25hyf",
+      "timestamp": "2026-05-24T14:29:47.600Z"
+    }
+  ]
+}

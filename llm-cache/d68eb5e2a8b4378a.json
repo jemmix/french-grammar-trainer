@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d68eb5e2a8b4378a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-17-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-17 - La concordance des temps : présent → passé composé / imparfait → plus-que-parfait\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il me disait qu'elle ___ avant lui. » (verbe : partir)\nChoices:\nA. [CORRECT] était partie\nB. partait\nC. serait partie\nD. était partant\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779631909869-h7rp7ye3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question directly tests the imparfait → plus-que-parfait sequence of tenses rule, where \"disait\" (imparfait) requires \"était partie\" (plus-que-parfait) for an action that happened before it.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779632100921-4bqa0291",
+      "timestamp": "2026-05-24T14:15:27.624Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying the sequence of tenses rule (concordance des temps) where an action that occurred before another past action expressed in the imparfait must be conjugated in the plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779632579519-jdqzacxa",
+      "timestamp": "2026-05-24T14:23:19.453Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests tense concordance with an imparfait main clause (\"Il me disait\") requiring plus-que-parfait for an anterior subordinate action (\"avant lui\"), which is exactly what rule 04-17 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779632951964-xbuy3y7j",
+      "timestamp": "2026-05-24T14:29:33.035Z"
+    }
+  ]
+}

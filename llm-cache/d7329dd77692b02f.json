@@ -1,0 +1,26 @@
+{
+  "cacheKey": "d7329dd77692b02f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-17-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-17 - La concordance des temps : présent → passé composé / imparfait → plus-que-parfait\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez avec le plus-que-parfait : « Il m'a dit qu'elle ___ avant lui. » (verbe : partir)\nChoices:\nA. [CORRECT] était partie\nB. partait\nC. serait partie\nD. était partant\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779629964137-0yq1i4da"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly instructs students to use the plus-que-parfait in the prompt rather than requiring them to apply tense concordance rules, and the main verb \"a dit\" (passé composé) doesn't match either of the cases (présent → passé composé or imparfait → plus-que-parfait) covered by the stated rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779630089237-w210nddo",
+      "timestamp": "2026-05-24T13:41:53.411Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs \"Complétez avec le plus-que-parfait,\" so the student doesn't need to apply the concordance rule to determine which tense to use—the question only tests conjugation knowledge, not when to select the plus-que-parfait in subordinate clauses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779630407892-8k7neddp",
+      "timestamp": "2026-05-24T13:47:19.305Z"
+    }
+  ]
+}

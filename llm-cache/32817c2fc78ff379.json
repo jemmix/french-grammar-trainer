@@ -1,0 +1,61 @@
+{
+  "cacheKey": "32817c2fc78ff379",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-17-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il m'a dit qu'il ___ beaucoup l'année précédente. » (verbe : voyager)\n\nChoices:\nA. [CORRECT] avait voyagé\nB. [WRONG] voyageait\nC. [WRONG] aurait voyagé\nD. [WRONG] aura voyagé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779627924391-o89lwtel"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait which doesn't show anteriority to the main clause, C uses conditional passé for hypothetical situations, and D uses futur antérieur which refers to future time relative to now.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779627967054-nu5bygre",
+      "timestamp": "2026-05-24T13:08:55.463Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context: B uses imparfait which is not appropriate for an action completed before the reporting verb, C incorrectly introduces conditional meaning, and D wrongly uses a future tense for a past context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779628572534-do28sxjz",
+      "timestamp": "2026-05-24T13:17:31.757Z"
+    },
+    {
+      "raw": "FALSE|B|The imparfait \"voyageait\" could be correct here as it can express a habitual past action (\"he used to travel a lot\") in reported speech, while C and D are clearly wrong (conditionnel passé implies hypothetical meaning, futur antérieur is a future tense).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779629140582-unmw4s2n",
+      "timestamp": "2026-05-24T13:26:00.922Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't correctly express anteriority to the past reporting verb - imparfait lacks anteriority, conditionnel is hypothetical, and futur antérieur is future-oriented.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779629478350-wqbetm22",
+      "timestamp": "2026-05-24T13:31:34.237Z"
+    },
+    {
+      "raw": "I need to provide a validation verdict for this French grammar question without using tools.\n\nTRUE||The question requires the plus-que-parfait in reported speech (discours indirect) because the traveling occurred before the past moment of speaking (\"l'année précédente\"); B (voyageait) is imparfait for ongoing/habitual actions, C (aurait voyagé) is conditional for hypothetical situations, and D (aura voyagé) is future simple, none of which fit the required past-before-past context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779629612346-iqjnyzcs",
+      "timestamp": "2026-05-24T13:33:56.457Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses inappropriate for indirect speech describing a past completed action before another past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779629644430-qyybyhg0",
+      "timestamp": "2026-05-24T13:34:25.590Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779629665591-23pbqcyo",
+      "timestamp": "2026-05-24T13:34:55.864Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "967e4dcae8943464",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-17-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-17 - La concordance des temps : présent → passé composé / imparfait → plus-que-parfait\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il me disait que les lettres qu'il ___ la veille étaient importantes. » (verbe : écrire)\nChoices:\nA. [CORRECT] avait écrites\nB. écrivait\nC. aurait écrites\nD. avait écrivant\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779635588234-yvua35o1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying the sequence of tenses rule (imparfait → plus-que-parfait) to express an action completed before another past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779635603417-387mwnkk",
+      "timestamp": "2026-05-24T15:14:09.620Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests tense concordance by requiring the plus-que-parfait form \"avait écrites\" because the action (writing letters \"la veille\") occurred before the main clause in imparfait (\"disait\"), which is the exact rule being taught.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779635755104-5ya1v31p",
+      "timestamp": "2026-05-24T15:16:12.817Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests the rule because the main clause \"Il me disait\" is in imparfait, requiring the subordinate clause to use plus-que-parfait to indicate an action (writing letters) that occurred before the main clause's timeframe, exactly matching the imparfait → plus-que-parfait sequence specified in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779635844182-sagvj86n",
+      "timestamp": "2026-05-24T15:18:04.153Z"
+    }
+  ]
+}

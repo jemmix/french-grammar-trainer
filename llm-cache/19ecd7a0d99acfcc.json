@@ -1,0 +1,33 @@
+{
+  "cacheKey": "19ecd7a0d99acfcc",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-17-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-17 - La concordance des temps : présent → passé composé / imparfait → plus-que-parfait\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au temps correct selon la concordance des temps.\nPhrase: Elle savait que vous ___ tous les détails.\nCorrect Answer: aviez expliqué\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779627924394-pl0dmfk0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the concordance des temps rule, as the imparfait main clause \"Elle savait\" requires the plus-que-parfait \"aviez expliqué\" in the subordinate clause to express an action that occurred before the main action, which is exactly what the rule states.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779628354043-zccsqicl",
+      "timestamp": "2026-05-24T13:13:02.891Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the imparfait → plus-que-parfait concordance rule, as \"savait\" (imparfait) requires the subordinate clause action that occurred earlier to use plus-que-parfait (\"aviez expliqué\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779628862908-cg9x6s78",
+      "timestamp": "2026-05-24T13:21:17.466Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Accomplished\nNo validation work has been completed yet. The agent was interrupted before it could begin the validation task of determining whether the question about time concordance properly tests rule 04-17.\n\n## Remaining Tasks\n- Validate the question: \"Elle savait que vous ___ tous les détails.\" with correct answer \"aviez expliqué\"\n- Determine if this question is ALIGNED or MISALIGNED with rule 04-17 (La concordance des temps : présent → passé composé / imparfait → plus-que-parfait)\n\n## Recommendations for Next Steps\nThe validation assessment for this question is:\n\n**VERDICT: ALIGNED**\n\n**REASON:** The question directly tests the rule of time concordance where the main clause verb \"savait\" is in the imparfait, requiring the subordinate clause verb to be in the plus-que-parfait (\"aviez expliqué\") for actions occurring before the main verb, which is the exact concept being tested.\n\nContinue with remaining questions in the validation queue.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779629341899-2dthr1cc",
+      "timestamp": "2026-05-24T13:29:37.533Z"
+    }
+  ]
+}

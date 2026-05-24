@@ -1,0 +1,40 @@
+{
+  "cacheKey": "738705343686a005",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-17-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-17 - La concordance des temps : présent → passé composé / imparfait → plus-que-parfait\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au plus-que-parfait.\nPhrase: Nous savions que la lettre que tu ___ était importante.\nCorrect Answer: avais reçue\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779629964139-2gl77gbb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly applies the tense concordance rule - since the main clause \"Nous savions\" is in the imparfait, the subordinate clause describing an action that occurred before requires the plus-que-parfait (\"avais reçue\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779630219208-2cuj3mmh",
+      "timestamp": "2026-05-24T13:44:06.856Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the concordance des temps rule because the learner must recognize that receiving the letter happened before \"nous savions\" (imparfait), requiring the use of plus-que-parfait in the subordinate clause according to the sequence imparfait → plus-que-parfait for anterior actions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779630566024-v992zgsk",
+      "timestamp": "2026-05-24T13:49:48.898Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests conjugation of \"recevoir\" in the plus-que-parfait, not the tense concordance rule about when to use plus-que-parfait versus passé composé—the prompt explicitly tells the student which tense to use, eliminating the need to apply the concordance rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779630810151-9ju8j0o9",
+      "timestamp": "2026-05-24T13:54:07.229Z"
+    },
+    {
+      "raw": "I understand. I need to provide a text-only response because the maximum steps for this agent have been reached.\n\n---\n\nVERDICT: MISALIGNED\n\nREASON: The prompt explicitly tells students to \"Conjuguez le verbe au plus-que-parfait,\" so students can answer correctly simply by knowing how to form that tense, without understanding the sequence of tenses rule (that plus-que-parfait is required when the main clause is in the imparfait).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779630866400-fu0dzc2u",
+      "timestamp": "2026-05-24T13:54:51.285Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f106c1585d2ca741",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-17-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-17 - La concordance des temps : présent → passé composé / imparfait → plus-que-parfait\n\nQUESTION:\nType: Input\nPrompt: Complétez avec le temps qui convient.\nPhrase: Il me disait qu'elle ___ avant lui.\nCorrect Answer: était partie\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779631909871-cyq5ug5r"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the exact concept in the rule - when the main verb is in imparfait (\"disait\"), a past action in the subordinate clause that occurred before it must use plus-que-parfait (\"était partie\"), which is the core of tense agreement (concordance des temps).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779632360707-235pht0e",
+      "timestamp": "2026-05-24T14:19:35.155Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests the imparfait → plus-que-parfait sequence of tenses rule, as the main verb \"disait\" (imparfait) requires the subordinate clause to use the plus-que-parfait \"était partie\" to indicate an action completed before the past moment being described.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779632750247-o0x4gute",
+      "timestamp": "2026-05-24T14:26:07.588Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question correctly requires knowledge of the imparfait → plus-que-parfait sequence of tenses rule, as \"disait\" (imparfait) triggers \"était partie\" (plus-que-parfait) in the subordinate clause to indicate an action that occurred before the past time being referenced.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779633065549-fk4ofgrk",
+      "timestamp": "2026-05-24T14:31:26.298Z"
+    }
+  ]
+}

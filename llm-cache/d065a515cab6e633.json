@@ -1,0 +1,26 @@
+{
+  "cacheKey": "d065a515cab6e633",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-17-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je pensais qu'il ___ ce projet. » (verbe : terminer)\n\nChoices:\nA. [CORRECT] avait terminé\nB. [WRONG] terminait\nC. [WRONG] aurait terminé\nD. [WRONG] aura terminé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779627924391-md4dktym"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B,C|B (terminait) could be correct if the meaning was \"I thought he was finishing this project\" (simultaneous action), and C (aurait terminé) could be correct as \"I thought he would have finished this project\" (hypothetical situation).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779627927399-h690qhvb",
+      "timestamp": "2026-05-24T13:16:13.952Z"
+    },
+    {
+      "raw": "TRUE||Without additional temporal markers, the default interpretation of \"Je pensais qu'il...\" requires the subordinate action to be anterior to the main action, which is correctly expressed by the plus-que-parfait (avait terminé) and not by the other tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779629085954-youp9sov",
+      "timestamp": "2026-05-24T13:26:05.229Z"
+    }
+  ]
+}

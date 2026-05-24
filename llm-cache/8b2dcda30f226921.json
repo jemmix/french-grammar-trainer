@@ -1,0 +1,47 @@
+{
+  "cacheKey": "8b2dcda30f226921",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-17-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle pensait que les erreurs que nous ___ étaient graves. » (verbe : corriger)\n\nChoices:\nA. [CORRECT] avions corrigées\nB. [WRONG] corrigions\nC. [WRONG] aurions corrigées\nD. [WRONG] avions corrigeant\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779631909870-1k8egvgh"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWork completed:\n- Analyzed the French grammar question about completing a sentence with the verb \"corriger\"\n- Evaluated each wrong answer (B, C, D) to determine if they are truly incorrect\n- Determined that B (\"corrigions\", imparfait) is grammatically valid in this context without an explicit tense requirement\n- Confirmed that C (\"aurions corrigées\", conditionnel passé) and D (\"avions corrigeant\", invalid form) are indeed incorrect\n- Reached a verdict based on strict evaluation within the stated constraints of the question\n\nMy verdict is: FALSE|B|The imparfait \"corrigions\" is grammatically valid in this context without an explicit tense requirement, while C and D are truly incorrect.\n\nRemaining tasks: None - the verification task has been completed.\n\nRecommendations: The verdict should be recorded according to the requested format (VERDICT|letter1,letter2,...|explanation). If the exercise expects only the plus-que-parfait as the correct answer, the question should be updated to explicitly specify this tense requirement to avoid ambiguity.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779632222801-ue0toivk",
+      "timestamp": "2026-05-24T14:19:51.643Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.\n\nThe question asks to complete the sentence with the verb \"corriger\" in the context \"Elle pensait que les erreurs que nous ___ étaient graves.\" The main clause uses \"pensait\" (imparfait), indicating a past action. The subordinate clause uses \"étaient\" (imparfait), also indicating a past action. The relative clause \"que nous ___\" refers to an action that happened before the main clause, so the correct tense is the plus-que-parfait, which is \"avions corrigées\" (choice A).\n\nB. \"corrigions\" is the imparfait of \"corriger\" for \"nous\", which doesn't match the context requiring an action that occurred before the main clause.\n\nC. \"aurions corrigées\" is the conditionnel passé of \"corriger\" for \"nous\", which doesn't match the non-hypothetical context of the sentence.\n\nD. \"avions corrigeant\" is not a valid verb form in French, combining the imparfait of \"avoir\" with the present participle of \"corriger\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779632766818-0ygm7i0i",
+      "timestamp": "2026-05-24T14:26:38.449Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses the wrong tense (imparfait instead of plus-que-parfait) and lacks participle agreement, C uses the wrong mood (conditionnel instead of indicative), and D is not a valid French verb form (incorrectly combining avoir with a present participle).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779633097650-xri571wk",
+      "timestamp": "2026-05-24T14:32:13.704Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect given the context: B (corrigions) changes the meaning to ongoing action rather than completed correction, C (aurions corrigées) incorrectly introduces a conditional mood without a hypothetical context, and D (avions corrigeant) is not a valid French verb form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779633205216-jte00gc4",
+      "timestamp": "2026-05-24T14:34:23.702Z"
+    },
+    {
+      "raw": "FALSE|B,C|B uses the imparfait \"corrigions\" which is grammatically valid and would mean \"were correcting\" - a perfectly plausible reading of the sentence. C uses the conditional perfect \"aurions corrigées\" which, while less common in this context, is grammatically correct and could express a hypothetical past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779633314244-5f7ln7nj",
+      "timestamp": "2026-05-24T14:37:54.277Z"
+    }
+  ]
+}

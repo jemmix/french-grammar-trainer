@@ -1,0 +1,40 @@
+{
+  "cacheKey": "652898612c416940",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-17-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-17 - La concordance des temps : présent → passé composé / imparfait → plus-que-parfait\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je remarque que tu ___ avant moi. » (verbe : partir)\nChoices:\nA. [CORRECT] es parti\nB. partais\nC. serais parti\nD. seras parti\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779627924392-688mx5d1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the sequence of tenses rule by requiring the learner to use passé composé (\"es parti\") in the subordinate clause because the main verb \"remarque\" is in the present tense, following the présent → passé composé pattern specified in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779628309614-hd6n88ik",
+      "timestamp": "2026-05-24T13:12:48.867Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question tests the simple anteriority relationship (present → passé composé), but the rule explicitly states \"présent → passé composé / imparfait → plus-que-parfait\" which describes a more complex sequence of tenses where imparfait triggers plus-que-parfait for anteriority; this question does not test that relationship or contrast the two scenarios.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779628843898-7zednytl",
+      "timestamp": "2026-05-24T13:23:47.288Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the présent → passé composé concordance rule, where the main clause \"Je remarque\" (présent) requires \"es parti\" (passé composé) for the action that occurred before it.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779629437439-mppaxokh",
+      "timestamp": "2026-05-24T13:30:59.694Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The rule states \"présent → passé composé / imparfait → plus-que-parfait\" which is about sequence of tenses, but this question only tests the présent → passé composé pattern and doesn't include any example testing imparfait → plus-que-parfait, which is the core focus of the \"Le plus-que-parfait\" section.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779629599270-sgkvimae",
+      "timestamp": "2026-05-24T13:33:53.938Z"
+    }
+  ]
+}
