@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2b1795366eea4209",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-19-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-19 - Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « À peine ___-ils vendu la maison qu'ils ont trouvé un appartement. »\nChoices:\nA. [CORRECT] avaient\nB. ont\nC. auraient\nD. auront\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779668666681-1a2qvjyy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the \"à peine...que\" construction which requires the plus-que-parfait tense in the first clause, and \"avaient\" is the correct conjugation of \"avoir\" in that tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779668851114-97vkqg2q",
+      "timestamp": "2026-05-25T00:27:49.080Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question properly tests the rule about using the plus-que-parfait tense with the \"à peine...que\" construction, as it requires identifying that \"avaient\" is the correct form of avoir in this specific context where an action had just completed when another occurred.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779669161004-437pr05n",
+      "timestamp": "2026-05-25T00:32:59.807Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThe task was to evaluate whether a specific French grammar question is aligned with its stated rule.\n\nI've analyzed the question and can provide the verdict:\n\nVERDICT: ALIGNED\nREASON: This question correctly tests the plus-que-parfait tense in the \"à peine...que\" construction, where the first clause must describe an action completed before another past action, requiring recognition of the pluperfect rather than the passé composé, conditionnel, or futur antérieur.\n\nThe grammar rule being tested is: \"Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\"\n\nThe question presents a sentence with the \"à peine...que\" construction where students must select the correct tense form of \"avoir.\" The correct answer \"avaient\" (plus-que-parfait) is the only choice that properly conveys an action completed just before another past action (\"ont trouvé\" in the second clause). The other choices represent different tenses that would be grammatically incorrect in this specific construction.\n\nNo further work is needed for this validation task.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779669675056-48lpmebu",
+      "timestamp": "2026-05-25T00:41:32.128Z"
+    }
+  ]
+}

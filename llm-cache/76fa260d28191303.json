@@ -1,0 +1,40 @@
+{
+  "cacheKey": "76fa260d28191303",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-19-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-19 - Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au plus-que-parfait.\nPhrase: À peine les enfants ___ qu'ils ont commencé à jouer.\nCorrect Answer: étaient arrivés\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779668666683-i1apeehb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question only tests the student's ability to conjugate \"arriver\" in the plus-que-parfait form based on an explicit prompt, rather than testing their understanding that the \"à peine...que\" construction requires the plus-que-parfait in the first clause.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779668890300-rp7ed00a",
+      "timestamp": "2026-05-25T00:29:05.698Z"
+    },
+    {
+      "raw": "I've completed the validation task as requested. Here's my assessment:\n\nVERDICT: ALIGNED\nREASON: The question requires understanding that \"à peine...que\" triggers the plus-que-parfait tense in the first clause when the second clause uses a past tense, which is precisely what the rule states.\n\nThis question properly tests the rule because:\n1. Students must recognize the \"à peine...que\" construction\n2. They need to know that this structure specifically requires the pluperfect tense (not just any past tense)\n3. They must conjugate \"arriver\" correctly in the pluperfect with \"les enfants\" as the subject\n\nWhile formal French typically uses subject-verb inversion with \"à peine...que\" (e.g., \"À peine étaient-ils arrivés...\"), the informal word order shown here is acceptable and doesn't prevent the question from testing the core grammar concept.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779669230105-z0t7nog6",
+      "timestamp": "2026-05-25T00:34:14.137Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the plus-que-parfait with the \"à peine...que\" construction, requiring knowledge that this specific structure uses the pluperfect tense in the first clause (as in \"À peine les enfants étaient arrivés...\").",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779671590732-zcccjupf",
+      "timestamp": "2026-05-25T01:13:29.756Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs students to conjugate in the pluperfect tense, so they can answer correctly without recognizing that \"à peine...que\" is the structure that requires pluperfect usage.\n\n---\n\n**MAXIMUM STEPS REACHED**\n\nI have completed the validation analysis of the question. The question was evaluated for alignment with the rule \"04-19 - Le plus-que-parfait avec à peine...que\" and was found to be misaligned because the prompt gives away the tense rather than testing recognition of the \"à peine...que\" construction.\n\n**Remaining tasks:** None - the validation task has been completed.\n\n**Recommendations:** If you would like to fix this question, the prompt should be revised to test recognition of the \"à peine...que\" structure without explicitly stating \"au plus-que-parfait.\" For example, the prompt could simply ask to conjugate the verb without specifying the tense, or use an MCQ format where students must choose the correct tense for the \"à peine...que\" construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779671609757-urdlr3v4",
+      "timestamp": "2026-05-25T01:13:48.701Z"
+    }
+  ]
+}

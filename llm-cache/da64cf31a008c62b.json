@@ -1,0 +1,33 @@
+{
+  "cacheKey": "da64cf31a008c62b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-19-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À peine ___-il fermé les yeux qu'il s'est endormi. »\n\nChoices:\nA. [CORRECT] avait\nB. [WRONG] était\nC. [WRONG] aurait\nD. [WRONG] avions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779654791303-gd0bibll"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the wrong auxiliary verb (être instead of avoir), C uses the wrong tense (conditional instead of pluperfect), and D uses the wrong person (1st person plural instead of 3rd person singular).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779654849744-xz1fcdoq",
+      "timestamp": "2026-05-24T20:34:25.967Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779655171176-5ndlngt4",
+      "timestamp": "2026-05-24T20:40:22.118Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses wrong auxiliary (fermer needs avoir not être), C uses wrong tense (conditionnel not plus-que-parfait for À peine structure), D has wrong person/number (avions is 1st person plural but subject is il).\n\n---\n**MAXIMUM STEPS REACHED**\n\nThis verification task has been completed. The analysis confirms that all wrong answers (B, C, D) in the French grammar question about the \"À peine...\" construction are indeed incorrect, making the question valid for use in the grammar trainer.\n\n**Remaining work:** None for this specific task.\n\n**Next steps:** The validated question can be included in the question set and compiled into the final TypeScript data files.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779655419159-1bes5wyx",
+      "timestamp": "2026-05-24T20:45:13.923Z"
+    }
+  ]
+}

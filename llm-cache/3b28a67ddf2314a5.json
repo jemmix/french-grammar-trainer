@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3b28a67ddf2314a5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-19-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-19 - Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au plus-que-parfait : « À peine ___-elle fini de manger qu'elle a reçu un appel téléphonique. »\nChoices:\nA. [CORRECT] avait\nB. était\nC. aurait\nD. eut\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779660988554-56wo8o3g"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question explicitly instructs \"Complétez au plus-que-parfait\", which tells students what tense to use, so they can answer correctly by simply knowing how to form the pluperfect of \"finir\" without understanding that \"à peine...que\" specifically requires the pluperfect tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779661250440-wt9cywns",
+      "timestamp": "2026-05-24T22:21:15.972Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the plus-que-parfait with the \"à peine...que\" construction, requiring knowledge of both the tense choice and the correct auxiliary verb (avoir vs. être) for \"finir\" in this grammatical structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779661542558-48wk5t7b",
+      "timestamp": "2026-05-24T22:25:59.418Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the user to use the plus-que-parfait, so the correct answer can be found using only conjugation knowledge without understanding the specific \"à peine...que\" construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779661897333-oet8k8jf",
+      "timestamp": "2026-05-24T22:34:47.051Z"
+    }
+  ]
+}

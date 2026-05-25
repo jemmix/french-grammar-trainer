@@ -1,0 +1,47 @@
+{
+  "cacheKey": "c86e3c2f8420aff8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-19-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-19 - Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au plus-que-parfait.\nPhrase: À peine le conférencier ___ son discours qu'il a quitté la salle.\nCorrect Answer: avait fini\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779668666682-evwpzokf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the plus-que-parfait tense in an \"à peine...que\" construction, which is exactly what the rule covers - the temporal sequence where one action had barely completed when another occurred.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779668869081-mxzh5rde",
+      "timestamp": "2026-05-25T00:28:22.586Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The prompt explicitly instructs \"Conjuguez le verbe au plus-que-parfait,\" which gives away the tense being tested — a student can answer correctly by simply knowing how to conjugate \"finir\" in plus-que-parfait without understanding that the \"à peine...que\" construction specifically requires this tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779669196299-9gyhn2tu",
+      "timestamp": "2026-05-25T00:33:29.853Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question properly tests the rule because answering correctly requires knowledge that the \"à peine...que\" construction specifically requires the pluperfect tense, and the student must conjugate \"finir\" in that tense to complete the sentence correctly.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779669528478-mwvynthn",
+      "timestamp": "2026-05-25T00:39:10.428Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating the verb \"finir\" in the plus-que-parfait tense within the \"à peine...que\" construction, which directly tests the rule about using plus-que-parfait with \"à peine...que\" to express an action that had barely occurred when another one happened.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779671586725-dtdxjcjt",
+      "timestamp": "2026-05-25T01:13:19.148Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work\n\nI was tasked with validating whether a French grammar question actually tests the stated rule about \"Le plus-que-parfait avec à peine...que.\"\n\nI analyzed the question and determined that it is **MISALIGNED** with the stated rule.\n\n## Reasoning\n\nThe question asks students to conjugate the verb \"finir\" in the plus-que-parfait tense in the sentence \"À peine le conférencier ___ son discours qu'il a quitté la salle.\" The prompt explicitly tells students to use the plus-que-parfait tense.\n\nThis is misaligned because:\n- The prompt already gives away the tense to use (\"Conjuguez le verbe au plus-que-parfait\")\n- Students can answer correctly simply by knowing how to conjugate \"finir\" in plus-que-parfait\n- The question does NOT test the key grammatical rule: that \"à peine...que\" constructions require the plus-que-parfait (since the prompt tells you the tense, you don't need to deduce it from the structure)\n\n## Remaining Tasks\n\nNone - the validation task is complete.\n\n## Recommendation\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly tells students to use the plus-que-parfait tense, so the question tests basic conjugation rather than the rule that \"à peine...que\" requires the plus-que-parfait.\n\nTo fix this, the prompt should be more general (e.g., \"Conjuguez le verbe\" or \"Complétez la phrase\") so students must recognize that \"à peine...que\" requires the plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779671599150-nqg4sagm",
+      "timestamp": "2026-05-25T01:13:36.308Z"
+    }
+  ]
+}

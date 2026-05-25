@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e6380cf20bab2723",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-19-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-19 - Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « À peine ___-on compris le problème qu'on a cherché une solution. »\nChoices:\nA. [CORRECT] avait\nB. était\nC. aurait\nD. eut\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779664722603-sa0oh91g"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the \"à peine...que\" structure which specifically requires the plus-que-parfait tense (\"avait-on compris\"), and the correct answer cannot be determined without knowing this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779664891197-tyxpv9k9",
+      "timestamp": "2026-05-24T23:21:47.086Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the correct use of the plus-que-parfait with the \"à peine...que\" construction, requiring the learner to select \"avait\" (imperfect of avoir) as the auxiliary to form \"avait-on compris\" (plus-que-parfait of comprendre) in exactly the pattern described by rule 04-19.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779665177591-js4wd012",
+      "timestamp": "2026-05-24T23:26:42.361Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that \"à peine...que\" constructions require the plus-que-parfait (avait-on compris) for the first action before the second action in passé composé (a cherché), and distinguishes this from other tenses (imparfait, conditionnel, passé antérieur).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779665478309-zkcq9d2p",
+      "timestamp": "2026-05-24T23:31:44.960Z"
+    }
+  ]
+}

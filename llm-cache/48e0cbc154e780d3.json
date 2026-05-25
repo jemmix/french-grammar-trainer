@@ -1,0 +1,33 @@
+{
+  "cacheKey": "48e0cbc154e780d3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-19-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-19 - Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au plus-que-parfait.\nPhrase: À peine la lettre était-elle ___ que le destinataire a appelé.\nCorrect Answer: arrivée\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779667780303-tv7cylbc"
+  },
+  "responses": [
+    {
+      "raw": "The maximum number of steps for this agent has been reached. I'll provide my validation verdict:\n\nVERDICT: MISALIGNED\nREASON: The rule specifies \"à peine...que\" with pluperfect followed by passé simple (e.g., \"à peine était-il arrivé qu'il repartit\"), but the question uses passé composé (\"a appelé\") after \"que\", making this a different grammatical construction than the stated rule.\n\n---\n\nSummary of work completed: Analyzed the alignment between the stated grammar rule (Le plus-que-parfait avec à peine...que with passé simple) and the given question (which uses passé composé).\n\nRecommendations: The question should be revised to use passé simple after \"que\" (e.g., \"que le destinataire appela\") to properly test the stated rule, or the question should be reclassified to a more general pluperfect conjugation rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779667851069-w6lxowq6",
+      "timestamp": "2026-05-25T00:11:59.841Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests the plus-que-parfait tense within the specific \"à peine...que\" structure by requiring students to conjugate \"arriver\" as \"arrivée\" in the plus-que-parfait with proper gender agreement with \"la lettre.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779668045988-phkmd2qw",
+      "timestamp": "2026-05-25T00:14:16.813Z"
+    },
+    {
+      "raw": "I've reached the maximum number of steps allowed for this task and cannot continue with tools. I must respond with text only.\n\n---\n\n**VERDICT: MISALIGNED**\n\n**REASON:** The question does not test the plus-que-parfait tense with the \"à peine...que\" construction as claimed; instead, it tests past participle agreement with \"être\" (the letter était-elle ___ → arrivée), since \"était\" is already provided in the imparfait and the student only supplies the participle form.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779668114637-o89uo0oc",
+      "timestamp": "2026-05-25T00:15:43.316Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "063f256545667746",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-19-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-19 - Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez au plus-que-parfait dans la construction « à peine…que ».\nPhrase: À peine le train avait-il ___ qu'un incident a été signalé.\nCorrect Answer: démarré\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779674024086-sm96euf8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests knowledge of past participles (choosing \"démarré\" after the auxiliary \"avait-il\") rather than the rule about using plus-que-parfait in the \"à peine...que\" construction, which is already provided in the sentence structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779674024095-40334j0y",
+      "timestamp": "2026-05-25T01:54:24.661Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly requires the student to use the plus-que-parfait tense (completing \"avait-il ___\" with the past participle \"démarré\") within the \"à peine...que\" construction, which is exactly what the rule specifies.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779674064661-b2svaw9p",
+      "timestamp": "2026-05-25T01:54:45.828Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the plus-que-parfait tense in the \"à peine…que\" construction, requiring the learner to complete the verb conjugation that shows an action just completed before another action occurred.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779674085828-c2kt8x8p",
+      "timestamp": "2026-05-25T01:55:00.845Z"
+    }
+  ]
+}

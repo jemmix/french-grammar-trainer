@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d6d7abfe8e2b7eb4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-19-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-19 - Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « À peine étions-nous ___ qu'on a servi le dîner. »\nChoices:\nA. [CORRECT] arrivés\nB. partis\nC. arrivé\nD. restés\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779667780290-02legaoh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question already provides the imparfait auxiliary \"étions,\" so students only need to supply the correct past participle with agreement rather than demonstrating they know that \"à peine...que\" triggers the plus-que-parfait tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779667787320-zxe4vl3c",
+      "timestamp": "2026-05-25T00:10:35.098Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question properly tests the rule \"Le plus-que-parfait avec à peine...que\" as it requires completing a sentence using the plus-que-parfait tense in the first clause of the \"à peine...que\" structure, and distinguishing between the correct participle \"arrivés\" and incorrect options based on both meaning and agreement with the subject \"nous.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779667942153-k1r882ra",
+      "timestamp": "2026-05-25T00:12:46.207Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests past participle agreement with the subject \"nous\" and semantic context, as the auxiliary \"étions\" is already provided; thus, the correct answer can be found without knowing the specific rule that \"à peine\" triggers the plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779668082119-cyo90h5w",
+      "timestamp": "2026-05-25T00:16:52.882Z"
+    }
+  ]
+}

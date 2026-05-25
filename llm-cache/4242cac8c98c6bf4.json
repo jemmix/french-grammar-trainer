@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4242cac8c98c6bf4",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-19-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À peine ___-il fermé les yeux qu'il s'est endormi. »\n\nChoices:\nA. [CORRECT] avait\nB. [WRONG] a\nC. [WRONG] aurait\nD. [WRONG] aura\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779668666679-r3bwb4vd"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI've analyzed the French grammar question about the \"à peine\" construction. The question tests the correct tense to use with the structure \"À peine [inverted verb] + que + [past action]\".\n\nThe verdict is: TRUE||All wrong answers contain clear grammar errors.\n\nExplanation:\n- B (a) is incorrect because \"à peine\" with inversion followed by \"que\" requires the pluperfect (avait), not the passé composé\n- C (aurait) is incorrect because the conditional tense doesn't work in this past-time construction\n- D (aura) is incorrect because the future tense cannot be used for an action that happened before another past action\n\nThe correct answer is A (avait) forming \"À peine avait-il fermé les yeux qu'il s'est endormi,\" which is the standard grammatical construction for expressing \"No sooner had he closed his eyes than he fell asleep.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779668712101-xkj4c06n",
+      "timestamp": "2026-05-25T00:25:33.140Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors - 'a' is the passé composé which doesn't fit the temporal sequence, 'aurait' is conditional which doesn't match the factual context, and 'aura' is future which contradicts the past action described.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779668993122-hbilqa48",
+      "timestamp": "2026-05-25T00:30:15.189Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for the \"À peine...que\" temporal construction which requires plus-que-parfait when the second clause is in passé composé.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779669327137-futa8pit",
+      "timestamp": "2026-05-25T00:36:08.309Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aaf329ea2c9ba425",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-19-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À peine ___-il arrivé qu'il a téléphoné. »\n\nChoices:\nA. [CORRECT] était\nB. [WRONG] est\nC. [WRONG] serait\nD. [WRONG] fut\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779664722599-x03q7izc"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors. The \"À peine...que\" construction requires the pluperfect or past perfect tense - \"était\" (pluperfect) is correct, while \"est\" (present), \"serait\" (conditional), and \"fut\" (simple past) are all incorrect tenses for this construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779664722620-5u5d9obl",
+      "timestamp": "2026-05-24T23:21:33.881Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to evaluate a French grammar question about the correct verb tense to use with \"À peine\" in the sentence \"« À peine ___-il arrivé qu'il a téléphoné. »\"\n\nThe grammatical construction \"À peine [verb]-il [past participle] que...\" requires the plus-que-parfait tense (past perfect). Given the second clause uses passé composé (\"a téléphoné\"), the first clause must use plus-que-parfait (\"était arrivé\").\n\nMy analysis:\n- Choice A (était) is correct as it forms the plus-que-parfait\n- Choice B (est) is incorrect - it's présent, not plus-que-parfait\n- Choice C (serait) is incorrect - it's conditionnel, not plus-que-parfait\n- Choice D (fut) is incorrect - it's passé simple/passé antérieur, not plus-que-parfait; plus the sentence uses passé composé in the second clause\n\nVerdict: TRUE||All wrong answers are indeed incorrect as they use tenses other than the required plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779665146906-16442nq6",
+      "timestamp": "2026-05-24T23:26:07.946Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for the \"À peine...que\" construction, which requires the plus-que-parfait (\"était\" in this case); \"est\" forms passé composé, \"serait\" forms conditionnel passé, and \"fut\" forms passé antérieur which is stylistically incompatible with the passé composé in the second clause.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779665333666-4dcngvjm",
+      "timestamp": "2026-05-24T23:29:13.128Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "fb268ada3cd0cd19",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-19-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À peine était-il ___ qu'il a téléphoné. »\n\nChoices:\nA. [CORRECT] arrivé\nB. [WRONG] parti\nC. [WRONG] arrivée\nD. [WRONG] sorti\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779667780280-7k6o87cr"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B,D|B (parti) and D (sorti) are grammatically correct in this construction; they form valid sentences with \"À peine était-il [parti/sorti] qu'il a téléphoné,\" matching the masculine subject \"il.\" Only C has a clear error (wrong gender agreement).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779667780306-9k8hsfz4",
+      "timestamp": "2026-05-25T00:10:17.098Z"
+    },
+    {
+      "raw": "TRUE||The correct answer \"arrivé\" is the only semantically appropriate completion for the structure \"à peine était-il ___ qu'il a téléphoné\" (hardly had he arrived when he called), whereas \"parti\" and \"sorti\" would create illogical semantic contexts (hardly had he left/gone out when he called), and \"arrivée\" is grammatically incorrect as it doesn't agree with the masculine subject \"il\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779667919841-79ta7ytx",
+      "timestamp": "2026-05-25T00:13:15.586Z"
+    }
+  ]
+}

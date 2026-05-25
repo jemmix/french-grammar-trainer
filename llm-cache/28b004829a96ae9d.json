@@ -1,0 +1,33 @@
+{
+  "cacheKey": "28b004829a96ae9d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-19-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-19 - Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au plus-que-parfait : « À peine ___-ils achevé le projet qu'ils se sont reposés. »\nChoices:\nA. [CORRECT] avaient\nB. étaient\nC. auraient\nD. eurent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779660988553-wy2igoub"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests the rule by requiring the student to select the correct auxiliary verb (avaient) to form the plus-que-parfait with the verb \"achever\" in the \"à peine...que\" construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779661197996-911zm7sp",
+      "timestamp": "2026-05-24T22:20:24.186Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question already instructs the student to use the plus-que-parfait in the prompt, so it primarily tests auxiliary selection (avoir vs être with the verb \"achever\") rather than testing the rule about when to use the plus-que-parfait in \"à peine...que\" constructions.\n\n---\n\n**Summary of work accomplished:**\nI analyzed whether the given French grammar question properly tests the stated rule (plus-que-parfait with \"à peine...que\" construction) and determined that the question is misaligned because it tests auxiliary selection rather than the rule itself.\n\n**Remaining tasks:**\nNone - the validation task has been completed.\n\n**Recommendations:**\nIf this question needs to be properly aligned with the rule, consider removing the \"au plus-que-parfait\" instruction from the prompt and/or restructuring the question so that the student must recognize that the \"à peine...que\" construction requires the plus-que-parfait tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779661495674-saq8rjh0",
+      "timestamp": "2026-05-24T22:25:17.995Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The prompt explicitly states \"Complétez au plus-que-parfait,\" which tells the student the tense to use, so the question only tests knowledge of how to form the plus-que-parfait (choosing the correct auxiliary \"avoir\" vs \"être\") rather than testing the rule about when \"à peine...que\" triggers the plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779661844346-revylf12",
+      "timestamp": "2026-05-24T22:31:11.820Z"
+    }
+  ]
+}

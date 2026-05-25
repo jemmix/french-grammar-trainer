@@ -1,0 +1,26 @@
+{
+  "cacheKey": "70ca6f3afbb492fa",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-19-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-19 - Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « À peine ___-vous partis qu'il a commencé à pleuvoir. »\nChoices:\nA. [CORRECT] étiez\nB. aviez\nC. seriez\nD. étions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779654791306-bqcb66sx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question primarily tests auxiliary verb selection (être vs avoir) and agreement, not the plus-que-parfait tense — the correct answer \"étiez\" is imparfait (plus-que-parfait would be \"aviez été\"), and choices like \"aviez\" can be eliminated by knowing that \"partir\" uses être, without any knowledge of the \"à peine...que\" construction.\n\n---\n\nMAXIMUM STEPS REACHED\n\nI have completed the validation task for the French grammar question. The analysis determined that the question tests auxiliary verb knowledge rather than the stated plus-que-parfait rule.\n\nNo tool operations were required for this validation task. The response provides both the verdict (MISALIGNED) and a clear explanation of why the question does not align with the rule it claims to test.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779654882179-9dt7uuql",
+      "timestamp": "2026-05-24T20:35:13.297Z"
+    },
+    {
+      "raw": "# Summary of Work Done\n\nI have analyzed the validation request for the French grammar question.\n\n## Task Completed\n\n**Validation Analysis:**\n\n**Verdict: MISALIGNED**\n\n**Reason:** The question tests auxiliary verb selection (être vs avoir) for the passé composé/plus-que-parfait of \"partir\", but the prompt incorrectly presents \"étiez\" as the correct answer while the sentence structure \"À peine ___-you partis\" already contains the past participle \"partis\" without a properly formed pluperfect construction; the \"à peine...que\" rule should produce \"À peine étiez-vous partis\" but the prompt's blank placement creates confusion about what's actually being tested.\n\n**Key Issues Identified:**\n1. The prompt structure `___-vous partis` is confusing - the blank comes before \"vous\"\n2. The past participle \"partis\" is already present, but the blank appears to ask for the auxiliary in an unusual position\n3. The \"à peine...que\" construction should be: \"À peine étiez-vous partis\" (auxiliary + subject + past participle)\n4. The choices test auxiliary selection but the prompt formatting doesn't match the standard \"à peine...que\" inversion pattern\n\nThe question appears to have a structural problem in how the blank is placed, which makes it not properly aligned with testing the \"à peine...que\" plus-que-parfait rule.\n\n---\n\n**Maximum steps for this agent have been reached.** To proceed with fixes to this question or continue validation of other questions, please provide new instructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779655461523-8j5qc15i",
+      "timestamp": "2026-05-24T20:45:59.206Z"
+    }
+  ]
+}

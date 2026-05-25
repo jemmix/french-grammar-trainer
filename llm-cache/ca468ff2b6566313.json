@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ca468ff2b6566313",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-19-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-19 - Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « À peine ___-il quitté son bureau qu'il s'est rendu compte de son oubli. »\nChoices:\nA. [CORRECT] avait\nB. était\nC. aurait\nD. eut\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779664722606-qtid2yz1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the \"à peine...que\" construction with plus-que-parfait, requiring knowledge that \"quitter\" takes \"avoir\" as its auxiliary and that the structure demands the plus-que-parfait form (\"avait\" + past participle).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779665003439-j8tn6dwq",
+      "timestamp": "2026-05-24T23:23:42.641Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the \"à peine...que\" structure requiring plus-que-parfait; selecting the correct answer \"avait\" over \"eut\" (passé simple) and \"aurait\" (conditionnel) depends specifically on knowing that \"à peine\" triggers pluperfect tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779665677326-comq6i2j",
+      "timestamp": "2026-05-24T23:35:44.162Z"
+    }
+  ]
+}

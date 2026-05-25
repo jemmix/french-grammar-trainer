@@ -1,0 +1,33 @@
+{
+  "cacheKey": "19a98abe2dd64824",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-19-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À peine ___-on démarré qu'un accident a bloqué la route. »\n\nChoices:\nA. [CORRECT] avait\nB. [WRONG] était\nC. [WRONG] aurait\nD. [WRONG] avaient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779654791301-dlotide1"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779654823371-wvuqyg6l",
+      "timestamp": "2026-05-24T20:34:17.590Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached. I have completed the verification task for the French grammar question about \"à peine\" construction.\n\nSummary of work accomplished:\n- Analyzed the grammar question: \"À peine ___-on démarré qu'un accident a bloqué la route.\"\n- Evaluated all three wrong answers (B, C, D) against the grammatical constraints\n\nAnalysis findings:\n- B (était) is incorrect because \"démarrer\" takes \"avoir\" as auxiliary, not \"être\", and imparfait is not the right tense for this construction\n- C (aurait) is incorrect because it uses conditional mood, which doesn't match the passé composé in the second clause indicating a real past event\n- D (avaient) is incorrect because \"on\" requires singular agreement, not plural\n\nVERDICT: TRUE||All wrong answers are grammatically incorrect in this context.</think>TRUE||All wrong answers are incorrect: B uses wrong auxiliary \"être\" and wrong tense, C uses conditional instead of indicative, and D uses plural agreement incorrectly with \"on\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779655166701-6e1yxnd0",
+      "timestamp": "2026-05-24T20:39:49.124Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the wrong auxiliary verb (démarrer takes avoir in this context), C is in conditional instead of pluperfect, and D is plural form not agreeing with the singular subject \"on\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779655405123-rv84av8n",
+      "timestamp": "2026-05-24T20:46:43.018Z"
+    }
+  ]
+}

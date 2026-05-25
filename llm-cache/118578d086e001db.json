@@ -1,0 +1,26 @@
+{
+  "cacheKey": "118578d086e001db",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-19-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-19 - Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « À peine étiez-vous ___ qu'il a commencé à pleuvoir. »\nChoices:\nA. [CORRECT] partis\nB. restés\nC. parti\nD. arrivés\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779667780290-dxgzbrab"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question already provides the \"à peine...que\" structure and the auxiliary verb \"étiez-vous\" in the imperfect tense, so students only need to select a past participle based on vocabulary meaning and agreement with \"vous\"; this tests past participle formation and subject agreement, not whether they understand the rule governing when to use plus-que-parfait with \"à peine...que.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779667796625-p57yfp4o",
+      "timestamp": "2026-05-25T00:10:58.150Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests past participle agreement (choosing \"partis\" over \"parti\") and vocabulary selection (\"partis\" vs \"arrivés\"/\"restés\"), whereas the stated rule focuses on the tense selection (plus-que-parfait) required by \"à peine...que\", which is already enforced by the pre-filled auxiliary \"étiez\" in the prompt.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779667991783-7q73ou8m",
+      "timestamp": "2026-05-25T00:14:42.118Z"
+    }
+  ]
+}

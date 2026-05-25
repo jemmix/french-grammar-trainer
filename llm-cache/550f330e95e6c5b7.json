@@ -1,0 +1,33 @@
+{
+  "cacheKey": "550f330e95e6c5b7",
+  "predicateId": "french-language",
+  "questionId": "04-19-009",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION CONTENT:\nPrompt: Complétez : « À peine ___-elle reçu le colis qu'elle l'a ouvert. »\nChoices:\nA. [correct] avait\n   Explanation: « Avait-elle reçu » : PQP avec inversion. « Recevoir » prend « avoir ». La réception du colis est antérieure à l'ouverture.\nB. a\n   Explanation: « A-t-elle reçu » est le passé composé. Le PQP est requis après « à peine ».\nC. aurait\n   Explanation: « Aurait-elle reçu » est le conditionnel passé, qui exprime une hypothèse.\nD. aura\n   Explanation: « Aura-t-elle reçu » est le futur antérieur. Le contexte passé exige le PQP.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779669648032-1vsejgx8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, choices, explanations, and grammar terminology are all properly in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779670028811-hc786ggp",
+      "timestamp": "2026-05-25T00:47:53.525Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, choices, and explanations are entirely in French. The abbreviations used (PQP for plus-que-parfait) are French grammatical terminology. No English exceptions are applicable here since there is no English content at all.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779670331251-4dm2mkl8",
+      "timestamp": "2026-05-25T00:52:35.515Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nMaximum steps for this agent have been reached. I have completed the language validation task by examining all fields (prompt, choices, explanations) in the provided French grammar question about the plus-que-parfait. All content is appropriately in French, with no English translations or mixed language elements. The validation is complete and no further action is required for this specific question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779670630064-qp119urn",
+      "timestamp": "2026-05-25T00:57:33.790Z"
+    }
+  ]
+}

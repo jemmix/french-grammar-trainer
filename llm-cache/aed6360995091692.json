@@ -1,0 +1,26 @@
+{
+  "cacheKey": "aed6360995091692",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-19-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-19 - Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au plus-que-parfait.\nPhrase: À peine le conférencier avait-il ___ son discours qu'il a quitté la salle.\nCorrect Answer: fini\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779667780303-qtl4cyvr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\n\nREASON: The question only tests basic past participle conjugation of \"finir\" since the auxiliary \"avait\" is already provided; it does not test the \"à peine...que\" construction or when to use the plus-que-parfait in this specific context, as the student is explicitly told to conjugate in that tense rather than needing to recognize when it's required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779667874705-r6e2xvgo",
+      "timestamp": "2026-05-25T00:12:10.008Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only requires conjugating \"finir\" to the past participle \"fini\" since the auxiliary \"avait\" is already provided, so it tests knowledge of past participles rather than understanding when to use the plus-que-parfait specifically with the \"à peine...que\" construction.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779668049981-qqt3iw0v",
+      "timestamp": "2026-05-25T00:15:03.719Z"
+    }
+  ]
+}

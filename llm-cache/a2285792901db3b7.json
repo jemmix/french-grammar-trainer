@@ -1,0 +1,40 @@
+{
+  "cacheKey": "a2285792901db3b7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-19-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-19 - Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au plus-que-parfait.\nPhrase: À peine le train avait-il ___ qu'un incident a été signalé.\nCorrect Answer: démarré\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779667780302-kkx60dv7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the user to conjugate the verb in the plus-que-parfait, so the question tests only the formation of the past participle (\"démarré\") rather than the grammatical rule that \"à peine...que\" triggers the pluperfect tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779667836646-zh9jwf4u",
+      "timestamp": "2026-05-25T00:11:44.169Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"démarrer\" in the plus-que-parfait within the \"à peine...que\" construction, which is the exact grammar rule being tested, and the correct answer cannot be determined without understanding this specific structure.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779668024025-t4d2qeqz",
+      "timestamp": "2026-05-25T00:15:03.254Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question properly tests the plus-que-parfait tense within the \"à peine...que\" construction, requiring students to both recognize the grammatical pattern and conjugate the verb in the appropriate tense.\n\n---\n\nMaximum steps for this agent have been reached.\n\nSummary of work completed:\n- Analyzed the grammar question alignment with the stated rule\n- Evaluated whether the question about \"à peine le train avait-il ___ qu'un incident a été signalé\" tests the rule \"Le plus-que-parfait avec à peine...que\"\n- Determined that the question is aligned as it requires understanding both the \"à peine...que\" construction and the plus-que-parfait tense\n\nNo remaining tasks were pending for this validation work. The verdict has been provided according to the requested format.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779668135180-6v7r3hvo",
+      "timestamp": "2026-05-25T00:15:53.599Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence already provides the plus-que-parfait auxiliary (\"avait-il\"), so the question only tests whether the student knows the past participle of \"démarrer\" - basic conjugation knowledge - rather than understanding the \"à peine...que\" construction and its tense sequence requirements.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779668153599-qd4mskvm",
+      "timestamp": "2026-05-25T00:16:17.057Z"
+    }
+  ]
+}

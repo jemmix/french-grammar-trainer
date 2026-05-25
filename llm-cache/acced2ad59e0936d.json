@@ -1,0 +1,33 @@
+{
+  "cacheKey": "acced2ad59e0936d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-19-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À peine ___-elle reçu le colis qu'elle l'a ouvert. »\n\nChoices:\nA. [CORRECT] avait\nB. [WRONG] a\nC. [WRONG] aurait\nD. [WRONG] aura\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779668666679-4k3eogkl"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the grammatical requirements: B uses passé composé instead of required plus-que-parfait for temporal construction, C uses conditional tense which implies hypothetical situation not stated, D uses future tense incompatible with past action context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779668732476-pa6iuizt",
+      "timestamp": "2026-05-25T00:25:48.435Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for the \"À peine...que\" construction which requires plus-que-parfait.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779669007941-5f8w8dih",
+      "timestamp": "2026-05-25T00:30:23.037Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors - \"a\" is wrong tense (needs plus-que-parfait), \"aurait\" is conditional (inappropriate here), and \"aura\" is future (incompatible with the past context of the second clause).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779669349587-mxf80sp3",
+      "timestamp": "2026-05-25T00:36:57.176Z"
+    }
+  ]
+}
