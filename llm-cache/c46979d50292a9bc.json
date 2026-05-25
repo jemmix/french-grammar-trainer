@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c46979d50292a9bc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-03-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au futur simple : « Nous ___ nos efforts pour réussir. »\n\nChoices:\nA. [CORRECT] tendrons\nB. [WRONG] tendons\nC. [WRONG] tendions\nD. [WRONG] tendrions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779736302225-2j2q6g37"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are in different tenses (présent, imparfait, conditionnel) rather than the requested futur simple form for \"nous\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779736311257-h31lrokl",
+      "timestamp": "2026-05-25T19:12:26.222Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are in different tenses (présent, imparfait, conditionnel) and not in the requested futur simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779736575559-fk4u5o02",
+      "timestamp": "2026-05-25T19:16:34.906Z"
+    },
+    {
+      "raw": "The maximum number of steps allowed for this agent has been reached.\n\n**Summary of what has been accomplished so far:**\nThe agent received the validation request but was unable to begin processing the grammar verification of the French question regarding the verb \"tendre\" in the futur simple tense because the step limit was reached immediately upon loading the task.\n\n**List of any remaining tasks that were not completed:**\n- Evaluate the wrong answers (B, C, D) for the question \"Complétez au futur simple : « Nous ___ nos efforts pour réussir. »\"\n- Determine the VERDICT (TRUE, FALSE, or UNCLEAR) based on strict grammatical constraints.\n- Format the final response as: `VERDICT|letter1,letter2,...|explanation`\n\n**Recommendations for what should be done next:**\nRetry the validation task. Based on the prompt's requirement for the *futur simple*, the wrong answers are:\n- B: *tendons* (Présent)\n- C: *tendions* (Imparfait)\n- D: *tendrions* (Conditionnel)\n\nNone of these match the required tense, so the correct output should be `TRUE||All wrong answers use a different tense than the requested futur simple.`",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779736849306-p78q4fn9",
+      "timestamp": "2026-05-25T19:21:39.406Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8c77544a057f5a9c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-03-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-03 - Formation du futur simple des verbes en -re (infinitif sans e + terminaisons)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple : « Il ___ la bougie sur la table. »\nChoices:\nA. [CORRECT] mettra\nB. met\nC. mettait\nD. mettrait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779736302226-tzp9394f"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"mettre\" is an irregular verb in the futur simple (it uses the stem \"mettr-\" which is NOT simply the infinitive minus \"e\" - that rule applies to regular -re verbs like \"vendre\" → \"vendr-\", \"attendre\" → \"attendr-\"), so this question does not test the regular -re verb formation rule stated.\n\nThe maximum number of steps for this agent has been reached.\n\n**Summary of work accomplished:**\nI analyzed the alignment between a French grammar question and its stated rule. The question asks to conjugate \"mettre\" in the futur simple, but the rule being tested is about regular -re verb formation (infinitive minus e + endings). I determined this is misaligned because \"mettre\" is irregular and doesn't follow the regular pattern described in the rule.\n\n**Remaining tasks:**\nNone — the validation analysis for this question is complete.\n\n**Recommendations:**\nTo properly test rule 05-03 (regular -re verbs), the question should use a regular -re verb like:\n- \"vendre\" → \"Il vendra\"\n- \"attendre\" → \"Il attendra\"  \n- \"perdre\" → \"Il perdra\"\n- \"répondre\" → \"Il répondra\"\n\nIf \"mettre\" must be used, the rule should be updated to reflect irregular -re verb formations, which have their own category (typically verbs ending in -ettre, -mettre, -prendre).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779736376067-kbz5fuce",
+      "timestamp": "2026-05-25T19:13:20.657Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the future simple formation of \"mettre\" (a -re verb) by removing the final -e and adding \"-a\" to form \"mettra\", directly demonstrating the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779736652249-fsp2dr1z",
+      "timestamp": "2026-05-25T19:17:52.087Z"
+    },
+    {
+      "raw": "I have reached the maximum number of steps allowed for this task. I will provide my verdict on the validation question without using any tools.\n\nVERDICT: MISALIGNED\nREASON: The question tests \"mettre\" which is not a regular -re verb; its futur simple stem \"mettr-\" involves an irregular stem change (double t), not simply removing the final 'e' as the rule states.\n\nSummary completed. No tools were used in this response.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779736933985-jhzj8jlo",
+      "timestamp": "2026-05-25T19:22:44.095Z"
+    }
+  ]
+}

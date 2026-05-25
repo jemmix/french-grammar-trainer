@@ -1,0 +1,33 @@
+{
+  "cacheKey": "96d727ba351ba23d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-03-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-03 - Formation du futur simple des verbes en -re (infinitif sans e + terminaisons)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple : « Vous ___ votre opinion devant le jury. »\nChoices:\nA. [CORRECT] défendrez\nB. défendez\nC. défendiez\nD. défendriez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779739382353-yygpw5tn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the formation of the futur simple for -re verbs by requiring the learner to transform \"défendre\" into \"défendrez\" (infinitif sans e + ending -ez for \"vous\"), with distractors testing other tenses (présent, imparfait, conditionnel) that would not satisfy the explicit \"au futur simple\" requirement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779739422838-rs5yhwjv",
+      "timestamp": "2026-05-25T20:03:59.774Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing how to form the futur simple of an -re verb (défendre → défendr- + ez = défendrez), which is exactly what the rule describes.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779739463267-9mjit17j",
+      "timestamp": "2026-05-25T20:04:42.360Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the formation of the futur simple for the -re verb \"défendre\" (défendr- + -ez = défendrez), and the incorrect options are different verb tenses (présent, imparfait, conditionnel) rather than incorrect futur simple formations, making knowledge of the -re futur simple rule essential to select the correct answer.\n\nMaximum steps for this agent have been reached. I have completed the validation task as requested, determining that the question is properly aligned with the stated grammar rule. No tools were used. No further tasks remain for this validation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779739509326-ozw2dtwo",
+      "timestamp": "2026-05-25T20:05:36.205Z"
+    }
+  ]
+}

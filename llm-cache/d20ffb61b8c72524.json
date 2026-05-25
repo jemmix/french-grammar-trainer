@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d20ffb61b8c72524",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-03-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au futur simple : « Vous ___ un accord avant la fin du mois. »\n\nChoices:\nA. [CORRECT] conclurez\nB. [WRONG] concluez\nC. [WRONG] concluriez\nD. [WRONG] concluaient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779739382334-j68heryg"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use different tenses (présent, conditionnel, imparfait) rather than the required futur simple, making them incorrect in this context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779739388400-opaozvwg",
+      "timestamp": "2026-05-25T20:07:46.274Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different tenses or forms than the requested futur simple for the subject \"vous.\"",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779739666275-b66t1d0z",
+      "timestamp": "2026-05-25T20:07:55.990Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are in the wrong tense (B is présent, C is conditionnel présent, D is imparfait) and D also uses incorrect subject-verb agreement for \"vous\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779739675990-4nh5r8wx",
+      "timestamp": "2026-05-25T20:08:05.865Z"
+    }
+  ]
+}
