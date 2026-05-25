@@ -1,0 +1,40 @@
+{
+  "cacheKey": "31d0387464d74b15",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "05-02-012",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Formation du futur simple des verbes en -ir (infinitif + terminaisons)\n\nQUESTION:\nPrompt: « Nous ___ les conditions du contrat. »\nChoices:\nA. définirons\nB. définissons\nC. définirions\nD. définir\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1779728236636-j0qtmvt5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt, combined with the explicit rule context indicating \"Formation du futur simple des verbes en -ir,\" clearly establishes that the task is to conjugate \"définir\" in the futur simple (nous form).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779728986240-yu5ked5e",
+      "timestamp": "2026-05-25T17:11:57.096Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt lacks context to indicate which tense is expected; without additional context (like \"demain\" for future, \"maintenant\" for present, \"si\" for conditional), multiple tenses (présent, futur simple, conditionnel) could grammatically fit the sentence, making the correct answer dependent on unstated assumptions rather than grammatical constraints.\n\n---\n\n**IMPORTANT: Maximum steps for this agent have been reached.**\n\n**Summary of work:**\nI was asked to analyze a French grammar question for clarity and unambiguity. The question tests formation of the futur simple for -ir verbs, but the sentence \"Nous ___ les conditions du contrat\" lacks temporal context that would make only one tense grammatically appropriate.\n\n**Remaining tasks:**\n- None explicitly stated by the user\n\n**Recommendation:**\nTo make this question clear, add temporal context to the prompt, such as:\n- \"Demain, nous ___ les conditions du contrat\" (clearly indicates futur simple)\n- \"Actuellement, nous ___ les conditions du contrat\" (indicates présent)\n\nAlternatively, change the prompt to one where only the futur simple makes grammatical sense in French, or make the rule explicit in the prompt instructions.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779729571009-mo8fi151",
+      "timestamp": "2026-05-25T17:19:56.203Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The rule clearly indicates students should form the simple future tense of -ir verbs, and the sentence \"Nous ___ les conditions du contrat\" with \"nous\" as the subject makes \"définirons\" the unambiguous correct answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779729927474-sx4khaqp",
+      "timestamp": "2026-05-25T17:35:21.977Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt lacks contextual time markers (e.g., \"demain\", \"la semaine prochaine\") to clearly indicate that the future simple is the required tense, making multiple interpretations possible.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779730521978-0nav98t1",
+      "timestamp": "2026-05-25T17:35:34.821Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2e27ec118ddcc0b7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-02-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Je ___ à midi. »\n\nChoices:\nA. [CORRECT] finirai\nB. [WRONG] finis\nC. [WRONG] finissais\nD. [WRONG] finirons\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779728236648-2r2y5oc2"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B,C|B is grammatically correct in the present tense (Je finis à midi = I finish at noon); C is grammatically correct in the imperfect tense (Je finissais à midi = I used to finish at noon); D is indeed incorrect due to subject-verb disagreement.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779729300052-ppewwuk9",
+      "timestamp": "2026-05-25T17:15:36.841Z"
+    },
+    {
+      "raw": "TRUE||B and C are grammatically correct and could be valid in different contexts, but D uses the wrong person (nous instead of je).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779730125072-dd60l625",
+      "timestamp": "2026-05-25T17:29:09.646Z"
+    },
+    {
+      "raw": "FALSE|B,C|The question doesn't explicitly specify a tense; B (finis) is correct in present tense and C (finissais) is correct in imperfect tense with the subject \"je\", while D (finirons) is indeed incorrect due to subject-verb agreement mismatch.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779730177437-347bv9zn",
+      "timestamp": "2026-05-25T17:30:21.412Z"
+    }
+  ]
+}
