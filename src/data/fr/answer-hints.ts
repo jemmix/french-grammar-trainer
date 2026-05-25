@@ -872,6 +872,7 @@ export const answerHints: Record<string, string> = {
   "Remplissons": "remplir",
   "rempli": "remplir",
   "rencontre": "rencontrer",
+  "rencontrerons": "rencontrer",
   "rendait visite à": "rendre visite à",
   "rendu": "rendre",
   "Rentre": "rentrer",

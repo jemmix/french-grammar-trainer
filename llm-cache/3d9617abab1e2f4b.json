@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3d9617abab1e2f4b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-01-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au futur simple : « Tu ___ cette décision. »\n\nChoices:\nA. [CORRECT] regretteras\nB. [WRONG] regrettais\nC. [WRONG] regrettes\nD. [WRONG] regretterait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779722812095-hkcwuz7g"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\n- I was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ are indeed incorrect\n- The question asks to complete the sentence in the futur simple: \"Tu ___ cette décision.\"\n- I analyzed each wrong answer:\n  - B. \"regrettais\" is imparfait, not futur simple - incorrect ✓\n  - C. \"regrettes\" is présent, not futur simple - incorrect ✓\n  - D. \"regretterait\" is conditionnel (and 3rd person), not futur simple - incorrect ✓\n\nThe verdict would be: TRUE||All wrong answers use different tenses or persons than the requested futur simple.\n\nNo remaining tasks - the verification is complete.\n\nRecommendation for next steps:\nNo action needed - all wrong answers are grammatically incorrect within the stated constraints of the question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779722815123-70hsconq",
+      "timestamp": "2026-05-25T15:27:19.465Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different tenses (imparfait, présent, conditionnel) instead of the required futur simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779723141632-5s4xe2uo",
+      "timestamp": "2026-05-25T15:32:58.164Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for futur simple: B is imparfait, C is présent, and D is conditionnel (third person form for a second person subject).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779723475852-0yf3veog",
+      "timestamp": "2026-05-25T15:38:24.765Z"
+    }
+  ]
+}

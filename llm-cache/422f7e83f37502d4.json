@@ -1,0 +1,19 @@
+{
+  "cacheKey": "422f7e83f37502d4",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-01-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle ___ ses parents à la maison le weekend prochain. »\n\nChoices:\nA. [CORRECT] aidera\nB. [WRONG] aidait\nC. [WRONG] aide\nD. [WRONG] aiderait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779722102163-5jlvnbhk"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was evaluating whether the wrong answers (B, C, D) in the French grammar question are indeed incorrect. The question asks to complete the sentence \"Elle ___ ses parents à la maison le weekend prochain.\" (She ___ her parents at home next weekend.)\n\nBased on my analysis:\n- B (aidait - imperfect tense) is incorrect because the imperfect describes past habitual or ongoing actions, not future events.\n- D (aiderait - conditional tense) is incorrect because the conditional expresses hypothetical situations, not certain future actions.\n\nHowever, for C (aide - present tense), there is grammatical ambiguity. In French, the present tense can sometimes be used for future actions when a time marker is specified (e.g., \"Je pars demain\"). Whether C should be considered incorrect depends on whether the question explicitly restricts the answer to the simple future tense form.\n\nGiven this ambiguity, I was preparing to return: UNCLEAR||The question doesn't explicitly require the simple future tense, and French present tense can express future actions with time markers.\n\nRecommendation: The question should be revised to either (1) explicitly require the future tense in the prompt, or (2) remove or replace choice C with an option that is unambiguously incorrect (e.g., \"aidait\" with a different wrong answer).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779722300028-lcc43cj0",
+      "timestamp": "2026-05-25T15:19:49.356Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b33abcd47f5b589c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-01-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-01 - Formation du futur simple des verbes en -er (infinitif + -ai, -as, -a, -ons, -ez, -ont)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple : « Ils ___ des cadeaux à la fête. »\nChoices:\nA. [CORRECT] apporteront\nB. apportaient\nC. apportent\nD. apporteraient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779722812098-lmi5z7yu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question requires selecting the correct futur simple form (apporteront) for a regular -er verb with the \"ils\" subject, which directly tests the rule's pattern of infinitive + -ont.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779723047945-o7l50o0p",
+      "timestamp": "2026-05-25T15:31:13.870Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the futur simple formation rule for -er verbs (infinitif + -ont for ils/elles) to correctly select \"apporteront\" from the choices.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779723338262-padsb0en",
+      "timestamp": "2026-05-25T15:36:08.156Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the formation of futur simple for -er verbs (apporter + -ont for \"ils\") against other plausible tenses (imparfait, présent, conditionnel), requiring knowledge of the specific futur simple conjugation pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779723634418-7kgaol2r",
+      "timestamp": "2026-05-25T15:41:00.061Z"
+    }
+  ]
+}
