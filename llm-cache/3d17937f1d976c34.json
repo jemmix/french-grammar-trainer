@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3d17937f1d976c34",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-04-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-04 - Les futurs irréguliers courants : être (ser-), avoir (aur-), faire (fer-), aller (ir-)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « faire » au futur simple.\nPhrase: Il ___ son travail avec soin.\nCorrect Answer: fera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779741361389-lc0au8hq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"faire\" takes the irregular stem \"fer-\" in the futur simple to correctly form \"fera\", which is exactly what the rule covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779741540516-o6imq6qa",
+      "timestamp": "2026-05-25T20:39:25.423Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly requires knowing that \"faire\" has the irregular stem \"fer-\" in the futur simple to correctly conjugate it as \"fera\" for the third person singular, which is the core concept taught in this rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779741744510-0eecu49z",
+      "timestamp": "2026-05-25T20:42:38.764Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the irregular future conjugation of \"faire\" (one of the four irregular verbs specified in the rule) requiring knowledge that \"faire\" uses the stem \"fer-\" in the futur simple rather than following a regular conjugation pattern.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779741931693-dz3sbbma",
+      "timestamp": "2026-05-25T20:46:53.683Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8eadebdf0e0bced1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-04-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au futur simple : « Elle ___ raison si elle persiste dans ses efforts. »\n\nChoices:\nA. [CORRECT] aura\nB. [WRONG] a\nC. [WRONG] aurait\nD. [WRONG] avions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779741361387-8uq84uho"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: \"a\" is present tense, \"aurait\" is conditional mood, and \"avions\" is first-person plural, none of which satisfy the requirement to complete the sentence with \"avoir\" in the futur simple for the third-person singular subject \"Elle\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779741403925-zh1fhuvm",
+      "timestamp": "2026-05-25T20:37:02.792Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses (present, conditional, or imperfect) instead of the required futur simple, and D also uses the wrong person/number.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779741587388-qd7fg7yd",
+      "timestamp": "2026-05-25T20:40:10.060Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect because \"a\" is present tense, \"aurait\" is conditional tense, and \"avions\" is both the wrong tense (imperfect) and wrong person (first person plural) — none match the required future simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779741789858-vw1ksszm",
+      "timestamp": "2026-05-25T20:43:22.539Z"
+    }
+  ]
+}

@@ -1075,7 +1075,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « J'___ heureux de te revoir demain. »",
+      prompt: "Complétez au futur simple : « J'___ heureux de te revoir demain. »",
       choices: [
         { text: "serai", correct: true, explanation: "C'est le futur irrégulier du verbe « être » avec le radical « ser- » et la terminaison de 1ère personne du singulier « -ai »." },
         { text: "suis", correct: false, explanation: "C'est le présent du verbe « être », pas le futur. Le contexte « demain » indique le futur." },
@@ -1088,7 +1088,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu ___ d'accord avec cette décision quand tu la découvriras. »",
+      prompt: "Complétez au futur simple : « Tu ___ d'accord avec cette décision quand tu la découvriras. »",
       choices: [
         { text: "seras", correct: true, explanation: "C'est le futur irrégulier du verbe « être » avec le radical « ser- » et la terminaison de 2e personne du singulier « -as »." },
         { text: "es", correct: false, explanation: "C'est le présent du verbe « être ». La phrase parle d'une action future (« quand tu la découvriras »), donc il faut le futur." },
@@ -1101,7 +1101,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il ___ difficile de terminer ce projet à temps. »",
+      prompt: "Complétez au futur simple : « Il ___ difficile de terminer ce projet à temps. »",
       choices: [
         { text: "sera", correct: true, explanation: "C'est le futur irrégulier du verbe « être » avec le radical « ser- » et la terminaison de 3e personne du singulier « -a »." },
         { text: "est", correct: false, explanation: "C'est le présent du verbe « être ». Le contexte « à temps » (implicitement futur) demande le futur." },
@@ -1114,7 +1114,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ___ persuadés que vous réussirez. »",
+      prompt: "Complétez au futur simple : « Nous ___ persuadés que vous réussirez. »",
       choices: [
         { text: "serons", correct: true, explanation: "C'est le futur irrégulier du verbe « être » avec le radical « ser- » et la terminaison de 1ère personne du pluriel « -ons »." },
         { text: "sommes", correct: false, explanation: "C'est le présent du verbe « être ». Le contexte « que vous réussirez » (futur) indique qu'on parle d'une action future." },
@@ -1127,7 +1127,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ surpris par les résultats de l'examen. »",
+      prompt: "Complétez au futur simple : « Vous ___ surpris par les résultats de l'examen. »",
       choices: [
         { text: "serez", correct: true, explanation: "C'est le futur irrégulier du verbe « être » avec le radical « ser- » et la terminaison de 2e personne du pluriel « -ez »." },
         { text: "êtes", correct: false, explanation: "C'est le présent du verbe « être ». Il n'y a pas d'indication de temps présent dans le contexte, donc le futur est attendu." },
@@ -1140,7 +1140,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « J'___ besoin de tes conseils demain. »",
+      prompt: "Complétez au futur simple : « J'___ besoin de tes conseils demain. »",
       choices: [
         { text: "aurai", correct: true, explanation: "C'est le futur irrégulier du verbe « avoir » avec le radical « aur- » et la terminaison de 1ère personne du singulier « -ai »." },
         { text: "ai", correct: false, explanation: "C'est le présent du verbe « avoir ». Le contexte « demain » indique clairement le futur, pas le présent." },
@@ -1153,7 +1153,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu ___ une chance unique si tu saisis cette opportunité. »",
+      prompt: "Complétez au futur simple : « Tu ___ une chance unique si tu saisis cette opportunité. »",
       choices: [
         { text: "auras", correct: true, explanation: "C'est le futur irrégulier du verbe « avoir » avec le radical « aur- » et la terminaison de 2e personne du singulier « -as »." },
         { text: "as", correct: false, explanation: "C'est le présent du verbe « avoir ». La proposition conditionnelle « si tu saisis » indique qu'on parle d'une action future." },
@@ -1166,12 +1166,13 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle ___ raison si elle persiste dans ses efforts. »",
+      prompt: "Complétez au futur simple : « Elle ___ raison si elle persiste dans ses efforts. »",
       choices: [
         { text: "aura", correct: true, explanation: "C'est le futur irrégulier du verbe « avoir » avec le radical « aur- » et la terminaison de 3e personne du singulier « -a »." },
         { text: "a", correct: false, explanation: "C'est le présent du verbe « avoir ». Le contexte « si elle persiste » (condition future) demande le futur pour la conséquence." },
         { text: "aurait", correct: false, explanation: "C'est le conditionnel présent du verbe « avoir ». La structure « si + présent + futur » demande le futur simple, pas le conditionnel." },
-        { text: "avaroit", correct: false, explanation: "C'est une forme obsolète du français classique. En français moderne, le futur irrégulier de « avoir » est « aur- » + terminaisons régulières." },
+        { text: "sera", correct: false, explanation: "C'est le futur du verbe « être ». Il faut le verbe « avoir » (« avoir raison »), pas « être »." },
+        { text: "avions", correct: false, explanation: "C'est l'imparfait du verbe « avoir » à la 1ère personne du pluriel. Le contexte demande le futur à la 3e personne du singulier." },
       ],
     },
     {
@@ -1179,7 +1180,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ___ de la patience si nous voulons réussir. »",
+      prompt: "Complétez au futur simple : « Nous ___ de la patience si nous voulons réussir. »",
       choices: [
         { text: "aurons", correct: true, explanation: "C'est le futur irrégulier du verbe « avoir » avec le radical « aur- » et la terminaison de 1ère personne du pluriel « -ons »." },
         { text: "avons", correct: false, explanation: "C'est le présent du verbe « avoir ». Le contexte « si nous voulons » indique un temps futur ou hypothétique, pas le présent actuel." },
@@ -1192,7 +1193,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ tous les détails de notre plan la semaine prochaine. »",
+      prompt: "Complétez au futur simple : « Vous ___ tous les détails de notre plan la semaine prochaine. »",
       choices: [
         { text: "aurez", correct: true, explanation: "C'est le futur irrégulier du verbe « avoir » avec le radical « aur- » et la terminaison de 2e personne du pluriel « -ez »." },
         { text: "avez", correct: false, explanation: "C'est le présent du verbe « avoir ». L'adverbe « la semaine prochaine » indique clairement le futur, pas le présent." },
@@ -1205,7 +1206,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ un excellent dîner ce week-end. »",
+      prompt: "Complétez au futur simple : « Je ___ un excellent dîner ce week-end. »",
       choices: [
         { text: "ferai", correct: true, explanation: "C'est le futur irrégulier du verbe « faire » avec le radical « fer- » et la terminaison de 1ère personne du singulier « -ai »." },
         { text: "fais", correct: false, explanation: "C'est le présent du verbe « faire ». Le contexte « ce week-end » indique une action future, pas une action présente." },
@@ -1218,7 +1219,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu ___ connaissance avec les nouveaux membres de notre équipe. »",
+      prompt: "Complétez au futur simple : « Tu ___ connaissance avec les nouveaux membres de notre équipe. »",
       choices: [
         { text: "feras", correct: true, explanation: "C'est le futur irrégulier du verbe « faire » avec le radical « fer- » et la terminaison de 2e personne du singulier « -as »." },
         { text: "fais", correct: false, explanation: "C'est le présent du verbe « faire ». Il n'y a pas de contexte présent ; on parle d'une action future." },
@@ -1231,12 +1232,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il ___ tout ce qui est possible pour réussir. »",
+      prompt: "Complétez au futur simple : « Il ___ tout ce qui est possible pour réussir. »",
       choices: [
         { text: "fera", correct: true, explanation: "C'est le futur irrégulier du verbe « faire » avec le radical « fer- » et la terminaison de 3e personne du singulier « -a »." },
         { text: "fait", correct: false, explanation: "C'est le présent du verbe « faire ». Le contexte « pour réussir » indique une action future, pas une action présente ou habituelle." },
         { text: "ferait", correct: false, explanation: "C'est le conditionnel présent du verbe « faire ». La phrase demande le futur simple pour exprimer une détermination, pas une hypothèse." },
-        { text: "ferapera", correct: false, explanation: "C'est une double conjugaison erronée. Le radical « fer- » se combine avec une seule terminaison « -a », pas « -apera »." },
+        { text: "ferons", correct: false, explanation: "C'est le futur de « faire » à la 1ère personne du pluriel (nous). Pour « il », il faut « fera »." },
       ],
     },
     {
@@ -1244,7 +1245,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ___ de notre mieux pour que tout soit parfait. »",
+      prompt: "Complétez au futur simple : « Nous ___ de notre mieux pour que tout soit parfait. »",
       choices: [
         { text: "ferons", correct: true, explanation: "C'est le futur irrégulier du verbe « faire » avec le radical « fer- » et la terminaison de 1ère personne du pluriel « -ons »." },
         { text: "faisons", correct: false, explanation: "C'est le présent du verbe « faire ». Le contexte « pour que tout soit parfait » (intention future) demande le futur." },
@@ -1257,7 +1258,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ l'expérience la plus mémorable de votre vie. »",
+      prompt: "Complétez au futur simple : « Vous ___ l'expérience la plus mémorable de votre vie. »",
       choices: [
         { text: "ferez", correct: true, explanation: "C'est le futur irrégulier du verbe « faire » avec le radical « fer- » et la terminaison de 2e personne du pluriel « -ez »." },
         { text: "faites", correct: false, explanation: "C'est le présent du verbe « faire ». L'article indéfini « l'expérience... de votre vie » suggère un événement futur singulier, pas une habitude présente." },
@@ -1270,7 +1271,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « J'___ à Paris demain pour les affaires. »",
+      prompt: "Complétez au futur simple : « J'___ à Paris demain pour les affaires. »",
       choices: [
         { text: "irai", correct: true, explanation: "C'est le futur irrégulier du verbe « aller » avec le radical « ir- » et la terminaison de 1ère personne du singulier « -ai »." },
         { text: "vais", correct: false, explanation: "C'est le présent du verbe « aller ». Le contexte « demain » indique une action future, pas une action présente." },
@@ -1283,7 +1284,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu ___ chercher les enfants à l'école cet après-midi. »",
+      prompt: "Complétez au futur simple : « Tu ___ chercher les enfants à l'école cet après-midi. »",
       choices: [
         { text: "iras", correct: true, explanation: "C'est le futur irrégulier du verbe « aller » avec le radical « ir- » et la terminaison de 2e personne du singulier « -as »." },
         { text: "vas", correct: false, explanation: "C'est le présent du verbe « aller ». Le contexte « cet après-midi » indique une action future, pas une action présente." },
@@ -1296,12 +1297,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle ___ à la gare aussitôt que possible. »",
+      prompt: "Complétez au futur simple : « Elle ___ à la gare aussitôt que possible. »",
       choices: [
         { text: "ira", correct: true, explanation: "C'est le futur irrégulier du verbe « aller » avec le radical « ir- » et la terminaison de 3e personne du singulier « -a »." },
         { text: "va", correct: false, explanation: "C'est le présent du verbe « aller ». L'expression « aussitôt que possible » indique une action future, pas une action présente." },
         { text: "irait", correct: false, explanation: "C'est le conditionnel présent du verbe « aller ». La phrase demande le futur simple pour exprimer une intention, pas une hypothèse." },
-        { text: "allapera", correct: false, explanation: "C'est une double conjugaison erronée. Le radical « ir- » se combine avec une seule terminaison « -a », pas « -apera »." },
+        { text: "allera", correct: false, explanation: "C'est une application incorrecte du radical régulier « aller- ». Le futur irrégulier de « aller » utilise le radical « ir- », donc « ira »." },
       ],
     },
     {
@@ -1309,7 +1310,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ___ au musée samedi prochain si vous êtes intéressés. »",
+      prompt: "Complétez au futur simple : « Nous ___ au musée samedi prochain si vous êtes intéressés. »",
       choices: [
         { text: "irons", correct: true, explanation: "C'est le futur irrégulier du verbe « aller » avec le radical « ir- » et la terminaison de 1ère personne du pluriel « -ons »." },
         { text: "allons", correct: false, explanation: "C'est le présent du verbe « aller ». Le contexte « samedi prochain » indique clairement le futur, pas le présent." },
@@ -1322,7 +1323,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ partout en Europe l'année prochaine. »",
+      prompt: "Complétez au futur simple : « Vous ___ partout en Europe l'année prochaine. »",
       choices: [
         { text: "irez", correct: true, explanation: "C'est le futur irrégulier du verbe « aller » avec le radical « ir- » et la terminaison de 2e personne du pluriel « -ez »." },
         { text: "allez", correct: false, explanation: "C'est le présent du verbe « aller ». L'adverbe « l'année prochaine » indique clairement le futur, pas le présent." },
@@ -1362,7 +1363,7 @@ const section: Section = {
         { text: "as", explanation: "C'est le présent du verbe « avoir ». Le contexte « demain » indique le futur, pas le présent." },
         { text: "avait", explanation: "C'est l'imparfait du verbe « avoir ». Le contexte futur (« demain ») demande le futur simple." },
         { text: "aurais", explanation: "C'est le conditionnel du verbe « avoir ». La phrase exprime une certitude future, pas une hypothèse conditionnelle." },
-        { text: "avoieras", explanation: "C'est une application incorrecte du radical régulier « avoir- ». Le futur irrégulier de « avoir » utilise le radical « aur- »." },
+        { text: "aurez", explanation: "C'est le futur de « avoir » à la 2e personne du pluriel (vous). Pour « tu », il faut « auras » avec « -as »." },
         { text: "aurait", explanation: "C'est le conditionnel du verbe « avoir » à la 3e personne. La phrase demande le futur à la 2e personne du singulier." },
       ],
     },
@@ -1416,7 +1417,7 @@ const section: Section = {
         { text: "êtes", explanation: "C'est le présent du verbe « être ». La phrase exprime une vérité permanente future, donc il faut le futur." },
         { text: "étiez", explanation: "C'est l'imparfait du verbe « être ». Le contexte demande le futur, pas une situation passée." },
         { text: "seriez", explanation: "C'est le conditionnel du verbe « être ». La phrase affirme une certitude, pas une hypothèse conditionnelle." },
-        { text: "étrerez", explanation: "C'est une application incorrecte du radical régulier « être- ». Le futur irrégulier de « être » utilise le radical « ser- »." },
+        { text: "seront", explanation: "C'est le futur de « être » à la 3e personne du pluriel (ils). Pour « vous », il faut « serez » avec « -ez »." },
         { text: "seras", explanation: "C'est la 2e personne du singulier (tu) du futur de « être ». Pour « vous », il faut « serez »." },
       ],
     },
