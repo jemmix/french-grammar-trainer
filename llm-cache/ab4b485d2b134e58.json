@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ab4b485d2b134e58",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-20-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Nous avons réalisé que nous ___ nos clés à l'intérieur. »\n\nChoices:\nA. [CORRECT] avions oublié\nB. [WRONG] avons oublié\nC. [WRONG] oubliions\nD. [WRONG] aurions oublié\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779683336747-ah1cfcnf"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb tenses: B uses passé composé which places the forgetting after the realization, C uses imparfait which describes an ongoing state, and D uses conditional perfect which expresses a hypothetical situation rather than the actual past action of forgetting.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779683336766-b723wiw3",
+      "timestamp": "2026-05-25T04:29:40.452Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.\n\nMaximum steps for this agent have been reached.\n\nI have analyzed the French grammar question about completing the sentence \"Nous avons réalisé que nous ___ nos clés à l'intérieur.\" with four choices. I verified that all three wrong answers (B, C, D) are indeed incorrect based on French grammar rules:\n\n- B (avons oublié) incorrectly uses passé composé instead of the required imparfait after \"que\" following \"réalisé\"\n- C (oubliions) incorrectly omits the auxiliary \"avoir\" needed to form a compound tense\n- D (aurions oublié) incorrectly uses conditional present instead of the required imparfait\n\nThe correct answer (A - avions oublié) properly uses the imparfait after \"que\" following a verb in passé composé, which is the appropriate sequence of tenses in French.\n\nNo further tasks were pending as this was a standalone verification request.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779683380452-0wv7dy4s",
+      "timestamp": "2026-05-25T04:29:54.270Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that are not appropriate for expressing an action completed before another past action (plus-que-parfait context).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779683394271-xbj18vkj",
+      "timestamp": "2026-05-25T04:30:31.720Z"
+    }
+  ]
+}

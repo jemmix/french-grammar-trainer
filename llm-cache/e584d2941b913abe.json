@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e584d2941b913abe",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-20-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle ___ déjà trois fois en Italie avant ce voyage. »\n\nChoices:\nA. [CORRECT] était allée\nB. [WRONG] est allée\nC. [WRONG] allait\nD. [WRONG] serait allée\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779677912839-hmw9iduu"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't express an action completed before another past event as required by \"avant ce voyage\" and \"déjà\" - B uses passé composé for recent past, C uses imparfait for ongoing/habitual actions, and D uses conditionnel passé for hypothetical situations.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779678288007-4kpeodii",
+      "timestamp": "2026-05-25T03:05:34.038Z"
+    },
+    {
+      "raw": "TRUE||B (passé composé) is not the correct tense for anteriority to another past event, C (imparfait) is for ongoing/habitual actions, and D (conditionnel) is for hypothetical situations.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779678890172-zamym3uu",
+      "timestamp": "2026-05-25T03:17:43.626Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: passé composé (B) doesn't express anteriority to another past event, imparfait (C) doesn't convey a completed action with a specific count, and conditionnel passé (D) introduces hypothetical meaning that contradicts the factual context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779679748963-r4tty5q4",
+      "timestamp": "2026-05-25T03:29:56.877Z"
+    }
+  ]
+}

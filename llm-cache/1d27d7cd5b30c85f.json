@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1d27d7cd5b30c85f",
+  "predicateId": "french-language",
+  "questionId": "04-20-021",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Synthèse : choisir entre passé composé, imparfait et plus-que-parfait dans un récit\n\nQUESTION CONTENT:\nPrompt: Conjuguez le verbe au temps qui convient (passé composé, imparfait ou plus-que-parfait).\nPhrase: Quand je suis arrivé au cinéma, le film ___ déjà.\nAnswer: avait commencé\nHint: commencer\nExplanation: Le film avait déjà commencé avant l'arrivée. Le plus-que-parfait « avait commencé » marque cette antériorité par rapport au passé composé « suis arrivé ».\nWrong answers:\n  - a commencé (Le passé composé « a commencé » ne marque pas que le début du film précède l'arrivée. Il faut le plus-que-parfait pour exprimer l'antériorité.)\n  - commençait (L'imparfait « commençait » indiquerait que le film était en train de commencer au moment de l'arrivée, non qu'il avait déjà commencé. Le plus-que-parfait est nécessaire.)\n  - aurait commencé (Le conditionnel passé exprime une hypothèse, non un fait dans la chronologie du récit. Il faut le plus-que-parfait de l'indicatif.)\n  - aura commencé (Le futur antérieur situe l'action avant un repère futur, non avant un repère passé. Ici le contexte est entièrement passé.)\n  - avait commencer (Après l'auxiliaire dans un temps composé, on utilise le participe passé (commencé), jamais l'infinitif (commencer).)\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779680973131-gdd7c6nz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779681473049-6tcpzf6y",
+      "timestamp": "2026-05-25T03:58:11.989Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779682015716-rhtfk7ui",
+      "timestamp": "2026-05-25T04:07:26.346Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, phrase, answer, hint, and all explanations are properly in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779682299313-ye35aeif",
+      "timestamp": "2026-05-25T04:11:52.519Z"
+    }
+  ]
+}

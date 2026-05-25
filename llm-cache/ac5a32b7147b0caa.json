@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ac5a32b7147b0caa",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-20-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-20 - Synthèse : choisir entre passé composé, imparfait et plus-que-parfait dans un récit\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Paul était le candidat idéal : il ___ déjà un stage dans la même entreprise. »\nChoices:\nA. [CORRECT] avait fait\nB. a fait\nC. faisait\nD. aurait fait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779682959496-mrp4uek8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests choosing between passé composé, imparfait, and plus-que-parfait (plus conditionnel as an additional distractor), where the context \"il ___ déjà\" with the marker \"déjà\" and the sequence of past events requires understanding that the internship happened before the narrative timeframe.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779682960523-ppikkj1y",
+      "timestamp": "2026-05-25T04:22:53.552Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests choosing between past tenses in a narrative context — the \"déjà\" combined with the imparfait background (\"Paul était\") clearly requires the plus-que-parfait (\"avait fait\") to express an action completed before another past action, making the learner discriminate between all three tenses mentioned in the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779682973554-yrmq3pp0",
+      "timestamp": "2026-05-25T04:23:13.085Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: This question requires understanding when to use the plus-que-parfait to express an action that occurred before another past action (Paul having done an internship before being described as the ideal candidate), which is the core of the synthesis rule distinguishing between the three past tenses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779682993086-ug656kql",
+      "timestamp": "2026-05-25T04:24:02.127Z"
+    }
+  ]
+}

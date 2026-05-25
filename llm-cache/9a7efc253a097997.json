@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9a7efc253a097997",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-20-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « J'ai lu le livre que tu lui ___ l'année dernière. »\n\nChoices:\nA. [CORRECT] avais prêté\nB. [WRONG] as prêté\nC. [WRONG] prêtais\nD. [WRONG] aurais prêté\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779677912839-ns756h28"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers (B, C, D) contain clear grammar errors: C lacks the auxiliary verb required for compound tenses; D incorrectly uses the conditional mood instead of a past tense; B uses passé composé which doesn't properly establish the chronological relationship to the main clause (the lending happened before the reading, requiring plus-que-parfait).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779678293246-i9ktj4ew",
+      "timestamp": "2026-05-25T03:08:15.681Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect in the context of this specific question.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779678910454-vrw31x7g",
+      "timestamp": "2026-05-25T03:20:50.752Z"
+    },
+    {
+      "raw": "TRUE||As prêté incorrectly places the action as contemporaneous with the reading rather than prior; prêtais (imparfait) suggests ongoing/habitual action incompatible with the specific time reference; aurais prêté (conditionnel) introduces a hypothetical meaning not supported by the context.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779679758709-f5dy94cz",
+      "timestamp": "2026-05-25T03:30:11.316Z"
+    }
+  ]
+}

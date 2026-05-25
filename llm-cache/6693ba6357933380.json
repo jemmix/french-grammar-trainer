@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6693ba6357933380",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-20-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « À l'aéroport, Marc a compris qu'il ___ son vol. »\n\nChoices:\nA. [CORRECT] avait raté\nB. [WRONG] a raté\nC. [WRONG] ratait\nD. [WRONG] aurait raté\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779679693816-gws2eiaz"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: \"a raté\" (passé composé) doesn't express the anteriority required by \"a compris,\" \"ratlait\" is either misspelled or incorrectly conjugated, and \"aurait raté\" is conditional and doesn't fit the factual past context.\n\nMaximum steps for this agent have been reached. I have completed the verification of the French grammar question and provided the verdict in the requested format. No remaining tasks were pending. The task has been completed successfully with a text-only response as required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779679716034-kn50i9ja",
+      "timestamp": "2026-05-25T03:29:28.755Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Completed\n\nI was asked to verify that the wrong answers (B, C, D) for a French grammar MCQ question are indeed incorrect. The question asks to complete: « À l'aéroport, Marc a compris qu'il ___ son vol. »\n\nThe correct answer is A: \"avait raté\" (plus-que-parfait).\n\nAnalysis of each wrong answer:\n- **B. a raté** (passé composé) - Incorrect because the missing of the flight happened BEFORE the realization, requiring plus-que-parfait, not passé composé\n- **C. ratait** (imparfait) - Incorrect because this would mean \"was missing\" his flight (an ongoing action), not a completed action of having missed it\n- **D. aurait raté** (conditionnel passé) - Incorrect because there's no hypothetical/conditional element - it's a factual statement about a past event\n\nAll three wrong answers are grammatically incorrect within the context of the sentence, which requires plus-que-parfait to show a completed action (missing the flight) that occurred before another past action (realizing it).\n\n## Verdict\n\nTRUE||All wrong answers are grammatically incorrect because the context requires plus-que-parfait (event occurring before another past event). B uses passé composé (same time), C uses imparfait (ongoing), and D uses conditional (hypothetical).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779679926518-iyim2u69",
+      "timestamp": "2026-05-25T03:32:34.550Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the sequence of tenses rule for indirect discourse in French, where plus-que-parfait is required for actions completed prior to the main clause's past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779680021319-mmro0a3n",
+      "timestamp": "2026-05-25T03:34:10.886Z"
+    }
+  ]
+}
