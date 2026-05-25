@@ -1,0 +1,33 @@
+{
+  "cacheKey": "eac40afbcb86c6c8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-05-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au plus-que-parfait (négation ne...pas) : « Tu ___ ce secret. »\n\nChoices:\nA. [CORRECT] n'avais pas révélé\nB. [WRONG] avais pas révélé\nC. [WRONG] n'avais révélé pas\nD. [WRONG] ne avais pas révélé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779716231167-hh7pl7jc"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is missing the \"ne\" from negation, C has incorrect word order for negation (pas should come before the past participle), and D is missing the required elision (n'avais instead of ne avais).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779716237803-ftixc7dm",
+      "timestamp": "2026-05-25T13:38:10.785Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is missing the \"ne\" of the negation; C incorrectly places \"pas\" after the past participle; D is missing the required elision before \"avais\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779716323217-xc0yzrtw",
+      "timestamp": "2026-05-25T13:38:58.374Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is missing the \"ne\" required by the negation ne...pas, C places \"pas\" after the past participle instead of the auxiliary verb, and D is missing the required elision in \"n'avais\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779716338374-i3mavtuf",
+      "timestamp": "2026-05-25T13:39:16.440Z"
+    }
+  ]
+}

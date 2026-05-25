@@ -1,0 +1,33 @@
+{
+  "cacheKey": "47df31ea63e67723",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-06-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le plus-que-parfait\n\nRULE BEING TESTED: 04-06 - Le plus-que-parfait pour exprimer une action antérieure à une autre action passée\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la forme correcte : « Il a refusé le plat parce qu'il ___ végétarien il y a longtemps. »\nChoices:\nA. [CORRECT] était devenu\nB. devenait\nC. est devenu\nD. serait devenu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779716231213-89i9bvet"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question requires understanding that becoming vegetarian (the earlier action) must be expressed in plus-que-parfait because it occurred before refusing the dish (the later past action), which is the core function of the rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779716249224-i388yuw0",
+      "timestamp": "2026-05-25T13:37:51.532Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the plus-que-parfait because choosing \"était devenu\" requires understanding that becoming vegetarian happened before refusing the dish (passé composé), which is exactly the temporal relationship the rule addresses.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779716277917-t35kztf7",
+      "timestamp": "2026-05-25T13:40:28.940Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that becoming vegetarian occurred before refusing the dish, which is exactly what the plus-que-parfait expresses—an action anterior to another past action.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779716428940-49cnbcx5",
+      "timestamp": "2026-05-25T13:40:51.293Z"
+    }
+  ]
+}

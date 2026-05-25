@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7349926b999fb73c",
+  "predicateId": "french-language",
+  "questionId": "04-04-006",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le plus-que-parfait des verbes pronominaux\n\nQUESTION CONTENT:\nPrompt: Complétez au plus-que-parfait : « Avant le dîner, elle ___ les mains. » (verbe : se laver)\nChoices:\nA. [correct] s'était lavé les mains\n   Explanation: « Se laver les mains » au plus-que-parfait : « les mains » est COD (placé après), donc « se » est COI et le participe reste invariable : s'était lavé les mains.\nB. s'était lavée les mains\n   Explanation: Comme « les mains » est le COD placé après le verbe, « se » est COI et le participe ne s'accorde pas : lavé (invariable), pas lavée.\nC. s'avait lavé les mains\n   Explanation: Les verbes pronominaux utilisent l'auxiliaire « être », pas « avoir ». Il faut « s'était lavé les mains ».\nD. avait lavé les mains\n   Explanation: Sans pronom réfléchi, la forme « avait lavé les mains » n'est pas pronominale. Pour « se laver », il faut le pronom « se » : s'était lavé les mains.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779707841124-lwybu9p7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779709057386-mbbjtzpo",
+      "timestamp": "2026-05-25T11:37:54.705Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, choices, explanations, and context are entirely in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779711322537-j34tzjlc",
+      "timestamp": "2026-05-25T12:15:49.478Z"
+    },
+    {
+      "raw": "**Maximum steps for this agent have been reached.**\n\n## Summary of Work Done\nI was tasked with validating whether the question content for the rule \"Le plus-que-parfait des verbes pronominaux\" is appropriately in French. I reviewed all content fields:\n\n- **Prompt**: \"Complétez au plus-que-parfait : « Avant le dîner, elle ___ les mains. » (verbe : se laver)\" — French ✓\n- **Choice A (correct)**: \"s'était lavé les mains\" with explanation about COD/COI agreement — French ✓\n- **Choice B**: \"s'était lavée les mains\" with explanation about invariable participle — French ✓\n- **Choice C**: \"s'avait lavé les mains\" with explanation about auxiliary \"être\" — French ✓\n- **Choice D**: \"avait lavé les mains\" with explanation about pronominal form — French ✓\n\n## Validation Verdict\nVERDICT: FRENCH\nREASON: All content is in French with no English detected. All prompts, choices, and explanations are written entirely in French, appropriate for the target language of the application.\n\n## Remaining Tasks\nNone — the validation for this question is complete.\n\n## Recommendations\nThis question passes language validation. It can proceed to the next stage of the workflow (commit/push).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779713683063-yxc2gn1q",
+      "timestamp": "2026-05-25T12:55:13.137Z"
+    }
+  ]
+}

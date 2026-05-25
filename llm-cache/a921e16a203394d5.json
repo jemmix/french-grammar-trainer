@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a921e16a203394d5",
+  "predicateId": "french-language",
+  "questionId": "04-19-024",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le plus-que-parfait avec à peine...que (à peine était-il arrivé qu'il repartit)\n\nQUESTION CONTENT:\nPrompt: Conjuguez le verbe « envoyer » au temps qui convient dans la construction « à peine…que » (sujet : les invitations).\nPhrase: À peine les invitations ___ que les réponses ont afflué.\nAnswer: avaient été envoyées\nHint: envoyer\nExplanation: « Avaient été envoyées » : PQP passif avec « être ». « Envoyer » au passif prend « être ». Accord au féminin pluriel : « envoyées ».\nWrong answers:\n  - étaient envoyées (« Étaient envoyées » est l'imparfait passif, qui ne marque pas l'antériorité. Le PQP est requis.)\n  - ont été envoyées (« Ont été envoyées » est le passé composé passif. Le PQP est requis pour l'antériorité.)\n  - auraient été envoyées (« Auraient été envoyées » est le conditionnel passé, qui exprime une hypothèse.)\n  - avaient envoyées (« Avaient envoyées » est la voix active. Le passif est requis ici car les invitations sont le sujet patient.)\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779718671062-hzx079hf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. All fields (prompt, phrase, answer, hint, explanation, and wrong answers) are entirely in French, with no English that would violate the language policy.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779718894687-vk4m3oib",
+      "timestamp": "2026-05-25T14:21:50.611Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, phrase, answer, hint, explanation, and all wrong answer explanations are entirely in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779718923396-8wf795yh",
+      "timestamp": "2026-05-25T14:22:22.189Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779718942190-wzao36zk",
+      "timestamp": "2026-05-25T14:22:44.891Z"
+    }
+  ]
+}

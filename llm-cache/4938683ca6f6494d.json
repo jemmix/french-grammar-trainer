@@ -1,0 +1,40 @@
+{
+  "cacheKey": "4938683ca6f6494d",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "04-19-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Conjuguez le verbe « envoyer » au temps qui convient dans la construction « à peine…que » (sujet : les invitations).\n\nPHRASE: À peine les invitations ___ que les réponses ont afflué.\n\nHINT: envoyer\n\nEXPECTED ANSWER: avaient été envoyées\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1779718671062-645i6l8z"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached. I have completed the validation analysis of the INPUT question as requested.\n\n**Summary of work completed:**\n- Analyzed the self-contained nature of the INPUT question about conjugating \"envoyer\" in the \"à peine...que\" construction\n- Evaluated whether the prompt, phrase, and hint together provide sufficient information for a learner to determine what to input without seeing the answer\n- Determined the question meets the SELF-CONTAINED criteria\n\n**Validation result:**\nVERDICT: SELF-CONTAINED\nREASON: The prompt clearly identifies the verb to conjugate (\"envoyer\"), specifies the subject (\"les invitations\"), indicates the grammatical construction (\"à peine...que\"), and the phrase provides context showing a past tense in the second clause, which together clearly signal that the plus-que-parfait passive form is required.\n\n**No remaining tasks** - this was a single-question validation request and it has been completed.\n\n**Recommendation:** This question can be considered valid for inclusion in the French grammar training content.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779718882051-ysst36g4",
+      "timestamp": "2026-05-25T14:22:18.427Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\n\nREASON: The prompt clearly identifies the verb to conjugate (\"envoyer\"), specifies the grammatical construction (\"à peine…que\"), identifies the subject (\"les invitations\"), and the context of the second clause (\"que les réponses ont afflué\") in passé composé makes it inferable that the plus-que-parfait passive form is required.\n\nThe learner can determine what to input without seeing the answer because the grammatical pattern is clearly indicated by the temporal construction and the tense of the second clause.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779718938455-ztxt489c",
+      "timestamp": "2026-05-25T14:23:17.313Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\n\nREASON: The prompt does not explicitly state whether to use the active or passive voice, which might lead learners to conjugate the verb in the active voice (\"avaient envoyé\") rather than the passive voice (\"avaient été envoyées\") that is marked as correct.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779718997313-ayou3lef",
+      "timestamp": "2026-05-25T14:24:18.395Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\n\nREASON: The prompt says \"conjuguez\" which typically implies active voice conjugation, but the expected answer \"avaient été envoyées\" is in passive voice, and the prompt doesn't explicitly specify \"voix passive\" or indicate that passive voice is required.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779719058397-k42qksil",
+      "timestamp": "2026-05-25T14:25:18.030Z"
+    }
+  ]
+}

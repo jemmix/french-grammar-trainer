@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8a91db8f57750146",
+  "predicateId": "french-language",
+  "questionId": "04-02-015",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le choix de l'auxiliaire avoir ou être au plus-que-parfait\n\nQUESTION CONTENT:\nPrompt: Choisissez la forme correcte du plus-que-parfait : « Il ___ sans dire un mot. » (sortir)\nChoices:\nA. [correct] était sorti\n   Explanation: « Sortir » employé intransitivement (sans COD, indiquant un déplacement) prend l'auxiliaire être. Au plus-que-parfait : « il était sorti ».\nB. avait sorti\n   Explanation: « Sortir » prend l'auxiliaire avoir uniquement quand il est transitif avec un COD (ex. : « il avait sorti les poubelles »). Ici, pas de COD, donc l'auxiliaire est être.\nC. est sorti\n   Explanation: « Est sorti » est du passé composé (être au présent), pas du plus-que-parfait. Il faut l'imparfait : « était sorti ».\nD. sortait\n   Explanation: « Sortait » est de l'imparfait de l'indicatif, pas du plus-que-parfait.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779707841066-tpbe46ss"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, choices, explanations, and phrase context are entirely in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779708517019-sl4iuo9p",
+      "timestamp": "2026-05-25T11:28:50.032Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779710667678-sdm8g6ig",
+      "timestamp": "2026-05-25T12:05:17.338Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, all choices, and all explanations are properly written in French using correct grammatical terminology (intransitivement, COD, imparfait, passé composé, plus-que-parfait).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779712991291-nq7579ua",
+      "timestamp": "2026-05-25T12:43:40.579Z"
+    }
+  ]
+}
