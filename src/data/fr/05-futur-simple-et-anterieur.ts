@@ -1426,7 +1426,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ venir demain. »",
+      prompt: "Complétez au futur simple : « Je ___ venir demain. »",
       choices: [
         { text: "pourrai", correct: true, explanation: "Futur simple du verbe « pouvoir » à la 1ère personne du singulier. Le radical irrégulier « pourr- » + terminaison « -ai »." },
         { text: "pourrais", correct: false, explanation: "C'est la forme du conditionnel présent (avec la terminaison « -ais »), pas le futur simple." },
@@ -1439,7 +1439,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu ___ me raconter la vérité. »",
+      prompt: "Complétez au futur simple : « Tu ___ me raconter la vérité. »",
       choices: [
         { text: "pourras", correct: true, explanation: "Futur simple du verbe « pouvoir » à la 2e personne du singulier. Le radical irrégulier « pourr- » + terminaison « -as »." },
         { text: "pourrais", correct: false, explanation: "C'est la forme du conditionnel (2e personne singulier), pas le futur simple." },
@@ -1452,7 +1452,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il ___ réussir cet examen sans difficulté. »",
+      prompt: "Complétez au futur simple : « Il ___ réussir cet examen sans difficulté. »",
       choices: [
         { text: "pourra", correct: true, explanation: "Futur simple du verbe « pouvoir » à la 3e personne du singulier. Le radical irrégulier « pourr- » + terminaison « -a »." },
         { text: "peut", correct: false, explanation: "C'est la forme du présent indicatif, pas le futur simple." },
@@ -1465,7 +1465,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ___ participer à la fête samedi. »",
+      prompt: "Complétez au futur simple : « Nous ___ participer à la fête samedi. »",
       choices: [
         { text: "pourrons", correct: true, explanation: "Futur simple du verbe « pouvoir » à la 1ère personne du pluriel. Le radical irrégulier « pourr- » + terminaison « -ons »." },
         { text: "pourrions", correct: false, explanation: "C'est la forme du conditionnel (1ère personne pluriel), pas le futur simple." },
@@ -1478,7 +1478,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ m'aider avec ce problème ? »",
+      prompt: "Complétez au futur simple : « Vous ___ m'aider avec ce problème ? »",
       choices: [
         { text: "pourrez", correct: true, explanation: "Futur simple du verbe « pouvoir » à la 2e personne du pluriel. Le radical irrégulier « pourr- » + terminaison « -ez »." },
         { text: "pouvez", correct: false, explanation: "C'est la forme du présent indicatif à la 2e personne du pluriel, pas le futur simple." },
@@ -1491,10 +1491,10 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ partir en vacances cet été. »",
+      prompt: "Complétez au futur simple : « Je ___ partir en vacances cet été. »",
       choices: [
-        { text: "voudrais", correct: true, explanation: "Attendez, la question demande « Je ___ partir... cet été » qui est clairement du futur. La réponse correcte est « voudrai ». Futur simple du verbe « vouloir » à la 1ère personne du singulier. Le radical irrégulier « voudr- » + terminaison « -ai »." },
-        { text: "voudrai", correct: false, explanation: "C'est la bonne réponse ! Futur simple du verbe « vouloir » à la 1ère personne du singulier." },
+        { text: "voudrai", correct: true, explanation: "Futur simple du verbe « vouloir » à la 1ère personne du singulier. Le radical irrégulier « voudr- » + terminaison « -ai »." },
+        { text: "voudrais", correct: false, explanation: "C'est le conditionnel présent (terminaison « -ais »), pas le futur simple (terminaison « -ai »)." },
         { text: "veux", correct: false, explanation: "C'est la forme du présent indicatif, pas le futur simple." },
         { text: "voudront", correct: false, explanation: "C'est la 3e personne du pluriel du futur simple, pas la 1ère personne du singulier." },
       ],
@@ -1504,7 +1504,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu ___ apprendre le français plus rapidement si tu pratiques. »",
+      prompt: "Complétez au futur simple : « Tu ___ apprendre le français, j'en suis sûr. »",
       choices: [
         { text: "voudras", correct: true, explanation: "Futur simple du verbe « vouloir » à la 2e personne du singulier. Le radical irrégulier « voudr- » + terminaison « -as »." },
         { text: "voudrais", correct: false, explanation: "C'est la forme du conditionnel présent (2e personne singulier), pas le futur simple." },
@@ -1517,7 +1517,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle ___ devenir médecin. »",
+      prompt: "Complétez au futur simple : « Elle ___ devenir médecin. »",
       choices: [
         { text: "voudra", correct: true, explanation: "Futur simple du verbe « vouloir » à la 3e personne du singulier. Le radical irrégulier « voudr- » + terminaison « -a »." },
         { text: "voudrait", correct: false, explanation: "C'est la forme du conditionnel (3e personne singulier), pas le futur simple." },
@@ -1530,7 +1530,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ___ rester ici pour les vacances. »",
+      prompt: "Complétez au futur simple : « Nous ___ rester ici pour les vacances. »",
       choices: [
         { text: "voudrons", correct: true, explanation: "Futur simple du verbe « vouloir » à la 1ère personne du pluriel. Le radical irrégulier « voudr- » + terminaison « -ons »." },
         { text: "voudriez", correct: false, explanation: "C'est la forme du conditionnel à la 2e personne du pluriel, pas le futur à la 1ère personne du pluriel." },
@@ -1543,7 +1543,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ accepter cette invitation ? »",
+      prompt: "Complétez au futur simple (verbe vouloir) : « Vous ___ accepter cette invitation, j'espère. »",
       choices: [
         { text: "voudrez", correct: true, explanation: "Futur simple du verbe « vouloir » à la 2e personne du pluriel. Le radical irrégulier « voudr- » + terminaison « -ez »." },
         { text: "voudriez", correct: false, explanation: "C'est la forme du conditionnel à la 2e personne du pluriel, pas le futur simple." },
@@ -1556,7 +1556,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ prendre cette décision plus tard. »",
+      prompt: "Complétez au futur simple : « Je ___ prendre cette décision plus tard. »",
       choices: [
         { text: "devrai", correct: true, explanation: "Futur simple du verbe « devoir » à la 1ère personne du singulier. Le radical irrégulier « devr- » + terminaison « -ai »." },
         { text: "devrais", correct: false, explanation: "C'est la forme du conditionnel présent (1ère personne singulier), pas le futur simple." },
@@ -1569,7 +1569,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu ___ finir tes devoirs avant de sortir. »",
+      prompt: "Complétez au futur simple : « Tu ___ finir tes devoirs avant de sortir, c'est obligatoire. »",
       choices: [
         { text: "devras", correct: true, explanation: "Futur simple du verbe « devoir » à la 2e personne du singulier. Le radical irrégulier « devr- » + terminaison « -as »." },
         { text: "devrais", correct: false, explanation: "C'est la forme du conditionnel (2e personne singulier), pas le futur simple." },
@@ -1582,7 +1582,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il ___ faire preuve de respect envers ses aînés. »",
+      prompt: "Complétez au futur simple : « Il ___ faire preuve de respect envers ses aînés. »",
       choices: [
         { text: "devra", correct: true, explanation: "Futur simple du verbe « devoir » à la 3e personne du singulier. Le radical irrégulier « devr- » + terminaison « -a »." },
         { text: "devrait", correct: false, explanation: "C'est la forme du conditionnel (3e personne singulier), pas le futur simple." },
@@ -1595,7 +1595,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ___ retourner chez nous avant minuit. »",
+      prompt: "Complétez au futur simple : « Nous ___ retourner chez nous avant minuit. »",
       choices: [
         { text: "devrons", correct: true, explanation: "Futur simple du verbe « devoir » à la 1ère personne du pluriel. Le radical irrégulier « devr- » + terminaison « -ons »." },
         { text: "devrions", correct: false, explanation: "C'est la forme du conditionnel (1ère personne pluriel), pas le futur simple." },
@@ -1608,7 +1608,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ remplir ce formulaire avant la fin du mois. »",
+      prompt: "Complétez au futur simple : « Vous ___ remplir ce formulaire, c'est obligatoire. »",
       choices: [
         { text: "devrez", correct: true, explanation: "Futur simple du verbe « devoir » à la 2e personne du pluriel. Le radical irrégulier « devr- » + terminaison « -ez »." },
         { text: "devriez", correct: false, explanation: "C'est la forme du conditionnel à la 2e personne du pluriel, pas le futur simple." },
@@ -1621,7 +1621,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ bientôt la réponse à cette question. »",
+      prompt: "Complétez au futur simple : « Je ___ bientôt la réponse à cette question. »",
       choices: [
         { text: "saurai", correct: true, explanation: "Futur simple du verbe « savoir » à la 1ère personne du singulier. Le radical irrégulier « saur- » + terminaison « -ai »." },
         { text: "saurais", correct: false, explanation: "C'est la forme du conditionnel présent (1ère personne singulier), pas le futur simple." },
@@ -1634,7 +1634,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu ___ nager correctement après quelques leçons. »",
+      prompt: "Complétez au futur simple : « Tu ___ nager correctement après quelques leçons. »",
       choices: [
         { text: "sauras", correct: true, explanation: "Futur simple du verbe « savoir » à la 2e personne du singulier. Le radical irrégulier « saur- » + terminaison « -as »." },
         { text: "saurais", correct: false, explanation: "C'est la forme du conditionnel (2e personne singulier), pas le futur simple." },
@@ -1647,7 +1647,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle ___ tous les détails du projet demain. »",
+      prompt: "Complétez au futur simple : « Elle ___ tous les détails du projet demain. »",
       choices: [
         { text: "saura", correct: true, explanation: "Futur simple du verbe « savoir » à la 3e personne du singulier. Le radical irrégulier « saur- » + terminaison « -a »." },
         { text: "saurait", correct: false, explanation: "C'est la forme du conditionnel (3e personne singulier), pas le futur simple." },
@@ -1660,12 +1660,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ résoudre ce problème ensemble. »",
+      prompt: "Complétez au futur simple : « Vous ___ la réponse à cette énigme. »",
       choices: [
         { text: "saurez", correct: true, explanation: "Futur simple du verbe « savoir » à la 2e personne du pluriel. Le radical irrégulier « saur- » + terminaison « -ez »." },
         { text: "sauriez", correct: false, explanation: "C'est la forme du conditionnel à la 2e personne du pluriel, pas le futur simple." },
         { text: "savez", correct: false, explanation: "C'est la forme du présent indicatif à la 2e personne du pluriel, pas le futur simple." },
-        { text: "voudrez", correct: false, explanation: "C'est le futur simple du verbe « vouloir », pas « savoir ». Les deux verbes ont des radicaux différents." },
+        { text: "connaîtrez", correct: false, explanation: "C'est une confusion avec le verbe « connaître ». « Savoir » (connaissance acquise) a le radical « saur- » au futur." },
       ],
     },
     {
@@ -1748,7 +1748,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ___ construire ce bâtiment en deux ans. »",
+      prompt: "Complétez au futur simple : « Nous ___ la vérité bientôt. »",
       choices: [
         { text: "saurons", correct: true, explanation: "Futur simple du verbe « savoir » à la 1ère personne du pluriel. Le radical irrégulier « saur- » + terminaison « -ons »." },
         { text: "saurions", correct: false, explanation: "C'est la forme du conditionnel (1ère personne pluriel), pas le futur simple." },
@@ -1771,7 +1771,7 @@ const section: Section = {
         { text: "pourrait", explanation: "C'est le conditionnel présent. Il utilise le même radical que le futur (pourr-) mais avec la terminaison -ait au lieu de -a." },
         { text: "pouvait", explanation: "C'est l'imparfait. Le futur simple exige les terminaisons -ai, -as, -a, -ons, -ez, -ont." },
         { text: "pourrais", explanation: "C'est le conditionnel à la 1ère personne du singulier (je), pas la 3e personne du singulier au futur." },
-        { text: "pourvoir", explanation: "Ce n'est pas une forme de « pouvoir ». L'infinitif de « pouvoir » ne prend pas de -v-." },
+        { text: "pourras", explanation: "C'est la 2e personne du singulier du futur simple (tu), pas la 3e personne du singulier (il/elle)." },
       ],
     },
     {

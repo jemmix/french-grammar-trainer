@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4a1cdb1fc429f2bf",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-05-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au futur simple : « Nous ___ rester ici pour les vacances. »\n\nChoices:\nA. [CORRECT] voudrons\nB. [WRONG] voudriez\nC. [WRONG] voudrions\nD. [WRONG] voulons\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779744358716-u6kjrcag"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use either the wrong tense (conditional or present instead of futur simple) or the wrong person (vous instead of nous).",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779744422245-2k492cde",
+      "timestamp": "2026-05-25T21:27:21.627Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779744658271-in4lxs1j",
+      "timestamp": "2026-05-25T21:31:12.270Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to satisfy the grammatical constraint: B uses the conditional form for \"vous\", C uses the conditional form for \"nous\", and D uses the present indicative form for \"nous\" instead of the required simple future tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779744881427-jb053p1i",
+      "timestamp": "2026-05-25T21:34:54.056Z"
+    }
+  ]
+}

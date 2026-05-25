@@ -1,0 +1,33 @@
+{
+  "cacheKey": "46e6c1e1085f3276",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-05-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au futur simple : « Vous ___ la réponse à cette énigme. »\n\nChoices:\nA. [CORRECT] saurez\nB. [WRONG] sauriez\nC. [WRONG] savez\nD. [WRONG] connaîtrez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779746677218-d5f4n1de"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is the conditional form, C is the present tense, and D uses \"connaître\" which means to be familiar with someone/something rather than knowing information like an answer.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779746699921-73arcq1e",
+      "timestamp": "2026-05-25T22:05:22.227Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers either use the wrong tense (B, C), the wrong verb (D), or both, which violates the constraint to use the futur simple tense of \"savoir\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779746761872-97usbn43",
+      "timestamp": "2026-05-25T22:07:05.149Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors within the specified context (futur simple) - B is conditionnel présent, C is présent indicatif, and D uses a different verb entirely.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779746840933-xu408gjl",
+      "timestamp": "2026-05-25T22:08:09.929Z"
+    }
+  ]
+}
