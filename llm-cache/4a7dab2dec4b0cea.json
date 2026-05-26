@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4a7dab2dec4b0cea",
+  "predicateId": "french-language",
+  "questionId": "05-06-018",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Les futurs irréguliers : venir (viendr-), tenir (tiendr-), voir (verr-), envoyer (enverr-)\n\nQUESTION CONTENT:\nPrompt: Complétez au futur simple : « Nous ___ un message demain matin. »\nChoices:\nA. [correct] enverrons\n   Explanation: Le futur de « envoyer » à la 1ère personne du pluriel est « enverrons », formé avec le radical irrégulier « enverr- ».\nB. envoyons\n   Explanation: C'est le présent à la 1ère personne du pluriel (ou l'impératif), pas le futur.\nC. enverrions\n   Explanation: C'est le conditionnel, pas le futur simple.\nD. envoyerons\n   Explanation: C'est une mauvaise application du pattern régulier.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779805969271-0gdpgl1i"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, choices, explanations, and phrase context are all written entirely in French, following the language policy for the application interface and grammar content.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779806261987-vbyest14",
+      "timestamp": "2026-05-26T14:37:59.697Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt \"Complétez au futur simple\", all choices (enverrons, envoyons, enverrions, envoyerons), and their explanations are entirely in French. While \"pattern\" in choice D's explanation is technically an English loanword, it is commonly used in French linguistic contexts and doesn't violate the language policy since it's not providing instruction or pedagogical content in English.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779806798442-riqcodwk",
+      "timestamp": "2026-05-26T14:47:04.997Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779807326092-41tayjp2",
+      "timestamp": "2026-05-26T14:55:40.210Z"
+    }
+  ]
+}
