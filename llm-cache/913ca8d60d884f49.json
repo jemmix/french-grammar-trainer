@@ -1,0 +1,26 @@
+{
+  "cacheKey": "913ca8d60d884f49",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-07-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-07 - Les futurs irréguliers : courir (courr-), mourir (mourr-), acquérir (acquerr-)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple : « Ils ___ le relais en dix secondes. »\nChoices:\nA. [CORRECT] courront\nB. couriront\nC. courent\nD. courraient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779810207809-nczzs2ke"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the irregular future stem \"courr-\" for the verb \"courir\", and the distractor \"couriront\" directly targets this irregular pattern, making it impossible to answer correctly without knowing the rule.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779810242638-6w7ajrdv",
+      "timestamp": "2026-05-26T15:45:00.897Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the learner knows that courir uses the irregular future stem courr- (producing courront) rather than the regular -ir pattern (couriront), which is exactly what rule 05-07 covers.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779810624415-u0ze7qm3",
+      "timestamp": "2026-05-26T15:50:45.631Z"
+    }
+  ]
+}

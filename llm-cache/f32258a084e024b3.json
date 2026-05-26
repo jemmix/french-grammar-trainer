@@ -1,0 +1,26 @@
+{
+  "cacheKey": "f32258a084e024b3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-07-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au futur simple : « Elle ___ tous les droits nécessaires pour cette succession. »\n\nChoices:\nA. [CORRECT] acquerra\nB. [WRONG] acquerira\nC. [WRONG] acquiert\nD. [WRONG] acquerrait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779810207810-xh0yg3ff"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B has a spelling error (should be \"acquerra\"), C is in present tense not future simple, and D is conditional not future simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779810369954-n5x8j3oi",
+      "timestamp": "2026-05-26T15:46:40.570Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B has a spelling error (extra 'r'), C is present tense, and D is conditional tense, while the question requires futur simple.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779810718408-zgw5fvlc",
+      "timestamp": "2026-05-26T15:52:43.935Z"
+    }
+  ]
+}

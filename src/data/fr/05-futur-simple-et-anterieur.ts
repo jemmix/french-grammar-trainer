@@ -2134,7 +2134,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ très vite dans le parc demain. »",
+      prompt: "Complétez au futur simple : « Je ___ très vite dans le parc demain. »",
       choices: [
         { text: "courrai", correct: true, explanation: "Futur simple du verbe « courir » à la 1ère personne du singulier avec le radical irrégulier « courr- »." },
         { text: "courirai", correct: false, explanation: "Erreur fréquente : oubli du double « r » du radical irrégulier." },
@@ -2147,7 +2147,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu ___ plus tard si tu continues à t'entraîner. »",
+      prompt: "Complétez au futur simple : « Tu ___ plus tard si tu continues à t'entraîner. »",
       choices: [
         { text: "courras", correct: true, explanation: "Futur simple du verbe « courir » à la 2e personne du singulier avec le radical irrégulier « courr- »." },
         { text: "couriras", correct: false, explanation: "Erreur : confusion avec un verbe régulier, oubli du double « r »." },
@@ -2160,7 +2160,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ___ ensemble vers la mer cet été. »",
+      prompt: "Complétez au futur simple : « Nous ___ ensemble vers la mer cet été. »",
       choices: [
         { text: "courrons", correct: true, explanation: "Futur simple du verbe « courir » à la 1ère personne du pluriel avec le radical irrégulier « courr- »." },
         { text: "couririons", correct: false, explanation: "Erreur : mélange de conjugaison, accent incorrect sur le radical." },
@@ -2173,12 +2173,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ plus vite que les autres équipes. »",
+      prompt: "Complétez au futur simple : « Vous ___ plus vite que les autres équipes. »",
       choices: [
         { text: "courrez", correct: true, explanation: "Futur simple du verbe « courir » à la 2e personne du pluriel avec le radical irrégulier « courr- »." },
         { text: "courrirez", correct: false, explanation: "Erreur : ajout d'une syllabe supplémentaire au radical." },
         { text: "courez", correct: false, explanation: "C'est la forme du présent à la 2e personne du pluriel." },
-        { text: "courriez", correct: false, explanation: "C'est l'imparfait du subjonctif, pas le futur simple." },
+        { text: "courriez", correct: false, explanation: "C'est le conditionnel présent à la 2e personne du pluriel, pas le futur simple." },
       ],
     },
     {
@@ -2186,7 +2186,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Ils ___ le relais en dix secondes. »",
+      prompt: "Complétez au futur simple : « Ils ___ le relais en dix secondes. »",
       choices: [
         { text: "courront", correct: true, explanation: "Futur simple du verbe « courir » à la 3e personne du pluriel avec le radical irrégulier « courr- »." },
         { text: "couriront", correct: false, explanation: "Erreur : oubli du double « r » caractéristique du radical irrégulier « courr- »." },
@@ -2199,7 +2199,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ de peur quand j'aurai entendu ces nouvelles. »",
+      prompt: "Complétez au futur simple : « Je ___ de peur quand j'aurai entendu ces nouvelles. »",
       choices: [
         { text: "mourrai", correct: true, explanation: "Futur simple du verbe « mourir » à la 1ère personne du singulier avec le radical irrégulier « mourr- »." },
         { text: "mourirai", correct: false, explanation: "Erreur courante : oubli du double « r » du radical irrégulier « mourr- »." },
@@ -2212,7 +2212,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu ne ___ jamais de cette maladie. »",
+      prompt: "Complétez au futur simple : « Tu ne ___ jamais de cette maladie. »",
       choices: [
         { text: "mourras", correct: true, explanation: "Futur simple du verbe « mourir » à la 2e personne du singulier avec le radical irrégulier « mourr- »." },
         { text: "mouriras", correct: false, explanation: "Erreur : confusion avec un verbe régulier, absence du double « r »." },
@@ -2225,7 +2225,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ___ tous un jour, c'est une certitude. »",
+      prompt: "Complétez au futur simple : « Nous ___ tous un jour, c'est une certitude. »",
       choices: [
         { text: "mourrons", correct: true, explanation: "Futur simple du verbe « mourir » à la 1ère personne du pluriel avec le radical irrégulier « mourr- »." },
         { text: "mouririons", correct: false, explanation: "Erreur : mélange de formes verbales." },
@@ -2238,12 +2238,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ de curiosité en découvrant la vérité. »",
+      prompt: "Complétez au futur simple : « Vous ___ de curiosité en découvrant la vérité. »",
       choices: [
         { text: "mourrez", correct: true, explanation: "Futur simple du verbe « mourir » à la 2e personne du pluriel avec le radical irrégulier « mourr- »." },
         { text: "mourrirez", correct: false, explanation: "Erreur : ajout d'une syllabe supplémentaire." },
         { text: "mourez", correct: false, explanation: "C'est la forme du présent à la 2e personne du pluriel." },
-        { text: "mourriez", correct: false, explanation: "C'est l'imparfait du subjonctif." },
+        { text: "mourriez", correct: false, explanation: "C'est le conditionnel présent à la 2e personne du pluriel, pas le futur simple." },
       ],
     },
     {
@@ -2251,7 +2251,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Ils ___ sans regrets après une belle vie. »",
+      prompt: "Complétez au futur simple : « Ils ___ sans regrets après une belle vie. »",
       choices: [
         { text: "mourront", correct: true, explanation: "Futur simple du verbe « mourir » à la 3e personne du pluriel avec le radical irrégulier « mourr- »." },
         { text: "mouriront", correct: false, explanation: "Erreur : oubli du double « r » du radical irrégulier." },
@@ -2264,7 +2264,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Tu ___ de l'expérience en travaillant ici. »",
+      prompt: "Complétez au futur simple : « Tu ___ de l'expérience en travaillant ici. »",
       choices: [
         { text: "acquerras", correct: true, explanation: "Futur simple du verbe « acquérir » à la 2e personne du singulier avec le radical irrégulier « acquerr- »." },
         { text: "acqueriras", correct: false, explanation: "Erreur : absence du double « r » du radical irrégulier." },
@@ -2277,7 +2277,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle ___ tous les droits nécessaires pour cette succession. »",
+      prompt: "Complétez au futur simple : « Elle ___ tous les droits nécessaires pour cette succession. »",
       choices: [
         { text: "acquerra", correct: true, explanation: "Futur simple du verbe « acquérir » à la 3e personne du singulier avec le radical irrégulier « acquerr- »." },
         { text: "acquerira", correct: false, explanation: "Erreur : application d'une conjugaison régulière, oubli du double « r »." },
@@ -2290,7 +2290,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nous ___ de la sagesse en vieillissant. »",
+      prompt: "Complétez au futur simple : « Nous ___ de la sagesse en vieillissant. »",
       choices: [
         { text: "acquerrons", correct: true, explanation: "Futur simple du verbe « acquérir » à la 1ère personne du pluriel avec le radical irrégulier « acquerr- »." },
         { text: "acqueririons", correct: false, explanation: "Erreur : mélange de formes verbales." },
@@ -2303,12 +2303,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Vous ___ une meilleure compréhension du sujet. »",
+      prompt: "Complétez au futur simple : « Vous ___ une meilleure compréhension du sujet. »",
       choices: [
         { text: "acquerrez", correct: true, explanation: "Futur simple du verbe « acquérir » à la 2e personne du pluriel avec le radical irrégulier « acquerr- »." },
         { text: "acquerrirez", correct: false, explanation: "Erreur : ajout d'une syllabe supplémentaire au radical." },
         { text: "acquérez", correct: false, explanation: "C'est l'impératif ou le présent à la 2e personne du pluriel." },
-        { text: "acquerriez", correct: false, explanation: "C'est l'imparfait du subjonctif." },
+        { text: "acquerriez", correct: false, explanation: "C'est le conditionnel présent à la 2e personne du pluriel, pas le futur simple." },
       ],
     },
     {
@@ -2316,7 +2316,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Ils ___ des richesses immenses par cet héritage. »",
+      prompt: "Complétez au futur simple : « Ils ___ des richesses immenses par cet héritage. »",
       choices: [
         { text: "acquerront", correct: true, explanation: "Futur simple du verbe « acquérir » à la 3e personne du pluriel avec le radical irrégulier « acquerr- »." },
         { text: "acquerriont", correct: false, explanation: "Erreur : confusion orthographique et oubli du « a »." },
@@ -2329,9 +2329,9 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ___ les moyens de réussir ce projet. »",
+      prompt: "Complétez au futur simple : « Je ___ le marathon de Paris l'année prochaine. »",
       choices: [
-        { text: "courrai", correct: true, explanation: "Futur simple du verbe « courir » à la 1ère personne du singulier (sens figuré : « obtenir »)." },
+        { text: "courrai", correct: true, explanation: "Futur simple du verbe « courir » à la 1ère personne du singulier avec le radical irrégulier « courr- »." },
         { text: "cours", correct: false, explanation: "C'est le présent à la 1ère personne du singulier." },
         { text: "courais", correct: false, explanation: "C'est l'imparfait du verbe « courir »." },
         { text: "courirai", correct: false, explanation: "Erreur : oubli du double « r » du radical irrégulier." },
@@ -2342,7 +2342,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle ___ les risques de cette décision. »",
+      prompt: "Complétez au futur simple : « Elle ___ les risques de cette décision. »",
       choices: [
         { text: "courra", correct: true, explanation: "Futur simple du verbe « courir » à la 3e personne du singulier (sens figuré : « être exposé à »)." },
         { text: "courira", correct: false, explanation: "Erreur : oubli du double « r » du radical irrégulier." },
@@ -2374,7 +2374,7 @@ const section: Section = {
       ruleId: "05-07",
       generatedBy: "haiku",
       prompt: "Conjuguez « mourir » au futur simple.",
-      phrase: { before: "Dans cent ans, personne ne ", after: " pour se souvenir de nous." },
+      phrase: { before: "Malheureusement, cette plante ", after: " si on ne l'arrose pas." },
       hint: "mourir",
       answer: "mourra",
       explanation: "Futur simple du verbe « mourir » à la 3e personne du singulier. Le radical irrégulier « mourr- » double le « r ».",
@@ -2382,7 +2382,7 @@ const section: Section = {
         { text: "mourira", explanation: "Erreur courante : application erronée de la conjugaison régulière des verbes en « -ir ». Le radical change en « mourr- »." },
         { text: "mourir", explanation: "C'est l'infinitif, pas la forme conjuguée au futur." },
         { text: "meurt", explanation: "C'est la forme du présent à la 3e personne du singulier." },
-        { text: "mourrais", explanation: "C'est le conditionnel présent." },
+        { text: "mourrait", explanation: "C'est le conditionnel présent, pas le futur simple." },
         { text: "mourant", explanation: "C'est le participe présent." },
         { text: "meurent", explanation: "C'est le présent à la 3e personne du pluriel." },
       ],
@@ -2438,7 +2438,7 @@ const section: Section = {
         { text: "acquiers", explanation: "C'est le présent à la 2e personne du singulier." },
         { text: "acquerais", explanation: "C'est le conditionnel présent à la 2e personne du singulier." },
         { text: "acquérir", explanation: "C'est l'infinitif, pas la forme conjuguée au futur." },
-        { text: "acquierant", explanation: "Erreur : confusion avec le participe présent ou une autre forme." },
+        { text: "acquerra", explanation: "C'est le futur à la 3e personne du singulier (il/elle), pas la 2e personne du singulier (tu). Il faut « acquerras »." },
       ],
     },
     {
@@ -2446,7 +2446,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Il ___ le marathon dans trois semaines. »",
+      prompt: "Complétez au futur simple : « Il ___ le marathon dans trois semaines. »",
       choices: [
         { text: "courra", correct: true, explanation: "Futur simple du verbe « courir » à la 3e personne du singulier avec le radical irrégulier « courr- »." },
         { text: "courira", correct: false, explanation: "Erreur : application d'une conjugaison régulière, absence du double « r » du radical irrégulier." },
@@ -2459,7 +2459,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « Nul homme ne ___ deux fois. »",
+      prompt: "Complétez au futur simple : « Nul homme ne ___ deux fois. »",
       choices: [
         { text: "mourra", correct: true, explanation: "Futur simple du verbe « mourir » à la 3e personne du singulier avec le radical irrégulier « mourr- »." },
         { text: "mourira", correct: false, explanation: "Erreur : application d'une conjugaison régulière, oubli du double « r »." },
@@ -2472,7 +2472,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez : « J'___ de nouvelles responsabilités dans ce poste. »",
+      prompt: "Complétez au futur simple : « J'___ de nouvelles responsabilités dans ce poste. »",
       choices: [
         { text: "acquerrai", correct: true, explanation: "Futur simple du verbe « acquérir » à la 1ère personne du singulier avec le radical irrégulier « acquerr- »." },
         { text: "acquerais", correct: false, explanation: "C'est le conditionnel présent (terminaison -ais). Le futur a la terminaison -ai pour je." },
