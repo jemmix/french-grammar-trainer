@@ -119,27 +119,52 @@ export function parseTxtFile(content: string): ParsedFile {
         currentHint = "";
         currentPairs = [];
         lastPair = null;
+      } else if (line !== "") {
+        parseErrors.push(`Line ${lineNum}: Unrecognized line outside question block: "${line.slice(0, 80)}"`);
       }
     } else {
-      if (line === "END QUESTION") {
+      if (line === "BEGIN QUESTION") {
+        parseErrors.push(`Line ${lineNum}: Nested BEGIN QUESTION — previous question was never closed`);
+      } else if (line === "END QUESTION") {
         inQuestion = false;
         const rightPair = currentPairs.find((p) => p.kind === "right");
         const wrongPairs = currentPairs.filter((p) => p.kind === "wrong");
         const qRuleId = currentId ? deriveRuleId(currentId) : ruleId;
         const type = currentType.toUpperCase();
 
-        if (type === "MCQ") {
+        const rightCount = currentPairs.filter((p) => p.kind === "right").length;
+        if (rightCount > 1) {
+          parseErrors.push(`Line ${lineNum}: Multiple RIGHT ANSWER entries in question "${currentId}" (${rightCount} found)`);
+        }
+        if (!currentId) {
+          parseErrors.push(`Line ${lineNum}: Question is missing ID`);
+        }
+        if (!currentType) {
+          parseErrors.push(`Line ${lineNum}: Question is missing TYPE`);
+        }
+        if (!currentPrompt) {
+          parseErrors.push(`Line ${lineNum}: Question is missing PROMPT`);
+        }
+        if (!rightPair) {
+          parseErrors.push(`Line ${lineNum}: Question is missing RIGHT ANSWER`);
+        }
+        if ((type === "MCQ" || type === "INPUT") && !rightPair) {
+          // skip — already flagged above
+        } else if (type === "MCQ") {
           questions.push({
             id: currentId,
             type: "mcq",
             ruleId: qRuleId,
             prompt: currentPrompt,
-            right: rightPair ? { text: rightPair.text, explanation: rightPair.explanation } : { text: "", explanation: "" },
+            right: { text: rightPair!.text, explanation: rightPair!.explanation },
             wrongs: wrongPairs.map((p) => ({ text: p.text, explanation: p.explanation })),
           });
         } else if (type === "INPUT") {
           if (!currentHint) {
             parseErrors.push(`Line ${lineNum}: INPUT question "${currentId}" is missing HINT`);
+          }
+          if (!currentPhrase) {
+            parseErrors.push(`Line ${lineNum}: INPUT question "${currentId}" is missing PHRASE`);
           }
           questions.push({
             id: currentId,
@@ -148,7 +173,7 @@ export function parseTxtFile(content: string): ParsedFile {
             prompt: currentPrompt,
             phrase: currentPhrase,
             hint: currentHint,
-            right: rightPair ? { text: rightPair.text, explanation: rightPair.explanation } : { text: "", explanation: "" },
+            right: { text: rightPair!.text, explanation: rightPair!.explanation },
             wrongs: wrongPairs.map((p) => ({ text: p.text, explanation: p.explanation })),
           });
         } else if (currentId || currentType) {
@@ -176,6 +201,8 @@ export function parseTxtFile(content: string): ParsedFile {
         } else {
           parseErrors.push(`Line ${lineNum}: EXPLANATION without a preceding answer`);
         }
+      } else if (line !== "") {
+        parseErrors.push(`Line ${lineNum}: Unrecognized line in question block: "${line.slice(0, 80)}"`);
       }
     }
   }

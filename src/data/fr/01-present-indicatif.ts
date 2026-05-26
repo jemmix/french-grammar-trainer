@@ -3234,7 +3234,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "01-10",
       generatedBy: "haiku",
-      prompt: "Complétez au présent : « Tu ___ la porte avec force. »",
+      prompt: "Complétez au présent : « Tu ___ la balle loin. »",
       choices: [
         { text: "jettes", correct: true, explanation: "Au présent, « jeter » double la consonne « t » à la 2e personne du singulier : tu jettes." },
         { text: "jetes", correct: false, explanation: "Forme incorrecte. Il faut doubler le « t » : tu jettes, non tu jetes." },

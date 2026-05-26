@@ -499,7 +499,7 @@ const section: Section = {
         { text: "Sophie est descendue du bus à la prochaine station.", correct: true, explanation: "« est descendue » est correct : auxiliaire être (est) + participe passé accordé (descendue, féminin)." },
         { text: "Sophie a descendu le bus à la prochaine station.", correct: false, explanation: "« a descendu » utilise l'auxiliaire avoir. Le verbe « descendre » (de) se conjugue avec être." },
         { text: "Sophie descendait du bus quand elle a vu son ami.", correct: false, explanation: "« descendait » est à l'imparfait, pas au passé composé." },
-        { text: "Sophie avait descendu du bus avant l'arrivée.", correct: false, explanation: "" },
+        { text: "Sophie avait descendu du bus avant l'arrivée.", correct: false, explanation: "« avait descendu » est au plus-que-parfait avec avoir, pas au passé composé avec être." },
       ],
     },
     {
@@ -951,7 +951,7 @@ const section: Section = {
       prompt: "Complétez au passé composé : « Les invités ___ venus à la fête en retard. »",
       choices: [
         { text: "sont", correct: true, explanation: "« Venir » est un verbe de mouvement intransitif, il se conjugue toujours avec l'auxiliaire être." },
-        { text: "ont", correct: false, explanation: "" },
+        { text: "ont", correct: false, explanation: "« ont » est l'auxiliaire avoir. « Venir » est un verbe de mouvement qui prend être." },
         { text: "seront", correct: false, explanation: "« seront » est le futur simple. Le passé composé utilise être au présent." },
         { text: "est", correct: false, explanation: "« est » est la troisième personne du singulier, pas du pluriel." },
       ],
