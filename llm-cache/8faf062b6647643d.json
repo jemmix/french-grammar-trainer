@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8faf062b6647643d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-07-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-07 - Les futurs irréguliers : courir (courr-), mourir (mourr-), acquérir (acquerr-)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez « mourir » au futur simple.\nPhrase: Sans eau, cette plante ___ rapidement.\nCorrect Answer: mourra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1779922295827-ruz6kodi"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the irregular future stem \"mourr-\" for mourir to produce the correct answer \"mourra\", which is exactly the grammar rule being tested.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779922298842-1dl3bf5e",
+      "timestamp": "2026-05-27T22:51:59.484Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the irregular future tense conjugation of \"mourir\" (one of the three verbs specified in the rule), and the correct answer \"mourra\" demonstrates knowledge of the irregular stem \"mourr-\" rather than a regular conjugation.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779922319484-n241irh4",
+      "timestamp": "2026-05-27T22:52:17.402Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge of the irregular stem \"mourr-\" for \"mourir\" in the futur simple to produce the correct answer \"mourra\"; without knowing this irregularity, one would likely incorrectly try \"mourira\".",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779922337402-q2voymki",
+      "timestamp": "2026-05-27T22:52:38.182Z"
+    }
+  ]
+}

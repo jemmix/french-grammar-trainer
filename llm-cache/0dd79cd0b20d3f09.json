@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0dd79cd0b20d3f09",
+  "predicateId": "french-language",
+  "questionId": "05-07-008",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Les futurs irréguliers : courir (courr-), mourir (mourr-), acquérir (acquerr-)\n\nQUESTION CONTENT:\nPrompt: Complétez au futur simple : « Tu ne ___ jamais de cette maladie. »\nChoices:\nA. [correct] mourras\n   Explanation: Futur simple du verbe « mourir » à la 2e personne du singulier avec le radical irrégulier « mourr- ».\nB. mouriras\n   Explanation: Erreur : confusion avec un verbe régulier, absence du double « r ».\nC. meurs\n   Explanation: C'est la forme du présent à la 2e personne du singulier.\nD. mourrait\n   Explanation: C'est une forme du conditionnel.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1779918993217-0gouz7vf"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done:\nI have received and analyzed the question content for the rule \"Les futurs irréguliers : courir (courr-), mourir (mourr-), acquérir (acquerr-)\". The content consists of a prompt asking to conjugate a sentence in the \"futur simple\", four multiple-choice answers, and corresponding explanations. I have reviewed all text fields (prompt, choices, explanations) against the language policy.\n\nRemaining tasks:\n- Output the final validation verdict in the requested `VERDICT: <FRENCH|ENGLISH_DETECTED> / REASON: <brief explanation>` format.\n- Record the outcome of the check.\n\nRecommendations:\nThe content passes the language validation check. All text, including the prompt (\"Complétez au futur simple\"), the choices (\"mourras\", \"mouriras\", etc.), and the explanations, is written in French. There are no English prompts, instructions, or explanations present, and no exceptions for pedagogical English contrast were utilized or required. The verdict should be recorded as `VERDICT: FRENCH` with the reason being that all content is in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779919792855-7cw9c9qy",
+      "timestamp": "2026-05-27T22:10:48.789Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected. The prompt, choices, and explanations are all properly written in French.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779920243602-kaej9ni2",
+      "timestamp": "2026-05-27T22:18:15.573Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779920685755-tzgkisnf",
+      "timestamp": "2026-05-27T22:25:02.039Z"
+    }
+  ]
+}
