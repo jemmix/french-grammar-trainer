@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4d61b2dfa9b213db",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-04-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au futur simple : « Je ___ heureux de te revoir demain. »\n\nChoices:\nA. [CORRECT] serai\nB. [WRONG] suis\nC. [WRONG] serais\nD. [WRONG] sera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1779918618271-gld2gff7"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached. I was asked to verify that the wrong answers in a French grammar question are indeed incorrect. The question asks to complete a sentence in the futur simple tense: \"Je ___ heureux de te revoir demain.\" \n\nI evaluated the three wrong answers:\n- B: \"suis\" - Present tense, not futur simple\n- C: \"serais\" - Conditional tense, not futur simple  \n- D: \"sera\" - Third person form, not matching \"Je\" (first person)\n\nAll wrong answers are indeed incorrect when evaluated strictly against the requirement to use the futur simple tense with the first person subject \"Je\".\n\nTRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779918618309-zq8nsnwc",
+      "timestamp": "2026-05-27T21:50:52.904Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect within the context of the question requiring the futur simple tense.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779918652905-4i6ulhmz",
+      "timestamp": "2026-05-27T21:51:24.875Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is present tense not futur simple, C is conditional mood not futur simple, D is third person conjugation not first person.",
+      "model": "glm-4.7",
+      "harness": "opencode",
+      "nonce": "nonce-1779918684876-owy2hx9i",
+      "timestamp": "2026-05-27T21:51:39.053Z"
+    }
+  ]
+}
