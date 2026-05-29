@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1aa8d3fd79bb99a2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-13-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-13 - Le futur simple vs le futur proche (aller + infinitif) : nuances d'emploi\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Regarde l'heure ! Nous _______ rater notre train ! »\nChoices:\nA. [CORRECT] allons\nB. raterons\nC. ratons\nD. raterions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780076778176-zst85j2u"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests exactly the stated rule — choosing between futur proche (\"allons rater\") and futur simple (\"raterons\") based on the context of immediacy (\"Regarde l'heure !\"), which is the core nuance this rule addresses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780076782196-62v604td",
+      "timestamp": "2026-05-29T17:46:43.484Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The context \"Regarde l'heure !\" creates an imminent situation where futur proche (\"allons rater\") is appropriate over futur simple (\"raterons\"), directly testing the nuanced distinction between these two future forms that the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780076887039-2k8sho0o",
+      "timestamp": "2026-05-29T17:48:39.959Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the futur simple vs futur proche distinction by presenting an immediate future context (\"Regarde l'heure !\") where the futur proche \"allons rater\" is pragmatically appropriate over the futur simple \"raterons\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780077044896-1z8yv36p",
+      "timestamp": "2026-05-29T17:51:14.346Z"
+    }
+  ]
+}

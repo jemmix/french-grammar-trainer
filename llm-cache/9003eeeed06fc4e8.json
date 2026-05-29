@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9003eeeed06fc4e8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-13-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Regarde ! Le chat _______ sauter par la fenêtre ! »\n\nChoices:\nA. [CORRECT] va\nB. [WRONG] sautera\nC. [WRONG] a sauté\nD. [WRONG] sauterait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780082944193-fmbu9wl5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B (futur simple) doesn't convey the immediacy required by \"Regarde !\" which demands futur proche, C (passé composé) is past tense contradicting the present observation, and D (conditionnel) introduces hypothetical meaning unsupported by the direct exclamation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780082944222-g1cvkndm",
+      "timestamp": "2026-05-29T19:29:38.785Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses incompatible with the immediate present context of \"Regarde !\" — B uses futur simple (distant future), C uses passé composé (past), and D uses conditionnel (hypothetical), whereas only the futur proche \"va\" fits the imminent action.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780082979781-nb677yy6",
+      "timestamp": "2026-05-29T19:29:57.832Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers create impossible double-verb constructions when placed before the infinitive \"sauter\" (e.g., \"sautera sauter\" is grammatically nonsensical).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780082997833-m5hooyai",
+      "timestamp": "2026-05-29T19:30:10.536Z"
+    }
+  ]
+}

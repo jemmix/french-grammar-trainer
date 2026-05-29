@@ -1,0 +1,26 @@
+{
+  "cacheKey": "cbee42b700ed071b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-13-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Pendant les prochaines vacances, on _____ visiter l'Italie. » Quel temps convient le mieux ?\n\nChoices:\nA. [CORRECT] va\nB. [WRONG] visiterons\nC. [WRONG] visitons\nD. [WRONG] visiterions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780074023623-ykksflmn"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers incorrectly use the \"nous\" conjugation (visiterons, visitons, visiterions) with the subject \"on,\" which requires third person singular forms (visitera, visite, visiterait).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780074140218-yyan10bs",
+      "timestamp": "2026-05-29T17:03:04.856Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the nous (1st person plural) conjugation instead of the on (3rd person singular) form required by the subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780074384402-ssj5r7yj",
+      "timestamp": "2026-05-29T17:07:00.186Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "84b40646e17ed6d7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-13-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Je suis sûr qu'il _____ réussir à ce concours. » Quel temps exprime cette certitude personnelle ?\n\nChoices:\nA. [CORRECT] va\nB. [WRONG] réussira\nC. [WRONG] réussit\nD. [WRONG] réussirait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780074023623-5zkrlphx"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:** I was evaluating a French grammar verification task for a multiple choice question about expressing personal certainty with \"Je suis sûr qu'il _____ réussir à ce concours.\"\n\n**My analysis (not yet delivered in required format):**\n- B. \"réussira\" (futur simple) — This is actually grammatically correct. After \"être sûr que\" expressing personal certainty, both futur proche (\"va réussir\") and futur simple (\"réussira\") are valid ways to express certainty about a future event.\n- C. \"réussit\" (présent) — Incorrect, as this is a future event, not a present habitual.\n- D. \"réussirait\" (conditionnel) — Correctly wrong, as conditionnel expresses doubt/hypothetical, contradicting \"être sûr que.\"\n\n**Verdict that should have been returned:**\nFALSE|B|\"Réussira\" (futur simple) is grammatically correct after \"être sûr que\" to express certainty about a future event, making it a valid alternative to the futur proche.\n\n**Recommendation:** The question should be revised to make the futur proche the only correct answer, perhaps by adding a constraint like \"Quel temps du futur proche exprime cette certitude personnelle?\" or by changing the wrong answers to ones that are unambiguously incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780074113675-akq2kefg",
+      "timestamp": "2026-05-29T17:02:20.217Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses futur simple which doesn't express the immediate personal certainty that futur proche conveys in this context, C uses présent which cannot refer to a future competition in this construction, and D uses conditionnel which contradicts the certainty expressed by \"Je suis sûr.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780074340954-zh95qjjh",
+      "timestamp": "2026-05-29T17:06:03.703Z"
+    }
+  ]
+}

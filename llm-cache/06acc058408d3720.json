@@ -1,0 +1,26 @@
+{
+  "cacheKey": "06acc058408d3720",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-13-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-13 - Le futur simple vs le futur proche (aller + infinitif) : nuances d'emploi\n\nQUESTION:\nType: Input\nPrompt: Futur simple ou futur proche ? Écrivez la forme correcte après cette exclamation.\nPhrase: Ça suffit ! Je _______ ce travail immédiatement.\nCorrect Answer: vais quitter\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780076778187-84y17ft1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the nuance between futur simple and futur proche, as \"immédiatement\" signals an imminent action that requires the futur proche (\"vais quitter\") rather than the futur simple (\"quitterai\"), and choosing correctly depends on understanding when each form is appropriate.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780076867171-p61pijid",
+      "timestamp": "2026-05-29T17:48:07.038Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that the immediacy implied by \"immédiatement\" and the emphatic context \"Ça suffit!\" call for futur proche (\"vais quitter\") rather than futur simple (\"quitterai\"), which is exactly the nuance this rule targets.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780077008543-myh4ss2g",
+      "timestamp": "2026-05-29T17:50:33.035Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "79c32ba7fd270999",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-13-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Regarde l'heure ! Nous _______ rater notre train ! »\n\nChoices:\nA. [CORRECT] allons\nB. [WRONG] raterons\nC. [WRONG] ratons\nD. [WRONG] raterions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780076778176-kgh4hprs"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B (raterons) uses futur simple which is unnatural for this imminent context requiring futur proche, C (ratons) incorrectly uses present tense for a future event, and D (raterions) incorrectly uses conditional for an imminent situation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780076781194-aqjxcg6d",
+      "timestamp": "2026-05-29T17:46:56.000Z"
+    },
+    {
+      "raw": "TRUE||B uses futur simple which is inappropriate for expressing imminent action in this urgent context, C uses present tense which cannot express future intent, and D uses conditional mood which implies hypothetical situations rather than the certain imminent event described.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780076909224-w8bxtjhh",
+      "timestamp": "2026-05-29T17:49:17.494Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't convey the imminence required by the urgent context \"Regarde l'heure!\"; futur simple (B) lacks the near-future meaning, present (C) cannot refer to a future event in this way, and conditionnel (D) expresses hypothesis rather than the certainty needed here.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780077097874-l4a81wxk",
+      "timestamp": "2026-05-29T17:53:25.455Z"
+    }
+  ]
+}

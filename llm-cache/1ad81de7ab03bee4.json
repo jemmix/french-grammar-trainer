@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1ad81de7ab03bee4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-13-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-13 - Le futur simple vs le futur proche (aller + infinitif) : nuances d'emploi\n\nQUESTION:\nType: Input\nPrompt: Futur simple ou futur proche ? Écrivez la forme correcte.\nPhrase: Attention ! Le chien _______ !\nCorrect Answer: va mordre\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780083397973-0a5mfzbl"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating whether a French grammar question is aligned with its stated rule. Here is my assessment:\n\nVERDICT: ALIGNED\nREASON: The warning context \"Attention !\" signals imminence, which is precisely the nuance that distinguishes futur proche from futur simple - this tests the core distinction the rule covers.\n\nThe question \"Attention ! Le chien _______ !\" with correct answer \"va mordre\" properly tests rule 05-13 because the student must understand that futur proche is used for imminent, about-to-happen actions (especially warnings), while futur simple would be inappropriate in this context. This is a textbook example of the nuance the rule addresses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780083397975-k8pg0wby",
+      "timestamp": "2026-05-29T19:36:53.059Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between futur simple and futur proche by presenting an imminent situation (\"Attention !\") where the futur proche is required, making knowledge of this specific nuance essential to answer correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780083413060-8o3jvpdk",
+      "timestamp": "2026-05-29T19:37:04.597Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the key nuance between futur simple and futur proche — the use of \"va mordre\" is correct here because it expresses imminence and a prediction based on present evidence (the warning \"Attention!\" signals the dog is about to bite), whereas \"mordra\" would be inappropriate in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780083424597-5eyxau62",
+      "timestamp": "2026-05-29T19:37:21.131Z"
+    }
+  ]
+}

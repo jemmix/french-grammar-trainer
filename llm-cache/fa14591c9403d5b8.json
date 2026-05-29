@@ -1,0 +1,26 @@
+{
+  "cacheKey": "fa14591c9403d5b8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-13-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-13 - Le futur simple vs le futur proche (aller + infinitif) : nuances d'emploi\n\nQUESTION:\nType: Multiple Choice\nPrompt: « Je _____ le train à 14h. Je le sens, je ne _____. » Quels temps conviennent ?\nChoices:\nA. [CORRECT] vais rater | me trompe\nB. raterai | me tromperai\nC. rate | me trompe\nD. raterais | me tromperais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780074023623-yqht3ogx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the futur simple vs futur proche distinction by presenting a context where a prediction based on present evidence (\"je le sens\") calls for futur proche (\"vais rater\") rather than futur simple (\"raterai\"), which is the core nuance this rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780074133748-t30jfrpv",
+      "timestamp": "2026-05-29T17:02:34.418Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires choosing between futur proche (\"vais rater\") and futur simple (\"raterai\") to express a prediction based on present evidence/feeling (\"Je le sens\"), which is precisely one of the key nuances distinguishing these two future forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780074351317-2doks38y",
+      "timestamp": "2026-05-29T17:06:24.401Z"
+    }
+  ]
+}

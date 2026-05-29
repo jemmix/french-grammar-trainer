@@ -1,0 +1,33 @@
+{
+  "cacheKey": "80071d270c3c2b0e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-13-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Je te promets : je _____ à l'heure demain. » Quel temps exprime une promesse formelle ?\n\nChoices:\nA. [CORRECT] serai\nB. [WRONG] vais être\nC. [WRONG] suis\nD. [WRONG] serais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780074023622-rq8jz5kb"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ question are indeed incorrect. The question asks which tense expresses a \"formal promise\" in the sentence \"Je te promets : je _____ à l'heure demain.\"\n\nMy analysis:\n- B (\"vais être\" - futur proche): Incorrect because the question specifically asks for a FORMAL promise, and the futur proche is typically used in informal/spoken contexts, not formal promises.\n- C (\"suis\" - présent): Incorrect because present tense cannot express a future action (\"demain\").\n- D (\"serais\" - conditionnel): Incorrect because the conditional expresses hypothesis or politeness, not a promise.\n\nThe verdict would be: TRUE||All wrong answers fail to satisfy the specific requirement for a formal promise—B uses the informal futur proche, C cannot express future time, and D expresses hypothesis rather than promise.\n\nNo remaining tasks - this was a single verification request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780074032638-6cmzkwmz",
+      "timestamp": "2026-05-29T17:00:58.629Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses futur proche which is informal and not the tense for formal promises, C uses présent which cannot properly express a future promise with \"demain,\" and D uses conditionnel which expresses hypothetical situations rather than promises.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780074271198-5om8kmyr",
+      "timestamp": "2026-05-29T17:05:05.143Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThis task was a single verification request that I can complete in my response:\n\nTRUE||B uses futur proche which expresses near future/plans not formal promises; C uses présent which is grammatically incompatible with \"demain\" for future reference; D uses conditionnel which expresses hypothesis not promise.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780074484838-m2ci8z6e",
+      "timestamp": "2026-05-29T17:08:25.137Z"
+    }
+  ]
+}

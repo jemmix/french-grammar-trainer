@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0d95279751979a73",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-13-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-13 - Le futur simple vs le futur proche (aller + infinitif) : nuances d'emploi\n\nQUESTION:\nType: Input\nPrompt: Complétez avec le futur proche pour exprimer une intention forte et immédiate.\nPhrase: Je n'en peux plus ! Je ___ tout arrêter et recommencer à zéro.\nCorrect Answer: vais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780074023625-7pthocr9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use the futur proche, so answering correctly only requires following that instruction rather than demonstrating knowledge of when to choose futur simple versus futur proche based on contextual nuances.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780074235499-2tvt13l4",
+      "timestamp": "2026-05-29T17:04:47.003Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule. Here is my assessment:\n\nVERDICT: MISALIGNED\nREASON: The question explicitly instructs the student to use futur proche rather than requiring them to choose between futur simple and futur proche based on context, so it tests conjugation of \"aller\" rather than the nuanced distinction between the two future tenses.\n\nNo remaining tasks — this single validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780074477176-4ykd7nil",
+      "timestamp": "2026-05-29T17:08:14.742Z"
+    }
+  ]
+}

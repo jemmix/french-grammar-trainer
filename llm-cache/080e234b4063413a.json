@@ -1,0 +1,33 @@
+{
+  "cacheKey": "080e234b4063413a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-13-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Regarde ! Le bébé _______ tomber ! »\n\nChoices:\nA. [CORRECT] va\nB. [WRONG] tombera\nC. [WRONG] tombe\nD. [WRONG] tomberait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780075349785-r3jb1oig"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers produce ungrammatical sequences (conjugated verb + infinitive \"tomber\") that are never valid in French.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780075424957-hobd9pel",
+      "timestamp": "2026-05-29T17:24:16.196Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect in the context of \"Regarde !\": B (futur simple) lacks the imminence required, C (présent) describes an ongoing action rather than one about to happen, and D (conditionnel) expresses hypothetical possibility rather than imminent future.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780075673404-gv40j8k3",
+      "timestamp": "2026-05-29T17:31:00.312Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses futur simple which doesn't express imminent action like futur proche; C uses présent which changes meaning to \"is falling\" rather than \"is about to fall\"; D uses conditionnel which expresses hypothetical situation, not imminent event.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780076033583-p6dc0afj",
+      "timestamp": "2026-05-29T17:34:37.146Z"
+    }
+  ]
+}
