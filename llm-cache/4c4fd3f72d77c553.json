@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4c4fd3f72d77c553",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-15-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il ___ ce livre trois fois avant d'en discuter demain. » (lire)\n\nChoices:\nA. [CORRECT] aura lu\nB. [WRONG] a lu\nC. [WRONG] aurait lu\nD. [WRONG] sera lu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780096045381-08y3v7ao"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780096051403-m5dodgvb",
+      "timestamp": "2026-05-29T23:07:48.923Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWork accomplished: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ about the futur antérieur tense are indeed incorrect. I analyzed the question \"Il ___ ce livre trois fois avant d'en discuter demain\" which requires the futur antérieur (aura lu) to express an action completed before a future reference point (\"demain\"). \n\nMy analysis concluded:\n- B (a lu): Passé composé is incorrect because it doesn't connect to the future reference \"demain\" - futur antérieur is required\n- C (aurait lu): Conditionnel passé is incorrect because there's no conditional/hypothetical context (no \"si\" clause)\n- D (sera lu): Futur passif is incorrect because it uses passive voice when active is required, and changes the meaning entirely\n\nThe verdict would have been: TRUE||All wrong answers contain clear grammar errors - B uses passé composé instead of required futur antérieur, C uses conditionnel without conditional context, and D incorrectly uses passive voice.\n\nNo remaining tasks - the verification was complete at the point of analysis.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780096087680-3jaep6td",
+      "timestamp": "2026-05-29T23:08:29.876Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses passé composé which doesn't align with the future reference \"demain\"; C uses conditionnel passé which expresses hypothetical past action, not completion before a future event; D uses passive voice and future tense instead of future anterior active.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780096138807-l0u7z3fj",
+      "timestamp": "2026-05-29T23:09:14.130Z"
+    }
+  ]
+}

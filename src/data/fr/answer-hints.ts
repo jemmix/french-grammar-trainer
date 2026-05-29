@@ -970,6 +970,7 @@ export const answerHints: Record<string, string> = {
   "sentait": "sentir",
   "sera arrivé": "arriver",
   "sera arrivée": "arriver",
+  "sera montée": "monter",
   "sera": "être",
   "serai": "être",
   "seraient venus": "venir",

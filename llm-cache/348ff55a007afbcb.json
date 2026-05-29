@@ -1,0 +1,33 @@
+{
+  "cacheKey": "348ff55a007afbcb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-15-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez la phrase : « J'___ ce projet avant la fin du mois. »\n\nChoices:\nA. [CORRECT] aurai terminé\nB. [WRONG] ai terminé\nC. [WRONG] aurait terminé\nD. [WRONG] avais terminé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780096045363-jwyuw9ng"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses or moods for expressing a future action completed before a deadline: B uses passé composé (past), C uses conditionnel passé with wrong subject agreement (3rd person), and D uses plus-que-parfait (past perfect).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780096045391-tqidzqrj",
+      "timestamp": "2026-05-29T23:07:39.668Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses or forms: B uses passé composé instead of futur antérieur for a future deadline, C uses third-person \"aurait\" instead of first-person \"aurais\" and the wrong mood entirely, D uses plus-que-parfait which describes a past-before-past action, not a future completion.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780096076717-kuvyi8vg",
+      "timestamp": "2026-05-29T23:08:14.660Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses passé composé instead of futur antérieur for a future time reference, C incorrectly uses third-person \"aurait\" instead of first-person \"aurai\", and D uses plus-que-parfait which is a past tense incompatible with the future context \"avant la fin du mois.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780096122669-oihlu4op",
+      "timestamp": "2026-05-29T23:08:58.806Z"
+    }
+  ]
+}

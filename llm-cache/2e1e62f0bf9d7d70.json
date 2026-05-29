@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2e1e62f0bf9d7d70",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "05-15-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Formation du futur antérieur : auxiliaire au futur + participe passé\nPROMPT: Complétez avec le futur antérieur du verbe « partir » (auxiliaire + participe passé).\nPHRASE: Elles ___ avant le coucher du soleil demain. » (partir)\nCORRECT ANSWER: seront parties\n\nWRONG ANSWERS to evaluate:\n1. auront parti\n2. sont parties\n3. partiront\n4. se sont parties\n5. ont parti\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780096598103-mxiyy6ud"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: using \"avoir\" instead of \"être\" as the auxiliary (1, 5), confusing futur antérieur with passé composé (2, 5) or futur simple (3), and incorrectly adding a reflexive pronoun (4).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780096661550-q3crello",
+      "timestamp": "2026-05-29T23:18:04.386Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: using \"avoir\" instead of \"être\" as the auxiliary (auront parti, ont parti), confusing futur antérieur with passé composé (sont parties) or futur simple (partiront), and incorrectly adding a reflexive pronoun (se sont parties).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780096690661-643jxqd4",
+      "timestamp": "2026-05-29T23:18:29.958Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: confusing auxiliaries (auront/ont vs seront), using the wrong tense (passé composé \"sont parties\" or futur simple \"partiront\" instead of futur antérieur), failing to make feminine agreement (\"parti\" instead of \"parties\"), and incorrectly adding a reflexive pronoun (\"se sont parties\" from confusion with pronominal verbs like \"s'en aller\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780096712203-wid8pav9",
+      "timestamp": "2026-05-29T23:18:58.027Z"
+    }
+  ]
+}
