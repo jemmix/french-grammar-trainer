@@ -1,0 +1,33 @@
+{
+  "cacheKey": "01546d25f3d0d7a5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-11-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Identifiez la phrase qui exprime un ordre parental avec le futur simple.\n\nChoices:\nA. [CORRECT] Tu finiras ton repas avant de sortir.\nB. [WRONG] Tu finis ton repas avant de sortir.\nC. [WRONG] Tu finirais ton repas avant de sortir.\nD. [WRONG] Finis ton repas avant de sortir.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780058662054-26kzht80"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the futur simple as required: B uses présent, C uses conditionnel présent, and D uses impératif présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780058665064-z04xuzcw",
+      "timestamp": "2026-05-29T12:44:35.490Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the futur simple as required: B uses présent de l'indicatif, C uses conditionnel présent, and D uses impératif présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780058850335-bv4eocuy",
+      "timestamp": "2026-05-29T12:55:35.926Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the futur simple as required: B uses présent, C uses conditionnel (which also softens the meaning to a suggestion rather than an order), and D uses impératif.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780059572406-119fei4g",
+      "timestamp": "2026-05-29T12:59:58.669Z"
+    }
+  ]
+}

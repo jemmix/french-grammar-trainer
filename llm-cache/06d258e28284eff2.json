@@ -1,0 +1,33 @@
+{
+  "cacheKey": "06d258e28284eff2",
+  "predicateId": "french-language",
+  "questionId": "05-11-017",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le futur simple pour exprimer une promesse ou un ordre (tu feras tes devoirs)\n\nQUESTION CONTENT:\nPrompt: Quel temps exprime l'ordre dans : « Vous me remettrez votre projet avant vendredi midi. »\nChoices:\nA. [correct] Le futur simple, pour un ordre professionnel\n   Explanation: Le futur simple « remettrez » exprime un délai obligatoire et un ordre professionnel clair.\nB. Le conditionnel, pour une demande polite\n   Explanation: C'est le futur simple, et ce n'est pas une demande polie mais un ordre.\nC. L'impératif, pour un ordre direct\n   Explanation: Bien que ce soit un ordre, la structure utilise le futur simple, pas l'impératif.\nD. Le présent de l'indicatif, pour une habitude\n   Explanation: C'est le futur simple, et ce n'est pas une habitude mais un ordre ponctuel.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1780059906855-r44t3h7h"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ENGLISH_DETECTED\nREASON: Choice B contains the English word \"polite\" instead of the correct French \"polie\" (\"Le conditionnel, pour une demande polite\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780059991516-10a7wbf3",
+      "timestamp": "2026-05-29T13:07:02.309Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780060141894-tawdrrwb",
+      "timestamp": "2026-05-29T13:09:28.531Z"
+    },
+    {
+      "raw": "VERDICT: ENGLISH_DETECTED\nREASON: Choice B uses the English word \"polite\" instead of the French \"polie\" (\"une demande polite\" should be \"une demande polie\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780060240254-3apsg50a",
+      "timestamp": "2026-05-29T13:11:11.715Z"
+    }
+  ]
+}

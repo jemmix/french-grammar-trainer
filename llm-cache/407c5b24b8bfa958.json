@@ -1,0 +1,40 @@
+{
+  "cacheKey": "407c5b24b8bfa958",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-11-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-11 - Le futur simple pour exprimer une promesse ou un ordre (tu feras tes devoirs)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au futur simple pour formuler cette consigne.\nPhrase: Vous ___ votre travail avant la pause, c'est la règle.\nCorrect Answer: terminerez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780064999964-l1kn491t"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly asks to conjugate in futur simple to formulate a \"consigne\" (order/instruction), and the sentence \"Vous terminerez votre travail avant la pause, c'est la règle\" is a clear example of using futur simple to express an order, matching the rule perfectly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780065004007-tby9mzyn",
+      "timestamp": "2026-05-29T14:30:23.015Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests conjugation of \"terminer\" in the futur simple, while the rule is about the pragmatic use of futur simple as a substitute for imperative to express orders/promises—a student could answer correctly without understanding this specific usage since the prompt explicitly tells them to use futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780065023016-dv8wmfw7",
+      "timestamp": "2026-05-29T14:30:44.124Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question asks to conjugate in futur simple specifically to formulate a \"consigne\" (instruction/order), and the sentence context \"c'est la règle\" frames it as an order, directly matching the rule about using futur simple to express an order or command.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780065044125-aifp8a91",
+      "timestamp": "2026-05-29T14:30:53.484Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using futur simple to express an order/instruction (\"Vous terminerez votre travail... c'est la règle\"), which directly matches the rule about using futur simple for expressing a promise or order.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780065053756-8qjalhyk",
+      "timestamp": "2026-05-29T14:31:05.627Z"
+    }
+  ]
+}

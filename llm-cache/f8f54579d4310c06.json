@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f8f54579d4310c06",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-11-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Identifiez la phrase exprimant un ordre parental avec futur simple.\n\nChoices:\nA. [CORRECT] Vous vous coucherez à 9 heures ce soir.\nB. [WRONG] Vous vous couchez à 9 heures ce soir.\nC. [WRONG] Vous vous coucheriez à 9 heures ce soir.\nD. [WRONG] Couchez-vous à 9 heures ce soir.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780060837683-d1cssggo"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use futur simple as required by the question—B uses présent, C uses conditionnel présent, and D uses impératif présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780060893502-u3b8mjnu",
+      "timestamp": "2026-05-29T13:22:16.347Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to verify whether wrong answers B, C, and D in a French grammar multiple choice question are indeed incorrect. The question asks to identify a phrase expressing a parental order using futur simple.\n\nAnalysis completed:\n- B uses présent (couchez), not futur simple - correctly wrong\n- C uses conditionnel présent (coucheriez), not futur simple - correctly wrong  \n- D uses impératif présent (couchez-vous), not futur simple - correctly wrong\n\nResult: TRUE||All wrong answers fail to use futur simple as required by the question.\n\nNo remaining tasks - the verification was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780061126524-404380br",
+      "timestamp": "2026-05-29T13:26:07.096Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers use tenses other than futur simple (present in B, conditional in C, imperative in D) as required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780061652697-usidyr3x",
+      "timestamp": "2026-05-29T13:34:20.067Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "955a272126c19c28",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-11-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-11 - Le futur simple pour exprimer une promesse ou un ordre (tu feras tes devoirs)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au futur simple pour exprimer cette consigne.\nPhrase: Vous n'___ pas vos téléphones portables pendant l'examen.\nCorrect Answer: utiliserez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780064407876-4s1gbv2j"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence \"Vous n'utiliserez pas vos téléphones portables pendant l'examen\" is a clear prohibition/order, and the futur simple form \"utiliserez\" is precisely what expresses this command rather than a prediction, directly testing the rule's focus on futur simple for expressing orders.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780064450347-w0fb6hwz",
+      "timestamp": "2026-05-29T14:21:19.298Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question primarily tests futur simple conjugation of \"utiliser\" rather than the specific usage of futur simple for expressing orders/promises — a student could answer correctly knowing only conjugation patterns without understanding the rule about when futur simple is used for consignes.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780064501529-5uqahenr",
+      "timestamp": "2026-05-29T14:22:10.519Z"
+    }
+  ]
+}

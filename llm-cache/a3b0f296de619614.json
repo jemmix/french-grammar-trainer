@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a3b0f296de619614",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-11-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-11 - Le futur simple pour exprimer une promesse ou un ordre (tu feras tes devoirs)\n\nQUESTION:\nType: Input\nPrompt: Complétez avec le bon temps.\nPhrase: Je vous le promets : je ___ un coup de fil à Marie dès mon arrivée.\nCorrect Answer: donnerai\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780064804488-imhqbrm0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly frames the sentence as a promise with \"Je vous le promets\" and requires the student to supply the futur simple form \"donnerai,\" directly testing the rule that futur simple is used to express promises.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780064807506-q1gbydq1",
+      "timestamp": "2026-05-29T14:27:06.126Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The future time marker \"dès mon arrivée\" allows students to determine the correct answer using general futur simple conjugation knowledge, making the promise context incidental rather than essential to solving the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780064826127-yemujvmr",
+      "timestamp": "2026-05-29T14:27:27.667Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence explicitly frames the action as a promise (\"Je vous le promets\") and requires the futur simple \"donnerai\" to express that promise, which directly tests the rule about using futur simple for promises.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780064848210-alhb44b9",
+      "timestamp": "2026-05-29T14:28:07.969Z"
+    }
+  ]
+}

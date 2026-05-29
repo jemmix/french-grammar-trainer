@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9501650f45092019",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-11-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-11 - Le futur simple pour exprimer une promesse ou un ordre (tu feras tes devoirs)\n\nQUESTION:\nType: Input\nPrompt: Complétez avec le bon temps.\nPhrase: Votre colis est arrivé en retard, mais nous ___ la prochaine commande en priorité.\nCorrect Answer: traiterons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780066177681-969rf6s9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The generic prompt \"Complétez avec le bon temps\" doesn't establish a promise or order context, so a student could answer correctly using only general knowledge that futur simple indicates future events, without understanding the specific promise/order usage of the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780066179690-0t9v263k",
+      "timestamp": "2026-05-29T14:50:03.211Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic futur simple conjugation in a customer service context (stating a future action), not the specific use of futur simple to express a promise or order as the rule describes with examples like \"tu feras tes devoirs.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780066203211-yx7u47sm",
+      "timestamp": "2026-05-29T14:50:22.427Z"
+    }
+  ]
+}

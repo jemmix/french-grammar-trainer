@@ -1,0 +1,40 @@
+{
+  "cacheKey": "37d71b17a98c19d1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-11-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-11 - Le futur simple pour exprimer une promesse ou un ordre (tu feras tes devoirs)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « rappeler » au futur simple pour promettre de rappeler quelqu'un.\nPhrase: Je suis débordé maintenant, mais je ___ dans l'heure qui vient.\nCorrect Answer: rappellerai\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780065562655-h9drats1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests the conjugation and spelling of \"rappeler\" in the futur simple (double L rule), not the specific use of futur simple to express a promise or order—the promise context is incidental to solving the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780065562657-5abx637v",
+      "timestamp": "2026-05-29T14:39:36.943Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question explicitly frames the context as a promise (\"pour promettre de rappeler quelqu'un\") and requires using the futur simple to express that promise, which directly tests the stated rule about using futur simple for promises.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780065576944-3bupxt92",
+      "timestamp": "2026-05-29T14:39:48.303Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question places the student in a promise situation (\"je suis débordé maintenant, mais je ___ dans l'heure qui vient\") and requires conjugating \"rappeler\" in futur simple to complete that promise, directly testing the use of futur simple for expressing a promise.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780065588304-a5mylifw",
+      "timestamp": "2026-05-29T14:40:05.793Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary\nI was in the process of validating a French grammar question for alignment with its stated rule. The question asks students to conjugate \"rappeler\" in futur simple in a promise context, with the correct answer being \"rappellerai.\"\n\n## Analysis Completed\nThe question was being evaluated against the rule \"Le futur simple pour exprimer une promesse ou un ordre\" (using futur simple to express a promise or order).\n\n## Remaining Tasks\n- Output the final verdict and reason\n\n## Verdict (for reference)\nVERDICT: MISALIGNED\nREASON: The question primarily tests conjugation of \"rappeler\" in futur simple (including the double-L spelling rule), not the rule about when to use futur simple for promises; the correct answer can be determined without understanding that futur simple is specifically used for promises versus other contexts.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780065605793-61hh3shb",
+      "timestamp": "2026-05-29T14:40:23.604Z"
+    }
+  ]
+}

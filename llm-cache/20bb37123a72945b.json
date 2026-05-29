@@ -1,0 +1,40 @@
+{
+  "cacheKey": "20bb37123a72945b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-11-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-11 - Le futur simple pour exprimer une promesse ou un ordre (tu feras tes devoirs)\n\nQUESTION:\nType: Input\nPrompt: Complétez la promesse avec le verbe « téléphoner » au futur simple.\nPhrase: Je vous le promets : je ___ dans la journée.\nCorrect Answer: téléphonerai\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780066303058-uev7pb23"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly frames the conjugation within a promise context (\"Je vous le promets\") and requires the futur simple form, directly testing the rule that futur simple is used to express promises.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780066303068-zc40s82g",
+      "timestamp": "2026-05-29T14:52:06.715Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly instructs the student to use futur simple, so it only tests conjugation knowledge rather than whether the student understands that futur simple is the appropriate tense choice for expressing promises.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780066326715-a87zwvrp",
+      "timestamp": "2026-05-29T14:52:23.765Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"téléphoner\" in the futur simple to complete a promise (\"Je vous le promets\"), which directly tests the rule about using the futur simple to express a promise.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780066343765-wz1rv16h",
+      "timestamp": "2026-05-29T14:52:36.155Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule. Here is my analysis:\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to use the futur simple (\"avec le verbe 'téléphoner' au futur simple\"), so the question only tests verb conjugation knowledge, not the specific rule that futur simple is used to express promises or orders.\n\nThe question would need to let the student choose the tense themselves based on recognizing the promise context in order to properly test rule 05-11.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780066356155-0yrrffa1",
+      "timestamp": "2026-05-29T14:52:51.286Z"
+    }
+  ]
+}

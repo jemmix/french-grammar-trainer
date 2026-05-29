@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9c3a81afa8d9669e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-11-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-11 - Le futur simple pour exprimer une promesse ou un ordre (tu feras tes devoirs)\n\nQUESTION:\nType: Input\nPrompt: Complétez avec le verbe au futur simple pour exprimer une promesse.\nPhrase: Nous ___ vos appels avec la plus grande discrétion.\nCorrect Answer: traiterons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780058662056-7gqwaa4i"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence \"Nous traiterons vos appels avec la plus grande discrétion\" is a statement of future procedure or service guarantee, not a genuine promise or order in the grammatical sense, so answering correctly only requires knowing futur simple conjugation rather than the specific promise/order usage this rule teaches.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780058831931-bt9av12i",
+      "timestamp": "2026-05-29T12:47:44.008Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence \"Nous traiterons vos appels avec la plus grande discrétion\" expresses a professional procedure or statement of fact, not a personal promise or order as specified by the rule; additionally, the question can be answered correctly using only future simple conjugation knowledge without understanding the promise/order usage distinction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780059441096-t9skmk3z",
+      "timestamp": "2026-05-29T12:57:36.139Z"
+    }
+  ]
+}

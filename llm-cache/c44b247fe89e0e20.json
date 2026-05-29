@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c44b247fe89e0e20",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-11-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-11 - Le futur simple pour exprimer une promesse ou un ordre (tu feras tes devoirs)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au futur simple.\nPhrase: Tu ___ tous tes légumes avant de prendre du dessert. » (instruction parentale)\nCorrect Answer: mangeras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780063528683-umhn944g"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question presents a parental instruction (explicitly labeled as such), which is an order, and requires the futur simple conjugation \"mangeras,\" directly testing the rule that futur simple is used to express orders.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780063555620-syijmpg3",
+      "timestamp": "2026-05-29T14:06:27.015Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question only tests conjugation of \"manger\" in futur simple, not the rule's core concept of recognizing when futur simple is used for promises/orders—the prompt explicitly states \"au futur simple,\" so students don't need to identify the order/promise context to answer correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780063606371-k8h72odh",
+      "timestamp": "2026-05-29T14:07:06.937Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was asked to validate whether a French grammar question about conjugating \"manger\" in futur simple aligns with rule 05-11 (using futur simple to express a promise or order).\n\n**My assessment (not yet delivered in proper format):**\nVERDICT: MISALIGNED\nREASON: The question only tests basic futur simple conjugation of \"manger\" for \"tu\", not the specific usage of futur simple to express an order or promise - a student could answer correctly without understanding this rule's distinct function versus other tenses like impératif.\n\n**Remaining tasks:**\n- Deliver the verdict in the exact format requested by the user\n\n**Recommendations:**\n- To properly test rule 05-11, the question should test whether students know to CHOOSE futur simple for an order context (e.g., a multiple choice between \"mange\", \"mangeras\", \"manges\", \"as mangé\") rather than just conjugating a verb that's already framed in futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780063627591-t50ttnu0",
+      "timestamp": "2026-05-29T14:07:30.608Z"
+    }
+  ]
+}

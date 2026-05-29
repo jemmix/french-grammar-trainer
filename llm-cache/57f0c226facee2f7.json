@@ -1,0 +1,26 @@
+{
+  "cacheKey": "57f0c226facee2f7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-11-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-11 - Le futur simple pour exprimer une promesse ou un ordre (tu feras tes devoirs)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « appeler » au futur simple pour exprimer cette promesse.\nPhrase: C'est promis : je t'___ ce soir.\nCorrect Answer: appellerai\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780065294403-uj0ats5z"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Work accomplished:** I was in the process of validating a French grammar question against its stated rule.\n\n**Analysis completed:**\nThe question asks students to conjugate \"appeler\" in futur simple with the context \"C'est promis : je t'___ ce soir.\" The stated rule is about using futur simple specifically to express a promise or order.\n\n**Verdict I would have given:**\nVERDICT: MISALIGNED\nREASON: The question tests conjugation of \"appeler\" in futur simple (a spelling/conjugation rule), not the specific usage of futur simple to express promises—the promise context is already provided in the prompt, so the student only needs conjugation knowledge, not knowledge of when futur simple is used for promises.\n\n**Remaining tasks:** None—this was a single-question validation that I was able to analyze fully.\n\n**Recommendation:** To properly test rule 05-11, the question should present a scenario where the student must choose futur simple as the appropriate tense for expressing a promise, rather than being told it's a promise and simply conjugating the verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780065294410-19uco0r7",
+      "timestamp": "2026-05-29T14:35:27.534Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests verb conjugation of \"appeler\" in futur simple (including the double-l spelling rule), not the rule about using futur simple to express promises or orders—the student is explicitly told both the tense and the promise context in the prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780065327859-p01c6c9x",
+      "timestamp": "2026-05-29T14:36:13.336Z"
+    }
+  ]
+}

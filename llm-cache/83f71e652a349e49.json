@@ -1,0 +1,47 @@
+{
+  "cacheKey": "83f71e652a349e49",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-11-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez la promesse du médecin : « Je vous ___ les meilleurs soins possibles. »\n\nChoices:\nA. [CORRECT] donnerai\nB. [WRONG] donne\nC. [WRONG] donnerais\nD. [WRONG] vais donner\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780058662054-enei9dod"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThis task was a single-step verification request that I was processing when the limit was reached.\n\nSummary of analysis completed:\n- Question asks to complete a doctor's \"promesse\" (promise): \"Je vous ___ les meilleurs soins possibles.\"\n- A (donnerai) is correct - futur simple, the standard tense for formal promises in French\n- B (donne) is correctly wrong - present tense doesn't convey a future promise\n- C (donnerais) is correctly wrong - conditionnel implies uncertainty/condition, not a firm promise\n- D (vais donner) is the borderline case - futur proche can express future intention but is not the canonical tense for formal promises in French grammar instruction\n\nTRUE||All wrong answers use tenses inappropriate for a formal promise: present (B), conditional (C), and futur proche (D) instead of the required futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780058680089-sav8a0fq",
+      "timestamp": "2026-05-29T12:45:08.679Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the futur simple, which is the standard tense for expressing a promise in French grammar.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780058904488-ajaq5p83",
+      "timestamp": "2026-05-29T12:59:12.029Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary\nI was analyzing a French grammar verification task for a multiple choice question about completing a doctor's promise. The question asks for the correct future tense form of \"donner\" in the context \"Je vous ___ les meilleurs soins possibles.\"\n\n## Analysis completed\n- A (donnerai) - Correct: futur simple, the classic tense for promises\n- B (donne) - Wrong: présent tense, not used for promises\n- C (donnerais) - Wrong: conditionnel, expresses hypothetical situations not promises\n- D (vais donner) - Problematic: futur proche, which CAN express promises/intentions in spoken French\n\n## Remaining task\nProvide the final verdict in the required format.\n\n## Recommendation\nThe verdict should be: FALSE|D|D uses the futur proche (\"vais donner\") which can express promises and intentions in French, particularly in spoken register, making it a plausible correct answer that violates the requirement that all wrong answers be clearly incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780059643057-4mcgodp9",
+      "timestamp": "2026-05-29T13:01:51.606Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was analyzing a French grammar verification task for the question \"Complétez la promesse du médecin : « Je vous ___ les meilleurs soins possibles. »\" with wrong answers B (donne), C (donnerais), and D (vais donner).\n\n**Analysis completed:**\n- B \"donne\" (présent) is incorrect because a promise requires future tense, not present\n- C \"donnerais\" (conditionnel) is incorrect because conditional expresses hypothesis, not a firm promise\n- D \"vais donner\" (futur proche) is incorrect in this context because futur simple is the standard tense for formal promises in French; futur proche is more casual and indicates immediate/near future plans rather than a commitment\n\n**Verdict:** TRUE||All wrong answers use tenses that do not correctly express a formal promise: présent (B) states a current fact, conditionnel (C) expresses hypothesis rather than commitment, and futur proche (D) is too informal for a formal promise context.\n\n**Remaining tasks:** None - the analysis is complete.\n\n**Recommendation:** The verdict is TRUE - all three wrong answers (B, C, D) are indeed incorrect within the grammatical constraints of the question (completing a promise using the appropriate tense).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780059711607-e0uoi3p0",
+      "timestamp": "2026-05-29T13:02:20.565Z"
+    },
+    {
+      "raw": "FALSE|D|The futur proche \"vais donner\" can legitimately express a promise in everyday French, making it a plausible correct answer in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780059740566-d1ukubjh",
+      "timestamp": "2026-05-29T13:03:39.191Z"
+    }
+  ]
+}

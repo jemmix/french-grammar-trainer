@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6f8d152e0ec5fc2b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-11-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Identifiez la phrase exprimant un ordre parental clair avec le futur simple.\n\nChoices:\nA. [CORRECT] Tu rentreras à la maison avant 22 heures.\nB. [WRONG] Tu rentres à la maison avant 22 heures.\nC. [WRONG] Tu rentrerais à la maison avant 22 heures.\nD. [WRONG] Tu es rentré à la maison avant 22 heures.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780058662054-twlszp45"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the futur simple as required by the question prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780058682565-vp4fip6x",
+      "timestamp": "2026-05-29T12:45:33.255Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses other than the futur simple (présent, conditionnel présent, passé composé) which is explicitly required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780058978682-7nhfzpbg",
+      "timestamp": "2026-05-29T12:49:53.247Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses other than futur simple (présent, conditionnel présent, passé composé), which the question explicitly requires.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780059528528-v0t0zat7",
+      "timestamp": "2026-05-29T12:59:38.988Z"
+    }
+  ]
+}

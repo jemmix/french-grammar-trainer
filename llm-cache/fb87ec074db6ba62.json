@@ -1,0 +1,40 @@
+{
+  "cacheKey": "fb87ec074db6ba62",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-11-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-11 - Le futur simple pour exprimer une promesse ou un ordre (tu feras tes devoirs)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel temps exprime l'interdiction dans : « Les étudiants ne tricheront pas pendant l'examen. »\nChoices:\nA. [CORRECT] Le futur simple, pour une interdiction officielle\nB. Le conditionnel, pour une suggestion polie\nC. Le présent de l'indicatif, pour une habitude\nD. L'imparfait, pour une description du passé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780063226680-tdosaxdo"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule. Here is my assessment:\n\nVERDICT: ALIGNED\nREASON: A prohibition is a type of order, and the question tests whether the student recognizes that the futur simple can express authoritative directives (including negative ones), not just future time predictions.\n\nThe question appropriately tests the rule \"Le futur simple pour exprimer une promesse ou un ordre\" because an interdiction (prohibition) is a negative form of an order. The student must understand that \"ne tricheront pas\" functions as an official directive rather than a prediction about the future, which is the core concept of the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780063227698-rdmlkda8",
+      "timestamp": "2026-05-29T14:01:18.916Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: An interdiction (prohibition) is a type of order (negative command), and the question tests recognizing that futur simple can express this mandatory/performative function, which is the core concept of the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780063529689-e6jxn8h7",
+      "timestamp": "2026-05-29T14:05:58.092Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The rule explicitly covers \"une promesse ou un ordre\" but the question tests recognition of futur simple used for \"une interdiction officielle,\" which is a distinct usage not mentioned in the rule—even though interdiction is related to orders, it should be explicitly included in the rule if intended to be tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780063587729-hoiq4b21",
+      "timestamp": "2026-05-29T14:07:06.589Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The rule specifically covers futur simple for promises or orders (positive commands like \"tu feras tes devoirs\"), but the question tests futur simple used for a prohibition (\"ne tricheront pas\"), which is a distinct modal use that isn't explicitly covered by the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780063626590-pr9hzuor",
+      "timestamp": "2026-05-29T14:07:28.928Z"
+    }
+  ]
+}

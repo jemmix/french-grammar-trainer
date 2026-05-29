@@ -1,0 +1,26 @@
+{
+  "cacheKey": "69a542caa1d87613",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-11-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-11 - Le futur simple pour exprimer une promesse ou un ordre (tu feras tes devoirs)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « respecter » au futur simple pour formuler cette consigne.\nPhrase: Vous ___ le silence pendant les cours.\nCorrect Answer: respecterez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780066303061-edlanqyv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests conjugation of \"respecter\" in futur simple for \"vous,\" which can be answered correctly without understanding that futur simple is used to express orders or promises—the rule's specific concept is incidental, not essential to solving the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780066307072-6kt4rlr0",
+      "timestamp": "2026-05-29T14:52:11.129Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic futur simple conjugation of \"respecter\" for the subject \"vous,\" not the specific grammatical function of using futur simple to express an order or promise—a student can answer correctly knowing only verb conjugation without understanding the rule's focus on futur simple as a command form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780066331130-y1ynthly",
+      "timestamp": "2026-05-29T14:52:30.528Z"
+    }
+  ]
+}

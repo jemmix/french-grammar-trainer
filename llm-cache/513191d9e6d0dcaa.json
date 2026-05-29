@@ -1,0 +1,33 @@
+{
+  "cacheKey": "513191d9e6d0dcaa",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-11-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-11 - Le futur simple pour exprimer une promesse ou un ordre (tu feras tes devoirs)\n\nQUESTION:\nType: Input\nPrompt: Complétez l'engagement de l'entreprise avec le verbe au futur simple.\nPhrase: Nous vous le garantissons : nous ___ vos appels avec la plus grande discrétion.\nCorrect Answer: traiterons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780060837688-6gfjryq8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests basic futur simple conjugation of \"traiter\" — a student could answer correctly without knowing that futur simple is specifically used to express promises or orders, which is the actual rule being claimed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780061010913-wtrrf3vz",
+      "timestamp": "2026-05-29T13:24:06.818Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugating \"traiter\" in the futur simple (\"nous traiterons\") within the explicit context of a company promise/commitment (\"Nous vous le garantissons\"), directly matching the rule about using futur simple to express a promise.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780061283542-jku1dmmf",
+      "timestamp": "2026-05-29T13:38:18.549Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use the futur simple (\"avec le verbe au futur simple\"), so the question tests conjugation of \"traiter\" rather than whether the student knows that futur simple is used to express a promise or commitment.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780061898549-m5dfj9y3",
+      "timestamp": "2026-05-29T13:38:31.856Z"
+    }
+  ]
+}

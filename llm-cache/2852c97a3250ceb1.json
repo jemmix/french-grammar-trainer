@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2852c97a3250ceb1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-11-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel temps exprime l'interdiction dans : « Il est strictement interdit : les étudiants ne tricheront pas pendant l'examen. »\n\nChoices:\nA. [CORRECT] Le futur simple, pour une interdiction officielle\nB. [WRONG] Le conditionnel, pour une suggestion polie\nC. [WRONG] Le présent de l'indicatif, pour une habitude\nD. [WRONG] L'imparfait, pour une description du passé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780060837683-3sef5b3h"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers incorrectly identify the tense of \"tricheront\" which is clearly futur simple, not conditionnel (tricheraient), présent (trichent), or imparfait (trichaient).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780060864803-613darfz",
+      "timestamp": "2026-05-29T13:22:04.255Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nThis was a single-step verification task for a French grammar MCQ question about identifying the tense used to express prohibition.\n\n**Verdict for the question:**\nTRUE||All wrong answers incorrectly identify the tense of \"tricheront\" which is futur simple, not conditionnel, présent, or imparfait.\n\n**Remaining tasks:**\nNone - the verification was straightforward and can be completed with the verdict above.\n\n**Recommendations:**\nThe wrong answers B, C, and D are all correctly flagged as incorrect since \"tricheront\" is unambiguously futur simple and none of the wrong answers correctly identify this tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780061125855-3gv0yc50",
+      "timestamp": "2026-05-29T13:26:08.211Z"
+    }
+  ]
+}

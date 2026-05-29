@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2b5a05b70e8dba24",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-11-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-11 - Le futur simple pour exprimer une promesse ou un ordre (tu feras tes devoirs)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « livrer » au futur simple pour exprimer cet engagement.\nPhrase: Nous ___ votre commande demain matin, sans faute.\nCorrect Answer: livrerons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780065294405-yrn7g1it"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests basic futur simple conjugation of \"livrer\" (nous livrerons), not the specific use of futur simple to express a promise or order — a student who simply knows how to conjugate the verb can answer correctly without understanding that \"sans faute\" signals a promise context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780065296412-ps9cpjtx",
+      "timestamp": "2026-05-29T14:35:26.858Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests basic futur simple conjugation of \"livrer\" with \"nous,\" not the specific grammatical distinction of using futur simple to express a promise or order as opposed to other future uses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780065326858-xk6qjl1w",
+      "timestamp": "2026-05-29T14:35:53.529Z"
+    }
+  ]
+}

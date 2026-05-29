@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8dd09c7d1a83a51e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-11-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez avec le bon temps : « Vous ___ ces rapports avant demain, c'est obligatoire. »\n\nChoices:\nA. [CORRECT] finirez\nB. [WRONG] finissez\nC. [WRONG] finiriez\nD. [WRONG] finissaient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780064407867-gqdyfm08"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to verify that wrong answers B, C, and D in a French grammar multiple choice question are indeed incorrect. The question asks to complete \"Vous ___ ces rapports avant demain, c'est obligatoire.\" with the correct tense.\n\n**Analysis completed:**\n- B (finissez - present tense): Incorrect because \"avant demain\" requires future tense for a deadline\n- C (finiriez - conditional): Incorrect because conditional expresses possibility/hypothetical, not obligation with a firm deadline\n- D (finissaient - imperfect): Incorrect because imperfect is for past ongoing actions, not future obligations\n\n**Verdict that would have been returned:**\nTRUE||All wrong answers use tenses incompatible with the future deadline and obligation expressed in the question.\n\n**Remaining tasks:** None - the verification was complete at the point of step limit.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780064413895-u12vkk34",
+      "timestamp": "2026-05-29T14:20:48.627Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses present tense instead of future for a \"before tomorrow\" context, C uses conditional instead of indicative future, and D uses imparfait 3rd person plural instead of futur 2nd person plural.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780064471316-zxwcuiy6",
+      "timestamp": "2026-05-29T14:21:29.611Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses present tense instead of future for \"avant demain\"; C uses conditional which contradicts the certainty of \"c'est obligatoire\"; D uses both wrong person (3rd plural instead of 2nd) and wrong tense (imparfait instead of futur).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780064507144-uoq2zq9r",
+      "timestamp": "2026-05-29T14:22:21.318Z"
+    }
+  ]
+}

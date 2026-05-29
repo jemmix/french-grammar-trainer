@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6abba6c1e1b22ca0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-11-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Identifiez la promesse exprimée avec futur simple dans un contexte amical.\n\nChoices:\nA. [CORRECT] Je t'inviterai à ma fête samedi prochain.\nB. [WRONG] Je t'inviterais à ma fête samedi prochain.\nC. [WRONG] Je t'invite à ma fête samedi prochain.\nD. [WRONG] Invite-toi à ma fête samedi prochain.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780058662055-mcz9oo82"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use different tenses (conditionnel présent for B, présent for C, impératif for D) rather than the futur simple required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780058772166-fswsgznn",
+      "timestamp": "2026-05-29T12:46:42.339Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**What was accomplished:**\nThe task was to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question asks to identify a promise expressed with \"futur simple\" in a friendly context.\n\n**Analysis completed:**\n- **B (\"Je t'inviterais\")**: Uses conditionnel présent, not futur simple — correctly marked as wrong\n- **C (\"Je t'invite\")**: Uses présent, not futur simple — correctly marked as wrong  \n- **D (\"Invite-toi\")**: Uses impératif reflexive (and is semantically nonsensical), not futur simple — correctly marked as wrong\n\n**Verdict that would have been returned:**\nTRUE||All wrong answers use a different tense/mood (conditionnel, présent, impératif) rather than the required futur simple.\n\n**Remaining tasks:** None — the verification was straightforward and complete.\n\n**Recommendations:** No further action needed; all wrong answers are clearly incorrect within the stated grammatical constraints.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780059363744-a78zvk7r",
+      "timestamp": "2026-05-29T12:56:18.261Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses conditionnel présent instead of futur simple, C uses présent instead of futur simple, and D is an ungrammatical imperative reflexive form that doesn't express a promise.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780059577209-h7g1p0q3",
+      "timestamp": "2026-05-29T13:00:02.025Z"
+    }
+  ]
+}
