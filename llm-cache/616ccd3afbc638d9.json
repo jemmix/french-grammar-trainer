@@ -1,0 +1,33 @@
+{
+  "cacheKey": "616ccd3afbc638d9",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "05-16-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le futur antérieur pour exprimer une action accomplie dans le futur (j'aurai fini avant midi)\nPROMPT: Conjuguez au futur antérieur pour exprimer l'ordre des événements futurs.\nPHRASE: Quand tu arriveras, j'_____ le dîner.\nCORRECT ANSWER: aurai préparé\n\nWRONG ANSWERS to evaluate:\n1. aurons préparé\n2. ai préparé\n3. aurais préparé\n4. avais préparé\n5. as préparé\n6. aurai préparer\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780097622439-mst23xfk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: wrong person agreement (aurons), confusion with passé composé (ai/as préparé), confusion with conditionnel passé (aurais préparé), confusion with plus-que-parfait (avais préparé), and using infinitive instead of past participle (aurai préparer).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780097911086-y5a60i1i",
+      "timestamp": "2026-05-29T23:38:56.243Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: wrong person conjugation (aurons, as), wrong tense confusion (ai, avais for passé composé/plus-que-parfait), conditional vs future confusion (aurais), and infinitive instead of past participle (préparer).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780098043950-imvmevn3",
+      "timestamp": "2026-05-29T23:41:01.071Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: wrong person (aurons), wrong tense (ai/avais/as), futur/conditionnel confusion (aurais), and infinitive instead of past participle (préparer) — all highly plausible mistakes when conjugating futur antérieur.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780098166268-rhxcpjex",
+      "timestamp": "2026-05-29T23:43:02.899Z"
+    }
+  ]
+}

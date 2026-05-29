@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3927a5ece9258f08",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-16-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez le verbe correct : « À cette heure-là demain, j'_____ le projet. »\n\nChoices:\nA. [CORRECT] aurai achevé\nB. [WRONG] achèverai\nC. [WRONG] aurais achevé\nD. [WRONG] ai achevé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780097622427-53fpbnii"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses futur simple instead of the required futur antérieur for expressing completion by a future time point, C uses conditionnel passé (wrong mood), and D uses passé composé (wrong tense for a future time reference).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780097625447-pw1fl595",
+      "timestamp": "2026-05-29T23:34:02.352Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question asks for the correct verb form in \"À cette heure-là demain, j'_____ le projet.\" which requires the futur antérieur (future perfect) tense due to the \"at that time tomorrow\" context indicating an action completed before a future point.\n\nAnalysis completed:\n- B (achèverai) - futur simple, not futur antérieur; doesn't convey \"will have finished\"\n- C (aurais achevé) - conditionnel, used for hypotheticals, not for certain future completion\n- D (ai achevé) - passé composé, a past tense completely wrong for future context\n\nVERDICT|B,C,D|TRUE||All wrong answers use incorrect tenses: B uses futur simple instead of futur antérieur, C uses conditional mood instead of future indicative, and D uses a past tense instead of a future tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780097677950-vypl6g6r",
+      "timestamp": "2026-05-29T23:34:56.779Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for expressing a future action completed by a specific future time point: B is futur simple (lacks the completion aspect), C is conditionnel passé (requires a hypothetical context), and D is passé composé (refers to past/present, not future).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780097731043-4zqnrm5w",
+      "timestamp": "2026-05-29T23:35:49.454Z"
+    }
+  ]
+}

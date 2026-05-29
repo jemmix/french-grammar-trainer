@@ -1,0 +1,33 @@
+{
+  "cacheKey": "90dc0fc9f7c59326",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-16-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-16 - Le futur antérieur pour exprimer une action accomplie dans le futur (j'aurai fini avant midi)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez au futur antérieur pour exprimer l'ordre des événements futurs.\nPhrase: Quand tu arriveras, j'_____ le dîner.\nCorrect Answer: aurai préparé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780097622439-yscfeq0j"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"préparer\" in the futur antérieur to express that the dinner will be finished before the other person arrives, which directly tests the rule's core concept of expressing a future completed action.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780097656242-wvcvp9ii",
+      "timestamp": "2026-05-29T23:34:25.972Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using the futur antérieur (\"aurai préparé\") to express an action that will be completed before another future action (\"quand tu arriveras\"), which is precisely the grammar rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780097697567-8goz0t0z",
+      "timestamp": "2026-05-29T23:35:45.190Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a French grammar question about the futur antérieur is aligned with the stated rule. I completed the analysis but was unable to output the formatted verdict before the step limit.\n\nThe question asks students to conjugate \"préparer\" in the futur antérieur in the sentence \"Quand tu arriveras, j'_____ le dîner\" with the correct answer being \"aurai préparé.\" This is a classic futur antérieur construction showing an action completed before another future action.\n\nVERDICT: ALIGNED\nREASON: The question directly tests using the futur antérieur to express an action that will be completed before another future event, which is the core function of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780097764032-832sjmpp",
+      "timestamp": "2026-05-29T23:36:19.559Z"
+    }
+  ]
+}
