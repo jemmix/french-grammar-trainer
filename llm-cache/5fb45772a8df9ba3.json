@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5fb45772a8df9ba3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-12-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand vous _______ à la gare, vous prendrez un taxi. »\n\nChoices:\nA. [CORRECT] arriverez\nB. [WRONG] arriveriez\nC. [WRONG] seriez arrivés\nD. [WRONG] arrivâtes\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780069503671-zoe04zyc"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses conditionnel présent instead of the required futur simple after \"quand\" with a future main clause, C changes the verb to a passé composé form with conditionnel which doesn't fit the future context, and D uses passé simple which is a past tense incompatible with the future meaning of \"prendrez.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780069536607-qbnddd51",
+      "timestamp": "2026-05-29T15:45:49.601Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the sequence of tenses required after \"quand\" with a future main clause: B uses conditionnel présent instead of futur, C uses conditionnel passé (a past hypothetical), and D uses passé simple (a past tense), none of which are grammatically correct in this future context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780069663522-y5nzf79q",
+      "timestamp": "2026-05-29T15:48:17.113Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThe task was to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect.\n\n**Summary of analysis completed:**\nThe question asks to complete \"Quand vous _______ à la gare, vous prendrez un taxi.\" The second clause uses future tense (\"prendrez\"), and \"quand\" in French requires the future tense after it when referring to future events.\n\n- B. \"arriveriez\" (conditional) - Incorrect: doesn't match the future tense context\n- C. \"seriez arrivés\" (conditional perfect) - Incorrect: wrong tense and overly complex construction\n- D. \"arrivâtes\" (passé simple) - Incorrect: past tense, not future\n\n**Verdict that would have been returned:**\nTRUE||All wrong answers contain clear grammar errors.\n\n**No remaining tasks** - the verification was straightforward and complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780069828038-9l3p852k",
+      "timestamp": "2026-05-29T15:50:46.790Z"
+    }
+  ]
+}

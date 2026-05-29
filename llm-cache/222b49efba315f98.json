@@ -1,0 +1,33 @@
+{
+  "cacheKey": "222b49efba315f98",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-12-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Identifiez la phrase grammaticalement correcte :\n\nChoices:\nA. [CORRECT] Quand j'aurai fini mes études, je chercherai un travail.\nB. [WRONG] Quand j'ai fini mes études, je cherche un travail.\nC. [WRONG] Quand je finis mes études, je cherche un travail.\nD. [WRONG] Quand j'aurais fini mes études, je cherchais un travail.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780067661246-441u1skz"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar multiple-choice question are indeed incorrect. The question asks to identify the grammatically correct sentence, with A being correct (futur antérieur + futur simple for expressing a future condition/result).\n\nAnalysis completed:\n- B: Uses passé composé + présent - incorrect tense sequence for expressing future condition/result\n- C: Uses présent + présent - doesn't properly convey the future meaning required\n- D: Uses conditionnel passé + imparfait - incoherent tense combination for this construction\n\nAll three wrong answers contain clear grammatical errors within the context specified by the question.\n\nTRUE||All wrong answers contain clear tense agreement errors for expressing a future condition followed by a future result.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780067692785-h82jmklh",
+      "timestamp": "2026-05-29T15:15:37.989Z"
+    },
+    {
+      "raw": "TRUE||B uses passé composé with present which doesn't express a future sequence; C uses present+present which expresses a habitual action not a future sequence; D incoherently mixes conditionnel passé with imparfait.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068070067-xeeu0884",
+      "timestamp": "2026-05-29T15:21:35.445Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tense sequences for expressing a future scenario: B uses passé composé + présent (expresses a completed present action, not future), C uses présent + présent (expresses habitual present, not future), and D uses an invalid conditional + imparfait combination (conditional cannot follow \"quand\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068385381-eap0bvj3",
+      "timestamp": "2026-05-29T15:27:51.320Z"
+    }
+  ]
+}

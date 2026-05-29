@@ -1,0 +1,40 @@
+{
+  "cacheKey": "67fdfa2c4c825c17",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-12-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-12 - Le futur simple après quand / lorsque / dès que / aussitôt que (quand il viendra, je partirai)\n\nQUESTION:\nType: Input\nPrompt: Après « quand », conjuguez le verbe « téléphoner » au futur simple.\nPhrase: Quand tu _______, dis-le-moi.\nCorrect Answer: téléphoneras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780071173476-apwdn0hd"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule because correctly conjugating \"téléphoner\" as \"téléphoneras\" requires knowing that futur simple must be used after \"quand\" when referring to future events—using présent would yield \"téléphones\" which would be incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780071173489-xnv2o58q",
+      "timestamp": "2026-05-29T16:13:09.621Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate \"au futur simple,\" so answering correctly only requires knowing the conjugation of \"téléphoner,\" not understanding that futur simple (rather than présent or futur antérieur) is required after \"quand\" in future contexts.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780071189623-3knr6l2u",
+      "timestamp": "2026-05-29T16:13:24.253Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that \"quand\" requires the futur simple for future events—the student must produce \"téléphoneras\" rather than the present tense \"téléphones\" that English speakers might incorrectly expect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780071204254-8yjzc6f7",
+      "timestamp": "2026-05-29T16:13:37.616Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate in the futur simple, so answering correctly only requires knowing how to conjugate \"téléphoner\" for \"tu\" — it does not test whether the student knows that \"quand\" triggers the futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780071217616-3mhtu1jb",
+      "timestamp": "2026-05-29T16:13:54.524Z"
+    }
+  ]
+}

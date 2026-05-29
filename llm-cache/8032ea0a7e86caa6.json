@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8032ea0a7e86caa6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-12-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-12 - Le futur simple après quand / lorsque / dès que / aussitôt que (quand il viendra, je partirai)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « arriver » au futur simple pour compléter la phrase.\nPhrase: Quand tu _______, appelle-moi.\nCorrect Answer: arriveras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780069503680-qbjoco2c"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate in the futur simple (\"Conjuguez le verbe « arriver » au futur simple\"), so the student doesn't need to know the rule about using futur simple after \"quand\" — they just follow the direct instruction to conjugate, making this a simple conjugation exercise rather than a test of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780069592549-rl2hhgg8",
+      "timestamp": "2026-05-29T15:46:57.177Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate in the futur simple, so the question only tests basic conjugation of \"arriver\" for \"tu\" — it does not require knowing that \"quand\" triggers the futur simple rather than the présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780069755532-lizzx70l",
+      "timestamp": "2026-05-29T15:49:47.824Z"
+    }
+  ]
+}

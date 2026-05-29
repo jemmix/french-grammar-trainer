@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3053af1f04b9df37",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-12-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-12 - Le futur simple après quand / lorsque / dès que / aussitôt que (quand il viendra, je partirai)\n\nQUESTION:\nType: Input\nPrompt: Après « quand », conjuguez le verbe « arriver » au futur simple.\nPhrase: Quand tu _______, appelle-moi.\nCorrect Answer: arriveras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780070825732-d0ya7o8c"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\n- I was asked to validate whether a French grammar question properly tests the stated rule about using futur simple after \"quand/lorsque/dès que/aussitôt que\"\n- I analyzed the question and determined it is misaligned\n\nRemaining tasks:\n- None - the validation task was completed before the step limit\n\nMy verdict:\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to use the futur simple (\"conjuguez le verbe au futur simple\"), so answering correctly only requires knowing how to conjugate \"arriver\" in that tense, not the actual rule about when futur simple is required after temporal conjunctions like \"quand\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780070828755-mxmda075",
+      "timestamp": "2026-05-29T16:07:44.108Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the use of futur simple after \"quand\" by requiring the student to conjugate \"arriver\" in the future tense rather than the present tense, which is the core grammar point of this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780070865290-dtlcjxo0",
+      "timestamp": "2026-05-29T16:08:21.806Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of evaluating whether a French grammar question about \"le futur simple après quand/lorsque/dès que/aussitôt que\" properly tests the stated rule.\n\n**My assessment (not yet delivered in required format):**\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate \"au futur simple,\" so the question only tests basic conjugation of \"arriver\" for \"tu\" rather than testing whether the student knows to select futur simple (rather than présent or futur antérieur) after \"quand.\"\n\n**Remaining tasks:**\n- Deliver the verdict in the exact format requested by the user\n\n**Recommendations for what should be done next:**\n- A properly aligned question would remove the explicit \"au futur simple\" instruction and instead ask something like \"Conjuguez le verbe 'arriver'\" after \"quand\" — this would test whether the student independently knows to use futur simple rather than présent (\"arrives\") or futur antérieur (\"seras arrivé\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780070908252-xlmdugyw",
+      "timestamp": "2026-05-29T16:08:52.862Z"
+    }
+  ]
+}

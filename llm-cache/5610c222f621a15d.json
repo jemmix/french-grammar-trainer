@@ -1,0 +1,26 @@
+{
+  "cacheKey": "5610c222f621a15d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-12-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-12 - Le futur simple après quand / lorsque / dès que / aussitôt que (quand il viendra, je partirai)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « se lever » au futur simple pour compléter la phrase.\nPhrase: Lorsque le soleil _______, les enfants sortiront jouer.\nCorrect Answer: se lèvera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780072583941-a0s3xvzr"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate \"au futur simple,\" so answering correctly only requires knowing futur simple conjugation of \"se lever,\" not knowing that futur simple must be used after \"lorsque\" — a properly aligned question would require the student to choose the correct tense without being told which one to use.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780072584003-48uni7nx",
+      "timestamp": "2026-05-29T16:36:46.421Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question. Here is my assessment:\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate \"au futur simple,\" so answering correctly only requires knowing how to conjugate the pronominal verb \"se lever\" in that tense, not knowing the rule about when futur simple is required after conjunctions like \"lorsque.\"\n\n**Remaining tasks:** None — the validation verdict was ready to be delivered.\n\n**Recommendation:** To properly test rule 05-12, the prompt should not specify the tense. For example: \"Complétez la phrase avec la forme correcte du verbe « se lever ».\" This way, the student must know that \"lorsque\" triggers the futur simple (rather than présent) to answer correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780072606422-sbi2i7d9",
+      "timestamp": "2026-05-29T16:37:14.886Z"
+    }
+  ]
+}

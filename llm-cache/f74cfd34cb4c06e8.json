@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f74cfd34cb4c06e8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-12-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle forme verbale est correcte ? « Quand tu me _______, je serai heureux. »\n\nChoices:\nA. [CORRECT] verras\nB. [WRONG] vois\nC. [WRONG] verrais\nD. [WRONG] voyais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780067661246-21kheuq0"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses (present, conditional, imperfect) that are incompatible with \"quand\" followed by a future main clause, which requires the future tense in the subordinate clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780067708400-7m9uqdqe",
+      "timestamp": "2026-05-29T15:15:46.114Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: \"vois\" is present instead of futur simple required after \"quand\" for future reference, \"verrais\" is conditionnel which doesn't fit a temporal clause without a condition, and \"voyais\" is imparfait which indicates past/habitual action incompatible with the future main clause \"je serai\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068077004-2lo2u88f",
+      "timestamp": "2026-05-29T15:21:40.157Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying wrong answers for a French grammar MCQ question about verb tense agreement with \"quand\" (when).\n\nFor the question \"Quelle forme verbale est correcte ? « Quand tu me _______, je serai heureux. »\", I determined:\n\n- B (vois) - present tense, incorrect because \"quand\" with future main clause (\"je serai\") requires future tense in the subordinate clause\n- C (verrais) - conditional, incorrect as it doesn't agree with the future main clause\n- D (voyais) - imperfect, incorrect as it doesn't agree with the future main clause\n\nAll wrong answers are indeed grammatically incorrect in this context.\n\n**Remaining task:** None - the analysis was complete.\n\n**Recommendation:** The verdict is TRUE||All wrong answers use tenses that don't agree with the future tense required by \"quand\" + future main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068399862-viu4gi3y",
+      "timestamp": "2026-05-29T15:27:11.711Z"
+    }
+  ]
+}

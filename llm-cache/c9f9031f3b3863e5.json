@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c9f9031f3b3863e5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-12-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand tu _______, dis-le-moi. »\n\nChoices:\nA. [CORRECT] téléphoneras\nB. [WRONG] téléphones\nC. [WRONG] téléphonerais\nD. [WRONG] as téléphoné\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780071399151-07ifrkqz"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses present tense which doesn't fit the one-time future context of \"dis-le-moi,\" C uses conditional which is not used after \"quand,\" and D uses passé composé which is temporally incoherent with the imperative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780071403165-bqawyb89",
+      "timestamp": "2026-05-29T16:19:06.814Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the rule that \"quand\" introducing a future event requires the future tense (not present, conditional, or passé composé).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780071547237-hyf104tq",
+      "timestamp": "2026-05-29T16:19:34.070Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was tasked with verifying whether the wrong answers (B, C, D) in a French grammar multiple-choice question are indeed incorrect. The question asks to complete \"Quand tu _______, dis-le-moi\" with the correct verb form of \"téléphoner.\"\n\nAnalysis completed:\n- B (téléphones - présent): This is actually a valid answer in French. The présent tense can be used after \"quand\" to express future meaning, making this answer potentially correct.\n- C (téléphonerais - conditionnel): Incorrect, as the conditional is used with \"si\" clauses, not \"quand\" clauses.\n- D (as téléphoné - passé composé): Incorrect, as the past tense doesn't fit the temporal context of the imperative \"dis-le-moi.\"\n\nRemaining tasks: None - the analysis is complete.\n\nRecommendation: The verdict for this question should be FALSE|B|B is grammatically acceptable in French as the présent can express future meaning after \"quand,\" making it a potentially correct answer that should not be listed as wrong.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780071575068-ofv2zba2",
+      "timestamp": "2026-05-29T16:19:58.218Z"
+    }
+  ]
+}

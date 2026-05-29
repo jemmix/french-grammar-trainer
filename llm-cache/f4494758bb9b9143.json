@@ -1,0 +1,40 @@
+{
+  "cacheKey": "f4494758bb9b9143",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-12-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-12 - Le futur simple après quand / lorsque / dès que / aussitôt que (quand il viendra, je partirai)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « partir » au futur simple après « lorsque ».\nPhrase: Lorsque tu _______, ferme la porte à clé.\nCorrect Answer: partiras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780067661249-pj2wyhzp"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a French grammar question about conjugating \"partir\" in the futur simple after \"lorsque\" properly tests the stated rule (05-12 - Le futur simple après quand / lorsque / dès que / aussitôt que).\n\nVerdict: MISALIGNED\nReason: The prompt explicitly instructs the student to conjugate \"au futur simple après 'lorsque'\", meaning the student doesn't need to know the underlying rule that future tense is required after these conjunctions—they're simply following instructions to conjugate, which tests basic conjugation knowledge rather than the specific grammar rule about when to use futur simple after temporal conjunctions.\n\nRemaining tasks: None - this was a single validation request.\n\nRecommendations: To properly test this rule, the prompt should not mention \"futur simple\" or \"lorsque\" explicitly—for example: \"Complétez la phrase\" with \"Lorsque tu _______, ferme la porte à clé.\" This would require the student to know that futur simple is needed after \"lorsque\" to answer correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068000393-r5bu05d9",
+      "timestamp": "2026-05-29T15:20:49.353Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core grammar rule by requiring the learner to conjugate a verb in the futur simple after \"lorsque,\" which is exactly the pattern the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068331291-a4b2nxdh",
+      "timestamp": "2026-05-29T15:25:54.769Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests using the futur simple after \"lorsque,\" as the student must produce \"partiras\" (futur simple) rather than \"pars\" (présent) to answer correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068535771-id2jaiud",
+      "timestamp": "2026-05-29T15:29:19.515Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate in the futur simple, so answering correctly only requires knowing the conjugation of \"partir\" for \"tu\" — not the rule about using futur simple after \"lorsque\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068570135-g6x52au9",
+      "timestamp": "2026-05-29T15:29:44.390Z"
+    }
+  ]
+}

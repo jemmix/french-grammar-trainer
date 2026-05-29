@@ -1,0 +1,26 @@
+{
+  "cacheKey": "a362c2fb917a5589",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-12-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est grammaticalement juste ?\n\nChoices:\nA. [CORRECT] Lorsque le film finira, nous sortirons de la salle.\nB. [WRONG] Lorsque le film finit, nous sortons de la salle.\nC. [WRONG] Lorsque le film finira, nous sortons de la salle.\nD. [WRONG] Lorsque le film finissait, nous sortions de la salle.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780067661247-liwo5k9h"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a French grammar validation question about correct tense usage with \"lorsque\" (when) for future events.\n\n**Analysis completed:**\n- Answer B uses présent tense (\"finit\", \"sortons\") which expresses habitual actions, not a specific future event\n- Answer C incorrectly mixes futur simple (\"finira\") with présent (\"sortons\") - tense agreement is required\n- Answer D uses imparfait (\"finissait\", \"sortions\") which describes past habitual actions, not future events\n\n**Verdict that would have been returned:**\nTRUE||All wrong answers use incorrect tense combinations with \"lorsque\" for expressing a future event - B uses présent for habitual meaning, C mixes futur and présent, and D uses imparfait for past habitual actions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780067824195-cil3gid1",
+      "timestamp": "2026-05-29T15:17:58.418Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the rule that \"lorsque\" introducing a future action requires future tense in both clauses—B uses present throughout, C mixes future with present, and D incorrectly uses imparfait for a future event.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068147763-hsfyymgh",
+      "timestamp": "2026-05-29T15:22:51.166Z"
+    }
+  ]
+}

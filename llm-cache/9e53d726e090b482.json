@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9e53d726e090b482",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-12-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est correcte ?\n\nChoices:\nA. [CORRECT] Lorsque tu auras lu ce livre, nous en discuterons.\nB. [WRONG] Lorsque tu lis ce livre, nous en discutons.\nC. [WRONG] Lorsque tu lirais ce livre, nous en discuterions.\nD. [WRONG] Lorsque tu liras ce livre, nous en discutions.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780067661248-yi07z9wi"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses present tense after \"lorsque\" for a future action, C inappropriately uses conditional with \"lorsque\" which requires an indicative tense, and D incorrectly pairs future in the subordinate clause with imparfait in the main clause instead of a future tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780067967895-kcr32s2d",
+      "timestamp": "2026-05-29T15:19:55.125Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B incorrectly uses present tense for a future-time \"lorsque\" clause requiring futur antérieur; C incorrectly uses conditional after \"lorsque\" which requires indicative; D has a tense mismatch with futur simple followed by imparfait instead of futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068263721-3z24mn1x",
+      "timestamp": "2026-05-29T15:25:03.023Z"
+    }
+  ]
+}

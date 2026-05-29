@@ -1,0 +1,26 @@
+{
+  "cacheKey": "16d6ccbc6269d54c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-12-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-12 - Le futur simple après quand / lorsque / dès que / aussitôt que (quand il viendra, je partirai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase est grammaticalement juste ?\nChoices:\nA. [CORRECT] Lorsque le film finira, nous sortirons de la salle.\nB. Lorsque le film finit, nous sortons de la salle.\nC. Lorsque le film finira, nous sortons de la salle.\nD. Lorsque le film finissait, nous sortions de la salle.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780067661247-5q64fvbo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that \"lorsque\" referring to a future event requires the futur simple, with the correct answer demonstrating this (finira/sortirons) and the distractors showing common errors like using present (B), mixing tenses (C), or using imperfect (D).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780067833411-c78hn960",
+      "timestamp": "2026-05-29T15:17:48.400Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to validate whether a French grammar question about \"Le futur simple après quand / lorsque / dès que / aussitôt que\" is properly aligned with its stated rule. I completed the analysis.\n\nVerdict: VERDICT: ALIGNED\nREASON: The question directly tests the rule that futur simple must be used after \"lorsque\" when referring to future events, and that the main clause should also be in futur simple—not present (choice B), not a mismatched tense combination (choice C), and not imparfait (choice D).\n\nNo remaining tasks—this single validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068144426-lu0r2eb7",
+      "timestamp": "2026-05-29T15:22:46.024Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "37147bd52d92a050",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-12-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez la phrase : « Quand tu _______, je te téléphonerai. »\n\nChoices:\nA. [CORRECT] arriveras\nB. [WRONG] arrives\nC. [WRONG] arriverais\nD. [WRONG] arriverses\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780067661245-jvfo7fec"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses présent instead of the required futur simple after \"quand\" for future reference, C uses conditionnel présent which is the wrong mood, and D is not a valid French conjugation form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780067661251-wlp6pa67",
+      "timestamp": "2026-05-29T15:14:50.533Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Work accomplished:** I was asked to verify that wrong answers B, C, D for a French grammar question are indeed incorrect.\n\n**Analysis of the question:**\n- Question: \"Quand tu _______, je te téléphonerai.\" requires future tense after \"quand\" when referring to a future event\n- B. \"arrives\" (présent) - incorrect because French uses future tense after \"quand\" in future contexts\n- C. \"arriverais\" (conditionnel) - incorrect because conditional doesn't fit the certainty of \"je te téléphonerai\"\n- D. \"arriverses\" - not a valid French verb form\n\n**Verdict:** TRUE||All wrong answers contain clear grammar errors: B uses present instead of required future tense after \"quand,\" C uses conditional which doesn't match the future certainty of the main clause, and D is not a valid French verb form.\n\n**Remaining tasks:** None - the verification is complete.\n\n**Recommendations:** The question and answers are valid and can proceed through the validation pipeline.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068044138-ssz90yh0",
+      "timestamp": "2026-05-29T15:21:09.931Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses present tense instead of the required future after \"quand\" with a future main clause, C uses conditional which is not used in temporal clauses with \"quand,\" and D is not a valid French verb form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068336180-3rgymf1m",
+      "timestamp": "2026-05-29T15:26:10.845Z"
+    }
+  ]
+}

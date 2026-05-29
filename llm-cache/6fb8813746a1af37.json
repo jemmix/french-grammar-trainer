@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6fb8813746a1af37",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-12-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand elle _______, raconte-moi tout. »\n\nChoices:\nA. [CORRECT] rentrera\nB. [WRONG] rentre\nC. [WRONG] rentrerait\nD. [WRONG] rentrait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780069503667-0jom3t6p"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWhat was accomplished: I was in the process of evaluating a French grammar validation task for a multiple choice question about the correct tense to use after \"quand\" in a future context.\n\nThe question asked to complete \"Quand elle _______, raconte-moi tout\" with the correct answer being \"rentrera\" (future tense). I was analyzing whether the wrong answers (B: rentre, C: rentrerait, D: rentrait) are indeed incorrect.\n\nMy analysis concluded: TRUE||All wrong answers use incorrect tenses for a \"quand\" clause referring to a future event, which requires the future tense in French.\n\nRemaining tasks: None for this specific validation item.\n\nRecommendation: The verdict for this question is TRUE - all wrong answers are grammatically incorrect in the stated context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780069512695-svdok6tq",
+      "timestamp": "2026-05-29T15:45:37.243Z"
+    },
+    {
+      "raw": "FALSE|B|B \"rentre\" is grammatically acceptable because \"quand\" + present tense can express future meaning in French, making it a valid alternative to the future tense in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780069644210-m98ni6gh",
+      "timestamp": "2026-05-29T15:47:46.902Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of analyzing a French grammar verification task for the question \"Complétez : « Quand elle _______, raconte-moi tout. »\" with choices A (rentrera - correct), B (rentre), C (rentrerait), and D (rentrait).\n\nAnalysis completed so far:\n- C (rentrerait - conditionnel) is clearly incorrect; conditionnel doesn't work after \"quand\" in this construction\n- D (rentrait - imparfait) is clearly incorrect; it creates a tense mismatch with the present imperative \"raconte-moi\"\n- B (rentre - présent) is borderline: it's grammatically valid for a habitual reading (\"Whenever she comes home, tell me everything\"), but the question doesn't specify whether it's asking for a future or habitual interpretation\n\nRemaining task: Provide the final verdict in the required format.\n\nRecommendation: The verdict should be UNCLEAR because the question prompt doesn't specify whether it refers to a specific future event (where \"rentrera\" is the only correct answer) or a habitual action (where \"rentre\" would also be grammatically valid). The expected format response would be: `UNCLEAR||The question does not specify whether it refers to a one-time future event or a habitual action, and \"rentre\" is grammatically valid for the habitual reading.`",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780069810814-kpmosa2h",
+      "timestamp": "2026-05-29T15:50:51.256Z"
+    }
+  ]
+}

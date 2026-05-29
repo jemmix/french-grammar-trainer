@@ -1,0 +1,26 @@
+{
+  "cacheKey": "91cad01450772116",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-12-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-12 - Le futur simple après quand / lorsque / dès que / aussitôt que (quand il viendra, je partirai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase est correcte ?\nChoices:\nA. [CORRECT] Lorsque tu auras lu ce livre, nous en discuterons.\nB. Lorsque tu lis ce livre, nous en discutons.\nC. Lorsque tu lirais ce livre, nous en discuterions.\nD. Lorsque tu liras ce livre, nous en discutions.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780067661248-i30h8wlt"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question alignment.\n\nVERDICT: MISALIGNED\nREASON: The rule specifies using futur simple after \"lorsque\" (example: \"quand il viendra, je partirai\"), but the correct answer uses futur antérieur (\"auras lu\"), testing the distinction between futur simple and futur antérieur rather than the stated rule about futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780067970341-ssxmb3qs",
+      "timestamp": "2026-05-29T15:22:12.841Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The correct answer uses the futur antérieur (\"auras lu\"), not the futur simple (\"liras\") that the stated rule is about, so this question actually tests a different grammar point (futur antérieur après lorsque) rather than the claimed rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068432242-gh47gyyb",
+      "timestamp": "2026-05-29T15:27:45.525Z"
+    }
+  ]
+}

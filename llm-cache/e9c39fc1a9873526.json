@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e9c39fc1a9873526",
+  "predicateId": "french-language",
+  "questionId": "05-12-001",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Le futur simple après quand / lorsque / dès que / aussitôt que (quand il viendra, je partirai)\n\nQUESTION CONTENT:\nPrompt: Complétez la phrase : « Quand tu _______, je te téléphonerai. »\nChoices:\nA. [correct] arriveras\n   Explanation: Après « quand », on doit employer le futur simple « arriveras » pour exprimer une action future.\nB. arrives\n   Explanation: C'est une erreur courante : on n'utilise pas le présent après « quand ». Le français exige le futur simple.\nC. arriverais\n   Explanation: Le conditionnel « arriverais » est incorrect après « quand ». C'est une confusion avec l'anglais où on dit « when you would arrive ».\nD. arriverses\n   Explanation: Cette forme n'existe pas en français. On ne peut pas doubler le sujet de cette manière après « quand ».\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1780067661246-j1pgspxi"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French. The only English mention (\"when you would arrive\") is an allowed exception under rule 3, as it clarifies a common confusion with English grammar patterns.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068715647-r9brc74v",
+      "timestamp": "2026-05-29T15:32:20.948Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French. The English phrase \"when you would arrive\" in explanation C falls under the allowed exception for clarifying common confusions with English.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068852099-ioaylqoy",
+      "timestamp": "2026-05-29T15:34:28.170Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French. The brief English phrase in choice C's explanation is an allowed exception for clarifying a common learner confusion with English (\"when you would arrive\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068965489-iubl4v9a",
+      "timestamp": "2026-05-29T15:36:20.425Z"
+    }
+  ]
+}

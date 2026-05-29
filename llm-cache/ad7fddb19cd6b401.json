@@ -1,0 +1,47 @@
+{
+  "cacheKey": "ad7fddb19cd6b401",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-12-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-12 - Le futur simple après quand / lorsque / dès que / aussitôt que (quand il viendra, je partirai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Identifiez la phrase grammaticalement correcte :\nChoices:\nA. [CORRECT] Quand j'aurai fini mes études, je chercherai un travail.\nB. Quand j'ai fini mes études, je cherche un travail.\nC. Quand je finis mes études, je cherche un travail.\nD. Quand j'aurais fini mes études, je cherchais un travail.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780067661246-sgkvc3yh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core principle that \"quand\" referring to future events requires future tenses (not present or past), with the correct answer using futur antérieur (aurai fini) because finishing studies precedes looking for work, while the distractors incorrectly use passé composé, présent, or conditionnel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780067700112-kq5o5tac",
+      "timestamp": "2026-05-29T15:15:51.740Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that future tenses (futur simple or futur antérieur) must be used after \"quand\" when referring to future events, as all four choices differ only in the tense used after \"quand.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068082216-7ei7t745",
+      "timestamp": "2026-05-29T15:21:46.697Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer uses futur antérieur (\"j'aurai fini\") after \"quand\", but the stated rule specifically covers futur simple after temporal conjunctions (e.g., \"quand il viendra\"), making this question test a different (though related) grammar point.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068412907-6rc81vt3",
+      "timestamp": "2026-05-29T15:28:28.389Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core concept that future tenses must be used after \"quand\" when referring to future events—the correct answer uses futur antérieur (required because the \"quand\" action precedes the main clause action), while the distractors show the common error of using present or past tenses, which is exactly what this rule addresses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068564423-3aakn65z",
+      "timestamp": "2026-05-29T15:29:47.401Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The correct answer uses futur antérieur (\"j'aurai fini\") after \"quand,\" but the stated rule specifically covers futur simple after these conjunctions (as shown by the example \"quand il viendra\"), making this question test a different though related tense rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068587402-2j8yakhs",
+      "timestamp": "2026-05-29T15:30:26.407Z"
+    }
+  ]
+}

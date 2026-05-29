@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a466659c0a48fde7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-12-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-12 - Le futur simple après quand / lorsque / dès que / aussitôt que (quand il viendra, je partirai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Dès que vous _______ prêts, nous partirons. »\nChoices:\nA. [CORRECT] serez\nB. seriez\nC. étiez\nD. avez été\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780069503671-imbd2ek3"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"dès que\" followed by a future action takes the futur simple (\"serez\") rather than other tenses like the imparfait (\"étiez\"), conditionnel (\"seriez\"), or passé composé (\"avez été\"), which is exactly the grammar rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780069529902-auxpg1bp",
+      "timestamp": "2026-05-29T15:47:03.289Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that \"dès que\" requires the futur simple (\"serez\") when referring to a future event, with the distractors presenting other tenses (conditionnel, imparfait, passé composé) that would be incorrect in this temporal construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780069785871-nmj4sjbq",
+      "timestamp": "2026-05-29T15:50:06.694Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that futur simple is required after \"dès que\" when the main clause is in the future tense (\"nous partirons\"), and the distractors correctly test the common error of using other tenses (conditionnel, imparfait, passé composé) in this position.\n\nMaximum steps for this agent have been reached. This was a single-step validation task that has been completed. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780069890306-qwfvbfgt",
+      "timestamp": "2026-05-29T15:51:43.938Z"
+    }
+  ]
+}

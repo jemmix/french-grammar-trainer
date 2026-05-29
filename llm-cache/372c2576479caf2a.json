@@ -1,0 +1,33 @@
+{
+  "cacheKey": "372c2576479caf2a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-12-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-12 - Le futur simple après quand / lorsque / dès que / aussitôt que (quand il viendra, je partirai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Aussitôt qu'il _______, nous commencerons la réunion. »\nChoices:\nA. [CORRECT] arrivera\nB. arrive\nC. arriverait\nD. arrivant\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780067661246-14qpmtfa"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that futur simple is used after \"aussitôt que\" when referring to a future action, with the wrong answers representing common errors (present, conditional, participle) that students make when they don't know this specific rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780067684034-q31jlvp0",
+      "timestamp": "2026-05-29T15:15:03.022Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that futur simple is required after \"aussitôt que\" when referring to a future event, with the distractors representing the most common errors (présent instead of futur simple, conditionnel, and participe présent).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068046426-ro6iupzx",
+      "timestamp": "2026-05-29T15:21:15.391Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was asked to validate whether a French grammar MCQ question properly tests the stated rule about using futur simple after \"quand/lorsque/dès que/aussitôt que.\"\n\n**Analysis completed:**\nThe question \"Aussitôt qu'il _______, nous commencerons la réunion\" with choices arrivera/arrive/arriverait/arrivant directly tests whether students know to use futur simple after \"aussitôt que\" rather than present tense (the common error for English speakers).\n\n**Verdict:**\nVERDICT: ALIGNED\nREASON: The question directly tests the core rule that \"aussitôt que\" requires the futur simple (arrivera) rather than the present tense (arrive), which is precisely the grammar point this rule covers.\n\n**Remaining tasks:** None - the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068352894-78hewgq2",
+      "timestamp": "2026-05-29T15:26:42.477Z"
+    }
+  ]
+}

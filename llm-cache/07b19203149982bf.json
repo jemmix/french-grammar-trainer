@@ -1,0 +1,33 @@
+{
+  "cacheKey": "07b19203149982bf",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-12-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Identifiez la phrase correcte parmi ces options :\n\nChoices:\nA. [CORRECT] Dès que tu m'appeleras, je répondrai immédiatement.\nB. [WRONG] Dès que tu m'appelles, je réponds immédiatement.\nC. [WRONG] Dès que tu m'appellerais, je répondrais.\nD. [WRONG] Dès que tu m'auras appelée, je répondrai immédiatement.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780067661247-v80i3skn"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses présent after \"dès que\" for a one-time future action (the \"dès que + futur\" rule), C wrongly uses conditionnel after \"dès que\" (which requires futur or futur antérieur), and D has an incorrect feminine agreement \"appelée\" when the COD \"me\" is first-person masculine.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780067868401-lwr3pyj3",
+      "timestamp": "2026-05-29T15:19:27.894Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to verify that wrong answers B, C, and D in a French grammar multiple choice question are indeed incorrect. The question tests the rule that \"dès que\" followed by a future action requires the future tense.\n\nAnalysis completed:\n- B (\"Dès que tu m'appelles, je réponds immédiatement\") uses present tense instead of the required future tense for expressing a future action after \"dès que\"\n- C (\"Dès que tu m'appellerais, je répondrais\") incorrectly uses the conditional mood, which is not used after \"dès que\" for future actions\n- D (\"Dès que tu m'auras appelée, je répondrai immédiatement\") contains an erroneous feminine agreement (\"appelée\" instead of \"appelé\") - since \"me\" is an indirect object pronoun, there should be no agreement\n\nTRUE||All wrong answers contain clear grammar errors: B uses present instead of future tense, C uses conditional mood incorrectly after \"dès que\", and D has an erroneous feminine agreement on the past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068211738-lj842ruz",
+      "timestamp": "2026-05-29T15:24:37.986Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of work done:\nI was analyzing a French grammar verification task for a multiple choice question about the correct use of tenses after \"dès que.\" I evaluated the three wrong answers (B, C, D) to determine if they are indeed incorrect.\n\n## Analysis completed:\n- **B** (\"Dès que tu m'appelles, je réponds immédiatement\"): Uses present tense for a future action after \"dès que\" - incorrect.\n- **C** (\"Dès que tu m'appellerais, je répondrais\"): Uses conditional after \"dès que\" - incorrect, as conditional is never used after this conjunction.\n- **D** (\"Dès que tu m'auras appelée, je répondrai immédiatement\"): Uses future anterior after \"dès que\" with feminine agreement \"appelée\" - this is where ambiguity arises. Future anterior IS grammatically valid after \"dès que,\" and the feminine agreement is correct IF the speaker (\"me\") is female.\n\n## Verdict I would have provided:\nUNCLEAR||The feminine agreement \"appelée\" in D could be correct if the speaker is female, making the question ambiguous without gender context.\n\n## Remaining tasks:\nNone - this was a single verification task.\n\n## Recommendations:\nThe question should either specify the speaker's gender/context, or the answer D should be changed to \"appelé\" (masculine/default) and reconsider whether future anterior is being tested as wrong when it's actually grammatically valid (just stylistically heavier than simple future). A better wrong answer for D might use a truly incorrect construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068524917-7pjw73ov",
+      "timestamp": "2026-05-29T15:30:16.635Z"
+    }
+  ]
+}

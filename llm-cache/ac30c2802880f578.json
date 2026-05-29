@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ac30c2802880f578",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-12-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand il _______ beau demain, nous irons à la plage. »\n\nChoices:\nA. [CORRECT] fera\nB. [WRONG] fait\nC. [WRONG] ferait\nD. [WRONG] faisait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780069503675-hb9j25yw"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: présent (B), conditionnel (C), and imparfait (D) cannot follow \"quand\" with the future marker \"demain\" - only futur simple is grammatically correct.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780069576175-n7boyifi",
+      "timestamp": "2026-05-29T15:47:10.554Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to verify that wrong answers B (\"fait\"), C (\"ferait\"), and D (\"faisait\") in a French grammar MCQ are incorrect. The question asks to complete \"Quand il _______ beau demain, nous irons à la plage.\" with the correct answer being \"fera\" (future tense). All three wrong answers are indeed grammatically incorrect in this context: B uses present tense (French requires future after \"quand\" with future reference), C uses conditional (inappropriate for a real future possibility), and D uses imperfect (wrong for future time reference).\n\n**Remaining tasks:**\nNone - the verification was complete but I was unable to output the final formatted response.\n\n**Recommendation for next step:**\nThe verdict should be: `TRUE||All wrong answers use incorrect tenses for a future-time clause introduced by \"quand\" with \"demain\" as the time marker.`",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780069786918-azng00id",
+      "timestamp": "2026-05-29T15:50:09.083Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses (présent, conditionnel, imparfait) for a future context with \"demain\" that requires the futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780069893813-jbdwafuh",
+      "timestamp": "2026-05-29T15:51:55.069Z"
+    }
+  ]
+}

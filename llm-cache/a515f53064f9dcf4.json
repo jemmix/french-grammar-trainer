@@ -1,0 +1,47 @@
+{
+  "cacheKey": "a515f53064f9dcf4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-12-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-12 - Le futur simple après quand / lorsque / dès que / aussitôt que (quand il viendra, je partirai)\n\nQUESTION:\nType: Input\nPrompt: Après « lorsque », conjuguez le verbe « venir » au futur simple.\nPhrase: Lorsque tu _______, apporte ton dossier.\nCorrect Answer: viendras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780071173479-y6tabepf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate in the futur simple (\"conjuguez le verbe 'venir' au futur simple\"), so the question only tests the conjugation of \"venir\" rather than whether the student knows that \"lorsque\" requires the futur simple for future events.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780071175491-8r0za5mo",
+      "timestamp": "2026-05-29T16:13:14.581Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule by requiring the student to conjugate \"venir\" in futur simple specifically after \"lorsque,\" which is the exact grammar pattern the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780071194581-i0r7q7ug",
+      "timestamp": "2026-05-29T16:13:25.263Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that temporal conjunctions like \"lorsque\" require the futur simple in French (unlike English which uses present tense), and answering correctly requires knowing both this specific rule and applying the futur simple conjugation of \"venir\" for \"tu\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780071205264-hs8h025p",
+      "timestamp": "2026-05-29T16:13:40.911Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule by requiring students to conjugate \"venir\" in the futur simple after \"lorsque,\" which is the exact grammar point the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780071220912-5n5l9lav",
+      "timestamp": "2026-05-29T16:13:57.159Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate in the futur simple, so the question only tests conjugation knowledge of \"venir\" rather than the actual rule about when futur simple is required after \"lorsque\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780071237160-sx87l8bi",
+      "timestamp": "2026-05-29T16:14:11.471Z"
+    }
+  ]
+}

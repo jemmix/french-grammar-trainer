@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7d8b301ab4f81939",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-12-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-12 - Le futur simple après quand / lorsque / dès que / aussitôt que (quand il viendra, je partirai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Identifiez l'erreur : « Quand il viendra demain, je viens le chercher. »\nChoices:\nA. [CORRECT] Je dois dire « je le chercherai » au lieu de « je viens ».\nB. Il ne faut pas utiliser « quand » avec une action future.\nC. Il faut dire « quand il venait » à la place.\nD. La phrase est correcte telle qu'elle est.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780067661247-1ornpp66"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that when \"quand\" introduces a future event with futur simple (\"quand il viendra\"), the main clause action must also use futur simple (\"je le chercherai\"), directly testing the rule about futur simple usage with \"quand\" in future contexts.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780067786679-fpzmb0x0",
+      "timestamp": "2026-05-29T15:18:29.107Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core pattern taught by this rule — that after \"quand\" with a future context, both clauses use futur simple, and recognizing that \"je viens\" (présent) should be \"je le chercherai\" (futur simple) requires knowing this specific tense coordination rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068166025-i25lqlvb",
+      "timestamp": "2026-05-29T15:24:16.735Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that when \"quand\" introduces a future action, the main clause must use the futur simple (\"je le chercherai\") rather than the présent (\"je viens\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780068508262-x8irngs7",
+      "timestamp": "2026-05-29T15:28:53.122Z"
+    }
+  ]
+}

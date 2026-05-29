@@ -1,0 +1,47 @@
+{
+  "cacheKey": "d9cbf814fc5d72ca",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-12-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-12 - Le futur simple après quand / lorsque / dès que / aussitôt que (quand il viendra, je partirai)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « cesser » au futur simple pour compléter la phrase.\nPhrase: Dès que la pluie _______, les enfants pourront jouer dehors.\nCorrect Answer: cessera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780072294195-nte5qnc4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"dès que\" followed by a future action takes futur simple rather than another tense, which is the core grammar point of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780072296207-3kmwdl7w",
+      "timestamp": "2026-05-29T16:31:49.894Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to validate whether a French grammar question about conjugating \"cesser\" at futur simple after \"dès que\" properly tests rule 05-12 (le futur simple après quand/lorsque/dès que/aussitôt que).\n\n**My assessment:**\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate in futur simple (\"Conjuguez le verbe « cesser » au futur simple\"), so the question only tests whether they can conjugate \"cesser\" in that tense, not whether they know that futur simple (rather than present tense) is required after \"dès que\" when referring to future events.\n\n**Remaining tasks:** None - the validation assessment is complete.\n\n**Recommendations:** To properly test rule 05-12, the prompt should NOT specify the tense. For example: \"Complétez la phrase\" without mentioning futur simple, so the student must know from the rule that \"dès que\" + future reference requires futur simple (not present tense as English speakers might incorrectly use).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780072309897-btt2k9qr",
+      "timestamp": "2026-05-29T16:32:15.613Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"cesser\" in the futur simple after \"dès que,\" which is exactly the grammar point specified in the rule (future tense after temporal conjunctions like dès que).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780072335874-pdxpk33e",
+      "timestamp": "2026-05-29T16:32:38.850Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"dès que\" triggers the futur simple, which is the exact grammar point being tested — without this knowledge, a learner might incorrectly use the présent (\"cesse\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780072359360-38dra3bg",
+      "timestamp": "2026-05-29T16:32:51.647Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests basic futur simple conjugation of \"cesser\" rather than the specific rule about using futur simple (vs. futur antérieur) after \"dès que\"—a student could answer correctly knowing only future tense conjugation without understanding the conjunction rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780072371648-gisfj6ja",
+      "timestamp": "2026-05-29T16:33:08.776Z"
+    }
+  ]
+}
