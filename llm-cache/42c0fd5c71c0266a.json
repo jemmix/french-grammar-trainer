@@ -1,0 +1,26 @@
+{
+  "cacheKey": "42c0fd5c71c0266a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-09-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel verbe au futur simple complète cette phrase ? « Nous ___ ce projet par écrit. »\n\nChoices:\nA. [CORRECT] renouvellerons\nB. [WRONG] renouvelerons\nC. [WRONG] renouvelons\nD. [WRONG] renouveliez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780013459103-wdu4x2hy"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B|B \"renouvelerons\" is the 1990 rectified orthography spelling of the futur simple, which is equally valid alongside the traditional spelling \"renouvellerons\" — both are correct answers for the futur simple of \"renouveler\" in the nous form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780013503193-wchl0cg2",
+      "timestamp": "2026-05-29T00:12:00.522Z"
+    },
+    {
+      "raw": "FALSE|B|B \"renouvelerons\" is an acceptable futur simple spelling under the 1990 orthographic reform (single ‹l› variant); C is présent (wrong tense) and D is imparfait of \"vous\" (wrong tense and person), both clearly incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780013689868-qsv266a8",
+      "timestamp": "2026-05-29T00:15:43.709Z"
+    }
+  ]
+}

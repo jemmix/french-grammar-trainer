@@ -1,0 +1,26 @@
+{
+  "cacheKey": "4da6fbe8a3ed5c0b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-09-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-09 - Les verbes en -eler/-eter au futur (appeler → appellerai, jeter → jetterai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple : « J'___ ce mot très souvent. »\nChoices:\nA. [CORRECT] épellerai\nB. épelleras\nC. épelle\nD. épellera\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780051792181-7ncpdydy"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: All four choices already use the correct doubled consonant form (épeller-), so the question actually tests subject-verb agreement (which future tense ending goes with \"je\") rather than the -eler/-eter consonant doubling rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780051799216-2vm7f4rj",
+      "timestamp": "2026-05-29T10:50:27.557Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a French grammar question about the verb \"épeler\" in the futur simple tests the stated rule about -eler/-eter verbs doubling their consonant.\n\nAnalysis completed: The question asks to complete \"J'___ ce mot très souvent\" with options épellerai, épelleras, épelle, and épellera. All the future tense options already show the doubled consonant (ll), so the question primarily tests knowing that \"je\" takes the \"-ai\" ending in futur simple, not the consonant-doubling rule itself.\n\nVERDICT: MISALIGNED\nREASON: All answer choices already contain the doubled consonant (ll), so the question tests subject-verb agreement (knowing \"je\" takes \"-ai\") rather than the -eler/-eter consonant doubling rule.\n\nRecommendations for next steps: To properly test this rule, include options with and without the doubled consonant (e.g., épelerai vs épellerai) while keeping the person/number consistent, or use a different subject that doesn't give away the answer through ending alone.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780051830907-w6pzqee4",
+      "timestamp": "2026-05-29T10:51:14.333Z"
+    }
+  ]
+}

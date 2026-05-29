@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b7322ad92ed44c08",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-09-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-09 - Les verbes en -eler/-eter au futur (appeler → appellerai, jeter → jetterai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Conjuguez au futur simple : « Je ___ le projet avant la fin du mois. »\nChoices:\nA. [CORRECT] rejetterai\nB. rejeterai\nC. rejette\nD. rejeterais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780013459104-3hr1bpow"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the consonant-doubling rule for -eter verbs in the futur simple, as the key distinction between the correct answer \"rejetterai\" and the distractor \"rejeterai\" is precisely whether the 't' is doubled — the core of rule 05-09.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780013605588-kk3zu31n",
+      "timestamp": "2026-05-29T00:13:43.133Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests whether the student knows that verbs ending in -eter (here, *rejeter*) double the consonant in the futur simple (*rejetterai* rather than *rejeterai*), which is precisely the rule stated for 05-09.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780013820364-0s2986ep",
+      "timestamp": "2026-05-29T00:17:13.362Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the -eter verb conjugation rule where the 't' must be doubled in futur simple (rejeter → rejetterai), and the primary distractor (rejeterai) is exactly the common mistake this rule is designed to address.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780038844418-529t2xjt",
+      "timestamp": "2026-05-29T07:14:18.046Z"
+    }
+  ]
+}

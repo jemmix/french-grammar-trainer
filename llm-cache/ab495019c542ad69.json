@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ab495019c542ad69",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-09-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel verbe complète cette phrase ? « Il ___ son avocate pour les détails. »\n\nChoices:\nA. [CORRECT] rappellera\nB. [WRONG] rapelera\nC. [WRONG] rapelle\nD. [WRONG] rappèlera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780013085211-gpxu18ie"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear spelling errors: B (\"rapelera\") is missing the doubled consonant, C (\"rapelle\") is a misspelled present tense form that also doesn't fit the future context, and D (\"rappèlera\") incorrectly uses a grave accent instead of doubling the consonant.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780013091221-hnw31qr0",
+      "timestamp": "2026-05-29T00:05:08.631Z"
+    },
+    {
+      "raw": "VERDICT: All wrong answers are indeed incorrect.\n\nAnalysis of each wrong answer:\n\n**B. rapelera** — Incorrect spelling. The verb *rappeler* requires a doubled consonant before a mute *e* in all conjugated forms. The correct spelling requires \"rappell-\" not \"rapel-\". Missing the second \"l\".\n\n**C. rapelle** — This is both the wrong tense (present rather than future) AND misspelled. Even in present tense it should be \"rappelle\" (with two p's and two l's). For the future tense context required here, this is incorrect on multiple levels.\n\n**D. rappèlera** — Incorrect spelling. This erroneously uses a grave accent (è) instead of the required consonant doubling. For verbs like *rappeler*, the rule is to double the consonant, not to change *e* to *è*. The form \"rappèlera\" does not exist.\n\nAll three wrong answers contain clear orthographic errors and are correctly marked as wrong.\n\nTRUE||All wrong answers contain clear spelling errors: B and C omit the doubled consonant, and D incorrectly uses a grave accent instead of consonant doubling.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780013360332-ywvsh69b",
+      "timestamp": "2026-05-29T00:09:41.130Z"
+    }
+  ]
+}

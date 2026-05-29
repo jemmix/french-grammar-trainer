@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c1e8e46923fb5ad5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-09-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Remplissez au futur simple : « Tu ___ un coup d'œil sur ce document. »\n\nChoices:\nA. [CORRECT] jetteras\nB. [WRONG] jeteras\nC. [WRONG] jette\nD. [WRONG] jeterais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780013459103-xfuyo9d6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is not a valid conjugation (jeter requires doubled consonant: jetteras), C is présent not futur simple, and D is conditionnel not futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780013555979-6a3i79li",
+      "timestamp": "2026-05-29T00:12:57.129Z"
+    },
+    {
+      "raw": "TRUE||B uses a single 't' instead of the required double 't' for the futur simple of \"jeter\" (tu jetteras); C is present tense (\"tu jettes\") not futur simple; D is conditionnel présent first person (\"je jeterais\") not futur simple second person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780013755955-4qdb93nr",
+      "timestamp": "2026-05-29T00:16:20.756Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B fails to apply the required stem change (e→è) for \"jeter\" in futur simple, C is present tense (and incorrectly spelled without the final -s), and D is conditionnel présent rather than futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780038807879-gkxic3er",
+      "timestamp": "2026-05-29T07:13:43.592Z"
+    }
+  ]
+}

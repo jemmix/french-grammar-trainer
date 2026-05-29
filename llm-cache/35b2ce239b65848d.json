@@ -1,0 +1,33 @@
+{
+  "cacheKey": "35b2ce239b65848d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-09-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-09 - Les verbes en -eler/-eter au futur (appeler → appellerai, jeter → jetterai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel futur convient ? « Tu ___ le numéro très lentement. »\nChoices:\nA. [CORRECT] épelleras\nB. épellerons\nC. épelle\nD. épellerais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780051792181-sxlty69v"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses the -eler verb \"épeler\" and asks for its futur simple conjugation, with the correct answer \"épelleras\" demonstrating the consonant-doubling pattern that is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780051796213-iqtaxhhf",
+      "timestamp": "2026-05-29T10:50:23.130Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI analyzed the validation question to determine if it properly tests the stated rule about -eler/-eter verbs in the futur simple.\n\n**Verdict:**\nVERDICT: MISALIGNED\nREASON: The main discrimination between the correct answer (épelleras) and the closest distractor (épellerons) is subject-verb agreement (tu vs nous), not the -eler doubling rule—both options correctly double the 'l', so a student could answer correctly by knowing only person endings without understanding the -eler/-eter conjugation pattern.\n\n**Remaining tasks:**\nNone—this was a single-question validation task.\n\n**Recommendations:**\nTo properly test the -eler/-eter rule, include \"épeleras\" (without doubling) as a distractor, forcing students to demonstrate they know the consonant must be doubled in the future tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780051827557-e85s29t7",
+      "timestamp": "2026-05-29T10:51:09.357Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to validate whether a French grammar question properly tests the stated rule about verbs ending in -eler/-eter in the future tense (doubling the consonant: appeler → appellerai).\n\nVERDICT: MISALIGNED\nREASON: The question can be answered correctly by eliminating wrong answers based on person (épellerons = nous, not tu), tense (épelle = present), and mood (épellerais = conditionnel) alone—the -eler/-eter doubling rule is present in all relevant choices and never actually discriminates between correct and incorrect answers.\n\nA properly aligned question would need to include a distractor like \"épéleras\" (without the doubled 'l') to actually test whether the student knows the consonant-doubling rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780051871789-gr88rby9",
+      "timestamp": "2026-05-29T10:51:38.085Z"
+    }
+  ]
+}

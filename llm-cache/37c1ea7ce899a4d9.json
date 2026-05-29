@@ -1,0 +1,33 @@
+{
+  "cacheKey": "37c1ea7ce899a4d9",
+  "predicateId": "french-language",
+  "questionId": "05-09-020",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Les verbes en -eler/-eter au futur (appeler → appellerai, jeter → jetterai)\n\nQUESTION CONTENT:\nPrompt: Quel futur convient ? « La cour ___ cette demande. »\nChoices:\nA. [correct] rejettera\n   Explanation: Futur du verbe « rejeter » à la 3e personne du singulier. Doublement du « t » : rejeT-T-era.\nB. rejetera\n   Explanation: Seul un « t » : faute courante. Le futur correct est « rejettera ».\nC. rejette\n   Explanation: C'est le présent ou le subjonctif, pas le futur. Le futur demande « -era ».\nD. rejetterait\n   Explanation: C'est le conditionnel, pas le futur. Le futur utilise « -era », le conditionnel « -erait ».\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1780050119309-6if5i29a"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780050582854-57d3tshk",
+      "timestamp": "2026-05-29T10:29:56.234Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was asked to validate a single French grammar question to verify all content is appropriately in French. The question tests the future tense of verbs ending in -eter (specifically \"rejeter\").\n\n**Analysis completed:**\n- Prompt: \"Quel futur convient ? « La cour ___ cette demande. »\" — French ✓\n- All 4 choice texts: French ✓\n- All 4 explanations: French ✓\n- No English detected in any field\n\n**Remaining tasks:** None — this was a single-question validation.\n\n**Recommendation:** This question passes language validation.\n\n---\n\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780050863300-mgzbc0m8",
+      "timestamp": "2026-05-29T10:34:45.254Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780051092625-vukvg0qc",
+      "timestamp": "2026-05-29T10:38:23.963Z"
+    }
+  ]
+}

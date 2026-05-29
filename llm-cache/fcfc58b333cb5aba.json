@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fcfc58b333cb5aba",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "05-09-006",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Quel futur convient ? « Tu ___ le numéro très lentement. »\nChoices:\nA. épelleras\nB. epeleras\nC. épelle\nD. épellerais\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780038739914-cowx8153"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Two choices (A: épelleras and B: epeleras) are both valid future tense forms of \"épeler\" under different spelling conventions (traditional with double L vs. 1990 orthographic reform without double L), and the prompt gives no indication which convention the learner should apply.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780038756632-4x7xdd0l",
+      "timestamp": "2026-05-29T07:13:28.476Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly specifies \"futur\" which eliminates the present and conditional options, and the remaining two choices test a legitimate spelling rule about whether the accent is preserved in the conjugated future form of épeler.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780050127324-rc7lq8un",
+      "timestamp": "2026-05-29T10:24:56.398Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was analyzing a French grammar question to determine if the prompt was clear or ambiguous for a learner who hasn't seen the rule title.\n\nThe question asks \"Quel futur convient?\" but presents two future tense options (épelleras and epeleras), which creates ambiguity about whether the learner is being tested on tense selection or spelling/orthography rules. A learner could reasonably be confused about why there are two future forms when asked \"which future.\"\n\nVERDICT: AMBIGUOUS\nREASON: The prompt asks \"Quel futur convient?\" but includes two future tense forms (A and B), making it unclear whether the question tests tense identification or spelling conventions—this distinction isn't obvious without the rule title.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780050296399-f47d8sat",
+      "timestamp": "2026-05-29T10:25:16.361Z"
+    }
+  ]
+}

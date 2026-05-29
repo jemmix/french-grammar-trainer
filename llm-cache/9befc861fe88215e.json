@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9befc861fe88215e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-09-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-09 - Les verbes en -eler/-eter au futur (appeler → appellerai, jeter → jetterai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Remplissez au futur simple : « Vous ___ votre assurance en janvier. »\nChoices:\nA. [CORRECT] renouvellerez\nB. renouveliez\nC. renouvelerez\nD. renouveleriez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780013459103-j9on0vhs"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"renouveler\" (an -eler verb) doubles the consonant in the futur simple (renouvellerez vs renouvelerez), which is precisely the stated rule about -eler/-eter verbs.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780013519690-feu44c0r",
+      "timestamp": "2026-05-29T00:12:19.003Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The verb *renouveler* ends in **-eler**, and the correct answer *renouvellerez* requires the doubled **l** that this rule specifically teaches, with choice C (*renouvelerez*) serving as a plausible distractor that tests whether the student knows the consonant-doubling pattern distinct to -eler/-eter verbs in the future tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780013705181-4oatt3fp",
+      "timestamp": "2026-05-29T00:15:22.188Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the doubling of the consonant in -eler verbs at the futur simple tense (\"renouvellerez\" with doubled L vs. \"renouvelerez\" without), which is precisely the core mechanic described in rule 05-09.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780013928990-olestqzk",
+      "timestamp": "2026-05-29T00:19:13.601Z"
+    }
+  ]
+}

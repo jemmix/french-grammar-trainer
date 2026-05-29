@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aa6f25882a2aff27",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "05-09-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Les verbes en -eler/-eter au futur (appeler → appellerai, jeter → jetterai)\nPROMPT: Conjuguez le verbe « rejeter » au futur simple.\nPHRASE: Nous ___ cette proposition demain.\nCORRECT ANSWER: rejetterons\n\nWRONG ANSWERS to evaluate:\n1. rejeterons\n2. rejetons\n3. rejeterions\n4. rejettaient\n5. rejetteraient\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780050119315-z764ixj5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: forgetting to double the 't' (rejeterons), confusing future with present (rejetons), confusing future with conditional (rejeterions, rejetteraient), and confusing future with imparfait (rejetaient).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780050665812-gtx2209t",
+      "timestamp": "2026-05-29T10:31:27.863Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: forgetting to double the 't' in -eter verbs (rejeterons), confusing future with present (rejetons), and mixing up future with conditional (rejeterions, rejetteraient) or imperfect (rejetaient) — all typical tense confusions for French learners.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780050919511-g32gwwuq",
+      "timestamp": "2026-05-29T10:35:43.230Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to evaluate whether 5 wrong answers for a French grammar input question about conjugating \"rejeter\" in the futur simple are plausible learner mistakes.\n\nAnalysis completed:\n1. **rejeterons** - Plausible: common mistake of not doubling the 't' for -eter verbs\n2. **rejetons** - Plausible: confusion with present tense\n3. **rejetterions** - Plausible: confusion between future and conditional (very common)\n4. **rejettaient** - Plausible: confusion with imperfect, though less directly related\n5. **rejetteraient** - Plausible: confusion between future/conditional plus wrong person/number\n\nVERDICT: PLAUSIBLE\nREASON: All wrong answers represent common grammar confusion patterns (forgetting consonant doubling, tense confusion between future/present/conditional/imperfect) that learners of French verb conjugation frequently make.\n\nNo remaining tasks - the evaluation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780051167179-d6nx83wn",
+      "timestamp": "2026-05-29T10:39:47.773Z"
+    }
+  ]
+}
