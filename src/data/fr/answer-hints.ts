@@ -6,6 +6,7 @@
 // - Other words: word type in French
 
 export const answerHints: Record<string, string> = {
+  "aboieront": "aboyer",
   "'irons jamais": "aller",
   "a": "avoir",
   "A-t-il": "avoir",
@@ -511,7 +512,9 @@ export const answerHints: Record<string, string> = {
   "es": "être",
   "essaies": "essayer",
   "essayé": "essayer",
+  "essaierez": "essayer",
   "essuierons": "essuyer",
+  "essuiera": "essuyer",
   "Est-ce qu'ils sont": "être",
   "Est-ce qu'il est": "aller",
   "Est-ce qu'il est allé": "aller",
@@ -729,6 +732,7 @@ export const answerHints: Record<string, string> = {
   "ne soit trop tard": "être",
   "ne soit": "être",
   "ne soyez trop fatigués": "être",
+  "nettoierai": "nettoyer",
   "nettoie": "nettoyer",
   "nettoient": "nettoyer",
   "nettoiera": "nettoyer",
@@ -767,6 +771,7 @@ export const answerHints: Record<string, string> = {
   "où": "pronom relatif",
   "paie": "payer",
   "paierai": "payer",
+  "paierons": "payer",
   "parcoure": "parcourir",
   "parlait": "parler",
   "parle": "parler",

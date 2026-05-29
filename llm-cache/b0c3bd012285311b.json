@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b0c3bd012285311b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-08-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-08 - Les verbes en -yer au futur (payer → paierai/payerai, essayer → essaierai/essayerai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple : « Nous ___ sur le bouton rouge pour confirmer. » (appuyer)\nChoices:\nA. [CORRECT] appuierons\nB. appuyerons\nC. appuierions\nD. appuyons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780008709332-fud7scbv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the `-yer` verb rule in futur simple by requiring the student to know that `appuyer` (a `-uyer` verb) must change `y` to `i` before the futur ending (`appuierons` is correct, `appuyerons` is not — this distinction only exists for `-yer` verbs and is the core of rule 05-08), even though the distractors C (conditionnel) and D (présent) also test tense recognition.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780008788248-5cwz4mo4",
+      "timestamp": "2026-05-28T22:53:31.507Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests conjugation of \"appuyer,\" a verb ending in -yer, in the futur simple — the student must know whether the y changes to i (appuierons) or stays (appuyerons), which is exactly what the rule covers.\n\n**Note:** There is a content accuracy concern here — both \"appuierons\" (A) and \"appuyerons\" (B) are valid futur simple forms for \"appuyer.\" The rule itself states that both forms are acceptable (*payer → paierai/payerai*). Marking only one as correct may mislead learners. Consider either accepting both as correct or adjusting the distractors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780008986117-0nryznl6",
+      "timestamp": "2026-05-28T22:56:53.764Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests conjugation of the verb \"appuyer\" (an -yer verb) in the futur simple, requiring students to know that -yer verbs can transform y → i before the future ending, with the correct answer \"appuierons\" demonstrating this pattern and the distractor \"appuyerons\" representing the alternative (non-transformed) form — both central to the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009196231-06d91qu5",
+      "timestamp": "2026-05-28T23:00:33.848Z"
+    }
+  ]
+}

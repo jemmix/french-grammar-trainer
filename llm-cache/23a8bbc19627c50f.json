@@ -1,0 +1,33 @@
+{
+  "cacheKey": "23a8bbc19627c50f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-08-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au futur simple : « Vous ___ la moquette du salon. » (essuyer)\n\nChoices:\nA. [CORRECT] essuierez\nB. [WRONG] essuyerez\nC. [WRONG] essuieriez\nD. [WRONG] essuyez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780008709333-w71r89n8"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B (essuyerez) is a non‑standard form for -uyer verbs which require y→i in the futur simple (standard: essuierez), C (essuieriez) is the conditionnel présent not the futur simple, and D (essuyez) is the présent de l'indicatif/impératif.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780008849480-qzrkgo8v",
+      "timestamp": "2026-05-28T22:54:54.957Z"
+    },
+    {
+      "raw": "FALSE|B|B \"essuyerez\" is also a correct futur simple form of \"essuyer\" for \"vous\" — the verbs in -uyer (like essuyer) accept two conjugations in the future tense (essuyerez/essuierez), making both A and B grammatically valid answers to this question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009079641-wme0294h",
+      "timestamp": "2026-05-28T22:58:18.184Z"
+    },
+    {
+      "raw": "FALSE|B|The verb \"essuyer\" accepts two future tense stems: \"essuier-\" and \"essuyer-\"; therefore \"essuyerez\" (B) is an equally valid futur simple form for \"vous,\" while C (conditionnel présent) and D (présent/impératif) are correctly wrong.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009281822-3athb6fn",
+      "timestamp": "2026-05-28T23:01:51.024Z"
+    }
+  ]
+}

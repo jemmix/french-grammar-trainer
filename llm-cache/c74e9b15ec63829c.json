@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c74e9b15ec63829c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-08-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au futur simple (forme avec y → i) : « L'enfant ___ ses parents pendant le voyage. »\n\nChoices:\nA. [CORRECT] ennuiera\nB. [WRONG] ennuyera\nC. [WRONG] ennuierait\nD. [WRONG] ennuie\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780010464470-oelf30un"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the alternate conjugation without y→i (contrary to the specified form), C is conditionnel présent (not futur simple), and D is indicatif présent (not futur simple).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010516813-hoonrnao",
+      "timestamp": "2026-05-28T23:22:40.809Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B (\"ennuyera\") fails to apply the mandatory y→i change required for -uyer verbs before a mute syllable in the future tense; C (\"ennuierait\") is the conditionnel présent, not the futur simple as requested; D (\"ennuie\") is the present tense, not the futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010695332-x7y9h7qq",
+      "timestamp": "2026-05-28T23:25:49.468Z"
+    },
+    {
+      "raw": "TRUE||B retains 'y' instead of applying the required y→i transformation specified in the prompt; C uses the conditional ending -ait instead of the futur simple ending -a; D is présent indicatif, not futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010902837-we086vc3",
+      "timestamp": "2026-05-28T23:28:44.342Z"
+    }
+  ]
+}

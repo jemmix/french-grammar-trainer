@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a4e844ed6593d417",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-08-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au futur simple (verbe vouvoyer) : « Vous ___ votre patron à la réunion. »\n\nChoices:\nA. [CORRECT] vouvoierez\nB. [WRONG] vouvoyerez\nC. [WRONG] vouvoieriez\nD. [WRONG] vouvoyez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780012318685-1i7i5h1w"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B incorrectly keeps 'y' instead of changing to 'i' (standard for -oyer verbs in futur simple: vouvoierez), C is the conditionnel présent form (vouvoieriez), and D is the présent indicatif form (vouvoyez) — none match the required futur simple tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780012318712-umfyhb1m",
+      "timestamp": "2026-05-28T23:54:35.569Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the wrong stem (y instead of i for -oyer verbs in futur simple), C is the conditionnel form (vouvoieriez) not futur simple, and D is the présent form not futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780012475569-t0f8zsuh",
+      "timestamp": "2026-05-28T23:55:23.953Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the wrong stem \"vouvoy-\" instead of the correct \"vouvoi-\" (verbs in -oyer change y to i before a silent ending), C is the conditionnel présent form (vous vouvoieriez) not futur simple, and D is the présent indicatif form (vous vouvoyez) not futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780012523953-ttmo7ddu",
+      "timestamp": "2026-05-28T23:55:38.399Z"
+    }
+  ]
+}

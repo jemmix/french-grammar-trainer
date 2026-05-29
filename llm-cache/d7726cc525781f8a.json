@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d7726cc525781f8a",
+  "predicateId": "french-language",
+  "questionId": "05-08-018",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Les verbes en -yer au futur (payer → paierai/payerai, essayer → essaierai/essayerai)\n\nQUESTION CONTENT:\nPrompt: Complétez au futur simple : « J'___ mes pieds sur le paillasson avant d'entrer. » (essuyer)\nChoices:\nA. [correct] essuierai\n   Explanation: Futur simple de « essuyer » (verbe en -uyer) à la 1ère personne du singulier. Le « y » devient obligatoirement « i » : on écrit « essuierai » et non « *essuyerai ».\nB. essuyerai\n   Explanation: Pour les verbes en -uyer, le « y » doit devenir « i ». Contrairement aux verbes en -ayer, la forme avec « y » n'est pas acceptée.\nC. essuierais\n   Explanation: C'est le conditionnel présent, pas le futur simple.\nD. essuie\n   Explanation: C'est le présent de l'indicatif, pas le futur simple.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1780008709333-fwmyso2p"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French. The prompt (\"Complétez au futur simple\"), all choice texts, and all explanations are written entirely in French. No English detected in any field.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009691826-vaj1w289",
+      "timestamp": "2026-05-28T23:08:21.556Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is entirely in French. The prompt, choices, and all explanations use proper French grammar terminology and phrasing. No English detected — no exceptions needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009861327-3xq14s06",
+      "timestamp": "2026-05-28T23:11:20.126Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is entirely in French. The prompt (\"Complétez au futur simple\"), the phrase context with blank, all choice texts, and all four explanations are written in proper French with correct grammar terminology (futur simple, conditionnel présent, indicatif). No English detected — no exceptions needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010030568-3d3dptnf",
+      "timestamp": "2026-05-28T23:14:13.037Z"
+    }
+  ]
+}

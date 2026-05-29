@@ -115,7 +115,7 @@ Chaque section contient 20 règles de grammaire. Chaque règle dispose de ~500 q
 5. Les futurs irréguliers : **pouvoir** (pourr-), **vouloir** (voudr-), **devoir** (devr-), **savoir** (saur-)
 6. Les futurs irréguliers : **venir** (viendr-), **tenir** (tiendr-), **voir** (verr-), **envoyer** (enverr-)
 7. Les futurs irréguliers : **courir** (courr-), **mourir** (mourr-), **acquérir** (acquerr-)
-8. Les verbes en **-yer** au futur (payer → paierai/payerai, essayer → essaierai/essayerai)
+8. Les verbes en **-yer** au futur : **-ayer** facultatif (paierai ou payerai) ; **-oyer** et **-uyer** obligatoire (nettoierai, essuierai)
 9. Les verbes en **-eler/-eter** au futur (appeler → appellerai, jeter → jetterai)
 10. Le futur simple pour exprimer un **projet** ou une **prédiction**
 11. Le futur simple pour exprimer une **promesse** ou un **ordre** (tu feras tes devoirs)

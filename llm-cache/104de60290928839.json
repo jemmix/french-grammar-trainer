@@ -1,0 +1,40 @@
+{
+  "cacheKey": "104de60290928839",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "05-08-005",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "RULE: Les verbes en -yer au futur (payer → paierai/payerai, essayer → essaierai/essayerai)\n\nQUESTION:\nPrompt: Complétez au futur simple : « Les fortes pluies ___ les rues basses de la ville. » (noyer)\nChoices:\nA. noieront\nB. noyeront\nC. noieraient\nD. noient\n\nIs this prompt clear and unambiguous?",
+    "nonce": "nonce-1780008709332-unbti2sb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly specifies the tense required (futur simple), provides the infinitive verb to conjugate (noyer), and offers a complete sentence with a clear subject (Les fortes pluies, 3rd person plural), leaving no ambiguity about what is being asked.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780008732742-djcr2omi",
+      "timestamp": "2026-05-28T22:52:35.153Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nREASON: The prompt instructs completion in futur simple, but both \"noieront\" (A) and \"noyeront\" (B) are accepted spellings for verbs in -oyer in the future tense under the very rule being tested, making it impossible to select a single definitively correct answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780008936168-if2u897f",
+      "timestamp": "2026-05-28T22:56:01.787Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\n\nREASON: The prompt explicitly specifies the tense required (\"futur simple\"), provides the infinitive verb form (\"noyer\") to conjugate, and the sentence context (\"Les fortes pluies ___ les rues basses de la ville\") makes it unambiguous that the student must conjugate *noyer* in the futur simple, third person plural — there is only one correct interpretation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009153675-cs31ou7t",
+      "timestamp": "2026-05-28T22:59:27.490Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\n\nREASON: The question tests -yer verbs in futur simple, but both \"noieront\" (A) and \"noyeront\" (B) are valid futur simple forms per the stated rule, creating ambiguity about which single answer the student should select without any guidance on which spelling variant is preferred.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009334660-njcy0tef",
+      "timestamp": "2026-05-28T23:02:41.138Z"
+    }
+  ]
+}

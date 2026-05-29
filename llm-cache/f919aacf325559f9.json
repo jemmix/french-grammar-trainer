@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f919aacf325559f9",
+  "predicateId": "french-language",
+  "questionId": "05-08-003",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Les verbes en -yer au futur : -ayer facultatif (paierai ou payerai) ; -oyer et -uyer obligatoire (nettoierai, essuierai)\n\nQUESTION CONTENT:\nPrompt: La phrase « Je payerai la facture demain » est :\nChoices:\nA. [correct] Correcte : « payer » est un verbe en -ayer, la forme en -y- est acceptée\n   Explanation: Les verbes en -ayer acceptent les deux orthographes. « Je payerai » et « je paierai » sont tous les deux corrects au futur simple.\nB. Incorrecte : il faut obligatoirement écrire « je paierai »\n   Explanation: Pour les verbes en -ayer, les deux formes sont acceptées. Seuls les verbes en -oyer et -uyer exigent le y → i.\nC. Incorrecte : c'est le conditionnel présent\n   Explanation: « Payerai » se termine par -erai (futur simple), pas -erais (conditionnel).\nD. Incorrecte : il faut écrire « je payirai »\n   Explanation: Les verbes en -yer ne suivent pas le modèle des verbes en -ir. Les formes correctes sont « payerai » ou « paierai ».\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1780010464469-29hx3exh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is entirely in French. The prompt, all choice texts, and all explanations use proper French grammar instruction language. No English detected — no exceptions needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780011150443-uzqpjeq7",
+      "timestamp": "2026-05-28T23:37:10.347Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content — the prompt, all four choice texts, and all four explanations — is entirely in French. No English is detected in any field. The question properly uses French grammatical terminology (e.g., « futur simple », « conditionnel présent », « orthographes ») and all explanations are written in French throughout. No exceptions are needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780011610616-oef25clc",
+      "timestamp": "2026-05-28T23:40:22.388Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content—prompt, choices, and explanations—is entirely in French. No English detected. The question properly uses French grammatical terminology (futur simple, conditionnel, orthographes) and French sentence structures throughout.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780011710489-0bblow16",
+      "timestamp": "2026-05-28T23:42:09.637Z"
+    }
+  ]
+}

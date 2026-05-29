@@ -1,0 +1,33 @@
+{
+  "cacheKey": "37a37814f49aeef3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-08-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-08 - Les verbes en -yer au futur (payer → paierai/payerai, essayer → essaierai/essayerai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple : « À partir de demain, vous ___ votre nouveau voisin. » (tutoyer)\nChoices:\nA. [CORRECT] tutoierez\nB. tutoyerez\nC. tutoieriez\nD. tutoyez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780008709332-jennybn1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests whether the student knows that verbs ending in -yer undergo the y→i stem change in the futur simple (tutoyer → tutoier-), and the distractors include the unshifted form \"tutoyerez\" as well as tense-confusion options, making mastery of this specific rule essential for selecting the correct answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780008734847-6fwvqbzd",
+      "timestamp": "2026-05-28T22:53:38.303Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the conjugation of \"tutoyer\" (a verb ending in -oyer, which falls under the -yer family) in the futur simple, requiring the learner to know the -yer → -ier- stem alternation that is precisely the subject of rule 05-08.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780008995728-zrc7rrca",
+      "timestamp": "2026-05-28T22:56:53.682Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests conjugation of \"tutoyer\" (a verb ending in -oyer, part of the -yer family) in the futur simple, requiring the student to know the y→i alternation (tutoierez) and distinguishing it from the alternate accepted form (tutoyerez) and incorrect conjugations (tutoieriez = conditionnel, tutoyez = impératif présent).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009194234-pik1csot",
+      "timestamp": "2026-05-28T23:00:16.698Z"
+    }
+  ]
+}

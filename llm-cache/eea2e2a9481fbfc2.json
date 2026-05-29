@@ -1,0 +1,33 @@
+{
+  "cacheKey": "eea2e2a9481fbfc2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-08-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-08 - Les verbes en -yer au futur : -ayer facultatif (paierai ou payerai) ; -oyer et -uyer obligatoire (nettoierai, essuierai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple (forme avec y → i) : « Tu ___ le bouton bleu pour envoyer le message. »\nChoices:\nA. [CORRECT] appuieras\nB. appuyeras\nC. appuierais\nD. appuies\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780010464473-py5zpsv5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the mandatory y→i stem change for -uyer verbs in the futur simple (\"appuyer\" → \"appuier-\"), with choice B (\"appuyeras\") serving as the key distractor that directly probes whether the student knows this rule versus keeping the y; the parenthetical hint \"(forme avec y → i)\" does nudge the student, but they must still correctly apply the transformation to produce \"appuieras\" and reject the unchanged stem.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010562395-vglnfcsw",
+      "timestamp": "2026-05-28T23:23:14.242Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the stated rule by asking for the futur simple of \"appuyer\" (a -uyer verb) with the mandatory y→i shift, and choice B (\"appuyeras\") serves as the key distractor that would trap a student who doesn't know the -uyer obligation, while C and D test tense recognition as secondary distractors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010733964-ww3wdciy",
+      "timestamp": "2026-05-28T23:25:51.258Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests whether the student knows that \"appuyer\" (a -uyer verb) obligatorily changes y→i in the futur simple, requiring \"appuieras\" over \"appuyeras,\" which is the core concept of rule 05-08 regarding -oyer/-uyer verbs.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010905756-iagemf3w",
+      "timestamp": "2026-05-28T23:28:38.532Z"
+    }
+  ]
+}

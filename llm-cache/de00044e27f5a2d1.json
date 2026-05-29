@@ -1,0 +1,33 @@
+{
+  "cacheKey": "de00044e27f5a2d1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-08-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au futur simple (forme avec y → i) : « Vous ___ votre nouveau voisin. » (tutoyer)\n\nChoices:\nA. [CORRECT] tutoierez\nB. [WRONG] tutoyerez\nC. [WRONG] tutoieriez\nD. [WRONG] tutoyez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780010464469-84xz9ewk"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B incorrectly retains 'y' instead of changing to 'i' (required for -oyer verbs in futur simple), C is the conditionnel présent form, and D is the impératif présent form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010479784-rnvjrv4u",
+      "timestamp": "2026-05-28T23:22:11.942Z"
+    },
+    {
+      "raw": "TRUE||B uses the y-retaining spelling contrary to the specified y→i form, C is the conditionnel présent not the futur simple, and D is the impératif présent, none of which satisfy the stated constraint.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010673139-7lp0f7xx",
+      "timestamp": "2026-05-28T23:24:54.820Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect for the futur simple at \"vous\": B keeps the \"y\" instead of changing to \"i\" as required, C uses the conditional ending \"-eriez\" instead of the future ending \"-erez\", and D is the imperative/subjunctive form, not the future tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010847703-jq9fj6m5",
+      "timestamp": "2026-05-28T23:28:23.599Z"
+    }
+  ]
+}

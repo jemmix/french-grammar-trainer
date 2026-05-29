@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e67f00c42ab8cd5a",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "05-08-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Les verbes en -yer au futur (payer → paierai/payerai, essayer → essaierai/essayerai)\nPROMPT: Conjuguez le verbe « payer » au futur simple, en écrivant la forme en -ier-.\nPHRASE: Nous ___ le loyer le 1er du mois.\nCORRECT ANSWER: paierons\n\nWRONG ANSWERS to evaluate:\n1. paierions\n2. payons\n3. payions\n4. payer\n5. payé\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780008709334-uqqcfaql"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent realistic learner errors: \"paierions\" is the conditionnel form (easily confused with futur simple \"paierons\" — just one letter different), \"payons\" is the présent tense, \"payions\" is the imparfait/subjonctif, \"payer\" is the unconjugated infinitive (a common beginner reflex), and \"payé\" is the past participle — all are genuine French forms a learner could plausibly produce when targeting \"nous paierons\" at the futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009717469-sofh9ztp",
+      "timestamp": "2026-05-28T23:09:04.682Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\n\nREASON: All five wrong answers represent common learner errors: \"paierions\" confuses the -ier- stem with conditionnel/subjonctif endings, \"payons\" and \"payions\" use the present/subjonctif instead of futur simple, and \"payer\" and \"payé\" are unconjugated forms (infinitive and past participle) that learners commonly substitute when unsure of the correct conjugation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009908366-ylue0bkc",
+      "timestamp": "2026-05-28T23:12:10.595Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\n\nREASON: All five wrong answers represent common learner errors: \"paierions\" is a tense/mood confusion (conditionnel/imparfait du subjonctif instead of futur simple), \"payons\" is the present tense mistakenly used for future context, \"payions\" is another tense confusion (imparfait), \"payer\" is the common beginner error of leaving the verb in infinitive form, and \"payé\" is the past participle incorrectly used — all are mistakes learners regularly make when conjugating -yer verbs in the futur simple.\n\n---\n\n**Note:** Maximum steps for this agent have been reached. The evaluation task above has been completed successfully. No remaining tasks were identified for this specific validation request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010079595-1yeytfhe",
+      "timestamp": "2026-05-28T23:15:00.666Z"
+    }
+  ]
+}

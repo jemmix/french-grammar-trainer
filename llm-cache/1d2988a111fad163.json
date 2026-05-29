@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1d2988a111fad163",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-08-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-08 - Les verbes en -yer au futur (payer → paierai/payerai, essayer → essaierai/essayerai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple : « Ils ___ le salon avant la fête. » (nettoyer)\nChoices:\nA. [CORRECT] nettoieront\nB. nettoyeront\nC. nettoieraient\nD. nettoient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780008709332-dogouttx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests conjugation of the -yer verb \"nettoyer\" in futur simple, requiring students to recognize the correct form among futur, conditionnel (C), and présent (D) distractors, though it should be noted that both A (nettoieront) and B (nettoyeront) are actually acceptable variants per the stated rule — this is a content accuracy issue (answer key error) rather than a misalignment issue.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780008746804-damysnvd",
+      "timestamp": "2026-05-28T22:53:27.592Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests conjugation of \"nettoyer,\" a verb ending in -oyer (a subset of -yer verbs), requiring the student to know that the stem changes to \"nettoier-\" in the futur simple, which is the core concept of rule 05-08.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780008976664-vx83u6y4",
+      "timestamp": "2026-05-28T22:57:12.115Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the conjugation of \"nettoyer\" (a verb ending in -yer) in the futur simple, requiring the student to know the -yer → -ier stem change pattern central to this rule.\n\n---\n\n**Note:** There is a subtle content issue — the rule states both forms are valid (*paierai/payerai*), yet only `nettoieront` (A) is marked correct while `nettoyeront` (B) is treated as wrong. This doesn't affect alignment (the question still tests the rule), but the answer key should ideally accept both forms or the distractor (B) should be swapped for something else to avoid penalizing a valid conjugation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009210010-cm6cjs5u",
+      "timestamp": "2026-05-28T23:00:31.055Z"
+    }
+  ]
+}

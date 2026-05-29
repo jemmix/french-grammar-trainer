@@ -1,0 +1,82 @@
+{
+  "cacheKey": "43f01485c419c57c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-08-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au futur simple : « À partir de demain, vous ___ votre nouveau voisin. » (tutoyer)\n\nChoices:\nA. [CORRECT] tutoierez\nB. [WRONG] tutoyerez\nC. [WRONG] tutoieriez\nD. [WRONG] tutoyez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780008709332-ncb7mk5a"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B|\"tutoyerez\" est une forme alternative valable du futur simple du verbe « tutoyer » pour « vous » (les deux conjugaisons, tutoierai/tutoyerai, sont acceptées).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780008734270-vwzj47r7",
+      "timestamp": "2026-05-28T22:52:52.446Z"
+    },
+    {
+      "raw": "TRUE||B uses an incorrect stem (the \"y\" in -yer verbs changes to \"i\" before a vowel ending, giving \"tutoier-\" not \"tutoyer-\"), C is the conditionnel présent form (not futur simple), and D is the impératif présent form (not futur simple).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780008957351-wyl0i4i2",
+      "timestamp": "2026-05-28T22:56:13.291Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly uses the stem vowel \"y\" instead of \"i\" in the futur simple; C is the conditionnel présent form (not futur simple); D is the impératif présent form (not futur simple).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009158700-4aht9ulz",
+      "timestamp": "2026-05-28T22:59:36.323Z"
+    },
+    {
+      "raw": "VERDICT|B,C,D|B \"tutoyerez\" uses an incorrect stem (should be \"tutoier-\"); C \"tutoieriez\" is conditionnel présent, not futur simple; D \"tutoyez\" is impératif, not futur simple.\n\nWait, let me re-evaluate more carefully.\n\nActually, B \"tutoyerez\" — the verb \"tutoyer\" has an alternative conjugation where the future stem can be \"tutoyer-\" → \"tutoyerez\". Let me think again.\n\nFor verbs in -oyer like \"tutoyer\", the \"y\" changes to \"i\" before an unpronounced ending. In futur simple, the endings all begin with consonants (except the 'e' in -erez), so the stem should be \"tutoier-\". \n\nActually: -ai, -as, -a, -ons, -ez, -ont. The ending for \"vous\" is \"-erez\" which starts with 'e'. The stem for futur simple of tutoyer is \"tutoier-\" universally.\n\nB. tutoyerez — incorrect stem, this is not a valid futur simple form. ✓ (wrong)\nC. tutoieriez — this is conditionnel présent (stem tutoier- + -iez), not futur simple. ✓ (wrong)\nD. tutoyez — this is impératif présent, not futur simple. ✓ (wrong)\n\nTRUE||All wrong answers are incorrect: B uses an invalid stem, C is conditionnel présent, and D is impératif.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009338236-0avidu2e",
+      "timestamp": "2026-05-28T23:02:43.377Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses an invalid future stem (should be \"tutoier-\" not \"tutoyer-\" for -oyer verbs), C is the conditionnel présent form (not futur simple), and D is the impératif présent form (not futur simple).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009369599-dz4xzhwh",
+      "timestamp": "2026-05-28T23:03:43.464Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the wrong stem (tutoyerez instead of tutoierez — -oyer verbs change y to i in the future tense), C is the conditionnel présent (tutoieriez), not the futur simple, and D is the impératif présent (tutoyez), not the futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009423464-d8focb4a",
+      "timestamp": "2026-05-28T23:04:10.332Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B \"tutoyerez\" incorrectly retains 'y' instead of the required 'i' for -oyer verbs in futur simple (the standard conjugation is \"tutoierez\"), C \"tutoieriez\" is the conditionnel présent (not futur simple), and D \"tutoyez\" is the impératif présent form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009450332-bl7ztwuj",
+      "timestamp": "2026-05-28T23:05:16.416Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B (\"tutoyerez\") uses an invalid conjugation stem for the futur simple of \"tutoyer\" (the correct stem is \"tutoier-\"); C (\"tutoieriez\") is the conditionnel présent, not the futur simple; D (\"tutoyez\") is the impératif présent, not the futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009516417-x516hobv",
+      "timestamp": "2026-05-28T23:06:04.512Z"
+    },
+    {
+      "raw": "TRUE||B fails to apply the y→i stem change required in futur simple for -oyer verbs; C is the conditionnel présent form, not futur simple; D is the impératif présent, not futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009564512-nzb1d5km",
+      "timestamp": "2026-05-28T23:06:18.465Z"
+    },
+    {
+      "raw": "I've reached the maximum steps for this task. However, I can provide the verification response based on my analysis:\n\n**VERDICT: FALSE|B|B \"tutoyerez\" is an accepted alternative spelling for the futur simple of \"tutoyer\" (vous form), per the 1990 orthographic reform which allows both \"tutoierez\" and \"tutoyerez\"; C is correctly wrong (conditionnel présent, not futur simple); D is correctly wrong (impératif présent, not futur simple).**\n\n### Summary of Analysis:\n\n- **B (tutoyerez)**: This is potentially a **valid** futur simple form. Verbs ending in -oyer have two accepted conjugations in modern French — the traditional form with 'i' (tutoierez) and the reformed spelling without 'i' (tutoyerez). Both are recognized by the Académie française.\n\n- **C (tutoieriez)**: Correctly wrong — this is the *conditionnel présent*, not the *futur simple*.\n\n- **D (tutoyez)**: Correctly wrong — this is the *impératif présent* form, lacking any future tense ending.\n\n### Recommendation:\nThe question should either:\n1. Accept both A and B as correct (mark B as also correct), or\n2. Specify which spelling convention to use (e.g., \"orthographe traditionnelle\") to disambiguate.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009578465-kqoii2ag",
+      "timestamp": "2026-05-28T23:06:48.198Z"
+    }
+  ]
+}

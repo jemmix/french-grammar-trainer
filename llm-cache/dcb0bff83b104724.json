@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dcb0bff83b104724",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-08-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-08 - Les verbes en -yer au futur : -ayer facultatif (paierai ou payerai) ; -oyer et -uyer obligatoire (nettoierai, essuierai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple (forme avec y → i) : « L'entreprise ___ trois personnes le mois prochain. »\nChoices:\nA. [CORRECT] emploiera\nB. employera\nC. emploierait\nD. emploie\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780010464473-j9h3bdfr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the futur simple conjugation of \"employer\" (an -oyer verb), and distractor B (\"employera\") directly targets the rule's key distinction — that -oyer verbs obligatorily change y→i, making \"employera\" incorrect and testing whether the student knows this is not optional like -ayer verbs.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010567915-72tmo8k6",
+      "timestamp": "2026-05-28T23:23:21.006Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the -oyer obligatory y→i change in the futur simple using the verb \"employer,\" with the distractor \"employera\" directly testing whether students know that -oyer verbs (unlike -ayer verbs) cannot retain the y in the futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010740639-x6bau80n",
+      "timestamp": "2026-05-28T23:26:13.518Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the -oyer obligatory y→i transformation for \"employer\" in futur simple, and the key distractor \"employera\" (choice B) specifically targets whether the student knows this change is required, which is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010919865-8lhmcfk9",
+      "timestamp": "2026-05-28T23:29:21.662Z"
+    }
+  ]
+}

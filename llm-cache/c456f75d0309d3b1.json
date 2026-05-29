@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c456f75d0309d3b1",
+  "predicateId": "french-language",
+  "questionId": "05-08-008",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Les verbes en -yer au futur : -ayer facultatif (paierai ou payerai) ; -oyer et -uyer obligatoire (nettoierai, essuierai)\n\nQUESTION CONTENT:\nPrompt: Quelle affirmation est correcte concernant les verbes en -yer au futur simple ?\nChoices:\nA. [correct] Pour les verbes en -ayer, les formes en -i- et en -y- sont toutes les deux correctes\n   Explanation: Les verbes en -ayer (payer, essayer, balayer…) acceptent les deux orthographes : « je paierai » et « je payerai » sont tous les deux corrects.\nB. Pour tous les verbes en -yer, les formes en -i- et en -y- sont correctes\n   Explanation: Ce n'est vrai que pour les verbes en -ayer. Pour les verbes en -oyer et -uyer, seule la forme en -i- est correcte.\nC. Pour les verbes en -oyer, les formes en -i- et en -y- sont toutes les deux correctes\n   Explanation: Pour les verbes en -oyer, seule la forme en -i- est correcte. « Je nettoierai » est correct, mais pas « *je nettoyerai ».\nD. Le y ne se transforme jamais en i au futur simple\n   Explanation: Le y se transforme toujours en i pour les verbes en -oyer et -uyer, et peut se transformer pour les verbes en -ayer.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1780010464470-qarfsop9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content is in French. The prompt, choices, and explanations are entirely in French. No English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780011180879-f0ig11i1",
+      "timestamp": "2026-05-28T23:34:21.606Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content — the prompt, all four choice texts, and all four explanations — is entirely in French. No English is detected. The question properly discusses French grammar rules about -yer verbs in the futur simple using French terminology and examples throughout.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780011422013-c5c1x949",
+      "timestamp": "2026-05-28T23:37:13.921Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: All content — prompt, choices, and explanations — is entirely in French. No English detected, and no exceptions needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780011611980-nj4vq66u",
+      "timestamp": "2026-05-28T23:40:27.955Z"
+    }
+  ]
+}

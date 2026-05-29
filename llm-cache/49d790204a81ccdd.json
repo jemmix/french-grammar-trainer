@@ -1,0 +1,33 @@
+{
+  "cacheKey": "49d790204a81ccdd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-08-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-08 - Les verbes en -yer au futur : -ayer facultatif (paierai ou payerai) ; -oyer et -uyer obligatoire (nettoierai, essuierai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Dans la phrase « Tu paieras la facture demain », que peut-on dire de la forme « paieras » ?\nChoices:\nA. [CORRECT] Elle est correcte, mais « payeras » est aussi accepté\nB. C'est la seule forme correcte\nC. Elle est incorrecte ; on doit écrire « payeras »\nD. C'est du conditionnel présent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780010464471-2s3osihg"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the learner's knowledge that verbs ending in -ayer (like \"payer\") have an optional spelling variation in the future tense where both \"paieras\" (with i) and \"payeras\" (without i) are correct, which is the core concept of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010526784-f00gt10a",
+      "timestamp": "2026-05-28T23:22:18.427Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the rule that verbs ending in -ayer have optional spelling variations in the future tense (both \"paieras\" and \"payeras\" are correct), which is the core concept of rule 05-08.\n\n---\n\n**Maximum steps reached for this agent.** \n\nNo tools were used — this was a straightforward validation task that required only analysis and a text response. The task has been completed: the question was evaluated against the stated rule and found to be properly aligned, as it tests the optional -ayer spelling variation in the futur simple, which is exactly what rule 05-08 covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010674634-4hy62no0",
+      "timestamp": "2026-05-28T23:24:48.594Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the -ayer optional rule by asking whether \"paieras\" is correct and whether \"payeras\" is also accepted, which is the core distinction described in rule 05-08 regarding the facultative nature of the y→i change for -ayer verbs like \"payer.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010845763-ekl7vh2c",
+      "timestamp": "2026-05-28T23:27:41.860Z"
+    }
+  ]
+}

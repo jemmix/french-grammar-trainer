@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f7680ec5358fedf6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-08-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-08 - Les verbes en -yer au futur : -ayer facultatif (paierai ou payerai) ; -oyer et -uyer obligatoire (nettoierai, essuierai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple (verbe vouvoyer) : « Vous ___ votre patron à la réunion. »\nChoices:\nA. [CORRECT] vouvoierez\nB. vouvoyerez\nC. vouvoieriez\nD. vouvoyez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780012318685-j9qeqsvz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that -oyer verbs require the y→i change in the futur simple (vouvoierez, not vouvoyerez), which is the core of the stated rule about -oyer and -uyer verbs having an obligatory stem change.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780012319713-z0d4zp45",
+      "timestamp": "2026-05-28T23:52:12.908Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the -oyer component of the rule by requiring the student to apply the mandatory y→i transformation for \"vouvoyer\" (an -oyer verb) in the future simple, distinguishing \"vouvoierez\" from the incorrect \"vouvoyerez\" which fails to apply the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780012332909-286lle48",
+      "timestamp": "2026-05-28T23:52:52.670Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the core concept of the rule — that verbs ending in -oyer require the y→i change in the futur simple — by asking the student to conjugate \"vouvoyer\" and choose between forms that either apply or fail to apply this transformation (vouvoierez vs. vouvoyerez).\n\n---\n\n**Summary:** Maximum steps for this agent have been reached. No tools were needed for this validation task — it was completed purely through analysis. The question about \"vouvoyer\" is properly aligned with rule 05-08 on -yer verbs in the futur simple. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780012372671-hb42glz3",
+      "timestamp": "2026-05-28T23:53:09.093Z"
+    }
+  ]
+}

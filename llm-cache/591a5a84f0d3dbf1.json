@@ -1,0 +1,26 @@
+{
+  "cacheKey": "591a5a84f0d3dbf1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-08-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-08 - Les verbes en -yer au futur (payer → paierai/payerai, essayer → essaierai/essayerai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple : « Vous ___ la moquette du salon. » (essuyer)\nChoices:\nA. [CORRECT] essuierez\nB. essuyerez\nC. essuieriez\nD. essuyez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780008709333-ni6fpv56"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests conjugation of \"essuyer\" (an -yer verb) in the futur simple, requiring the student to know that -yer verbs can change y→i in future tense forms, though note that both \"essuierez\" (A) and \"essuyerez\" (B) are actually accepted spellings per the rule, which is a content quality issue rather than an alignment problem.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780008850075-am7beb0e",
+      "timestamp": "2026-05-28T22:55:40.726Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the -yer → -ier stem change for \"essuyer\" (a -uyer verb) in the futur simple, requiring the student to know that y changes to i (essuierez) and distinguishing this from the incorrect retention of y (essuyerez), which is precisely the focus of rule 05-08.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009119426-mofs4c6a",
+      "timestamp": "2026-05-28T22:59:15.385Z"
+    }
+  ]
+}

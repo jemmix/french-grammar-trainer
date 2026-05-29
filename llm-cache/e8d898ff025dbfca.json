@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e8d898ff025dbfca",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-08-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-08 - Les verbes en -yer au futur : -ayer facultatif (paierai ou payerai) ; -oyer et -uyer obligatoire (nettoierai, essuierai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple (forme avec y → i) : « J'___ mes pieds sur le paillasson avant d'entrer. »\nChoices:\nA. [CORRECT] essuierai\nB. essuyerai\nC. essuierais\nD. essuie\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780010464473-tkb99oml"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that \"essuyer\" (a -uyer verb) obligatorily changes y→i in the futur simple, requiring them to select \"essuierai\" over the incorrect \"essuyerai\" (which violates the mandatory -uyer rule) and distinguish it from the conditionnel distractor \"essuierais\" and the present-tense \"essuie.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010579137-cv4owasi",
+      "timestamp": "2026-05-28T23:25:30.524Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the mandatory y→i stem change for the verb \"essuyer\" (a -uyer verb) in the futur simple, which is the central concept of rule 05-08 distinguishing obligatory -oyer/-uyer changes from optional -ayer changes.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010887298-adptnee2",
+      "timestamp": "2026-05-28T23:28:22.837Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests the verb \"essuyer,\" an -uyer verb, requiring the student to know that the y→i change is mandatory in the futur simple (essuierai, not essuyerai), which is precisely the distinction the rule covers for -oyer/-uyer verbs.\n\n---\n\n**Summary:** Maximum steps for this agent have been reached. I evaluated the alignment of the provided French grammar question against its stated rule (05-08: verbs in -yer in the futur simple). The question about \"essuyer\" correctly tests whether students know the mandatory y→i spelling change for -uyer verbs in the future tense. No remaining tasks were pending — this was a single validation request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010978552-44pkuqcn",
+      "timestamp": "2026-05-28T23:30:17.128Z"
+    }
+  ]
+}

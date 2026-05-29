@@ -1,0 +1,33 @@
+{
+  "cacheKey": "761476f22f6e0f77",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-08-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-08 - Les verbes en -yer au futur (payer → paierai/payerai, essayer → essaierai/essayerai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple : « Elle ___ ses cheveux avec une serviette. » (essuyer)\nChoices:\nA. [CORRECT] essuiera\nB. essuyera\nC. essuierait\nD. essuie\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780008709332-5hgjei1c"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the conjugation of \"essuyer\" (a verb ending in -uyer) in the futur simple, where the correct answer \"essuiera\" demonstrates the y→i change that is the core of the stated rule, and the distractor \"essuyera\" tests whether the student knows this specific alternation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780008811508-ah792kww",
+      "timestamp": "2026-05-28T22:54:03.732Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests conjugation of \"essuyer\" (an -yer verb) in the futur simple, which is exactly what rule 05-08 covers — however, it should be noted that both \"essuiera\" and \"essuyera\" are valid forms according to the rule, so choice B should arguably also be accepted.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009020354-hezrq1vs",
+      "timestamp": "2026-05-28T22:57:53.008Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question tests conjugation of \"essuyer,\" a verb ending in -yer, in the futur simple, directly requiring knowledge of how -yer verbs form their future stems (essuy- → essuier-/essuyer-), with distractors that test both tense recognition (essuierait = conditional, essuie = présent) and the alternate acceptable stem (essuyera).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780009234843-50j9jtzb",
+      "timestamp": "2026-05-28T23:01:06.152Z"
+    }
+  ]
+}

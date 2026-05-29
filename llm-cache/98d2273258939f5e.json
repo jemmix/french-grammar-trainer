@@ -1,0 +1,33 @@
+{
+  "cacheKey": "98d2273258939f5e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-08-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-08 - Les verbes en -yer au futur : -ayer facultatif (paierai ou payerai) ; -oyer et -uyer obligatoire (nettoierai, essuierai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple (forme avec y → i) : « La crue ___ les champs inondés. »\nChoices:\nA. [CORRECT] noiera\nB. noyera\nC. noierait\nD. noie\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780010464471-wu7e3bwt"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The verb \"noyer\" is an -oyer verb, and the question directly tests whether the student knows the obligatory y → i shift in the futur simple by presenting the correct form \"noiera\" alongside the incorrect \"noyera\" which fails to apply the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010531858-iqp5ydfd",
+      "timestamp": "2026-05-28T23:22:47.914Z"
+    },
+    {
+      "raw": "**Maximum steps reached for this agent.**\n\n## Task Summary\n\nI was asked to validate whether a French grammar question is aligned with its stated rule. Here is my analysis:\n\n---\n\n**QUESTION ANALYSIS:**\n\n- **Rule**: 05-08 — Verbs ending in -yer in the future tense. Specifically: -ayer is optional (paierai or payerai); -oyer and -uyer require y→i (nettoierai, essuierai).\n- **Question**: Complete with the futur simple (form with y→i): « La crue ___ les champs inondés. »\n  - A. **noiera** (CORRECT)\n  - B. noyera\n  - C. noierait\n  - D. noie\n\n**The verb \"noyer\" ends in -oyer**, so it falls under the -oyer group where y→i is **obligatory** in the futur simple. The prompt specifically asks for the \"forme avec y → i,\" which is the form mandated by the rule for -oyer verbs.\n\nThe question tests whether the student knows that:\n1. \"Noyer\" (an -oyer verb) must change y→i in the futur simple → \"noiera\"\n2. The incorrect form \"noyera\" (keeping y) is wrong specifically because of this rule\n3. \"noierait\" is the conditional (wrong tense), and \"noie\" is the subjunctive present (wrong tense)\n\n---\n\n## VERDICT\n\n**VERDICT: ALIGNED**\n\n**REASON:** The question directly tests the -oyer obligation rule by asking for the futur simple of \"noyer\" (an -oyer verb), where the correct answer \"noiera\" requires applying the mandatory y→i transformation, while the distractor \"noyera\" represents the common error of failing to apply this specific rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010705636-piwn4scg",
+      "timestamp": "2026-05-28T23:25:22.592Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\n\nREASON: The question directly tests the obligatory y→i transformation for the -oyer verb \"noyer\" in futur simple, with the key distractor \"noyera\" (choice B) requiring students to know that keeping the y is incorrect for -oyer verbs — precisely the distinction the rule teaches.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010881938-khr4kqft",
+      "timestamp": "2026-05-28T23:28:19.009Z"
+    }
+  ]
+}

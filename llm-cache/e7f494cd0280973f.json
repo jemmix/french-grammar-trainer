@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e7f494cd0280973f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-08-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au futur simple (forme avec y → i) : « Tu ___ le bouton bleu pour envoyer le message. »\n\nChoices:\nA. [CORRECT] appuieras\nB. [WRONG] appuyeras\nC. [WRONG] appuierais\nD. [WRONG] appuies\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780010464473-0xkyfx84"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B (appuyeras) retains the 'y' instead of changing to 'i' as required by the question constraint, C (appuierais) is the conditionnel présent not the futur simple, and D (appuies) is the présent de l'indicatif not the futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010560810-ifimz60e",
+      "timestamp": "2026-05-28T23:23:01.944Z"
+    },
+    {
+      "raw": "TRUE||B keeps the y instead of applying the required y→i change; C uses the conditional ending -ais instead of the future ending -as; D is a present subjunctive/imperative form, not futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010722593-jhuvxf26",
+      "timestamp": "2026-05-28T23:25:36.088Z"
+    },
+    {
+      "raw": "TRUE||B retains the y instead of changing to i as required in the futur simple of \"appuyer\"; C uses the conditionnel présent ending -ais instead of the futur simple ending -as; D is the subjonctif/impératif form, not futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780010893740-mlnmay6t",
+      "timestamp": "2026-05-28T23:28:34.202Z"
+    }
+  ]
+}
