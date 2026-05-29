@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bab6227a41845513",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-14-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Selon la règle « si + présent → futur simple », que met-on dans la principale ? « Si nous travaillons ensemble, nous ___ plus vite. »\n\nChoices:\nA. [CORRECT] finirons\nB. [WRONG] finirions\nC. [WRONG] finissons\nD. [WRONG] avons fini\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780094089827-iutg4725"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses (conditionnel présent, présent, passé composé) that violate the explicit \"si + présent → futur simple\" rule stated in the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780094153273-vdaj3es2",
+      "timestamp": "2026-05-29T22:36:08.029Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses other than futur simple (conditionnel présent, présent, passé composé), violating the explicit \"si + présent → futur simple\" rule stated in the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780094235254-8yrfvprl",
+      "timestamp": "2026-05-29T22:37:37.325Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\n- I was asked to verify that wrong answers B, C, and D in a French grammar MCQ question are indeed incorrect.\n- The question tests the rule \"si + présent → futur simple\" and asks what goes in the main clause.\n- Analysis: B (finirions - conditionnel) is wrong because it belongs to a different si-clause pattern; C (finissons - présent) is wrong because it doesn't use futur simple; D (avons fini - passé composé) is wrong for the same reason.\n\nList of remaining tasks that were not completed:\n- None — the analysis was complete before the step limit was reached.\n\nRecommendations for what should be done next:\n- The verdict is: TRUE||All wrong answers violate the stated \"si + présent → futur simple\" rule by using conditionnel (B), présent (C), and passé composé (D) instead of futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780094310546-tkoii40g",
+      "timestamp": "2026-05-29T22:38:53.226Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1e96e59f59552898",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-14-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Selon la règle « si + présent → futur simple », que met-on dans la principale ? « Si on va à cette fête, on ___ tous nos amis. »\n\nChoices:\nA. [CORRECT] verra\nB. [WRONG] verrait\nC. [WRONG] voit\nD. [WRONG] a vu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780094089824-y38n2y0g"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of analyzing a French grammar verification task. The question asked about the \"si + présent → futur simple\" rule and I needed to verify that wrong answers B (\"verrait\" - conditionnel), C (\"voit\" - présent), and D (\"a vu\" - passé composé) are all incorrect.\n\nMy analysis concluded that all three wrong answers are indeed incorrect because:\n- B uses conditionnel présent, which belongs to the \"si + imparfait → conditionnel\" structure\n- C uses présent, which violates the rule that requires futur simple in the main clause\n- D uses passé composé, which is not the futur simple required by the stated rule\n\nThe expected verdict would be: TRUE||All wrong answers violate the stated \"si + présent → futur simple\" rule by using conditionnel, présent, or passé composé instead of futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780094124324-3xmvmh70",
+      "timestamp": "2026-05-29T22:35:47.251Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses other than futur simple (conditionnel, présent, passé composé), which violates the explicitly stated rule \"si + présent → futur simple\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780094209863-cve5fp7m",
+      "timestamp": "2026-05-29T22:37:06.468Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the futur simple as required by the stated rule \"si + présent → futur simple\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780094287944-4cryq17v",
+      "timestamp": "2026-05-29T22:38:23.508Z"
+    }
+  ]
+}

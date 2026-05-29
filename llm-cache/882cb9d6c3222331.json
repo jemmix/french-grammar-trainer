@@ -1,0 +1,33 @@
+{
+  "cacheKey": "882cb9d6c3222331",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-14-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Lequel de ces énoncés suit correctement la règle « si + présent → futur » ?\n\nChoices:\nA. [CORRECT] Si vous travaillez dur, vous réussirez.\nB. [WRONG] Si vous travailleriez dur, vous réussiriez.\nC. [WRONG] Si vous aviez travaillé dur, vous auriez réussi.\nD. [WRONG] Si vous travailliez dur, vous réussissiez.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780094089824-vtnzqi9r"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ about the \"si + présent → futur\" rule are indeed incorrect.\n\n**Analysis completed:**\n- B uses conditionnel (travailleriez) in the si-clause instead of présent — grammatically incorrect\n- C uses plus-que-parfait (aviez travaillé) + conditionnel passé — this is a different rule (si + plus-que-parfait → conditionnel passé), not the requested rule\n- D uses imparfait in both clauses — the correct pattern would be si + imparfait → conditionnel présent, not imparfait + imparfait\n\n**Result:** TRUE||All wrong answers use incorrect tense combinations that violate the \"si + présent → futur\" rule.\n\n**Remaining tasks:** None — the verification was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780094118878-qiksfkqp",
+      "timestamp": "2026-05-29T22:35:40.304Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tense combinations (conditionnel, plus-que-parfait/conditionnel passé, imparfait) that do not follow the specified \"si + présent → futur\" rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780094208193-3dxks9fz",
+      "timestamp": "2026-05-29T22:37:17.962Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThis task was straightforward - I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question tests the rule \"si + présent → futur\" (if clause with present tense leads to future tense in the main clause).\n\nAnalysis completed:\n- B uses \"si + conditionnel\" which is never valid in French\n- C uses \"si + plus-que-parfait → conditionnel passé\" (irréel du passé), not the requested pattern\n- D uses \"si + imparfait → imparfait\" which is not a valid French pattern (should be imparfait → conditionnel)\n\nAll three wrong answers are correctly identified as incorrect.\n\nTRUE||All wrong answers use different tense combinations that do not match the \"si + présent → futur\" rule specified in the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780094298880-n1parjyk",
+      "timestamp": "2026-05-29T22:38:45.745Z"
+    }
+  ]
+}
