@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aabb5fb71995081f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-18-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase exprime une supposition sur le passé ?\n\nChoices:\nA. [CORRECT] Il n'est pas venu — il aura oublié la réunion.\nB. [WRONG] Il n'est pas venu — il a oublié la réunion.\nC. [WRONG] Il n'est pas venu — il aurait oublié la réunion.\nD. [WRONG] Il n'est pas venu — il oubliait la réunion.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406256-se3t8xm0"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses passé composé which states a fact rather than a supposition; C uses conditionnel passé which expresses a hypothetical or unreal past scenario, not a supposition about what actually happened; D uses imparfait which describes ongoing or habitual past actions, not a single-event supposition.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085875244-vr29x0jl",
+      "timestamp": "2026-05-29T20:18:12.350Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically correct French sentences but do not express a supposition about the past: B states a flat fact (passé composé), C expresses a hypothetical/unrealized condition (conditionnel passé), and D describes an ongoing past state (imparfait), whereas only the futur antérieur in A conveys supposition about a past event.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087500091-k9vn66ru",
+      "timestamp": "2026-05-29T20:45:16.359Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that do not express supposition about the past: B uses passé composé (states a fact), C uses conditionnel passé (expresses an unreal/hypothetical situation), and D uses imparfait (describes an ongoing past state).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089725983-0gx19cyk",
+      "timestamp": "2026-05-29T21:22:44.658Z"
+    }
+  ]
+}

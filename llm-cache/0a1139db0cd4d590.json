@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0a1139db0cd4d590",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-17-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-17 - Le futur antérieur après quand / lorsque / dès que (quand j'aurai fini, je t'appellerai)\n\nQUESTION:\nType: Input\nPrompt: Complétez au futur antérieur.\nPhrase: Lorsque vous ___ vos documents, nous pourrons commencer.\nCorrect Answer: aurez rassemblé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780084406255-phz8g4ot"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to use the futur antérieur after \"lorsque\" in a sentence where the subordinate action (gathering documents) must be completed before the main clause action can occur, which is exactly what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085845537-yt1t5f4t",
+      "timestamp": "2026-05-29T20:17:51.679Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using the futur antérieur after \"lorsque\" to express a future action completed before another future action, which is the exact grammar point the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087479720-wmzvmhvj",
+      "timestamp": "2026-05-29T20:44:49.389Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was in the process of validating a French grammar question alignment with its stated rule.\n\nAnalysis completed:\n- The question uses \"lorsque\" (a key conjunction for the rule)\n- Requires future antérieur conjugation (\"aurez rassemblé\")\n- Context shows completion before another future action\n- This directly tests the future antérieur after temporal conjunctions\n\nVERDICT: ALIGNED\nREASON: The question requires using the future antérieur after \"lorsque\" to express an action completed before another future action, which is exactly what the rule covers.\n\nNo remaining tasks - the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089697511-uw5axaj2",
+      "timestamp": "2026-05-29T21:21:57.143Z"
+    }
+  ]
+}

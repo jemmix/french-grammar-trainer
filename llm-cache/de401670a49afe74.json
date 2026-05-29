@@ -1,0 +1,33 @@
+{
+  "cacheKey": "de401670a49afe74",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-18-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Pourquoi n'est-elle pas venue à la fête ? Elle ___ quelque chose de plus important. »\n\nChoices:\nA. [CORRECT] aura eu\nB. [WRONG] avait eu\nC. [WRONG] a eu\nD. [WRONG] aurait eu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406256-salhr0xm"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was in the process of evaluating a French grammar validation task for a multiple choice question about the futur antérieur. The question asks to fill in: \"Pourquoi n'est-elle pas venue à la fête ? Elle ___ quelque chose de plus important.\"\n\n**Remaining tasks:**\n- Provide the final verdict on whether wrong answers B, C, and D are indeed incorrect\n\n**Recommendations for what should be done next:**\nProvide the validation response. Based on my analysis:\n- B \"avait eu\" (plus-que-parfait) is grammatically acceptable as an explanation for why she didn't come\n- C \"a eu\" (passé composé) is actually the most natural and direct way to say \"she had something more important\" - this is clearly a correct answer that was wrongly marked as wrong\n- D \"aurait eu\" (conditionnel) implies hypothesis/uncertainty and doesn't fit the assertive explanation context\n\nThe expected verdict would be: FALSE|B,C|B (plus-que-parfait) is grammatically acceptable to explain a prior completed situation; C (passé composé) is the most natural way to express \"she had something more important\" and is clearly correct in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085934163-hgq7qk7r",
+      "timestamp": "2026-05-29T20:19:43.849Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't convey the deductive meaning required: \"avait eu\" (pluperfect) implies a prior action before another past event, \"a eu\" (passé composé) states a simple fact rather than a logical deduction about the past, and \"aurait eu\" (conditional past) introduces an unreal hypothetical that contradicts the factual context of explaining why she actually didn't come.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087590247-wlqxzz49",
+      "timestamp": "2026-05-29T20:47:07.191Z"
+    },
+    {
+      "raw": "FALSE|B,C|Both \"avait eu\" (plus-que-parfait) and \"a eu\" (passé composé) are grammatically correct and could reasonably explain why she didn't come to the party; only \"aurait eu\" is genuinely wrong as it implies a hypothetical that contradicts the intended meaning.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089816379-qp8xekrs",
+      "timestamp": "2026-05-29T21:24:07.146Z"
+    }
+  ]
+}

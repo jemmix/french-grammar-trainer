@@ -1,0 +1,33 @@
+{
+  "cacheKey": "556d9f244a25f56d",
+  "predicateId": "french-language",
+  "questionId": "05-19-007",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: La négation au futur simple et au futur antérieur\n\nQUESTION CONTENT:\nPrompt: Laquelle de ces phrases exprime correctement le futur négatif avec « nulle part » ?\nChoices:\nA. [correct] Nous n'irons nulle part cet été.\n   Explanation: « N' » + verbe au futur (irons) + « nulle part » est la bonne construction pour « we won't go anywhere ».\nB. Nous ne irons pas nulle part cet été.\n   Explanation: Il faut élider « ne » en « n' » avant la voyelle « i ». De plus, on ne combine pas « pas » et « nulle part ».\nC. Nous irons nulle part cet été.\n   Explanation: Il manque « ne ». La négation requiert « ne » avant le verbe.\nD. Nous n'irons nulle part pas cet été.\n   Explanation: On ne combine pas « nulle part » et « pas ». « Nulle part » seul suffit.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1780084406259-wffudix0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: FRENCH\nREASON: Content uses allowed English exception for pedagogical translation contrast (\"we won't go anywhere\" to illustrate the meaning of the French construction).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780091321444-e1s18tb0",
+      "timestamp": "2026-05-29T21:48:57.921Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: Content uses allowed English exception for pedagogical translation — the English \"we won't go anywhere\" clarifies the meaning of the French construction, which is a standard teaching technique. All instructions, explanations, and prompts are in French.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780092260353-got3ug5d",
+      "timestamp": "2026-05-29T22:04:44.739Z"
+    },
+    {
+      "raw": "VERDICT: FRENCH\nREASON: Content uses allowed English exception for pedagogical contrast showing English equivalent \"we won't go anywhere\" in choice A's explanation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780093017366-z0bdsb6y",
+      "timestamp": "2026-05-29T22:17:16.641Z"
+    }
+  ]
+}

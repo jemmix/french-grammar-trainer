@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6af17400bccafe99",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-15-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Quand vous ___ vos valises, nous pourrons partir. » (faire)\n\nChoices:\nA. [CORRECT] aurez fait\nB. [WRONG] avez fait\nC. [WRONG] auriez fait\nD. [WRONG] serez fait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406250-9gkr1eqg"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a French grammar verification task. The question asked me to verify that wrong answers B, C, and D are incorrect for the sentence \"Quand vous ___ vos valises, nous pourrons partir.\"\n\nMy analysis:\n- B (\"avez fait\" - passé composé) is incorrect because \"quand\" with future reference requires futur simple\n- C (\"auriez fait\" - conditionnel passé) is incorrect because conditionnel is for hypotheticals, not temporal future clauses\n- D (\"serez fait\" - passive/reflexive futur) is incorrect because \"faire ses valises\" is active, not passive\n\nThe verdict would be: TRUE||All wrong answers contain clear grammar errors.\n\nNo remaining tasks - this was a single verification request that I completed the analysis for.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085013867-usreegt8",
+      "timestamp": "2026-05-29T20:03:57.955Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tense/mood or invalid passive construction for the required futur antérieur.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087049418-ubajss0d",
+      "timestamp": "2026-05-29T20:37:53.365Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses passé composé (past) instead of futur antérieur required after \"quand\" with a future main clause, C uses conditionnel which doesn't work with \"quand\" expressing a certain future event, and D incorrectly uses the être auxiliary instead of avoir for the transitive verb \"faire\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089308134-x0zvnnwu",
+      "timestamp": "2026-05-29T21:15:42.435Z"
+    }
+  ]
+}

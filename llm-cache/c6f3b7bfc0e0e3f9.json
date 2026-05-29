@@ -1,0 +1,82 @@
+{
+  "cacheKey": "c6f3b7bfc0e0e3f9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-17-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez correctement : « Dès qu'on ___ les résultats, tout le monde sera heureux ou déçu. »\n\nChoices:\nA. [CORRECT] aura connu\nB. [WRONG] connaît\nC. [WRONG] connaîtra\nD. [WRONG] connaîtrait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406254-vy7dlrc6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses présent instead of the required future tense after \"dès que\" with a future main clause; C uses futur simple when futur antérieur is needed to express that the discovery of results is completed before people react; D uses conditionnel présent which is inappropriate for a certain future context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085550165-0c2mduag",
+      "timestamp": "2026-05-29T20:12:48.018Z"
+    },
+    {
+      "raw": "TRUE||B fails because \"dès que\" requires a future tense when the main clause is in the future; C fails because it uses futur simple instead of futur antérieur needed to express completion before the main clause action; D fails because conditional is incompatible with the certainty expressed by \"sera.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087357105-p8pqymqf",
+      "timestamp": "2026-05-29T20:42:59.277Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was analyzing a French grammar validation question about completing a sentence with \"Dès qu'on ___ les résultats, tout le monde sera heureux ou déçu.\" The correct answer given is \"aura connu\" (future anterior), and I needed to verify that the wrong answers (B: connaît, C: connaîtra, D: connaîtrait) are indeed incorrect.\n\nAnalysis completed:\n- B (connaît - present): Could be correct in French, as \"dès que\" + present can refer to future events (similar to English \"when I know...\")\n- C (connaîtra - simple future): Widely accepted in modern French after \"dès que,\" though purists prefer future anterior\n- D (connaîtrait - conditional): Genuinely incorrect as it doesn't match the future tense in the main clause\n\nThe verdict would be: FALSE|B,C|Both present tense and simple future are valid alternatives to future anterior after \"dès que\" in French, especially in contemporary usage.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089606615-109z08bl",
+      "timestamp": "2026-05-29T21:20:38.811Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context: B uses present tense which doesn't agree with the future in the main clause after \"dès que\", C uses simple future instead of the required future anterior after \"dès que\" with a future main clause, and D uses conditional which is incompatible with \"dès que\" expressing a future condition.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780090131282-hf6kuput",
+      "timestamp": "2026-05-29T21:29:13.871Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses present tense instead of required future/future perfect after \"dès que\" with a future main clause, C uses futur simple which doesn't convey the completed action of learning results that precedes the emotional reaction, and D inappropriately uses conditional mood without any conditional context in the sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780090207839-yyfs0kxq",
+      "timestamp": "2026-05-29T21:31:21.701Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context: B uses present tense instead of the required future anterior with \"dès que\" + future main clause, C uses simple future which doesn't express the necessary anteriority, and D uses conditional which doesn't fit the certain future context of the sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780090289905-pixe9jkc",
+      "timestamp": "2026-05-29T21:31:52.068Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses (présent, futur simple, conditionnel) that don't satisfy the futur antérieur requirement after \"dès que\" when the main clause is in futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780090315700-qqe469h8",
+      "timestamp": "2026-05-29T21:32:18.045Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was evaluating a French grammar verification task for a multiple choice question about completing a sentence with \"Dès qu'on ___ les résultats.\" The correct answer uses the futur antérieur \"aura connu\" because \"dès que\" with a future main clause requires the futur antérieur to express a completed action. The wrong answers (B: \"connaît\" present tense, C: \"connaîtra\" simple future, D: \"connaîtrait\" conditional) are all grammatically incorrect for this construction.\n\nThe verdict for this question is: TRUE||All wrong answers use incorrect tenses—B uses present instead of future, C uses simple future instead of futur antérieur (missing completed aspect), and D uses conditional instead of indicative future.\n\nRemaining tasks: None for this specific verification.\n\nRecommendations: The question and wrong answers are valid—no corrections needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780090344125-nl7kt4uy",
+      "timestamp": "2026-05-29T21:32:55.204Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for a \"dès que\" clause with a future main clause: present (B) doesn't express future anteriority, simple future (C) fails to convey the required anteriority, and conditional (D) is inappropriate for expressing a certain future event.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780090376719-xqdumcz0",
+      "timestamp": "2026-05-29T21:33:23.184Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question tests the correct tense after \"dès que\" when the main clause is in futur simple.\n\nAnalysis completed:\n- B (connaît - présent): Incorrect, as présent is not used after \"dès que\" with a future main clause\n- C (connaîtra - futur simple): This is actually CORRECT - futur simple is the standard tense after \"dès que\" when the main clause is in the future\n- D (connaîtrait - conditionnel): Incorrect, conditionnel doesn't fit this temporal construction\n\nThe verdict should be: FALSE|C|C uses the futur simple which is the standard and equally valid tense after \"dès que\" when the main clause is in the future.\n\nRemaining tasks: None - the analysis is complete.\n\nRecommendation: The question needs to be revised. Either change the correct answer to \"connaîtra\" (futur simple), or rephrase the question to specifically require the futur antérieur (e.g., by adding context that emphasizes completion of knowing before the reaction occurs). As written, both A and C are grammatically correct.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780090403185-nqmle0a4",
+      "timestamp": "2026-05-29T21:33:43.664Z"
+    }
+  ]
+}

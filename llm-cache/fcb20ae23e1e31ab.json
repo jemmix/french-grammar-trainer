@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fcb20ae23e1e31ab",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-18-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Pourquoi n'a-t-il pas terminé son travail ? Il ___ des problèmes. »\n\nChoices:\nA. [CORRECT] aura eu\nB. [WRONG] aurait eu\nC. [WRONG] avait eu\nD. [WRONG] a eu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406257-fmim0czx"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses that don't fit the context: B (conditionnel passé) implies a hypothetical rather than an explanation of what actually happened, C (plus-que-parfait) would require a reference point in the past that isn't established here, and D (passé composé) doesn't convey the inferred/reported certainty that the futur antérieur \"aura eu\" expresses in this explanatory context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085999852-xgh2hyq6",
+      "timestamp": "2026-05-29T20:21:22.135Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\n\nI was in the process of analyzing a French grammar MCQ validation task. The question asks to verify that wrong answers B, C, and D are indeed incorrect for the fill-in-the-blank question: « Pourquoi n'a-t-il pas terminé son travail ? Il ___ des problèmes. »\n\nThe correct answer is A: \"aura eu\" (futur antérieur used to express deduction/certainty about a past event).\n\n## Analysis Completed\n\n- **B (aurait eu)**: Conditional past - expresses hypothetical, which doesn't fit as an explanation for an actual past event\n- **C (avait eu)**: Pluperfect - \"He had had problems\" is grammatically valid and semantically logical as an explanation for why he didn't finish\n- **D (a eu)**: Passé composé - \"He had problems\" is grammatically correct and the most natural way to explain why he didn't finish\n\n## Remaining Task\n\nProvide the final verdict in the required format.\n\n## Recommendation\n\nThe verdict should be: **FALSE|C,D|C (avait eu) and D (a eu) are grammatically correct completions that logically explain why he didn't finish his work; the question does not explicitly require futur antérieur for deduction, so these remain valid alternatives.**",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087660688-boy4zkoc",
+      "timestamp": "2026-05-29T20:48:31.133Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was in the process of analyzing a French grammar MCQ question to verify that the wrong answers are indeed incorrect. The question asks to fill in the blank in \"Pourquoi n'a-t-il pas terminé son travail ? Il ___ des problèmes.\" with the correct answer being \"aura eu\" (future anterior).\n\nRemaining tasks that were not completed:\n- I was about to provide my verdict but reached the step limit before responding.\n\nRecommendations for what should be done next:\nThe question should be re-evaluated. Based on my analysis, answer D (\"a eu\" - passé composé) appears to be a valid correct answer in this context, as \"Il a eu des problèmes\" is a natural and grammatically correct way to explain why he didn't finish his work. The future anterior \"aura eu\" expresses conjecture/deduction (\"He must have had problems\"), but the passé composé expresses a straightforward fact (\"He had problems\"), and both are valid without additional context specifying the speaker's certainty. The expected verdict would be: FALSE|D|D (\"a eu\", passé composé) is grammatically correct as a straightforward factual explanation for why he didn't finish his work, making it indistinguishable from the future anterior without context specifying whether the speaker is deducing or stating a known fact.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089849318-wb6p02mc",
+      "timestamp": "2026-05-29T21:24:50.833Z"
+    }
+  ]
+}

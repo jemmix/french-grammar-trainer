@@ -1,0 +1,26 @@
+{
+  "cacheKey": "20e31035a8197602",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-19-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-19 - La négation au futur simple et au futur antérieur\n\nQUESTION:\nType: Multiple Choice\nPrompt: Laquelle de ces phrases avec élision est correctement négative ?\nChoices:\nA. [CORRECT] Elles n'iront nulle part cet hiver.\nB. Elles ne iront nulle part cet hiver.\nC. Elles n'iront pas nulle part cet hiver.\nD. Elles n'iront nulle part pas cet hiver.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780084406259-czbdafcy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests elision rules (n' vs ne before a vowel) and the behavior of \"nulle part\" as a negative adverb, not the specific structure or rules of negation in futur simple and futur antérieur — the futur simple tense is incidental to the actual grammar being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780086255932-ubgecbje",
+      "timestamp": "2026-05-29T20:24:41.503Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests elision rules (ne → n') and word order with \"nulle part,\" not the specific negation patterns of futur simple/futur antérieur, as the same question would work identically with any other tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087865665-de1j9tyb",
+      "timestamp": "2026-05-29T20:51:27.991Z"
+    }
+  ]
+}

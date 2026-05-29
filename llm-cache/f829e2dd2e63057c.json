@@ -1,0 +1,26 @@
+{
+  "cacheKey": "f829e2dd2e63057c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-20-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Je ne peux pas venir maintenant, mais je ___ bientôt. » Quel temps ?\n\nChoices:\nA. [CORRECT] vais venir\nB. [WRONG] viendrai\nC. [WRONG] serai venu\nD. [WRONG] venais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406261-kiykytih"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating the French grammar verification question. My analysis so far:\n\n- **B (viendrai)**: This is the futur simple of \"venir\". \"Je viendrai bientôt\" is grammatically correct French and expresses a future action. While futur proche (vais venir) is more common with \"bientôt\", the futur simple is a valid alternative, making this answer potentially correct.\n\n- **C (serai venu)**: This is futur antérieur, expressing a completed future action. \"Je serai venu bientôt\" doesn't fit the context well since \"bientôt\" indicates imminent action, not completion by a reference point. This is genuinely incorrect.\n\n- **D (venais)**: This is imparfait, a past tense. It cannot be used for future actions, so \"Je venais bientôt\" is incorrect.\n\n**Remaining task**: Provide the final verdict in the requested format.\n\n**My verdict would be**: FALSE|B|B (\"viendrai\") is the futur simple which is grammatically correct for expressing future actions and could validly replace the futur proche in this sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780086403835-k5i8got3",
+      "timestamp": "2026-05-29T20:27:17.404Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI analyzed the French grammar multiple choice question to verify whether the wrong answers (B, C, D) are indeed incorrect. The question asks for the correct future tense to complete \"Je ne peux pas venir maintenant, mais je ___ bientôt.\"\n\n**Analysis completed:**\n- B. \"viendrai\" (futur simple) - This is actually grammatically correct in this context. While \"vais venir\" (futur proche) may be more natural with \"bientôt,\" the futur simple is a valid future tense.\n- C. \"serai venu\" (futur antérieur) - Incorrect; doesn't make logical sense with \"bientôt\"\n- D. \"venais\" (imparfait) - Incorrect; doesn't express future intention\n\n**Result:** FALSE|B|B \"viendrai\" is futur simple, a valid future tense that is grammatically correct in this sentence context.\n\n**Remaining tasks:** None - the verification is complete.\n\n**Recommendations:** The question should either accept both A and B as correct answers, or should be rephrased to specifically ask for the futur proche (e.g., \"Quel temps avec 'aller' + infinitif ?\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780088007376-fbudjf6y",
+      "timestamp": "2026-05-29T20:53:58.519Z"
+    }
+  ]
+}

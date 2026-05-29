@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e3b5fda9b765def3",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "05-18-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le futur antérieur pour exprimer une supposition sur le passé (il aura oublié)\nPROMPT: Complétez avec le futur antérieur pour exprimer une supposition. Conjuguez le verbe.\nPHRASE: Mon ami ne m'a pas appelé — il ___ (être) très occupé.\nCORRECT ANSWER: aura été\n\nWRONG ANSWERS to evaluate:\n1. a été\n2. aurait été\n3. était\n4. avait été\n5. étant\n6. été\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780084406258-eeos81j3"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was evaluating the plausibility of wrong answers for a French grammar input question about the futur antérieur tense.\n\n**Analysis completed:**\nThe question asks learners to conjugate \"être\" in futur antérieur (correct: \"aura été\"). The wrong answers include:\n- \"a été\" (passé composé) - PLAUSIBLE\n- \"aurait été\" (conditionnel passé) - PLAUSIBLE, very common confusion\n- \"était\" (imparfait) - PLAUSIBLE\n- \"avait été\" (plus-que-parfait) - PLAUSIBLE\n- \"étant\" (participe présent) - MARGINALLY PLAUSIBLE\n- \"été\" (past participle alone) - IMPLAUSIBLE - this is an incomplete form, not a conjugation error\n\n**Remaining tasks:**\nNone - the evaluation is complete.\n\n**Recommendation:**\nVERDICT: IMPLAUSIBLE\nREASON: \"Été\" alone is not a plausible conjugation mistake—it's an incomplete form without an auxiliary, which learners studying futur antérieur would recognize as insufficient; replace it with a more realistic error like \"sera été\" (confusing futur simple auxiliary with futur antérieur structure).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780091218922-lc0u5ldm",
+      "timestamp": "2026-05-29T21:47:50.420Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"Étant\" is not a plausible mistake here — no learner would type \"il étant très occupé\" as it doesn't form a valid verb construction in this slot, and \"été\" (bare past participle) is also borderline as \"il été\" is ungrammatical rather than a typical conjugation error.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780092198297-gariyx7i",
+      "timestamp": "2026-05-29T22:03:37.411Z"
+    }
+  ]
+}

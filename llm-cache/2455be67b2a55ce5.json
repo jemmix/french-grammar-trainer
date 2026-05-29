@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2455be67b2a55ce5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-15-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-15 - Formation du futur antérieur : auxiliaire au futur + participe passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Conjuguez au futur antérieur : « Nous ___ à Rome avant la fin mai. » (arriver)\nChoices:\nA. [CORRECT] serons arrivé(e)s\nB. aurons arrivé\nC. sommes arrivé(e)s\nD. arriverons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780084406251-g53siyaa"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires students to apply the futur antérieur formation rule (auxiliary in futur + past participle) and distinguish it from the futur simple (choice D), the passé composé (choice C), and the common error of using avoir instead of être as the auxiliary for \"arriver\" (choice B).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085078772-ro0j0qv2",
+      "timestamp": "2026-05-29T20:05:05.172Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the correct auxiliary (être, not avoir), conjugating it in the futur simple (serons), and combining it with the past participle (arrivé(e)s) with proper agreement — all core components of the futur antérieur formation rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087116516-vys16lh3",
+      "timestamp": "2026-05-29T20:38:54.891Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly requires applying the formation rule of futur antérieur (auxiliary conjugated in futur simple + past participle), and the distractors test related but distinct errors (wrong auxiliary with \"aurons arrivé\", wrong tense with \"sommes arrivé(e)s\", simple future instead of antérieur with \"arriverons\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089382769-uaegjpvt",
+      "timestamp": "2026-05-29T21:16:49.066Z"
+    }
+  ]
+}

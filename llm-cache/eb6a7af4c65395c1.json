@@ -1,0 +1,33 @@
+{
+  "cacheKey": "eb6a7af4c65395c1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-16-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-16 - Le futur antérieur pour exprimer une action accomplie dans le futur (j'aurai fini avant midi)\n\nQUESTION:\nType: Input\nPrompt: Remplissez avec le futur antérieur pour exprimer une completion avant une heure précise.\nPhrase: À cette heure-là, nous _____ le projet.\nCorrect Answer: aurons achevé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780084406254-fgtabz2j"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly requires the learner to produce the futur antérieur form \"aurons achevé\" to express completion before a specific future time reference (\"À cette heure-là\"), which is precisely what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085321869-i4oej850",
+      "timestamp": "2026-05-29T20:08:48.603Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly requires conjugating \"achever\" in the futur antérieur (\"aurons achevé\") and the context \"À cette heure-là\" properly sets up a future completion scenario that matches the rule's definition.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087294838-0gp99yya",
+      "timestamp": "2026-05-29T20:41:46.035Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far:\nI was asked to validate whether a French grammar question about the futur antérieur properly tests the stated rule. The question asks students to fill in \"À cette heure-là, nous _____ le projet\" with the correct futur antérieur form (\"aurons achevé\").\n\nRemaining tasks:\nNone - this was a single validation request.\n\nRecommendations for what should be done next:\nThe validation verdict for this question is:\n\nVERDICT: ALIGNED\nREASON: The question requires producing the futur antérieur form \"aurons achevé\" to express that the project will be completed by a future reference point (\"À cette heure-là\"), which directly tests the rule about using futur antérieur for actions accomplished in the future.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089551519-ykas1ykt",
+      "timestamp": "2026-05-29T21:19:42.899Z"
+    }
+  ]
+}

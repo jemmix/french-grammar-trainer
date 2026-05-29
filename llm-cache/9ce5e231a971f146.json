@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9ce5e231a971f146",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-15-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Vous ___ ce travail avant demain midi. » (finir)\n\nChoices:\nA. [CORRECT] aurez fini\nB. [WRONG] avez fini\nC. [WRONG] finissez\nD. [WRONG] seriez fini(e)s\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406251-d4p0uely"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are incorrect. The question asks to complete \"Vous ___ ce travail avant demain midi\" with the verb \"finir,\" requiring futur antérieur due to \"avant demain midi.\"\n\nAnalysis completed:\n- B (\"avez fini\"): Passé composé, incorrect for a future deadline\n- C (\"finissez\"): Présent, incorrect for a future deadline  \n- D (\"seriez fini(e)s\"): Conditionnel passé with wrong auxiliary \"être\" (finir takes \"avoir\"), incorrect\n\nTRUE||All wrong answers use incorrect tenses or auxiliary verbs for expressing a future action completed before a deadline.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085049218-k5qhxx14",
+      "timestamp": "2026-05-29T20:04:38.657Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses passé composé instead of the required futur antérieur for a future deadline, C uses present tense which cannot express completion by a future point, and D incorrectly uses être as auxiliary for finir (which takes avoir) and uses conditionnel passé instead of futur antérieur.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087093032-lrad50qy",
+      "timestamp": "2026-05-29T20:38:36.516Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question requires completing \"Vous ___ ce travail avant demain midi\" with \"finir,\" where \"avant demain midi\" clearly requires a future tense (futur antérieur). Analysis shows: B (avez fini - passé composé) is past tense, C (finissez - présent) is present tense, and D (seriez fini(e)s - conditionnel passé) is conditional, none of which express future completion before a deadline.\n\nRemaining tasks: None - the analysis is complete.\n\nRecommendations for next steps: The verdict is TRUE||All wrong answers use incorrect tenses (passé composé, présent, and conditionnel) that do not express future completion before a deadline as required by \"avant demain midi.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089363677-dev52zuk",
+      "timestamp": "2026-05-29T21:16:33.101Z"
+    }
+  ]
+}

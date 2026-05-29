@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3842a98428d50da6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-14-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez la phrase : « Si tu étudies bien, tu ___ aux examens. »\n\nChoices:\nA. [CORRECT] réussiras\nB. [WRONG] réussirais\nC. [WRONG] réussis\nD. [WRONG] auras réussi\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406250-n9d6jbgt"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for the si + présent structure, which requires futur simple in the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780084946831-50zdklnz",
+      "timestamp": "2026-05-29T20:03:57.917Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ question are indeed incorrect. The question tests the si + présent → futur simple (first conditional) structure.\n\nAnalysis completed:\n- B (réussirais) uses conditionnel présent, which requires an imparfait si-clause\n- C (réussis) uses présent, which doesn't fit the future consequence pattern\n- D (auras réussi) uses futur antérieur, which expresses completed action and doesn't fit the context\n\nAll wrong answers are correctly identified as incorrect.\n\nVERDICT: TRUE||All wrong answers violate the si + présent → futur simple conditional structure: B uses conditionnel (requires imparfait in si-clause), C uses présent (not the correct future consequence), and D uses futur antérieur (expresses completion, not appropriate here).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087046465-gh2x57f1",
+      "timestamp": "2026-05-29T20:37:56.109Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses (conditionnel présent, présent, futur antérieur) that don't match the si+présent → futur simple pattern required by this first conditional structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089316294-ut9lhhj2",
+      "timestamp": "2026-05-29T21:15:46.159Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a40a1e2a6125100e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-17-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Aussitôt qu'elle ___ la maison, elle courra à la gare. »\n\nChoices:\nA. [CORRECT] aura quitté\nB. [WRONG] quitte\nC. [WRONG] quittera\nD. [WRONG] quitterait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406254-5k87ukqv"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of evaluating a French grammar verification task for a multiple choice question about the use of futur antérieur after \"aussitôt que\" when the main clause is in the future tense.\n\nThe question asks to complete \"Aussitôt qu'elle ___ la maison, elle courra à la gare.\" with the correct answer being \"aura quitté\" (futur antérieur).\n\nAnalysis of wrong answers:\n- B (quitte - présent): Incorrect because the present doesn't express the required anteriority before a future action\n- C (quittera - futur simple): Incorrect because standard French grammar requires futur antérieur after \"aussitôt que\" when the main clause is future, to express that the leaving completes before the running\n- D (quitterait - conditionnel): Incorrect because the conditional is incompatible with the future tense in the main clause\n\nAll wrong answers are indeed incorrect within the grammatical constraints of the question.\n\nTRUE||All wrong answers fail to satisfy the grammatical requirement of using futur antérieur to express anteriority before a future-tense main clause after \"aussitôt que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085435601-ib8d4amy",
+      "timestamp": "2026-05-29T20:10:55.136Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: \"quitte\" is present, \"quittera\" is futur simple, and \"quitterait\" is conditional, but after \"aussitôt que\" with a future main clause, only the futur antérieur (\"aura quitté\") is grammatically correct.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087326961-vvee4a5d",
+      "timestamp": "2026-05-29T20:42:55.400Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses présent instead of the required futur antérieur, C uses futur simple which doesn't express the necessary anteriority before \"courra\", and D uses conditionnel which is incompatible with the futur simple main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089602714-61nqq02p",
+      "timestamp": "2026-05-29T21:20:16.819Z"
+    }
+  ]
+}

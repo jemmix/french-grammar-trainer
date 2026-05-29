@@ -1,0 +1,33 @@
+{
+  "cacheKey": "593173f4e94f6858",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-19-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle est la forme correcte pour exprimer la négation avec « personne » au futur simple ?\n\nChoices:\nA. [CORRECT] Je ne rencontrerai personne à la gare.\nB. [WRONG] Je ne personne rencontrerai à la gare.\nC. [WRONG] Je rencontrerai personne à la gare.\nD. [WRONG] Je n'irai pas personne à la gare.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406258-2ahu0iz1"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the required \"ne + verb + personne\" word order for negation with personne: B incorrectly places personne before the verb, C omits the required \"ne\", and D incorrectly combines \"pas\" with \"personne\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780086142150-2u7b8cbh",
+      "timestamp": "2026-05-29T20:22:36.391Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087759260-nwvrnplt",
+      "timestamp": "2026-05-29T20:49:32.396Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the required \"ne + verb + personne\" word order for negation with \"personne\" in futur simple: B incorrectly places \"personne\" before the verb, C omits the required \"ne\", and D redundantly adds \"pas\" alongside \"personne\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089875800-uzwevlmq",
+      "timestamp": "2026-05-29T21:24:57.631Z"
+    }
+  ]
+}

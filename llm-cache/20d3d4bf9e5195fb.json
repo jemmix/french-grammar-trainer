@@ -1,0 +1,33 @@
+{
+  "cacheKey": "20d3d4bf9e5195fb",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "05-20-019",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Choisissez la phrase correcte pour exprimer un plan ferme dans le futur distant :\nChoices:\nA. Dans dix ans, je serai ingénieur.\nB. Dans dix ans, je vais être ingénieur.\nC. Dans dix ans, j'aurai été ingénieur.\nD. Dans dix ans, je serais ingénieur.\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780084406261-nb3og4eu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The term \"plan ferme\" is not a standard grammatical concept and could reasonably be interpreted as either an intention/commitment (which learners associate with futur proche) or a planned future state (associated with futur simple), creating confusion about which criterion—\"firm plan\" or \"distant future\"—should drive the answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780086442761-nuq9x1p0",
+      "timestamp": "2026-05-29T20:28:25.408Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt specifies \"futur distant\" as the key criterion, and all choices include \"dans dix ans\" which reinforces the temporal distance, making it clear that futur simple (A) is the expected answer over futur proche.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780088047484-l8likm41",
+      "timestamp": "2026-05-29T20:54:34.665Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was asked to evaluate a single French grammar question for prompt clarity and unambiguity. I analyzed the question:\n\n**Question analyzed:**\n- Prompt: \"Choisissez la phrase correcte pour exprimer un plan ferme dans le futur distant :\"\n- Four choices testing futur simple vs futur proche vs futur antérieur vs conditionnel\n\n## Assessment (Verdict)\n**VERDICT: AMBIGUOUS**\n**REASON:** The prompt presents two criteria (\"plan ferme\" and \"futur distant\") that conflict under standard French grammar teaching—futur proche typically conveys firm plans while futur simple typically conveys distant future—making it unclear which criterion should determine the answer.\n\n## Remaining Tasks\nNone — this was a single-question validation task.\n\n## Recommendations\n- Rewrite the prompt to prioritize one clear criterion (e.g., \"pour exprimer une prédiction dans le futur distant\" would clearly point to futur simple, or \"pour exprimer une intention planifiée\" would clearly point to futur proche)\n- Avoid combining two semantic criteria that pull in different grammatical directions",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780090083000-ldksnsk8",
+      "timestamp": "2026-05-29T21:28:29.372Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "d2ed2ec106b62390",
+  "predicateId": "french-language",
+  "questionId": "05-19-004",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: La négation au futur simple et au futur antérieur\n\nQUESTION CONTENT:\nPrompt: Quelle est la bonne négation pour le futur simple avec « rien » ?\nChoices:\nA. [correct] Nous ne ferons rien ce week-end.\n   Explanation: « Ne » + verbe au futur (ferons) + « rien » est la bonne construction pour exprimer « we will do nothing ».\nB. Nous ne ferons pas rien ce week-end.\n   Explanation: On ne combine pas « pas » et « rien ». La négation correcte est simplement « ne...rien ».\nC. Nous ferons rien ce week-end.\n   Explanation: Il manque « ne ». La structure complète exige « ne » avant le verbe conjugué.\nD. Nous ne ferons ce week-end rien.\n   Explanation: « Rien » doit venir immédiatement après le verbe conjugué, non à la fin de la phrase.\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1780084406258-1wr40krs"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ENGLISH_DETECTED\nREASON: Explanation for correct answer contains untranslated English phrase \"we will do nothing\" without explicit pedagogical framing or contrast.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780091307977-w5xr3c9h",
+      "timestamp": "2026-05-29T21:48:48.494Z"
+    },
+    {
+      "raw": "VERDICT: ENGLISH_DETECTED\nREASON: Choice A explanation contains untranslated English \"we will do nothing\" — this is a simple translation, not a false friend contrast or cognate reference, so it doesn't qualify as an allowed exception.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780092253884-wmaelzis",
+      "timestamp": "2026-05-29T22:04:42.545Z"
+    }
+  ]
+}

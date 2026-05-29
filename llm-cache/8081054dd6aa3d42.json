@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8081054dd6aa3d42",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "05-18-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le futur antérieur pour exprimer une supposition sur le passé (il aura oublié)\nPROMPT: Exprimez une supposition sur le passé avec le futur antérieur. Conjuguez le verbe entre parenthèses.\nPHRASE: Le client s'est plaint — il ___ (trouver) un défaut dans le produit.\nCORRECT ANSWER: aura trouvé\n\nWRONG ANSWERS to evaluate:\n1. a trouvé\n2. aurait trouvé\n3. trouvait\n4. avait trouvé\n5. trouvé\n6. ayant trouvé\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780084406258-2fmfukxr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors when dealing with futur antérieur: confusing it with other compound tenses that express past actions or suppositions (passé composé, conditionnel passé, plus-que-parfait), defaulting to imparfait for past contexts, omitting the auxiliary verb, or confusing it with the \"ayant + participe passé\" construction for anteriority.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780091238555-xdn08pdq",
+      "timestamp": "2026-05-29T21:47:49.559Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All six wrong answers represent common confusions learners make when attempting the futur antérieur: confusing it with other compound past tenses (passé composé \"a trouvé\", conditionnel passé \"aurait trouvé\", plus-que-parfait \"avait trouvé\"), falling back to simpler tenses (imparfait \"trouvait\"), omitting the auxiliary (bare participle \"trouvé\"), or using a related non-finite form (gérondif \"ayant trouvé\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780092190963-c41rrtgs",
+      "timestamp": "2026-05-29T22:03:24.962Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f90db459f25a077e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-14-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-14 - Le futur simple dans les hypothèses : si + présent → futur\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Si nous ne faisons pas attention, nous ___ une erreur. »\nChoices:\nA. [CORRECT] ferons\nB. ferions\nC. faisions\nD. avons fait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780084406248-jkd3obyz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the si + présent → futur structure by requiring the student to choose the future simple \"ferons\" over the conditional \"ferions\" when the si-clause uses the present tense \"faisons\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780084818455-yld2vzk4",
+      "timestamp": "2026-05-29T20:00:36.944Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was tasked with validating whether a French grammar question properly tests the stated rule \"05-14 - Le futur simple dans les hypothèses : si + présent → futur\".\n\n## Analysis Completed\nThe question \"Si nous ne faisons pas attention, nous ___ une erreur.\" with correct answer \"ferons\" (futur simple) directly tests the si+présent→futur pattern. The distractors include \"ferions\" (conditionnel), which is the most common error for this rule, making it a well-targeted question.\n\n## Remaining Tasks\nNone - this was a single-question validation task.\n\n## Recommendation\nVERDICT: ALIGNED\nREASON: The question directly tests the si+présent→futur pattern by requiring the student to choose the futur simple \"ferons\" over the conditionnel \"ferions\" in the main clause following a present-tense si-clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780086884228-j7q6rj8l",
+      "timestamp": "2026-05-29T20:35:02.721Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that a \"si\" clause in the present tense triggers the futur simple in the main clause, and the wrong answers (conditionnel, imparfait, passé composé) represent the common mistakes students make when they confuse this pattern with other si-clause constructions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089178578-f6fy6d5b",
+      "timestamp": "2026-05-29T21:13:33.493Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "741543027d7477e2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-20-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la phrase correcte pour exprimer un plan ferme dans le futur distant :\n\nChoices:\nA. [CORRECT] Dans dix ans, je serai ingénieur.\nB. [WRONG] Dans dix ans, je vais être ingénieur.\nC. [WRONG] Dans dix ans, j'aurai été ingénieur.\nD. [WRONG] Dans dix ans, je serais ingénieur.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406261-7z70b3fm"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses futur proche inappropriate for distant future plans, C uses futur antérieur which expresses completion not a plan, and D uses conditionnel which expresses hypothesis not a firm plan.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780086437405-eb1ve4i8",
+      "timestamp": "2026-05-29T20:27:41.601Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to verify that wrong answers B, C, and D in a French grammar multiple choice question are indeed incorrect. The question asks students to choose the correct phrase to express \"un plan ferme dans le futur distant\" (a firm plan in the distant future).\n\n**Analysis completed:**\n- **B** (\"je vais être ingénieur\") uses futur proche, which is typically for near future, not \"futur distant\" — incorrect for this context\n- **C** (\"j'aurai été ingénieur\") uses futur antérieur, which expresses completion of an action, not a firm plan — incorrect\n- **D** (\"je serais ingénieur\") uses conditionnel, which expresses hypothetical/uncertain situations, contradicting \"plan ferme\" — incorrect\n\n**Verdict that would have been returned:**\nTRUE||All wrong answers fail to meet the stated constraints: B uses futur proche instead of futur simple for distant future, C uses futur antérieur which changes meaning to completion rather than a plan, and D uses conditionnel which contradicts \"plan ferme.\"\n\n**No remaining tasks** — the validation was completed in the analysis.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780088016195-64uoigft",
+      "timestamp": "2026-05-29T20:54:35.296Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect for the specified context: B uses futur proche inappropriate for distant future firm plans, C uses futur antérieur which implies completion rather than a plan, and D uses conditionnel which expresses hypothesis rather than certainty.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780090084994-48csem8v",
+      "timestamp": "2026-05-29T21:28:26.507Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4c5add8254dd737c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-19-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Laquelle de ces phrases négatives au futur est correcte ?\n\nChoices:\nA. [CORRECT] Nous ne verrons rien de beau là-bas.\nB. [WRONG] Nous ne verrons pas rien de beau là-bas.\nC. [WRONG] Nous verrons rien de beau là-bas.\nD. [WRONG] Nous ne verrons rien pas de beau là-bas.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406259-3vxmt3ne"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses incorrect double negation \"ne...pas rien\", C lacks the required \"ne\" particle for standard French negation, and D has the negation particles in incorrect order with \"rien pas\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780086213164-y9rk5dif",
+      "timestamp": "2026-05-29T20:23:51.542Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses an invalid double negation \"ne...pas...rien\", C omits the required \"ne\" particle, and D has incorrect word order with \"rien pas\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087829585-mbeh7l5n",
+      "timestamp": "2026-05-29T20:50:53.161Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly doubles the negative with \"pas rien\", C omits the required \"ne\", and D has a malformed negation structure with \"rien pas\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089945861-8v98mv5d",
+      "timestamp": "2026-05-29T21:26:01.271Z"
+    }
+  ]
+}

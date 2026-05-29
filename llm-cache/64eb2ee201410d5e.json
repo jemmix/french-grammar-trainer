@@ -1,0 +1,26 @@
+{
+  "cacheKey": "64eb2ee201410d5e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-19-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est correctement conjuguée au futur négatif ?\n\nChoices:\nA. [CORRECT] Tu ne mangeras plus de sucre.\nB. [WRONG] Tu ne mangeras pas plus de sucre.\nC. [WRONG] Tu mangeras plus pas de sucre.\nD. [WRONG] Tu ne plus mangeras de sucre.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406258-l5tvpsrf"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nFALSE|B|B uses \"ne…pas\" which is a valid negative future construction and is grammatically correct, even though it has a different meaning (\"you will not eat more sugar\") than A (\"you will no longer eat sugar\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780086113870-fksheji7",
+      "timestamp": "2026-05-29T20:22:12.750Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.\n\nMaximum steps for this agent have been reached. I was evaluating a French grammar verification task regarding negative future tense conjugation.\n\nWhat was accomplished: I analyzed the multiple choice question asking which phrase is correctly conjugated in the negative future tense, evaluating whether the wrong answers (B, C, D) are indeed incorrect.\n\nRemaining tasks: None - the verification was completed.\n\nRecommendations: The verdict is TRUE - all wrong answers are genuinely incorrect. B uses \"ne...pas plus\" which changes the meaning to \"not more\" rather than \"no longer,\" C has invalid word order (\"plus pas\"), and D misplaces \"plus\" before the conjugated verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087732179-lsfxcfd9",
+      "timestamp": "2026-05-29T20:49:32.317Z"
+    }
+  ]
+}

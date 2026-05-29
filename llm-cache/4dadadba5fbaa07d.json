@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4dadadba5fbaa07d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-17-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-17 - Le futur antérieur après quand / lorsque / dès que (quand j'aurai fini, je t'appellerai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Lorsque le train ___ , nous montrerons nos billets au contrôleur. »\nChoices:\nA. [CORRECT] aura démarré\nB. démarre\nC. démarrera\nD. démarrerait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780084406255-1zx47w85"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between futur antérieur and futur simple after \"lorsque\" — the correct answer \"aura démarré\" requires knowing that a completed future action before the main clause demands the futur antérieur, not the futur simple \"démarrera.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085616401-6h1f989d",
+      "timestamp": "2026-05-29T20:13:50.454Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to validate whether a French grammar question about the futur antérieur after \"lorsque\" is aligned with its stated rule. I completed the analysis:\n\nVERDICT: ALIGNED\nREASON: The question directly tests the rule that \"lorsque\" requires the futur antérieur (\"aura démarré\") rather than the futur simple (\"démarrera\") when the subordinate clause action is completed before the main clause action.\n\n**Remaining tasks:** None - the validation was completed.\n\n**Recommendations:** No further action needed on this question; it is well-designed and properly tests the stated grammar rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087381178-xl76k7jw",
+      "timestamp": "2026-05-29T20:43:17.361Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that futur antérieur must be used after \"lorsque\" when the subordinate clause action will be completed before the main clause action, as the learner must choose \"aura démarré\" over the tempting but incorrect \"démarrera\" (futur simple).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089629030-r5yo0ihe",
+      "timestamp": "2026-05-29T21:21:04.714Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cf880c9f754667d7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-14-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Lequel de ces énoncés suit correctement la règle « si + présent → futur » ?\n\nChoices:\nA. [CORRECT] Si tu m'appelles ce soir, je te raconterai tout.\nB. [WRONG] Si tu m'appelais ce soir, je te raconterais tout.\nC. [WRONG] Si tu m'appelleras ce soir, je te raconterai tout.\nD. [WRONG] Si tu m'avais appelé ce soir, je t'aurais tout raconté.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406250-cnspneud"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses after \"si\": B uses imparfait+conditionnel (not présent+futur), C incorrectly uses futur after \"si\" (a grammatical error), and D uses plus-que-parfait+conditionnel passé (not présent+futur).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780084936625-mlkey4lb",
+      "timestamp": "2026-05-29T20:02:39.615Z"
+    },
+    {
+      "raw": "TRUE||B and D are valid French constructions (si+imparfait→conditionnel and si+plus-que-parfait→conditionnel passé) but do not follow the specified \"si+présent→futur\" rule, while C is grammatically incorrect in any context since \"si\" cannot be followed by a future tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780086982805-azkmlx8j",
+      "timestamp": "2026-05-29T20:36:41.274Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying the wrong answers for this French grammar question about the \"si + présent → futur\" rule.\n\nBased on my analysis:\n- Answer B uses imparfait + conditionnel (hypothetical structure), not présent + futur\n- Answer C incorrectly uses future tense after \"si\" (a classic French grammar error)\n- Answer D uses plus-que-parfait + conditionnel passé (unreal past structure), not présent + futur\n\nAll wrong answers are indeed incorrect within the stated grammatical constraint.\n\nTRUE||All wrong answers use different si-clause structures (imparfait+conditionnel, future after si, plus-que-parfait+conditionnel passé) that violate the specified \"si + présent → futur\" rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089243326-mtzggs5i",
+      "timestamp": "2026-05-29T21:14:31.915Z"
+    }
+  ]
+}

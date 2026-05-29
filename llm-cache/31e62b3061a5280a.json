@@ -1,0 +1,40 @@
+{
+  "cacheKey": "31e62b3061a5280a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-20-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-20 - Synthèse : choisir entre futur proche, futur simple et futur antérieur\n\nQUESTION:\nType: Multiple Choice\nPrompt: « Regarde ! Elle ___ se noyer ! » — quel temps convient ?\nChoices:\nA. [CORRECT] va\nB. sera\nC. aura\nD. pourrait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780084406260-xrwxurep"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that an imminent action indicated by \"Regarde !\" calls for the futur proche (\"va se noyer\") rather than the futur simple or futur antérieur, directly testing the ability to choose between these three tenses based on context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780086295836-ujkrb2ou",
+      "timestamp": "2026-05-29T20:25:23.759Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of validating a French grammar question for alignment with its stated rule.\n\nVerdict for the pending validation:\n\nVERDICT: MISALIGNED\nREASON: The option \"aura\" is an incomplete futur antérieur form (missing past participle), and \"pourrait\" is a conditional rather than one of the three future tenses being tested, so the question doesn't properly present the three-way choice the rule requires.\n\nRemaining tasks: None beyond this single validation.\n\nRecommendations: The question should be revised to include properly formed representatives of all three tenses (e.g., \"va se noyer\" for futur proche, \"se noiera\" for futur simple, \"aura eu\" or a proper futur antérieur construction) so students can actually demonstrate their ability to choose between them based on context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087905304-hg8fw80l",
+      "timestamp": "2026-05-29T20:52:15.274Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the key distinction between futur proche (used for imminent actions, as signaled by \"Regarde !\") versus futur simple and futur antérieur, which is central to the rule about choosing between these three tenses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780090020682-3wrhyazf",
+      "timestamp": "2026-05-29T21:27:28.150Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The wrong answers \"sera se noyer\" and \"aura se noyer\" are not grammatically valid French constructions, so the question doesn't actually present a meaningful choice between futur simple and futur antérieur as alternatives to futur proche—a properly aligned question would use correct forms of each tense (e.g., \"va se noyer\" vs \"se noiera\" vs \"aura failli se noyer\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780090163577-k5oc72zx",
+      "timestamp": "2026-05-29T21:29:56.945Z"
+    }
+  ]
+}

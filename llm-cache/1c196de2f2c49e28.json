@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1c196de2f2c49e28",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-17-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la forme correcte : « Dès qu'il ___, je m'en vais. »\n\nChoices:\nA. [CORRECT] aura mangé\nB. [WRONG] mangera\nC. [WRONG] mange\nD. [WRONG] mangerait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406254-pn5zqd7j"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the future anterior required by \"dès que\" to express anteriority before the main clause action.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085365336-xm9fy68t",
+      "timestamp": "2026-05-29T20:09:37.161Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the rule that \"dès que\" requires the future anterior (aura mangé) when referring to a completed future action, not the future simple (mangera), present (mange), or conditional (mangerait).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087306036-cigr9ls7",
+      "timestamp": "2026-05-29T20:41:59.128Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: B uses futur simple instead of futur antérieur for a completed action, C uses present instead of a future tense, and D inappropriately uses the conditional for a real future action after \"dès que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089566056-hggnzqim",
+      "timestamp": "2026-05-29T21:20:01.798Z"
+    }
+  ]
+}

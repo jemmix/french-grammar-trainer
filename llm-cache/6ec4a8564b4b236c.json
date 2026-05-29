@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6ec4a8564b4b236c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-18-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-18 - Le futur antérieur pour exprimer une supposition sur le passé (il aura oublié)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Laquelle de ces phrases exprime une supposition sur le passé avec le futur antérieur ?\nChoices:\nA. [CORRECT] Ils auront raté leur train — c'est pour ça qu'ils sont en retard.\nB. Ils ont raté leur train — c'est pour ça qu'ils sont en retard.\nC. Ils rataient leur train — c'est pour ça qu'ils sont en retard.\nD. Ils auraient raté leur train — c'est pour ça qu'ils seraient en retard.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780084406256-jhxqkwvd"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the futur antérieur used to express a supposition about a past event, which is exactly what rule 05-18 covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085900773-v0zz0ih3",
+      "timestamp": "2026-05-29T20:18:33.926Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests recognition of the futur antérieur form (\"auront raté\") used to express a supposition about a past event, distinguishing it from passé composé (fact), imparfait (ongoing past), and conditionnel passé (hypothetical).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087529259-ngjpd0fw",
+      "timestamp": "2026-05-29T20:45:49.229Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests recognition of the futur antérieur (\"auront raté\") used to express a supposition about a past event, and the distractors use other tenses that state facts (passé composé, imparfait) or express hypothetical conditions (conditionnel passé) rather than suppositions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089764480-lsg5qil0",
+      "timestamp": "2026-05-29T21:23:07.924Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "83c827e1623e32b1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-14-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase exprime correctement une hypothèse sur le futur ?\n\nChoices:\nA. [CORRECT] Si tu me téléphones, je te répondrai immédiatement.\nB. [WRONG] Si tu me téléphonais, je te répondrais immédiatement.\nC. [WRONG] Si tu me téléphoneras, je te répondrai immédiatement.\nD. [WRONG] Si tu m'avais téléphonée, je t'aurais répondu immédiatement.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406249-zq7h36z2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect structures for expressing a future hypothesis in French: B uses imparfait+conditionnel (present hypothetical), C incorrectly uses futur after \"si\", and D uses plus-que-parfait+conditionnel passé (past hypothetical).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780084884574-0nzcmlzu",
+      "timestamp": "2026-05-29T20:01:54.122Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait/conditionnel for an unlikely present hypothesis rather than a future one, C incorrectly places futur simple after \"si\" (which is grammatically forbidden in French), and D expresses a counterfactual past situation with plus-que-parfait/conditionnel passé instead of a future hypothesis and also contains an erroneous feminine agreement on \"téléphonée.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780086939388-6h057yye",
+      "timestamp": "2026-05-29T20:36:03.290Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait+conditionnel for unlikely/present hypothetical rather than future hypothesis, C incorrectly uses futur simple after \"si\" (a classic grammar error), and D expresses a past hypothesis with plus-que-parfait+conditionnel passé rather than a future one.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089228768-aragq20g",
+      "timestamp": "2026-05-29T21:15:01.822Z"
+    }
+  ]
+}

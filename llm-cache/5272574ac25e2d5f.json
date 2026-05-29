@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5272574ac25e2d5f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-15-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Conjuguez au futur antérieur : « Nous ___ cette question avant la réunion. » (discuter)\n\nChoices:\nA. [CORRECT] aurons discuté\nB. [WRONG] avons discuté\nC. [WRONG] aurions discuté\nD. [WRONG] serons discuté(e)s\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406252-q0fngezf"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is passé composé (not futur antérieur), C is conditionnel passé (not futur antérieur), and D incorrectly uses être as the auxiliary verb when discuter conjugates with avoir.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085124333-3y8caq7s",
+      "timestamp": "2026-05-29T20:05:47.036Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses passé composé instead of futur antérieur, C uses conditionnel passé, and D incorrectly uses \"être\" as the auxiliary verb (discuter takes \"avoir\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087155725-8lnmbsp7",
+      "timestamp": "2026-05-29T20:39:31.816Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was evaluating a French grammar verification task for a multiple choice question about conjugating \"discuter\" in the futur antérieur tense.\n\nAnalysis completed:\n- B (avons discuté): Passé composé, not futur antérieur — incorrect\n- C (aurions discuté): Conditionnel passé, not futur antérieur — incorrect  \n- D (serons discuté(e)s): Uses wrong auxiliary (être instead of avoir) — incorrect\n\nAll wrong answers are indeed incorrect within the stated grammatical constraints.\n\nTRUE||All wrong answers use wrong tenses (passé composé, conditionnel passé) or wrong auxiliary verb (être instead of avoir) and thus do not satisfy the futur antérieur requirement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089426644-gbcvupgf",
+      "timestamp": "2026-05-29T21:17:23.932Z"
+    }
+  ]
+}

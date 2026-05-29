@@ -1,0 +1,26 @@
+{
+  "cacheKey": "bb486e04afbe0031",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-18-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Les enfants ne sont pas rentrés à l'école — ils ___ malades. »\n\nChoices:\nA. [CORRECT] auront été\nB. [WRONG] auraient été\nC. [WRONG] ont été\nD. [WRONG] étaient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406257-kjubqv1o"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|C,D|\"Ont été\" (passé composé) is acceptable for expressing a completed state of being sick; \"étaient\" (imparfait) is actually the most natural and standard tense for describing an ongoing past state that explains why the children didn't return to school.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085970380-bulu0uf1",
+      "timestamp": "2026-05-29T20:20:12.682Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate a French grammar multiple choice question, specifically verifying that the wrong answers (B, C, D) are indeed incorrect.\n\nAnalysis completed:\n- The question \"Les enfants ne sont pas rentrés à l'école — ils ___ malades.\" has \"auront été\" (future anterior) as the correct answer\n- B \"auraient été\" (conditional) is correctly wrong - implies hypothesis, not deduction\n- C \"ont été\" (passé composé) could be correct - it's a valid way to state a past fact\n- D \"étaient\" (imparfait) could be correct - it's a valid way to describe a past state\n\nThe question does not explicitly specify that the answer must use the future anterior to express deduction, making C and D potentially correct answers.\n\nMy verdict would have been: FALSE|C,D|The question does not explicitly require the future anterior for deduction; \"ont été\" correctly states a past fact and \"étaient\" correctly describes a past state, both of which are grammatically valid completions.\n\nRemaining tasks: None - the verdict was formulated but not delivered due to step limit.\n\nRecommendation: This question should be revised to explicitly state the grammatical constraint being tested (e.g., \"Complétez avec le futur antérieur pour exprimer une déduction\") or the wrong answers should be replaced with options that are unambiguously incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087611644-nzo5q0ff",
+      "timestamp": "2026-05-29T20:47:28.604Z"
+    }
+  ]
+}

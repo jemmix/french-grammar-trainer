@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dccd7a1e34b2921c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-17-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-17 - Le futur antérieur après quand / lorsque / dès que (quand j'aurai fini, je t'appellerai)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle est la meilleure réponse ? « Quand les ouvriers ___ la maison, nous y emménagerons. »\nChoices:\nA. [CORRECT] auront fini\nB. finiront\nC. finissent\nD. finiraient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780084406254-3k5m1usq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that the futur antérieur must be used after \"quand\" when referring to a future action completed before the main clause action, as the correct answer \"auront fini\" is the only choice that applies this specific tense rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085579070-rg0asdmv",
+      "timestamp": "2026-05-29T20:13:09.093Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that \"quand\" requires the futur antérieur when the subordinate action (finishing the house) will be completed before the main clause action (moving in), distinguishing it from futur simple, présent, and conditionnel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087366018-gnlqeppd",
+      "timestamp": "2026-05-29T20:43:01.177Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"quand\" followed by a completed action before a future main clause takes the futur antérieur rather than the futur simple, présent, or conditionnel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089613166-ro0piood",
+      "timestamp": "2026-05-29T21:20:31.703Z"
+    }
+  ]
+}

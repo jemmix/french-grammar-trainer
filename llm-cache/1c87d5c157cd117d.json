@@ -1,0 +1,26 @@
+{
+  "cacheKey": "1c87d5c157cd117d",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "05-17-003",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Quelle phrase est correcte ?\nChoices:\nA. Lorsque vous aurez signé le contrat, nous commencerons les travaux.\nB. Lorsque vous signerez le contrat, nous commencerons les travaux.\nC. Lorsque vous aurez signé le contrat, nous avons commencé les travaux.\nD. Lorsque vous signez le contrat, nous commençons les travaux.\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780084406254-u1tb1amn"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was evaluating the clarity of a French grammar question. The question asks \"Quelle phrase est correcte ?\" (Which sentence is correct?) with four options testing tense agreement with \"lorsque\" (future anterior + future vs. other combinations).\n\nMy assessment: This prompt is AMBIGUOUS because it doesn't specify what aspect of correctness is being tested. A learner could reasonably wonder if it's testing tense agreement with \"lorsque,\" logical sequence of events, or something else. Without knowing the rule title, a learner might think option B (future + future) could also be acceptable in some contexts, making it unclear why only one answer is definitively correct. A clearer prompt would hint at the specific grammar point, such as \"Quelle phrase respecte l'accord des temps avec 'lorsque' ?\"\n\nVERDICT: AMBIGUOUS\nREASON: The prompt doesn't specify what aspect of correctness is being tested, leaving learners to guess whether it's about tense agreement with \"lorsque,\" temporal logic, or another grammar point.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085420278-1mldrwjn",
+      "timestamp": "2026-05-29T20:10:35.600Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Without knowing the rule title (likely testing future antérieur vs futur simple after \"lorsque\"), choices A and B are both grammatically correct in different contexts, and choice D could also be valid for habitual actions, making it impossible for a learner to determine which single answer is expected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087320808-szg14xx8",
+      "timestamp": "2026-05-29T20:42:16.429Z"
+    }
+  ]
+}

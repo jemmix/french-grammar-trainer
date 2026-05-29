@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0037143384afcb75",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-17-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Remplissez : « Lorsque les invités ___ , nous passerons à table. »\n\nChoices:\nA. [CORRECT] seront arrivés\nB. [WRONG] arrivent\nC. [WRONG] arriveront\nD. [WRONG] arriveraient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780084406254-ptsyzxfb"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was in the process of evaluating a French grammar MCQ question to verify that wrong answers B, C, and D are indeed incorrect. The question asks to fill in the blank in \"Lorsque les invités ___ , nous passerons à table.\" with the correct answer being A (\"seront arrivés\" - futur antérieur).\n\n**Analysis completed:**\n- B (\"arrivent\" - présent): Incorrect, as present tense doesn't align with the future main clause\n- C (\"arriveront\" - futur simple): This is actually grammatically acceptable after \"lorsque\" with a futur simple main clause; while futur antérieur is more precise for expressing anteriority, futur simple is not wrong\n- D (\"arriveraient\" - conditionnel): Incorrect, as conditionnel doesn't fit the temporal structure\n\n**Verdict that would have been returned:**\nFALSE|C|C uses futur simple after \"lorsque\" which is grammatically acceptable in French when the main clause is in futur simple, even if futur antérieur better expresses the sequential relationship.\n\n**Remaining tasks:**\nNone - this was a single verification task.\n\n**Recommendations:**\nThe question should be revised to make the context more clearly require futur antérieur (e.g., adding \"déjà\" or rephrasing to emphasize the completed nature of the arrival), or answer C should be replaced with a more clearly incorrect option.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780085521604-covoz2av",
+      "timestamp": "2026-05-29T20:12:19.929Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context: B uses présent instead of the required futur antérieur after \"lorsque\" for a completed future action, C uses futur simple which implies simultaneity rather than anteriority, and D uses conditionnel which is incompatible with the certain future context of the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780087345794-2j967etk",
+      "timestamp": "2026-05-29T20:42:46.017Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context: B uses présent which fails to express the required anteriority with \"lorsque\" + futur, C uses futur simple which indicates simultaneity rather than completion before the main action, and D uses conditionnel which changes the meaning to a hypothetical situation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780089598673-ud395q85",
+      "timestamp": "2026-05-29T21:20:44.002Z"
+    }
+  ]
+}
