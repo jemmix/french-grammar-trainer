@@ -1,0 +1,40 @@
+{
+  "cacheKey": "97d205d6cdc12ea7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-10-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-10 - Le futur simple pour exprimer un projet ou une prédiction\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe pronominal « se retrouver » au futur simple.\nPhrase: Nous ___ ensemble dans dix ans.\nCorrect Answer: nous retrouverons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780057874192-zx8y9hf8"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question. Here is my assessment:\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate \"au futur simple,\" so the question tests pronominal verb conjugation mechanics rather than the rule about using futur simple to express a project or prediction—the student doesn't need to recognize the prediction context (\"dans dix ans\") to select the correct tense since it's already specified.\n\nNo other tasks were in progress. For a properly aligned question testing this rule, the prompt should not specify the tense—instead, it should present a prediction scenario and let the student determine that futur simple is the appropriate choice.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780057877203-f1po3m4n",
+      "timestamp": "2026-05-29T12:31:50.947Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating a pronominal verb in the futur simple to express a prediction about the future (\"dans dix ans\"), which directly tests using the futur simple for predictions as stated in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780057910948-zrivt9rv",
+      "timestamp": "2026-05-29T12:32:09.137Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating a pronominal verb in the futur simple within a sentence expressing a clear prediction (\"dans dix ans\"), directly testing the rule's focus on using futur simple for predictions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780057929137-sm7ln6om",
+      "timestamp": "2026-05-29T12:32:31.117Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate in the futur simple, so answering correctly only requires knowing pronominal verb conjugation, not the ability to recognize when the futur simple is appropriate for expressing a prediction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780057951117-0xj5nagx",
+      "timestamp": "2026-05-29T12:32:48.620Z"
+    }
+  ]
+}

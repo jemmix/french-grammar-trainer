@@ -1,0 +1,26 @@
+{
+  "cacheKey": "80897981c0b8f669",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-10-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Nous ___ cette réunion samedi prochain. »\n\nChoices:\nA. [CORRECT] aurons\nB. [WRONG] avons\nC. [WRONG] aurions\nD. [WRONG] allons avoir\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780052886691-iixx1jbm"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|D|D uses the futur proche construction (\"aller\" + infinitive) which is grammatically correct and commonly used in French to express planned future events, including with \"samedi prochain.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780052901836-22gczbqd",
+      "timestamp": "2026-05-29T11:08:49.023Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses present tense which doesn't properly convey future intent with \"samedi prochain\" in standard French, C uses conditional which expresses hypothetical situations rather than planned events, and D uses futur proche which is grammatically valid but changes the meaning to immediate future rather than the simple future expected here.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780053088888-gqmvcawo",
+      "timestamp": "2026-05-29T11:12:02.109Z"
+    }
+  ]
+}

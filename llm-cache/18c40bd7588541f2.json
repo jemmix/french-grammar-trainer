@@ -1,0 +1,33 @@
+{
+  "cacheKey": "18c40bd7588541f2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-10-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase exprime correctement un projet avec le futur simple ?\n\nChoices:\nA. [CORRECT] Ils construiront une nouvelle maison l'année prochaine.\nB. [WRONG] Ils construisent une nouvelle maison l'année prochaine.\nC. [WRONG] Ils construiraient une nouvelle maison l'année prochaine.\nD. [WRONG] Ils vont construire une nouvelle maison l'année prochaine.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780052886692-1iza6c93"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses other than the futur simple as required by the question: B uses présent, C uses conditionnel présent, and D uses futur proche.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780052982879-a9aep2sv",
+      "timestamp": "2026-05-29T11:10:02.526Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses other than futur simple as required: B uses present tense, C uses conditional, and D uses futur proche.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780053169181-au19pqq4",
+      "timestamp": "2026-05-29T11:13:18.358Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\n- I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect\n- The question asks for a phrase expressing a project with the futur simple\n- Analysis completed: B uses présent, C uses conditionnel présent, D uses futur proche - none match the required futur simple\n\nResult: TRUE||All wrong answers use tenses other than futur simple (present, conditional, and futur proche) as explicitly required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780053367514-h7c46h26",
+      "timestamp": "2026-05-29T11:16:26.088Z"
+    }
+  ]
+}

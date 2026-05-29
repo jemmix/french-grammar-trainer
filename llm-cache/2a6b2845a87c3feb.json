@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2a6b2845a87c3feb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-10-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Bientôt, tu ___ tout comprendre. »\n\nChoices:\nA. [CORRECT] pourras\nB. [WRONG] peux\nC. [WRONG] pourrais\nD. [WRONG] vas pouvoir\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780052886692-ww40as5s"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, D in a French grammar MCQ question are indeed incorrect. The question asks to complete \"Bientôt, tu ___ tout comprendre.\" with the correct answer being \"pourras\" (futur simple).\n\nAnalysis completed:\n- B (\"peux\" - présent): Incorrect because \"bientôt\" requires a future tense\n- C (\"pourrais\" - conditionnel): Incorrect because conditionnel needs an \"if\" clause or hypothetical context\n- D (\"vas pouvoir\" - futur proche): This is actually GRAMMATICALLY CORRECT. The futur proche (aller + infinitive) is perfectly valid with \"bientôt\" to express near future.\n\nRemaining tasks: None - the analysis is complete.\n\nRecommendation: The verdict should be FALSE|D|D uses the futur proche construction (\"vas pouvoir\") which is grammatically correct and entirely appropriate with \"bientôt\" to express near future, making it a valid alternative to the futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780052995770-ax91beqg",
+      "timestamp": "2026-05-29T11:10:26.297Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses present tense instead of future for a \"bientôt\" context, C uses conditional which doesn't express the definite future indicated by \"bientôt\", and D uses futur proche which is grammatically incompatible with the adverb \"bientôt\" placed at the start of the sentence (bientôt requires futur simple in this construction).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780053200792-solx7wkk",
+      "timestamp": "2026-05-29T11:14:10.705Z"
+    },
+    {
+      "raw": "FALSE|C,D|C (pourrais) is conditionnel présent which can express possibility about the near future (\"Soon, you might understand everything\"), and D (vas pouvoir) is futur proche which, while stylistically redundant with \"bientôt,\" is grammatically correct and commonly used in spoken French.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780053399785-8aocmmkv",
+      "timestamp": "2026-05-29T11:17:19.528Z"
+    }
+  ]
+}

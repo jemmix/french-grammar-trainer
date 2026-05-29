@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7c58c6499e7634c0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-10-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise le futur simple pour exprimer une prédiction ?\n\nChoices:\nA. [CORRECT] Ce médicament te soulagera rapidement.\nB. [WRONG] Ce médicament te soulage rapidement.\nC. [WRONG] Ce médicament te soulagerait rapidement.\nD. [WRONG] Ce médicament t'a soulagé rapidement.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780053973829-1c1uedwr"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses other than futur simple (présent, conditionnel présent, and passé composé respectively) and therefore do not satisfy the question's requirement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780054082142-qf83a8e6",
+      "timestamp": "2026-05-29T11:28:20.232Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was analyzing a French grammar verification task for a multiple choice question about the futur simple tense. The question asked which phrase uses the futur simple to express a prediction, with four choices where A was marked correct and B, C, D were marked wrong.\n\nAnalysis completed:\n- B (\"te soulage\") uses present tense, not futur simple — correctly marked as wrong\n- C (\"te soulagerait\") uses conditionnel présent, not futur simple — correctly marked as wrong  \n- D (\"t'a soulagé\") uses passé composé, not futur simple — correctly marked as wrong\n\nThe verdict would have been: TRUE||All wrong answers use tenses other than the required futur simple (present, conditional, and passé composé respectively).\n\nRemaining tasks: None — the analysis was complete.\n\nRecommendation: The question passes validation; all wrong answers are definitively incorrect within the grammatical constraints stated.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780054542793-5q3ftkns",
+      "timestamp": "2026-05-29T11:40:58.320Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses other than the futur simple (present, conditional, and passé composé respectively).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780056048740-m5nlr9mj",
+      "timestamp": "2026-05-29T12:01:02.807Z"
+    }
+  ]
+}

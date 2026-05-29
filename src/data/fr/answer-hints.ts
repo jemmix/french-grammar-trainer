@@ -39,6 +39,7 @@ export const answerHints: Record<string, string> = {
   "construisait": "construire",
   "pratiquait": "pratiquer",
   "se rendait": "se rendre",
+  "organiserons": "organiser",
   "ont organisé": "organiser",
   "s'est ouverte": "s'ouvrir",
   "skiait": "skier",

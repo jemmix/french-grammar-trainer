@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2e907888767d5071",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-10-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle ___ médecin après ses études. »\n\nChoices:\nA. [CORRECT] deviendra\nB. [WRONG] devient\nC. [WRONG] deviendrait\nD. [WRONG] va devenir\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780052886693-3ryr0pvs"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying a French grammar multiple choice question about the correct future tense form of \"devenir\" in the sentence \"Elle ___ médecin après ses études.\"\n\nMy analysis found that answer D (\"va devenir\") is actually a valid alternative to the correct answer A (\"deviendra\"). The futur proche (aller + infinitive) and futur simple can both express future events in French, and \"Elle va devenir médecin après ses études\" is grammatically correct.\n\nThe verdict would have been: FALSE|D|D uses the futur proche (va devenir) which is a grammatically valid way to express future in French and is interchangeable with futur simple in this context.\n\nNo remaining tasks - this was a single verification request that was nearly complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780053025209-uqfn4sow",
+      "timestamp": "2026-05-29T11:10:46.086Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar MCQ question about the correct verb form to complete \"Elle ___ médecin après ses études.\"\n\nAnalysis completed:\n- B (devient - présent): Incorrect, as present tense doesn't match the future context of \"après ses études\"\n- C (deviendrait - conditionnel): Incorrect, as there's no conditional/hypothetical context\n- D (va devenir - futur proche): This is actually CORRECT - the futur proche is a valid and common way to express planned future actions in French\n\nVerdict that would have been returned: FALSE|D|D uses the futur proche which is a valid and common way to express future actions in French, especially for planned events like becoming a doctor after completing studies.\n\nRecommendation: The question should be revised to either remove option D or rephrase to specifically ask for the futur simple tense (e.g., \"Complétez au futur simple\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780053239117-7jdeevc8",
+      "timestamp": "2026-05-29T11:14:26.187Z"
+    }
+  ]
+}

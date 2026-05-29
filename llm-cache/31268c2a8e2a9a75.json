@@ -1,0 +1,33 @@
+{
+  "cacheKey": "31268c2a8e2a9a75",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-10-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez avec le bon temps : « Nous ___ cette réunion samedi prochain. »\n\nChoices:\nA. [CORRECT] aurons\nB. [WRONG] avons\nC. [WRONG] aurions\nD. [WRONG] avons eu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780056966867-xha0n4pz"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was evaluating a French grammar verification task for a multiple choice question about verb tenses. The question asks to complete \"Nous ___ cette réunion samedi prochain\" with the correct tense.\n\n**Analysis completed:**\n- B (avons): Présent tense is incorrect with \"samedi prochain\" (future time marker requires futur simple/futur proche)\n- C (aurions): Conditionnel présent implies hypothetical situation, not a planned future event\n- D (avons eu): Passé composé creates a temporal contradiction (past tense with future time marker)\n\n**Verdict:** TRUE||All wrong answers contain clear grammar errors or temporal inconsistencies.\n\n**Remaining tasks:** None - the evaluation was completed before the step limit was reached.\n\n**Recommendations:** No further action needed on this item; the wrong answers are all verifiably incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780056966900-8px2vwyt",
+      "timestamp": "2026-05-29T12:16:27.859Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: B uses present instead of future for a scheduled event, C uses conditional (hypothetical) instead of future, and D uses passé composé (past) which contradicts \"samedi prochain.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780056987859-5gdzlibp",
+      "timestamp": "2026-05-29T12:16:41.970Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: B is present tense, C is conditional, and D is passé composé, none of which fit with \"samedi prochain\" indicating a future event.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780057001970-298axo9p",
+      "timestamp": "2026-05-29T12:16:53.320Z"
+    }
+  ]
+}

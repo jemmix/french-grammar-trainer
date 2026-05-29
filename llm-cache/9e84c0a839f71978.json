@@ -1,0 +1,54 @@
+{
+  "cacheKey": "9e84c0a839f71978",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-10-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-10 - Le futur simple pour exprimer un projet ou une prédiction\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au futur simple : « Elle ___ avocate. C'est son rêve. »\nChoices:\nA. [CORRECT] sera\nB. est\nC. serait\nD. a été\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780053973827-oxn5xni4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using futur simple to express a future project (\"C'est son rêve\"), requiring the student to select \"sera\" over present, conditional, or past forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780054012196-p0y0wy8d",
+      "timestamp": "2026-05-29T11:27:46.210Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying that expressing a future project or dream (\"C'est son rêve\") demands the futur simple, and knowing the correct conjugation \"sera\" distinguishes it from present, conditional, and passé composé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780054198211-6us91zip",
+      "timestamp": "2026-05-29T11:41:16.552Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs \"au futur simple,\" so the student only needs to conjugate \"être\" in that tense rather than demonstrate understanding that futur simple is used to express a project or prediction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780055982704-2rku5qj8",
+      "timestamp": "2026-05-29T12:00:10.815Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\n**Validation result for the pending question:**\n\nVERDICT: ALIGNED\nREASON: The question directly tests using futur simple to express a future project (\"C'est son rêve\"), and correctly answering requires knowing both when to apply futur simple for predictions/projects and the correct conjugation of \"être\" in that tense.\n\n**Remaining tasks:**\nNone - this was a single-question validation that has been completed in this response.\n\n**Recommendations for next steps:**\nIf there are additional questions to validate, submit them in a new request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780056067625-h2leaj11",
+      "timestamp": "2026-05-29T12:01:29.859Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests using the futur simple to express a project (\"C'est son rêve\" establishes the context of a future aspiration), and the correct answer \"sera\" cannot be determined without knowing both the futur simple conjugation and its use for expressing projects/predictions rather than other tenses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780056089860-ybx5r2sd",
+      "timestamp": "2026-05-29T12:01:44.507Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs \"Complétez au futur simple,\" giving away the tense and reducing the question to a simple conjugation test of \"être\" rather than testing whether the student knows that futur simple is used for expressing a project or prediction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780056104507-v1ye8pwe",
+      "timestamp": "2026-05-29T12:02:00.133Z"
+    }
+  ]
+}
