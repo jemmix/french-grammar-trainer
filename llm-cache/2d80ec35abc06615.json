@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2d80ec35abc06615",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-17-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise correctement le futur antérieur après « lorsque » ?\n\nChoices:\nA. [CORRECT] Lorsque vous aurez signé le contrat, nous commencerons les travaux.\nB. [WRONG] Lorsque vous signerez le contrat, nous commencerons les travaux.\nC. [WRONG] Lorsque vous aurez signé le contrat, nous avons commencé les travaux.\nD. [WRONG] Lorsque vous signez le contrat, nous commençons les travaux.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780098921799-o2y2wmrj"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses futur simple instead of the required futur antérieur, C has a tense mismatch between futur antérieur and passé composé making it incoherent, and D uses présent instead of futur antérieur.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780098924829-kfpcd7jc",
+      "timestamp": "2026-05-29T23:55:38.489Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying the wrong answers for a French grammar question about the futur antérieur after \"lorsque\".\n\nAnalysis completed:\n- **B**: Uses futur simple (\"signerez\") instead of futur antérieur — does not satisfy the question's specific requirement\n- **C**: Uses futur antérieur correctly in the first clause, but \"avons commencé\" (passé composé) is incompatible with a future time reference — grammatically incorrect\n- **D**: Uses présent (\"signez\") instead of futur antérieur — does not satisfy the question's specific requirement\n\nAll three wrong answers are indeed incorrect within the grammatical constraints stated in the question prompt.\n\nTRUE||All wrong answers fail to correctly use the futur antérieur after \"lorsque\" as explicitly required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780098977714-amt1c8gg",
+      "timestamp": "2026-05-29T23:56:49.565Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of work done\nI was asked to verify that wrong answers B, C, and D in a French grammar MCQ about the futur antérieur after \"lorsque\" are indeed incorrect.\n\n## Analysis completed\n- **B** (\"Lorsque vous signerez le contrat...\"): Uses futur simple instead of the required futur antérieur — incorrect.\n- **C** (\"...nous avons commencé les travaux\"): Though it correctly uses \"aurez signé\" (futur antérieur), the second clause uses passé composé (\"avons commencé\"), creating an incoherent timeline (future completed action followed by past action) — incorrect.\n- **D** (\"Lorsque vous signez le contrat...\"): Uses présent instead of the required futur antérieur — incorrect.\n\n**Verdict: TRUE||All wrong answers are incorrect — B and D fail to use futur antérieur, and C has an incoherent tense sequence.**\n\n## Remaining tasks\nNone — this was a single verification task that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780099049046-yo3alglt",
+      "timestamp": "2026-05-29T23:58:37.960Z"
+    }
+  ]
+}

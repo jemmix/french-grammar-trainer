@@ -5631,12 +5631,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-17",
       generatedBy: "haiku",
-      prompt: "Complétez : « Quand tu auras fini tes devoirs, tu ___. »",
+      prompt: "Complétez au futur antérieur : « Quand tu ___ tes devoirs, tu pourras regarder la télé. »",
       choices: [
-        { text: "pourras regarder la télé", correct: true, explanation: "Après le futur antérieur (« auras fini »), on utilise le futur simple dans la proposition principale pour exprimer une action future dépendant de la completion d'une autre action." },
-        { text: "pourras regardes la télé", correct: false, explanation: "On ne mélange pas les modes ; après « tu », on conjugue au futur simple : « tu pourras », non « tu pourras regardes »." },
-        { text: "peux regarder la télé", correct: false, explanation: "Le présent (« peux ») ne convient pas ici car on parle d'une action future, pas présente." },
-        { text: "pourrais regarder la télé", correct: false, explanation: "Le conditionnel (« pourrais ») s'utilise pour exprimer une hypothèse ou une condition irréelle, pas une conséquence future certaine." },
+        { text: "auras fini", correct: true, explanation: "Après « quand », le futur antérieur (« auras fini ») exprime que l'action sera complétée avant l'action principale (regarder la télé)." },
+        { text: "finis", correct: false, explanation: "Le présent (« finis ») ne convient pas ici car on parle d'une action future." },
+        { text: "finiras", correct: false, explanation: "Le futur simple (« finiras ») ne marque pas l'antériorité requise après « quand »." },
+        { text: "aurais fini", correct: false, explanation: "Le conditionnel passé (« aurais fini ») exprime une hypothèse, pas une certitude future." },
       ],
     },
     {
@@ -5657,9 +5657,9 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-17",
       generatedBy: "haiku",
-      prompt: "Quelle phrase est correcte ?",
+      prompt: "Quelle phrase utilise correctement le futur antérieur après « lorsque » ?",
       choices: [
-        { text: "Lorsque vous aurez signé le contrat, nous commencerons les travaux.", correct: true, explanation: "Cette phrase respecte la règle : futur antérieur (« aurez signé ») dans la subordinée après « lorsque », puis futur simple (« commencerons ») dans la principale pour exprimer la conséquence." },
+        { text: "Lorsque vous aurez signé le contrat, nous commencerons les travaux.", correct: true, explanation: "Cette phrase respecte la règle : futur antérieur (« aurez signé ») dans la subordonnée après « lorsque », puis futur simple (« commencerons ») dans la principale pour exprimer la conséquence." },
         { text: "Lorsque vous signerez le contrat, nous commencerons les travaux.", correct: false, explanation: "Le futur simple (« signerez ») ne convient pas ; il n'indique pas que la signature doit être complétée avant le début des travaux." },
         { text: "Lorsque vous aurez signé le contrat, nous avons commencé les travaux.", correct: false, explanation: "Le passé composé (« avons commencé ») est incohérent chronologiquement ; la signature est future, donc les travaux aussi." },
         { text: "Lorsque vous signez le contrat, nous commençons les travaux.", correct: false, explanation: "Le présent ne convient pas pour exprimer des actions futures." },
@@ -5672,10 +5672,10 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez la phrase : « Quand j'___ mon travail, tu m'appelleras. »",
       choices: [
-        { text: "aurai terminé", correct: true, explanation: "Le futur antérieur (« aurai terminé ») exprime l'action complétée dans la subordinée avant l'appel dans la principale." },
-        { text: "terminai", correct: false, explanation: "Le passé simple (« terminai ») est incorrect car on parle du futur, non du passé." },
-        { text: "aurais terminé", correct: false, explanation: "Le conditionnel antérieur (« aurais terminé ») exprime une hypothèse, alors qu'ici on énonce une certitude future." },
-        { text: "vais terminer", correct: false, explanation: "Le futur proche (« vais terminer ») ne souligne pas l'antériorité requise après « quand »." },
+        { text: "aurai terminé", correct: true, explanation: "Le futur antérieur (« aurai terminé ») exprime l'action complétée dans la subordonnée avant l'appel dans la principale." },
+        { text: "avais terminé", correct: false, explanation: "Le plus-que-parfait (« avais terminé ») est un temps passé, non futur." },
+        { text: "aurais terminé", correct: false, explanation: "Le conditionnel passé (« aurais terminé ») exprime une hypothèse, alors qu'ici on énonce une certitude future." },
+        { text: "aurons terminé", correct: false, explanation: "C'est la première personne du pluriel, pas du singulier (je)." },
       ],
     },
     {
@@ -5709,7 +5709,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-17",
       generatedBy: "haiku",
-      prompt: "Quelle phrase exprime correctement l'antériorité ?",
+      prompt: "Quelle phrase utilise correctement le futur antérieur après « quand » pour exprimer l'antériorité ?",
       choices: [
         { text: "Quand tu auras répondu à mes questions, je te dirai la vérité.", correct: true, explanation: "Cette phrase respecte la structure : futur antérieur (« auras répondu ») dans la subordinée, puis futur simple (« dirai ») pour la conséquence." },
         { text: "Quand tu réponds à mes questions, je te dirai la vérité.", correct: false, explanation: "Le présent (« réponds ») ne convient pas pour une action future." },
@@ -5722,7 +5722,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-17",
       generatedBy: "haiku",
-      prompt: "Remplissez : « Lorsque les invités ___ , nous passerons à table. »",
+      prompt: "Complétez au futur antérieur : « Lorsque les invités ___ , nous passerons à table. »",
       choices: [
         { text: "seront arrivés", correct: true, explanation: "Le futur antérieur (« seront arrivés ») avec l'auxiliaire « être » indique que l'arrivée des invités sera complétée avant le passage à table." },
         { text: "arrivent", correct: false, explanation: "Le présent (« arrivent ») ne convient pas pour une action future." },
@@ -5735,7 +5735,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-17",
       generatedBy: "haiku",
-      prompt: "Complétez correctement : « Dès qu'on ___ les résultats, tout le monde sera heureux ou déçu. »",
+      prompt: "Complétez au futur antérieur : « Dès qu'on ___ les résultats, tout le monde sera heureux ou déçu. »",
       choices: [
         { text: "aura connu", correct: true, explanation: "Le futur antérieur (« aura connu ») exprime l'apprentissage des résultats comme préalable à la réaction collective." },
         { text: "connaît", correct: false, explanation: "Le présent (« connaît ») ne convient pas ici ; on parle d'une action future." },
@@ -5748,7 +5748,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-17",
       generatedBy: "haiku",
-      prompt: "Quelle est la meilleure réponse ? « Quand les ouvriers ___ la maison, nous y emménagerons. »",
+      prompt: "Complétez au futur antérieur : « Quand les ouvriers ___ la maison, nous y emménagerons. »",
       choices: [
         { text: "auront fini", correct: true, explanation: "Le futur antérieur (« auront fini ») indique que les travaux doivent être terminés avant l'emménagement." },
         { text: "finiront", correct: false, explanation: "Le futur simple (« finiront ») ne marque pas clairement que la fin des travaux précède l'emménagement." },
@@ -5774,7 +5774,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-17",
       generatedBy: "haiku",
-      prompt: "Complétez : « Lorsque le train ___ , nous montrerons nos billets au contrôleur. »",
+      prompt: "Complétez au futur antérieur : « Lorsque le train ___ , nous montrerons nos billets au contrôleur. »",
       choices: [
         { text: "aura démarré", correct: true, explanation: "Le futur antérieur (« aura démarré ») marque que le départ du train sera complété avant la vérification des billets." },
         { text: "démarre", correct: false, explanation: "Le présent (« démarre ») ne convient pas pour une action future." },
@@ -5787,9 +5787,9 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-17",
       generatedBy: "haiku",
-      prompt: "Quelle phrase est correcte ?",
+      prompt: "Quelle phrase utilise correctement le futur antérieur après « quand » ?",
       choices: [
-        { text: "Quand vous aurez payé la facture, vous recevrez la marchandise.", correct: true, explanation: "Cette phrase respecte la règle : futur antérieur (« aurez payé ») dans la subordinée, futur simple (« recevrez ») dans la principale." },
+        { text: "Quand vous aurez payé la facture, vous recevrez la marchandise.", correct: true, explanation: "Cette phrase respecte la règle : futur antérieur (« aurez payé ») dans la subordonnée, futur simple (« recevrez ») dans la principale." },
         { text: "Quand vous payerez la facture, vous recevrez la marchandise.", correct: false, explanation: "Le futur simple dans les deux propositions ne marque pas l'antériorité du paiement." },
         { text: "Quand vous aurez payé la facture, vous aviez reçu la marchandise.", correct: false, explanation: "Le plus-que-parfait (« aviez reçu ») est chronologiquement incohérent." },
         { text: "Quand vous payez la facture, vous recevez la marchandise.", correct: false, explanation: "Le présent ne convient pas pour exprimer des actions futures." },
@@ -5878,7 +5878,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-17",
       generatedBy: "haiku",
-      prompt: "Complétez correctement : « Quand le client ___ satisfait, il reviendra pour d'autres achats. »",
+      prompt: "Complétez au futur antérieur : « Quand le client ___ satisfait, il reviendra pour d'autres achats. »",
       choices: [
         { text: "aura été", correct: true, explanation: "Le futur antérieur passif (« aura été ») indique que le client sera devenu satisfait avant de revenir." },
         { text: "est", correct: false, explanation: "Le présent (« est ») ne convient pas pour une action future." },
@@ -5901,7 +5901,7 @@ const section: Section = {
         { text: "finis", explanation: "Le présent « finis » ne convient pas pour une action future." },
         { text: "finissais", explanation: "L'imparfait « finissais » n'est pas approprié pour une action future." },
         { text: "aurais fini", explanation: "Le conditionnel antérieur « aurais fini » exprime une hypothèse irréelle, pas une certitude future." },
-        { text: "ais fini", explanation: "Le passé composé « ais fini » est temporellement incorrect ici." },
+        { text: "as fini", explanation: "Le passé composé « as fini » est un temps passé, non futur." },
       ],
     },
     {
