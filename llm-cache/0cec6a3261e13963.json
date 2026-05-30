@@ -1,0 +1,40 @@
+{
+  "cacheKey": "0cec6a3261e13963",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "05-18-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le futur antérieur pour exprimer une supposition sur le passé (il aura oublié)\nPROMPT: Complétez avec le futur antérieur pour exprimer une supposition. Conjuguez le verbe.\nPHRASE: Mon ami ne m'a pas appelé — il ___ (être) très occupé.\nCORRECT ANSWER: aura été\n\nWRONG ANSWERS to evaluate:\n1. a été\n2. aurait été\n3. était\n4. avait été\n5. a étés\n6. aurez été\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780101583355-orolalqg"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All six wrong answers represent common learner errors: using passé composé, conditionnel passé, imparfait, or plus-que-parfait instead of futur antérieur, making agreement mistakes on être verbs, or conjugating for the wrong person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780101586369-8rxft95d",
+      "timestamp": "2026-05-30T00:39:58.138Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All six wrong answers represent common learner errors: using passé composé (a été), confusing futur antérieur with conditionnel passé (aurait été), falling back to simpler tenses (était, avait été), over-applying agreement rules (a étés), or conjugating for the wrong subject person (aurez été).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780101598140-sn1bo2dh",
+      "timestamp": "2026-05-30T00:40:13.270Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"a étés\" is not a valid French form — the past participle of être is always invariable \"été\" and never agrees, so no learner would produce this spelling.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780101613270-tgvm4n6o",
+      "timestamp": "2026-05-30T00:40:26.070Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner confusions: mixing up futur antérieur with passé composé (a été), conditionnel passé (aurait été), imparfait (était), plus-que-parfait (avait été), making agreement errors (a étés), or confusing person/number endings (aurez été).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780101626070-5cpcsrnq",
+      "timestamp": "2026-05-30T00:40:35.032Z"
+    }
+  ]
+}

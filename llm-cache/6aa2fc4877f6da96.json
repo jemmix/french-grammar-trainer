@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6aa2fc4877f6da96",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-18-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au futur antérieur : « Le client est fâché ? Il ___ une erreur dans sa commande. »\n\nChoices:\nA. [CORRECT] aura trouvé\nB. [WRONG] a trouvé\nC. [WRONG] aurait trouvé\nD. [WRONG] trouvait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780100310845-1g60mlrq"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that the wrong answers in a French grammar MCQ question are indeed incorrect. The question asks to complete a sentence in the futur antérieur tense.\n\nAnalysis completed:\n- B: \"a trouvé\" — passé composé, not futur antérieur → incorrect\n- C: \"aurait trouvé\" — conditionnel passé, not futur antérieur → incorrect  \n- D: \"trouvait\" — imparfait, not futur antérieur → incorrect\n\nTRUE||All wrong answers use tenses other than the required futur antérieur.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780100316871-civvuth3",
+      "timestamp": "2026-05-30T00:19:49.356Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different tenses (passé composé, conditionnel passé, imparfait) instead of the required futur antérieur.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780100439079-krlorg82",
+      "timestamp": "2026-05-30T00:20:47.976Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses other than the required futur antérieur (passé composé, conditionnel passé, and imparfait respectively).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780100501904-eudlmu96",
+      "timestamp": "2026-05-30T00:21:52.858Z"
+    }
+  ]
+}

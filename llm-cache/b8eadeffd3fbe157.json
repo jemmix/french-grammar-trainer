@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b8eadeffd3fbe157",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "05-18-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le futur antérieur pour exprimer une supposition sur le passé (il aura oublié)\nPROMPT: Complétez avec le futur antérieur pour exprimer une supposition. Conjuguez le verbe.\nPHRASE: Mon ami ne m'a pas appelé — il ___ (être) très occupé.\nCORRECT ANSWER: aura été\n\nWRONG ANSWERS to evaluate:\n1. a été\n2. aurait été\n3. était\n4. avait été\n5. sera été\n6. aurez été\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780100310854-wyeldj7y"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"sera été\" is not a valid French verb form (futur simple + past participle don't combine), so no learner would naturally produce this error, while the other five wrong answers represent common tense or agreement confusions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780100730854-247375fv",
+      "timestamp": "2026-05-30T00:25:58.816Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was evaluating whether the wrong answers for a French grammar input question about the futur antérieur are plausible learner mistakes.\n\nAnalysis completed:\n- \"a été\" (passé composé) - PLAUSIBLE: common tense confusion\n- \"aurait été\" (conditionnel passé) - PLAUSIBLE: very common confusion with futur antérieur for supposition\n- \"était\" (imparfait) - PLAUSIBLE: learners often default to simple past tenses\n- \"avait été\" (plus-que-parfait) - PLAUSIBLE: another past tense learners might reach for\n- \"sera été\" - IMPLAUSIBLE: this is a nonsensical hybrid (futur simple + past participle) that doesn't correspond to any real French tense\n- \"aurez été\" - MARGINALLY PLAUSIBLE: wrong person conjugation, though subject \"il\" is clear\n\nVerdict that would have been given:\nVERDICT: IMPLAUSIBLE\nREASON: \"sera été\" is a grammatically impossible form (mixing futur simple \"sera\" with past participle \"été\") that no learner would naturally produce; it should be replaced with something like \"sera\" (futur simple) or \"soit\" (subjonctif présent).\n\nRemaining tasks: None - this was a single evaluation task.\n\nRecommendations: Replace \"sera été\" with a more plausible wrong answer such as \"sera\" (futur simple, which learners might use not knowing they need a compound tense for this construction) or \"soit\" (subjonctif, which learners sometimes overuse after certain expressions).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780100863299-2hymgn7f",
+      "timestamp": "2026-05-30T00:28:05.014Z"
+    }
+  ]
+}
