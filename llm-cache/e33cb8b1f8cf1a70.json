@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e33cb8b1f8cf1a70",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "05-20-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Synthèse : choisir entre futur proche, futur simple et futur antérieur\nPROMPT: Complétez avec la forme du futur qui exprime une supposition sur un fait passé.\nPHRASE: Il n'a pas répondu à mes messages. Il ___ mon numéro de téléphone.\nCORRECT ANSWER: aura perdu\n\nWRONG ANSWERS to evaluate:\n1. va perdre\n2. perdra\n3. a perdu\n4. perdait\n5. avait perdu\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780108442884-34aex9yh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent highly plausible confusions: \"va perdre\" and \"perdra\" test exactly the distinction this synthesis rule targets (choosing between future tenses), while \"a perdu\", \"perdait\", and \"avait perdu\" are past tenses a learner might mistakenly reach for when expressing a supposition about a past event.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780108657956-2q1x4rhf",
+      "timestamp": "2026-05-30T02:37:52.023Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common tense confusions a learner would make when struggling to apply the rule that futur antérieur expresses suppositions about past events—using futur proche, futur simple, or various past tenses (passé composé, imparfait, plus-que-parfait) are all natural errors when the underlying concept isn't fully grasped.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780108672023-rtb1yv7v",
+      "timestamp": "2026-05-30T02:38:11.301Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner confusions: \"va perdre\" and \"perdra\" show confusion between futur antérieur's supposition function and the other future tenses, while \"a perdu,\" \"perdait,\" and \"avait perdu\" show learners correctly identifying the past context but failing to use the specific tense (futur antérieur) required for expressing suppositions about past events.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780108691532-vkbcaykj",
+      "timestamp": "2026-05-30T02:38:24.514Z"
+    }
+  ]
+}

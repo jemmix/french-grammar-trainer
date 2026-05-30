@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3d474066be34d40a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-20-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-20 - Synthèse : choisir entre futur proche, futur simple et futur antérieur\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au temps du futur qui convient (action sur le point de se produire).\nPhrase: Regarde ! Le bébé ___ !\nCorrect Answer: va marcher\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780105201785-ao48tzjr"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule. Here is my analysis:\n\nVERDICT: MISALIGNED\nREASON: The question explicitly tells the student to use the tense for \"action sur le point de se produire,\" which gives away the choice between futur proche, futur simple, and futur antérieur rather than testing the student's ability to discriminate between them.\n\nThe question would be better suited for a rule specifically about futur proche formation, since the prompt removes the decision-making aspect that rule 05-20 is supposed to test.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780105329359-yfl6w5ec",
+      "timestamp": "2026-05-30T01:42:26.557Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly states \"action sur le point de se produire\" which directly tells the student to use futur proche, eliminating the need to actually choose between the three tenses that the rule is supposed to test.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780105499897-fiqpbxq0",
+      "timestamp": "2026-05-30T01:45:18.803Z"
+    }
+  ]
+}

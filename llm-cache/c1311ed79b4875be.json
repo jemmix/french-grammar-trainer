@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c1311ed79b4875be",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-20-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-20 - Synthèse : choisir entre futur proche, futur simple et futur antérieur\n\nQUESTION:\nType: Input\nPrompt: Complétez avec la forme du futur appropriée (proche, simple ou antérieur).\nPhrase: Lorsque tu ___ tes études, tu trouveras un bon emploi.\nCorrect Answer: auras terminé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780107976580-0sx2rqpa"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires choosing between futur antérieur (\"auras terminé\"), futur simple (\"termineras\"), and futur proche (\"vas terminer\") in a classic temporal clause structure where futur antérieur is the correct choice, directly testing the synthesis skill of distinguishing between these three future forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780107981592-ovzj5wob",
+      "timestamp": "2026-05-30T02:28:04.256Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires choosing between future tenses based on the temporal relationship between two clauses (action completed before another future action), which is precisely the futur antérieur usage that must be distinguished from futur simple and futur proche.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780108084257-npz35e80",
+      "timestamp": "2026-05-30T02:28:14.153Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\n**Work completed:**\nI analyzed the question asking students to complete \"Lorsque tu ___ tes études, tu trouveras un bon emploi\" with the correct answer \"auras terminé\" (futur antérieur).\n\n**Verdict that would have been returned:**\nVERDICT: ALIGNED\nREASON: The question requires choosing the futur antérieur (\"auras terminé\") over futur proche or futur simple based on the anteriority relationship with the subsequent future action (\"tu trouveras\"), which directly tests the synthesis rule about selecting between these three future tenses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780108094153-jbibkuux",
+      "timestamp": "2026-05-30T02:28:25.785Z"
+    }
+  ]
+}

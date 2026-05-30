@@ -1,0 +1,26 @@
+{
+  "cacheKey": "91f1fb7d952b6bd8",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "05-20-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Conjuguez le verbe au futur.\n\nPHRASE: Lorsque tu ___ tes études, tu trouveras un bon emploi.\n\nHINT: terminer\n\nEXPECTED ANSWER: auras terminé\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1780106614715-x3jdgbkn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"Conjuguez le verbe au futur\" but the expected answer \"auras terminé\" is the futur antérieur, not the futur simple (\"termineras\"), so a learner following the prompt literally would produce a different (and arguably correct) answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780106849493-ofgrks3f",
+      "timestamp": "2026-05-30T02:07:44.331Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate a single INPUT question for self-containment. The question asks to conjugate \"terminer\" in the future tense to fill in the blank \"Lorsque tu ___ tes études, tu trouveras un bon emploi.\" The expected answer is \"auras terminé\" (futur antérieur).\n\nRemaining tasks: None — the validation can be provided in this text response.\n\nRecommendations: The question is AMBIGUOUS. The prompt says \"Conjuguez le verbe au futur\" but the expected answer is futur antérieur (\"auras terminé\"), not futur simple (\"termineras\"). A learner following the prompt literally could reasonably answer \"termineras\" and be marked wrong. The prompt should specify \"futur antérieur\" to be self-contained and unambiguous.\n\nVERDICT: AMBIGUOUS\nREASON: The prompt says \"futur\" but expects futur antérieur (\"auras terminé\"); a learner could validly answer \"termineras\" (futur simple) based on the prompt alone.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780106864331-818lyy6f",
+      "timestamp": "2026-05-30T02:08:07.223Z"
+    }
+  ]
+}

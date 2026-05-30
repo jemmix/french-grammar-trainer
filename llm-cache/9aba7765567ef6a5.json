@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9aba7765567ef6a5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-20-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-20 - Synthèse : choisir entre futur proche, futur simple et futur antérieur\n\nQUESTION:\nType: Input\nPrompt: Choisissez entre futur proche, futur simple et futur antérieur. Conjuguez le verbe.\nPhrase: Lorsque tu ___ tes études, tu trouveras un bon emploi.\nCorrect Answer: auras terminé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780107288404-5adeu62c"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a French grammar question about choosing between futur proche, futur simple, and futur antérieur is aligned with its stated rule. I analyzed the question but did not output my final verdict before reaching the step limit.\n\nRemaining tasks: Provide the validation verdict and reasoning.\n\nRecommendation for next step: The validation result is:\n\nVERDICT: ALIGNED\nREASON: The question requires choosing the correct future tense (futur antérieur \"auras terminé\") from the three options specified in the rule, and the answer cannot be determined without knowing that futur antérieur is required after \"lorsque\" to express a future action completed before the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780107296417-ctjr5ui7",
+      "timestamp": "2026-05-30T02:15:54.471Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to recognize that futur antérieur is needed in a temporal clause (\"lorsque\") to express an action completed before another future action, which is precisely the distinction this synthesis rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780107405791-eb1ox9mt",
+      "timestamp": "2026-05-30T02:17:26.883Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires the student to recognize that \"lorsque\" with a sequence of future actions where one must be completed before the other (finishing studies before finding a job) specifically requires the futur antérieur, not the futur simple or futur proche.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780107447061-0jwpvpp3",
+      "timestamp": "2026-05-30T02:17:49.961Z"
+    }
+  ]
+}

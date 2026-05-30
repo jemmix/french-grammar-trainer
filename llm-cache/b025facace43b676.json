@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b025facace43b676",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-20-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-20 - Synthèse : choisir entre futur proche, futur simple et futur antérieur\n\nQUESTION:\nType: Input\nPrompt: Complétez avec la forme du futur qui exprime une action sur le point de se produire.\nPhrase: Regarde ! Le colis ___ d'une minute à l'autre.\nCorrect Answer: va arriver\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780110800909-umg995ut"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to validate whether a French grammar question about \"va arriver\" is aligned with the rule \"Synthèse : choisir entre futur proche, futur simple et futur antérieur.\" I completed the analysis and determined the verdict.\n\n**Verdict:**\nVERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use \"la forme du futur qui exprime une action sur le point de se produire,\" which gives away that futur proche is needed, so the question only tests formation of futur proche rather than the ability to choose between futur proche, futur simple, and futur antérieur.\n\n**Remaining tasks:** None — the validation was completed.\n\n**Recommendations:** To properly test this synthesis rule, the question should present a context without explicitly naming which future form to use, forcing the student to determine whether futur proche, futur simple, or futur antérieur is appropriate based on the situation described.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780110802924-bdkkcen8",
+      "timestamp": "2026-05-30T03:13:44.240Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use \"la forme du futur qui exprime une action sur le point de se produire,\" which gives away that the answer is futur proche, eliminating the need to actually choose between futur proche, futur simple, and futur antérieur based on context—the core skill this synthesis rule is meant to test.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780110840743-idg9fc3g",
+      "timestamp": "2026-05-30T03:14:51.446Z"
+    }
+  ]
+}

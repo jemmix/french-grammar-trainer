@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0cd709fac69c225d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-20-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-20 - Synthèse : choisir entre futur proche, futur simple et futur antérieur\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au futur.\nPhrase: Regarde le ciel ! Il ___ dans quelques minutes.\nCorrect Answer: va pleuvoir\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780106614715-bciosyn9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"dans quelques minutes\" signals a near future action, which necessitates choosing the futur proche (\"va pleuvoir\") over the futur simple (\"pleuvra\"), directly testing the synthesis rule's core skill of selecting between future tenses based on context clues.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780106623743-6uezvqiz",
+      "timestamp": "2026-05-30T02:05:27.498Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI have completed the validation task for the single question provided.\n\n**Validation Result:**\n\nVERDICT: MISALIGNED\nREASON: The rule requires choosing between futur proche, futur simple, and futur antérieur, but this input question only tests producing the futur proche form for a context with an obvious time marker (\"dans quelques minutes\") without presenting the choice between tenses that the synthesis rule demands.\n\n**Remaining tasks:** None — this was a single-question validation request.\n\n**Recommendation:** To properly test rule 05-20 (choosing between future tenses), the question should be converted to an MCQ format with options representing all three future forms (e.g., \"pleuvra,\" \"va pleuvoir,\" \"aura plu\") so the student must actively select the correct one based on context clues.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780106729948-xso6q42g",
+      "timestamp": "2026-05-30T02:06:27.017Z"
+    }
+  ]
+}

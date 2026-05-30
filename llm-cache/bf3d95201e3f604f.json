@@ -1,0 +1,26 @@
+{
+  "cacheKey": "bf3d95201e3f604f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-20-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-20 - Synthèse : choisir entre futur proche, futur simple et futur antérieur\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au temps du futur qui convient pour une observation imminente.\nPhrase: Regarde le ciel ! Il ___ dans quelques minutes.\nCorrect Answer: va pleuvoir\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780105201786-ypt2qwp5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to recognize that an imminent action (\"dans quelques minutes\") calls for the futur proche (\"va pleuvoir\") rather than the futur simple (\"pleuvra\") or futur antérieur (\"aura plu\"), which is precisely the distinction this synthesis rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780105345218-pbdz2rno",
+      "timestamp": "2026-05-30T01:42:54.747Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I analyzed the validation request for a French grammar question about choosing between futur proche, futur simple, and futur antérieur.\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly specifies \"pour une observation imminente,\" which essentially tells the student to use futur proche rather than requiring them to choose between the three future tenses based on contextual cues alone.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780105538585-ibc4hu2e",
+      "timestamp": "2026-05-30T01:46:16.670Z"
+    }
+  ]
+}

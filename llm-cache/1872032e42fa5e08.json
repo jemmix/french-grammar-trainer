@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1872032e42fa5e08",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-20-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel temps du futur convient pour exprimer une action sur le point de se produire ? « Attention ! Elle ___ dans la piscine ! »\n\nChoices:\nA. [CORRECT] va tomber\nB. [WRONG] tombera\nC. [WRONG] sera tombée\nD. [WRONG] tombait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780105201778-f36ggecp"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI analyzed the French grammar MCQ question about which future tense expresses an action about to happen (\"sur le point de se produire\") in the context \"Attention ! Elle ___ dans la piscine !\"\n\n**Analysis of wrong answers:**\n- B. \"tombera\" (futur simple) - Incorrect because futur simple expresses a future action but lacks the immediacy required for \"about to happen\"; it's used for more distant futures.\n- C. \"sera tombée\" (futur antérieur) - Incorrect because futur antérieur expresses a completed future action that precedes another future action, not an action about to occur.\n- D. \"tombait\" (imparfait) - Incorrect because it's a past tense, not a future tense at all.\n\nThe correct answer A. \"va tomber\" (futur proche) is the appropriate construction for expressing an imminent action.\n\n**Verdict:** TRUE||All wrong answers are grammatically incorrect for expressing an action about to happen: B (futur simple) doesn't convey immediacy, C (futur antérieur) expresses a completed future action, and D (imparfait) is a past tense.\n\n**Remaining tasks:** None - the verification is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780105204792-wbkn6pos",
+      "timestamp": "2026-05-30T01:40:28.104Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers use tenses that do not express imminent future action as specified in the question prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780105374747-mcpnt493",
+      "timestamp": "2026-05-30T01:43:22.235Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: B uses futur simple (not for imminent action), C uses futur antérieur (for completed future actions), and D uses imparfait (a past tense, not future at all).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780105569806-f2mw9qcu",
+      "timestamp": "2026-05-30T01:46:22.026Z"
+    }
+  ]
+}

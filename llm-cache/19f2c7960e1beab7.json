@@ -1,0 +1,26 @@
+{
+  "cacheKey": "19f2c7960e1beab7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-20-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le futur simple et le futur antérieur\n\nRULE BEING TESTED: 05-20 - Synthèse : choisir entre futur proche, futur simple et futur antérieur\n\nQUESTION:\nType: Input\nPrompt: Complétez avec la forme du futur qui exprime une promesse ferme.\nPhrase: Je te le promets : tu ___ la vérité la semaine prochaine.\nCorrect Answer: sauras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780108442884-rqg5math"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question asks students to conjugate \"savoir\" in futur simple based on a prompt that already specifies which tense to use, rather than requiring them to choose between futur proche, futur simple, and futur antérieur based on context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780108446895-1utm5x1u",
+      "timestamp": "2026-05-30T02:34:37.557Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\n**Analysis completed:**\nThe question asks students to complete \"Je te le promets : tu ___ la vérité la semaine prochaine\" with the correct answer being \"sauras.\" The rule being tested is choosing between futur proche, futur simple, and futur antérieur.\n\n**Verdict:**\nVERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use \"la forme du futur qui exprime une promesse ferme,\" which gives away the answer (futur simple) and eliminates the need to actually choose between the three future tenses, reducing it to a simple conjugation exercise rather than a tense selection test.\n\n**Remaining tasks:**\nNone - this was a single-question validation that is now complete.\n\n**Recommendations:**\nTo properly test rule 05-20, the question should present context where multiple future forms could plausibly fit, without the prompt hinting at which one to use. For example, removing the explicit instruction about \"promesse ferme\" and letting the student determine from context which future tense is appropriate.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780108477557-h7c1pvmk",
+      "timestamp": "2026-05-30T02:35:50.474Z"
+    }
+  ]
+}
