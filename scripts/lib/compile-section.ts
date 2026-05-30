@@ -62,6 +62,14 @@ export function collectValidationErrors(parsed: ParsedFile): string[] {
     errors.push(`INPUT count mismatch: declared ${parsed.declaredInput}, found ${inputCount}`);
   }
 
+  const total = mcqCount + inputCount;
+  if (total > 0 && total % 5 !== 0) {
+    errors.push(`Total question count ${total} is not divisible by 5`);
+  }
+  if (total > 0 && inputCount / total * 100 !== 20) {
+    errors.push(`Expected 20% input, got ${(inputCount / total * 100).toFixed(1)}% (${inputCount}/${total})`);
+  }
+
   const seenIds = new Set<string>();
   for (const q of parsed.questions) {
     if (seenIds.has(q.id)) errors.push(`Duplicate question ID: ${q.id}`);
