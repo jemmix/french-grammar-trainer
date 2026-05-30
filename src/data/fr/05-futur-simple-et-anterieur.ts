@@ -1530,7 +1530,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez au futur simple : « Nous ___ rester ici pour les vacances. »",
+      prompt: "Complétez au futur simple (verbe vouloir) : « Nous ___ rester ici pour les vacances. »",
       choices: [
         { text: "voudrons", correct: true, explanation: "Futur simple du verbe « vouloir » à la 1ère personne du pluriel. Le radical irrégulier « voudr- » + terminaison « -ons »." },
         { text: "voudriez", correct: false, explanation: "C'est la forme du conditionnel à la 2e personne du pluriel, pas le futur à la 1ère personne du pluriel." },
@@ -1647,7 +1647,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez au futur simple : « Elle ___ tous les détails du projet demain. »",
+      prompt: "Complétez au futur simple (verbe savoir) : « Elle ___ tous les détails du projet demain. »",
       choices: [
         { text: "saura", correct: true, explanation: "Futur simple du verbe « savoir » à la 3e personne du singulier. Le radical irrégulier « saur- » + terminaison « -a »." },
         { text: "saurait", correct: false, explanation: "C'est la forme du conditionnel (3e personne singulier), pas le futur simple." },
@@ -1660,7 +1660,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-05",
       generatedBy: "haiku",
-      prompt: "Complétez au futur simple : « Vous ___ la réponse à cette énigme. »",
+      prompt: "Complétez au futur simple (verbe savoir) : « Vous ___ la réponse à cette énigme. »",
       choices: [
         { text: "saurez", correct: true, explanation: "Futur simple du verbe « savoir » à la 2e personne du pluriel. Le radical irrégulier « saur- » + terminaison « -ez »." },
         { text: "sauriez", correct: false, explanation: "C'est la forme du conditionnel à la 2e personne du pluriel, pas le futur simple." },
@@ -1922,7 +1922,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-06",
       generatedBy: "haiku",
-      prompt: "Complétez au futur simple : « Ils ___ bien que nous avons raison. »",
+      prompt: "Complétez au futur simple : « Ils ___ clairement que nous avons raison. »",
       choices: [
         { text: "verront", correct: true, explanation: "Le futur de « voir » à la 3e personne du pluriel est « verront », avec le radical irrégulier « verr- »." },
         { text: "voyaient", correct: false, explanation: "C'est l'imparfait, pas le futur. De plus, ce n'est pas la bonne personne." },
@@ -2134,7 +2134,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Complétez au futur simple : « Je ___ très vite dans le parc demain. »",
+      prompt: "Complétez au futur simple (orthographe traditionnelle) : « Je ___ très vite dans le parc demain. »",
       choices: [
         { text: "courrai", correct: true, explanation: "Futur simple du verbe « courir » à la 1ère personne du singulier avec le radical irrégulier « courr- »." },
         { text: "courirai", correct: false, explanation: "Erreur fréquente : oubli du double « r » du radical irrégulier." },
@@ -2410,7 +2410,7 @@ const section: Section = {
       type: "input",
       ruleId: "05-07",
       generatedBy: "haiku",
-      prompt: "Conjuguez « mourir » au futur simple.",
+      prompt: "Conjuguez « mourir » au futur simple (expression : mourir d'envie).",
       phrase: { before: "Vous ", after: " certainement d'envie de découvrir la fin de l'histoire." },
       hint: "mourir",
       answer: "mourrez",
