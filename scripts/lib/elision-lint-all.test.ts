@@ -61,10 +61,9 @@ describe("elision lint across all question files", () => {
     results.push(result);
   }
 
-  it("sections 01-06 should have no elision issues", () => {
-    const strictSections = new Set(["01", "02", "03", "04", "05", "06"]);
+  it("sections not in the allowed-failing list should have no elision issues", () => {
     const strictIssues = results
-      .filter((r) => strictSections.has(r.sectionId))
+      .filter((r) => !ALLOWED_FAILING_SECTIONS.has(r.sectionId))
       .flatMap((r) => r.issues);
 
     if (strictIssues.length > 0) {
@@ -72,27 +71,15 @@ describe("elision lint across all question files", () => {
         (i) => `  ${i.questionId}: [${i.kind}] ${i.message}`
       );
       expect.fail(
-        `Sections 01-06 have ${strictIssues.length} elision issue(s):\n${messages.join("\n")}`
+        `Found ${strictIssues.length} elision issue(s) in strict sections:\n${messages.join("\n")}`
       );
     }
   });
 
-  it("report all elision issues (sections 07-12 failures are allowed but logged)", () => {
-    const allowedFailing: FileResult[] = [];
-    const disallowedFailing: FileResult[] = [];
-
-    for (const result of results) {
-      if (result.issues.length > 0) {
-        if (ALLOWED_FAILING_SECTIONS.has(result.sectionId)) {
-          allowedFailing.push(result);
-      } else if (result.sectionId !== "01") {
-        const strictSections = new Set(["02", "03", "04", "05", "06"]);
-        if (!strictSections.has(result.sectionId)) {
-          disallowedFailing.push(result);
-        }
-        }
-      }
-    }
+  it("report all elision issues in allowed-failing sections (logged but not failing)", () => {
+    const allowedFailing = results.filter(
+      (r) => r.issues.length > 0 && ALLOWED_FAILING_SECTIONS.has(r.sectionId)
+    );
 
     for (const result of allowedFailing) {
       console.log(`\n[ALLOWED FAILURE] ${result.ruleId}:`);
@@ -101,22 +88,13 @@ describe("elision lint across all question files", () => {
       }
     }
 
-    if (disallowedFailing.length > 0) {
-      const messages = disallowedFailing.flatMap((r) =>
-        r.issues.map((i) => `  ${i.questionId}: [${i.kind}] ${i.message}`)
-      );
-      expect.fail(
-        `Unexpected elision issues in sections outside 01-12:\n${messages.join("\n")}`
-      );
-    }
-
     const totalAllowedIssues = allowedFailing.reduce(
       (sum, r) => sum + r.issues.length,
       0
     );
     if (totalAllowedIssues > 0) {
       console.log(
-        `\n[INFO] ${totalAllowedIssues} elision issue(s) in allowed sections (07-12) - these do not fail the test`
+        `\n[INFO] ${totalAllowedIssues} elision issue(s) in allowed sections - these do not fail the test`
       );
     }
   });
