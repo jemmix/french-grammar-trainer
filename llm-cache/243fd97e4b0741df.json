@@ -1,0 +1,47 @@
+{
+  "cacheKey": "243fd97e4b0741df",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez. « Nous avions supposé que vous ___ libres ce jour-là. »\nChoices:\nA. [CORRECT] seriez\nB. êtes\nC. étiez\nD. serez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741975-yr4u1euf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that after a past tense reporting verb (\"avions supposé\"), French uses the conditional (\"seriez\") rather than the future (\"serez\") to express a future-in-the-past, which is exactly the distinction this rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164385405-6xiz9n5s",
+      "timestamp": "2026-05-30T18:06:46.347Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests concordance des temps (using a past-relative form after \"avions supposé\") rather than the semantic distinction between futur dans le passé and conditionnel, since \"serez\" is grammatically incorrect in this context regardless of which interpretation applies.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169391496-tyrmrswr",
+      "timestamp": "2026-05-30T19:30:42.972Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that after a past reporting verb (\"avions supposé\"), the conditional \"seriez\" must be used instead of the future \"serez\" to express a future event from a past perspective (futur dans le passé), which is exactly the distinction this rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173090753-yo517e2f",
+      "timestamp": "2026-05-30T20:31:52.896Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests exactly the futur dans le passé construction — \"seriez\" is used to report a future supposition (\"you would be free\") from a past perspective (\"nous avions supposé\"), distinguishing it from the imparfait \"étiez\" (simultaneous past state) and the futur simple \"serez\" (which cannot follow a past reporting verb).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780174178072-w69if5fg",
+      "timestamp": "2026-05-30T20:50:12.076Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question alignment. Here is my assessment:\n\nVERDICT: ALIGNED\nREASON: The question requires distinguishing between the conditional \"seriez\" (correct for expressing a past supposition about a future event) and the future \"serez\" (a key distractor representing the common error of using futur simple after a past tense main clause), which is precisely the core of the futur dans le passé vs conditionnel distinction.\n\nNo remaining tasks — this single-question validation is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780174529279-qa55w99t",
+      "timestamp": "2026-05-30T20:58:13.141Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "55503e5d5e6a3036",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-09-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel après au cas où (au cas où il pleuvrait)\nPROMPT: Complétez avec le conditionnel du verbe « avoir »\nPHRASE: Au cas où vous ___ des doutes, n'hésitez pas à demander.\nCORRECT ANSWER: auriez\n\nWRONG ANSWERS to evaluate:\n1. ayez\n2. avez\n3. aurez\n4. aviez\n5. eussiez\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780159741964-uoi5i2s2"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was evaluating whether the wrong answers provided for a French grammar input question (about \"au cas où\" + conditionnel) are plausible learner mistakes.\n\nAnalysis completed:\n- \"ayez\" (subjonctif présent) - PLAUSIBLE: very common error, learners often use subjonctif after \"au cas où\"\n- \"avez\" (indicatif présent) - PLAUSIBLE: common error using present indicative\n- \"aurez\" (futur simple) - PLAUSIBLE: common confusion between conditionnel and futur\n- \"aviez\" (imparfait) - PLAUSIBLE: common confusion between conditionnel and imparfait\n- \"eussiez\" (subjonctif imparfait) - IMPLAUSIBLE: this is an extremely rare, literary form that virtually no learner would produce as a mistake. A learner who doesn't know the rule would use \"ayez\" (subjonctif présent), not an obsolete subjunctive form.\n\nVerdict: IMPLAUSIBLE\nReason: \"Eussiez\" is a subjonctif imparfait form that is essentially obsolete in modern French; no typical learner would produce this as a mistake when the much more common \"ayez\" (subjonctif présent) already covers the \"wrongly using subjunctive\" error case.\n\nRecommendation: Replace \"eussiez\" with another plausible error, such as \"aurions\" (wrong person - 1st person plural instead of 2nd) or \"aurait\" (wrong person - 3rd person singular).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780176832552-thac28ei",
+      "timestamp": "2026-05-30T21:34:21.204Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was evaluating whether wrong answers for a French grammar input question are plausible learner mistakes. The question tests the conditional after \"au cas où\" with the correct answer being \"auriez.\"\n\nMy analysis:\n- **ayez** (subjunctive present) - PLAUSIBLE: learners often overuse subjunctive\n- **avez** (present indicative) - PLAUSIBLE: common to use present instead of conditional\n- **aurez** (future) - PLAUSIBLE: future and conditional are easily confused\n- **aviez** (imperfect) - PLAUSIBLE: imperfect is very close to conditional in form\n- **eussiez** (past subjunctive) - IMPLAUSIBLE: this is a highly literary/archaic form that most learners would never know or accidentally produce\n\nVERDICT: IMPLAUSIBLE\nREASON: \"Eussiez\" is a literary past subjunctive form that virtually no learner would accidentally produce; while the other four answers are excellent plausible mistakes, this one fails the plausibility check.\n\n**Remaining task:** Replace \"eussiez\" with a more plausible wrong answer such as \"aurions\" (1st person plural conditional - wrong person agreement) or \"aurait\" (3rd person singular conditional - wrong number agreement).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780179517357-85m0tamw",
+      "timestamp": "2026-05-30T22:19:01.973Z"
+    }
+  ]
+}

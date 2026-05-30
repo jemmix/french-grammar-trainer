@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e939964660d80853",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-03-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-03 - Le conditionnel de politesse (je voudrais, pourriez-vous, j'aimerais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase exprime poliment un doute ou une hypothèse ?\nChoices:\nA. [CORRECT] On pourrait penser que c'est impossible.\nB. On pense que c'est impossible.\nC. On pourra penser que c'est impossible.\nD. On pensait que c'est impossible.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741953-9mv3zos4"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was in the process of validating whether a French grammar question is aligned with the stated rule \"06-03 - Le conditionnel de politesse (je voudrais, pourriez-vous, j'aimerais)\".\n\n**Analysis completed:**\nThe question asks which phrase \"politely expresses doubt or a hypothesis\" with choices contrasting conditional (\"pourrait\") vs present, future, and imperfect. The rule specifically covers polite conditional forms like \"je voudrais\", \"pourriez-vous\", \"j'aimerais\" for requests and wishes. The question instead tests the conditional for expressing hypothesis/doubt (contrasted with future tense \"pourra\"), which is a different grammatical use of the conditional.\n\n**Verdict:**\nVERDICT: MISALIGNED\nREASON: The question tests the conditional for expressing hypothesis/doubt (conditional vs future distinction), not the specific polite request forms like \"je voudrais\" or \"pourriez-vous\" that the rule covers.\n\n**Remaining tasks:**\nNone - the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160360326-o8o5htqe",
+      "timestamp": "2026-05-30T17:00:23.103Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the conditional used to express doubt/hypothesis (conditionnel d'incertitude), not the conditional of politeness (je voudrais, pourriez-vous, j'aimerais) which is the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166266489-p2eb6zlb",
+      "timestamp": "2026-05-30T18:38:14.666Z"
+    }
+  ]
+}

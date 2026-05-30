@@ -1,0 +1,26 @@
+{
+  "cacheKey": "061f2c2f028c6750",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-10-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Vous ___ mieux organiser votre travail. »\n\nChoices:\nA. [CORRECT] pourriez\nB. [WRONG] pouvez\nC. [WRONG] puissiez\nD. [WRONG] pourrez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741964-fouxisu0"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of verifying wrong answers for a French grammar MCQ question about completing the sentence \"Vous ___ mieux organiser votre travail.\" The correct answer is \"pourriez\" (conditional), and I needed to verify that the wrong answers (pouvez, puissiez, pourrez) are indeed incorrect.\n\nAnalysis completed:\n- B. \"pouvez\" (present) - grammatically valid sentence, just different meaning\n- C. \"puissiez\" (subjunctive) - incorrect, subjunctive doesn't work here as main clause\n- D. \"pourrez\" (future) - grammatically valid sentence, just different meaning\n\nThe verdict would be: FALSE|B,D|B (\"pouvez\") and D (\"pourrez\") are both grammatically correct completions since the question does not specify that the conditional tense is required; they change the meaning (present ability vs. future ability vs. conditional suggestion) but remain valid French sentences.\n\nRemaining tasks: None - this was a single verification task.\n\nRecommendation: The question should be revised to specify the conditional tense or the pragmatic context (e.g., \"Donnez un conseil poli\" or \"Utilisez le conditionnel\") to make \"pourriez\" the uniquely correct answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162167362-oqceojbw",
+      "timestamp": "2026-05-30T17:30:07.998Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWhat was accomplished: I was in the process of analyzing a French grammar MCQ verification task.\n\nAnalysis completed: The question asks to complete \"Vous ___ mieux organiser votre travail\" with \"pourriez\" marked as correct. However, the question prompt does not specify any tense, mood, or register constraint—it simply says \"Complétez\" (Complete). Without such constraints, B \"pouvez\" (present indicative) and D \"pourrez\" (future) are grammatically valid completions, though they change the meaning. C \"puissiez\" (subjunctive) is genuinely incorrect as it cannot function as a main clause without a subjunctive trigger.\n\nThe verdict would be: FALSE|B,D|B \"pouvez\" is grammatically correct in present tense; D \"pourrez\" is grammatically correct in future tense—the question lacks a tense/mood constraint to rule them out.\n\nRemaining tasks: None—this was a single verification request.\n\nRecommendation: To fix this question, add a constraint like \"au conditionnel\" to the prompt, making it \"Complétez au conditionnel : « Vous ___ mieux organiser votre travail. »\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167774085-r8f6fkfq",
+      "timestamp": "2026-05-30T19:04:37.895Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "726e2375ad094c86",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-20-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Identifiez la structure correcte pour exprimer une hypothèse simple :\n\nChoices:\nA. [CORRECT] Si j'avais assez d'argent, je voyagerais en Afrique.\nB. [WRONG] Si j'aurais assez d'argent, je voyagerais en Afrique.\nC. [WRONG] Si j'ai assez d'argent, je voyagerais en Afrique.\nD. [WRONG] Si j'aurais eu assez d'argent, je voyagerais en Afrique.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741982-crm3siyj"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\n- I was tasked with verifying that the wrong answers (B, C, D) in a French grammar MCQ question about hypothetical structures (si-clauses) are indeed incorrect.\n\nAnalysis completed:\n- B (\"Si j'aurais\") is incorrect because the conditional is never used after \"si\" — it should be imparfait.\n- C (\"Si j'ai... je voyagerais\") is incorrect because présent + conditionnel présent is not a valid pairing; it should be présent + futur simple or imparfait + conditionnel présent.\n- D (\"Si j'aurais eu\") is incorrect for the same reason as B (conditional after \"si\") and also mismatches the tenses with the main clause.\n\nVerdict: TRUE||All wrong answers contain clear grammar errors violating si-clause tense agreement rules.\n\nNo remaining tasks — the verification was completed before the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165574755-woz7mpie",
+      "timestamp": "2026-05-30T18:26:48.179Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B and D incorrectly use the conditional after \"si\" (which is never allowed), and C incorrectly mixes present tense after \"si\" with conditional in the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170638687-qn7w9ohv",
+      "timestamp": "2026-05-30T19:51:03.998Z"
+    }
+  ]
+}

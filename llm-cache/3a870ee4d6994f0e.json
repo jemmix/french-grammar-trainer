@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3a870ee4d6994f0e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Input\nPrompt: Utilisez le conditionnel pour exprimer le futur dans le passé.\nPhrase: Elle a écrit que les travaux ___ terminés avant l'été.\nCorrect Answer: seraient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741976-67n2pq4o"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using the conditional \"seraient\" to report a future event (\"seront\") from a past perspective (\"a écrit\"), which is exactly the futur dans le passé distinction this rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164607286-47t6fkl6",
+      "timestamp": "2026-05-30T18:10:26.809Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests using the conditional (\"seraient\") to express a future event reported from a past perspective (\"Elle a écrit que...\"), which is precisely the grammar distinction covered by the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169626077-9yw3j6f0",
+      "timestamp": "2026-05-30T19:34:11.791Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using the conditional \"seraient\" in a reported speech context (\"Elle a écrit que...\") to express a future event from a past perspective, which is precisely the futur dans le passé distinction this rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173234476-htu5ryo0",
+      "timestamp": "2026-05-30T20:34:08.534Z"
+    }
+  ]
+}

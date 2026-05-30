@@ -1,0 +1,33 @@
+{
+  "cacheKey": "04c3a1a9eaae63a7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-19-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Avec plus de temps, on ___ pas échoué. »\n\nChoices:\nA. [CORRECT] n'aurait\nB. [WRONG] ne réussirait\nC. [WRONG] n'échouerait\nD. [WRONG] n'avait échoué\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741980-juhr3840"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question asks to complete \"Avec plus de temps, on ___ pas échoué\" which requires the conditionnel passé (n'aurait pas échoué).\n\nAnalysis completed:\n- B (ne réussirait): Incorrect - conditionnel présent cannot be followed by a past participle \"échoué\"\n- C (n'échouerait): Incorrect - same issue as B, creates ungrammatical \"n'échouerait pas échoué\"\n- D (n'avait échoué): Incorrect - plus-que-parfait is wrong for the main clause in this conditional construction\n\nThe verdict would be: TRUE||All wrong answers contain clear grammar errors - B and C incorrectly mix conditionnel présent with a past participle, and D uses plus-que-parfait instead of the required conditionnel passé for the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165278474-4jmnu23t",
+      "timestamp": "2026-05-30T18:21:40.199Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to verify that wrong answers B, C, and D are incorrect for a French grammar question about conditional sentences. The question requires the conditionnel passé form \"n'aurait\" (answer A) to complete \"Avec plus de temps, on ___ pas échoué.\" Answer B uses conditionnel présent with an incompatible verb, answer C redundantly pairs conditionnel présent with a past participle of the same verb, and answer D uses plus-que-parfait which doesn't express the hypothetical result required by the conditional context.\n\nRemaining tasks: None - the analysis was complete.\n\nRecommendations: The verdict is TRUE||All wrong answers contain clear grammar errors — B uses the wrong tense and incompatible verb, C creates a redundant construction, and D uses plus-que-parfait instead of the required conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170316615-h1fu15c2",
+      "timestamp": "2026-05-30T19:47:10.724Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B mixes conditionnel présent with past participle incoherently, C creates a redundant \"n'échouerait pas échoué\" construction, and D uses plus-que-parfait which doesn't fit the hypothetical main clause requiring conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173669270-ce5dhmbx",
+      "timestamp": "2026-05-30T20:41:31.235Z"
+    }
+  ]
+}

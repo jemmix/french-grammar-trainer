@@ -1,0 +1,26 @@
+{
+  "cacheKey": "d43ecf2cd557910b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-14-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Si j'avais su, je ___ venue plus tôt. »\n\nChoices:\nA. [CORRECT] serais\nB. [WRONG] serai\nC. [WRONG] serions\nD. [WRONG] viendrais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741971-jj420dxh"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating the French grammar question to verify that the wrong answers (B, C, D) are indeed incorrect.\n\n**Analysis completed:**\n\n- **B. \"serai\"** — Futur simple, but si + imparfait requires conditionnel présent. Incorrect.\n- **C. \"serions\"** — Conditionnel présent, but 1st person plural; subject is \"je\" (1st person singular). Incorrect.\n- **D. \"viendrais\"** — Conditionnel présent of \"venir\", but the sentence structure requires \"être\" as auxiliary with \"venue\" as past participle; \"je viendrais venue\" is incoherent. Incorrect.\n\n**Verdict:** TRUE||All wrong answers contain clear grammar errors.\n\nNo remaining tasks — the evaluation is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163252674-ywi0ovzr",
+      "timestamp": "2026-05-30T17:47:53.866Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses future instead of conditional in a si-clause with imperfect, C uses wrong person/number (plural instead of singular), and D uses the wrong verb (venir instead of être) which cannot combine with the past participle \"venue.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168743346-jbau5i9k",
+      "timestamp": "2026-05-30T19:19:26.882Z"
+    }
+  ]
+}

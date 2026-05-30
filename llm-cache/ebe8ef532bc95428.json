@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ebe8ef532bc95428",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-11-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel verbe au conditionnel passé complète : « Tu ___ rester si tu avais voulu. »\n\nChoices:\nA. [CORRECT] aurais pu\nB. [WRONG] aurais pouvoir\nC. [WRONG] peux\nD. [WRONG] pourrais rester\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741966-egaaihul"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the conditionnel passé form: B uses infinitive instead of past participle, C is present indicative, and D is conditionnel présent with infinitive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162599854-0mfc4d7m",
+      "timestamp": "2026-05-30T17:37:00.503Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B incorrectly uses the infinitive \"pouvoir\" instead of the past participle \"pu\" after the auxiliary \"aurais\"; C uses present indicative \"peux\" instead of the required conditionnel passé; D uses conditionnel présent \"pourrais\" and would create the redundant \"pourrais rester rester.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168145300-64y5z3ld",
+      "timestamp": "2026-05-30T19:09:46.174Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses infinitive instead of past participle after auxiliary, C is present tense not conditional past, D is conditional present not conditional past and redundantly repeats \"rester\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172462250-0ylfp6jp",
+      "timestamp": "2026-05-30T20:21:15.760Z"
+    }
+  ]
+}

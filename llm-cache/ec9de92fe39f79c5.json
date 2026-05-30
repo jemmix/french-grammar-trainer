@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ec9de92fe39f79c5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-10-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel énoncé illustre un reproche atténué au conditionnel ?\n\nChoices:\nA. [CORRECT] Vous pourriez améliorer votre présentation.\nB. [WRONG] Vous amélioriez votre présentation.\nC. [WRONG] Amélirez votre présentation.\nD. [WRONG] Vous devez améliorer votre présentation.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741965-lgzddnae"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||B uses the imparfait instead of the conditional required for a reproche atténué, C contains a non-existent verb form (\"amélirez\" is not valid French), and D expresses a direct obligation with \"devez\" rather than a softened reproach.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162402491-wm9n97g2",
+      "timestamp": "2026-05-30T17:33:47.831Z"
+    },
+    {
+      "raw": "TRUE||B uses imparfait which does not express a mitigated reproach, C contains a non-existent verb form (\"amélirez\" is not valid French), and D uses indicative \"devez\" which expresses direct obligation rather than a conditional softening.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167977530-j4yvkggn",
+      "timestamp": "2026-05-30T19:06:35.539Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Verdict for the validation task:**\nTRUE||All wrong answers are incorrect: B uses imparfait instead of conditionnel and is not a reproche atténué, C contains the non-existent word \"amélirez\" (the conditionnel of \"améliorer\" would be \"améliorerez\"), and D uses présent de l'indicatif with \"devoir\" which expresses direct obligation rather than attenuated reproach.\n\n**Summary of work accomplished:**\n- Analyzed the MCQ question asking which statement illustrates an attenuated reproach using the conditional mood\n- Verified all three wrong answers (B, C, D) are indeed grammatically incorrect or fail to meet the specified constraints\n\n**Remaining tasks:**\n- None — the validation was completed in the analysis\n\n**Recommendations:**\n- This question passes validation and can be kept as-is in the question bank",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172254047-t76hzm7v",
+      "timestamp": "2026-05-30T20:18:26.749Z"
+    }
+  ]
+}

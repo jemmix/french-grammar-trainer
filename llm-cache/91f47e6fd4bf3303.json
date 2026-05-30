@@ -1,0 +1,33 @@
+{
+  "cacheKey": "91f47e6fd4bf3303",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-15-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « On prétend qu'il ___ combattant dans cette guerre célèbre. »\n\nChoices:\nA. [CORRECT] aurait été\nB. [WRONG] était\nC. [WRONG] aurait êtes\nD. [WRONG] a été\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741974-q3rqsvsq"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B, C, D in a French grammar MCQ about reported speech with \"on prétend que\" are indeed incorrect.\n\nAnalysis completed:\n- B (\"était\") - Incorrect because after \"prétend que\" in reported speech, the conditional is needed to convey the original claim's uncertainty, not imparfait\n- C (\"aurait êtes\") - Clearly grammatically incorrect as \"êtes\" is not the past participle of être\n- D (\"a été\") - Incorrect because passé composé doesn't convey the reported conditional claim properly\n\nAll wrong answers are indeed incorrect within the grammatical constraints of the question.\n\nTRUE||All wrong answers are incorrect: B and D use wrong tenses for reported speech with \"prétend que\" (should use conditional), and C is grammatically invalid (\"êtes\" is not the past participle of être).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164200770-ti5zxusb",
+      "timestamp": "2026-05-30T18:03:47.761Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B changes the required conditional nuance for reported uncertain past claims, C has a morphological error (\"êtes\" instead of \"été\"), and D uses passé composé inappropriately for describing a state/role with \"prétend que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169142095-kln68dhq",
+      "timestamp": "2026-05-30T19:26:39.856Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait instead of the conditional required for reported speech with \"on prétend que,\" C contains a morphological error (\"êtes\" instead of past participle \"été\"), and D uses passé composé which doesn't convey the reported/uncertain nature of the claim.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172993865-au3yo8gp",
+      "timestamp": "2026-05-30T20:30:17.137Z"
+    }
+  ]
+}

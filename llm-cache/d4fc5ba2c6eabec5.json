@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d4fc5ba2c6eabec5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Elle ___ l'été prochain si elle trouve un emploi. »\n\nChoices:\nA. [CORRECT] voyagera\nB. [WRONG] voyagerait\nC. [WRONG] voyageait\nD. [WRONG] voyage\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741976-mi8xgw8t"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was in the process of evaluating a French grammar MCQ question about the correct verb tense in a conditional sentence (\"si + present → futur simple\" pattern).\n\nThe analysis was complete:\n- B (voyagerait - conditionnel) is incorrect because \"si + present\" requires futur simple, not conditionnel\n- C (voyageait - imparfait) is incorrect because it doesn't fit the future context \"l'été prochain\"\n- D (voyage - présent) is incorrect because \"si + present\" cannot take present in the main clause\n\nResult: TRUE||All wrong answers use tenses incompatible with the \"si + present → futur\" pattern required by this future conditional sentence.\n\nNo remaining tasks - the validation verdict was ready to be output.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164691577-pozb8cps",
+      "timestamp": "2026-05-30T18:12:02.952Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to verify that the wrong answers (B, C, D) for a French grammar MCQ question are indeed incorrect. The question asks to complete \"Elle ___ l'été prochain si elle trouve un emploi.\" The correct answer is A (voyagera, futur simple).\n\n**Analysis completed:**\n- B (\"voyagerait\") - conditional, incorrect because \"si elle trouve\" (present) requires future in the main clause, not conditional\n- C (\"voyageait\") - imparfait, clearly incorrect for referring to \"l'été prochain\"\n- D (\"voyage\") - present tense, incorrect for a future time reference\n\n**Remaining tasks:**\n- Provide the final verdict in the requested format\n\n**Recommendation for next step:**\nThe verdict should be: TRUE||All wrong answers use incorrect tenses (conditional, imparfait, présent) instead of the required futur simple for a real future condition with \"si + présent.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169740882-a4k45tls",
+      "timestamp": "2026-05-30T19:36:09.081Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses incompatible with the \"si + présent → futur simple\" structure required for real conditions referring to future time.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173312952-0mat96y4",
+      "timestamp": "2026-05-30T20:35:33.467Z"
+    }
+  ]
+}

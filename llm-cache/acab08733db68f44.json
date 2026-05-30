@@ -1,0 +1,33 @@
+{
+  "cacheKey": "acab08733db68f44",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-03-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-03 - Le conditionnel de politesse (je voudrais, pourriez-vous, j'aimerais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase utilise correctement le conditionnel de politesse ?\nChoices:\nA. [CORRECT] Pourrait-on réserver une table pour deux ?\nB. Pouvait-on réserver une table pour deux ?\nC. Peut-on réserver une table pour deux ?\nD. Pourra-t-on réserver une table pour deux ?\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741953-yab7qj4n"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing the conditional \"pourrait-on\" from the imparfait, présent, and futur forms to identify the correct polite request construction, which is exactly what the conditionnel de politesse rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160296548-66gw35gx",
+      "timestamp": "2026-05-30T16:58:37.540Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing the conditional \"pourrait-on\" from imparfait, présent, and futur forms of \"pouvoir\" to identify the correct polite conditional construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166194431-yr9tjc73",
+      "timestamp": "2026-05-30T18:36:56.282Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a French grammar question about \"le conditionnel de politesse\" properly tests the stated rule.\n\nVerdict for the question:\nVERDICT: ALIGNED\nREASON: The question directly tests recognition of the conditional form \"pourrait-on\" versus the imparfait (pouvait-on), présent (peut-on), and futur (pourra-t-on) forms of the same verb, which is the core skill in using le conditionnel de politesse.\n\nNo remaining tasks — this was a single-question validation that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171127663-4qmex9f4",
+      "timestamp": "2026-05-30T19:59:11.918Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "5b06249bc67884ca",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-19-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Tu ___ rien dire à personne, compris ? »\n\nChoices:\nA. [CORRECT] ne devrais\nB. [WRONG] ne devrais pas\nC. [WRONG] ne devais\nD. [WRONG] n'aurais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741979-kswbnklo"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B creates an ungrammatical double negation (ne…pas…rien is invalid); C uses imparfait instead of conditional present, which doesn't fit the immediate instructional context; D uses \"avoir\" instead of \"devoir,\" changing the meaning from \"shouldn't\" to \"wouldn't have.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165152051-1tenl7bd",
+      "timestamp": "2026-05-30T18:19:36.731Z"
+    },
+    {
+      "raw": "TRUE||B creates an incorrect double negation with \"ne...pas...rien\"; C uses imparfait instead of the required conditional present for giving advice; D is grammatically incomplete as \"n'aurais\" cannot directly precede an infinitive without a past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170193046-cfm4rc10",
+      "timestamp": "2026-05-30T19:44:11.341Z"
+    }
+  ]
+}

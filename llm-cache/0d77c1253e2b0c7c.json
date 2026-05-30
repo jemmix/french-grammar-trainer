@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0d77c1253e2b0c7c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez. « Nous avions supposé que tu ___ content de cette nouvelle. »\nChoices:\nA. [CORRECT] serais\nB. étais\nC. es\nD. seras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741975-2efur4rq"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far:\nI was in the process of analyzing a French grammar validation question about whether a multiple-choice question properly tests the rule \"Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\".\n\nMy analysis concluded:\n\nVERDICT: MISALIGNED\nREASON: The question tests whether to use conditional after a past reporting clause (\"Nous avions supposé que tu ___\"), but does not present a scenario requiring the learner to distinguish between conditional used as \"futur dans le passé\" versus conditional used for hypothetical situations—the distractors are simply other tenses, not a competing hypothetical interpretation.\n\nRemaining tasks: None—this was a single-question validation task.\n\nRecommendations: If the goal is to test the distinction between futur dans le passé and conditionnel, the question should present a context where both could plausibly apply, forcing the learner to determine whether the conditional is being used to report a past future intention or to express a hypothetical condition.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164442300-z2y1gcvh",
+      "timestamp": "2026-05-30T18:09:07.885Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary\n\nI was in the process of validating a French grammar question for alignment with its stated rule. I analyzed the question but did not produce a final verdict before reaching the step limit.\n\n## Analysis Completed\n\nThe question asks students to complete \"Nous avions supposé que tu ___ content de cette nouvelle\" with the correct answer being \"serais\" (conditionnel). The stated rule is about distinguishing \"futur dans le passé vs conditionnel\" in reported speech contexts like \"il a dit qu'il viendrait.\"\n\n## Preliminary Assessment\n\nThe question appears **MISALIGNED** because:\n- \"Supposer que\" expresses a hypothesis, not reported speech (unlike \"dire que\")\n- The distinction between futur dans le passé and conditionnel cannot be tested when they share the same form (\"serais\")\n- The question actually tests whether students know to use conditionnel after a past-tense hypothesis, not the specific reported speech transformation this rule covers\n\n## Recommendation\n\nThe verdict should be:\n```\nVERDICT: MISALIGNED\nREASON: The question tests using conditionnel after a past-tense hypothesis (\"avions supposé\"), but \"supposer que\" expresses a hypothesis rather than reported speech, so it doesn't properly test the distinction between futur dans le passé and conditionnel in reported speech contexts like \"il a dit qu'il viendrait.\"\n```\n\nTo properly test this rule, the question should use a verb of speaking (dire, affirmer, promettre, etc.) in the past tense, where the subordinate clause clearly represents reported future speech.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169518085-j9v1l2nf",
+      "timestamp": "2026-05-30T19:32:55.250Z"
+    }
+  ]
+}

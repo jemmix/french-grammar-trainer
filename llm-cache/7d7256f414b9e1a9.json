@@ -1,0 +1,26 @@
+{
+  "cacheKey": "7d7256f414b9e1a9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-12-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « J'___ à cette invitation si je l'avais reçue à temps. »\nChoices:\nA. [CORRECT] aurais répondu\nB. aurais répondre\nC. ai répondu\nD. avais répondu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741969-ym0au94a"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests the \"si + plus-que-parfait → conditionnel passé\" unreal past conditional structure, not the specific expression of regret using \"j'aurais dû + infinitive\" that the rule describes.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162878203-v3zfx2py",
+      "timestamp": "2026-05-30T17:41:44.482Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\n**Analysis completed:**\n\nVERDICT: MISALIGNED\nREASON: The question tests the conditionnel passé in a si-clause structure (hypothetical past with \"si + plus-que-parfait, conditionnel passé\"), not the specific usage of conditionnel passé to express regret as exemplified by \"j'aurais dû étudier\" in the rule definition.\n\n**Remaining tasks:** None - this was a single-question validation task that has been completed.\n\n**Recommendation:** This question would be better suited for a rule about si-clauses and conditional sentences (e.g., \"Le conditionnel passé dans les phrases conditionnelles avec 'si'\"). To properly test the \"regret\" usage, questions should use structures like \"j'aurais dû/pu/voulu + infinitif\" or similar constructions that express regret about past actions or inactions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168404510-l826giox",
+      "timestamp": "2026-05-30T19:14:21.750Z"
+    }
+  ]
+}

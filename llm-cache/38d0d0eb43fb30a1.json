@@ -1,0 +1,33 @@
+{
+  "cacheKey": "38d0d0eb43fb30a1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Tu ___ plus heureux si tu travaillais moins. »\n\nChoices:\nA. [CORRECT] serais\nB. [WRONG] seras\nC. [WRONG] étais\nD. [WRONG] serait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741977-ge3cicwf"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses futur simple instead of conditionnel présent required by si+imparfait; C uses imparfait which doesn't complete the conditional construction; D uses 3rd person singular \"serait\" instead of 2nd person \"serais\" needed for \"tu\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164910186-myxnk7j4",
+      "timestamp": "2026-05-30T18:15:29.275Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ are indeed incorrect.\n\nAnalysis completed:\n- The question \"Tu ___ plus heureux si tu travaillais moins\" requires conditionnel présent (2nd person singular) because \"si + imparfait\" triggers conditional in the main clause\n- B. \"seras\" (futur) - incorrect: wrong tense\n- C. \"étais\" (imparfait) - incorrect: wrong tense for main clause with si+imparfait\n- D. \"serait\" (conditionnel, 3rd person) - incorrect: wrong person/number agreement with \"tu\"\n\nTRUE||All wrong answers violate the si+imparfait → conditionnel pattern or subject-verb agreement with \"tu\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169925780-y8ctrlko",
+      "timestamp": "2026-05-30T19:39:07.151Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses futur simple instead of conditionnel with si+imparfait, C uses imparfait which doesn't fit the conditional structure, and D uses 3rd person singular instead of 2nd person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173437410-em2ftwif",
+      "timestamp": "2026-05-30T20:37:48.840Z"
+    }
+  ]
+}

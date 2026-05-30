@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0408574783f9a5b8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez. « Je pensais qu'il ___ ce matin-là. »\n\nChoices:\nA. [CORRECT] arriverait\nB. [WRONG] arrivait\nC. [WRONG] arrive\nD. [WRONG] arrivera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741975-ji3tndnd"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the concordance des temps required after \"je pensais\" (imparfait) in reported speech: B uses imparfait instead of conditionnel for future-in-the-past, C uses présent, and D uses futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164416633-yefl0oas",
+      "timestamp": "2026-05-30T18:07:22.299Z"
+    },
+    {
+      "raw": "TRUE||B (imparfait) describes an ongoing past action not a future-from-past; C (présent) violates sequence of tenses after a past main clause; D (futur simple) incorrectly retains the future instead of shifting to conditional in reported speech.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169445835-jaflllgc",
+      "timestamp": "2026-05-30T19:31:18.750Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate concordance des temps: B uses imparfait instead of conditionnel for future-in-the-past, C uses présent which doesn't backshift from the imparfait main clause, and D uses futur simple instead of conditionnel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173112897-9e6cdaco",
+      "timestamp": "2026-05-30T20:32:45.758Z"
+    }
+  ]
+}

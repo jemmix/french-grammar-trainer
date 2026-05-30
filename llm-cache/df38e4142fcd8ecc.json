@@ -1,0 +1,33 @@
+{
+  "cacheKey": "df38e4142fcd8ecc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-09-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Au cas où je n'___ pas assez d'argent, peux-tu m'en prêter ? »\n\nChoices:\nA. [CORRECT] aurais\nB. [WRONG] aie\nC. [WRONG] aura\nD. [WRONG] avais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741963-y8jdhhra"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"aie\" is subjunctive (not used after \"au cas où\"), \"aura\" is future 3rd person (wrong mood and wrong person), and \"avais\" is imperfect (wrong mood for \"au cas où\" which requires conditional).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162039411-t3atcd6f",
+      "timestamp": "2026-05-30T17:27:41.358Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was tasked with verifying that the wrong answers (B, C, D) in a French grammar multiple choice question about \"au cas où\" are indeed incorrect.\n\n**Analysis completed:**\n- B. \"aie\" (subjunctive present) - Incorrect because \"au cas où\" requires the conditional mood, not the subjunctive\n- C. \"aura\" (future, 3rd person) - Incorrect because it's the wrong person (je needs 1st person) and wrong mood (future instead of conditional)\n- D. \"avais\" (imparfait) - Incorrect because \"au cas où\" requires the conditional, not the imparfait\n\nThe correct answer is A. \"aurais\" (conditional present, 1st person singular).\n\n**Remaining tasks:**\nNone - the verification was completed.\n\n**Recommendation:**\nThe verdict is: TRUE||All wrong answers use incorrect moods/tenses for \"au cas où,\" which requires the conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167641525-2evvbm32",
+      "timestamp": "2026-05-30T19:01:19.579Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for \"au cas où,\" which strictly requires the conditional mood (aurais), not the subjunctive (aie), future (aura), or imperfect (avais).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172053737-556qzwzx",
+      "timestamp": "2026-05-30T20:14:29.063Z"
+    }
+  ]
+}

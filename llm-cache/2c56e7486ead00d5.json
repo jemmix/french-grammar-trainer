@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2c56e7486ead00d5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-04-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Vous ___ apprendre l'espagnol ? »\n\nChoices:\nA. [CORRECT] aimeriez\nB. [WRONG] aimez\nC. [WRONG] aimerez\nD. [WRONG] aimeraient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741954-ohck3vu3"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B,C|B \"aimez\" is grammatically correct présent indicatif meaning \"do you like learning\"; C \"aimerez\" is grammatically correct futur simple meaning \"will you like learning\"; only D is truly incorrect because it's 3rd person plural instead of 2nd person plural \"vous\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160549067-p39kr1l4",
+      "timestamp": "2026-05-30T17:03:17.781Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary\nI was in the process of analyzing a French grammar verification question about completing the sentence \"Vous ___ apprendre l'espagnol ?\" with options being different conjugations of \"aimer\" (aimeriez, aimez, aimerez, aimeraient).\n\n## Analysis Completed\n- A (aimeriez) - Correct conditional 2nd person plural\n- B (aimez) - Present indicative 2nd person plural - grammatically valid but changes meaning\n- C (aimerez) - Future indicative 2nd person plural - grammatically valid though unusual contextually\n- D (aimeraient) - Conditional 3rd person plural - person agreement error with \"vous\" in modern French\n\n## Remaining Task\nProvide the final verdict in the required format (VERDICT|letters|explanation).\n\n## Recommendation\nThe answer should be: FALSE|B,C|B \"aimez\" is grammatically correct present indicative that changes meaning; C \"aimerez\" is grammatically correct future indicative; the question does not specify tense/mood so these are valid completions. D is correctly wrong due to person mismatch.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166422550-s4g2vpbc",
+      "timestamp": "2026-05-30T18:41:25.038Z"
+    }
+  ]
+}

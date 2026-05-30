@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d142d13bf1d6b3c6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-07-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-07 - Le conditionnel pour exprimer l'imaginaire (je serais le roi et tu serais la reine)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au conditionnel pour exprimer l'imaginaire\nPhrase: Nous ___ explorer les planètes lointaines si c'était possible.\nCorrect Answer: pourrions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741960-qbzc5cpe"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"pouvoir\" in the conditional for \"nous\" within a hypothetical scenario (\"si c'était possible\"), which directly tests the conditional for expressing the imaginary as specified by the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780161680463-7xotge3c",
+      "timestamp": "2026-05-30T17:23:07.649Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"pouvoir\" in the conditionnel présent to express a hypothetical/imaginary scenario (\"explorer les planètes lointaines si c'était possible\"), which directly tests the rule about using the conditional for l'imaginaire.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167396483-sym7uwa6",
+      "timestamp": "2026-05-30T18:56:54.766Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of validating a French grammar question alignment. The question asks to conjugate \"pouvoir\" in the conditional for \"nous\" in a hypothetical context (\"si c'était possible\"), with the correct answer being \"pourrions.\"\n\nMy assessment: VERDICT: ALIGNED\nREASON: The question directly tests the conditional mood used to express imaginary/hypothetical situations, matching the rule's focus on \"le conditionnel pour exprimer l'imaginaire.\"\n\nNo remaining tasks - this was a single validation request that I have completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171780852-b4iizlpy",
+      "timestamp": "2026-05-30T20:09:59.773Z"
+    }
+  ]
+}

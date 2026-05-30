@@ -1,0 +1,40 @@
+{
+  "cacheKey": "5f48e04b35e0c53b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-10-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Vous ___ être plus attentif aux détails. »\n\nChoices:\nA. [CORRECT] devriez\nB. [WRONG] deviez\nC. [WRONG] deviez pas\nD. [WRONG] devez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741965-equgiafb"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of verifying wrong answers for a French grammar MCQ question about the verb \"devoir\" in the sentence \"Vous ___ être plus attentif aux détails.\"\n\nThe verification analysis was:\n\nTRUE||All wrong answers use incorrect tenses or constructions: B uses imparfait instead of conditional, C is grammatically incomplete for negation, and D uses present indicative (obligation) instead of conditional (advice).\n\nRemaining tasks: None - the verdict was reached.\n\nRecommendations: The verdict TRUE is appropriate - \"deviez\" (imparfait) changes meaning to past obligation, \"deviez pas\" lacks proper negation structure, and \"devez\" expresses direct obligation rather than the advice/recommendation conveyed by the conditional \"devriez.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162307988-owog8t3g",
+      "timestamp": "2026-05-30T17:32:33.958Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the imperfect \"deviez\" which doesn't fit the present-oriented context without past time markers, C is grammatically incomplete (missing \"ne\" for negation), and D uses present \"devez\" conveying obligation rather than the conditional advice meaning intended by \"devriez.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167915652-fawehvm9",
+      "timestamp": "2026-05-30T19:06:00.036Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was in the process of evaluating the French grammar MCQ question to verify that the wrong answers (B, C, D) are indeed incorrect.\n\n**Analysis completed:**\n- B. \"deviez\" (imparfait) — clearly incorrect; this is past tense (\"you were supposed to be\"), not fitting the present context\n- C. \"deviez pas\" — clearly incorrect; grammatically broken construction without \"ne\" and no negation context\n- D. \"devez\" (present indicative) — ambiguous; grammatically valid in the sentence (\"you must be more attentive\") but changes the meaning from advice to obligation\n\n**Remaining tasks:**\n- Provide the final verdict in the requested format\n\n**Recommendation:**\nThe verdict should be: `UNCLEAR||The question doesn't specify whether it asks for advice (conditional) or obligation (present indicative), making \"devez\" potentially correct.`\n\nTo make this question unambiguous, the prompt should be modified to explicitly state the context, such as: \"Complétez avec le conditionnel pour donner un conseil : « Vous ___ être plus attentif aux détails. »\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172214314-gc58kq30",
+      "timestamp": "2026-05-30T20:17:50.955Z"
+    },
+    {
+      "raw": "TRUE||The wrong answers are incorrect: B uses imparfait (past context) instead of the expected conditionnel for advice, C is ungrammatical without the \"ne\" particle in negation, and D uses présent indicatif expressing obligation rather than the conditionnel \"should\" meaning expected here.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780174104445-wop4m3lh",
+      "timestamp": "2026-05-30T20:49:04.639Z"
+    }
+  ]
+}

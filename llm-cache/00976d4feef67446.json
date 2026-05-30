@@ -1,0 +1,33 @@
+{
+  "cacheKey": "00976d4feef67446",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-09-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Au cas où nous ___ du retard, attends-nous. »\n\nChoices:\nA. [CORRECT] aurions\nB. [WRONG] ayons\nC. [WRONG] aurons\nD. [WRONG] avions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741962-3h4kebj5"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying the wrong answers for a French grammar MCQ question about the construction \"au cas où\" + conditionnel.\n\nThe question asks to complete \"Au cas où nous ___ du retard, attends-nous.\" with the correct answer being \"aurions\" (conditionnel présent).\n\nAnalysis completed:\n- B. \"ayons\" (subjonctif) - Incorrect, \"au cas où\" requires conditionnel not subjonctif\n- C. \"aurons\" (futur simple) - Incorrect, this is a common learner mistake but \"au cas où\" strictly takes conditionnel\n- D. \"avions\" (imparfait) - Incorrect, \"au cas où\" requires conditionnel not imparfait\n\nAll wrong answers are indeed grammatically incorrect within the stated constraints. The verdict would have been: TRUE||All wrong answers use incorrect tenses/moods; \"au cas où\" requires the conditionnel présent, not subjonctif, futur, or imparfait.\n\nNo remaining tasks - this verification was complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780161941590-ch47y2xj",
+      "timestamp": "2026-05-30T17:26:00.225Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the wrong mood/tense: B uses subjonctif présent, C uses futur simple, and D uses imparfait, but \"au cas où\" requires the conditionnel présent (aurions).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167569098-r2gsqzh0",
+      "timestamp": "2026-05-30T19:00:01.557Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods/tenses: \"ayons\" is subjunctive (not used after \"au cas où\"), \"aurons\" is futur simple, and \"avions\" is imparfait, whereas \"au cas où\" requires the conditional mood \"aurions.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171975824-e8a2fx3a",
+      "timestamp": "2026-05-30T20:13:19.945Z"
+    }
+  ]
+}

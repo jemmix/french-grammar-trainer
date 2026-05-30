@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c714f1f4371234eb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-14-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Si je n'avais pas oublié mes documents, j'___ entrer sans problème. »\n\nChoices:\nA. [CORRECT] aurais pu\nB. [WRONG] avais pu\nC. [WRONG] ai pu\nD. [WRONG] aurais pouvoir\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741972-7ud1voph"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses plus-que-parfait instead of the required conditionnel passé after \"si\" + plus-que-parfait, C uses passé composé instead of conditionnel passé, and D incorrectly uses the infinitive \"pouvoir\" instead of the past participle \"pu\" in the conditionnel passé construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163428304-zfd7t3be",
+      "timestamp": "2026-05-30T17:50:47.384Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses plus-que-parfait instead of conditionnel passé, C uses passé composé instead of conditionnel passé, and D incorrectly uses the infinitive \"pouvoir\" instead of the past participle \"pu\" after the auxiliary \"aurais\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168936503-2ffon636",
+      "timestamp": "2026-05-30T19:22:32.857Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses imparfait instead of the required conditionnel passé for a past counterfactual, C uses passé composé which doesn't fit the hypothetical structure, and D incorrectly pairs the auxiliary with an infinitive rather than the past participle \"pu\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172804852-oovyjoy4",
+      "timestamp": "2026-05-30T20:27:03.754Z"
+    }
+  ]
+}

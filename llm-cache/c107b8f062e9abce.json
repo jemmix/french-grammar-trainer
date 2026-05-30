@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c107b8f062e9abce",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la réponse correcte. « Elles ont juré qu'elles ___ la vérité. »\nChoices:\nA. [CORRECT] diraient\nB. disent\nC. disaient\nD. diront\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741975-ldc2wcnb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests exactly the stated rule by requiring the student to recognize that in reported speech after a past-tense verb (\"ont juré\"), the conditional \"diraient\" must be used to express future-in-the-past, distinguishing it from the present, imparfait, and futur options.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164388596-8a06o64s",
+      "timestamp": "2026-05-30T18:06:53.935Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work\nI was in the process of validating a French grammar question against its stated rule.\n\n## Analysis Completed\nVERDICT: ALIGNED\nREASON: The question tests exactly the futur dans le passé rule — after a past tense reporting verb (\"ont juré\"), the future must be expressed using the conditional (\"diraient\"), distinguishing it from the true future (\"diront\") or other tenses.\n\n## Remaining Tasks\nNone — this single-question validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169398533-tp9bds1s",
+      "timestamp": "2026-05-30T19:30:33.662Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that in reported speech set in the past (\"ont juré qu'elles...\"), the conditional \"diraient\" expresses future-in-the-past, directly distinguishing it from the future \"diront\" and other tenses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173090438-x883rnjc",
+      "timestamp": "2026-05-30T20:32:06.130Z"
+    }
+  ]
+}

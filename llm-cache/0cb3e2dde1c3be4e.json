@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0cb3e2dde1c3be4e",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-16-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\nPROMPT: Conjuguez le verbe au conditionnel pour exprimer le futur dans le passé.\nPHRASE: Le professeur a expliqué que le cours ___ à dix heures.\nCORRECT ANSWER: commencerait\n\nWRONG ANSWERS to evaluate:\n1. commençait\n2. commence\n3. commencera\n4. a commencé\n5. aurait commencé\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780159741976-089sa72c"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner confusions when mastering the futur dans le passé: imparfait confusion (commençait), failure to shift tense (commence), using futur simple directly (commencera — the core mistake this rule targets), using passé composé (a commencé), and overcomplicating with conditionnel passé (aurait commencé).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780177808898-o7vs4bvk",
+      "timestamp": "2026-05-30T21:50:30.033Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: using imparfait or présent instead of conditional for reported speech, keeping futur simple without tense backshifting, misinterpreting the timeline with passé composé, or overcorrecting with conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780180426007-mnwm9spm",
+      "timestamp": "2026-05-30T22:34:16.400Z"
+    }
+  ]
+}

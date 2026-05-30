@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a2a2a0d5d36f2fcf",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-10-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-10 - Le conditionnel pour exprimer un reproche atténué (tu pourrais faire attention)\n\nQUESTION:\nType: Input\nPrompt: Mettez au conditionnel pour formuler un reproche ou suggestion douce\nPhrase: Nous ___ nous montrer plus patients les uns envers les autres.\nCorrect Answer: pourrions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741965-xcsmxbpg"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests using the conditional to soften a suggestion or reproach (\"Nous pourrions nous montrer plus patients\" rather than a direct imperative), and the prompt explicitly frames it in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162438786-zate7pno",
+      "timestamp": "2026-05-30T17:34:26.110Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the learner to produce \"pourrions\" (pouvoir in conditionnel) to soften a reproach about not being patient enough, which is precisely the grammar construction taught by this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168008395-ixkx9tvb",
+      "timestamp": "2026-05-30T19:07:09.551Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using the conditional \"pourrions\" in a context of gentle collective self-reproach, which is a direct application of the rule about softened reproaches, even though the prompt explicitly mentions the conditional form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172285713-j7wja4xr",
+      "timestamp": "2026-05-30T20:18:31.557Z"
+    }
+  ]
+}

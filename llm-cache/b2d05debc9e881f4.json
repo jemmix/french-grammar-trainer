@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b2d05debc9e881f4",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-19-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il ___ jamais accepté cette proposition. »\n\nChoices:\nA. [CORRECT] n'aurait\nB. [WRONG] n'a\nC. [WRONG] ne refuserait\nD. [WRONG] n'avait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741979-8e7qq7lz"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:** I was tasked with verifying that wrong answers B, C, and D for a French grammar MCQ are indeed incorrect. The question asks to complete \"Il ___ jamais accepté cette proposition\" with the correct answer being A \"n'aurait\" (conditionnel passé).\n\n**Analysis completed:**\n- B \"n'a\" forms valid passé composé \"Il n'a jamais accepté\" — grammatically correct, wrong tense\n- D \"n'avait\" forms valid plus-que-parfait \"Il n'avait jamais accepté\" — grammatically correct, wrong tense  \n- C \"ne refuserait\" is genuinely incorrect — mixes verb \"refuser\" with past participle \"accepté\"\n\n**Verdict that would have been returned:** FALSE|B,D|B forms a grammatically correct passé composé and D forms a grammatically correct plus-que-parfait; since the question prompt does not specify a tense, these are valid completions even though they differ from the intended conditional meaning.\n\n**Remaining tasks:** None — this was a single verification task.\n\n**Recommendations:** The question should specify the tense/mood (e.g., \"Complétez au conditionnel passé\") to make B and D unambiguously wrong, or the wrong answers should be replaced with choices that contain actual grammatical errors rather than just different valid tenses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165140397-bve8nfjm",
+      "timestamp": "2026-05-30T18:19:46.658Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWork accomplished: I analyzed the French grammar question to verify whether the wrong answers (B, C, D) are indeed incorrect.\n\nAnalysis summary:\n- Question: « Il ___ jamais accepté cette proposition. » with correct answer A (\"n'aurait\" - conditionnel passé)\n- B (\"n'a\") forms \"Il n'a jamais accepté\" - passé composé, grammatically correct with a different meaning\n- C (\"ne refuserait\") creates \"Il ne refuserait jamais accepté\" - grammatically incorrect (cannot combine conditionnel présent with past participle \"accepté\")\n- D (\"n'avait\") forms \"Il n'avait jamais accepté\" - plus-que-parfait, grammatically correct with a different meaning\n\nThe verdict would be: FALSE|B,D|B (\"n'a\" - passé composé) and D (\"n'avait\" - plus-que-parfait) are grammatically correct French completions with different temporal meanings than the intended conditional.\n\nRecommendation: The question should specify the context (e.g., \"dans un contexte hypothétique\" or provide a preceding clause like \"Si on le lui avait proposé\") to make B and D clearly wrong answers rather than alternative valid constructions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170207523-7twxgma7",
+      "timestamp": "2026-05-30T19:44:36.518Z"
+    }
+  ]
+}

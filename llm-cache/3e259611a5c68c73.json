@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3e259611a5c68c73",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-13-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il ___ attendre que tout le monde soit là avant de commencer. »\n\nChoices:\nA. [CORRECT] aurait mieux valu\nB. [WRONG] valait mieux\nC. [WRONG] aura mieux valu\nD. [WRONG] aurait dû\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741970-ta3813ig"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context: B uses imparfait which creates a tense mismatch with the present subjunctive \"soit,\" C uses futur antérieur which doesn't fit the past situation described, and D changes the construction to \"devoir\" which is not equivalent to \"valoir mieux\" as it expresses obligation rather than comparative value judgment.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163134654-zfkcotxu",
+      "timestamp": "2026-05-30T17:46:18.747Z"
+    },
+    {
+      "raw": "FALSE|B,D|B \"valait mieux\" is grammatically correct in imparfait for expressing general past truths; D \"aurait dû\" is grammatically correct though it uses a different verb (\"devoir\" instead of \"valoir\") with a different meaning (\"he should have\" vs \"it would have been better\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168629650-umt0re38",
+      "timestamp": "2026-05-30T19:18:05.484Z"
+    }
+  ]
+}

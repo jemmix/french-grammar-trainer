@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3c2e307bd3ae795c",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "06-15-014",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: « Selon la légende, ce roi ___ immortel. »\nChoices:\nA. aurait été\nB. était\nC. aurait être\nD. a été\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780159741974-aykz1jzp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The sentence-with-blank format is standard and unambiguous, and \"Selon la légende\" provides clear contextual cues that the conditional past is needed for reporting uncertain/legendary information.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164169795-rg9wbjfd",
+      "timestamp": "2026-05-30T18:03:09.694Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: \"Selon la légende\" can legitimately be followed by the imparfait (\"était\") or the conditionnel passé (\"aurait été\"), and without knowing which specific grammar rule is being tested, a learner cannot determine which interpretation is expected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169105505-zbm2cyty",
+      "timestamp": "2026-05-30T19:25:35.655Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Without knowing the rule title, a learner could reasonably interpret \"Selon la légende\" as simply setting a mythical scene and choose \"était\" (imparfait for description) or \"a été\" (passé composé for a stated fact), not understanding that \"selon\" as a reporting trigger specifically requires the conditionnel passé to express uncertainty about the legend's claim.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172972991-wpuae5np",
+      "timestamp": "2026-05-30T20:30:05.725Z"
+    }
+  ]
+}

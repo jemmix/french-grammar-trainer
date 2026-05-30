@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3adb260ca9e2f3e0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez. « Mon patron m'a dit que je ___ une augmentation l'année prochaine. »\n\nChoices:\nA. [CORRECT] recevrais\nB. [WRONG] recevais\nC. [WRONG] reçois\nD. [WRONG] recevrai\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741975-42mo44np"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was in the process of analyzing a French grammar verification question about indirect speech (discours indirect). The question asks to complete \"Mon patron m'a dit que je ___ une augmentation l'année prochaine\" where the correct answer is \"recevrais\" (conditional), and I needed to verify that the wrong answers (B: recevais, C: reçois, D: recevrai) are indeed incorrect.\n\nRemaining tasks: Complete the verification and provide the verdict in the requested format.\n\nRecommendations: The answer is TRUE|B,C,D|All wrong answers are incorrect: B (imparfait) doesn't work with future time reference \"l'année prochaine\", C (présent) cannot be used for future events in indirect speech with a past reporting verb, and D (futur simple) violates the tense backshifting rule that requires conditional when the main clause is in the past (\"m'a dit\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164494684-fhbo5dl7",
+      "timestamp": "2026-05-30T18:08:47.778Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was asked to verify that wrong answers B, C, and D in a French grammar MCQ about indirect speech (discours indirect) are indeed incorrect.\n\nAnalysis completed:\n- The question requires the conditional after \"a dit que\" for future reference in indirect speech\n- B. \"recevais\" (imparfait) is incorrect - wrong tense, doesn't convey future meaning\n- C. \"reçois\" (présent) is incorrect - present tense incompatible with \"l'année prochaine\" and indirect speech rules\n- D. \"recevrai\" (futur simple) is incorrect - in standard indirect speech, future becomes conditional after a past tense reporting verb\n\nTRUE||All wrong answers violate the rules of indirect speech (discours indirect) which requires the conditional after a past tense reporting verb when referring to future events.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169511595-j6wbb9b2",
+      "timestamp": "2026-05-30T19:32:14.909Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate concordance des temps in indirect speech: B (imparfait) doesn't express future, C (présent) should shift to imparfait after a past tense main verb, and D (futur simple) must shift to conditionnel présent in reported speech.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173155727-kgvweyth",
+      "timestamp": "2026-05-30T20:33:01.587Z"
+    }
+  ]
+}

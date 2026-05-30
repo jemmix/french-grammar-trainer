@@ -1,0 +1,33 @@
+{
+  "cacheKey": "30d9a7f23680c7eb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au conditionnel pour exprimer le futur dans le passé.\nPhrase: Le professeur a expliqué que le cours ___ à dix heures.\nCorrect Answer: commencerait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741976-96fwyhx1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to use the conditional \"commencerait\" in a subordinate clause after a past tense reporting verb (\"a expliqué\"), which is precisely the future-in-the-past construction the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164574402-kbs5g6yz",
+      "timestamp": "2026-05-30T18:09:48.128Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using the conditionnel (commencerait, not futur commencera) to report a future event from a past perspective (\"Le professeur a expliqué que...\"), which is precisely the futur dans le passé distinction the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169571195-1w3xjagj",
+      "timestamp": "2026-05-30T19:33:16.131Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to validate whether a French grammar question is aligned with the stated rule \"06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\".\n\n**Validation result:**\nVERDICT: ALIGNED\nREASON: The question requires conjugating \"commencer\" in the conditional tense (\"commencerait\") within a reported speech context where the main clause is in the past (\"a expliqué\"), directly testing the futur dans le passé construction.\n\n**Remaining tasks:**\nNone - the validation was completed before the step limit was reached.\n\n**Recommendations:**\nNo further action needed for this particular validation. The question is properly aligned with the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173202529-lk7q8af6",
+      "timestamp": "2026-05-30T20:33:43.016Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ccf831edb05ad533",
+  "predicateId": "french-language",
+  "questionId": "06-02-018",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Les conditionnels irréguliers (mêmes radicaux que le futur : ser-, aur-, fer-, ir-, pourr-, voudr-...)\n\nQUESTION CONTENT:\nPrompt: « Elles ___ d'accord si on leur posait la question. »\nChoices:\nA. [correct] seraient\n   Explanation: Le radical irrégulier « ser- » + la terminaison du conditionnel pour « elles » : « -aient ». Elles seraient = they would be.\nB. seront\n   Explanation: « Seront » est le futur simple. Le conditionnel du radical « ser- » est « seraient ».\nC. sont\n   Explanation: « Sont » est le présent. Le contexte « si on leur posait » exige le conditionnel.\nD. serait\n   Explanation: « Serait » est la forme du conditionnel pour « il/elle », pas pour « elles ». La bonne forme pour « elles » est « seraient ».\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1780159741951-2ew48vlh"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of work accomplished:\nI was asked to validate whether all question content is in French for a single question about irregular conditionals.\n\n## Analysis completed:\nThe question was analyzed for language compliance. All fields are in French except for one instance in Choice A's explanation: \"Elles seraient = they would be.\" The appended English translation \"= they would be\" does not fall under any of the allowed exceptions (false friend contrast, cognate reference, confusion clarification, or proper nouns). It is simply a direct translation without clear pedagogical purpose.\n\n## Remaining tasks:\nNone - the validation for this single question is complete.\n\n## Recommendation:\nThe validation result is:\n\nVERDICT: ENGLISH_DETECTED\nREASON: Choice A explanation contains untranslated English translation \"= they would be\" that does not fall under allowed exceptions (not a false friend contrast, cognate reference, or confusion clarification).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780175649736-es6qeknp",
+      "timestamp": "2026-05-30T21:14:51.036Z"
+    },
+    {
+      "raw": "VERDICT: ENGLISH_DETECTED\nREASON: Explanation for choice A contains untranslated English translation \"Elles seraient = they would be.\" This is a simple translation, not a false friend contrast, cognate reference, or confusion clarification — it does not fit the allowed exceptions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780178489453-r3r5wcwq",
+      "timestamp": "2026-05-30T22:01:53.690Z"
+    }
+  ]
+}

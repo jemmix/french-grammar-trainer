@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9b12e265425f2530",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-01-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Formation du conditionnel présent : radical du futur + terminaisons de l'imparfait\nPROMPT: Conjuguez le verbe au conditionnel présent\nPHRASE: Nous ___ un voyage inoubliable si nous avions plus d'argent.\nCORRECT ANSWER: ferions\n\nWRONG ANSWERS to evaluate:\n1. faisons\n2. faisions\n3. ferons\n4. fassions\n5. fassent\n6. feraient\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780159741950-ar8u8u6f"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was in the process of evaluating whether wrong answers for a French conditional present tense question were plausible learner mistakes.\n\nAnalysis completed:\n- **faisons** (present indicative) - PLAUSIBLE: Common mistake of using present instead of conditional\n- **faisions** (imperfect) - PLAUSIBLE: Learners might apply imperfect endings to wrong stem\n- **ferons** (future) - PLAUSIBLE: Forgetting to add imperfect endings to future stem\n- **fassions** (subjunctive) - PLAUSIBLE: Confusion between subjunctive and conditional with \"si\" clauses\n- **fassent** (3rd person plural subjunctive) - IMPLAUSIBLE: No learner would use \"ils/elles\" ending with \"Nous\"\n- **feraient** (3rd person plural conditional) - IMPLAUSIBLE: Same issue - wrong person agreement\n\nVERDICT: IMPLAUSIBLE\nREASON: \"fassent\" and \"feraient\" use 3rd person plural endings when the subject is clearly \"Nous\" — no learner would make this person agreement error in writing where the subject is visible.\n\nRecommendations for next steps: Remove or replace \"fassent\" and \"feraient\" with more plausible mistakes such as \"ferions\" with incorrect spelling variations, or other confusions like mixing up with other tenses that maintain the correct person/number agreement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780175515696-8nkbm0ps",
+      "timestamp": "2026-05-30T21:12:31.248Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common confusions learners face with the conditionnel: \"faisons\" (présent indicatif), \"faisions\" (imparfait), \"ferons\" (futur simple), \"fassions\" (subjonctif imparfait - same stem confusion, wrong tense), \"fassent\" (subjonctif présent - adjacent mood with wrong person), and \"feraient\" (correct tense, wrong person/number) are all plausible errors when learning to form the conditionnel présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780178352248-hmugvk6y",
+      "timestamp": "2026-05-30T21:59:59.262Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was evaluating the plausibility of wrong answers for a French grammar input question about the conditional present tense of \"faire\" (nous ferions).\n\nVERDICT: IMPLAUSIBLE\nREASON: \"fassent\" is the ils/elles subjunctive form, not the nous form — a learner attempting the subjunctive would use \"fassions\" (already listed), and no learner would apply a 3rd person plural ending to a \"nous\" subject.\n\nRemaining tasks: None — the evaluation is complete.\n\nRecommendations: Replace \"fassent\" with a more plausible wrong answer such as \"feriions\" (a common over-correction/spelling error where learners double the 'i' thinking it's needed before -ions), or \"ferimes\" (passé simple, another literary tense learners might confuse).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780180945283-83iy4vn0",
+      "timestamp": "2026-05-30T22:42:47.129Z"
+    }
+  ]
+}

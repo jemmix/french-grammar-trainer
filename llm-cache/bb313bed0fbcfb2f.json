@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bb313bed0fbcfb2f",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "06-16-004",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Choisissez la forme correcte. « Les enfants croyaient que les cadeaux ___ sous le sapin. »\nChoices:\nA. seraient\nB. sont\nC. étaient\nD. seront\nE. soient\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780159741976-r176kgvy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: \"Choisissez la forme correcte\" in the context of a fill-in-the-blank sentence unambiguously asks for the grammatically correct verb form, and the sentence context (imparfait \"croyaient\" + future-from-past meaning) makes only one answer valid.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164619138-3uun8ci1",
+      "timestamp": "2026-05-30T18:10:52.212Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Both \"étaient\" and \"seraient\" are grammatically valid after \"croyaient\" (imperfect) depending on whether the children believed the gifts were already there or would be there, and the prompt doesn't clarify which meaning is intended.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169656890-c54y8c85",
+      "timestamp": "2026-05-30T19:34:36.893Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: AMBIGUOUS\nREASON: \"Choisissez la forme correcte\" doesn't specify whether grammatical tense agreement, mood, or semantic appropriateness is being tested, and without knowing this is a concordance des temps exercise, a learner cannot determine whether \"étaient\" or \"seraient\" is intended as correct since both are defensible past-tense constructions after \"croyaient que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173254906-axusxo34",
+      "timestamp": "2026-05-30T20:34:45.346Z"
+    }
+  ]
+}

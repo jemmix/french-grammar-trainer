@@ -1,0 +1,19 @@
+{
+  "cacheKey": "a2b2c51d460f2462",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-15-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Les voisins affirment qu'il y ___ une fête bruyante jusqu'à minuit. »\n\nChoices:\nA. [CORRECT] aurait eu\nB. [WRONG] a eu\nC. [WRONG] aura eu\nD. [WRONG] avait eu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741974-krntqttz"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the concordance des temps in reported speech: \"a eu\" incorrectly uses passé composé which doesn't convey the reported/hedged nature of the affirmation, \"aura eu\" uses futur antérieur which is temporally incoherent for a past event being reported, and \"avait eu\" uses plus-que-parfait which would require a past-tense main clause rather than the present-tense \"affirment.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164311237-yp6qk1tq",
+      "timestamp": "2026-05-30T18:07:00.501Z"
+    }
+  ]
+}

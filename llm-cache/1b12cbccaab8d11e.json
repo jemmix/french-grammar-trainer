@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1b12cbccaab8d11e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-19-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-19 - La négation au conditionnel présent et passé\n\nQUESTION:\nType: Input\nPrompt: Complétez la phrase avec la négation au conditionnel passé\nPhrase: Sans ton intervention, on ___ jamais réussi ce projet.\nCorrect Answer: n'aurait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741981-wtossf95"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests recognizing when to use the conditionnel passé in a hypothetical \"sans\" construction, not the negation structure itself—\"jamais\" is already provided in the sentence, so the student only needs to add the conditional auxiliary rather than demonstrating knowledge of where to place negation elements.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165415864-c3pm0g2n",
+      "timestamp": "2026-05-30T18:24:01.367Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to produce \"n'aurait,\" which combines the negative particle \"ne\" (elided to \"n'\") with the conditional passé auxiliary \"aurait,\" directly testing negation placement in the conditional passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170479997-iivej5nv",
+      "timestamp": "2026-05-30T19:48:31.442Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\n- I was in the process of analyzing a French grammar question for alignment with its stated rule\n- The analysis was nearly complete when the step limit was reached\n\nThe verdict I was about to deliver:\n\nVERDICT: MISALIGNED\nREASON: The negation element \"jamais\" is already provided in the sentence, so the blank primarily tests recognizing that \"sans + noun\" triggers the conditional auxiliary \"aurait,\" not the negation structure itself.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173742766-8nm9aysp",
+      "timestamp": "2026-05-30T20:42:46.461Z"
+    }
+  ]
+}

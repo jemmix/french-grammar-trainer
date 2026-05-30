@@ -1,0 +1,26 @@
+{
+  "cacheKey": "1282dc457b7becdc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « On dit qu'elle ___ la semaine prochaine. »\n\nChoices:\nA. [CORRECT] démissionnerait\nB. [WRONG] démissionnera\nC. [WRONG] va démissionner\nD. [WRONG] a démissionné\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741957-g0ht8kjp"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|B,C|Both B (démissionnera) and C (va démissionner) are grammatically correct future constructions in indirect speech when the reporting verb \"On dit\" is in the present tense; the conditional \"démissionnerait\" (A) would only be appropriate if the reporting verb were in the past (\"On a dit qu'elle démissionnerait\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780161093592-9tidevbt",
+      "timestamp": "2026-05-30T17:11:59.468Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was in the process of evaluating a French grammar verification task for a multiple choice question about the conditional after \"On dit que\".\n\nRemaining task: Provide the verdict for the question.\n\nRecommendation: The verdict should be:\nFALSE|B,C|B (\"démissionnera\" future simple) and C (\"va démissionner\" futur proche) are grammatically correct in everyday French after \"on dit que\" when reporting future plans; only D is clearly incorrect due to the past tense conflicting with \"la semaine prochaine.\" The question should specify formal/journalistic register if it intends to test the conditional exclusively.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166861037-l9qat8ue",
+      "timestamp": "2026-05-30T18:48:24.513Z"
+    }
+  ]
+}

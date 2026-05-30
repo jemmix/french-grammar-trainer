@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6f5a94c7275dcea7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il m'a dit qu'il ___ bientôt. »\n\nChoices:\nA. [CORRECT] arriverait\nB. [WRONG] arrive\nC. [WRONG] arrivera\nD. [WRONG] était arrivé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741977-c3shiz1m"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate standard concordance des temps rules for indirect speech after a past-tense main clause (\"a dit\" requires conditionnel for future reference, not présent, futur, or plus-que-parfait).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164752315-95g0jxae",
+      "timestamp": "2026-05-30T18:13:30.954Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B violates concordance des temps (présent cannot follow a past tense reporting verb in indirect speech), C violates concordance des temps (futur must become conditionnel after \"a dit\"), and D is semantically contradictory with \"bientôt\" (plus-que-parfait implies the action already happened).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169809438-1u7zpssv",
+      "timestamp": "2026-05-30T19:37:15.739Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the sequence of tenses rules for indirect speech in French: B uses present instead of conditional, C uses future instead of conditional, and D uses plus-que-parfait which is logically incompatible with \"bientôt.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173358849-fhvxtdgz",
+      "timestamp": "2026-05-30T20:36:21.380Z"
+    }
+  ]
+}

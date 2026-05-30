@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e8ab33f0d1802b64",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-15-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Selon ses amis, il ___ un emploi à l'étranger. »\n\nChoices:\nA. [CORRECT] aurait trouvé\nB. [WRONG] trouvait\nC. [WRONG] aura trouvé\nD. [WRONG] a trouvé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741974-r3e2zrtg"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was in the process of evaluating a French grammar verification task. The question asked to verify that wrong answers B (\"trouvait\"), C (\"aura trouvé\"), and D (\"a trouvé\") are indeed incorrect for the sentence « Selon ses amis, il ___ un emploi à l'étranger. » where the correct answer is A (\"aurait trouvé\" - conditionnel passé).\n\n**Analysis completed:**\n- B \"trouvait\" (imparfait) - incorrect for reporting a completed action\n- C \"aura trouvé\" (futur antérieur) - incorrect in this reported speech context\n- D \"a trouvé\" (passé composé) - this is potentially debatable as it could work if presenting the information as a direct assertion rather than uncertain reported speech\n\n**Remaining tasks:**\n- The final verdict was not output in the required format (VERDICT|letters|explanation)\n\n**Recommendation for next step:**\nThe verdict would likely be FALSE|D|D (\"a trouvé\") could be acceptable if interpreting \"selon ses amis\" as presenting a direct assertion rather than uncertain reported information, though \"aurait trouvé\" is stylistically preferred. However, a reasonable argument could also be made for TRUE if we consider that \"selon\" inherently marks reported/attributed information where the conditionnel is the expected tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164297920-pwu2mj3f",
+      "timestamp": "2026-05-30T18:05:28.296Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait which doesn't convey reported speech/conditional meaning needed with \"selon\" for a future-oriented past event, C uses future antérieur which is incorrect for reported past speculation, and D uses passé composé which cannot express the conditional/hypothetical nature required by the context of \"selon ses amis\" reporting uncertain past information.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169261696-5ftfbrxg",
+      "timestamp": "2026-05-30T19:28:02.925Z"
+    }
+  ]
+}

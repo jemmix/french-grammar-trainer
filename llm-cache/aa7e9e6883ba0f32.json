@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aa7e9e6883ba0f32",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-10-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-10 - Le conditionnel pour exprimer un reproche atténué (tu pourrais faire attention)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez au conditionnel pour exprimer un conseil ou reproche atténué\nPhrase: Il ___ prendre un peu plus de temps pour finir ce projet.\nCorrect Answer: devrait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741965-9u75f6dr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Devrait\" is the conditional of \"devoir,\" which is a standard construction for expressing a softened reproach or advice (similar to \"tu pourrais\"), and the sentence clearly functions as a reproche atténué rather than a direct command.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162428615-oqxrr7sk",
+      "timestamp": "2026-05-30T17:34:27.088Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests using the conditional of \"devoir\" to express a softened reproach/advice, which is precisely the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168008423-oct7vfld",
+      "timestamp": "2026-05-30T19:07:06.884Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests using \"devoir\" in the conditional form (\"devrait\") to express a softened reproach or advice, which is precisely the grammar concept described by the stated rule about le conditionnel pour exprimer un reproche atténué.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172278489-8dra44fr",
+      "timestamp": "2026-05-30T20:18:50.038Z"
+    }
+  ]
+}

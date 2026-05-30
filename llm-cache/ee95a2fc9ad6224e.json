@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ee95a2fc9ad6224e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-12-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « On ___ ensemble si on avait eu le même emploi du temps. »\nChoices:\nA. [CORRECT] aurait voyagé\nB. aurait voyager\nC. voyagerait\nD. voyagea\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741969-eh9pagp3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the si + plus-que-parfait → conditionnel passé sentence structure for hypothetical past situations, not the specific use of conditionnel passé to express regret (which typically involves constructions like \"j'aurais dû + infinitif\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162811524-yo0ekxlo",
+      "timestamp": "2026-05-30T17:40:39.806Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests the si-clause tense agreement (plus-que-parfait → conditionnel passé) for a hypothetical past situation, not the specific use of conditionnel passé to express regret as described in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168344023-py42jr7u",
+      "timestamp": "2026-05-30T19:12:45.808Z"
+    }
+  ]
+}

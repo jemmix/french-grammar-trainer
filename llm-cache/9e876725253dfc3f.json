@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9e876725253dfc3f",
+  "predicateId": "french-language",
+  "questionId": "06-02-009",
+  "spec": {
+    "systemPrompt": "You are a French language content validator. Your task is to verify that all question content is in French.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting French with English for pedagogical purposes (e.g., \"Attention: 'actuellement' does NOT mean 'actually'\")\n2. When referencing English cognates to help learners understand French words\n3. When clarifying false friends/common confusions with English\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Conjuguez le verbe...\"\n- English explanations like \"This is wrong because...\" instead of \"C'est incorrect parce que...\"\n- English hints or instructions\n- Mixing English and French sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <FRENCH|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: FRENCH\nREASON: All content is in French with no English detected.\n\nVERDICT: FRENCH\nREASON: Content uses allowed English exception for false friend contrast (actuellement/actually).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of French.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Les conditionnels irréguliers (mêmes radicaux que le futur : ser-, aur-, fer-, ir-, pourr-, voudr-...)\n\nQUESTION CONTENT:\nPrompt: « J'___ au cinéma ce soir si tu m'accompagnais. »\nChoices:\nA. [correct] irais\n   Explanation: Le radical irrégulier « ir- » + la terminaison du conditionnel pour « je » : « -ais ». J'irais = I would go.\nB. irai\n   Explanation: « Irai » est le futur simple. Le conditionnel du radical « ir- » est « irais ».\nC. allais\n   Explanation: « Allais » est l'imparfait de « aller ». Le conditionnel du radical irrégulier « ir- » est « irais ».\nD. irions\n   Explanation: « Irions » est la forme du conditionnel pour « nous », pas pour « je ». La bonne forme pour « je » est « irais ».\n\nIs all content appropriately in French?",
+    "nonce": "nonce-1780159741951-tv5ljjlv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ENGLISH_DETECTED\nREASON: Explanation for choice A contains English translation \"J'irais = I would go.\" which does not fit the allowed exceptions (not a false friend contrast, cognate clarification, or pedagogical comparison — just a direct translation).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780175582747-ndx89v7t",
+      "timestamp": "2026-05-30T21:13:23.980Z"
+    },
+    {
+      "raw": "VERDICT: ENGLISH_DETECTED\nREASON: Explanation for correct answer A contains English translation \"J'irais = I would go.\" which does not fit any allowed exception — it is not a false friend contrast, cognate reference, or proper noun, just an untranslated English translation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780178415703-vao9ahwu",
+      "timestamp": "2026-05-30T22:00:38.244Z"
+    }
+  ]
+}

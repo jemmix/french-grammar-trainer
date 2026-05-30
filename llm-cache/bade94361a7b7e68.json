@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bade94361a7b7e68",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-01-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Lequel de ces énoncés contient une forme correcte du conditionnel présent ?\n\nChoices:\nA. [CORRECT] Je serais heureux de vous aider.\nB. [WRONG] Je suis heureux de vous aider.\nC. [WRONG] Je serait heureux de vous aider.\nD. [WRONG] Je serai heureux de vous aider.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741947-asgo3c4v"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses or conjugations (présent indicatif, wrong person conjugation, and futur simple) that do not match the required conditionnel présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780159741988-hcg6kaxn",
+      "timestamp": "2026-05-30T16:49:19.946Z"
+    },
+    {
+      "raw": "TRUE||B uses présent indicatif, C uses third-person conditional form with first-person subject, and D uses futur simple — none are conditionnel présent first-person forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165667338-uul8wwlb",
+      "timestamp": "2026-05-30T18:28:03.864Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses present indicative instead of conditional, C has a subject-verb agreement error (3rd person form with 1st person subject), and D uses future simple instead of conditional present.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170707205-1o14mrzq",
+      "timestamp": "2026-05-30T19:53:41.879Z"
+    }
+  ]
+}

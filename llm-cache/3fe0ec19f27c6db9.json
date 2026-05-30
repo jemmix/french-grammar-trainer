@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3fe0ec19f27c6db9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-02-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-02 - Les conditionnels irréguliers (mêmes radicaux que le futur : ser-, aur-, fer-, ir-, pourr-, voudr-...)\n\nQUESTION:\nType: Multiple Choice\nPrompt: « Ils ___ bien réussir cet examen s'ils travaillaient davantage. »\nChoices:\nA. [CORRECT] pourraient\nB. pourront\nC. peuvent\nD. pourrions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741951-ymdnysvm"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the irregular conditional stem \"pourr-\" (shared with the future) and the correct conditional ending \"-aient\" for the 3rd person plural, which is exactly what the rule about irregular conditionals covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160127932-dai7bsgn",
+      "timestamp": "2026-05-30T16:55:50.222Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work\n\nI was asked to validate whether a French grammar question is aligned with the rule it claims to test.\n\n**Analysis completed:**\n\nThe question asks students to fill in the blank in \"Ils ___ bien réussir cet examen s'ils travaillaient davantage.\" with choices between *pourraient*, *pourront*, *peuvent*, and *pourrions*.\n\nThe correct answer is *pourraient* — the conditional of *pouvoir* for \"ils\". This directly tests:\n1. The irregular conditional stem \"pourr-\" (same as the future stem, as stated in the rule)\n2. The conditional endings (-aient for ils)\n3. Recognizing the si + imperfect construction requires the conditional\n\n**Verdict:** VERDICT: ALIGNED\n**Reason:** The question requires knowing the irregular conditional stem \"pourr-\" (shared with the future) and the correct conditional ending for \"ils,\" which is exactly what rule 06-02 covers.\n\n## Remaining Tasks\n\nNone — this was a single-question validation that has been completed.\n\n## Recommendations\n\nNo further action needed on this question; it properly tests the stated rule about irregular conditionals.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166014263-9avytnul",
+      "timestamp": "2026-05-30T18:34:08.241Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the irregular conditional \"pourraient\" which uses the \"pourr-\" radical shared with the future, requiring the learner to distinguish the conditional ending (-aient) from future (-ont), present (-ent), and wrong person/number (-ions) endings.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170979132-a8isf7ld",
+      "timestamp": "2026-05-30T19:56:42.634Z"
+    }
+  ]
+}

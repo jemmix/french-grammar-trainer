@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fbdf38f7152abef9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-07-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Tu ___ comprendre cette langue si tu la pratiquais tous les jours. »\n\nChoices:\nA. [CORRECT] comprendrais\nB. [WRONG] comprends\nC. [WRONG] comprendras\nD. [WRONG] comprendriez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741959-6pnaybl6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses présent instead of conditionnel, C uses futur simple instead of conditionnel with an imparfait si-clause, and D uses the wrong person/number (2nd person plural instead of singular for \"tu\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780161558229-09mcl8wg",
+      "timestamp": "2026-05-30T17:19:53.363Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses present tense instead of conditional required by \"si + imparfait\", C uses future tense instead of conditional, and D uses the \"vous\" form instead of the \"tu\" form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167205871-34rhedka",
+      "timestamp": "2026-05-30T18:54:13.607Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses présent instead of the required conditionnel, C uses futur simple which doesn't match the si+imparfait structure, and D uses the wrong person/number (2nd plural instead of 2nd singular).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171661264-nh057660",
+      "timestamp": "2026-05-30T20:08:03.810Z"
+    }
+  ]
+}

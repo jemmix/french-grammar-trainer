@@ -1,0 +1,40 @@
+{
+  "cacheKey": "7332ce55ae289576",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "06-20-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Conjuguez le verbe au conditionnel pour rapporter une information incertaine.\nPhrase: Selon les dernières nouvelles, le concert ___ (être annulé) la semaine prochaine.\nHint: être\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780159741982-53tlr8s6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"Conjuguez le verbe\" (singular) but presents \"être annulé\" in parentheses, which a learner could interpret as two separate verbs rather than recognizing it as a passive construction requiring only the auxiliary \"être\" to be conjugated.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165664787-gqa2d95w",
+      "timestamp": "2026-05-30T18:28:10.988Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The instruction specifies the tense (conditionnel), the hint identifies which verb to conjugate (être), and the subject \"le concert\" makes the expected form (serait) unambiguous.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170720231-f83fa750",
+      "timestamp": "2026-05-30T19:52:25.089Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt specifies the tense (conditionnel), provides contextual justification (rapporter une information incertaine) that matches the sentence frame (\"Selon les dernières nouvelles\"), the hint \"être\" clarifies which verb to conjugate despite the passive construction \"être annulé\", and the subject \"le concert\" is unambiguous.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173919070-hiw8ygba",
+      "timestamp": "2026-05-30T20:46:00.405Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a French grammar question for clarity and unambiguity. Here is my assessment:\n\nVERDICT: AMBIGUOUS\nREASON: The prompt says \"au conditionnel\" without specifying whether conditionnel présent (\"serait\") or conditionnel passé (\"aurait été\") is required, and the context creates genuine ambiguity—\"la semaine prochaine\" suggests future (favoring \"serait annulé\") while \"être annulé\" implies a completed action (favoring \"aurait été annulé\").\n\n**Remaining tasks:** None—this was a single-question validation that I have now completed.\n\n**Recommendation:** Rephrase the prompt to specify the exact conditional tense needed, or restructure the sentence context so that only one form makes grammatical sense (e.g., remove \"la semaine prochaine\" to clearly require conditionnel passé, or change the construction to unambiguously require conditionnel présent).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780174352247-cnt64b1t",
+      "timestamp": "2026-05-30T20:53:09.358Z"
+    }
+  ]
+}

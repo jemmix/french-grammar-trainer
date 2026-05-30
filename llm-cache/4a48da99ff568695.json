@@ -1,0 +1,47 @@
+{
+  "cacheKey": "4a48da99ff568695",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-02-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-02 - Les conditionnels irréguliers (mêmes radicaux que le futur : ser-, aur-, fer-, ir-, pourr-, voudr-...)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez le conditionnel présent correct : « Il ___ avec sa mère si elle lui demandait de l'aide. »\nChoices:\nA. [CORRECT] irait\nB. ira\nC. va\nD. iriez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741950-xdd8uykm"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the irregular conditional stem \"ir-\" (from \"aller\"), which is explicitly listed in the rule's set of irregular stems shared with the future tense, and the distractors test tense confusion rather than a different grammar concept.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160031406-6ly20cr6",
+      "timestamp": "2026-05-30T16:54:09.644Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was in the process of validating a French grammar question alignment. The question asks for the conditional présent of \"aller\" in a si-clause context, with \"irait\" as the correct answer.\n\nVerdict: VERDICT: ALIGNED\nREASON: The question directly tests the irregular conditional stem \"ir-\" for \"aller\" listed in the rule, requiring the student to distinguish the conditional from futur (\"ira\"), présent (\"va\"), and wrong person/number (\"iriez\").\n\nNo remaining tasks - the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165936408-mo3bzhi9",
+      "timestamp": "2026-05-30T18:32:51.681Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests the tense selection rule for \"si\" clauses (imparfait + conditionnel) rather than the irregular stems themselves—all \"ir-\" options share the same stem, so a student could answer correctly knowing only tense rules, not the irregular stem rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170923259-l9ifu3pl",
+      "timestamp": "2026-05-30T19:56:13.348Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires identifying the correct irregular conditional form \"irait\" using the \"ir-\" stem explicitly listed in the rule, while distinguishing it from the future simple (\"ira\"), present (\"va\"), and an incorrect person/number form (\"iriez\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173940187-gpv8log5",
+      "timestamp": "2026-05-30T20:46:35.444Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question alignment.\n\nVERDICT: MISALIGNED\nREASON: The question primarily tests conditionnel usage (si + imparfait requires conditionnel) and person/number agreement, but doesn't include a distractor like \"allerais\" that would actually test whether students know the irregular stem \"ir-\" versus the regular formation.\n\n**Summary:** I analyzed one question to determine if it properly tests the stated rule about irregular conditional stems (ir-, ser-, aur-, etc.).\n\n**Remaining tasks:** None specified beyond this single validation.\n\n**Recommendations:** To properly test irregular conditional stems, questions should include the \"regular\" incorrect formation as a distractor (e.g., \"allerais\" alongside \"irait\") so students must demonstrate knowledge of the irregular stem specifically, not just general conditionnel usage.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780174369632-2uczmtsa",
+      "timestamp": "2026-05-30T20:53:32.899Z"
+    }
+  ]
+}

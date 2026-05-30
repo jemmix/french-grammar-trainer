@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0d7add455c1f1033",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-10-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel énoncé illustre le reproche atténué avec le conditionnel ?\n\nChoices:\nA. [CORRECT] Vous devriez écouter davantage les autres.\nB. [WRONG] Vous écoutez trop peu les autres.\nC. [WRONG] Vous deviez écouter davantage les autres.\nD. [WRONG] Écoutez davantage les autres.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741964-j5reuxd8"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar question about \"reproche atténué avec le conditionnel\" are indeed incorrect.\n\nAnalysis completed:\n- B: \"Vous écoutez trop peu les autres\" - present indicative, no conditional, no attenuation\n- C: \"Vous deviez écouter davantage les autres\" - imparfait (not conditionnel), means past obligation\n- D: \"Écoutez davantage les autres\" - imperative, direct command with no attenuation\n\nTRUE||All wrong answers fail to use the conditionnel tense as required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162175408-ycewaeyp",
+      "timestamp": "2026-05-30T17:30:11.263Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses present tense (direct reproach, no attenuation), C uses imparfait not conditionnel (past reproach, not attenuated), D uses imperative (direct command, no conditional).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167784052-e57z0bom",
+      "timestamp": "2026-05-30T19:03:26.627Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the conditional tense to express an attenuated reproach: B uses present indicative (direct reproach), C uses imparfait (past obligation, not conditional), and D uses imperative (direct command).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172150493-f5ynh79b",
+      "timestamp": "2026-05-30T20:16:07.887Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ff4268f66c949da7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-13-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il ___ partir plus tôt pour ne pas rater le train. »\n\nChoices:\nA. [CORRECT] aurait fallu\nB. [WRONG] fallait\nC. [WRONG] faudra\nD. [WRONG] fallût\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741970-6qqmpm9q"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses imparfait instead of conditionnel passé, which doesn't convey the counterfactual meaning required by the context of regretting not leaving earlier; C uses future tense which is incompatible with the past situation; D uses imperfect subjunctive which is not used in main clauses in modern French.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163030877-jqzmpx5u",
+      "timestamp": "2026-05-30T17:44:48.172Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done so far:**\nI was asked to verify whether the wrong answers (B, C, D) in a French grammar MCQ are indeed incorrect. The question asks to complete \"Il ___ partir plus tôt pour ne pas rater le train.\"\n\n**Analysis completed:**\n- **A (aurait fallu)**: Correct - conditionnel passé fits the counterfactual context\n- **B (fallait)**: This is actually grammatically correct - \"Il fallait partir plus tôt\" is valid imparfait expressing past necessity, commonly used in this exact context\n- **C (faudra)**: Genuinely wrong - futur simple doesn't fit the past/regret context\n- **D (fallût)**: Genuinely wrong - subjonctif imparfait is not used in main clause constructions like this\n\n**Remaining tasks:**\n- Provide the final verdict in the requested format\n\n**Recommendation for next steps:**\nThe verdict should be: `FALSE|B|B (\"fallait\") is grammatically correct in this context as the imparfait legitimately expresses past necessity, making \"Il fallait partir plus tôt pour ne pas rater le train\" a valid French sentence with essentially the same meaning.` The question should either specify it wants the conditionnel passé, or B should be replaced with a different wrong answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168546093-hek15kit",
+      "timestamp": "2026-05-30T19:16:27.929Z"
+    }
+  ]
+}

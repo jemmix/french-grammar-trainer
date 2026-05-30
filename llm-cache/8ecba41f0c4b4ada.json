@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8ecba41f0c4b4ada",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au conditionnel pour exprimer le futur dans le passé.\nPhrase: Vous aviez affirmé que vous ___ me contacter dans la semaine.\nCorrect Answer: me contacteriez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741976-7ers1tba"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using the conditional after a past-tense reporting verb (\"Vous aviez affirmé que\") to express a future action from a past perspective, which is exactly the core distinction this rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164593084-1y88yajh",
+      "timestamp": "2026-05-30T18:11:47.547Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question but did not complete the response.\n\nThe question being analyzed was:\n- Rule: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n- Question asks to conjugate \"me contacter\" in conditional for \"futur dans le passé\" context\n- Context: \"Vous aviez affirmé que vous ___ me contacter dans la semaine\"\n- Answer: \"me contacteriez\"\n\nMy analysis:\nVERDICT: ALIGNED\nREASON: The question requires recognizing that reported speech about a future action (\"futur dans le passé\") demands the conditional form \"contacteriez,\" directly testing the distinction between futur simple and conditionnel in past contexts.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169718827-fo7w9w82",
+      "timestamp": "2026-05-30T19:35:42.258Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"contacter\" in the conditional within a reported speech context (\"Vous aviez affirmé que...\"), which directly tests the futur-dans-le-passé use of the conditional that distinguishes it from the futur simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173293260-ljby74vx",
+      "timestamp": "2026-05-30T20:35:14.741Z"
+    }
+  ]
+}

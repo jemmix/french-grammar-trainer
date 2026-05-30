@@ -1,0 +1,26 @@
+{
+  "cacheKey": "efc4609b046a6315",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-02-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-02 - Les conditionnels irréguliers (mêmes radicaux que le futur : ser-, aur-, fer-, ir-, pourr-, voudr-...)\n\nQUESTION:\nType: Multiple Choice\nPrompt: « Elles ___ une exception pour cette occasion spéciale. »\nChoices:\nA. [CORRECT] feraient\nB. feront\nC. font\nD. ferions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741950-hf3j27d5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"faire\" uses the irregular stem \"fer-\" in the conditionnel présent, which is exactly one of the irregular stems listed in the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160014793-2r2241od",
+      "timestamp": "2026-05-30T16:53:54.360Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"feraient\" is the conditional form of \"faire\" with the irregular stem \"fer-\" and distinguishing it from the future tense \"feront,\" which directly tests the irregular conditional rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165919929-9ez5z558",
+      "timestamp": "2026-05-30T18:32:34.547Z"
+    }
+  ]
+}

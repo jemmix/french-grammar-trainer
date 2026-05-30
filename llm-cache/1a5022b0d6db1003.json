@@ -1,0 +1,54 @@
+{
+  "cacheKey": "1a5022b0d6db1003",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Selon le journal, le prix de l'essence ___ en hausse. »\n\nChoices:\nA. [CORRECT] serait\nB. [WRONG] est\nC. [WRONG] sera\nD. [WRONG] a été\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741957-u6j3auft"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are incorrect. The question asks to complete \"Selon le journal, le prix de l'essence ___ en hausse.\" with the correct answer being \"serait\" (conditional).\n\nAnalysis completed:\n- B \"est\" (present) is incorrect because it fails to use the conditional required for reported speech with \"selon\"\n- C \"sera\" (future) is incorrect because future tense doesn't fit the reported speech context\n- D \"a été\" (passé composé) is incorrect because it doesn't work with \"en hausse\" in this reported speech context\n\nAll wrong answers are indeed incorrect.\n\nTRUE||All wrong answers fail to use the conditional required for reported speech with \"selon.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780161109120-qx9ypejm",
+      "timestamp": "2026-05-30T17:12:39.736Z"
+    },
+    {
+      "raw": "FALSE|B|B is grammatically acceptable because \"selon le journal\" can attribute a source using present indicative without requiring conditional transformation for reported speech.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166895495-rc4ktxt0",
+      "timestamp": "2026-05-30T18:49:02.492Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThis was a single-step verification task. I have analyzed the question and can provide the verdict:\n\nTRUE||All wrong answers fail to use the conditional mood required for reported speech after \"selon\" — \"est\" uses present indicative instead of conditional, \"sera\" incorrectly uses future tense for a current state, and \"a été\" uses passé composé which implies a completed action rather than an ongoing state.\n\nNo remaining tasks — the verification is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171437020-cezgb4p5",
+      "timestamp": "2026-05-30T20:06:53.327Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the conditional mood required for reported speech after \"selon le journal,\" making them grammatically incorrect in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780174044786-1h45ry2l",
+      "timestamp": "2026-05-30T20:50:03.178Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the conditional tense required for reported speech after \"selon le journal,\" where \"serait\" correctly marks the indirect/distant nature of the information.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780174495142-7gjnhgzz",
+      "timestamp": "2026-05-30T20:55:38.683Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of work done\nI was in the process of evaluating a French grammar verification task for the question \"Complétez : « Selon le journal, le prix de l'essence ___ en hausse. »\" with choices A (serait - correct), B (est), C (sera), D (a été).\n\n## Analysis completed\nThe question tests reported speech with \"selon le journal.\" The conditional \"serait\" is the formal/journalistic standard for indirect discourse. However, answer B \"est\" (present indicative) is actually grammatically acceptable in this context—French allows present tense after \"selon\" when reporting current information, though it's less formal than the conditional.\n\n## Result that would have been returned\nFALSE|B|B \"est\" is grammatically acceptable after \"selon\" when reporting current information, even though \"serait\" is the more formal journalistic choice.\n\n## Remaining tasks\nNone—this was a single verification task.\n\n## Recommendations\nThe question should be revised to make B unambiguously wrong, for example by adding context that explicitly requires the conditional (e.g., specifying formal journalistic register or indirect speech transformation).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780174750529-4he1rvrl",
+      "timestamp": "2026-05-30T20:59:43.028Z"
+    }
+  ]
+}

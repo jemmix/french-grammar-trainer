@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dadca4632f88b94e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-03-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je ___ que tu m'aides avec les devoirs. »\n\nChoices:\nA. [CORRECT] voudrais\nB. [WRONG] veux\nC. [WRONG] voulais\nD. [WRONG] voudrai\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741952-rmjgh10h"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was evaluating a French grammar verification task for a multiple choice question about the verb \"vouloir\" in the construction \"Je ___ que tu m'aides avec les devoirs.\"\n\nThe task was to verify that wrong answers B (\"veux\"), C (\"voulais\"), and D (\"voudrai\") are indeed incorrect.\n\nRemaining tasks: Provide the final verdict in the requested format.\n\nRecommendation for next step: The verdict should be:\nFALSE|B,C|B is grammatically correct in present tense (just less polite than the conditional \"voudrais\"); C is grammatically correct in imparfait when expressing a past desire; only D is genuinely incorrect as \"voudrai\" (futur) does not work with the subjunctive clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160288910-p7c3e0t4",
+      "timestamp": "2026-05-30T16:58:35.190Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B \"veux\" is too direct for this polite request context, C \"voulais\" shifts to past tense inappropriately, and D \"voudrai\" uses future tense which doesn't work with \"que\" + subjunctive for expressing a wish.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166185420-uybho9ur",
+      "timestamp": "2026-05-30T18:36:57.217Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify whether the wrong answers (B, C, D) in a French grammar MCQ about completing \"Je ___ que tu m'aides avec les devoirs\" are indeed incorrect.\n\nAnalysis completed:\n- B (\"veux\"): \"Je veux que tu m'aides\" is grammatically correct in present indicative with subjunctive subordinate clause—it's less polite than \"voudrais\" but the question doesn't specify politeness/register requirements.\n- C (\"voulais\"): \"Je voulais que tu m'aides\" uses imperfect which in French can serve as a polite present request (softening), making it a valid alternative.\n- D (\"voudrai\"): Future simple \"je voudrai\" means \"I will want\" and doesn't fit the present request context—this one is genuinely incorrect.\n\nThe verdict would be: FALSE|B,C|B is grammatically correct present indicative used for direct requests; C uses imperfect which is a valid polite alternative for present requests in French.\n\nRemaining tasks: None—this was a single verification task.\n\nRecommendations: The question should either (1) specify \"formal/polite register\" to exclude B, and add a constraint like \"present tense\" to exclude C, or (2) replace B and C with clearly incorrect forms (e.g., \"voulons\", \"veuille\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171131093-gk0zm2jk",
+      "timestamp": "2026-05-30T19:59:29.048Z"
+    }
+  ]
+}

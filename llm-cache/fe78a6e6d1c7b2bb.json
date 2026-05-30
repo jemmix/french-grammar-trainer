@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fe78a6e6d1c7b2bb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-14-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Si vous aviez écouté, vous ___ les consignes. »\n\nChoices:\nA. [CORRECT] auriez compris\nB. [WRONG] aviez compris\nC. [WRONG] comprendriez\nD. [WRONG] aurez compris\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741971-fe71r06g"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for a si-clause with plus-que-parfait, which requires conditionnel passé in the main clause: B is plus-que-parfait, C is conditionnel présent (used with si + imparfait), and D is futur antérieur (used with si + présent).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163301618-ggjv921r",
+      "timestamp": "2026-05-30T17:48:44.088Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was asked to verify whether the wrong answers (B, C, D) in a French grammar MCQ question are indeed incorrect. The question tests the conditional past (conditionnel passé) in a \"si\" clause construction: « Si vous aviez écouté, vous ___ les consignes. »\n\n**Analysis completed:**\n- B. \"aviez compris\" (plus-que-parfait) — Incorrect; after \"si\" + plus-que-parfait, the main clause requires conditionnel passé, not another plus-que-parfait\n- C. \"comprendriez\" (conditionnel présent) — Incorrect; this would match \"si\" + imparfait, not \"si\" + plus-que-parfait\n- D. \"aurez compris\" (futur antérieur) — Incorrect; this tense doesn't fit the hypothetical past structure\n\n**Verdict that would have been returned:**\nTRUE||All wrong answers use tenses that don't match the si+plus-que-parfait → conditionnel passé structure.\n\n**Remaining tasks:** None — the verification was complete.\n\n**Recommendation:** The question passes validation; all wrong answers are grammatically incorrect within the stated constraints.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168799911-jxpgturx",
+      "timestamp": "2026-05-30T19:20:27.179Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for the si-clause plus-que-parfait construction, which requires conditionnel passé in the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172687950-nkww3a30",
+      "timestamp": "2026-05-30T20:25:02.010Z"
+    }
+  ]
+}

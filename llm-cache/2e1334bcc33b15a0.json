@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2e1334bcc33b15a0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-20-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Dans « Vous souhaiteriez rencontrer le chef de projet », le conditionnel est utilisé pour :\n\nChoices:\nA. [CORRECT] Formuler poliment une demande ou un souhait rapporté\nB. [WRONG] Créer une hypothèse sur ce qui pourrait arriver\nC. [WRONG] Exprimer l'incertitude absolue d'une nouvelle\nD. [WRONG] Montrer le regret d'une mauvaise action\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741981-4rct2bob"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers describe different uses of the conditional (hypothetical, journalistic uncertainty, past regret) that do not apply to the present conditional \"souhaiteriez\" which expresses a polite wish.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165494260-3dnd0bbf",
+      "timestamp": "2026-05-30T18:25:17.123Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers describe conditional uses (hypothetical, uncertainty, regret) that do not apply to \"souhaiteriez\" in this sentence, which instead expresses a polite wish.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170539290-mhbzqqxo",
+      "timestamp": "2026-05-30T19:49:19.272Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers describe other legitimate uses of the conditional in French, but none of them apply to the specific sentence \"Vous souhaiteriez rencontrer le chef de projet\" which uses the conditional to politely express a wish, not to create a hypothesis, express uncertainty, or show regret.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173778983-4qmzwjbs",
+      "timestamp": "2026-05-30T20:43:23.470Z"
+    }
+  ]
+}

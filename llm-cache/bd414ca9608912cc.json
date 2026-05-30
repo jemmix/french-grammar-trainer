@@ -1,0 +1,26 @@
+{
+  "cacheKey": "bd414ca9608912cc",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-19-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-19 - La négation au conditionnel présent et passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Tu ___ pas parlé si tu avais su la vérité. »\nChoices:\nA. [CORRECT] n'aurais\nB. ne parlerais\nC. ne parlais\nD. n'avais parlé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741980-zeyu7v7v"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests conditionnel passé formation (selecting the correct auxiliary \"aurais\" in conditional), while the negation structure \"ne...pas\" is already partially given in the prompt and is incidental to solving the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165292290-x8rlcmow",
+      "timestamp": "2026-05-30T18:21:54.392Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to validate whether a French grammar question about completing \"Tu ___ pas parlé si tu avais su la vérité\" with the correct answer \"n'aurais\" actually tests the stated rule \"La négation au conditionnel présent et passé.\"\n\nMy analysis concluded:\n\nVERDICT: MISALIGNED\nREASON: The question primarily tests recognizing the conditionnel passé in a si-clause structure (choosing between aurais/parlerais/parlais/avais parlé), not the specific mechanics of negation in the conditional, which is incidental—the \"n'\" is just standard elision that applies to all compound tenses.\n\nNo remaining tasks or recommendations—this was a single-question validation that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170326911-c5ljswdo",
+      "timestamp": "2026-05-30T19:46:22.362Z"
+    }
+  ]
+}

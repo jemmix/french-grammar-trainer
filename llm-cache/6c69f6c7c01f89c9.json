@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6c69f6c7c01f89c9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-05-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-05 - Le conditionnel pour exprimer une suggestion (on pourrait aller au restaurant)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez « pouvoir » au conditionnel, 3e personne du pluriel.\nPhrase: Elles ___ participer à ce projet intéressant.\nCorrect Answer: pourraient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741957-f6jojden"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests mechanical conjugation of \"pouvoir\" in the conditional but does not assess whether the student understands when to use the conditional specifically to express suggestions, which is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780161077663-tnr3zevx",
+      "timestamp": "2026-05-30T17:11:48.422Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a French grammar question about conjugating \"pouvoir\" in the conditional (3rd person plural) properly tests the rule \"Le conditionnel pour exprimer une suggestion.\"\n\nVerdict for the validation:\nVERDICT: MISALIGNED\nREASON: The question tests conjugation of \"pouvoir\" in the conditional mood and the sentence expresses possibility (\"they could participate\"), not a suggestion as specified by the rule (which gives examples like \"on pourrait aller au restaurant\").\n\nNo remaining tasks - this was a single validation request that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166849348-c9xkjyv4",
+      "timestamp": "2026-05-30T18:47:54.601Z"
+    }
+  ]
+}

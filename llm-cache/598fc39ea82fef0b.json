@@ -1,0 +1,33 @@
+{
+  "cacheKey": "598fc39ea82fef0b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez. « Elles ont affirmé qu'elles ___ avant minuit. »\nChoices:\nA. [CORRECT] rentreraient\nB. rentraient\nC. rentrent\nD. rentreront\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741975-t9brp4f0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the reported speech rule where a past-tense reporting verb (\"ont affirmé\") requires the conditional form (\"rentreraient\") to express what was originally a future event, which is precisely the futur dans le passé concept.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164550931-na24h2nr",
+      "timestamp": "2026-05-30T18:09:34.372Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question tests exactly the stated rule — after a past reporting verb (\"ont affirmé que\"), the future must be backshifted to the conditional (\"rentreraient\"), not kept as futur (\"rentreront\"), which is the key distractor testing this specific distinction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169547835-u30e3xwx",
+      "timestamp": "2026-05-30T19:32:51.194Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the reported speech rule where future tense in the original statement must be backshifted to conditional after a past-tense reporting verb (\"ont affirmé\"), and the key distractor \"rentreront\" represents the exact mistake this rule is designed to catch.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173176037-aip09yqh",
+      "timestamp": "2026-05-30T20:33:19.378Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "5e9d091f74d84e4c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Sélectionnez. « Tu avais dit que tu ne ___ jamais accepter cette offre. »\n\nChoices:\nA. [CORRECT] ne pourrais\nB. [WRONG] ne pouvais\nC. [WRONG] ne peux\nD. [WRONG] ne pourras\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741975-ebt9lkar"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the sequence of tenses for reported speech after \"tu avais dit\" (imparfait main clause requires conditionnel for future reference, not imparfait, présent, or futur simple).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164530763-2ik8pncc",
+      "timestamp": "2026-05-30T18:18:14.578Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nNo substantive work was accomplished on this task before the step limit was reached.\n\nRemaining tasks:\n- Validate the French grammar MCQ question regarding \"Tu avais dit que tu ne ___ jamais accepter cette offre.\"\n- Determine whether wrong answers B (\"ne pouvais\"), C (\"ne peux\"), and D (\"ne pourras\") are indeed incorrect\n\nRecommendations for next steps:\n- Re-run this validation. The key issue is that answer B (\"ne pouvais\" - imparfait) is likely a valid alternative to the correct answer A (\"ne pourrais\" - conditionnel) in reported speech after plus-que-parfait, as the imparfait can represent a shift from original present tense in indirect speech. The expected verdict is likely FALSE|B| with an explanation that imparfait is acceptable in this reported speech context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170110210-ao87j099",
+      "timestamp": "2026-05-30T19:42:33.082Z"
+    },
+    {
+      "raw": "TRUE||B uses imparfait which cannot express future-in-the-past after \"avais dit\"; C uses présent which breaks the sequence of tenses required in reported speech; D uses futur simple instead of the required conditionnel présent for future-in-the-past.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173589696-qo9zao9b",
+      "timestamp": "2026-05-30T20:40:14.887Z"
+    },
+    {
+      "raw": "TRUE||B uses imparfait which changes the meaning from \"would never accept\" to \"could not accept\"; C violates sequence of tenses by using présent after a past main clause; D violates sequence of tenses by using futur simple instead of conditionnel présent for future-in-the-past.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780174252665-t95o45hn",
+      "timestamp": "2026-05-30T20:51:24.093Z"
+    }
+  ]
+}

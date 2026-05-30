@@ -1,0 +1,26 @@
+{
+  "cacheKey": "fab980ce88b6374c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-19-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-19 - La négation au conditionnel présent et passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Vous ___ pas cette décision, n'est-ce pas ? »\nChoices:\nA. [CORRECT] n'approuveriez\nB. n'approuviez\nC. ne préféreriez\nD. n'aviez approuvé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741980-9pef5cd3"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to validate whether a French grammar question about completing \"Vous ___ pas cette décision, n'est-ce pas ?\" with choices testing conditional vs. imparfait vs. plus-que-parfait conjugations actually tests the rule \"La négation au conditionnel présent et passé.\"\n\n**My assessment:**\nVERDICT: MISALIGNED\nREASON: The negation structure \"ne...pas\" is already provided in the prompt (\"___ pas\"), so the question primarily tests conditional tense conjugation and distinguishing it from imparfait/plus-que-parfait, not the formation or placement of negation in the conditional mood.\n\n**Remaining tasks:** None — the validation was completed.\n\n**Recommendations:** The question should either be reassigned to a rule about conditionnel présent conjugation, or redesigned to actually test negation placement/formation in the conditional (e.g., asking where \"ne\" and \"pas\" go relative to the conditional verb).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165186658-mh0wyg80",
+      "timestamp": "2026-05-30T18:20:15.761Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\n**What was accomplished:**\nI analyzed the question about completing \"Vous ___ pas cette décision, n'est-ce pas ?\" with choices testing n'approuveriez, n'approuviez, ne préféreriez, and n'aviez approuvé against the rule \"La négation au conditionnel présent et passé.\"\n\n**Verdict I reached:**\n\nVERDICT: MISALIGNED\nREASON: The question primarily tests choosing the correct verb and tense (conditionnel présent vs imparfait vs plus-que-parfait), while negation is identical across all choices and is incidental rather than the concept being tested.\n\n**Remaining tasks:**\nNone — this was a single-question validation that I completed before reaching the step limit.\n\n**Recommendations:**\nTo properly test \"La négation au conditionnel présent et passé,\" a question should focus on negation-specific aspects such as:\n- Placement of \"ne\" and \"pas\" around the conditional verb\n- Contrasting negative forms with affirmative forms in the conditional\n- Testing negative particles like \"ne...jamais,\" \"ne...rien,\" \"ne...plus\" in conditional contexts",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170239181-sol1xhx3",
+      "timestamp": "2026-05-30T19:44:37.904Z"
+    }
+  ]
+}

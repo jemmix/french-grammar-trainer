@@ -1,0 +1,26 @@
+{
+  "cacheKey": "50eec643cd077f70",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-10-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-10 - Le conditionnel pour exprimer un reproche atténué (tu pourrais faire attention)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Les enfants ___ jouer dehors plus souvent. »\nChoices:\nA. [CORRECT] pourraient\nB. peuvent\nC. puissent\nD. joueraient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741965-hycvyo4z"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence \"Les enfants pourraient jouer dehors plus souvent\" expresses a suggestion or possibility, not a softened reproach — to test this rule, the context would need to clearly imply criticism (e.g., \"Tu pourrais ranger ta chambre\" suggesting the person isn't doing it).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162343297-el1n023k",
+      "timestamp": "2026-05-30T17:32:51.692Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence \"Les enfants pourraient jouer dehors plus souvent\" lacks contextual cues that establish a reproach, so a student could select the correct answer by recognizing it as a general possibility or suggestion rather than specifically applying the \"reproche atténué\" use of the conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167931601-y8u14qiy",
+      "timestamp": "2026-05-30T19:06:00.077Z"
+    }
+  ]
+}

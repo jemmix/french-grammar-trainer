@@ -1,0 +1,26 @@
+{
+  "cacheKey": "a9787fa7d6c0a2a1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-05-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-05 - Le conditionnel pour exprimer une suggestion (on pourrait aller au restaurant)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel conditionnel complète : « Il ___ rejoindre l'équipe sportive. »\nChoices:\nA. [CORRECT] pourrait\nB. peut\nC. puisse\nD. pouvait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741956-09psfek9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence \"Il pourrait rejoindre l'équipe sportive\" expresses a possibility or hypothetical situation about a third person, not a suggestion (which would typically involve \"on\" or \"nous\" proposing an action), so the question tests conditional conjugation of \"pouvoir\" rather than the specific use of conditional for suggestions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160958112-zmx7wbfd",
+      "timestamp": "2026-05-30T17:09:51.152Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests identifying the conditionnel présent conjugation of \"pouvoir\" among other moods/tenses, and the sentence context (\"Il pourrait rejoindre l'équipe sportive\") expresses possibility about a third person rather than a suggestion, which would typically be addressed to an interlocutor (e.g., \"Tu pourrais...\", \"On pourrait...\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166734040-ciosmlwo",
+      "timestamp": "2026-05-30T18:46:07.796Z"
+    }
+  ]
+}

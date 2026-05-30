@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f12bce7e8a31ef03",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-13-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Tu ___ me demander avant de toucher à mes affaires. »\n\nChoices:\nA. [CORRECT] aurais dû\nB. [WRONG] devrais\nC. [WRONG] aurais pu\nD. [WRONG] devais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741971-wn6gyww5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B \"devrais\" uses present conditional for a past context, C \"aurais pu\" changes the verb from \"should have\" to \"could have\" altering the intended reproach meaning, and D \"devais\" uses imparfait which expresses a narrative obligation rather than the conditional past reproach required here.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163183092-zj3wi8wu",
+      "timestamp": "2026-05-30T17:48:11.166Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:** I was in the process of evaluating a French grammar verification task for the question \"Tu ___ me demander avant de toucher à mes affaires.\" with wrong answers B (devrais), C (aurais pu), and D (devais).\n\n**Analysis completed mentally:**\n- B \"devrais\" (conditional present) is correctly wrong — it refers to present/future, but the context requires past\n- C \"aurais pu\" is problematic as a wrong answer — it's grammatically correct and semantically fits the context (expresses \"you could have asked me\"), just shifts meaning from obligation to ability\n- D \"devais\" (imperfect) is also problematic — \"Tu devais me demander\" is grammatically acceptable to express an unfulfilled past obligation\n\n**Likely verdict:** FALSE|C,D|C \"aurais pu\" is grammatically correct and fits the reproachful context though it expresses ability rather than obligation; D \"devais\" correctly uses the imperfect to express an unfulfilled past expectation.\n\n**Remaining tasks:** Provide the formatted verdict response.\n\n**Recommendations:** The question needs revision — answers C and D are not clearly incorrect. Consider replacing C with something like \"as dû\" (passé composé, which doesn't work for this reproachful meaning) and D with \"devrais avoir\" (not a valid French construction).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168769242-m49c3ahm",
+      "timestamp": "2026-05-30T19:20:11.336Z"
+    },
+    {
+      "raw": "FALSE|B,C,D|B \"devrais\" is grammatically valid present conditional meaning \"you should ask me\" (general rule); C \"aurais pu\" is valid past conditional meaning \"you could have asked me\"; D \"devais\" is valid imperfect expressing past obligation/reproach, commonly used interchangeably with \"aurais dû\" in spoken French.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172678503-xjqfody6",
+      "timestamp": "2026-05-30T20:25:15.776Z"
+    }
+  ]
+}

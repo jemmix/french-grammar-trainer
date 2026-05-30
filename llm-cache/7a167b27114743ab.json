@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7a167b27114743ab",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-03-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel de politesse (je voudrais, pourriez-vous, j'aimerais)\nPROMPT: Conjuguez au conditionnel pour exprimer un désir poli\nPHRASE: J'___ te parler en privé.\nCORRECT ANSWER: aimerais\n\nWRONG ANSWERS to evaluate:\n1. aime\n2. aimerai\n3. aimais\n4. aimant\n5. aie aimé\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780159741954-nt98uyfm"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers are real conjugation forms of \"aimer\" in different tenses/moods (présent, futur simple, imparfait, participe présent, subjonctif passé) that learners commonly confuse with the conditionnel, especially \"aimerai\" (futur) which is the most frequent mix-up due to the near-identical spelling.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780175855916-gzof5hm3",
+      "timestamp": "2026-05-30T21:18:12.132Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was evaluating whether the wrong answers provided for a French conditional tense question are plausible learner mistakes. The question asks learners to conjugate \"aimer\" in the conditional for polite expression, with the correct answer being \"aimerais.\"\n\n## Analysis Completed\nI reviewed the 5 wrong answers:\n1. **aime** (present) - PLAUSIBLE - classic present/conditional confusion\n2. **aimerai** (future) - PLAUSIBLE - extremely common confusion, only one letter difference\n3. **aimais** (imperfect) - PLAUSIBLE - shares the same stem as conditional\n4. **aimant** (present participle) - IMPLAUSIBLE - learners don't use participles as finite verbs after \"J'\"\n5. **aie aimé** (subjunctive past) - IMPLAUSIBLE - requires \"que\" clause, not a natural error after \"J'\"\n\n## Verdict\nVERDICT: IMPLAUSIBLE\nREASON: \"aimant\" and \"aie aimé\" are not errors learners would realistically make in this context—present participles aren't used as finite verbs, and the subjunctive past doesn't fit after \"J'\" without \"que.\"\n\n## Remaining Tasks\nNone for this specific validation item.\n\n## Recommendations\nReplace \"aimant\" and \"aie aimé\" with more realistic errors such as:\n- \"aimerions\" (wrong person: nous instead of je)\n- \"voudrais\" (confusing with another polite conditional form)\n- \"adorerais\" (overcorrecting to a stronger synonym)",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780178651987-xsj8d9yw",
+      "timestamp": "2026-05-30T22:04:54.713Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common confusions with the conditional form \"aimerais\": \"aime\" (present instead of conditional), \"aimerai\" (future, extremely common one-letter confusion), \"aimais\" (imperfect, similar endings and both can express wishes), \"aimant\" (present participle, a form learners encounter and might mistakenly try to use), and \"aie aimé\" (subjunctive, which learners associate with polite/formal language).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780181125942-0bg8mpof",
+      "timestamp": "2026-05-30T22:45:54.879Z"
+    }
+  ]
+}

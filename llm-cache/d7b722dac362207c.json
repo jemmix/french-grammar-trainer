@@ -1,0 +1,26 @@
+{
+  "cacheKey": "d7b722dac362207c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Selon la météo, il ___ demain. »\n\nChoices:\nA. [CORRECT] pleuvrait\nB. [WRONG] pleut\nC. [WRONG] pleuvra\nD. [WRONG] pleuvait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741959-p2otambu"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of evaluating a French grammar multiple choice question to verify that the wrong answers (B, C, D) are indeed incorrect for the question \"Complétez : « Selon la météo, il ___ demain. »\" where the correct answer is A (\"pleuvrait\" - conditional).\n\n**Analysis completed:**\n- B (\"pleut\" - present): Incorrect, as it doesn't work with \"demain\" (future marker)\n- C (\"pleuvra\" - futur simple): This is grammatically valid - \"selon la météo, il pleuvra demain\" is a legitimate way to express a weather prediction\n- D (\"pleuvait\" - imparfait): Incorrect, as it doesn't work with \"demain\" (future marker)\n\n**Result that would have been returned:**\nFALSE|C|\"pleuvra\" (futur simple) is grammatically valid in this sentence to express a future prediction based on the weather forecast.\n\n**Recommendations:**\nThe wrong answer C should be replaced with a different option that is actually incorrect, such as \"a plu\" (passé composé) or \"pleuvoir\" (infinitive).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780161418891-ifj3ly5p",
+      "timestamp": "2026-05-30T17:17:33.931Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B \"pleut\" is present tense incompatible with \"demain,\" C \"pleuvra\" would require a definite prediction rather than the conditional framing of \"selon la météo,\" and D \"pleuvait\" is imperfect tense incompatible with future reference.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167081870-pvuo7cpv",
+      "timestamp": "2026-05-30T18:51:56.337Z"
+    }
+  ]
+}

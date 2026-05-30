@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ccc0604913e57fe9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-01-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Vous ___ réussir si vous travailliez davantage. »\n\nChoices:\nA. [CORRECT] pourriez\nB. [WRONG] pouvez\nC. [WRONG] pouviez\nD. [WRONG] pourrez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741949-w6nrjppo"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached. No work was accomplished prior to this point as this was a single verification request. The task was to verify that wrong answers B, C, and D in the French grammar question are incorrect - this analysis can be completed without tools.\n\nThe verification result would be:\nTRUE||All wrong answers use incorrect tenses that don't match the si+imparfait → conditionnel présent structure required by this conditional sentence (B is présent, C is imparfait, D is futur simple; none are conditionnel).\n\nNo remaining tasks - this was a single-item verification that has been answered above.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780159862880-xcup4h0i",
+      "timestamp": "2026-05-30T16:55:56.581Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the si+imparfait → conditionnel présent rule: B uses présent indicatif, C uses imparfait, and D uses futur simple instead of the required conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166027097-4cm0lee2",
+      "timestamp": "2026-05-30T18:44:06.941Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWork accomplished: I was in the process of verifying the wrong answers for a French grammar MCQ question about conditional sentences.\n\nAnalysis completed:\n- Question requires the conditionnel présent tense (due to \"si + imparfait\" structure)\n- B. \"pouvez\" (présent) - incorrect, wrong tense for this conditional structure\n- C. \"pouviez\" (imparfait) - incorrect, imparfait doesn't work in main clause with si+imparfait\n- D. \"pourrez\" (futur simple) - incorrect, futur requires si+présent, not si+imparfait\n\nThe verdict would be: TRUE||All wrong answers use incorrect tenses for the si+imparfait → conditionnel présent conditional sentence structure.\n\nNo remaining tasks - this was a single verification request that has been analyzed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171322562-8kghcfcl",
+      "timestamp": "2026-05-30T20:02:28.172Z"
+    }
+  ]
+}

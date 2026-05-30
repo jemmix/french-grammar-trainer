@@ -1,0 +1,26 @@
+{
+  "cacheKey": "712f4cd4bc34a21a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-05-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-05 - Le conditionnel pour exprimer une suggestion (on pourrait aller au restaurant)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase formule correctement une suggestion au conditionnel ?\nChoices:\nA. [CORRECT] Tu devrais essayer ce restaurant.\nB. Tu dois essayer ce restaurant.\nC. Tu devrais que tu essaies ce restaurant.\nD. Tu essaies ce restaurant.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741956-7bnb4xkr"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was in the process of validating a French grammar question for alignment with its stated rule. The analysis was nearly complete.\n\n## Validation Result\n\nVERDICT: MISALIGNED\nREASON: The correct answer \"Tu devrais\" uses the conditional of \"devoir\" to give advice, but the rule specifically targets \"on pourrait\" constructions using \"pouvoir\" to make suggestions—these are distinct grammatical patterns (advice vs. proposing an activity together), and the question does not test the \"pourrait aller\" structure exemplified in the rule.\n\n## Remaining Tasks\nNone for this specific validation—it is complete.\n\n## Recommendations\nTo properly test rule 06-05, the question should feature \"on pourrait\" or similar \"pouvoir\" conditional constructions for proposing shared activities (e.g., \"On pourrait aller au cinéma ce soir ?\"), and distractors should test common errors with this specific structure rather than mixing in \"devoir\" conditional forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160848912-xpics09m",
+      "timestamp": "2026-05-30T17:08:10.219Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer \"Tu devrais\" uses the conditional of \"devoir\" to express softened obligation/advice rather than a suggestion in the sense of \"on pourrait,\" and the distinction being tested is primarily between conditional vs. indicative of devoir, not the specific suggestion structure outlined in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166649553-gykd5q8g",
+      "timestamp": "2026-05-30T18:44:36.225Z"
+    }
+  ]
+}

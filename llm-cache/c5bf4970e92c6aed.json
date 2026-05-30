@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c5bf4970e92c6aed",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-07-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « On ___ une belle fête si les amis arrivaient à l'heure. »\n\nChoices:\nA. [CORRECT] aurait\nB. [WRONG] a\nC. [WRONG] aura\nD. [WRONG] avait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741959-79o9bsma"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the conditional tense required by the si + imparfait construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780161566226-9qfqp4of",
+      "timestamp": "2026-05-30T17:19:48.089Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses—present (a), future (aura), and imperfect (avait)—when the \"si + imparfait\" construction strictly requires the conditional (aurait) in the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167203819-cu0fegc6",
+      "timestamp": "2026-05-30T18:53:41.030Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done so far:**\nI was asked to validate a French grammar multiple-choice question as a verification judge. The question tests the conditional tense \"aurait\" in a si-clause construction (\"si + imparfait → conditionnel présent\"). The wrong answers are:\n- B: \"a\" (présent)\n- C: \"aura\" (futur simple)\n- D: \"avait\" (imparfait)\n\nAll three wrong answers are grammatically incorrect in this context—French si-clause rules require the conditionnel présent when the subordinate clause uses the imparfait.\n\n**Remaining tasks:**\n- Provide the final verdict in the required format (TRUE||All wrong answers violate French si-clause rules requiring conditionnel présent after si + imparfait.)\n\n**Recommendations:**\nThe question is valid and all wrong answers are genuinely incorrect. No fixes needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171635082-1w6r7nl0",
+      "timestamp": "2026-05-30T20:07:34.957Z"
+    }
+  ]
+}

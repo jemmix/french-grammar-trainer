@@ -1,0 +1,33 @@
+{
+  "cacheKey": "abba578db0f8f023",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-20-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la phrase qui utilise correctement le conditionnel pour la politesse :\n\nChoices:\nA. [CORRECT] Auriez-vous l'amabilité de fermer la porte ?\nB. [WRONG] Vous fermerez la porte, s'il vous plaît.\nC. [WRONG] Fermez la porte si vous voulez bien.\nD. [WRONG] Vous fermiez la porte s'il vous plaît.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741981-tyo4rb3h"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use non-conditional tenses (future, imperative, and imparfait respectively) and therefore do not satisfy the question's requirement to use the conditionnel pour la politesse.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165461608-4tlejulq",
+      "timestamp": "2026-05-30T18:24:51.956Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses other than the conditional (future, imperative, imperfect) and thus do not satisfy the requirement to use the conditional for politeness.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170518326-fiwupw56",
+      "timestamp": "2026-05-30T19:48:52.635Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use non-conditional tenses (futur simple, impératif, imparfait) and do not satisfy the requirement to use the conditional for politeness.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173763872-zq04lx2u",
+      "timestamp": "2026-05-30T20:42:58.982Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8a305996cb0b0715",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-15-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Selon la presse, les négociations ___ un accord. »\n\nChoices:\nA. [CORRECT] auraient abouti\nB. [WRONG] ont abouti\nC. [WRONG] auraient aboutir\nD. [WRONG] aboutiraient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741973-ab70zkjh"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was in the process of verifying wrong answers for a French grammar multiple choice question about reported speech (\"Selon la presse, les négociations ___ un accord.\"). The correct answer is \"auraient abouti\" (past conditional, required for reported speech indicating a past action). \n\nAnalysis completed:\n- B \"ont abouti\" (passé composé): Incorrect because reported speech with \"selon\" requires conditional mood\n- C \"auraient aboutir\": Grammatically malformed - mixes auxiliary with infinitive instead of past participle\n- D \"aboutiraient\" (present conditional): Incorrect because the context requires past conditional (the agreement would have been reached), not present conditional\n\nVerdict: TRUE||All wrong answers are incorrect - B uses the wrong mood for reported speech, C is grammatically malformed, and D uses present conditional when past conditional is required.\n\nNo remaining tasks - the verification was complete at the point of interruption.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163567418-t8vt5t5v",
+      "timestamp": "2026-05-30T18:03:20.187Z"
+    },
+    {
+      "raw": "TRUE||B uses passé composé instead of the required conditionnel passé for journalistic reported speech; C incorrectly uses the infinitive \"aboutir\" instead of the past participle \"abouti\" after the auxiliary; D uses conditionnel présent instead of conditionnel passé, changing the meaning from \"would have reached\" to \"would reach.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169109931-4j8350ub",
+      "timestamp": "2026-05-30T19:25:43.285Z"
+    }
+  ]
+}

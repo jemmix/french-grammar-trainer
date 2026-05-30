@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2540d641e5ec6da3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-19-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Personne ne ___ jamais deviné la vérité dans ces conditions. »\n\nChoices:\nA. [CORRECT] n'aurait\nB. [WRONG] la devinerait\nC. [WRONG] ne devinait\nD. [WRONG] l'a deviné\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741980-m0rn2dm2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers create ungrammatical constructions: B inserts an object pronoun creating double verb conflict, C produces double \"ne\" and mixes imparfait with a bare past participle, and D creates a redundant past participle with no auxiliary support.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165363958-0r84yzsm",
+      "timestamp": "2026-05-30T18:23:02.216Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B duplicates the verb with wrong pronoun placement, C creates a double \"ne\" and tense mismatch, and D creates an incoherent double verb construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170413732-35yetfif",
+      "timestamp": "2026-05-30T19:47:13.808Z"
+    }
+  ]
+}

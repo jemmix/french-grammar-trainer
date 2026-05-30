@@ -1,0 +1,33 @@
+{
+  "cacheKey": "668e3430a2972724",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-15-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-15 - Le conditionnel passé pour une information non confirmée au passé (il aurait démissionné)\n\nQUESTION:\nType: Multiple Choice\nPrompt: « Selon les bruits de couloir, le directeur ___ au mois de juin. »\nChoices:\nA. [CORRECT] aurait démissionné\nB. a démissionné\nC. aurait démissionnait\nD. démissionnait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741974-u8rnkv9r"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the use of conditionnel passé for unconfirmed past information, with \"selon les bruits de couloir\" clearly signaling that this is rumor requiring the conditional rather than a factual past tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164231075-rhcs6bcp",
+      "timestamp": "2026-05-30T18:04:07.432Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I analyzed the validation request for a French grammar question about le conditionnel passé for unconfirmed past information.\n\nVerdict for the question:\nVERDICT: ALIGNED\nREASON: The question uses \"Selon les bruits de couloir\" as a clear context marker for unconfirmed information, and correctly answering requires knowing that the conditionnel passé (\"aurait démissionné\") is the appropriate tense for reporting unconfirmed past events, while the distractors test other tenses (passé composé, imparfait) that would not convey uncertainty.\n\nNo remaining tasks - this was a single-question validation that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169195849-douwvols",
+      "timestamp": "2026-05-30T19:27:03.173Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of what was accomplished:**\nI was in the process of validating whether a French grammar question about the conditionnel passé is properly aligned with its stated rule.\n\n**Validation result:**\nVERDICT: ALIGNED\nREASON: The question's context \"Selon les bruits de couloir\" (According to rumors) directly signals unconfirmed information, requiring the learner to select \"aurait démissionné\" (conditionnel passé) over the passé composé \"a démissionné\" (which would imply confirmed fact) or the imparfait \"démissionnait\" (which indicates ongoing/background action, not uncertainty).\n\n**Remaining tasks:**\nNone — the validation task for this single question was completed.\n\n**Recommendations for next steps:**\nIf there are additional questions to validate in this section or other sections, they can be submitted for review following the same format.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173001539-89hgn3oe",
+      "timestamp": "2026-05-30T20:30:27.077Z"
+    }
+  ]
+}

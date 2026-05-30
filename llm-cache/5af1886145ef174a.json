@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5af1886145ef174a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-14-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Si vous vous étiez reposés, vous ___ mieux. »\n\nChoices:\nA. [CORRECT] seriez allés\nB. [WRONG] seriez aller\nC. [WRONG] irez\nD. [WRONG] alliez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741972-2rsr0tlu"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify whether wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question tests the conditionnel passé in a \"si\" + plus-que-parfait construction: « Si vous vous étiez reposés, vous ___ mieux. »\n\nAnalysis completed:\n- B (seriez aller): Incorrect — uses infinitive instead of past participle after the auxiliary \"seriez\"\n- C (irez): Incorrect — uses futur simple instead of required conditionnel passé\n- D (alliez): Incorrect — uses imparfait instead of required conditionnel passé\n\nTRUE||All wrong answers contain clear grammar errors: B uses infinitive instead of past participle, C uses futur simple instead of conditionnel passé, D uses imparfait instead of conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163447364-wtsqznuh",
+      "timestamp": "2026-05-30T17:51:07.196Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses infinitive instead of past participle, C uses futur simple instead of conditionnel passé, and D uses imparfait instead of conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168954666-9k90tpia",
+      "timestamp": "2026-05-30T19:22:45.884Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the conditionnel passé construction (auxiliary + past participle) required in the main clause after \"si\" + plus-que-parfait: B uses infinitive instead of past participle, C uses futur simple, and D uses imparfait.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172823755-uldf41ij",
+      "timestamp": "2026-05-30T20:27:23.586Z"
+    }
+  ]
+}

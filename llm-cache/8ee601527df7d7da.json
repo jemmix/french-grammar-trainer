@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8ee601527df7d7da",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-05-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-05 - Le conditionnel pour exprimer une suggestion (on pourrait aller au restaurant)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quel conditionnel complète cette suggestion ? « Nous ___ organiser une fête surprise. »\nChoices:\nA. [CORRECT] pourrions\nB. pouvons\nC. pourrais\nD. devions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741956-lritfygw"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests using the conditional mood to express a suggestion, and the distractors effectively test whether the learner knows to use the conditional (not present/imperfect) and the correct person/number agreement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160924195-fjtbe8yu",
+      "timestamp": "2026-05-30T17:09:03.799Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests using the conditional mood to make a suggestion, requiring the student to choose the conditional form \"pourrions\" over the present indicative \"pouvons\" and the incorrectly conjugated \"pourrais.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166697507-8ja3o8to",
+      "timestamp": "2026-05-30T18:45:18.624Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests using the conditional mood to express a suggestion (\"Nous pourrions organiser une fête surprise\"), and distinguishing the correct conditional form (\"pourrions\") from the present indicative (\"pouvons\"), the wrong person (\"pourrais\"), and a different modal verb (\"devions\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171354784-s6949309",
+      "timestamp": "2026-05-30T20:02:53.929Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "df3006bfdd0f2819",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la forme correcte. « Ils ont expliqué que les résultats ___ publiés demain. »\n\nChoices:\nA. [CORRECT] seraient\nB. [WRONG] étaient\nC. [WRONG] sont\nD. [WRONG] seront\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741975-mn2g5zoe"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify whether wrong answers B, C, and D are incorrect for a French grammar question about concordance des temps (tense agreement in reported speech).\n\nRemaining tasks: Provide the verification verdict.\n\nRecommendation: The answer should be TRUE||All wrong answers violate concordance des temps: B uses imperfect with a future time marker \"demain\", C uses present which doesn't agree with the past reporting verb for future reference, and D uses future tense instead of the required conditional after a past tense reporting verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164522713-8k4bxvkt",
+      "timestamp": "2026-05-30T18:09:17.935Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate concordance des temps: B uses imperfect which cannot express future reference with \"demain,\" C uses present which doesn't properly shift after past tense \"ont expliqué,\" and D keeps future simple instead of shifting to conditional as required by reported speech rules.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169534910-n5t5yqxf",
+      "timestamp": "2026-05-30T19:33:10.782Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done so far:**\nI was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ about reported speech and concordance des temps are indeed incorrect.\n\n**Analysis completed:**\n- B \"étaient\" (imparfait): Incorrect - imparfait cannot express future-in-the-past with \"demain\" in this construction\n- C \"sont\" (présent): Incorrect - présent is incompatible with \"demain\" in this reported speech context\n- D \"seront\" (futur simple): Incorrect - violates concordance des temps; after \"ont expliqué que\" (past), the future-in-the-past requires conditional \"seraient\", not futur simple\n\n**Verdict:** TRUE||All wrong answers violate the concordance des temps required in reported speech after a past tense verb.\n\n**Remaining tasks:** None - the verification was completed.\n\n**Recommendations:** The question is well-constructed; all wrong answers are genuinely incorrect within the stated grammatical context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173188630-g8ve03no",
+      "timestamp": "2026-05-30T20:36:25.421Z"
+    }
+  ]
+}

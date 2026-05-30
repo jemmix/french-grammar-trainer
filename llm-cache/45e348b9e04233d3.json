@@ -1,0 +1,33 @@
+{
+  "cacheKey": "45e348b9e04233d3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je ___ te voir demain si j'avais le temps. »\n\nChoices:\nA. [CORRECT] pourrais\nB. [WRONG] peux\nC. [WRONG] pourrai\nD. [WRONG] pouvais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741976-c4qnfjsi"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the si + imparfait → conditionnel présent tense agreement rule required by this hypothetical conditional sentence structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164674616-phfrlj4v",
+      "timestamp": "2026-05-30T18:11:47.864Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThis was a simple validation task that I can complete in my response:\n\nTRUE||All wrong answers use the wrong tense/mood for a si-clause with imparfait, which requires the conditional in the main clause: B uses présent instead of conditionnel, C uses futur simple instead of conditionnel, and D incorrectly places imparfait in the main clause rather than the si-clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169726317-c1f2wog6",
+      "timestamp": "2026-05-30T19:35:47.372Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate a French grammar multiple choice question about the conditional tense. The question \"Complétez : « Je ___ te voir demain si j'avais le temps. »\" tests the conditional structure with \"si\" + imparfait requiring conditional in the main clause.\n\nTRUE||All wrong answers use incorrect tenses for a conditional sentence with \"si\" + imparfait, which requires the conditional present in the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173300364-uited38s",
+      "timestamp": "2026-05-30T20:35:20.435Z"
+    }
+  ]
+}

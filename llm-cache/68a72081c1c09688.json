@@ -1,0 +1,33 @@
+{
+  "cacheKey": "68a72081c1c09688",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-11-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Ils ___ mieux s'ils avaient étudié plus. »\n\nChoices:\nA. [CORRECT] auraient réussi\nB. [WRONG] auraient réussir\nC. [WRONG] avaient réussi\nD. [WRONG] réussiraient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741966-jd8hpmg2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly pairs an auxiliary with an infinitive instead of a past participle, C uses plus-que-parfait instead of the required conditionnel passé for a past unreal si-clause, and D uses conditionnel présent instead of conditionnel passé needed after \"si\" + plus-que-parfait.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162482902-m9p38a6b",
+      "timestamp": "2026-05-30T17:35:04.431Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses an infinitive instead of a past participle after the auxiliary, C uses plus-que-parfait instead of conditionnel passé for the main clause of a past hypothetical, and D uses conditionnel présent instead of conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168045621-hl5bqv5x",
+      "timestamp": "2026-05-30T19:07:39.548Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was asked to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question asks to complete \"Ils ___ mieux s'ils avaient étudié plus\" which requires conditionnel passé (past conditional) due to the si + plus-que-parfait structure.\n\nAnalysis completed:\n- B: \"auraient réussir\" - Incorrect because \"avoir\" in conditionnel requires a past participle (réussi), not an infinitive (réussir)\n- C: \"avaient réussi\" - Incorrect because this is plus-que-parfait, not conditionnel passé as required by the si-clause structure\n- D: \"réussiraient\" - Incorrect because this is conditionnel présent, used with si + imparfait, not si + plus-que-parfait\n\nResult: TRUE||All wrong answers contain clear grammar errors.\n\nNo remaining tasks - this verification was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172313588-frypfnt5",
+      "timestamp": "2026-05-30T20:29:02.334Z"
+    }
+  ]
+}

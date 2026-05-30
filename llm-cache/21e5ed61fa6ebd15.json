@@ -1,0 +1,33 @@
+{
+  "cacheKey": "21e5ed61fa6ebd15",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-07-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Nous ___ voyager partout si nous n'avions pas de responsabilités. »\n\nChoices:\nA. [CORRECT] pourrions\nB. [WRONG] pouvons\nC. [WRONG] pourrons\nD. [WRONG] puissions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741960-2gdxtr49"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses (présent indicatif, futur simple, subjonctif présent) that don't match the conditional required after \"si\" + imperfect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780161592661-8qyr2j91",
+      "timestamp": "2026-05-30T17:20:43.587Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers contain clear grammar errors: B uses présent indicatif instead of conditionnel, C uses futur simple instead of conditionnel, and D uses subjonctif présent instead of conditionnel, none of which are grammatically valid after \"si + imparfait.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167258798-3zjhbzi2",
+      "timestamp": "2026-05-30T18:54:45.896Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use wrong moods/tenses: B is present indicative, C is future simple, and D is subjunctive, none of which are valid in the main clause of an \"si + imparfait\" conditional sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171691355-ejltwg1u",
+      "timestamp": "2026-05-30T20:08:26.004Z"
+    }
+  ]
+}

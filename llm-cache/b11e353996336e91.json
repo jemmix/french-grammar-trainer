@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b11e353996336e91",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-05-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez avec le conditionnel : « Vous ___ vérifier votre orthographe avant d'envoyer le mail. »\n\nChoices:\nA. [CORRECT] devriez\nB. [WRONG] devez\nC. [WRONG] deviez\nD. [WRONG] devrions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741956-z7rtxdeo"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is présent indicatif not conditionnel, C is imparfait not conditionnel, and D is the \"nous\" form rather than the \"vous\" form required by the subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160965957-cnvl3wtf",
+      "timestamp": "2026-05-30T17:09:47.459Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is present indicative (devez), C is imperfect indicative (deviez), and D is conditional but wrong person (devrions is nous, not vous).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166731822-edc2oy8i",
+      "timestamp": "2026-05-30T18:45:53.067Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses present indicative instead of conditional, C uses imperfect indicative instead of conditional, and D uses the wrong subject agreement (nous instead of vous).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171394965-5ipr1ep0",
+      "timestamp": "2026-05-30T20:03:32.647Z"
+    }
+  ]
+}

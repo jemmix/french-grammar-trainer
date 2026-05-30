@@ -1,0 +1,40 @@
+{
+  "cacheKey": "6b3f1dbf87ef19db",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "06-04-003",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Complétez : « Nous ___ bien aller à la plage ce weekend. »\nChoices:\nA. aimerions\nB. aimons\nC. aimeriez\nD. aimerons\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780159741954-pehqush8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The subject \"Nous\" eliminates the \"vous\" form, and the context of expressing a desire about an upcoming weekend clearly points to the conditional \"aimerions bien\" rather than the present or future tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160529917-uhjqnx85",
+      "timestamp": "2026-05-30T17:02:41.202Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Without knowing the rule being tested, a learner could reasonably interpret \"Nous aimons bien aller à la plage ce weekend\" (present, expressing general enjoyment) as valid, making both A (aimerions - conditional wish) and B (aimons - present preference) plausible depending on whether \"ce weekend\" is read as specific context or incidental detail.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166403051-gme2ytbn",
+      "timestamp": "2026-05-30T18:40:48.903Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt is straightforward (\"Complétez\" with a clear sentence context), the subject \"Nous\" eliminates choice C (aimeriez is for \"vous\"), and \"ce weekend\" combined with expressing a wish clearly points to the conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171233206-mihz9biz",
+      "timestamp": "2026-05-30T20:01:35.267Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: AMBIGUOUS\nREASON: Both \"aimerions\" (conditional) and \"aimerons\" (futur simple) are grammatically valid with \"ce weekend,\" so without knowing the rule being tested, a learner cannot determine which is the intended correct answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173995445-jgj3umgz",
+      "timestamp": "2026-05-30T20:47:03.454Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "884827185d7ca678",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-09-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Au cas où le film ___ mauvais, on regarde un autre. »\n\nChoices:\nA. [CORRECT] serait\nB. [WRONG] soit\nC. [WRONG] est\nD. [WRONG] sera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741963-jk2io0l5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use the wrong mood/tense: \"au cas où\" strictly requires the conditional (\"serait\"), not the subjunctive (B), present indicative (C), or future indicative (D).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162096029-g90xrjxk",
+      "timestamp": "2026-05-30T17:28:29.676Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers are incorrect: \"au cas où\" strictly requires the conditional mood (\"serait\"), while B uses the subjunctive (\"soit\"), C uses the indicative present (\"est\"), and D uses the future indicative (\"sera\"), none of which are grammatically valid after \"au cas où.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167692594-oox8mqye",
+      "timestamp": "2026-05-30T19:01:48.803Z"
+    },
+    {
+      "raw": "TRUE||\"Au cas où\" requires the conditional tense in standard French, making \"soit\" (subjunctive), \"est\" (present), and \"sera\" (future) all grammatically incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172078609-mct3fnr7",
+      "timestamp": "2026-05-30T20:14:51.780Z"
+    }
+  ]
+}

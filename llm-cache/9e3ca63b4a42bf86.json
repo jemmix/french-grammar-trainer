@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9e3ca63b4a42bf86",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-13-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-13 - Le conditionnel passé pour exprimer un reproche (tu aurais pu me prévenir)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au conditionnel passé pour exprimer un reproche\nPhrase: Vous ___ vous excuser pour votre comportement impoli.\nCorrect Answer: auriez dû\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741971-c0y69nh3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly requires the student to produce the conditionnel passé form \"auriez dû\" to express a reproach, which is the exact grammar construct the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163238799-eos6uioi",
+      "timestamp": "2026-05-30T17:48:07.824Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"devoir\" in the conditionnel passé (\"auriez dû\") specifically to express reproach about impolite behavior, which directly tests using the conditionnel passé for reproach.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168761496-8hfxvt76",
+      "timestamp": "2026-05-30T19:19:34.081Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires students to produce \"auriez dû,\" the conditionnel passé form used to express reproach (you should have apologized), which directly tests the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172654911-stn7pwnt",
+      "timestamp": "2026-05-30T20:24:30.250Z"
+    }
+  ]
+}

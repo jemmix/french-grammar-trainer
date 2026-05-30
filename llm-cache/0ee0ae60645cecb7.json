@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0ee0ae60645cecb7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-15-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « On prétend qu'elle ___ le concours l'année dernière. »\n\nChoices:\nA. [CORRECT] aurait remporté\nB. [WRONG] a remporté\nC. [WRONG] aurait remporta\nD. [WRONG] remporterait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741973-9en1uc3t"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work\nI was asked to verify wrong answers in a French grammar MCQ question about indirect speech with \"prétend que\" and past time reference (\"l'année dernière\").\n\n## Analysis Completed\nThe question asks to fill in: « On prétend qu'elle ___ le concours l'année dernière. »\n\n- **B. \"a remporté\"** — This is passé composé, which is grammatically valid in indirect speech when reporting a claimed past fact. While \"aurait remporté\" (conditional) adds a nuance of distancing/doubt typical of reported speech, the indicative \"a remporté\" is not grammatically incorrect.\n- **C. \"aurait remporta\"** — Clearly incorrect: combines conditional auxiliary with passé simple form, which is impossible.\n- **D. \"remporterait\"** — Incorrect: conditional present doesn't work with specific past time reference \"l'année dernière.\"\n\n## Verdict\nFALSE|B|\"a remporté\" is grammatically correct in this context since indirect speech can use the indicative to report claimed facts without the distancing nuance of the conditional.\n\n## Remaining Tasks\nNone — the verification is complete.\n\n## Recommendation\nIf this question is meant to specifically test the conditional in reported speech, the prompt should be revised to make that requirement explicit (e.g., \"En utilisant le conditionnel pour marquer l'incertitude du propos rapporté...\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163959959-ga56r60j",
+      "timestamp": "2026-05-30T17:59:41.684Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses passé composé which violates indirect speech concordance des temps with \"prétend que\" requiring conditionnel passé for reported past events, C is morphologically impossible (mixing conditionnel auxiliary with passé simple form), and D uses conditionnel présent which cannot express a completed past action with \"l'année dernière.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169020382-xzainyy1",
+      "timestamp": "2026-05-30T19:24:03.646Z"
+    },
+    {
+      "raw": "FALSE|B|\"a remporté\" is grammatically correct in indirect discourse when the reporting verb (\"prétend\") is in the present tense, as the original direct speech \"Elle a remporté le concours l'année dernière\" would not require tense shifting.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172904283-oxeobj7t",
+      "timestamp": "2026-05-30T20:29:09.874Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0b24a71896da9fe4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-18-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-18 - Le conditionnel vs le subjonctif après certains verbes et conjonctions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je doute que cela ___ possible. »\nChoices:\nA. [CORRECT] soit\nB. serait\nC. est\nD. était\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741978-gqeoecdz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests that \"douter que\" requires the subjunctive, not the distinction between when to use conditional vs subjunctive after different verbs and conjunctions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165027685-eegu9ea0",
+      "timestamp": "2026-05-30T18:17:28.701Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to validate whether a French grammar question about \"Je doute que cela ___ possible\" (with correct answer \"soit\" - subjunctive) properly tests the rule \"Le conditionnel vs le subjonctif après certains verbes et conjonctions.\"\n\n**My verdict:**\nVERDICT: MISALIGNED\nREASON: The question primarily tests whether the student knows that \"douter que\" requires the subjunctive mood, not the specific contrast between conditional and subjunctive—the conditional option \"serait\" is merely one of several wrong answers from different moods/tenses, not the central distractor.\n\n**Remaining tasks:**\nNone—this was a single validation task.\n\n**Recommendations:**\nTo properly test \"le conditionnel vs le subjonctif,\" the question should present a scenario where the student must actively choose between these two moods, not where subjunctive is clearly correct and conditional is just one random wrong option among others.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170061026-g5zmt51w",
+      "timestamp": "2026-05-30T19:41:25.813Z"
+    }
+  ]
+}

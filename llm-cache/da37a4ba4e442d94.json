@@ -1,0 +1,26 @@
+{
+  "cacheKey": "da37a4ba4e442d94",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-17-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-17 - Le conditionnel vs le futur : différences de forme et d'emploi\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Les enfants ___ l'école demain parce qu'il y a un jour férié. »\nChoices:\nA. [CORRECT] n'auront pas\nB. n'auraient pas\nC. n'ont pas eu\nD. n'avaient pas\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741976-grpcr8gs"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The temporal marker \"demain\" makes this a straightforward future tense identification question that can be answered without understanding the nuanced differences between conditional and future usage—the conditional option is easily eliminated by basic tense recognition rather than by knowing when each tense is appropriately employed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164707864-q7ygsw02",
+      "timestamp": "2026-05-30T18:12:29.793Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a French grammar question against its stated rule. The question asks learners to complete a sentence about children not having school tomorrow due to a holiday, with choices between futur simple, conditionnel présent, passé composé, and imparfait.\n\n**Verdict I was formulating:**\nVERDICT: MISALIGNED\nREASON: The question can be answered correctly using only basic future tense knowledge (\"demain\" = futur simple) without needing to understand the nuanced differences between conditional and future usage that the rule specifies.\n\n**Remaining tasks:**\n- None explicitly requested beyond this single validation.\n\n**Recommendations:**\nTo properly test \"Le conditionnel vs le futur : différences de forme et d'emploi,\" the question should present a scenario where both tenses could plausibly fit (e.g., expressing uncertainty, politeness, or a hypothetical condition) forcing the learner to distinguish between them based on meaning rather than just recognizing a time marker.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169742258-eo0p0fml",
+      "timestamp": "2026-05-30T19:36:11.332Z"
+    }
+  ]
+}

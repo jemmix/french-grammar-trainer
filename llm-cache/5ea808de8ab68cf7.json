@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5ea808de8ab68cf7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-10-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel énoncé contient un reproche au conditionnel ?\n\nChoices:\nA. [CORRECT] Tu aurais pu vérifier la date avant de venir.\nB. [WRONG] Tu as pu vérifier la date avant de venir.\nC. [WRONG] Tu peux vérifier la date avant de venir.\nD. [WRONG] Ne te trompe pas de date !\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741965-zqy41nvw"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect because none use the conditional mood (B uses passé composé, C uses présent, D uses impératif), which is explicitly required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162376653-6xb7vatd",
+      "timestamp": "2026-05-30T17:33:18.623Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different tenses/moods (passé composé, présent, impératif) and none contain a conditional construction expressing reproach.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167960078-p7sm817n",
+      "timestamp": "2026-05-30T19:06:17.529Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses passé composé (statement of fact), C uses present tense (present ability), and D uses imperative (an order), none of which contain a reproach expressed in the conditional mood as required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172234201-vzuzhr6f",
+      "timestamp": "2026-05-30T20:17:34.047Z"
+    }
+  ]
+}

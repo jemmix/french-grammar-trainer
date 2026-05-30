@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3cd7f7c084b085c3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-13-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-13 - Le conditionnel passé pour exprimer un reproche (tu aurais pu me prévenir)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il ___ partir plus tôt pour ne pas rater le train. »\nChoices:\nA. [CORRECT] aurait fallu\nB. fallait\nC. faudra\nD. fallût\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741970-mc9dttby"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the conditionnel passé of \"falloir\" to express a past necessity (\"it would have been necessary to leave\"), not to express a reproach toward someone as the rule specifies.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163032173-sai4qi5j",
+      "timestamp": "2026-05-30T17:44:41.241Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests recognition of the conditionnel passé form of \"falloir\" (conjugation knowledge), but the sentence \"Il aurait fallu partir\" expresses a missed necessity rather than a reproach directed at someone—the rule specifically targets using conditionnel passé with personal subjects (tu aurais pu/dû) to blame someone for not doing something.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168541822-772pmf62",
+      "timestamp": "2026-05-30T19:16:16.412Z"
+    }
+  ]
+}

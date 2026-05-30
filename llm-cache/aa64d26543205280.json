@@ -1,0 +1,26 @@
+{
+  "cacheKey": "aa64d26543205280",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "06-11-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Conjuguez le verbe « avoir » au conditionnel passé (première personne du singulier) et complétez la phrase.\nPhrase: Si j'avais eu plus de temps, j'___ réussi.\nHint: avoir\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780159741967-dnwnyedm"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI evaluated the French grammar question for clarity and ambiguity as requested.\n\n**Verdict:**\nVERDICT: AMBIGUOUS\nREASON: The prompt asks to conjugate \"avoir\" in conditionnel passé (which yields \"aurais eu\"), but inserting this into the blank creates an ungrammatical sentence (\"j'aurais eu réussi\" is incorrect French), leaving the learner unable to determine whether to follow the literal instruction or produce a grammatically correct sentence.\n\n**Remaining tasks:**\nNone - the single evaluation was completed.\n\n**Recommendations:**\nThis question has a content error: \"réussir\" in conditionnel passé uses \"avoir\" as its auxiliary, so the correct completion is \"aurais\" (not \"aurais eu\"). The question should either be rewritten to test a different verb construction where \"aurais eu\" is grammatically correct (e.g., \"j'aurais eu peur\"), or the prompt should be changed to simply ask for the correct auxiliary without specifying \"conditionnel passé de avoir.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162669537-cvm7bbku",
+      "timestamp": "2026-05-30T17:38:30.792Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was evaluating a single French grammar question for prompt clarity and ambiguity as requested by the validation task.\n\nVerdict for the question:\nVERDICT: AMBIGUOUS\nREASON: The prompt asks to conjugate \"avoir\" au conditionnel passé (which is \"aurais eu\"), but the blank in \"j'___ réussi\" only accommodates \"aurais\" since \"réussi\" is already the past participle of \"réussir\", creating a grammatical mismatch between what's explicitly asked and what actually fits in the sentence.\n\nRemaining tasks: None - this was a single-question validation.\n\nRecommendations: The prompt should be rephrased to clarify that the learner needs the auxiliary \"avoir\" in conditionnel présent to form the conditionnel passé of \"réussir\", rather than asking for \"avoir au conditionnel passé\" which implies the full compound form \"aurais eu\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168222940-5jut50ho",
+      "timestamp": "2026-05-30T19:11:14.477Z"
+    }
+  ]
+}

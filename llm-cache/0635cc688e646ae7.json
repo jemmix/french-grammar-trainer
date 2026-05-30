@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0635cc688e646ae7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Sélectionnez. « Vous aviez affirmé que le projet ___ avant juillet. »\n\nChoices:\nA. [CORRECT] serait terminé\nB. [WRONG] était terminé\nC. [WRONG] est terminé\nD. [WRONG] sera terminé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741975-87avdo59"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of evaluating a French grammar verification task. The question asked to complete \"Vous aviez affirmé que le projet ___ avant juillet.\" with the correct reported speech form. The correct answer is \"serait terminé\" (conditional), which is the proper transformation of future tense in direct speech to reported speech after a past-tense main clause (\"aviez affirmé\").\n\n**Analysis completed before step limit:**\n- B (\"était terminé\" - imperfect): Incorrect because it changes the meaning to past completion rather than future-from-past perspective\n- C (\"est terminé\" - present): Incorrect because present tense doesn't align with the past reporting verb for a future event\n- D (\"sera terminé\" - future): Incorrect in formal reported speech; after \"aviez affirmé\" (imparfait), the future should shift to conditional\n\n**Verdict that would have been returned:**\nTRUE||All wrong answers use tenses that do not correctly represent reported future speech after a past-tense main clause in formal French.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164398964-3cva40g9",
+      "timestamp": "2026-05-30T18:09:23.161Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the concordance des temps rules for reported speech after a past tense verb: B uses imparfait instead of conditional for a future-in-the-past reference, C uses present which doesn't shift properly and doesn't convey future meaning, and D uses futur simple which should shift to conditional after \"aviez affirmé.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169535536-9lbajyam",
+      "timestamp": "2026-05-30T19:32:47.502Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the sequence of tenses (concordance des temps) required for reported speech in the past: B uses imparfait instead of conditionnel, C uses present instead of conditionnel, and D uses futur simple instead of conditionnel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173165758-9fb1grxd",
+      "timestamp": "2026-05-30T20:33:37.685Z"
+    }
+  ]
+}

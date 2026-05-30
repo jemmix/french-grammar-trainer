@@ -1,0 +1,26 @@
+{
+  "cacheKey": "5c2286bb2e487142",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-12-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Nous ___ ce problème avant s'il y avait eu plus de communication. »\n\nChoices:\nA. [CORRECT] aurions résolu\nB. [WRONG] aurions résoudre\nC. [WRONG] résoudrions\nD. [WRONG] avions résolu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741969-piswxf1p"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses the infinitive \"résoudre\" instead of the past participle \"résolu\"; C uses conditionnel présent instead of the required conditionnel passé; D uses plus-que-parfait instead of conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162844789-s3s913r3",
+      "timestamp": "2026-05-30T17:41:01.800Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses an infinitive after \"aurions\" instead of a past participle, C uses conditionnel présent instead of the required conditionnel passé for a \"si + plus-que-parfait\" construction, and D uses plus-que-parfait which cannot serve as the main clause in this conditional structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168367636-ttx4h5dw",
+      "timestamp": "2026-05-30T19:13:13.481Z"
+    }
+  ]
+}

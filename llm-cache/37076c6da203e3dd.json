@@ -1,0 +1,26 @@
+{
+  "cacheKey": "37076c6da203e3dd",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-12-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il ___ de mauvaises habitudes si quelqu'un lui avait expliqué les risques. »\n\nChoices:\nA. [CORRECT] n'aurait pas pris\nB. [WRONG] n'aurait pas prendre\nC. [WRONG] ne prendrait pas\nD. [WRONG] n'avait pas pris\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741969-9ew89uha"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses infinitive \"prendre\" instead of past participle \"pris\" after the auxiliary; C uses conditionnel présent instead of the required conditionnel passé triggered by the plus-que-parfait \"si\" clause; D uses plus-que-parfait which doesn't fit the si-clause structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162883077-qv0130en",
+      "timestamp": "2026-05-30T17:41:44.530Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers contain clear grammar errors - B uses infinitive instead of past participle after the auxiliary, C uses conditionnel présent instead of the required conditionnel passé for a third conditional, D uses plus-que-parfait which is incorrect in the main clause of a si-clause with plus-que-parfait in the subordinate clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168406980-argir9s3",
+      "timestamp": "2026-05-30T19:14:00.629Z"
+    }
+  ]
+}

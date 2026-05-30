@@ -1,0 +1,26 @@
+{
+  "cacheKey": "160070a4f531c584",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-19-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si tu m'avais prévenu, je ___ rien fait de mon côté. »\n\nChoices:\nA. [CORRECT] n'aurais\nB. [WRONG] ne ferais\nC. [WRONG] n'ai rien fait\nD. [WRONG] ne fis\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741980-ewldcymi"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly mixes conditionnel présent with a past participle, C uses passé composé instead of the required conditionnel passé for this si-clause sequence, and D incorrectly combines passé simple with a past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165253227-278pufu0",
+      "timestamp": "2026-05-30T18:21:11.299Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: B uses conditionnel présent instead of conditionnel passé, C uses passé composé which doesn't fit the si-clause structure, and D uses passé simple which is never used in conditional sentences.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170281375-gpecfi38",
+      "timestamp": "2026-05-30T19:44:57.160Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "a4fdd6f1bec22a10",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-13-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-13 - Le conditionnel passé pour exprimer un reproche (tu aurais pu me prévenir)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Nous ___ prendre rendez-vous plus tôt. »\nChoices:\nA. [CORRECT] aurions dû\nB. aurions pu\nC. devrions\nD. devions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741970-5n6t82kl"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that a reproach about a past failure (\"should have made an appointment earlier\") demands the conditionnel passé form \"aurions dû\" rather than other modal/tense combinations.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163057970-hmvh4ls0",
+      "timestamp": "2026-05-30T17:45:03.155Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the distinction between past conditional, present conditional, and imperfect tenses along with devoir vs pouvoir, rather than the specific pragmatic function of using conditionnel passé to express reproach.\n\n---\n\nMaximum steps for this agent have been reached.\n\n**Summary of what has been accomplished:** I analyzed the validation task for the French grammar question and determined that the question about \"Nous ___ prendre rendez-vous plus tôt\" with \"aurions dû\" as the correct answer does not properly align with the stated rule about using conditionnel passé to express reproach. The question primarily tests tense differentiation (past conditional vs present conditional vs imperfect) and verb selection (devoir vs pouvoir), not the specific communicative function of reproach.\n\n**Remaining tasks:** None for this specific validation task - the verdict has been provided.\n\n**Recommendations for what should be done next:** If this is part of a batch validation process, continue validating other questions. If curriculum improvements are needed, a better-aligned question for this rule would explicitly frame the sentence as a reproach directed at someone (e.g., \"Tu ___ me prévenir avant de partir!\" with options testing the conditionnel passé form specifically used for reproachful statements).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168562780-dvygp3qb",
+      "timestamp": "2026-05-30T19:17:28.134Z"
+    }
+  ]
+}

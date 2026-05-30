@@ -1,0 +1,26 @@
+{
+  "cacheKey": "750ae3d47ea904e9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-01-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel énoncé utilise le conditionnel présent correctement ?\n\nChoices:\nA. [CORRECT] Elles se sentiraient libérées si elles démissionnaient.\nB. [WRONG] Elles se sentent libérées si elles démissionnaient.\nC. [WRONG] Elles se sentiront libérées si elles démissionnaient.\nD. [WRONG] Elles se sentaient libérées si elles démissionnaient.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741949-x3r1yzhx"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use different tenses (présent indicatif, futur simple, imparfait) instead of the required conditionnel présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780159889741-roe4l5ne",
+      "timestamp": "2026-05-30T16:51:44.821Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWork accomplished: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question asks which statement uses the conditional present (\"conditionnel présent\") correctly.\n\nAnalysis completed:\n- Answer B uses \"sentent\" (present indicative) — not conditional present\n- Answer C uses \"sentiront\" (future simple) — not conditional present  \n- Answer D uses \"sentiaient\" (imparfait) — not conditional present\n\nAll three wrong answers correctly use tenses other than the conditional present as explicitly required by the question.\n\nTRUE||All wrong answers use tenses other than the conditional present (present indicative, future simple, and imperfect respectively) as explicitly required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165808286-428n1fdn",
+      "timestamp": "2026-05-30T18:30:27.179Z"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "cacheKey": "d00fc4775ac9a214",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « D'après les textos, il ___ venir plus tard. »\n\nChoices:\nA. [CORRECT] devrait\nB. [WRONG] doit\nC. [WRONG] deva\nD. [WRONG] viendra\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741958-lls2krew"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses \"doit\" which expresses obligation or certainty rather than the inferential nuance required by \"d'après les textos\"; C \"deva\" is imperfect subjunctive which is obsolete and doesn't fit; D \"viendra\" states a future fact rather than the expected/deduced meaning conveyed by \"devrait.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780161320252-21vc5aux",
+      "timestamp": "2026-05-30T17:15:55.125Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses indicative \"doit\" which implies stronger certainty than warranted for an inference based on indirect evidence; C \"deva\" is imperfect subjunctive, an archaic form not used in this context; D \"viendra\" uses future tense instead of conditional to express inference.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167025433-2h5owfhu",
+      "timestamp": "2026-05-30T18:51:11.894Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a French grammar verification question about the sentence \"D'après les textos, il ___ venir plus tard.\" The correct answer is \"devrait\" (conditional of devoir, expressing soft deduction/probability).\n\nMy analysis so far:\n- B (\"doit\") - Borderline. Can express probability in French, though \"devrait\" is more nuanced for soft inferences from indirect evidence. Could be acceptable.\n- C (\"deva\") - Clearly incorrect (imperfect subjunctive, archaic and not used in this context)\n- D (\"viendra\") - Grammatically valid as a different construction meaning \"he will come later\" but changes the meaning significantly\n\nThe question prompt only says \"Complétez\" without specifying what grammar rule is being tested, making it difficult to definitively rule out alternatives that are grammatically valid even if they convey different nuances.\n\nThe likely verdict would be: FALSE|B,D|B \"doit\" can express probability based on evidence and creates a valid sentence; D \"viendra\" creates a grammatically correct sentence with a different but plausible meaning.\n\nRecommendation: Submit the verdict directly based on this analysis.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171484528-nta7w89o",
+      "timestamp": "2026-05-30T20:06:17.317Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B \"doit\" changes the meaning from a deduction to an obligation which doesn't fit \"d'après les textos\"; C \"deva\" is the imperfect subjunctive which is never used as a main verb in this context; D \"viendra\" incorrectly skips the required modal verb construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780174025931-0684pape",
+      "timestamp": "2026-05-30T20:49:40.609Z"
+    },
+    {
+      "raw": "FALSE|B,D|\"Doit\" can express deduction from evidence in the present tense and is grammatically valid here; \"viendra\" is a grammatically correct future tense completion, though both change the intended nuance of conditional probability.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780174488179-oqhm3kx7",
+      "timestamp": "2026-05-30T20:55:37.533Z"
+    }
+  ]
+}

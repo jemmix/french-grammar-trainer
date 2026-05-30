@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c1a3f5d9ec5fb4de",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-10-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel pour exprimer un reproche atténué (tu pourrais faire attention)\nPROMPT: Mettez au conditionnel pour formuler un reproche ou suggestion douce\nPHRASE: Nous ___ nous montrer plus patients les uns envers les autres.\nCORRECT ANSWER: pourrions\n\nWRONG ANSWERS to evaluate:\n1. pouvons\n2. puissions\n3. pourrons\n4. pouvions\n5. montrerions\n6. soyons\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780159741965-y0mi3mca"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"soyons\" is not a plausible learner error because inserting it into the sentence (\"Nous soyons nous montrer plus patients\") produces completely nonsensical syntax — no learner attempting to express a softened reproche with \"pouvoir\" would substitute the verb \"être\" in this position, whereas the other five answers (pouvons, puissions, pourrons, pouvions, montrerions) are all reasonable conjugation or verb-choice confusions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780176983588-eyu3eod2",
+      "timestamp": "2026-05-30T21:37:09.357Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was evaluating the plausibility of wrong answers for a French grammar input question about the conditional tense used for softened reproaches. The question asks learners to conjugate \"pouvoir\" in the conditional first person plural (\"pourrions\") in the sentence \"Nous ___ nous montrer plus patients les uns envers les autres.\"\n\n**Verdict that would have been provided:**\nVERDICT: IMPLAUSIBLE\nREASON: While \"pouvons,\" \"puissions,\" \"pourrons,\" and \"pouvons\" are all plausible conjugation errors (present, subjunctive, future, and imparfait respectively) and \"montrerions\" is a reasonable wrong-verb error, \"soyons\" (être conjugation) is implausible as it's a completely different verb that doesn't fit the sentence structure and no learner would insert \"let's be\" before \"nous montrer\" in this context.\n\n**Remaining tasks:**\n- None; this was a single-evaluation task\n\n**Recommendations:**\n- Replace \"soyons\" with a more plausible error such as \"pourrait\" (third person singular conditional - agreement error) or \"pouviez\" (second person plural imparfait - person error)",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780179660452-xkahu809",
+      "timestamp": "2026-05-30T22:21:22.792Z"
+    }
+  ]
+}

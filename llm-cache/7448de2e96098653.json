@@ -1,0 +1,40 @@
+{
+  "cacheKey": "7448de2e96098653",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-13-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « J'___ vérifier les faits avant de critiquer. »\n\nChoices:\nA. [CORRECT] aurais dû\nB. [WRONG] avais dû\nC. [WRONG] aurais pu\nD. [WRONG] ai dû\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741970-j2ymzfae"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|C|\"J'aurais pu vérifier les faits avant de critiquer\" is grammatically correct French that produces a coherent sentence expressing possibility rather than obligation, and the question prompt does not explicitly constrain the answer to express obligation or regret.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163096089-b06o3ux6",
+      "timestamp": "2026-05-30T17:46:06.790Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"avais dû\" (imparfait) cannot express the regret/counterfactual meaning required here, \"aurais pu\" changes the meaning to \"could have\" rather than \"should have,\" and \"ai dû\" (passé composé) states a completed fact rather than expressing regret about a past inaction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168613707-revr3r0w",
+      "timestamp": "2026-05-30T19:17:38.627Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of analyzing a French grammar verification task for a multiple choice question about the conditional past of \"devoir\" vs other forms.\n\nThe question asks to complete \"J'___ vérifier les faits avant de critiquer\" with the correct answer being \"aurais dû\" (I should have). I analyzed each wrong answer:\n\n- B (avais dû): Imparfait - expresses past obligation \"I had to\", not regret about what should have been done\n- C (aurais pu): Conditional past of pouvoir - changes meaning to \"I could have\" instead of \"I should have\"\n- D (ai dû): Passé composé - expresses \"I had to\" or \"I must have\", not regret\n\nAll wrong answers are indeed incorrect in this context.\n\nTRUE||All wrong answers use different tenses or verbs that change the meaning from regret (\"should have\") to obligation (\"had to\"), possibility (\"could have\"), or deduction (\"must have\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172596486-9mtpby9g",
+      "timestamp": "2026-05-30T20:23:53.346Z"
+    },
+    {
+      "raw": "TRUE||The context implies regret for not verifying before criticizing, which requires \"aurais dû\"; the other options are grammatically valid in isolation but don't express this counterfactual meaning.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780174132674-bervnpc4",
+      "timestamp": "2026-05-30T20:49:36.381Z"
+    }
+  ]
+}

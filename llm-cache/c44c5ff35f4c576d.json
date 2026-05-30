@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c44c5ff35f4c576d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-05-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Sélectionnez le conditionnel correct : « Tu ___ consulter un médecin. »\n\nChoices:\nA. [CORRECT] devrais\nB. [WRONG] dois\nC. [WRONG] devras\nD. [WRONG] devienne\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741956-dwmfxmbx"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are in different moods/tenses (B is present indicative, C is future, D is subjunctive of a different verb) and none is the conditional form requested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160901389-6kzinz4z",
+      "timestamp": "2026-05-30T17:08:44.195Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use non-conditional forms: B is present indicative, C is future tense, and D is subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166668458-vew9qgtt",
+      "timestamp": "2026-05-30T18:45:48.203Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is present indicative, C is future simple, and D is subjunctive of a different verb (devenir), none of which match the requested conditional tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171387223-txk20nz8",
+      "timestamp": "2026-05-30T20:03:20.818Z"
+    }
+  ]
+}

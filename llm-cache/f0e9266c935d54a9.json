@@ -1,0 +1,26 @@
+{
+  "cacheKey": "f0e9266c935d54a9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-15-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-15 - Le conditionnel passé pour une information non confirmée au passé (il aurait démissionné)\n\nQUESTION:\nType: Multiple Choice\nPrompt: « Selon ses amis, il ___ un emploi à l'étranger. »\nChoices:\nA. [CORRECT] aurait trouvé\nB. trouvait\nC. aura trouvé\nD. a trouvé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741974-rrrvikfn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The context \"selon ses amis\" explicitly signals unconfirmed past information, making the conditionnel passé \"aurait trouvé\" the only grammatically appropriate answer to express this uncertainty.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164300603-8r56t2mg",
+      "timestamp": "2026-05-30T18:05:23.366Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"selon ses amis\" introduces unconfirmed reported information about the past, which precisely triggers the conditionnel passé (\"aurait trouvé\") as opposed to the other tenses that either state facts (passé composé), describe ongoing states (imparfait), or refer to the future (futur antérieur).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169261624-dxcgd1wj",
+      "timestamp": "2026-05-30T19:27:59.584Z"
+    }
+  ]
+}

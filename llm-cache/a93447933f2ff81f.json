@@ -1,0 +1,26 @@
+{
+  "cacheKey": "a93447933f2ff81f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-13-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-13 - Le conditionnel passé pour exprimer un reproche (tu aurais pu me prévenir)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Vous ___ trouver une solution plus rapidement. »\nChoices:\nA. [CORRECT] auriez pu\nB. pouviez\nC. pourrez\nD. auriez dû\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741970-blouhvaz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the conditionnel passé form (\"auriez pu\") to complete a sentence that naturally implies a reproach about something that could have been done differently, and the distractors test confusion with imparfait, futur, and a different modal in conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163162042-9e197w0j",
+      "timestamp": "2026-05-30T17:46:42.575Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to validate whether a French grammar question about completing \"Vous ___ trouver une solution plus rapidement\" with the correct answer \"auriez pu\" properly tests the rule \"Le conditionnel passé pour exprimer un reproche.\"\n\nVerdict: MISALIGNED\n\nREASON: The question primarily tests the semantic distinction between \"pouvoir\" (could have) and \"devoir\" (should have) in the conditionnel passé, since both \"auriez pu\" and \"auriez dû\" are conditionnel passé forms that can express reproach—the key decision point is vocabulary/meaning, not the grammatical rule about using conditionnel passé for reproach.\n\nRemaining tasks: None—this was a single-question validation.\n\nRecommendations: To properly test this rule, a question should include wrong answers that are NOT conditionnel passé (which this question partially does with B and C), but should avoid including another conditionnel passé option that also expresses reproach, as that shifts the test to semantic distinction rather than the target grammar rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168667706-ui5w3gvv",
+      "timestamp": "2026-05-30T19:18:36.723Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "799eed06622f8d8f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-02-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-02 - Les conditionnels irréguliers (mêmes radicaux que le futur : ser-, aur-, fer-, ir-, pourr-, voudr-...)\n\nQUESTION:\nType: Multiple Choice\nPrompt: « Elle ___ cette opportunité si elle l'avait connue plus tôt. »\nChoices:\nA. [CORRECT] voudrait\nB. voudra\nC. veut\nD. voudrais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741951-g2wepyhh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence uses \"si + plus-que-parfait\" (\"si elle l'avait connue\"), which requires conditionnel passé (\"aurait voulu\") in the main clause, not conditionnel présent (\"voudrait\"), so the question context is grammatically incompatible with testing conditionnel présent forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160087361-1l0hmgue",
+      "timestamp": "2026-05-30T16:55:37.574Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a French grammar question about irregular conditionals. The question asks students to fill in \"Elle ___ cette opportunité si elle l'avait connue plus tôt.\" with choices between voudrait, voudra, veut, and voudrais.\n\n**Analysis completed:**\nThe question is grammatically flawed. The sentence uses \"si\" + plus-que-parfait (\"si elle l'avait connue\"), which requires the conditionnel passé in the main clause (\"aurait voulu\"), not the conditionnel présent (\"voudrait\"). None of the provided answer choices are grammatically correct for this sentence structure.\n\nVERDICT: MISALIGNED\nREASON: The sentence structure (si + plus-que-parfait) requires conditionnel passé (\"aurait voulu\"), not conditionnel présent, making none of the answer choices grammatically correct and rendering the question unable to properly test irregular conditional radicals.\n\n**Remaining tasks:**\nNone - the validation verdict has been provided.\n\n**Recommendations:**\nThis question needs to be rewritten. Either:\n1. Change the \"si\" clause to imparfait (\"si elle la connaissait\") to make conditionnel présent correct\n2. Change the answer choices to include conditionnel passé forms like \"aurait voulu\" if testing past conditional\n3. Use a different sentence structure that naturally calls for conditionnel présent",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166003486-ky0tnaxm",
+      "timestamp": "2026-05-30T18:34:14.144Z"
+    }
+  ]
+}

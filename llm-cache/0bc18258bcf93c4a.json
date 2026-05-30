@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0bc18258bcf93c4a",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-09-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel après au cas où (au cas où il pleuvrait)\nPROMPT: Conjuguez le verbe au conditionnel après « au cas où »\nPHRASE: Au cas où tu ___ , laisse-moi un message.\nCORRECT ANSWER: m'appellerais\n\nWRONG ANSWERS to evaluate:\n1. m'appelles\n2. m'appelleras\n3. m'appelais\n4. m'appelle\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780159741963-y1jjukmj"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common tense confusions learners make with the conditional: présent (m'appelles), futur (m'appelleras), and imparfait (m'appelais) are all frequently substituted for the conditional, and m'appelle adds a plausible subject-verb agreement error on top of the tense confusion.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780176814257-b3c3m8mb",
+      "timestamp": "2026-05-30T21:33:54.228Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common tense/mood confusion errors learners make with \"au cas où\" — using present indicative (m'appelles, m'appelle), future (m'appelleras), or imparfait (m'appelais) instead of the required conditional, which are exactly the mistakes this rule is designed to catch.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780179490574-f7q9g7a5",
+      "timestamp": "2026-05-30T22:18:33.979Z"
+    }
+  ]
+}

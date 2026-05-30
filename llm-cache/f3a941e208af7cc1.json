@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f3a941e208af7cc1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-13-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-13 - Le conditionnel passé pour exprimer un reproche (tu aurais pu me prévenir)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au conditionnel passé pour exprimer un reproche\nPhrase: Elle ___ suivre les instructions au lieu de faire comme elle voulait.\nCorrect Answer: aurait dû\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741971-bwodpyrx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"devoir\" in the conditionnel passé within a sentence that clearly expresses a reproach (\"Elle aurait dû suivre les instructions au lieu de faire comme elle voulait\"), which directly tests the stated rule about using conditionnel passé to express reproach.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163224171-cyyk6s6p",
+      "timestamp": "2026-05-30T17:47:32.674Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"devoir\" in the conditionnel passé to express reproach (\"she should have\"), which directly tests the rule about using this tense for reproachful statements like \"tu aurais pu me prévenir.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168715068-kn9ix6s6",
+      "timestamp": "2026-05-30T19:19:29.242Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"devoir\" in the conditionnel passé to express a reproach about a past action that should have been done differently, which directly tests the stated rule about using conditionnel passé for reproaches.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172644116-0l5wuio9",
+      "timestamp": "2026-05-30T20:24:38.503Z"
+    }
+  ]
+}

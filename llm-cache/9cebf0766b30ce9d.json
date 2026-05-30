@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9cebf0766b30ce9d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-15-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-15 - Le conditionnel passé pour une information non confirmée au passé (il aurait démissionné)\n\nQUESTION:\nType: Multiple Choice\nPrompt: « Les historiens pensent que ce document ___ au XVe siècle. »\nChoices:\nA. [CORRECT] aurait été écrit\nB. aurait été écrite\nC. a été écrit\nD. était écrit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741973-aon8iix6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires choosing conditionnel passé over passé composé or imparfait to express historians' uncertain/unconfirmed assumption about a past event, which is precisely the grammar point this rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164078732-4w3kdlv5",
+      "timestamp": "2026-05-30T18:01:29.501Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the conditionnel passé (\"aurait été écrit\") to express unconfirmed past information about when a document was written, which is precisely what the stated rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169043647-mew1gxj5",
+      "timestamp": "2026-05-30T19:24:34.579Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a French grammar question about the conditional past (conditionnel passé) for unconfirmed past information is properly aligned with its stated rule.\n\nThe question asks students to fill in the blank in \"Les historiens pensent que ce document ___ au XVe siècle\" with choices between conditionnel passé forms (aurait été écrit/écrite) and other tenses (passé composé, imparfait).\n\nMy analysis: This question IS aligned with the stated rule because it requires students to recognize that expressing uncertain/hypothetical information about the past (historians' unconfirmed belief) requires the conditionnel passé rather than passé composé or imparfait.\n\nVERDICT: ALIGNED\nREASON: The question requires selecting conditionnel passé over passé composé and imparfait to express historians' unconfirmed hypothesis about the past, directly testing the rule for using conditional past for non-confirmed past information.\n\nNo remaining tasks - the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172928024-8jt7670w",
+      "timestamp": "2026-05-30T20:29:10.598Z"
+    }
+  ]
+}

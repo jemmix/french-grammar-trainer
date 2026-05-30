@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2a5f57ae361e567d",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-14-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel passé dans les hypothèses : si + plus-que-parfait → conditionnel passé\nPROMPT: Conjuguez le verbe au conditionnel passé pour compléter la structure hypothétique.\nPHRASE: Si j'avais parlé au directeur, il ___ (agir) autrement.\nCORRECT ANSWER: aurait agi\n\nWRONG ANSWERS to evaluate:\n1. avait agi\n2. agissait\n3. agirais\n4. aurait agir\n5. a agi\n6. aurait agissé\n7. auraient agi\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780159741973-w6vvwmau"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"aurait agissé\" is not a plausible learner error — the past participle of \"agir\" is \"agi\" (regular -ir verb), and no learner would naturally invent the non-existent form \"agissé\" with an added \"-iss-\" infix.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780177650474-738qs3cu",
+      "timestamp": "2026-05-30T21:48:09.878Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: confusing tenses in si-clauses (avait agi, agissait, a agi), using conditionnel présent instead of passé (agirais), using infinitive instead of past participle (aurait agir), overgeneralizing irregular conjugation patterns (aurait agissé), and agreement errors (auraient agi).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780180281012-e4lnbro8",
+      "timestamp": "2026-05-30T22:31:41.256Z"
+    }
+  ]
+}

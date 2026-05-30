@@ -1,0 +1,40 @@
+{
+  "cacheKey": "73f859ecc92b29ce",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-06-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-06 - Le conditionnel pour exprimer une information non confirmée (il y aurait 10 victimes)\n\nQUESTION:\nType: Input\nPrompt: Complétez en utilisant le conditionnel pour rapporter l'information non confirmée\nPhrase: Selon les témoins, il y ___ environ cinquante personnes dans la pièce.\nCorrect Answer: aurait eu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741958-0nwem7h7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence \"il y ___ environ cinquante personnes dans la pièce\" requires the present conditional \"aurait\" to express unconfirmed present information, but the provided answer \"aurait eu\" is the past conditional and does not fit the present-tense context of the sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780161363644-kt0u82xz",
+      "timestamp": "2026-05-30T17:16:48.860Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly asks students to use the conditional to report unconfirmed information from witnesses, which directly tests the stated rule about expressing unconfirmed information with the conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167053097-7xuxr1jd",
+      "timestamp": "2026-05-30T18:52:11.345Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using the conditional mood to report unconfirmed information (\"selon les témoins\"), which is the core concept of the stated rule; using passé conditionnel (aurait eu) rather than présent conditionnel remains within the section scope of \"Le conditionnel présent et passé.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171524446-hiy3pp6e",
+      "timestamp": "2026-05-30T20:06:43.190Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests conjugation of \"il y avoir\" in the conditional passé, while the rule's pragmatic concept (using conditional to express unconfirmed information) is explicitly stated in the prompt rather than being something the student must deduce.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780174035956-vv86l45q",
+      "timestamp": "2026-05-30T20:47:51.426Z"
+    }
+  ]
+}

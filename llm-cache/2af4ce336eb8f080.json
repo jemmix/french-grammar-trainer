@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2af4ce336eb8f080",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-10-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel pour exprimer un reproche atténué (tu pourrais faire attention)\nPROMPT: Conjuguez le verbe au conditionnel pour exprimer un reproche atténué\nPHRASE: Tu ___ faire attention à tes affaires.\nCORRECT ANSWER: devrais\n\nWRONG ANSWERS to evaluate:\n1. dois\n2. devais\n3. devra\n4. doive\n5. fais\n6. doit\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780159741965-wemyu5fx"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far:\nI was in the process of evaluating whether the wrong answers for a French grammar input question about the conditional tense (used for softened reproaches) are plausible learner mistakes.\n\nAnalysis completed:\nThe question asks for \"devrais\" (conditional of devoir, tu form) in the sentence \"Tu ___ faire attention à tes affaires.\" All six wrong answers are plausible:\n1. dois - present tense confusion\n2. devais - imperfect/conditional confusion (very common)\n3. devra - future tense + wrong person\n4. doive - subjunctive + wrong person\n5. fais - conjugating wrong verb (faire instead of devoir)\n6. doit - present tense + wrong person\n\nVERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors including tense confusion (present, imperfect, future, subjunctive instead of conditional), person agreement mistakes, and conjugating the wrong verb that appears in the sentence.\n\nNo remaining tasks — the evaluation is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780176927428-pzg7m530",
+      "timestamp": "2026-05-30T21:35:52.006Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: \"dois\" uses present instead of conditional, \"devais\" confuses conditional with imparfait, \"devra\" uses futur (which shares forms with conditional), \"doive\" incorrectly uses subjonctif, \"fais\" conjugates the wrong verb visible in the sentence, and \"doit\" uses 3rd person instead of 2nd.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780179608311-cg6ydq24",
+      "timestamp": "2026-05-30T22:20:29.737Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: confusing conditional with present (dois, doit), imparfait (devais), futur simple (devra), or subjunctive (doive), and mistakenly conjugating the wrong verb in the sentence (fais).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780181976133-a1sy958q",
+      "timestamp": "2026-05-30T22:59:54.172Z"
+    }
+  ]
+}

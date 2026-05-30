@@ -1,0 +1,26 @@
+{
+  "cacheKey": "59cfb056dfe7d489",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Le gouvernement ___ diminué les taxes. »\n\nChoices:\nA. [CORRECT] aurait\nB. [WRONG] a\nC. [WRONG] eut\nD. [WRONG] avait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741957-xatvvl3b"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B and D form valid tenses (passé composé and plus-que-parfait) but the question implies a conditional/hypothetical context where only \"aurait\" fits; C (passé antérieur) is never used in main clauses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780161131698-w0hujz4g",
+      "timestamp": "2026-05-30T17:12:41.233Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"a\" gives passé composé, \"eut\" gives the rare passé antérieur which cannot stand alone as a main clause, and \"avait\" gives plus-que-parfait—none match the conditionnel passé context implied by \"aurait\" as the correct answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166896644-ikvdrwix",
+      "timestamp": "2026-05-30T18:49:01.276Z"
+    }
+  ]
+}

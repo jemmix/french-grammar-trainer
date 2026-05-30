@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b1609e303b72fcda",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-04-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Tu ___ parler à quelqu'un de confiance de tes soucis. »\n\nChoices:\nA. [CORRECT] voudrais\nB. [WRONG] veux\nC. [WRONG] voudras\nD. [WRONG] voudrait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741954-w8pagvbu"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThis was a simple one-shot validation task that required no tool use. The task was to verify whether the wrong answers in a French grammar MCQ are indeed incorrect.\n\n**What was accomplished:** Analysis of the question was completed mentally. The question \"Tu ___ parler à quelqu'un de confiance de tes soucis\" with correct answer \"voudrais\" (conditional) has wrong answers B \"veux\" (present), C \"voudras\" (future), and D \"voudrait\" (3rd person conditional).\n\n**Verdict (not yet delivered):** FALSE|B,C|B \"veux\" is grammatically correct in present tense and C \"voudras\" is grammatically correct in future tense, but the question does not specify which tense to use, making these potentially correct depending on context.\n\n**Remaining tasks:** Deliver the verdict in the required format.\n\n**Recommendation:** The question prompt should explicitly specify \"au conditionnel\" or similar to disambiguate, since without a tense specification, B and C are grammatically valid completions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160596469-mk2bd2y0",
+      "timestamp": "2026-05-30T17:04:10.799Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:** I was asked to verify that wrong answers B, C, D in a French grammar MCQ question are indeed incorrect.\n\n**Analysis completed:**\n- B (\"veux\" - present tense) is grammatically correct in this sentence context\n- C (\"voudras\" - future tense) is grammatically correct in this sentence context  \n- D (\"voudrait\" - 3rd person conditional) is genuinely incorrect due to subject-verb disagreement with \"tu\"\n\n**Remaining tasks:** None - the analysis is complete.\n\n**Recommendation:** The verdict should be `FALSE|B,C|B uses present tense \"veux\" which is grammatically valid with \"tu\"; C uses future tense \"voudras\" which is also grammatically valid with \"tu\"; the question does not specify that conditional mood is required.` Only D is truly incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166472179-zticu5ed",
+      "timestamp": "2026-05-30T18:41:34.576Z"
+    }
+  ]
+}

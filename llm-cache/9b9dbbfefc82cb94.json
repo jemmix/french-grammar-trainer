@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9b9dbbfefc82cb94",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-20-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe entre parenthèses au conditionnel pour exprimer la politesse.\nPhrase: Je vous ___ (demander) de nous accorder un peu plus de temps.\nCorrect Answer: demanderais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741982-1wro4yv3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly requires conjugating in the conditional to express politeness, which is one of the four specific values (politesse, hypothèse, regret, information incertaine) that the synthesis rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165646624-76q57hrc",
+      "timestamp": "2026-05-30T18:27:42.978Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests conditional conjugation, not the ability to recognize when to use the conditional for politeness versus other values (hypothesis, regret, uncertain information), since the prompt explicitly tells the student which value to use.\n\nThis question would be better suited for a rule about conjugating the conditionnel présent. A properly aligned question for this synthesis rule would present a scenario and ask the student to identify which conditional value is being used, or require the student to choose the appropriate conditional value without being told which one to apply.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170692024-57isdvn4",
+      "timestamp": "2026-05-30T19:51:47.753Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly tells the student to use the conditional for politeness, so it only tests conjugation of \"demander\" rather than requiring the student to recognize when the conditional expresses politeness versus other values.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173896051-hi2vdi99",
+      "timestamp": "2026-05-30T20:54:00.108Z"
+    }
+  ]
+}

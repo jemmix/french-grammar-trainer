@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2b971cde00f94305",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-09-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel après au cas où (au cas où il pleuvrait)\nPROMPT: Remplissez le blanc avec le conditionnel du verbe « devoir »\nPHRASE: Au cas où je ___ annuler, je t'informerai à l'avance.\nCORRECT ANSWER: devrais\n\nWRONG ANSWERS to evaluate:\n1. doive\n2. devrai\n3. devais\n4. dusse\n5. dû\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780159741964-eeeadvje"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"Dusse\" (subjunctive imperfect) is an extremely rare literary form that most learners wouldn't even know exists, making it implausible as a spontaneous error; the other four answers (doive, devrai, devais, dû) are all reasonable mistakes.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780176842869-eav2a7t2",
+      "timestamp": "2026-05-30T21:34:25.024Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner confusions: \"doive\" uses subjunctive instead of conditional (a natural error since \"au cas où\" feels subjunctive-triggering), \"devrai\" uses future tense (very common since learners often match future in the main clause), \"devais\" confuses conditional with imperfect (they share stems), \"dusse\" applies the imperfect subjunctive which some overeager learners overuse, and \"dû\" uses the past participle by mistake.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780179527688-tk9a8qy4",
+      "timestamp": "2026-05-30T22:19:12.395Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating the plausibility of wrong answers for a French grammar question about the conditional after \"au cas où.\"\n\nVERDICT: IMPLAUSIBLE\nREASON: While \"doive\" (subjunctive confusion), \"devrai\" (future confusion), and \"devais\" (imparfait confusion) are excellent plausible mistakes, \"dusse\" (subjunctive imperfect) is extremely rare and literary—most learners wouldn't even know this form—and \"dû\" (past participle) is nonsensical in this position where a finite verb is clearly required.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780181882478-xi0kdx9i",
+      "timestamp": "2026-05-30T22:58:18.357Z"
+    }
+  ]
+}

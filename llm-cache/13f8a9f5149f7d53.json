@@ -1,0 +1,33 @@
+{
+  "cacheKey": "13f8a9f5149f7d53",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-05-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-05 - Le conditionnel pour exprimer une suggestion (on pourrait aller au restaurant)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez avec le conditionnel : « Vous ___ vérifier votre orthographe avant d'envoyer le mail. »\nChoices:\nA. [CORRECT] devriez\nB. devez\nC. deviez\nD. devrions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741956-2wv7et8v"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\n## Analysis Completed\nI evaluated whether the question \"Complétez avec le conditionnel : « Vous ___ vérifier votre orthographe avant d'envoyer le mail. »\" (with correct answer \"devriez\") properly tests the rule \"Le conditionnel pour exprimer une suggestion (on pourrait aller au restaurant)\".\n\n## My Verdict\nVERDICT: MISALIGNED\nREASON: The question tests the conditional of \"devoir\" for giving advice/recommendations (\"you should check your spelling\"), which is a different use of the conditional than expressing suggestions like \"on pourrait aller au restaurant\" as specified in the rule.\n\n## Remaining Tasks\nNone - the validation judgment was ready to be output.\n\n## Recommendation\nThis question would be better aligned with a rule about using \"devoir\" in the conditional for advice/recommendations. For the stated rule about suggestions, a question should use \"pourrait\" or similar constructions suggesting an activity (e.g., \"On ___ aller au cinéma ce soir - qu'est-ce que tu en penses?\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160968337-jmn9vmka",
+      "timestamp": "2026-05-30T17:11:10.831Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests using the conditional \"devriez\" to express a suggestion/advice, which is directly within the scope of using the conditional for suggestions as described in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166813024-h2ixckge",
+      "timestamp": "2026-05-30T18:47:17.673Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests the conditional for giving advice/piece of conseil (\"devriez\" as a recommendation), not the conditional for making a suggestion (\"on pourrait\" / \"on pourrait aller\" structure), which is a distinct communicative function.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171402137-7jtss80e",
+      "timestamp": "2026-05-30T20:03:40.400Z"
+    }
+  ]
+}

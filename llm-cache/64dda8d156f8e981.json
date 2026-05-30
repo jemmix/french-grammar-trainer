@@ -1,0 +1,33 @@
+{
+  "cacheKey": "64dda8d156f8e981",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-20-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Laquelle de ces phrases exprime une hypothèse irréelle au présent ?\n\nChoices:\nA. [CORRECT] Si je parlais mieux le chinois, je travaillerais en Chine.\nB. [WRONG] Si je parlais mieux le chinois, j'aurais travaillé en Chine.\nC. [WRONG] Si je parlais mieux le chinois, je travaille en Chine.\nD. [WRONG] Si j'aurais parlé mieux le chinois, j'aurais travaillé en Chine.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741981-xkjg4y1m"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses conditionnel passé in the result clause which expresses a past unreal hypothesis, not present; C uses présent indicatif instead of conditionnel présent in the result clause; D incorrectly uses conditionnel after \"si\" which is grammatically forbidden in French.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165470497-7va0d846",
+      "timestamp": "2026-05-30T18:24:54.259Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses conditionnel passé (irréel du passé, not présent), C incorrectly pairs imparfait with présent instead of conditionnel, and D uses the grammatically impossible \"si j'aurais\" construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170532616-4wzsllwm",
+      "timestamp": "2026-05-30T19:49:14.209Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses conditionnel passé instead of présent (expressing a past unreal hypothesis, not present), C uses indicatif présent instead of conditionnel présent after si+imparfait, and D incorrectly uses conditional after si (a structural error) plus conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173775605-t65w8h7e",
+      "timestamp": "2026-05-30T20:43:30.826Z"
+    }
+  ]
+}

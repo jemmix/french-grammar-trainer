@@ -1,0 +1,26 @@
+{
+  "cacheKey": "4885c0f430a43476",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-13-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-13 - Le conditionnel passé pour exprimer un reproche (tu aurais pu me prévenir)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il ___ attendre que tout le monde soit là avant de commencer. »\nChoices:\nA. [CORRECT] aurait mieux valu\nB. valait mieux\nC. aura mieux valu\nD. aurait dû\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741970-ow5pb0wc"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Verdict on the question:**\n\nVERDICT: MISALIGNED\nREASON: \"Il aurait mieux valu\" is an impersonal expression of regret about what would have been preferable, not a reproach directed at someone — the rule specifically targets the conditionnel passé used to reproach (e.g., \"tu aurais pu/dû\"), which requires a personal subject and implies fault.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780163140904-goy2e20r",
+      "timestamp": "2026-05-30T17:46:15.238Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a French grammar question about completing \"Il ___ attendre que tout le monde soit là avant de commencer\" with \"aurait mieux valu\" correctly tests the rule \"Le conditionnel passé pour exprimer un reproche.\"\n\nVerdict reached:\nVERDICT: MISALIGNED\nREASON: \"Il aurait mieux valu\" expresses regret or a preferable hypothetical situation, not a reproach directed at someone for failing to act — the rule specifically covers reproaches like \"tu aurais pu me prévenir\" where someone is being blamed for not doing something.\n\nNo remaining tasks — the validation was completed before the step limit.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168625656-rjpwq6r3",
+      "timestamp": "2026-05-30T19:17:20.947Z"
+    }
+  ]
+}

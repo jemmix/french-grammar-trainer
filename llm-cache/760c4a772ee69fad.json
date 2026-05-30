@@ -1,0 +1,33 @@
+{
+  "cacheKey": "760c4a772ee69fad",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Sélectionnez la bonne réponse. « Il a promis qu'il nous ___ du café. »\n\nChoices:\nA. [CORRECT] apporterait\nB. [WRONG] apporte\nC. [WRONG] apportait\nD. [WRONG] apportera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741975-kwyvff46"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||After \"a promis que\" in the past tense, the subordinate clause requires the conditional (\"apporterait\"), making the present (\"apporte\"), imparfait (\"apportait\"), and futur (\"apportera\") all grammatically incorrect in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164345090-q2mfjkcv",
+      "timestamp": "2026-05-30T18:05:59.582Z"
+    },
+    {
+      "raw": "TRUE||After \"a promis\" (passé composé), the concordance des temps requires the conditional mood for future-in-the-past, making the present indicative (B), imparfait (C), and futur simple (D) all grammatically incorrect in this reported speech context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169322088-ltiovcv8",
+      "timestamp": "2026-05-30T19:29:18.693Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was in the process of evaluating a French grammar MCQ verification task. The question asks to select the correct completion for \"Il a promis qu'il nous ___ du café.\" with the correct answer being \"apporterait\" (conditional). I analyzed the three wrong answers (B: apporte, C: apportait, D: apportera) to verify they are all incorrect under standard French reported speech rules after a past tense main clause.\n\nThe answer I would have provided:\nTRUE||All wrong answers violate standard reported speech rules — B uses present instead of conditional backshift, C uses imperfect which changes the meaning to ongoing past action, D uses future instead of conditional for future-in-the-past.\n\nRemaining tasks: None — this was a single verification question.\n\nRecommendations: No further action needed on this item.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173059215-c45fi8k1",
+      "timestamp": "2026-05-30T20:31:23.444Z"
+    }
+  ]
+}

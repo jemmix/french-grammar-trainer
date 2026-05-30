@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7cf995812f00493e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-02-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Ils ___ bien réussir cet examen s'ils travaillaient davantage. »\n\nChoices:\nA. [CORRECT] pourraient\nB. [WRONG] pourront\nC. [WRONG] peuvent\nD. [WRONG] pourrions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741951-77xgra1y"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses futur simple instead of conditionnel required by the imparfait clause, C uses présent instead of conditionnel, and D uses first-person plural conjugation with a third-person plural subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160119722-w7mptp83",
+      "timestamp": "2026-05-30T16:56:45.331Z"
+    },
+    {
+      "raw": "TRUE||B uses futur simple instead of the conditional required after si+imparfait; C uses présent instead of conditional; D is 1st person plural but the subject \"ils\" requires 3rd person plural.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166073573-80z1fgma",
+      "timestamp": "2026-05-30T18:34:48.986Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses futur simple instead of the required conditionnel présent with \"si + imparfait\", C uses présent de l'indicatif instead of conditionnel présent, and D uses the wrong person/number (pourrions is 1st person plural, not 3rd person plural required for \"Ils\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171016922-4xuuk201",
+      "timestamp": "2026-05-30T19:57:10.101Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7dbb67e6de19d458",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-08-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-08 - Le conditionnel dans les hypothèses : si + imparfait → conditionnel présent\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Si tu me le demandais gentiment, je te le ___. »\nChoices:\nA. [CORRECT] donnerais\nB. donnais\nC. donne\nD. donnerai\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741962-o0ywwbok"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the si + imparfait → conditionnel présent structure, as the correct answer \"donnerais\" requires knowing that an imperfect si-clause triggers the present conditional in the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780161884586-fkxu6vcj",
+      "timestamp": "2026-05-30T17:24:58.840Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the si + imparfait → conditionnel présent structure, as the correct answer \"donnerais\" can only be selected by knowing that an imparfait \"si\" clause requires a conditionnel présent in the main clause rather than futur, présent, or another imparfait.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167497727-aw3q6a24",
+      "timestamp": "2026-05-30T18:58:38.550Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI have completed the validation task that was requested:\n\nVERDICT: ALIGNED\nREASON: The question directly tests the si + imparfait → conditionnel présent structure, as the correct answer \"donnerais\" requires knowing that the main clause must use conditionnel présent when the si-clause uses imparfait.\n\nNo remaining tasks - the validation was completed in a single step.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171904726-ec76tmgj",
+      "timestamp": "2026-05-30T20:12:00.803Z"
+    }
+  ]
+}

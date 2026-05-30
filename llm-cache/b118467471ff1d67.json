@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b118467471ff1d67",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-02-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-02 - Les conditionnels irréguliers (mêmes radicaux que le futur : ser-, aur-, fer-, ir-, pourr-, voudr-...)\n\nQUESTION:\nType: Multiple Choice\nPrompt: « Vous ___ intéressé si je vous expliquais mieux. »\nChoices:\nA. [CORRECT] seriez\nB. serez\nC. êtes\nD. serais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741951-cson8w7b"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing the irregular conditional \"seriez\" (ser- radical + -iez ending for vous) from the future \"serez,\" the present \"êtes,\" and the wrong-person conditional \"serais,\" directly testing knowledge of irregular conditional stems listed in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160172064-2u0klyrf",
+      "timestamp": "2026-05-30T16:56:34.811Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the correct irregular conditional stem \"ser-\" with the proper ending \"-iez\" for \"vous\", and distinguishing it from the future \"serez\" (same stem, different tense) and the wrong person \"serais\" — all central to mastering irregular conditionals.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166065179-kg390b06",
+      "timestamp": "2026-05-30T18:34:45.158Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing the irregular conditional stem \"ser-\" for être and applying the correct conditional ending \"-iez\" for \"vous\", which is precisely what the rule about irregular conditionals covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171004888-ywhwsolx",
+      "timestamp": "2026-05-30T19:56:59.799Z"
+    }
+  ]
+}

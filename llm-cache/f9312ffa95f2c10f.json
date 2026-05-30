@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f9312ffa95f2c10f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-06-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-06 - Le conditionnel pour exprimer une information non confirmée (il y aurait 10 victimes)\n\nQUESTION:\nType: Input\nPrompt: Complétez en utilisant le conditionnel pour exprimer une affirmation rapportée douteuse\nPhrase: D'après la rumeur, le scandale ___ révélé le mois dernier.\nCorrect Answer: aurait été\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741958-v4c5027i"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the learner to recognize that \"d'après la rumeur\" signals unconfirmed information and to use the conditionnel passé (\"aurait été\") rather than the passé composé (\"a été\"), directly testing the use of conditional for reported doubtful information.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780161374843-vxzbts46",
+      "timestamp": "2026-05-30T17:16:31.948Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests using the conditional passé (\"aurait été\") to express doubtful reported information triggered by \"D'après la rumeur,\" which is the exact grammar pattern the rule describes.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167046576-c94crn9r",
+      "timestamp": "2026-05-30T18:50:57.093Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the use of the conditionnel passé (\"aurait été\") to express unconfirmed reported information introduced by \"d'après la rumeur,\" which is precisely the grammar point covered by rule 06-06.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171479166-9uos72kz",
+      "timestamp": "2026-05-30T20:05:06.631Z"
+    }
+  ]
+}

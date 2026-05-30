@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9ad4d8f3b6e23753",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-15-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Selon les archives, cet homme ___ pendant la Révolution. »\n\nChoices:\nA. [CORRECT] aurait travaillé\nB. [WRONG] aurait travailler\nC. [WRONG] avait travaillé\nD. [WRONG] travaillait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741973-dl3wttit"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was in the process of analyzing a French grammar MCQ question to verify that the wrong answers (B, C, D) are indeed incorrect. The question tests reported speech with \"selon les archives\" and the correct answer is \"aurait travaillé\" (conditional).\n\n## Analysis Completed\n- **B (aurait travailler)**: Clearly grammatically incorrect - uses infinitive instead of past participle after auxiliary \"aurait\"\n- **C (avait travaillé)**: Grammatically valid French (plus-que-parfait), but doesn't follow the conditional of reported speech rule\n- **D (travaillait)**: Grammatically valid French (imparfait), but doesn't follow the conditional of reported speech rule\n\n## Verdict\nFALSE|C,D|C (plus-que-parfait) and D (imparfait) are grammatically correct French verb forms that could be used with \"selon les archives,\" though they convey different nuances than the conditional of reported speech expected here.\n\n## Remaining Tasks\nNone - this was a single verification task.\n\n## Recommendations\nIf this question is meant to specifically test the conditional of reported speech (conditionnel de reportage), consider adding explicit wording like \"Conjuguez au conditionnel\" or \"Utilisez le conditionnel de reportage\" to make the constraint clear and ensure C and D are unambiguously wrong in that context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164005969-wibvre6m",
+      "timestamp": "2026-05-30T18:00:39.486Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B has a morphological error (infinitive instead of past participle), and C and D use the wrong tense for reported speech (plus-que-parfait and imparfait respectively instead of the required conditionnel passé for concordance des temps after \"Selon les archives\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169028914-wl7cah37",
+      "timestamp": "2026-05-30T19:24:12.148Z"
+    },
+    {
+      "raw": "TRUE||B uses an infinitive instead of a past participle after the auxiliary \"aurait,\" which is a clear grammar error; C (plus-que-parfait) and D (imparfait) do not convey the reported/uncertain nuance required by \"selon les archives,\" which specifically calls for the conditional perfect to indicate information attributed to a source with implicit uncertainty.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172905735-o5o7i0hz",
+      "timestamp": "2026-05-30T20:29:09.740Z"
+    }
+  ]
+}

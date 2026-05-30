@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c3a6e24625a9dbd8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez. « Marie pensait qu'elle ___ réussir l'examen. »\nChoices:\nA. [CORRECT] pourrait\nB. pouvait\nC. peut\nD. pourra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741975-gtr3d77o"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary\nI was asked to validate whether a French grammar MCQ question properly tests the stated rule about distinguishing \"futur dans le passé\" vs \"conditionnel\" (e.g., \"il a dit qu'il viendrait\").\n\n## Analysis Completed\nThe question asks students to complete \"Marie pensait qu'elle ___ réussir l'examen\" with the correct answer being \"pourrait\" (conditionnel of pouvoir). However, this sentence structure tests the use of conditionnel to express possibility/hypothesis in a past context, NOT the futur dans le passé construction. A true futur dans le passé example would use a main verb like \"réussirait\" (Marie thought she would pass = she predicted her future success). The use of \"pourrait\" here is about expressing ability/possibility, which is a different grammar concept entirely.\n\n## Remaining Tasks\nNone - the validation judgment was ready to be delivered.\n\n## Recommendation\nThe question should be marked as MISALIGNED and rewritten. To properly test this rule, the sentence should involve reporting someone's future prediction or intention from a past viewpoint, using a main verb that shifts from futur to conditionnel in indirect speech (e.g., \"Marie a dit qu'elle ___ réussir l'examen\" with \"réussirait\" as the correct answer and \"réussira\" as a tempting wrong answer testing the distinction).\n\nVERDICT: MISALIGNED\nREASON: The sentence uses \"pourrait\" to express past possibility, not the futur dans le passé construction which would use a shifted main verb like \"réussirait\" to report a future event from a past perspective.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164358619-nbe4epps",
+      "timestamp": "2026-05-30T18:06:35.603Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic tense agreement after a past main verb (concordance des temps) with \"pouvoir,\" not the specific distinction between futur dans le passé and conditionnel which involves ambiguous contexts like reported speech where both interpretations are possible.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169379238-b78sny0c",
+      "timestamp": "2026-05-30T19:31:16.884Z"
+    }
+  ]
+}

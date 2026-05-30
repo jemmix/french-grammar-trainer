@@ -1,0 +1,47 @@
+{
+  "cacheKey": "020bf6f9034b81aa",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-03-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Vous ___ me laisser seul, s'il vous plaît ? »\n\nChoices:\nA. [CORRECT] pourriez\nB. [WRONG] pouvez\nC. [WRONG] pourrez\nD. [WRONG] pouviez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741953-d30w0l40"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"pouvez\" is too direct for a polite request with \"s'il vous plaît,\" \"pourrez\" shifts meaning to future ability rather than present politeness, and \"pouviez\" uses the imparfait which cannot express a present request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160306772-6hc8enjc",
+      "timestamp": "2026-05-30T16:58:48.706Z"
+    },
+    {
+      "raw": "FALSE|B|\"Pouvez\" is grammatically correct in this sentence structure (\"Vous pouvez me laisser seul, s'il vous plaît ?\") even though the conditional \"pourriez\" is more polite; the question doesn't explicitly require the conditional mood.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166200607-9agr7f5k",
+      "timestamp": "2026-05-30T18:37:18.838Z"
+    },
+    {
+      "raw": "TRUE||B uses present tense instead of conditional for a polite request with \"s'il vous plaît\", C uses future tense which is not used for making requests, and D uses imperfect tense which is inappropriate for requests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171144161-q0m1znpr",
+      "timestamp": "2026-05-30T19:59:46.488Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"pouvez\" is present tense and too direct for this polite request context, \"pourrez\" is future tense which doesn't fit a present request with \"s'il vous plaît\", and \"pouviez\" is imperfect tense used for past descriptions not present requests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780173963781-ep614dc9",
+      "timestamp": "2026-05-30T20:47:22.128Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify wrong answers in a French grammar MCQ question about completing \"Vous ___ me laisser seul, s'il vous plaît ?\" with the correct form of \"pouvoir\".\n\nAnalysis completed:\n- The correct answer is \"pourriez\" (conditional, used for polite requests)\n- B \"pouvez\" (present indicative) is grammatically correct French and could complete the sentence, though stylistically less polite than conditional with \"s'il vous plaît\"\n- C \"pourrez\" (future) changes the meaning to future capability\n- D \"pouviez\" (imperfect) is past tense and doesn't fit\n\nRemaining tasks: None - the analysis was complete.\n\nRecommendation: The verdict should be FALSE|B|B \"pouvez\" is grammatically correct present indicative and could complete the sentence, though it's stylistically less polite than the conditional form typically expected with \"s'il vous plaît\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780174392334-n6xmo576",
+      "timestamp": "2026-05-30T20:53:53.476Z"
+    }
+  ]
+}

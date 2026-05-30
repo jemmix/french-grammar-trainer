@@ -1,0 +1,26 @@
+{
+  "cacheKey": "5fa4de9f4e86330f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-12-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « J'___ plus attentif à la classe si j'avais étudié. »\nChoices:\nA. [CORRECT] aurais été\nB. avais été\nC. aurais eu\nD. étais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741968-7y840bba"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of work done\n\nI was asked to validate a single French grammar question against its stated rule. I completed the analysis:\n\n**Question analyzed:** \"J'___ plus attentif à la classe si j'avais étudié.\" with correct answer \"aurais été\"\n\n**Rule claimed:** 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\n**My verdict:**\nVERDICT: MISALIGNED\nREASON: The question tests the conditionnel passé in a standard si-clause structure (hypothetical past situation with si + plus-que-parfait), not the specific construction \"aurais dû + infinitif\" used to express regret.\n\nThe distinction matters because the rule is specifically about the \"devoir au conditionnel passé\" pattern for regrets (\"I should have done X\"), but the question uses \"être au conditionnel passé\" in a conditional sentence, which is a different grammar point entirely.\n\n## Remaining tasks\n\nNone — this was a single-question validation task that I completed.\n\n## Recommendations\n\nIf this question is meant to test expressing regret, it should be rewritten to use \"devoir\" in the conditionnel passé, for example:\n- \"J'___ étudier plus tôt.\" → \"aurais dû\"\n\nIf the question is meant to test si-clauses with conditionnel passé, it should be mapped to a different rule that covers that structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162700059-ypxk53r3",
+      "timestamp": "2026-05-30T17:39:53.392Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: This question tests the conditionnel passé in an \"si\" clause structure (si + plus-que-parfait → conditionnel passé) for a hypothetical past situation, not the specific regret pattern \"j'aurais dû + infinitif\" that the rule describes.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168301559-6jfi9upc",
+      "timestamp": "2026-05-30T19:12:04.821Z"
+    }
+  ]
+}

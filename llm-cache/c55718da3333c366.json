@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c55718da3333c366",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-12-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « J'___ cette décision si j'avais envisagé les conséquences. »\nChoices:\nA. [CORRECT] aurais modifié\nB. aurais modifiant\nC. avais modifié\nD. ai modifié\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741969-pq1hzl60"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a French grammar question properly tests the stated rule about \"Le conditionnel passé pour exprimer un regret\" (past conditional to express regret).\n\nMy analysis:\n\nVERDICT: MISALIGNED\nREASON: This question tests the si-clause conditional structure (si + plus-que-parfait → conditionnel passé) rather than specifically expressing a regret with the conditionnel passé — the sentence \"J'aurais modifié cette décision si j'avais envisagé les conséquences\" is a hypothetical unreal past condition, not an expression of regret like \"j'aurais dû étudier.\"\n\nRemaining tasks: None — the validation was completed.\n\nRecommendations: The question could be realigned by changing the prompt to explicitly frame it as a regret, for example: \"Exprimez votre regret : « ___ prendre cette décision. »\" with choices like \"J'aurais dû\" (correct), \"J'ai dû\", \"Je devais\", \"J'aurais\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780162832914-vmiyikbr",
+      "timestamp": "2026-05-30T17:41:03.379Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing the conditionnel passé form (auxiliary avoir in conditionnel présent + past participle) to complete the sentence expressing what one would have done differently, which directly tests knowledge of this tense's formation and usage for past hypotheticals/regrets.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780168377995-ualwz9wq",
+      "timestamp": "2026-05-30T19:13:38.579Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\n\nI was asked to validate whether a French grammar question properly tests the stated rule about \"Le conditionnel passé pour exprimer un regret\" (the past conditional to express a regret).\n\n## Analysis Completed\n\nThe question asks students to complete: \"J'___ cette décision si j'avais envisagé les conséquences.\" with the correct answer being \"aurais modifié.\"\n\n**Verdict: MISALIGNED**\n\n**Reason:** This question tests the si-clause structure (plus-que-parfait → conditionnel passé in the main clause) rather than the specific use of conditionnel passé to express regret. The rule explicitly references the \"devoir\" construction (\"j'aurais dû étudier\") for expressing regret, but this question tests a hypothetical/conditional sentence structure where regret is at most implicit. A student could answer correctly knowing only si-clause rules without understanding the \"regret\" usage of conditionnel passé.\n\n## Remaining Tasks\n\nNone - the validation was completed before the step limit was reached.\n\n## Recommendations\n\nTo properly test \"Le conditionnel passé pour exprimer un regret,\" questions should focus on constructions with \"devoir\" (e.g., \"J'aurais dû + infinitif\") or other explicit regret expressions, rather than hypothetical si-clause sentences.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780172547992-6k6jkh4w",
+      "timestamp": "2026-05-30T20:23:17.664Z"
+    }
+  ]
+}

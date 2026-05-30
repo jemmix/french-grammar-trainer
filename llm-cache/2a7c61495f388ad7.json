@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2a7c61495f388ad7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-08-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si tu venais avec nous, tu ___ vraiment la beauté de la région. »\n\nChoices:\nA. [CORRECT] découvrirais\nB. [WRONG] découvrais\nC. [WRONG] découvres\nD. [WRONG] découvriras\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741961-sw70cxty"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses: B uses imparfait instead of conditionnel, C uses présent instead of conditionnel, and D uses futur simple which requires si+présent not si+imparfait.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780161790201-29yycbjb",
+      "timestamp": "2026-05-30T17:23:30.747Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the wrong tense for the main clause of a conditional sentence with an imperfect si-clause (B uses imparfait, C uses présent, D uses futur simple instead of the required conditionnel présent).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780167418167-2arw0kmb",
+      "timestamp": "2026-05-30T18:57:14.058Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ question are indeed incorrect.\n\nAnalysis completed: The question asks to complete a conditional sentence \"Si tu venais avec nous, tu ___ vraiment la beauté de la région.\" The protasis uses \"si + imparfait\" (venais), which requires the conditionnel présent in the main clause. \n\n- B (découvrais) is imparfait - incorrect\n- C (découvres) is présent - incorrect  \n- D (découvriras) is futur simple - incorrect\n\nAll wrong answers use the wrong tense for this grammatical construction.\n\nTRUE||All wrong answers use incorrect tenses for a si+imparfait clause, which requires conditionnel présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171805823-nxa5zj15",
+      "timestamp": "2026-05-30T20:10:28.244Z"
+    }
+  ]
+}

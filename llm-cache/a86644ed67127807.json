@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a86644ed67127807",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-03-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle est la manière la plus polie de refuser quelque chose ?\n\nChoices:\nA. [CORRECT] Je ne pourrais malheureusement pas accepter cette offre.\nB. [WRONG] Je ne peux pas accepter cette offre.\nC. [WRONG] Je n'accepte pas cette offre.\nD. [WRONG] Je n'accepterai pas cette offre.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741953-zgx4o01q"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically correct French but are less polite than the conditional form with \"malheureusement\" in A, so none qualify as \"la manière la plus polie.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160388221-94dit1k1",
+      "timestamp": "2026-05-30T17:00:21.348Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically correct French but are not the most polite way to refuse as the question requires—they lack the conditional mood and \"malheureusement\" that soften the refusal in the correct answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166265400-npwvtr2b",
+      "timestamp": "2026-05-30T18:38:06.144Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically correct but fail to meet the \"most polite\" register requirement specified in the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171177599-qw70v56e",
+      "timestamp": "2026-05-30T20:00:08.017Z"
+    }
+  ]
+}

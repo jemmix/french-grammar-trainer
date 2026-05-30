@@ -1,0 +1,26 @@
+{
+  "cacheKey": "72bcf8ac3372add5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Sélectionnez. « Vous aviez affirmé que le projet ___ avant juillet. »\nChoices:\nA. [CORRECT] serait terminé\nB. était terminé\nC. est terminé\nD. sera terminé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741975-q5gkhlm0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the futur dans le passé by requiring the learner to recognize that after a past reporting verb (\"aviez affirmé\"), the original future shifts to conditional (\"serait terminé\") rather than remaining in the future tense (\"sera terminé\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780164406347-pukmyamg",
+      "timestamp": "2026-05-30T18:07:10.225Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question. Here is my assessment:\n\nVERDICT: ALIGNED\nREASON: The question requires distinguishing the conditional form used for \"futur dans le passé\" (serait) from the actual future tense (sera) when reporting a past statement about future events, which is precisely what rule 06-16 covers.\n\nThe question presents a classic reporting context (\"Vous aviez affirmé que...\") and forces the student to choose between the conditional (correct for future-in-the-past) and the future tense (incorrect because it doesn't respect the past reporting frame), directly testing the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780169417656-687x6esa",
+      "timestamp": "2026-05-30T19:40:50.194Z"
+    }
+  ]
+}

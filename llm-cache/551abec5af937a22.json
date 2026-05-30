@@ -1,0 +1,33 @@
+{
+  "cacheKey": "551abec5af937a22",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-02-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Si j'avais plus de temps, je ___ à la bibliothèque. »\n\nChoices:\nA. [CORRECT] serais\nB. [WRONG] serai\nC. [WRONG] suis\nD. [WRONG] serait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741950-gx2879cx"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:** I was in the process of evaluating a French grammar verification task for a multiple choice question about conditional tense in si-clauses.\n\n**Analysis completed:** The question « Si j'avais plus de temps, je ___ à la bibliothèque. » requires the conditionnel présent (1st person singular) after \"si + imparfait\". \n- B (serai) is futur simple - incorrect for this structure\n- C (suis) is présent - incorrect for this structure  \n- D (serait) is conditionnel but 3rd person singular - incorrect person agreement\n\n**Verdict that would have been returned:** TRUE||All wrong answers use incorrect tense or person combinations for the required conditional structure with \"si + imparfait\".\n\n**Remaining tasks:** None - the analysis was complete but the response could not be formatted before the step limit was reached.\n\n**Recommendation:** The validation result is TRUE - all wrong answers are genuinely incorrect. No fixes needed for this question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780159969645-gkuh80sw",
+      "timestamp": "2026-05-30T16:53:16.271Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses futur simple instead of conditionnel présent required after \"si\" + imparfait, C uses présent instead of conditionnel présent, and D uses 3rd person singular \"serait\" instead of 1st person singular \"serais\" for the subject \"je\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165883082-bb3m1rzw",
+      "timestamp": "2026-05-30T18:31:48.833Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses futur simple instead of conditionnel présent required after \"si\" + imparfait, C uses présent instead of conditionnel, and D uses 3rd person singular ending instead of 1st person singular for \"je\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170877920-ebdjj7fn",
+      "timestamp": "2026-05-30T19:54:53.978Z"
+    }
+  ]
+}

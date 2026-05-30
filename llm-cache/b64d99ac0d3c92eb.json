@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b64d99ac0d3c92eb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-03-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase demande poliment la permission ?\n\nChoices:\nA. [CORRECT] Aurais-je la permission de partir plus tôt ?\nB. [WRONG] Ai-je la permission de partir plus tôt ?\nC. [WRONG] Aurai-je la permission de partir plus tôt ?\nD. [WRONG] Avais-je la permission de partir plus tôt ?\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780159741953-y8zs5mwj"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying a French grammar multiple choice question. The question asks \"Quelle phrase demande poliment la permission ?\" (Which phrase politely asks for permission?) and I needed to verify that answers B, C, and D are indeed incorrect.\n\nMy analysis was complete:\n- B (\"Ai-je\") uses present indicative, which is grammatically correct but too direct to be considered \"polite\"\n- C (\"Aurai-je\") uses future simple, which doesn't convey the politeness of the conditional\n- D (\"Avais-je\") uses imperfect, asking about past permission rather than making a current polite request\n\nAll three wrong answers are indeed incorrect within the constraints of the question (asking \"poliment\" requires the conditional \"aurais-je\").\n\nThe verdict would have been: TRUE||All wrong answers fail to meet the \"poliment\" requirement: B uses present indicative (too direct), C uses future simple (not a polite request form), D uses imperfect (refers to past, not a current request).\n\nNo remaining tasks - this was a single verification task that I had completed analyzing before the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780160331809-1euxwy1t",
+      "timestamp": "2026-05-30T16:59:23.054Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail the specific requirement of asking \"politely\": B uses present indicative (too direct), C uses future tense (not standard for polite permission requests), and D uses imperfect (refers to past permission).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780166238839-hl889xtl",
+      "timestamp": "2026-05-30T18:37:40.867Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically correct but fail the specific requirement of asking \"poliment\" (politely) — B uses direct present indicative, C uses future tense asking about a future state rather than making a polite request, and D uses imperfect to ask about a past situation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780171162281-bl6y0yn1",
+      "timestamp": "2026-05-30T19:59:43.555Z"
+    }
+  ]
+}

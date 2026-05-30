@@ -1,0 +1,26 @@
+{
+  "cacheKey": "30ab680d789fba75",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-19-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-19 - La négation au conditionnel présent et passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Les enfants ___ pas sortis s'il avait plu. »\nChoices:\nA. [CORRECT] ne seraient\nB. ne sortiraient\nC. ne sont\nD. ne sortiront\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741980-ghedhref"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\n\nI was asked to validate whether a French grammar question properly tests the stated rule \"06-19 - La négation au conditionnel présent et passé\" (Negation in the conditional present and past).\n\n## Analysis Completed\n\n**Question:** \"Complétez : « Les enfants ___ pas sortis s'il avait plu. »\" with choices focusing on verb forms (ne seraient, ne sortiraient, ne sont, ne sortiront).\n\nThe question primarily tests:\n- Selecting the correct conditional tense (conditionnel passé) for a past hypothetical condition (\"s'il avait plu\")\n- Choosing the correct auxiliary verb (être) with \"sorti\"\n- Distinguishing conditionnel passé from conditionnel présent, présent, and futur\n\nThe negation element (\"ne...pas\") is already provided in the prompt structure—the blank only requires inserting \"ne\" before the verb. The negation is incidental, not the focus.\n\n## Verdict\n\nVERDICT: MISALIGNED\nREASON: The question primarily tests conditional tense selection and auxiliary verb choice for a past hypothetical condition, not the placement or form of negation in the conditional, which is already provided in the prompt.\n\n## Remaining Tasks\n\nNone—this was a single-question validation task.\n\n## Recommendations\n\nTo properly test negation in the conditional, the question should focus on where \"ne\" and \"pas\" go in relation to the conditional verb, or test common negation mistakes specific to the conditional (e.g., incorrect placement of pronouns with negation in the conditional).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165217981-x7d8tkq9",
+      "timestamp": "2026-05-30T18:21:01.391Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a single question validation task. Here is my assessment:\n\nVERDICT: MISALIGNED\nREASON: The question primarily tests si-clause tense agreement (plus-que-parfait triggering conditionnel passé) rather than the specific mechanics of negation in the conditional, which is incidental to solving the question.\n\nThe negation structure \"ne...pas\" is already partially provided in the prompt, so the core challenge is selecting the correct verb tense, not understanding how negation works with the conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170276519-6vu51dt1",
+      "timestamp": "2026-05-30T19:45:01.734Z"
+    }
+  ]
+}

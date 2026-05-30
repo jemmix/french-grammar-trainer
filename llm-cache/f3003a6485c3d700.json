@@ -1,0 +1,26 @@
+{
+  "cacheKey": "f3003a6485c3d700",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-19-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-19 - La négation au conditionnel présent et passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Tu ___ rien dire à personne, compris ? »\nChoices:\nA. [CORRECT] ne devrais\nB. ne devrais pas\nC. ne devais\nD. n'aurais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780159741979-o6uznl4d"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a French grammar question about completing the sentence \"Tu ___ rien dire à personne, compris ?\" with choices \"ne devrais,\" \"ne devrais pas,\" \"ne devais,\" and \"n'aurais\" actually tests the rule \"La négation au conditionnel présent et passé\" (Negation in present and past conditional).\n\nMy assessment:\nVERDICT: MISALIGNED\nREASON: The question tests recognizing conditionnel présent vs. imparfait of \"devoir,\" not the negation structure, since the negation elements (ne...rien, ne...personne) are already provided in the prompt.\n\nRemaining tasks: None - this was a single validation task.\n\nRecommendations: To properly test negation in the conditional, the question should require the student to place or construct the negation elements (ne...pas, ne...rien, ne...jamais, etc.) around a conditional verb, rather than just selecting the correct verb form when negation is already given.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780165152695-xt1h42x4",
+      "timestamp": "2026-05-30T18:19:34.745Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of validating a French grammar question against its stated rule \"La négation au conditionnel présent et passé\" (Negation in the present and past conditional).\n\nMy analysis concluded:\nVERDICT: MISALIGNED\nREASON: The negation rule being tested (not using \"pas\" when \"rien\" is present) applies to all tenses, not specifically to the conditional, so the conditional aspect is incidental rather than central.\n\nThe question \"Tu ___ rien dire à personne, compris ?\" with correct answer \"ne devrais\" primarily tests the general French negation rule about not stacking negative particles (\"pas\" + \"rien\"), which is tense-independent. The conditional tense is just the form the verb happens to take here, not the focus of the grammar being tested.\n\nNo remaining tasks - this was a single-question validation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780170192381-gujyppw6",
+      "timestamp": "2026-05-30T19:44:00.695Z"
+    }
+  ]
+}
