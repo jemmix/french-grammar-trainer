@@ -399,7 +399,7 @@ const section: Section = {
         { text: "serais", correct: true, explanation: "Le radical irrégulier « ser- » est partagé par le futur et le conditionnel. Avec le sujet « je », la terminaison du conditionnel est « -ais »." },
         { text: "serai", correct: false, explanation: "« Serai » est le futur simple (« je serai »), pas le conditionnel. Le contexte « si j'avais » exige le conditionnel." },
         { text: "suis", correct: false, explanation: "« Suis » est le présent de « être ». Le conditionnel du radical irrégulier « ser- » est « serais »." },
-        { text: "étais", correct: false, explanation: "« Étais » est l'imparfait de « être ». Le conditionnel du radical irrégulier « ser- » est « serais »." },
+        { text: "serait", correct: false, explanation: "« Serait » est le conditionnel à la 3e personne du singulier, mais le sujet est « je ». La forme correcte est « serais »." },
       ],
     },
     {
@@ -2247,7 +2247,7 @@ const section: Section = {
         { text: "serais", correct: true, explanation: "Le conditionnel « serais » exprime un rêve ou une imagination : je serais heureux (hypothétiquement) dans ce lieu magique." },
         { text: "suis", correct: false, explanation: "« Suis » est le présent. Le conditionnel convient mieux pour exprimer un scénario imaginaire." },
         { text: "serai", correct: false, explanation: "« Serai » est le futur simple. Le conditionnel exprime mieux une hypothèse imaginaire." },
-        { text: "étais", correct: false, explanation: "« Étais » est l'imparfait de l'indicatif. On a besoin du conditionnel pour exprimer l'hypothèse, pas l'imparfait." },
+        { text: "serait", correct: false, explanation: "« Serait » est le conditionnel à la 3e personne du singulier, mais le sujet est « je ». La forme correcte est « serais »." },
       ],
     },
     {
@@ -3812,7 +3812,7 @@ const section: Section = {
         { text: "aurais eu", explanation: "Le verbe « réussir » qui suit demande seulement l'auxiliaire « aurais », pas l'auxiliaire complet « aurais eu »." },
         { text: "avais", explanation: "C'est l'imparfait (auxiliaire imparfait), pas le conditionnel passé." },
         { text: "ai", explanation: "C'est le présent du passé composé, pas le conditionnel passé." },
-        { text: "serais", explanation: "« Serais » est l'auxiliaire être au conditionnel, mais « réussir » requiert l'auxiliaire avoir (aurais)." },
+        { text: "auriez", explanation: "« Auriez » est le conditionnel à la 2e personne du pluriel, mais le sujet est « je ». La forme correcte est « aurais »." },
       ],
     },
     {
@@ -3848,7 +3848,7 @@ const section: Section = {
         { text: "ai voulu", explanation: "C'est le passé composé, pas le conditionnel passé. L'auxiliaire doit être au conditionnel (aurais), pas au présent (ai)." },
         { text: "avais voulu", explanation: "C'est le plus-que-parfait, pas le conditionnel passé. L'auxiliaire doit être au conditionnel (aurais), non à l'imparfait (avais)." },
         { text: "aurais vouloir", explanation: "Il faut le participe passé (voulu), pas l'infinitif (vouloir)." },
-        { text: "serais voulu", explanation: "« Serais voulu » utilise l'auxiliaire être, mais « vouloir » requiert l'auxiliaire avoir (aurais voulu)." },
+        { text: "aurions voulu", explanation: "« Aurions voulu » est le conditionnel passé à la 1re personne du pluriel, mais le sujet est « je ». La forme correcte est « aurais voulu »." },
       ],
     },
     {

@@ -7,11 +7,6 @@ import { checkQuestionElision, type QuestionElisionIssue } from "./elision-check
 const QUESTIONS_DIR = join(import.meta.dirname, "../../questions/fr");
 
 const ALLOWED_FAILING_SECTIONS = new Set([
-  "02",
-  "03",
-  "04",
-  "05",
-  "06",
   "07",
   "08",
   "09",
@@ -66,22 +61,23 @@ describe("elision lint across all question files", () => {
     results.push(result);
   }
 
-  it("section 01 should have no elision issues", () => {
-    const section01Issues = results
-      .filter((r) => r.sectionId === "01")
+  it("sections 01-06 should have no elision issues", () => {
+    const strictSections = new Set(["01", "02", "03", "04", "05", "06"]);
+    const strictIssues = results
+      .filter((r) => strictSections.has(r.sectionId))
       .flatMap((r) => r.issues);
 
-    if (section01Issues.length > 0) {
-      const messages = section01Issues.map(
+    if (strictIssues.length > 0) {
+      const messages = strictIssues.map(
         (i) => `  ${i.questionId}: [${i.kind}] ${i.message}`
       );
       expect.fail(
-        `Section 01 has ${section01Issues.length} elision issue(s):\n${messages.join("\n")}`
+        `Sections 01-06 have ${strictIssues.length} elision issue(s):\n${messages.join("\n")}`
       );
     }
   });
 
-  it("report all elision issues (sections 02-12 failures are allowed but logged)", () => {
+  it("report all elision issues (sections 07-12 failures are allowed but logged)", () => {
     const allowedFailing: FileResult[] = [];
     const disallowedFailing: FileResult[] = [];
 
@@ -89,8 +85,11 @@ describe("elision lint across all question files", () => {
       if (result.issues.length > 0) {
         if (ALLOWED_FAILING_SECTIONS.has(result.sectionId)) {
           allowedFailing.push(result);
-        } else if (result.sectionId !== "01") {
+      } else if (result.sectionId !== "01") {
+        const strictSections = new Set(["02", "03", "04", "05", "06"]);
+        if (!strictSections.has(result.sectionId)) {
           disallowedFailing.push(result);
+        }
         }
       }
     }
@@ -117,7 +116,7 @@ describe("elision lint across all question files", () => {
     );
     if (totalAllowedIssues > 0) {
       console.log(
-        `\n[INFO] ${totalAllowedIssues} elision issue(s) in allowed sections (02-12) - these do not fail the test`
+        `\n[INFO] ${totalAllowedIssues} elision issue(s) in allowed sections (07-12) - these do not fail the test`
       );
     }
   });
