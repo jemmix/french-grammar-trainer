@@ -1087,6 +1087,8 @@ export const answerHints: Record<string, string> = {
   "venez": "venir",
   "veniez": "venir",
   "verrai": "voir",
+  "irons jamais": "aller",
+  "verrai personne": "voir",
   "verras": "voir",
   "atteindrez": "atteindre",
   "verrez": "voir",
