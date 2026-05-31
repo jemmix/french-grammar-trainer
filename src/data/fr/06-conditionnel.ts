@@ -2512,7 +2512,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez au conditionnel présent : « Si vous aviez des vacances, où ___-vous ? »",
+      prompt: "Après « si + imparfait », quel temps dans la principale ? « Si vous aviez des vacances, où ___-vous ? » (aller)",
       choices: [
         { text: "iriez", correct: true, explanation: "Le conditionnel présent de « aller » à la 2e personne du pluriel est « iriez »." },
         { text: "alliez", correct: false, explanation: "« Alliez » est l'imparfait, incompatible dans la principale d'une hypothèse conditionnelle." },
@@ -2756,7 +2756,7 @@ const section: Section = {
         { text: "est", explanation: "« Est » est le présent de l'indicatif, non approprié pour une hypothèse irréelle du présent." },
         { text: "sera", explanation: "« Sera » est le futur simple, incompatible avec si + imparfait." },
         { text: "soit", explanation: "« Soit » est le présent du subjonctif, non adapté à cette structure conditionnelle." },
-        { text: "serait-il", explanation: "La phrase est une affirmation, non une question, donc l'inversion n'est pas appropriée ici." },
+        { text: "serais", explanation: "« Serais » est la forme pour « je/tu », mais le sujet est « il » — il faut « serait »." },
       ],
     },
     {
@@ -2774,7 +2774,7 @@ const section: Section = {
         { text: "fais", explanation: "« Fais » est le présent, incorrect après une hypothèse irréelle du présent." },
         { text: "ferai", explanation: "« Ferai » est le futur, non adapté à la structure si + imparfait." },
         { text: "fasse", explanation: "« Fasse » est le présent du subjonctif, non approprié pour exprimer une hypothèse." },
-        { text: "ferait-je", explanation: "La phrase est une affirmation, non une question, donc l'inversion n'est pas ici appropriée." },
+        { text: "ferions", explanation: "« Ferions » est la forme pour « nous », pas pour « je »." },
       ],
     },
     {
@@ -2810,7 +2810,7 @@ const section: Section = {
         { text: "peux", explanation: "« Peux » est le présent, incompatible avec l'hypothèse « si + imparfait »." },
         { text: "pourrai", explanation: "« Pourrai » est le futur, incorrect pour cette structure hypothétique." },
         { text: "puisse", explanation: "« Puisse » est le présent du subjonctif, non approprié pour exprimer une hypothèse." },
-        { text: "pourrais-tu", explanation: "La phrase est une affirmation, non une question, donc l'inversion n'est pas appropriée ici." },
+        { text: "pourrions", explanation: "« Pourrions » est la forme pour « nous », pas pour « tu »." },
       ],
     },
     {
@@ -2828,7 +2828,7 @@ const section: Section = {
         { text: "serions", explanation: "« Serions » est la forme du conditionnel pour « nous », pas pour « vous ». La bonne forme pour « vous » est « seriez »." },
         { text: "serez", explanation: "« Serez » est le futur, incompatible avec si + imparfait." },
         { text: "soyez", explanation: "« Soyez » est le présent du subjonctif, non adapté à cette structure conditionnelle." },
-        { text: "seriez-vous", explanation: "La phrase est une affirmation, non une question, donc l'inversion n'est pas appropriée ici." },
+        { text: "seraient", explanation: "« Seraient » est la forme pour « ils/elles », pas pour « vous »." },
       ],
     },
     {
