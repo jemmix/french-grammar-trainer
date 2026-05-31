@@ -18,11 +18,11 @@ const section: Section = {
     { id: "06-03", sectionId: "06-conditionnel", title: "Le conditionnel de politesse (je voudrais, pourriez-vous, j'aimerais)" },
     { id: "06-04", sectionId: "06-conditionnel", title: "Le conditionnel pour exprimer un souhait ou un désir (j'aimerais voyager)" },
     { id: "06-05", sectionId: "06-conditionnel", title: "Le conditionnel pour exprimer une suggestion (on pourrait aller au restaurant)" },
-    { id: "06-06", sectionId: "06-conditionnel", title: "Le conditionnel pour exprimer une information non confirmée (il y aurait 10 victimes)" },
-    { id: "06-07", sectionId: "06-conditionnel", title: "Le conditionnel pour exprimer l'imaginaire (je serais le roi et tu serais la reine)" },
-    { id: "06-08", sectionId: "06-conditionnel", title: "Le conditionnel dans les hypothèses : si + imparfait → conditionnel présent" },
-    { id: "06-09", sectionId: "06-conditionnel", title: "Le conditionnel après au cas où (au cas où il pleuvrait)" },
-    { id: "06-10", sectionId: "06-conditionnel", title: "Le conditionnel pour exprimer un reproche atténué (tu pourrais faire attention)" },
+    { id: "06-06", sectionId: "06-conditionnel", title: "Le conditionnel dans les phrases avec « si » : si + imparfait → conditionnel présent" },
+    { id: "06-07", sectionId: "06-conditionnel", title: "Le conditionnel présent pour exprimer une hypothèse (un rêve, une imagination)" },
+    { id: "06-08", sectionId: "06-conditionnel", title: "Les phrases conditionnelles avec « si » : concordance des temps si + imparfait → conditionnel présent" },
+    { id: "06-09", sectionId: "06-conditionnel", title: "Le conditionnel présent dans les phrases avec « si » : variétés de conditions" },
+    { id: "06-10", sectionId: "06-conditionnel", title: "Le conditionnel présent pour atténuer une affirmation ou exprimer la prudence" },
     { id: "06-11", sectionId: "06-conditionnel", title: "Formation du conditionnel passé : auxiliaire au conditionnel + participe passé" },
     { id: "06-12", sectionId: "06-conditionnel", title: "Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)" },
     { id: "06-13", sectionId: "06-conditionnel", title: "Le conditionnel passé pour exprimer un reproche (tu aurais pu me prévenir)" },
@@ -746,7 +746,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Choisissez la forme la plus polie pour demander quelque chose :",
       choices: [
-        { text: "Je voudrais un café, s'il vous plaît.", correct: true, explanation: "Le conditionnel présent « voudrais » exprime une demande polite et respectueuse." },
+        { text: "Je voudrais un café, s'il vous plaît.", correct: true, explanation: "Le conditionnel présent « voudrais » exprime une demande polie et respectueuse." },
         { text: "Je veux un café, s'il vous plaît.", correct: false, explanation: "Le présent de l'indicatif « veux » est direct et moins poli que le conditionnel." },
         { text: "J'ai voulu un café, s'il vous plaît.", correct: false, explanation: "Le passé composé « ai voulu » n'exprime pas une demande actuelle et est grammaticalement inapproprié." },
         { text: "Je voudrai un café, s'il vous plaît.", correct: false, explanation: "Le futur « voudrai » exprime une certitude future, pas une demande polie au conditionnel." },
@@ -757,7 +757,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-03",
       generatedBy: "sonnet",
-      prompt: "Complétez la phrase : « ___ m'aider avec ce projet ? »",
+      prompt: "Complétez au conditionnel présent : « ___ m'aider avec ce projet ? »",
       choices: [
         { text: "Pourriez-vous", correct: true, explanation: "Le conditionnel « pourriez-vous » est la forme polie standard pour demander une aide." },
         { text: "Pouvez-vous", correct: false, explanation: "Le présent de l'indicatif « pouvez-vous » est direct et moins poli que le conditionnel." },
@@ -783,7 +783,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-03",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ vous poser une question, si vous le permettez. »",
+      prompt: "Complétez au conditionnel présent : « Je ___ vous poser une question, si vous le permettez. »",
       choices: [
         { text: "voudrais", correct: true, explanation: "Le conditionnel « voudrais » formule une demande polie et respectueuse." },
         { text: "veux", correct: false, explanation: "Le présent de l'indicatif « veux » est trop direct pour une demande polie." },
@@ -822,7 +822,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-03",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ que tu m'aides avec les devoirs. »",
+      prompt: "Complétez au conditionnel présent : « Je ___ que tu m'aides avec les devoirs. »",
       choices: [
         { text: "voudrais", correct: true, explanation: "Le conditionnel « voudrais » exprime poliment un désir ou une demande." },
         { text: "veux", correct: false, explanation: "Le présent de l'indicatif « veux » est trop direct pour exprimer une demande polie." },
@@ -848,7 +848,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-03",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ me laisser seul, s'il vous plaît ? »",
+      prompt: "Complétez au conditionnel présent : « Vous ___ me laisser seul, s'il vous plaît ? »",
       choices: [
         { text: "pourriez", correct: true, explanation: "Le conditionnel « pourriez » formule une demande polie et respectueuse." },
         { text: "pouvez", correct: false, explanation: "Le présent de l'indicatif « pouvez » est trop direct pour une demande polie." },
@@ -861,12 +861,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-03",
       generatedBy: "sonnet",
-      prompt: "Quelle est la manière la plus polie d'exprimer un regret concernant une action passée ?",
+      prompt: "Quelle phrase exprime un souhait de manière polie au conditionnel présent ?",
       choices: [
-        { text: "J'aurais préféré ne pas y aller.", correct: true, explanation: "Le plus-que-parfait du conditionnel « aurais préféré » exprime un regret du passé de manière polie." },
-        { text: "J'ai préféré ne pas y aller.", correct: false, explanation: "Le passé composé « ai préféré » indique une décision, pas un regret poli." },
-        { text: "J'aurais aimé ne pas y aller.", correct: false, explanation: "Bien que correct, cette forme est moins spécifique que « aurais préféré »." },
-        { text: "Je préfère ne pas y être allé.", correct: false, explanation: "Le présent de l'indicatif « préfère » est trop direct pour exprimer un regret." },
+        { text: "J'aimerais voyager au Japon un jour.", correct: true, explanation: "Le conditionnel présent « aimerais » exprime un souhait de manière polie et atténuée." },
+        { text: "Je veux voyager au Japon un jour.", correct: false, explanation: "Le présent de l'indicatif « veux » est trop direct pour exprimer un souhait poli." },
+        { text: "J'aimerai voyager au Japon un jour.", correct: false, explanation: "Le futur « aimerai » exprime une certitude future, pas un souhait poli." },
+        { text: "J'ai aimé voyager au Japon.", correct: false, explanation: "Le passé composé « ai aimé » se réfère au passé, pas à un souhait présent." },
       ],
     },
     {
@@ -874,7 +874,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-03",
       generatedBy: "sonnet",
-      prompt: "Complétez : « ___ vous déplacer pour cette réunion ? »",
+      prompt: "Complétez au conditionnel présent : « ___ vous déplacer pour cette réunion ? »",
       choices: [
         { text: "Pourriez-vous", correct: true, explanation: "Le conditionnel « pourriez-vous » est la demande polie formelle standard." },
         { text: "Pouvez-vous", correct: false, explanation: "Le présent de l'indicatif « pouvez-vous » est direct, moins approprié pour une demande formelle." },
@@ -900,7 +900,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-03",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ vous suggérer une alternative. »",
+      prompt: "Complétez au conditionnel présent : « Je ___ vous suggérer une alternative. »",
       choices: [
         { text: "pourrais", correct: true, explanation: "Le conditionnel « pourrais » exprime poliment la suggestion d'une action." },
         { text: "peux", correct: false, explanation: "Le présent de l'indicatif « peux » est trop direct." },
@@ -913,12 +913,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-03",
       generatedBy: "sonnet",
-      prompt: "Quelle phrase exprime poliment un doute ou une hypothèse ?",
+      prompt: "Complétez au conditionnel présent : « Est-ce que je ___ vous poser une question ? »",
       choices: [
-        { text: "On pourrait penser que c'est impossible.", correct: true, explanation: "Le conditionnel « pourrait » exprime poliment un doute ou une hypothèse sans certitude." },
-        { text: "On pense que c'est impossible.", correct: false, explanation: "Le présent de l'indicatif « pense » est trop affirmatif, pas du doute poli." },
-        { text: "On pourra penser que c'est impossible.", correct: false, explanation: "Le futur « pourra » indique une certitude, pas un doute poli." },
-        { text: "On pensait que c'est impossible.", correct: false, explanation: "L'imparfait « pensait » change le temps logique." },
+        { text: "pourrais", correct: true, explanation: "Le conditionnel présent « pourrais » formule une demande polie et respectueuse." },
+        { text: "peux", correct: false, explanation: "Le présent de l'indicatif « peux » est trop direct pour une demande polie." },
+        { text: "pourrai", correct: false, explanation: "Le futur « pourrai » indique une certitude, pas une demande polie." },
+        { text: "pouvais", correct: false, explanation: "L'imparfait « pouvais » se réfère au passé, pas à une demande présente." },
       ],
     },
     {
@@ -926,7 +926,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-03",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Nous ___ vous prêter de l'argent si vous en aviez besoin. »",
+      prompt: "Complétez au conditionnel présent : « Nous ___ vous prêter de l'argent si vous en aviez besoin. »",
       choices: [
         { text: "pourrions", correct: true, explanation: "Le conditionnel « pourrions » exprime poliment une hypothétique condition présente." },
         { text: "pouvons", correct: false, explanation: "Le présent de l'indicatif « pouvons » est trop direct." },
@@ -952,7 +952,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-03",
       generatedBy: "sonnet",
-      prompt: "Complétez : « ___ que tu m'écoutes, c'est important. »",
+      prompt: "Complétez au conditionnel présent : « ___ que tu m'écoutes, c'est important. »",
       choices: [
         { text: "J'aimerais", correct: true, explanation: "Le conditionnel « aimerais » exprime poliment un désir ou une demande." },
         { text: "J'aime", correct: false, explanation: "Le présent de l'indicatif « aime » est trop direct." },
@@ -965,12 +965,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-03",
       generatedBy: "sonnet",
-      prompt: "Quelle phrase utilise le conditionnel de politesse pour exprimer un conseil ?",
+      prompt: "Quelle phrase exprime un souhait de manière polie au conditionnel présent ?",
       choices: [
-        { text: "Tu devrais consulter un médecin.", correct: true, explanation: "Le conditionnel « devrais » exprime un conseil de manière polie et respectueuse." },
-        { text: "Tu dois consulter un médecin.", correct: false, explanation: "Le présent de l'indicatif « dois » est une obligation, pas un conseil poli." },
-        { text: "Tu devras consulter un médecin.", correct: false, explanation: "Le futur « devras » est trop affirmatif pour un conseil poli." },
-        { text: "Tu devais consulter un médecin.", correct: false, explanation: "L'imparfait « devais » se réfère au passé." },
+        { text: "Je voudrais remercier toute l'équipe.", correct: true, explanation: "Le conditionnel présent « voudrais » exprime un souhait de manière polie et respectueuse." },
+        { text: "Je veux remercier toute l'équipe.", correct: false, explanation: "Le présent de l'indicatif « veux » est trop direct pour exprimer un souhait poli." },
+        { text: "Je voudrai remercier toute l'équipe.", correct: false, explanation: "Le futur « voudrai » indique une intention future, pas un souhait poli au présent." },
+        { text: "J'ai voulu remercier toute l'équipe.", correct: false, explanation: "Le passé composé « ai voulu » se réfère au passé, pas à un souhait présent." },
       ],
     },
     {
@@ -978,7 +978,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-03",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Nous ___ très reconnaissants de votre aide. »",
+      prompt: "Complétez au conditionnel présent : « Nous ___ très reconnaissants de votre aide. »",
       choices: [
         { text: "serions", correct: true, explanation: "Le conditionnel « serions » exprime une gratitude polie et hypothétique." },
         { text: "sommes", correct: false, explanation: "Le présent de l'indicatif « sommes » est trop direct." },
@@ -991,12 +991,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-03",
       generatedBy: "sonnet",
-      prompt: "Quelle phrase utilise correctement le conditionnel pour exprimer une condition polite ?",
+      prompt: "Complétez au conditionnel présent : « Il ___ passer vous voir la semaine prochaine. »",
       choices: [
-        { text: "Si tu étais d'accord, j'en serais ravi.", correct: true, explanation: "Le conditionnel « serais » exprime poliment la conséquence d'une condition hypothétique." },
-        { text: "Si tu es d'accord, j'en suis ravi.", correct: false, explanation: "Le présent de l'indicatif « suis » est trop direct." },
-        { text: "Si tu serais d'accord, j'en serais ravi.", correct: false, explanation: "On n'utilise pas le conditionnel après « si » ; on utilise l'imparfait ou le présent." },
-        { text: "Si tu étais d'accord, j'en serai ravi.", correct: false, explanation: "Le futur « serai » après une condition au passé est logiquement incorrect." },
+        { text: "aimerait", correct: true, explanation: "Le conditionnel présent « aimerait » exprime un souhait de manière polie et atténuée." },
+        { text: "aime", correct: false, explanation: "Le présent de l'indicatif « aime » est trop direct pour exprimer un souhait poli." },
+        { text: "aimera", correct: false, explanation: "Le futur « aimera » indique une certitude, pas un souhait poli." },
+        { text: "aimait", correct: false, explanation: "L'imparfait « aimait » se réfère au passé, pas à un souhait présent." },
       ],
     },
     {
@@ -1040,7 +1040,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-03",
       generatedBy: "sonnet",
-      prompt: "Conjuguez le verbe au conditionnel pour formuler une demande polite",
+      prompt: "Conjuguez le verbe pouvoir au conditionnel pour formuler une demande polie",
       phrase: { before: "", after: " -vous venir à ma réunion demain ?" },
       hint: "pouvoir",
       answer: "Pourriez",
@@ -1058,7 +1058,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-03",
       generatedBy: "sonnet",
-      prompt: "Mettez le verbe au conditionnel pour exprimer une suggestion polite",
+      prompt: "Mettez le verbe faire au conditionnel pour exprimer une suggestion polie",
       phrase: { before: "Je ", after: " consulter un professionnel à votre place." },
       hint: "faire",
       answer: "ferais",
@@ -1094,7 +1094,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « J'___ voyager en Italie. »",
+      prompt: "Complétez au conditionnel présent : « J'___ voyager en Italie. »",
       choices: [
         { text: "aimerais", correct: true, explanation: "Le conditionnel « aimerais » exprime un souhait ou un désir poliment. C'est la première personne du singulier." },
         { text: "aime", correct: false, explanation: "« Aime » est le présent, qui exprime une action actuelle, non un souhait." },
@@ -1107,7 +1107,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ manger une glace ce soir ? »",
+      prompt: "Complétez au conditionnel présent : « Tu ___ manger une glace ce soir ? »",
       choices: [
         { text: "aimerais", correct: true, explanation: "Le conditionnel « aimerais » exprime un souhait poliment pour la deuxième personne du singulier." },
         { text: "aimes", correct: false, explanation: "« Aimes » est le présent de l'indicatif, qui est moins poli pour exprimer un souhait." },
@@ -1120,7 +1120,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Nous ___ bien aller à la plage ce weekend. »",
+      prompt: "Complétez au conditionnel présent : « Nous ___ bien aller à la plage ce weekend. »",
       choices: [
         { text: "aimerions", correct: true, explanation: "Le conditionnel « aimerions » à la première personne du pluriel exprime un souhait collectif." },
         { text: "aimons", correct: false, explanation: "« Aimons » est le présent, qui exprime une action actuelle, non un désir hypothétique." },
@@ -1133,7 +1133,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ visiter le musée du Louvre. »",
+      prompt: "Complétez au conditionnel présent : « Il ___ visiter le musée du Louvre. »",
       choices: [
         { text: "aimerait", correct: true, explanation: "Le conditionnel « aimerait » à la troisième personne du singulier exprime un souhait personnel." },
         { text: "aime", correct: false, explanation: "« Aime » est le présent, qui décrit une action habituelle, non un désir." },
@@ -1146,7 +1146,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ apprendre l'espagnol ? »",
+      prompt: "Complétez au conditionnel présent : « Vous ___ apprendre l'espagnol ? »",
       choices: [
         { text: "aimeriez", correct: true, explanation: "Le conditionnel « aimeriez » à la deuxième personne du pluriel exprime un souhait ou une envie." },
         { text: "aimez", correct: false, explanation: "« Aimez » est le présent, qui est moins poli et moins hypothétique." },
@@ -1159,10 +1159,10 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elles ___ danser toute la nuit. »",
+      prompt: "Complétez au conditionnel présent : « Elles ___ danser toute la nuit. »",
       choices: [
         { text: "aimeraient", correct: true, explanation: "Le conditionnel « aimeraient » à la troisième personne du pluriel exprime un désir collectif." },
-        { text: "aiment", correct: false, explanation: "« Aiment » est le présent, qui est moins polite et moins hypothétique pour un souhait." },
+        { text: "aiment", correct: false, explanation: "« Aiment » est le présent, qui est moins poli et moins hypothétique pour un souhait." },
         { text: "aimeront", correct: false, explanation: "« Aimeront » est le futur simple, qui annonce une action certaine." },
         { text: "aimerions", correct: false, explanation: "« Aimerions » est la première personne du pluriel (nous), pas la troisième." },
       ],
@@ -1172,7 +1172,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Quel verbe conjugué au conditionnel exprime un souhait dans cette phrase : « Je ___ un café, s'il vous plaît. »",
+      prompt: "Quel verbe conjugué au conditionnel présent exprime un souhait dans cette phrase : « Je ___ un café, s'il vous plaît. »",
       choices: [
         { text: "prendrais", correct: true, explanation: "Le conditionnel « prendrais » est poli et exprime une envie ou un souhait courtois." },
         { text: "prends", correct: false, explanation: "« Prends » est l'impératif ou le présent, qui est moins poli." },
@@ -1185,7 +1185,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ parler à quelqu'un de confiance de tes soucis. »",
+      prompt: "Complétez au conditionnel présent : « Tu ___ parler à quelqu'un de confiance de tes soucis. »",
       choices: [
         { text: "voudrais", correct: true, explanation: "Le conditionnel « voudrais » exprime le souhait de parler à quelqu'un." },
         { text: "veux", correct: false, explanation: "« Veux » est le présent de l'indicatif, plus direct et moins poli pour un souhait." },
@@ -1198,12 +1198,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Nous ___ bien nous reposer ce week-end. »",
+      prompt: "Complétez au conditionnel présent : « On ___ avoir plus de temps libre. »",
       choices: [
-        { text: "pourrions", correct: true, explanation: "Le conditionnel « pourrions » exprime une possibilité ou un souhait hypothétique." },
-        { text: "pouvons", correct: false, explanation: "« Pouvons » est le présent, qui exprime une capacité actuelle, non un désir." },
-        { text: "pourront", correct: false, explanation: "« Pourront » est le futur simple, qui annonce une possibilité certaine." },
-        { text: "pourrai", correct: false, explanation: "« Pourrai » est la première personne du singulier, pas du pluriel." },
+        { text: "aimerait", correct: true, explanation: "Le conditionnel « aimerait » exprime le souhait d'avoir davantage de temps libre." },
+        { text: "aime", correct: false, explanation: "« Aime » est le présent, qui décrit un goût actuel, non un souhait." },
+        { text: "aimera", correct: false, explanation: "« Aimera » est le futur simple, qui annonce une certitude." },
+        { text: "aimeraient", correct: false, explanation: "« Aimeraient » est la troisième personne du pluriel, pas la troisième du singulier." },
       ],
     },
     {
@@ -1211,9 +1211,9 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ bien une maison avec un jardin. »",
+      prompt: "Complétez au conditionnel présent : « Je ___ bien une maison avec un jardin. »",
       choices: [
-        { text: "voudrais", correct: true, explanation: "Le conditionnel « voudrais » exprime un désir ou un souhait personnel poliment." },
+        { text: "voudrais", correct: true, explanation: "Le conditionnel « voudrais » exprime un désir ou un souhait personnel." },
         { text: "veux", correct: false, explanation: "« Veux » est le présent, qui est plus direct et moins poli qu'un souhait au conditionnel." },
         { text: "voudrai", correct: false, explanation: "« Voudrai » est le futur simple, qui exprime une volonté future certaine." },
         { text: "voudrait", correct: false, explanation: "« Voudrait » est la troisième personne du singulier (il/elle), pas la première." },
@@ -1224,7 +1224,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Quelle forme conditionnel complète correctement : « Elle ___ une promotion au travail. »",
+      prompt: "Quelle forme au conditionnel présent complète correctement : « Elle ___ une promotion au travail. »",
       choices: [
         { text: "mériterait", correct: true, explanation: "Le conditionnel « mériterait » exprime un souhait ou une opinion sur ce qui serait juste." },
         { text: "mérite", correct: false, explanation: "« Mérite » est le présent, qui est un jugement direct, non un souhait." },
@@ -1237,7 +1237,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ goûter cette spécialité locale. »",
+      prompt: "Complétez au conditionnel présent : « Vous ___ goûter cette spécialité locale. »",
       choices: [
         { text: "aimeriez", correct: true, explanation: "Le conditionnel « aimeriez » exprime un souhait ou une envie personnelle." },
         { text: "aimez", correct: false, explanation: "« Aimez » est le présent, qui décrit une préférence actuelle, non un souhait." },
@@ -1250,7 +1250,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Ils ___ devenir musiciens professionnels. »",
+      prompt: "Complétez au conditionnel présent : « Ils ___ devenir musiciens professionnels. »",
       choices: [
         { text: "aimeraient", correct: true, explanation: "Le conditionnel « aimeraient » exprime le rêve ou le désir personnel de ces personnes." },
         { text: "aiment", correct: false, explanation: "« Aiment » est le présent, qui exprime une action actuelle ou une préférence." },
@@ -1263,7 +1263,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ vraiment apprendre à jouer du piano. »",
+      prompt: "Complétez au conditionnel présent : « Tu ___ vraiment apprendre à jouer du piano. »",
       choices: [
         { text: "aimerais", correct: true, explanation: "Le conditionnel « aimerais » exprime un souhait ou un désir personnel." },
         { text: "aimes", correct: false, explanation: "« Aimes » est le présent de l'indicatif, qui décrit une préférence actuelle." },
@@ -1276,7 +1276,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Nous ___ partir en voyage cet été. »",
+      prompt: "Complétez au conditionnel présent : « Nous ___ partir en voyage cet été. »",
       choices: [
         { text: "voudrions", correct: true, explanation: "Le conditionnel « voudrions » exprime le souhait collectif du groupe." },
         { text: "voulons", correct: false, explanation: "« Voulons » est le présent, qui est plus direct et autoritaire." },
@@ -1289,7 +1289,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elle ___ écrire un roman un jour. »",
+      prompt: "Complétez au conditionnel présent : « Elle ___ écrire un roman un jour. »",
       choices: [
         { text: "aimerait", correct: true, explanation: "Le conditionnel « aimerait » exprime un souhait personnel ou un rêve." },
         { text: "aime", correct: false, explanation: "« Aime » est le présent, qui exprime une préférence actuelle." },
@@ -1302,9 +1302,9 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ bien visiter le Japon un jour. »",
+      prompt: "Complétez au conditionnel présent : « Je ___ bien visiter le Japon un jour. »",
       choices: [
-        { text: "voudrais", correct: true, explanation: "Le conditionnel « voudrais » exprime un désir ou un rêve personnel poliment." },
+        { text: "voudrais", correct: true, explanation: "Le conditionnel « voudrais » exprime un désir ou un rêve personnel." },
         { text: "veux", correct: false, explanation: "« Veux » est le présent, qui est plus direct et autoritaire." },
         { text: "voudrai", correct: false, explanation: "« Voudrai » est le futur simple, qui annonce une volonté certaine." },
         { text: "voudrait", correct: false, explanation: "« Voudrait » est la troisième personne du singulier, pas la première." },
@@ -1315,12 +1315,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ une tasse de thé ? »",
+      prompt: "Complétez au conditionnel présent : « Elle ___ d'une grande maison avec un beau jardin. »",
       choices: [
-        { text: "prendriez", correct: true, explanation: "Le conditionnel « prendriez » demande poliment à quelqu'un s'il désire quelque chose." },
-        { text: "prenez", correct: false, explanation: "« Prenez » est l'impératif ou le présent, qui est plus direct." },
-        { text: "preniez", correct: false, explanation: "« Preniez » est l'imparfait de l'indicatif ou le subjonctif présent, qui n'exprime pas un souhait au conditionnel." },
-        { text: "prendrez", correct: false, explanation: "« Prendrez » est le futur simple, qui annonce une certitude." },
+        { text: "rêverait", correct: true, explanation: "Le conditionnel « rêverait » exprime un souhait ou un rêve personnel." },
+        { text: "rêve", correct: false, explanation: "« Rêve » est le présent, qui décrit une action actuelle, non un souhait conditionnel." },
+        { text: "rêvera", correct: false, explanation: "« Rêvera » est le futur simple, qui annonce une certitude." },
+        { text: "rêverais", correct: false, explanation: "« Rêverais » est la première ou deuxième personne du singulier, pas la troisième." },
       ],
     },
     {
@@ -1328,7 +1328,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ trouver un travail qui te passionne. »",
+      prompt: "Complétez au conditionnel présent : « Tu ___ trouver un travail qui te passionne. »",
       choices: [
         { text: "souhaiterais", correct: true, explanation: "Le conditionnel « souhaiterais » exprime un souhait profond et personnel." },
         { text: "souhaites", correct: false, explanation: "« Souhaites » est le présent de l'indicatif, plus direct pour exprimer un souhait." },
@@ -1341,7 +1341,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Ils ___ habiter près de la montagne. »",
+      prompt: "Complétez au conditionnel présent : « Ils ___ habiter près de la montagne. »",
       choices: [
         { text: "aimeraient", correct: true, explanation: "Le conditionnel « aimeraient » exprime le souhait ou le rêve collectif." },
         { text: "aiment", correct: false, explanation: "« Aiment » est le présent, qui décrit une préférence actuelle." },
@@ -1354,7 +1354,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Conjuguez le verbe au conditionnel pour exprimer un souhait poli",
+      prompt: "Conjuguez le verbe vouloir au conditionnel présent pour exprimer un souhait poli",
       phrase: { before: "Je ", after: " une chambre avec vue sur la mer, s'il vous plaît." },
       hint: "vouloir",
       answer: "voudrais",
@@ -1371,17 +1371,17 @@ const section: Section = {
       type: "input",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Complétez au conditionnel pour exprimer un conseil ou une recommandation",
-      phrase: { before: "Tu ", after: " plus d'exercice pour rester en bonne santé." },
-      hint: "devoir",
-      answer: "devrais faire",
-      explanation: "Le conditionnel « devrais faire » exprime un conseil bienveillant et poli.",
+      prompt: "Conjuguez le verbe souhaiter au conditionnel présent pour exprimer un souhait",
+      phrase: { before: "Nous ", after: " passer les vacances au soleil cette année." },
+      hint: "souhaiter",
+      answer: "souhaiterions",
+      explanation: "Le conditionnel « souhaiterions » exprime un souhait collectif pour les vacances.",
       wrongAnswers: [
-        { text: "dois faire", explanation: "« Dois faire » est au présent, qui est une obligation directe et moins conseillière." },
-        { text: "devras faire", explanation: "« Devras faire » est au futur simple, qui annonce une obligation certaine." },
-        { text: "ferais", explanation: "« Ferais » est le conditionnel seul sans le verbe « devoir », ce qui change le sens." },
-        { text: "fais", explanation: "« Fais » est l'impératif, qui est un ordre direct, non un conseil poli." },
-        { text: "devrait faire", explanation: "« Devrait faire » est la troisième personne du singulier, pas la deuxième." },
+        { text: "souhaitons", explanation: "« Souhaitons » est le présent de l'indicatif, plus direct et moins poli." },
+        { text: "souhaiterons", explanation: "« Souhaiterons » est le futur simple, qui annonce une certitude." },
+        { text: "souhaiteriez", explanation: "« Souhaiteriez » est la deuxième personne du pluriel, pas la première." },
+        { text: "souhaitions", explanation: "« Souhaitions » est l'imparfait, qui exprime un souhait passé, non présent." },
+        { text: "aurions souhaité", explanation: "« Aurions souhaité » est le conditionnel passé, qui exprime un souhait révolu." },
       ],
     },
     {
@@ -1389,7 +1389,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Conjuguez le verbe au conditionnel pour exprimer un rêve ou un désir personnel",
+      prompt: "Conjuguez le verbe aimer au conditionnel présent pour exprimer un rêve ou un désir personnel",
       phrase: { before: "Elle ", after: " en Afrique un jour pour découvrir la faune et la flore." },
       hint: "aimer",
       answer: "aimerait voyager",
@@ -1398,7 +1398,7 @@ const section: Section = {
         { text: "aime voyager", explanation: "« Aime voyager » est au présent, qui décrit une préférence actuelle, non un rêve." },
         { text: "aimera voyager", explanation: "« Aimera voyager » est au futur simple, qui annonce une intention certaine." },
         { text: "aimait voyager", explanation: "« Aimait voyager » est à l'imparfait, qui exprime une habitude ou action passée." },
-        { text: "aimerait", explanation: "« Aimerait » seul est incomplet ; le phrase nécessite un verbe d'action après « aimer »." },
+        { text: "aimerait", explanation: "« Aimerait » seul est incomplet ; la phrase nécessite un verbe d'action après « aimer »." },
         { text: "aimerions aller", explanation: "« Aimerions aller » est la première personne du pluriel (nous), pas la troisième du singulier (elle)." },
       ],
     },
@@ -1407,17 +1407,17 @@ const section: Section = {
       type: "input",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Conjuguez le verbe au conditionnel pour exprimer une possibilité hypothétique",
-      phrase: { before: "Nous ", after: " cette proposition si les conditions étaient meilleures." },
-      hint: "pouvoir",
-      answer: "pourrions accepter",
-      explanation: "Le conditionnel « pourrions accepter » exprime une possibilité hypothétique dans une situation imaginaire.",
+      prompt: "Conjuguez le verbe désirer au conditionnel présent pour exprimer un désir",
+      phrase: { before: "Il ", after: " une réponse rapide à sa demande." },
+      hint: "désirer",
+      answer: "désirerait",
+      explanation: "Le conditionnel « désirerait » exprime un souhait ou un désir formel.",
       wrongAnswers: [
-        { text: "pouvons accepter", explanation: "« Pouvons accepter » est au présent, qui décrit une capacité actuelle, non une hypothèse." },
-        { text: "pourrons accepter", explanation: "« Pourrons accepter » est au futur simple, qui annonce une certitude future." },
-        { text: "pouvions accepter", explanation: "« Pouvions accepter » est à l'imparfait, qui exprime une habitude passée." },
-        { text: "accepterions", explanation: "« Accepterions » seul omet le modal « pouvoir » qui établit la condition hypothétique." },
-        { text: "aurions pu accepter", explanation: "« Aurions pu accepter » est le conditionnel passé, qui décrit une hypothèse dans le passé." },
+        { text: "désire", explanation: "« Désire » est le présent de l'indicatif, plus direct." },
+        { text: "désirera", explanation: "« Désirera » est le futur simple, qui annonce une certitude." },
+        { text: "désirerais", explanation: "« Désirerais » est la première ou deuxième personne du singulier, pas la troisième." },
+        { text: "désirerions", explanation: "« Désirerions » est la première personne du pluriel, pas la troisième du singulier." },
+        { text: "a désiré", explanation: "« A désiré » est le passé composé, qui décrit une action accomplie." },
       ],
     },
     {
@@ -1425,7 +1425,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-04",
       generatedBy: "sonnet",
-      prompt: "Conjuguez le verbe au conditionnel pour exprimer un souhait",
+      prompt: "Conjuguez le verbe souhaiter au conditionnel présent pour exprimer un souhait",
       phrase: { before: "Vous ", after: " trouver un appartement plus spacieux." },
       hint: "souhaiter",
       answer: "souhaiteriez",
@@ -1445,8 +1445,8 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Quelle suggestion utilise le conditionnel correctement ?",
       choices: [
-        { text: "On pourrait regarder un film ce soir.", correct: true, explanation: "Le conditionnel « pourrait » est l'emploi correct pour exprimer une suggestion polite." },
-        { text: "On peut regarder un film ce soir.", correct: false, explanation: "Le présent de l'indicatif « peut » énonce une possibilité plutôt qu'une suggestion polite." },
+        { text: "On pourrait regarder un film ce soir.", correct: true, explanation: "Le conditionnel « pourrait » est l'emploi correct pour exprimer une suggestion polie." },
+        { text: "On peut regarder un film ce soir.", correct: false, explanation: "Le présent de l'indicatif « peut » énonce une possibilité plutôt qu'une suggestion polie." },
         { text: "On a regardé un film ce soir.", correct: false, explanation: "Le passé composé « a regardé » relate un fait accompli dans le passé, pas une suggestion." },
         { text: "On regarde un film ce soir.", correct: false, explanation: "Le présent énonce un fait, pas une suggestion." },
       ],
@@ -1459,7 +1459,7 @@ const section: Section = {
       prompt: "Complétez avec la forme correcte du conditionnel : « Vous ___ venir dîner chez nous ? »",
       choices: [
         { text: "pourriez", correct: true, explanation: "Le conditionnel « pourriez » (2e personne du pluriel) exprime poliment une suggestion dirigée au « vous »." },
-        { text: "pouvez", correct: false, explanation: "Le présent de l'indicatif « pouvez » n'a pas la nuance suggestion polite du conditionnel." },
+        { text: "pouvez", correct: false, explanation: "Le présent de l'indicatif « pouvez » n'a pas la nuance suggestion polie du conditionnel." },
         { text: "pourrez", correct: false, explanation: "Le futur « pourrez » n'est pas approprié pour une suggestion ; il énonce une certitude future." },
         { text: "pouviez", correct: false, explanation: "L'imparfait « pouviez » est hors contexte ; il décrit une situation passée habituelle, non une suggestion présente." },
       ],
@@ -1497,7 +1497,7 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Sélectionnez la suggestion au conditionnel la plus courtoise :",
       choices: [
-        { text: "Vous auriez peut-être envie d'une pause ?", correct: true, explanation: "Le conditionnel « auriez » crée une suggestion très polite, suggérant délicatement sans imposer." },
+        { text: "Vous auriez peut-être envie d'une pause ?", correct: true, explanation: "Le conditionnel « auriez » crée une suggestion très polie, suggérant délicatement sans imposer." },
         { text: "Vous avez peut-être envie d'une pause.", correct: false, explanation: "L'indicatif énonce une constatation, moins courtois qu'une suggestion au conditionnel." },
         { text: "Vous aviez peut-être envie d'une pause.", correct: false, explanation: "L'imparfait renvoie à un moment passé et ne fonctionne pas pour une suggestion présente." },
         { text: "Vous ayez peut-être envie d'une pause.", correct: false, explanation: "Le subjonctif n'est pas employé ainsi pour exprimer une suggestion." },
@@ -1521,7 +1521,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-05",
       generatedBy: "sonnet",
-      prompt: "Complétez la suggestion : « On ___ faire du sport ensemble. »",
+      prompt: "Complétez la suggestion au conditionnel présent : « On ___ faire du sport ensemble. »",
       choices: [
         { text: "pourrait", correct: true, explanation: "Le conditionnel « pourrait » avec « on » est la façon idéale de suggérer une activité." },
         { text: "peut", correct: false, explanation: "Le présent « peut » n'a pas la qualité suggestion-douce du conditionnel." },
@@ -1538,7 +1538,7 @@ const section: Section = {
       choices: [
         { text: "Vous pourriez essayer la recette de ma grand-mère.", correct: true, explanation: "Le conditionnel « pourriez » formule gracieusement une suggestion culinaire." },
         { text: "Vous essayez la recette de ma grand-mère.", correct: false, explanation: "L'indicatif présent énonce un fait habituel, pas une suggestion." },
-        { text: "Vous essayeriez la recette de ma grand-mère.", correct: false, explanation: "Cette construction mélange le conditionnel avec « essayer » (dénué de sens ici) ; « pourriez » serait plus clair." },
+        { text: "Vous avez essayé la recette de ma grand-mère.", correct: false, explanation: "Le passé composé « avez essayé » relate un fait accompli, pas une suggestion." },
         { text: "Vous essayez bien la recette de ma grand-mère.", correct: false, explanation: "L'ajout de « bien » ne change pas le mode du verbe ; cela reste du présent, pas une suggestion." },
       ],
     },
@@ -1573,7 +1573,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-05",
       generatedBy: "sonnet",
-      prompt: "Complétez la suggestion : « Elles ___ inviter leurs amis au cinéma. »",
+      prompt: "Complétez la suggestion au conditionnel présent : « Elles ___ inviter leurs amis au cinéma. »",
       choices: [
         { text: "pourraient", correct: true, explanation: "Le conditionnel « pourraient » exprime poliment une suggestion pour le groupe « elles »." },
         { text: "peuvent", correct: false, explanation: "Le présent « peuvent » énonce une capacité, non une suggestion courtoise." },
@@ -1586,7 +1586,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-05",
       generatedBy: "sonnet",
-      prompt: "Sélectionnez la meilleure suggestion au conditionnel :",
+      prompt: "Sélectionnez la meilleure suggestion au conditionnel présent :",
       choices: [
         { text: "On pourrait prendre un café ensemble.", correct: true, explanation: "Le conditionnel « pourrait » avec « on » crée une suggestion amicale et ouverte." },
         { text: "On prend un café ensemble.", correct: false, explanation: "L'indicatif présent énonce un fait ou une habitude, non une suggestion." },
@@ -1651,12 +1651,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-05",
       generatedBy: "sonnet",
-      prompt: "Quel conditionnel complète cette suggestion ? « Je ___ vous aider avec ce projet. »",
+      prompt: "Quel conditionnel complète ce conseil ? « Il ___ voir un spécialiste pour son dos. »",
       choices: [
-        { text: "pourrais", correct: true, explanation: "Le conditionnel « pourrais » exprime une offre polite d'aide." },
-        { text: "peux", correct: false, explanation: "L'indicatif « peux » énonce une capacité, moins courtois qu'une suggestion au conditionnel." },
-        { text: "pourrai", correct: false, explanation: "Le futur « pourrai » énonce un engagement certain, non une suggestion humble." },
-        { text: "puis", correct: false, explanation: "Le présent « puis » est une capacité ou permission présente, non une suggestion." },
+        { text: "devrait", correct: true, explanation: "Le conditionnel « devrait » formule un conseil à propos d'une tierce personne." },
+        { text: "doit", correct: false, explanation: "L'indicatif présent « doit » sonne comme un ordre catégorique, non un conseil." },
+        { text: "devra", correct: false, explanation: "Le futur « devra » énonce une obligation future certaine, non un conseil." },
+        { text: "devait", correct: false, explanation: "L'imparfait « devait » décrit une obligation passée habituelle, non un conseil présent." },
       ],
     },
     {
@@ -1664,7 +1664,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-05",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elles ___ améliorer leur technique en s'entraînant davantage. »",
+      prompt: "Complétez au conditionnel présent : « Elles ___ améliorer leur technique en s'entraînant davantage. »",
       choices: [
         { text: "pourraient", correct: true, explanation: "Le conditionnel « pourraient » formule poliment une suggestion d'amélioration pour « elles »." },
         { text: "peuvent", correct: false, explanation: "L'indicatif « peuvent » énonce une capacité, pas une suggestion." },
@@ -1682,7 +1682,7 @@ const section: Section = {
         { text: "Tu pourrais essayer une nouvelle coiffure.", correct: true, explanation: "Le conditionnel « pourrais » exprime une suggestion légère et amicale." },
         { text: "Tu peux essayer une nouvelle coiffure.", correct: false, explanation: "L'indicatif énonce une possibilité ou permission, moins doux qu'une suggestion." },
         { text: "Tu essaies une nouvelle coiffure.", correct: false, explanation: "Le présent énonce une habitude ou un fait, non une suggestion." },
-        { text: "Tu essayerais une nouvelle coiffure.", correct: false, explanation: "Cette forme est ambiguë et moins naturelle que le conditionnel avec « pouvoir »." },
+        { text: "Tu as essayé une nouvelle coiffure.", correct: false, explanation: "Le passé composé relate un fait accompli, pas une suggestion." },
       ],
     },
     {
@@ -1709,7 +1709,7 @@ const section: Section = {
       answer: "pourrait",
       explanation: "Le conditionnel « pourrait » avec « on » est la façon classique de formuler une suggestion.",
       wrongAnswers: [
-        { text: "peut", explanation: "Le présent de l'indicatif énonce une possibilité objective, non une suggestion polite." },
+        { text: "peut", explanation: "Le présent de l'indicatif énonce une possibilité objective, non une suggestion polie." },
         { text: "pourra", explanation: "Le futur simple énonce un plan déterminé, non une suggestion douce." },
         { text: "pouvait", explanation: "L'imparfait décrit une capacité habituelle du passé." },
         { text: "puisse", explanation: "Le subjonctif n'est pas approprié pour exprimer une suggestion directe." },
@@ -1788,7 +1788,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Selon les rumeurs, il ___ une solution possible. »",
+      prompt: "Complétez au conditionnel : « Selon les rumeurs, il ___ une solution possible. »",
       choices: [
         { text: "y aurait", correct: true, explanation: "Le conditionnel (y aurait) exprime une information non confirmée, une rumeur rapportée au lieu d'un fait établi." },
         { text: "y a", correct: false, explanation: "Le présent énoncé une affirmation certaine, non une information douteuse ou rapportée." },
@@ -1801,7 +1801,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « On dit qu'elle ___ la semaine prochaine. »",
+      prompt: "Complétez au conditionnel : « On dit qu'elle ___ la semaine prochaine. »",
       choices: [
         { text: "démissionnerait", correct: true, explanation: "Le conditionnel présent rapporte une information incertaine sur une intention future de démissionner." },
         { text: "démissionnera", correct: false, explanation: "Le futur simple énonce une prédiction certaine, non une information rapportée ou incertaine." },
@@ -1814,7 +1814,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ qu'une explosion ___ le bâtiment. »",
+      prompt: "Complétez (conditionnel suivi du subjonctif) : « Il ___ qu'une explosion ___ le bâtiment. »",
       choices: [
         { text: "semblerait, ait endommagé", correct: true, explanation: "Le conditionnel « semblerait » exprime l'information comme non confirmée, suivi du subjonctif passé « ait endommagé »." },
         { text: "semble, a endommagé", correct: false, explanation: "Le présent et l'indicatif affirment les faits comme certains, sans nuance de doute ou d'information rapportée." },
@@ -1827,7 +1827,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Selon le journal, le prix de l'essence ___ en hausse. »",
+      prompt: "Complétez au conditionnel : « Selon le journal, le prix de l'essence ___ en hausse. »",
       choices: [
         { text: "serait", correct: true, explanation: "Le conditionnel signale une information rapportée par le journal, non une affirmation certaine du locuteur." },
         { text: "est", correct: false, explanation: "Le présent indiquerait certitude et affirmation personnelle, non information rapportée." },
@@ -1840,7 +1840,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Le gouvernement ___ diminué les taxes. »",
+      prompt: "Complétez au conditionnel : « Le gouvernement ___ diminué les taxes. »",
       choices: [
         { text: "aurait", correct: true, explanation: "Le conditionnel passé rapporte une affirmation dont on doute, une information non vérifiée." },
         { text: "a", correct: false, explanation: "Le passé composé affirmerait un fait certain et établi." },
@@ -1853,7 +1853,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « On rapporte qu'il ___ environ mille personnes au concert. »",
+      prompt: "Complétez au conditionnel : « On rapporte qu'il ___ environ mille personnes au concert. »",
       choices: [
         { text: "y aurait eu", correct: true, explanation: "Le conditionnel passé (y aurait eu) exprime une information rapportée et non confirmée sur l'affluence." },
         { text: "y a eu", correct: false, explanation: "Le passé composé énonce un fait établi, pas une information rapportée ou douteuse." },
@@ -1866,7 +1866,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Les témoins disent que le suspect ___ en fuite depuis trois jours. »",
+      prompt: "Complétez au conditionnel : « Les témoins disent que le suspect ___ en fuite depuis trois jours. »",
       choices: [
         { text: "serait", correct: true, explanation: "Le conditionnel rapporte le témoignage rapporté, signalant qu'on rapporte les paroles des témoins." },
         { text: "est", correct: false, explanation: "Le présent affirmerait certainement que le suspect est en fuite, non rapportant les paroles." },
@@ -1879,7 +1879,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il paraît que vous ___ très occupés cette semaine. »",
+      prompt: "Complétez au conditionnel : « Il paraît que vous ___ très occupés cette semaine. »",
       choices: [
         { text: "seriez", correct: true, explanation: "Le conditionnel rapporte le « il paraît que » (il semble que), signalant une information non confirmée personnellement." },
         { text: "êtes", correct: false, explanation: "Le présent affirmerait directement l'occupation, sans le filtrage d'une source rapportée." },
@@ -1892,7 +1892,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « On dit que le film ___ très bien les critiques. »",
+      prompt: "Complétez au conditionnel : « On dit que le film ___ très bien les critiques. »",
       choices: [
         { text: "aurait reçu", correct: true, explanation: "Le conditionnel passé rapporte l'information « on dit que » ; le participe passé ne s'accorde pas car le COD « les critiques » suit le verbe." },
         { text: "a reçues", correct: false, explanation: "Le passé composé énonce un fait établi, non une information rapportée." },
@@ -1905,12 +1905,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Selon certaines sources, le projet ___ achevé dans deux mois. »",
+      prompt: "Complétez au conditionnel : « Selon certaines sources, le projet ___ achevé dans deux mois. »",
       choices: [
         { text: "serait", correct: true, explanation: "Le conditionnel rapporte l'estimation des sources, non une affirmation certaine." },
         { text: "est", correct: false, explanation: "Le présent affirmerait que le projet est actuellement achevé, incorrect ici." },
         { text: "sera", correct: false, explanation: "Le futur énonce une prédiction certaine du locuteur." },
-        { text: "pourrait être", correct: false, explanation: "Bien que plausible, cela ajouterait une nuance de possibilité non demandée." },
+        { text: "était", correct: false, explanation: "L'imparfait est incompatible avec « dans deux mois » et n'exprime pas une information rapportée." },
       ],
     },
     {
@@ -1918,7 +1918,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « D'après les rumeurs, elle ___ refusé l'offre. »",
+      prompt: "Complétez au conditionnel : « D'après les rumeurs, elle ___ refusé l'offre. »",
       choices: [
         { text: "aurait", correct: true, explanation: "Le conditionnel passé rapporte la rumeur sur le refus, signalant une information non confirmée." },
         { text: "a", correct: false, explanation: "Le passé composé énonce un fait établi, pas une rumeur rapportée." },
@@ -1931,7 +1931,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ que le directeur ___ en congé. »",
+      prompt: "Complétez (conditionnel suivi du subjonctif) : « Il ___ que le directeur ___ en congé. »",
       choices: [
         { text: "paraitrait, soit", correct: true, explanation: "Le conditionnel « paraîtrait » rapporte l'impression, et le subjonctif « soit » suit la structure avec « il paraît que »." },
         { text: "parait, est", correct: false, explanation: "Le présent affirmerait directement, sans marquer l'information comme rapportée ou incertaine." },
@@ -1944,7 +1944,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Selon la radio, il ___ 200 000 spectateurs au stade. »",
+      prompt: "Complétez au conditionnel : « Selon la radio, il ___ 200 000 spectateurs au stade. »",
       choices: [
         { text: "y aurait", correct: true, explanation: "Le conditionnel « y aurait » rapporte l'estimation de la radio, non un comptage certain." },
         { text: "y a", correct: false, explanation: "Le présent indiquerait un comptage confirmé, non une estimation rapportée." },
@@ -1957,7 +1957,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « On prétend que ce restaurant ___ les meilleurs plats de la ville. »",
+      prompt: "Complétez au conditionnel : « On prétend que ce restaurant ___ les meilleurs plats de la ville. »",
       choices: [
         { text: "aurait", correct: true, explanation: "Le conditionnel rapporte la prétention comme non confirmée ou douteuse." },
         { text: "a", correct: false, explanation: "Le passé composé affirmerait un fait certain." },
@@ -1970,7 +1970,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ que nous ___ oublié quelque chose. »",
+      prompt: "Complétez (conditionnel suivi du subjonctif) : « Il ___ que nous ___ oublié quelque chose. »",
       choices: [
         { text: "semblerait, ayons", correct: true, explanation: "Le conditionnel « semblerait » rapporte l'impression, et le subjonctif « ayons » suit la structure « il semble que »." },
         { text: "semble, avons", correct: false, explanation: "Le présent et l'indicatif affirmeraient directement; le subjonctif est requis ici." },
@@ -1983,7 +1983,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « D'après les textos, il ___ venir plus tard. »",
+      prompt: "Complétez au conditionnel : « D'après les textos, il ___ venir plus tard. »",
       choices: [
         { text: "devrait", correct: true, explanation: "Le conditionnel rapporte l'information des textos comme non confirmée; « devrait » exprime l'intention rapportée." },
         { text: "doit", correct: false, explanation: "Le présent indiquerait obligation ou certitude immédiate, non une information rapportée." },
@@ -1996,7 +1996,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Les journaux rapportent que le pont ___ endommagé par la tempête. »",
+      prompt: "Complétez au conditionnel : « Les journaux rapportent que le pont ___ endommagé par la tempête. »",
       choices: [
         { text: "aurait été", correct: true, explanation: "Le conditionnel passé à la voix passive rapporte les dégâts comme non confirmés par le locuteur." },
         { text: "a été", correct: false, explanation: "Le passé composé actif ou passif énonce un fait établi, non une information rapportée." },
@@ -2009,7 +2009,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « On raconte que le trésor ___ caché sous l'arbre depuis des années. »",
+      prompt: "Complétez au conditionnel : « On raconte que le trésor ___ caché sous l'arbre depuis des années. »",
       choices: [
         { text: "aurait été", correct: true, explanation: "Le conditionnel passé à la voix passive rapporte la localisation du trésor comme non confirmée ou légendaire." },
         { text: "a été", correct: false, explanation: "Le passé composé énonce un fait établi, pas une histoire ou une affirmation rapportée douteuse." },
@@ -2022,7 +2022,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez en utilisant le conditionnel pour rapporter l'information non confirmée",
+      prompt: "Conjuguez le verbe « avoir » au conditionnel passé pour rapporter l'information non confirmée",
       phrase: { before: "Selon les témoins, il y ", after: " environ cinquante personnes dans la pièce." },
       hint: "avoir",
       answer: "aurait eu",
@@ -2040,7 +2040,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez en utilisant le conditionnel pour exprimer une affirmation rapportée douteuse",
+      prompt: "Conjuguez le verbe « être » au conditionnel passé pour exprimer une affirmation rapportée douteuse",
       phrase: { before: "D'après la rumeur, le scandale ", after: " révélé le mois dernier." },
       hint: "être",
       answer: "aurait été",
@@ -2058,7 +2058,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez en utilisant le conditionnel pour rapporter une information incertaine",
+      prompt: "Conjuguez le verbe « devoir » au conditionnel passé pour rapporter une information incertaine",
       phrase: { before: "On dit que le ministre ", after: " démissionner avant les élections." },
       hint: "devoir",
       answer: "aurait dû",
@@ -2076,7 +2076,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez en utilisant le conditionnel pour exprimer une information non vérifiée",
+      prompt: "Conjuguez le verbe « avoir » au conditionnel pour exprimer une information non vérifiée",
       phrase: { before: "Selon les sources policières, l'accident ", after: " causé quatre blessés graves." },
       hint: "avoir",
       answer: "aurait",
@@ -2094,7 +2094,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez en utilisant le conditionnel pour rapporter une affirmation non confirmée",
+      prompt: "Conjuguez le verbe « avoir » au conditionnel passé pour rapporter une affirmation non confirmée",
       phrase: { before: "Il paraît que vous ", after: " reçu une invitation spéciale hier soir." },
       hint: "avoir",
       answer: "auriez",
@@ -2112,7 +2112,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Selon la météo, il ___ demain. »",
+      prompt: "Complétez au conditionnel : « Selon la météo, il ___ demain. »",
       choices: [
         { text: "pleuvrait", correct: true, explanation: "Le conditionnel rapporte la prévision météorologique, non une affirmation certaine du locuteur." },
         { text: "pleut", correct: false, explanation: "Le présent décrit la pluie actuelle ou constante, non une prévision rapportée." },
@@ -2125,7 +2125,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-06",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Les enfants disent qu'ils ___ vu un fantôme. »",
+      prompt: "Complétez au conditionnel : « Les enfants disent qu'ils ___ vu un fantôme. »",
       choices: [
         { text: "auraient", correct: true, explanation: "Le conditionnel passé rapporte le récit des enfants comme non confirmé ou douteux." },
         { text: "ont", correct: false, explanation: "Le passé composé énonce un fait établi sans filtrer par le doute du rapporteur." },
@@ -2138,7 +2138,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ une star si tu avais du talent. »",
+      prompt: "Complétez au conditionnel présent : « Tu ___ une star si tu avais du talent. »",
       choices: [
         { text: "serais", correct: true, explanation: "Le conditionnel « serais » exprime une hypothèse. C'est la conséquence correcte après une condition en imparfait." },
         { text: "es", correct: false, explanation: "« Es » est le présent. On a besoin du conditionnel pour exprimer une situation imaginaire." },
@@ -2151,7 +2151,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Nous ___ au Japon si nous avions assez d'argent. »",
+      prompt: "Complétez au conditionnel présent : « Nous ___ au Japon si nous avions assez d'argent. »",
       choices: [
         { text: "irions", correct: true, explanation: "Le conditionnel « irions » exprime un rêve ou une hypothèse. C'est la forme correcte pour exprimer l'imaginaire." },
         { text: "allons", correct: false, explanation: "« Allons » est le présent. On utilise le conditionnel pour une situation hypothétique, pas le présent." },
@@ -2164,7 +2164,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Si vous aviez du courage, vous ___ de ce projet difficile. »",
+      prompt: "Complétez au conditionnel présent : « Si vous aviez du courage, vous ___ de ce projet difficile. »",
       choices: [
         { text: "oseriez", correct: true, explanation: "Le conditionnel « oseriez » exprime une action hypothétique dépendant du courage. C'est la conséquence correcte." },
         { text: "osez", correct: false, explanation: "« Osez » est l'impératif ou le présent. Le conditionnel convient mieux pour une hypothèse irréelle." },
@@ -2177,7 +2177,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ plus amusant si tu venais avec nous. »",
+      prompt: "Complétez au conditionnel présent : « Il ___ plus amusant si tu venais avec nous. »",
       choices: [
         { text: "serait", correct: true, explanation: "Le conditionnel « serait » exprime une hypothèse : ce serait plus amusant si tu étais là." },
         { text: "est", correct: false, explanation: "« Est » est le présent. On utilise le conditionnel pour une hypothèse imaginaire, pas pour une réalité actuelle." },
@@ -2190,7 +2190,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ te pardonner si tu t'excusais vraiment. »",
+      prompt: "Complétez au conditionnel présent : « Je ___ te pardonner si tu t'excusais vraiment. »",
       choices: [
         { text: "pourrais", correct: true, explanation: "Le conditionnel « pourrais » exprime une possibilité hypothétique : je pourrais (peut-être) te pardonner si..." },
         { text: "peux", correct: false, explanation: "« Peux » est le présent. Le conditionnel convient mieux pour une hypothèse plutôt que pour une capacité présente." },
@@ -2203,7 +2203,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ riches si vous travailliez dur pendant dix ans. »",
+      prompt: "Complétez au conditionnel présent : « Vous ___ riches si vous travailliez dur pendant dix ans. »",
       choices: [
         { text: "seriez", correct: true, explanation: "Le conditionnel « seriez » exprime une hypothèse : vous pourriez devenir riches si vous travailliez dur." },
         { text: "êtes", correct: false, explanation: "« Êtes » est le présent. On utilise le conditionnel pour une hypothèse imaginaire, pas pour décrire le présent." },
@@ -2216,7 +2216,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elle ___ une excellente avocate si elle avait étudié le droit. »",
+      prompt: "Complétez au conditionnel présent : « Elle ___ une excellente avocate si elle avait étudié le droit. »",
       choices: [
         { text: "serait", correct: true, explanation: "Le conditionnel « serait » exprime un hypothèse sur ce qu'elle aurait pu devenir : elle serait avocate si..." },
         { text: "est", correct: false, explanation: "« Est » est le présent. On utilise le conditionnel pour une hypothèse irréelle, pas pour la réalité." },
@@ -2229,7 +2229,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Ils ___ heureux de te rencontrer si tu passais par leur ville. »",
+      prompt: "Complétez au conditionnel présent : « Ils ___ heureux de te rencontrer si tu passais par leur ville. »",
       choices: [
         { text: "seraient", correct: true, explanation: "Le conditionnel « seraient » exprime une hypothèse : ils seraient heureux si tu venais dans leur ville." },
         { text: "sont", correct: false, explanation: "« Sont » est le présent. Le conditionnel exprime mieux une hypothèse imaginaire." },
@@ -2242,7 +2242,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ un enfant heureux dans cet endroit magique. »",
+      prompt: "Complétez au conditionnel présent : « Je ___ un enfant heureux dans cet endroit magique. »",
       choices: [
         { text: "serais", correct: true, explanation: "Le conditionnel « serais » exprime un rêve ou une imagination : je serais heureux (hypothétiquement) dans ce lieu magique." },
         { text: "suis", correct: false, explanation: "« Suis » est le présent. Le conditionnel convient mieux pour exprimer un scénario imaginaire." },
@@ -2255,7 +2255,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ comprendre cette langue si tu la pratiquais tous les jours. »",
+      prompt: "Complétez au conditionnel présent : « Tu ___ comprendre cette langue si tu la pratiquais tous les jours. »",
       choices: [
         { text: "comprendrais", correct: true, explanation: "Le conditionnel « comprendrais » exprime une hypothèse : tu comprendrais (peut-être) si tu pratiquais régulièrement." },
         { text: "comprends", correct: false, explanation: "« Comprends » est le présent. Le conditionnel est plus approprié pour une hypothèse imaginaire." },
@@ -2268,7 +2268,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « On ___ une belle fête si les amis arrivaient à l'heure. »",
+      prompt: "Complétez au conditionnel présent : « On ___ une belle fête si les amis arrivaient à l'heure. »",
       choices: [
         { text: "aurait", correct: true, explanation: "Le conditionnel « aurait » exprime une hypothèse : on pourrait avoir une belle fête si tout se passait bien." },
         { text: "a", correct: false, explanation: "« A » est le présent de l'indicatif. On utilise le conditionnel pour une hypothèse irréelle, pas le présent." },
@@ -2281,7 +2281,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Ces chaussures ___ parfaites si elles étaient un peu plus grandes. »",
+      prompt: "Complétez au conditionnel présent : « Ces chaussures ___ parfaites si elles étaient un peu plus grandes. »",
       choices: [
         { text: "seraient", correct: true, explanation: "Le conditionnel « seraient » exprime une hypothèse : elles seraient parfaites (hypothétiquement) si elles étaient plus grandes." },
         { text: "sont", correct: false, explanation: "« Sont » est le présent. Le conditionnel exprime mieux une hypothèse imaginaire." },
@@ -2294,7 +2294,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Nous ___ voyager partout si nous n'avions pas de responsabilités. »",
+      prompt: "Complétez au conditionnel présent : « Nous ___ voyager partout si nous n'avions pas de responsabilités. »",
       choices: [
         { text: "pourrions", correct: true, explanation: "Le conditionnel « pourrions » exprime une hypothèse : nous pourrions voyager (hypothétiquement) si nous étions libres." },
         { text: "pouvons", correct: false, explanation: "« Pouvons » est le présent. Le conditionnel exprime mieux une hypothèse imaginaire." },
@@ -2307,7 +2307,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Cette histoire ___ incroyable si elle était vraie. »",
+      prompt: "Complétez au conditionnel présent : « Cette histoire ___ incroyable si elle était vraie. »",
       choices: [
         { text: "serait", correct: true, explanation: "Le conditionnel « serait » exprime une hypothèse : cette histoire serait incroyable (hypothétiquement) si c'était vrai." },
         { text: "est", correct: false, explanation: "« Est » est le présent. Le conditionnel exprime mieux une hypothèse imaginaire." },
@@ -2320,7 +2320,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ un héros si j'avais sauvé ces enfants. »",
+      prompt: "Complétez au conditionnel présent : « Je ___ un héros si j'avais sauvé ces enfants. »",
       choices: [
         { text: "serais", correct: true, explanation: "Le conditionnel « serais » exprime une hypothèse imaginaire : je serais un héros si je les avais sauvés." },
         { text: "suis", correct: false, explanation: "« Suis » est le présent. Le conditionnel exprime mieux une hypothèse irréelle." },
@@ -2333,7 +2333,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ moins stressés si vous aviez plus de sommeil. »",
+      prompt: "Complétez au conditionnel présent : « Vous ___ moins stressés si vous aviez plus de sommeil. »",
       choices: [
         { text: "seriez", correct: true, explanation: "Le conditionnel « seriez » exprime une hypothèse : vous seriez moins stressés (hypothétiquement) avec plus de sommeil." },
         { text: "êtes", correct: false, explanation: "« Êtes » est le présent. Le conditionnel exprime mieux une hypothèse imaginaire." },
@@ -2346,7 +2346,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elles ___ danser toute la nuit si elles avaient l'énergie. »",
+      prompt: "Complétez au conditionnel présent : « Elles ___ danser toute la nuit si elles avaient l'énergie. »",
       choices: [
         { text: "danseraient", correct: true, explanation: "Le conditionnel « danseraient » exprime une hypothèse : elles danseraient (hypothétiquement) si elles avaient plus d'énergie." },
         { text: "dansent", correct: false, explanation: "« Dansent » est le subjonctif ou le présent. Le conditionnel convient mieux pour une hypothèse imaginaire." },
@@ -2359,7 +2359,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ millionnaire si tu inventais quelque chose d'extraordinaire. »",
+      prompt: "Complétez au conditionnel présent : « Tu ___ millionnaire si tu inventais quelque chose d'extraordinaire. »",
       choices: [
         { text: "deviendrais", correct: true, explanation: "Le conditionnel « deviendrais » exprime une hypothèse : tu deviendrais millionnaire (hypothétiquement) si tu faisais une grande invention." },
         { text: "deviens", correct: false, explanation: "« Deviens » est le présent ou l'impératif. Le conditionnel convient mieux pour une hypothèse imaginaire." },
@@ -2372,7 +2372,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Si j'avais des ailes, je ___ dans le ciel. »",
+      prompt: "Complétez au conditionnel présent : « Si j'avais des ailes, je ___ dans le ciel. »",
       choices: [
         { text: "volerais", correct: true, explanation: "Le conditionnel « volerais » exprime une action imaginaire conditionnelle. C'est la forme correcte après « si » + imparfait." },
         { text: "volais", correct: false, explanation: "« Volais » est l'imparfait, pas le conditionnel. On utilise l'imparfait dans la clause « si », pas dans la conséquence." },
@@ -2385,7 +2385,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elles ___ plus heureuses dans une autre ville. »",
+      prompt: "Complétez au conditionnel présent : « Elles ___ plus heureuses dans une autre ville. »",
       choices: [
         { text: "seraient", correct: true, explanation: "Le conditionnel « seraient » exprime une hypothèse imaginaire sur leur bonheur possible ailleurs." },
         { text: "sont", correct: false, explanation: "« Sont » est le présent. On utilise le conditionnel pour exprimer une hypothèse, pas la réalité présente." },
@@ -2398,7 +2398,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Conjuguez le verbe au conditionnel pour exprimer l'imaginaire",
+      prompt: "Conjuguez le verbe « changer » au conditionnel présent pour exprimer l'imaginaire",
       phrase: { before: "Si j'avais le pouvoir magique, je ", after: " le monde." },
       hint: "changer",
       answer: "changerais",
@@ -2416,7 +2416,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Conjuguez le verbe au conditionnel pour exprimer l'imaginaire",
+      prompt: "Conjuguez le verbe « être » au conditionnel présent pour exprimer l'imaginaire",
       phrase: { before: "Tu ", after: " très heureux dans ma situation." },
       hint: "être",
       answer: "serais",
@@ -2434,7 +2434,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Conjuguez le verbe au conditionnel pour exprimer l'imaginaire",
+      prompt: "Conjuguez le verbe « pouvoir » au conditionnel présent pour exprimer l'imaginaire",
       phrase: { before: "Nous ", after: " explorer les planètes lointaines si c'était possible." },
       hint: "pouvoir",
       answer: "pourrions",
@@ -2452,7 +2452,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Conjuguez le verbe au conditionnel pour exprimer l'imaginaire",
+      prompt: "Conjuguez le verbe « être » au conditionnel présent pour exprimer l'imaginaire",
       phrase: { before: "Elles ", after: " des chanteuses célèbres si elles avaient poursuivi leur formation musicale." },
       hint: "être",
       answer: "seraient",
@@ -2470,7 +2470,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-07",
       generatedBy: "sonnet",
-      prompt: "Conjuguez le verbe au conditionnel pour exprimer l'imaginaire",
+      prompt: "Conjuguez le verbe « construire » au conditionnel présent pour exprimer l'imaginaire",
       phrase: { before: "Si j'étais riche, je ", after: " une grande villa au bord de la mer." },
       hint: "construire",
       answer: "construirais",
@@ -2488,7 +2488,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si tu avais plus de temps, tu ___ au cinéma. »",
+      prompt: "Complétez au conditionnel présent : « Si tu avais plus de temps, tu ___ au cinéma. »",
       choices: [
         { text: "irais", correct: true, explanation: "Avec « si + imparfait », on utilise le conditionnel présent : « tu irais »." },
         { text: "allais", correct: false, explanation: "« Allais » est l'imparfait, mais après « si », il faut le conditionnel présent « irais »." },
@@ -2501,7 +2501,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si elle apprenait l'anglais, elle ___ travailler à l'étranger. »",
+      prompt: "Complétez au conditionnel présent : « Si elle apprenait l'anglais, elle ___ travailler à l'étranger. »",
       choices: [
         { text: "pourrait", correct: true, explanation: "Le conditionnel présent « pourrait » s'emploie après « si + imparfait »." },
         { text: "pouvait", correct: false, explanation: "« Pouvait » est l'imparfait, mais dans la principale on emploie le conditionnel." },
@@ -2514,7 +2514,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si vous aviez des vacances, où ___-vous ? »",
+      prompt: "Complétez au conditionnel présent : « Si vous aviez des vacances, où ___-vous ? »",
       choices: [
         { text: "iriez", correct: true, explanation: "Le conditionnel présent de « aller » à la 2e personne du pluriel est « iriez »." },
         { text: "alliez", correct: false, explanation: "« Alliez » est l'imparfait, incompatible dans la principale d'une hypothèse conditionnelle." },
@@ -2527,7 +2527,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si j'avais assez d'argent, j'___ une maison. »",
+      prompt: "Complétez au conditionnel présent : « Si j'avais assez d'argent, j'___ une maison. »",
       choices: [
         { text: "achèterais", correct: true, explanation: "Le conditionnel présent « achèterais » s'utilise dans la principale après « si + imparfait »." },
         { text: "achetais", correct: false, explanation: "« Achetais » est l'imparfait, mais il faut le conditionnel dans la conséquence." },
@@ -2540,7 +2540,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si les élèves écoutaient bien, ils ___ mieux. »",
+      prompt: "Complétez au conditionnel présent : « Si les élèves écoutaient bien, ils ___ mieux. »",
       choices: [
         { text: "comprendraient", correct: true, explanation: "Le conditionnel présent « comprendraient » exprime la conséquence de l'hypothèse." },
         { text: "comprennent", correct: false, explanation: "« Comprennent » est le présent du subjonctif, non approprié après « si + imparfait »." },
@@ -2553,7 +2553,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si tu lui parlais, elle ___ ta proposition. »",
+      prompt: "Complétez au conditionnel présent : « Si tu lui parlais, elle ___ ta proposition. »",
       choices: [
         { text: "accepterait", correct: true, explanation: "Le conditionnel présent « accepterait » est la bonne forme dans la conséquence." },
         { text: "acceptait", correct: false, explanation: "« Acceptait » est l'imparfait, non approprié dans la principale d'une hypothèse." },
@@ -2566,7 +2566,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si on avait le choix, on ___ à la campagne. »",
+      prompt: "Complétez au conditionnel présent : « Si on avait le choix, on ___ à la campagne. »",
       choices: [
         { text: "habiterait", correct: true, explanation: "Le conditionnel présent « habiterait » convient pour exprimer le résultat hypothétique." },
         { text: "habitait", correct: false, explanation: "« Habitait » est l'imparfait, mais la conséquence requiert le conditionnel." },
@@ -2579,7 +2579,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si elle travaillait davantage, elle ___ plus d'argent. »",
+      prompt: "Complétez au conditionnel présent : « Si elle travaillait davantage, elle ___ plus d'argent. »",
       choices: [
         { text: "gagnerait", correct: true, explanation: "Le conditionnel présent « gagnerait » exprime la conséquence hypothétique." },
         { text: "gagnait", correct: false, explanation: "« Gagnait » est l'imparfait, non utilisé dans la principale d'une condition." },
@@ -2592,7 +2592,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si nous partions en été, nous ___ des prix moins chers. »",
+      prompt: "Complétez au conditionnel présent : « Si nous partions en été, nous ___ des prix moins chers. »",
       choices: [
         { text: "aurions", correct: true, explanation: "Le conditionnel présent « aurions » est correct pour la conséquence hypothétique." },
         { text: "avions", correct: false, explanation: "« Avions » est l'imparfait, mais il faut le conditionnel dans la principale." },
@@ -2605,7 +2605,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si tu venais avec nous, tu ___ vraiment la beauté de la région. »",
+      prompt: "Complétez au conditionnel présent : « Si tu venais avec nous, tu ___ vraiment la beauté de la région. »",
       choices: [
         { text: "découvrirais", correct: true, explanation: "Le conditionnel présent « découvrirais » exprime le résultat conditionnel." },
         { text: "découvrais", correct: false, explanation: "« Découvrais » est l'imparfait, non utilisé dans la conséquence conditionnelle." },
@@ -2618,7 +2618,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si les choses s'amélioraient, nous ___ tous plus heureux. »",
+      prompt: "Complétez au conditionnel présent : « Si les choses s'amélioraient, nous ___ tous plus heureux. »",
       choices: [
         { text: "serions", correct: true, explanation: "Le conditionnel présent « serions » (de « être ») est la bonne forme ici." },
         { text: "étions", correct: false, explanation: "« Étions » est l'imparfait, incompatible dans la principale d'une hypothèse." },
@@ -2631,7 +2631,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si vous étudiiez plus régulièrement, vous ___ mieux à cet examen. »",
+      prompt: "Complétez au conditionnel présent : « Si vous étudiiez plus régulièrement, vous ___ mieux à cet examen. »",
       choices: [
         { text: "réussiriez", correct: true, explanation: "Le conditionnel présent « réussiriez » convient pour exprimer la conséquence hypothétique." },
         { text: "réussissiez", correct: false, explanation: "« Réussissiez » est l'imparfait de l'indicatif, mais dans la principale on emploie le conditionnel." },
@@ -2644,7 +2644,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si les prix baissaient, plus de gens ___ une maison. »",
+      prompt: "Complétez au conditionnel présent : « Si les prix baissaient, plus de gens ___ une maison. »",
       choices: [
         { text: "achèteraient", correct: true, explanation: "Le conditionnel présent « achèteraient » exprime le résultat hypothétique." },
         { text: "achetaient", correct: false, explanation: "« Achetaient » est l'imparfait, non utilisé dans la conséquence conditionnelle." },
@@ -2657,7 +2657,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si je le savais, je te le ___. »",
+      prompt: "Complétez au conditionnel présent : « Si je le savais, je te le ___. »",
       choices: [
         { text: "dirais", correct: true, explanation: "Le conditionnel présent « dirais » exprime la conséquence de l'hypothèse." },
         { text: "disais", correct: false, explanation: "« Disais » est l'imparfait, mais il faut le conditionnel dans la principale." },
@@ -2670,7 +2670,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si vous aviez besoin d'aide, vous ___ sur nous. »",
+      prompt: "Complétez au conditionnel présent : « Si vous aviez besoin d'aide, vous ___ sur nous. »",
       choices: [
         { text: "pourriez", correct: true, explanation: "Le conditionnel présent « pourriez » convient pour la conséquence hypothétique." },
         { text: "pouviez", correct: false, explanation: "« Pouviez » est l'imparfait, non utilisé dans la principale d'une condition." },
@@ -2683,7 +2683,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si elle avait le talent, elle ___ danseuse professionnelle. »",
+      prompt: "Complétez au conditionnel présent : « Si elle avait le talent, elle ___ danseuse professionnelle. »",
       choices: [
         { text: "serait", correct: true, explanation: "Le conditionnel présent « serait » exprime le résultat conditionnel." },
         { text: "était", correct: false, explanation: "« Était » est l'imparfait, incompatible dans la conséquence conditionnelle." },
@@ -2696,7 +2696,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si tu avais plus de confiance, tu ___ cette chance. »",
+      prompt: "Complétez au conditionnel présent : « Si tu avais plus de confiance, tu ___ cette chance. »",
       choices: [
         { text: "saisirais", correct: true, explanation: "Le conditionnel présent « saisirais » convient pour exprimer la conséquence hypothétique." },
         { text: "saisissais", correct: false, explanation: "« Saisissais » est l'imparfait, non adapté dans la principale d'une hypothèse." },
@@ -2709,7 +2709,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si nous avions plus de temps, nous ___ davantage en famille. »",
+      prompt: "Complétez au conditionnel présent : « Si nous avions plus de temps, nous ___ davantage en famille. »",
       choices: [
         { text: "voyagerions", correct: true, explanation: "Le conditionnel présent « voyagerions » exprime la conséquence hypothétique." },
         { text: "voyagions", correct: false, explanation: "« Voyagions » peut être l'imparfait ou le présent du subjonctif, incompatible ici." },
@@ -2722,7 +2722,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si tu l'aimais vraiment, tu ___ son bonheur avant tout. »",
+      prompt: "Complétez au conditionnel présent : « Si tu l'aimais vraiment, tu ___ son bonheur avant tout. »",
       choices: [
         { text: "chercherais", correct: true, explanation: "Le conditionnel présent « chercherais » convient pour la conséquence hypothétique." },
         { text: "cherchais", correct: false, explanation: "« Cherchais » est l'imparfait, non utilisé dans la principale d'une condition." },
@@ -2735,7 +2735,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez : « Si tu me le demandais gentiment, je te le ___. »",
+      prompt: "Complétez au conditionnel présent : « Si tu me le demandais gentiment, je te le ___. »",
       choices: [
         { text: "donnerais", correct: true, explanation: "Le conditionnel présent « donnerais » exprime le résultat hypothétique." },
         { text: "donnais", correct: false, explanation: "« Donnais » est l'imparfait, incompatible dans la conséquence conditionnelle." },
@@ -2748,7 +2748,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Conjuguez le verbe au conditionnel présent dans une hypothèse avec « si + imparfait »",
+      prompt: "Conjuguez le verbe « être » au conditionnel présent dans une hypothèse avec « si + imparfait »",
       phrase: { before: "Si tu lui rendais visite, il ", after: " vraiment content." },
       hint: "être",
       answer: "serait",
@@ -2766,7 +2766,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Complétez en employant le conditionnel présent après une hypothèse irréelle du présent",
+      prompt: "Conjuguez le verbe « faire » au conditionnel présent après une hypothèse irréelle du présent",
       phrase: { before: "Si je gagnais à la loterie, je ", after: " le tour du monde." },
       hint: "faire",
       answer: "ferais",
@@ -2784,7 +2784,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Utilisez le conditionnel présent pour exprimer la conséquence hypothétique",
+      prompt: "Conjuguez le verbe « cuisiner » au conditionnel présent pour exprimer la conséquence hypothétique",
       phrase: { before: "Si mes enfants aimaient les légumes, je ", after: " beaucoup plus facilement." },
       hint: "cuisiner",
       answer: "cuisinerais",
@@ -2802,7 +2802,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Conjuguez au conditionnel présent dans la conséquence d'une hypothèse",
+      prompt: "Conjuguez le verbe « pouvoir » au conditionnel présent dans la conséquence d'une hypothèse",
       phrase: { before: "Si tu étudiais chaque jour, tu ", after: " certainement réussir tes examens." },
       hint: "pouvoir",
       answer: "pourrais",
@@ -2820,7 +2820,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-08",
       generatedBy: "opus",
-      prompt: "Remplissez le blanc avec le conditionnel présent après une condition irréelle du présent",
+      prompt: "Conjuguez le verbe « être » au conditionnel présent après une condition irréelle du présent",
       phrase: { before: "Si vous m'écoutiez, vous ne ", after: " pas dans cette situation difficile." },
       hint: "être",
       answer: "seriez",
@@ -2838,7 +2838,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où tu ___ en retard, appelle-moi. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où tu ___ en retard, appelle-moi. »",
       choices: [
         { text: "serais", correct: true, explanation: "Après « au cas où », on utilise le conditionnel présent. « Tu serais en retard » exprime une hypothèse." },
         { text: "sois", correct: false, explanation: "C'est le subjonctif, qui ne s'utilise pas après « au cas où ». Le conditionnel est nécessaire ici." },
@@ -2851,7 +2851,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où il ___ , prends un parapluie. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où il ___ , prends un parapluie. »",
       choices: [
         { text: "pleuvrait", correct: true, explanation: "Le conditionnel présent « pleuvrait » suit la construction « au cas où ». C'est l'hypothèse envisagée." },
         { text: "pleuve", correct: false, explanation: "C'est le subjonctif, qui n'est pas employé après « au cas où ». Le conditionnel est la bonne forme." },
@@ -2864,7 +2864,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où elle ___ malade, annule la réunion. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où elle ___ malade, annule la réunion. »",
       choices: [
         { text: "serait", correct: true, explanation: "Le conditionnel « serait » exprime l'hypothèse après « au cas où ». C'est la structure correcte." },
         { text: "soit", correct: false, explanation: "Le subjonctif ne s'emploie pas avec « au cas où ». C'est le conditionnel qui est requis." },
@@ -2877,7 +2877,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où nous ___ du retard, attends-nous. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où nous ___ du retard, attends-nous. »",
       choices: [
         { text: "aurions", correct: true, explanation: "Le conditionnel présent « aurions du retard » s'utilise après « au cas où » pour exprimer une hypothèse." },
         { text: "ayons", correct: false, explanation: "C'est le subjonctif. Après « au cas où », le conditionnel (composé ou simple) est la forme appropriée." },
@@ -2890,7 +2890,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où vous ___ besoin d'aide, contactez-moi. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où vous ___ besoin d'aide, contactez-moi. »",
       choices: [
         { text: "auriez", correct: true, explanation: "Le conditionnel « auriez besoin » est la forme correcte après « au cas où » pour exprimer une hypothèse." },
         { text: "ayez", correct: false, explanation: "C'est le subjonctif. Après « au cas où », le conditionnel est la bonne construction." },
@@ -2903,12 +2903,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où les enfants ___ trop fatigués, on arrête le jeu. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où les enfants ___ trop fatigués, on arrête le jeu. »",
       choices: [
         { text: "seraient", correct: true, explanation: "Le conditionnel « seraient » exprime l'hypothèse envisagée. C'est la structure correcte après « au cas où »." },
         { text: "soient", correct: false, explanation: "Le subjonctif ne s'emploie pas après « au cas où ». Le conditionnel est la forme appropriée." },
         { text: "sont", correct: false, explanation: "C'est le présent de l'indicatif, qui ne convient pas après « au cas où ». Le conditionnel est correct." },
-        { text: "seraient-ils", correct: false, explanation: "Cette forme est correcte, mais la question demande juste le verbe. « Seraient » seul suffit." },
+        { text: "sera", correct: false, explanation: "C'est le futur simple. Avec « au cas où », on emploie le conditionnel, pas le futur." },
       ],
     },
     {
@@ -2916,7 +2916,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où la voiture ___ en panne, appelle un mécanicien. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où la voiture ___ en panne, appelle un mécanicien. »",
       choices: [
         { text: "tomberait", correct: true, explanation: "Le conditionnel « tomberait » suit la règle après « au cas où ». On envisage l'hypothèse d'une panne." },
         { text: "tombe", correct: false, explanation: "C'est le présent. Après « au cas où », on utilise le conditionnel pour l'hypothèse." },
@@ -2929,7 +2929,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où il y ___ une grève, les bus ne circuleront pas. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où il y ___ une grève, les bus ne circuleront pas. »",
       choices: [
         { text: "aurait", correct: true, explanation: "Le conditionnel « aurait » exprime l'hypothèse après « au cas où ». C'est la forme correcte." },
         { text: "ait", correct: false, explanation: "C'est le subjonctif. Après « au cas où », le conditionnel est la construction appropriée." },
@@ -2942,7 +2942,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où tu ne ___ pas tes clés, je te les enverrai. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où tu ne ___ pas tes clés, je te les enverrai. »",
       choices: [
         { text: "trouverais", correct: true, explanation: "Le conditionnel « trouverais » s'utilise après « au cas où » pour exprimer une hypothèse." },
         { text: "trouves", correct: false, explanation: "C'est le présent du subjonctif. Après « au cas où », le conditionnel est la forme correcte." },
@@ -2955,7 +2955,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où elle ___ me voir demain, je lui raconterai tout. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où elle ___ me voir demain, je lui raconterai tout. »",
       choices: [
         { text: "viendrait", correct: true, explanation: "Le conditionnel « viendrait » est correct après « au cas où ». On exprime une hypothèse." },
         { text: "vienne", correct: false, explanation: "C'est le subjonctif. Après « au cas où », le conditionnel est la bonne construction." },
@@ -2968,7 +2968,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où vous ___ un problème, prévenez-moi immédiatement. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où vous ___ un problème, prévenez-moi immédiatement. »",
       choices: [
         { text: "rencontreriez", correct: true, explanation: "Le conditionnel « rencontreriez » exprime l'hypothèse après « au cas où ». C'est la forme appropriée." },
         { text: "rencontriez", correct: false, explanation: "C'est l'indicatif imparfait ou le subjonctif présent. Après « au cas où », le conditionnel est la forme correcte." },
@@ -2981,7 +2981,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où mon ami ___ , donne-lui mon numéro. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où mon ami ___ , donne-lui mon numéro. »",
       choices: [
         { text: "appellerait", correct: true, explanation: "Le conditionnel « appellerait » suit la règle après « au cas où ». On envisage l'hypothèse d'un appel." },
         { text: "appelle", correct: false, explanation: "C'est le présent du subjonctif. Après « au cas où », le conditionnel est requis." },
@@ -2994,7 +2994,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où je n'___ pas assez d'argent, peux-tu m'en prêter ? »",
+      prompt: "Complétez au conditionnel présent : « Au cas où je n'___ pas assez d'argent, peux-tu m'en prêter ? »",
       choices: [
         { text: "aurais", correct: true, explanation: "Le conditionnel « aurais » exprime l'hypothèse après « au cas où ». C'est la construction correcte." },
         { text: "aie", correct: false, explanation: "C'est le subjonctif. Après « au cas où », le conditionnel est approprié." },
@@ -3007,7 +3007,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où elles ___ du mal à comprendre, explique-leur plus clairement. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où elles ___ du mal à comprendre, explique-leur plus clairement. »",
       choices: [
         { text: "auraient", correct: true, explanation: "Le conditionnel « auraient du mal » s'utilise après « au cas où » pour exprimer une hypothèse." },
         { text: "aient", correct: false, explanation: "C'est le subjonctif. Après « au cas où », le conditionnel est la forme correcte." },
@@ -3020,7 +3020,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où tu ___ les règles, lis-les attentivement. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où tu ___ les règles, lis-les attentivement. »",
       choices: [
         { text: "ignorerais", correct: true, explanation: "Le conditionnel « ignorerais » est la forme correcte après « au cas où ». On envisage une hypothèse." },
         { text: "ignores", correct: false, explanation: "C'est le présent du subjonctif. Après « au cas où », le conditionnel convient." },
@@ -3033,7 +3033,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où il ___ trop tard, on partira demain matin. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où il ___ trop tard, on partira demain matin. »",
       choices: [
         { text: "serait", correct: true, explanation: "Le conditionnel « serait trop tard » s'utilise après « au cas où ». C'est l'hypothèse envisagée." },
         { text: "soit", correct: false, explanation: "C'est le subjonctif. Après « au cas où », le conditionnel est la forme appropriée." },
@@ -3046,7 +3046,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où je ___ disponible ce soir, je t'appellerai. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où je ___ disponible ce soir, je t'appellerai. »",
       choices: [
         { text: "ne serais pas", correct: true, explanation: "Le conditionnel négatif « ne serais pas » exprime l'hypothèse après « au cas où ». C'est correct." },
         { text: "ne sois pas", correct: false, explanation: "C'est le subjonctif négatif. Après « au cas où », le conditionnel est la construction requise." },
@@ -3059,7 +3059,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où vous ___ besoin de précisions, posez vos questions. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où vous ___ besoin de précisions, posez vos questions. »",
       choices: [
         { text: "auriez", correct: true, explanation: "Le conditionnel « auriez » s'utilise après « au cas où ». On exprime une hypothèse poliment." },
         { text: "ayez", correct: false, explanation: "C'est le subjonctif. Après « au cas où », le conditionnel est la forme correcte." },
@@ -3072,7 +3072,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où le film ___ mauvais, on regarde un autre. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où le film ___ mauvais, on regarde un autre. »",
       choices: [
         { text: "serait", correct: true, explanation: "Le conditionnel « serait » exprime l'hypothèse après « au cas où ». C'est la structure appropriée." },
         { text: "soit", correct: false, explanation: "C'est le subjonctif. Après « au cas où », le conditionnel est requis." },
@@ -3085,7 +3085,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Conjuguez le verbe au conditionnel après « au cas où »",
+      prompt: "Conjuguez le verbe « appeler » au conditionnel présent après « au cas où »",
       phrase: { before: "Au cas où tu ", after: " , laisse-moi un message." },
       hint: "appeler",
       answer: "m'appellerais",
@@ -3102,7 +3102,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez avec le conditionnel du verbe « avoir »",
+      prompt: "Complétez avec le conditionnel présent du verbe « avoir »",
       phrase: { before: "Au cas où vous ", after: " des doutes, n'hésitez pas à demander." },
       hint: "avoir",
       answer: "auriez",
@@ -3120,7 +3120,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Conjuguez le verbe « venir » au conditionnel",
+      prompt: "Conjuguez le verbe « venir » au conditionnel présent",
       phrase: { before: "Au cas où il ", after: " demain, prépare le dîner." },
       hint: "venir",
       answer: "viendrait",
@@ -3138,7 +3138,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Remplissez le blanc avec le conditionnel du verbe « devoir »",
+      prompt: "Remplissez le blanc avec le conditionnel présent du verbe « devoir »",
       phrase: { before: "Au cas où je ", after: " annuler, je t'informerai à l'avance." },
       hint: "devoir",
       answer: "devrais",
@@ -3156,7 +3156,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Conjuguez le verbe « faire » au conditionnel",
+      prompt: "Conjuguez le verbe « faire » au conditionnel présent",
       phrase: { before: "Au cas où il ", after: " trop chaud, on ira à la plage." },
       hint: "faire",
       answer: "ferait",
@@ -3174,7 +3174,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-09",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Au cas où nous ___ cette opportunité, on en cherchera une autre. »",
+      prompt: "Complétez au conditionnel présent : « Au cas où nous ___ cette opportunité, on en cherchera une autre. »",
       choices: [
         { text: "raterions", correct: true, explanation: "Après « au cas où », on emploie le conditionnel. Le conditionnel de « rater » pour « nous » est « raterions » (radical « rater- » + terminaison « -ions »)." },
         { text: "ratons", correct: false, explanation: "« Ratons » est le présent de l'indicatif. Après « au cas où », le conditionnel est requis." },
@@ -3200,7 +3200,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-10",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ mieux organiser votre travail. »",
+      prompt: "Complétez au conditionnel présent : « Vous ___ mieux organiser votre travail. »",
       choices: [
         { text: "pourriez", correct: true, explanation: "Le conditionnel « pourriez » (vous) exprime un reproche atténué, une suggestion courtoise plutôt qu'un ordre." },
         { text: "pouvez", correct: false, explanation: "Le présent « pouvez » est trop direct et neutre ; le conditionnel rend le reproche plus doux." },
@@ -3239,7 +3239,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-10",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elle ___ être plus prudente à la maison. »",
+      prompt: "Complétez au conditionnel présent : « Elle ___ être plus prudente à la maison. »",
       choices: [
         { text: "devrait", correct: true, explanation: "Le conditionnel « devrait » exprime un reproche doux : « Il serait bon qu'elle soit plus prudente », plutôt qu'un ordre direct." },
         { text: "doit", correct: false, explanation: "Le présent « doit » est trop direct et n'exprime pas l'atténuation du reproche." },
@@ -3265,7 +3265,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-10",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ mieux lire les instructions avant de commencer. »",
+      prompt: "Complétez au conditionnel présent : « Il ___ mieux lire les instructions avant de commencer. »",
       choices: [
         { text: "faudrait", correct: true, explanation: "Le conditionnel « faudrait » (il faut → il faudrait) exprime une suggestion ou un reproche atténué avec politesse." },
         { text: "faut", correct: false, explanation: "Le présent « faut » est trop direct et impératif ; le conditionnel le rend plus doux." },
@@ -3291,7 +3291,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-10",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ vous demander un peu plus de rigueur dans vos résultats. »",
+      prompt: "Complétez au conditionnel présent : « Je ___ vous demander un peu plus de rigueur dans vos résultats. »",
       choices: [
         { text: "voudrais", correct: true, explanation: "Le conditionnel « voudrais » atténue la demande en la formant poliment, comme un souhait ou une suggestion plutôt que comme un ordre direct." },
         { text: "veux", correct: false, explanation: "Le présent « veux » est plus direct et sans atténuation." },
@@ -3317,7 +3317,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-10",
       generatedBy: "sonnet",
-      prompt: "Complétez : « On ___ ranger la cuisine après le repas. »",
+      prompt: "Complétez au conditionnel présent : « On ___ ranger la cuisine après le repas. »",
       choices: [
         { text: "devrait", correct: true, explanation: "Le conditionnel « devrait » exprime une suggestion ou reproche doux à la forme impersonnelle « on »." },
         { text: "doit", correct: false, explanation: "Le présent « doit » est une obligation directe, sans atténuation." },
@@ -3343,7 +3343,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-10",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ être plus attentif aux détails. »",
+      prompt: "Complétez au conditionnel présent : « Vous ___ être plus attentif aux détails. »",
       choices: [
         { text: "devriez", correct: true, explanation: "Le conditionnel « devriez » formule le reproche ou conseil comme une suggestion courtoise plutôt qu'un ordre." },
         { text: "deviez", correct: false, explanation: "L'imparfait « deviez » parle d'une obligation passée habituelle." },
@@ -3369,7 +3369,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-10",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Les enfants ___ jouer dehors plus souvent. »",
+      prompt: "Complétez au conditionnel présent : « Les enfants ___ jouer dehors plus souvent. »",
       choices: [
         { text: "pourraient", correct: true, explanation: "Le conditionnel « pourraient » exprime une suggestion ou un conseil doux, sans imposer une obligation directe." },
         { text: "peuvent", correct: false, explanation: "Le présent « peuvent » est neutre et n'exprime pas un reproche ou suggestion atténuée." },
@@ -3395,7 +3395,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-10",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ être utile d'organiser une réunion pour discuter. »",
+      prompt: "Complétez au conditionnel présent : « Il ___ être utile d'organiser une réunion pour discuter. »",
       choices: [
         { text: "serait", correct: true, explanation: "Le conditionnel « serait » exprime une suggestion ou reproche doux : « Ce serait utile » plutôt qu'un ordre direct d'organiser." },
         { text: "est", correct: false, explanation: "Le présent « est » est une affirmation factuelle sans reproche atténué." },
@@ -3421,7 +3421,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-10",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ne ___ pas être en retard à une entrevue. »",
+      prompt: "Complétez au conditionnel présent : « Vous ne ___ pas être en retard à une entrevue. »",
       choices: [
         { text: "devriez", correct: true, explanation: "Le conditionnel négatif « ne devriez pas » exprime un conseil ou reproche doux plutôt qu'une interdiction sèche." },
         { text: "devez", correct: false, explanation: "Le présent « devez » est une obligation directe sans atténuation." },
@@ -3447,7 +3447,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-10",
       generatedBy: "sonnet",
-      prompt: "Conjuguez le verbe au conditionnel pour exprimer un reproche atténué",
+      prompt: "Conjuguez le verbe « devoir » au conditionnel présent pour exprimer un reproche atténué",
       phrase: { before: "Tu ", after: " faire attention à tes affaires." },
       hint: "devoir",
       answer: "devrais",
@@ -3466,7 +3466,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-10",
       generatedBy: "sonnet",
-      prompt: "Complétez avec le conditionnel pour formuler un reproche doux",
+      prompt: "Conjuguez le verbe « pouvoir » au conditionnel présent pour formuler un reproche doux",
       phrase: { before: "Vous ", after: " mieux vérifier vos calculs avant de les présenter." },
       hint: "pouvoir",
       answer: "pourriez",
@@ -3485,7 +3485,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-10",
       generatedBy: "sonnet",
-      prompt: "Conjuguez au conditionnel pour exprimer un conseil ou reproche atténué",
+      prompt: "Conjuguez le verbe « devoir » au conditionnel présent pour exprimer un conseil ou reproche atténué",
       phrase: { before: "Il ", after: " prendre un peu plus de temps pour finir ce projet." },
       hint: "devoir",
       answer: "devrait",
@@ -3504,7 +3504,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-10",
       generatedBy: "sonnet",
-      prompt: "Mettez au conditionnel pour formuler un reproche ou suggestion douce",
+      prompt: "Conjuguez le verbe « pouvoir » au conditionnel présent pour formuler un reproche ou suggestion douce",
       phrase: { before: "Nous ", after: " nous montrer plus patients les uns envers les autres." },
       hint: "pouvoir",
       answer: "pourrions",
@@ -3523,7 +3523,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-10",
       generatedBy: "sonnet",
-      prompt: "Conjuguez le verbe au conditionnel pour adoucir le reproche",
+      prompt: "Conjuguez le verbe « devoir » au conditionnel présent pour adoucir le reproche",
       phrase: { before: "Vous ne ", after: " pas vous absenter sans prévenir à l'avance." },
       hint: "devoir",
       answer: "devriez",
@@ -3542,7 +3542,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-11",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Si j'avais eu le temps, je ___ à la réunion. »",
+      prompt: "Complétez au conditionnel passé : « Si j'avais eu le temps, je ___ à la réunion. »",
       choices: [
         { text: "serais allé", correct: true, explanation: "Le conditionnel passé requiert l'auxiliaire au conditionnel (serais) + participe passé (allé). C'est la forme correcte pour exprimer une action hypothétique dans le passé." },
         { text: "serais aller", correct: false, explanation: "Après l'auxiliaire, on utilise le participe passé (allé), pas l'infinitif (aller)." },
@@ -3568,7 +3568,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-11",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Ils ___ mieux s'ils avaient étudié plus. »",
+      prompt: "Complétez au conditionnel passé : « Ils ___ mieux s'ils avaient étudié plus. »",
       choices: [
         { text: "auraient réussi", correct: true, explanation: "Conditionnel passé de réussir : auxiliaire auraient + participe passé réussi." },
         { text: "auraient réussir", correct: false, explanation: "Il faut le participe passé (réussi), pas l'infinitif (réussir)." },
@@ -3581,7 +3581,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-11",
       generatedBy: "sonnet",
-      prompt: "Quel verbe complète correctement : « Tu ___ gagné le match avec plus de concentration. »",
+      prompt: "Quel verbe complète correctement au conditionnel passé : « Tu ___ gagné le match avec plus de concentration. »",
       choices: [
         { text: "aurais", correct: true, explanation: "Conditionnel passé : aurait (auxiliaire avoir au conditionnel) + gagné. Ici c'est la deuxième personne, donc « aurais »." },
         { text: "auras", correct: false, explanation: "C'est le futur simple, pas le conditionnel passé. Il manque le participe passé." },
@@ -3607,7 +3607,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-11",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elle ___ accepté l'offre si elle avait eu le choix. »",
+      prompt: "Complétez au conditionnel passé : « Elle ___ accepté l'offre si elle avait eu le choix. »",
       choices: [
         { text: "aurait", correct: true, explanation: "Conditionnel passé : aurait (auxiliaire avoir au conditionnel, troisième personne) + accepté." },
         { text: "a", correct: false, explanation: "C'est l'auxiliaire au passé composé, pas au conditionnel passé." },
@@ -3633,10 +3633,10 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-11",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ téléphoné si vous étiez occupés ? »",
+      prompt: "Complétez au conditionnel passé : « Vous ___ téléphoné si vous aviez été occupés ? »",
       choices: [
         { text: "auriez", correct: true, explanation: "Conditionnel passé : auriez (auxiliaire avoir au conditionnel, deuxième personne plurielle) + téléphoné (participe passé)." },
-        { text: "aviez", correct: false, explanation: "C'est l'imparfait, pas le conditionnel passé." },
+        { text: "aviez", correct: false, explanation: "C'est le plus-que-parfait (aviez téléphoné), pas le conditionnel passé (auriez téléphoné)." },
         { text: "avez", correct: false, explanation: "C'est le présent de l'auxiliaire avoir, pas le conditionnel passé." },
         { text: "seriez", correct: false, explanation: "« Seriez » est l'auxiliaire être au conditionnel, mais « téléphoner » requiert l'auxiliaire avoir (auriez)." },
       ],
@@ -3672,7 +3672,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-11",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ venu plus tôt si j'avais su. »",
+      prompt: "Complétez au conditionnel passé : « Je ___ venu plus tôt si j'avais su. »",
       choices: [
         { text: "serais", correct: true, explanation: "Verbe venir avec auxiliaire être au conditionnel : serais. Conditionnel passé : serais venu." },
         { text: "serions", correct: false, explanation: "« Serions » est la forme du conditionnel pour « nous », pas pour « je ». La bonne forme pour « je » est « serais »." },
@@ -3698,7 +3698,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-11",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Si tu m'avais attendu, nous ___ ensemble. »",
+      prompt: "Complétez au conditionnel passé : « Si tu m'avais attendu, nous ___ ensemble. »",
       choices: [
         { text: "serions partis", correct: true, explanation: "Conditionnel passé de partir (verbe avec être) : auxiliaire serions au conditionnel + participe passé partis." },
         { text: "aurions parti", correct: false, explanation: "Partir requiert l'auxiliaire être (serions), pas avoir (aurions). De plus, il faut l'accord du participe : partis." },
@@ -3737,7 +3737,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-11",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elles ___ écrit une lettre si elles avaient eu du papier. »",
+      prompt: "Complétez au conditionnel passé : « Elles ___ écrit une lettre si elles avaient eu du papier. »",
       choices: [
         { text: "auraient", correct: true, explanation: "Auxiliaire avoir au conditionnel (troisième personne pluriel) : auraient. Conditionnel passé : auraient écrit." },
         { text: "auraient écrire", correct: false, explanation: "Il faut le participe passé (écrit), pas l'infinitif (écrire)." },
@@ -3763,7 +3763,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-11",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ faire le devoir s'il avait compris. »",
+      prompt: "Complétez au conditionnel passé : « Il ___ faire le devoir s'il avait compris. »",
       choices: [
         { text: "aurait pu", correct: true, explanation: "Pouvoir au conditionnel passé : auxiliaire aurait au conditionnel + participe passé pu." },
         { text: "aurait pouvoir", correct: false, explanation: "Il faut le participe passé (pu), pas l'infinitif (pouvoir)." },
@@ -3892,7 +3892,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « J'___ plus attentif à la classe si j'avais étudié. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « J'___ plus attentif à la classe si j'avais étudié. »",
       choices: [
         { text: "aurais été", correct: true, explanation: "Le conditionnel passé « aurais été » exprime un regret sur le passé. La structure avec « si + plus-que-parfait » demande un conditionnel passé." },
         { text: "avais été", correct: false, explanation: "« Avais été » est le plus-que-parfait, utilisé dans la clause « si », pas dans la principale." },
@@ -3905,7 +3905,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elle ___ son examen si elle avait plus étudié. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « Elle ___ son examen si elle avait plus étudié. »",
       choices: [
         { text: "aurait réussi", correct: true, explanation: "Le conditionnel passé « aurait réussi » exprime un regret. Elle n'a pas réussi et elle regrette de ne pas avoir étudié davantage." },
         { text: "a réussi", correct: false, explanation: "Le passé composé « a réussi » ne convient pas pour exprimer un regret hypothétique ; c'est un fait passé simple." },
@@ -3918,7 +3918,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ cet accident si tu avais été plus prudent. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « Tu ___ cet accident si tu avais été plus prudent. »",
       choices: [
         { text: "aurais évité", correct: true, explanation: "Le conditionnel passé « aurais évité » exprime le regret de ne pas avoir été prudent et l'accident qui en a résulté." },
         { text: "aurais éviter", correct: false, explanation: "Le verbe après le conditionnel doit être au participe passé (évité), pas l'infinitif (éviter)." },
@@ -3931,7 +3931,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Nous ___ plus de temps si nous avions planifié correctement. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « Nous ___ plus de temps si nous avions planifié correctement. »",
       choices: [
         { text: "aurions eu", correct: true, explanation: "Le conditionnel passé « aurions eu » avec le sujet « nous » exprime le regret de ne pas avoir eu plus de temps." },
         { text: "avions eu", correct: false, explanation: "« Avions eu » est un plus-que-parfait, qui s'utilise dans la proposition « si »." },
@@ -3944,7 +3944,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ votre maison si vous aviez suivi les conseils. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « Vous ___ votre maison si vous aviez suivi les conseils. »",
       choices: [
         { text: "auriez vendu", correct: true, explanation: "Le conditionnel passé « auriez vendu » exprime le regret. Avec l'auxiliaire « avoir » et un COD post-posé (« votre maison »), il n'y a pas d'accord du participe passé." },
         { text: "auriez vendre", correct: false, explanation: "Le verbe doit être au participe passé (vendu), pas à l'infinitif (vendre)." },
@@ -3957,7 +3957,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Ils ___ cette opportunité s'ils l'avaient connue. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « Ils ___ cette opportunité s'ils l'avaient connue. »",
       choices: [
         { text: "auraient saisi", correct: true, explanation: "Le conditionnel passé « auraient saisi » exprime le regret d'avoir raté une opportunité parce qu'on ne la connaissait pas." },
         { text: "saisiraient", correct: false, explanation: "« Saisiraient » est un conditionnel simple (présent), pas le conditionnel passé." },
@@ -3970,7 +3970,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « J'___ ce message si j'avais consulté ma messagerie hier. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « J'___ ce message si j'avais consulté ma messagerie hier. »",
       choices: [
         { text: "aurais lu", correct: true, explanation: "Le conditionnel passé « aurais lu » exprime le regret de ne pas avoir lu le message en temps voulu." },
         { text: "aurais lire", correct: false, explanation: "Le verbe après le conditionnel doit être au participe passé (lu), pas à l'infinitif (lire)." },
@@ -3983,7 +3983,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elles ___ mieux comprendre si elles avaient posé des questions. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « Elles ___ mieux comprendre si elles avaient posé des questions. »",
       choices: [
         { text: "auraient pu", correct: true, explanation: "Le conditionnel passé « auraient pu » avec le verbe « pouvoir » exprime le regret de ne pas avoir eu la possibilité de mieux comprendre." },
         { text: "auraient pouvoir", correct: false, explanation: "Le verbe après le conditionnel doit être au participe passé (pu), pas à l'infinitif (pouvoir)." },
@@ -3996,7 +3996,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ le concert s'il avait su qu'il venait. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « Il ___ le concert s'il avait su qu'il venait. »",
       choices: [
         { text: "aurait vu", correct: true, explanation: "Le conditionnel passé « aurait vu » exprime le regret de ne pas avoir assisté au concert." },
         { text: "verra", correct: false, explanation: "« Verra » est un futur, pas un conditionnel passé." },
@@ -4009,7 +4009,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Ça ___ différent si tu avais écouté ma suggestion. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « Ça ___ différent si tu avais écouté ma suggestion. »",
       choices: [
         { text: "aurait été", correct: true, explanation: "Le conditionnel passé « aurait été » exprime le regret de ce qui aurait pu se passer différemment." },
         { text: "aurait est", correct: false, explanation: "« Est » n'est pas au participe passé ; la forme correcte est « été »." },
@@ -4022,7 +4022,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « On ___ ensemble si on avait eu le même emploi du temps. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « On ___ ensemble si on avait eu le même emploi du temps. »",
       choices: [
         { text: "aurait voyagé", correct: true, explanation: "Le conditionnel passé « aurait voyagé » exprime le regret de ne pas avoir pu voyager ensemble." },
         { text: "aurait voyager", correct: false, explanation: "Le verbe après le conditionnel doit être au participe passé (voyagé), pas à l'infinitif (voyager)." },
@@ -4035,7 +4035,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ cette erreur si vous aviez été plus prudents. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « Vous ___ cette erreur si vous aviez été plus prudents. »",
       choices: [
         { text: "n'auriez pas commis", correct: true, explanation: "Le conditionnel passé négatif « n'auriez pas commis » exprime le regret d'avoir commis une erreur par manque de prudence." },
         { text: "n'auriez pas commettre", correct: false, explanation: "Le verbe doit être au participe passé (commis), pas à l'infinitif (commettre)." },
@@ -4048,7 +4048,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « J'___ cette décision si j'avais envisagé les conséquences. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « J'___ cette décision si j'avais envisagé les conséquences. »",
       choices: [
         { text: "aurais modifié", correct: true, explanation: "Le conditionnel passé « aurais modifié » exprime le regret d'avoir pris une décision sans réfléchir aux conséquences." },
         { text: "aurais modifiant", correct: false, explanation: "Le participe passé de « modifier » est « modifié », pas « modifiant »." },
@@ -4061,7 +4061,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elle ___ cet emploi si elle avait insisté davantage. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « Elle ___ cet emploi si elle avait insisté davantage. »",
       choices: [
         { text: "aurait obtenu", correct: true, explanation: "Le conditionnel passé « aurait obtenu » exprime le regret de ne pas avoir obtenu l'emploi faute d'insistance." },
         { text: "aurait obtenir", correct: false, explanation: "Le verbe doit être au participe passé (obtenu), pas à l'infinitif (obtenir)." },
@@ -4074,7 +4074,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Nous ___ ce problème avant s'il y avait eu plus de communication. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « Nous ___ ce problème avant s'il y avait eu plus de communication. »",
       choices: [
         { text: "aurions résolu", correct: true, explanation: "Le conditionnel passé « aurions résolu » avec le sujet « nous » exprime le regret de ne pas avoir résolu le problème plus tôt." },
         { text: "aurions résoudre", correct: false, explanation: "Le verbe doit être au participe passé (résolu), pas à l'infinitif (résoudre)." },
@@ -4087,7 +4087,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ moins de stress si tu avais mieux organisé ton travail. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « Tu ___ moins de stress si tu avais mieux organisé ton travail. »",
       choices: [
         { text: "aurais eu", correct: true, explanation: "Le conditionnel passé « aurais eu » exprime le regret d'avoir eu du stress par manque d'organisation." },
         { text: "aurais avoir", correct: false, explanation: "Le verbe doit être au participe passé (eu), pas à l'infinitif (avoir)." },
@@ -4100,7 +4100,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elles ___ cette blessure si elles avaient été plus attentives. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « Elles ___ cette blessure si elles avaient été plus attentives. »",
       choices: [
         { text: "n'auraient pas subi", correct: true, explanation: "Le conditionnel passé négatif « n'auraient pas subi » exprime le regret d'avoir eu une blessure par manque d'attention. Avec l'auxiliaire « avoir » et un COD post-posé (« cette blessure »), il n'y a pas d'accord du participe passé." },
         { text: "n'auraient pas subir", correct: false, explanation: "Le verbe doit être au participe passé (subi), pas à l'infinitif (subir)." },
@@ -4113,7 +4113,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « J'___ à cette invitation si je l'avais reçue à temps. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « J'___ à cette invitation si je l'avais reçue à temps. »",
       choices: [
         { text: "aurais répondu", correct: true, explanation: "Le conditionnel passé « aurais répondu » exprime le regret de ne pas avoir répondu à l'invitation." },
         { text: "aurais répondre", correct: false, explanation: "Le verbe doit être au participe passé (répondu), pas à l'infinitif (répondre)." },
@@ -4126,7 +4126,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ de mauvaises habitudes si quelqu'un lui avait expliqué les risques. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « Il ___ de mauvaises habitudes si quelqu'un lui avait expliqué les risques. »",
       choices: [
         { text: "n'aurait pas pris", correct: true, explanation: "Le conditionnel passé négatif « n'aurait pas pris » exprime le regret d'avoir adopté de mauvaises habitudes par manque d'information." },
         { text: "n'aurait pas prendre", correct: false, explanation: "Le verbe doit être au participe passé (pris), pas à l'infinitif (prendre)." },
@@ -4139,7 +4139,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-12",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ le spectacle si vous aviez acheté vos billets plus tôt. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un regret : « Vous ___ le spectacle si vous aviez acheté vos billets plus tôt. »",
       choices: [
         { text: "auriez apprécié", correct: true, explanation: "Le conditionnel passé « auriez apprécié » exprime le regret de ne pas avoir apprécié le spectacle à cause de la dernière minute." },
         { text: "auriez apprécier", correct: false, explanation: "Le verbe doit être au participe passé (apprécié), pas à l'infinitif (apprécier)." },
@@ -4254,7 +4254,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ venir à ma fête au lieu de rester chez toi. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Tu ___ venir à ma fête au lieu de rester chez toi. »",
       choices: [
         { text: "aurais pu", correct: true, explanation: "Le conditionnel passé exprime un reproche : tu n'es pas venu, mais tu aurais pu le faire." },
         { text: "pouvais", correct: false, explanation: "L'imparfait (pouvais) décrit une capacité au passé, mais ne marque pas le reproche." },
@@ -4267,7 +4267,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ appeler sa mère avant de partir. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Il ___ appeler sa mère avant de partir. »",
       choices: [
         { text: "aurait dû", correct: true, explanation: "Le conditionnel passé exprime le reproche : il n'a pas appelé sa mère, mais il aurait dû le faire." },
         { text: "devrait", correct: false, explanation: "Le conditionnel présent (devrait) exprime une obligation future, pas un reproche sur le passé." },
@@ -4280,7 +4280,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ me consulter avant de prendre cette décision. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Vous ___ me consulter avant de prendre cette décision. »",
       choices: [
         { text: "auriez dû", correct: true, explanation: "Le conditionnel passé (auriez dû) exprime le reproche : vous ne m'avez pas consulté, mais vous auriez dû." },
         { text: "deviez", correct: false, explanation: "L'imparfait (deviez) décrit une obligation sans exprimer le reproche." },
@@ -4293,7 +4293,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Nous ___ réfléchir plus avant d'agir. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Nous ___ réfléchir plus avant d'agir. »",
       choices: [
         { text: "aurions dû", correct: true, explanation: "Le conditionnel passé (aurions dû) exprime le reproche : nous n'avons pas réfléchi assez, mais nous aurions dû." },
         { text: "devions", correct: false, explanation: "L'imparfait (devions) décrit une obligation sans le reproche conditionnel." },
@@ -4306,7 +4306,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ éviter ce malentendu en s'expliquant clairement. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Il ___ éviter ce malentendu en s'expliquant clairement. »",
       choices: [
         { text: "aurait pu", correct: true, explanation: "Le conditionnel passé de pouvoir exprime un reproche sous forme de possibilité non réalisée : il était possible d'éviter le malentendu, mais il ne l'a pas fait." },
         { text: "pouvait", correct: false, explanation: "L'imparfait (pouvait) décrit une capacité au passé sans marquer le reproche." },
@@ -4319,7 +4319,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « J'___ te parler plus tôt pour éviter ce malentendu. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « J'___ te parler plus tôt pour éviter ce malentendu. »",
       choices: [
         { text: "aurais dû", correct: true, explanation: "Le conditionnel passé (aurais dû) exprime le reproche : je ne t'ai pas parlé, mais j'aurais dû." },
         { text: "avais dû", correct: false, explanation: "Le plus-que-parfait « avais dû » s'utilise dans la clause « si », pas dans la principale." },
@@ -4332,7 +4332,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ être plus attentif en classe. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Tu ___ être plus attentif en classe. »",
       choices: [
         { text: "aurais dû", correct: true, explanation: "Le conditionnel passé (aurais dû) exprime le reproche : tu n'as pas été attentif, mais tu aurais dû." },
         { text: "devrais", correct: false, explanation: "Le conditionnel présent (devrais) marque une obligation hypothétique actuelle, pas un reproche passé." },
@@ -4345,7 +4345,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ partir plus tôt pour ne pas rater le train. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Il ___ partir plus tôt pour ne pas rater le train. »",
       choices: [
         { text: "aurait fallu", correct: true, explanation: "Le conditionnel passé impersonnel (aurait fallu) exprime un reproche : il était nécessaire de partir plus tôt, mais cela n'a pas été fait." },
         { text: "fallait", correct: false, explanation: "L'imparfait (fallait) décrit une nécessité passée sans la nuance de reproche." },
@@ -4358,7 +4358,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Nous ___ prendre rendez-vous plus tôt. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Nous ___ prendre rendez-vous plus tôt. »",
       choices: [
         { text: "aurions dû", correct: true, explanation: "Le conditionnel passé (aurions dû) exprime le reproche : nous n'avons pas pris rendez-vous tôt, mais nous aurions dû." },
         { text: "aurions pu", correct: false, explanation: "Bien que au conditionnel passé, « aurions pu » marque la capacité plutôt que l'obligation." },
@@ -4371,7 +4371,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ signaler votre absence à l'avance. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Vous ___ signaler votre absence à l'avance. »",
       choices: [
         { text: "auriez dû", correct: true, explanation: "Le conditionnel passé (auriez dû) exprime le reproche : vous n'avez pas signalé votre absence, mais vous auriez dû." },
         { text: "auriez pu", correct: false, explanation: "Bien que au conditionnel passé, « auriez pu » marque la capacité, pas l'obligation." },
@@ -4384,7 +4384,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ que cela n'allait pas marcher. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Tu ___ que cela n'allait pas marcher. »",
       choices: [
         { text: "aurais dû savoir", correct: true, explanation: "Le conditionnel passé avec un verbe de connaissance (aurais dû savoir) exprime un reproche : tu avais l'obligation de le savoir, mais tu ne l'as pas su." },
         { text: "savais", correct: false, explanation: "L'imparfait (savais) décrit un état de connaissance sans exprimer le reproche." },
@@ -4397,7 +4397,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « J'___ vérifier les faits avant de critiquer. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « J'___ vérifier les faits avant de critiquer. »",
       choices: [
         { text: "aurais dû", correct: true, explanation: "Le conditionnel passé (aurais dû) exprime le reproche : je n'ai pas vérifié, mais j'aurais dû." },
         { text: "avais dû", correct: false, explanation: "Le plus-que-parfait « avais dû » s'utilise dans la clause « si », pas pour exprimer un reproche." },
@@ -4410,7 +4410,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ accepter ce contrat sans lire les conditions. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Tu ___ accepter ce contrat sans lire les conditions. »",
       choices: [
         { text: "n'aurais pas dû", correct: true, explanation: "Le conditionnel passé négatif (n'aurais pas dû) exprime un reproche : tu as accepté, mais c'était une erreur — tu ne devais pas le faire." },
         { text: "aurais dû", correct: false, explanation: "« Aurais dû » affirme une obligation positive (tu devais accepter), l'inverse du reproche voulu ici." },
@@ -4423,7 +4423,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ se taire au lieu de crier. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Il ___ se taire au lieu de crier. »",
       choices: [
         { text: "aurait dû", correct: true, explanation: "Le conditionnel passé (aurait dû) exprime le reproche : il n'a pas gardé le silence, mais il aurait dû." },
         { text: "aurait pu", correct: false, explanation: "Bien que au conditionnel passé, « aurait pu » marque la capacité, pas l'obligation." },
@@ -4436,7 +4436,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ attendre que tout le monde soit là avant de commencer. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Il ___ attendre que tout le monde soit là avant de commencer. »",
       choices: [
         { text: "aurait mieux valu", correct: true, explanation: "L'expression impersonnelle « aurait mieux valu » exprime un reproche en indiquant ce qui aurait été préférable." },
         { text: "valait mieux", correct: false, explanation: "L'imparfait (valait mieux) décrit une préférence passée sans la nuance de reproche du conditionnel passé." },
@@ -4449,7 +4449,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ trouver une solution plus rapidement. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Vous ___ trouver une solution plus rapidement. »",
       choices: [
         { text: "auriez pu", correct: true, explanation: "Le conditionnel passé de pouvoir (auriez pu) exprime un reproche sous forme de possibilité non réalisée : vous aviez la capacité de trouver plus vite." },
         { text: "pouviez", correct: false, explanation: "L'imparfait (pouviez) décrit une capacité au passé sans la nuance de reproche." },
@@ -4462,7 +4462,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Ils ___ nous prévenir du retard — on s'est inquiétés. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Ils ___ nous prévenir du retard — on s'est inquiétés. »",
       choices: [
         { text: "auraient pu", correct: true, explanation: "Le conditionnel passé de pouvoir (auraient pu) exprime un reproche : ils avaient la possibilité de prévenir, mais ne l'ont pas fait." },
         { text: "pouvaient", correct: false, explanation: "L'imparfait (pouvaient) décrit une capacité au passé sans exprimer le reproche." },
@@ -4475,7 +4475,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « J'___ accepter cette invitation. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « J'___ accepter cette invitation. »",
       choices: [
         { text: "aurais dû", correct: true, explanation: "Le conditionnel passé (aurais dû) exprime le reproche : je n'ai pas accepté, mais j'aurais dû." },
         { text: "aurais pu", correct: false, explanation: "Bien que au conditionnel passé, « aurais pu » marque la capacité, pas l'obligation." },
@@ -4488,7 +4488,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ me demander avant de toucher à mes affaires. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Tu ___ me demander avant de toucher à mes affaires. »",
       choices: [
         { text: "aurais dû", correct: true, explanation: "Le conditionnel passé (aurais dû) exprime le reproche : tu n'as pas demandé, mais tu aurais dû." },
         { text: "devrais", correct: false, explanation: "Le conditionnel présent (devrais) marque une obligation hypothétique actuelle, pas un reproche passé." },
@@ -4501,7 +4501,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-13",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ se plaindre plutôt que d'agir. »",
+      prompt: "Complétez au conditionnel passé pour exprimer un reproche : « Il ___ se plaindre plutôt que d'agir. »",
       choices: [
         { text: "n'aurait pas dû", correct: true, explanation: "Le conditionnel passé négatif (n'aurait pas dû) exprime le reproche : il s'est plaint, mais il ne devrait pas." },
         { text: "ne devraient pas", correct: false, explanation: "Le conditionnel présent (ne devraient pas) marque une obligation hypothétique actuelle, pas un reproche passé." },
@@ -4604,7 +4604,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si j'avais su, je ___ venue plus tôt. »",
+      prompt: "Complétez au conditionnel passé : « Si j'avais su, je ___ venue plus tôt. »",
       choices: [
         { text: "serais", correct: true, explanation: "Après « si » au plus-que-parfait, le verbe de la principale se conjugue au conditionnel passé. Ici, il faut « je serais venue » (conditionnel passé du verbe « être »)." },
         { text: "serai", correct: false, explanation: "« Serai » est le futur simple, pas le conditionnel. La structure « si + plus-que-parfait » exige le conditionnel passé." },
@@ -4617,7 +4617,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si tu avais réfléchi, tu n'___ pas cette erreur. »",
+      prompt: "Complétez au conditionnel passé : « Si tu avais réfléchi, tu n'___ pas cette erreur. »",
       choices: [
         { text: "aurais commis", correct: true, explanation: "Le conditionnel passé « aurais commis » est la bonne forme après « si » au plus-que-parfait. C'est un verbe transitif qui prend l'auxiliaire « avoir »." },
         { text: "avais commis", correct: false, explanation: "Le plus-que-parfait « avais commis » s'utilise après la conjonction « si » dans l'antécédent, pas dans la principale. La principale nécessite le conditionnel passé." },
@@ -4630,7 +4630,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si nous avions eu plus de temps, nous ___ le projet. »",
+      prompt: "Complétez au conditionnel passé : « Si nous avions eu plus de temps, nous ___ le projet. »",
       choices: [
         { text: "aurions terminé", correct: true, explanation: "« Aurions terminé » est le conditionnel passé correct après « si » au plus-que-parfait. Il exprime une action passée conditionnelle." },
         { text: "avions terminé", correct: false, explanation: "Le plus-que-parfait « avions terminé » s'utilise après « si », mais c'est l'antécédent de la structure. La principale demande le conditionnel passé." },
@@ -4643,7 +4643,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si elle avait accepté l'offre, elle ___ plus d'argent maintenant. »",
+      prompt: "Complétez au conditionnel passé : « Si elle avait accepté l'offre, elle ___ plus d'argent maintenant. »",
       choices: [
         { text: "aurait eu", correct: true, explanation: "« Aurait eu » (conditionnel passé de « avoir ») est la forme correcte dans une structure « si + plus-que-parfait ». Elle exprime une conséquence hypothétique passée." },
         { text: "avait eu", correct: false, explanation: "Le plus-que-parfait « avait eu » s'utilise dans la clause « si », pas dans la principale. Ici, la principale demande le conditionnel passé." },
@@ -4656,7 +4656,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si vous aviez écouté, vous ___ les consignes. »",
+      prompt: "Complétez au conditionnel passé : « Si vous aviez écouté, vous ___ les consignes. »",
       choices: [
         { text: "auriez compris", correct: true, explanation: "« Auriez compris » (conditionnel passé avec le sujet « vous ») est la forme correcte. Elle suit la structure hypothétique classique : si + plus-que-parfait → conditionnel passé." },
         { text: "aviez compris", correct: false, explanation: "Le plus-que-parfait « aviez compris » s'utilise dans la clause « si », non dans la principale. La principale exige le conditionnel passé." },
@@ -4669,7 +4669,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si j'avais pu, j'___ cette chance. »",
+      prompt: "Complétez au conditionnel passé : « Si j'avais pu, j'___ cette chance. »",
       choices: [
         { text: "aurais saisi", correct: true, explanation: "« Aurais saisi » (conditionnel passé du verbe « saisir ») est correct. Le COD « cette chance » est post-posé, donc avec l'auxiliaire « avoir » il n'y a pas d'accord du participe passé." },
         { text: "aurais saisie", correct: false, explanation: "« Aurais saisie » est incorrect. Avec l'auxiliaire « avoir », le participe passé ne s'accorde pas car le COD « cette chance » est post-posé (placé après le verbe)." },
@@ -4682,7 +4682,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si les enfants avaient obéi, ils n'___ pas punis. »",
+      prompt: "Complétez au conditionnel passé : « Si les enfants avaient obéi, ils n'___ pas punis. »",
       choices: [
         { text: "auraient été", correct: true, explanation: "« Auraient été » (conditionnel passé de « être ») est correct pour les verbes passifs. C'est la structure passive : sujet + conditionnel passé de « être » + participe passé." },
         { text: "avaient été", correct: false, explanation: "Le plus-que-parfait passif « avaient été » s'utilise dans la clause « si », non dans la principale. La principale demande le conditionnel passé." },
@@ -4695,7 +4695,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si nous avions eu le choix, nous ___ à la montagne. »",
+      prompt: "Complétez au conditionnel passé : « Si nous avions eu le choix, nous ___ à la montagne. »",
       choices: [
         { text: "aurions voyagé", correct: true, explanation: "« Aurions voyagé » (conditionnel passé avec « nous ») exprime correctement la conséquence hypothétique d'une condition passée." },
         { text: "avions voyagé", correct: false, explanation: "Le plus-que-parfait « avions voyagé » s'utilise après « si » pour exprimer la condition, pas la conséquence. La conséquence demande le conditionnel passé." },
@@ -4708,7 +4708,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si vous aviez préparé l'examen, vous ___. »",
+      prompt: "Complétez au conditionnel passé : « Si vous aviez préparé l'examen, vous ___. »",
       choices: [
         { text: "auriez réussi", correct: true, explanation: "« Auriez réussi » (conditionnel passé avec « vous ») est la forme correcte. Elle exprime une conséquence hypothétique suite à une condition passée." },
         { text: "aviez réussi", correct: false, explanation: "Le plus-que-parfait « aviez réussi » s'utilise dans la clause « si », non dans la principale. La principale exige le conditionnel passé." },
@@ -4721,7 +4721,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "Marie dit : « Si j'avais su qu'elle était malade, je ___ la visiter. »",
+      prompt: "Complétez au conditionnel passé. Marie dit : « Si j'avais su qu'elle était malade, je ___ la visiter. »",
       choices: [
         { text: "serais allée", correct: true, explanation: "« Serais allée » (conditionnel passé de « aller ») est correct. Le verbe « aller » utilise l'auxiliaire « être » et le participe s'accorde avec le sujet féminin « Marie (je) »." },
         { text: "serais allés", correct: false, explanation: "« Allés » est la forme masculine plurielle du participe passé. Pour le sujet féminin singulier « Marie (je) », il faut « allée »." },
@@ -4734,7 +4734,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si les travaux avaient commencé plus tôt, ils ___ avant l'été. »",
+      prompt: "Complétez au conditionnel passé : « Si les travaux avaient commencé plus tôt, ils ___ avant l'été. »",
       choices: [
         { text: "auraient été terminés", correct: true, explanation: "« Auraient été terminés » (conditionnel passé passif) exprime correctement que les travaux seraient terminés si la condition passée avait été remplie." },
         { text: "avaient été terminés", correct: false, explanation: "Le plus-que-parfait passif « avaient été terminés » s'utilise dans la clause « si », non dans la principale. La principale demande le conditionnel passé." },
@@ -4747,7 +4747,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si tu avais pratiqué davantage le piano, tu ___ mieux. »",
+      prompt: "Complétez au conditionnel passé : « Si tu avais pratiqué davantage le piano, tu ___ mieux. »",
       choices: [
         { text: "aurais joué", correct: true, explanation: "« Aurais joué » (conditionnel passé) est correct ici. Le contexte « pratiqué le piano » indique qu'il s'agit de jouer, et c'est la forme appropriée au conditionnel passé." },
         { text: "avais joué", correct: false, explanation: "Le plus-que-parfait « avais joué » s'utilise dans la clause « si », pas dans la principale. La conséquence exige le conditionnel passé." },
@@ -4760,7 +4760,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si elle avait étudié sérieusement, elle n'___ pas échoué. »",
+      prompt: "Complétez au conditionnel passé : « Si elle avait étudié sérieusement, elle n'___ pas échoué. »",
       choices: [
         { text: "aurait", correct: true, explanation: "« Aurait » est le conditionnel passé d'« avoir ». Avec la négation « n'... pas » et le participe passé « échoué », on obtient « n'aurait pas échoué ». Le verbe « échouer » se conjugue avec « avoir » et il n'y a pas de COD antéposé, donc pas d'accord du participe passé." },
         { text: "avait", correct: false, explanation: "Le plus-que-parfait « avait » s'utilise dans la clause « si », non dans la principale. La conséquence demande le conditionnel passé." },
@@ -4773,7 +4773,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si nous nous étions dépêchés, nous ___ à temps. »",
+      prompt: "Complétez au conditionnel passé : « Si nous nous étions dépêchés, nous ___ à temps. »",
       choices: [
         { text: "serions arrivés", correct: true, explanation: "« Serions arrivés » (conditionnel passé du verbe « arriver » avec l'auxiliaire « être ») est correct. Le verbe « arriver » se conjugue avec « être », le participe passé s'accorde donc avec le sujet « nous »." },
         { text: "aurions arrivé", correct: false, explanation: "« Aurions arrivé » est incorrect car le verbe « arriver » se conjugue avec l'auxiliaire « être », non « avoir ». La forme correcte est « serions arrivés »." },
@@ -4786,7 +4786,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si tu m'avais dit la vérité, je t'___ cru. »",
+      prompt: "Complétez au conditionnel passé : « Si tu m'avais dit la vérité, je t'___ cru. »",
       choices: [
         { text: "aurais", correct: true, explanation: "« Aurais cru » (conditionnel passé de « croire ») avec le COD antéposé « t' ». Ici, « aurais » complète l'espace blanc." },
         { text: "avais", correct: false, explanation: "Le plus-que-parfait « avais » s'utilise dans la clause « si », non dans la principale. La conséquence exige le conditionnel passé." },
@@ -4799,7 +4799,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si vous aviez moins travaillé, vous ___ moins fatigués. »",
+      prompt: "Complétez au conditionnel passé : « Si vous aviez moins travaillé, vous ___ moins fatigués. »",
       choices: [
         { text: "auriez été", correct: true, explanation: "« Auriez été » (conditionnel passé de « être ») est la forme correcte. La structure est : si + plus-que-parfait → conditionnel passé." },
         { text: "aviez été", correct: false, explanation: "Le plus-que-parfait « aviez été » s'utilise dans la clause « si », pas dans la principale. La conséquence demande le conditionnel passé." },
@@ -4812,7 +4812,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si j'avais su qu'il était malade, je lui ___ rendu visite. »",
+      prompt: "Complétez au conditionnel passé : « Si j'avais su qu'il était malade, je lui ___ rendu visite. »",
       choices: [
         { text: "aurais", correct: true, explanation: "« Aurais rendu » (conditionnel passé de « rendre ») est correct. Le pronom « lui » est COI (complément d'objet indirect), et le COD « visite » est post-posé, donc il n'y a pas d'accord du participe passé." },
         { text: "avais", correct: false, explanation: "Le plus-que-parfait « avais » s'utilise dans la clause « si », non dans la principale. La conséquence exige le conditionnel passé." },
@@ -4825,7 +4825,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si les élèves avaient écouté, ils ___ les explications. »",
+      prompt: "Complétez au conditionnel passé : « Si les élèves avaient écouté, ils ___ les explications. »",
       choices: [
         { text: "auraient compris", correct: true, explanation: "« Auraient compris » (conditionnel passé avec le sujet « les élèves ») exprime correctement la conséquence passée hypothétique." },
         { text: "avaient compris", correct: false, explanation: "Le plus-que-parfait « avaient compris » s'utilise après « si », non dans la principale. La conséquence demande le conditionnel passé." },
@@ -4838,7 +4838,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si je n'avais pas oublié mes documents, j'___ entrer sans problème. »",
+      prompt: "Complétez au conditionnel passé : « Si je n'avais pas oublié mes documents, j'___ entrer sans problème. »",
       choices: [
         { text: "aurais pu", correct: true, explanation: "« Aurais pu » (conditionnel passé de « pouvoir ») est correct. Le verbe « pouvoir » au conditionnel passé s'utilise avec l'infinitif qui suit." },
         { text: "avais pu", correct: false, explanation: "Le plus-que-parfait « avais pu » s'utilise dans la clause « si », pas dans la principale. La conséquence demande le conditionnel passé." },
@@ -4851,7 +4851,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-14",
       generatedBy: "sonnet",
-      prompt: "« Si vous vous étiez reposés, vous ___ mieux. »",
+      prompt: "Complétez au conditionnel passé : « Si vous vous étiez reposés, vous ___ mieux. »",
       choices: [
         { text: "seriez allés", correct: true, explanation: "« Seriez allés » (conditionnel passé du verbe « aller » avec l'auxiliaire « être ») est correct. La structure « si + plus-que-parfait → conditionnel passé » exige le conditionnel passé dans la principale." },
         { text: "seriez aller", correct: false, explanation: "L'infinitif « aller » après l'auxiliaire au conditionnel est incorrect. Il faut le participe passé « allés »." },
@@ -4958,7 +4958,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "Complétez : « On dit qu'il ___ sa maison en 2020. »",
+      prompt: "Complétez au conditionnel passé : « On dit qu'il ___ sa maison en 2020. »",
       choices: [
         { text: "aurait vendu", correct: true, explanation: "Le conditionnel passé (aurait vendu) exprime une information non confirmée au passé. On rapporte ce qu'on a entendu sans affirmer la certitude." },
         { text: "a vendu", correct: false, explanation: "Le passé composé affirme un fait certain. Ici, on rapporte une rumeur, donc le conditionnel passé est nécessaire." },
@@ -4971,7 +4971,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« D'après les rumeurs, elle ___ enceinte à l'époque. »",
+      prompt: "Complétez au conditionnel passé : « D'après les rumeurs, elle ___ enceinte à l'époque. »",
       choices: [
         { text: "aurait été", correct: true, explanation: "Le conditionnel passé (aurait été) rapporte une information non vérifiée. Les rumeurs expriment le doute et l'incertitude." },
         { text: "était", correct: false, explanation: "L'imparfait décrit un état passé comme un fait certain. Avec les rumeurs, le conditionnel passé est plus approprié." },
@@ -4984,7 +4984,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« Les témoins affirment qu'il ___ le restaurant avant minuit. »",
+      prompt: "Complétez au conditionnel passé : « Les témoins affirment qu'il ___ le restaurant avant minuit. »",
       choices: [
         { text: "aurait quitté", correct: true, explanation: "Le conditionnel passé rapporte une affirmation de tiers sans la confirmer. C'est ce que les témoins ont dit, sans certitude absolue." },
         { text: "aurait quitter", correct: false, explanation: "Erreur de conjugaison. Le participe passé de « quitter » est « quitté », pas « quitter »." },
@@ -4997,7 +4997,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« Selon la presse, les négociations ___ un accord. »",
+      prompt: "Complétez au conditionnel passé : « Selon la presse, les négociations ___ un accord. »",
       choices: [
         { text: "auraient abouti", correct: true, explanation: "Le conditionnel passé rapporte une information de source médiatique sans l'affirmer comme certitude. C'est une information rapportée, non vérifiée." },
         { text: "ont abouti", correct: false, explanation: "Le passé composé affirme un fait certain. La presse rapporte souvent des informations non confirmées, donc le conditionnel passé est préférable." },
@@ -5010,7 +5010,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« On prétend qu'elle ___ le concours l'année dernière. »",
+      prompt: "Complétez au conditionnel passé : « On prétend qu'elle ___ le concours l'année dernière. »",
       choices: [
         { text: "aurait remporté", correct: true, explanation: "Le conditionnel passé exprime le doute face à une prétention d'autrui. On rapporte ce qu'on a entendu sans affirmer la vérité." },
         { text: "a remporté", correct: false, explanation: "Le passé composé indique certitude. Ici, « on prétend » crée du doute, donc le conditionnel passé est approprié." },
@@ -5023,7 +5023,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« Selon les archives, cet homme ___ pendant la Révolution. »",
+      prompt: "Complétez au conditionnel passé : « Selon les archives, cet homme ___ pendant la Révolution. »",
       choices: [
         { text: "aurait travaillé", correct: true, explanation: "Le conditionnel passé rapporte une information historique rapportée par des archives sans affirmation complète. C'est ce que les sources suggèrent." },
         { text: "aurait travailler", correct: false, explanation: "Erreur de conjugaison. Le participe passé de « travailler » est « travaillé », pas « travailler »." },
@@ -5036,7 +5036,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« Les historiens pensent que ce document ___ au XVe siècle. »",
+      prompt: "Complétez au conditionnel passé : « Les historiens pensent que ce document ___ au XVe siècle. »",
       choices: [
         { text: "aurait été écrit", correct: true, explanation: "Le conditionnel passé rapporte l'hypothèse des historiens sans l'affirmer comme établie. C'est une conclusion savante, non une certitude absolue." },
         { text: "aurait été écrite", correct: false, explanation: "Erreur d'accord. Le participe passé « écrit » ne s'accorde pas avec « document » (masculin), donc « écrit » au masculin singulier est correct." },
@@ -5049,7 +5049,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« D'après le journal, l'accident ___ vers 18 heures. »",
+      prompt: "Complétez au conditionnel passé : « D'après le journal, l'accident ___ vers 18 heures. »",
       choices: [
         { text: "aurait eu lieu", correct: true, explanation: "Le conditionnel passé rapporte ce que le journal a dit sans que ce soit confirmé par une source directe. C'est une information rapportée." },
         { text: "a eu lieu", correct: false, explanation: "Le passé composé affirme certitude. Une source journalistique rapportée demande souvent le conditionnel passé pour exprimer le doute." },
@@ -5062,7 +5062,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« On raconte qu'elle ___ la maison avant son mariage. »",
+      prompt: "Complétez au conditionnel passé : « On raconte qu'elle ___ la maison avant son mariage. »",
       choices: [
         { text: "aurait hérité de", correct: true, explanation: "Le conditionnel passé exprime le ouï-dire et le doute. C'est ce qu'on rapporte sans certitude absolue." },
         { text: "a hérité de", correct: false, explanation: "Le passé composé affirme. Avec « on raconte », le conditionnel passé est préféré pour exprimer l'incertitude." },
@@ -5075,7 +5075,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« On suppose qu'ils ___ le contrat sans l'avis du directeur. »",
+      prompt: "Complétez au conditionnel passé : « On suppose qu'ils ___ le contrat sans l'avis du directeur. »",
       choices: [
         { text: "auraient signé", correct: true, explanation: "Le conditionnel passé exprime la supposition et le doute. On ne sait pas avec certitude s'ils ont signé, donc on emploie le conditionnel passé." },
         { text: "ont signé", correct: false, explanation: "Le passé composé affirme. Une supposition demande le conditionnel passé pour exprimer le manque de certitude." },
@@ -5088,7 +5088,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« Selon la légende, ce roi ___ immortel. »",
+      prompt: "Complétez au conditionnel passé : « Selon la légende, ce roi ___ immortel. »",
       choices: [
         { text: "aurait été", correct: true, explanation: "Le conditionnel passé rapporte une affirmation légendaire sans la confirmer historiquement. C'est un doute face à une légende." },
         { text: "était", correct: false, explanation: "L'imparfait décrit un état comme établi. Une légende demande le conditionnel passé pour exprimer le doute." },
@@ -5101,7 +5101,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« On dit que les explorateurs ___ un nouveau continent en secret. »",
+      prompt: "Complétez au conditionnel passé : « On dit que les explorateurs ___ un nouveau continent en secret. »",
       choices: [
         { text: "auraient découvert", correct: true, explanation: "Le conditionnel passé rapporte une affirmation sans la confirmer historiquement. On doute de cette découverte secrète." },
         { text: "auraient découvertir", correct: false, explanation: "Erreur de conjugaison. Le participe passé de « découvrir » est « découvert », pas « découvertir »." },
@@ -5114,7 +5114,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« Selon les rumeurs, elle ___ son diplôme avec mention. »",
+      prompt: "Complétez au conditionnel passé : « Selon les rumeurs, elle ___ son diplôme avec mention. »",
       choices: [
         { text: "aurait obtenu", correct: true, explanation: "Le conditionnel passé exprime le doute face à une rumeur. On rapporte sans affirmer la certitude." },
         { text: "a obtenu", correct: false, explanation: "Le passé composé affirme. Une rumeur demande le conditionnel passé pour exprimer l'incertitude." },
@@ -5127,7 +5127,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« On prétend qu'il ___ combattant dans cette guerre célèbre. »",
+      prompt: "Complétez au conditionnel passé : « On prétend qu'il ___ combattant dans cette guerre célèbre. »",
       choices: [
         { text: "aurait été", correct: true, explanation: "Le conditionnel passé rapporte une prétention sans l'affirmer. On exprime le doute face à cette affirmation." },
         { text: "était", correct: false, explanation: "L'imparfait décrit un état comme établi. « On prétend » crée du doute, donc le conditionnel passé convient." },
@@ -5140,7 +5140,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« Les archéologues pensent que cet objet ___ sacré pour les anciens. »",
+      prompt: "Complétez au conditionnel passé : « Les archéologues pensent que cet objet ___ sacré pour les anciens. »",
       choices: [
         { text: "aurait été", correct: true, explanation: "Le conditionnel passé rapporte l'hypothèse des savants sans l'affirmer comme établie. C'est une conclusion provisoire." },
         { text: "aurait être", correct: false, explanation: "Erreur de conjugaison. Le participe passé de « être » est « été », pas « être »." },
@@ -5153,7 +5153,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« On raconte que cet écrivain ___ ses mémoires dans le secret. »",
+      prompt: "Complétez au conditionnel passé : « On raconte que cet écrivain ___ ses mémoires dans le secret. »",
       choices: [
         { text: "aurait rédigé", correct: true, explanation: "Le conditionnel passé rapporte une histoire douteuse. On doute que cette action se soit réellement produite." },
         { text: "aurait rédiger", correct: false, explanation: "Erreur de conjugaison. Le participe passé de « rédiger » est « rédigé », pas « rédiger »." },
@@ -5166,7 +5166,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« Selon les bruits de couloir, le directeur ___ au mois de juin. »",
+      prompt: "Complétez au conditionnel passé : « Selon les bruits de couloir, le directeur ___ au mois de juin. »",
       choices: [
         { text: "aurait démissionné", correct: true, explanation: "Le conditionnel passé rapporte une rumeur sans la confirmer. Les « bruits de couloir » impliquent le doute." },
         { text: "a démissionné", correct: false, explanation: "Le passé composé affirme certitude. Une rumeur demande le conditionnel passé." },
@@ -5269,7 +5269,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« On murmure qu'ils ___ des secrets pendant des années. »",
+      prompt: "Complétez au conditionnel passé : « On murmure qu'ils ___ des secrets pendant des années. »",
       choices: [
         { text: "auraient gardé", correct: true, explanation: "Le conditionnel passé exprime le doute et les rumeurs. On rapporte ce qu'on a ouï-dire sans certitude." },
         { text: "gardaient", correct: false, explanation: "L'imparfait dépeint une habitude comme établie. Avec les murmures, le conditionnel passé affirme mieux le doute." },
@@ -5282,7 +5282,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« Selon ses amis, il ___ un emploi à l'étranger. »",
+      prompt: "Complétez au conditionnel passé : « Selon ses amis, il ___ un emploi à l'étranger. »",
       choices: [
         { text: "aurait trouvé", correct: true, explanation: "Le conditionnel passé rapporte le témoignage de ses amis sans l'affirmer comme établi. C'est une information de seconde main." },
         { text: "trouvait", correct: false, explanation: "L'imparfait décrit un état passé comme certain. Ici, on rapporte ce que ses amis ont dit, donc le conditionnel passé est approprié." },
@@ -5295,7 +5295,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-15",
       generatedBy: "sonnet",
-      prompt: "« Les voisins affirment qu'il y ___ une fête bruyante jusqu'à minuit. »",
+      prompt: "Complétez au conditionnel passé : « Les voisins affirment qu'il y ___ une fête bruyante jusqu'à minuit. »",
       choices: [
         { text: "aurait eu", correct: true, explanation: "Le conditionnel passé rapporte ce que les voisins ont dit sans l'affirmer comme certain. C'est un témoignage indirect." },
         { text: "a eu", correct: false, explanation: "Le passé composé affirme la certitude d'un fait. Le témoignage de voisins rapporté demande le conditionnel passé." },
@@ -5518,10 +5518,10 @@ const section: Section = {
       generatedBy: "sonnet",
       prompt: "Sélectionnez. « Tu avais dit que tu ne ___ jamais accepter cette offre. »",
       choices: [
-        { text: "ne pourrais", correct: true, explanation: "Le conditionnel « ne pourrais » exprime l'impossibilité envisagée depuis le passé. Tu avais dit que tu ne pourrais jamais accepter (impossibilité envisagée au passé)." },
-        { text: "ne pouvais", correct: false, explanation: "L'imparfait « ne pouvais » décrirait une incapacité habituelle au passé, non une impossibilité future envisagée depuis ce moment." },
-        { text: "ne peux", correct: false, explanation: "Le présent « ne peux » ne s'utilise pas après un verbe au passé dans ce contexte de discours rapporté indirect." },
-        { text: "ne pourras", correct: false, explanation: "Le futur simple « ne pourras » s'utilise après un verbe au présent. Ici, le conditionnel est requis après le passé." },
+        { text: "pourrais", correct: true, explanation: "Le conditionnel « pourrais » exprime l'impossibilité envisagée depuis le passé. Tu avais dit que tu ne pourrais jamais accepter (impossibilité envisagée au passé)." },
+        { text: "pouvais", correct: false, explanation: "L'imparfait « pouvais » décrirait une incapacité habituelle au passé, non une impossibilité future envisagée depuis ce moment." },
+        { text: "peux", correct: false, explanation: "Le présent « peux » ne s'utilise pas après un verbe au passé dans ce contexte de discours rapporté indirect." },
+        { text: "pourras", correct: false, explanation: "Le futur simple « pourras » s'utilise après un verbe au présent. Ici, le conditionnel est requis après le passé." },
       ],
     },
     {
@@ -6226,7 +6226,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-18",
       generatedBy: "sonnet",
-      prompt: "Complétez au subjonctif présent après « vouloir que »",
+      prompt: "Conjuguez le verbe au conditionnel ou au subjonctif selon le contexte",
       phrase: { before: "Ma mère veut que je ", after: " mes études à l'université." },
       hint: "poursuivre",
       answer: "poursuive",
@@ -6244,7 +6244,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-18",
       generatedBy: "sonnet",
-      prompt: "Complétez au subjonctif présent après « craindre que »",
+      prompt: "Conjuguez le verbe au conditionnel ou au subjonctif selon le contexte",
       phrase: { before: "Je crains que vous ne ", after: " déçu par les résultats." },
       hint: "être",
       answer: "soyez",
@@ -6262,7 +6262,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-18",
       generatedBy: "sonnet",
-      prompt: "Complétez au subjonctif présent après « à moins que »",
+      prompt: "Conjuguez le verbe au conditionnel ou au subjonctif selon le contexte",
       phrase: { before: "Je ne peux partir à moins que tu ne ", after: " avec moi." },
       hint: "venir",
       answer: "viennes",
@@ -6319,7 +6319,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-18",
       generatedBy: "sonnet",
-      prompt: "Complétez au subjonctif présent après « bien que »",
+      prompt: "Conjuguez le verbe au conditionnel ou au subjonctif selon le contexte",
       phrase: { before: "Bien qu'il ", after: " difficile, il veut continuer." },
       hint: "être",
       answer: "soit",
@@ -6337,7 +6337,7 @@ const section: Section = {
       type: "input",
       ruleId: "06-18",
       generatedBy: "sonnet",
-      prompt: "Complétez au subjonctif présent après « afin que »",
+      prompt: "Conjuguez le verbe au conditionnel ou au subjonctif selon le contexte",
       phrase: { before: "Elle travaille dur afin qu'elle ", after: " ses rêves." },
       hint: "réaliser",
       answer: "réalise",
@@ -6355,7 +6355,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je ___ pas venir à la réunion demain. »",
+      prompt: "Complétez au conditionnel présent : « Je ___ pas venir à la réunion demain. »",
       choices: [
         { text: "ne pourrais", correct: true, explanation: "Au conditionnel présent, la négation complète est formée avec « ne + verbe au conditionnel + pas ». « Je ne pourrais pas venir » exprime une impossibilité hypothétique." },
         { text: "ne peux", correct: false, explanation: "« Je ne peux pas » est au présent de l'indicatif, pas au conditionnel présent. Le contexte indique une action future hypothétique." },
@@ -6368,7 +6368,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Il ___ jamais accepté cette proposition. »",
+      prompt: "Complétez au conditionnel passé : « Il ___ jamais accepté cette proposition. »",
       choices: [
         { text: "n'aurait", correct: true, explanation: "Au conditionnel passé, la négation avec « jamais » s'exprime par « ne + auxiliaire au conditionnel + pas » ou « ne + auxiliaire + jamais ». Ici, « n'aurait jamais accepté » signifie qu'il refuserait cette proposition." },
         { text: "n'a", correct: false, explanation: "« N'a » est au passé composé (présent d'auxiliaire + participe), pas au conditionnel passé. Le temps verbal ne correspond pas au contexte hypothétique." },
@@ -6381,7 +6381,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Tu ___ rien dire à personne, compris ? »",
+      prompt: "Complétez au conditionnel présent : « Tu ___ rien dire à personne, compris ? »",
       choices: [
         { text: "ne devrais", correct: true, explanation: "Au conditionnel présent, « ne devrais rien dire » exprime une obligation hypothétique négative. La double négation « ne...rien » est correcte ici." },
         { text: "ne devrais pas", correct: false, explanation: "« Ne devrais pas » introduit une double négation avec « rien », ce qui est maladroit. Il est préférable d'utiliser soit « ne devrais rien dire », soit « ne devrais pas dire »." },
@@ -6394,7 +6394,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Nous ___ jamais fait cela dans ces conditions. »",
+      prompt: "Complétez au conditionnel passé : « Nous ___ jamais fait cela dans ces conditions. »",
       choices: [
         { text: "n'aurions", correct: true, explanation: "Au conditionnel passé, « n'aurions jamais fait » exprime une action négative hypothétique au passé. Le sujet « nous » demande la première personne du pluriel." },
         { text: "ne ferions", correct: false, explanation: "« Ne ferions » est au conditionnel présent du verbe « faire », pas au conditionnel passé. Bien que le temps soit conditionnel, la forme n'est pas celle du passé." },
@@ -6420,7 +6420,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Vous ___ pas cette décision, n'est-ce pas ? »",
+      prompt: "Complétez au conditionnel présent : « Vous ___ pas cette décision, n'est-ce pas ? »",
       choices: [
         { text: "n'approuveriez", correct: true, explanation: "Au conditionnel présent, « n'approuveriez pas » exprime une probabilité négative. Bien que « pas » soit inclus, la forme « n'approuveriez » est correcte pour la deuxième personne du pluriel." },
         { text: "n'approuviez", correct: false, explanation: "« N'approuviez » est à l'imparfait, pas au conditionnel présent. Le contexte suggère une hypothèse future, non une action passée." },
@@ -6459,7 +6459,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je crois que tu ___ raison. »",
+      prompt: "Complétez au conditionnel présent : « Je crois que tu ___ raison. »",
       choices: [
         { text: "n'aurais pas", correct: true, explanation: "Au conditionnel présent, « n'aurais pas raison » exprime un doute ou une opinion hypothétique. La négation de « avoir raison » requiert « ne…pas »." },
         { text: "n'as", correct: false, explanation: "« N'as » est au présent de l'indicatif, pas au conditionnel présent. Bien que grammaticalement correct, la forme ne convient pas au doute implicite." },
@@ -6485,7 +6485,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Ils ___ jamais pensé à cette solution. »",
+      prompt: "Complétez au conditionnel passé : « Ils ___ jamais pensé à cette solution. »",
       choices: [
         { text: "n'auraient", correct: true, explanation: "Au conditionnel passé, « n'auraient jamais pensé » avec « jamais » exprime une action négative hypothétique. La troisième personne du pluriel est correcte pour le sujet « ils »." },
         { text: "ne penseraient", correct: false, explanation: "« Ne penseraient » est au conditionnel présent, pas au conditionnel passé. La structure de la phrase indique un passé hypothétique." },
@@ -6498,7 +6498,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Dans ce cas, vous ___ pas de problèmes. »",
+      prompt: "Complétez au conditionnel présent : « Dans ce cas, vous ___ pas de problèmes. »",
       choices: [
         { text: "n'auriez", correct: true, explanation: "Au conditionnel présent, « n'auriez pas de problèmes » exprime une situation hypothétique négative. La deuxième personne du pluriel est correcte pour « vous »." },
         { text: "ne teriez", correct: false, explanation: "Cette forme n'existe pas en français. « Ne teriez » n'est pas un verbe valide." },
@@ -6511,7 +6511,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Avec plus de temps, on ___ pas échoué. »",
+      prompt: "Complétez au conditionnel passé : « Avec plus de temps, on ___ pas échoué. »",
       choices: [
         { text: "n'aurait", correct: true, explanation: "Au conditionnel passé, « n'aurait pas échoué » avec le sujet indéfini « on » exprime un échec hypothétique évité. La forme est correcte." },
         { text: "ne réussirait", correct: false, explanation: "« Ne réussirait » est au conditionnel présent d'un verbe différent (« réussir »), pas au conditionnel passé d'« échouer »." },
@@ -6537,7 +6537,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Elle ___ jamais accepté ta proposition, même avec ton aide. »",
+      prompt: "Complétez au conditionnel passé : « Elle ___ jamais accepté ta proposition, même avec ton aide. »",
       choices: [
         { text: "n'aurait", correct: true, explanation: "Au conditionnel passé, « n'aurait jamais accepté » exprime un refus hypothétique persistant. Le participe « accepté » ne s'accorde pas car le COD « ta proposition » est postposé." },
         { text: "ne l'accepterait", correct: false, explanation: "« Ne l'accepterait » est au conditionnel présent, pas au conditionnel passé. Le contexte indique une hypothèse sur le passé." },
@@ -6550,7 +6550,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Les entreprises ___ pas fermées sans subventions gouvernementales. »",
+      prompt: "Complétez au conditionnel passé : « Les entreprises ___ pas fermées sans subventions gouvernementales. »",
       choices: [
         { text: "ne se seraient", correct: true, explanation: "Au conditionnel passé avec le verbe pronominal « se fermer », « ne se seraient pas fermées » exprime une hypothèse négative. L'auxiliaire « être » est utilisé pour les verbes pronominaux et le participe s'accorde avec le sujet féminin pluriel « les entreprises »." },
         { text: "ne fermeraient", correct: false, explanation: "« Ne fermeraient » est au conditionnel présent, pas au conditionnel passé. Le contexte hypothétique demande le passé." },
@@ -6563,7 +6563,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Je suis certain que tu ___ pas raison sur ce point. »",
+      prompt: "Complétez au conditionnel présent : « Je suis certain que tu ___ pas raison sur ce point. »",
       choices: [
         { text: "n'aurais", correct: true, explanation: "Au conditionnel présent, « tu n'aurais pas raison » exprime un doute ou une opinion hypothétique dans un contexte déclaratif. Le conditionnel adoucit l'affirmation." },
         { text: "n'as", correct: false, explanation: "« N'as » est au présent de l'indicatif, pas au conditionnel. Le contexte avec « Je suis certain que » peut aussi admettre le conditionnel pour nuancer le propos." },
@@ -6576,7 +6576,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « En te voyant, je ___ aucun doute. »",
+      prompt: "Complétez au conditionnel présent : « En te voyant, je ___ aucun doute. »",
       choices: [
         { text: "n'aurais", correct: true, explanation: "Au conditionnel présent, « n'aurais aucun doute » exprime une certitude hypothétique dans une situation. La structure « n'aurais + nom » avec la double négation « aucun » est correcte." },
         { text: "n'ai", correct: false, explanation: "« N'ai » est au présent de l'indicatif, pas au conditionnel passé. Le contexte hypothétique demande un conditionnel." },
@@ -6602,7 +6602,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "06-19",
       generatedBy: "sonnet",
-      prompt: "Complétez : « Personne ne ___ jamais deviné la vérité dans ces conditions. »",
+      prompt: "Complétez au conditionnel passé : « Personne ne ___ jamais deviné la vérité dans ces conditions. »",
       choices: [
         { text: "n'aurait", correct: true, explanation: "Au conditionnel passé, « n'aurait jamais deviné » exprime une impossibilité hypothétique. La négation « ne…jamais » est correcte avec le sujet « Personne ne »." },
         { text: "la devinerait", correct: false, explanation: "« La devinerait » est au conditionnel présent, pas au conditionnel passé. Le contexte avec « jamais » et la négation demande le passé hypothétique." },
