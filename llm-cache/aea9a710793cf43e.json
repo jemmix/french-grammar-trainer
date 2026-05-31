@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aea9a710793cf43e",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-01-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Formation du conditionnel présent : radical du futur + terminaisons de l'imparfait\nPROMPT: Conjuguez le verbe « pouvoir » au conditionnel présent\nPHRASE: Je ___ aller à la plage avec toi si j'étais libre ce weekend.\nCORRECT ANSWER: pourrais\n\nWRONG ANSWERS to evaluate:\n1. peux\n2. pouvais\n3. pourrai\n4. puisse\n5. pourrait\n6. pourraient\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780182701422-btkxm1kh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All six wrong answers represent common and predictable learner errors: using the present tense (peux), the imparfait (pouvais), the futur simple without imparfait endings (pourrai), the subjonctif (puisse), or wrong person agreement in the conditionnel itself (pourrait/pourraient).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780182928514-ydirfl9q",
+      "timestamp": "2026-05-30T23:15:46.198Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: defaulting to present tense (peux), confusing with imperfect (pouvais), using futur simple without imparfait endings (pourrai), confusing with subjunctive (puisse), and mixing up person/number agreement (pourrait, pourraient).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780183064639-548rjtrf",
+      "timestamp": "2026-05-30T23:18:05.969Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: using present tense (peux), confusing conditional with imparfait (pouvais) since the rule mentions imparfait endings, stopping at the futur radical without adding imparfait endings (pourrai), confusing with subjunctive (puisse), and wrong person/number agreement (pourrait, pourraient).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780183203270-o407kgax",
+      "timestamp": "2026-05-30T23:20:34.769Z"
+    }
+  ]
+}

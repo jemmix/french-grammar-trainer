@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f1ce6a9fd3d52c88",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-02-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel présent avec le verbe « être » : « Si j'avais plus de temps, je ___ à la bibliothèque. »\n\nChoices:\nA. [CORRECT] serais\nB. [WRONG] serai\nC. [WRONG] suis\nD. [WRONG] serait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780184789726-80cfqb0u"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses or person/number agreements: B is futur simple, C is présent indicatif, and D is third person singular instead of first person singular.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780184789763-d9mjkmoz",
+      "timestamp": "2026-05-30T23:46:41.974Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses (serai=futur simple, suis=présent) or wrong person/number (serait=3rd person conditionnel).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780184801975-zlukzjpr",
+      "timestamp": "2026-05-30T23:46:56.477Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use either the wrong tense (futur simple for B, présent for C) or the wrong person (serait is il/elle/on form, not je).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780184816478-wly2jsz8",
+      "timestamp": "2026-05-30T23:47:08.535Z"
+    }
+  ]
+}
