@@ -142,6 +142,7 @@ export const answerHints: Record<string, string> = {
   "aille": "aller",
   "ailles": "aller",
   "aimerais": "aimer",
+  "aimerait": "aimer",
   "aimerait voyager": "aimer",
   "ait": "avoir",
   "ait abandonné": "abandonner",
