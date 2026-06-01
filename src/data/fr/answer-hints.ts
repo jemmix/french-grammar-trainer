@@ -260,6 +260,7 @@ export const answerHints: Record<string, string> = {
   "aurait agi": "agir",
   "aurait aimé": "aimer",
   "aurait dû": "devoir",
+  "aurait pu": "pouvoir",
   "aurait eu": "avoir",
   "aurait fait": "faire",
   "aurait occupé": "occuper",
