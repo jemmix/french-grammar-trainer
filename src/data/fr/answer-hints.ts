@@ -268,6 +268,7 @@ export const answerHints: Record<string, string> = {
   "aurait vaincu": "vaincre",
   "vainc": "vaincre",
   "aurait été rédigé": "rédiger",
+  "aurait remarqué": "remarquer",
   "aurait été": "être",
   "aurait": "avoir",
   "auras fini": "finir",
