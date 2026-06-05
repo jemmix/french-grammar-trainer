@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d8fac6467cfa3e11",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-20-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\n\nQUESTION:\nType: Input\nPrompt: Conditionnel présent ou conditionnel passé ? Complétez la phrase.\nPhrase: Avec un budget illimité, tu ___ (visiter) tous les continents.\nCorrect Answer: visiterais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780694716888-ubq2zpvq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the hypothesis value of the conditional (\"avec un budget illimité\" presents an unreal condition requiring the conditional mood), which is explicitly one of the values listed in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694716889-7lv3qu3w",
+      "timestamp": "2026-06-05T21:25:27.436Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the hypothetical use of the conditional (\"Avec un budget illimité, tu visiterais...\"), which is one of the specific values explicitly listed in the rule (hypothèse).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694727438-g9uoeocy",
+      "timestamp": "2026-06-05T21:25:36.058Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the conditional used for hypothesis (\"avec un budget illimité, tu visiterais...\"), which is one of the specific values explicitly listed in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694736059-4rcgsxsw",
+      "timestamp": "2026-06-05T21:25:45.259Z"
+    }
+  ]
+}

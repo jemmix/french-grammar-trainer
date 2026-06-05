@@ -1,0 +1,54 @@
+{
+  "cacheKey": "fbdc5179046835c4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-20-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\n\nQUESTION:\nType: Input\nPrompt: Conditionnel présent ou conditionnel passé ? Complétez la phrase.\nPhrase: Madame, je ___ (vouloir) vous demander un renseignement.\nCorrect Answer: voudrais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780694886617-qnpzlilx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: This question directly tests the politeness value of the conditional, which is explicitly one of the four values listed in the rule (politesse, hypothèse, regret, information incertaine).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694886618-zbpqg04m",
+      "timestamp": "2026-06-05T21:28:17.301Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the politeness value of the conditional (\"je voudrais\" instead of \"je veux\"), which is one of the four specific values explicitly listed in the rule (politesse, hypothèse, regret, information incertaine).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694897303-04hm7niw",
+      "timestamp": "2026-06-05T21:28:26.842Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule. Here is my assessment:\n\nVERDICT: MISALIGNED\nREASON: The question tests basic conditional conjugation and tense selection (choosing présent over passé), not the identification of different conditional values (politesse, hypothèse, regret, information incertaine) that the synthesis rule is supposed to cover.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694906843-7y898e8v",
+      "timestamp": "2026-06-05T21:28:41.293Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the politeness value of the conditional (\"je voudrais\" instead of \"je veux\"), which is explicitly one of the values listed in the synthesis rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694921293-gbcpdv7t",
+      "timestamp": "2026-06-05T21:28:50.791Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the use of the conditional for politeness (\"je voudrais\" as a polite request), which is one of the four specific values explicitly listed in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694930791-h9klutk8",
+      "timestamp": "2026-06-05T21:28:59.088Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work\nI was asked to validate whether a French grammar question about the conditional tense is properly aligned with the stated rule about \"les différentes valeurs du conditionnel\" (the different values/uses of the conditional: politeness, hypothesis, regret, uncertain information).\n\n## Analysis Completed\nThe question asks students to choose between conditionnel présent and conditionnel passé for the sentence \"Madame, je ___ (vouloir) vous demander un renseignement\" with answer \"voudrais.\"\n\n**VERDICT: MISALIGNED**\n**REASON: The question tests tense selection between conditionnel présent and passé, not the identification of different conditional values (politesse, hypothèse, regret, information incertaine) which is what the rule is about.**\n\nThe prompt simply asks \"Conditionnel présent ou conditionnel passé?\" without requiring students to identify or distinguish between the different VALUES of the conditional. A student could answer correctly knowing only the conjugation of \"vouloir\" without understanding that this expresses politeness versus other conditional uses.\n\n## Remaining Tasks\nNone - this was a single validation task.\n\n## Recommendations\nTo properly test rule 06-20, questions should:\n- Ask students to identify which value (politesse, hypothèse, regret, information incertaine) is being expressed in a given sentence\n- Present multiple sentences using the conditional in different contexts and ask students to match them to their values\n- Include scenarios where students must choose the appropriate conditional use, not just the tense",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694939089-5usdcg05",
+      "timestamp": "2026-06-05T21:29:13.840Z"
+    }
+  ]
+}

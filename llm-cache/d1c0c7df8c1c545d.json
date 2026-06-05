@@ -1,0 +1,40 @@
+{
+  "cacheKey": "d1c0c7df8c1c545d",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "06-20-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Conditionnel présent ou conditionnel passé ? Complétez la phrase.\n\nPHRASE: Hélas, on ___ (réussir) à convaincre le conseil d'administration.\n\nHINT: consulter\n\nEXPECTED ANSWER: aurait réussi\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1780694046291-afj5k6j1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly specifies the two tenses to choose from (conditionnel présent ou conditionnel passé), and the phrase explicitly shows the verb to conjugate \"(réussir)\" with the subject \"on\", making it clear what the learner should type.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694173663-bputlenf",
+      "timestamp": "2026-06-05T21:16:53.641Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly specifies the two tenses to choose from, the verb to conjugate (réussir) is given in parentheses, and the subject (on) is unambiguous — the learner knows exactly what form to produce.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694213642-unugtkry",
+      "timestamp": "2026-06-05T21:17:17.037Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The hint \"consulter\" does not match the verb \"réussir\" shown in parentheses in the phrase, creating confusion about what the learner should actually input.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694238468-9sjl5zsy",
+      "timestamp": "2026-06-05T21:17:38.565Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The hint \"consulter\" refers to a completely different verb than \"réussir\" shown in the phrase, which would confuse learners about what they're supposed to conjugate.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694258565-nct07nrr",
+      "timestamp": "2026-06-05T21:17:56.318Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "97c075c4dc72623c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-20-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\n\nQUESTION:\nType: Input\nPrompt: Complétez la phrase.\nPhrase: Hélas, on ___ (devoir) refuser cette offre à l'époque.\nCorrect Answer: aurait dû\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780693483491-hl6sr8ac"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached. I was in the process of validating a single grammar question alignment.\n\nVERDICT: ALIGNED\nREASON: The context created by \"Hélas\" and \"à l'époque\" specifically requires the use of the conditional past to express regret, which is one of the core values detailed in the synthesis rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780693483493-89dmc3ps",
+      "timestamp": "2026-06-05T21:05:16.229Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"Hélas\" to explicitly signal regret, and \"aurait dû\" (conditional passé) correctly expresses this regret value of the conditional, which is one of the core values listed in the synthesis rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780693516230-ysgcc43a",
+      "timestamp": "2026-06-05T21:05:24.606Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the \"regret\" value of the conditionnel passé — the context cues \"Hélas\" and \"à l'époque\" signal regret, and choosing \"aurait dû\" over the passé composé \"a dû\" requires understanding that the conditional expresses this regret value rather than simply reporting a past fact.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780693524606-osda6x87",
+      "timestamp": "2026-06-05T21:05:37.375Z"
+    }
+  ]
+}

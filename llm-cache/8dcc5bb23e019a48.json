@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8dcc5bb23e019a48",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-20-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\n\nQUESTION:\nType: Input\nPrompt: Le conditionnel rend cette demande plus courtoise. Complétez la phrase.\nPhrase: Monsieur, je ___ (vouloir) vous poser une question.\nCorrect Answer: voudrais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780695382165-4wklbhlw"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the politeness value of the conditional (using \"voudrais\" instead of \"veux\" to make a request more courteous), which is explicitly one of the values listed in the synthesis rule about different uses of the conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780695382166-o0rcso5a",
+      "timestamp": "2026-06-05T21:36:33.753Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the politeness value of the conditional, which is explicitly listed as one of the values in the synthesis rule (politesse, hypothèse, regret, information incertaine), and the prompt even reinforces this by stating \"Le conditionnel rend cette demande plus courtoise.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780695393755-pxj4db3h",
+      "timestamp": "2026-06-05T21:36:43.280Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the use of the conditional for politeness, which is one of the four specific values (politesse, hypothèse, regret, information incertaine) listed in the rule, and the prompt explicitly frames the exercise around this value.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780695403281-zjfwkoq7",
+      "timestamp": "2026-06-05T21:36:52.183Z"
+    }
+  ]
+}

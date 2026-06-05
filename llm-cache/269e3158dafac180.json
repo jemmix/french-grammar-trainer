@@ -1,0 +1,33 @@
+{
+  "cacheKey": "269e3158dafac180",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-20-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\n\nQUESTION:\nType: Input\nPrompt: Quel temps du conditionnel convient ici ? Complétez la phrase.\nPhrase: Avec plus de temps libre, tu ___ (voyager) plus souvent.\nCorrect Answer: voyagerais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780694631040-an3jcvgk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that this sentence expresses a hypothetical situation about a present/future possibility (explicitly listed as one of the values in the rule) in order to correctly select \"voyagerais\" (conditionnel présent) rather than \"aurais voyagé\" (conditionnel passé, which would indicate a past regret).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694631042-9awi1l72",
+      "timestamp": "2026-06-05T21:24:06.643Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\nI was in the process of evaluating a single question for rule alignment validation.\n\nAnalysis completed:\nThe question asks students to conjugate \"voyager\" in the conditional after \"Avec plus de temps libre\" — this tests conditional conjugation and basic hypothetical context recognition. However, the stated rule (06-20) is about synthesizing the DIFFERENT VALUES of the conditional (politeness, hypothesis, regret, uncertain information). A properly aligned question for this rule would ask students to identify WHICH value is being expressed, not just conjugate a verb.\n\nVERDICT: MISALIGNED\nREASON: The question tests conditional conjugation and recognition of a hypothetical context, not the synthesis of different conditional values (politeness, hypothesis, regret, uncertain information) which is the stated rule.\n\nRemaining tasks:\n- None — this was a single-question validation task that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694646644-qpuriqa1",
+      "timestamp": "2026-06-05T21:24:19.631Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating whether a French grammar question aligns with its stated rule.\n\n**Verdict for the submitted question:**\n\nVERDICT: ALIGNED\nREASON: The question tests the hypothetical value of the conditional (\"Avec plus de temps libre, tu voyagerais...\"), which is one of the four values (politesse, hypothèse, regret, information incertaine) explicitly covered by the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780694659632-81b1wmhf",
+      "timestamp": "2026-06-05T21:24:33.256Z"
+    }
+  ]
+}

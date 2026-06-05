@@ -1,0 +1,33 @@
+{
+  "cacheKey": "618247bc562db5ea",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-20-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\n\nQUESTION:\nType: Input\nPrompt: Conditionnel présent ou conditionnel passé ? Complétez la phrase.\nPhrase: J' ___ (aimer) visiter Paris l'année dernière.\nCorrect Answer: aurais aimé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780695064155-3d17o3s2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the regret value of the conditionnel passé (expressing a past unrealized wish with \"l'année dernière\" as context), which is explicitly one of the values listed in the synthesis rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780695064158-cbl5ojnq",
+      "timestamp": "2026-06-05T21:31:15.148Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of analyzing a French grammar validation question to determine if it properly tests the stated rule about \"les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine).\"\n\n**Analysis completed:**\nThe question asks students to fill in \"J' ___ (aimer) visiter Paris l'année dernière\" with either conditionnel présent or conditionnel passé. The correct answer is \"aurais aimé.\"\n\n**My assessment:**\nVERDICT: MISALIGNED\nREASON: The question primarily tests the formal distinction between conditionnel présent and conditionnel passé based on recognizing the past time marker \"l'année dernière,\" not the different values/uses of the conditional (politeness, hypothesis, regret, uncertain information) that the rule is supposed to synthesize—students can answer correctly without understanding which value the conditional expresses here.\n\n**Remaining tasks:**\n- None for this specific validation item; the assessment is complete.\n\n**Recommendations:**\nTo properly test rule 06-20, questions should require students to identify or produce conditionals in contexts that highlight specific values (e.g., distinguishing polite request from uncertain information, or identifying regret vs. hypothesis in different sentence contexts), rather than just selecting the correct tense form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780695075151-sntnxcg4",
+      "timestamp": "2026-06-05T21:31:30.039Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests selecting conditionnel passé over présent based on the past time marker \"l'année dernière,\" not the different semantic values of the conditional (politeness, hypothesis, regret, uncertain information) that the rule is supposed to synthesize.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780695090039-cftcybf1",
+      "timestamp": "2026-06-05T21:31:42.230Z"
+    }
+  ]
+}

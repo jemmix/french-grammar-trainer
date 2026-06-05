@@ -1,0 +1,26 @@
+{
+  "cacheKey": "cf1178b6f44113d3",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "06-20-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Vous exprimez un regret sur le passé. Complétez avec un temps composé.\nPhrase: Hélas, on ___ (réussir) à convaincre le conseil d'administration.\nHint: réussir\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780693613280-awzjqz9i"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: \"Un temps composé\" refers to a grammatical category containing multiple tenses (passé composé, plus-que-parfait, conditionnel passé, futur antérieur, etc.) rather than specifying which exact tense is expected, forcing the learner to guess which compound tense expresses regret.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780693614282-poipjmsu",
+      "timestamp": "2026-06-05T21:07:03.367Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was analyzing a single French grammar question for clarity and ambiguity as part of a validation task.\n\n**Question being evaluated:**\n- Prompt: \"Vous exprimez un regret sur le passé. Complétez avec un temps composé.\"\n- Phrase: \"Hélas, on ___ (réussir) à convaincre le conseil d'administration.\"\n\n**My assessment (not yet delivered):**\nVERDICT: AMBIGUOUS\nREASON: \"Un temps composé\" is a broad category encompassing passé composé, plus-que-parfait, conditionnel passé, and others, so while \"regret\" provides context pointing to conditionnel passé, the prompt doesn't explicitly name the expected tense and a learner could reasonably be unsure which specific compound tense to use.\n\n**Remaining tasks:**\n- Deliver the verdict for this question (nonce-1780693623368-u2v7snn6)\n- Any additional questions in the batch (if any were queued)\n\n**Recommendations:**\n- To fix this prompt, replace \"un temps composé\" with \"le conditionnel passé\" to make the expected answer unambiguous\n- Alternatively, add more specific guidance like \"Exprimez ce qui aurait dû se passer\" to clarify the function",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780693623368-u2v7snn6",
+      "timestamp": "2026-06-05T21:07:27.162Z"
+    }
+  ]
+}
