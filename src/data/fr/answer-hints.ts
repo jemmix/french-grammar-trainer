@@ -450,6 +450,7 @@ export const answerHints: Record<string, string> = {
   "comprenait": "comprendre",
   "comprendrez": "comprendre",
   "comprends": "comprendre",
+  "comprenne": "comprendre",
   "comprennent": "comprendre",
   "confiiez": "confier",
   "connaissez": "se connaître",
@@ -493,8 +494,12 @@ export const answerHints: Record<string, string> = {
   "devriez": "devoir",
   "devrions": "devoir",
   "dirais": "dire",
+  "dirait": "dire",
   "dis": "dire",
+  "disait": "dire",
+  "dise": "dire",
   "dises": "dire",
+  "dit": "dire",
   "dites-la-nous": "dire",
   "doives": "devoir",
   "dû": "devoir",
@@ -1362,6 +1367,11 @@ export const answerHints: Record<string, string> = {
   "terminerait": "terminer",
   "décidera": "décider",
   "fermerait": "fermer",
+  "lises": "lire",
+  "partirais": "partir",
+  "pleuve": "pleuvoir",
+  "aies": "avoir",
+  "viendrais": "venir",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
