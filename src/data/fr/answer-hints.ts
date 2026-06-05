@@ -1355,6 +1355,13 @@ export const answerHints: Record<string, string> = {
   "obtiendra": "obtenir",
   "s'effondrera": "s'effondrer",
   "va s'effondrer": "s'effondrer",
+  "atterrira": "atterrir",
+  "entendrait": "entendre",
+  "réussisses": "réussir",
+  "aidiez": "aider",
+  "terminerait": "terminer",
+  "décidera": "décider",
+  "fermerait": "fermer",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
