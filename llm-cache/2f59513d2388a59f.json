@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2f59513d2388a59f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Multiple Choice\nPrompt: « Je prendrais bien un dessert. » — Quelle est la fonction de « prendrais » ?\nChoices:\nA. [CORRECT] Un souhait atténué (conditionnel de politesse)\nB. Un futur dans le passé (discours rapporté)\nC. Une information incertaine\nD. Un regret sur le passé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780293122324-gizchnfz"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\n**Analysis completed:**\n\nVERDICT: MISALIGNED\nREASON: The question tests general identification of conditional functions (wishes, politeness, uncertainty, regret) rather than specifically testing the distinction between futur dans le passé and conditionnel—the correct answer can be determined by recognizing \"prendrais bien\" expresses a wish without needing to understand what futur dans le passé is or how it differs from conditionnel.\n\nA properly aligned question for this rule would require students to determine whether a given sentence uses the conditional form as a futur dans le passé (reported speech context) or as a true conditional, based on contextual cues.\n\n**Remaining tasks:** None—this single validation task was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293163658-hprjc7ix",
+      "timestamp": "2026-06-01T05:54:49.226Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"prendrais\" expresses a polite wish rather than a reported future, directly testing the distinction between conditionnel and futur dans le passé by presenting the latter as a plausible distractor.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293550709-1klledgy",
+      "timestamp": "2026-06-01T05:59:31.533Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests identifying the conditional of politeness/wish function, not the distinction between futur dans le passé and conditional — \"futur dans le passé\" is just one of several distractors, not the core concept being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293750681-9bkqtavb",
+      "timestamp": "2026-06-01T06:02:55.876Z"
+    }
+  ]
+}

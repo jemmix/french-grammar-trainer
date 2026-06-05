@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e17f82192dae5e9a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-12-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel passé pour exprimer un regret : « Tu ___ moins de stress si tu avais mieux organisé ton travail. »\n\nChoices:\nA. [CORRECT] aurais eu\nB. [WRONG] aurais avoir\nC. [WRONG] aurais\nD. [WRONG] auras\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401424-hcrjld8q"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses an invalid auxiliary+infinitive construction, C is conditional present instead of conditional past, and D is future simple instead of conditional past.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228719673-3gtuzsom",
+      "timestamp": "2026-05-31T11:59:00.373Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of what was accomplished:**\nI was asked to verify that wrong answers B, C, and D in a French grammar multiple choice question are indeed incorrect. The question asks for the conditionnel passé form of \"avoir\" to complete the sentence expressing regret.\n\n**Analysis completed:**\n- B (\"aurais avoir\") is incorrect - cannot use infinitive after auxiliary in compound tense\n- C (\"aurais\") is incorrect - missing past participle \"eu\" required for conditionnel passé\n- D (\"auras\") is incorrect - this is futur simple, not conditionnel passé\n\n**Verdict that would have been returned:**\nTRUE||All wrong answers contain clear grammar errors: B incorrectly uses infinitive instead of past participle, C is incomplete missing the past participle, and D uses the wrong tense (futur simple instead of conditionnel passé).\n\n**Remaining tasks:**\nNone - the verification task was straightforward and complete.\n\n**Recommendations:**\nNo further action needed for this specific question verification.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231894512-pjnn5ka1",
+      "timestamp": "2026-05-31T12:52:05.972Z"
+    }
+  ]
+}

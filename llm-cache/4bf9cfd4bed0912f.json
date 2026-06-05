@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4bf9cfd4bed0912f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-03-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-03 - Le conditionnel de politesse (je voudrais, pourriez-vous, j'aimerais)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle est la formule polie au conditionnel pour exprimer un souhait pour une tierce personne ? « Il ___ passer vous voir la semaine prochaine. »\nChoices:\nA. [CORRECT] aimerait\nB. aime\nC. aimera\nD. aimait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780251592104-fnt60wbr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests recognizing the conditional form \"aimerait\" used to express a polite wish for a third person, which directly applies the conditionnel de politesse rule (j'aimerais/il aimerait) to a different subject person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780251621879-18g5d5lw",
+      "timestamp": "2026-05-31T18:20:36.527Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to validate whether a French grammar question is aligned with its stated rule. Here is my assessment:\n\nVERDICT: MISALIGNED\nREASON: The question tests the conditional used to express a wish about a third person (\"Il aimerait...\"), not the \"conditionnel de politesse\" which specifically refers to polite forms used to soften requests directed at the interlocutor (je voudrais, pourriez-vous, j'aimerais).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780251671982-ya0lkcnk",
+      "timestamp": "2026-05-31T18:21:33.024Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary\nI was asked to validate whether a French grammar question is properly aligned with the rule it claims to test. The rule is \"Le conditionnel de politesse (je voudrais, pourriez-vous, j'aimerais)\" and the question asks students to fill in \"Il ___ passer vous voir\" with \"aimerait\" as the correct answer.\n\n## My Assessment\nVERDICT: MISALIGNED\nREASON: This question tests the conditional used to express a wish for a third person, not the \"conditionnel de politesse\" which specifically refers to using conditional forms to soften one's own requests or suggestions when addressing someone directly (first/second person interactions).\n\n## Remaining Tasks\nNone - the validation judgment was complete.\n\n## Recommendations\nTo properly test \"le conditionnel de politesse,\" the question should involve first or second person constructions like \"Je voudrais...\", \"Pourriez-vous...\", or \"J'aimerais...\" where the conditional is being used to soften a request or express politeness to the interlocutor.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780251723995-rps09r0q",
+      "timestamp": "2026-05-31T18:22:28.486Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "51482a18ee3b4cd6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-17-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-17 - Le conditionnel vs le futur : différences de forme et d'emploi\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Selon la météo, il ___ demain. »\nChoices:\nA. [CORRECT] pleuvra\nB. pleuvrait\nC. pleut\nD. pleuvait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780524019381-9g2pr5f9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The context \"Selon la météo\" (according to the weather forecast) clearly calls for the future tense as a prediction based on reliable information, making the correct answer determinable without needing to understand the nuanced differences between conditional and future usage that the rule is meant to test.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780524035718-15lz7ssf",
+      "timestamp": "2026-06-03T22:00:50.960Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the essential distinction between future tense (prediction based on concrete evidence like a weather forecast) and conditional (hypothetical/unlikely scenario), which is precisely the core of the stated rule about differences in form and usage.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780524143047-uk8ezcjr",
+      "timestamp": "2026-06-03T22:02:48.654Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was in the process of analyzing a French grammar validation question to determine if it properly tests the stated rule \"Le conditionnel vs le futur : différences de forme et d'emploi\" (The conditional vs the future: differences in form and usage).\n\nThe question asks students to complete \"Selon la météo, il ___ demain\" with choices between future (pleuvra - correct), conditional (pleuvrait), present (pleut), and imperfect (pleuvait).\n\nMy analysis was complete:\n\nVERDICT: ALIGNED\nREASON: The question directly tests when to use future vs. conditional for predictions, with \"pleuvrait\" as the key distractor requiring knowledge that weather forecasts use the future tense rather than the conditional.\n\nNo remaining tasks - this validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780524258283-s24moi18",
+      "timestamp": "2026-06-03T22:04:49.457Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence \"Selon la météo, il ___ demain\" with \"demain\" as a time marker unambiguously requires the future tense, making this a simple future-tense recognition question rather than a test of the nuanced distinction between conditional and future usage.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780524337480-akzk0wh9",
+      "timestamp": "2026-06-03T22:05:52.655Z"
+    }
+  ]
+}

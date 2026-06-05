@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ec94d779f41ae58b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si elle ___ plus confiance en elle, elle postulerait. » (avoir)\n\nChoices:\nA. [CORRECT] avait\nB. [WRONG] aurait\nC. [WRONG] a\nD. [WRONG] eut\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780257007455-pbcm2chl"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWhat was accomplished: I was asked to verify wrong answers in a French grammar MCQ question about si-clauses. The question asks for the correct form of \"avoir\" in a \"si + imparfait → conditionnel présent\" structure. \n\nAnalysis completed:\n- B (\"aurait\" - conditionnel présent): Incorrect because French si-clauses do not use conditionnel in the \"si\" clause\n- C (\"a\" - présent): Incorrect because \"si + présent\" requires future/imperatif in the main clause, not conditionnel\n- D (\"eut\" - passé simple): Incorrect because this would require a different main clause tense structure\n\nResult: TRUE||All wrong answers use incorrect tenses for the si-clause structure requiring imparfait in the protasis with conditionnel présent in the apodosis.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257161899-5xvegl7k",
+      "timestamp": "2026-05-31T19:53:13.887Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for a si-clause requiring the imparfait: B uses conditionnel (never used after si), C uses présent (would require a future main clause), and D uses passé simple (not used in this construction).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257428105-mw81hidg",
+      "timestamp": "2026-05-31T19:57:27.472Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors - B uses conditionnel in a si-clause where imparfait is required, C uses présent which doesn't match the conditionnel in the main clause, and D uses passé antérieur which is never used in si-clauses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257700737-4gowfjs0",
+      "timestamp": "2026-05-31T20:02:09.983Z"
+    }
+  ]
+}

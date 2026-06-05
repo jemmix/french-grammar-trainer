@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7f9ffb91aaf1f2d4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-19-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-19 - La négation au conditionnel présent et passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel présent : « Tu ___ rien dire à personne, compris ? »\nChoices:\nA. [CORRECT] ne devrais\nB. ne devrais pas\nC. ne devais\nD. n'aurais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401518-b3mqi6el"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question about negation in the conditional present and past tense. The question asks students to complete \"Tu ___ rien dire à personne, compris ?\" with options testing the conditional of \"devoir\" with and without \"pas.\"\n\nThe validation analysis was complete but not yet output:\n\nVERDICT: ALIGNED\nREASON: The key distractor \"ne devrais pas\" specifically tests whether the student knows that \"ne...rien\" forms a complete negation without needing \"pas,\" which is directly about negation rules in the conditional tense.\n\nNo remaining tasks — the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229707974-9vn0lm20",
+      "timestamp": "2026-05-31T12:17:32.395Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of what was accomplished:**\nI was in the process of analyzing a French grammar validation question to determine if it properly tests the stated rule about negation in the conditional present and past tense.\n\n**Analysis completed:**\nThe question asks students to complete \"Tu ___ rien dire à personne, compris ?\" with the correct answer being \"ne devrais.\" While this involves the conditional present, the negation elements (\"rien\", \"personne\") are already provided in the prompt. The student only needs to conjugate \"devoir\" in conditional present and add \"ne\" — this tests verb conjugation, not the negation structure itself.\n\n**Verdict that would have been returned:**\nVERDICT: MISALIGNED\nREASON: The question primarily tests the conditional present conjugation of \"devoir\" rather than the negation structure, since the negation elements (\"rien\", \"personne\") are already provided in the prompt and the student only needs to supply the verb form with \"ne\".\n\n**Remaining tasks:**\nNone — this was a single validation judgment that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780234463148-p8wx1vpv",
+      "timestamp": "2026-05-31T13:35:08.355Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the correct negation structure in the conditional by requiring students to recognize that \"ne...rien\" forms a complete negation without needing \"pas\" (eliminating choice B), while also distinguishing the conditional form \"devrais\" from the imperfect \"devais\" and conditional of avoir \"aurais\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780236966286-onet4fbh",
+      "timestamp": "2026-05-31T14:16:34.845Z"
+    }
+  ]
+}

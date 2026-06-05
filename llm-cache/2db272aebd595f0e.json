@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2db272aebd595f0e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-09-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-09 - Le conditionnel présent dans les phrases avec « si » : variétés de conditions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase respecte la concordance des temps pour exprimer une hypothèse irréelle du passé ?\nChoices:\nA. [CORRECT] Si elle avait su, elle serait venue.\nB. Si elle savait, elle serait venue.\nC. Si elle avait su, elle viendrait.\nD. Si elle saurait, elle viendrait.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780261529477-88k77st9"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests the conditionnel passé (serait venue) in si-clauses for unreal past hypotheses, but the stated rule is about the conditionnel présent in si-clauses, which is a different tense pattern used for unreal present/future conditions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780261533485-mzes1hay",
+      "timestamp": "2026-05-31T21:06:17.965Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was asked to validate whether a French grammar question about the concordance des temps in \"si\" clauses is aligned with the stated rule \"Le conditionnel présent dans les phrases avec « si » : variétés de conditions.\"\n\n**Verdict:**\nVERDICT: MISALIGNED\nREASON: The question tests the conditionnel passé (\"serait venue\") in a past unreal hypothesis (plus-que-parfait + conditionnel passé), whereas the stated rule specifically concerns the conditionnel présent in \"si\" clauses, which would cover structures like imparfait + conditionnel présent for present/future hypotheses.\n\n**Remaining tasks:** None — the validation was completed in my analysis before the step limit was reached.\n\n**Recommendations:** This question should be reassigned to a rule about \"Le conditionnel passé dans les phrases avec « si »\" or \"La concordance des temps dans les phrases hypothétiques irréelles du passé.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780261797694-za3onnro",
+      "timestamp": "2026-05-31T21:10:20.894Z"
+    }
+  ]
+}

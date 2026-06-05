@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9a536249ac693b22",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-19-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel présent : « Je suis certain que tu ___ pas raison sur ce point. »\n\nChoices:\nA. [CORRECT] n'aurais\nB. [WRONG] n'as\nC. [WRONG] n'aurais pas\nD. [WRONG] ne devrais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401521-qa3e816z"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses présent instead of conditionnel présent, C would create a double \"pas\" in the sentence, and D uses the wrong verb \"devoir\" instead of \"avoir\" for the expression \"avoir raison\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229846214-yvgyfogs",
+      "timestamp": "2026-05-31T12:17:50.424Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is present indicative not conditional present as required, C would create \"n'aurais pas pas raison\" with a double negation, and D uses \"devrais\" which does not properly collocate with \"raison\" in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780234476767-g3w5ay1c",
+      "timestamp": "2026-05-31T13:35:15.816Z"
+    }
+  ]
+}

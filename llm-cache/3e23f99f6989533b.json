@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3e23f99f6989533b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « S'il faisait beau, nous ___ en mer. » — Pourquoi le conditionnel et pas le futur dans la principale ?\n\nChoices:\nA. [CORRECT] sortirions — La principale d'une hypothèse avec « si + imparfait » exige le conditionnel.\nB. [WRONG] sortirons — Le futur ne s'emploie pas dans la subordonnée.\nC. [WRONG] sortons — Le présent de l'impératif peut remplacer le conditionnel.\nD. [WRONG] sortions — Le subjonctif présent s'utilise après « si ».\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780522501021-b38k8op3"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect for the si+imparfait→conditionnel construction being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780522721918-tt09gylv",
+      "timestamp": "2026-06-03T21:39:56.197Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:** I was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ about conditional vs. future in si-clauses are indeed incorrect.\n\n**Analysis completed:**\n- B. \"sortirons\" (futur) — Incorrect. With \"si + imparfait,\" the main clause requires conditionnel présent, not futur.\n- C. \"sortons\" (présent) — Incorrect. Present indicative cannot replace the conditional in this construction. (Note: the given explanation incorrectly calls it \"impératif,\" but the answer itself is still wrong.)\n- D. \"sortions\" (subjonctif) — Incorrect. The subjunctive is not used in the main clause of si-clauses, nor does \"si\" take the subjunctive. (Note: the given explanation is misleading, but the answer is still wrong.)\n\n**Verdict:** TRUE||All wrong answers are grammatically incorrect in the context of \"si + imparfait\" requiring conditionnel in the main clause, though some explanations contain inaccuracies.\n\n**Remaining tasks:** None — the verification is complete.\n\n**Recommendations:** The explanations for answers C and D contain factual errors (C is not impératif; D's explanation incorrectly states subjonctif follows \"si\"). Consider correcting these explanations to avoid confusing learners.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780522975585-ocduw5x0",
+      "timestamp": "2026-06-03T21:43:31.227Z"
+    }
+  ]
+}

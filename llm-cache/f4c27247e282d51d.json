@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f4c27247e282d51d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-15-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel passé : « Les archéologues pensent que cet objet ___ sacré pour les anciens. »\n\nChoices:\nA. [CORRECT] aurait été\nB. [WRONG] aurait être\nC. [WRONG] était\nD. [WRONG] a été\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401448-ljawcknf"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the infinitive \"être\" instead of the past participle \"été\", C is in the imparfait rather than conditionnel passé, and D is in the passé composé rather than conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229554906-cw5xtymv",
+      "timestamp": "2026-05-31T12:13:29.885Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is not a valid conditionnel passé form (auxiliary + infinitive instead of past participle), C is imparfait, and D is passé composé, neither of which matches the requested conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780234171475-rjyyqwcw",
+      "timestamp": "2026-05-31T13:29:53.980Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect within the specified conditionnel passé context: B incorrectly uses the infinitive after the auxiliary, C is imparfait, and D is passé composé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780236828581-cmn96ve4",
+      "timestamp": "2026-05-31T14:14:07.736Z"
+    }
+  ]
+}

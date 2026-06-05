@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9199d526ddc562e2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-17-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-17 - Le conditionnel vs le futur : différences de forme et d'emploi\n\nQUESTION:\nType: Input\nPrompt: Après « si + imparfait », on emploie le conditionnel dans la principale. Complétez :\nPhrase: Si tu parlais plus fort, on t'___ mieux.\nCorrect Answer: entendrait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780521062081-jcud0nej"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly states to use the conditional (\"on emploie le conditionnel\") so it tests conjugation knowledge, not the distinction between conditional and future tense usage that the rule requires.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521232898-ki640qq9",
+      "timestamp": "2026-06-03T21:14:13.403Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to validate whether a French grammar question about \"si + imparfait → conditionnel\" properly tests the rule \"Le conditionnel vs le futur : différences de forme et d'emploi.\"\n\n**Verdict I would have provided:**\nVERDICT: MISALIGNED\nREASON: The prompt explicitly states \"on emploie le conditionnel dans la principale,\" which removes the need for students to distinguish between conditional and future tense—the question only tests conditional conjugation of \"entendre,\" not the actual choice between these two tenses.\n\n**Remaining tasks:**\n- None explicitly requested beyond this single validation.\n\n**Recommendations:**\nTo properly test rule 06-17, the question should remove the explicit instruction about which tense to use. For example: \"Si tu parlais plus fort, on t'___ mieux\" without the prompt telling them to use the conditional—this would require students to know that si+imparfait triggers conditional (not future) based on their understanding of the distinction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521425821-7xakqbp0",
+      "timestamp": "2026-06-03T21:17:44.254Z"
+    }
+  ]
+}

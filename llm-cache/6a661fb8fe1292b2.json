@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6a661fb8fe1292b2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-15-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel passé : « Selon la presse, les négociations ___ un accord. »\n\nChoices:\nA. [CORRECT] auraient abouti\nB. [WRONG] ont abouti\nC. [WRONG] auraient aboutir\nD. [WRONG] aboutiraient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401447-n2xczjo2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is passé composé (wrong tense), C incorrectly uses the infinitive \"aboutir\" instead of the past participle \"abouti\", and D is conditionnel présent not conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229431044-ueocuku4",
+      "timestamp": "2026-05-31T12:10:53.428Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question asks for the conditionnel passé form.\n\nAnalysis completed:\n- B. \"ont abouti\" — passé composé, not conditionnel passé → incorrect\n- C. \"auraient aboutir\" — grammatically malformed (infinitive instead of past participle) → incorrect  \n- D. \"aboutiraient\" — conditionnel présent, not conditionnel passé → incorrect\n\nTRUE||All wrong answers either use the wrong tense (B: passé composé, D: conditionnel présent) or are grammatically malformed (C: infinitive instead of past participle).\n\nNo remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780233923088-d9cbqg0i",
+      "timestamp": "2026-05-31T13:25:45.316Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses passé composé instead of conditionnel passé, C incorrectly uses the infinitive \"aboutir\" after the auxiliary \"auraient\" instead of the past participle, and D uses conditionnel présent instead of conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780236630401-7vqa657r",
+      "timestamp": "2026-05-31T14:11:12.195Z"
+    }
+  ]
+}

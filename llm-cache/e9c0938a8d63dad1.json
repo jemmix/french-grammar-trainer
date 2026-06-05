@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e9c0938a8d63dad1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle est la différence de terminaison entre « nous chanterions » (conditionnel) et « nous chanterons » (futur) ?\n\nChoices:\nA. [CORRECT] Conditionnel : -ions / Futur : -ons.\nB. [WRONG] Conditionnel : -ons / Futur : -ions.\nC. [WRONG] Ils ont les mêmes terminaisons.\nD. [WRONG] Le radical change entre les deux formes.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780522501021-y5o21ycm"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ question are indeed incorrect. The question asks about the difference in endings between \"nous chanterions\" (conditional) and \"nous chanterons\" (future).\n\nMy analysis:\n- B (\"Conditionnel : -ons / Futur : -ions\") incorrectly swaps the endings\n- C (\"Ils ont les mêmes terminaisons\") falsely claims the endings are identical when -ions ≠ -ons\n- D (\"Le radical change entre les deux formes\") incorrectly states the stem changes when both forms use \"chanter-\"\n\nTRUE||All wrong answers contain factual errors about the endings and stems of the conditional and future forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780522737788-qykqzunv",
+      "timestamp": "2026-06-03T21:39:35.412Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are factually incorrect: B swaps the actual endings, C falsely claims identical endings when they differ (-ions vs -ons), and D falsely claims the radical changes when both forms use \"chanter-\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780522958822-3jvneyj4",
+      "timestamp": "2026-06-03T21:42:51.812Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear factual errors: B swaps the endings, C falsely claims the endings are identical, and D incorrectly states the stem changes when only the endings differ.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780523104326-qg7ei8cu",
+      "timestamp": "2026-06-03T21:45:28.812Z"
+    }
+  ]
+}

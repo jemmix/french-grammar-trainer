@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3773378a16b50b0c",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "06-19-003",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Complétez au conditionnel présent : « Tu ___ rien dire à personne, compris ? »\nChoices:\nA. ne devrais\nB. ne devrais pas\nC. ne devais\nD. n'aurais\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780226401518-ckgdynqy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt includes \"ne\" in the answer choices while \"rien\" already appears in the sentence, creating confusion about whether the learner should select \"ne devrais\" (forming ne…rien) or \"ne devrais pas\" (which would create an incorrect double negative ne…pas…rien), making it unclear what negation pattern is being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229712423-vun0mz2l",
+      "timestamp": "2026-05-31T12:17:20.171Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt specifies the exact tense required (conditionnel présent) and the existing \"rien\" in the sentence makes clear that the negation structure is \"ne...rien,\" eliminating ambiguity about whether \"pas\" should be included.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780234425049-l9wygjzm",
+      "timestamp": "2026-05-31T13:34:36.767Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a French grammar question for clarity and ambiguity. My analysis:\n\nVERDICT: AMBIGUOUS\nREASON: The prompt instructs the learner to complete \"au conditionnel présent,\" but the real challenge is knowing that \"ne…rien\" is already a complete negation and that \"ne…pas…rien\" is grammatically incorrect—this negation stacking rule is not hinted at in the prompt, so a learner who knows the conditional perfectly could still be confused about whether to include \"pas.\"\n\nNo remaining tasks—this was a single-question evaluation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780236945484-qk4ui9l8",
+      "timestamp": "2026-05-31T14:18:08.812Z"
+    }
+  ]
+}

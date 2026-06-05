@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a541a931e11d143d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-12-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\nQUESTION:\nType: Multiple Choice\nPrompt: La phrase « J'aurais préféré te le dire en personne » exprime :\nChoices:\nA. [CORRECT] Un regret : je regrette de ne pas te l'avoir dit en personne.\nB. Une préférence actuelle : je préfère te le dire en personne maintenant.\nC. Une promesse : je te le dirai en personne.\nD. Une hypothèse : peut-être te l'ai-je dit en personne.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780277249534-tbi9je4y"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student can identify that the conditionnel passé form \"j'aurais préféré\" expresses a regret about a past action not taken, which is the central concept of the stated rule about using conditionnel passé to express regret.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277339196-i5ovua4d",
+      "timestamp": "2026-06-01T01:29:34.755Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"J'aurais préféré\" expresses a counterfactual past preference, not a true regret — a proper example for this rule would use \"j'aurais dû\" or \"j'aurais voulu\" which genuinely convey regret about something not done.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277671835-r6e51mxq",
+      "timestamp": "2026-06-01T01:35:39.385Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence \"J'aurais préféré te le dire en personne\" expresses a past wish or unfulfilled preference rather than a true regret in the sense of \"j'aurais dû\" — the question tests identifying the pragmatic meaning of a sentence rather than the specific grammar rule of using conditionnel passé with \"devoir\" to express regret.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277991307-l1v83sik",
+      "timestamp": "2026-06-01T01:40:52.900Z"
+    }
+  ]
+}

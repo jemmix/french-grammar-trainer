@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2421d772f26333dc",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-19-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-19 - La négation au conditionnel présent et passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel passé : « Les entreprises ___ pas fermées sans subventions gouvernementales. »\nChoices:\nA. [CORRECT] ne se seraient\nB. ne fermeraient\nC. n'auraient fermé\nD. ne fermaient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401521-4hwtmhf6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the formation of the conditional past with a reflexive verb (distinguishing \"se seraient\" from \"auraient fermé\"), not the mechanics of negation with the conditional tenses, which are already provided in the prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229840172-4n4zburn",
+      "timestamp": "2026-05-31T12:17:43.328Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a French grammar question about completing a sentence in conditionnel passé actually tests the stated rule \"La négation au conditionnel présent et passé\" (negation in conditional present and past).\n\nThe question asks students to choose between \"ne se seraient\", \"ne fermeraient\", \"n'auraient fermé\", and \"ne fermaient\" to complete « Les entreprises ___ pas fermées sans subventions gouvernementales. »\n\nMy assessment:\n\nVERDICT: MISALIGNED\nREASON: The question primarily tests conditionnel passé formation for pronominal verbs (choosing \"se seraient\" over \"auraient fermé\" requires knowing \"se fermer\" takes \"être\" as auxiliary), not the placement or structure of negation in the conditional, since all options already have \"ne\" correctly positioned before the verb phrase.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780234470017-0bwu0ps8",
+      "timestamp": "2026-05-31T13:35:25.583Z"
+    }
+  ]
+}

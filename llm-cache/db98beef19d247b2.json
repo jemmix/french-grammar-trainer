@@ -1,0 +1,33 @@
+{
+  "cacheKey": "db98beef19d247b2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-12-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez pour exprimer un reproche : « Tu ___ me prévenir avant de partir ! »\nChoices:\nA. [CORRECT] aurais dû\nB. devais\nC. dois\nD. auras dû\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780280629624-ilobfd5z"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the conditionnel passé form \"aurais dû\" to express a reproach about a past action, which directly tests the rule about using conditionnel passé to express regret/reproach.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780280658734-0pee74iv",
+      "timestamp": "2026-06-01T02:24:51.448Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"aurais dû\" is the conditionnel passé form needed to express reproach about a past failure, distinguishing it from imparfait, présent, and futur antérieur — the core grammatical distinction this rule teaches.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780280958446-dn37tmmz",
+      "timestamp": "2026-06-01T02:30:02.706Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting \"aurais dû\" (conditionnel passé of devoir) to express a reproach about a past action that didn't happen, which directly tests the conditionnel passé structure covered by this rule (regret and reproach are closely related uses of this form).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780281224000-86dujzxa",
+      "timestamp": "2026-06-01T02:34:18.284Z"
+    }
+  ]
+}

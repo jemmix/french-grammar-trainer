@@ -1,0 +1,33 @@
+{
+  "cacheKey": "90e3ba4dfd9ac624",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-12-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\nQUESTION:\nType: Input\nPrompt: Le conditionnel passé de devoir permet d'exprimer un regret. Complétez avec la forme qui convient :\nPhrase: J'___ lire le contrat avant de le signer.\nCorrect Answer: aurais dû\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780282913172-z2nx70dd"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the past conditional of \"devoir\" to express a regret (\"I should have read\"), which is precisely the grammar point stated in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780282916178-5kkzqjjn",
+      "timestamp": "2026-06-01T03:02:09.989Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the conditionnel passé of \"devoir\" (aurais dû) in a context expressing regret about not having read a contract, which is precisely the grammar structure the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780282931296-7nc6s184",
+      "timestamp": "2026-06-01T03:02:26.410Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the conditionnel passé of \"devoir\" (\"aurais dû\") to express a regret about not having read a contract, which is precisely the grammar rule stated.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780282947121-g9rj8sew",
+      "timestamp": "2026-06-01T03:02:41.194Z"
+    }
+  ]
+}

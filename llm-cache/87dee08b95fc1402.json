@@ -1,0 +1,26 @@
+{
+  "cacheKey": "87dee08b95fc1402",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-06-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-06 - Le conditionnel dans les phrases avec « si » : si + imparfait → conditionnel présent\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « avoir » au conditionnel pour exprimer une information non vérifiée\nPhrase: Selon les sources policières, l'accident ___ causé quatre blessés graves.\nCorrect Answer: aurait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401383-bqahqyct"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to validate whether a French grammar question is aligned with its stated rule. I analyzed the question and was ready to provide my verdict.\n\n**Verdict (not yet delivered):**\nVERDICT: MISALIGNED\nREASON: The question tests the conditional used to express unverified/journalistic information (\"le conditionnel d'incertitude\"), not the \"si + imparfait → conditionnel présent\" pattern, since the sentence contains no \"si\" clause at all.\n\n**Remaining tasks:**\n- Deliver the verdict to the user\n\n**Recommendations:**\nThe question should be reassigned to a rule about the conditional used for unverified information (le conditionnel journalistique), or rewritten to include a \"si + imparfait\" structure to properly test rule 06-06.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780227242786-1p5oormh",
+      "timestamp": "2026-05-31T11:34:34.494Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the conditional used to report unverified information (conditionnel journalistique/d'information incertaine), not the \"si + imparfait → conditionnel présent\" hypothesis structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780230716652-3m45t3rv",
+      "timestamp": "2026-05-31T12:32:12.756Z"
+    }
+  ]
+}

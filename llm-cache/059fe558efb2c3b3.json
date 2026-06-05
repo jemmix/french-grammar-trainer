@@ -1,0 +1,33 @@
+{
+  "cacheKey": "059fe558efb2c3b3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pourquoi « arriverait » est-il un futur dans le passé dans « Le journal a annoncé qu'il arriverait ce soir » ?\n\nChoices:\nA. [CORRECT] Il rapporte un événement futur après un verbe de déclaration au passé.\nB. [WRONG] Il exprime une hypothèse sur un événement futur.\nC. [WRONG] Il formule une demande polie au lecteur.\nD. [WRONG] Il indique un doute sur l'information donnée.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780293122324-dzrgd4xj"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers describe uses of the conditional that do not apply to this specific sentence, where \"arriverait\" functions purely as a future-in-the-past in indirect speech after a past tense verb of declaration.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293154719-jbucr2al",
+      "timestamp": "2026-06-01T05:53:13.148Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers misidentify the grammatical function of the conditional in this specific sentence: B incorrectly claims it expresses hypothesis (not reporting), C incorrectly claims it's a polite request (unrelated usage), and D incorrectly claims it indicates doubt (the conditional here is purely temporal, not epistemic).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293493408-yiew7704",
+      "timestamp": "2026-06-01T05:58:33.720Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ about the conditional tense (\"futur dans le passé\") are indeed incorrect.\n\nAnalysis completed:\n- **B** (\"Il exprime une hypothèse sur un événement futur\"): Incorrect because in this specific sentence, \"arriverait\" is in a reported speech context after \"a annoncé\" (passé composé), not expressing a hypothesis.\n- **C** (\"Il formule une demande polie au lecteur\"): Clearly incorrect—the conditional here has nothing to do with polite requests.\n- **D** (\"Il indique un doute sur l'information donnée\"): Incorrect because the conditional here is used strictly for sequence of tenses (futur dans le passé), not to express doubt about the information.\n\nTRUE||All wrong answers incorrectly identify functions of the conditional that do not apply to this specific grammatical context of reported speech after a past tense verb of declaration.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293699808-anvq86ug",
+      "timestamp": "2026-06-01T06:02:05.567Z"
+    }
+  ]
+}

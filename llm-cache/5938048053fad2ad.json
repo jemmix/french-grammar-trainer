@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5938048053fad2ad",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-18-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il a promis qu'il ___ son concours la semaine suivante. »\n\nChoices:\nA. [CORRECT] réussirait\nB. [WRONG] réussisse\nC. [WRONG] réussit\nD. [WRONG] réussira\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780668525479-lirvbra7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the concordance des temps rule for indirect speech: after a past-tense reporting verb with future reference (\"la semaine suivante\"), only the conditionnel présent is correct, not subjonctif (B), présent (C), or futur simple (D).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780668764657-6viqvufr",
+      "timestamp": "2026-06-05T14:13:00.108Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the sequence of tenses (concordance des temps) required after \"a promis\" (passé composé) with \"la semaine suivante\": B uses subjunctive which is not required by \"promettre que\" and wrong tense anyway, C uses present which doesn't indicate future relative to past, and D uses futur simple instead of the required conditionnel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780668960827-2l8j7wy0",
+      "timestamp": "2026-06-05T14:16:25.698Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to verify that wrong answers B, C, and D are incorrect for a French grammar question about conjugating \"réussir\" after \"Il a promis qu'il...\" with the context \"la semaine suivante.\"\n\n**Analysis completed:**\n- The question requires the conditional mood (conditionnel) because after \"promettre que\" in a past tense, French uses the conditional to express future-in-the-past\n- B. \"réussisse\" (subjunctive present) - incorrect; subjunctive is not used after \"promettre que\"\n- C. \"réussit\" (present indicative) - incorrect; doesn't match the sequence of tenses for a future event relative to past\n- D. \"réussira\" (future simple) - incorrect; after past \"promettre que,\" conditional is required, not future\n\n**Verdict that would have been returned:**\nTRUE||All wrong answers use incorrect moods/tenses for the sequence of tenses required after \"promettre que\" in the passé composé.\n\n**Remaining tasks:** None - the verification was completed.\n\n**Recommendations:** The question and its wrong answers are valid; no corrections needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780669127784-0uo6nc8z",
+      "timestamp": "2026-06-05T14:19:05.354Z"
+    }
+  ]
+}

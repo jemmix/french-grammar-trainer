@@ -1,0 +1,26 @@
+{
+  "cacheKey": "bcd54813b5b61c02",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Input\nPrompt: Après un verbe au passé, le futur se transpose en conditionnel. Complétez le discours indirect :\nPhrase: Elle a annoncé qu'elle ___ étudier la médecine.\nCorrect Answer: voudrait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780517238708-2d5ph2j2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests backshifting of present-tense \"vouloir\" to conditional in reported speech, not the specific distinction between futur dans le passé and conditionnel (where a future-tense verb like \"viendra\" becomes \"viendrait\"); the example structure \"vouloir + infinitif\" doesn't involve a future tense being transposed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517367108-8zsz5ncq",
+      "timestamp": "2026-06-03T20:09:44.199Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a French grammar question for alignment with its stated rule (06-16: Distinction futur dans le passé vs conditionnel).\n\n**Analysis completed:**\nThe question asks for \"voudrait\" in \"Elle a annoncé qu'elle ___ étudier la médecine.\" However, \"vouloir\" is virtually never used in the future tense (\"je voudrai\") in French—\"voudrait\" is primarily used as a polite present-wish form. This means a learner could answer correctly simply by knowing \"vouloir + infinitive\" makes sense contextually (\"she announced she would like to study medicine\"), without understanding the futur→conditionnel transformation rule at all. A proper test of this rule would use a verb commonly found in the future tense (viendrai, partira, fera, etc.).\n\n**Verdict:**\nVERDICT: MISALIGNED\nREASON: \"Vouloir\" is virtually never used in the future tense in French (\"je voudrai\"), so \"voudrait\" here is being used as a polite present-wish form, not as a genuine \"futur dans le passé\" transformation, meaning a learner could answer correctly without understanding the stated rule.\n\n**Remaining tasks:**\nNone—this was a single-question validation that has been completed.\n\n**Recommendations:**\nReplace this question with one using a verb that naturally occurs in the future tense (e.g., \"Elle a annoncé qu'elle ___ étudier la médecine l'année prochaine\" with answer \"étudierait\" from \"étudiera\", or \"Elle a dit qu'elle ___ à la fête\" with answer \"viendrait\" from \"viendrai\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517465926-s4gcb4m6",
+      "timestamp": "2026-06-03T20:11:36.717Z"
+    }
+  ]
+}

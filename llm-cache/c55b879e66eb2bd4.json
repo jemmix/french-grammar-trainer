@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c55b879e66eb2bd4",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-08-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Les phrases conditionnelles avec « si » : concordance des temps si + imparfait → conditionnel présent\nPROMPT: Conjuguez le verbe « faire » au conditionnel présent après une hypothèse irréelle du présent\nPHRASE: Si je gagnais à la loterie, je ___ le tour du monde.\nCORRECT ANSWER: ferais\n\nWRONG ANSWERS to evaluate:\n1. faisais\n2. fais\n3. ferai\n4. fasse\n5. ferions\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780260745347-p26a7v0i"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors for this grammar point: \"faisais\" confuses the si-clause tense with the main clause, \"fais\" uses present instead of conditional, \"ferai\" is the classic futur/conditionnel confusion, \"fasse\" reflects overuse of subjunctive after \"si\", and \"ferions\" is a plausible person/number agreement error.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780260784638-52w1aswd",
+      "timestamp": "2026-05-31T20:53:48.003Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to evaluate whether five wrong answers for a French conditional sentence question are plausible learner mistakes.\n\nAnalysis completed:\n1. \"faisais\" - Plausible: learner uses imparfait in both clauses instead of imparfait → conditionnel\n2. \"fais\" - Plausible: learner defaults to present tense\n3. \"ferai\" - Plausible: learner confuses futur simple with conditionnel présent (very common)\n4. \"fasse\" - Plausible: learner overuses subjonctif\n5. \"ferions\" - Plausible: learner uses wrong person/number (nous instead of je)\n\nVERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: using imparfait instead of conditionnel (faisais), defaulting to present (fais), confusing futur simple with conditionnel (ferai), overusing subjunctive (fasse), and wrong person/number agreement (ferions).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780260848521-v8c7myl4",
+      "timestamp": "2026-05-31T20:54:40.610Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: \"faisais\" incorrectly repeats the imparfait from the si-clause, \"fais\" uses présent instead of conditionnel, \"ferai\" confuses futur simple with conditionnel présent (a very common error since they differ by only one letter), \"fasse\" mistakenly uses subjonctif, and \"ferions\" is a subject-verb agreement error using the nous form instead of je.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780260893767-1n7yl79o",
+      "timestamp": "2026-05-31T20:55:34.309Z"
+    }
+  ]
+}

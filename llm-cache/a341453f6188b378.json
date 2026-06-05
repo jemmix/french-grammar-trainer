@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a341453f6188b378",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-13-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel passé pour exprimer un reproche : « J'___ accepter cette invitation. »\n\nChoices:\nA. [CORRECT] aurais dû\nB. [WRONG] aurais pu\nC. [WRONG] avais dû\nD. [WRONG] ai dû\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401429-ljcfwkah"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses \"pouvoir\" which expresses possibility not reproach, C uses imparfait instead of conditionnel passé, and D uses passé composé instead of conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229063941-5t1zdyye",
+      "timestamp": "2026-05-31T12:04:52.947Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to verify that wrong answers B, C, D in a French grammar MCQ about the conditionnel passé for expressing a reproche are indeed incorrect.\n\nAnalysis completed:\n- B (aurais pu): Conditionnel passé form is correct, but \"pouvoir\" expresses possibility/capability, not a reproche — does not satisfy the prompt's requirement to express a reproche.\n- C (avais dû): Plus-que-parfait (indicative), not conditionnel passé — does not satisfy the tense requirement.\n- D (ai dû): Passé composé (indicative), not conditionnel passé — does not satisfy the tense requirement.\n\nAll three wrong answers are correctly marked as incorrect within the constraints specified in the question prompt.\n\nRemaining tasks: None — the verification is complete.\n\nRecommendation: The verdict is TRUE — all wrong answers are incorrect.\n\nTRUE||B expresses possibility not reproche; C and D use indicative tenses instead of the required conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780232230086-8iz0xh5q",
+      "timestamp": "2026-05-31T12:57:53.603Z"
+    },
+    {
+      "raw": "TRUE||B is in conditionnel passé but expresses possibility rather than reproche as specified; C uses plus-que-parfait instead of conditionnel passé; D uses passé composé instead of conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780236284337-8cioahyy",
+      "timestamp": "2026-05-31T14:05:34.009Z"
+    }
+  ]
+}

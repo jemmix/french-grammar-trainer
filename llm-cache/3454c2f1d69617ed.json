@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3454c2f1d69617ed",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-10-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise le conditionnel pour présenter une opinion sans l'imposer ?\n\nChoices:\nA. [CORRECT] Je dirais que cette solution est la plus raisonnable.\nB. [WRONG] Je dis que cette solution est la plus raisonnable.\nC. [WRONG] Je dirai que cette solution est la plus raisonnable.\nD. [WRONG] Cette solution est la plus raisonnable.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780274529064-yawly00u"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThis was a straightforward verification task. The question asks which sentence uses the conditional (conditionnel) to present an opinion without imposing it.\n\nAnalysis completed:\n- B: \"Je dis\" is présent indicatif, NOT conditionnel — incorrect\n- C: \"Je dirai\" is futur simple, NOT conditionnel — incorrect  \n- D: No conditional form at all, just a direct assertion — incorrect\n\nTRUE||All wrong answers fail to use the conditionnel as explicitly required by the question prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780274535096-8xlf3kyr",
+      "timestamp": "2026-06-01T00:44:49.453Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the conditional tense as required: B uses present tense \"dis\", C uses futur simple \"dirai\" (not conditional \"dirais\"), and D has no conditional verb at all.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780274734218-cbapawln",
+      "timestamp": "2026-06-01T00:45:56.814Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was evaluating a French grammar verification task for a multiple choice question about the conditional mood used to soften opinions. The question asks which phrase uses the conditional to present an opinion without imposing it.\n\nAnalysis completed:\n- B (\"Je dis\" - présent indicatif): Direct assertion, not conditional - correctly marked wrong\n- C (\"Je dirai\" - futur simple): Future tense prediction, not conditional - correctly marked wrong  \n- D (\"Cette solution est\" - direct statement): No conditional construction at all - correctly marked wrong\n\nThe intended answer: TRUE||All wrong answers do not use the conditional mood to soften the opinion as required by the question.\n\nRemaining tasks: None - the analysis was complete.\n\nRecommendations: The verdict is TRUE - all three wrong answers (B, C, D) are genuinely incorrect for the question as posed. No fixes needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780274756816-zwzre49b",
+      "timestamp": "2026-06-01T00:46:33.962Z"
+    }
+  ]
+}

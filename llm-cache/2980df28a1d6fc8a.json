@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2980df28a1d6fc8a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-13-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est un reproche direct envers quelqu'un ?\n\nChoices:\nA. [CORRECT] Vous auriez pu me demander mon avis avant de décider.\nB. [WRONG] Vous m'avez demandé mon avis avant de décider.\nC. [WRONG] Vous pouvez me demander mon avis avant de décider.\nD. [WRONG] Vous me demanderez mon avis la prochaine fois.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780286150697-jrff3bxq"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers describe neutral facts, permissions, or future expectations rather than expressing reproach, which requires criticism of a past action through constructions like the conditional past.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780286211149-s5620ltt",
+      "timestamp": "2026-06-01T03:57:19.251Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are factual statements or suggestions in different tenses, not reproaches like the conditional construction in the correct answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780286397585-u9viohut",
+      "timestamp": "2026-06-01T04:00:16.444Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are statements of fact, permission, or future intention rather than reproaches—only the conditionnel passé in A conveys the criticism implicit in a reproche.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780286587524-zvmxlsdu",
+      "timestamp": "2026-06-01T04:03:32.028Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e6fccd215558f8ec",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "06-17-002",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Complétez : « Il a dit qu'il ___ à la réunion. »\nChoices:\nA. viendrait\nB. viendra\nC. venait\nD. est venu\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780524019378-9v5mvpwj"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Without context indicating whether the original direct speech expressed future intent (\"Je viendrai\" → \"viendrait\") or an ongoing action (\"Je viens\" → \"venait\"), both options A and C could be grammatically correct, leaving the learner unable to determine which interpretation is intended.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780524021402-x00q0u68",
+      "timestamp": "2026-06-03T22:00:38.973Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to evaluate a single French grammar question for clarity and unambiguity. The question tests reported speech sequence of tenses with the prompt \"Complétez : « Il a dit qu'il ___ à la réunion. »\" and four verb choices (viendrait, viendra, venait, est venu).\n\n**Verdict on the question:**\nVERDICT: AMBIGUOUS\nREASON: Both \"viendrait\" (conditional - \"would come\") and \"venait\" (imparfait - \"was coming\") are grammatically correct completions with different meanings, and the prompt gives no context to indicate which intended meaning the learner should select.\n\n**Remaining tasks:** None - this was a single-item validation task.\n\n**Recommendations:** To fix this question, either (1) add context that makes only one answer correct (e.g., a time indicator like \"demain\" in the original statement), or (2) change the wrong answer \"venait\" to something unambiguously incorrect like \"vient\" (present) to eliminate the semantic ambiguity.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780524131193-csunox8b",
+      "timestamp": "2026-06-03T22:02:35.712Z"
+    }
+  ]
+}

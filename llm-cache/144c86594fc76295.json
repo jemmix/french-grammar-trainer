@@ -1,0 +1,33 @@
+{
+  "cacheKey": "144c86594fc76295",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « On ___ aller au cinéma ce soir, non ? »\n\nChoices:\nA. [CORRECT] pourrait\nB. [WRONG] pourra\nC. [WRONG] pourra aller\nD. [WRONG] pourra vraiment\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780666329216-8ceuf45g"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses future tense instead of conditional for a suggestion with \"non?\", C creates an ungrammatical double \"aller\" construction, and D adds an unnecessary adverb while still using the wrong tense for this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780666332239-o4klz0jc",
+      "timestamp": "2026-06-05T13:35:27.144Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of analyzing a French grammar verification question about filling in the blank in \"On ___ aller au cinéma ce soir, non ?\" with the correct conditional form of \"pouvoir.\" I was evaluating whether the wrong answers (B: pourra, C: pourra aller, D: pourra vraiment) are indeed incorrect.\n\n**Analysis completed:**\n- B (pourra): Future tense, which doesn't match the suggestion function implied by the \"non?\" tag—the conditional is required for suggestions in French\n- C (pourra aller): Grammatically incorrect because \"aller\" is already present in the sentence after the blank\n- D (pourra vraiment): Doesn't fit grammatically in this slot as it disrupts the sentence structure\n\n**Remaining tasks:**\nNone—the verdict can be provided: TRUE||B uses future tense which doesn't match the suggestion function of \"non?\"; C redundantly repeats \"aller\" already in the sentence; D adds an adverb that doesn't fit grammatically in this slot.\n\n**Recommendations:**\nNo further action needed on this verification task.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780666527145-clyc4cmy",
+      "timestamp": "2026-06-05T13:36:19.308Z"
+    },
+    {
+      "raw": "FALSE|B|B (\"pourra\") is grammatically valid French for a confirmation question about future ability (\"We'll be able to go to the cinema tonight, right?\"), even though it changes the pragmatic intent from a suggestion to a statement of future possibility; C and D are correctly identified as wrong.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780666579309-ewo1szkf",
+      "timestamp": "2026-06-05T13:36:45.760Z"
+    }
+  ]
+}

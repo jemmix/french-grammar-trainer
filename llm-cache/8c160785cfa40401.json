@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8c160785cfa40401",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-15-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel passé pour une information non confirmée au passé (il aurait démissionné)\nPROMPT: Le conditionnel passé permet de rapporter une information sans la confirmer. Complétez avec la forme qui convient :\nPHRASE: On raconte qu'ils ___ une fortune cachée dans les murs de la maison.\nCORRECT ANSWER: auraient découvert\n\nWRONG ANSWERS to evaluate:\n1. ont découvert\n2. découvraient\n3. avaient découvert\n4. découvrirait\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780291908839-csgbq6tw"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common tense confusions learners make - using passé composé, imparfait, or plus-que-parfait instead of conditionnel passé to report uncertain past information, or confusing conditionnel présent (singular) with conditionnel passé (plural).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780292196600-77wd7pt9",
+      "timestamp": "2026-06-01T05:37:12.158Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: using passé composé instead of conditionnel to report information, confusing imparfait with conditional, using plus-que-parfait for past-in-the-past, or mixing up conditionnel présent with passé and making an agreement error (singular instead of plural \"ils\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780292298954-z9t2d5wc",
+      "timestamp": "2026-06-01T05:38:56.414Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner confusions: using passé composé, imparfait, or plus-que-parfait instead of conditionnel passé for unconfirmed information, and confusing conditionnel présent with conditionnel passé (including a number agreement error with \"découvrirait\" being singular instead of plural \"découvriraient\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780292397451-3jmwg66k",
+      "timestamp": "2026-06-01T05:40:29.468Z"
+    }
+  ]
+}

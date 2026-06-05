@@ -1,0 +1,26 @@
+{
+  "cacheKey": "933d86f6bcd6c5c8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-19-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-19 - La négation au conditionnel présent et passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel passé : « Nous ___ jamais fait cela dans ces conditions. »\nChoices:\nA. [CORRECT] n'aurions\nB. ne ferions\nC. n'avons\nD. ne ferais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401518-ojlevfcp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests recognition of the conditional passé auxiliary (aurions) versus other tenses (ferions, avons) rather than the specific mechanics of negation in the conditional, which follows the standard ne...pas/jamais placement around the auxiliary identical to all compound tenses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229727851-aht6m1xd",
+      "timestamp": "2026-05-31T12:20:26.769Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question primarily tests conditionnel passé formation (auxiliary + past participle) and subject-verb agreement, not the specific mechanics of negation placement in conditional tenses—the negation with \"jamais\" is already cued, and none of the distractors test common negation-specific errors like misplaced \"ne\" or incorrect wrapping around the auxiliary.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780234571803-9hkw1oo0",
+      "timestamp": "2026-05-31T13:37:06.373Z"
+    }
+  ]
+}

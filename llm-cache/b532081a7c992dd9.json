@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b532081a7c992dd9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-18-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est correctement formée ?\n\nChoices:\nA. [CORRECT] Bien qu'il soit malade, il travaillerait quand même.\nB. [WRONG] Bien qu'il serait malade, il travaille quand même.\nC. [WRONG] Je voudrais que tu viendrais demain.\nD. [WRONG] Il a dit qu'il vienne la semaine suivante.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780668525479-h53axq7d"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780668631907-3v5pw5zu",
+      "timestamp": "2026-06-05T14:10:46.937Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses conditional \"serait\" instead of subjunctive after \"bien que\", C uses conditional \"viendrais\" instead of subjunctive after \"vouloir que\", and D inappropriately uses subjunctive \"vienne\" in reported speech where indicative/conditional is required.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780668896334-8f6mrfqj",
+      "timestamp": "2026-06-05T14:15:15.426Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0b012534fbe0be95",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-04-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-04 - Le conditionnel pour exprimer un souhait ou un désir (j'aimerais voyager)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel présent : « Tu ___ parler à quelqu'un de confiance de tes soucis. »\nChoices:\nA. [CORRECT] voudrais\nB. veux\nC. voudras\nD. voudrait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401365-kli1kepl"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was asked to validate whether a French grammar question about completing \"Tu ___ parler à quelqu'un de confiance de tes soucis\" with the conditional form of \"vouloir\" properly tests the rule \"Le conditionnel pour exprimer un souhait ou un désir.\"\n\n**Verdict I would have provided:**\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs \"Complétez au conditionnel présent,\" so the question primarily tests conjugation of \"vouloir\" rather than the ability to recognize when conditional should be used to express a wish or desire.\n\n**Remaining tasks:**\nNone — this was a single-question validation task.\n\n**Recommendations:**\nTo properly test this rule, the question should not explicitly state which tense to use. Instead, it should present a context where a wish is being expressed and ask the student to choose the appropriate form from a mix of tenses (present, future, conditional, imparfait), forcing them to recognize that the wish context requires the conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780226694708-h4hqdk2g",
+      "timestamp": "2026-05-31T11:25:44.467Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests using the conditional to express a wish or desire (\"Tu voudrais parler...\" = \"You would want to speak...\"), requiring the student to select the conditional form \"voudrais\" over the present indicative \"veux\" and other incorrect conjugations.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780230157055-5r88tezb",
+      "timestamp": "2026-05-31T12:24:19.197Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to use the conditionnel présent, so the question tests conjugation recognition rather than the semantic rule of when to use the conditional to express a wish or desire.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780234724519-sg1cpb67",
+      "timestamp": "2026-05-31T13:39:20.190Z"
+    }
+  ]
+}

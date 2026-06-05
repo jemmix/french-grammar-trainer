@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2e3b771bb456dc62",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-12-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour exprimer le regret de ne pas avoir voyagé, quelle phrase utilise le conditionnel passé ?\n\nChoices:\nA. [CORRECT] J'aurais aimé voyager quand j'en avais l'occasion.\nB. [WRONG] J'aimais voyager quand j'en avais l'occasion.\nC. [WRONG] J'aimerais voyager quand j'en ai l'occasion.\nD. [WRONG] J'ai aimé voyager quand j'en avais l'occasion.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780277249533-irde8go3"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses other than conditionnel passé: B uses imparfait, C uses conditionnel présent, and D uses passé composé, none of which express regret about a past missed opportunity as specified.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277252542-gthm1l9h",
+      "timestamp": "2026-06-01T01:27:46.611Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different tenses (imparfait, conditionnel présent, passé composé) rather than the required conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277529939-ik11ugm3",
+      "timestamp": "2026-06-01T01:32:28.357Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar MCQ question about the conditionnel passé.\n\nSummary of analysis completed:\n- Question asks which sentence uses the conditionnel passé to express regret about not traveling\n- Answer A (correct): \"J'aurais aimé voyager\" - correctly uses conditionnel passé\n- Answer B: \"J'aimais voyager\" - uses imparfait, NOT conditionnel passé\n- Answer C: \"J'aimerais voyager\" - uses conditionnel présent, NOT conditionnel passé  \n- Answer D: \"J'ai aimé voyager\" - uses passé composé, NOT conditionnel passé\n\nAll wrong answers are clearly incorrect as they use different tenses than what the question explicitly requires.\n\nMy verdict response would have been:\nTRUE||All wrong answers use different tenses (imparfait, conditionnel présent, passé composé) rather than the conditionnel passé required by the question.\n\nNo remaining tasks - the validation was essentially complete at the point of interruption.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277851219-qq2tsmzc",
+      "timestamp": "2026-06-01T01:38:19.159Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e1dce2e7e2d1e750",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-13-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel passé pour exprimer un reproche : « Tu ___ que cela n'allait pas marcher. »\n\nChoices:\nA. [CORRECT] aurais dû savoir\nB. [WRONG] savais\nC. [WRONG] as su\nD. [WRONG] aurais pu savoir\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401429-khjmrm9x"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, D in a French grammar MCQ are incorrect. The question asks for \"conditionnel passé pour exprimer un reproche.\"\n\nAnalysis completed:\n- B (\"savais\") is imparfait, not conditionnel passé — correctly wrong\n- C (\"as su\") is passé composé, not conditionnel passé — correctly wrong  \n- D (\"aurais pu savoir\") IS in conditionnel passé and CAN express a reproach (\"You could have known\"), making it a potentially correct answer\n\nVerdict: FALSE|D|D is in conditionnel passé and \"aurais pu savoir\" expresses a valid reproach meaning \"you could have known.\"\n\nRemaining tasks: None — the verification was completed.\n\nRecommendation: Replace D with a wrong answer that is not in conditionnel passé or does not fit the reproach context, such as \"devais savoir\" (imparfait) or \"aurais su\" (conditionnel passé but doesn't carry reproach meaning without a modal like \"devoir\" or \"pouvoir\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228960317-oib4qv5w",
+      "timestamp": "2026-05-31T12:03:08.812Z"
+    },
+    {
+      "raw": "FALSE|D|D (\"aurais pu savoir\") is in the conditionnel passé and can express reproach in context (implying \"you could have figured it out\"), making it a plausible correct answer despite being less natural than \"aurais dû savoir\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780232077313-qrsvff2c",
+      "timestamp": "2026-05-31T12:55:11.594Z"
+    }
+  ]
+}

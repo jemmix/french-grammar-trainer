@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fde767e246604305",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-19-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez avec la forme négative (ne...pas) au conditionnel présent : « Nous ___ cette décision. » (prendre)\n\nChoices:\nA. [CORRECT] ne prendrions pas\nB. [WRONG] prendrions pas\nC. [WRONG] ne pas prendrions\nD. [WRONG] ne prendrions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780673201634-v7otd0sl"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to verify that wrong answers B, C, and D in a French grammar MCQ question are indeed incorrect. The question asks to complete \"Nous ___ cette décision\" with the negative form (ne...pas) in conditionnel présent of \"prendre\".\n\n**Analysis completed:**\n- B. \"prendrions pas\" — Missing \"ne\", violates the required ne...pas structure\n- C. \"ne pas prendrions\" — Incorrect word order; \"ne\" and \"pas\" must surround the verb\n- D. \"ne prendrions\" — Missing \"pas\", violates the required ne...pas structure\n\n**Result:** TRUE||All wrong answers violate the required ne...pas negation structure - B and D are missing parts of the negation, and C has incorrect word order.\n\n**Remaining tasks:** None — the verification was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780673416243-wnlb5vqh",
+      "timestamp": "2026-06-05T15:30:51.684Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780673806760-jcaqi1bd",
+      "timestamp": "2026-06-05T15:37:31.246Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the required ne...pas structure: B is missing \"ne\", C incorrectly places \"pas\" before the verb instead of after it, and D is missing \"pas\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780674237936-mcyolyt0",
+      "timestamp": "2026-06-05T15:44:11.079Z"
+    }
+  ]
+}

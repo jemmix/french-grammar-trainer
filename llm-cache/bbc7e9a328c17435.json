@@ -1,0 +1,26 @@
+{
+  "cacheKey": "bbc7e9a328c17435",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Je voudrais réserver une table pour deux. » — Quelle est la fonction de « voudrais » ?\n\nChoices:\nA. [CORRECT] Conditionnel de politesse (formulation courtoise d'une demande)\nB. [WRONG] Futur dans le passé (transposition d'un futur en discours indirect)\nC. [WRONG] Conditionnel d'hypothèse (exprime une éventualité)\nD. [WRONG] Imparfait (description passée)\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780513881384-o9zahjkv"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers misidentify the grammatical function of \"voudrais\" — B incorrectly labels it as future-in-the-past, C as hypothetical conditional, and D as imperfect, when it is actually a conditional of politeness used for a courteous request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780514180548-g90kmsye",
+      "timestamp": "2026-06-03T19:16:49.434Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is wrong because \"voudrais\" is not reporting a future from a past perspective but making a direct polite request; C is wrong because there is no hypothesis being expressed; D is wrong because \"voudrais\" is conditionnel présent, not imparfait, and the context is a present request, not a past description.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780514854016-vkwripmo",
+      "timestamp": "2026-06-03T19:27:56.317Z"
+    }
+  ]
+}

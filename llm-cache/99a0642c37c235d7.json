@@ -1,0 +1,33 @@
+{
+  "cacheKey": "99a0642c37c235d7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-18-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-18 - Le conditionnel vs le subjonctif après certains verbes et conjonctions\n\nQUESTION:\nType: Input\nPrompt: Choisissez entre le conditionnel et le subjonctif selon le contexte. Complétez :\nPhrase: Ils espéraient que je ___ (venir) à la fête.\nCorrect Answer: viendrais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780668525480-pwax8gpu"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a French grammar question about \"Ils espéraient que je ___ (venir) à la fête\" with answer \"viendrais\" properly tests the rule \"Le conditionnel vs le subjonctif après certains verbes et conjonctions.\"\n\nRemaining tasks: Provide the validation verdict.\n\nRecommendation: Here is my assessment:\n\nVERDICT: ALIGNED\nREASON: The question correctly tests the distinction between conditional and subjunctive after \"espérer que,\" requiring the student to know that this verb takes the conditional (not the subjunctive \"vienne\") in a past context for future-from-past meaning.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780668813128-qf44qtce",
+      "timestamp": "2026-06-05T14:13:52.975Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer \"viendrais\" is primarily determined by the sequence of tenses in reported speech (imparfait in main clause triggers conditionnel for future reference), not by the distinction between conditionnel and subjonctif after \"espérer que\" — a better question for this rule would present a direct choice between conditionnel and subjonctif forms based on the governing verb or conjunction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780669001354-k6wivdfl",
+      "timestamp": "2026-06-05T14:17:04.447Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"Espérer que\" takes the indicatif, not the subjonctif, so this question actually tests concordance des temps (future-in-the-past) rather than the choice between conditionnel and subjonctif after specific verbs or conjunctions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780669145355-1ziqd5ji",
+      "timestamp": "2026-06-05T14:19:31.280Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "12abf028eb0cc3ad",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-14-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel passé dans les hypothèses : si + plus-que-parfait → conditionnel passé\nPROMPT: Complétez la phrase avec le conditionnel passé du verbe entre parenthèses.\nPHRASE: Si j'avais étudié, j'___ (réussir) mon examen.\nCORRECT ANSWER: aurais réussi\n\nWRONG ANSWERS to evaluate:\n1. avais réussi\n2. ai réussi\n3. aurais réussir\n4. auriez réussi\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780291000262-p1qaxw8z"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: using plus-que-parfait (avais réussi) or passé composé (ai réussi) instead of conditionnel passé, using the infinitive instead of past participle (aurais réussir), and wrong person/number agreement (auriez réussi for vous instead of je).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780291056242-eq04n2hn",
+      "timestamp": "2026-06-01T05:17:56.508Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: using plus-que-parfait instead of conditionnel passé (avais réussi), using passé composé (ai réussi), forgetting to use the past participle with the auxiliary (aurais réussir), and conjugating for the wrong person (auriez réussi).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780291121950-mmukjq8b",
+      "timestamp": "2026-06-01T05:19:05.303Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"avais réussi\" confuses the tense by using plus-que-parfait instead of conditionnel passé, \"ai réussi\" uses passé composé instead of the required conditional, \"aurais réussir\" is the classic error of leaving the main verb in infinitive form instead of past participle, and \"auriez réussi\" is a person/number agreement mistake using the vous-form ending.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780291170967-zcjtfjam",
+      "timestamp": "2026-06-01T05:20:02.466Z"
+    }
+  ]
+}

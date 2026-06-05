@@ -1,0 +1,26 @@
+{
+  "cacheKey": "785d598cfad81ba4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Dans la phrase « Ce serait une bonne idée de partir tôt », « serait » est :\nChoices:\nA. [CORRECT] un conditionnel d'hypothèse (suggestion prudente)\nB. un futur dans le passé (discours indirect)\nC. un conditionnel de politesse\nD. un présent de l'indicatif\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780517238704-od43buyq"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests the distinction between different uses of the conditionnel (hypothesis vs. politeness), not the distinction between futur dans le passé and conditionnel which is the stated rule.\n\nSummary of work: I analyzed the alignment between the question and the stated grammar rule about distinguishing futur dans le passé from conditionnel.\n\nRemaining tasks: None - this was a single validation task.\n\nRecommendations: To properly test rule 06-16, the question should present a sentence in indirect speech where \"viendrait\" (or similar form) could plausibly be either a futur dans le passé or a true conditionnel, requiring the learner to use context to determine which it is.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517333562-lknf7dlm",
+      "timestamp": "2026-06-03T20:09:19.404Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests distinguishing conditionnel from futur dans le passé by including \"futur dans le passé (discours indirect)\" as a key distractor, requiring the student to recognize that \"serait\" here expresses a hypothetical suggestion rather than reported future speech.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517441448-7tk4a7yd",
+      "timestamp": "2026-06-03T20:10:57.238Z"
+    }
+  ]
+}

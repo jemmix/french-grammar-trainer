@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7ab9f71f7b695c6d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-18-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Nous souhaiterions que vous ___ avec nous. »\n\nChoices:\nA. [CORRECT] restiez\nB. [WRONG] resteriez\nC. [WRONG] restez\nD. [WRONG] resterez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780668525478-7q25r0c8"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional forms instead of the required subjunctive mood after \"souhaiter que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780668578054-t0lfbndu",
+      "timestamp": "2026-06-05T14:10:17.090Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"souhaiter que\" with a subject change.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780668861974-nnn9robk",
+      "timestamp": "2026-06-05T14:14:53.884Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods (conditional, present indicative, future) instead of the required subjunctive after \"souhaiter que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780669052399-7zdfctw4",
+      "timestamp": "2026-06-05T14:17:47.353Z"
+    }
+  ]
+}

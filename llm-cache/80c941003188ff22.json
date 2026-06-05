@@ -1,0 +1,33 @@
+{
+  "cacheKey": "80c941003188ff22",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Input\nPrompt: Discours indirect : « Elle viendra demain » → Elle a dit qu'elle…\nPhrase: Elle a dit qu'elle ___ le lendemain.\nCorrect Answer: viendrait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780293122326-q0f893cf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the transformation of futur simple to conditionnel présent in reported speech, which is the core of the stated rule about distinguishing futur dans le passé vs conditionnel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293416884-itdkt2qa",
+      "timestamp": "2026-06-01T05:57:24.173Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to validate whether a French grammar question about reported speech (discours indirect) properly tests the stated rule about distinguishing futur dans le passé vs conditionnel.\n\n**Validation result:**\nVERDICT: ALIGNED\nREASON: Converting \"viendra\" (futur simple in direct speech) to \"viendrait\" (conditionnel in indirect speech) is precisely the rule being tested — the futur dans le passé vs conditionnel distinction in reported speech.\n\n**Remaining tasks:** None — this was a single validation task.\n\n**Recommendations:** No further action needed on this question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293637389-saa6tegy",
+      "timestamp": "2026-06-01T06:00:54.703Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core concept of converting future tense in direct speech to conditional in indirect speech (futur dans le passé), which is exactly what rule 06-16 covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293813879-djnd554i",
+      "timestamp": "2026-06-01T06:03:48.926Z"
+    }
+  ]
+}

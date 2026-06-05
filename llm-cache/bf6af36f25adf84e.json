@@ -1,0 +1,26 @@
+{
+  "cacheKey": "bf6af36f25adf84e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel : « Selon la météo, il ___ demain. »\n\nChoices:\nA. [CORRECT] pleuvrait\nB. [WRONG] pleut\nC. [WRONG] pleuvra\nD. [WRONG] pleuvait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401384-wkid960p"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses other than the conditional as explicitly required by the question prompt (B is present indicative, C is future indicative, D is imperfect indicative).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780227272402-oz3d2knt",
+      "timestamp": "2026-05-31T11:34:46.367Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was in the process of verifying a French grammar MCQ question about the conditional mood. The question asks to complete a sentence in the conditional tense (\"il ___ demain\" with \"Selon la météo\" context).\n\nAnalysis completed: The correct answer is \"pleuvrait\" (conditional). The wrong answers are:\n- B. \"pleut\" (present indicative)\n- C. \"pleuvra\" (future indicative)  \n- D. \"pleuvait\" (imparfait)\n\nAll wrong answers are indeed incorrect because the question explicitly requires the conditional mood, and none of B, C, or D use the conditional.\n\nThe verdict should be: TRUE||All wrong answers use tenses other than the conditional as explicitly required by the question prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780230721812-zpq45nxe",
+      "timestamp": "2026-05-31T12:32:24.680Z"
+    }
+  ]
+}

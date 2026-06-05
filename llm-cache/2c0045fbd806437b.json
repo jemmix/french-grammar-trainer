@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2c0045fbd806437b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-19-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase négative au conditionnel présent est correctement formée ?\n\nChoices:\nA. [CORRECT] Je n'aimerais pas partir sans vous remercier.\nB. [WRONG] Je ne aimerais pas partir sans vous remercier.\nC. [WRONG] J'aimerais pas partir sans vous remercier.\nD. [WRONG] Je n'aimerais partir pas sans vous remercier.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780673201633-mm2uty2p"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ about negative conditional formation are indeed incorrect.\n\nMy analysis:\n- **B** (\"Je ne aimerais pas\"): Incorrect — missing elision; \"ne\" must become \"n'\" before a vowel\n- **C** (\"J'aimerais pas\"): Incorrect in standard written French — the \"ne\" is required for formal negation, though common in spoken French\n- **D** (\"Je n'aimerais partir pas\"): Incorrect — \"pas\" is placed after the infinitive \"partir\" instead of after the conjugated verb \"aimerais\"\n\nAll three wrong answers contain clear grammatical errors under standard French rules, so the verdict would be: TRUE||B lacks required elision before a vowel, C omits the required \"ne\" in standard written French, and D incorrectly places \"pas\" after the infinitive instead of the conjugated verb.\n\nNo remaining tasks — the verification was completed analytically.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780673204643-3uagqg5y",
+      "timestamp": "2026-06-05T15:27:01.354Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:** I was in the process of evaluating a French grammar validation task for a multiple choice question about negative sentences in the present conditional tense. I had analyzed the three wrong answers (B, C, D) and determined their grammatical status.\n\n**Analysis completed:**\n- B (\"Je ne aimerais pas\") - Incorrect due to missing elision (should be \"n'aimerais\")\n- C (\"J'aimerais pas\") - Informal spoken form dropping \"ne\", not standard \"correct formation\"\n- D (\"Je n'aimerais partir pas\") - Incorrect word order, \"pas\" should follow conjugated verb not infinitive\n\n**Remaining tasks:** The actual verdict response was not delivered to the caller.\n\n**Recommendation:** The verdict should be TRUE||All wrong answers violate standard French negation rules: B lacks required elision before a vowel, C omits the mandatory \"ne\" element of formal negation, and D places \"pas\" after the infinitive instead of after the conjugated verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780673593813-1vs9gwnp",
+      "timestamp": "2026-06-05T15:34:04.142Z"
+    },
+    {
+      "raw": "TRUE||B is missing the required elision of \"ne\" to \"n'\" before a vowel; C omits \"ne\" entirely, which is only acceptable in informal spoken French, not in a correctly formed negative sentence; D has incorrect word order with \"pas\" placed after the infinitive instead of surrounding the conjugated verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780674006022-ywgw003i",
+      "timestamp": "2026-06-05T15:43:33.592Z"
+    }
+  ]
+}

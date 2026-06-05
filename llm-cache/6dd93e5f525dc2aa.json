@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6dd93e5f525dc2aa",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-10-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Un médecin veut rester prudent dans son diagnostic. Que dit-il ?\n\nChoices:\nA. [CORRECT] Il pourrait s'agir d'une simple infection virale.\nB. [WRONG] Il s'agit d'une simple infection virale.\nC. [WRONG] Il s'agira d'une simple infection virale.\nD. [WRONG] C'est une simple infection virale.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780272608641-aqe6dvwc"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a French grammar multiple choice question for validation. The question asks what a prudent/cautious doctor would say in their diagnosis, with the correct answer using the conditional \"pourrait\" to express uncertainty.\n\nAfter analyzing the wrong answers:\n- B (\"Il s'agit d'une simple infection virale\") uses present tense, making a definitive statement rather than a cautious one\n- C (\"Il s'agira d'une simple infection virale\") uses future tense, also not expressing current caution\n- D (\"C'est une simple infection virale\") is a direct, definitive statement without hedging\n\nAll wrong answers fail to express the prudence/caution explicitly required by the question prompt, so they are correctly marked as wrong.\n\nThe validation result would be: TRUE||All wrong answers use definitive statements that don't express the caution required by the question context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780272765809-91wwhb5f",
+      "timestamp": "2026-06-01T00:15:30.476Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers express certainty (present, future, or flat assertion) which contradicts the cautious/hedging requirement of the prompt, making only the conditional \"pourrait\" correct.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780273225710-4z6945vm",
+      "timestamp": "2026-06-01T00:20:57.170Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers make definitive statements (\"s'agit,\" \"s'agira,\" \"C'est\") without any hedging, which contradicts the doctor's intention to remain cautious in his diagnosis.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780273482796-s8zwin4o",
+      "timestamp": "2026-06-01T00:25:50.621Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ae2b78f011fc868d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-09-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-09 - Le conditionnel présent dans les phrases avec « si » : variétés de conditions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel présent : « Au cas où nous ___ du retard, attends-nous. »\nChoices:\nA. [CORRECT] aurions\nB. ayons\nC. aurons\nD. avions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401389-ecbzi7ju"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the specific exception where \"au cas où\" requires the conditionnel présent in the subordinate clause (unlike standard \"si\" clauses which use imparfait), which is precisely the \"variétés de conditions\" aspect covered by this rule.\n\n---\n\n**Note:** Maximum steps for this agent have been reached. The validation task for this single question has been completed successfully. No remaining tasks were pending for this specific item. If you have additional questions to validate, please submit them in a new prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780227924941-xnomk979",
+      "timestamp": "2026-05-31T11:46:00.105Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the use of the conditional after \"au cas où\" (which requires the conditional in the subordinate clause), not the conditional in \"si\" clauses where the conditional appears in the main clause after \"si + imparfait.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231258111-q2bkhys3",
+      "timestamp": "2026-05-31T12:41:34.052Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question alignment. Here is my assessment:\n\nVERDICT: MISALIGNED\nREASON: The rule specifically targets \"phrases avec « si »\" (sentences with \"si\") but this question uses \"au cas où,\" which is a different grammatical expression that triggers the conditional present but is not a \"si\" clause.\n\nThe question \"Au cas où nous ___ du retard\" tests knowledge that \"au cas où\" requires the conditional present, which is a valid grammar point, but it does not test the specific rule about \"si\" clauses and their varieties of conditions. \"Au cas où\" would typically belong to a separate rule about expressions that require the conditional (alongside expressions like \"pourvu que,\" \"à condition que,\" etc.).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780235516959-ych5mt21",
+      "timestamp": "2026-05-31T13:53:12.684Z"
+    }
+  ]
+}

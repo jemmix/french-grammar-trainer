@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2a9f05dfdf418aea",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-18-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-18 - Le conditionnel vs le subjonctif après certains verbes et conjonctions\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au conditionnel ou au subjonctif selon le contexte\nPhrase: Elle travaille dur afin qu'elle ___ ses rêves.\nCorrect Answer: réalise\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401517-kv1lqehm"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating whether a French grammar question properly tests the stated rule about distinguishing between le conditionnel and le subjonctif after certain verbs and conjunctions.\n\n**Analysis completed:**\nThe question asks students to conjugate \"réaliser\" after \"afin que\" with the correct answer being \"réalise\" (subjonctif). However, \"afin que\" categorically requires the subjonctif—there is no scenario where conditionnel would be correct after this conjunction. Therefore, this question only tests whether students know that \"afin que\" takes the subjonctif, not the distinction between conditionnel vs. subjonctif.\n\n**Verdict:**\nVERDICT: MISALIGNED\nREASON: \"Afin que\" always requires the subjonctif, so this question only tests knowledge of subjonctif after conjunctions, not the distinction between conditionnel and subjonctif that the rule specifies.\n\n**Remaining tasks:**\nNone—this was a single-question validation task that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229670041-k0q3sw0c",
+      "timestamp": "2026-05-31T12:15:03.504Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"Afin que\" unambiguously requires the subjunctive, so there is no genuine choice between conditional and subjunctive—the question only tests whether the student knows this one conjunction takes subjunctive, not the distinction between the two moods that the rule implies.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780234273382-vm7p2bgg",
+      "timestamp": "2026-05-31T13:32:04.261Z"
+    }
+  ]
+}

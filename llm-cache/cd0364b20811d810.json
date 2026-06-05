@@ -1,0 +1,26 @@
+{
+  "cacheKey": "cd0364b20811d810",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-12-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel passé pour exprimer un regret : « Elle ___ son examen si elle avait plus étudié. »\nChoices:\nA. [CORRECT] aurait réussi\nB. a réussi\nC. réussirait\nD. avait réussi\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401421-9mzgiwiv"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far:\nI was in the process of evaluating a single question validation task for the French Grammar Trainer project. The task was to determine whether a multiple-choice question about the conditionnel passé properly tests the specific rule \"Le conditionnel passé pour exprimer un regret (j'aurais dû étudier).\"\n\nThe question asks students to complete \"Elle ___ son examen si elle avait plus étudié\" with the correct answer being \"aurait réussi.\"\n\nAnalysis completed:\nThe question tests conditionnel passé in a hypothetical past context, but the specific rule is about expressing regret using \"devoir\" in the conditionnel passé (e.g., \"j'aurais dû étudier\"). The question doesn't use the \"devoir\" construction at all—it uses \"réussir,\" making this a general conditionnel passé question rather than one specifically testing the regret expression with \"devoir.\"\n\n**VERDICT: MISALIGNED**\n**REASON: The rule specifically covers expressing regret with \"devoir\" in conditionnel passé (j'aurais dû + infinitive), but this question tests regular conditionnel passé with \"réussir\" in a hypothetical past context, not the \"devoir\" regret construction.**\n\nRemaining tasks: None—this was a single-question validation.\n\nRecommendations for next steps: To properly test rule 06-12, the question should use \"devoir\" in the conditionnel passé followed by an infinitive, such as: \"Elle ___ plus étudier pour réussir son examen\" with choices like \"aurait dû\" (correct), \"a dû\", \"devrait\", \"avait dû\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228539482-ekr18nsi",
+      "timestamp": "2026-05-31T11:56:26.948Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests si-clause tense agreement (si + plus-que-parfait → conditionnel passé) rather than specifically testing the use of conditionnel passé to express regret, as a student could answer correctly using only knowledge of si-clause rules without understanding that conditionnel passé expresses regret.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231768542-9rhsqman",
+      "timestamp": "2026-05-31T12:51:53.662Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "90ada0f662da755b",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-15-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel passé pour une information non confirmée au passé (il aurait démissionné)\nPROMPT: Le conditionnel passé permet de rapporter une information sans la confirmer. Complétez avec la forme qui convient :\nPHRASE: Selon certaines sources, ce chevalier ___ un dragon pour sauver le royaume.\nCORRECT ANSWER: aurait vaincu\n\nWRONG ANSWERS to evaluate:\n1. a vaincu\n2. vainquait\n3. avait vaincu\n4. vaincrait\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780291908839-2zhcy5el"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common tense confusions learners make with conditionnel passé: using passé composé (a vaincu), imparfait (vainquait), plus-que-parfait (avait vaincu), or conditionnel présent (vaincrait) instead of the required conditionnel passé form with auxiliary + past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780292170294-g3npv2rm",
+      "timestamp": "2026-06-01T05:40:48.086Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common tense confusions learners make with the conditionnel passé: using passé composé (\"a vaincu\") instead of the conditional auxiliary, imparfait (\"vainquait\") as a general past tense fallback, plus-que-parfait (\"avait vaincu\") which shares the same structure but uses a different auxiliary form, and conditionnel présent (\"vaincrait\") which is the same mood but wrong tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780292448087-deniu6h0",
+      "timestamp": "2026-06-01T05:41:09.203Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common tense confusions French learners make: passé composé (\"a vaincu\") instead of conditionnel passé, imparfait (\"vainquait\") for past narration, plus-que-parfait (\"avait vaincu\") confusing anteriority with conditionality, and conditionnel présent (\"vaincrait\") omitting the auxiliary passé component.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780292469204-x4hbqun3",
+      "timestamp": "2026-06-01T05:41:34.360Z"
+    }
+  ]
+}

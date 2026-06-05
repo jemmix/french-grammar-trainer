@@ -1,0 +1,33 @@
+{
+  "cacheKey": "666440763a6487f5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise le conditionnel de politesse ?\n\nChoices:\nA. [CORRECT] Auriez-vous l'heure, s'il vous plaît ?\nB. [WRONG] Il a répondu qu'il serait là à l'heure.\nC. [WRONG] Ils ont cru qu'elle viendrait nous voir.\nD. [WRONG] Elle a promis qu'elle comprendrait.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780293122324-53ziya90"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to verify that wrong answers B, C, and D in a French grammar question about \"conditionnel de politesse\" are indeed incorrect.\n\nAnalysis completed:\n- B: \"Il a répondu qu'il serait là à l'heure.\" - Uses conditional in reported speech, not polite conditional\n- C: \"Ils ont cru qu'elle viendrait nous voir.\" - Uses conditional in reported speech, not polite conditional  \n- D: \"Elle a promis qu'elle comprendrait.\" - Uses conditional in reported speech, not polite conditional\n\nThe correct answer A (\"Auriez-vous l'heure, s'il vous plaît ?\") correctly demonstrates the polite conditional used for making a polite request.\n\nTRUE||All wrong answers use the conditional in reported speech contexts, not as the polite conditional requested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293215274-m2w0tsu6",
+      "timestamp": "2026-06-01T05:54:02.857Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the conditional tense in reported speech contexts (concordance des temps) rather than as a conditionnel de politesse, which specifically softens requests or suggestions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293522239-wj3k3uyh",
+      "timestamp": "2026-06-01T05:59:10.708Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the conditional in reported speech (concordance des temps), not as conditionnel de politesse.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293732190-h4gglbju",
+      "timestamp": "2026-06-01T06:02:32.565Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8d2eea9b910c86b6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-03-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel présent : « Je ___ vous poser une question, si vous le permettez. »\n\nChoices:\nA. [CORRECT] voudrais\nB. [WRONG] veux\nC. [WRONG] voulais\nD. [WRONG] voudrai\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401351-mq0fm2ze"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses (présent for B, imparfait for C, futur for D) instead of the required conditionnel présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780226404561-2bywcgal",
+      "timestamp": "2026-05-31T11:20:19.788Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different tenses (présent, imparfait, futur) instead of the required conditionnel présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229893721-3taw85v9",
+      "timestamp": "2026-05-31T12:18:32.635Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B (\"veux\"), C (\"voulais\"), and D (\"voudrai\") are incorrect in a question asking to complete the sentence in the conditional present tense (\"Complétez au conditionnel présent\").\n\nAnalysis completed: All three wrong answers use incorrect tenses - B is present indicative, C is imperfect indicative, and D is future indicative. Since the question explicitly requires the conditional present, all wrong answers are genuinely incorrect.\n\nVERDICT|TRUE||All wrong answers use tenses other than the required conditional présent (B is présent, C is imparfait, D is futur).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780234525543-dcyeibw1",
+      "timestamp": "2026-05-31T13:35:56.699Z"
+    }
+  ]
+}

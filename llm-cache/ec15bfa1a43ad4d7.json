@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ec15bfa1a43ad4d7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Le médecin a dit qu'il devrait se reposer. » — Quelle est la fonction de « devrait » ?\n\nChoices:\nA. [CORRECT] Futur dans le passé (transposition de « il devra se reposer » en discours indirect)\nB. [WRONG] Conditionnel de politesse (formulation atténuée d'un conseil médical)\nC. [WRONG] Conditionnel d'hypothèse (exprime une éventualité médicale)\nD. [WRONG] Imparfait (description passée)\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780513881384-5pdqrlom"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify whether the wrong answers (B, C, D) in a French grammar MCQ about the function of \"devrait\" in reported speech are indeed incorrect.\n\nAnalysis completed:\n- B (Conditionnel de politesse) is incorrect — \"devrait\" here results from future tense transposition in indirect speech, not politeness attenuation\n- C (Conditionnel d'hypothèse) is incorrect — this is not a hypothetical construction but standard indirect speech transposition\n- D (Imparfait) is incorrect — \"devrait\" is conditionnel présent, not imparfait (which would be \"devait\")\n\nTRUE||All wrong answers are incorrect: B misidentifies the function as politeness rather than indirect speech transposition, C misidentifies it as hypothetical rather than transposed future, and D incorrectly labels the conditionnel présent as imparfait.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780514235381-je4rtfia",
+      "timestamp": "2026-06-03T19:18:29.971Z"
+    },
+    {
+      "raw": "TRUE||B is incorrect because the conditional here results from indirect speech transposition, not politeness attenuation; C is incorrect because there is no hypothetical \"si\" clause, just reported speech; D is incorrect because \"devrait\" is conditionnel présent, not imparfait (\"devait\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780514929479-epdh3ia0",
+      "timestamp": "2026-06-03T19:29:20.378Z"
+    }
+  ]
+}

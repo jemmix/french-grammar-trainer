@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c30389b9b5a1aa25",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Input\nPrompt: Après un verbe au passé, le futur se transpose en conditionnel. Complétez le discours indirect :\nPhrase: Elle a annoncé qu'elle ___ la médecine l'année suivante.\nCorrect Answer: étudierait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780518200849-vrwx0vdo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule by requiring students to transform a future tense (\"étudiera\") into its conditionnel form (\"étudierait\") in indirect speech after a past tense reporting verb (\"a annoncé\"), which is the exact grammar concept the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780518237055-bwa7hgqw",
+      "timestamp": "2026-06-03T20:26:44.372Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the backshifting of futur simple to conditionnel présent in reported speech after a past tense verb (\"a annoncé\"), which is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780518404373-ypxljkuw",
+      "timestamp": "2026-06-03T20:26:53.746Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly requires applying the rule that in reported speech with a past-tense main verb (\"Elle a annoncé\"), the future must be transposed to conditional (\"étudierait\" rather than \"étudiera\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780518413746-0kzmkj7i",
+      "timestamp": "2026-06-03T20:27:12.442Z"
+    }
+  ]
+}

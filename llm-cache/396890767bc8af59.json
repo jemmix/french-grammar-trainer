@@ -1,0 +1,33 @@
+{
+  "cacheKey": "396890767bc8af59",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-03-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-03 - Le conditionnel de politesse (je voudrais, pourriez-vous, j'aimerais)\n\nQUESTION:\nType: Input\nPrompt: Pour proposer poliment une boisson à un invité, quelle forme au conditionnel utilise-t-on ? Conjuguez le verbe prendre.\nPhrase: ___ -vous un verre d'eau ?\nCorrect Answer: Prendriez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780252992552-zd789cy7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that the conditional form \"prendriez\" is used instead of the imperative to make a polite offer, which directly tests the concept of conditionnel de politesse.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780252992560-j4o0v8jx",
+      "timestamp": "2026-05-31T18:43:55.854Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"prendre\" in the conditional \"vous\" form (\"prendriez-vous\") to make a polite offer, which directly tests the conditionnel de politesse pattern exemplified by \"pourriez-vous.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780253035854-nbfe4tnq",
+      "timestamp": "2026-05-31T18:44:11.003Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"prendre\" in the conditional to form a polite offer (\"Prendriez-vous\"), which directly applies the conditionnel de politesse pattern exemplified by \"pourriez-vous.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780253051004-esnye6l6",
+      "timestamp": "2026-05-31T18:44:24.694Z"
+    }
+  ]
+}

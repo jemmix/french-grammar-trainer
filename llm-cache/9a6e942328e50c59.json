@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9a6e942328e50c59",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-15-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel passé : « On murmure qu'ils ___ des secrets pendant des années. »\n\nChoices:\nA. [CORRECT] auraient gardé\nB. [WRONG] gardaient\nC. [WRONG] avaient gardé\nD. [WRONG] ont gardé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401459-h36r9cou"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses other than the conditionnel passé as specified: B is imparfait, C is plus-que-parfait, and D is passé composé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229592870-4fp4qiyh",
+      "timestamp": "2026-05-31T12:13:35.962Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses (imparfait, plus-que-parfait, passé composé) instead of the required conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780234183506-v07sna8c",
+      "timestamp": "2026-05-31T13:30:15.712Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was in the process of evaluating a French grammar verification task. The question asked to complete a sentence in the conditionnel passé tense. I analyzed the four choices:\n- A (auraient gardé) - correct conditionnel passé form\n- B (gardaient) - imparfait, not conditionnel passé\n- C (avaient gardé) - plus-que-parfait, not conditionnel passé\n- D (ont gardé) - passé composé, not conditionnel passé\n\nAll wrong answers clearly use different tenses than what was specified.\n\nRemaining tasks: None - the analysis is complete.\n\nRecommendation: The verdict should be: TRUE||All wrong answers use different tenses (imparfait, plus-que-parfait, passé composé) instead of the required conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780236847737-bbtqv6uh",
+      "timestamp": "2026-05-31T14:14:38.803Z"
+    }
+  ]
+}

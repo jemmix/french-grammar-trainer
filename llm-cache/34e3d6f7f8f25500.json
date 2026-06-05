@@ -1,0 +1,33 @@
+{
+  "cacheKey": "34e3d6f7f8f25500",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Il ___ pleuvoir ce week-end, d'après les prévisions. » — Le conditionnel ou le futur ?\n\nChoices:\nA. [CORRECT] pleuvra — Les prévisions météo sont présentées comme fiables, le futur convient.\nB. [WRONG] pleuvrait — Le conditionnel exprime une information incertaine.\nC. [WRONG] pleut — Le présent exprime un fait actuel.\nD. [WRONG] pleuvait — L'imparfait est un temps du passé.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780663968324-urh5q3eu"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWork accomplished: I was in the process of evaluating a French grammar verification task for a multiple choice question about the correct tense to use in \"Il ___ pleuvoir ce week-end, d'après les prévisions.\"\n\nMy analysis found that answer B (\"pleuvrait\" - conditional) is actually problematic as a wrong answer. The question itself asks \"Le conditionnel ou le futur?\" which acknowledges both tenses are plausible. Furthermore, \"d'après les prévisions\" (according to forecasts) is a classic context where the conditional is used in French to express reported or uncertain information. The explanation that \"Le conditionnel exprime une information incertaine\" doesn't actually disqualify it—weather forecasts are inherently uncertain, and the conditional is appropriate for hedging reported predictions.\n\nThe intended verdict was: FALSE|B|B (pleuvrait) could be correct because \"d'après les prévisions\" sets up reported information where the conditional is grammatically appropriate for expressing uncertainty or indirect speech.\n\nNo remaining tasks to complete—this was a single verification request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780663971348-uvwgzuwb",
+      "timestamp": "2026-06-05T12:53:36.030Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses conditionnel which changes the meaning to express uncertainty rather than presenting a forecast, C uses présent for a current fact rather than a weekend prediction, D uses imparfait which is a past tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780664054475-kyhho12f",
+      "timestamp": "2026-06-05T13:07:28.008Z"
+    },
+    {
+      "raw": "FALSE|B|The conditional \"pleuvrait\" is commonly used in weather forecasts to express uncertainty and is explicitly mentioned as a valid option in the question prompt (\"Le conditionnel ou le futur?\"), making it a plausible correct answer in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780664887488-iad40pjc",
+      "timestamp": "2026-06-05T13:08:27.536Z"
+    }
+  ]
+}

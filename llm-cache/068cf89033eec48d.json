@@ -1,0 +1,33 @@
+{
+  "cacheKey": "068cf89033eec48d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-03-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour demander poliment au client de patienter, quelle formule au conditionnel utilise-t-on ? « Je ___ vous demander de patienter quelques instants. »\n\nChoices:\nA. [CORRECT] pourrais\nB. [WRONG] peux\nC. [WRONG] pourrai\nD. [WRONG] pouvais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780252279966-uvbfua7m"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:** I was evaluating a French grammar verification task for a multiple choice question about the conditional mood of \"pouvoir.\" The question asks which conditional form is used to politely ask a client to wait, with \"pourrais\" as the correct answer.\n\n**Analysis completed:** \n- B: \"peux\" is present indicative, not conditional — incorrect\n- C: \"pourrai\" is futur simple, not conditional — incorrect  \n- D: \"pouvais\" is imparfait, not conditional — incorrect\n\nAll wrong answers fail to meet the explicit requirement of using the conditional mood.\n\n**Verdict:** TRUE||All wrong answers are not in the conditional mood as explicitly required by the question prompt.\n\n**Remaining tasks:** None — this was a single verification task that has been completed.\n\n**Recommendations:** The question and its wrong answers are valid; no corrections needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780252279978-hl6ap3q4",
+      "timestamp": "2026-05-31T18:31:51.729Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses other than the conditional (présent, futur simple, imparfait) as explicitly required by the question prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780252345695-wotbibq7",
+      "timestamp": "2026-05-31T18:32:43.310Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses other than the conditional (présent for B, futur for C, imparfait for D) as explicitly required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780252391193-ulpi16b7",
+      "timestamp": "2026-05-31T18:33:34.452Z"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "cacheKey": "5ef64fbab1284384",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-10-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel présent pour atténuer une affirmation ou exprimer la prudence\nPROMPT: Conjuguez le verbe « devoir » au conditionnel présent pour adoucir le reproche\nPHRASE: Vous ne ___ pas vous absenter sans prévenir à l'avance.\nCORRECT ANSWER: devriez\n\nWRONG ANSWERS to evaluate:\n1. devez\n2. deviez\n3. devra\n4. doivent\n5. puissiez\n6. devaient\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780226401399-8odleva1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: confusing conditional with present/imperfect/future indicative (devez, deviez, devaient, devra), wrong person/number agreement (devra, doivent, devaient), or confusing the modal verbs devoir and pouvoir (puissiez).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780239259242-wh5fbxeu",
+      "timestamp": "2026-05-31T14:54:57.637Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far:\nI was asked to evaluate whether 6 wrong answers for a French grammar input question are plausible learner mistakes. The question tests the conditional present of \"devoir\" used to soften a reproche. The correct answer is \"devriez\" (vous form).\n\nAnalysis completed:\n- \"devez\" (present indicative vous) - PLAUSIBLE - classic error of using present instead of conditional\n- \"deviez\" (imparfait vous) - PLAUSIBLE - imparfait and conditionnel are commonly confused\n- \"devra\" (futur il/elle) - BORDERLINE - futur/conditionnel confusion is common, but wrong person makes it less natural\n- \"doivent\" (present ils/elles) - IMPLAUSIBLE - wrong person is a basic agreement error unrelated to the conditional rule\n- \"puissiez\" (subjonctif of pouvoir) - PLAUSIBLE - adjacent verb/mood confusion\n- \"devaient\" (imparfait ils/elles) - IMPLAUSIBLE - wrong person combined with wrong tense, too basic an error for this level\n\nVERDICT: IMPLAUSIBLE\nREASON: \"doivent\" and \"devaient\" represent basic subject-verb agreement errors (ils/elles form used for Vous) that a learner studying the conditional would be unlikely to make; these are random errors rather than plausible grammar-rule-related mistakes.\n\nRecommendations for next steps:\n- Replace \"doivent\" with \"devrez\" (futur simple, vous form) to test futur/conditionnel confusion with correct person\n- Replace \"devaient\" with \"devrait\" (conditionnel il/elle form) to test person agreement within the conditional\n- This would give 6 plausible errors: present, imparfait, futur, wrong person conditional, subjonctif of pouvoir, and imparfait (all in vous form)",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780243008834-02culn0q",
+      "timestamp": "2026-05-31T15:58:17.243Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: \"devez\" confuses indicative with conditional, \"deviez\" confuses imparfait with conditionnel, \"devra\" and \"doivent\" are agreement errors, \"pussiez\" reflects confusing devoir/pouvoir in modal contexts, and \"devaient\" mixes tense and number.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780245159613-rv130f6x",
+      "timestamp": "2026-05-31T16:33:01.284Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was evaluating the plausibility of wrong answers for a French grammar input question about the conditional present of \"devoir.\"\n\n**Verdict I would have provided:**\nVERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: present indicative instead of conditional (devez, doivent), imperfect instead of conditional (deviez, devaient), confusing modal verbs (puissiez for pouvoir vs devoir), or mixing tense and person (devra - future singular instead of conditional vous form).\n\n**Remaining tasks:**\n- None beyond providing this single evaluation.\n\n**Recommendations:**\n- No further action needed; the wrong answers pass the plausibility check.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780245923430-325a9lcv",
+      "timestamp": "2026-05-31T16:47:46.675Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: Three wrong answers (devra, doivent, devaient) have person agreement errors — they are 3rd person forms used for \"vous\" (2nd person plural), which is implausible because learners who know to conjugate for \"vous\" would typically get the person correct even if they choose the wrong tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780246066676-g0ie54lu",
+      "timestamp": "2026-05-31T16:48:16.566Z"
+    }
+  ]
+}

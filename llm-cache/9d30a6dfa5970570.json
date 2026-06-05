@@ -1,0 +1,26 @@
+{
+  "cacheKey": "9d30a6dfa5970570",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-19-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-19 - La négation au conditionnel présent et passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel présent : « Je suis certain que tu ___ pas raison sur ce point. »\nChoices:\nA. [CORRECT] n'aurais\nB. n'as\nC. n'aurais pas\nD. ne devrais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401521-3j5uysm3"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question primarily tests conjugation of \"avoir\" in the conditional present and recognizing the expression \"avoir raison,\" not the specific mechanics or placement of negation in the conditional tense—the \"ne\" is simply part of the correct conjugation choice rather than being the focus of what's being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229847349-lvvu8qi7",
+      "timestamp": "2026-05-31T12:18:13.721Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a French grammar question against its stated rule. The question asks students to complete a conditional present sentence that already contains \"pas\", with the correct answer being \"n'aurais\".\n\n**Verdict reached:**\nVERDICT: MISALIGNED\nREASON: The question primarily tests whether the student notices that \"pas\" is already provided in the sentence and avoids doubling it, rather than testing knowledge of how negation structures (ne...pas) are properly formed and placed around conditional verbs.\n\n**Remaining tasks:**\nNone - this was a single-question validation task.\n\n**Recommendations:**\nTo properly test \"La négation au conditionnel présent et passé,\" the question should present a sentence without any negation elements and ask students to form the complete negated conditional, or test the placement of \"ne\" and \"pas\" around the auxiliary verb in conditional passé (e.g., \"je n'aurais pas mangé\" vs incorrect placements).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780234508355-rv5l98g1",
+      "timestamp": "2026-05-31T13:38:44.518Z"
+    }
+  ]
+}

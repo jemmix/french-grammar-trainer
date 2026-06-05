@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6771e84a33c92608",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-18-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est correctement formée ?\n\nChoices:\nA. [CORRECT] Je préférerais que tu viennes demain.\nB. [WRONG] Je préférerais que tu viendrais demain.\nC. [WRONG] Je préfère que tu viendrais demain.\nD. [WRONG] Je préférerais que tu viens demain.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780670620770-15bxpl2a"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers incorrectly use indicative or conditional instead of the required subjunctive \"viennes\" after \"que\" with a different subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780670637732-ss4c3ca7",
+      "timestamp": "2026-06-05T14:44:43.590Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers incorrectly use non-subjunctive verb forms (conditional \"viendrais\" in B and C, present indicative \"viens\" in D) after \"que\" following a verb of preference, where the subjunctive \"viennes\" is mandatory.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780670754872-vc0wjo7y",
+      "timestamp": "2026-06-05T14:50:29.916Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods after \"que\" following a verb of preference: B and C use the conditional \"viendrais\" and D uses the indicative \"viens\" instead of the required subjunctive \"viennes.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780671029917-58og7fvc",
+      "timestamp": "2026-06-05T14:50:41.026Z"
+    }
+  ]
+}

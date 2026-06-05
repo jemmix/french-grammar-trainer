@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9d35a452c7684a9c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Dans « Marie a annoncé qu'elle partirait lundi », « partirait » est :\n\nChoices:\nA. [CORRECT] un futur dans le passé\nB. [WRONG] un conditionnel de politesse\nC. [WRONG] un conditionnel d'hypothèse\nD. [WRONG] un plus-que-parfait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780293122323-aax8799x"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B wrongly identifies it as politeness conditional when it's clearly reported speech after a past tense verb, C wrongly identifies it as hypothetical conditional when there is no \"si\" clause, and D incorrectly calls it a plus-que-parfait when \"partirait\" is unmistakably a conditional form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293122328-rrkijz3s",
+      "timestamp": "2026-06-01T05:52:30.240Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B misidentifies the usage as politeness rather than reported speech, C incorrectly claims a hypothetical context when none exists, and D names an entirely different tense (plus-que-parfait) rather than the conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293467485-mf88qnws",
+      "timestamp": "2026-06-01T05:58:04.528Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is wrong because \"partirait\" here reports future speech, not used for politeness; C is wrong because there is no hypothetical \"if\" clause structure; D is wrong because \"partirait\" is conditionnel présent, not plus-que-parfait (which would be \"était partie\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293677256-d8bzxn1n",
+      "timestamp": "2026-06-01T06:01:43.521Z"
+    }
+  ]
+}

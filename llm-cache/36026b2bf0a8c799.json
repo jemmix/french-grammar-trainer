@@ -1,0 +1,33 @@
+{
+  "cacheKey": "36026b2bf0a8c799",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « J'___ partir en vacances la semaine prochaine. »\n\nChoices:\nA. [CORRECT] aimerais\nB. [WRONG] aimerai\nC. [WRONG] aime\nD. [WRONG] aimais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780524019384-zdkiirjr"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses futur simple which changes the meaning to an unnatural prediction about a future desire rather than expressing a current wish; C uses present tense which cannot combine with the specific future time marker \"la semaine prochaine\"; D uses imparfait which is incompatible with any future time reference.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780524057050-d96nggel",
+      "timestamp": "2026-06-03T22:01:33.756Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ about the conditional vs. other tenses of \"aimer\" are indeed incorrect. The question asks to complete \"J'___ partir en vacances la semaine prochaine\" with the correct answer being \"aimerais\" (conditional).\n\nAnalysis completed:\n- B: \"aimerai\" (futur simple) - incorrect, expresses future certainty not a present wish\n- C: \"aime\" (présent) - incorrect, expresses general preference not future-oriented intention\n- D: \"aimais\" (imparfait) - incorrect, refers to past habits, incompatible with \"la semaine prochaine\"\n\nTRUE||All wrong answers use incorrect tenses that don't match the future-oriented context of \"la semaine prochaine\": B (futur simple) expresses future certainty not wish, C (présent) expresses general preference not future intention, D (imparfait) refers to past habits.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780524176001-97e3qf4b",
+      "timestamp": "2026-06-03T22:03:23.884Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of what was accomplished:** The agent was asked to verify that wrong answers B, C, and D in a French grammar MCQ question are indeed incorrect. The question asks to complete \"J'___ partir en vacances la semaine prochaine\" with the correct conditional form \"aimerais.\"\n\n**Remaining tasks:** The actual verification was not completed before the step limit was reached.\n\n**Recommendations for next steps:** Re-run this verification task. Based on the question content, the expected verdict would be:\n- B (\"aimerai\" - futur simple) is incorrect because \"la semaine prochaine\" with \"aimer\" expressing a wish/desire requires the conditional, not the future tense\n- C (\"aime\" - présent) is incorrect because the present tense doesn't convey the conditional nuance of \"would like to\"\n- D (\"aimais\" - imparfait) is incorrect because the imperfect expresses past habitual actions, not a present/future wish\n\nThe expected response would be: `TRUE||All wrong answers use incorrect tenses for expressing a conditional wish about future plans.`",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780524289458-lnrg98jd",
+      "timestamp": "2026-06-03T22:05:01.967Z"
+    }
+  ]
+}

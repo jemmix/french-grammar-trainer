@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ce157f7ad8cbb5ca",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-09-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est correctement formée avec « si + imparfait » ?\n\nChoices:\nA. [CORRECT] Si nous avions des billets, nous entrerions au concert.\nB. [WRONG] Si nous aurions des billets, nous entrerions au concert.\nC. [WRONG] Si nous avions des billets, nous entrons au concert.\nD. [WRONG] Si nous avions des billets, nous entrerons au concert.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780270251434-5xgg4a47"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the \"si + imparfait → conditionnel présent\" rule: B incorrectly uses conditional after \"si\", C uses present instead of conditional in the main clause, and D uses future instead of conditional in the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780270334489-6yij27c7",
+      "timestamp": "2026-05-31T23:32:30.857Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the \"si + imparfait → conditionnel\" rule: B incorrectly uses the conditional after \"si\", C uses present tense instead of conditional in the main clause, and D uses futur simple instead of conditional in the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780270488087-bh5137tn",
+      "timestamp": "2026-05-31T23:35:15.140Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the \"si + imparfait, conditionnel présent\" rule: B uses conditionnel in the si-clause instead of imparfait, C uses présent instead of conditionnel in the main clause, and D uses futur simple instead of conditionnel in the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780270670218-kvr7shaj",
+      "timestamp": "2026-05-31T23:38:16.034Z"
+    }
+  ]
+}

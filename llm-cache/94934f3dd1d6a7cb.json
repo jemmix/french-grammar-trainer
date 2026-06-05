@@ -1,0 +1,33 @@
+{
+  "cacheKey": "94934f3dd1d6a7cb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-15-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-15 - Le conditionnel passé pour une information non confirmée au passé (il aurait démissionné)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel passé : « Les témoins affirment qu'il ___ le restaurant avant minuit. »\nChoices:\nA. [CORRECT] aurait quitté\nB. aurait quitter\nC. a quitté\nD. quitterait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401447-o69nkkjp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The context of \"Les témoins affirment\" perfectly sets up the use of conditionnel passé to indicate unconfirmed past information reported by third parties, which is exactly what this rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229418503-6dmx1vzm",
+      "timestamp": "2026-05-31T12:10:44.723Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses the classic reporting context (\"Les témoins affirment\") to test the conditionnel passé as a marker of unconfirmed past information, which is precisely the grammar rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780233899873-np7l66vb",
+      "timestamp": "2026-05-31T13:25:23.088Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires choosing the conditionnel passé (\"aurait quitté\") to express unconfirmed past information reported by witnesses, which is precisely the grammar rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780236622203-9y4uzl0m",
+      "timestamp": "2026-05-31T14:10:52.401Z"
+    }
+  ]
+}

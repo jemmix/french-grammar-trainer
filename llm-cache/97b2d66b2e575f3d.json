@@ -1,0 +1,33 @@
+{
+  "cacheKey": "97b2d66b2e575f3d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pourquoi dit-on « je voudrais un café » (conditionnel) et non « je voudrai un café » (futur) ?\n\nChoices:\nA. [CORRECT] Le conditionnel atténue la demande pour être poli.\nB. [WRONG] Le futur est incorrect après « vouloir ».\nC. [WRONG] Le conditionnel exprime le doute sur l'existence du café.\nD. [WRONG] Les deux formes sont interchangeables dans ce contexte.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780522501019-7foja0nf"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear errors: B is false because the future is grammatically correct after \"vouloir\" (it just doesn't express politeness), C misidentifies the function of the conditional (it's for politeness, not doubt about existence), and D is false because the two forms have distinct meanings and are not interchangeable in a request context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780522510040-sbmdhclz",
+      "timestamp": "2026-06-03T21:36:32.756Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was tasked with verifying that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question asks why \"je voudrais\" (conditional) is used instead of \"je voudrai\" (future) when ordering coffee.\n\nAnalysis completed:\n- B (\"Le futur est incorrect après 'vouloir'\") - This is correctly marked as wrong because the future CAN be used after \"vouloir\" (e.g., \"Je voudrai te voir demain\"); the issue is politeness, not grammatical impossibility.\n- C (\"Le conditionnel exprime le doute sur l'existence du café\") - This is correctly marked as wrong; the conditional here expresses politeness, not doubt about the coffee's existence.\n- D (\"Les deux formes sont interchangeables dans ce contexte\") - This is correctly marked as wrong; in an ordering context, they are not interchangeable—the future would be abrupt/impolite.\n\nVerdict: TRUE||All wrong answers contain clear factual or grammatical errors.\n\nRemaining tasks: None—analysis is complete.\n\nRecommendation: The validated verdict is TRUE—no changes needed to this question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780522822197-quwo04d4",
+      "timestamp": "2026-06-03T21:40:40.783Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain factual errors: the future tense is grammatically correct after \"vouloir\" (just not appropriate here), the conditional here expresses politeness not doubt, and the two forms are not interchangeable.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780523023123-jpwil5sa",
+      "timestamp": "2026-06-03T21:44:10.727Z"
+    }
+  ]
+}

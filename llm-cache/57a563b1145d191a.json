@@ -1,0 +1,33 @@
+{
+  "cacheKey": "57a563b1145d191a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Multiple Choice\nPrompt: « J'ai lu dans le journal que le président parlerait ce soir. » — « parlerait » est :\nChoices:\nA. [CORRECT] un futur dans le passé (information rapportée)\nB. un conditionnel de politesse présidentielle\nC. un conditionnel d'hypothèse\nD. un imparfait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780293122325-z5s3kpqh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests distinguishing a futur dans le passé from other conditional uses, which is precisely the rule's focus on recognizing reported speech constructions like \"il a dit qu'il viendrait.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293358398-zymuqz56",
+      "timestamp": "2026-06-01T05:56:18.099Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"parlerait\" in a reported speech context (\"J'ai lu que...\") functions as a futur dans le passé rather than a true conditional, which is exactly what this rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293587999-9224hf0j",
+      "timestamp": "2026-06-01T06:00:04.977Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core distinction of the rule — recognizing that \"parlerait\" in a reported speech context (\"j'ai lu que...\") functions as a futur dans le passé rather than an actual conditional of politeness or hypothesis.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293772849-rcj9kxio",
+      "timestamp": "2026-06-01T06:03:08.976Z"
+    }
+  ]
+}

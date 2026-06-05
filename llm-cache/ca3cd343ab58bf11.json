@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ca3cd343ab58bf11",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-10-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase exprime la prudence face à une information non vérifiée ?\n\nChoices:\nA. [CORRECT] Le suspect serait toujours en fuite.\nB. [WRONG] Le suspect est toujours en fuite.\nC. [WRONG] Le suspect sera bientôt arrêté.\nD. [WRONG] Le suspect a été vu pour la dernière fois hier.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780272608641-u9iexfjg"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use indicative tenses (present, future, passé composé) that express certainty rather than the conditional \"serait\" which conveys prudence about unverified information.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780272713799-amkpi6ze",
+      "timestamp": "2026-06-01T00:12:17.808Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use direct assertion tenses (present, future, passé composé) rather than the conditional which is the standard way to express prudence/hedging in French.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780273043698-wem80tnx",
+      "timestamp": "2026-06-01T00:17:53.346Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to verify that wrong answers B, C, and D in a French grammar multiple choice question are indeed incorrect. The question asks which phrase expresses \"prudence face à une information non vérifiée\" (caution regarding unverified information).\n\nAnalysis completed:\n- Answer A (correct): \"Le suspect serait toujours en fuite\" uses conditional \"serait\" to express uncertainty - correctly identifies prudence.\n- Answer B (wrong): \"Le suspect est toujours en fuite\" uses present indicative \"est\" - states fact definitively without prudence. Correctly marked wrong.\n- Answer C (wrong): \"Le suspect sera bientôt arrêté\" uses future \"sera\" - makes a prediction, not expressing prudence about unverified info. Correctly marked wrong.\n- Answer D (wrong): \"Le suspect a été vu pour la dernière fois hier\" uses passé composé - states a past fact definitively without prudence. Correctly marked wrong.\n\nAll wrong answers are indeed incorrect within the grammatical constraints of the question.\n\nRemaining tasks: None - the verification is complete.\n\nRecommendation: The validation result is:\n\nTRUE||All wrong answers use indicative tenses that state facts definitively rather than expressing the prudence/uncertainty that the conditional mood conveys.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780273332022-60r3lf79",
+      "timestamp": "2026-06-01T00:22:56.093Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "53b127f31484bdf0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Peut-on dire : « Si j'aurais le temps, je viendrais » ?\n\nChoices:\nA. [CORRECT] Non, on ne met jamais le conditionnel après « si ». On dit « Si j'avais le temps… »\nB. [WRONG] Oui, cette phrase est correcte.\nC. [WRONG] Non, il faut dire « Si j'aurai le temps… »\nD. [WRONG] Non, il faut dire « Si j'ai le temps… » avec le conditionnel dans les deux clauses.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780257007454-7w4gl9oq"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers are incorrect: B claims an ungrammatical sentence is correct, C incorrectly suggests using futur simple after \"si\" (should be imparfait), and D incorrectly suggests using présent with conditional in both clauses (impossible construction).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257124977-2y9ox5g2",
+      "timestamp": "2026-05-31T19:52:24.363Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257369111-oeos6onn",
+      "timestamp": "2026-05-31T19:56:34.604Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was analyzing a French grammar verification task for the question \"Peut-on dire : « Si j'aurais le temps, je viendrais » ?\" to determine if wrong answers B, C, and D are indeed incorrect.\n\n**Analysis completed:**\n- B (\"Oui, cette phrase est correcte\") is incorrect because \"Si j'aurais\" uses conditionnel after \"si\", which violates French grammar rules\n- C (\"Non, il faut dire « Si j'aurai le temps… »\") is incorrect because futur simple is also forbidden after \"si\"\n- D (\"Non, il faut dire « Si j'ai le temps… » avec le conditionnel dans les deux clauses\") is incorrect because présent after \"si\" doesn't pair with conditionnel in the main clause, and the explanation is self-contradictory\n\n**Remaining tasks:**\nNone — the analysis was complete.\n\n**Recommendation:**\nThe verdict is TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257656129-0ly137aw",
+      "timestamp": "2026-05-31T20:01:43.955Z"
+    }
+  ]
+}

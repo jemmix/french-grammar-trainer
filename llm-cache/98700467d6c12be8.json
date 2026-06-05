@@ -1,0 +1,33 @@
+{
+  "cacheKey": "98700467d6c12be8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-18-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il a dit qu'il ___ le lendemain. »\n\nChoices:\nA. [CORRECT] viendrait\nB. [WRONG] vienne\nC. [WRONG] vient\nD. [WRONG] viendra\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780666986277-u0sepqty"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate indirect speech tense concordance rules: B incorrectly uses subjunctive, C uses present tense incompatible with the past main clause, and D uses future tense instead of the required conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667026068-p55ko1qu",
+      "timestamp": "2026-06-05T13:44:15.160Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate concordance des temps rules: reported speech with a past tense reporting verb (\"a dit\") requires the conditional (\"viendrait\"), not subjunctive (B), present (C), or future (D).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667268567-t7usft75",
+      "timestamp": "2026-06-05T13:48:12.166Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done so far:**\nI was in the process of verifying a French grammar multiple choice question about reported speech (discours indirect) and concordance des temps. The question asked to complete \"Il a dit qu'il ___ le lendemain.\" I analyzed all wrong answers (B: vienne, C: vient, D: viendra) to verify they are grammatically incorrect.\n\n**Analysis completed:**\n- The question tests reported speech where the main clause is past tense (\"a dit\") and the reported event refers to the future (\"le lendemain\")\n- Per concordance des temps rules, future in direct speech becomes conditional in indirect speech\n- B (vienne) - subjunctive present, incorrectly used\n- C (vient) - present tense, doesn't work with \"le lendemain\" in reported speech\n- D (viendra) - future tense, should be conditional in strict grammar\n\n**Result that would have been returned:**\nTRUE||All wrong answers violate the concordance des temps rules for reported speech: B uses subjunctive inappropriately, C uses present tense which doesn't work with \"le lendemain\" in indirect speech, and D keeps the future instead of converting to conditional as required.\n\n**Remaining tasks:** None - this was a single verification task.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667572427-vl7xbink",
+      "timestamp": "2026-06-05T13:53:17.621Z"
+    }
+  ]
+}

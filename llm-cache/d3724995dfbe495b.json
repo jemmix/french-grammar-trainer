@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d3724995dfbe495b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-09-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel présent : « Au cas où je ___ disponible ce soir, je t'appellerai. »\n\nChoices:\nA. [CORRECT] ne serais pas\nB. [WRONG] ne sois pas\nC. [WRONG] ne serai pas\nD. [WRONG] ne sois pas disponible\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401390-il93n0ga"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses subjonctif présent instead of conditionnel présent, C uses futur simple instead of conditionnel présent, and D redundantly repeats \"disponible\" while also using subjonctif présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228079551-nyc5k9ph",
+      "timestamp": "2026-05-31T11:48:46.398Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the conditionnel présent as explicitly required: B uses subjonctif présent, C uses futur simple, and D uses subjonctif présent with a redundant word.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231396620-n0o77r69",
+      "timestamp": "2026-05-31T12:43:39.489Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses (subjonctif présent for B and D, futur simple for C) rather than the required conditionnel présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780235602148-hba1nzqk",
+      "timestamp": "2026-05-31T13:53:59.782Z"
+    }
+  ]
+}

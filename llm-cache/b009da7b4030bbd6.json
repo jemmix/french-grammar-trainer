@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b009da7b4030bbd6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-18-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-18 - Le conditionnel vs le subjonctif après certains verbes et conjonctions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Si nous ___ le temps, nous voyagerions autour du monde. »\nChoices:\nA. [CORRECT] avions\nB. aurions\nC. avons\nD. aurons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780668525478-9r62icnd"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests the imparfait in si-clauses (conditional sentence structure with \"si + imparfait → conditionnel présent\"), not the choice between conditionnel and subjonctif after specific verbs and conjunctions as stated in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780668554976-2pdjyjm4",
+      "timestamp": "2026-06-05T14:09:38.054Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary\nI was in the process of validating whether a French grammar question properly tests the stated rule about \"Le conditionnel vs le subjonctif après certains verbes et conjonctions.\"\n\n## Analysis Completed\nThe question asks to complete \"Si nous ___ le temps, nous voyagerions autour du monde\" with the correct answer being \"avions\" (imparfait). This is clearly testing the \"si clause\" structure (si + imparfait → conditionnel présent), which is a completely different grammar topic from choosing between conditional and subjunctive after specific verbs/conjunctions (like \"vouloir que\", \"il faut que\", \"bien que\", etc.).\n\n## Verdict\nVERDICT: MISALIGNED\nREASON: The question tests the \"si + imparfait, conditionnel présent\" hypothetical structure, not the choice between conditionnel and subjonctif after specific verbs and conjunctions.\n\n## Remaining Tasks\nNone - the validation assessment is complete.\n\n## Recommendations\nThis question should be reassigned to a rule about \"si clauses\" or hypothetical conditional structures (e.g., \"Les phrases conditionnelles avec 'si'\"). A properly aligned question for rule 06-18 would involve a verb or conjunction that triggers either the conditional or subjunctive mood, such as \"Il faudrait que tu ___\" or \"Je souhaiterais que tu ___\" where the student must choose between conditionnel and subjonctif forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780668844010-ou3cg5d3",
+      "timestamp": "2026-06-05T14:14:20.755Z"
+    }
+  ]
+}

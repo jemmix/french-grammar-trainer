@@ -1,0 +1,33 @@
+{
+  "cacheKey": "348f6e95d232ceb1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-09-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-09 - Le conditionnel présent dans les phrases avec « si » : variétés de conditions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Si vous conduisiez moins vite, vous n'___ pas d'amende. »\nChoices:\nA. [CORRECT] auriez\nB. aurez\nC. avez\nD. aviez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780270251429-6pq7x798"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core si+imparfait → conditionnel présent structure, requiring the student to know that \"auriez\" (not \"aurez,\" \"avez,\" or \"aviez\") is required in the main clause when \"si\" introduces an imperfect condition.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780270273317-1k0nw0nk",
+      "timestamp": "2026-05-31T23:31:42.734Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core si-clause pattern (si + imparfait → conditionnel présent), requiring knowledge that \"conduisiez\" (imparfait) triggers \"auriez\" (conditionnel présent) in the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780270419304-70xdvnd1",
+      "timestamp": "2026-05-31T23:34:35.296Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far:\nI was asked to validate whether a French grammar question about \"Si vous conduisiez moins vite, vous n'___ pas d'amende\" properly tests the rule \"06-09 - Le conditionnel présent dans les phrases avec « si » : variétés de conditions.\"\n\nThe question is a classic example of the \"si + imparfait → conditionnel présent\" structure. The \"si\" clause uses imparfait (conduisiez) and the main clause requires conditionnel présent (auriez). The distractors test knowledge of other tenses (futur simple, présent, imparfait) that could confuse learners.\n\nMy verdict:\nVERDICT: ALIGNED\nREASON: The question directly tests the \"si + imparfait → conditionnel présent\" sentence structure, which is the core pattern covered by the rule about conditionnel présent in \"si\" clauses.\n\nRemaining tasks: None - the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780270642940-0xp6saz3",
+      "timestamp": "2026-05-31T23:37:47.991Z"
+    }
+  ]
+}

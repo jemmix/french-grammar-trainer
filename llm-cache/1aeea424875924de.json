@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1aeea424875924de",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-17-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel vs le futur : différences de forme et d'emploi\nPROMPT: Choisissez entre futur et conditionnel selon le contexte. Complétez :\nPHRASE: Le professeur a expliqué que l'examen ___ reporté.\nCORRECT ANSWER: serait\n\nWRONG ANSWERS to evaluate:\n1. sera\n2. est\n3. était\n4. a été\n5. fut\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780524019393-hz6owk33"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors when navigating conditional vs. future in reported speech: \"sera\" confuses future with conditional, \"est\" fails to backshift for reported speech, \"était\" over-applies backshifting, \"a été\" treats it as a completed past action, and \"fut\" is an overcorrection to a literary past tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780524563581-g620ilut",
+      "timestamp": "2026-06-03T22:10:02.366Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner confusions: \"sera\" is the most likely error (futur vs conditionnel confusion in reported speech), \"est\" and \"a été\" reflect tense selection difficulties, \"était\" shows confusion about sequence of tenses, and \"fut\" could come from learners overapplying passé simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780524676944-goufnyol",
+      "timestamp": "2026-06-03T22:11:41.848Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done:\nI was asked to evaluate whether 5 wrong answers for a French grammar input question about conditional vs future tense are plausible learner mistakes. The question asks learners to complete \"Le professeur a expliqué que l'examen ___ reporté\" with the correct answer being \"serait\" (conditional, for reported speech).\n\nMy evaluation:\nVERDICT: PLAUSIBLE\nREASON: All wrong answers are real French verb forms of être that represent common learner confusions between tenses—sera (future vs conditional confusion, the exact skill being tested), est (present used incorrectly in reported speech), était (imperfect vs conditional confusion), a été (passé composé misapplied), and fut (passé simple incorrectly used in reported speech).\n\nNo remaining tasks—this was a single-evaluation request that I have completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780524909707-c0xj7yk6",
+      "timestamp": "2026-06-03T22:15:33.423Z"
+    }
+  ]
+}

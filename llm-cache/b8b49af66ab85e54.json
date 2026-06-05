@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b8b49af66ab85e54",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-13-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est un reproche direct envers quelqu'un ?\n\nChoices:\nA. [CORRECT] Elle aurait pu répondre plus tôt à ce message.\nB. [WRONG] Elle a répondu plus tôt à ce message.\nC. [WRONG] Elle peut répondre plus tôt si elle veut.\nD. [WRONG] Elle répondra plus tôt la prochaine fois.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780286150697-amb7fhsy"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are statements of fact (B), possibility (C), or future prediction (D) rather than direct reproaches, which require the conditional past construction used in A.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780286156710-5vob6rfa",
+      "timestamp": "2026-06-01T03:56:51.149Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are factual statements (past, present ability, or future) rather than reproaches, which require the conditional past construction like \"aurait pu\" to convey criticism about something that should have happened but didn't.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780286381031-90x56ato",
+      "timestamp": "2026-06-01T03:59:55.129Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to verify that the wrong answers (B, C, D) in a French grammar multiple choice question are indeed incorrect. The question asks which phrase is a \"reproche direct\" (direct reproach).\n\nAnalysis completed:\n- B: \"Elle a répondu plus tôt à ce message\" — passé composé stating a fact, not a reproach. Correctly wrong.\n- C: \"Elle peut répondre plus tôt si elle veut\" — present tense expressing possibility, not a reproach. Correctly wrong.\n- D: \"Elle répondra plus tôt la prochaine fois\" — future tense expressing prediction/expectation, not a reproach. Correctly wrong.\n\nThe correct answer (A) uses \"aurait pu\" (conditional past), which is a classic French reproach structure implying \"she should have but didn't.\"\n\nTRUE||All wrong answers are simple factual, possibility, or future statements that do not express reproach.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780286559609-ns3s7hbm",
+      "timestamp": "2026-06-01T04:03:07.523Z"
+    }
+  ]
+}

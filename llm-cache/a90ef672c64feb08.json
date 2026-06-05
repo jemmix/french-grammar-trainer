@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a90ef672c64feb08",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-09-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si nous habitions près de la mer, nous ___ de la voile. »\n\nChoices:\nA. [CORRECT] ferions\nB. [WRONG] faisons\nC. [WRONG] ferons\nD. [WRONG] faisions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780270251429-4dabqwjn"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the si + imparfait → conditionnel présent rule: B is present indicative, C is futur simple (which requires si + présent), and D is imparfait (never used in the main clause of si constructions).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780270281868-wdwdx69a",
+      "timestamp": "2026-05-31T23:31:48.962Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the wrong tense for the main clause of a si-clause requiring conditionnel présent after si + imparfait.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780270434882-m67e5fdh",
+      "timestamp": "2026-05-31T23:34:25.405Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for the si+imparfait construction which requires the conditional in the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780270623824-2ph5wq92",
+      "timestamp": "2026-05-31T23:37:21.189Z"
+    }
+  ]
+}

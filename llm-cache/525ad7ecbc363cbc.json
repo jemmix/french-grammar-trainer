@@ -1,0 +1,33 @@
+{
+  "cacheKey": "525ad7ecbc363cbc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est au conditionnel (et non au futur) ?\n\nChoices:\nA. [CORRECT] Nous aimerions voyager au Japon.\nB. [WRONG] Nous aimerons voyager au Japon.\nC. [WRONG] Nous aimions voyager au Japon.\nD. [WRONG] Nous aimâmes voyager au Japon.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780521062077-4hhxdj5y"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is in the future tense, C is in the imparfait, and D is in the passé simple—none are in the conditional as required.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521062083-5be52g80",
+      "timestamp": "2026-06-03T21:11:23.030Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are in different tenses (future, imparfait, passé simple) rather than the conditionnel required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521244047-9z4w7zel",
+      "timestamp": "2026-06-03T21:14:20.666Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify whether the wrong answers (B, C, D) in a French grammar multiple choice question about the conditional tense are indeed incorrect.\n\nAnalysis completed:\n- B: \"Nous aimerons voyager au Japon.\" - Uses future tense \"aimerons\", explicitly excluded by the question which asks for conditional AND NOT future.\n- C: \"Nous aimions voyager au Japon.\" - Uses imparfait \"aimions\", not the conditional.\n- D: \"Nous aimâmes voyager au Japon.\" - Uses passé simple \"aimâmes\", not the conditional.\n\nAll wrong answers are genuinely incorrect within the grammatical constraints stated in the question.\n\nTRUE||All wrong answers use tenses other than the conditional: B is future (explicitly excluded), C is imparfait, and D is passé simple.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521432896-vtkxcdwp",
+      "timestamp": "2026-06-03T21:17:43.484Z"
+    }
+  ]
+}

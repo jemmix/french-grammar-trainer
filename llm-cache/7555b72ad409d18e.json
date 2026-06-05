@@ -1,0 +1,26 @@
+{
+  "cacheKey": "7555b72ad409d18e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-04-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-04 - Le conditionnel pour exprimer un souhait ou un désir (j'aimerais voyager)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel présent : « Elles ___ danser toute la nuit. »\nChoices:\nA. [CORRECT] aimeraient\nB. aiment\nC. aimeront\nD. aimerions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401365-80up44rh"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to use \"le conditionnel présent,\" so the question only tests conjugation of \"aimer\" in the conditional for \"elles,\" not the student's ability to recognize when the conditional should be used to express a wish or desire.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780226626046-4dbff04o",
+      "timestamp": "2026-05-31T11:25:18.848Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to validate a single French grammar question for alignment with its stated rule.\n\n**Analysis completed:**\nThe question asks students to conjugate \"aimer\" in the conditional present for \"elles\" in the sentence \"Elles ___ danser toute la nuit.\" The stated rule is about using the conditional to express a wish or desire.\n\n**My verdict:**\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to use the conditional (\"Complétez au conditionnel présent\"), so answering correctly only requires knowing conditional conjugation, not recognizing when the conditional is appropriate for expressing a wish or desire.\n\n**Remaining tasks:** None — this was a single-question validation task.\n\n**Recommendation:** To properly test rule 06-04, the question should present a wish/desire context without explicitly naming the tense, requiring the student to choose between present, future, and conditional based on recognizing the wish/desire context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780230147389-otkud3q1",
+      "timestamp": "2026-05-31T12:24:24.095Z"
+    }
+  ]
+}

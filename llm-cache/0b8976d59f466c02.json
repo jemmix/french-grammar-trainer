@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0b8976d59f466c02",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si elles ___ la vérité, elles réagiraient différemment. » (savoir)\n\nChoices:\nA. [CORRECT] savaient\nB. [WRONG] sauraient\nC. [WRONG] savent\nD. [WRONG] sauront\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780257007453-ayyfrx9b"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the si-clause structure: B uses conditional after \"si\" (only allowed in main clause), C uses present which doesn't match the conditional main clause, and D uses future which is never used after \"si\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257038292-suf3o1al",
+      "timestamp": "2026-05-31T19:51:04.981Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers are incorrect: B uses conditionnel which is never used after \"si\", C uses présent which doesn't match the conditionnel in the main clause requiring imparfait, and D uses futur which is never used after \"si\" in French conditional sentences.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257265304-a4aigdnr",
+      "timestamp": "2026-05-31T19:54:54.508Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses (conditional, present, future) that are grammatically incompatible with the imperfect required in a si-clause when the main clause is in the conditional present.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257551540-ab5cvsep",
+      "timestamp": "2026-05-31T19:59:53.112Z"
+    }
+  ]
+}

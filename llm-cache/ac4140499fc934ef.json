@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ac4140499fc934ef",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-03-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-03 - Le conditionnel de politesse (je voudrais, pourriez-vous, j'aimerais)\n\nQUESTION:\nType: Input\nPrompt: Mettez le verbe faire au conditionnel pour exprimer une suggestion polie\nPhrase: Je ___ consulter un professionnel à votre place.\nCorrect Answer: ferais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401364-wgi803f5"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI was analyzing a French grammar validation question to determine if it properly tests the stated rule.\n\n**Analysis:**\nThe rule \"Le conditionnel de politesse\" specifically covers fixed politeness expressions like \"je voudrais,\" \"pourriez-vous,\" and \"j'aimerais.\" The question asks to conjugate \"faire\" as \"ferais\" in \"Je ___ consulter un professionnel à votre place\" for a \"suggestion polie.\" However, \"je ferais\" is not one of these standard politeness formulas—it's testing general conditional conjugation rather than the specific social politeness markers the rule is about.\n\n**Verdict:**\nVERDICT: MISALIGNED\nREASON: The question tests general conditional conjugation of \"faire\" rather than the specific fixed politeness expressions (je voudrais, pourriez-vous, j'aimerais) that define the conditional de politesse rule.\n\n**Remaining tasks:** None—this was a single-question validation.\n\n**Recommendations:** A properly aligned question for this rule would test recognition or production of politeness formulas like distinguishing \"je voudrais\" from \"je veux,\" or choosing \"pourriez-vous\" instead of \"pouvez-vous\" in a polite context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780226574540-nepvvyos",
+      "timestamp": "2026-05-31T11:23:32.133Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the conditional conjugation of \"faire\" in a hypothetical statement (\"I would do X in your place\"), not the formulaic polite request expressions (je voudrais, pourriez-vous, j'aimerais) that define the conditionnel de politesse.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780230083703-z3vv8hi5",
+      "timestamp": "2026-05-31T12:21:56.207Z"
+    }
+  ]
+}

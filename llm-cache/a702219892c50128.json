@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a702219892c50128",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-12-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour dire « I should have listened », quelle phrase française est correcte ?\n\nChoices:\nA. [CORRECT] J'aurais dû écouter.\nB. [WRONG] Je devais écouter.\nC. [WRONG] Je dois écouter.\nD. [WRONG] J'ai dû écouter.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780277249534-n4gcp82w"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar MCQ question. The question asks for the correct French translation of \"I should have listened\" and I needed to verify that answers B, C, and D are indeed incorrect.\n\nMy analysis:\n- B. \"Je devais écouter\" (imperfect) means \"I had to/I was supposed to listen\" - does not convey the counterfactual \"should have\" meaning\n- C. \"Je dois écouter\" (present) means \"I must listen\" - completely wrong tense\n- D. \"J'ai dû écouter\" (passé composé) means \"I had to/I must have listened\" - does not convey the regret/counterfactual nuance of \"should have\"\n\nThe correct answer A uses \"J'aurais dû écouter\" (conditional perfect) which is the standard construction for \"should have done something\" with its implicit regret.\n\nTRUE||All wrong answers use incorrect tenses or constructions that do not convey the counterfactual \"should have\" meaning required by the prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277361544-qrky5o80",
+      "timestamp": "2026-06-01T01:29:49.805Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait (past obligation, not regret), C is present tense, and D uses passé composé (completed obligation or deduction) rather than the conditional perfect needed to express \"should have.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277687943-mssgj93e",
+      "timestamp": "2026-06-01T01:35:26.731Z"
+    },
+    {
+      "raw": "TRUE||B uses imparfait expressing \"I was supposed to\" not the conditional regret \"I should have\"; C is present tense; D uses passé composé meaning \"I had to\" or \"I must have\" rather than the counterfactual \"should have.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277975941-ddf3u82u",
+      "timestamp": "2026-06-01T01:40:07.025Z"
+    }
+  ]
+}

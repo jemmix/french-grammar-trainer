@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5e11feee72517ede",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-07-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel présent : « Je ___ un enfant heureux dans cet endroit magique. »\n\nChoices:\nA. [CORRECT] serais\nB. [WRONG] suis\nC. [WRONG] serai\nD. [WRONG] serait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401384-lih48f50"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is present indicative (not conditional), C is future indicative (not conditional), and D is third-person singular conditional (doesn't agree with \"Je\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780227387891-zanfnv93",
+      "timestamp": "2026-05-31T11:36:54.810Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers fail to satisfy the requirement for conditionnel présent with first person singular subject \"Je\": B is present indicative, C is future, D is conditional but third person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780230840525-hylwrpqt",
+      "timestamp": "2026-05-31T12:34:24.879Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the wrong tense or wrong subject agreement — B is present indicative, C is future simple, and D is 3rd person singular conditional instead of 1st person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780235045401-ua3rvues",
+      "timestamp": "2026-05-31T13:44:25.994Z"
+    }
+  ]
+}

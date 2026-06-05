@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3f9bfeb53dc93c3a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-10-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Un chercheur veut être prudent dans ses conclusions. Quelle phrase choisit-il ?\n\nChoices:\nA. [CORRECT] Ces résultats sembleraient confirmer notre hypothèse.\nB. [WRONG] Ces résultats confirment notre hypothèse.\nC. [WRONG] Ces résultats confirmeront notre hypothèse.\nD. [WRONG] Ces résultats ont confirmé notre hypothèse.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780272608640-705r208h"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers use indicative tenses (present, future, passé composé) that express certainty rather than the conditional mood required for a prudent, hedging statement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780272614653-teixinfr",
+      "timestamp": "2026-06-01T00:11:10.045Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:** I was in the process of evaluating a French grammar verification task for a multiple choice question about cautious language in academic conclusions.\n\n**Assessment completed:** The question asks which sentence a cautious researcher would choose. The correct answer (A) uses the conditional \"sembleraient\" to express hedging. The wrong answers (B, C, D) all use assertive tenses (present indicative, future, passé composé) that do not express caution, making them all genuinely incorrect within the stated context.\n\n**Verdict that would have been returned:**\nTRUE||All wrong answers use assertive tenses that do not express the caution required by the question prompt.\n\n**Remaining tasks:** None - the verification was essentially complete.\n\n**Recommendations:** The question and its wrong answers are valid; no changes needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780272943810-s5hkmtmi",
+      "timestamp": "2026-06-01T00:16:25.703Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use assertive tenses (present, future, passé composé) that express certainty rather than the prudent, hedging tone required by the context, whereas the correct answer uses the conditional \"sembleraient\" which is the standard way to express caution in academic French.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780273262534-kd7fhhhh",
+      "timestamp": "2026-06-01T00:21:40.988Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d908ed7799536dd8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-12-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase exprime le regret d'une occasion manquée ?\n\nChoices:\nA. [CORRECT] J'aurais pu saisir cette opportunité.\nB. [WRONG] Je pouvais saisir cette opportunité.\nC. [WRONG] Je peux saisir cette opportunité.\nD. [WRONG] Je saisirai cette opportunité.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780279334484-znz6c9wg"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses (imparfait, présent, futur simple) that do not express regret for a missed opportunity, unlike the correct conditionnel passé in A.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780279396841-d4xsvfpi",
+      "timestamp": "2026-06-01T02:03:36.031Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses that do not express regret for a missed opportunity: B (imparfait) states past ability without regret, C (présent) refers to present ability, and D (futur) refers to future action.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780279510471-ecbqa7iv",
+      "timestamp": "2026-06-01T02:05:38.875Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that the wrong answers (B, C, D) in a French grammar multiple choice question are indeed incorrect. The question asks which phrase expresses regret for a missed opportunity.\n\nAnalysis completed:\n- B (\"Je pouvais saisir\") uses imparfait - expresses past ability, not regret\n- C (\"Je peux saisir\") uses présent - expresses current ability, not past regret  \n- D (\"Je saisirai\") uses futur simple - expresses future intention, not past regret\n\nTRUE||All wrong answers use tenses (imparfait, présent, futur simple) that cannot express regret for a missed opportunity, whereas the correct answer properly uses conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780279624837-007u361y",
+      "timestamp": "2026-06-01T02:07:59.804Z"
+    }
+  ]
+}

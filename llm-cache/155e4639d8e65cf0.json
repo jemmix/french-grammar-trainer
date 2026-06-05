@@ -1,0 +1,33 @@
+{
+  "cacheKey": "155e4639d8e65cf0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-18-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je suis surpris que vous ___ la vérité. »\n\nChoices:\nA. [CORRECT] disiez\nB. [WRONG] diriez\nC. [WRONG] dites\nD. [WRONG] direz\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780666986278-eqo8h06y"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use non-subjunctive forms (conditional, present indicative, future) while the construction \"être surpris que\" requires the subjunctive mood.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667162190-w35iwi2j",
+      "timestamp": "2026-06-05T13:46:25.753Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"être surpris que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667484564-25fyfye1",
+      "timestamp": "2026-06-05T13:51:32.608Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of evaluating a French grammar verification task for a multiple choice question about the subjunctive mood. The question \"Je suis surpris que vous ___ la vérité\" requires the subjunctive after \"être surpris que.\"\n\n**Analysis completed:**\n- A (disiez) - imparfait du subjonctif - CORRECT\n- B (diriez) - conditionnel présent - WRONG (wrong mood)\n- C (dites) - indicatif présent - WRONG (wrong mood)\n- D (direz) - indicatif futur - WRONG (wrong mood)\n\nAll wrong answers are indeed incorrect because none use the subjunctive mood required by the construction.\n\n**Remaining tasks:**\n- Output the final verdict in the required format: `TRUE||All wrong answers fail to use the subjunctive mood required after \"être surpris que.\"`\n\n**Recommendations:**\nThe task is essentially complete—just needs the formatted verdict string output.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667644099-7xh7faph",
+      "timestamp": "2026-06-05T13:54:36.376Z"
+    }
+  ]
+}

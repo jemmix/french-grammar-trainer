@@ -1,0 +1,47 @@
+{
+  "cacheKey": "b3ae2c2c3c92faa4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-07-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-07 - Le conditionnel présent pour exprimer une hypothèse (un rêve, une imagination)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel présent : « Je ___ un enfant heureux dans cet endroit magique. »\nChoices:\nA. [CORRECT] serais\nB. suis\nC. serai\nD. serait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401384-b3018ogm"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the conditional present form \"serais\" in a sentence describing an imaginary scenario (\"dans cet endroit magique\"), directly testing the use of le conditionnel présent to express a hypothesis or imagination.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780227389860-kwask3e0",
+      "timestamp": "2026-05-31T11:37:03.972Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying a hypothetical/imaginary scenario (\"dans cet endroit magique\") and selecting the conditional present form \"serais\" to express it, which directly tests using the conditionnel présent for une hypothèse/un rêve.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780230846190-xs0tq8ju",
+      "timestamp": "2026-05-31T12:34:31.155Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to use the conditionnel présent, so the question tests conjugation knowledge (choosing \"serais\" over \"serait\" for the correct subject) rather than the rule about when to use the conditionnel to express a hypothesis or dream.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780235048910-tdq4tuby",
+      "timestamp": "2026-05-31T13:44:51.681Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The sentence describes an imaginary scenario (\"dans cet endroit magique\") and requires the conditionnel présent \"serais\" to express this hypothetical dream, directly testing the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780237050113-4jbjg2as",
+      "timestamp": "2026-05-31T14:17:59.663Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was analyzing a single question validation task. Here is my assessment:\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to use \"le conditionnel présent,\" so the question tests conjugation of être in the conditional rather than the ability to recognize when conditional is appropriate for expressing a hypothesis or dream.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780237218324-yhupnztg",
+      "timestamp": "2026-05-31T14:21:17.306Z"
+    }
+  ]
+}

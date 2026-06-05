@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4a9315bce093bda7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-06-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-06 - Le conditionnel dans les phrases avec « si » : si + imparfait → conditionnel présent\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Si Marie ___ son cours, elle pourrait venir au cinéma. » (finir)\nChoices:\nA. [CORRECT] finissait\nB. finirait\nC. finit\nD. finira\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780257007454-p488dkxv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether students know to use the imparfait after \"si\" in a si+imparfait → conditionnel présent structure, as the second clause \"elle pourrait venir\" is already in conditionnel présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257108749-ykdz4jag",
+      "timestamp": "2026-05-31T19:52:07.010Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question tests knowledge that in the \"si + imparfait → conditionnel présent\" structure, the si-clause requires the imparfait (\"finissait\"), which is directly testing the first half of this rule's pattern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257348661-w1fmnlun",
+      "timestamp": "2026-05-31T19:56:26.690Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The blank appears after \"si\" in the condition clause, so selecting \"finissait\" (imparfait) over \"finirait\" (conditionnel présent) directly tests the rule that si + imparfait leads to conditionnel présent in the result clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257632101-iaad4l6b",
+      "timestamp": "2026-05-31T20:01:03.443Z"
+    }
+  ]
+}

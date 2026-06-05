@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cf1975ccb5a38957",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pourquoi emploie-t-on le futur dans « Le train partira à 8 h » et non le conditionnel ?\n\nChoices:\nA. [CORRECT] C'est une information programmée et certaine, le futur exprime la certitude.\nB. [WRONG] Le conditionnel ne peut pas s'utiliser avec le verbe partir.\nC. [WRONG] Le futur est obligatoire pour parler d'un train.\nD. [WRONG] Le conditionnel s'utilise seulement au passé.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780521062079-iqtnhkt5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All three wrong answers contain factually false statements: B is wrong because the conditional can be used with \"partir\" (e.g., \"je partirais si...\"), C is wrong because other tenses can describe trains, and D is wrong because the conditional is used for present/future hypotheticals, not only past contexts.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521161412-5gxjya84",
+      "timestamp": "2026-06-03T21:13:26.389Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain false grammatical claims: the conditional can be used with partir, the future is not obligatory for train-related statements, and the conditional is not restricted to past usage.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521377727-y11ncsiw",
+      "timestamp": "2026-06-03T21:16:42.152Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done:\nI was in the process of evaluating whether wrong answers B, C, and D in a French grammar multiple choice question are indeed incorrect. The question asks why the futur is used in \"Le train partira à 8 h\" rather than the conditionnel.\n\nMy analysis:\n- **B** (\"Le conditionnel ne peut pas s'utiliser avec le verbe partir\") is incorrect — the conditionnel can indeed be used with \"partir\" (e.g., \"Je partirais si j'avais le temps\")\n- **C** (\"Le futur est obligatoire pour parler d'un train\") is incorrect — you can discuss trains in other tenses (e.g., \"Le train est parti\", \"Le train partait\")\n- **D** (\"Le conditionnel s'utilise seulement au passé\") is incorrect — the conditionnel exists in both present and past forms\n\nMy verdict would have been: TRUE||All wrong answers contain factually incorrect grammatical statements.\n\nNo remaining tasks — the evaluation was complete but the response could not be delivered before the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521639144-uia781j2",
+      "timestamp": "2026-06-03T21:21:01.163Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "27dd2bceef034a10",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-07-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel présent pour exprimer une hypothèse (un rêve, une imagination)\nPROMPT: Conjuguez le verbe « être » au conditionnel présent pour exprimer l'imaginaire\nPHRASE: Tu ___ très heureux dans ma situation.\nCORRECT ANSWER: serais\n\nWRONG ANSWERS to evaluate:\n1. es\n2. seras\n3. étais\n4. sois\n5. serait\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780226401385-f9hw3vm1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors when conjugating être in the conditional: present tense (es), future tense confusion (seras), imperfect confusion (étais), subjunctive confusion (sois), and wrong person agreement (serait instead of serais).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780238688258-25qqt5ut",
+      "timestamp": "2026-05-31T14:45:16.769Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: present tense (es), future tense confusion (seras), imparfait confusion (étais), subjunctive confusion (sois), and wrong person agreement in the correct tense (serait).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780242369788-23yj77ct",
+      "timestamp": "2026-05-31T15:48:32.261Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: PLAUSIBLE\nREASON: All five wrong answers represent very common learner mistakes: \"es\" confuses présent with conditionnel, \"seras\" confuses futur with conditionnel, \"étais\" confuses imparfait with conditionnel, \"sois\" confuses subjonctif with conditionnel, and \"serait\" is the correct tense but wrong person (3rd instead of 2nd singular).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780244752222-568ki911",
+      "timestamp": "2026-05-31T16:26:13.590Z"
+    }
+  ]
+}

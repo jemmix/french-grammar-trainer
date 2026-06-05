@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f4597e836e2079df",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-14-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel passé : « Si j'avais pu, j'___ cette chance. »\n\nChoices:\nA. [CORRECT] aurais saisi\nB. [WRONG] aurais saisie\nC. [WRONG] aurais saisir\nD. [WRONG] avais saisie\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401437-pt1mye06"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B has incorrect feminine agreement (past participle is invariable when object follows), C uses infinitive instead of past participle, and D uses imparfait instead of conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229168365-v6yob3ry",
+      "timestamp": "2026-05-31T12:06:32.796Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B has incorrect feminine agreement (the COD \"cette chance\" follows the verb, so no agreement), C uses the infinitive instead of the past participle, and D uses the imparfait instead of the conditional plus incorrect agreement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780232336574-k6cs2838",
+      "timestamp": "2026-05-31T12:59:56.969Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B has wrong gender agreement (participle doesn't agree when direct object follows), C uses infinitive instead of past participle, and D uses imparfait instead of conditionnel present for the auxiliary.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780236446621-1svf28d4",
+      "timestamp": "2026-05-31T14:07:56.105Z"
+    }
+  ]
+}

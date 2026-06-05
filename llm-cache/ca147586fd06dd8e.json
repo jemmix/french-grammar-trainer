@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ca147586fd06dd8e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Dans la phrase « Il a promis qu'il viendrait nous voir bientôt », « viendrait » est :\n\nChoices:\nA. [CORRECT] un futur dans le passé (discours indirect)\nB. [WRONG] un conditionnel d'hypothèse\nC. [WRONG] un conditionnel de politesse\nD. [WRONG] un imparfait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780517238700-r8gcw956"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is wrong because there is no \"si\" clause or hypothesis in the sentence; C is wrong because the conditional here is not used to soften a request; D is wrong because \"viendrait\" is clearly a conditional form, not an imparfait.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517267057-owxn2mbj",
+      "timestamp": "2026-06-03T20:08:11.909Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"viendrait\" is clearly a conditional used for future-in-the-past in indirect speech, not a hypothesis (no si-clause), politeness (not a request), or imparfait (different conjugation).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517398964-tq106pfj",
+      "timestamp": "2026-06-03T20:10:12.518Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is wrong because there is no hypothesis/si-clause, C is wrong because the conditional is not used for politeness here, and D is wrong because \"viendrait\" is conditionnel présent not imparfait (\"venait\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517498313-c9brk7c2",
+      "timestamp": "2026-06-03T20:11:52.519Z"
+    }
+  ]
+}

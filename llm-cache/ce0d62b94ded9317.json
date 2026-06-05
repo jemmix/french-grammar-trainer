@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ce0d62b94ded9317",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-10-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-10 - Le conditionnel présent pour atténuer une affirmation ou exprimer la prudence\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel présent : « Vous ___ mieux organiser votre travail. »\nChoices:\nA. [CORRECT] pourriez\nB. pouvez\nC. puissiez\nD. pourrez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401392-fiku8rco"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a French grammar MCQ question about \"pourriez\" properly tests the rule \"Le conditionnel présent pour atténuer une affirmation ou exprimer la prudence.\"\n\nAnalysis completed:\n- VERDICT: MISALIGNED\n- REASON: The prompt explicitly instructs \"Complétez au conditionnel présent,\" so the student only needs conjugation knowledge to select \"pourriez\" over \"pouvez/puissiez/pourrez,\" without needing to understand when or why the conditional is used for attenuation or prudence.\n\nNo remaining tasks — the validation was completed before the step limit was reached.\n\nRecommendation: To properly test this rule, the prompt should not specify \"au conditionnel présent\" but instead present a context (e.g., giving polite advice) and ask which form is most appropriate, forcing the student to choose the conditional for pragmatic reasons rather than following an explicit conjugation instruction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228205998-zzhgnz1s",
+      "timestamp": "2026-05-31T11:50:49.531Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was in the process of validating a French grammar question alignment. The question asks to complete \"Vous ___ mieux organiser votre travail\" with choices between \"pourriez\" (correct), \"pouvez\", \"puissiez\", and \"pourrez\". The stated rule is about using the conditional present to soften a statement or express prudence.\n\n**Assessment of this question:**\n\nVERDICT: MISALIGNED\nREASON: This question tests conjugation of \"pouvoir\" in the conditional vs. other moods/tenses (présent, subjonctif, futur), but does not test the specific pragmatic use of the conditional to soften or express prudence—the context \"mieux organiser votre travail\" could simply be testing which verb form fits grammatically, not why one would choose the conditional for politeness/attenuation.\n\n**Remaining tasks:**\n- None explicitly stated beyond this single validation\n\n**Recommendations:**\nTo properly test this rule, the question should present a scenario where the learner must choose between indicative and conditional forms to convey the right nuance (e.g., \"Tu devrais...\" vs \"Tu devrais...\" in contexts that highlight the softening function), or ask explicitly about the effect of using the conditional in a given sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231496079-0wu58lxh",
+      "timestamp": "2026-05-31T12:45:22.532Z"
+    }
+  ]
+}

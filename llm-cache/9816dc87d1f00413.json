@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9816dc87d1f00413",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-13-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Parmi ces phrases, laquelle formule un reproche sur une action passée non réalisée ?\n\nChoices:\nA. [CORRECT] Tu aurais dû m'expliquer la situation dès le début.\nB. [WRONG] Tu devais m'expliquer la situation dès le début.\nC. [WRONG] Tu m'as expliqué la situation dès le début.\nD. [WRONG] Tu m'expliqueras la situation au début.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780283650833-muxp5065"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was analyzing a French grammar verification task for a multiple choice question about expressing reproach about an unrealized past action (\"reproche sur une action passée non réalisée\").\n\n## Analysis Completed\nThe question asks which phrase formulates a reproach about a past action that wasn't done. The correct answer A uses \"Tu aurais dû\" (conditionnel passé), which is the canonical grammatical form for this type of reproach.\n\n- **B** \"Tu devais\" (imparfait) - expresses past obligation but lacks the inherent reproachful nuance of the conditional\n- **C** \"Tu m'as expliqué\" (passé composé) - describes an action that WAS realized, contradicting the question\n- **D** \"Tu m'expliqueras\" (futur) - refers to future, not past\n\n## Verdict\nTRUE||B uses imparfait \"devais\" which states a past obligation without the inherent reproachful nuance of the conditionnel \"aurais dû\"; C describes a realized action contrary to the question; D uses future tense instead of past.\n\n## Remaining Tasks\nNone - the verification was completed.\n\n## Recommendations\nThe question and wrong answers are valid. No changes needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780283941944-ls7zbpts",
+      "timestamp": "2026-06-01T03:21:22.204Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to satisfy the specific requirements: B lacks the reproachful nuance of the conditionnel passé, C describes a completed action contrary to \"non réalisée,\" and D uses future tense instead of past.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780284379918-h6fy25ow",
+      "timestamp": "2026-06-01T03:27:00.277Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question asks which phrase formulates a reproach about a past action that was not realized (\"action passée non réalisée\").\n\nAnalysis completed:\n- B (\"Tu devais m'expliquer...\"): Uses imparfait which states a past obligation but lacks the reproachful tone of conditionnel \"aurais dû\" - incorrect for expressing reproach\n- C (\"Tu m'as expliqué...\"): Uses passé composé stating the action WAS done - directly contradicts \"non réalisée\" - incorrect\n- D (\"Tu m'expliqueras...\"): Uses futur simple for a future action - contradicts \"passée\" - incorrect\n\nTRUE||All wrong answers fail to meet the stated requirements: B lacks the reproachful conditionnel form, C describes a completed action contradicting \"non réalisée\", and D uses future tense contradicting \"passée\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780284580914-ypplfmwy",
+      "timestamp": "2026-06-01T03:30:09.548Z"
+    }
+  ]
+}

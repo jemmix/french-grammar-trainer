@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6b45e157140bd172",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-18-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-18 - Le conditionnel vs le subjonctif après certains verbes et conjonctions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Nous voyagerions en Italie pourvu que nous ___ le temps. »\nChoices:\nA. [CORRECT] ayons\nB. aurions\nC. avons\nD. aurons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780670620760-92zok0mu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"pourvu que\" requires the subjunctive (\"ayons\") rather than the conditional (\"aurions\"), which is the core distinction of this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780670621790-fe8f984i",
+      "timestamp": "2026-06-05T14:43:57.619Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"pourvu que\" requires the subjunctive (ayons) rather than the conditional (aurions), which is the core distinction of the stated rule about conditionnel vs subjonctif after certain conjunctions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780670705980-vev4dye5",
+      "timestamp": "2026-06-05T14:45:16.939Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was asked to validate whether a French grammar question properly tests the stated rule \"Le conditionnel vs le subjonctif après certains verbes et conjonctions\" (The conditional vs the subjunctive after certain verbs and conjunctions).\n\nThe question tests \"pourvu que,\" a conjunction that requires the subjunctive mood. The correct answer \"ayons\" (subjunctive) must be chosen over \"aurions\" (conditional), which is exactly the distinction the rule covers. The main clause uses the conditional (\"voyagerions\"), making the distractor especially tempting for students who don't know that \"pourvu que\" triggers the subjunctive regardless.\n\nRemaining tasks: None - this was a single validation task.\n\nRecommendations:\nVERDICT: ALIGNED\nREASON: The question directly tests knowing that \"pourvu que\" requires the subjunctive (\"ayons\") rather than the conditional (\"aurions\"), which is the exact distinction the stated rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780670790735-r291r7bb",
+      "timestamp": "2026-06-05T14:46:49.375Z"
+    }
+  ]
+}

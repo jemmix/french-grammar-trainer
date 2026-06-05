@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e13e43c64ee3d0d8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-09-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase respecte la concordance avec « si + imparfait » ?\n\nChoices:\nA. [CORRECT] Si elle avait le temps, elle viendrait nous voir.\nB. [WRONG] Si elle aurait le temps, elle viendrait nous voir.\nC. [WRONG] Si elle avait le temps, elle vient nous voir.\nD. [WRONG] Si elle avait le temps, elle viendra nous voir.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780270251429-q5g9a8dq"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the \"si + imparfait → conditionnel\" concordance rule: B uses conditionnel after \"si\" (should be imparfait), C uses présent in the main clause (should be conditionnel), and D uses futur simple in the main clause (should be conditionnel).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780270260452-cj37mg9u",
+      "timestamp": "2026-05-31T23:31:32.621Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to verify whether the wrong answers (B, C, D) in a French grammar multiple choice question about \"si + imparfait\" concordance are indeed incorrect.\n\n**Analysis completed:**\n- B uses \"aurait\" (conditional) after \"si\" instead of imparfait — incorrect\n- C uses \"vient\" (present) in the main clause instead of conditional — incorrect  \n- D uses \"viendra\" (futur simple) in the main clause instead of conditional — incorrect\n\n**Verdict:**\nTRUE||All wrong answers violate the si + imparfait → conditional concordance rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780270414673-0mb61dsb",
+      "timestamp": "2026-05-31T23:34:05.521Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the concordance rule for \"si + imparfait\": B incorrectly uses the conditional after \"si\" (must be imparfait), C uses present tense in the main clause (must be conditional), and D uses futur simple in the main clause (must be conditional).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780270614121-z7vh18xf",
+      "timestamp": "2026-05-31T23:37:15.142Z"
+    }
+  ]
+}

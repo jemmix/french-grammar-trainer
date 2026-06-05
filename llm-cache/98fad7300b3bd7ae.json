@@ -1,0 +1,33 @@
+{
+  "cacheKey": "98fad7300b3bd7ae",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Il a dit qu'il viendrait. » / « Il viendrait s'il pouvait. » — Pourquoi l'interprétation diffère-t-elle ?\n\nChoices:\nA. [CORRECT] La première est un futur dans le passé (discours rapporté), la seconde un conditionnel d'hypothèse.\nB. [WRONG] La première est un conditionnel d'hypothèse, la seconde un futur dans le passé.\nC. [WRONG] Les deux sont des conditionnels d'hypothèse identiques.\nD. [WRONG] Les deux sont des futurs dans le passé identiques.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780293122325-umutbaoj"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers misidentify the grammatical function: B reverses the correct analysis, C incorrectly labels both as conditionals of hypothesis (the first is reported speech), and D incorrectly labels both as future-in-the-past (the second is a hypothetical condition with \"si\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293372421-lxw91jtn",
+      "timestamp": "2026-06-01T05:56:42.604Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of what has been accomplished:** No work was completed on this task. The validation request was received but no verification was performed before the step limit was reached.\n\n**Remaining tasks:** Verify the wrong answers (B, C, D) in the French grammar question about the difference between \"futur dans le passé\" and \"conditionnel d'hypothèse.\"\n\n**Recommendation for next step:** Re-submit the same validation request. The answer for this question would be:\n\nTRUE||All wrong answers contain clear grammatical misidentifications: B swaps the two interpretations, C incorrectly labels reported speech as hypothesis, and D incorrectly labels a conditional hypothesis as reported speech.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293621333-ak177w0r",
+      "timestamp": "2026-06-01T06:00:53.837Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers misidentify the grammatical function of the conditional in at least one of the two sentences: B swaps the correct interpretations, C incorrectly claims both are hypotheses when the first is clearly reported speech, and D incorrectly claims both are futures in the past when the second has an explicit conditional clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293811603-yyqosln8",
+      "timestamp": "2026-06-01T06:03:47.660Z"
+    }
+  ]
+}

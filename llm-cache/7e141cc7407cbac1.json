@@ -1,0 +1,40 @@
+{
+  "cacheKey": "7e141cc7407cbac1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-10-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-10 - Le conditionnel présent pour atténuer une affirmation ou exprimer la prudence\n\nQUESTION:\nType: Input\nPrompt: Pour rapporter une rumeur sans la confirmer, utilisez le temps qui convient :\nPhrase: Selon la rumeur, le maire ___ sur le point de démissionner.\nCorrect Answer: serait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780274529078-wjuj7oq3"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished: I was asked to validate whether a French grammar question about the conditional tense is properly aligned with the stated rule about using the conditionnel présent to soften assertions or express caution.\n\nVERDICT: ALIGNED\nREASON: The question directly tests using the conditional to report unverified information (a rumor) without confirming it, which is a classic application of the conditionnel présent to express prudence/caution in one's assertions.\n\nNo remaining tasks - this was a single validation request that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780274563148-z4hgzhar",
+      "timestamp": "2026-06-01T00:43:21.370Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question alignment but did not complete the response.\n\n**Analysis completed:**\n\nThe question asks students to use \"le temps qui convient\" to report a rumor without confirming it, with the correct answer being \"serait.\" \n\nThis question tests the **conditionnel de l'information incertaine** (conditional of uncertain information / journalistic conditional), which is used to report information whose truth cannot be confirmed.\n\nHowever, the stated rule is about using the conditional to **\"atténuer une affirmation ou exprimer la prudence\"** (soften an affirmation or express caution) - which is a different usage, such as \"Je voudrais...\" to soften a request, or \"Ce serait bien\" to soften an opinion.\n\nVERDICT: MISALIGNED\nREASON: The question tests the conditional of uncertain information (conditionnel journalistique) for reporting unconfirmed rumors, which is a distinct usage from softening one's own affirmations or expressing prudence as described in the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780274657555-nysk3ik7",
+      "timestamp": "2026-06-01T00:45:05.483Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Reporting a rumor without confirming it is a classic example of using the conditional to express prudence, as the speaker distances themselves from the truth of the statement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780274736110-e4vbepgi",
+      "timestamp": "2026-06-01T00:46:31.970Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly frames itself around \"rapporter une rumeur sans la confirmer\" (reporting a rumor without confirming it), which tests the conditional of uncertain/second-hand information (conditionnel journalistique), a distinct usage from attenuating one's own affirmation or expressing personal caution.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780274791970-2lxz3og3",
+      "timestamp": "2026-06-01T00:47:19.882Z"
+    }
+  ]
+}

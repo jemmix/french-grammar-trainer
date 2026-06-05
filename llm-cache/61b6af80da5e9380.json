@@ -1,0 +1,26 @@
+{
+  "cacheKey": "61b6af80da5e9380",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-19-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-19 - La négation au conditionnel présent et passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel présent : « Vous ___ pas cette décision, n'est-ce pas ? »\nChoices:\nA. [CORRECT] n'approuveriez\nB. n'approuviez\nC. ne préféreriez\nD. n'aviez approuvé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401518-6xsvvg88"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to validate whether a French grammar question about completing a sentence with negation in the present conditional actually tests the stated rule \"06-19 - La négation au conditionnel présent et passé.\"\n\n**Analysis completed:**\n- The question asks to complete: « Vous ___ pas cette décision, n'est-ce pas ? »\n- All four answer choices (n'approuveriez, n'approuviez, ne préféreriez, n'aviez approuvé) include negation markers (n'/ne)\n- The negation is already partially provided in the prompt (\"___ pas\")\n- The real distinction between choices is tense (conditional vs. imparfait vs. plus-que-parfait) and verb (approuver vs. préférer)\n\n**Verdict determined:**\nVERDICT: MISALIGNED\nREASON: All answer choices include negation markers, so the question actually tests conditional conjugation and verb selection, not the specific mechanics of how negation functions with the conditional tense.\n\n**Remaining tasks:** None - this was a single validation task.\n\n**Recommendation:** To properly test \"La négation au conditionnel,\" the question should require the student to place or identify the negation elements (ne...pas) correctly in a conditional sentence, rather than having negation pre-provided in both the stem and all answer options.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229745643-1kbu03dl",
+      "timestamp": "2026-05-31T12:16:28.140Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a French grammar question about completing a sentence with the conditional present form of \"approuver\" (with negation) actually tests the stated rule \"La négation au conditionnel présent et passé.\"\n\nMy analysis: The question presents \"Vous ___ pas cette décision, n'est-ce pas ?\" with choices testing different tenses (imparfait, conditional present, plus-que-parfait) and different verbs. The negation structure (ne...pas) is already provided in the prompt, and what's actually being tested is identifying the correct conditional present conjugation of \"approuver\" — not the mechanics or placement of negation with the conditional tense.\n\nVerdict: MISALIGNED\nReason: The question primarily tests conjugation of the conditional present (distinguishing it from imparfait and plus-que-parfait), not the mechanics of negation with the conditional tense.\n\nRemaining tasks: None — this was a single-question validation.\n\nRecommendations: To properly test \"La négation au conditionnel présent et passé,\" questions should focus on aspects like negation placement, exceptions to standard ne...pas placement with the conditional, or contrasting negative vs. affirmative conditional forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780234368044-bgs46ye4",
+      "timestamp": "2026-05-31T13:33:39.620Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6a9421613c91de9a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-17-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-17 - Le conditionnel vs le futur : différences de forme et d'emploi\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il y ___ des blessés dans l'accident. »\nChoices:\nA. [CORRECT] aurait\nB. aura\nC. a\nD. avait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780524019381-460ix322"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI was in the process of evaluating whether a French grammar question about \"Il y ___ des blessés dans l'accident\" (correct answer: \"aurait\") properly tests the rule \"Le conditionnel vs le futur : différences de forme et d'emploi.\"\n\n**Verdict I was about to provide:**\nVERDICT: ALIGNED\nREASON: The question tests the conditional's use in journalistic/reporting style for unconfirmed information (\"il y aurait\") versus the future (\"il y aura\"), which is a core usage distinction covered by the stated rule.\n\n**Remaining tasks:**\nNone - this was a single validation task.\n\n**Recommendations:**\nNo further action needed on this particular validation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780524041057-x2oqhas0",
+      "timestamp": "2026-06-03T22:01:02.460Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question primarily tests the journalistic/improbable conditional (conditionnel d'incertitude) used for unconfirmed information, not the general contrast between conditional and future usage which the rule describes.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780524154115-1pa096ha",
+      "timestamp": "2026-06-03T22:03:05.222Z"
+    }
+  ]
+}

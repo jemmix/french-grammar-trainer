@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6f811a7ccddea30d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-12-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase exprime un regret sur un choix passé ?\n\nChoices:\nA. [CORRECT] Vous auriez dû choisir l'autre option.\nB. [WRONG] Vous deviez choisir l'autre option.\nC. [WRONG] Vous devez choisir l'autre option.\nD. [WRONG] Vous choisiriez l'autre option.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780279334482-ea7x2n2p"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the imperfect \"deviez\" which states a past obligation but does not express regret, C uses the present \"devez\" which refers to a current obligation rather than a past choice, and D uses the conditional present \"choisiriez\" which expresses a hypothetical present/future action rather than regret about a past decision.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780279387755-nvqsflvy",
+      "timestamp": "2026-06-01T02:03:34.275Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different tenses or constructions that do not express regret about a past choice: B (imparfait) states a past obligation, C (présent) states a current obligation, and D (conditionnel présent) expresses a hypothetical present/future action.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780279506302-7zfv8xta",
+      "timestamp": "2026-06-01T02:05:32.425Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to express regret about a past choice: B states past obligation without the counterfactual/regret element, C is present tense obligation, and D is conditional present for a hypothetical future choice rather than regret over a past one.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780279615851-ed1uii1i",
+      "timestamp": "2026-06-01T02:07:26.861Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6261283656344cf1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise le futur dans le passé (discours indirect) ?\n\nChoices:\nA. [CORRECT] Elle a affirmé qu'elle viendrait le lendemain.\nB. [WRONG] Elle a affirmé qu'elle viendra le lendemain.\nC. [WRONG] Elle affirme qu'elle viendrait le lendemain.\nD. [WRONG] Elle viendrait le lendemain.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780522501020-3sd2ldbs"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses futur simple instead of conditionnel after a past tense reporting verb, C uses conditionnel with a present tense reporting verb (which should keep the original future), and D lacks any indirect speech structure entirely.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780522592757-il8lnhsh",
+      "timestamp": "2026-06-03T21:37:13.159Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||B incorrectly uses futur simple instead of conditionnel with a past reporting verb, C incorrectly uses conditionnel with a present reporting verb (should be futur simple), and D is not indirect speech at all.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780522838811-cj4vlmmz",
+      "timestamp": "2026-06-03T21:40:57.150Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to correctly use the futur dans le passé: B uses future simple instead of conditional with a past reporting verb, C uses conditional with a present tense reporting verb where no backshifting is needed, and D is not indirect speech at all.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780523025352-d3htovzi",
+      "timestamp": "2026-06-03T21:44:06.427Z"
+    }
+  ]
+}

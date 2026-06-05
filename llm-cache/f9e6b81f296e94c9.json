@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f9e6b81f296e94c9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-12-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: La phrase « J'aurais préféré te le dire en personne » exprime :\n\nChoices:\nA. [CORRECT] Un regret : je regrette de ne pas te l'avoir dit en personne.\nB. [WRONG] Une préférence actuelle : je préfère te le dire en personne maintenant.\nC. [WRONG] Une promesse : je te le dirai en personne.\nD. [WRONG] Une hypothèse : peut-être te l'ai-je dit en personne.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780277249534-ijseehch"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers are incorrect: B wrongly interprets the conditionnel passé as a present preference when it expresses regret about a past counterfactual; C wrongly interprets it as a future promise when the tense is retrospective; D is semantically incoherent as the phrase doesn't express any hypothesis about whether something occurred.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277331129-0hex333t",
+      "timestamp": "2026-06-01T01:29:21.550Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect interpretations of the conditional perfect construction \"j'aurais préféré\", which expresses regret about a past action that didn't occur, not a current preference (B), a promise (C), or a hypothesis (D).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277645365-1hqml4go",
+      "timestamp": "2026-06-01T01:34:31.834Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B misidentifies conditionnel passé as a present preference, C misidentifies it as a future promise, and D misidentifies it as a hypothesis about a past event.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277944407-pclfjgq5",
+      "timestamp": "2026-06-01T01:39:34.141Z"
+    }
+  ]
+}

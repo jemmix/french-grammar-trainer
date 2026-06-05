@@ -1,0 +1,33 @@
+{
+  "cacheKey": "61047ced0710709d",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-16-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\nPROMPT: Après un verbe au passé, le futur se transpose en conditionnel. Complétez :\nPHRASE: Ils ont promis qu'ils ___ à l'heure.\nCORRECT ANSWER: seraient\n\nWRONG ANSWERS to evaluate:\n1. seront\n2. étaient\n3. ont été\n4. serions\n5. seriez\n6. serait\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780513881385-zj1tw6s8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: using futur instead of conditional backshift (seront), confusing conditional with imparfait (étaient), using passé composé by analogy with the reporting verb (ont été), and person/number agreement errors (serions, seriez, serait).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780515727255-ndryb4k3",
+      "timestamp": "2026-06-03T19:42:37.127Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: using future instead of conditional after a past tense verb (seront), confusing conditional with imperfect (étaient) or passé composé (ont été), or selecting the correct tense but wrong person/number agreement (serions, seriez, serait).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780515995499-w57kskf1",
+      "timestamp": "2026-06-03T19:47:05.535Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: \"seront\" is the most likely mistake (using futur simple instead of backshifting to conditionnel), \"étaient\" and \"ont été\" show tense confusion with other past forms, \"serions\" and \"seriez\" are person/number agreement errors, and \"serait\" is a singular/plural confusion.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780516207954-00c72m6f",
+      "timestamp": "2026-06-03T19:50:44.798Z"
+    }
+  ]
+}

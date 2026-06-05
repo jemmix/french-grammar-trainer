@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2cf67c285a0c7863",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-13-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est un reproche direct envers quelqu'un ?\n\nChoices:\nA. [CORRECT] Tu aurais pu me prévenir avant de partir !\nB. [WRONG] Tu m'as prévenu avant de partir.\nC. [WRONG] Tu peux me prévenir la prochaine fois.\nD. [WRONG] Tu me préviendras la prochaine fois, j'espère.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780286150696-gl4uf4bj"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are statements of fact, requests, or hopes rather than direct reproaches; only A uses the conditional past to express criticism about a past action not taken.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780286150703-muylwgou",
+      "timestamp": "2026-06-01T03:56:29.782Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is a positive factual statement, C is a request for future behavior, and D expresses hope—none constitute a direct reproach like the conditionnel passé structure in A.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780286366885-hlhyxh1u",
+      "timestamp": "2026-06-01T03:59:44.289Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are factual statements, future requests, or expressions of hope rather than reproaches about a past action.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780286555903-rp27cidn",
+      "timestamp": "2026-06-01T04:02:58.717Z"
+    }
+  ]
+}

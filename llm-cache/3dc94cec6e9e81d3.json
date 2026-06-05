@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3dc94cec6e9e81d3",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-10-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel présent pour atténuer une affirmation ou exprimer la prudence\nPROMPT: Transformez le présent en conditionnel pour marquer la prudence du journaliste.\nPHRASE: Selon la rumeur, le maire ___ sur le point de démissionner.\nCORRECT ANSWER: serait\n\nWRONG ANSWERS to evaluate:\n1. est\n2. sera\n3. était\n4. a été\n5. soient\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780275486277-i9fonc8j"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"soient\" is implausible because it is the plural subjunctive form, but \"le maire\" is singular — a learner might confuse conditional with subjunctive but would typically use \"soit\" (singular), not \"soients\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780275615155-t0od86pb",
+      "timestamp": "2026-06-01T01:00:44.735Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\nI was asked to evaluate whether 5 wrong answers for a French grammar input question are plausible learner mistakes. The question tests the conditional present of \"être\" (serait) in the context of a journalist expressing prudence.\n\nAnalysis completed:\n- \"est\" (present) - PLAUSIBLE: learner doesn't transform the verb\n- \"sera\" (future) - PLAUSIBLE: common confusion between future and conditional\n- \"était\" (imperfect) - PLAUSIBLE: common confusion between imperfect and conditional (same stem)\n- \"a été\" (passé composé) - PLAUSIBLE: learner might think past tense is needed\n- \"soient\" (subjunctive plural) - IMPLAUSIBLE: wrong number (plural with singular subject \"le maire\") AND wrong mood (subjunctive vs conditional)\n\nVERDICT: IMPLAUSIBLE\nREASON: \"soient\" is implausible because it's both the wrong number (plural form for singular subject \"le maire\") and the wrong mood (subjunctive instead of conditional)—no learner who understands basic subject-verb agreement would make this specific error.\n\nRemaining tasks: None beyond this single evaluation.\n\nRecommendation: Replace \"soient\" with a more plausible wrong answer such as \"serais\" (conditional but wrong person—2nd person singular instead of 3rd), which is a very common learner error involving person/number confusion within the same tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780275657685-p8f7hkk6",
+      "timestamp": "2026-06-01T01:01:40.839Z"
+    }
+  ]
+}

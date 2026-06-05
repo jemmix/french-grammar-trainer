@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e65b5bac0a6421a6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-06-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-06 - Le conditionnel dans les phrases avec « si » : si + imparfait → conditionnel présent\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel : « On raconte que le trésor ___ caché sous l'arbre depuis des années. »\nChoices:\nA. [CORRECT] aurait été\nB. a été\nC. était\nD. est\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401383-69zy51e1"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:** I was asked to validate whether a French grammar question about completing a sentence with \"aurait été\" actually tests the rule \"si + imparfait → conditionnel présent\" (conditional in \"si\" clauses).\n\n**Assessment:**\n\nVERDICT: MISALIGNED\nREASON: The question contains no \"si\" clause at all—it tests the conditional passé in reported speech (\"On raconte que...\"), which is a completely different grammar construction than the si+imparfait→conditionnel présent pattern.\n\n**Remaining tasks:** None—this was a single-question validation.\n\n**Recommendations:** This question should be reassigned to a rule about the conditional in reported speech or indirect discourse, or replaced with a question that actually contains a \"si + imparfait\" clause leading to a conditionnel présent answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780227182278-syld8qmp",
+      "timestamp": "2026-05-31T11:33:24.300Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence contains no \"si\" clause and instead tests reported speech/indirect discourse tense shifting, not the conditional in hypothetical \"si\" constructions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780230682923-jnhgp37m",
+      "timestamp": "2026-05-31T12:32:01.934Z"
+    }
+  ]
+}

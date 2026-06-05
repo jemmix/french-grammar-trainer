@@ -1,0 +1,47 @@
+{
+  "cacheKey": "6a9f90e12ee8b56e",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-10-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel présent pour atténuer une affirmation ou exprimer la prudence\nPROMPT: Transformez le présent en conditionnel pour marquer la prudence du journaliste.\nPHRASE: Selon la rumeur, le maire ___ sur le point de démissionner.\nCORRECT ANSWER: serait\n\nWRONG ANSWERS to evaluate:\n1. soient\n2. sera\n3. était\n4. est\n5. a été\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780275828251-xzse4g4e"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was evaluating the plausibility of wrong answers for a French grammar input question about the conditional present.\n\nVERDICT: IMPLAUSIBLE\nREASON: \"Soient\" is the plural subjunctive form, but the subject \"le maire\" is singular — a learner confusing conditional with subjunctive would use \"soit\" (singular), not \"soient\" (plural), making this an implausible error.\n\nThe other four wrong answers (sera, était, est, a été) are all plausible mistakes: confusing future/conditional, using imperfect, forgetting to transform from present, or using a past tense form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780275865359-lu6jbl6m",
+      "timestamp": "2026-06-01T01:04:43.057Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner confusions: \"sera\" mixes up conditionnel with futur simple, \"soient\" confuses it with subjonctif, \"était\" confuses it with imparfait (both use the same stem), \"est\" is the unchanged présent that the prompt asks to transform, and \"a été\" represents a tense confusion with passé composé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780275883058-bcufmku9",
+      "timestamp": "2026-06-01T01:04:54.607Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers are real conjugated forms of \"être\" that learners commonly confuse with the conditional—sera (future) and était (imparfait) are especially likely errors since the conditional shares forms with both, while soient (subjunctive), est (present), and a été (passé composé) represent other tense confusions typical of intermediate learners.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780275894607-50jbeywt",
+      "timestamp": "2026-06-01T01:05:10.915Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was evaluating whether the wrong answers provided for a French grammar input question about the conditionnel présent are plausible learner mistakes.\n\nMy analysis:\n- **soient** (subjonctif présent) - plausible: learners often confuse conditionnel with subjonctif\n- **sera** (futur simple) - highly plausible: confusing futur and conditionnel is one of the most common errors\n- **était** (imparfait) - plausible: learners might confuse imparfait with conditionnel endings\n- **est** (présent) - plausible: learner may not understand the \"transform\" instruction\n- **a été** (passé composé) - somewhat less plausible in context, but still a known form of \"être\" a confused learner might pick\n\nVERDICT: PLAUSIBLE\nREASON: All wrong answers are conjugated forms of \"être\" that learners might mistakenly select when attempting the conditionnel présent, with \"sera\" (futur/conditionnel confusion) and \"était\" (imparfait/conditionnel confusion) representing particularly common and realistic errors.\n\nRemaining tasks: None - the evaluation is complete.\n\nRecommendations: No further action needed; this question passes the plausibility check.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780275910916-y2qvn7xo",
+      "timestamp": "2026-06-01T01:05:31.779Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"Soient\" is implausible because it's the plural subjunctive form — a learner confusing conditional with subjunctive would write \"soit\" (singular), and making both a mood error AND a number agreement error simultaneously is unlikely for this exercise.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780275931779-sneq6lns",
+      "timestamp": "2026-06-01T01:05:50.025Z"
+    }
+  ]
+}

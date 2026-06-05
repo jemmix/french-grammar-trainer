@@ -1,0 +1,33 @@
+{
+  "cacheKey": "980eaea66a94758a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-13-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel passé pour exprimer un reproche : « Vous ___ me consulter avant de prendre cette décision. »\n\nChoices:\nA. [CORRECT] auriez dû\nB. [WRONG] deviez\nC. [WRONG] devrez\nD. [WRONG] auriez pu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401428-5onc9kd6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to meet the stated requirements: B and C are not in conditionnel passé (imparfait and futur simple respectively), and D, while technically in conditionnel passé, expresses possibility (\"could have\") rather than reproach (\"should have\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228809808-dl3hjtqm",
+      "timestamp": "2026-05-31T12:01:08.780Z"
+    },
+    {
+      "raw": "TRUE||B is imparfait (not conditionnel passé), C is futur simple (not conditionnel passé), and D uses \"pu\" which expresses possibility rather than the reproachful obligation that \"dû\" conveys in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231974058-m6xu358r",
+      "timestamp": "2026-05-31T12:54:04.140Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was analyzing a French grammar verification task for a multiple choice question about the conditionnel passé used to express reproach (\"Vous ___ me consulter avant de prendre cette décision.\").\n\nAnalysis completed: \n- B. \"deviez\" is imparfait, not conditionnel passé — incorrect\n- C. \"devrez\" is futur simple, not conditionnel passé — incorrect  \n- D. \"auriez pu\" is conditionnel passé but expresses possibility/regret, not reproach in the grammatical sense — incorrect\n\nThe verdict would have been: TRUE||All wrong answers either use the wrong tense (B: imparfait, C: futur simple) or express a different meaning (D: possibility/regret rather than reproach).\n\nNo remaining tasks — the analysis was complete but the response could not be formatted and sent due to the step limit.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780236100237-rerheme5",
+      "timestamp": "2026-05-31T14:03:42.911Z"
+    }
+  ]
+}

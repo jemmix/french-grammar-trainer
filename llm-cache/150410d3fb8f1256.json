@@ -1,0 +1,33 @@
+{
+  "cacheKey": "150410d3fb8f1256",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-19-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez avec la forme négative (ne...personne) au conditionnel passé : « Il ___ pendant la réunion. » (voir)\n\nChoices:\nA. [CORRECT] n'aurait vu personne\nB. [WRONG] n'aurait personne vu\nC. [WRONG] aurait vu personne\nD. [WRONG] n'aurait pas vu personne\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780673201634-kniwdbu9"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B incorrectly places \"personne\" before the past participle (should follow it); C is missing the required \"ne\" in the negation; D redundantly combines \"ne...pas\" with \"ne...personne\" which is grammatically incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780673383429-x0vmk64t",
+      "timestamp": "2026-06-05T15:29:55.854Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar multiple choice question are incorrect. The question asks to complete with \"ne...personne\" in conditionnel passé.\n\nAnalysis completed:\n- B (\"n'aurait personne vu\"): Incorrect word order - \"personne\" should come after the past participle, not before\n- C (\"aurait vu personne\"): Missing the required \"ne\" part of the negation\n- D (\"n'aurait pas vu personne\"): Redundant negation using both \"pas\" and \"personne\"\n\nVERDICT: TRUE||All wrong answers contain clear grammar errors (B has wrong word order, C is missing \"ne\", D redundantly uses both \"pas\" and \"personne\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780673767030-pldh246n",
+      "timestamp": "2026-06-05T15:36:23.701Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar question about \"ne...personne\" in conditionnel passé are indeed incorrect.\n\nAnalysis completed:\n- B (\"n'aurait personne vu\"): Incorrect word order - \"personne\" should come after the past participle, not before it\n- C (\"aurait vu personne\"): Incorrect - missing the required \"ne\" from the \"ne...personne\" construction\n- D (\"n'aurait pas vu personne\"): Incorrect - redundantly uses both \"pas\" and \"personne\" in the same negation, which is not valid French\n\nAll wrong answers are correctly identified as incorrect.\n\nTRUE||All wrong answers contain clear grammar errors (B has incorrect word order with personne before past participle, C is missing the required \"ne\", D redundantly combines \"pas\" and \"personne\" in the same negation).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780674165796-usxia8dg",
+      "timestamp": "2026-06-05T15:51:44.347Z"
+    }
+  ]
+}

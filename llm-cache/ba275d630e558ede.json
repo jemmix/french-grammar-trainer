@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ba275d630e558ede",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-13-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel passé pour exprimer un reproche (tu aurais pu me prévenir)\nPROMPT: Le conditionnel passé permet d'exprimer un reproche. Complétez avec la forme qui convient :\nPHRASE: Ils ___ me dire la vérité dès le début.\nCORRECT ANSWER: auraient pu\n\nWRONG ANSWERS to evaluate:\n1. ont pu\n2. pourront\n3. peuvent\n4. aurais pu\n5. auriez pu\n6. pourrait\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780286150702-4kduu45v"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: tense confusion (ont pu as passé composé, pourront as futur, peuvent as présent), subject-verb agreement mistakes (aurais/auriez instead of auraient for \"ils\"), and confusion between conditionnel présent and passé (pourrait).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780287041620-khqrzlsy",
+      "timestamp": "2026-06-01T04:11:04.074Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: confusing conditionnel passé with passé composé (\"ont pu\"), futur (\"pourront\"), présent (\"peuvent\"), or conditionnel présent (\"pourrait\"), as well as wrong subject-verb agreement errors (\"aurais pu\" for 1st person singular, \"auriez pu\" for 2nd person plural) — all highly plausible mistakes when learning the conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780287264975-h1aqvk01",
+      "timestamp": "2026-06-01T04:14:53.992Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was evaluating the plausibility of wrong answers for a French grammar input question about the conditionnel passé used to express reproach (\"Ils ___ me dire la vérité dès le début\" → \"auraient pu\").\n\n**Verdict:**\nVERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: tense confusion (ont pu = passé composé, pourront = futur, peuvent = présent, pourrait = conditionnel présent) and person/number agreement mistakes (aurais pu = 1st/2nd singular, auriez pu = 2nd plural instead of 3rd plural \"ils\").\n\n**Remaining tasks:** None — this evaluation is complete.\n\n**Recommendations:** No action needed; this question's wrong answers pass the plausibility check.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780287480157-d8beftao",
+      "timestamp": "2026-06-01T04:18:42.697Z"
+    }
+  ]
+}

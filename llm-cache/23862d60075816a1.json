@@ -1,0 +1,33 @@
+{
+  "cacheKey": "23862d60075816a1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-12-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel passé pour exprimer un regret : « Elle ___ cet emploi si elle avait insisté davantage. »\nChoices:\nA. [CORRECT] aurait obtenu\nB. aurait obtenir\nC. obtiendrait\nD. avait obtenu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401424-rvb78h9y"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\n**Work completed:**\nI analyzed the question about completing \"Elle ___ cet emploi si elle avait insisté davantage\" with the conditionnel passé to express a regret.\n\n**Verdict:**\nVERDICT: ALIGNED\nREASON: The question requires identifying the correct conditionnel passé form (\"aurait obtenu\") to express a past regret, which is exactly what the rule \"Le conditionnel passé pour exprimer un regret\" tests.\n\n**Remaining tasks:** None for this specific validation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228695592-roob4alb",
+      "timestamp": "2026-05-31T11:58:40.301Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests standard conditionnel passé formation and si-clause usage (aurait + past participle), not the specific expression of regret through the \"devoir\" construction that the rule's example \"j'aurais dû étudier\" indicates is the actual focus.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231880123-qw0237ny",
+      "timestamp": "2026-05-31T12:52:03.738Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the si-clause structure (si + plus-que-parfait → conditionnel passé) rather than the specific use of conditionnel passé to express regret with structures like \"aurais dû + infinitive\"; the sentence is a hypothetical condition-result pair, not an explicit expression of regret.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780236008258-xdqf4p3i",
+      "timestamp": "2026-05-31T14:00:44.729Z"
+    }
+  ]
+}

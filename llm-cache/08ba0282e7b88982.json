@@ -1,0 +1,33 @@
+{
+  "cacheKey": "08ba0282e7b88982",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-12-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour dire « I should have listened », quelle phrase est correcte ?\n\nChoices:\nA. [CORRECT] J'aurais dû écouter.\nB. [WRONG] Je devais écouter.\nC. [WRONG] Je dois écouter.\nD. [WRONG] J'ai dû écouter.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780280629624-dicnu4eo"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use different tenses or moods (imparfait, présent, passé composé) that do not express the conditional past meaning of \"should have\" required by the English source phrase.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780280716621-z67l95us",
+      "timestamp": "2026-06-01T02:25:39.878Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different tenses (imperfect, present, passé composé) that express obligation or probability rather than the conditional perfect construction required to convey \"should have\" as past regret.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780281002706-maca8a7c",
+      "timestamp": "2026-06-01T02:31:32.583Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses or moods: B uses imparfait (past obligation, not regret), C is present tense, and D uses passé composé which conveys completed obligation or deduction rather than \"should have.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780281316867-ddkn9nmd",
+      "timestamp": "2026-06-01T02:35:52.899Z"
+    }
+  ]
+}

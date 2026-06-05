@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ad17df2d7528629d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Dans la phrase « Elle a dit qu'elle irait au marché le lendemain », « irait » est :\n\nChoices:\nA. [CORRECT] un futur dans le passé (discours indirect)\nB. [WRONG] un conditionnel d'hypothèse\nC. [WRONG] un conditionnel de politesse\nD. [WRONG] un imparfait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780517238704-9vfz9nlv"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is wrong because there is no hypothesis (no \"si\" clause), C is wrong because the conditional is not used for politeness here, and D is wrong because \"irait\" is conditionnel présent not imparfait (which would be \"allait\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517316698-3mjn8u5x",
+      "timestamp": "2026-06-03T20:13:13.873Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers misidentify the grammatical function of \"irait\" in this indirect speech context: B is wrong because there is no hypothesis or si-clause, C is wrong because there is no polite request, and D is wrong because \"irait\" is conditionnel présent not imparfait (\"allait\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517593873-jg4orj11",
+      "timestamp": "2026-06-03T20:13:26.262Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached. No work has been accomplished yet as this is the first step.\n\nRemaining tasks: The French grammar verification was about to be performed on the question about \"irait\" in indirect speech.\n\nRecommendation: Re-run this verification task. The answer should be:\n\nTRUE||All wrong answers are incorrect: \"irait\" here is a future-in-the-past used in indirect speech (reporting \"elle ira\" shifted back), not a conditional of hypothesis (which would express an if-then), not a conditional of politeness (used to soften requests), and not an imparfait (which would be \"allait\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517606263-iw7v1ugy",
+      "timestamp": "2026-06-03T20:13:36.177Z"
+    }
+  ]
+}

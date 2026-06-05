@@ -1,0 +1,40 @@
+{
+  "cacheKey": "c94a3a8d88bfed58",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-13-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-13 - Le conditionnel passé pour exprimer un reproche (tu aurais pu me prévenir)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel passé pour exprimer un reproche : « Vous ___ me consulter avant de prendre cette décision. »\nChoices:\nA. [CORRECT] auriez dû\nB. deviez\nC. devrez\nD. auriez pu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401428-4077w9c4"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was analyzing a French grammar validation question to determine if it properly tests the stated rule about \"Le conditionnel passé pour exprimer un reproche.\"\n\nMy analysis determined:\n\nVERDICT: MISALIGNED\nREASON: The question includes two conditionnel passé options (auriez dû and auriez pu), so answering correctly requires distinguishing between \"devoir\" and \"pouvoir\" in reproach contexts rather than simply knowing to use conditionnel passé for reproach as the rule states. Additionally, the rule's own example uses \"aurais pu\" which contradicts marking \"auriez pu\" as incorrect.\n\nRemaining tasks: None - the validation judgment was completed.\n\nRecommendations: The question should be revised to either remove \"auriez pu\" as a distractor (replacing it with a non-conditionnel passé option) or the rule should be refined to clarify the distinction between devoir and pouvoir in reproach expressions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228811600-a6xnapre",
+      "timestamp": "2026-05-31T12:01:54.997Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a French grammar question about \"le conditionnel passé pour exprimer un reproche\" is properly aligned with the stated rule. I analyzed the question and its four choices.\n\nRemaining tasks: Provide the final verdict.\n\nRecommendations: Here is my assessment:\n\nVERDICT: ALIGNED\nREASON: The question requires recognizing that the reproach context demands conditionnel passé (eliminating the imparfait \"deviez\" and futur \"devrez\"), and then selecting the most appropriate conditionnel passé form—\"auriez dû\"—which conveys a stronger reproach (\"you should have\") compared to \"auriez pu\" (\"you could have\") for the context of not consulting someone before a decision.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780232011910-6p8fyn85",
+      "timestamp": "2026-05-31T12:54:25.902Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the conditionnel passé form to express a reproach, distinguishing \"auriez dû\" from other tenses (imparfait \"deviez\", futur \"devrez\") and testing within-topic knowledge by contrasting with another conditionnel passé verb (\"auriez pu\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780236139145-jxph7gny",
+      "timestamp": "2026-05-31T14:04:09.615Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to use \"le conditionnel passé pour exprimer un reproche,\" giving away the grammatical form, and both \"auriez dû\" and \"auriez pu\" are conditionnel passé forms that can express reproach—the rule's own example uses \"aurais pu,\" making this question test the lexical distinction between devoir and pouvoir rather than the grammar rule itself.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780237123176-gncgnv72",
+      "timestamp": "2026-05-31T14:20:00.703Z"
+    }
+  ]
+}

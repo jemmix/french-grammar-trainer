@@ -1,0 +1,33 @@
+{
+  "cacheKey": "135fa09bc1391834",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-12-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise le conditionnel passé de devoir pour exprimer un regret ?\n\nChoices:\nA. [CORRECT] Il aurait dû sauvegarder son travail régulièrement.\nB. [WRONG] Il devait sauvegarder son travail régulièrement.\nC. [WRONG] Il doit sauvegarder son travail régulièrement.\nD. [WRONG] Il sauvegardera son travail régulièrement.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780280629625-w1d4wtca"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses or verbs: B uses imparfait, C uses présent, and D uses futur simple of a different verb entirely, none of which match the required conditionnel passé of devoir.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780280836686-uzdbplfl",
+      "timestamp": "2026-06-01T02:27:47.481Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to verify that wrong answers B, C, and D in a French grammar multiple choice question are indeed incorrect. The question asks which sentence uses the conditionnel passé of \"devoir\" to express regret.\n\nAnalysis completed:\n- Answer B uses \"devait\" (imparfait), not conditionnel passé\n- Answer C uses \"doit\" (présent), not conditionnel passé  \n- Answer D uses \"sauvegardera\" (futur simple of a different verb), not devoir at all\n\nThe correct verdict is: TRUE||All wrong answers use incorrect tenses or a different verb entirely, none being the conditionnel passé of devoir.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780281110318-tjqjuwq7",
+      "timestamp": "2026-06-01T02:32:11.997Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses imparfait not conditionnel passé, C uses présent not conditionnel passé, and D uses futur simple of sauvegarder instead of conditionnel passé of devoir.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780281377678-9ezmt79h",
+      "timestamp": "2026-06-01T02:36:42.765Z"
+    }
+  ]
+}

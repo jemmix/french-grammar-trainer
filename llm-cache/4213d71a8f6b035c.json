@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4213d71a8f6b035c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-14-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-14 - Le conditionnel passé dans les hypothèses : si + plus-que-parfait → conditionnel passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel passé : « Si tu m'avais dit la vérité, je t'___ cru. »\nChoices:\nA. [CORRECT] aurais\nB. avais\nC. ai\nD. aurais dû\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401438-lxcgjvdc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing the \"si + plus-que-parfait\" trigger (\"m'avais dit\") and knowing that the result clause must use conditionnel passé (\"aurais cru\"), which is the exact grammar pattern this rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229318845-ktslw0qj",
+      "timestamp": "2026-05-31T12:09:08.678Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing the si + plus-que-parfait (\"m'avais dit\") → conditionnel passé (\"aurais cru\") pattern, which is the exact grammar structure the rule teaches.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780232456721-ivw6758m",
+      "timestamp": "2026-05-31T13:37:48.651Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to validate whether a French grammar question about the conditionnel passé in si-clauses properly tests the stated rule. I analyzed the question and determined it is ALIGNED with the rule.\n\n**Verdict:**\nVERDICT: ALIGNED\nREASON: The question directly tests the si+plus-que-parfait→conditionnel passé pattern, as students must recognize that \"avais dit\" (plus-que-parfait) triggers \"aurais cru\" (conditionnel passé) in the main clause.\n\n**Remaining tasks:** None - this was a single-question validation task that is now complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780236994845-lm68ximv",
+      "timestamp": "2026-05-31T14:17:07.082Z"
+    }
+  ]
+}

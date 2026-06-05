@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a91e9cc8137053a3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-15-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-15 - Le conditionnel passé pour une information non confirmée au passé (il aurait démissionné)\n\nQUESTION:\nType: Input\nPrompt: Le conditionnel passé permet de rapporter une information sans la confirmer. Complétez avec la forme qui convient :\nPhrase: Selon certaines sources, ce chevalier ___ un dragon pour sauver le royaume.\nCorrect Answer: aurait vaincu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780291908839-u0aonr6m"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using the conditionnel passé \"aurait vaincu\" to report an unconfirmed past action introduced by \"Selon certaines sources,\" which directly tests the stated rule about using conditionnel passé for non-confirmed past information.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780291916863-fm9cj53k",
+      "timestamp": "2026-06-01T05:34:31.916Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using the conditionnel passé \"aurait vaincu\" to report unconfirmed past information introduced by \"selon certaines sources,\" which directly tests the stated rule about using conditionnel passé for non-confirmed past information.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780292071917-bwge7nk9",
+      "timestamp": "2026-06-01T05:34:53.675Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the conditionnel passé for unconfirmed past information by using \"Selon certaines sources\" as the context cue and requiring \"aurait vaincu\" as the answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780292093676-j9ku8ecu",
+      "timestamp": "2026-06-01T05:35:06.053Z"
+    }
+  ]
+}

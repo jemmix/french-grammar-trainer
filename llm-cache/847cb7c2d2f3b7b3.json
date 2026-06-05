@@ -1,0 +1,33 @@
+{
+  "cacheKey": "847cb7c2d2f3b7b3",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-16-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\nPROMPT: Transposez au discours indirect après un verbe au passé. Complétez :\nPHRASE: Elle a écrit qu'elle ___ en France l'année suivante.\nCORRECT ANSWER: étudierait\n\nWRONG ANSWERS to evaluate:\n1. étudiera\n2. étudiait\n3. étudieraient\n4. étudierions\n5. a étudié\n6. étudie\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780513881385-wua9yeky"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common errors learners make with this grammar point: étudiera (failing to backshift futur to conditionnel), étudiait (wrong tense choice), étudieraient/étudierions (wrong person/number agreement in conditionnel), a étudié (using passé composé instead of conditional), and étudie (no tense shift at all).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780515700262-pm9arxh8",
+      "timestamp": "2026-06-03T19:42:18.355Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All six wrong answers represent common learner errors: failing to backshift the tense (étudiera, étudie), choosing the wrong past tense for backshift (étudiait, a étudié), or getting the correct conditionnel but with wrong subject-verb agreement (étudieraient, étudierions).\n\nMaximum steps for this agent have been reached. This was a single-step validation task that has been completed. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780515978276-4pul3806",
+      "timestamp": "2026-06-03T19:46:39.547Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\nI was asked to evaluate whether 6 wrong answers for a French grammar input question about \"futur dans le passé vs conditionnel\" are plausible learner mistakes.\n\nMy evaluation:\n\nVERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors related to tense backshifting in indirect speech: \"étudiera\" (failing to backshift future to conditional), \"étudiait\" and \"a étudié\" (choosing wrong past tenses), \"étudieraient\" and \"étudierions\" (agreement errors), and \"étudie\" (defaulting to present tense).\n\nRemaining tasks:\n- None — this was a single evaluation task that is now complete.\n\nRecommendations for next steps:\n- No further action needed on this evaluation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780516184397-8etiohdp",
+      "timestamp": "2026-06-03T19:50:30.099Z"
+    }
+  ]
+}

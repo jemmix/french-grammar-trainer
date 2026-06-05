@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8c202d147cb21d0a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-04-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel présent : « Elle ___ d'une grande maison avec un beau jardin. »\n\nChoices:\nA. [CORRECT] rêverait\nB. [WRONG] rêve\nC. [WRONG] rêvera\nD. [WRONG] rêverais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401365-ibm89y6n"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses (B: présent, C: futur) or wrong person agreement (D: 1st/2nd person instead of 3rd person) for the conditional present requirement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780226817646-1a1edwbg",
+      "timestamp": "2026-05-31T11:27:12.365Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses the present tense instead of conditional, C uses the future tense instead of conditional, and D uses the first/second person singular form instead of the third person singular \"rêverait\" required for the subject \"Elle.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780230294588-k4rsf84h",
+      "timestamp": "2026-05-31T12:25:22.489Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses present indicative instead of conditionnel présent, C uses future simple instead of conditionnel présent, and D uses the wrong person/number agreement (first/second person instead of third person \"elle\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780234782393-khfgu5fx",
+      "timestamp": "2026-05-31T13:40:12.693Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7a5d21eb515cb8b0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est au conditionnel (et non au futur) ?\n\nChoices:\nA. [CORRECT] Vous seriez gentil de m'aider.\nB. [WRONG] Vous serez gentil de m'aider.\nC. [WRONG] Vous étiez gentil de m'aider.\nD. [WRONG] Vous soyez gentil de m'aider.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780521062079-3oxa1t92"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses other than the conditional (B is futur, C is imparfait, D is subjonctif).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521117798-0wipls6v",
+      "timestamp": "2026-06-03T21:12:14.785Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWork accomplished: I was asked to verify that wrong answers B, C, and D in a French grammar multiple choice question are indeed incorrect. The question asks which phrase is in the conditional mood (not the future).\n\nAnalysis completed:\n- B (\"Vous serez gentil de m'aider.\") uses \"serez\" - future tense, not conditional ✓\n- C (\"Vous étiez gentil de m'aider.\") uses \"étiez\" - imperfect tense, not conditional ✓  \n- D (\"Vous soyez gentil de m'aider.\") uses \"soyez\" - subjunctive mood, not conditional ✓\n\nAll wrong answers are correctly identified as incorrect.\n\nTRUE||All wrong answers use different tenses/moods (future, imperfect, subjunctive) rather than the conditional as required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521296487-b5db4vt1",
+      "timestamp": "2026-06-03T21:15:12.380Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use non-conditional tenses: B is future (explicitly excluded), C is imparfait, and D is subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521567485-26vc35oq",
+      "timestamp": "2026-06-03T21:19:48.238Z"
+    }
+  ]
+}

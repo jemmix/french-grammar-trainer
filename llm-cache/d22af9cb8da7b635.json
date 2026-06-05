@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d22af9cb8da7b635",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-12-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez pour exprimer un regret : « Elles ___ emporter des vêtements plus chauds. »\nChoices:\nA. [CORRECT] auraient dû\nB. devaient\nC. doivent\nD. auront dû\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780280629625-w18b4heb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting \"auraient dû,\" the conditionnel passé form of devoir, which is precisely the structure used to express regret as specified in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780280812801-ecddbnjh",
+      "timestamp": "2026-06-01T02:27:19.690Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the conditionnel passé \"auraient dû\" to express a regret, directly testing the stated rule about using le conditionnel passé for regrets while distinguishing it from other tenses (imparfait, présent, futur antérieur).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780281089307-sgb3ve2f",
+      "timestamp": "2026-06-01T02:31:50.936Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the use of the conditionnel passé (\"auraient dû\") to express a regret, matching the rule's stated grammar concept exactly, and the distractors test knowledge of other tenses that would not correctly express regret in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780281352899-frp80v26",
+      "timestamp": "2026-06-01T02:36:17.677Z"
+    }
+  ]
+}

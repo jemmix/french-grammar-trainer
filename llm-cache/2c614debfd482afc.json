@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2c614debfd482afc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-10-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour exprimer une réserve sur un fait rapporté, quelle phrase est la plus prudente ?\n\nChoices:\nA. [CORRECT] D'après certains témoins, l'origine de l'incendie serait un court-circuit.\nB. [WRONG] D'après certains témoins, l'origine de l'incendie est un court-circuit.\nC. [WRONG] Les témoins confirment qu'un court-circuit est à l'origine de l'incendie.\nD. [WRONG] L'incendie a été causé par un court-circuit.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780272608641-7y01ne2y"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers lack the conditional mood (serait) needed to express reservation, instead using assertive indicative forms (est, confirment, a été) which contradict the question's requirement for prudence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780272752948-l0y2gzi2",
+      "timestamp": "2026-06-01T00:13:03.428Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to express \"une réserve\" and are not \"prudent\" — B uses the indicative present instead of conditional, C uses \"confirment\" which is the opposite of expressing reservation, and D makes a direct unqualified assertion.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780273102809-tl9s276m",
+      "timestamp": "2026-06-01T00:19:09.928Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to express reservation (réserve) as required: B uses indicatif présent instead of conditionnel, C uses \"confirment\" which asserts certainty rather than doubt, and D makes a flat declarative statement with no hedging whatsoever.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780273418490-lt63owqj",
+      "timestamp": "2026-06-01T00:24:26.242Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c7124313145dec16",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Input\nPrompt: Le conditionnel permet d'exprimer un souhait atténué. Complétez :\nPhrase: J' ___ bien vous voir ce week-end.\nCorrect Answer: aimerais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780513881385-9hbv3ci6"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests the conditional used to express a polite wish (\"j'aimerais bien\"), not the distinction between futur dans le passé and conditionnel in reported speech contexts like \"il a dit qu'il viendrait.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780514261940-d3smaji8",
+      "timestamp": "2026-06-03T19:17:59.140Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\n**Analysis completed:**\nThe question asks students to fill in \"J' ___ bien vous voir ce week-end\" with \"aimerais,\" testing the conditional to express a polite/attenuated wish. However, the stated rule (06-16) is about distinguishing between \"futur dans le passé\" and \"conditionnel\" in reported speech contexts like \"il a dit qu'il viendrait.\" These are completely different grammar concepts.\n\n**Verdict:**\nVERDICT: MISALIGNED\nREASON: The question tests the conditional used to express a polite wish (\"souhait atténué\"), which is a different usage of the conditional entirely from the rule's focus on distinguishing future-in-the-past from conditional in reported speech.\n\n**Remaining tasks:** None - the validation judgment was reached.\n\n**Recommendations:** This question should be reassigned to a rule about conditional uses (expressing wishes, politeness) rather than the futur-dans-le-passé vs conditional distinction rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780514908936-16uddk3m",
+      "timestamp": "2026-06-03T19:28:54.355Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2d49c0eb884444df",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-06-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-06 - Le conditionnel dans les phrases avec « si » : si + imparfait → conditionnel présent\n\nQUESTION:\nType: Input\nPrompt: Complétez la subordonnée « si » avec l'imparfait du verbe écouter.\nPhrase: Si tu ___ attention, tu comprendrais la leçon.\nCorrect Answer: écoutais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780259529860-0tvgqs2m"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work**: I was asked to validate whether a French grammar question properly tests the stated rule about conditional sentences with \"si\" (si + imparfait → conditionnel présent).\n\n**Verdict that would have been provided**:\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to use the imparfait (\"avec l'imparfait du verbe écouter\"), so answering correctly only requires conjugation knowledge, not understanding of the si + imparfait → conditionnel présent pattern.\n\n**Remaining tasks**: None — this was a single validation task.\n\n**Recommendations**: To properly test rule 06-06, the question should not explicitly mention \"imparfait\" in the prompt. Instead, it should present the full sentence structure and let the student determine which tense to use in the \"si\" clause based on the conditionnel présent in the main clause. For example: \"Complétez: Si tu ___ attention, tu comprendrais la leçon.\" without specifying the tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780259532873-u6jawmid",
+      "timestamp": "2026-05-31T20:32:38.613Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests imparfait conjugation of \"écouter\" (which is explicitly prompted for), not the si+imparfait→conditionnel pattern, since the conditional \"comprendrais\" is already provided in the main clause and the prompt directly tells the student to use the imparfait.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780259558614-uz10aye3",
+      "timestamp": "2026-05-31T20:33:03.874Z"
+    }
+  ]
+}

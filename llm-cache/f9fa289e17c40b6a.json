@@ -1,0 +1,47 @@
+{
+  "cacheKey": "f9fa289e17c40b6a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-13-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-13 - Le conditionnel passé pour exprimer un reproche (tu aurais pu me prévenir)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel passé pour exprimer un reproche : « Il ___ partir plus tôt pour ne pas rater le train. »\nChoices:\nA. [CORRECT] aurait fallu\nB. fallait\nC. faudra\nD. fallût\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401429-lf3t7ovv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the conditional passé form of \"falloir\" in a reproach context (someone missed a train because they didn't leave early enough), and the distractors test recognition of other tenses of the same verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228917785-qpx7e1iq",
+      "timestamp": "2026-05-31T12:02:46.813Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: \"Il aurait fallu\" is an impersonal expression of necessity, not a direct reproach; a true reproach with conditionnel passé requires a personal subject with verbs like pouvoir/devoir/vouloir (e.g., \"Tu aurais dû partir plus tôt\"), and this question can be answered solely by knowing conditionnel passé conjugation without understanding the reproach usage.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780232064502-2w6wnsn2",
+      "timestamp": "2026-05-31T12:54:58.165Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly requires knowledge of the conditionnel passé form of \"falloir\" (aurait fallu) to express reproach about a past action that should have been done differently, which is the core of this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780236186868-d9ug35be",
+      "timestamp": "2026-05-31T14:03:53.580Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI was analyzing a single validation task for a French grammar question about the conditionnel passé used to express reproach.\n\n**Analysis result:**\nVERDICT: ALIGNED\nREASON: The question requires knowing that the conditionnel passé is used to express reproach, and \"aurait fallu\" correctly applies this rule while the other tense options (imparfait \"fallait\", futur \"faudra\", subjonctif \"fallût\") would not convey the reproachful meaning intended by the prompt.\n\n**Remaining tasks:** None — this was a single-question validation that has been completed.\n\n**Recommendation:** No further action needed on this particular question; it properly tests the stated rule about using conditionnel passé to express reproach.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780237121887-xvrh214c",
+      "timestamp": "2026-05-31T14:19:41.095Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to use the conditionnel passé (\"Complétez au conditionnel passé\"), so the question only tests whether they can conjugate \"falloir\" in that tense, not whether they know when to choose the conditionnel passé to express reproach versus other tenses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780237284481-h40i9r2x",
+      "timestamp": "2026-05-31T14:22:29.215Z"
+    }
+  ]
+}

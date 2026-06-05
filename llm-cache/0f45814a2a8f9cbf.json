@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0f45814a2a8f9cbf",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-06-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-06 - Le conditionnel dans les phrases avec « si » : si + imparfait → conditionnel présent\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « avoir » au conditionnel passé pour rapporter une affirmation non confirmée\nPhrase: Il paraît que vous ___ reçu une invitation spéciale hier soir.\nCorrect Answer: auriez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401384-ak35hhdg"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was asked to validate whether a French grammar question properly tests the stated rule about conditional sentences with \"si\" (si + imparfait → conditionnel présent).\n\nVerdict on the question:\n\nVERDICT: MISALIGNED\nREASON: The question tests the journalistic conditional (conditionnel d'incertitude) used to report unconfirmed information, which is a completely different grammar concept from \"si + imparfait → conditionnel présent\" conditional sentences—there is no \"si\" clause anywhere in the question.\n\nRemaining tasks: None—this was a single-question validation.\n\nRecommendations: This question should either be reassigned to a rule about the conditionnel passé used for reporting uncertain information (if such a rule exists in the curriculum), or rewritten to actually test si-clauses with conditionnel présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780227271780-m5tvzmor",
+      "timestamp": "2026-05-31T11:34:55.236Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the conditional of reported speech/uncertainty (conditionnel d'incertitude) used after \"il paraît que,\" which has no \"si\" clause and is a completely different grammatical structure than the stated rule about \"si + imparfait → conditionnel présent.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780230721934-au61271p",
+      "timestamp": "2026-05-31T12:32:44.418Z"
+    }
+  ]
+}

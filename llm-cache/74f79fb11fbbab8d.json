@@ -1,0 +1,33 @@
+{
+  "cacheKey": "74f79fb11fbbab8d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-18-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-18 - Le conditionnel vs le subjonctif après certains verbes et conjonctions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Après « bien que », quel mode utilise-t-on ?\nChoices:\nA. [CORRECT] Le subjonctif\nB. Le conditionnel\nC. L'indicatif\nD. L'infinitif\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780666986276-5onqmx67"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between conditionnel and subjonctif after a specific conjunction (\"bien que\"), which is the exact focus of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780666987282-hjdbl3r0",
+      "timestamp": "2026-06-05T13:43:23.306Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to validate whether a French grammar question properly tests the stated rule \"Le conditionnel vs le subjonctif après certains verbes et conjonctions.\"\n\nMy analysis:\n\nVERDICT: MISALIGNED\nREASON: The question only tests knowledge that \"bien que\" takes the subjunctive, without presenting any scenario where the choice between conditionnel and subjonctif is actually at stake.\n\nRemaining tasks: None - the validation verdict was reached.\n\nRecommendations: To properly test this rule, the question should present a context where a learner might reasonably hesitate between conditionnel and subjonctif (e.g., after verbs like \"vouloir que\" vs \"souhaiter\" + infinitive, or contrasting conjunctions where the mood choice is the actual challenge).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667227122-e5khkg5q",
+      "timestamp": "2026-06-05T13:47:48.567Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question only tests that \"bien que\" takes the subjunctive, not the distinction between conditional and subjunctive after verbs and conjunctions—the conditional is merely one of several distractors, not the focus of the comparison.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667559485-r1xst8qr",
+      "timestamp": "2026-06-05T13:52:52.426Z"
+    }
+  ]
+}

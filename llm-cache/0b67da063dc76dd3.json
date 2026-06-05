@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0b67da063dc76dd3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-04-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-04 - Le conditionnel pour exprimer un souhait ou un désir (j'aimerais voyager)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel présent : « Elle ___ d'une grande maison avec un beau jardin. »\nChoices:\nA. [CORRECT] rêverait\nB. rêve\nC. rêvera\nD. rêverais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401366-81iidrb1"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires using the conditional present \"rêverait\" to express a wish/desire (dreaming of a house with a garden), directly testing the stated rule about the conditional for expressing wishes, while the distractors test knowledge of other tenses (present, future) and person agreement (rêverais vs rêverait).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780226818044-l7uu6xad",
+      "timestamp": "2026-05-31T11:27:25.312Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question explicitly instructs \"au conditionnel présent,\" so it tests verb conjugation (rêverait vs rêverais) rather than whether the student knows that wishes/desires require the conditional mood.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780230311256-qedwx1kc",
+      "timestamp": "2026-05-31T12:25:54.883Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was analyzing a French grammar question validation task to determine if a multiple-choice question about the conditional tense properly tests the rule \"Le conditionnel pour exprimer un souhait ou un désir.\"\n\nAnalysis completed: The question asks students to complete \"Elle ___ d'une grande maison avec un beau jardin\" with the conditional present. While the sentence does express a wish/desire context, the prompt explicitly instructs \"Complétez au conditionnel présent,\" which tells students which tense to use rather than testing whether they know WHEN to use the conditional for wishes. This makes the question primarily test conditional conjugation rather than the pragmatic rule about using conditional to express wishes/desires.\n\nVerdict that would have been provided:\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to use the conditional present (\"Complétez au conditionnel présent\"), so the question tests conjugation knowledge rather than whether the student knows to use the conditional to express wishes/desires—the core of the stated rule.\n\nRemaining tasks: None—this was a single-question validation.\n\nRecommendations: To properly test rule 06-04, the prompt should not mention the conditional tense; instead, it should present a wish/desire context and let the student choose the appropriate tense from options including present, future, imperfect, and conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780234810364-16csrpwa",
+      "timestamp": "2026-05-31T13:41:20.696Z"
+    }
+  ]
+}

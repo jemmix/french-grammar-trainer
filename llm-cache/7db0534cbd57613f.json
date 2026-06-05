@@ -1,0 +1,54 @@
+{
+  "cacheKey": "7db0534cbd57613f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-10-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-10 - Le conditionnel présent pour atténuer une affirmation ou exprimer la prudence\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « devoir » au conditionnel présent pour exprimer un conseil ou reproche atténué\nPhrase: Il ___ prendre un peu plus de temps pour finir ce projet.\nCorrect Answer: devrait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401399-lypzdil2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests using the conditionnel présent to express a softened reproach (\"conseil ou reproche atténué\"), which is precisely the grammar rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228372753-lhsvmy5r",
+      "timestamp": "2026-05-31T11:53:18.293Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question primarily tests conjugation of \"devoir\" in the conditionnel présent, not the pragmatic rule about using the conditional to soften assertions or express caution—the prompt explicitly tells the student to use the conditional for that purpose, so the student only needs conjugation knowledge to answer correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231616378-v288s71a",
+      "timestamp": "2026-05-31T12:47:34.588Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to use \"devrait\" (conditionnel) rather than \"doit\" (présent) to express a softened piece of advice, which directly tests the rule about using the conditionnel présent to attenuate a statement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780235779533-2yukaspg",
+      "timestamp": "2026-05-31T13:57:11.309Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires using \"devrait\" (conditional present) instead of \"doit\" (indicative present) to soften a reproach about taking more time, which directly tests the rule about using the conditional présent to attenuate an affirmation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780237090815-heuobbkm",
+      "timestamp": "2026-05-31T14:18:41.886Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to recognize that a softened advice/reproach context calls for the conditionnel présent of \"devoir,\" directly testing the rule's core concept of using this tense for attenuation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780237235693-7g2i745o",
+      "timestamp": "2026-05-31T14:21:24.481Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a French grammar question about conjugating \"devoir\" in conditionnel présent properly tests the rule \"Le conditionnel présent pour atténuer une affirmation ou exprimer la prudence.\"\n\nMy analysis:\nVERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use conditionnel présent for attenuation (\"pour exprimer un conseil ou reproche atténué\"), so answering correctly only requires knowing the conjugation of \"devoir,\" not understanding when or why to use conditional to attenuate an affirmation.\n\nRemaining tasks: None - this was a single validation task.\n\nRecommendation: To properly test this rule, the question should present a context (e.g., a direct or blunt statement) and ask the student to reformulate it using conditional to attenuate it, or present multiple verb forms and ask which one correctly expresses attenuation/prudence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780237376485-e2fiti8p",
+      "timestamp": "2026-05-31T14:25:42.339Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "29ba8d6a85343302",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Je prendrais bien un dessert. » — Quelle est la fonction de « prendrais » ?\n\nChoices:\nA. [CORRECT] Un souhait atténué (conditionnel de politesse)\nB. [WRONG] Un futur dans le passé (discours rapporté)\nC. [WRONG] Une information incertaine\nD. [WRONG] Un regret sur le passé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780293122324-xwpu2vc6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is wrong because this is direct speech not reported speech, C is wrong because the sentence expresses a wish not uncertainty, and D is wrong because the conditionnel présent expresses a present wish not a past regret (which would require conditionnel passé).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293163173-qw37fdsb",
+      "timestamp": "2026-06-01T05:53:12.846Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was in the process of evaluating a French grammar verification task for a multiple choice question about the function of \"prendrais\" in \"Je prendrais bien un dessert.\"\n\n**Analysis completed:**\n- B (Un futur dans le passé) - This is incorrect; the sentence is not reported speech or a future-in-the-past construction\n- C (Une information incertaine) - This is incorrect; the conditional here expresses a wish, not uncertainty about information\n- D (Un regret sur le passé) - This is incorrect; this is present conditional expressing a current wish, not past conditional expressing regret\n\nThe verdict would have been: TRUE||All wrong answers incorrectly describe the function of the conditional in this context; B refers to reported speech, C to uncertain information, and D to past regret, none of which apply to \"Je prendrais bien un dessert.\"\n\n**Remaining tasks:** None - this was a single verification task.\n\n**Recommendations:** The question is valid and all wrong answers are correctly identified as incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293489165-lbcy5rhr",
+      "timestamp": "2026-06-01T05:58:34.687Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of work accomplished\n\nI was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ question are indeed incorrect. The question asks about the function of \"prendrais\" in \"Je prendrais bien un dessert.\"\n\n## Analysis completed\n\n- **B (Un futur dans le passé)**: Incorrect - there is no reported speech or past tense framing in this sentence\n- **C (Une information incertaine)**: Incorrect - the sentence expresses a desire, not uncertainty about a fact\n- **D (Un regret sur le passé)**: Incorrect - this is a present/future wish, not a regret about something that didn't happen\n\n## Verdict\n\nTRUE||All wrong answers describe functions of the conditional that do not apply to \"Je prendrais bien un dessert,\" which expresses a polite wish, not reported speech, uncertain information, or past regret.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293699832-n0z78nng",
+      "timestamp": "2026-06-01T06:02:04.297Z"
+    }
+  ]
+}

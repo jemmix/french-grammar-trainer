@@ -1,0 +1,33 @@
+{
+  "cacheKey": "07266056b7203d1d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-11-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel passé : « Elles ___ écrit une lettre si elles avaient eu du papier. »\n\nChoices:\nA. [CORRECT] auraient\nB. [WRONG] auraient écrire\nC. [WRONG] avaient\nD. [WRONG] ont\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401411-6764obxi"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses the infinitive instead of past participle (and would duplicate the verb), C is imparfait not conditionnel passé, and D is présent not conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228499610-9nlucivq",
+      "timestamp": "2026-05-31T11:55:18.137Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the infinitive instead of the past participle, C gives the imparfait auxiliary (plus-que-parfait), and D gives the passé composé auxiliary, none of which form the conditionnel passé as required.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231715188-l2ryesul",
+      "timestamp": "2026-05-31T12:48:55.157Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to provide the correct conditionnel passé form: B incorrectly uses the infinitive \"écrire\" instead of the past participle \"écrit,\" C uses the imparfait \"avaient,\" and D uses the présent \"ont.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780235868705-day1o47u",
+      "timestamp": "2026-05-31T13:58:17.346Z"
+    }
+  ]
+}

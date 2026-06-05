@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d3b32bbc6d1e39a7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise le futur simple pour annoncer un événement certain ?\n\nChoices:\nA. [CORRECT] La réunion commencera à 9 heures précises.\nB. [WRONG] La réunion commencerait à 9 heures précises.\nC. [WRONG] La réunion commence à 9 heures précises.\nD. [WRONG] La réunion a commencé à 9 heures précises.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780521062080-3c9q6xvc"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWork accomplished: I was asked to verify that wrong answers B, C, and D are incorrect for a French grammar question about the futur simple (future tense).\n\nAnalysis completed:\n- B. \"commencerait\" uses conditionnel présent, not futur simple - INCORRECT as required\n- C. \"commence\" uses présent, not futur simple - INCORRECT as required  \n- D. \"a commencé\" uses passé composé, not futur simple - INCORRECT as required\n\nThe verdict would have been: TRUE||All wrong answers use tenses other than the futur simple as explicitly required by the question.\n\nNo remaining tasks - the verification was straightforward and complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521185534-a04130aj",
+      "timestamp": "2026-06-03T21:13:29.243Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses other than futur simple: B uses conditionnel présent, C uses présent, and D uses passé composé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521385364-vr45ztia",
+      "timestamp": "2026-06-03T21:16:38.755Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses other than futur simple (conditionnel présent for B, présent for C, passé composé for D), making them all incorrect for the question's specific requirement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521631672-uts3joxc",
+      "timestamp": "2026-06-03T21:20:48.227Z"
+    }
+  ]
+}

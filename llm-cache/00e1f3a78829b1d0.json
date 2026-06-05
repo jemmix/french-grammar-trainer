@@ -1,0 +1,26 @@
+{
+  "cacheKey": "00e1f3a78829b1d0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-12-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel passé pour exprimer un regret : « On ___ ensemble si on avait eu le même emploi du temps. »\nChoices:\nA. [CORRECT] aurait voyagé\nB. aurait voyager\nC. voyagerait\nD. voyagea\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401424-hsdqvhpt"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the conditionnel passé in a si-clause hypothetical construction (\"si on avait eu... on aurait...\"), which expresses an unrealized past possibility, not the specific regret structure (\"j'aurais dû + infinitif\") that the rule defines.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228648631-ibiak0qc",
+      "timestamp": "2026-05-31T11:58:20.659Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far: I was analyzing a French grammar question to determine if it properly aligns with the stated rule \"06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\".\n\nAnalysis completed:\n- The question asks to complete a sentence with conditionnel passé to express regret\n- The correct answer \"aurait voyagé\" is indeed conditionnel passé\n- However, the rule specifically focuses on the \"j'aurais dû + infinitive\" construction for expressing regrets\n- The question actually tests the si-clause structure (si + plus-que-parfait → conditionnel passé), which is a different grammar point that happens to imply regret contextually\n\nVerdict that would have been returned:\nVERDICT: MISALIGNED\nREASON: The question tests the si-clause structure (si + plus-que-parfait → conditionnel passé) rather than the specific \"devoir + infinitive in conditionnel passé\" construction for expressing regrets that the rule title exemplifies with \"j'aurais dû étudier.\"\n\nRemaining tasks: None - this was a single-question validation.\n\nRecommendations: If this question needs to be fixed, it should either (1) be moved to a rule about si-clauses with conditionnel passé, or (2) be rewritten to test the \"j'aurais dû + infinitive\" regret construction specifically.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231860003-sca7dker",
+      "timestamp": "2026-05-31T12:51:47.313Z"
+    }
+  ]
+}

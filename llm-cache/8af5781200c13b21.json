@@ -1,0 +1,47 @@
+{
+  "cacheKey": "8af5781200c13b21",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-12-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel passé pour exprimer un regret : « J'___ plus attentif à la classe si j'avais étudié. »\nChoices:\nA. [CORRECT] aurais été\nB. avais été\nC. aurais eu\nD. étais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780225549925-4y3ridr0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the conditionnel passé form \"aurais été\" to complete a sentence expressing regret about a past unreal situation (\"si j'avais étudié\"), which directly tests the rule about using conditionnel passé for regrets.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780225550936-5t4mbod6",
+      "timestamp": "2026-05-31T11:06:15.415Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests the si-clause construction (si + plus-que-parfait → conditionnel passé) rather than the specific regret usage pattern illustrated by the rule's example \"j'aurais dû étudier,\" which is a standalone expression of regret without a conditional clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228526572-pqz3ravo",
+      "timestamp": "2026-05-31T11:56:10.268Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct conditionnel passé form (\"aurais été\") in a sentence context that expresses regret about past behavior, directly testing the rule's core concept.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231766418-0u0a13lo",
+      "timestamp": "2026-05-31T12:50:10.384Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires students to form the conditionnel passé (\"aurais été\") in a context framed as expressing regret, which is the core skill defined by this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780235920620-ddzc3tdj",
+      "timestamp": "2026-05-31T14:01:40.360Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the conditionnel passé in a si-clause structure (hypothetical result: \"si j'avais étudié, j'aurais été\"), not the regret expression pattern (j'aurais dû + infinitif) that the rule specifically covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780237119339-fle9gy1g",
+      "timestamp": "2026-05-31T14:19:20.597Z"
+    }
+  ]
+}

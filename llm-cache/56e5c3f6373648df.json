@@ -1,0 +1,33 @@
+{
+  "cacheKey": "56e5c3f6373648df",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-18-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-18 - Le conditionnel vs le subjonctif après certains verbes et conjonctions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il partirait sans qu'elle ___ la vérité. »\nChoices:\nA. [CORRECT] sache\nB. saurait\nC. sait\nD. saura\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780668525479-xbxmmsto"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether students know that \"sans que\" requires the subjunctive (\"sache\") rather than the conditional (\"saurait\") which a student might incorrectly select due to the main clause using \"partirait\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780668617090-4xaztybz",
+      "timestamp": "2026-06-05T14:10:33.599Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests the rule by requiring the student to know that \"sans que\" demands the subjunctive (\"sache\") rather than the conditional (\"saurait\") or indicative forms, making the conditional-vs-subjunctive distinction central to answering correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780668893886-ulsm5ggd",
+      "timestamp": "2026-06-05T14:15:09.447Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of analyzing whether a French grammar question about \"sans que\" + subjunctive properly tests the rule \"Le conditionnel vs le subjonctif après certains verbes et conjonctions.\"\n\n**Analysis completed:**\nThe question \"Il partirait sans qu'elle ___ la vérité\" with choices sache/saurait/sait/saura directly tests the stated rule. The conjunction \"sans que\" requires the subjunctive (\"sache\"), and the conditional in the main clause (\"partirait\") serves as a potential distractor that could mislead students into choosing \"saurait.\" This is a classic test of knowing when to use subjunctive vs. conditional after specific conjunctions.\n\n**Verdict I would have provided:**\nVERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"sans que\" requires the subjunctive (sache) rather than being misled by the conditional in the main clause into choosing \"saurait.\"\n\n**Remaining tasks:**\nNone - the analysis was complete at the point of step limit.\n\n**Recommendations:**\nNo further action needed on this specific validation task.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780669067353-xs5dhe3t",
+      "timestamp": "2026-06-05T14:18:06.964Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1804e3d93876961a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-09-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase exprime un irréel du présent ?\n\nChoices:\nA. [CORRECT] Si j'étais toi, je refuserais cette offre.\nB. [WRONG] Si je suis toi, je refuserai cette offre.\nC. [WRONG] Si j'avais été toi, j'aurais refusé cette offre.\nD. [WRONG] Si j'avais été toi, je refuserais cette offre.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780261529477-zx5p3zh2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses present+future (real condition, not irréel du présent); C expresses irréel du passé (plus-que-parfait + conditionnel passé); D mixes plus-que-parfait with conditionnel présent which is grammatically incoherent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780261597775-nbkudpjo",
+      "timestamp": "2026-05-31T21:07:19.664Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tense combinations: B uses présent+futur (irréel du futur, not présent), C uses plus-que-parfait+conditionnel passé (irréel du passé), and D inappropriately mixes plus-que-parfait with conditionnel présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780261838756-qsqjg60g",
+      "timestamp": "2026-05-31T21:10:51.641Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was in the process of evaluating a French grammar verification task for a multiple choice question about \"irréel du présent\" (present unreal/counterfactual). I had analyzed the question and all three wrong answers:\n\n- B (\"Si je suis toi, je refuserai cette offre.\") uses present + future, expressing a real possibility, not an unreal present condition\n- C (\"Si j'avais été toi, j'aurais refusé cette offre.\") uses plus-que-parfait + conditionnel passé, which expresses \"irréel du passé,\" not present\n- D (\"Si j'avais été toi, je refuserais cette offre.\") is a grammatically inconsistent mix that doesn't properly express \"irréel du présent\"\n\nThe verdict would be: TRUE||All wrong answers fail to express an irréel du présent—B uses real future structure, C expresses irréel du passé, and D is a grammatically inconsistent hybrid.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780261985797-wqu45ubk",
+      "timestamp": "2026-05-31T21:13:36.509Z"
+    }
+  ]
+}

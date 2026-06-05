@@ -1,0 +1,33 @@
+{
+  "cacheKey": "43d4ddce26ca35d2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si tu ___ à ma place, tu refuserais. » (être)\n\nChoices:\nA. [CORRECT] étais\nB. [WRONG] serais\nC. [WRONG] es\nD. [WRONG] fus\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780257007453-joxxhmms"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ question are indeed incorrect. The question tests the si-clause structure (Si + imparfait → conditionnel présent).\n\nAnalysis completed:\n- B (\"serais\") - conditionnel présent cannot follow \"si\" in standard French\n- C (\"es\") - présent indicatif doesn't match the conditionnel présent in the main clause\n- D (\"fus\") - passé simple is never used in si-clauses for hypothetical situations\n\nAll three wrong answers are grammatically incorrect within the stated context.\n\nTRUE||All wrong answers contain clear grammar errors for the si + imparfait → conditionnel présent structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257064982-99xb5qb3",
+      "timestamp": "2026-05-31T19:51:29.557Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses conditionnel in a si-clause where only imparfait is allowed, C uses présent which would require a future main clause, and D uses passé simple which is never used in si-clauses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257300697-ks9rrt6s",
+      "timestamp": "2026-05-31T19:55:30.290Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in a si-clause requiring imparfait: \"serais\" is conditional (never used after \"si\"), \"es\" is present indicative (requires present/future main clause), and \"fus\" is passé simple (never used in si-clauses).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257574953-wdo2s5vw",
+      "timestamp": "2026-05-31T20:00:30.165Z"
+    }
+  ]
+}

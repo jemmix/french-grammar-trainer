@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1ef558c3fa01bf2f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-19-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase négative au conditionnel passé est correctement formée ?\n\nChoices:\nA. [CORRECT] Le projet n'aurait pas été terminé à temps.\nB. [WRONG] Le projet n'aurait été pas terminé à temps.\nC. [WRONG] Le projet aurait pas été terminé à temps.\nD. [WRONG] Le projet ne aurait pas été terminé à temps.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780673201634-yr8yxn1e"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B has incorrect word order (pas should precede the past participle, not follow it), C is missing the required \"ne\" in formal negation, and D fails to elide \"ne\" before a vowel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780673311343-22sv036y",
+      "timestamp": "2026-06-05T15:31:05.757Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ about conditionnel passé negation are indeed incorrect. I analyzed each answer and determined all three contain clear grammatical errors within the stated constraints.\n\n**Remaining tasks:**\nNone - the verification task was completed in my analysis.\n\n**Recommendations for next steps:**\nThe verdict is TRUE - all wrong answers are incorrect:\n- B: \"n'aurait été pas\" has incorrect word order (pas should come before the past participle)\n- C: Missing the required \"ne\" in formal negation\n- D: \"ne aurait\" fails to elide to \"n'aurait\" before a vowel\n\nTRUE||All wrong answers contain clear grammar errors: B has incorrect negation word order, C is missing the required \"ne\", and D fails to elide \"ne\" before a vowel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780673829861-xzthp0g7",
+      "timestamp": "2026-06-05T15:37:27.592Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||B incorrectly places \"pas\" after the past participle instead of after the auxiliary; C omits the required \"ne\" element of negation; D fails to elide \"ne\" before the vowel-initial \"aurait\" (should be \"n'aurait\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780674227629-b6lgiuay",
+      "timestamp": "2026-06-05T15:44:08.077Z"
+    }
+  ]
+}

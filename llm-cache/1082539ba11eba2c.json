@@ -1,0 +1,26 @@
+{
+  "cacheKey": "1082539ba11eba2c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase utilise le conditionnel (et non le futur dans le passé) ?\nChoices:\nA. [CORRECT] Pourriez-vous m'indiquer le chemin de la gare ?\nB. Elle a confié qu'elle aurait du mal à venir.\nC. Il a indiqué qu'il prendrait le train de 8 heures.\nD. Ils ont annoncé qu'ils organiseraient une fête.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780513881383-j00iyahh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question can be answered correctly by simply recognizing choice A as a polite request form (conditionnel de politesse), without requiring any understanding of the nuanced distinction between futur dans le passé and conditionnel in reported speech contexts that the rule is meant to test.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780514055533-2lhl9ue2",
+      "timestamp": "2026-06-03T19:15:22.418Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a French grammar question about distinguishing \"futur dans le passé vs conditionnel\" properly tests the stated rule.\n\nVERDICT: MISALIGNED\nREASON: The correct answer (A) is unambiguously conditional because it's a polite request (conditionnel de politesse), not because it distinguishes futur dans le passé from conditionnel—the question never actually tests the ambiguous reported speech cases that this rule is about.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780514808690-hc9ehzov",
+      "timestamp": "2026-06-03T19:27:13.737Z"
+    }
+  ]
+}

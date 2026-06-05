@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b706681a3a16fdfc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-05-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Pour proposer une sortie au conditionnel : « Nous ___ aller au concert vendredi. »\n\nChoices:\nA. [CORRECT] pourrions\nB. [WRONG] pouvons\nC. [WRONG] pourrons\nD. [WRONG] pouvions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780255400865-6l0zs29v"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use tenses other than the conditionnel présent specifically requested in the question prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780255450425-4eklxnuq",
+      "timestamp": "2026-05-31T19:24:23.886Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:** I was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ about the conditional mood are indeed incorrect. The question asks for the conditional form of \"pouvoir\" to propose an outing. Answer B \"pouvons\" is présent, C \"pourrons\" is futur, and D \"pouvions\" is imparfait — none are in the conditionnel as required.\n\n**Verdict:** TRUE||All wrong answers are in different tenses (présent, futur, imparfait) rather than the conditionnel demanded by the question.\n\n**Remaining tasks:** None — this was a single verification task.\n\n**Recommendations:** No further action needed; the wrong answers are correctly classified as incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780255544533-ldkil5t8",
+      "timestamp": "2026-05-31T19:26:14.435Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different tenses (présent for B, futur for C, imparfait for D) rather than the conditionnel explicitly required by the question prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780255652350-yk3n3vja",
+      "timestamp": "2026-05-31T19:27:51.817Z"
+    }
+  ]
+}

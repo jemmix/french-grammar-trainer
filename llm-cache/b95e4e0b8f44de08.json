@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b95e4e0b8f44de08",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase respecte la structure « si + imparfait → conditionnel présent » ?\n\nChoices:\nA. [CORRECT] Si elle venait, nous serions contents.\nB. [WRONG] Si elle viendra, nous serions contents.\nC. [WRONG] Si elle viendrait, nous serons contents.\nD. [WRONG] Si elle vient, nous serions contents.\nE. [WRONG] Si elle viendrait, nous serions contents.\nF. [WRONG] Si elle venait, nous sommes contents.\n\nVerify these WRONG answers are incorrect (letters: B, C, D, E, F)",
+    "nonce": "nonce-1780259043901-o8n9q8d7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the \"si + imparfait → conditionnel présent\" structure: B uses futur simple instead of imparfait, C and E use conditionnel after \"si\" and C also uses futur instead of conditionnel, D uses présent instead of imparfait, and F uses présent instead of conditionnel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780259043930-ikfj5q6m",
+      "timestamp": "2026-05-31T20:24:23.289Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, D, E, F in a French grammar MCQ are indeed incorrect. The question asks which phrase follows the \"si + imparfait → conditionnel présent\" structure.\n\nAnalysis completed:\n- B: \"viendra\" (futur) is wrong after \"si\" — should be imparfait\n- C: \"viendrait\" (conditionnel) is wrong after \"si\", and \"serons\" (futur) should be conditionnel\n- D: \"vient\" (présent) is wrong — should be imparfait\n- E: \"viendrait\" (conditionnel) is wrong after \"si\" — should be imparfait (note: E is a duplicate of C, which is a content quality issue)\n- F: \"sommes\" (présent) is wrong in the main clause — should be conditionnel présent\n\nAll wrong answers are indeed incorrect within the stated grammatical constraints.\n\nResult: TRUE||All wrong answers fail to use the required \"si + imparfait → conditionnel présent\" structure — B uses futur, C and E use conditionnel after \"si\" (and C uses futur in main clause), D uses présent after \"si\", and F uses présent instead of conditionnel in the main clause.\n\nNo remaining tasks — the verification is complete. Recommendation: address the duplicate choice (C and E are identical) as a content quality issue.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780259074248-2g8m96nc",
+      "timestamp": "2026-05-31T20:25:14.349Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers violate the specified \"si + imparfait → conditionnel présent\" structure by using incorrect tenses in the si-clause (B: futur, C/E: conditionnel, D: présent) or the main clause (C: futur, F: présent).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780259128217-fazzynen",
+      "timestamp": "2026-05-31T20:25:57.135Z"
+    }
+  ]
+}

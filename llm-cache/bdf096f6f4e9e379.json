@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bdf096f6f4e9e379",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-18-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Pierre a annoncé qu'il ___ l'année suivante. »\n\nChoices:\nA. [CORRECT] partirait\nB. [WRONG] parte\nC. [WRONG] part\nD. [WRONG] partira\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780666986278-womt55q2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the sequence of tenses in indirect speech: B uses subjunctive (inappropriate for reported future), C uses present (doesn't express future after a past tense main clause), and D uses future (should be backshifted to conditional when the reporting verb is in a past tense).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667103876-ed4dshs2",
+      "timestamp": "2026-06-05T13:45:31.306Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate tense concordance rules for indirect speech after a past tense main verb: B uses the subjunctive (not required after \"annoncer que\"), C uses present indicative instead of conditional, and D uses future instead of the required conditional to express future-in-the-past.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667425806-3ckq7hkv",
+      "timestamp": "2026-06-05T13:50:48.206Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was in the process of evaluating a French grammar verification question about reported speech and the conditional tense.\n\n**Analysis completed:**\nThe question asks to complete \"Pierre a annoncé qu'il ___ l'année suivante.\" with the correct verb form. This is a reported speech scenario where the main verb (\"a annoncé\") is in the past, and the subordinate clause refers to a future time (\"l'année suivante\"). In French, this requires the conditional (\"partirait\").\n\n- B (parte): Subjunctive present - incorrect for reported speech after \"annoncer que\"\n- C (part): Present indicative - incorrect, doesn't convey future-in-the-past\n- D (partira): Future indicative - incorrect in reported speech when main verb is past\n\n**Remaining tasks:**\nNone - the analysis is complete.\n\n**Recommendation:**\nTRUE||All wrong answers are grammatically incorrect for reported speech with a past-tense main verb and future time reference.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667612230-77vxmtpd",
+      "timestamp": "2026-06-05T13:53:53.586Z"
+    }
+  ]
+}

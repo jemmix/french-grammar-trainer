@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6180d8b54bbb0ffa",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-04-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-04 - Le conditionnel pour exprimer un souhait ou un désir (j'aimerais voyager)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Pour commander poliment au café en exprimant un souhait, que dites-vous ?\nChoices:\nA. [CORRECT] Je prendrais un café, s'il vous plaît.\nB. Je prends un café, s'il vous plaît.\nC. Je prendrai un café, s'il vous plaît.\nD. Je veux un café, s'il vous plaît.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780253705661-2f37s92m"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"Je prendrais\" in a café context is a polite conditional used for softening requests, not the conditional of wishing or desiring exemplified by the rule's example \"j'aimerais voyager\" — the question tests conditional politeness rather than expressing a souhait ou désir.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780253712694-9x5rfuyz",
+      "timestamp": "2026-05-31T18:56:07.577Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the conditional of politeness (le conditionnel de politesse) used in service contexts like ordering at a café, not the use of the conditional to express a genuine wish or desire as exemplified by \"j'aimerais voyager\" — a better-aligned question would use verbs like \"aimer\" or \"vouloir\" to directly express wishes rather than the politeness convention of \"je prendrais.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780253821065-ppar08hf",
+      "timestamp": "2026-05-31T18:59:32.473Z"
+    }
+  ]
+}

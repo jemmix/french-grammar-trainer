@@ -1,0 +1,26 @@
+{
+  "cacheKey": "bdca645d7fe7fcf4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-12-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\nQUESTION:\nType: Input\nPrompt: Le conditionnel passé permet d'exprimer un regret. Complétez avec la forme qui convient :\nPhrase: Tu ___ me téléphoner avant de venir.\nCorrect Answer: aurais pu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780277249536-cko6oonh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The rule specifically focuses on \"aurais dû\" + infinitive to express regret, but the question tests \"aurais pu\" + infinitive which expresses past possibility/capability, not the specific regret structure outlined in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277520052-2b8xe7kf",
+      "timestamp": "2026-06-01T01:32:33.975Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was in the process of analyzing a validation question about French grammar alignment. The task was to determine whether a question testing \"Tu ___ me téléphoner avant de venir\" (answer: \"aurais pu\") properly aligns with the rule \"Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\".\n\n**Verdict I was about to provide:**\n\nVERDICT: MISALIGNED\nREASON: The question tests \"aurais pu\" (could have) which expresses possibility in the past, not regret — the rule specifically targets regret expressions like \"j'aurais dû\" (should have), and while the sentence implies mild reproach, the grammatical focus is on ability/possibility rather than regret.\n\n**Remaining tasks:**\n- None; this was a single-question validation that I was completing.\n\n**Recommendations:**\nTo properly test this rule, questions should use verbs like \"devoir\" (aurais dû), \"vouloir\" (aurais voulu), or \"aimer\" (j'aurais aimé) in the conditionnel passé, which explicitly express regret about past actions or inactions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277870895-5y2ug3ou",
+      "timestamp": "2026-06-01T01:38:34.529Z"
+    }
+  ]
+}

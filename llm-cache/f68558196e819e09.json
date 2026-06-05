@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f68558196e819e09",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-09-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si on mettait la musique moins fort, les voisins ne ___. »\n\nChoices:\nA. [CORRECT] se plaindraient pas\nB. [WRONG] se plaignent pas\nC. [WRONG] se sont plaints\nD. [WRONG] se plaignirent pas\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780261529478-5n5vkuj8"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||The si-clause uses imparfait (\"mettait\") requiring conditionnel présent in the main clause; B uses présent, C uses passé composé, and D uses passé simple, all of which are incorrect for this structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780261649493-ohhgdo7a",
+      "timestamp": "2026-05-31T21:08:08.535Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Analysis completed:**\nThe question uses \"Si on mettait\" (imparfait in a si-clause), which requires the conditional in the main clause for a hypothetical present/future scenario.\n\n- B (\"se plaignent pas\" - présent) is incorrect: si + imparfait triggers conditional, not present indicative\n- C (\"se sont plaints\" - passé composé) is incorrect: this would express a real past event, not a hypothetical\n- D (\"se plaignirent pas\" - passé simple) is incorrect: this is a literary past tense, not the conditional\n\n**Verdict:** TRUE||All wrong answers use tenses incompatible with si + imparfait, which requires the conditional in the main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780261860146-05zt08nd",
+      "timestamp": "2026-05-31T21:11:21.466Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the conditionnel présent required after \"si + imparfait\" in a conditional sentence structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780261991547-oq5sp21u",
+      "timestamp": "2026-05-31T21:13:37.504Z"
+    }
+  ]
+}

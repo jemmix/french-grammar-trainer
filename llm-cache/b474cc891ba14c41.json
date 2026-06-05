@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b474cc891ba14c41",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-17-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-17 - Le conditionnel vs le futur : différences de forme et d'emploi\n\nQUESTION:\nType: Input\nPrompt: Pour exprimer une certitude sur un événement futur, on utilise le futur simple. Complétez :\nPhrase: L'avion ___ à l'heure prévue.\nCorrect Answer: atterrira\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780521062081-vjb6rjtw"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly tells the student to use the futur simple and simply tests conjugation of \"atterrir,\" rather than requiring the student to distinguish between conditionnel and futur based on context or meaning.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521220839-2ug1eeff",
+      "timestamp": "2026-06-03T21:13:55.293Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use the futur simple, eliminating any need to distinguish between conditional and future tense, so the question only tests basic conjugation of \"atterrir\" rather than the rule about differences in form and employment between the two tenses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780521407591-053gs3i2",
+      "timestamp": "2026-06-03T21:17:12.895Z"
+    }
+  ]
+}

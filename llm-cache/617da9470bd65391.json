@@ -1,0 +1,33 @@
+{
+  "cacheKey": "617da9470bd65391",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-18-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-18 - Le conditionnel vs le subjonctif après certains verbes et conjonctions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Ce serait bien que tu ___ la réponse. »\nChoices:\nA. [CORRECT] saches\nB. saurais\nC. sais\nD. sauras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780666986278-6rxm34z7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests choosing the subjunctive \"saches\" over the conditional \"saurais\" after \"Ce serait bien que,\" directly testing the distinction between conditional and subjunctive after certain expressions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667140063-keowlqxs",
+      "timestamp": "2026-06-05T13:46:02.189Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\n**Analysis completed:**\nThe question \"Ce serait bien que tu ___ la réponse.\" with choices testing saches (subjunctive), saurais (conditional), sais (present), and sauras (future) directly tests the rule about conditional vs subjunctive after certain expressions. The trap is that students might see \"serait\" (conditional in main clause) and incorrectly choose \"saurais\" (conditional), but the rule requires subjunctive after \"que\" in this construction.\n\n**Verdict:**\nVERDICT: ALIGNED\nREASON: The question tests exactly when to use subjunctive vs conditional after \"il serait bien que\" — the main clause uses conditional but the subordinate clause after \"que\" requires subjunctive, which is the core of this rule.\n\n**Remaining tasks:** None — this single-question validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667460613-5coo5etn",
+      "timestamp": "2026-06-05T13:51:17.200Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a French grammar question about \"Ce serait bien que tu ___ la réponse\" properly tests the rule \"Le conditionnel vs le subjonctif après certains verbes et conjonctions.\"\n\nThe question presents four choices testing savoir in different moods/tenses (saches = subjunctive, saurais = conditional, sais = present, sauras = future). The correct answer is \"saches\" (subjunctive) because \"que\" triggers the subjunctive, even though \"serait\" in the main clause is conditional.\n\nMy verdict:\n\nVERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"que\" triggers the subjunctive (\"saches\") rather than the conditional (\"saurais\") despite the conditional \"serait\" appearing earlier in the sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667633245-o2a469xf",
+      "timestamp": "2026-06-05T13:54:16.827Z"
+    }
+  ]
+}

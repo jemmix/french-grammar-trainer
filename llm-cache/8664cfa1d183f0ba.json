@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8664cfa1d183f0ba",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise « serait » comme futur dans le passé ?\n\nChoices:\nA. [CORRECT] Le professeur a dit qu'il serait absent lundi.\nB. [WRONG] Il serait judicieux de partir maintenant.\nC. [WRONG] Je serais ravi de vous rencontrer.\nD. [WRONG] Elle serait déjà là si elle avait pris le train.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780513881386-vc13nir6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use \"serait\" as a conditional (hypothetical, politeness, or irrealis) rather than as futur dans le passé (reported future from a past perspective).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780514359290-9s606rrz",
+      "timestamp": "2026-06-03T19:20:16.104Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was asked to verify that wrong answers B, C, and D in a French grammar multiple-choice question are indeed incorrect. The question asks which sentence uses \"serait\" as \"futur dans le passé\" (future in the past).\n\nAnalysis completed:\n- B: \"Il serait judicieux de partir maintenant\" - uses conditional for politeness/hedging, NOT futur dans le passé ✓ correctly wrong\n- C: \"Je serais ravi de vous rencontrer\" - uses conditional for hypothetical/polite willingness, NOT futur dans le passé ✓ correctly wrong  \n- D: \"Elle serait déjà là si elle avait pris le train\" - uses conditional in an irrealis/hypothetical si-clause, NOT futur dans le passé ✓ correctly wrong\n\nAll wrong answers are indeed incorrect within the stated grammatical constraint.\n\nRemaining tasks: None - the verification is complete.\n\nRecommendations: The question is valid. The verdict would be: TRUE||All wrong answers use the conditional in contexts other than \"futur dans le passé\" (politeness, hypothetical willingness, or irrealis condition).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780514986479-5bu8ouku",
+      "timestamp": "2026-06-03T19:30:09.420Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use \"serait\" in contexts other than future in the past: B and C use the conditional of politeness, while D uses the conditional in an unreal si-clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780515307306-ttf99gmk",
+      "timestamp": "2026-06-03T19:35:29.615Z"
+    }
+  ]
+}

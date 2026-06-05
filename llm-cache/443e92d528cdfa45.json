@@ -1,0 +1,33 @@
+{
+  "cacheKey": "443e92d528cdfa45",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-19-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez avec la forme négative (ne...pas) au conditionnel présent : « Elle ___ cette remarque. » (faire)\n\nChoices:\nA. [CORRECT] ne ferait pas\nB. [WRONG] ne ferait\nC. [WRONG] ferait pas\nD. [WRONG] ne pas ferait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780673201635-cnew06sq"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B and C are missing part of the \"ne...pas\" negative structure explicitly required; D has incorrect word order with \"ne pas\" placed before the verb instead of surrounding it.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780673486186-rzvrzj4y",
+      "timestamp": "2026-06-05T15:31:53.152Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to produce the correct ne...pas negation structure: B omits \"pas\", C omits \"ne\", and D has incorrect word order.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780673889024-5w9b3nq0",
+      "timestamp": "2026-06-05T15:38:24.224Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the required \"ne...pas\" structure: B omits \"pas\", C omits \"ne\", and D has incorrect word order with \"pas\" before the conjugated verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780674273261-papubjhr",
+      "timestamp": "2026-06-05T15:44:48.613Z"
+    }
+  ]
+}

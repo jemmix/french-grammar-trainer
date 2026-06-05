@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c84195d60e4f92b7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-16-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-16 - Distinction futur dans le passé vs conditionnel (il a dit qu'il viendrait)\n\nQUESTION:\nType: Input\nPrompt: Le conditionnel exprime ici une hypothèse (et non un futur dans le passé). Complétez :\nPhrase: Nous ___ au concert si nous avions des places.\nCorrect Answer: irions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780513881385-vl9jguic"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of work accomplished\n\nI was asked to validate whether a French grammar question is properly aligned with the rule it claims to test. I completed the analysis:\n\n**Question analyzed:** \"Nous ___ au concert si nous avions des places.\" (Answer: irions)\n**Rule claimed:** 06-16 - Distinction futur dans le passé vs conditionnel\n\n## Verdict\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student this is a hypothesis and not a futur dans le passé, so the question only tests conjugation of \"aller\" in conditionnel présent, not the actual distinction between futur dans le passé and conditionnel which is the stated rule.\n\n## Remaining tasks\n\nNone — this was a single-question validation task that has been completed.\n\n## Recommendations for next steps\n\nIf this question is part of a larger batch, continue validating the remaining questions. To properly test rule 06-16 (distinction between futur dans le passé and conditionnel), questions should present contexts where students must determine which usage applies — for example, comparing \"Il a dit qu'il viendrait\" (reported speech/futur dans le passé) with \"Il viendrait s'il avait le temps\" (hypothesis) without explicitly telling them which is which.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780514277710-rmlevfqu",
+      "timestamp": "2026-06-03T19:21:01.898Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly tells the student it's a hypothesis (not a futur dans le passé), so it doesn't actually test the distinction between these two uses—it only tests the conditional conjugation of \"aller.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780515004177-myy2x8bx",
+      "timestamp": "2026-06-03T19:30:24.581Z"
+    }
+  ]
+}

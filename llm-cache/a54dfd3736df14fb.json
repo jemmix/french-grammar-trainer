@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a54dfd3736df14fb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-04-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise le conditionnel pour exprimer un souhait ?\n\nChoices:\nA. [CORRECT] Elle aimerait avoir une promotion au travail.\nB. [WRONG] Elle aime avoir une promotion au travail.\nC. [WRONG] Elle aura une promotion au travail.\nD. [WRONG] Elle mérite une promotion au travail.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780253705664-ajy24ovs"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D are indeed incorrect for a French grammar multiple choice question about the conditional tense used to express a wish.\n\nAnalysis completed:\n- B uses \"aime\" (present indicative) — not conditional, so correctly marked wrong\n- C uses \"aura\" (future tense) — not conditional, so correctly marked wrong  \n- D uses \"mérite\" (present indicative) — not conditional, so correctly marked wrong\n\nThe answer would be: TRUE||All wrong answers use present indicative or future tense instead of the conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780253723758-cmn2qrgm",
+      "timestamp": "2026-05-31T18:55:46.665Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use present indicative (B, D) or future tense (C) instead of the conditional mood required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780253809127-vq1oz19v",
+      "timestamp": "2026-05-31T18:57:06.964Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers correctly fail to use the conditionnel tense: B uses présent indicatif (\"aime\"), C uses futur simple (\"aura\"), and D uses présent indicatif (\"mérite\"), none of which satisfy the requirement to use the conditionnel to express a wish.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780253872743-smmxksga",
+      "timestamp": "2026-05-31T18:58:29.027Z"
+    }
+  ]
+}

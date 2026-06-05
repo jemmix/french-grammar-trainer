@@ -1,0 +1,26 @@
+{
+  "cacheKey": "099ae45fcd328a55",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-12-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel passé pour exprimer un regret : « Tu ___ moins de stress si tu avais mieux organisé ton travail. »\nChoices:\nA. [CORRECT] aurais eu\nB. aurais avoir\nC. aurais\nD. auras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401424-rpvj14ph"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the general formation of the conditionnel passé (auxiliary + past participle) rather than the specific construction \"j'aurais dû + infinitif\" used to express regret about a past action not taken.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228720301-vk5axoef",
+      "timestamp": "2026-05-31T11:59:30.229Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the si + plus-que-parfait → conditionnel passé conditional sentence pattern, not the specific regret constructions (aurais dû, aurais pu, aurais voulu + infinitif) that characterize this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231909763-o7m3hsd4",
+      "timestamp": "2026-05-31T12:52:25.229Z"
+    }
+  ]
+}

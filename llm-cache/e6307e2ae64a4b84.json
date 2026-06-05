@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e6307e2ae64a4b84",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-14-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-14 - Le conditionnel passé dans les hypothèses : si + plus-que-parfait → conditionnel passé\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel passé : « Si elle avait accepté l'offre, elle ___ plus d'argent maintenant. »\nChoices:\nA. [CORRECT] aurait eu\nB. avait eu\nC. aurait\nD. aurait pu avoir\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401437-738isx1a"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the si + plus-que-parfait → conditionnel passé structure, requiring the student to recognize that \"Si elle avait accepté\" (pluperfect) triggers a conditionnel passé in the main clause, and to correctly form \"aurait eu\" rather than selecting the plus-que-parfait trap (\"avait eu\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780229147505-djxeitxh",
+      "timestamp": "2026-05-31T12:06:22.225Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the si + plus-que-parfait → conditionnel passé structure, with the \"si\" clause already in pluperfect (\"avait accepté\") and the correct answer (\"aurait eu\") being the past conditional form that completes the hypothetical framework.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780232323348-xaxrh7rj",
+      "timestamp": "2026-05-31T12:59:13.476Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests the si + plus-que-parfait → conditionnel passé structure by requiring the student to recognize that \"avait accepté\" (plus-que-parfait) in the si-clause demands \"aurait eu\" (conditionnel passé) in the main clause, while the distractors test common errors like using plus-que-parfait or conditionnel présent instead.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780236368843-yjr7bkpf",
+      "timestamp": "2026-05-31T14:06:39.453Z"
+    }
+  ]
+}

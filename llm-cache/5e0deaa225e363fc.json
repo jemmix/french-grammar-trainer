@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5e0deaa225e363fc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Je suppose qu'il irait au marché si c'était ouvert. » — Quelle est la fonction de « irait » ?\n\nChoices:\nA. [CORRECT] Conditionnel d'hypothèse (exprime une éventualité soumise à la condition « si c'était ouvert »)\nB. [WRONG] Futur dans le passé (transposition d'un futur en discours indirect)\nC. [WRONG] Conditionnel de politesse (formulation atténuée)\nD. [WRONG] Imparfait (description passée)\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780513881386-aolufgr1"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether the wrong answers (B, C, D) in a French grammar multiple choice question are indeed incorrect. The question asks about the function of \"irait\" in \"Je suppose qu'il irait au marché si c'était ouvert.\" The correct answer is A (conditionnel d'hypothèse).\n\nRemaining tasks: None - I can provide the verdict directly.\n\nRecommendations: The validation result is:\n\nTRUE||All wrong answers are incorrect: B misidentifies reported speech where there is none (the \"si\" clause confirms conditional hypothesis), C wrongly claims politeness in a purely hypothetical context, and D incorrectly labels the conditionnel \"irait\" as an imparfait.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780514497982-p8tyd0ui",
+      "timestamp": "2026-06-03T19:22:05.722Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWork accomplished: I was asked to verify that wrong answers B, C, and D in a French grammar multiple choice question are indeed incorrect. The question asks about the function of \"irait\" in \"Je suppose qu'il irait au marché si c'était ouvert.\"\n\nAnalysis completed:\n- B (Futur dans le passé): Incorrect because \"Je suppose\" is present tense, not past, so this is not a reported future\n- C (Conditionnel de politesse): Incorrect because the conditional here is part of a hypothetical structure (si + imparfait → conditionnel), not a politeness formulation\n- D (Imparfait): Incorrect because \"irait\" is conditionnel présent, not imparfait (which would be \"allait\")\n\nThe verdict would be: TRUE||All wrong answers misidentify the grammatical function of \"irait\" within the given sentence structure.\n\nNo remaining tasks — the analysis was complete at the point the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780515035911-1pkl23k8",
+      "timestamp": "2026-06-03T19:30:59.070Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is wrong because there is no reported speech context, C is wrong because the conditional here expresses hypothesis not politeness, and D is wrong because \"irait\" is conditionnel présent not imparfait.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780515346817-ipesvaxe",
+      "timestamp": "2026-06-03T19:36:06.497Z"
+    }
+  ]
+}

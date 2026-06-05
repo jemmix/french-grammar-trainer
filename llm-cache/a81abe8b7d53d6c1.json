@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a81abe8b7d53d6c1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise le conditionnel (et non le futur) pour exprimer la prudence journalistique ?\n\nChoices:\nA. [CORRECT] Le suspect aurait été arrêté hier soir.\nB. [WRONG] Le suspect aura été arrêté hier soir.\nC. [WRONG] Le suspect a été arrêté hier soir.\nD. [WRONG] Le suspect avait été arrêté hier soir.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780522501021-01l0p9d0"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use different tenses (futur antérieur for B, passé composé for C, plus-que-parfait for D) and none use the conditionnel as explicitly required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780522734892-vx1g8utf",
+      "timestamp": "2026-06-03T21:39:12.601Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use non-conditional tenses (futur antérieur, passé composé, plus-que-parfait) and therefore do not satisfy the question's requirement to use the conditionnel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780522930364-fsaqcqtv",
+      "timestamp": "2026-06-03T21:42:25.442Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use tenses other than the conditionnel: B uses future antérieur, C uses passé composé, and D uses plus-que-parfait.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780523076589-r8ltp9th",
+      "timestamp": "2026-06-03T21:44:52.470Z"
+    }
+  ]
+}

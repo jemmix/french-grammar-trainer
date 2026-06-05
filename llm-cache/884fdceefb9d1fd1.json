@@ -1,0 +1,47 @@
+{
+  "cacheKey": "884fdceefb9d1fd1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-18-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-18 - Le conditionnel vs le subjonctif après certains verbes et conjonctions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il a promis qu'il ___ son concours la semaine suivante. »\nChoices:\nA. [CORRECT] réussirait\nB. réussisse\nC. réussit\nD. réussira\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780668525479-j2g3mx55"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule. I completed the analysis but did not output the final formatted response.\n\n**Analysis completed:**\n- The question asks to complete \"Il a promis qu'il ___ son concours la semaine suivante.\"\n- The correct answer is \"réussirait\" (conditionnel) over \"réussisse\" (subjonctif)\n- This directly tests the rule about conditionnel vs subjonctif after certain verbs like \"promettre que\"\n\n**Final verdict that should have been output:**\n\nVERDICT: ALIGNED\nREASON: The question directly tests whether the learner knows that \"promettre que\" in the past tense requires the conditionnel (not the subjonctif) in the subordinate clause when referring to a future action, which is precisely the distinction this rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780668775117-re1mn8cd",
+      "timestamp": "2026-06-05T14:13:21.476Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far: I was asked to validate whether a French grammar question about \"Il a promis qu'il ___ son concours la semaine suivante\" (with réussirait as correct answer) properly tests the rule \"Le conditionnel vs le subjonctif après certains verbes et conjonctions.\"\n\nVERDICT: MISALIGNED\nREASON: This question tests the sequence of tenses in reported speech (discours indirect) — \"promettre que\" with future reference in past context requires the conditional — rather than the choice between conditional and subjunctive after specific verbs/conjunctions, since \"promettre que\" does not take the subjunctive at all.\n\nRemaining tasks: None — this was a single-question validation request.\n\nRecommendations: To properly test rule 06-18, the question should present a scenario where learners must choose between conditional and subjunctive based on the governing verb or conjunction (e.g., \"bien que\" + subjunctive vs \"même si\" + conditional, or verbs like \"douter que\" vs \"penser que\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780668971014-u4pqsw8t",
+      "timestamp": "2026-06-05T14:16:41.352Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests whether students know that \"promettre que\" requires the conditionnel (not the subjonctif) when the main clause is in the past, which is precisely the rule about distinguishing conditionnel vs subjonctif after certain verbs.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780669142296-a5b1jfgd",
+      "timestamp": "2026-06-05T14:19:25.494Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the conditional vs. subjunctive distinction after \"promettre que\" — students must know that this verb takes the conditional (not the subjunctive \"réussisse\") in the subordinate clause when the main verb is in a past tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780669171281-31nl0021",
+      "timestamp": "2026-06-05T14:20:05.100Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question primarily tests the \"future in the past\" concept (futur dans le passé) — using the conditional after a past-tense reporting verb to express a future event relative to that past moment — rather than a genuine choice between conditional and subjunctive after \"promettre que,\" where the subjunctive is simply not a realistic alternative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780669205100-uweb6m1b",
+      "timestamp": "2026-06-05T14:20:31.475Z"
+    }
+  ]
+}

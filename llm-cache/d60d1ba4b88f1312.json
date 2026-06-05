@@ -1,0 +1,61 @@
+{
+  "cacheKey": "d60d1ba4b88f1312",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-08-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Les phrases conditionnelles avec « si » : concordance des temps si + imparfait → conditionnel présent\nPROMPT: Conjuguez le verbe « faire » au conditionnel présent après une hypothèse irréelle du présent\nPHRASE: Si je gagnais à la loterie, je ___ le tour du monde.\nCORRECT ANSWER: ferais\n\nWRONG ANSWERS to evaluate:\n1. faisais\n2. fais\n3. ferai\n4. fasse\n5. ferait-je\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780226401388-fbswvvgp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: using imparfait \"faisais\" by continuing the same tense from the si-clause, defaulting to présent \"fais\", confusing conditionnel with futur simple \"ferai\", mistakenly using subjonctif \"fasse\" after \"si\", and incorrectly inverting \"ferait-je\" as if forming a question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780239069077-1lhy3n8f",
+      "timestamp": "2026-05-31T14:51:51.484Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"ferait-je\" is implausible because it would produce \"je ferait-je le tour du monde\" with a duplicated subject pronoun and incorrect 3rd person agreement, which no learner would realistically type into a blank that follows \"je\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780242806738-snpkyj5z",
+      "timestamp": "2026-05-31T15:54:20.828Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: \"faisais\" over-applies the imparfait from the si-clause, \"fais\" defaults to présent, \"ferai\" confuses futur simple with conditionnel présent (the most likely mistake), \"fasse\" over-applies subjonctif (common after conjunctions), and \"ferait-je\" misapplies inversion despite knowing the conditionnel form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780245023258-ulikqxvh",
+      "timestamp": "2026-05-31T16:30:53.382Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors when dealing with si-clauses: using imparfait in the main clause (faisais), defaulting to présent (fais), confusing futur simple with conditionnel présent (ferai — an extremely common mistake), incorrectly using subjonctif after \"si\" (fasse), and over-applying subject-verb inversion (ferait-je).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780245921852-hd6rmiss",
+      "timestamp": "2026-05-31T16:45:44.240Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: \"faisais\" confuses the si-clause imparfait with the main clause, \"fais\" uses present instead of conditional, \"ferai\" confuses futur simple with conditionnel présent (a very common mistake), \"fasse\" overapplies the subjunctive, and \"ferait-je\" incorrectly applies inversion to a declarative sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780245957768-a6082rjd",
+      "timestamp": "2026-05-31T16:47:04.625Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: \"faisais\" confuses the two-clause tense rule (using imparfait in both), \"fais\" defaults to présent, \"ferai\" confuses conditionnel with futur simple (a very common mix-up), \"fasse\" incorrectly applies subjonctif after \"si\" (influenced by other languages or overgeneralization), and \"ferait-je\" inverts subject-verb incorrectly for a statement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780246027519-50ymj2hp",
+      "timestamp": "2026-05-31T16:47:27.800Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: IMPLAUSIBLE\nREASON: \"ferait-je\" is not a plausible learner error because typing it would produce \"je ferait-je le tour du monde,\" which no learner would naturally produce since the subject \"je\" already precedes the blank — this is a structural error so obviously wrong that no one would type it, whereas the other four answers (faisais, fais, ferai, fasse) are all genuinely common confusions with the conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780246048693-r01v54s4",
+      "timestamp": "2026-05-31T16:47:53.046Z"
+    }
+  ]
+}

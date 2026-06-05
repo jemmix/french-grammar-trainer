@@ -1,0 +1,26 @@
+{
+  "cacheKey": "125bd4ae27df02df",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "06-04-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Conjuguez le verbe aimer au conditionnel présent pour exprimer un rêve ou un désir personnel\n\nPHRASE: Elle ___ en Afrique un jour pour découvrir la faune et la flore.\n\nHINT: aimer\n\nEXPECTED ANSWER: aimerait voyager\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1780226401366-1xf690bn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt asks to conjugate \"aimer\" but the expected answer includes \"voyager,\" a verb never mentioned in the prompt, phrase, or hint, so a learner would reasonably input only \"aimerait\" and be confused when marked wrong.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780238226053-qht7db0i",
+      "timestamp": "2026-05-31T14:37:40.860Z"
+    },
+    {
+      "raw": "VERDICT: UNCLEAR\nREASON: The prompt instructs the learner to conjugate the verb \"aimer,\" but the expected answer \"aimerait voyager\" includes the word \"voyager\" which is nowhere mentioned in the prompt, phrase, or hint — a learner following the instructions would likely answer just \"aimerait\" and be marked incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780241931454-18rrfc38",
+      "timestamp": "2026-05-31T15:39:31.318Z"
+    }
+  ]
+}

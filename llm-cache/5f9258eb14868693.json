@@ -1,0 +1,26 @@
+{
+  "cacheKey": "5f9258eb14868693",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-12-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-12 - Le conditionnel passé pour exprimer un regret (j'aurais dû étudier)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Parmi ces phrases, laquelle exprime un regret avec un modal au conditionnel passé ?\nChoices:\nA. [CORRECT] Ils auraient aimé rester plus longtemps.\nB. Ils aimaient rester plus longtemps.\nC. Ils aimeront rester plus longtemps.\nD. Ils ont aimé rester plus longtemps.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780277249534-z92u798b"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question alignment. Here is my assessment:\n\nVERDICT: MISALIGNED\nREASON: \"Aimer\" is not classified as a modal verb in French grammar (modaux are typically devoir, pouvoir, vouloir, savoir), so the correct answer \"auraient aimé\" does not actually demonstrate the regret-with-modal structure the rule describes (e.g., \"j'aurais dû\").\n\n**Summary of work done:**\n- Analyzed the question to determine if it tests the stated rule about conditionnel passé for expressing regret with modal verbs\n- Identified that while \"auraient aimé\" is conditionnel passé, \"aimer\" is not a modal verb\n\n**Remaining tasks:**\n- None for this specific validation\n\n**Recommendations:**\n- The question should be revised to use a true modal verb expressing regret (e.g., \"Ils auraient dû rester plus longtemps\" or \"Ils auraient pu rester plus longtemps\") to properly align with the rule about \"j'aurais dû étudier\" structures",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277296981-kjo0llbl",
+      "timestamp": "2026-06-01T01:29:01.130Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer \"Ils auraient aimé rester\" expresses an unfulfilled wish rather than a regret—the rule specifically targets regret with modals like \"aurais dû/pu/voulu,\" and a true regret example would be \"Ils auraient dû rester plus longtemps.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780277639946-jy3rmi2s",
+      "timestamp": "2026-06-01T01:34:41.667Z"
+    }
+  ]
+}

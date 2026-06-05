@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7575d2df8b515861",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Dans la phrase « Il a annoncé qu'il démissionnerait la semaine suivante », « démissionnerait » est :\n\nChoices:\nA. [CORRECT] un futur dans le passé (discours indirect)\nB. [WRONG] un conditionnel d'hypothèse\nC. [WRONG] un conditionnel de politesse\nD. [WRONG] un futur simple\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780517238694-qqjtd0ly"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B misidentifies the function (this is concordance des temps, not hypothesis), C misidentifies the register (not a politeness conditional), and D misidentifies the tense (démissionnerait is conditionnel, not futur simple).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517241718-dxv3rkhq",
+      "timestamp": "2026-06-03T20:07:46.638Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B describes a hypothetical conditional (used with \"si\" clauses), C describes a politeness conditional (used for requests like \"je voudrais\"), and D misidentifies the conditional form as futur simple (\"démissionnera\" would be futur simple).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517374804-mrwxqnj5",
+      "timestamp": "2026-06-03T20:09:49.765Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly identifies the conditional as expressing hypothesis rather than indirect speech reporting, C incorrectly identifies it as a politeness conditional, and D incorrectly identifies the conditional form \"démissionnerait\" as a futur simple (which would be \"démissionnera\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517472067-ncohpg1f",
+      "timestamp": "2026-06-03T20:11:47.535Z"
+    }
+  ]
+}

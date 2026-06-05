@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3ce80badc3aaf2a2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-12-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel passé pour exprimer un regret : « J'___ cette décision si j'avais envisagé les conséquences. »\n\nChoices:\nA. [CORRECT] aurais modifié\nB. [WRONG] aurais modifiant\nC. [WRONG] avais modifié\nD. [WRONG] ai modifié\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401424-3b0ntpu6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb forms: B uses a present participle instead of a past participle, C uses plus-que-parfait instead of conditionnel passé, and D uses passé composé instead of conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228675241-w75p35eb",
+      "timestamp": "2026-05-31T11:58:17.214Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the conditionnel passé as required: B is not a valid French construction (mixing auxiliary with present participle), C is plus-que-parfait, and D is passé composé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231853686-wna8m2r2",
+      "timestamp": "2026-05-31T12:51:20.260Z"
+    },
+    {
+      "raw": "TRUE||B uses a present participle instead of a past participle which is grammatically impossible after an auxiliary; C is plus-que-parfait and D is passé composé, neither of which satisfies the requirement for conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780235960930-m39jvw0p",
+      "timestamp": "2026-05-31T13:59:58.113Z"
+    }
+  ]
+}

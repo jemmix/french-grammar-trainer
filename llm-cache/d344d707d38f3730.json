@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d344d707d38f3730",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-04-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-04 - Le conditionnel pour exprimer un souhait ou un désir (j'aimerais voyager)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe désirer au conditionnel présent pour exprimer un désir\nPhrase: Il ___ une réponse rapide à sa demande.\nCorrect Answer: désirerait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401366-7l0wfl3n"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to validate whether a French grammar question properly tests the rule \"06-04 - Le conditionnel pour exprimer un souhait ou un désir (j'aimerais voyager)\". The question asks the user to conjugate \"désirer\" in the conditional present to express a desire, with the answer \"désirerait\".\n\n**Remaining tasks:**\n- Provide the final verdict and reasoning for this validation check.\n\n**Recommendation for what should be done next:**\nThe verdict for this question is:\n\nVERDICT: ALIGNED\nREASON: The question directly requires conjugating \"désirer\" in the conditional present to express a desire, which is precisely what rule 06-04 covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780226876547-dyqi72lc",
+      "timestamp": "2026-05-31T11:28:13.608Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence \"Il désirerait une réponse rapide à sa demande\" uses the conditional for politeness or to soften a request, not to express a personal wish or desire as the rule specifies (e.g., \"j'aimerais voyager\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780230366732-9cezuorg",
+      "timestamp": "2026-05-31T12:26:35.258Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was asked to validate whether a French grammar question about conjugating \"désirer\" in the conditional present actually tests the rule \"Le conditionnel pour exprimer un souhait ou un désir.\"\n\n## My Assessment (not yet delivered)\n\nVERDICT: MISALIGNED\nREASON: The question only tests conditional conjugation of a regular -er verb (désirer), not the specific semantic use of the conditional to express wishes or desires—a student could answer correctly knowing only conjugation patterns without understanding when or why to use conditional for wishes.\n\n## Remaining Tasks\nNone — this was a single validation task.\n\n## Recommendation\nIf this validation format is needed for more questions, re-run the prompt. The question in question should be revised to actually test the distinction between using conditional for wishes vs. other uses (e.g., presenting a sentence where the learner must choose between présent, futur, and conditionnel to express a wish).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780234874119-95aja5pc",
+      "timestamp": "2026-05-31T13:42:06.529Z"
+    }
+  ]
+}

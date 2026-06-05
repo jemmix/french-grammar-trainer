@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a4b99faedff8bc02",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-13-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est un reproche direct envers quelqu'un ?\n\nChoices:\nA. [CORRECT] Vous auriez pu m'informer de ce changement plus tôt.\nB. [WRONG] Vous m'avez informé de ce changement plus tôt.\nC. [WRONG] Vous pouvez m'informer de tout changement.\nD. [WRONG] Vous m'informerez de tout changement à l'avenir.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780286150698-ekdcz9tw"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was evaluating a French grammar verification task for a multiple choice question about identifying a direct reproach (reproche direct). The question asked which phrase is a direct reproach, with the correct answer being \"Vous auriez pu m'informer de ce changement plus tôt\" (conditional past expressing reproach).\n\nThe three wrong answers to verify were:\n- B: \"Vous m'avez informé de ce changement plus tôt\" (simple past statement of fact)\n- C: \"Vous pouvez m'informer de tout changement\" (present tense about ability)\n- D: \"Vous m'informerez de tout changement à l'avenir\" (future tense statement)\n\nAll three wrong answers are indeed incorrect as they do not express a reproche direct - they are factual statements or requests, not reproachful constructions.\n\nThe verdict would have been: TRUE||All wrong answers are simple statements or requests, not reproachful constructions like the conditional past in the correct answer.\n\nRemaining tasks: None - the verification was complete at the point of interruption.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780286305212-sanyegc3",
+      "timestamp": "2026-06-01T03:58:46.618Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are statements of fact, permission, or future expectation rather than reproaches, whereas the correct answer uses the conditional past to express criticism for not acting.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780286481563-irxz0ja6",
+      "timestamp": "2026-06-01T04:01:40.416Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative tenses (passé composé, présent, futur) that state facts or make requests, whereas a reproach requires the conditional past \"auriez pu\" construction as in A.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780286637184-52u9rznh",
+      "timestamp": "2026-06-01T04:04:20.326Z"
+    }
+  ]
+}

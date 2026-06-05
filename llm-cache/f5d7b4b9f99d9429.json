@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f5d7b4b9f99d9429",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-13-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel passé pour exprimer un reproche : « Nous ___ prendre rendez-vous plus tôt. »\n\nChoices:\nA. [CORRECT] aurions dû\nB. [WRONG] aurions pu\nC. [WRONG] devrions\nD. [WRONG] devions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401429-mf176ex4"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail the stated constraints: B uses a verb that doesn't express reproach, C is conditionnel présent not passé, and D is imparfait not conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228933934-3uje70d1",
+      "timestamp": "2026-05-31T12:02:40.316Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what was accomplished: I was asked to verify that wrong answers B, C, and D for a French grammar multiple choice question are indeed incorrect. The question asks for the conditionnel passé to express a reproach (\"Nous ___ prendre rendez-vous plus tôt.\").\n\nAnalysis completed:\n- B. \"aurions pu\" - conditionnel passé of \"pouvoir\" (could have) - incorrect because it expresses possibility, not a reproach (requires \"devoir\" for reproach)\n- C. \"devrions\" - conditionnel présent, not conditionnel passé - incorrect tense\n- D. \"devions\" - imparfait, not conditionnel passé - incorrect tense\n\nMy verdict: TRUE||All wrong answers fail to satisfy the stated requirements: B uses the wrong modal verb for expressing a reproach, while C and D are not in the conditionnel passé.\n\nNo remaining tasks - the verification was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780232060714-f44lgnvc",
+      "timestamp": "2026-05-31T12:54:52.954Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses \"pouvoir\" which expresses possibility rather than the reproach conveyed by \"devoir\"; C is conditionnel présent not conditionnel passé; D is imparfait not conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780236174066-4rhho2ye",
+      "timestamp": "2026-05-31T14:03:58.275Z"
+    }
+  ]
+}

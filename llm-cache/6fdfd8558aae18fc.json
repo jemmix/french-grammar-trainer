@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6fdfd8558aae18fc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-18-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il a dit qu'il ___ son projet la semaine suivante. »\n\nChoices:\nA. [CORRECT] finirait\nB. [WRONG] finisse\nC. [WRONG] finit\nD. [WRONG] finira\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780668525477-sfs2o8p2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for reported speech with a past main verb referring to a future event: B uses subjunctive (not triggered by \"dire que\"), C uses present (doesn't convey future-in-the-past), and D uses future simple (must be backshifted to conditional after a past reporting verb).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780668528487-2g7d4nb6",
+      "timestamp": "2026-06-05T14:09:14.976Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for reported speech: B uses subjunctive (not triggered by \"dire que\" in this context), C uses present (incompatible with future reference \"la semaine suivante\" in reported speech), and D uses future simple (must be backshifted to conditional when main verb is past).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780668826389-j9s3zk7z",
+      "timestamp": "2026-06-05T14:14:04.009Z"
+    }
+  ]
+}

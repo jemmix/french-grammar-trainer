@@ -1,0 +1,33 @@
+{
+  "cacheKey": "626871a17293adc6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase utilise « saurait » comme futur dans le passé ?\n\nChoices:\nA. [CORRECT] Il a assuré qu'il saurait répondre à cette question.\nB. [WRONG] Je ne saurais vous dire exactement.\nC. [WRONG] Saurait-elle la réponse ?\nD. [WRONG] Il saurait le faire s'il voulait.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780513881386-ai6odv4d"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use \"saurait/saurais\" in present conditional contexts (polite hesitation, hypothetical question, conditional clause) rather than as futur dans le passé within reported speech.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780514449230-0w0vembo",
+      "timestamp": "2026-06-03T19:21:14.793Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the conditional in present-tense contexts (polite hedging, hypothetical present, or interrogative) rather than as \"futur dans le passé\" following a past-tense main verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780515009421-v9ljygfd",
+      "timestamp": "2026-06-03T19:30:28.305Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of what was accomplished:**\nI was in the process of evaluating the French grammar verification question about \"saurait\" used as \"futur dans le passé.\" I analyzed all three wrong answers (B, C, D) and determined they are all correctly marked as wrong:\n- B uses conditional for politeness/hedging (present context)\n- C uses conditional for doubt in an interrogative (present context)  \n- D uses conditional in an si-clause hypothetical (present/future condition)\n\nNone of these represent \"futur dans le passé\" (future viewed from a past narrative standpoint), which only answer A correctly demonstrates.\n\n**Verdict that would have been returned:**\nTRUE||All wrong answers use the conditional of savoir in contexts other than futur dans le passé (politeness, doubt, hypothetical condition) rather than future viewed from a past perspective.\n\n**Remaining tasks:**\nNone - the analysis was complete.\n\n**Recommendations:**\nNo further action needed; this validation item passes successfully.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780515325977-qb6y9v6m",
+      "timestamp": "2026-06-03T19:36:01.672Z"
+    }
+  ]
+}

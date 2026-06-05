@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d1fb208cf917843d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-13-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-13 - Le conditionnel passé pour exprimer un reproche (tu aurais pu me prévenir)\n\nQUESTION:\nType: Input\nPrompt: Le conditionnel passé permet d'exprimer un reproche. Complétez avec la forme qui convient :\nPhrase: Elle ___ nous avertir du changement.\nCorrect Answer: aurait pu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780286150702-j80mbbs2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the use of the conditionnel passé (\"aurait pu\") to express a reproach about a past failure to act, which is precisely the grammar rule stated.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780286352671-kgmld7zm",
+      "timestamp": "2026-06-01T03:59:29.263Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the learner to produce the conditionnel passé form \"aurait pu\" to express a reproach about a past action that didn't happen, which is exactly the grammar concept stated in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780286542728-r14l397o",
+      "timestamp": "2026-06-01T04:02:44.868Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires producing the conditionnel passé form \"aurait pu\" to express reproach (\"she could have warned us\"), which directly tests the rule about using conditionnel passé for reproaches.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780286714000-4z5o48vy",
+      "timestamp": "2026-06-01T04:05:37.419Z"
+    }
+  ]
+}

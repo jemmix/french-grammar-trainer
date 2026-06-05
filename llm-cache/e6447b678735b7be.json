@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e6447b678735b7be",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est correctement construite ?\n\nChoices:\nA. [CORRECT] Si tu étudiais plus, tu réussirais tes examens.\nB. [WRONG] Si tu étudierais plus, tu réussissais tes examens.\nC. [WRONG] Si tu étudiais plus, tu réussiras tes examens.\nD. [WRONG] Si tu étudieras plus, tu réussirais tes examens.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780257007454-4hg0ynxm"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the si-clause rules: B incorrectly uses conditionnel after \"si\" and imparfait in the result clause, C incorrectly uses futur simple instead of conditionnel présent in the result clause, and D incorrectly uses futur simple after \"si\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257087713-bg6jfd2u",
+      "timestamp": "2026-05-31T19:51:53.959Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to verify that the wrong answers (B, C, D) in a French grammar multiple-choice question about si-clauses are indeed incorrect.\n\nAnalysis completed:\n- B uses conditionnel after \"si\" (never allowed) and imparfait in the main clause (should be conditionnel)\n- C correctly uses imparfait after \"si\" but incorrectly uses futur simple in the main clause (should be conditionnel)\n- D incorrectly uses futur simple after \"si\" (never allowed in this construction)\n\nTRUE||All wrong answers violate the standard si+imparfait / conditionnel présent structure for hypothetical present conditions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257335799-qn42yzra",
+      "timestamp": "2026-05-31T19:56:08.282Z"
+    },
+    {
+      "raw": "TRUE||B uses the conditional after \"si\" which is never grammatically correct; C mixes si+imparfait with futur simple instead of conditionnel présent; D uses futur simple after \"si\" which requires the present tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257622991-9ul1qtj5",
+      "timestamp": "2026-05-31T20:00:43.895Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "a0637516e145b978",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-09-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-09 - Le conditionnel présent dans les phrases avec « si » : variétés de conditions\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe « appeler » au conditionnel présent après « au cas où »\nPhrase: Au cas où tu ___ , laisse-moi un message.\nCorrect Answer: m'appellerais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401390-1c59ndtw"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The rule specifically covers \"phrases avec « si »\" (si-clause condition patterns), but the question uses \"au cas où,\" which is a distinct grammatical expression that requires the conditional for its own structural reasons, not as part of a \"si\" clause condition variety.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228134097-v59mjrcr",
+      "timestamp": "2026-05-31T11:51:08.696Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI can provide my verdict directly without any tool calls:\n\nVERDICT: MISALIGNED\nREASON: The rule specifically concerns conditional present in sentences with \"si\" (if-clauses), but this question uses \"au cas où\" (in case), which is a distinct grammatical construction that triggers the conditional present directly rather than through the si+imparfait → conditionnel pattern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231505916-73zv2g3f",
+      "timestamp": "2026-05-31T12:45:27.053Z"
+    }
+  ]
+}

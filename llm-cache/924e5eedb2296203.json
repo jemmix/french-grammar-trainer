@@ -1,0 +1,33 @@
+{
+  "cacheKey": "924e5eedb2296203",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-10-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle formulation adoucit le mieux la critique « Votre travail est insuffisant » ?\n\nChoices:\nA. [CORRECT] Votre travail serait peut-être à revoir sur certains points.\nB. [WRONG] Votre travail est insuffisant.\nC. [WRONG] Refaites votre travail !\nD. [WRONG] Votre travail sera insuffisant.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780272608641-j473ye6r"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to soften the criticism as required: B is the original harsh statement with no softening, C is an aggressive imperative command, and D is a future-tense prediction that doesn't mitigate the criticism.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780272737808-ic4nenab",
+      "timestamp": "2026-06-01T00:13:51.454Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating the multiple choice question about softening criticism in French. The question asks which formulation best softens \"Votre travail est insuffisant.\"\n\nAnalysis completed:\n- B (\"Votre travail est insuffisant\") - This is the original unsoftened criticism, correctly marked as wrong\n- C (\"Refaites votre travail !\") - This is a harsher imperative, correctly marked as wrong  \n- D (\"Votre travail sera insuffisant\") - This uses future tense oddly without softening, correctly marked as wrong\n\nTRUE||All wrong answers fail to soften the criticism: B repeats the original harsh statement, C is an even harsher imperative, and D uses future tense without any mitigating language.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780273129709-zsbjja24",
+      "timestamp": "2026-06-01T00:19:59.908Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers either repeat the original harsh criticism verbatim (B), use an even more direct imperative (C), or make a definitive future prediction (D), none of which soften the criticism as the question requires.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780273466243-t5ur050s",
+      "timestamp": "2026-06-01T00:24:51.096Z"
+    }
+  ]
+}

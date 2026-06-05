@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e673c2978b1d430b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Si tu ___ la porte, il ferait moins froid. » (fermer)\n\nChoices:\nA. [CORRECT] fermait\nB. [WRONG] fermerait\nC. [WRONG] fermes\nD. [WRONG] ferma\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780257007454-sfk532qi"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate si-clause tense rules: B uses conditionnel after si (never allowed), C uses présent which doesn't agree with the conditionnel in the main clause, and D uses passé simple which is never used in si-clauses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257142014-2odkk1b4",
+      "timestamp": "2026-05-31T19:52:54.100Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ question are indeed incorrect. The question tests the \"si + imparfait → conditionnel présent\" construction: \"Si tu ___ la porte, il ferait moins froid.\"\n\n**Analysis completed:**\n- B \"fermerait\" (conditionnel): Incorrect because \"si\" cannot be followed by the conditional in standard French\n- C \"fermes\" (présent): Incorrect because \"si + présent\" requires a present/future main clause, not conditional (\"ferait\")\n- D \"ferma\" (passé simple): Incorrect because passé simple is not used in \"si\" clauses for hypothetical conditions\n\n**Verdict that would have been returned:**\nTRUE||All wrong answers use tenses that cannot follow \"si\" in a hypothetical conditional construction requiring imparfait.\n\n**Remaining tasks:** None — the analysis was complete at the point the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257414927-90mnvwmn",
+      "timestamp": "2026-05-31T19:59:34.174Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses for a si-clause: B uses conditionnel (never used after si), C uses présent (requires imparfait for hypothetical), D uses passé simple (not used in si-clauses).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257740198-spzoszab",
+      "timestamp": "2026-05-31T20:03:18.029Z"
+    }
+  ]
+}

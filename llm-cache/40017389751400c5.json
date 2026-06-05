@@ -1,0 +1,33 @@
+{
+  "cacheKey": "40017389751400c5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-13-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Parmi ces phrases, laquelle utilise le conditionnel passé pour formuler un reproche ?\n\nChoices:\nA. [CORRECT] Elle aurait pu nous inviter à son anniversaire.\nB. [WRONG] Elle pouvait nous inviter à son anniversaire.\nC. [WRONG] Elle nous a invités à son anniversaire.\nD. [WRONG] Elle nous invitait souvent à son anniversaire.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780283650833-if0dcnod"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use different tenses (imparfait for B and D, passé composé for C) rather than the required conditionnel passé, and none express a reproach.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780283825465-0wy6fpa4",
+      "timestamp": "2026-06-01T03:17:32.319Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying that wrong answers B, C, and D are incorrect for the French grammar question about conditionnel passé used to formulate a reproche.\n\nAnalysis completed:\n- B uses \"pouvait\" (imparfait), not conditionnel passé — incorrect ✓\n- C uses \"a invités\" (passé composé), not conditionnel passé — incorrect ✓\n- D uses \"invitait\" (imparfait), not conditionnel passé — incorrect ✓\n\nAll wrong answers are indeed incorrect within the grammatical constraints stated in the question.\n\nTRUE||All wrong answers use tenses other than conditionnel passé (imparfait or passé composé) and therefore do not satisfy the question's requirement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780284135104-zi3j999u",
+      "timestamp": "2026-06-01T03:22:39.049Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different tenses (imparfait for B and D, passé composé for C) rather than the required conditionnel passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780284445287-fy8gkbya",
+      "timestamp": "2026-06-01T03:27:46.312Z"
+    }
+  ]
+}

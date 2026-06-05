@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9190d10543931704",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Sophie a raconté qu'elle aurait fini avant midi. » — « aurait fini » est :\n\nChoices:\nA. [CORRECT] un futur antérieur dans le passé (fait futur accompli rapporté)\nB. [WRONG] un conditionnel passé exprimant un regret\nC. [WRONG] un plus-que-parfait de l'indicatif\nD. [WRONG] un conditionnel de politesse au passé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780293122325-oc1f8vn2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B misidentifies the function as regret rather than reported speech, C incorrectly claims it's a plus-que-parfait (which would use \"avait\" not \"aurait\"), and D misidentifies the function as politeness rather than reported speech.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293401508-ofewxh6p",
+      "timestamp": "2026-06-01T05:57:11.222Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying wrong answers for a French grammar MCQ question about \"aurait fini\" in reported speech.\n\nSummary of analysis completed:\n- B (\"un conditionnel passé exprimant un regret\") is incorrect because in this context, \"aurait fini\" is used for reported speech (futur antérieur dans le passé), not to express regret\n- C (\"un plus-que-parfait de l'indicatif\") is incorrect because plus-que-parfait uses \"avait\" not \"aurait\"\n- D (\"un conditionnel de politesse au passé\") is incorrect because conditionnel de politeness is a present-tense concept and doesn't apply to reported speech\n\nThe verdict would be: TRUE||All wrong answers contain clear grammar errors.\n\nNo remaining tasks - the verification was essentially complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293626741-kdrj7yal",
+      "timestamp": "2026-06-01T06:00:55.348Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B misidentifies the function (this is reported speech, not regret), C confuses the form (plus-que-parfait would be \"avait fini,\" not \"aurait fini\"), and D misidentifies the register function (this is not a politeness construction).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780293817977-flc96cwx",
+      "timestamp": "2026-06-01T06:03:59.057Z"
+    }
+  ]
+}

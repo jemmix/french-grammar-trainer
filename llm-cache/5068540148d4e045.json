@@ -1,0 +1,26 @@
+{
+  "cacheKey": "5068540148d4e045",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Dans la phrase « Le médecin a dit qu'il devrait se reposer », « devrait » est :\n\nChoices:\nA. [CORRECT] un futur dans le passé (discours indirect après « a dit »)\nB. [WRONG] un conditionnel de conseil direct\nC. [WRONG] un conditionnel de politesse\nD. [WRONG] un imparfait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780518200844-dqbjdb29"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers misidentify the grammatical function of \"devrait\" in this indirect speech context: B is wrong because the advice is reported not direct, C is wrong because there is no politeness function here, and D is wrong because \"devrait\" is conditional not imparfait (\"devait\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780518231117-7j02j913",
+      "timestamp": "2026-06-03T20:24:06.073Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B misidentifies the context as direct advice when it's clearly reported speech, C incorrectly labels it as a politeness conditional which doesn't apply here, and D wrongly identifies the tense as imparfait when \"devrait\" is conditionnel présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780518270249-z8umhx64",
+      "timestamp": "2026-06-03T20:24:46.137Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f41ad714d178e7de",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-18-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Ce serait bien que tu ___ la réponse. »\n\nChoices:\nA. [CORRECT] saches\nB. [WRONG] saurais\nC. [WRONG] sais\nD. [WRONG] sauras\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780666986278-dyw0pmo5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after \"Ce serait bien que tu\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667139759-rzzp3g7m",
+      "timestamp": "2026-06-05T13:46:04.025Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods (conditional, present indicative, future) instead of the required subjunctive after \"Ce serait bien que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667466622-9whl4xs1",
+      "timestamp": "2026-06-05T13:51:19.216Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods (conditional or indicative) instead of the required subjunctive after \"Ce serait bien que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667633586-uguwhcjw",
+      "timestamp": "2026-06-05T13:54:10.259Z"
+    }
+  ]
+}

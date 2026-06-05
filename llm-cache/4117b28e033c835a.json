@@ -1,0 +1,26 @@
+{
+  "cacheKey": "4117b28e033c835a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-09-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-09 - Le conditionnel présent dans les phrases avec « si » : variétés de conditions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase respecte la concordance des temps avec « si » pour exprimer une condition réelle ?\nChoices:\nA. [CORRECT] Si tu étudies, tu réussiras l'examen.\nB. Si tu étudiais, tu réussirais l'examen.\nC. Si tu étudieras, tu réussis l'examen.\nD. Si tu étudierais, tu réussiras l'examen.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780261529476-kh4e0tow"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to validate whether a French grammar question properly tests the stated rule \"06-09 - Le conditionnel présent dans les phrases avec « si » : variétés de conditions.\"\n\nAnalysis completed:\nVERDICT: MISALIGNED\nREASON: The correct answer (\"Si tu étudies, tu réussiras l'examen\") uses futur simple (\"réussiras\"), not conditionnel présent, so this question tests the first conditional pattern (Si + présent → futur simple) for real conditions rather than the stated rule about conditionnel présent in \"si\" clauses.\n\nNo remaining tasks - the validation was completed before the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780261530482-bsh3950f",
+      "timestamp": "2026-05-31T21:05:59.085Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The correct answer (Si + présent → futur simple) tests the first conditional pattern for real conditions, not the conditional present in \"si\" clauses, which would require the structure Si + imparfait → conditionnel présent (as seen in choice B, which is incorrectly marked as wrong for this rule).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780261777860-aksf90us",
+      "timestamp": "2026-05-31T21:10:10.140Z"
+    }
+  ]
+}

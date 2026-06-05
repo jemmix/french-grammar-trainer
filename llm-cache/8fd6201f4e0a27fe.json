@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8fd6201f4e0a27fe",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-08-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Les phrases conditionnelles avec « si » : concordance des temps si + imparfait → conditionnel présent\nPROMPT: Conjuguez le verbe « être » au conditionnel présent dans une hypothèse avec « si + imparfait »\nPHRASE: Si tu lui rendais visite, il ___ vraiment content.\nCORRECT ANSWER: serait\n\nWRONG ANSWERS to evaluate:\n1. était\n2. est\n3. sera\n4. soit\n5. serais\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780260745346-1wt3nlzl"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors with si-clauses: using imparfait (était) by overgeneralizing the \"si + imparfait\" pattern, using présent (est) by ignoring the conditional requirement, confusing conditionnel with futur (sera), confusing conditionnel with subjonctif (soit), or conjugating for the wrong subject (serais for \"tu\" instead of \"il\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780260781634-g2yea5yk",
+      "timestamp": "2026-05-31T20:55:45.892Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: using the same tense as the si-clause (était), defaulting to present (est), confusing conditional with future (sera), overapplying subjunctive (soit), and correct conditional but wrong person agreement (serais).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780260945893-x2tbw8ri",
+      "timestamp": "2026-05-31T20:55:58.270Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: using imparfait (était), présent (est), or futur simple (sera) instead of conditionnel, incorrectly using subjonctif (soit), or making a person agreement error (serais) which is especially likely given the \"tu\" in the si-clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780260958270-b8yyc4op",
+      "timestamp": "2026-05-31T20:56:12.325Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e771067dc9524d56",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-10-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-10 - Le conditionnel présent pour atténuer une affirmation ou exprimer la prudence\n\nQUESTION:\nType: Input\nPrompt: Pour exprimer un doute avec nuance, conjuguez le verbe :\nPhrase: Je ___ que cette décision est un peu hâtive.\nCorrect Answer: dirais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780272608642-2rb0k4ew"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires students to recognize that expressing nuanced doubt calls for the conditionnel présent form \"dirais\" rather than the indicative \"dis,\" directly testing the rule about using conditionnel to soften/attenuate an affirmation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780272847170-11ct54mf",
+      "timestamp": "2026-06-01T00:14:52.318Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests using the conditionnel présent (\"dirais\") to soften an assertion (\"Je dirais que...\" instead of the direct \"Je dis que...\"), which is precisely the grammar rule about attenuating affirmations and expressing prudence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780273184568-c2udgfb7",
+      "timestamp": "2026-06-01T00:20:14.508Z"
+    }
+  ]
+}

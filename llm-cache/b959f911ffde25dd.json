@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b959f911ffde25dd",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-16-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Dans la phrase « Nous pensions qu'il réussirait son examen », « réussirait » est :\n\nChoices:\nA. [CORRECT] un futur dans le passé (discours indirect)\nB. [WRONG] un conditionnel d'hypothèse\nC. [WRONG] un conditionnel de politesse\nD. [WRONG] un imparfait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780517238704-33tnllej"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is wrong because there is no hypothesis or si-clause, just reported future from a past perspective; C is wrong because this is not a politeness usage like \"je voudrais\"; D is wrong because \"réussirait\" is conditionnel présent, not imparfait (which would be \"réussissait\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517340440-3ru6blot",
+      "timestamp": "2026-06-03T20:09:19.047Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers misclassify the grammatical function of \"réussirait\" — it is not expressing a hypothesis (B), not a politeness form (C), and it is not in the imparfait tense (D).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517441024-nu534xiu",
+      "timestamp": "2026-06-03T20:11:05.925Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B describes a conditional used in hypothetical if-clauses (not indirect speech), C describes a conditional of politeness used to soften requests (inapplicable here), and D incorrectly identifies the tense as imparfait when \"réussirait\" is clearly in the conditional form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780517528287-phm58fte",
+      "timestamp": "2026-06-03T20:12:31.440Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dc98a2189f4b82f7",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-17-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le conditionnel vs le futur : différences de forme et d'emploi\nPROMPT: Choisissez entre futur et conditionnel selon le contexte. Complétez :\nPHRASE: Il a annoncé qu'il ___ le projet le mois suivant.\nCORRECT ANSWER: terminerait\n\nWRONG ANSWERS to evaluate:\n1. terminera\n2. terminait\n3. a terminé\n4. terminât\n5. termine\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780522501021-efua7k75"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: \"terminera\" is the classic confusion this rule targets (future vs conditional in reported speech), \"terminait\" mistakes conditional for imparfait due to similar endings, \"a terminé\" misreads the temporal context, \"terminât\" overapplies subjunctive in subordinate clauses, and \"termine\" is the default-to-present fallback.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780523411840-6jb3njuq",
+      "timestamp": "2026-06-03T21:50:27.718Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: While \"terminera,\" \"terminait,\" \"a terminé,\" and \"termine\" are all highly plausible errors (failing to apply reported speech backshift, confusing with imperfect, using passé composé, or defaulting to present), \"terminât\" (imperfect subjunctive) is too obscure to be a realistic learner mistake at the level studying futur vs conditionnel — the imperfect subjunctive is a literary form that most learners never actively produce.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780523516725-80rtacks",
+      "timestamp": "2026-06-03T21:52:36.265Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"terminât\" (imparfait du subjonctif) is not a plausible learner mistake because this form is extremely rare and literary—most native French speakers never use it, so a learner would almost never produce it as an error.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780523664474-rmoxoiro",
+      "timestamp": "2026-06-03T21:54:40.625Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8ecf3977b9f062c9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-17-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-17 - Le conditionnel vs le futur : différences de forme et d'emploi\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle est la différence entre « je peux » et « je pourrais » ?\nChoices:\nA. [CORRECT] « Je peux » est une affirmation directe ; « je pourrais » est une suggestion ou une demande atténuée.\nB. « Je peux » est au futur ; « je pourrais » est au présent.\nC. « Je pourrais » est plus formel car il utilise un verbe plus soutenu.\nD. Il n'y a aucune différence de sens entre les deux.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780522501020-bxbjzggg"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question compares the present tense (\"je peux\") with the conditional (\"je pourrais\"), but the rule specifically tests the difference between the future tense and the conditional — the future of pouvoir would be \"je pourrai,\" which is not mentioned at all.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780522665231-9q5xbho7",
+      "timestamp": "2026-06-03T21:38:08.122Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question compares the present indicative (\"je peux\") with the conditional present (\"je pourrais\"), not the conditional vs the future tense as the rule states; a properly aligned question would contrast \"je pourrais\" (conditional) with \"je pourrai\" (future).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780522879182-3jvb7ass",
+      "timestamp": "2026-06-03T21:41:53.251Z"
+    }
+  ]
+}

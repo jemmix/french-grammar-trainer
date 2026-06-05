@@ -1,0 +1,26 @@
+{
+  "cacheKey": "94dcd20be66aee4c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-18-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-18 - Le conditionnel vs le subjonctif après certains verbes et conjonctions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Dans la phrase « Si j'avais le temps, je le ferais », quel mode est utilisé dans la proposition principale ?\nChoices:\nA. [CORRECT] Le conditionnel\nB. Le subjonctif\nC. L'imparfait\nD. Le plus-que-parfait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780666986278-e8lt1kkp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic identification of the conditional mood in an if-clause construction where there is no choice between conditional and subjunctive, rather than testing the distinction between these two moods after verbs/conjunctions where both could theoretically appear.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667147747-f4myhe2q",
+      "timestamp": "2026-06-05T13:46:13.289Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests basic identification of the conditional mood in a si-clause structure (si + imparfait → conditionnel), not the distinction between conditional and subjunctive after specific verbs and conjunctions like \"vouloir que\" or \"bien que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780667481770-deivm3vn",
+      "timestamp": "2026-06-05T13:51:33.810Z"
+    }
+  ]
+}

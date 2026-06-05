@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8ba8e7c500d86685",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « S'il y ___ moins de bruit, je pourrais me concentrer. » (avoir)\n\nChoices:\nA. [CORRECT] avait\nB. [WRONG] aurait\nC. [WRONG] a\nD. [WRONG] aura\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780257007454-70pncwos"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate si-clause rules: B uses conditionnel (never used after si), C uses présent (which would require future or impératif in the main clause, not conditionnel), and D uses futur simple (never used after si).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257094839-lfrn3o6w",
+      "timestamp": "2026-05-31T19:52:07.908Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nFor this verification task, I can provide my analysis:\n\nTRUE||All wrong answers are grammatically incorrect in this si-clause context: B uses the conditional which is never used after \"si\"; C uses present indicative which would require a future main clause, not conditional; D uses future which is never used after \"si\" in standard French.\n\nThe question requires the imparfait \"avait\" because the main clause \"je pourrais\" is in conditional present, and the rule is \"si + imparfait → conditionnel présent.\" All three wrong answers (B: aurait, C: a, D: aura) violate this pattern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257352972-rgnpw4ww",
+      "timestamp": "2026-05-31T19:56:28.597Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nFor the validation task requested:\n\nTRUE||All wrong answers violate the si-clause tense agreement rules (imparfait is required after \"si\" when the main clause uses conditional).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780257640723-kh6ds2fs",
+      "timestamp": "2026-05-31T20:01:02.194Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "49369620c31bcfb8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-09-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-09 - Le conditionnel présent dans les phrases avec « si » : variétés de conditions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez au conditionnel présent : « Au cas où il ___ , prends un parapluie. »\nChoices:\nA. [CORRECT] pleuvrait\nB. pleuve\nC. pleut\nD. pleuvra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780226401389-zt1nbu07"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the use of the conditional mood with \"au cas où,\" which is a recognized variety of conditional construction in French, directly matching the rule's focus on \"variétés de conditions.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780227902720-bjjjyusg",
+      "timestamp": "2026-05-31T11:45:24.941Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far: I was asked to validate whether a French grammar question about the conditional tense is aligned with the stated rule \"Le conditionnel présent dans les phrases avec « si » : variétés de conditions.\"\n\nAnalysis completed:\n\nVERDICT: MISALIGNED\nREASON: The question uses \"au cas où\" (which takes the conditional directly) rather than a \"si\" clause, so it tests a different construction than the \"si + condition\" patterns the rule is about.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231235350-1wjt9wxy",
+      "timestamp": "2026-05-31T12:41:05.640Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests the \"au cas où + conditionnel\" construction, which is a distinct grammar rule from \"si\" clauses — the stated rule specifically covers phrases with \"si\" and their conditional patterns, not \"au cas où\" which takes the conditional directly as its own specific rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780235495707-u2ezwto6",
+      "timestamp": "2026-05-31T13:52:06.165Z"
+    }
+  ]
+}

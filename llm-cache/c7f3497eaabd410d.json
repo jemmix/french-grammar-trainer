@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c7f3497eaabd410d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-17-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase illustre la différence d'emploi entre futur et conditionnel ?\n\nChoices:\nA. [CORRECT] Il pleuvra demain. / Il pleuvrait demain si les nuages persistaient.\nB. [WRONG] Il pleut demain. / Il pleuvait demain.\nC. [WRONG] Il va pleuvoir demain. / Il pleuvra demain.\nD. [WRONG] Il pleuvra demain. / Il a plu demain.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780522501021-29w4io8n"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers use incorrect tense combinations (présent/imparfait, futur proche/futur simple, futur/passé composé) that do not illustrate the difference between futur and conditionnel as required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780522683965-qzdw1aen",
+      "timestamp": "2026-06-03T21:38:36.680Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to illustrate the futur vs conditionnel distinction: B uses present and imparfait, C uses futur proche and futur simple, and D uses futur simple and passé composé — none pair futur with conditionnel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780522912350-oxbbh9by",
+      "timestamp": "2026-06-03T21:42:09.806Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to illustrate the futur/conditionnel distinction: B uses incorrect tenses (présent/imparfait, both ungrammatical with \"demain\"), C contrasts futur proche with futur simple instead of conditionnel, and D pairs futur with an ungrammatical passé composé + \"demain\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780523059656-76yem4yx",
+      "timestamp": "2026-06-03T21:44:42.021Z"
+    }
+  ]
+}

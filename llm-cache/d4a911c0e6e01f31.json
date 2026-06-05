@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d4a911c0e6e01f31",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-10-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Un expert veut formuler une conclusion avec prudence. Quelle phrase choisit-il ?\n\nChoices:\nA. [CORRECT] On pourrait en conclure que la tendance se confirme.\nB. [WRONG] On en conclut que la tendance se confirme.\nC. [WRONG] On en conclura que la tendance se confirme.\nD. [WRONG] La tendance se confirme, c'est évident.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780272608641-myu16scm"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses present tense which is too direct for a cautious conclusion; C uses future tense which still asserts certainty rather than hedging; D is explicitly assertive (\"c'est évident\") which is the opposite of cautious.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780272725494-1yzbhgf5",
+      "timestamp": "2026-06-01T00:12:54.200Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to express the cautious/hedging tone required by \"avec prudence\": B uses assertive present tense, C uses future which is more certain than conditional, and D is explicitly assertive with \"c'est évident.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780273084926-jtz9n6bs",
+      "timestamp": "2026-06-01T00:18:35.512Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are incorrect. The question asks which sentence an expert would choose to formulate a conclusion \"avec prudence\" (with caution). Answer A uses the conditional \"pourrait\" to express caution. Answer B uses the present indicative \"conclut\" (too direct/assertive), answer C uses the future \"conclura\" (still assertive, not cautious), and answer D says \"c'est évident\" (the opposite of cautious). All three wrong answers fail the \"avec prudence\" constraint specified in the question.\n\nThe verdict would be: TRUE||All wrong answers fail the \"avec prudence\" constraint—B and C are too assertive, D explicitly states certainty with \"c'est évident.\"\n\nNo remaining tasks — the verification was complete at the point of interruption.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780273376175-x6etkyyw",
+      "timestamp": "2026-06-01T00:23:38.490Z"
+    }
+  ]
+}

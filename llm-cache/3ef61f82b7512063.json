@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3ef61f82b7512063",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-09-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-09 - Le conditionnel présent dans les phrases avec « si » : variétés de conditions\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Si tu veux, on ___ au cinéma ce soir. »\nChoices:\nA. [CORRECT] ira\nB. irait\nC. allait\nD. aille\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780261529478-ivwmpa7m"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests the key rule that \"si + présent\" takes the future simple (not the conditional), making \"irait\" the natural trap answer for students who don't understand the si-clause tense agreements covered by this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780261679622-kcm2imth",
+      "timestamp": "2026-05-31T21:08:25.888Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI have completed the validation task that was requested:\n\n**VERDICT: MISALIGNED**\n**REASON: The correct answer \"ira\" is future tense, not conditional; the question tests the \"si + présent → futur\" pattern, not the \"si + imparfait → conditionnel\" pattern described in the stated rule about le conditionnel présent in \"si\" clauses.**\n\nNo remaining tasks — this was a single-question validation that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780261874737-4d3m3xlg",
+      "timestamp": "2026-05-31T21:13:55.233Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The correct answer \"ira\" is in the futur simple, not the conditionnel présent — this question tests when NOT to use the conditional (si + présent → futur simple), which is the opposite of the stated rule about using the conditionnel présent in si-clauses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780262046480-0yl2eyya",
+      "timestamp": "2026-05-31T21:14:43.479Z"
+    }
+  ]
+}

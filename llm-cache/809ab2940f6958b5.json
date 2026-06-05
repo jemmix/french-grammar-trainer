@@ -1,0 +1,33 @@
+{
+  "cacheKey": "809ab2940f6958b5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-19-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase négative au conditionnel passé est correctement formée ?\n\nChoices:\nA. [CORRECT] Il n'aurait jamais menti à ses amis.\nB. [WRONG] Il n'aurait menti jamais à ses amis.\nC. [WRONG] Il aurait jamais menti à ses amis.\nD. [WRONG] Il ne aurait jamais menti à ses amis.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780673201633-pf5oaawm"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly places \"jamais\" after the past participle instead of before it, C omits the required \"ne\" particle, and D fails to elide \"ne\" before a vowel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780673216458-z3wkwcr2",
+      "timestamp": "2026-06-05T15:27:14.595Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was evaluating a French grammar verification question about the correct formation of a negative sentence in the passé conditionnel.\n\nAnalysis completed: The wrong answers B, C, and D are all indeed incorrect:\n- B places \"jamais\" after the past participle instead of surrounding the auxiliary\n- C omits the required \"ne\" in standard written French\n- D fails to elide \"ne\" before the vowel, writing \"ne aurait\" instead of \"n'aurait\"\n\nTRUE||All wrong answers contain clear grammar errors: B misplaces the negation, C drops the required \"ne\", and D fails to elide \"ne\" before a vowel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780673600550-cgxs69v5",
+      "timestamp": "2026-06-05T15:34:09.874Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B has incorrect word order (jamais should precede the past participle), C omits the required \"ne\" of negation, and D fails to elide \"ne\" before a vowel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780674015220-1njf4v85",
+      "timestamp": "2026-06-05T15:40:46.116Z"
+    }
+  ]
+}

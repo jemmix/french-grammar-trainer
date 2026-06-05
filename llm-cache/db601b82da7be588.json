@@ -1,0 +1,33 @@
+{
+  "cacheKey": "db601b82da7be588",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-10-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez au conditionnel présent : « Il ___ être utile d'organiser une réunion pour discuter. »\n\nChoices:\nA. [CORRECT] serait\nB. [WRONG] est\nC. [WRONG] était\nD. [WRONG] soit\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780226401397-w4ua5bmy"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are in different tenses/moods (présent indicatif, imparfait, subjonctif) rather than the conditionnel présent explicitly requested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780228312503-pwehxpf6",
+      "timestamp": "2026-05-31T11:52:16.195Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different tenses/moods (présent, imparfait, subjonctif) instead of the required conditionnel présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780231560646-4z28r7c5",
+      "timestamp": "2026-05-31T12:46:24.377Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use different moods/tenses (présent indicatif, imparfait indicatif, subjonctif présent) rather than the required conditionnel présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780235721180-npjm0nyr",
+      "timestamp": "2026-05-31T13:55:40.511Z"
+    }
+  ]
+}
