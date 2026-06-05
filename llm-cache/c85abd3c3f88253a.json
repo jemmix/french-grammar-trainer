@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c85abd3c3f88253a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-20-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\n\nQUESTION:\nType: Input\nPrompt: Le conditionnel passé marque ici ce qui aurait dû être fait. Complétez la phrase.\nPhrase: Après cet échec, il ___ (falloir) prendre une autre décision.\nCorrect Answer: aurait fallu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780688409522-xzw7lndh"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Work accomplished:** I analyzed the validation request for the French grammar question about conditionnel passé.\n\n**Analysis summary:**\nVERDICT: MISALIGNED\nREASON: The question tests conjugation of \"falloir\" in the conditionnel passé, not the identification of different conditional values (politeness, hypothesis, regret, uncertain information) since the prompt already tells the student which value is being used (\"ce qui aurait dû être fait\").\n\n**Remaining tasks:** None - the validation verdict was ready to be provided.\n\n**Recommendations:** The question should either be redesigned to actually test identification of conditional values (e.g., by removing the explanatory prompt and asking students to identify which value is being expressed), or it should be reassigned to a rule about conjugating the conditionnel passé rather than one about synthesizing different values of the conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780688411530-emaxjnrx",
+      "timestamp": "2026-06-05T19:40:30.447Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question primarily tests verb conjugation of \"falloir\" in the conditional passé, not the ability to identify or distinguish between different values of the conditional (politeness, hypothesis, regret, uncertain information) — the prompt explicitly tells the student which tense to use, so no understanding of conditional values is required to answer correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780688430447-k3x5q2zi",
+      "timestamp": "2026-06-05T19:40:53.177Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0fd1855448d97f04",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-20-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\n\nQUESTION:\nType: Input\nPrompt: Complétez cette demande polie.\nPhrase: Vous ___ (pouvoir) me transmettre ce document, s'il vous plaît ?\nCorrect Answer: pourriez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780680407218-jq9b6cnk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the \"politesse\" value of the conditional explicitly listed in the rule, requiring the learner to use \"pourriez\" instead of \"pouvez\" to form a polite request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780680415230-ocviw85i",
+      "timestamp": "2026-06-05T17:27:30.963Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the politeness value of the conditional, which is explicitly listed as one of the four values in the synthesis rule, and correctly answering requires knowing that \"pourriez\" (conditional of pouvoir) is the appropriate form for a polite request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780680450963-gi3i7x6o",
+      "timestamp": "2026-06-05T17:27:49.452Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the politeness value of the conditional—one of the four specific values (politesse, hypothèse, regret, information incertaine) explicitly listed in the rule—by requiring the learner to use \"pourriez\" instead of \"pouvez\" for a polite request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780680469453-8pf7ox5j",
+      "timestamp": "2026-06-05T17:28:01.815Z"
+    }
+  ]
+}

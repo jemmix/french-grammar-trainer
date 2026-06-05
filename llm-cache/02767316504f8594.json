@@ -1,0 +1,33 @@
+{
+  "cacheKey": "02767316504f8594",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-20-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Dans la phrase « Si j'avais su, je n'aurais pas fait cette erreur », le conditionnel passé exprime :\n\nChoices:\nA. [CORRECT] Un regret lié à une hypothèse irréelle du passé\nB. [WRONG] Une demande polie\nC. [WRONG] Une information rapportée incertaine\nD. [WRONG] Un conseil amical\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780677766400-3u87dfh7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers describe different uses of the conditional (polite requests use conditionnel présent, uncertain reported information requires a different context, and advice uses conditionnel présent or imperative) that do not match the conditionnel passé in a \"si + plus-que-parfait\" hypothetical regret structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780677772422-o08fnr1f",
+      "timestamp": "2026-06-05T16:43:27.525Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers describe valid uses of the conditionnel in other contexts, but in this specific si-clause structure they are incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780677956674-i5g4t8sq",
+      "timestamp": "2026-06-05T16:46:15.668Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers describe valid uses of the conditionnel in other contexts but are incorrect for this specific sentence, which clearly expresses regret about an unreal past hypothesis, not a polite request, uncertain reported information, or friendly advice.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780678138061-861rfzj4",
+      "timestamp": "2026-06-05T16:49:47.538Z"
+    }
+  ]
+}

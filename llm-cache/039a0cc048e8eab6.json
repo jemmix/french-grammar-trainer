@@ -1,0 +1,26 @@
+{
+  "cacheKey": "039a0cc048e8eab6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-20-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\n\nQUESTION:\nType: Input\nPrompt: Conditionnel présent ou conditionnel passé ? Complétez la phrase.\nPhrase: Après cet échec, il ___ (falloir) prendre une autre décision.\nCorrect Answer: aurait fallu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780688140354-0a7tqokf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests whether to use conditionnel présent vs. conditionnel passé based on temporal context (past situation requiring passé), not the identification of different conditional values (politeness, hypothesis, regret, uncertain information) as specified in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780688142364-emt8efsw",
+      "timestamp": "2026-06-05T19:35:59.777Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\n**Analysis completed:**\n\nVERDICT: MISALIGNED\nREASON: This question only tests whether students can select the correct conditional tense (présent vs passé) based on temporal context (\"Après cet échec\" indicates past), not whether they understand the different values/uses of the conditional (politeness, hypothesis, regret, uncertain information) that the rule is meant to synthesize.\n\n**Remaining tasks:** None - the validation verdict has been provided.\n\n**Recommendation:** This question would be better suited for a rule about choosing between conditionnel présent and conditionnel passé based on temporal context, rather than a synthesis rule about the different semantic values of the conditional. To properly test rule 06-20, a question should ask students to identify or demonstrate understanding of WHICH value (regret, hypothesis, politeness, etc.) is being expressed in a given conditional sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780688159778-7lhmvrmz",
+      "timestamp": "2026-06-05T19:36:17.454Z"
+    }
+  ]
+}

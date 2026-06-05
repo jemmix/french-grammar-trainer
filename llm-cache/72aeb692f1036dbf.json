@@ -1,0 +1,26 @@
+{
+  "cacheKey": "72aeb692f1036dbf",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-20-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe entre parenthèses au conditionnel présent.\nPhrase: Si j'avais plus de temps, je ___ (voyager) davantage.\nCorrect Answer: voyagerais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780677766412-hzzzdk8t"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests conjugation of the conditionnel présent form, not understanding of the different values (politesse, hypothèse, regret, information incertaine) — a student could answer correctly by simply knowing how to conjugate \"voyager\" without recognizing that the sentence illustrates a hypothetical use.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780677881564-up8d8drg",
+      "timestamp": "2026-06-05T16:45:04.500Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to validate whether a French grammar question about conjugating \"voyager\" in the conditional present tense is properly aligned with the rule \"Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\".\n\nMy analysis:\n\nVERDICT: MISALIGNED\nREASON: The question tests conditional conjugation (verb form) rather than the different semantic values/uses of the conditional (politeness, hypothesis, regret, uncertain information) that the rule is about—a student could correctly conjugate the verb without understanding any of the conditional's distinct values.\n\nRemaining tasks: None—this was a single-question validation that I have completed in my analysis above.\n\nRecommendations: To properly test rule 06-20, questions should require students to identify or produce conditionals in specific communicative contexts (e.g., distinguishing a polite request from a hypothetical statement, or identifying when conditional expresses uncertain information vs. regret), rather than simply conjugating verbs in conditional form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780678071821-wpk8dkjl",
+      "timestamp": "2026-06-05T16:50:21.521Z"
+    }
+  ]
+}

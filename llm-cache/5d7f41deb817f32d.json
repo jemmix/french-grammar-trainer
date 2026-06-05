@@ -1,0 +1,40 @@
+{
+  "cacheKey": "5d7f41deb817f32d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-20-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\n\nQUESTION:\nType: Input\nPrompt: Le conditionnel permet de rapporter une information incertaine. Complétez la phrase.\nPhrase: Selon la météo, il ___ (pleuvoir) demain après-midi.\nCorrect Answer: pleuvrait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780679494995-od0x11vx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the \"information incertaine\" value of the conditional, which is explicitly listed as one of the four values in the rule, and the prompt explicitly frames it as such.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780679501006-xxpgoowd",
+      "timestamp": "2026-06-05T17:12:00.805Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the \"information incertaine\" value of the conditional in a classic context (weather forecast with \"selon la météo\"), requiring the student to produce the conditional form to express reported uncertain information.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780679520805-pxbbwbbu",
+      "timestamp": "2026-06-05T17:12:29.260Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Work accomplished:** I was asked to validate whether a French grammar question about the conditional tense is properly aligned with the rule it claims to test.\n\n**Analysis completed:**\nThe question asks students to conjugate \"pleuvoir\" in the conditional after the prompt explicitly states \"Le conditionnel permet de rapporter une information incertaine\" (The conditional is used to report uncertain information). \n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student that the conditional expresses uncertain information, so the question only tests conjugation of \"pleuvoir\" in the conditional présent, not the ability to recognize or distinguish between the different values of the conditional (politeness, hypothesis, regret, uncertain information) as the rule requires.\n\n**Remaining tasks:** None - the validation was completed.\n\n**Recommendations:** To properly test rule 06-20, questions should require students to identify which value of the conditional is being used in context, or to choose the appropriate verb form/mood for a specific situational value, without giving away the answer in the prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780679549261-g0jdv4k8",
+      "timestamp": "2026-06-05T17:12:46.150Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of analyzing a French grammar validation question to determine if it properly tests the stated rule about the different values of the conditional (politesse, hypothèse, regret, information incertaine).\n\n**Analysis completed (not yet output):**\n- Rule: Synthèse des différentes valeurs du conditionnel\n- Question: Conjugate \"pleuvoir\" in \"Selon la météo, il ___ pleuvoir demain\"\n- The prompt explicitly states \"Le conditionnel permet de rapporter une information incertaine,\" which gives away the grammar point\n- This reduces the question to a simple conjugation exercise rather than testing whether students can identify or distinguish between different conditional values\n\n**Verdict that would have been output:**\nVERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student the sentence uses the conditional for \"information incertaine,\" reducing the question to a simple conjugation exercise rather than testing the student's ability to identify or apply different values of the conditional.\n\n**Remaining tasks:** None - this was a single-question validation.\n\n**Recommendations:** Questions testing this synthesis rule should either ask students to identify which value of the conditional is being used in a given sentence, or ask them to produce sentences using specific values without being told which value applies.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780679566150-mlxz74gq",
+      "timestamp": "2026-06-05T17:13:01.134Z"
+    }
+  ]
+}

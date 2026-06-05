@@ -1,0 +1,33 @@
+{
+  "cacheKey": "71070e00731baa86",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-20-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\n\nQUESTION:\nType: Input\nPrompt: Complétez cette information rapportée sans certitude.\nPhrase: Selon la météo, il ___ (pleuvoir) demain après-midi.\nCorrect Answer: pleuvrait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780680407218-wupiuw60"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the \"information incertaine\" value of the conditional, where reported information (weather forecast) is presented without certainty, requiring the conditional \"pleuvrait\" rather than the future \"pleuvra.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780680413228-8n73s4d4",
+      "timestamp": "2026-06-05T17:27:06.831Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far:\nI analyzed the validation request for the French grammar question about the conditional tense.\n\nRemaining tasks:\nNone - the analysis was complete at the point of interruption.\n\nRecommendations for next steps:\nHere is the validation result for the question:\n\nVERDICT: ALIGNED\nREASON: The question directly tests the \"information incertaine\" (uncertain information) value of the conditional, which is explicitly one of the four values listed in the synthesis rule, and the prompt specifically frames the context as reported information without certainty.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780680426834-3c49bzrr",
+      "timestamp": "2026-06-05T17:27:29.443Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the \"information incertaine\" value of the conditional, as the context \"Selon la météo\" and the explicit instruction \"sans certitude\" require the learner to recognize that reported uncertain information demands the conditional mood.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780680449443-yydb7awl",
+      "timestamp": "2026-06-05T17:27:43.310Z"
+    }
+  ]
+}

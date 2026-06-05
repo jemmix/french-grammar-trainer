@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c0b460da47968c99",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-20-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe entre parenthèses au conditionnel passé.\nPhrase: Après cet échec, il ___ (falloir) prendre une autre décision.\nCorrect Answer: aurait fallu\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780677766412-np9dfd8g"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests conjugation of the conditionnel passé (formation of \"falloir\"), not the different values/uses of the conditional (politeness, hypothesis, regret, uncertain information).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780677891681-c7omknqn",
+      "timestamp": "2026-06-05T16:45:04.163Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests the mechanical conjugation of \"falloir\" in the conditionnel passé, not the different values or uses of the conditional (politeness, hypothesis, regret, uncertain information) that the rule is about.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780678070233-ksk989t0",
+      "timestamp": "2026-06-05T16:48:40.021Z"
+    }
+  ]
+}

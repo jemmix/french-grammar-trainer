@@ -1,0 +1,33 @@
+{
+  "cacheKey": "61ccbd542869f01c",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "06-20-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\nPROMPT: Le conditionnel de politesse adoucit une demande. Complétez la phrase.\nPHRASE: Vous ___ (pouvoir) me transmettre ce document, s'il vous plaît ?\nCORRECT ANSWER: pourriez\n\nWRONG ANSWERS to evaluate:\n1. pouvez\n2. pouviez\n3. pourrez\n4. auriez pu\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780679494995-1j5osnon"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common confusions learners make with the conditional: using indicative present instead of conditional (pouvez), confusing imparfait with conditionnel which share similar endings (pouviez), confusing futur with conditionnel which share the same stem (pourrez), and using past conditional instead of present conditional (auriez pu).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780679684667-qyh5m6in",
+      "timestamp": "2026-06-05T17:15:02.814Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers are real French conjugations of \"pouvoir\" in different tenses (présent, imparfait, futur simple) or a related conditional structure (conditionnel passé) that learners commonly confuse with the conditionnel présent used for politeness.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780679702815-h073mzr8",
+      "timestamp": "2026-06-05T17:15:20.795Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner confusions: \"pouvez\" confuses present indicative with conditional, \"pouviez\" confuses imperfect with conditional, \"pourrez\" confuses future with conditional (the most common mistake since they share the same stem), and \"auriez pu\" overcorrects to past conditional when present conditional politeness is required.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780679720795-jmdat100",
+      "timestamp": "2026-06-05T17:15:39.346Z"
+    }
+  ]
+}

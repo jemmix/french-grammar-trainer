@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e941302ec8594bbb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-20-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le conditionnel présent et passé\n\nRULE BEING TESTED: 06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\n\nQUESTION:\nType: Input\nPrompt: Le conditionnel présente cette éventualité comme irréelle. Complétez la phrase.\nPhrase: Avec plus de temps libre, je ___ (voyager) davantage.\nCorrect Answer: voyagerais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780687894996-j97fnw4u"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\n\nI was analyzing a single validation task for a French grammar question to determine if it properly tests the stated rule.\n\n## Analysis Completed\n\nThe question asks students to conjugate \"voyager\" in the conditional to complete \"Avec plus de temps libre, je ___ (voyager) davantage\" with the answer \"voyagerais\".\n\nThe rule being tested is \"06-20 - Synthèse : les différentes valeurs du conditionnel (politesse, hypothèse, regret, information incertaine)\" - which is about recognizing the different uses/values of the conditional.\n\nThe question is **MISALIGNED** because:\n- The prompt explicitly states \"Le conditionnel présente cette éventualité comme irréelle\" - essentially telling the student to use the conditional\n- The student doesn't need to recognize *when* to use the conditional (hypothèse) - they're told it's a conditional situation\n- The core skill being tested is conjugation, not understanding the values of the conditional\n- A properly aligned question would require students to identify which conditional value is being used, or choose between indicatif/conditionnel based on context\n\n## Verdict\n\nVERDICT: MISALIGNED\nREASON: The question primarily tests conditional conjugation of \"voyager\" rather than the different values of the conditional (politesse, hypothèse, regret, information incertaine) since the prompt explicitly tells the student to use the conditional rather than requiring them to recognize when the conditional is appropriate.\n\n## Remaining Tasks\n\nNone - this was a single validation task that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780687895009-tp7d7uao",
+      "timestamp": "2026-06-05T19:32:02.444Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was asked to validate whether a French grammar question about the conditionnel is aligned with the rule it claims to test (Rule 06-20: Synthesis of the different values of the conditional - politeness, hypothesis, regret, uncertain information).\n\n## My Assessment\nVERDICT: MISALIGNED\nREASON: The question primarily tests verb conjugation in the conditionnel présent rather than the student's ability to recognize or distinguish between the different values of the conditional; the prompt explicitly states the grammatical context (\"Le conditionnel présente cette éventualité comme irréelle\"), so no understanding of conditional values is required to answer correctly.\n\n## Remaining Tasks\nNone - this was a single validation request that I have completed.\n\n## Recommendations\nIf the goal is to truly test Rule 06-20 (understanding different conditional values), consider:\n- Presenting multiple sentences using the conditional and asking students to identify which value each represents\n- Giving a scenario and asking which form (conditionnel vs. other moods) would be appropriate and why\n- Removing the explicit hint about \"irréelle\" from the prompt to force students to recognize the hypothetical context themselves",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780687922444-4i9wtoxs",
+      "timestamp": "2026-06-05T19:32:30.538Z"
+    }
+  ]
+}
