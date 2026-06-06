@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e4584efb466da18a",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-01-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Formation régulière du subjonctif présent : radical de ils/elles au présent + -e, -es, -e, -ions, -iez, -ent\nPROMPT: Conjuguez le verbe au subjonctif présent (2e personne du pluriel).\nPHRASE: Le directeur exige que vous ___ cet entretien demain.\nCORRECT ANSWER: réussissiez\n\nWRONG ANSWERS to evaluate:\n1. réussissez\n2. réussirez\n3. réussiriez\n4. réussissions\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780743958577-4s5rlagj"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent real conjugations of \"réussir\" that learners commonly confuse with the subjunctive: the indicative present (réussissez), future (réussirez), conditional (réussiriez), and wrong person within the subjunctive itself (réussissions).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780743980856-vnbbn5eq",
+      "timestamp": "2026-06-06T11:06:30.150Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: confusing indicative present with subjonctif (réussissez), using future tense triggered by \"demain\" (réussirez), mixing up conditionnel and subjonctif due to shared -iez ending (réussiriez), and selecting the wrong person/number within the subjonctif itself (réussissions for nous instead of vous).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780744005752-cy9lldzn",
+      "timestamp": "2026-06-06T11:07:00.382Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: using the indicative present (réussissez), future tense triggered by \"demain\" (réussirez), conditional confused with subjunctive due to similar -iez ending (réussiriez), or correct subjunctive but wrong person with -ions instead of -iez (réussissions).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780744030219-1pjzip2m",
+      "timestamp": "2026-06-06T11:07:20.837Z"
+    }
+  ]
+}

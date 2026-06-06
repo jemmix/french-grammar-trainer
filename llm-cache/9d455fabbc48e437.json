@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9d455fabbc48e437",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-01-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-01 - Formation régulière du subjonctif présent : radical de ils/elles au présent + -e, -es, -e, -ions, -iez, -ent\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je doute que nous ___ la bonne décision. »\nChoices:\nA. [CORRECT] décidions\nB. décidons\nC. déciderons\nD. déciderions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780742306093-k1jws0ps"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The correct answer \"décidions\" is formed by applying the stated rule (taking the radical \"décid-\" from \"ils décident\" and adding the subjunctive ending \"-ions\"), and the distractors test whether students can distinguish the subjunctive formation from indicative, future, and conditional forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780742364969-zeakjdj6",
+      "timestamp": "2026-06-06T10:39:53.415Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing both that \"je doute que\" triggers the subjunctive and how to form the subjunctive of \"décider\" using the ils/elles radical (décid-) plus the -ions ending, distinguishing it from the similar-sounding conditional \"déciderions.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780742562356-61o2lga5",
+      "timestamp": "2026-06-06T10:42:58.120Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to validate whether a French grammar question properly tests the stated rule about forming the regular present subjunctive.\n\nMy analysis:\nVERDICT: ALIGNED\nREASON: The question requires forming the subjunctive present of \"décider\" for \"nous\" by taking the \"ils/elles\" stem (décid-) and adding the correct ending (-ions), which is exactly what the rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780742719671-52q4hsgd",
+      "timestamp": "2026-06-06T10:45:40.270Z"
+    }
+  ]
+}

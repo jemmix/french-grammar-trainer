@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4f79e1d8eb468b9f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-01-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-01 - Formation régulière du subjonctif présent : radical de ils/elles au présent + -e, -es, -e, -ions, -iez, -ent\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au subjonctif présent (3e personne du singulier).\nPhrase: Il est nécessaire qu'il ___ ses erreurs pour progresser.\nCorrect Answer: grandisse\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780742306094-ajyvdl6m"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying the regular subjunctive formation rule (taking the ils/elles radical \"grandiss-\" from \"ils grandissent\" and adding \"-e\" for 3rd person singular to get \"grandisse\"), which is exactly what the rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780742449398-7g1lde22",
+      "timestamp": "2026-06-06T10:49:37.971Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying the stated rule by taking the ils/elles present stem \"grandiss-\" and adding \"-e\" to form \"grandisse\" for the 3rd person singular subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780742977972-2n3cmhj1",
+      "timestamp": "2026-06-06T10:49:46.334Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the learner to form the subjonctif présent of \"grandir\" by taking the ils/elles stem (\"grandiss-\") and adding the 3rd person singular ending (\"-e\"), which is exactly the rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780742986335-gu87r1op",
+      "timestamp": "2026-06-06T10:49:54.813Z"
+    }
+  ]
+}

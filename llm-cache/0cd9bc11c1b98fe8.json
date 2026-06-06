@@ -1,0 +1,47 @@
+{
+  "cacheKey": "0cd9bc11c1b98fe8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-01-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-01 - Formation régulière du subjonctif présent : radical de ils/elles au présent + -e, -es, -e, -ions, -iez, -ent\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au subjonctif présent (2e personne du pluriel).\nPhrase: Le directeur exige que vous ___ ce rapport pour lundi.\nCorrect Answer: réussissiez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780742306094-5qprtp8g"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the regular subjunctive formation by requiring the learner to identify the stem \"réussiss-\" from the ils/elles present tense form and add the \"-iez\" ending for the 2nd person plural.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780742444551-y9xbkame",
+      "timestamp": "2026-06-06T10:41:11.599Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the ils/elles present stem \"réussiss-\" and applying the correct 2nd person plural ending \"-iez\" to form \"réussissiez,\" directly testing the stated rule for regular subjunctive formation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780742621363-4x9qc4me",
+      "timestamp": "2026-06-06T10:44:02.325Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\n**Analysis completed:**\n\nThe question asks students to conjugate \"le verbe\" at subjunctive present (2nd person plural) for the sentence \"Le directeur exige que vous ___ ce rapport pour lundi\" with the answer \"réussissiez.\"\n\n**Two critical issues identified:**\n\n1. **Missing verb specification**: The prompt says \"Conjuguez le verbe\" but never identifies WHICH verb to conjugate. Students cannot know the answer should be \"réussir\" - they could reasonably fill in \"finissiez,\" \"rendissiez,\" or other grammatically valid subjunctive forms.\n\n2. **Semantic incompatibility**: Even if students knew to use \"réussir,\" the verb doesn't fit the sentence context (\"réussir un rapport\" is not correct French - you \"finir\" or \"rendre\" a report, you don't \"succeed\" it).\n\n**Verdict (not yet delivered):**\nVERDICT: MISALIGNED\nREASON: The question fails to specify which verb to conjugate, making it impossible to answer correctly using only knowledge of the subjunctive formation rule; additionally, the expected answer \"réussissiez\" is semantically incompatible with the sentence context.\n\n**Remaining tasks:** None - this was a single-question validation that is now complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780742774215-3n2xrdrk",
+      "timestamp": "2026-06-06T10:46:53.828Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying the exact formation rule—taking the ils/elles present root \"réussiss-\" and adding the 2nd person plural subjunctive ending \"-iez\" to produce \"réussissiez\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780742813828-b3ysbqbh",
+      "timestamp": "2026-06-06T10:47:06.578Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The verb \"réussir\" does not semantically fit with \"ce rapport\" in French — you cannot \"réussir un rapport,\" making the question fundamentally broken regardless of whether it tests the subjunctive formation rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780742827466-qfo0t07t",
+      "timestamp": "2026-06-06T10:47:20.674Z"
+    }
+  ]
+}
