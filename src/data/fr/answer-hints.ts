@@ -989,6 +989,8 @@ export const answerHints: Record<string, string> = {
   "s'était": "se souvenir",
   "Sache": "savoir",
   "sache": "savoir",
+  "veuille": "vouloir",
+  "veuillent": "vouloir",
   "saches": "savoir",
   "sachions": "savoir",
   "Saisissons": "saisir",

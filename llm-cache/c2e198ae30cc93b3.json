@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c2e198ae30cc93b3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-03-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je doute que tu ___ cette information avant demain. »\n\nChoices:\nA. [CORRECT] saches\nB. [WRONG] sais\nC. [WRONG] sus\nD. [WRONG] sauras\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780746698105-62lg7y1g"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use non-subjunctive forms (indicative present \"sais\", passé simple \"sus\", futur \"sauras\") when \"douter que\" strictly requires the subjunctive \"saches\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780746707118-s33av038",
+      "timestamp": "2026-06-06T11:52:19.558Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative mood (present, passé simple, or future) instead of the required subjunctive after \"douter que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780746903745-fqythdj7",
+      "timestamp": "2026-06-06T11:55:28.514Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative tenses (present, passé simple, futur) instead of the required subjunctive mood after \"je doute que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780747076704-ffdpl901",
+      "timestamp": "2026-06-06T11:58:30.521Z"
+    }
+  ]
+}

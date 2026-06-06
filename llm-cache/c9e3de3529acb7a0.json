@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c9e3de3529acb7a0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-03-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-03 - Les subjonctifs irréguliers : pouvoir (puisse), savoir (sache), vouloir (veuille)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il est étonnant que vous ___ la réponse à cette question. »\nChoices:\nA. [CORRECT] sachiez\nB. savez\nC. saurez\nD. saviez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780746698107-q9dmd4ib"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires knowing both that \"Il est étonnant que\" triggers the subjunctive and that the subjunctive of \"savoir\" is the irregular form \"sache\" (sachiez for \"vous\"), not the regular-looking \"saviez\" which is actually the imparfait.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780746844542-dtk4oa3v",
+      "timestamp": "2026-06-06T11:54:25.020Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"Il est étonnant que\" triggers the subjunctive and knowing the irregular subjunctive stem \"sach-\" for savoir to correctly select \"sachiez\" over the indicative \"savez\" and other indicative tense forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780747025778-er5s35ob",
+      "timestamp": "2026-06-06T11:57:21.726Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"Il est étonnant que\" triggers the subjunctive and knowing the irregular subjunctive form \"sachiez\" for \"savoir\" with \"vous,\" which is exactly what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780747211179-cby3dgfk",
+      "timestamp": "2026-06-06T12:00:28.945Z"
+    }
+  ]
+}

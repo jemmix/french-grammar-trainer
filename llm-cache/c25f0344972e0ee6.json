@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c25f0344972e0ee6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-03-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-03 - Les subjonctifs irréguliers : pouvoir (puisse), savoir (sache), vouloir (veuille)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il est possible que nous ne ___ pas terminer à temps. »\nChoices:\nA. [CORRECT] puissions\nB. pouvons\nC. pourrions\nD. pouvions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780746698105-9az1ekwf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"Il est possible que\" triggers the subjunctive and knowing the irregular subjunctive form \"puissions\" for \"nous\" — exactly the rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780746727639-i7e7xp07",
+      "timestamp": "2026-06-06T11:52:35.587Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"Il est possible que\" triggers the subjunctive mood and knowing the irregular subjunctive form \"puissions\" for \"pouvoir\" with the subject \"nous.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780746921084-s37b8i15",
+      "timestamp": "2026-06-06T11:55:43.275Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing a subjunctive trigger (\"Il est possible que\") and knowing the irregular subjunctive form \"puissions\" for \"nous,\" which is exactly what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780747099427-t6ozbt67",
+      "timestamp": "2026-06-06T11:58:44.488Z"
+    }
+  ]
+}
