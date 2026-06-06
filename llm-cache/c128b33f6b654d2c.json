@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c128b33f6b654d2c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-10-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-10 - Le subjonctif après pour que, afin que (but)\n\nQUESTION:\nType: Multiple Choice\nPrompt: « Ils renforcent la sécurité afin qu'aucun problème ne se ___. »\nChoices:\nA. [CORRECT] produise\nB. produit\nC. produire\nD. produisait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780774774977-tfv7q7o9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"afin que\" triggers the subjunctive mood (\"produise\") rather than the indicative (\"produit\", \"produisait\") or infinitive (\"produire\"), which is precisely what the rule about le subjonctif après pour que/afin que tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780774892919-uiven6lc",
+      "timestamp": "2026-06-06T19:41:46.329Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests that \"afin que\" requires the subjunctive mood, as the correct answer \"produise\" is the only subjunctive form among the choices.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780775049189-3n05bwgl",
+      "timestamp": "2026-06-06T19:44:30.716Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"afin que\" triggers the subjunctive mood, as the correct answer \"produise\" is the subjunctive form while the distractors are indicative or infinitive forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780775209156-blheev0i",
+      "timestamp": "2026-06-06T19:47:21.149Z"
+    }
+  ]
+}

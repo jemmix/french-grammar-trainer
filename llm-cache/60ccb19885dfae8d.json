@@ -1,0 +1,33 @@
+{
+  "cacheKey": "60ccb19885dfae8d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-10-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-10 - Le subjonctif après pour que, afin que (but)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au subjonctif présent.\nPhrase: Nous préparons tout pour que vous ___ partir tranquillement.\nCorrect Answer: puissiez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780776273135-dqfcusi8"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was in the process of validating a French grammar question for alignment with its stated rule. The analysis was complete but the response was not yet delivered.\n\nRemaining tasks:\n- Deliver the validation verdict for the question about \"pour que\" and the subjunctive\n\nRecommendations for what should be done next:\nThe verdict for this question is:\n\nVERDICT: ALIGNED\nREASON: The question requires recognizing that \"pour que\" triggers the subjunctive mood, and without this knowledge a student would likely incorrectly answer with the indicative form \"pouvez\" instead of \"puissiez.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780776279150-k1ksn9fv",
+      "timestamp": "2026-06-06T20:05:20.132Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate in the subjunctive present, so the student doesn't need to know that \"pour que\" triggers the subjunctive—the question tests conjugation of \"pouvoir,\" not the rule about subordinating conjunctions requiring the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780776327616-2mfwbgud",
+      "timestamp": "2026-06-06T20:05:55.326Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Work accomplished**: I analyzed the validation request for a French grammar question about the subjunctive after \"pour que/afin que.\"\n\n**My assessment** (not yet delivered in required format):\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs \"Conjuguez le verbe au subjonctif présent,\" which gives away the key knowledge the rule is supposed to test—knowing that \"pour que\" triggers the subjunctive—reducing the question to a simple conjugation exercise for \"pouvoir\" rather than testing the rule about purpose clauses requiring the subjunctive.\n\n**Remaining tasks**: Deliver the verdict in the exact format requested by the user.\n\n**Recommendation**: To properly test rule 07-10, the prompt should not mention \"subjonctif présent\" and should instead be something like \"Complétez la phrase\" so the student must recognize that \"pour que\" requires the subjunctive mood.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780776355328-ukr2jn85",
+      "timestamp": "2026-06-06T20:06:19.305Z"
+    }
+  ]
+}

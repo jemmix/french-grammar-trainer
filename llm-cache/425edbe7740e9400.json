@@ -1,0 +1,33 @@
+{
+  "cacheKey": "425edbe7740e9400",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-10-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Nous parlons fort afin que tout le monde nous ___. »\n\nChoices:\nA. [CORRECT] voie\nB. [WRONG] voit\nC. [WRONG] voir\nD. [WRONG] verrait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780774774976-akjo8x99"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use the wrong mood (indicative for B, infinitive for C, conditional for D) instead of the required subjunctive after \"afin que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780774875981-rzbn7eao",
+      "timestamp": "2026-06-06T19:41:35.706Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the indicative instead of the required subjunctive after \"afin que,\" C is an infinitive rather than a conjugated form, and D uses the conditional mood instead of the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780775039922-kvdhjq08",
+      "timestamp": "2026-06-06T19:44:14.965Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect because \"afin que\" requires the subjunctive mood: B uses indicative present \"voit\", C uses infinitive \"voir\", and D uses conditional \"verrait\" instead of the required subjunctive \"voie\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780775186390-3p0ckaab",
+      "timestamp": "2026-06-06T19:46:49.155Z"
+    }
+  ]
+}

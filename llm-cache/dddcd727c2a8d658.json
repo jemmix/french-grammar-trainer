@@ -1,0 +1,47 @@
+{
+  "cacheKey": "dddcd727c2a8d658",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-10-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-10 - Le subjonctif après pour que, afin que (but)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au subjonctif présent.\nPhrase: J'ouvre la fenêtre afin que la fumée ___.\nCorrect Answer: parte\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780776273138-05xq4c2g"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate \"au subjonctif présent,\" which gives away the key knowledge the rule is supposed to test—knowing that \"afin que\" triggers the subjunctive—reducing the question to a simple conjugation exercise.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780776288503-bhyqz2qp",
+      "timestamp": "2026-06-06T20:05:11.531Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"afin que\" (one of the conjunctions specified in the rule) and requires the student to produce the subjunctive form \"parte,\" directly testing knowledge that this conjunction triggers the subjunctive mood.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780776318154-8uas7rdx",
+      "timestamp": "2026-06-06T20:05:45.053Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to recognize that \"afin que\" triggers the subjunctive mood and then correctly conjugate \"partir\" in subjunctive present, which is exactly what the rule teaches.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780776346155-pylq8ggj",
+      "timestamp": "2026-06-06T20:06:00.538Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"afin que,\" one of the two conjunctions explicitly named in the rule, and requires the student to produce the subjunctive form \"parte\" rather than the indicative \"part,\" directly testing whether they know that these conjunctions trigger the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780776360538-1li59h98",
+      "timestamp": "2026-06-06T20:06:13.783Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a French grammar question aligns with its stated rule. The question asks to conjugate \"partir\" in subjunctive present after \"afin que\" in the sentence \"J'ouvre la fenêtre afin que la fumée ___\" with answer \"parte\".\n\nThe rule being tested is \"Le subjonctif après pour que, afin que (but)\" - which is about WHEN to use the subjunctive (after these conjunctions of purpose).\n\nHowever, the question's prompt explicitly tells the student \"Conjuguez le verbe au subjonctif présent\" - meaning it gives away that subjunctive should be used. A student could answer correctly knowing only subjunctive conjugation, without knowing the rule that \"afin que\" triggers subjunctive.\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to use the subjunctive, so the question tests subjunctive conjugation knowledge rather than the rule about when \"afin que\" requires the subjunctive mood.\n\nRecommendations for next steps: To properly test this rule, the question should not mention \"subjonctif\" in the prompt - it should simply ask to complete the sentence, letting the student recognize from \"afin que\" that subjunctive is needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780776377125-xb13xrvr",
+      "timestamp": "2026-06-06T20:06:47.072Z"
+    }
+  ]
+}

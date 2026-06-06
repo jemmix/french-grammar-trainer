@@ -1,0 +1,33 @@
+{
+  "cacheKey": "68ecc7d302386dc2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-10-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Les parents sauvent de l'argent afin que leurs enfants ___ aller à l'université. »\n\nChoices:\nA. [CORRECT] puissent\nB. [WRONG] peuvent\nC. [WRONG] pouvoir\nD. [WRONG] pourraient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780774774975-tepezab2"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a French grammar verification task. The question asked about the correct verb form after \"afin que\" (which requires the subjunctive mood).\n\nSummary of analysis completed:\n- The question requires the subjunctive mood after \"afin que\"\n- B (\"peuvent\") is indicative present - INCORRECT (wrong mood)\n- C (\"pouvoir\") is infinitive - INCORRECT (would need \"afin de\" not \"afin que\")\n- D (\"pourraient\") is conditional - INCORRECT (wrong mood)\n- A (\"puissent\") is subjunctive present - CORRECT\n\nThe verdict would be: TRUE||All wrong answers fail to use the subjunctive mood required after \"afin que\" — B uses indicative, C uses infinitive, and D uses conditional.\n\nNo remaining tasks - the analysis was complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780774800114-o0y0kj0d",
+      "timestamp": "2026-06-06T19:40:26.801Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"afin que\": B uses indicative, C uses infinitive, and D uses conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780774965755-wzwqcjt4",
+      "timestamp": "2026-06-06T19:43:02.262Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect after \"afin que\" which requires the subjunctive mood: B uses indicative, C uses infinitive, and D uses conditional instead of the required subjunctive \"puissent\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780775113466-u2pxmcr0",
+      "timestamp": "2026-06-06T19:45:47.069Z"
+    }
+  ]
+}

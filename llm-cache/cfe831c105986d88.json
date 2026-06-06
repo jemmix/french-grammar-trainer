@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cfe831c105986d88",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-10-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le subjonctif après pour que, afin que (but)\nPROMPT: Indicatif ou subjonctif ? Conjuguez le verbe.\nPHRASE: Ses parents l'aident pour qu'il ___ son examen.\nCORRECT ANSWER: réussisse\n\nWRONG ANSWERS to evaluate:\n1. réussit\n2. réussirait\n3. réussissait\n4. réussir\n5. réussisses\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780777085743-zsvrrc3u"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: using indicative present (réussit), conditional (réussirait), imperfect (réussissait), infinitive (réussir) instead of conjugating, or the correct subjunctive but wrong person (réussisses - tu instead of il).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780777177608-sjdhqk1a",
+      "timestamp": "2026-06-06T20:19:57.146Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: using indicative instead of subjunctive (réussit), confusing with conditional (réussirait), confusing with imperfect (réussissait), using infinitive by analogy with \"pour\" + infinitive (réussir), and wrong person agreement in subjunctive (réussisses).\n\nMaximum steps for this agent have been reached. The evaluation of the wrong answers for this French grammar question has been completed. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780777218329-t1qypdsl",
+      "timestamp": "2026-06-06T20:20:40.104Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: using indicative (réussit) or conditional (réussirait) instead of subjunctive, confusing with imparfait (réussissait), using infinitive by false analogy with \"pour\" (réussir), or selecting the wrong person in subjunctive (réussisses).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780777259622-os2v0kbp",
+      "timestamp": "2026-06-06T20:21:15.791Z"
+    }
+  ]
+}
