@@ -1,0 +1,33 @@
+{
+  "cacheKey": "28feb92cbcb97552",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-05-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je souhaite que tu ne ___ plus tard. »\n\nChoices:\nA. [CORRECT] sois\nB. [WRONG] soit\nC. [WRONG] serais\nD. [WRONG] seras\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780753854966-aquyg0o9"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was analyzing a French grammar verification task. The question asked to verify that wrong answers B (\"soit\"), C (\"serais\"), and D (\"seras\") are incorrect for the sentence \"Je souhaite que tu ne ___ plus tard.\"\n\nSummary of analysis completed:\n- The question requires subjunctive mood (triggered by \"je souhaite que\") with second person singular (\"tu\")\n- B (\"soit\") is incorrect because it's the 3rd person singular subjunctive form, not 2nd person (\"sois\" is correct for \"tu\")\n- C (\"serais\") is incorrect because it uses conditional mood, not subjunctive\n- D (\"seras\") is incorrect because it uses future tense, not subjunctive\n\nAll wrong answers are genuinely incorrect within the grammatical constraints of the question.\n\nVERDICT|TRUE||All wrong answers are incorrect: B uses wrong person (3rd singular instead of 2nd singular subjunctive), C uses conditional instead of subjunctive, and D uses future instead of subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780753932789-8gnsz23w",
+      "timestamp": "2026-06-06T13:52:50.085Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context: B uses the 3rd person subjunctive form instead of the 2nd person \"sois\", C uses the conditional mood which is not triggered by \"je souhaite que\", and D uses the future tense which is likewise incompatible with the subjunctive requirement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780754153170-x5l8rwmr",
+      "timestamp": "2026-06-06T13:56:08.262Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the 3rd person singular subjunctive \"soit\" instead of the required 2nd person \"sois\", C uses the conditional \"serais\" instead of the subjunctive required after \"je souhaite que\", and D uses the future \"seras\" instead of the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780754311405-tzzsqf6o",
+      "timestamp": "2026-06-06T13:58:46.447Z"
+    }
+  ]
+}

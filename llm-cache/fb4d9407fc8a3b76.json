@@ -1,0 +1,26 @@
+{
+  "cacheKey": "fb4d9407fc8a3b76",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-05-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-05 - Le subjonctif après les verbes de volonté (vouloir que, souhaiter que, exiger que, demander que)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Elle préfère que tu ___ avec elle. »\nChoices:\nA. [CORRECT] restes\nB. restais\nC. resteras\nD. rester\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780753854966-q3c4ppeq"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: \"Préférer que\" is not one of the verbs of volonté listed in the rule (vouloir que, souhaiter que, exiger que, demander que), so answering correctly requires knowing that \"préférer que\" takes the subjunctive — a separate grammar point not covered by this specific rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780753950432-4syq1opw",
+      "timestamp": "2026-06-06T13:52:49.966Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: \"Préférer que\" is a verb of preference/sentiment, not a \"verbe de volonté\" — the question tests subjunctive after a different category of triggering verb than what the rule specifies (vouloir que, souhaiter que, exiger que, demander que).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780754150616-h7anxyst",
+      "timestamp": "2026-06-06T13:56:10.991Z"
+    }
+  ]
+}

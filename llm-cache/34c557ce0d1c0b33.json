@@ -1,0 +1,33 @@
+{
+  "cacheKey": "34c557ce0d1c0b33",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-05-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-05 - Le subjonctif après les verbes de volonté (vouloir que, souhaiter que, exiger que, demander que)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au subjonctif présent.\nPhrase: Le patron exige que vous ___ la vérité aux clients.\nCorrect Answer: disiez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780756569170-9yg1or93"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"exiger que,\" one of the verbs of volition listed in the rule, and requires the student to produce the subjunctive form \"disiez\" rather than the indicative \"dites,\" directly testing whether they know this verb triggers the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780756573197-duk8r2o3",
+      "timestamp": "2026-06-06T14:36:30.545Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate a single French grammar question for alignment with its stated rule.\n\nRemaining task: Provide the verdict on whether the question \"Le patron exige que vous ___ la vérité aux clients\" (answer: disiez) properly tests rule 07-05 about le subjonctif après les verbes de volonté.\n\nRecommendation: Here is my assessment:\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate in subjonctif présent (\"Conjuguez le verbe au subjonctif présent\"), so the question tests conjugation of \"dire\" for \"vous\" rather than knowledge that \"exiger que\" triggers the subjunctive mood—the core skill the rule is meant to assess.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780756590545-hyhqiqsx",
+      "timestamp": "2026-06-06T14:41:56.491Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate \"au subjonctif présent,\" so answering correctly only requires knowing how to conjugate \"dire\" in the subjunctive for \"vous,\" not recognizing that \"exiger que\" triggers the subjunctive mood—the actual skill the rule is meant to test.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780756916492-r1wkxelt",
+      "timestamp": "2026-06-06T14:42:10.516Z"
+    }
+  ]
+}

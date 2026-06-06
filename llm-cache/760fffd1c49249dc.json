@@ -1,0 +1,33 @@
+{
+  "cacheKey": "760fffd1c49249dc",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-05-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-05 - Le subjonctif après les verbes de volonté (vouloir que, souhaiter que, exiger que, demander que)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Nous voulons que Marie ___ avec nous au concert. »\nChoices:\nA. [CORRECT] vienne\nB. vient\nC. venir\nD. viendra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780753854964-c6wssbms"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to validate whether a French grammar question about the subjunctive after verbs of will (\"vouloir que\") is aligned with its stated rule.\n\nThe question \"Nous voulons que Marie ___ avec nous au concert.\" with choices vienne/vient/viendra/vir clearly tests the rule - answering correctly requires knowing that \"vouloir que\" triggers the subjunctive mood and that \"vienne\" is the correct subjunctive form of \"venir\" for the third person singular.\n\nVerdict: ALIGNED\nReason: The question directly tests whether the student knows that \"vouloir que\" requires the subjunctive, as the correct answer \"vienne\" can only be selected by recognizing this trigger and applying the subjunctive conjugation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780753875202-0ggl6cfr",
+      "timestamp": "2026-06-06T13:51:45.539Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"vouloir que\" requires the subjunctive mood, as the correct answer \"vienne\" can only be selected by applying this specific rule rather than choosing the indicative \"vient\", infinitive \"venir\", or future \"viendra\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780754062282-66rc6rl7",
+      "timestamp": "2026-06-06T13:54:48.874Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule by requiring the subjunctive \"vienne\" after \"vouloir que,\" and the distractors test specific misconceptions (indicative present, infinitive, future) that a learner would make if they didn't know the subjunctive requirement after verbs of will.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780754263915-p3rh2tc3",
+      "timestamp": "2026-06-06T13:58:02.318Z"
+    }
+  ]
+}

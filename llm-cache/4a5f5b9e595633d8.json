@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4a5f5b9e595633d8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-05-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je demande que tu me ___ la main. »\n\nChoices:\nA. [CORRECT] donnes\nB. [WRONG] donnais\nC. [WRONG] donneras\nD. [WRONG] donner\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780753854966-1h175ru5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb forms (imparfait, futur simple, infinitif) instead of the required subjonctif présent after \"je demande que tu\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780753964865-uv4w3snj",
+      "timestamp": "2026-06-06T13:53:09.334Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods/tenses: B uses imparfait instead of subjunctive present, C uses future which doesn't exist in subjunctive, and D uses infinitive which is invalid after \"que\" + subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780754167773-jlmcdxba",
+      "timestamp": "2026-06-06T13:56:28.407Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses imparfait instead of the required subjunctive, C uses futur instead of subjunctive, and D uses the infinitive form instead of a conjugated verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780754319201-uqcc7qrx",
+      "timestamp": "2026-06-06T13:58:59.254Z"
+    }
+  ]
+}

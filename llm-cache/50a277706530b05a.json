@@ -1,0 +1,33 @@
+{
+  "cacheKey": "50a277706530b05a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-05-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je veux que vous ___ ce projet sérieusement. »\n\nChoices:\nA. [CORRECT] preniez\nB. [WRONG] prenez\nC. [WRONG] prendre\nD. [WRONG] prendrez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780753854964-mloyl2jg"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nThe task was to verify whether wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question asks to complete \"Je veux que vous ___ ce projet sérieusement\" which requires the subjunctive mood (\"veuillir que\" triggers subjunctive). Analysis of the wrong answers:\n- B (\"prenez\") is indicative present, not subjunctive - incorrect\n- C (\"prendre\") is infinitive, not conjugated - incorrect  \n- D (\"prendrez\") is future tense, not subjunctive - incorrect\n\n**Remaining tasks:**\n- Output the final verdict in the required format\n\n**Recommendation for next step:**\nThe verdict is TRUE - all wrong answers are grammatically incorrect within the context specified. The response should be:\nTRUE||All wrong answers fail to use the subjunctive mood required after \"je veux que\": B uses indicative present, C uses infinitive, and D uses future tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780753876439-geqn8gv1",
+      "timestamp": "2026-06-06T13:51:39.440Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: \"prenez\" is indicative not subjunctive required after \"je veux que,\" \"prendre\" is an infinitive not a conjugated form, and \"prendrez\" is future indicative rather than the required subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780754056660-wirym6qd",
+      "timestamp": "2026-06-06T13:54:40.576Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods or forms that don't satisfy the subjunctive requirement after \"je veux que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780754262628-579vcb19",
+      "timestamp": "2026-06-06T13:57:56.836Z"
+    }
+  ]
+}
