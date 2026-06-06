@@ -1,0 +1,26 @@
+{
+  "cacheKey": "66238d2b81b4bc69",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il se peut qu'ils ___ trop de vin. »\nChoices:\nA. [CORRECT] boivent\nB. buvent\nC. buvaient\nD. boiront\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780750347804-8fzqavl8"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was asked to validate whether a French grammar question about the verb \"boire\" in the subjunctive properly tests the stated rule about \"verbs with two stems in the present subjunctive\" (boire: boive/buvions pattern).\n\n**Analysis completed:**\nThe question asks students to complete \"Il se peut qu'ils ___ trop de vin\" with the correct answer being \"boivent.\" While this sentence does require the subjunctive mood (triggered by \"il se peut que\"), the correct answer \"boivent\" is identical to the indicative present form. The two-stem nature of \"boire\" in the subjunctive (boiv- vs buv-) is only visible in the nous/vous forms (buvions, buviez). Therefore, this question doesn't actually test the core concept of the stated rule.\n\n**Verdict:**\nVERDICT: MISALIGNED\nREASON: The correct answer \"boivent\" is identical to the indicative present form, so the question doesn't test the two-stem distinction that is the core of this rule; a better question would use \"nous\" or \"vous\" to highlight the buv- stem.\n\n**Remaining tasks:** None — this was a single validation task.\n\n**Recommendations:** To properly test this rule, create questions using nous/vous subjects where students must choose between the two stems (e.g., \"Il se peut que nous ___ trop de vin\" with options including \"boivions\" and \"buvions\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750427154-l8ow7uhl",
+      "timestamp": "2026-06-06T12:54:20.222Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The correct answer \"boivent\" is identical in both indicative and subjunctive present for the 3rd person plural of \"boire,\" so the question can be answered correctly using only indicative present knowledge without testing the subjunctive or the two-radical distinction (boiv- vs buv-) that is the core of this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750635005-tprj1la8",
+      "timestamp": "2026-06-06T12:57:43.119Z"
+    }
+  ]
+}

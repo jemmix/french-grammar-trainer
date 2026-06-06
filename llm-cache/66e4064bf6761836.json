@@ -1,0 +1,33 @@
+{
+  "cacheKey": "66e4064bf6761836",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au subjonctif présent (1re personne du pluriel).\nPhrase: Bien que nous ___ cette décision ensemble, certains la désapprouvent.\nCorrect Answer: prenions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780749031051-p5oaeo0k"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question specifically targets the nous form where the two-radical distinction manifests (prenions vs. the indicative prenons), making knowledge of this verb's irregular stem pattern essential to answer correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749202942-h00xonzn",
+      "timestamp": "2026-06-06T12:33:44.537Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was asked to validate a single French grammar question to determine if it properly tests the stated rule about verbs with two stems (radicaux) in the subjunctive present (specifically \"prendre: prenne/prenions\").\n\nMy analysis is complete:\n\nVERDICT: ALIGNED\nREASON: The question specifically asks for the 1st person plural subjunctive form of \"prendre\" (prenions), which is precisely the form that demonstrates the two-radical pattern that defines this rule.\n\nNo remaining tasks - this was a single-question validation that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749405595-c4x7idyc",
+      "timestamp": "2026-06-06T12:37:08.887Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question specifically tests the 1st person plural form \"prenions\" of \"prendre\" in the subjunctive, which is precisely one of the forms that demonstrates the two-stem pattern (prenions/preniez use \"pren-\" while other persons use \"prenn-\"), so answering correctly requires knowing this specific rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749536640-b8shw1wu",
+      "timestamp": "2026-06-06T12:39:19.258Z"
+    }
+  ]
+}

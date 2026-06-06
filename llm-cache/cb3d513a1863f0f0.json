@@ -1,0 +1,26 @@
+{
+  "cacheKey": "cb3d513a1863f0f0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Pourvu qu'il ___ de bonne volonté ! »\nChoices:\nA. [CORRECT] vienne\nB. vient\nC. venait\nD. viendra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780749031049-wpuersno"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to validate whether a French grammar question about the subjunctive of \"venir\" actually tests the stated rule about \"verbes à deux radicaux au subjonctif\" (verbs with two stems in the subjunctive).\n\nThe question \"Pourvu qu'il ___ de bonne volonté !\" with correct answer \"vienne\" tests subjunctive usage after \"pourvu que\" and knowledge of the 3rd person singular subjunctive of venir. However, it does NOT test the specific \"two stems\" rule (vienne vs venions), since only one stem is tested.\n\nVERDICT: MISALIGNED\nREASON: The question only tests general subjunctive conjugation of \"venir\" in the 3rd person singular, but the stated rule is specifically about the two-stem pattern (vienne/vien... vs venions) which this question does not engage with at all.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749128696-gzobwuw3",
+      "timestamp": "2026-06-06T12:32:29.971Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: This question primarily tests whether the student knows that \"pourvu que\" requires the subjunctive and the basic subjunctive form of \"venir\" for third person singular, but it does not test the distinguishing feature of the two-stem rule—the contrast between \"vienne\" (je/tu/il/ils) and \"venions\" (nous)—since no first-person plural form appears among the choices.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749330323-ry61gdop",
+      "timestamp": "2026-06-06T12:36:00.278Z"
+    }
+  ]
+}

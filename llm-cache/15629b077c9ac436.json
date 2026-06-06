@@ -1,0 +1,33 @@
+{
+  "cacheKey": "15629b077c9ac436",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je suis ravi qu'il ___ autant de lait. »\nChoices:\nA. [CORRECT] boive\nB. boit\nC. buve\nD. buvait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780750347805-xtegtp1v"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The correct answer \"boive\" is explicitly listed in the rule, and the distractor \"buve\" specifically tests whether the student knows which of the two stems (boiv- vs buv-) applies to the third person singular.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750513334-9ac93vwd",
+      "timestamp": "2026-06-06T12:56:10.074Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question against its stated rule.\n\n**Summary of work completed:**\nI analyzed the question \"Je suis ravi qu'il ___ autant de lait\" with correct answer \"boive\" and distractors \"boit,\" \"buve,\" and \"buvait\" against the rule about verbs with two radicals in the subjunctive (boire: boive/buvions).\n\n**My assessment:**\nVERDICT: ALIGNED\nREASON: The question tests knowledge of which radical to use for the third person singular of \"boire\" in the subjunctive (boive vs. the incorrect buve), directly testing the two-radical nature of this verb.\n\n**Remaining tasks:** None — the validation was complete.\n\n**Recommendation:** The question is properly aligned with the stated rule and can be kept as-is.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750746560-fih0m6s1",
+      "timestamp": "2026-06-06T12:59:30.311Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the two-radical pattern of \"boire\" in the subjunctive, where the distractor \"buve\" specifically targets the common mistake of applying the \"buv-\" radical to the wrong person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750878874-u8e94f6s",
+      "timestamp": "2026-06-06T13:01:37.209Z"
+    }
+  ]
+}

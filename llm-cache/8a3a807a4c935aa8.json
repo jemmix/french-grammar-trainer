@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8a3a807a4c935aa8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Que tu ___ ou que tu refuses, c'est ton choix. »\nChoices:\nA. [CORRECT] viennes\nB. viens\nC. viendra\nD. venais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780749031049-2fymjte8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"venir\" uses the \"vien-\" stem in the subjunctive for the \"tu\" form, distinguishing it from the indicative \"viens\" — directly testing the two-radical pattern described in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749053758-ro3br7lk",
+      "timestamp": "2026-06-06T12:31:08.466Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests whether the student knows to use the subjunctive after \"que tu\" and knows the subjunctive form of \"venir\" for \"tu\", but it does not test the defining feature of this rule—the two-stem nature (vienn-/ven-), since the \"tu\" form uses the same stem as je/il/ils; to test this rule, the question would need to target the \"nous\" or \"vous\" form where the stem shift actually occurs.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749244673-3u7b0w94",
+      "timestamp": "2026-06-06T12:34:40.716Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests general subjunctive usage after \"que\" and the subjunctive form of \"venir\" for \"tu,\" but does not test the specific two-stem nature of the verb since the \"ven-\" stem (used for nous/vous forms like \"venions\") is not presented as a distractor—only non-subjunctive forms are offered.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749466967-6avkx4su",
+      "timestamp": "2026-06-06T12:38:11.348Z"
+    }
+  ]
+}

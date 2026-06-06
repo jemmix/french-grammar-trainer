@@ -1,0 +1,40 @@
+{
+  "cacheKey": "0bc31820d588d403",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je veux que nous ___ ces conséquences. »\nChoices:\nA. [CORRECT] comprenions\nB. comprenons\nC. comprendrons\nD. compreniez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780749031049-58201v24"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge that \"comprendre\" (like \"prendre\") uses a different stem (\"compreni-\") for the nous form in the subjunctive (\"comprenions\") versus the other persons, which is the core of the two-radical rule.\n\nMaximum steps for this agent have been reached. The validation task has been completed - I provided the alignment verdict for the single question presented. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749140726-ajzz988p",
+      "timestamp": "2026-06-06T12:32:41.487Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question primarily tests (1) the requirement for subjunctive after \"je veux que\" and (2) correct subject-verb agreement for \"nous\", but does not test the two-radical distinction since both \"comprenions\" and \"compreniez\" use the same radical—the discriminating factor between A and D is person/number, not the radical pattern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749342835-tocmhg14",
+      "timestamp": "2026-06-06T12:36:14.655Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"comprendre\" follows the same two-stem pattern as \"prendre\" in the subjunctive, where the nous form uses a distinct radical (comprén-ions) different from other persons, which is precisely what the rule teaches.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749503720-dot1r8j1",
+      "timestamp": "2026-06-06T12:38:49.857Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what was accomplished: I analyzed the validation question to determine if the MCQ about \"comprendre\" in the subjunctive properly tests the rule about \"verbes à deux radicaux au subjonctif.\"\n\nVerdict: MISALIGNED\nReason: The verb \"comprendre\" does not have two different radicals in the subjunctive (both \"que je comprenne\" and \"que nous comprenions\" use the same radical \"compren-\"), unlike the rule's examples (boive/buvions, vienne/venions), so this question tests regular subjunctive conjugation rather than the specific two-radical pattern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749569301-os2usucc",
+      "timestamp": "2026-06-06T12:40:01.119Z"
+    }
+  ]
+}

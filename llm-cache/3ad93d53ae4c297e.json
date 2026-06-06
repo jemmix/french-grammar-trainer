@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3ad93d53ae4c297e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je suis ravi qu'elle ___ me voir. »\nChoices:\nA. [CORRECT] vienne\nB. vient\nC. vene\nD. viendra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780751806314-o6fubts5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question correctly tests knowledge of the irregular subjunctive form \"vienne\" for the verb \"venir,\" which is explicitly listed in the rule as a two-stem subjunctive verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780751867110-ls7y8to9",
+      "timestamp": "2026-06-06T13:18:30.412Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the irregular subjunctive form \"vienne\" for \"venir\" (one of the two-radical verbs explicitly listed in the rule), and the distractors test whether the learner can distinguish it from the indicative present (\"vient\"), a non-existent form (\"vene\"), and the future (\"viendra\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780751990606-gnf5wse6",
+      "timestamp": "2026-06-06T13:20:11.803Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests \"venir\" in the subjunctive, requiring knowledge that the correct form is \"vienne\" (not \"vene\"), which directly tests the two-radical pattern for this verb family.\n\nMaximum steps for this agent have been reached. The validation task has been completed - I provided the alignment verdict for the single question that needed validation. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780752068235-7cawjj45",
+      "timestamp": "2026-06-06T13:21:31.738Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "4e805777c6f06088",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il est important que tu ___ tes devoirs. »\nChoices:\nA. [CORRECT] prennes\nB. prends\nC. prenes\nD. prenne\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780750347804-5dtwbqep"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests basic subjunctive person/number agreement (tu \"prennes\" vs. il/elle \"prenne\"), but does not test the defining feature of the rule—the two-stem pattern where nous/vous use a different radical (prenions/preniez) than other persons.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750411936-8r65dp2v",
+      "timestamp": "2026-06-06T12:54:05.751Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was in the process of validating whether a French grammar MCQ question about the subjunctive form of \"prendre\" properly tests the stated rule about verbs with two stems in the subjunctive present (boire, prendre, venir).\n\n**Analysis completed:**\nThe question asks for the \"tu\" form of \"prendre\" in a subjunctive context (\"Il est important que tu ___ tes devoirs\"). The choices test subjunctive vs indicative mood and correct conjugation for \"tu\", but only involve one stem (\"pren-\"). The two-stem distinction (prenne for je/tu/il/ils vs prenions for nous/vous) is never tested because the \"nous/vous\" form is not presented.\n\n**My verdict would have been:**\nVERDICT: MISALIGNED\nREASON: The question tests general subjunctive conjugation for \"tu\" with prendre (subjunctive vs indicative distinction), but does not test the two-stem nature of these verbs since only the \"prenne\" stem is in play—the \"prenions\" stem (nous/vous forms) is never presented as an option.\n\n**Remaining tasks:**\n- None beyond providing this verdict.\n\n**Recommendations:**\nTo properly test rule 07-04, a question should require the student to choose between the two stems, for example by asking for the \"nous\" or \"vous\" form (where prenions/preniez uses the second stem) or by including both stem forms as answer options to test recognition of when each stem applies.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750616005-d4tzt5gy",
+      "timestamp": "2026-06-06T12:57:32.742Z"
+    }
+  ]
+}

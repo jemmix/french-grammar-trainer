@@ -1,0 +1,26 @@
+{
+  "cacheKey": "05dab568e7c519b1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il faut que nous ___ ces règles. »\nChoices:\nA. [CORRECT] apprenions\nB. apprenons\nC. apprennent\nD. apprendrons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780749031049-cxzn790s"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests general subjunctive conjugation after \"il faut que\" and recognizing the nous form, but does not specifically test the two-radical distinction that defines this rule—the distractors don't include a form with the wrong radical (e.g., \"prennions\" style error) to check whether the student knows which stem applies to which person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749057529-qh9w9lre",
+      "timestamp": "2026-06-06T12:31:32.268Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"apprendre\" is not one of the classic verbs à deux radicaux listed in the rule (boire, prendre, venir) and its subjunctive conjugation follows a regular -endre pattern rather than demonstrating the distinctive two-radical alternation that characterizes the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749272891-a9os8j6b",
+      "timestamp": "2026-06-06T12:35:27.507Z"
+    }
+  ]
+}

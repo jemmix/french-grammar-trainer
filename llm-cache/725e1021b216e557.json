@@ -1,0 +1,40 @@
+{
+  "cacheKey": "725e1021b216e557",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il se peut qu'il ___ me voir demain. »\nChoices:\nA. [CORRECT] vienne\nB. vient\nC. vene\nD. venait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780751806307-5x92e4mh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the correct subjunctive form \"vienne\" for the verb \"venir,\" which is explicitly listed in the rule as one of the two-stem subjunctive verbs (vienne/venions).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780751807327-vvb8i24y",
+      "timestamp": "2026-06-06T13:17:42.417Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests whether the student knows to use the subjunctive after \"il se peut que\" and recognizes \"vienne\" as the correct form, but it doesn't test the \"two radicals\" feature—the distinctive aspect of this rule is the contrast between \"vienne\" and \"venions\" (different stems), and a 3rd person singular question cannot reveal whether a student understands that distinction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780751934132-61180exs",
+      "timestamp": "2026-06-06T13:19:41.518Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing between the irregular subjunctive \"vienne\" and the regular-but-incorrect \"vene,\" which is precisely the two-stem pattern this rule covers for the verb \"venir.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780752045142-lw2apw48",
+      "timestamp": "2026-06-06T13:21:08.234Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests the 3rd person singular subjunctive form \"vienne\" without requiring knowledge of the dual-radical nature of the verb—the contrast between \"vienne\" and \"venions\" that defines this rule is never tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780752102282-1cfcfucd",
+      "timestamp": "2026-06-06T13:22:14.862Z"
+    }
+  ]
+}

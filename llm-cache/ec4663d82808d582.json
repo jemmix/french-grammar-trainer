@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ec4663d82808d582",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je souhaite qu'il ___ cet accord. »\nChoices:\nA. [CORRECT] comprenne\nB. comprend\nC. comprenait\nD. comprendra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780749031049-0filub44"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the subjunctive form of \"comprendre,\" a verb that follows the same two-radical pattern as \"prendre\" (comprenne/comprénions), and distinguishing \"comprenne\" from \"comprend\" directly tests knowledge of this verb's irregular subjunctive conjugation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749066801-xuaur109",
+      "timestamp": "2026-06-06T12:31:34.391Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was asked to validate whether a French grammar question about \"comprendre\" in the subjunctive properly tests the stated rule about verbs with two radicals in the subjunctive (boire, prendre, venir families).\n\n**My assessment:**\nVERDICT: MISALIGNED\nREASON: The question tests subjunctive usage after \"je souhaite que\" and basic subjunctive conjugation of comprendre, but does not test the distinctive two-radical pattern (e.g., prenne vs prenions) that is the core of rule 07-04, since only the 3rd person singular form is tested.\n\n**Remaining tasks:** None - this was a single-question validation.\n\n**Recommendations:** To properly test rule 07-04 (two-radical verbs), questions should include nous/vous forms (e.g., \"Il faut que nous ___\" → buvions/venions/comprenions) or explicitly contrast the two radicals in the choices to test whether students know which radical applies to which persons.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749273222-4h9m5ncs",
+      "timestamp": "2026-06-06T12:35:25.260Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests the third person singular subjunctive form (comprenne), which doesn't reveal the distinctive two-stem pattern; the \"deux radicaux\" characteristic only becomes apparent when comparing singular forms (comprenne) with nous/vous forms (comprenions), so this question could be answered correctly using only basic subjunctive conjugation knowledge.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749487725-9fd6285q",
+      "timestamp": "2026-06-06T12:38:42.385Z"
+    }
+  ]
+}

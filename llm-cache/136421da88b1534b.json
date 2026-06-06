@@ -1,0 +1,33 @@
+{
+  "cacheKey": "136421da88b1534b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il est important que nous ___ à l'heure. »\nChoices:\nA. [CORRECT] venions\nB. venons\nC. viendrons\nD. veniez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780749031050-2ykbps45"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"venir\" uses the distinct stem \"ven-\" for the nous/vous subjonctif (\"venions\") rather than \"vienn-,\" which is precisely the two-radical pattern described in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749169826-jzhocp21",
+      "timestamp": "2026-06-06T12:33:09.593Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The correct answer \"venions\" is the nous-form conjugation of \"venir\" in the subjunctive that uses the second radical (ven-) rather than the first (vienn-), so answering correctly requires knowing this specific two-radical pattern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749376442-dhsfcarg",
+      "timestamp": "2026-06-06T12:37:08.102Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"venir\" uses the \"ven-\" stem for the 1st person plural in the subjunctive (venions) rather than the \"vien-\" stem, which is precisely the two-stem pattern this rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749529857-c6dpd5be",
+      "timestamp": "2026-06-06T12:39:14.950Z"
+    }
+  ]
+}

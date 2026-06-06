@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bedfa261316f2136",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je doute qu'ils ___ la bonne décision. »\nChoices:\nA. [CORRECT] prennent\nB. prenent\nC. prenaient\nD. prendront\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780750347804-n5meygbe"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires knowing the correct subjunctive present form of \"prendre,\" which is explicitly listed as a two-stem verb in the rule, and the distractors test whether the student can distinguish the subjunctive from other tenses and the correct spelling from a common misspelling.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750443300-k899bbgh",
+      "timestamp": "2026-06-06T12:54:28.093Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the basic subjunctive conjugation of \"prendre\" and the trigger \"je doute que,\" but does not engage with the rule's core concept—the two-stem distinction—since \"prennent\" uses the same stem as the singular forms; a question testing \"prenions\" or \"venions\" would properly target this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750635320-g0n201ub",
+      "timestamp": "2026-06-06T12:57:51.810Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question alignment with the stated rule.\n\n**Analysis completed:**\n\nThe question asks students to complete \"Je doute qu'ils ___ la bonne décision\" with choices including \"prennent\" (correct), \"prenent\" (spelling error), \"prenaient\" (imparfait), and \"prendront\" (futur).\n\nThe stated rule is about \"verbes à deux radicaux au subjonctif\" - verbs with TWO different stems in the subjunctive (e.g., boive/buvions, prenne/prenions, vienne/venions).\n\nThe question only tests the \"ils\" form (prennent), which uses the same stem as \"je/tu/il\" (prenne). The distinctive two-stem feature would only be tested by asking about the \"nous/vous\" forms (prenions) which use a different stem.\n\nVERDICT: MISALIGNED\nREASON: The question tests the subjunctive form of \"prendre\" generally, but does not test the two-stem distinction (prenne vs prenions) that is the core of this specific rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750815060-d72go0bg",
+      "timestamp": "2026-06-06T13:00:55.473Z"
+    }
+  ]
+}

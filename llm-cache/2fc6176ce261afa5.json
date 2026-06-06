@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2fc6176ce261afa5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il est bon que je ___ ce breuvage. »\nChoices:\nA. [CORRECT] boive\nB. bois\nC. buve\nD. buvais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780750347803-aky3ltbw"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires recognizing that \"Il est bon que\" triggers the subjunctive, and then knowing that the first-person singular subjunctive of \"boire\" uses the \"boiv-\" stem (\"boive\") rather than the \"buv-\" stem (\"buvions\"), which is precisely the two-radical distinction this rule teaches.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750360102-2h56ushr",
+      "timestamp": "2026-06-06T12:52:56.687Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires identifying the correct subjunctive stem for \"boire\" with \"je\" (boiv- not buv-), and the distractor \"buve\" directly tests the two-stem distinction central to this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750572517-t2j208vz",
+      "timestamp": "2026-06-06T12:56:32.008Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"boive\" (not \"buve\") is the correct first-person singular subjunctive form, which directly tests the two-stem distinction specific to verbs like \"boire\" in the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750774883-wx329bo2",
+      "timestamp": "2026-06-06T13:00:03.399Z"
+    }
+  ]
+}

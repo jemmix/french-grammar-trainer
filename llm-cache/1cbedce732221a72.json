@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1cbedce732221a72",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-04-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\nPROMPT: Conjuguez le verbe au subjonctif présent (2e personne du pluriel).\nPHRASE: Il est essentiel que vous ___ à cette réunion importante.\nCORRECT ANSWER: veniez\n\nWRONG ANSWERS to evaluate:\n1. venez\n2. viendrez\n3. vieniez\n4. venions\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780749031051-ceyyodr6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"venez\" uses indicative instead of subjunctive, \"viendrez\" confuses future tense, \"vieniez\" is a typical mixed-radical error (applying -iez to the vien- stem instead of ven-), and \"venions\" uses the correct subjunctive but wrong person—exactly the kind of confusion this two-radical rule targets.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749625681-34vqbzf8",
+      "timestamp": "2026-06-06T12:42:00.058Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors for this grammar point: \"venez\" uses indicative instead of subjunctive, \"viendrez\" uses future tense, \"vieniez\" incorrectly applies the singular radical to the plural form, and \"venions\" confuses vous with nous.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749795850-xyhrajoe",
+      "timestamp": "2026-06-06T12:43:53.213Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common and realistic learner errors: \"venez\" confuses indicative with subjunctive, \"viendrez\" uses the future stem, \"vieniez\" incorrectly applies the 3rd person singular radical with the 2nd person plural ending (a classic two-radical verb mistake), and \"venions\" confuses 1st and 2nd person plural within the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749885283-1ubehxjv",
+      "timestamp": "2026-06-06T12:45:13.574Z"
+    }
+  ]
+}

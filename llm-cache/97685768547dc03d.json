@@ -1,0 +1,33 @@
+{
+  "cacheKey": "97685768547dc03d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il est nécessaire que tu ___ cette adresse. »\nChoices:\nA. [CORRECT] retiennes\nB. retiens\nC. retenes\nD. retenais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780750347805-tpoocknw"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The verb \"retenir\" belongs to the same family as \"tenir\" and \"venir\" with two stems in the subjunctive (retienne/retiennes vs. retenions/reteniez), so distinguishing \"retiennes\" (subjonctif) from \"retiens\" (indicatif présent) directly tests this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750488388-shgk1v7n",
+      "timestamp": "2026-06-06T12:55:09.968Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Retenir\" belongs to the same -enir conjugation family as \"venir\" and shares its two-stem subjunctive pattern (retienn-/reten-), so choosing \"retiennes\" over the indicative \"retiens\" directly tests the stated two-radical rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750675429-vxmqagfv",
+      "timestamp": "2026-06-06T12:58:23.298Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests \"retenir\" which has two radicals in the subjunctive (retien- for tu/je/il/ils vs. reten- for nous/vous), and distinguishing \"retiennes\" from the incorrect \"retenes\" directly requires knowing which radical applies to the \"tu\" form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780750842808-kftrx99u",
+      "timestamp": "2026-06-06T13:01:00.686Z"
+    }
+  ]
+}

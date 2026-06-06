@@ -1,0 +1,33 @@
+{
+  "cacheKey": "63ae0fbefceb6223",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il est important que tu ___ tes devoirs. »\nChoices:\nA. [CORRECT] prennes\nB. prends\nC. prenne\nD. prenait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780749031049-dx9aikzo"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was asked to validate whether a French grammar question about the verb \"prendre\" in the subjunctive properly tests the stated rule (07-04 - Les verbes à deux radicaux au subjonctif). I analyzed the question and was ready to provide my verdict.\n\nList of any remaining tasks that were not completed:\n- Output the final verdict and reasoning for the question validation\n\nRecommendations for what should be done next:\nThe verdict for this question is:\n\nVERDICT: ALIGNED\nREASON: The question directly tests the subjunctive conjugation of \"prendre,\" which is explicitly listed as an example in the stated rule about verbs with two stems in the subjunctive (prendre : prenne/prenions).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749082943-en82z0je",
+      "timestamp": "2026-06-06T12:31:49.596Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests general subjunctive recognition and conjugation of \"prendre\" for the \"tu\" form, but does not specifically test the two-stem (deux radicaux) characteristic that is the core of rule 07-04, since \"prennes\" uses the same stem as other singular forms and doesn't require knowledge of the stem change to \"preni-\" that occurs in nous/vous forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749293803-9emus1bm",
+      "timestamp": "2026-06-06T12:35:31.146Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests basic subjunctive conjugation and trigger recognition after \"il est important que,\" but does not test the two-radical distinction since both \"prennes\" and the distractor \"prenne\" use the same radical (prenn-); to test this rule, the question would need to contrast forms using different radicals such as \"prennes\" vs \"prenions.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749497638-az3tooal",
+      "timestamp": "2026-06-06T12:43:13.389Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "43224681a2dc5ebb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il faut que nous ___ cette décision. »\nChoices:\nA. [CORRECT] prenions\nB. prenons\nC. prennent\nD. preniez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780749031048-b3j6bcsk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"prendre\" uses the second radical \"prenions\" (with the -i- infix) for the nous form in the subjunctive, which is the defining feature of two-stem verbs like this one.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749035054-9dwohc3u",
+      "timestamp": "2026-06-06T12:31:15.674Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Work accomplished:** I analyzed one validation question to determine if it properly tests the stated grammar rule about two-stem verbs in the subjunctive (verbs like prendre that have different stems: prenne/prenions).\n\n**Analysis completed:** The question \"Il faut que nous ___ cette décision.\" with correct answer \"prenions\" directly tests the two-stem nature of \"prendre\" in the subjunctive. The key distractor \"prenons\" (indicative) versus \"prenions\" (subjunctive nous form) is exactly what this rule covers.\n\n**Verdict:** VERDICT: ALIGNED\nREASON: The question requires knowing that \"prendre\" has a different stem for the nous form in subjunctive (\"prenions\") compared to indicative (\"prenons\"), which is the core of the two-stem rule being tested.\n\n**Remaining tasks:** None specified - this was a single-question validation request.\n\n**Recommendations:** No further action needed for this particular question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749251372-od3y6f9e",
+      "timestamp": "2026-06-06T12:35:53.719Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests general subjunctive conjugation of \"prendre\" (identifying that \"il faut que\" triggers the subjunctive and selecting the correct nous form), but does not specifically test the \"deux radicaux\" feature since \"prenions\" uses the same stem as the other subjunctive forms (prenne, prennent), unlike true two-stem verbs like boire (boive/buvions) or venir (vienne/venions).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749499879-97qiu7i2",
+      "timestamp": "2026-06-06T12:38:59.567Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was asked to validate a single French grammar question to determine if it properly tests the stated rule about \"les verbes à deux radicaux au subjonctif\" (verbs with two stems in the subjunctive).\n\nRemaining tasks that were not completed:\n- Output the formal verdict in the requested format\n\nRecommendations for what should be done next:\nHere is my analysis and verdict:\n\nVERDICT: MISALIGNED\nREASON: The question tests subjunctive mood and subject-verb agreement, but doesn't test the two-radical distinction because \"prenne\" (the other radical) isn't among the choices, so a student could answer correctly without knowing that \"prendre\" has two different stems in the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749572965-2sdplyvc",
+      "timestamp": "2026-06-06T12:40:03.678Z"
+    }
+  ]
+}

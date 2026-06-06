@@ -1,0 +1,26 @@
+{
+  "cacheKey": "a2d8af064244becb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il est nécessaire que tu ___ cette nouvelle. »\nChoices:\nA. [CORRECT] retiennes\nB. retiens\nC. retenais\nD. retiendras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780749031049-8mwi5hmk"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests general subjunctive vs. indicative tense distinction, but doesn't test the two-stem phenomenon since \"tu retienes\" uses the regular subjunctive stem; the distinctive two-radical pattern (retienes vs. retenions) only becomes apparent in nous/vous forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749093524-h8xc93r4",
+      "timestamp": "2026-06-06T12:32:00.214Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of analyzing whether a French grammar question about the verb \"retenir\" in the subjunctive properly tests the rule about verbs with two radicals in the subjunctive present.\n\nAnalysis completed:\n- The rule (07-04) specifically targets verbs like boire, prendre, venir that have TWO different stems in the subjunctive (e.g., boive/buvions)\n- The question asks for the \"tu\" form of \"retenir\" after \"Il est nécessaire que\"\n- The correct answer \"retiennes\" uses the same radical as \"retienne/retiennent\" - the \"nous/vous\" radical \"retenions\" is not tested at all\n- The distractors test mood/tense distinctions (indicatif vs subjonctif, présent vs imparfait vs futur), not the two-radical feature\n\nVERDICT: MISALIGNED\nREASON: The question tests when to use the subjunctive and the subjunctive conjugation of \"retenir\" for \"tu\", but does not test the two-radical distinction (retienne vs retenions) which is the specific focus of the stated rule.\n\nRemaining tasks: None - the validation judgment is complete.\n\nRecommendations: To properly test rule 07-04, the question should either contrast the two radicals directly (e.g., testing \"nous\" or \"vous\" forms where the second radical applies, or contrasting \"qu'ils retiennent\" with \"que nous retenions\") or explicitly draw attention to the stem change in the explanation/prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749299898-sqxjfcut",
+      "timestamp": "2026-06-06T12:39:06.469Z"
+    }
+  ]
+}

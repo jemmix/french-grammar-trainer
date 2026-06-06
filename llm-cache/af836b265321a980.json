@@ -1,0 +1,33 @@
+{
+  "cacheKey": "af836b265321a980",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-04-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il faut que vous ___ votre travail. »\n\nChoices:\nA. [CORRECT] repreniez\nB. [WRONG] reprenez\nC. [WRONG] reprenniez\nD. [WRONG] reprendrez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780753453296-0uv8lyxy"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to validate a French grammar MCQ question about the subjunctive mood triggered by \"il faut que.\" The question asks for the correct form of \"reprendre\" for \"vous\" after \"Il faut que vous ___ votre travail.\"\n\nAnalysis completed:\n- A. repreniez (CORRECT) - subjunctive present, proper form\n- B. reprenez (WRONG) - indicative present, not subjunctive as required\n- C. reprenniez (WRONG) - non-existent form, misspelling of the subjunctive\n- D. reprendrez (WRONG) - future indicative, not subjunctive as required\n\nAll three wrong answers are indeed grammatically incorrect within the stated context.\n\nTRUE||All wrong answers are grammatically incorrect: B uses indicative instead of required subjunctive, C is a non-existent misspelled form, and D uses future indicative instead of required subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780753453328-prtq0qmo",
+      "timestamp": "2026-06-06T13:44:27.219Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses indicative instead of required subjunctive after \"il faut que,\" C is a non-existent form with double 'n,' and D uses future tense instead of subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780753467912-o8ff8utj",
+      "timestamp": "2026-06-06T13:44:40.959Z"
+    },
+    {
+      "raw": "TRUE||B uses indicative present instead of required subjunctive after \"il faut que\"; C is a non-existent verb form (double 'n' is incorrect); D uses future indicative instead of required subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780753481546-lufmk563",
+      "timestamp": "2026-06-06T13:44:54.960Z"
+    }
+  ]
+}

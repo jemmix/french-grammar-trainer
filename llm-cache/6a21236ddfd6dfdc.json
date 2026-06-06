@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6a21236ddfd6dfdc",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je veux que tu ___ de l'eau. »\nChoices:\nA. [CORRECT] boives\nB. bois\nC. boive\nD. buves\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780749031048-u3qs6h9m"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the correct subjunctive form of \"boire\" for \"tu,\" which is a verb specifically listed in the two-radical subjunctive rule, and the distractor \"buves\" tests whether the student knows which radical (boi- vs buv-) applies to which person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749032053-275espz2",
+      "timestamp": "2026-06-06T12:31:05.048Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the two-stem distinction for \"boire\" at the subjunctive—distractor D (\"buves\") catches learners who incorrectly apply the \"buv-\" radical to \"tu\", while the correct answer \"boives\" requires knowing that \"tu\" uses the \"boiv-\" stem.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749242724-s6z3h6q5",
+      "timestamp": "2026-06-06T12:34:33.016Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing both which stem (\"boiv-\" vs \"buv-\") applies to the \"tu\" person and the correct subjunctive ending, with the distractor \"buves\" specifically testing the two-stem distinction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749457070-0tbc3rx8",
+      "timestamp": "2026-06-06T12:38:05.035Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "eea7632e024ab6ce",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-04-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Que tu ___ ou que tu refuses, c'est ton choix. »\n\nChoices:\nA. [CORRECT] viennes\nB. [WRONG] viens\nC. [WRONG] viendra\nD. [WRONG] venais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780749031048-14a38nu0"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"que\" in this parallel construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749048926-bqqfeq4k",
+      "timestamp": "2026-06-06T12:32:08.695Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWork completed: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect.\n\nAnalysis performed:\n- Question requires subjunctive after \"que\" in a parallel construction (\"Que tu ___ ou que tu refuses\")\n- B (viens) is indicative present, not subjunctive - INCORRECT\n- C (viendra) is future indicative, not subjunctive present - INCORRECT  \n- D (venais) is imparfait indicative, not subjunctive - INCORRECT\n\nTRUE||All wrong answers use indicative mood instead of the required subjunctive after \"que\" in this parallel construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749316708-ysh3ifbo",
+      "timestamp": "2026-06-06T12:35:40.579Z"
+    }
+  ]
+}

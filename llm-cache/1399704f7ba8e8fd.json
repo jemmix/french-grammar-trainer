@@ -1,0 +1,54 @@
+{
+  "cacheKey": "1399704f7ba8e8fd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il faut que vous ___ cette porte ouverte. »\nChoices:\nA. [CORRECT] teniez\nB. tenez\nC. tienniez\nD. tiendrez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780753154797-koq5iwl2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether students know that \"tenir\" uses the \"ten-\" radical for the vous form in subjonctif (teniez) rather than incorrectly extending the \"tienn-\" radical from the singular forms (tienniez), which is precisely the two-radical distinction this rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780753158830-x92hmcok",
+      "timestamp": "2026-06-06T13:39:49.139Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question is factually incorrect — the correct subjunctive form for \"vous\" with \"tenir\" is \"teniez\" (choice A), not \"tienniez\" (choice C), so the marked correct answer is wrong and the question fails to test the two-radical pattern properly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780753189140-ysh355n7",
+      "timestamp": "2026-06-06T13:40:22.570Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question alignment. I have completed the analysis:\n\nVERDICT: ALIGNED\nREASON: The question tests whether the student knows that \"tenir\" uses the \"ten-\" radical for the vous form (teniez) rather than the \"tienn-\" radical (tienniez), which is exactly the type of two-radical distinction the rule covers.\n\nNo remaining tasks — the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780753222571-5trl0zfb",
+      "timestamp": "2026-06-06T13:41:05.926Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the two-radical pattern of \"tenir\" in the subjunctive (tienne vs teniez for vous), which follows the exact same pattern as the example verbs (venir: vienne/venions) listed in the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780753265927-2m36cwm5",
+      "timestamp": "2026-06-06T13:41:49.447Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that \"tenir\" uses the \"ten-\" stem (not \"tienn-\") for the vous form in the subjunctive, which is exactly the two-stem pattern described in the rule (tenir follows the same pattern as boire/prendre/venir with distinct stems for different persons).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780753309448-3ncthnhn",
+      "timestamp": "2026-06-06T13:42:00.544Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The rule explicitly lists boire, prendre, and venir as the verbs to be tested, but this question tests \"tenir,\" which is not included in the stated rule scope.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780753320544-o8nom80b",
+      "timestamp": "2026-06-06T13:42:14.436Z"
+    }
+  ]
+}

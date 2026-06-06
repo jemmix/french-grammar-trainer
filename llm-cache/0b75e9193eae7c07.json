@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0b75e9193eae7c07",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il est essentiel que vous ___ ce message. »\nChoices:\nA. [CORRECT] compreniez\nB. comprenez\nC. comprenaient\nD. comprendrez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780749031049-t04v1kb6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"comprendre\" (a prendre-family verb) uses a second stem for \"vous\" in the subjunctive, producing \"compreniez\" rather than the first-stem form \"comprenez\" (which is the indicative).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749076880-2q4dp0wr",
+      "timestamp": "2026-06-06T12:33:46.788Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests recognizing the subjunctive trigger \"il est essentiel que\" and knowing the -iez ending for the vous form, not the two-radical distinction (the question doesn't contrast \"comprenne\" vs \"comprenions\" stems).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749411883-q2gd4b1f",
+      "timestamp": "2026-06-06T12:37:53.592Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests the indicative vs. subjunctive distinction for the \"vous\" form (-ez vs -iez ending), which applies to all -re verbs, not specifically the two-stem nature of verbs like \"comprendre\" in the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749549811-8zynbsl2",
+      "timestamp": "2026-06-06T12:40:45.523Z"
+    }
+  ]
+}

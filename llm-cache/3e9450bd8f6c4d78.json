@@ -1,0 +1,47 @@
+{
+  "cacheKey": "3e9450bd8f6c4d78",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-04 - Les verbes à deux radicaux au subjonctif (boire : boive/buvions, prendre : prenne/prenions, venir : vienne/venions)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « À condition qu'elle ___ avant la fin du mois. »\nChoices:\nA. [CORRECT] revienne\nB. revient\nC. revenue\nD. revenait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780749031050-yuuph7r9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests the 3rd person singular form \"revienne\" and doesn't require knowledge of the two-stem distinction (the nous/vous forms like \"revenions\" that differ from other conjugations), so it primarily tests general subjunctive usage triggered by \"à condition que\" rather than the specific two-radical pattern of verbs like venir/boire/prendre.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749184848-qst3zmcz",
+      "timestamp": "2026-06-06T12:33:27.224Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Revenir\" follows the same two-stem pattern as \"venir\" (revienne/revenions), and the question tests knowledge of the correct subjunctive form for this verb category, even though only one stem is needed for the third person singular.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749386009-mbd7ra3m",
+      "timestamp": "2026-06-06T12:37:08.224Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the subjunctive form of \"revenir,\" which is a compound of \"venir\" — one of the canonical two-stem verbs listed in the rule, and the student must know the specific irregular subjunctive stem to answer correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749533743-vmzwrhst",
+      "timestamp": "2026-06-06T12:39:19.764Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Revenir\" is derived from \"venir\" (explicitly listed in the rule) and \"revienne\" follows the same two-stem subjunctive pattern (revienne/revenions) that the rule targets.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749618588-55s399ia",
+      "timestamp": "2026-06-06T12:40:49.148Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question against its stated rule.\n\n**Analysis completed:**\n\nVERDICT: MISALIGNED\nREASON: The question only tests the 3rd person singular subjunctive form \"revienne\" and the use of subjunctive after \"à condition que\", but does not test the two-stem distinction (vienne vs venions) which is the core of the stated rule about verbs with two radicals in the subjunctive.\n\n**Remaining tasks:** None - the validation judgment was formed but not output before the step limit.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780749747741-ty0n2xqw",
+      "timestamp": "2026-06-06T12:42:51.056Z"
+    }
+  ]
+}
