@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a572fdde281c56d0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-08-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Il est urgent que vous ___ cette situation. »\n\nChoices:\nA. [CORRECT] régliez\nB. [WRONG] réglez\nC. [WRONG] régler\nD. [WRONG] régleriez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780766869703-ryz6jef1"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb forms: B uses indicative present instead of subjunctive, C uses the infinitive instead of a conjugated form, and D uses conditional instead of subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780766930241-frg9mf2h",
+      "timestamp": "2026-06-06T17:29:02.426Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a French grammar verification task. The task was to verify that the wrong answers (B, C, D) in a multiple choice question about the subjunctive mood are indeed incorrect.\n\nAnalysis completed:\n- B. \"règlez\" - This is the present indicative for \"vous\", not the subjunctive (which should be \"régliez\"). Incorrect.\n- C. \"régler\" - This is the infinitive form, not a conjugated verb. Incorrect.\n- D. \"régleriez\" - This is the conditional present for \"vous\", not the subjunctive. Incorrect.\n\nThe verdict would have been: TRUE||All wrong answers contain clear grammar errors — B uses indicative instead of subjunctive, C is an infinitive, and D uses conditional instead of subjunctive.\n\nNo remaining tasks for this specific verification.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780767082496-kzs6522i",
+      "timestamp": "2026-06-06T17:31:43.200Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use non-subjunctive forms (indicative present, infinitive, and conditional) which are grammatically incorrect after the subjunctive-triggering expression \"il est urgent que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780767248317-ynz6ql07",
+      "timestamp": "2026-06-06T17:34:30.018Z"
+    }
+  ]
+}

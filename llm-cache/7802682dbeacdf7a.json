@@ -1,0 +1,26 @@
+{
+  "cacheKey": "7802682dbeacdf7a",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-08-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le subjonctif après les expressions de nécessité (il faut que, il est nécessaire que, il est important que)\nPROMPT: Conjuguez le verbe au subjonctif présent.\nPHRASE: Il est nécessaire que nous ___ ce litige à l'amiable.\nCORRECT ANSWER: résolvions\n\nWRONG ANSWERS to evaluate:\n1. résolvons\n2. résoudrons\n3. résoudre\n4. résoudrions\n5. résolvaient\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780769201685-k2nvp3nc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"résolvaient\" is the imparfait form for \"ils/elles\", not \"nous\" — a learner making a tense mistake would more naturally use \"résolvions\" (nous imparfait) rather than a form that doesn't match the subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780769283228-zcd6soih",
+      "timestamp": "2026-06-06T18:08:27.322Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"résolvaient\" is the imparfait indicatif for ils/elles, not nous, making it an implausible error — a learner studying the subjunctive after \"il est nécessaire que nous\" would not randomly switch to third-person imperfect indicative, whereas the other four answers (indicative present, future, infinitive, conditional) all represent common tense/mood confusions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780769307322-hbfklgol",
+      "timestamp": "2026-06-06T18:08:47.729Z"
+    }
+  ]
+}

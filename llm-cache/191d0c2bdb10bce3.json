@@ -1,0 +1,33 @@
+{
+  "cacheKey": "191d0c2bdb10bce3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-08-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-08 - Le subjonctif après les expressions de nécessité (il faut que, il est nécessaire que, il est important que)\n\nQUESTION:\nType: Multiple Choice\nPrompt: « Il est nécessaire que je ___ cette décision. »\nChoices:\nA. [CORRECT] prenne\nB. prends\nC. prendre\nD. prendrais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780766869702-3tgw4b0c"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"il est nécessaire que,\" one of the core expressions from the rule, and correctly answering requires knowing this triggers the subjunctive mood (prenne) rather than the indicative (prends), infinitive (prendre), or conditional (prendrais).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780766895938-p4hshqhb",
+      "timestamp": "2026-06-06T17:28:29.959Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"il est nécessaire que,\" one of the exact expressions listed in the rule, and requires selecting the subjunctive form \"prenne\" over the indicative, infinitive, or conditional forms.\n\nMaximum steps for this agent have been reached. The validation task has been completed - I provided the alignment verdict for the French grammar question as requested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780767046788-z53cn1kl",
+      "timestamp": "2026-06-06T17:31:04.252Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"il est nécessaire que\" (an expression of necessity from the rule) and requires the student to select the subjunctive form \"prenne\" over the indicative \"prends\", infinitive \"prendre\", or conditional \"prendrais\", directly testing that expressions of necessity trigger the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780767210599-th9zok9f",
+      "timestamp": "2026-06-06T17:33:49.088Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "77ac26ba740fcbe6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-08-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-08 - Le subjonctif après les expressions de nécessité (il faut que, il est nécessaire que, il est important que)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au subjonctif présent.\nPhrase: Il est important que vous ___ vos objectifs.\nCorrect Answer: atteigniez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780766869705-1a9dgbpy"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question uses \"il est important que\" (an expression of necessity explicitly listed in the rule) and requires conjugating \"atteindre\" in the subjonctif présent, directly testing both the trigger recognition and the subjunctive formation that the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780767011373-ba8w8f8x",
+      "timestamp": "2026-06-06T17:30:27.249Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"Il est important que,\" which is explicitly listed in the rule as an expression of necessity that triggers the subjunctive, and correctly answering requires knowing to use the subjunctive form \"atteigniez\" rather than the indicative \"atteignez.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780767171572-p5neuzup",
+      "timestamp": "2026-06-06T17:33:03.447Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate \"au subjonctif présent,\" so answering correctly only requires knowing how to conjugate \"atteindre\" in the subjunctive for \"vous,\" not knowing that \"il est important que\" triggers the subjunctive mood.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780767333748-sqedddyh",
+      "timestamp": "2026-06-06T17:35:58.229Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to conjugate in the subjunctive (\"Conjuguez le verbe au subjonctif présent\"), so the question tests conjugation knowledge rather than whether the student knows that \"il est important que\" triggers the subjunctive mood.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780767496382-xsuth68j",
+      "timestamp": "2026-06-06T17:38:37.880Z"
+    }
+  ]
+}

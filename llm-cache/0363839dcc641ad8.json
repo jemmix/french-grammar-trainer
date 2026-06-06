@@ -1,0 +1,40 @@
+{
+  "cacheKey": "0363839dcc641ad8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-08-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-08 - Le subjonctif après les expressions de nécessité (il faut que, il est nécessaire que, il est important que)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au subjonctif présent.\nPhrase: Il est nécessaire que tu ___ la vérité à tes parents.\nCorrect Answer: dises\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780768218679-x9n8qow7"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests the subjunctive after \"il est nécessaire que,\" which is explicitly listed as one of the expressions of necessity in the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780768225696-saopcf26",
+      "timestamp": "2026-06-06T17:50:40.491Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\nI was in the process of analyzing a French grammar question to determine if it aligns with the stated rule about \"Le subjonctif après les expressions de nécessité.\"\n\nMy analysis:\nVERDICT: MISALIGNED\nREASON: The prompt explicitly instructs \"Conjuguez le verbe au subjonctif présent,\" meaning the student doesn't need to know that \"il est nécessaire que\" triggers the subjunctive—they only need to know how to conjugate \"dire\" in subjunctive present, which tests conjugation rather than recognition of necessity expressions as subjunctive triggers.\n\nRemaining tasks: None for this specific validation request.\n\nRecommendation: To properly test this rule, the prompt should not explicitly mention the subjunctive (e.g., just \"Conjuguez le verbe\" or \"Complétez la phrase\"), so the student must recognize from \"il est nécessaire que\" that subjunctive is required.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780768248239-fledzuir",
+      "timestamp": "2026-06-06T17:51:24.006Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"il est nécessaire que\" triggers the subjunctive mood, which is the exact grammar rule being tested, and the correct answer \"dises\" can only be determined by applying this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780768289581-e8fikvur",
+      "timestamp": "2026-06-06T17:51:43.986Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to conjugate in the subjunctive (\"Conjuguez le verbe au subjonctif présent\"), so the question only tests verb conjugation of \"dire\" rather than whether the student knows that \"il est nécessaire que\" requires the subjunctive mood.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780768303986-32peb4xb",
+      "timestamp": "2026-06-06T17:51:57.577Z"
+    }
+  ]
+}

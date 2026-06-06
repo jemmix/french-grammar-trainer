@@ -1,0 +1,40 @@
+{
+  "cacheKey": "fca2b31253eedd60",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-08-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-08 - Le subjonctif après les expressions de nécessité (il faut que, il est nécessaire que, il est important que)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au subjonctif présent.\nPhrase: Il est essentiel que nous ___ avant 22 heures.\nCorrect Answer: dormions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780766869704-xxvztxut"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Il est essentiel que\" is an expression of necessity that requires the subjunctive mood, making this question directly test the stated rule about subjunctive after necessity expressions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780766952782-j28dph1j",
+      "timestamp": "2026-06-06T17:29:37.016Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs \"Conjuguez le verbe au subjonctif présent,\" so the student doesn't need to recognize that \"il est essentiel que\" triggers the subjunctive—the question actually tests subjunctive conjugation of \"dormir,\" not the rule about expressions of necessity requiring the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780767117819-7opr3tb5",
+      "timestamp": "2026-06-06T17:32:17.806Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Il est essentiel que\" is an expression of necessity that triggers the subjunctive mood, making this question directly test the stated rule about subjunctive after necessity expressions like \"il est important que\" and \"il est nécessaire que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780767285770-uin8xinf",
+      "timestamp": "2026-06-06T17:35:02.808Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was asked to validate a single French grammar question alignment and was about to provide my verdict.\n\nList of any remaining tasks that were not completed:\n- The validation response for this question was not delivered\n\nRecommendations for what should be done next:\nProvide the validation response:\n\nVERDICT: MISALIGNED\nREASON: The question tests conjugation of \"dormir\" in the subjunctive present, not which expressions of necessity require the subjunctive—\"il est essentiel que\" isn't even listed in the rule (il faut que, il est nécessaire que, il est important que).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780767447006-wgbtwrwh",
+      "timestamp": "2026-06-06T17:37:53.064Z"
+    }
+  ]
+}

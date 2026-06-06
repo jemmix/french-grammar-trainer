@@ -1,0 +1,33 @@
+{
+  "cacheKey": "270e46d4c1bd543d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-08-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-08 - Le subjonctif après les expressions de nécessité (il faut que, il est nécessaire que, il est important que)\n\nQUESTION:\nType: Multiple Choice\nPrompt: « Il est important que nous ___ cette nouvelle à nos familles. »\nChoices:\nA. [CORRECT] communiquions\nB. communiquons\nC. communiquer\nD. communiquerions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780766869702-2ddf9n7p"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"il est important que\" (one of the listed necessity expressions) and requires selecting the subjunctive form \"communiquions\" over the indicative \"communiquons\", directly testing the rule that expressions of necessity trigger the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780766909242-eborefgc",
+      "timestamp": "2026-06-06T17:29:00.496Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"Il est important que,\" an expression explicitly listed in the rule, and requires recognizing that it triggers the subjunctive mood to select \"communiquions\" over the indicative, infinitive, or conditional forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780767078139-9fmp1evz",
+      "timestamp": "2026-06-06T17:31:42.605Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether students know that \"il est important que\" triggers the subjunctive mood, which is the exact grammar rule stated, and the correct answer \"communiquions\" is the subjunctive form that distinguishes it from the indicative, infinitive, and conditional distractors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780767244097-sdkvh9tl",
+      "timestamp": "2026-06-06T17:34:23.199Z"
+    }
+  ]
+}

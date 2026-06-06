@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b2a5e8ab791aaa92",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-08-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Il est nécessaire que je ___ cette décision. »\n\nChoices:\nA. [CORRECT] prenne\nB. [WRONG] prends\nC. [WRONG] prendre\nD. [WRONG] prendrais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780766869702-8ebzf38z"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods or forms: B uses indicative instead of required subjunctive, C is an infinitive rather than a conjugated form, and D uses conditional instead of subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780766891158-ns8v65i3",
+      "timestamp": "2026-06-06T17:28:24.817Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"il est nécessaire que\": B uses indicative present, C uses infinitive, and D uses conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780767037227-rw0z61e0",
+      "timestamp": "2026-06-06T17:30:50.119Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the required subjunctive mood after \"il est nécessaire que\": B uses indicative, C uses infinitive, and D uses conditional.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780767195328-rp2m67xp",
+      "timestamp": "2026-06-06T17:33:37.281Z"
+    }
+  ]
+}
