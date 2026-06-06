@@ -40,10 +40,22 @@ function parseArgs(): ValidationOptions & { json?: boolean } {
     if (arg === "--lang" && args[i + 1]) {
       opts.lang = args[++i] as "fr" | "en";
     } else if (arg === "--section" && args[i + 1]) {
-      opts.sections = [args[++i]!];
+      if (opts.sections) {
+        console.error("Error: --section may only be specified once. Combine multiple IDs with commas (e.g. --section 01,02).");
+        process.exit(1);
+      }
+      opts.sections = args[++i]!.split(",");
     } else if (arg === "--rule" && args[i + 1]) {
-      opts.rules = [args[++i]!];
+      if (opts.rules) {
+        console.error("Error: --rule may only be specified once. Combine multiple IDs with commas (e.g. --rule 01-01,01-02).");
+        process.exit(1);
+      }
+      opts.rules = args[++i]!.split(",");
     } else if (arg === "--question" && args[i + 1]) {
+      if (opts.questions) {
+        console.error("Error: --question may only be specified once. Combine multiple IDs with commas (e.g. --question 01-01-001,01-01-002).");
+        process.exit(1);
+      }
       opts.questions = args[++i]!.split(",");
     } else if (arg === "--llm") {
       opts.llm = true;
