@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c145d454a1c2397d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-11-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-11 - Le subjonctif après bien que, quoique (concession)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme du verbe. « Bien que nous ___ jeunes, nous avons beaucoup d'expérience. »\nChoices:\nA. [CORRECT] soyons\nB. étions\nC. sommes\nD. serons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780778713453-noub8ey4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"bien que\" triggers the subjunctive mood, as only the subjunctive form \"soyons\" is correct among the choices.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780778781447-lccc8a4z",
+      "timestamp": "2026-06-06T20:46:33.940Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"bien que\" triggers the subjunctive mood to correctly select \"soyons\" over the indicative forms \"étions,\" \"sommes,\" and \"serons.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780778901931-gdrgfucn",
+      "timestamp": "2026-06-06T20:48:37.873Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"bien que\" triggers the subjunctive mood (\"soyons\" vs. indicative forms \"étions\", \"sommes\", \"serons\"), which is the exact grammar rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780779037129-0fle5zqr",
+      "timestamp": "2026-06-06T20:50:58.047Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f70e1f0c0a069c22",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-11-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Bien que les résultats ___ décevants, l'équipe ne s'est pas découragée. »\n\nChoices:\nA. [CORRECT] soient\nB. [WRONG] étaient\nC. [WRONG] sont\nD. [WRONG] seraient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780777518536-n796wlpv"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"bien que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780777561896-9ie9jebx",
+      "timestamp": "2026-06-06T20:26:13.519Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after \"bien que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780777718674-hxn2be41",
+      "timestamp": "2026-06-06T20:29:01.439Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**What was accomplished:** No work was completed on this task yet — the agent received a single validation request for a French grammar question about \"bien que\" subjunctive usage.\n\n**Remaining tasks:**\n- Verify that wrong answers B (\"étaient\"), C (\"sont\"), and D (\"seraient\") are indeed incorrect for the sentence \"Bien que les résultats ___ décevants\"\n- Return the verdict in the required format: VERDICT|letters|explanation\n\n**Recommendation for next step:** The answer is straightforward — \"bien que\" requires the subjunctive in French. \"Soient\" (A) is correct (subjunctive). \"Étaient\" (B, imparfait), \"sont\" (C, présent indicatif), and \"seraient\" (D, conditionnel) are all incorrect because none are in the subjunctive mood. The expected response would be: `TRUE||All wrong answers use indicative or conditional moods, but \"bien que\" requires the subjunctive.`",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780777953046-ia18ilnq",
+      "timestamp": "2026-06-06T20:32:56.627Z"
+    }
+  ]
+}

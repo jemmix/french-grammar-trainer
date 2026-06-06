@@ -1,0 +1,33 @@
+{
+  "cacheKey": "98c514e4e480f0be",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-11-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Indicatif ou subjonctif ? Choisissez la bonne forme du verbe. « Bien qu'il ___ riche, il mène une vie simple. »\n\nChoices:\nA. [CORRECT] soit\nB. [WRONG] était\nC. [WRONG] est\nD. [WRONG] sera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780779581489-ttxmni0r"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use indicative mood (imparfait, présent, futur) while \"bien que\" strictly requires the subjunctive mood \"soit\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780779635944-9m3hubx3",
+      "timestamp": "2026-06-06T21:00:50.867Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ about indicative vs. subjunctive after \"bien que\" are indeed incorrect.\n\nThe verification result would be:\nTRUE||All wrong answers are in the indicative mood (imparfait, présent, futur), but \"bien que\" strictly requires the subjunctive mood (\"soit\").\n\nNo remaining tasks - the verification was complete at the point of interruption.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780779755979-duhtxmma",
+      "timestamp": "2026-06-06T21:02:51.448Z"
+    },
+    {
+      "raw": "TRUE||\"Bien que\" requires the subjunctive mood, and \"était\" (imparfait indicatif), \"est\" (présent indicatif), and \"sera\" (futur indicatif) are all indicative forms, making them grammatically incorrect in this construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780779872824-0ka15xtq",
+      "timestamp": "2026-06-06T21:04:47.119Z"
+    }
+  ]
+}

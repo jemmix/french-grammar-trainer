@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2367b654020f45aa",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-11-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe. « Bien qu'il ___ très occupé, il est venu à la fête. »\n\nChoices:\nA. [CORRECT] soit\nB. [WRONG] est\nC. [WRONG] était\nD. [WRONG] serait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780778713451-3o0uyag5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"bien que\": B uses indicative present, C uses indicative imperfect, and D uses conditional, none of which are grammatically correct in this construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780778713466-tv7x6paj",
+      "timestamp": "2026-06-06T20:45:27.282Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after \"bien que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780778833944-c2y7ushu",
+      "timestamp": "2026-06-06T20:47:32.431Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"bien que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780778962799-x5ap5c12",
+      "timestamp": "2026-06-06T20:49:41.491Z"
+    }
+  ]
+}

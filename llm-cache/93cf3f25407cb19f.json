@@ -1,0 +1,33 @@
+{
+  "cacheKey": "93cf3f25407cb19f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-11-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Quoique ce plan ___ imparfait, c'est le meilleur que nous avons. »\n\nChoices:\nA. [CORRECT] soit\nB. [WRONG] était\nC. [WRONG] est\nD. [WRONG] semblait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780777518537-lwzbu9iy"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar question about \"quoique\" are indeed incorrect.\n\nAnalysis completed:\n- Question: \"Quoique ce plan ___ imparfait, c'est le meilleur que nous avons.\"\n- B. \"était\" (imparfait indicative) - incorrect, \"quoique\" requires subjunctive\n- C. \"est\" (present indicative) - incorrect, \"quoique\" requires subjunctive  \n- D. \"semblait\" (imparfait indicative) - incorrect, \"quoique\" requires subjunctive\n\nResult: TRUE||All wrong answers use indicative mood when \"quoique\" requires the subjunctive.\n\nNo remaining tasks - this was a single verification request that has been analyzed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780777610178-2vt8u3bi",
+      "timestamp": "2026-06-06T20:27:29.492Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect because \"quoique\" requires the subjunctive mood, and \"était\" (imparfait indicative), \"est\" (présent indicative), and \"semblait\" (imparfait indicative of sembler) are all in indicative forms, not subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780777797538-tcj28ukc",
+      "timestamp": "2026-06-06T20:30:16.276Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the indicative mood (imparfait or présent), but \"quoique\" requires the subjunctive mood, making only \"soit\" grammatically correct.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780778016550-xqatqhf8",
+      "timestamp": "2026-06-06T20:33:48.469Z"
+    }
+  ]
+}

@@ -130,7 +130,7 @@ Avoid "nous/vous" subjects in MCQ questions — the reflexive pronoun is identic
 - **Bad**: "Conjuguez le verbe au temps approprié" (fails `no-ambiguous-prompts` — which tense?)
 - **Bad**: "Conjuguez le verbe au passé composé" for tense-choice rules (gives away the answer)
 - **OK for tense-choice**: "Conjuguez le verbe à l'imparfait ou au passé composé selon le contexte."
-- **Best for mood-trigger rules** (e.g., subjonctif after "pour que"): "Indicatif ou subjonctif ? Conjuguez le verbe." — names the choice without giving away the answer; passes both `no-ambiguous-prompts` and `question-rule-alignment` reliably (3/3 first try).
+- **Best for mood-trigger rules** (e.g., subjonctif after "pour que"): "Indicatif ou subjonctif ? Conjuguez le verbe." — names the choice without giving away the answer; passes both `no-ambiguous-prompts` and `question-rule-alignment` reliably (3/3 first try). Works for both MCQ and INPUT questions (use "Indicatif ou subjonctif ? Choisissez la bonne forme du verbe." for MCQ).
 
 ### Wrong answers
 - Minimum 4 required by compile-time validation

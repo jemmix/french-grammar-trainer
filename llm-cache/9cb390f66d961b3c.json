@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9cb390f66d961b3c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-11-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe. « Quoique tu ___ raison, je ne suis pas d'accord. »\n\nChoices:\nA. [CORRECT] aies\nB. [WRONG] as\nC. [WRONG] avais\nD. [WRONG] aurais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780778713452-k1lyh854"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"quoique\" — B uses present indicative, C uses imperfect indicative, and D uses conditional present.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780778748788-fgca0eem",
+      "timestamp": "2026-06-06T20:46:00.150Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after \"quoique\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780778870132-z778v6pk",
+      "timestamp": "2026-06-06T20:48:01.151Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying the wrong answers in a French grammar multiple choice question about the subjunctive mood with \"quoique.\"\n\nSummary of analysis completed:\n- The question tests knowledge that \"quoique\" requires the subjunctive mood\n- A. \"aies\" (correct) is the present subjunctive of \"avoir\"\n- B. \"as\" is present indicative - incorrect (wrong mood)\n- C. \"avais\" is imperfect indicative - incorrect (wrong mood and tense)\n- D. \"aurais\" is conditional - incorrect (wrong mood)\n\nTRUE||All wrong answers fail to use the required subjunctive mood after \"quoique.\"\n\nNo remaining tasks - the verification is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780778996808-072iurdk",
+      "timestamp": "2026-06-06T20:50:17.221Z"
+    }
+  ]
+}

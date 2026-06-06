@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ccc80e3523e5fb3d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-11-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe. « Quoique ce film ___ un peu long, je l'ai trouvé excellent. »\n\nChoices:\nA. [CORRECT] soit\nB. [WRONG] était\nC. [WRONG] est\nD. [WRONG] sera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780778713452-nclsla59"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||\"Quoique\" requires the subjunctive mood, and \"était\" (imparfait), \"est\" (présent indicatif), and \"sera\" (futur) are all in the indicative mood, making them grammatically incorrect in this construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780778736899-xp8bhrvg",
+      "timestamp": "2026-06-06T20:46:09.749Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative tenses (imparfait, présent, futur) when \"quoique\" requires the subjunctive mood.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780778877521-u5840vkl",
+      "timestamp": "2026-06-06T20:48:35.253Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was analyzing a French grammar verification task for the question \"Quoique ce film ___ un peu long, je l'ai trouvé excellent.\" The task was to verify that wrong answers B (était), C (est), and D (sera) are indeed incorrect.\n\n**Analysis completed:**\n- The conjunction \"quoique\" requires the subjunctive mood in French\n- Answer A (soit) is correctly marked as correct - it's the subjunctive present of \"être\"\n- Answer B (était) is imparfait - incorrect because it's not subjunctive\n- Answer C (est) is présent indicatif - incorrect because it's not subjunctive\n- Answer D (sera) is futur simple - incorrect because it's not subjunctive\n\n**Verdict that would have been returned:**\nTRUE||All wrong answers use indicative or future tenses, but \"quoique\" requires the subjunctive mood, making only \"soit\" grammatically correct.\n\n**No remaining tasks** - this was a single verification query that has been fully analyzed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780779033726-mtruvf4m",
+      "timestamp": "2026-06-06T20:50:56.168Z"
+    }
+  ]
+}

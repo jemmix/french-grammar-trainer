@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6d4edd2cb60923b9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-11-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-11 - Le subjonctif après bien que, quoique (concession)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme du verbe. « Bien que les difficultés ___ nombreuses, nous persévérerons. »\nChoices:\nA. [CORRECT] soient\nB. étaient\nC. sont\nD. seraient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780778713453-pjtakuwq"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that \"bien que\" requires the subjunctive mood, as only choosing \"soient\" (subjunctive) over the indicative forms (\"sont\", \"étaient\") and conditional (\"seraient\") demonstrates knowledge of this specific concession structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780778793940-07x9ojeq",
+      "timestamp": "2026-06-06T20:46:56.069Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"bien que\" triggers the subjunctive mood, which is the exact grammar rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780778923357-1312bw2b",
+      "timestamp": "2026-06-06T20:49:01.483Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"bien que\" requires the subjunctive mood, as selecting \"soient\" over the indicative \"sont\" or other forms requires this specific knowledge.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780779063401-6kz6e6xg",
+      "timestamp": "2026-06-06T20:51:19.227Z"
+    }
+  ]
+}
