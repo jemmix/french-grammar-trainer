@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f9f9f1033d3cd3c9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-09-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Il est inadmissible que vous _____ ce règlement. »\n\nChoices:\nA. [CORRECT] sachiez\nB. [WRONG] savez\nC. [WRONG] saurez\nD. [WRONG] savoir\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780772001776-3ir821d0"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"Il est inadmissible que\" — B uses indicative present, C uses future, and D uses infinitive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780772001797-j6fbjses",
+      "timestamp": "2026-06-06T18:53:31.009Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses indicative instead of required subjunctive, C uses future indicative instead of subjunctive, and D uses the infinitive instead of a conjugated form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780772011011-m61zdhpa",
+      "timestamp": "2026-06-06T18:53:40.895Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods/tenses for a subjunctive clause introduced by \"Il est inadmissible que\": B uses indicative present, C uses future, and D uses infinitive instead of the required subjunctive \"sachiez\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780772021408-lirtpo8l",
+      "timestamp": "2026-06-06T18:53:54.485Z"
+    }
+  ]
+}

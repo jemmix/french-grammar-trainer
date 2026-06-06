@@ -1,0 +1,33 @@
+{
+  "cacheKey": "36e23d9d3b688093",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-09-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Il est regrettable qu'elle _____ ce travail sans aide. »\n\nChoices:\nA. [CORRECT] fasse\nB. [WRONG] fait\nC. [WRONG] ferait\nD. [WRONG] fera\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780770051756-99ipuid7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are in indicative or conditional mood, but \"il est regrettable que\" requires the subjunctive mood, making \"fasse\" the only correct choice.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780770124921-beigpst3",
+      "timestamp": "2026-06-06T18:22:33.515Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"Il est regrettable que\" — B is present indicative, C is conditional, and D is future indicative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780770282750-1tyke8ik",
+      "timestamp": "2026-06-06T18:24:58.444Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative, conditional, or future tenses instead of the required subjunctive mood after \"Il est regrettable que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780770422694-zbgnqlp8",
+      "timestamp": "2026-06-06T18:27:16.013Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b3e15f1a7bfd72a7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-09-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Il est regrettable que nous ne _____ pas nous rencontrer ce mois-ci. »\n\nChoices:\nA. [CORRECT] puissions\nB. [WRONG] pouvons\nC. [WRONG] pourrons\nD. [WRONG] pourrions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780770051755-7rcy2ihe"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use the wrong mood (indicative or conditional) when the subjunctive is required after \"il est regrettable que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780770075131-j6kf85q1",
+      "timestamp": "2026-06-06T18:21:35.950Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"Il est regrettable que\": B uses indicative present, C uses future indicative, and D uses conditional present instead of the required subjunctive present \"puissions\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780770222201-tp9sbo5j",
+      "timestamp": "2026-06-06T18:23:58.001Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after \"Il est regrettable que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780770363278-sdpjrxks",
+      "timestamp": "2026-06-06T18:26:26.990Z"
+    }
+  ]
+}
