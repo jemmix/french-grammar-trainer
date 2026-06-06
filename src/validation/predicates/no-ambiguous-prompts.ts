@@ -4,6 +4,7 @@ import type { MultipleChoiceQuestion, InputQuestion } from "../../data/types";
 export const noAmbiguousPromptsPredicate: LLMPredicate = {
   id: "no-ambiguous-prompts",
   category: "semantic",
+  phase: 1,
 
   appliesTo(_ctx: QuestionContext): boolean {
     return true;

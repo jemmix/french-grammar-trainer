@@ -38,6 +38,11 @@ export interface LLMResponse {
 export interface LLMPredicate {
   id: string;
   category: "semantic" | "pedagogical";
+  /**
+   * 1 = priority (gating). Run before phase-2 predicates for the same question.
+   * 2 = remaining. Skipped if the question is doomed by phase 1.
+   */
+  phase: 1 | 2;
   appliesTo(ctx: QuestionContext): boolean;
   generatePrompt(ctx: QuestionContext): LLMRequestSpec;
   interpretResponse(ctx: QuestionContext, rawResponse: string): PredicateResult;

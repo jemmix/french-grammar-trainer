@@ -4,6 +4,7 @@ import type { MultipleChoiceQuestion, InputQuestion } from "../../data/types";
 export const grammarValidPredicate: LLMPredicate = {
   id: "grammar-valid",
   category: "semantic",
+  phase: 2,
 
   appliesTo(_ctx: QuestionContext): boolean {
     return true;

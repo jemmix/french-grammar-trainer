@@ -4,6 +4,7 @@ import type { MultipleChoiceQuestion, InputQuestion } from "../../data/types";
 export const frenchLanguagePredicate: LLMPredicate = {
   id: "french-language",
   category: "semantic",
+  phase: 2,
 
   appliesTo(ctx: QuestionContext): boolean {
     return ctx.lang === "fr";

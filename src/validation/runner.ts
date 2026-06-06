@@ -30,12 +30,6 @@ const RETRY_DELAYS_MS = [
   60_000, 120_000, 300_000, 600_000, 600_000,
 ];
 
-const PRIORITY_PREDICATE_IDS = new Set([
-  "question-rule-alignment",
-  "no-ambiguous-prompts",
-  "mcq-wrong-is-false",
-]);
-
 function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -157,6 +151,22 @@ interface LLMPendingTask {
   ctx: QuestionContext;
   entry: CacheEntry;
   fromCache: boolean;
+  phaseTag: "P1" | "P2";
+}
+
+interface QuestionPipeline {
+  questionId: string;
+  phase1: LLMPendingTask[];
+  phase2: LLMPendingTask[];
+}
+
+interface SharedRunState {
+  limitConcurrency: <T>(fn: () => Promise<T>) => Promise<T>;
+  waitForRateLimit: () => Promise<void>;
+  harness: LLMHarness;
+  doomedQuestions: Set<string>;
+  ui: ProgressUI;
+  verbose: boolean;
 }
 
 function preCheckDoomedQuestions(tasks: LLMPendingTask[]): Set<string> {
@@ -353,105 +363,115 @@ class ProgressUI {
   }
 }
 
-async function runLLMBatch(
-  tasks: LLMPendingTask[],
+async function runTask(
+  task: LLMPendingTask,
+  taskIndex: number,
   updateCache: boolean,
-  concurrency: number,
-  limitConcurrency: <T>(fn: () => Promise<T>) => Promise<T>,
-  waitForRateLimit: () => Promise<void>,
-  verbose: boolean,
-  harness: LLMHarness,
-  doomedQuestions: Set<string>
-): Promise<CheckResult[]> {
-  const ui = new ProgressUI(tasks.length, concurrency);
-  const taskResults: CheckResult[] = new Array(tasks.length);
+  shared: SharedRunState,
+): Promise<CheckResult> {
+  const { predicate, ctx, entry, phaseTag } = task;
+  const { limitConcurrency, waitForRateLimit, harness, doomedQuestions, ui, verbose } = shared;
+  const spec = { systemPrompt: entry.spec.systemPrompt, userPrompt: entry.spec.userPrompt };
 
-  const runTask = async (taskIndex: number) => {
-    const task = tasks[taskIndex]!;
-    const { predicate, ctx, entry } = task;
-    const spec = { systemPrompt: entry.spec.systemPrompt, userPrompt: entry.spec.userPrompt };
-
-    const getValidResults = () => {
-      const all = entry.responses.map(r => predicate.interpretResponse(ctx, r.raw));
-      return all.filter((r): r is ValidPredicateResult => r.status !== "invalid");
-    };
-
-    const needsMore = () => {
-      const validResults = getValidResults();
-      const failCount = validResults.filter(r => r.status === "fail").length;
-      if (failCount >= 2) return false;
-      if (validResults.length < INITIAL_RUNS) return true;
-      return failCount > 0 && validResults.length < INITIAL_RUNS + ADDITIONAL_RUNS;
-    };
-
-    let attemptNumber = 0;
-
-    while (updateCache && needsMore()) {
-      if (doomedQuestions.has(ctx.question.id)) break;
-
-      await waitForRateLimit();
-
-      if (doomedQuestions.has(ctx.question.id)) break;
-
-      await limitConcurrency(async () => {
-        if (doomedQuestions.has(ctx.question.id)) return;
-
-        const nonce = generateNonce();
-
-        const callStart = Date.now();
-        const response = await runWithRetry(
-          async () => {
-            const res = await harness.run(spec, nonce);
-            const interp = predicate.interpretResponse(ctx, res.raw);
-            if (interp.status === "invalid") {
-              throw new InvalidResponseError(interp.reason);
-            }
-            return res;
-          },
-          "LLM call for " + ctx.question.id + "/" + predicate.id,
-          (msg) => ui.write(msg)
-        );
-        const callDuration = Date.now() - callStart;
-
-        entry.responses.push(response);
-        attemptNumber++;
-
-        const validResults = getValidResults();
-        const failCount = validResults.filter(r => r.status === "fail").length;
-
-        ui.tick(taskIndex, failCount, callDuration);
-
-        if (verbose) {
-          const interp = predicate.interpretResponse(ctx, response.raw);
-          if (isInteractive) {
-            ui.write("  " + ctx.question.id + " | " + predicate.id + " | attempt " + attemptNumber + " | " + formatStatus(interp));
-          } else {
-            console.log("  " + ctx.question.id + " | " + predicate.id + " | attempt " + attemptNumber + " | " + formatStatus(interp) + ui.suffix());
-          }
-        }
-
-        saveCacheEntry(entry);
-
-        if (failCount >= 2) {
-          doomedQuestions.add(ctx.question.id);
-        }
-      });
-    }
-
-    ui.done(taskIndex);
-
-    const result = resolveTask(task, doomedQuestions);
-
-    if (verbose && entry.responses.length === 0) {
-      ui.write("  " + ctx.question.id + " | " + predicate.id + " | attempt 0 | " + formatStatus({ status: "fail", reason: result.reason || "FAIL" }));
-    }
-
-    taskResults[taskIndex] = result;
+  const getValidResults = () => {
+    const all = entry.responses.map(r => predicate.interpretResponse(ctx, r.raw));
+    return all.filter((r): r is ValidPredicateResult => r.status !== "invalid");
   };
 
-  await Promise.all(tasks.map((_, i) => runTask(i)));
-  ui.finish();
-  return taskResults;
+  const needsMore = () => {
+    const validResults = getValidResults();
+    const failCount = validResults.filter(r => r.status === "fail").length;
+    if (failCount >= 2) return false;
+    if (validResults.length < INITIAL_RUNS) return true;
+    return failCount > 0 && validResults.length < INITIAL_RUNS + ADDITIONAL_RUNS;
+  };
+
+  let attemptNumber = 0;
+
+  while (updateCache && needsMore()) {
+    if (doomedQuestions.has(ctx.question.id)) break;
+
+    await waitForRateLimit();
+
+    if (doomedQuestions.has(ctx.question.id)) break;
+
+    await limitConcurrency(async () => {
+      if (doomedQuestions.has(ctx.question.id)) return;
+
+      const nonce = generateNonce();
+
+      const callStart = Date.now();
+      const response = await runWithRetry(
+        async () => {
+          const res = await harness.run(spec, nonce);
+          const interp = predicate.interpretResponse(ctx, res.raw);
+          if (interp.status === "invalid") {
+            throw new InvalidResponseError(interp.reason);
+          }
+          return res;
+        },
+        "LLM call for " + ctx.question.id + "/" + predicate.id,
+        (msg) => ui.write(msg)
+      );
+      const callDuration = Date.now() - callStart;
+
+      entry.responses.push(response);
+      attemptNumber++;
+
+      const validResults = getValidResults();
+      const failCount = validResults.filter(r => r.status === "fail").length;
+
+      ui.tick(taskIndex, failCount, callDuration);
+
+      if (verbose) {
+        const interp = predicate.interpretResponse(ctx, response.raw);
+        const line = ctx.question.id + " | [" + phaseTag + "] " + predicate.id + " | attempt " + attemptNumber + " | " + formatStatus(interp);
+        if (isInteractive) {
+          ui.write("  " + line);
+        } else {
+          console.log("  " + line + ui.suffix());
+        }
+      }
+
+      saveCacheEntry(entry);
+
+      if (failCount >= 2) {
+        doomedQuestions.add(ctx.question.id);
+      }
+    });
+  }
+
+  ui.done(taskIndex);
+
+  const result = resolveTask(task, doomedQuestions);
+
+  if (verbose && entry.responses.length === 0) {
+    const line = ctx.question.id + " | [" + phaseTag + "] " + predicate.id + " | attempt 0 | " + formatStatus({ status: "fail", reason: result.reason || "FAIL" });
+    ui.write("  " + line);
+  }
+
+  return result;
+}
+
+async function runQuestionPipeline(
+  pipeline: QuestionPipeline,
+  taskOffset: number,
+  updateCache: boolean,
+  shared: SharedRunState,
+): Promise<CheckResult[]> {
+  const phase1Offset = taskOffset;
+  const phase2Offset = taskOffset + pipeline.phase1.length;
+
+  const phase1Results = await Promise.all(
+    pipeline.phase1.map((t, i) => runTask(t, phase1Offset + i, updateCache, shared))
+  );
+
+  // Phase 2 — each task self-skips via runTask's doom check, ensuring ui.done is called.
+  const phase2Results = await Promise.all(
+    pipeline.phase2.map((t, i) => runTask(t, phase2Offset + i, updateCache, shared))
+  );
+
+  return [...phase1Results, ...phase2Results];
 }
 
 function tallyResults(results: CheckResult[]): { passed: number; failed: number; warnings: number } {
@@ -473,7 +493,7 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   const startTime = Date.now();
 
   const lang = opts.lang || "en";
-  const model = opts.model || "glm-5";
+  const model = opts.model || "glm-5-turbo";
   const harness = createOpencodeHarness(model);
   const sections = await loadSections(lang);
   const cacheKeysUsed = new Set<string>();
@@ -482,8 +502,9 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
   const rateLimitMs = opts.rateLimit * 1000;
   const waitForRateLimit = rateLimitMs > 0 ? createRateLimiter(rateLimitMs) : async () => {};
 
-  const priorityTasks: LLMPendingTask[] = [];
-  const restTasks: LLMPendingTask[] = [];
+  const pipelines: QuestionPipeline[] = [];
+  const pipelineByQuestion = new Map<string, QuestionPipeline>();
+  const allLLMTasks: LLMPendingTask[] = [];
   const structuralResults: CheckResult[] = [];
   let cacheHits = 0;
   let cacheMisses = 0;
@@ -559,8 +580,17 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
             cacheHits++;
           }
 
-          const target = PRIORITY_PREDICATE_IDS.has(predicate.id) ? priorityTasks : restTasks;
-          target.push({ predicate, ctx, entry: entry!, fromCache });
+          const phaseTag: "P1" | "P2" = predicate.phase === 1 ? "P1" : "P2";
+          const task: LLMPendingTask = { predicate, ctx, entry: entry!, fromCache, phaseTag };
+          allLLMTasks.push(task);
+
+          let pipeline = pipelineByQuestion.get(question.id);
+          if (!pipeline) {
+            pipeline = { questionId: question.id, phase1: [], phase2: [] };
+            pipelineByQuestion.set(question.id, pipeline);
+            pipelines.push(pipeline);
+          }
+          (phaseTag === "P1" ? pipeline.phase1 : pipeline.phase2).push(task);
 
         } else {
           const predicateResult = predicate.check(ctx);
@@ -576,7 +606,6 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
     }
   }
 
-  const allLLMTasks = [...priorityTasks, ...restTasks];
   const llmResults: CheckResult[] = [];
 
   if (allLLMTasks.length > 0) {
@@ -598,36 +627,29 @@ export async function runValidation(opts: ValidationOptions): Promise<Validation
       console.log(doomedQuestions.size + " question(s) doomed before LLM checks (" + parts.join(", ") + ")");
     }
 
-    console.log("Running " + allLLMTasks.length + " LLM tasks (max " + concurrency + " concurrent)...");
+    console.log("Running " + allLLMTasks.length + " LLM tasks across " + pipelines.length + " questions (max " + concurrency + " concurrent)...");
 
-    const activePriority = priorityTasks.filter(t => !doomedQuestions.has(t.ctx.question.id));
-    const skippedPriority = priorityTasks.filter(t => doomedQuestions.has(t.ctx.question.id));
+    const ui = new ProgressUI(allLLMTasks.length, concurrency);
 
-    if (skippedPriority.length > 0) {
-      llmResults.push(...skippedPriority.map(t => resolveTask(t, doomedQuestions)));
-    }
+    const shared: SharedRunState = {
+      limitConcurrency,
+      waitForRateLimit,
+      harness,
+      doomedQuestions,
+      ui,
+      verbose,
+    };
 
-    if (activePriority.length > 0) {
-      console.log("  Phase 1: " + activePriority.length + " priority checks");
-      const results = await runLLMBatch(activePriority, !!opts.updateCache, concurrency, limitConcurrency, waitForRateLimit, verbose, harness, doomedQuestions);
-      llmResults.push(...results);
-    }
+    let taskOffset = 0;
+    const pipelinePromises = pipelines.map(pipeline => {
+      const offset = taskOffset;
+      taskOffset += pipeline.phase1.length + pipeline.phase2.length;
+      return runQuestionPipeline(pipeline, offset, !!opts.updateCache, shared);
+    });
 
-    if (restTasks.length > 0) {
-      const activeRest = restTasks.filter(t => !doomedQuestions.has(t.ctx.question.id));
-      const skippedRest = restTasks.filter(t => doomedQuestions.has(t.ctx.question.id));
-
-      if (skippedRest.length > 0) {
-        console.log("  " + skippedRest.length + " remaining tasks skipped (question already doomed)");
-        llmResults.push(...skippedRest.map(t => resolveTask(t, doomedQuestions)));
-      }
-
-      if (activeRest.length > 0) {
-        console.log("  Phase 2: " + activeRest.length + " remaining checks");
-        const results = await runLLMBatch(activeRest, !!opts.updateCache, concurrency, limitConcurrency, waitForRateLimit, verbose, harness, doomedQuestions);
-        llmResults.push(...results);
-      }
-    }
+    const pipelineResults = await Promise.all(pipelinePromises);
+    ui.finish();
+    llmResults.push(...pipelineResults.flat());
   }
 
   if (opts.pruneCache) {

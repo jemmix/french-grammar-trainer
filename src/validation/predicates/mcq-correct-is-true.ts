@@ -4,6 +4,7 @@ import type { MultipleChoiceQuestion } from "../../data/types";
 export const mcqCorrectIsTruePredicate: LLMPredicate = {
   id: "mcq-correct-is-true",
   category: "semantic",
+  phase: 2,
 
   appliesTo(ctx: QuestionContext): boolean {
     return ctx.question.type === "mcq";

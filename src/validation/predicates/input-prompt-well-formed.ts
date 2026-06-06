@@ -4,6 +4,7 @@ import type { InputQuestion } from "../../data/types";
 export const inputPromptWellFormedPredicate: LLMPredicate = {
   id: "input-prompt-well-formed",
   category: "semantic",
+  phase: 2,
 
   appliesTo(ctx: QuestionContext): boolean {
     return ctx.question.type === "input";

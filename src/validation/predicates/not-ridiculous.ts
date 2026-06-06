@@ -4,6 +4,7 @@ import type { MultipleChoiceQuestion, InputQuestion } from "../../data/types";
 export const notRidiculousPredicate: LLMPredicate = {
   id: "not-ridiculous",
   category: "pedagogical",
+  phase: 2,
 
   appliesTo(_ctx: QuestionContext): boolean {
     return true;

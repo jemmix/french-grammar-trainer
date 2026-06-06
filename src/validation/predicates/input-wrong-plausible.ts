@@ -4,6 +4,7 @@ import type { InputQuestion } from "../../data/types";
 export const inputWrongPlausiblePredicate: LLMPredicate = {
   id: "input-wrong-plausible",
   category: "pedagogical",
+  phase: 2,
 
   appliesTo(ctx: QuestionContext): boolean {
     return ctx.question.type === "input";
