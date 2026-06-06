@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f9ca3b68a73739f2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-06-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Vous vous étonnez que je ___ capable de cela. »\n\nChoices:\nA. [CORRECT] sois\nB. [WRONG] suis\nC. [WRONG] serai\nD. [WRONG] serais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780773653434-s77h6018"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a French grammar validation task. The question asks to verify that wrong answers B (\"suis\"), C (\"serai\"), and D (\"serais\") are indeed incorrect for the sentence \"Vous vous étonnez que je ___ capable de cela.\"\n\nThe correct answer is A (\"sois\") because \"s'étonner que\" requires the subjunctive mood. All three wrong answers use incorrect moods (indicative present, future indicative, and conditional respectively) and are genuinely wrong.\n\nThe verdict would be: TRUE||All wrong answers use the indicative or conditional mood instead of the required subjunctive after \"s'étonner que.\"\n\nNo remaining tasks for this particular validation item.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780773659466-z42mtwrr",
+      "timestamp": "2026-06-06T19:21:15.427Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional moods, but \"s'étonner que\" requires the subjunctive mood, making only \"sois\" correct.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780773695292-hcvrn3q9",
+      "timestamp": "2026-06-06T19:21:55.008Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"s'étonner que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780773735381-xetz3wod",
+      "timestamp": "2026-06-06T19:22:25.045Z"
+    }
+  ]
+}

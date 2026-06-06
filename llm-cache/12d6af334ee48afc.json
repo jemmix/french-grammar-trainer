@@ -1,0 +1,33 @@
+{
+  "cacheKey": "12d6af334ee48afc",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-06-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-06 - Le subjonctif après les verbes de sentiment (être content que, regretter que, avoir peur que, craindre que)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au subjonctif présent.\nPhrase: J'ai peur que tu te ___ malade avant la compétition.\nCorrect Answer: sois\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780773653454-wac9uoel"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"avoir peur que,\" which is explicitly listed in the rule as a verb of sentiment triggering the subjunctive, and correctly answering requires knowing both that this construction requires the subjonctif and the correct conjugation \"sois\" for the verb être.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780773682435-xqhw1pb9",
+      "timestamp": "2026-06-06T19:21:33.987Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"avoir peur que\" (explicitly listed in the rule) and requires conjugating \"être\" in subjunctive present, directly testing both the trigger verb and the subjunctive formation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780773717361-g060jo7l",
+      "timestamp": "2026-06-06T19:22:12.115Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating whether a French grammar question about the subjunctive after verbs of sentiment is aligned with its stated rule. The question asks students to conjugate \"être\" in the subjunctive present after \"J'ai peur que tu...\"\n\n**Verdict (not yet delivered):**\nVERDICT: ALIGNED\nREASON: The question uses \"avoir peur que,\" which is explicitly listed in the rule as a verb of sentiment triggering the subjunctive, and correctly requires students to produce \"sois\" (subjunctive) rather than \"es\" (indicative).\n\n**Remaining tasks:**\nNone - this was a single-question validation task.\n\n**Recommendations:**\nThe question is properly aligned with rule 07-06 and is ready for use.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780773755769-u9djz20x",
+      "timestamp": "2026-06-06T19:23:02.773Z"
+    }
+  ]
+}

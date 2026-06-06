@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cea8267004f5c59b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-09-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Il est dommage que vous n'_____ pas cette présentation. »\n\nChoices:\nA. [CORRECT] ayez vu\nB. [WRONG] ayez vue\nC. [WRONG] avez vu\nD. [WRONG] auriez vu\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780774148041-qezmd4ge"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly agrees the past participle, C uses indicative instead of required subjunctive, and D uses conditional instead of required subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780774154067-r4oer3l1",
+      "timestamp": "2026-06-06T19:33:57.362Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying that wrong answers B, C, and D in the French grammar question are indeed incorrect.\n\nAnalysis completed:\n- **B (ayez vue)**: Incorrect - \"vue\" is feminine, but with \"avoir\" as auxiliary and the direct object \"cette présentation\" coming after the verb, no agreement is needed, so it should be \"vu\"\n- **C (avez vu)**: Incorrect - \"avez vu\" is passé composé (indicative), but \"Il est dommage que\" requires the subjunctive mood\n- **D (auriez vu)**: Incorrect - \"auriez vu\" is conditionnel passé, but \"Il est dommage que\" requires the subjunctive mood\n\nThe verdict is: TRUE||All wrong answers are grammatically incorrect: B has wrong gender agreement (vue instead of vu), C uses indicative instead of required subjunctive, D uses conditional instead of required subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780774437365-q392j2nj",
+      "timestamp": "2026-06-06T19:34:08.600Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B has wrong participle agreement (vue should be vu since the direct object follows the verb), C uses indicative instead of required subjunctive after \"il est dommage que\", and D uses conditional instead of required subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780774448601-1lsbr3vp",
+      "timestamp": "2026-06-06T19:34:17.036Z"
+    }
+  ]
+}
