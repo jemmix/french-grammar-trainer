@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d46b5d05a5cfc185",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-07-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je doute qu'il ___ capable de réussir. »\n\nChoices:\nA. [CORRECT] soit\nB. [WRONG] est\nC. [WRONG] sera\nD. [WRONG] serait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780764421016-0fllanum"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after \"je doute que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780764427026-aihbry0e",
+      "timestamp": "2026-06-06T16:47:31.576Z"
+    },
+    {
+      "raw": "TRUE||After \"je doute que,\" French grammar requires the subjunctive mood, making \"est\" (indicative present), \"sera\" (future indicative), and \"serait\" (conditional) all grammatically incorrect in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780764621123-rz2r9rkk",
+      "timestamp": "2026-06-06T16:50:42.073Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThe task was to verify wrong answers B, C, and D in a French grammar MCQ about the subjunctive after \"douter que.\"\n\nIf I were to provide the verification response, it would be:\nTRUE||After \"douter que,\" the subjunctive mood is required; est (indicative present), sera (future indicative), and serait (conditional) are all grammatically incorrect in this context.\n\nNo remaining tasks to complete. The verification is straightforward: all three wrong answers fail to use the required subjunctive mood after \"douter que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780764795986-j51d3de8",
+      "timestamp": "2026-06-06T16:53:28.656Z"
+    }
+  ]
+}

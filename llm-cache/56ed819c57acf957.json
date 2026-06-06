@@ -1,0 +1,47 @@
+{
+  "cacheKey": "56ed819c57acf957",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "07-07-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Conjuguez le verbe au subjonctif présent.\nPhrase: Il est possible que vous ___ venir demain.\nHint: pouvoir\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780765843691-a0uaheoi"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"Conjuguez le verbe\" (singular) but there are two verbs in the sentence (pouvoir and venir), making it unclear which verb to conjugate without relying on the hint.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780765850708-kq7pqo7g",
+      "timestamp": "2026-06-06T17:11:18.172Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly states the mood and tense required (\"subjonctif présent\"), the hint identifies the verb to conjugate (\"pouvoir\"), and the blank position in the sentence is unambiguous.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780765913266-jd3t9czp",
+      "timestamp": "2026-06-06T17:14:17.810Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly states the tense/mood required (subjonctif présent), the hint provides the infinitive to conjugate (pouvoir), and the subject \"vous\" is clearly visible in the sentence context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780766086792-wd3mnjp5",
+      "timestamp": "2026-06-06T17:15:03.021Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to evaluate a single French grammar question for clarity/ambiguity. The question asks learners to conjugate \"pouvoir\" in the subjonctif présent to complete the sentence \"Il est possible que vous ___ venir demain.\"\n\n**Verdict on the question:**\nVERDICT: CLEAR\nREASON: The prompt precisely specifies the tense (subjonctif présent), the hint identifies the verb (pouvoir), and the subject (vous) is unambiguous from the sentence context, leaving only one correct interpretation.\n\n**Remaining tasks:**\nNone — this was a single-question validation task.\n\n**Recommendations:**\nNo further action needed; the question passes the clarity check.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780766119442-dpm6umii",
+      "timestamp": "2026-06-06T17:16:01.701Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt says \"conjuguez le verbe\" without specifying which verb, and while the hint provides \"pouvoir,\" the sentence also contains \"venir,\" leaving learners unsure which verb belongs in the blank.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780766161702-t4yp9qio",
+      "timestamp": "2026-06-06T17:16:18.048Z"
+    }
+  ]
+}

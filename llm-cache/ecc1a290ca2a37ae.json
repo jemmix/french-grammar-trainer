@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ecc1a290ca2a37ae",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-07-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-07 - Le subjonctif après les verbes de doute et incertitude (douter que, il est possible que, il se peut que)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il se peut qu'il ___ tôt. »\nChoices:\nA. [CORRECT] vienne\nB. vient\nC. viendra\nD. viendrait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780765843692-i1rs8b0a"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Il se peut que\" is explicitly listed in the rule as triggering the subjunctive, and the correct answer \"vienne\" requires knowing both that the subjunctive is needed and how to conjugate \"venir\" in subjunctive present, while the distractors test the common mistake of using indicative or other moods.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780765852711-zavnxtqg",
+      "timestamp": "2026-06-06T17:11:41.081Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Il se peut que\" is explicitly listed in the rule as a trigger for the subjunctive, and correctly answering requires knowing to use \"vienne\" (subjonctif) rather than the indicative or other moods.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780765941337-kzivudfb",
+      "timestamp": "2026-06-06T17:12:35.711Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"il se peut que\" (explicitly listed in the rule) triggers the subjunctive mood, as the correct answer \"vienne\" is the subjonctif présent form while the distractors are indicative, future, and conditional forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780765992043-b9671mts",
+      "timestamp": "2026-06-06T17:13:34.712Z"
+    }
+  ]
+}

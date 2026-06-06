@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0316c26b5f7ce444",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-07-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Doute-t-elle qu'il ___ honnête ? »\n\nChoices:\nA. [CORRECT] soit\nB. [WRONG] est\nC. [WRONG] sera\nD. [WRONG] serait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780764421018-yfr840ym"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use the wrong mood after \"douter que\" in an affirmative clause, which requires the subjunctive (soit) rather than indicative (est, sera) or conditional (serait).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780764584721-ibd8tbpl",
+      "timestamp": "2026-06-06T16:50:22.989Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after \"douter que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780764781995-7cure53m",
+      "timestamp": "2026-06-06T16:53:50.377Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished: I was analyzing a French grammar verification question about the subjunctive mood after \"douter que.\"\n\nThe analysis was complete: The question asks for the correct completion of \"Doute-t-elle qu'il ___ honnête?\" and the wrong answers (B: \"est\", C: \"sera\", D: \"serait\") all fail because \"douter que\" requires the subjunctive mood, not indicative or conditional.\n\nTRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after \"douter que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780764976420-c7fvg62z",
+      "timestamp": "2026-06-06T16:56:31.665Z"
+    }
+  ]
+}

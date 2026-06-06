@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1ab0d4632de5c902",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-07-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-07 - Le subjonctif après les verbes de doute et incertitude (douter que, il est possible que, il se peut que)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il est possible qu'on ___ pas le temps. »\nChoices:\nA. [CORRECT] ait\nB. a\nC. aura\nD. aurait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780764421017-mwgwwt8t"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule by requiring the subjunctive \"ait\" after \"il est possible que,\" which is one of the explicit triggers listed in the rule for doubt/uncertainty expressions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780764520245-wb7pbaog",
+      "timestamp": "2026-06-06T16:48:50.706Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"il est possible que\" requires the subjunctive mood, as selecting \"ait\" (subjunctive) over \"a\" (indicative) depends entirely on this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780764700447-fy80kvj0",
+      "timestamp": "2026-06-06T16:51:54.969Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the learner knows that \"il est possible que\" requires the subjunctive mood, which is the exact grammar rule stated.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780764886815-amei7p24",
+      "timestamp": "2026-06-06T16:54:57.579Z"
+    }
+  ]
+}

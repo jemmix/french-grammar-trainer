@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e496c8e89cb363ff",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-07-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-07 - Le subjonctif après les verbes de doute et incertitude (douter que, il est possible que, il se peut que)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Ne doutez pas qu'il ___ compétent. »\nChoices:\nA. [CORRECT] est\nB. soit\nC. sera\nD. soyez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780764421016-f16vxm3v"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the exception where negating a verb of doubt (\"ne pas douter que\") requires the indicative, not the subjunctive, which is the opposite of what the stated rule teaches.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780764435361-h2xn7tai",
+      "timestamp": "2026-06-06T16:47:38.592Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the nuanced application of the subjunctive rule with verbs of doubt, specifically that \"ne pas douter que\" (negative doubt = certainty) takes the indicative rather than the subjunctive, which requires deep understanding of the rule's boundaries.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780764622990-tqwl9q2u",
+      "timestamp": "2026-06-06T16:50:41.274Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was asked to validate whether a French grammar MCQ question is aligned with the rule it claims to test. The question asks students to complete \"Ne doutez pas qu'il ___ compétent\" with the correct answer being \"est\" (indicative).\n\n**Analysis completed:**\nThe rule states \"Le subjonctif après les verbes de doute et incertitude (douter que, il est possible que, il se peut que)\" — prescribing subjunctive after doubt verbs. However, the question uses the NEGATED form \"ne doutez pas que\" which expresses certainty, not doubt. In French, \"ne pas douter que\" takes the indicative, not the subjunctive. This means the correct answer \"est\" (indicative) is correct precisely because it does NOT follow the stated rule.\n\nVERDICT: MISALIGNED\nREASON: The sentence \"ne doutez pas que\" is negated doubt expressing certainty, which takes the indicative — this question tests the exception to the rule (when NOT to use subjunctive) rather than the rule itself, and a student who knows the basic rule would incorrectly choose \"soit.\"\n\n**Remaining tasks:**\n- None — the validation judgment has been provided above.\n\n**Recommendations:**\n- To properly test this rule, use affirmative doubt constructions like \"Je doute qu'il ___ compétent\" where \"soit\" would be the correct answer\n- If the intent is to test the negation exception, the rule title should be updated to reflect that (e.g., \"Le subjonctif après les verbes de doute : l'exception de la négation\")",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780764792001-4li4rgk5",
+      "timestamp": "2026-06-06T16:53:48.054Z"
+    }
+  ]
+}
