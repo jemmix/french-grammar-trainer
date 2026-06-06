@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f75bf253152c8526",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-12-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-12 - Le subjonctif après avant que (antériorité) — vs indicatif après après que\n\nQUESTION:\nType: Multiple Choice\nPrompt: Indicatif ou subjonctif ? Choisissez la bonne forme du verbe. « Avant que nous ___ une décision, discutons-en. »\nChoices:\nA. [CORRECT] prenions\nB. prenons\nC. prendrons\nD. prenions pas\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780780788222-r0fqubci"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"avant que\" requires the subjunctive mood, which is the core of the stated rule about subjonctif après avant que.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780780819422-c7bquz6m",
+      "timestamp": "2026-06-06T21:20:34.794Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"avant que\" requires the subjunctive mood, as the key distinction between the correct answer \"prenions\" (subjunctive) and the distractor \"prenons\" (indicative) depends entirely on this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780781021402-milpk4bf",
+      "timestamp": "2026-06-06T21:23:54.017Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was able to complete the validation task before reaching the step limit:\n\nVERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"avant que\" requires the subjunctive mood, with \"prenions\" (subjunctive) contrasting against \"prenons\" (indicative present) and \"prendrons\" (indicative future), which are the exact distinctions the rule addresses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780781180882-oood1dma",
+      "timestamp": "2026-06-06T21:26:38.179Z"
+    }
+  ]
+}

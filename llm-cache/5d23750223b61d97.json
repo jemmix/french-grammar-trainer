@@ -1,0 +1,40 @@
+{
+  "cacheKey": "5d23750223b61d97",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "07-12-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Indicatif ou subjonctif ? Conjuguez le verbe.\nPhrase: Après que vous ___ le travail, vous pourrez partir.\nHint: finir\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780780788224-nvatguvu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The binary framing \"Indicatif ou subjonctif?\" explicitly narrows the task to choosing between two moods, and the tense can be reasonably inferred from the future context (\"vous pourrez partir\") pointing to futur antérieur.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780780981735-kf3cc8c4",
+      "timestamp": "2026-06-06T21:23:28.344Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The binary choice between indicatif and subjonctif is explicitly stated, and the temporal context (\"après que\" + future consequence) makes the passé composé the obvious tense within the indicative mood.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780781153262-0na0h8vf",
+      "timestamp": "2026-06-06T21:26:14.100Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks for \"indicatif ou subjonctif\" but doesn't specify which tense within those moods to use—finit (présent), finissez (présent), avez fini (passé composé), or aviez fini (plus-que-parfait) could all be defensible interpretations of the timeline, leaving the learner guessing which specific form is expected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780781297230-vblq5p4o",
+      "timestamp": "2026-06-06T21:28:43.973Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt \"Indicatif ou subjonctif ?\" presents both moods as equally valid options, but \"après que\" takes the indicative in correct French grammar—by framing it as a simple choice without indicating that one option is a common error rather than a valid alternative, the learner cannot determine which answer the question expects.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780781432622-b4kyxxjn",
+      "timestamp": "2026-06-06T21:30:57.850Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0cedcd782133b4ef",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-12-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-12 - Le subjonctif après avant que (antériorité) — vs indicatif après après que\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe au passé composé de l'indicatif ou au subjonctif présent.\nPhrase: Après que vous ___ le travail, vous êtes rentrés chez vous.\nCorrect Answer: avez fini\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780783508839-ed1s7d43"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the \"après que + indicatif\" part of the rule by requiring students to recognize that \"après que\" triggers the indicative (\"avez fini\") rather than the subjunctive, which is the core distinction this rule teaches.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780783508840-unjdmc65",
+      "timestamp": "2026-06-06T22:05:20.945Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the \"après que → indicatif\" part of the rule, as students must know to use \"avez fini\" (passé composé de l'indicatif) rather than a subjunctive form, which would be the common mistake by analogy with \"avant que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780783520946-2iarilyo",
+      "timestamp": "2026-06-06T22:05:29.770Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule by using \"après que\" and expecting the indicative \"avez fini\" — a learner who doesn't know this rule would likely incorrectly use the subjunctive \"ayez fini\" by false analogy with \"avant que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780783529771-t8o2ctav",
+      "timestamp": "2026-06-06T22:05:39.248Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4981f68f5a580c62",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-12-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe. « Avant que tu ___ ton train, vérifie tes billets. »\n\nChoices:\nA. [CORRECT] prennes\nB. [WRONG] prends\nC. [WRONG] prendras\nD. [WRONG] prenais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780782371727-3dy0nl4i"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers use indicative mood (present, future, imperfect) instead of the required subjunctive after \"avant que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780782371748-w526b9if",
+      "timestamp": "2026-06-06T21:46:23.405Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods or tenses; \"avant que\" requires the subjunctive \"prennes\", not indicative \"prends\", future \"prendras\", or imparfait \"prenais\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780782470091-3k5s5zrj",
+      "timestamp": "2026-06-06T21:48:07.017Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative mood forms (present, future, imparfait) when \"avant que\" strictly requires the subjunctive \"prennes.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780782578224-18nyjw68",
+      "timestamp": "2026-06-06T21:50:06.258Z"
+    }
+  ]
+}

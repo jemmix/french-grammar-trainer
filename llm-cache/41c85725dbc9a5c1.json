@@ -1,0 +1,33 @@
+{
+  "cacheKey": "41c85725dbc9a5c1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-12-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la phrase correcte :\n\nChoices:\nA. [CORRECT] Après qu'elle a terminé son travail, elle est partie en vacances.\nB. [WRONG] Après qu'elle ait terminé son travail, elle est partie en vacances.\nC. [WRONG] Après qu'elle terminerait son travail, elle est partie en vacances.\nD. [WRONG] Après qu'elle terminait son travail, elle est partie en vacances.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780780788222-9dmkj8vl"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B incorrectly uses the subjunctive with \"après que\" (which requires indicative), C uses the conditional which doesn't fit a completed past action, and D uses the imparfait which implies ongoing/habitual action rather than completion.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780780797235-4jvbo9zn",
+      "timestamp": "2026-06-06T21:20:27.538Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses the subjunctive after \"après que\" (which requires indicative), C uses the conditional which doesn't fit the completed action in the main clause, and D uses the imperfect which doesn't properly express the completed temporal sequence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780781013138-6jm1yb9g",
+      "timestamp": "2026-06-06T21:24:10.157Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B incorrectly uses subjunctive after \"après que\" (which requires indicative), C uses conditional mood inappropriately for a completed past action, and D uses imparfait instead of passé composé for a completed action.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780781198179-9zxzenu0",
+      "timestamp": "2026-06-06T21:27:01.671Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9d372b632c25dc27",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-12-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-12 - Le subjonctif après avant que (antériorité) — vs indicatif après après que\n\nQUESTION:\nType: Input\nPrompt: Indicatif ou subjonctif ? Conjuguez le verbe.\nPhrase: Après qu'elle ___ son projet, elle a présenté les résultats.\nCorrect Answer: a fini\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780783664165-kpp7ezfr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the \"après que → indicative\" half of the rule; a student who incorrectly extends the \"avant que\" pattern would produce the subjunctive \"ait fini\" instead of the correct indicative \"a fini.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780783664166-nexu9234",
+      "timestamp": "2026-06-06T22:07:58.471Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule by requiring the student to recognize that \"après que\" takes the indicative (\"a fini\") rather than the subjunctive (\"ait fini\"), which is the core distinction this rule teaches.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780783678473-d5koss9o",
+      "timestamp": "2026-06-06T22:08:10.436Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a French grammar question against its stated rule. The validation analysis was complete but the response had not yet been formatted.\n\n**Analysis completed:**\nThe question \"Après qu'elle ___ son projet, elle a présenté les résultats.\" with correct answer \"a fini\" tests the \"après que + indicatif\" portion of rule 07-12. The rule explicitly contrasts subjonctif after \"avant que\" with indicatif after \"après que,\" and this question directly tests whether the student knows to use the indicative (passé composé \"a fini\") after \"après que\" rather than incorrectly using the subjunctive.\n\n**Verdict:**\nVERDICT: ALIGNED\nREASON: The question tests the \"après que + indicatif\" part of the stated rule, requiring knowledge that \"après que\" takes the indicative mood rather than the subjunctive.\n\n**Remaining tasks:**\nNone - the validation was complete.\n\n**Recommendations:**\nNo further action needed for this validation task.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780783690437-bn8c0hx5",
+      "timestamp": "2026-06-06T22:08:37.436Z"
+    }
+  ]
+}
