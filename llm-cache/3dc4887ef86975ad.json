@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3dc4887ef86975ad",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-06-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je crains que tu ne ___ ce projet à temps. »\n\nChoices:\nA. [CORRECT] finisses\nB. [WRONG] finis\nC. [WRONG] finissais\nD. [WRONG] finirais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780759757326-85lafe20"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use non-subjunctive forms (indicative, imperfect, conditional) when \"craindre que\" strictly requires the subjunctive \"finisses\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780759814475-w60wsubo",
+      "timestamp": "2026-06-06T15:30:29.792Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods (indicative present, indicative imperfect, conditional) where the subjunctive is required after \"craindre que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780759968876-7iz0v3ip",
+      "timestamp": "2026-06-06T15:33:11.065Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are incorrect. The question requires the subjunctive mood after \"Je crains que tu ne ___\" and the correct answer is \"finisses\" (subjunctive present). \n\nRemaining tasks: Provide the verification response.\n\nRecommendation: The answer should be:\n\nTRUE||All wrong answers use the wrong mood (indicative present for B, indicative imperfect for C, conditional for D) instead of the required subjunctive after \"je crains que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780760108839-bfg0cxpu",
+      "timestamp": "2026-06-06T15:35:49.572Z"
+    }
+  ]
+}

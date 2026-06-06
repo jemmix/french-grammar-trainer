@@ -1,0 +1,33 @@
+{
+  "cacheKey": "15eafbe0945a9f68",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-06-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-06 - Le subjonctif après les verbes de sentiment (être content que, regretter que, avoir peur que, craindre que)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je crains que tu ne ___ ce projet à temps. »\nChoices:\nA. [CORRECT] finisses\nB. finis\nC. finissais\nD. finirais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780759757326-1sk9pqlc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Craindre que\" is explicitly listed in the rule as a verb of sentiment requiring the subjunctive, and the distractors test whether the student can distinguish the subjunctive present from other moods/tenses of the same verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780759819747-z5yapo86",
+      "timestamp": "2026-06-06T15:30:37.836Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"craindre que\" triggers the subjunctive mood and correctly conjugating \"finir\" in subjunctive present for \"tu\", which is exactly what the stated rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780759977231-5l54k5bo",
+      "timestamp": "2026-06-06T15:33:24.346Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"craindre que\" requires the subjunctive mood, which is the core of the stated rule, and the correct answer \"finisses\" cannot be selected without this knowledge.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780760140796-gxgtiye8",
+      "timestamp": "2026-06-06T15:36:09.425Z"
+    }
+  ]
+}

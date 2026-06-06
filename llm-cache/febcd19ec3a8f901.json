@@ -1,0 +1,33 @@
+{
+  "cacheKey": "febcd19ec3a8f901",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-06-023",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le subjonctif après les verbes de sentiment (être content que, regretter que, avoir peur que, craindre que)\nPROMPT: Conjuguez le verbe au subjonctif présent.\nPHRASE: Vous regrettez que je ___ si longtemps ici.\nCORRECT ANSWER: vive\n\nWRONG ANSWERS to evaluate:\n1. vis\n2. vivais\n3. vivrais\n4. vivrai\n5. vives\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780764180003-w1uj8jay"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: using indicative instead of subjunctive (vis), confusing with other tenses (vivais for imparfait, vivrais for conditionnel, vivrai for futur), and wrong person agreement within the subjunctive (vives is the tu form instead of je).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780764236565-sq77c35d",
+      "timestamp": "2026-06-06T16:44:31.726Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was evaluating whether wrong answers for a French grammar input question are plausible mistakes learners might make.\n\nAnalysis completed:\n- Question tests present subjunctive of \"vivre\" after \"regretter que\" (je vive)\n- Wrong answer \"vis\" - present indicative, very common error (using indicative instead of subjunctive)\n- Wrong answer \"vivais\" - imparfait, plausible tense confusion\n- Wrong answer \"vivrais\" - conditionnel, plausible mood/tense confusion\n- Wrong answer \"vivrai\" - futur, plausible tense confusion\n- Wrong answer \"vives\" - subjunctive but wrong person (tu instead of je), very common error\n\nVERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: using indicative instead of subjunctive (vis), wrong tense selections (vivais, vivrais, vivrai), and correct subjunctive but wrong person agreement (vives).\n\nNo remaining tasks - evaluation is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780764271726-rlw1ilc5",
+      "timestamp": "2026-06-06T16:44:52.955Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers are valid conjugations of \"vivre\" representing common learner errors—confusing the indicative (vis), imparfait (vivais), conditionnel (vivrais), futur (vivrai), or wrong person in subjonctif (vives) with the required subjonctif présent 1st person singular.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780764292955-4nqg457h",
+      "timestamp": "2026-06-06T16:45:03.766Z"
+    }
+  ]
+}

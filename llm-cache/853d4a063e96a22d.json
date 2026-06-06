@@ -1,0 +1,33 @@
+{
+  "cacheKey": "853d4a063e96a22d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-06-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-06 - Le subjonctif après les verbes de sentiment (être content que, regretter que, avoir peur que, craindre que)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je suis content que tu ___ à la fête. »\nChoices:\nA. [CORRECT] viennes\nB. viens\nC. venais\nD. viendrais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780759757324-u3cnsv9n"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly requires knowing that \"être content que\" triggers the subjunctive mood, which is the exact grammar rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780759758330-dx8c4pyw",
+      "timestamp": "2026-06-06T15:29:47.656Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Être content que\" is explicitly listed in the rule as a verb of sentiment requiring the subjunctive, and choosing the correct answer \"viennes\" over the indicative \"viens\" directly tests this knowledge.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780759921796-00o738ip",
+      "timestamp": "2026-06-06T15:32:33.350Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"être content que\" triggers the subjunctive mood, as the correct answer \"viennes\" is the subjunctive form while \"viens\" is the indicative that a student unfamiliar with this rule would likely choose.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780760071906-kfrgle0h",
+      "timestamp": "2026-06-06T15:34:53.604Z"
+    }
+  ]
+}
