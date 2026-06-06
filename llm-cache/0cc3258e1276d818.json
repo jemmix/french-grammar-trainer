@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0cc3258e1276d818",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-02-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il est essentiel que vous ___ vos papiers. »\n\nChoices:\nA. [CORRECT] ayez\nB. [WRONG] avez\nC. [WRONG] aurez\nD. [WRONG] aient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780744877397-dhfg1pnz"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B \"avez\" is indicative not subjunctive, C \"aurez\" is future indicative not subjunctive, and D \"aient\" is 3rd person plural subjunctive rather than the required 2nd person plural \"ayez\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780744898195-6oq640ry",
+      "timestamp": "2026-06-06T11:21:51.978Z"
+    },
+    {
+      "raw": "TRUE||B and C use the indicative mood instead of the required subjunctive after \"il est essentiel que\"; D uses the subjunctive but is conjugated for \"ils/elles\" rather than the required \"vous\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780745051418-my9hzgrd",
+      "timestamp": "2026-06-06T11:24:26.347Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of evaluating a French grammar verification task. The question asked to verify that wrong answers B (\"avez\"), C (\"aurez\"), and D (\"aient\") are incorrect for the sentence \"Il est essentiel que vous ___ vos papiers.\"\n\n**Analysis completed (but not yet submitted):**\n- B (\"avez\") is incorrect because \"Il est essentiel que\" triggers the subjunctive, not the present indicative\n- C (\"aurez\") is incorrect because it uses the future indicative instead of the required subjunctive\n- D (\"aient\") is incorrect because it's the 3rd person plural subjunctive form, but the subject is \"vous\" (2nd person plural)\n\n**The answer that would have been provided:**\nTRUE||All wrong answers either use the wrong mood (indicative instead of subjunctive for B and C) or the wrong person (3rd person plural subjunctive \"aient\" instead of 2nd person plural \"ayez\" for D).\n\n**Remaining tasks:** None - this was a single verification task.\n\n**Recommendations:** No further action needed; the verification is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780745196101-2stmllgi",
+      "timestamp": "2026-06-06T11:26:56.913Z"
+    }
+  ]
+}

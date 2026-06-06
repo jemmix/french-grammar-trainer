@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a81d127830a08656",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-02-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-02 - Les subjonctifs irréguliers : être (sois), avoir (aie), aller (aille), faire (fasse)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Il est dommage qu'il ___ bientôt. »\nChoices:\nA. [CORRECT] aille\nB. va\nC. ira\nD. soit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780744877398-17tl2bce"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"il est dommage que\" triggers the subjunctive and that the irregular subjunctive form of \"aller\" is \"aille\" — both core to the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780744940932-c5p8ezwe",
+      "timestamp": "2026-06-06T11:22:33.837Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a French grammar MCQ question about the subjunctive properly tests the stated rule about irregular subjunctives (être, avoir, aller, faire).\n\nAnalysis completed:\n- The question \"Il est dommage qu'il ___ bientôt.\" with correct answer \"aille\" directly tests the irregular subjunctive of \"aller\"\n- The distractors test related knowledge (indicative vs subjunctive, future tense, and another irregular subjunctive \"soit\")\n- The rule explicitly lists \"aller (aille)\" as one of the irregular subjunctives to know\n\nVERDICT: ALIGNED\nREASON: The question requires recognizing that \"Il est dommage que\" triggers the subjunctive and knowing the irregular subjunctive form \"aille\" for \"aller,\" which is explicitly listed in the rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780745096772-15xmf2k4",
+      "timestamp": "2026-06-06T11:25:16.901Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"il est dommage que\" triggers the subjunctive and knowing the irregular subjunctive form \"aille\" for \"aller,\" which is exactly what the rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780745250039-dw12ppsn",
+      "timestamp": "2026-06-06T11:27:42.961Z"
+    }
+  ]
+}

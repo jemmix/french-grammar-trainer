@@ -1,0 +1,61 @@
+{
+  "cacheKey": "fc1521653d4a4191",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-02-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-02 - Les subjonctifs irréguliers : être (sois), avoir (aie), aller (aille), faire (fasse)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Pourvu que nous ___ au sommet ! »\nChoices:\nA. [CORRECT] allions\nB. allons\nC. irions\nD. soyons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780744877398-3ou5rvae"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the irregular subjunctive form of \"aller\" (aille → allions for nous), which is exactly what rule 07-02 covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780744951076-a6ma0dvc",
+      "timestamp": "2026-06-06T11:22:43.769Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests general subjunctive usage after \"pourvu que,\" but the correct answer \"allions\" is the regular nous-form of aller in the subjunctive, not one of the specifically irregular forms (sois, aie, aille, fasse) that the rule targets.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780745111038-47azn5sn",
+      "timestamp": "2026-06-06T11:25:38.082Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the irregular subjunctive conjugation of \"aller\" (allions) for the first person plural, which is one of the four irregular subjunctives explicitly listed in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780745267486-4mhs2vtc",
+      "timestamp": "2026-06-06T11:28:03.789Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"pourvu que\" triggers the subjunctive and that \"allions\" is the irregular subjunctive form of \"aller\" for \"nous,\" which directly tests the stated rule about irregular subjunctives of \"aller.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780745381528-2r3j2c81",
+      "timestamp": "2026-06-06T11:30:02.129Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"pourvu que\" triggers the subjunctive and that the irregular subjunctive form of \"aller\" for \"nous\" is \"allions,\" which is directly testing the stated rule about irregular subjunctives including aller (aille/allions).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780745553902-brkds12v",
+      "timestamp": "2026-06-06T11:32:48.530Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the irregular subjunctive form \"allions\" for \"aller\" in the nous form, which is exactly what rule 07-02 covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780745709127-9ks3awma",
+      "timestamp": "2026-06-06T11:35:25.124Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was in the process of validating a French grammar question against its stated rule. The question asks to complete \"Pourvu que nous ___ au sommet !\" with the correct answer being \"allions\" (subjunctive of aller).\n\n**My analysis was:**\nVERDICT: MISALIGNED\nREASON: \"Allions\" follows the regular subjunctive conjugation pattern for \"nous\" and is not one of the irregular forms (sois, aie, aille, fasse) specified in the rule—the question tests subjunctive usage after \"pourvu que\" but not the specific irregular forms the rule targets.\n\n**Remaining tasks:**\n- None for this specific validation request—the verdict is complete.\n\n**Recommendations:**\nTo properly test rule 07-02, the question should use one of the actually irregular forms (sois, aie, aille, fasse), such as \"Pourvu que j'___ au sommet !\" with correct answer \"aille\" and distractors like \"alle\", \"vais\", \"irais\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780745823166-s82f3rpg",
+      "timestamp": "2026-06-06T11:37:36.645Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9cae2ee5987ace8f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-02-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-02 - Les subjonctifs irréguliers : être (sois), avoir (aie), aller (aille), faire (fasse)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je doute qu'il ___ ce travail. »\nChoices:\nA. [CORRECT] fasse\nB. fait\nC. ferait\nD. aille\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780744877398-2hrks0p8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing both that \"douter que\" triggers the subjunctive and that the irregular subjunctive form of \"faire\" is \"fasse,\" which is the exact grammar point being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780744962851-di4mft7c",
+      "timestamp": "2026-06-06T11:23:05.440Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that the irregular subjunctive of \"faire\" is \"fasse,\" which is the exact grammar point being tested, and the distractor \"aille\" (another irregular subjunctif from the same rule set) ensures the learner must distinguish between the specific irregular forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780745120672-0ili9tc0",
+      "timestamp": "2026-06-06T11:25:48.313Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"je doute que\" triggers the subjunctive and that the irregular subjunctive form of \"faire\" is \"fasse,\" which is exactly the grammar point specified in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780745280585-lhiptthy",
+      "timestamp": "2026-06-06T11:28:13.580Z"
+    }
+  ]
+}

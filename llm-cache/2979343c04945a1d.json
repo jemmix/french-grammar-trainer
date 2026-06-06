@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2979343c04945a1d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-02-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Il est dommage qu'il ___ sans dire au revoir. »\n\nChoices:\nA. [CORRECT] aille\nB. [WRONG] va\nC. [WRONG] ira\nD. [WRONG] soit\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780746068391-p0pf5bvt"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses indicative present instead of required subjunctive after \"il est dommage que\"; C uses future indicative instead of subjunctive; D uses subjunctive of \"être\" instead of the required verb \"aller\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780746068411-pramh8yp",
+      "timestamp": "2026-06-06T11:41:22.916Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B and C use indicative mood instead of the required subjunctive after \"Il est dommage que\", and D uses the wrong verb \"être\" instead of \"aller\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780746093898-ztpkekoc",
+      "timestamp": "2026-06-06T11:42:07.189Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying a French grammar MCQ question about the subjunctive mood. The question \"Il est dommage qu'il ___ sans dire au revoir\" requires the subjunctive of \"aller\" (aille).\n\nSummary of analysis completed:\n- B \"va\" - incorrect (present indicative, not subjunctive)\n- C \"ira\" - incorrect (future indicative, not subjunctive)  \n- D \"soit\" - incorrect (subjunctive of \"être\", not \"aller\"; doesn't fit the sentence meaning)\n\nThe verdict would be: TRUE||All wrong answers are grammatically incorrect within the context requiring the subjunctive of \"aller.\"\n\nNo remaining tasks - the verification was essentially complete at the point of interruption.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780746142593-t0mwdra0",
+      "timestamp": "2026-06-06T11:42:46.283Z"
+    }
+  ]
+}
