@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a2a703495a261708",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-18-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). Complétez : « Il ne suppose pas que tu ___ à la fête. »\n\nChoices:\nA. [CORRECT] viennes\nB. [WRONG] viens\nC. [WRONG] venir\nD. [WRONG] vienne\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780857570863-nvgvui8f"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers are incorrect: B uses indicative instead of required subjunctive after \"ne suppose pas que\", C is an infinitive not a conjugated form, and D is the 3rd person singular subjunctive form rather than the 2nd person \"viennes\" required by \"tu\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780857688640-uvnp904u",
+      "timestamp": "2026-06-07T18:41:46.471Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was tasked with verifying that the wrong answers (B, C, D) in a French grammar MCQ are indeed incorrect. The question asks for the correct verb form to complete \"Il ne suppose pas que tu ___ à la fête\" in the present tense (indicative or subjunctif).\n\n**Analysis completed:**\n- B. \"viens\" (indicatif présent, 2nd person) — incorrect because \"supposer que\" requires the subjonctif\n- C. \"venir\" (infinitif) — incorrect, infinitive cannot fill this position after a conjugated verb + que\n- D. \"vienne\" (subjonctif, 3rd person singular) — incorrect because the subject is \"tu\" (2nd person), so the correct form would be \"viennes\" not \"vienne\"\n\n**Verdict that would have been returned:**\nTRUE||All wrong answers contain clear grammar errors: B uses indicative instead of required subjunctive, C uses infinitive which is syntactically impossible here, and D uses 3rd person singular subjunctive instead of the required 2nd person form.\n\n**Remaining tasks:**\nNone — the analysis is complete.\n\n**Recommendations:**\nNo further action needed; the question's wrong answers are all validly incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780857816999-s4shihaq",
+      "timestamp": "2026-06-07T18:44:02.154Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the indicative instead of the required subjunctive after \"ne suppose pas que\", C is an infinitive that cannot follow \"que tu\", and D is the 3rd person singular subjunctive form rather than the 2nd person singular \"viennes\" needed for \"tu\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780857954685-mb91m48t",
+      "timestamp": "2026-06-07T18:46:13.750Z"
+    }
+  ]
+}

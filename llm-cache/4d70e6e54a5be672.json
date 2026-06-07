@@ -1,0 +1,26 @@
+{
+  "cacheKey": "4d70e6e54a5be672",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-18-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent.\n\nChoices:\nA. [CORRECT] Crois-tu qu'ils aient compris la leçon ?\nB. [WRONG] Crois-tu qu'ils ont compris la leçon ?\nC. [WRONG] Crois-tu qu'ils auront compris la leçon ?\nD. [WRONG] Crois-tu qu'ils auraient compris la leçon ?\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780854207393-00zysshx"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses indicative passé composé instead of subjunctive present (required after interrogative \"croire que\"), C uses futur antérieur, and D uses conditionnel passé — none match the requested present tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780854405735-xa7fxlg3",
+      "timestamp": "2026-06-07T17:47:13.240Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B, C, and D are incorrect for a French grammar question about the present tense.\n\nThe question asks for the correct verb form \"au présent\" in the context \"Crois-tu qu'ils ___ compris la leçon ?\"\n\n- B uses \"ont compris\" (passé composé indicatif) - incorrect because after \"croire que\" in interrogative/doubt context, subjonctif is required\n- C uses \"auront compris\" (futur antérieur indicatif) - incorrect for same reason plus wrong tense\n- D uses \"auraient compris\" (conditionnel passé indicatif) - incorrect for same reason plus wrong mood\n\nThe correct answer A uses \"aient compris\" (subjonctif passé), which is the required mood after \"croire que\" in this context.\n\nAll wrong answers are indeed incorrect.\n\nTRUE||All wrong answers incorrectly use indicative mood forms instead of the required subjonctif after \"croire que\" in an interrogative context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780854721444-agjt3xjl",
+      "timestamp": "2026-06-07T17:52:30.857Z"
+    }
+  ]
+}

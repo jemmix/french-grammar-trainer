@@ -1,0 +1,26 @@
+{
+  "cacheKey": "1b354d97a276bdaf",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-18-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-18 - La négation au subjonctif (je ne pense pas qu'il vienne)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme du verbe au présent.\nChoices:\nA. [CORRECT] Crois-tu qu'ils aient compris la leçon ?\nB. Crois-tu qu'ils ont compris la leçon ?\nC. Crois-tu qu'ils auront compris la leçon ?\nD. Crois-tu qu'ils auraient compris la leçon ?\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780854207393-zaiph8k5"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to validate whether a French grammar question properly tests the stated rule \"07-18 - La négation au subjonctif (je ne pense pas qu'il vienne)\".\n\n**Verdict and reasoning:**\n\nVERDICT: MISALIGNED\nREASON: The question tests subjunctive triggered by \"crois-tu que\" (interrogative/doubt construction), not the negation patterns like \"je ne pense pas que\" that the stated rule specifically covers.\n\n**Remaining tasks:**\nNone — this was a single-question validation task.\n\n**Recommendations for next steps:**\nThis question should either be reassigned to a rule about subjunctive with verbs of doubt/opinion in interrogative forms, or rewritten to actually test negation + subjunctive (e.g., using \"Je ne crois pas qu'ils...\", \"Il ne pense pas qu'il...\", etc.).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780854408117-nmq479g5",
+      "timestamp": "2026-06-07T17:47:33.629Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests the subjunctive after \"crois-tu que\" in an interrogative/affirmative context, but the stated rule specifically covers negation triggering the subjunctive (e.g., \"je ne pense pas que...\"), and there is no negation in this question at all.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780854741224-yh88tpbr",
+      "timestamp": "2026-06-07T17:52:42.675Z"
+    }
+  ]
+}

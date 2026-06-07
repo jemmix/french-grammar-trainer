@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ee7cf844c20818be",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-18-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-18 - La négation au subjonctif (je ne pense pas qu'il vienne)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). Complétez : « Tu ne trouves pas que nous ___ du bon travail. »\nChoices:\nA. [CORRECT] fassions\nB. faisons\nC. faire\nD. fassent\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780857570861-jrflieht"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires students to recognize that the negative construction \"ne trouve pas que\" triggers the subjunctive mood, directly testing the core concept of the rule about negation and the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780857584500-xndag4dq",
+      "timestamp": "2026-06-07T18:40:00.069Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that negative expressions of opinion like \"ne trouves pas que\" trigger the subjunctive mood, which is precisely the stated rule about negation au subjonctif.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780857712691-1wtvx6kt",
+      "timestamp": "2026-06-07T18:42:06.491Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to validate whether a French grammar question about the subjunctive properly tests the stated rule \"La négation au subjonctif (je ne pense pas qu'il vienne).\"\n\n**My assessment:**\nVERDICT: ALIGNED\nREASON: The question tests exactly the stated rule—knowing that \"ne pas trouver que\" triggers the subjunctive is required to choose \"fassions\" over the indicative \"faisons.\"\n\n**Remaining tasks:** None — this was a single-question validation task.\n\n**Recommendations:** No further action needed for this validation item.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780857841105-a4qo2usz",
+      "timestamp": "2026-06-07T18:44:38.897Z"
+    }
+  ]
+}

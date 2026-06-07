@@ -1,0 +1,40 @@
+{
+  "cacheKey": "b8fda2c44033b60e",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "07-18-004",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Indicatif ou subjonctif ? Choisissez la bonne forme du verbe.\nChoices:\nA. Il ne croit pas que nous fassions du bon travail.\nB. Il ne croit pas que nous faisons du bon travail.\nC. Il ne croit pas que nous ferons du bon travail.\nD. Il ne croit pas que nous ferions du bon travail.\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780855180306-or2yr09q"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt frames the question as a binary choice between \"indicatif ou subjonctif\" but includes two options (ferons = futur, ferions = conditionnel) that are neither mood, creating confusion about the actual scope of what's being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780855227334-8ktn1ecd",
+      "timestamp": "2026-06-07T18:01:07.731Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly asks the learner to choose the correct verb form, and the context sentence \"Il ne croit pas que\" provides sufficient information to determine that subjunctive is required, making the task well-defined despite the \"Indicatif ou subjonctif?\" framing including additional tense variants as distractors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780855414976-57p6jpdp",
+      "timestamp": "2026-06-07T18:04:04.232Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly states the grammatical distinction being tested (indicative vs subjunctive) and asks the learner to choose the correct verb form, providing a complete sentence context with four plausible options where only one uses the subjunctive mood required after \"ne croit pas que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780855558049-m4zmm8wg",
+      "timestamp": "2026-06-07T18:06:44.017Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt explicitly asks to choose between \"indicatif ou subjonctif,\" but choices C (futur) and D (conditionnel) fall outside these two categories, creating confusion about whether the learner should only consider A and B or evaluate all four options.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780855668340-8u8p75vw",
+      "timestamp": "2026-06-07T18:08:03.228Z"
+    }
+  ]
+}

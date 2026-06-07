@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6719717cd5d236f2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-18-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). Complétez : « Je ne trouve pas qu'elles ___ en ville ce week-end. »\n\nChoices:\nA. [CORRECT] aillent\nB. [WRONG] vont\nC. [WRONG] alliez\nD. [WRONG] allions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780858524288-ib0liext"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses indicative instead of required subjunctive after \"je ne trouve pas que\"; C and D use the wrong person/number (vous and nous respectively) instead of the required \"elles\" form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780858527317-k4pom0hi",
+      "timestamp": "2026-06-07T18:55:39.604Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question asks for the correct form of \"aller\" to complete \"Je ne trouve pas qu'elles ___ en ville ce week-end.\" with the constraint that it must be present tense (indicative or subjunctif).\n\nAnalysis completed:\n- B. \"vont\" is the present indicative (3rd plural), but \"ne pas trouver que\" triggers the subjunctive, so this is incorrect.\n- C. \"alliez\" is the present subjunctive but for 2nd person plural (\"vous\"), not 3rd plural (\"elles\"), so this is incorrect.\n- D. \"allions\" is the present subjunctive but for 1st person plural (\"nous\"), not 3rd plural (\"elles\"), so this is incorrect.\n\nTRUE||All wrong answers are grammatically incorrect: B uses indicative instead of required subjunctive, C and D use wrong person/number forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780858540371-ugj33dve",
+      "timestamp": "2026-06-07T18:56:01.444Z"
+    },
+    {
+      "raw": "TRUE||B uses indicative instead of required subjunctive after \"ne trouve pas que\"; C is 2nd person plural subjunctive but subject is \"elles\" (3rd person plural); D is 1st person plural subjunctive but subject is \"elles\" (3rd person plural).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780858561604-826xth7x",
+      "timestamp": "2026-06-07T18:56:32.690Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9a2c8418bc4b3a5a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-18-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). Complétez : « Je n'imagine pas qu'ils ___ déjà là. »\n\nChoices:\nA. [CORRECT] soient\nB. [WRONG] sont\nC. [WRONG] être\nD. [WRONG] soyez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780857570862-k5r2aerd"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses indicative instead of the required subjunctive after \"n'imagine pas que\", C is an infinitive which cannot follow a subject pronoun in this construction, and D is the 2nd person plural subjunctive form rather than the 3rd person plural \"soient\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780857613510-4c9nv8st",
+      "timestamp": "2026-06-07T18:40:36.720Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect within the stated constraints: B uses indicative instead of the required subjunctive after \"n'imagine pas que\", C is an infinitive rather than a conjugated present tense form, and D is the 2nd person plural subjunctive instead of the 3rd person plural \"soient\" needed for the subject \"ils\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780857741632-qoqaz30q",
+      "timestamp": "2026-06-07T18:42:41.253Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses indicative instead of required subjunctive after \"n'imagine pas que,\" C uses infinitive instead of conjugated form, and D uses the vous-form \"soyez\" instead of the ils-form \"soient.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780857877048-2r4g11ec",
+      "timestamp": "2026-06-07T18:44:54.318Z"
+    }
+  ]
+}

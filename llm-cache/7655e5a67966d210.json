@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7655e5a67966d210",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-18-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif).\n\nChoices:\nA. [CORRECT] Je ne crois pas que ce livre plaise aux enfants.\nB. [WRONG] Je ne crois pas que ce livre plaît aux enfants.\nC. [WRONG] Je ne crois pas que ce livre plaisait aux enfants.\nD. [WRONG] Je ne crois pas que ce livre plairait aux enfants.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780856537765-be72s9wn"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I analyzed the French grammar MCQ question about the correct form of \"plaire\" after \"Je ne crois pas que\" in the present tense.\n\nAnalysis completed:\n- B (\"plaît\") - INCORRECT: Uses indicatif présent, but \"ne...pas que\" requires subjonctif\n- C (\"plaisait\") - INCORRECT: Uses imparfait, but question specifies present tense\n- D (\"plairait\") - INCORRECT: Uses conditionnel présent, but question specifies present tense (indicatif or subjonctif)\n\nAll three wrong answers are definitively incorrect within the grammatical constraints stated.\n\nTRUE||All wrong answers violate the stated constraints: B uses indicative instead of required subjunctive after \"ne...pas que\", C uses imperfect instead of present tense, and D uses conditional instead of present tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780856625473-a0nl8l6o",
+      "timestamp": "2026-06-07T18:24:02.088Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods or tenses: B uses indicative present instead of subjunctive, C uses imperfect indicative, and D uses conditional, none of which satisfy the requirement for present subjunctive after \"je ne crois pas que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780856777701-iyv68nr4",
+      "timestamp": "2026-06-07T18:26:39.171Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the wrong mood or tense: B uses indicative instead of required subjunctive after \"ne crois pas que,\" C uses imparfait instead of present, and D uses conditionnel instead of present.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780856941638-2szg5ihk",
+      "timestamp": "2026-06-07T18:29:19.025Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b0fea1604c070ccc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-18-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent.\n\nChoices:\nA. [CORRECT] Je ne pense pas qu'elle sache la vérité.\nB. [WRONG] Je ne pense pas qu'elle sait la vérité.\nC. [WRONG] Je ne pense pas qu'elle saura la vérité.\nD. [WRONG] Je ne pense pas qu'elle saurait la vérité.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780854207392-ok9zs3aa"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses indicative instead of the required subjunctive after \"ne pas penser que\"; C uses future tense; D uses conditional mood, and neither matches the present tense specified in the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780854235536-ei7q92gy",
+      "timestamp": "2026-06-07T17:44:35.762Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of verifying the wrong answers in a French grammar multiple choice question about the subjunctive mood after \"Je ne pense pas que.\"\n\nThe answer I would have provided:\nTRUE||All wrong answers are incorrect: B uses indicative \"sait\" instead of required subjunctive after \"ne pas penser que,\" C uses future \"saura\" which violates the present tense requirement, and D uses conditional \"saurait\" which also violates the present tense requirement.\n\nNo remaining tasks - this was a single verification task that was about to be completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780854535463-b3dg38n7",
+      "timestamp": "2026-06-07T17:49:17.391Z"
+    }
+  ]
+}

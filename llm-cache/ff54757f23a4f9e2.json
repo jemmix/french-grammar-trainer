@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ff54757f23a4f9e2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-18-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif).\n\nChoices:\nA. [CORRECT] Je ne pense pas qu'il vienne.\nB. [WRONG] Je ne pense pas qu'il vient.\nC. [WRONG] Je ne pense pas qu'il viendra.\nD. [WRONG] Je ne pense pas qu'il viendrait.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780856537763-jdqllq0m"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B incorrectly uses the indicative \"vient\" instead of the required subjunctive after \"ne penser pas que,\" C uses the future tense \"viendra\" which violates the present-tense requirement, and D uses the conditional \"viendrait\" which also violates the present-tense requirement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780856537780-kqg1h32e",
+      "timestamp": "2026-06-07T18:22:30.140Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the stated grammatical constraints: B uses indicative instead of required subjunctive after \"je ne pense pas que\", C uses future tense instead of present, and D uses conditional instead of present subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780856671435-o7lcm1rw",
+      "timestamp": "2026-06-07T18:24:57.386Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to verify that wrong answers B, C, and D for a French grammar multiple-choice question are indeed incorrect. The question asks for the correct present tense form (indicative or subjunctive) of the verb \"venir\" after \"Je ne pense pas que.\"\n\nAnalysis completed:\n- B (\"vient\") uses present indicative instead of required subjunctive after \"je ne pense pas que\" - incorrect\n- C (\"viendra\") uses future tense instead of present - incorrect  \n- D (\"viendrait\") uses conditional instead of present - incorrect\n\nThe verdict is: TRUE||All wrong answers are incorrect because B uses indicative instead of subjunctive, while C and D use future and conditional tenses respectively instead of the required present tense.\n\nNo remaining tasks - this was a single verification request that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780856845997-qq9s10bi",
+      "timestamp": "2026-06-07T18:33:00.348Z"
+    }
+  ]
+}

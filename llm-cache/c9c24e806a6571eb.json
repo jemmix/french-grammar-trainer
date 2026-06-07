@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c9c24e806a6571eb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-18-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif).\n\nChoices:\nA. [CORRECT] Je ne pense pas qu'elle sache la vérité.\nB. [WRONG] Je ne pense pas qu'elle sait la vérité.\nC. [WRONG] Je ne pense pas qu'elle saura la vérité.\nD. [WRONG] Je ne pense pas qu'elle saurait la vérité.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780856537764-t3r07zi0"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B incorrectly uses indicative after \"ne pas penser que\" which requires subjunctive; C uses futur simple instead of the requested présent; D uses conditionnel présent instead of the requested présent.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780856561208-rjnwivxl",
+      "timestamp": "2026-06-07T18:22:53.288Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar multiple choice question are indeed incorrect.\n\nAnalysis completed:\n- B \"sait\" (indicative present) is incorrect because \"Je ne pense pas que\" requires the subjunctive\n- C \"saura\" (future) is incorrect because the question asks for present tense only\n- D \"saurait\" (conditional) is incorrect because the question asks for present tense only\n\nAll three wrong answers are genuinely incorrect within the grammatical constraints specified.\n\nTRUE||All wrong answers violate the stated constraints: B uses indicative instead of required subjunctive after \"ne pas penser que\"; C and D use future/conditional tenses when only present tense was requested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780856697387-baubnz5g",
+      "timestamp": "2026-06-07T18:25:29.439Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question asks for the present tense (indicatif or subjonctif) after \"Je ne pense pas qu'elle...\"\n\nAnalysis completed:\n- B (\"sait\") uses indicative present instead of the required subjunctive after negative \"penser que\" - incorrect\n- C (\"saura\") uses future tense instead of present tense - incorrect  \n- D (\"saurait\") uses conditional instead of present tense - incorrect\n\nThe verdict would be: TRUE||All wrong answers violate the grammatical constraints: B uses indicative instead of required subjunctive after negative \"penser que\"; C and D use future/conditional instead of the specified present tense.\n\nNo remaining tasks - the verification was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780856871850-9wj4eccs",
+      "timestamp": "2026-06-07T18:28:22.619Z"
+    }
+  ]
+}

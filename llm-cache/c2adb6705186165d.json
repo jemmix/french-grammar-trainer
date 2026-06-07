@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c2adb6705186165d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-18-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Indicatif ou subjonctif ? Choisissez la bonne forme du verbe.\n\nChoices:\nA. [CORRECT] Il ne croit pas que nous fassions du bon travail.\nB. [WRONG] Il ne croit pas que nous faisons du bon travail.\nC. [WRONG] Il ne croit pas que nous ferons du bon travail.\nD. [WRONG] Il ne croit pas que nous ferions du bon travail.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780855180306-uzn2v6m1"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use indicative forms (present, future, conditional) where the subjunctive \"fassions\" is required after \"ne pas croit que,\" making them unambiguously incorrect within the stated grammatical constraint.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780855189328-v8xvohu2",
+      "timestamp": "2026-06-07T18:00:42.435Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative, future, or conditional moods instead of the required subjunctive after \"ne croit pas que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780855398224-pb0fc31k",
+      "timestamp": "2026-06-07T18:03:44.088Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying whether the wrong answers (B, C, D) in a French grammar question about indicative vs. subjunctive mood are indeed incorrect.\n\nAnalysis completed:\n- B (\"faisons\") uses indicative present instead of required subjunctive after \"ne croit pas que\" — INCORRECT ✓\n- C (\"ferons\") uses indicative future instead of required subjunctive — INCORRECT ✓\n- D (\"ferions\") uses conditional instead of required subjunctive — INCORRECT ✓\n\nThe verdict is TRUE — all wrong answers are indeed grammatically incorrect within the constraints of the question.\n\nTRUE||All wrong answers use the wrong mood (indicative present, indicative future, or conditional) instead of the required subjunctive after \"ne croit pas que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780855536649-1p0ix2nn",
+      "timestamp": "2026-06-07T18:06:04.607Z"
+    }
+  ]
+}

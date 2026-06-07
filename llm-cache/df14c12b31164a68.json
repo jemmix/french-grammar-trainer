@@ -1,0 +1,33 @@
+{
+  "cacheKey": "df14c12b31164a68",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-18-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-18 - La négation au subjonctif (je ne pense pas qu'il vienne)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Indicatif ou subjonctif ? Choisissez la bonne forme du verbe.\nChoices:\nA. [CORRECT] Elle ne pense pas que nous allions au cinéma.\nB. Elle ne pense pas que nous allons au cinéma.\nC. Elle ne pense pas que nous irons au cinéma.\nD. Elle ne pense pas que nous irions au cinéma.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780855180306-n5snvvg8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"ne pas penser que\" triggers the subjunctive mood (\"allions\") rather than the indicative, which is precisely the grammar rule stated.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780855268418-bsbw8y36",
+      "timestamp": "2026-06-07T18:01:27.928Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was asked to validate whether a French grammar question about \"Elle ne pense pas que nous allions au cinéma\" properly tests the rule \"La négation au subjonctif (je ne pense pas qu'il vienne).\"\n\nMy assessment:\n\nVERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"ne pense pas que\" requires the subjunctive mood (\"alliions\" vs indicative forms like \"allons\", \"irons\", \"irions\"), which is the core of the stated rule about negation triggering the subjunctive.\n\nNo remaining tasks - this was a single validation request that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780855427916-0z9l123w",
+      "timestamp": "2026-06-07T18:04:08.534Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"ne pas penser que\" triggers the subjunctive mood, requiring \"allions\" instead of indicative forms like \"allons\" or \"irons\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780855564608-60rn9yll",
+      "timestamp": "2026-06-07T18:06:19.175Z"
+    }
+  ]
+}

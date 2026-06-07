@@ -1,0 +1,33 @@
+{
+  "cacheKey": "11e312ef41d95c6c",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-18-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: La négation au subjonctif (je ne pense pas qu'il vienne)\nPROMPT: Indicatif ou subjonctif ? Conjuguez le verbe au présent.\nPHRASE: Je ne suppose pas qu'elles ___ d'accord.\nCORRECT ANSWER: soient\n\nWRONG ANSWERS to evaluate:\n1. sont\n2. seront\n3. seraient\n4. soyez\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780854207394-fy7n0zwo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: \"sont\" is the indicative form learners default to when forgetting the subjunctive requirement after \"ne...pas que,\" \"seront\" and \"seraient\" reflect confusion between subjunctive and future/conditional moods which often express similar uncertainty, and \"soyez\" is a plausible person/number error within the subjunctive itself since it's the 2nd person plural form of the same verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780854897132-i06mgpg3",
+      "timestamp": "2026-06-07T17:55:16.996Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"sont\" uses the indicative instead of subjunctive (the most frequent mistake), \"seront\" uses the future tense, \"seraient\" confuses conditional with subjunctive, and \"soyez\" uses the wrong person (vous instead of elles) in the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780854963724-rkf2kobc",
+      "timestamp": "2026-06-07T17:56:31.186Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers are real conjugations of \"être\" representing common learner errors: \"sont\" is the classic indicative-instead-of-subjunctive mistake, \"seront\" and \"seraient\" show tense/mood confusion, and \"soyez\" is a plausible person/number error within the subjunctive itself.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780855054640-m4j3l8gr",
+      "timestamp": "2026-06-07T17:57:56.969Z"
+    }
+  ]
+}

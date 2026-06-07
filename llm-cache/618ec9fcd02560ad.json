@@ -1,0 +1,33 @@
+{
+  "cacheKey": "618ec9fcd02560ad",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-18-010",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-18 - La négation au subjonctif (je ne pense pas qu'il vienne)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). Complétez : « Nous ne supposons pas que tu ___ compris. »\nChoices:\nA. [CORRECT] aies\nB. as\nC. avoir\nD. ait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780857570862-t34twau7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"ne...pas que\" triggers the subjunctive mood and then selecting the correct subjunctive conjugation \"aies\" over the indicative \"as,\" which is precisely the grammar point covered by the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780857620599-iu65omin",
+      "timestamp": "2026-06-07T18:45:31.424Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the learner knows that negative expressions of belief/supposition like \"ne supposons pas que\" trigger the subjunctive, which is exactly the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780858032899-cwdk962q",
+      "timestamp": "2026-06-07T18:47:29.185Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\n## Analysis Completed\nThe question asks students to choose between \"aies\" (subjunctive) and \"as\" (indicative) after \"Nous ne supposons pas que tu ___ compris.\"\n\n## Verdict\nVERDICT: ALIGNED\nREASON: The question requires recognizing that \"ne supposons pas que\" (a negative expression of belief/supposition) triggers the subjunctive mood, which is precisely what the rule \"La négation au subjonctif\" teaches—students must know this negative construction requires subjunctive to select \"aies\" over the indicative \"as.\"\n\n## Remaining Tasks\nNone—this was a single-question validation that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780858152949-rjuna1tn",
+      "timestamp": "2026-06-07T18:49:31.398Z"
+    }
+  ]
+}

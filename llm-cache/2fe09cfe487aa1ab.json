@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2fe09cfe487aa1ab",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-18-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est correcte ?\n\nChoices:\nA. [CORRECT] Je pense qu'il vient. / Je ne pense pas qu'il vienne.\nB. [WRONG] Je pense qu'il vienne. / Je ne pense pas qu'il vient.\nC. [WRONG] Je pense qu'il viendra. / Je ne pense pas qu'il viendra.\nD. [WRONG] Je pense qu'il viendrait. / Je ne pense pas qu'il viendrait.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780854207392-rk1vgj5q"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|C|C's first clause \"Je pense qu'il viendra\" is grammatically correct since futur simple is an indicative tense, which is appropriate after the affirmative \"penser que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780854309606-pfxvgkyf",
+      "timestamp": "2026-06-07T17:45:52.656Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:** I was analyzing a French grammar multiple-choice question to verify that the wrong answers (B, C, D) are indeed incorrect. The question tests subjunctive vs. indicative after \"penser que\" / \"ne pas penser que.\"\n\n**Analysis completed:**\n- B is clearly wrong (subjunctive after positive \"penser que\" is incorrect; indicative after negative \"ne pas penser que\" is incorrect)\n- C is problematic: \"Je pense qu'il viendra\" uses futur indicatif, which is technically grammatically correct since futur is an indicative tense. The question doesn't specify présent tense.\n- D is problematic: \"Je pense qu'il viendrait\" with conditionnel can be acceptable in hypothetical/polite contexts.\n\n**Verdict that would have been returned:**\nFALSE|C,D|C's first clause \"Je pense qu'il viendra\" uses futur indicatif which is grammatically valid after affirmative \"penser que\"; D's first clause \"Je pense qu'il viendrait\" could be acceptable in hypothetical contexts since conditionnel can follow \"penser que.\"\n\n**Remaining tasks:** None—this was a single verification task.\n\n**Recommendations:** Revise answer C to use a tense that is clearly not indicative (e.g., \"Je pense qu'il viendrait\" for the first clause to make it unambiguously wrong), and revise D to avoid the conditionnel ambiguity, perhaps by using imparfait du subjonctif or another clearly incorrect form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780854651629-sw13qxys",
+      "timestamp": "2026-06-07T17:58:05.755Z"
+    }
+  ]
+}

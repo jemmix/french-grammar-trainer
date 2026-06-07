@@ -6009,8 +6009,8 @@ const section: Section = {
       choices: [
         { text: "sache", correct: true, explanation: "Après « ne pas penser que », le subjonctif s'impose. « Sache » est le subjonctif présent 3e personne de « savoir »." },
         { text: "sait", correct: false, explanation: "« Sait » est l'indicatif présent. La négation de « penser » exige le subjonctif." },
-        { text: "savoir", correct: false, explanation: "« Savoir » est l'infinitif. Après « qu'elle » avec un sujet exprimé, le verbe doit être conjugué." },
-        { text: "savait", correct: false, explanation: "« Savait » est l'imparfait de l'indicatif. Après « ne pas penser que », le subjonctif présent est requis, pas l'imparfait." },
+        { text: "saches", correct: false, explanation: "« Saches » est le subjonctif présent 2e personne. Avec le sujet « elle » (3e personne), on utilise « sache »." },
+        { text: "sachions", correct: false, explanation: "« Sachions » est le subjonctif présent 1re personne pluriel. Avec le sujet « elle » (3e personne), on utilise « sache »." },
       ],
     },
     {
@@ -6074,8 +6074,8 @@ const section: Section = {
       choices: [
         { text: "aillent", correct: true, explanation: "Après « ne pas trouver que », le subjonctif est de rigueur. « Aillent » est le subjonctif présent 3e personne du pluriel de « aller »." },
         { text: "vont", correct: false, explanation: "« Vont » est l'indicatif présent. La négation de « trouver » déclenche le subjonctif." },
-        { text: "aller", correct: false, explanation: "« Aller » est l'infinitif. Après « qu'elles » avec un sujet exprimé, le verbe doit être conjugué." },
-        { text: "allaient", correct: false, explanation: "« Allaient » est l'imparfait de l'indicatif. Après « ne pas trouver que », le subjonctif présent est nécessaire, pas l'imparfait." },
+        { text: "alliez", correct: false, explanation: "« Alliez » est le subjonctif présent 2e personne pluriel. Avec le sujet « elles » (3e personne pluriel), on utilise « aillent »." },
+        { text: "allions", correct: false, explanation: "« Allions » est le subjonctif présent 1re personne pluriel. Avec le sujet « elles » (3e personne pluriel), on utilise « aillent »." },
       ],
     },
     {
@@ -6165,8 +6165,8 @@ const section: Section = {
       choices: [
         { text: "soit", correct: true, explanation: "Après « ne pas croire que », le subjonctif est obligatoire. « Soit » est le subjonctif présent 3e personne de « être »." },
         { text: "est", correct: false, explanation: "« Est » est l'indicatif présent. La négation de « croire » déclenche le subjonctif." },
-        { text: "être", correct: false, explanation: "« Être » est l'infinitif. Après « qu'il » avec un sujet exprimé, le verbe doit être conjugué." },
-        { text: "était", correct: false, explanation: "« Était » est l'imparfait de l'indicatif. Après « ne pas croire que », le subjonctif présent est exigé, pas l'imparfait." },
+        { text: "sois", correct: false, explanation: "« Sois » est le subjonctif présent 2e personne. Avec le sujet « il » (3e personne), on utilise « soit »." },
+        { text: "soyons", correct: false, explanation: "« Soyons » est le subjonctif présent 1re personne pluriel. Avec le sujet « il » (3e personne), on utilise « soit »." },
       ],
     },
     {

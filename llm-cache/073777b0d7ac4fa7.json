@@ -1,0 +1,33 @@
+{
+  "cacheKey": "073777b0d7ac4fa7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-18-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-18 - La négation au subjonctif (je ne pense pas qu'il vienne)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). Complétez : « Je ne pense pas qu'elle ___ la vérité. »\nChoices:\nA. [CORRECT] sache\nB. sait\nC. saches\nD. sachions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780858524283-fxzen3ub"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"Je ne pense pas que\" triggers the subjunctive mood, which is the core of the stated rule about negation with subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780858525316-eh8rupss",
+      "timestamp": "2026-06-07T18:55:38.366Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"je ne pense pas que\" triggers the subjunctive mood (sache) rather than the indicative (sait), which is precisely the grammar point covered by the rule on negation with subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780858538369-hwihgnam",
+      "timestamp": "2026-06-07T18:55:52.774Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a French grammar question alignment with its stated rule. The validation was nearly complete - I had analyzed the question about \"La négation au subjonctif\" and determined it was properly aligned.\n\n**Validation result for the pending question:**\n\nVERDICT: ALIGNED\nREASON: The question directly tests the core grammar rule that \"je ne pense pas que\" triggers the subjunctive mood, as the correct answer \"sache\" can only be selected by knowing this negative expression requires the subjunctive rather than the indicative \"sait.\"\n\n**Remaining tasks:**\n- None explicitly stated beyond this single validation\n\n**Recommendations for next steps:**\n- If this is part of a batch validation, continue validating remaining questions using the same ALIGNED/MISALIGNED format\n- If question generation or fixes are needed based on validation results, follow the workflow in CLAUDE.md",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780858552820-b4b4cnvw",
+      "timestamp": "2026-06-07T18:56:14.860Z"
+    }
+  ]
+}

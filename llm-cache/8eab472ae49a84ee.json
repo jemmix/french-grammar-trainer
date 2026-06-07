@@ -1,0 +1,19 @@
+{
+  "cacheKey": "8eab472ae49a84ee",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-18-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est correcte ?\n\nChoices:\nA. [CORRECT] Je trouve que ce film est bon. / Je ne trouve pas que ce film soit bon.\nB. [WRONG] Je trouve que ce film soit bon. / Je ne trouve pas que ce film est bon.\nC. [WRONG] Je trouve que ce film sera bon. / Je ne trouve pas que ce film sera bon.\nD. [WRONG] Je trouve que ce film serait bon. / Je ne trouve pas que ce film serait bon.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780854207393-zp32hg6l"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\n\nI was in the process of analyzing a French grammar verification question about the subjunctive vs. indicative after \"trouver que\" (affirmative) and \"ne pas trouver que\" (negative).\n\n## Analysis Completed\n\n**Answer B**: Fully incorrect - uses subjunctive \"soit\" after affirmative \"trouver que\" (should be indicative), and indicative \"est\" after negative \"ne pas trouver que\" (should be subjunctive).\n\n**Answer C**: PARTIALLY CORRECT - \"Je trouve que ce film sera bon\" uses future indicative \"sera\", which IS a valid indicative tense after affirmative \"trouver que\". This makes C not entirely wrong.\n\n**Answer D**: Fully incorrect - conditional \"serait\" is not indicative, so it's wrong after affirmative \"trouver que\"; and wrong after negative as well.\n\n## Verdict\n\nFALSE|C|The first sentence in C \"Je trouve que ce film sera bon\" uses future indicative \"sera\", which is grammatically correct after affirmative \"trouver que\" since future is an indicative tense.\n\n## Remaining Tasks\n\nNone - the analysis is complete.\n\n## Recommendations\n\nThe question should be revised to make answer C fully wrong, for example by using a non-indicative mood in both clauses, or by changing the context to rule out future tense as a valid answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780854341171-rb3bm5uc",
+      "timestamp": "2026-06-07T17:46:59.627Z"
+    }
+  ]
+}

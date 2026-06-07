@@ -1,0 +1,33 @@
+{
+  "cacheKey": "428ef4deddfc24b2",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "07-18-014",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif).\nChoices:\nA. Je ne pense pas que vous puissiez venir.\nB. Je ne pense pas que vous pouvez venir.\nC. Je ne pense pas que vous pourrez venir.\nD. Je ne pense pas que vous pourriez venir.\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780856537765-8zaug05q"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a French grammar question for clarity and ambiguity. The question asks learners to choose the correct verb form \"au présent (indicatif ou subjonctif)\" but includes future and conditional tense options, which contradicts the prompt's scope restriction.\n\n**My assessment:**\nVERDICT: AMBIGUOUS\nREASON: The prompt explicitly restricts to \"présent\" (present tense) but includes future (\"pourrez\") and conditional (\"pourriez\") options, creating confusion about whether learners should only consider present tense forms or evaluate all presented options.\n\n**Remaining tasks:** None - this was a single evaluation task.\n\n**Recommendation:** The prompt should either be revised to remove the \"au présent\" restriction (e.g., \"Choisissez la bonne forme du verbe\") or the non-present options should be removed to match the stated scope.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780856614633-s1wx7i5s",
+      "timestamp": "2026-06-07T18:23:54.682Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly specifies to find the present tense form (indicative or subjunctive), and the inclusion of future/conditional distractors tests whether learners can apply this tense constraint to eliminate wrong options.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780856767585-mtqo4saq",
+      "timestamp": "2026-06-07T18:26:50.073Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt specifies \"au présent\" (present tense) but two of the four choices (C: futur, D: conditionnel) are not in the present tense, which could confuse a learner who takes the instructions literally.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780856948665-ez47la8e",
+      "timestamp": "2026-06-07T18:29:35.735Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c0853a401a52610a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-18-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). Complétez : « Vous ne croyez pas qu'il ___ le faire seul. »\n\nChoices:\nA. [CORRECT] puisse\nB. [WRONG] peut\nC. [WRONG] pouvoir\nD. [WRONG] puissent\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780857570862-x99deb8n"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors - B uses indicative instead of required subjunctive after \"ne pas croire que,\" C is an infinitive rather than a conjugated present form, and D is the plural subjunctive form instead of the singular \"il\" form needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780857600070-u6qlvors",
+      "timestamp": "2026-06-07T18:40:18.442Z"
+    },
+    {
+      "raw": "TRUE||B uses indicative after negative \"croire que\" which requires subjunctive; C is an infinitive instead of a conjugated form; D is the plural subjunctive but the subject \"il\" requires the singular \"puisse.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780857726491-rzmgrpvu",
+      "timestamp": "2026-06-07T18:42:20.359Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses indicative instead of required subjunctive after \"ne pas croire que,\" C is an infinitive not a conjugated present tense form, and D is plural subjunctive but the subject \"il\" requires singular.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780857858837-1m9fj11l",
+      "timestamp": "2026-06-07T18:44:34.660Z"
+    }
+  ]
+}
