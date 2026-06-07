@@ -41,8 +41,8 @@ const DETERMINER_FAMILIES: Record<string, string[]> = {
   "de-definite": ["der", "die", "das", "den", "dem", "des"],
   "de-indefinite": ["ein", "eine", "einer", "einem", "einen", "eines"],
   "de-negative": ["kein", "keine", "keiner", "keinem", "keinen", "keines"],
-  "de-possessive-m": ["mein", "dein", "sein", "unser", "euer", "ihr"],
-  "de-possessive-f": ["meine", "deine", "seine", "unsere", "eure", "ihre"],
+  "de-possessive-m": ["mein", "dein", "sein", "ihr", "unser", "euer"],
+  "de-possessive-f": ["meine", "deine", "seine", "ihre", "unsere", "eure"],
   "de-demonstrative": ["dieser", "diese", "dieses", "jener", "jene", "jenes"],
 };
 

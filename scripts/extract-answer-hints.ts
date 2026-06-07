@@ -4,15 +4,29 @@ import type { Section, InputQuestion } from "../src/data/types";
 
 function extractAnswerHints(sections: Section[]): Map<string, string> {
   const answerHints = new Map<string, string>();
+  const conflicts: string[] = [];
 
   for (const section of sections) {
     for (const q of section.questions) {
       if (q.type === "input") {
         const inputQ = q as InputQuestion;
-        if (!answerHints.has(inputQ.answer)) {
-          answerHints.set(inputQ.answer, "...");
+        const existing = answerHints.get(inputQ.answer);
+        if (existing === undefined) {
+          answerHints.set(inputQ.answer, inputQ.hint);
+        } else if (existing !== inputQ.hint) {
+          conflicts.push(`"${inputQ.answer}" in ${q.id}: "${inputQ.hint}" conflicts with "${existing}"`);
         }
       }
+    }
+  }
+
+  if (conflicts.length > 0) {
+    console.warn(`Hint conflicts for ${conflicts.length} answers:`);
+    for (const c of conflicts.slice(0, 20)) {
+      console.warn(`  ${c}`);
+    }
+    if (conflicts.length > 20) {
+      console.warn(`  ... and ${conflicts.length - 20} more`);
     }
   }
 
@@ -33,8 +47,8 @@ function generateDictionaryFile(lang: string, answerHints: Map<string, string>):
     `export const answerHints: Record<string, string> = {`,
   ];
 
-  for (const [answer] of entries) {
-    lines.push(`  "${escapeString(answer)}": "...",`);
+  for (const [answer, hint] of entries) {
+    lines.push(`  "${escapeString(answer)}": "${escapeString(hint)}",`);
   }
 
   lines.push(`};`);
@@ -56,8 +70,8 @@ function escapeString(str: string): string {
 async function main() {
   const lang = process.argv[2];
 
-  if (!lang || !["fr", "en"].includes(lang)) {
-    console.error("Usage: npx tsx scripts/extract-answer-hints.ts <fr|en>");
+  if (!lang || !["fr", "en", "de"].includes(lang)) {
+    console.error("Usage: npx tsx scripts/extract-answer-hints.ts <fr|en|de>");
     process.exit(1);
   }
 

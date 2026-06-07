@@ -21,7 +21,7 @@ async function loadAnswerHints(lang: string): Promise<Record<string, string>> {
   return answerHints;
 }
 
-for (const lang of ["fr", "en"] as const) {
+for (const lang of ["fr", "en", "de"] as const) {
   describe(`Answer hints: ${lang}`, async () => {
     const sections = await loadSections(lang);
     const answerHints = await loadAnswerHints(lang);

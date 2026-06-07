@@ -78,7 +78,7 @@ function validateRuleProportions(
 describe("DSL question proportions", () => {
   const questionsDir = path.join(process.cwd(), "questions");
 
-  for (const lang of ["fr", "en"]) {
+  for (const lang of ["fr", "en", "de"]) {
     const langDir = path.join(questionsDir, lang);
 
     if (!fs.existsSync(langDir)) continue;
@@ -107,7 +107,7 @@ describe("DSL question proportions", () => {
 describe("TypeScript question proportions", () => {
   const dataDir = path.join(process.cwd(), "src", "data");
 
-  for (const lang of ["fr", "en"]) {
+  for (const lang of ["fr", "en", "de"]) {
     const langDir = path.join(dataDir, lang);
 
     if (!fs.existsSync(langDir)) continue;

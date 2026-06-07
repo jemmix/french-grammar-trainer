@@ -92,7 +92,7 @@ function normalizeForComparison(tsCode: string): string {
     .trim();
 }
 
-for (const lang of ["fr", "en"]) {
+for (const lang of ["fr", "en", "de"]) {
   describe(`TypeScript freshness: ${lang}`, () => {
     const toc = loadToc(lang);
     const sectionConfigs = loadSectionConfigs(lang);
