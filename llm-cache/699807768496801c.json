@@ -1,0 +1,33 @@
+{
+  "cacheKey": "699807768496801c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-20-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Indicatif ou subjonctif ? Choisissez la bonne forme du verbe : « Je crains qu'il ___ son train. »\n\nChoices:\nA. [CORRECT] perde\nB. [WRONG] perd\nC. [WRONG] perdent\nD. [WRONG] perdes\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780866489314-q6riyuyk"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that the wrong answers (B, C, D) in a French grammar multiple choice question about indicative vs. subjunctive are indeed incorrect.\n\nAnalysis completed:\n- The question \"Je crains qu'il ___ son train\" requires the subjunctive mood after \"craindre que\"\n- B. \"perd\" (indicative present, 3rd singular) - WRONG mood (indicative instead of subjunctive)\n- C. \"perdent\" (subjunctive present, 3rd plural) - WRONG number (plural for singular subject \"il\")\n- D. \"perdes\" (subjunctive present, 2nd singular) - WRONG person (2nd person for 3rd person subject \"il\")\n\nTRUE||All wrong answers are grammatically incorrect: B uses the indicative instead of required subjunctive, C uses plural for singular subject \"il\", and D uses 2nd person for 3rd person subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780866608306-gwacwvjw",
+      "timestamp": "2026-06-07T21:10:25.826Z"
+    },
+    {
+      "raw": "TRUE||B uses indicative instead of required subjunctive after \"craindre que\"; C is plural form but subject \"il\" is singular; D is 2nd person singular but subject \"il\" is 3rd person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780866745183-f32bbcu3",
+      "timestamp": "2026-06-07T21:12:42.226Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses indicative instead of required subjunctive after \"craindre que\", C uses 3rd person plural form with singular subject \"il\", and D uses 2nd person singular form instead of 3rd person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780866874087-xuavx0ng",
+      "timestamp": "2026-06-07T21:14:55.445Z"
+    }
+  ]
+}

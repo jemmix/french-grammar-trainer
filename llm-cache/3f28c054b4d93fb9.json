@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3f28c054b4d93fb9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-20-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Pourvu qu'il ___ à l'heure pour la réunion ! »\n\nChoices:\nA. [CORRECT] soit\nB. [WRONG] est\nC. [WRONG] serait\nD. [WRONG] être\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780864435453-sy3nelrq"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"pourvu que\": B uses indicative present, C uses conditional, and D uses infinitive instead of the required subjunctive \"soit\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780864509704-qejw3w6o",
+      "timestamp": "2026-06-07T20:35:20.249Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect — \"est\" uses the indicative mood, \"serait\" uses the conditional mood, and \"être\" is an infinitive, but \"pourvu que\" strictly requires the subjunctive mood (\"soit\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780864664643-924p328f",
+      "timestamp": "2026-06-07T20:37:57.190Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a French grammar validation question about the subjunctive mood after \"pourvu que\". The question asked to verify that wrong answers B (\"est\"), C (\"serait\"), and D (\"être\") are incorrect when the correct answer is A (\"soit\").\n\nThe verification result would be:\nTRUE||All wrong answers are incorrect: B uses indicative instead of required subjunctive, C uses conditional instead of required subjunctive, D uses infinitive which cannot follow a subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780864797295-rmz92ahz",
+      "timestamp": "2026-06-07T20:40:22.066Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e1b235f4cb473be1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-20-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Pour que vous ___ du progrès, il faut travailler régulièrement. »\n\nChoices:\nA. [CORRECT] fassiez\nB. [WRONG] faites\nC. [WRONG] feriez\nD. [WRONG] faire\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780864435453-tr38kvwx"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use the wrong mood or form: B is present indicative, C is conditional, and D is infinitive instead of the required subjunctive triggered by \"pour que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780864454737-din07k5u",
+      "timestamp": "2026-06-07T20:34:28.992Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWhat has been accomplished: I was about to verify the wrong answers in a French grammar multiple choice question about the subjunctive mood after \"pour que.\"\n\nRemaining tasks: Complete the verification of wrong answers B, C, and D for the question about \"Pour que vous ___ du progrès.\"\n\nRecommendations for next steps: The verification is straightforward - \"pour que\" requires the subjunctive mood. Answer B (\"faites\" - indicative present), C (\"feriez\" - conditional), and D (\"faire\" - infinitive) are all grammatically incorrect in this context. The correct answer A (\"fassiez\" - subjunctive) is the only valid option. The verdict should be TRUE||All wrong answers use incorrect moods/forms for a \"pour que\" clause requiring the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780864610782-wmim2w3m",
+      "timestamp": "2026-06-07T20:37:08.432Z"
+    }
+  ]
+}

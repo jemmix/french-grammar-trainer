@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d1d6edacf51dbd2b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-20-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Indicatif ou subjonctif ? Choisissez la bonne forme du verbe : « C'est le seul étudiant qui ___ la réponse. »\n\nChoices:\nA. [CORRECT] connaisse\nB. [WRONG] connaît\nC. [WRONG] connaissent\nD. [WRONG] connaisses\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780866489311-2kvsmzq3"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses indicative instead of the required subjunctive after \"le seul qui\", C is both indicative and plural (should be singular to agree with \"le seul étudiant\"), and D uses 2nd person singular subjunctive instead of 3rd person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780866526274-u3ia3x95",
+      "timestamp": "2026-06-07T21:09:01.431Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses indicative instead of required subjunctive after \"le seul qui,\" C is both indicative and plural (wrong agreement with singular subject), and D uses 2nd person singular subjunctive instead of 3rd person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780866665015-evk48umj",
+      "timestamp": "2026-06-07T21:11:26.427Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWhat was accomplished: I was in the process of analyzing a French grammar verification question about the subjunctive vs. indicative mood with \"le seul...qui\" construction.\n\nAnalysis completed:\n- The question asks for the correct verb form after \"le seul étudiant qui\" which requires the subjunctive\n- A (connaisse) - correct subjunctive form ✓\n- B (connaît) - indicative, wrong mood ✗\n- C (connaissent) - indicative AND plural, wrong mood and number ✗\n- D (connaisses) - subjunctive but 2nd person, wrong person ✗\n\nTRUE||All wrong answers contain clear grammar errors — B uses indicative instead of subjunctive, C uses indicative and plural form, D uses 2nd person singular instead of 3rd person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780866807949-d3ylarpx",
+      "timestamp": "2026-06-07T21:13:49.698Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "68e1bf67d5f30bd8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-20-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Il a réussi l'examen sans qu'on ___ qu'il avait triché. »\n\nChoices:\nA. [CORRECT] sache\nB. [WRONG] sait\nC. [WRONG] saurait\nD. [WRONG] savoir\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780864435454-7m8jh9fn"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B, C, and D in a French grammar multiple choice question are indeed incorrect. The question tests the subjunctive mood after \"sans que.\"\n\nAnalysis completed:\n- B (sait): Present indicative - incorrect because \"sans que\" requires subjunctive\n- C (saurait): Conditional - incorrect because \"sans que\" requires subjunctive\n- D (savoir): Infinitive - incorrect because a conjugated form is needed after the subject \"qu'on\"\n\nVerdict: TRUE||All wrong answers contain clear grammar errors — B and C use wrong moods (indicative/conditional instead of subjunctive), and D uses an infinitive instead of a conjugated verb.\n\nNo remaining tasks — the verification was completed successfully.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780864577414-vo1ov0rd",
+      "timestamp": "2026-06-07T20:36:32.428Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"sans que\": B uses the present indicative, C uses the conditional, and D uses the infinitive form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780864731150-psgqh0m2",
+      "timestamp": "2026-06-07T20:39:08.949Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect after \"sans que\" which requires the subjunctive mood: B uses indicative, C uses conditional, and D uses infinitive instead of the required subjunctive \"sache\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780864851063-uht4axxu",
+      "timestamp": "2026-06-07T20:41:09.546Z"
+    }
+  ]
+}

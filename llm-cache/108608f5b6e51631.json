@@ -1,0 +1,33 @@
+{
+  "cacheKey": "108608f5b6e51631",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-20-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Indicatif ou subjonctif ? Choisissez la bonne forme du verbe : « Avant que tu ___, je veux te dire quelque chose. »\n\nChoices:\nA. [CORRECT] partes\nB. [WRONG] pars\nC. [WRONG] partirais\nD. [WRONG] partir\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780865334656-oaf3lza9"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses indicative present instead of the required subjunctive, C uses conditional instead of subjunctive, and D uses the infinitive instead of a conjugated verb form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780865370696-wqtgwj4h",
+      "timestamp": "2026-06-07T20:49:41.810Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the wrong mood or form: pars is indicative (not subjunctive required by \"avant que\"), partirais is conditional (not asked for), and partir is an infinitive (not a conjugated form).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780865486660-2ha2vr4r",
+      "timestamp": "2026-06-07T20:51:48.731Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: \"pars\" is indicative not subjunctive, \"partirais\" is conditional not subjunctive, and \"partir\" is an infinitive not a conjugated form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780865636590-wbzmzpge",
+      "timestamp": "2026-06-07T20:54:13.980Z"
+    }
+  ]
+}

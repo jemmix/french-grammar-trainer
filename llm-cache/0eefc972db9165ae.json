@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0eefc972db9165ae",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-20-001",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Synthèse : reconnaître les déclencheurs du subjonctif dans une phrase\nPROMPT: Indicatif ou subjonctif ? Conjuguez le verbe pour compléter.\nPHRASE: Il suffit que vous ___ vos devoirs ce soir.\nCORRECT ANSWER: fassiez\n\nWRONG ANSWERS to evaluate:\n1. faites\n2. ferez\n3. feriez\n4. faire\n5. fassent\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780867906284-l4zthlb5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: \"faites\" uses indicative instead of recognizing the subjunctive trigger \"il suffit que\", \"ferez\" and \"feriez\" use other indicative moods (future/conditional) that learners might confuse with subjunctive, \"faire\" is the uninflected infinitive a learner might use after \"que\", and \"fassent\" correctly uses subjunctive but with the wrong subject agreement (ils/elles instead of vous).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780867943530-q7pagfzz",
+      "timestamp": "2026-06-07T21:32:46.906Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: PLAUSIBLE\nREASON: All wrong answers are real conjugations of \"faire\" representing common errors: using indicative instead of subjunctive (faites, ferez), confusing conditional with subjunctive (feriez), using infinitive when unsure (faire), or wrong subject agreement in subjunctive (fassent).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780867968940-0mn77le2",
+      "timestamp": "2026-06-07T21:33:14.144Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors with the subjunctive: \"faites\" is the indicative present (most likely mistake), \"ferez\" and \"feriez\" are future/conditional forms a learner might use instead of recognizing the subjunctive trigger, \"faire\" is the infinitive form a confused learner might default to, and \"fassent\" is the subjunctive but with wrong subject agreement (ils/elles instead of vous).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780867994144-kgy8upk3",
+      "timestamp": "2026-06-07T21:33:24.288Z"
+    }
+  ]
+}

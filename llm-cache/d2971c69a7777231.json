@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d2971c69a7777231",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-20-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: « Je doute qu'il ___ la vérité. »\n\nChoices:\nA. [CORRECT] dise\nB. [WRONG] dit\nC. [WRONG] dirait\nD. [WRONG] dire\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780864435453-svdohqww"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect after \"je doute que\" which requires the subjunctive present: B uses indicative, C uses conditional, and D uses the infinitive instead of a conjugated form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780864448559-gighw4fs",
+      "timestamp": "2026-06-07T20:34:21.680Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was evaluating a French grammar verification task for the question \"Je doute qu'il ___ la vérité.\" with choices A (dise - correct subjunctive), B (dit - indicative), C (dirait - conditional), and D (dire - infinitive).\n\nRemaining tasks: None - the analysis was complete.\n\nRecommendations: The verdict is TRUE||All wrong answers use incorrect moods (indicative, conditional, infinitive) when the subjunctive is required after \"je doute que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780864605578-g33bbb5i",
+      "timestamp": "2026-06-07T20:36:58.689Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods (indicative, conditional, infinitive) instead of the required subjunctive after \"je doute que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780864762807-h4y9axvl",
+      "timestamp": "2026-06-07T20:39:35.533Z"
+    }
+  ]
+}

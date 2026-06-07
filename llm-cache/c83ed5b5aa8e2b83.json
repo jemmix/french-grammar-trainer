@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c83ed5b5aa8e2b83",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-20-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Indicatif ou subjonctif ? Choisissez la bonne forme du verbe : « À moins que tu ___ une très bonne excuse, tu dois venir. »\n\nChoices:\nA. [CORRECT] aies\nB. [WRONG] as\nC. [WRONG] a\nD. [WRONG] ait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780866489310-ustsqwgb"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B and C use the indicative instead of the required subjunctive after \"à moins que\"; D uses the subjunctive but is 3rd person singular instead of the required 2nd person singular \"tu\" form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780866495323-hl3shk55",
+      "timestamp": "2026-06-07T21:08:31.103Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B (\"as\") and C (\"a\") use the indicative mood instead of the required subjunctive after \"à moins que,\" and D (\"ait\") is 3rd person singular subjunctive rather than the needed 2nd person singular \"aies.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780866647196-9mh8exqt",
+      "timestamp": "2026-06-07T21:11:05.644Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses indicative instead of required subjunctive, C uses both wrong mood (indicative) and wrong person (3rd singular), and D uses correct subjunctive but wrong person (3rd singular instead of 2nd).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780866787714-22kw3gal",
+      "timestamp": "2026-06-07T21:13:36.191Z"
+    }
+  ]
+}
