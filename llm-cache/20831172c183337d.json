@@ -1,0 +1,33 @@
+{
+  "cacheKey": "20831172c183337d",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "08-01-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Formation du subjonctif passé : auxiliaire au subjonctif présent + participe passé\nPROMPT: Conjuguez le verbe au subjonctif passé\nPHRASE: À moins que vous ___ de cette situation précaire, rien ne changera.\nCORRECT ANSWER: ayez parlé\n\nWRONG ANSWERS to evaluate:\n1. avez parlé\n2. ayez parler\n3. parliez\n4. soyez parlé\n5. parlerez\n6. parleriez\n7. ayez parlés\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780868289819-cbdx7qha"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: \"avez parlé\" confuses indicative and subjunctive mood, \"ayez parler\" uses infinitive instead of past participle, \"parliez\" and \"parlerez\" and \"parleriez\" select wrong tenses (imparfait, futur, conditionnel), \"soyez parlé\" uses wrong auxiliary verb, and \"ayez parlés\" over-applies agreement with the subject \"vous\" when no agreement is needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780869033619-r8glsjws",
+      "timestamp": "2026-06-07T21:51:03.503Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All seven wrong answers represent common learner errors: confusing indicative with subjunctive (avez parlé), using infinitive instead of past participle (ayez parler), tense confusion (parliez, parlerez, parleriez), auxiliary confusion (soyez parlé), and incorrect agreement (ayez parlés).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780869250510-3e32zxrb",
+      "timestamp": "2026-06-07T21:54:35.670Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common error patterns: \"avez parlé\" confuses indicative and subjunctive mood, \"ayez parler\" mixes infinitive and past participle, \"soyez parlé\" uses the wrong auxiliary, \"parliez\" confuses subjunctive tenses, \"parlerez\" and \"parleriez\" are tense guesses from a confused learner, and \"ayez parlés\" shows over-agreement with the subject \"vous.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780869855116-vxxelma4",
+      "timestamp": "2026-06-07T22:04:59.272Z"
+    }
+  ]
+}

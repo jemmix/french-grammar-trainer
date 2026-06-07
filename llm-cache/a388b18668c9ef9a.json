@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a388b18668c9ef9a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "08-01-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif passé\n\nRULE BEING TESTED: 08-01 - Formation du subjonctif passé : auxiliaire au subjonctif présent + participe passé\n\nQUESTION:\nType: Input\nPrompt: Mettez le verbe au subjonctif passé\nPhrase: Pourvu qu'on ___ ce virus avant l'été !\nCorrect Answer: ait éliminé\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780868289819-55n6hs58"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to produce \"ait éliminé,\" which is precisely the auxiliary \"avoir\" in subjonctif présent (\"ait\") combined with the past participle (\"éliminé\"), directly testing the formation rule of the subjonctif passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780868467064-vijr85yn",
+      "timestamp": "2026-06-07T21:41:23.169Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"éliminer\" in subjonctif passé by combining the auxiliary \"avoir\" in subjonctif présent (\"ait\") with the past participle (\"éliminé\"), which is exactly what the rule describes.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780868653916-h6fggjla",
+      "timestamp": "2026-06-07T21:44:30.712Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to validate a single French grammar question against its stated rule. The analysis is complete in my response above - the question \"Pourvu qu'on ___ ce virus avant l'été !\" with answer \"ait éliminé\" properly tests rule 08-01 on formation of the subjonctif passé (auxiliary in subjonctif présent + past participle).\n\n**Remaining tasks:**\nNone - this was a single-question validation task that is now complete.\n\n**Recommendations:**\nThe validation result is: VERDICT: ALIGNED - The question directly tests the stated rule by requiring students to combine the subjonctif présent of \"avoir\" with the past participle of \"éliminer.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780868817042-qscdl155",
+      "timestamp": "2026-06-07T21:47:14.803Z"
+    }
+  ]
+}

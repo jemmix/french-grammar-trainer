@@ -53,7 +53,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-01",
       generatedBy: "haiku",
-      prompt: "Complétez : « Elle doute que nous ___ la vérité. »",
+      prompt: "Complétez au subjonctif passé : « Elle doute que nous ___ la vérité. »",
       choices: [
         { text: "ayons su", correct: true, explanation: "Le subjonctif passé du verbe savoir se forme avec ayons (auxiliaire avoir au subjonctif) + su (participe passé)." },
         { text: "avons su", correct: false, explanation: "« avons su » est à l'indicatif passé composé, pas au subjonctif." },
@@ -94,10 +94,10 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Choisissez le subjonctif passé : « Je regrette que tu ___ cette occasion. »",
       choices: [
-        { text: "aies manquée", correct: true, explanation: "Le subjonctif passé se forme avec aies + manquée (l'accord se fait avec « tu », féminin singulier dans ce contexte)." },
+        { text: "aies manqué", correct: true, explanation: "Le subjonctif passé se forme avec aies + manqué. Avec l'auxiliaire avoir, il n'y a pas d'accord du participe passé car le COD (« cette occasion ») est placé après le verbe." },
         { text: "as manqué", correct: false, explanation: "« as manqué » est au passé composé indicatif, pas au subjonctif." },
         { text: "manques", correct: false, explanation: "« manques » est au présent indicatif, pas au subjonctif passé." },
-        { text: "aies manquer", correct: false, explanation: "On utilise le participe passé « manquée », pas l'infinitif « manquer »." },
+        { text: "aies manquée", correct: false, explanation: "Avec l'auxiliaire avoir, le participe passé ne s'accorde pas quand le COD suit le verbe. « manqué » reste invariable." },
       ],
     },
     {
@@ -131,7 +131,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-01",
       generatedBy: "haiku",
-      prompt: "Choisissez : « Je doute qu'il ___ à la réunion. »",
+      prompt: "Choisissez le subjonctif passé : « Je doute qu'il ___ à la réunion. »",
       choices: [
         { text: "soit venu", correct: true, explanation: "« Venir » utilise l'auxiliaire être. Au subjonctif passé : soit + venu." },
         { text: "a venu", correct: false, explanation: "« A venu » est incorrect — venir utilise être, pas avoir." },
@@ -144,7 +144,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-01",
       generatedBy: "haiku",
-      prompt: "Complétez : « Pourvu qu'on ___ ce problème avant demain ! »",
+      prompt: "Conjuguez au subjonctif passé : « Pourvu qu'on ___ ce problème à temps ! »",
       choices: [
         { text: "ait résolu", correct: true, explanation: "Le subjonctif passé se forme avec ait (avoir au subjonctif) + résolu (participe passé du verbe résoudre)." },
         { text: "a résolu", correct: false, explanation: "« a résolu » est au passé composé indicatif, pas au subjonctif." },
@@ -183,7 +183,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-01",
       generatedBy: "haiku",
-      prompt: "Choisissez : « Pourvu qu'elles ___ leurs examens ! »",
+      prompt: "Choisissez le subjonctif passé : « Pourvu qu'elles ___ leurs examens ! »",
       choices: [
         { text: "aient réussi", correct: true, explanation: "Le subjonctif passé se forme avec aient (auxiliaire avoir au subjonctif) + réussi (participe passé)." },
         { text: "ont réussi", correct: false, explanation: "« ont réussi » est à l'indicatif passé composé, pas au subjonctif." },
@@ -198,10 +198,10 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez : « C'est dommage que tu ___ ta chance. »",
       choices: [
-        { text: "aies gaspillée", correct: true, explanation: "Le subjonctif passé se forme avec aies + gaspillée (accord avec « ta chance », féminin singulier)." },
+        { text: "aies gaspillé", correct: true, explanation: "Le subjonctif passé se forme avec aies + gaspillé. Avec l'auxiliaire avoir, le participe passé ne s'accorde pas car le COD (« ta chance ») suit le verbe." },
         { text: "as gaspillé", correct: false, explanation: "« as gaspillé » est au passé composé indicatif, pas au subjonctif." },
         { text: "gaspilles", correct: false, explanation: "« gaspilles » est au subjonctif présent, pas au subjonctif passé." },
-        { text: "aies gaspiller", correct: false, explanation: "Le participe passé est « gaspillée », pas l'infinitif « gaspiller »." },
+        { text: "aies gaspillée", correct: false, explanation: "Avec l'auxiliaire avoir, le participe passé ne s'accorde pas quand le COD suit le verbe. « gaspillé » reste invariable." },
       ],
     },
     {
@@ -224,10 +224,10 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Complétez : « Je suis surpris que vous ___ cette décision. »",
       choices: [
-        { text: "ayez prise", correct: true, explanation: "Le subjonctif passé se forme avec ayez + prise (accord avec « cette décision », féminin singulier)." },
+        { text: "ayez pris", correct: true, explanation: "Le subjonctif passé se forme avec ayez + pris. Avec l'auxiliaire avoir, le participe passé ne s'accorde pas car le COD (« cette décision ») suit le verbe." },
         { text: "avez pris", correct: false, explanation: "« avez pris » est au passé composé indicatif, pas au subjonctif." },
         { text: "preniez", correct: false, explanation: "« preniez » est à l'imparfait indicatif, pas au subjonctif passé." },
-        { text: "ayez prendre", correct: false, explanation: "Le participe passé est « prise », pas l'infinitif « prendre »." },
+        { text: "ayez prise", correct: false, explanation: "Avec l'auxiliaire avoir, le participe passé ne s'accorde pas quand le COD suit le verbe. « pris » reste invariable." },
       ],
     },
     {
@@ -250,10 +250,10 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Choisissez : « Bien que j'___ beaucoup travaillé, j'ai échoué. »",
       choices: [
-        { text: "aie", correct: true, explanation: "Le subjonctif passé du verbe avoir se forme avec aie + travaillé." },
+        { text: "aie", correct: true, explanation: "Le subjonctif passé du verbe avoir se forme avec aie (subjonctif présent, 1re personne) + travaillé (participe passé déjà présent dans la phrase)." },
         { text: "ai", correct: false, explanation: "« ai » est au passé composé indicatif, pas au subjonctif passé." },
-        { text: "sois", correct: false, explanation: "« sois » est une forme d'être, pas d'avoir." },
-        { text: "aie travaillé", correct: false, explanation: "On doit combiner aie avec travaillé pour former le subjonctif passé complet." },
+        { text: "aies", correct: false, explanation: "« aies » est la 2e personne du singulier. Avec « je », il faut « aie »." },
+        { text: "eusse", correct: false, explanation: "« eusse » est à l'imparfait du subjonctif, une forme littéraire. Le subjonctif passé utilise le subjonctif présent de l'auxiliaire : « aie »." },
       ],
     },
     {
@@ -261,7 +261,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-01",
       generatedBy: "haiku",
-      prompt: "Complétez : « Je ne pense pas qu'il ___ à cet événement. »",
+      prompt: "Complétez au subjonctif passé : « Je ne pense pas qu'il ___ à cet événement. »",
       choices: [
         { text: "soit allé", correct: true, explanation: "« Aller » utilise l'auxiliaire être. Au subjonctif passé : soit + allé." },
         { text: "a allé", correct: false, explanation: "« Aller » utilise l'auxiliaire être, pas avoir." },
@@ -276,10 +276,10 @@ const section: Section = {
       generatedBy: "haiku",
       prompt: "Remplissez : « À moins que vous ___ complètement les règles, il y a un espoir. »",
       choices: [
-        { text: "ayez oubliées", correct: true, explanation: "Le subjonctif passé se forme avec ayez + oubliées (accord au féminin pluriel avec « les règles »)." },
+        { text: "ayez oublié", correct: true, explanation: "Le subjonctif passé se forme avec ayez + oublié. Avec l'auxiliaire avoir, le participe passé ne s'accorde pas car le COD (« les règles ») suit le verbe." },
         { text: "avez oublié", correct: false, explanation: "« avez oublié » est au passé composé indicatif, pas au subjonctif." },
-        { text: "oubliiez", correct: false, explanation: "« oubliiez » n'est pas une forme grammaticale valide." },
-        { text: "ayez oublier", correct: false, explanation: "Le participe passé est « oubliées », pas l'infinitif « oublier »." },
+        { text: "oubliiez", correct: false, explanation: "« oubliiez » est à l'imparfait de l'indicatif, pas au subjonctif passé." },
+        { text: "ayez oubliées", correct: false, explanation: "Avec l'auxiliaire avoir, le participe passé ne s'accorde pas quand le COD suit le verbe. « oublié » reste invariable." },
       ],
     },
     {
@@ -287,7 +287,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "08-01",
       generatedBy: "haiku",
-      prompt: "Quel est le subjonctif passé de « tomber » pour « je » ?",
+      prompt: "Quel est le subjonctif passé de « tomber » pour « je » au féminin ?",
       choices: [
         { text: "sois tombée", correct: true, explanation: "« Tomber » utilise l'auxiliaire être. Au subjonctif passé : sois + tombée (si le sujet est féminin)." },
         { text: "aie tombé", correct: false, explanation: "« Tomber » utilise l'auxiliaire être, pas avoir." },
@@ -303,14 +303,14 @@ const section: Section = {
       prompt: "Conjuguez le verbe au subjonctif passé",
       phrase: { before: "Je suis heureux que vous ", after: " cette lettre à temps." },
       hint: "recevoir",
-      answer: "ayez reçue",
-      explanation: "Le subjonctif passé se forme avec ayez (avoir au subjonctif) + reçue (participe passé accordé au féminin singulier avec « lettre »).",
+      answer: "ayez reçu",
+      explanation: "Le subjonctif passé se forme avec ayez (avoir au subjonctif) + reçu (participe passé). Avec avoir, le participe passé ne s'accorde pas car le COD (« cette lettre ») suit le verbe.",
       wrongAnswers: [
-        { text: "avez reçue", explanation: "« avez reçue » est au passé composé indicatif, pas au subjonctif." },
-        { text: "ayez recevoir", explanation: "On utilise le participe passé « reçue », pas l'infinitif « recevoir »." },
-        { text: "receviez", explanation: "« receviez » est à l'imparfait de l'indicatif, pas au subjonctif passé." },
-        { text: "soyez reçue", explanation: "Le verbe recevoir utilise l'auxiliaire avoir, pas être." },
-        { text: "ayez reçu", explanation: "L'accord doit se faire avec « lettre » (féminin), d'où « reçue » plutôt que « reçu »." },
+        { text: "avez reçu", explanation: "« avez reçu » est au passé composé indicatif, pas au subjonctif." },
+        { text: "ayez recevoir", explanation: "On utilise le participe passé « reçu », pas l'infinitif « recevoir »." },
+        { text: "receviez", explanation: "« receviez » est à l'imparfait de l'indicatif ou au subjonctif présent, pas au subjonctif passé." },
+        { text: "soyez reçu", explanation: "Le verbe recevoir utilise l'auxiliaire avoir, pas être." },
+        { text: "ayez reçue", explanation: "Avec l'auxiliaire avoir, le participe passé ne s'accorde pas quand le COD suit le verbe. « reçu » reste invariable." },
       ],
     },
     {
@@ -329,7 +329,7 @@ const section: Section = {
         { text: "ayons arrivés", explanation: "Le verbe arriver utilise l'auxiliaire être, pas avoir." },
         { text: "arrivions", explanation: "« arrivions » est à l'imparfait indicatif, pas au subjonctif passé." },
         { text: "soyons arrivé", explanation: "L'accord doit se faire au pluriel avec « nous », d'où « arrivés »." },
-        { text: "arrivâmes", explanation: "C'est un passé simple, pas le subjonctif passé." },
+        { text: "soyez arrivés", explanation: "« soyez arrivés » est la 2e personne du pluriel. Avec « nous », il faut « soyons »." },
       ],
     },
     {
@@ -340,15 +340,15 @@ const section: Section = {
       prompt: "Complétez avec le subjonctif passé",
       phrase: { before: "Elle doute que tu ", after: " les instructions correctement." },
       hint: "comprendre",
-      answer: "aies comprise",
-      explanation: "Le subjonctif passé se forme avec aies (avoir au subjonctif) + comprise (participe passé accordé au féminin singulier, car « tu » renvoie à une femme dans ce contexte, et s'accorde avec l'objet « les instructions »).",
+      answer: "aies compris",
+      explanation: "Le subjonctif passé se forme avec aies (avoir au subjonctif) + compris (participe passé). Avec avoir, le participe passé ne s'accorde pas car le COD (« les instructions ») suit le verbe.",
       wrongAnswers: [
-        { text: "as comprise", explanation: "« as comprise » est au passé composé indicatif, pas au subjonctif." },
-        { text: "aies comprendre", explanation: "On utilise le participe passé « comprise », pas l'infinitif « comprendre »." },
+        { text: "as compris", explanation: "« as compris » est au passé composé indicatif, pas au subjonctif." },
+        { text: "aies comprendre", explanation: "On utilise le participe passé « compris », pas l'infinitif « comprendre »." },
         { text: "comprenais", explanation: "« comprenais » est à l'imparfait indicatif, pas au subjonctif passé." },
-        { text: "sois comprise", explanation: "Le verbe comprendre utilise l'auxiliaire avoir, pas être." },
-        { text: "aies compris", explanation: "L'accord se fait avec « les instructions » (féminin pluriel), d'où « comprises » plutôt que « compris »." },
-        { text: "aies comprendu", explanation: "Le participe passé de comprendre est « compris » ou « comprise » (accordé), pas « comprendu »." },
+        { text: "sois compris", explanation: "Le verbe comprendre utilise l'auxiliaire avoir, pas être." },
+        { text: "aies comprises", explanation: "Avec l'auxiliaire avoir, le participe passé ne s'accorde pas quand le COD suit le verbe. « compris » reste invariable." },
+        { text: "aies comprendu", explanation: "Le participe passé de comprendre est « compris », pas « comprendu »." },
       ],
     },
     {
@@ -387,7 +387,7 @@ const section: Section = {
         { text: "soyez parlé", explanation: "Le verbe parler utilise l'auxiliaire avoir, pas être (sauf s'il est utilisé à la voix passive, ce qui ne s'applique pas ici)." },
         { text: "parlerez", explanation: "« parlerez » est au futur simple de l'indicatif, pas au subjonctif passé." },
         { text: "parleriez", explanation: "« parleriez » est au conditionnel présent, pas au subjonctif passé." },
-        { text: "ayez parlés", explanation: "L'accord du participe passé ne s'applique généralement pas avec avoir et un sujet indirect (vous)." },
+        { text: "ayez parlés", explanation: "Avec l'auxiliaire avoir, le participe passé ne s'accorde qu'avec le COD placé avant le verbe. Ici, il n'y a pas de COD avant le verbe, donc « parlé » reste invariable." },
       ],
     },
     {

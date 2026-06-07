@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8929a8b1775291f7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-01-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quel est le subjonctif passé de « arriver » pour « je » ?\n\nChoices:\nA. [CORRECT] sois arrivé\nB. [WRONG] aie arrivé\nC. [WRONG] sois arriver\nD. [WRONG] ayant arrivé\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780868289817-l88jm3bs"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the auxiliary \"avoir\" instead of \"être\" (arriver takes être), C uses the infinitive \"arriver\" instead of the past participle \"arrivé\", and D uses a gérondif construction with \"ayant\" (which is also the wrong auxiliary) rather than the subjonctif passé.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780868295832-ko8ejk69",
+      "timestamp": "2026-06-07T21:38:42.314Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ about the subjonctif passé of \"arriver\" for \"je\" are indeed incorrect.\n\nAnalysis completed:\n- B. \"aie arrivé\" — Incorrect because \"arriver\" takes \"être\" as its auxiliary, not \"avoir\"\n- C. \"sois arriver\" — Incorrect because it uses the infinitive \"arriver\" instead of the past participle \"arrivé\"\n- D. \"ayant arrivé\" — Incorrect because this is a gérondif/passé composé construction, not the subjonctif passé form\n\nAll wrong answers are genuinely incorrect within the grammatical constraints of the question.\n\nRemaining tasks: None — the verification is complete.\n\nRecommendation: The verdict should be TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780868495246-gsapg9y5",
+      "timestamp": "2026-06-07T21:42:07.255Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the wrong auxiliary \"aie\" instead of \"sois\", C uses the infinitive \"arriver\" instead of the past participle \"arrivé\", and D uses the gérondif form \"ayant arrivé\" which is neither the subjonctif passé nor grammatically correct (arriver takes être, not avoir).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780868692736-6denk3fw",
+      "timestamp": "2026-06-07T21:45:08.003Z"
+    }
+  ]
+}

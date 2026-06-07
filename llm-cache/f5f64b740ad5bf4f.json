@@ -1,0 +1,26 @@
+{
+  "cacheKey": "f5f64b740ad5bf4f",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "08-01-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Formation du subjonctif passé : auxiliaire au subjonctif présent + participe passé\nPROMPT: Remplissez avec le subjonctif passé\nPHRASE: Bien que nous ___ tard, nous avons pu finir le projet.\nCORRECT ANSWER: soyons arrivés\n\nWRONG ANSWERS to evaluate:\n1. sommes arrivés\n2. soyons arriver\n3. ayons arrivés\n4. arrivions\n5. soyons arrivé\n6. arrivâmes\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780868289819-rx6ugbob"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was evaluating whether the wrong answers provided for a French subjonctif passé question are plausible learner mistakes.\n\n## Analysis Completed\nI reviewed all 6 wrong answers:\n1. **sommes arrivés** - PLAUSIBLE (indicative vs subjunctive confusion)\n2. **soyons arriver** - PLAUSIBLE (infinitive vs past participle confusion)\n3. **ayons arrivés** - PLAUSIBLE (wrong auxiliary: avoir instead of être)\n4. **arrivions** - PLAUSIBLE (imparfait confusion)\n5. **soyons arrivé** - PLAUSIBLE (missing plural agreement)\n6. **arrivâmes** - IMPLAUSIBLE (passé simple form - too distinct from subjonctif passé structure, unlikely error for this specific grammar point)\n\n## Remaining Tasks\n- Provide the final verdict in the requested format\n\n## Recommendation\nThe final verdict should be IMPLAUSIBLE because \"arrivâmes\" (passé simple) is not a plausible mistake for a learner studying subjonctif passé. The passé simple is a completely different tense formation that a learner at this level would recognize as distinct. A better replacement would be something like \"soyons arrivées\" (wrong gender agreement) or \"serions arrivés\" (conditionnel confusion).\n\nVERDICT: IMPLAUSIBLE\nREASON: \"arrivâmes\" is a passé simple form that is too structurally and functionally distinct from the subjonctif passé for a learner to produce as a natural mistake when studying this specific grammar point.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780868964953-ep32ab4z",
+      "timestamp": "2026-06-07T21:50:02.282Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"arrivâmes\" is the passé simple form, which is a literary tense almost never confused with subjonctif passé by learners — it reads more like padding than a plausible error.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780869179603-tiuo08w2",
+      "timestamp": "2026-06-07T21:53:21.991Z"
+    }
+  ]
+}

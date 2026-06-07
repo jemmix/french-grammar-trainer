@@ -417,6 +417,7 @@ export const answerHints: Record<string, string> = {
   "ayez pu": "pouvoir",
   "ayez refusée": "refuser",
   "ayez reçue": "recevoir",
+  "ayez reçu": "recevoir",
   "ayez terminés": "terminer",
   "ayez trouvé": "trouver",
   "ayons compris": "comprendre",
