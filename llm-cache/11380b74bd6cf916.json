@@ -1,0 +1,33 @@
+{
+  "cacheKey": "11380b74bd6cf916",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-17-022",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\nPROMPT: Infinitif ou « que + subjonctif » ? Complétez la phrase (un ou plusieurs mots).\nPHRASE: Tes enfants sont paresseux. Tu veux ___ leurs devoirs.\nCORRECT ANSWER: qu'ils fassent\n\nWRONG ANSWERS to evaluate:\n1. faire\n2. qu'ils font\n3. qu'ils feront\n4. qu'elles fassent\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780852935231-pptf2wmn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"faire\" incorrectly applies the same-subject infinitif rule to a different-subject context, \"qu'ils font\" uses indicative instead of subjunctive (the most frequent mistake), \"qu'ils feront\" confuses future with subjunctive, and \"qu'elles fassent\" shows agreement confusion with the masculine default \"enfants.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780853047953-awftayvf",
+      "timestamp": "2026-06-07T17:24:21.394Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\n- I was asked to evaluate whether 4 wrong answers for a French grammar input question are plausible learner mistakes.\n- The question tests the rule: same subject → infinitif, different subjects → que + subjonctif.\n- The correct answer is \"qu'ils fassent\" (different subjects: tu veux que ils fassent).\n\nThe evaluation of the wrong answers:\n\n1. \"faire\" - PLAUSIBLE: Learner might incorrectly apply the \"same subject = infinitif\" rule or forget \"que\" entirely\n2. \"qu'ils font\" - PLAUSIBLE: Using indicative présent instead of subjonctif is one of the most common French learner errors\n3. \"qu'ils feront\" - PLAUSIBLE: Learner might use future tense thinking of the action happening later\n4. \"qu'elles fassent\" - PLAUSIBLE: Learner might mistakenly use feminine plural \"elles\" instead of masculine \"ils\" for \"enfants\"\n\nVERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors—using infinitif instead of subjonctif, using indicative instead of subjonctif, using future tense, and wrong gender agreement.\n\nRemaining tasks: None—this evaluation is complete.\n\nRecommendations: No further action needed on this question; the wrong answers are well-crafted.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780853085630-lp9wzh0e",
+      "timestamp": "2026-06-07T17:25:05.122Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: using infinitive instead of subjonctif with different subjects (faire), confusing indicative with subjunctive (qu'ils font), using future tense instead of subjunctive (qu'ils feront), and gender agreement error with \"enfants\" (qu'elles fassent).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780853114347-0vwqlqjq",
+      "timestamp": "2026-06-07T17:25:29.574Z"
+    }
+  ]
+}

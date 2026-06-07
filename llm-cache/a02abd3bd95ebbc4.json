@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a02abd3bd95ebbc4",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-17-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Infinitif ou « que + subjonctif » ? Complétez : « Nous espérons ___ ce projet bientôt. »\n\nChoices:\nA. [CORRECT] terminer\nB. [WRONG] que nous terminions\nC. [WRONG] que vous terminiez\nD. [WRONG] que nous terminons\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780847349020-xv9c8uuu"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"espérer\" takes the infinitive, not \"que + subjonctif,\" B and C use the wrong construction, and D additionally uses indicative instead of subjunctive mood.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847358033-po98rvaz",
+      "timestamp": "2026-06-07T15:49:39.143Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect because \"espérer\" takes the infinitive directly, never \"que + subjonctif\", and option D additionally uses the indicative instead of the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847612585-0pcibtec",
+      "timestamp": "2026-06-07T15:54:20.034Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nNo work was accomplished on this task as this is the first step.\n\nThe task was to verify wrong answers in a French grammar MCQ about \"espérer\" (whether it takes infinitive or \"que + subjonctif\").\n\nRecommendation: The answer should be TRUE||All wrong answers are incorrect because \"espérer\" takes an infinitive complement, not a subordinate clause with any mood; B and C incorrectly use subjunctive, and D incorrectly uses indicative, all of which are ungrammatical after \"espérer.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847892562-3s7rxijt",
+      "timestamp": "2026-06-07T15:58:39.629Z"
+    }
+  ]
+}

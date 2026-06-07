@@ -1,0 +1,33 @@
+{
+  "cacheKey": "98512e8fe71e3e9c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-17-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase est correcte ?\n\nChoices:\nA. [CORRECT] Je veux partir seul.\nB. [WRONG] Je veux que je parte seul.\nC. [WRONG] Je veux de partir seul.\nD. [WRONG] Je veux à partir seul.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780847349021-hijhnygt"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses \"que je\" with same-subject vouloir (should be infinitive), C incorrectly adds \"de\" before the infinitive, and D incorrectly adds \"à\" before the infinitive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847515578-7912pcmg",
+      "timestamp": "2026-06-07T15:52:17.440Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses \"que je\" with the same subject as the main clause (redundant and non-standard), C incorrectly adds \"de\" before the infinitive (vouloir takes bare infinitive), and D incorrectly adds \"à\" before the infinitive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847803859-d2z1zyxk",
+      "timestamp": "2026-06-07T15:57:03.537Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses \"que je parte\" instead of the infinitive for same-subject construction, C incorrectly inserts \"de\" before the infinitive, and D incorrectly inserts \"à\" before the infinitive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780848047245-usua37gg",
+      "timestamp": "2026-06-07T16:01:06.399Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "efc560dbdeb14cf0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-17-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Infinitif ou « que + subjonctif » ? Complétez : « Je veux ___ avec mes amis ce weekend. »\n\nChoices:\nA. [CORRECT] partir\nB. [WRONG] que je parte\nC. [WRONG] que nous partions\nD. [WRONG] que je pars\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780847349019-vsrtlz3d"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of what was accomplished:**\nI was in the process of verifying a French grammar multiple choice question about the correct use of infinitive vs. \"que + subjonctif\" after the verb \"vouloir.\" The question asks to complete \"Je veux ___ avec mes amis ce weekend\" with the correct answer being \"partir\" (infinitive).\n\n**Analysis completed:**\n- B (\"que je parte\") is incorrect because \"vouloir\" with the same subject requires an infinitive, not \"que + subjonctif\"\n- C (\"que nous partions\") is incorrect because it changes the subject and the sentence structure doesn't accommodate this\n- D (\"que je pars\") is incorrect because it uses indicatif présent instead of subjonctif after \"que\"\n\n**Remaining tasks:**\n- Provide the final verdict in the exact required format\n\n**Recommendation for next step:**\nThe verdict should be: TRUE||All wrong answers are grammatically incorrect in this context — B and C use the wrong construction for same-subject \"vouloir\" (which requires infinitive), and D incorrectly uses indicatif instead of subjonctif after \"que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847349024-d6sq3ulf",
+      "timestamp": "2026-06-07T15:49:39.175Z"
+    },
+    {
+      "raw": "TRUE||B violates the same-subject rule requiring infinitive after vouloir; C creates a subject mismatch (\"nous\" with \"mes amis\"); D incorrectly uses indicative \"pars\" instead of subjunctive after \"que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847637923-grfcn65u",
+      "timestamp": "2026-06-07T15:54:56.118Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B and C incorrectly use \"que + subjonctif\" after \"vouloir\" when the subject of both clauses is the same (je = nous in context), and D incorrectly uses the indicative \"pars\" instead of the subjunctive \"parte\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847941037-673yfv0e",
+      "timestamp": "2026-06-07T16:00:21.187Z"
+    }
+  ]
+}

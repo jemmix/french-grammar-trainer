@@ -1,0 +1,26 @@
+{
+  "cacheKey": "d74ffee22a67b440",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase est correcte ?\nChoices:\nA. [CORRECT] Elle exige que je sois à l'heure.\nB. Elle exige que je être à l'heure.\nC. Elle exige que je suis à l'heure.\nD. Elle exige que je serai à l'heure.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780849067010-dhs1k749"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: This question tests the subjunctive mood after \"exiger que\" (choosing \"sois\" over indicative or infinitive forms), but does not test the specific rule about same subject → infinitif vs different subjects → subjonctif, which would require contrasting sentences like \"Elle exige d'être à l'heure\" with \"Elle exige que je sois à l'heure.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849081678-86hs1ujp",
+      "timestamp": "2026-06-07T16:18:19.698Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests general subjunctive usage after \"que\" with different subjects, but the stated rule specifically contrasts same-subject (infinitive) vs different-subject (subjunctive) constructions, which this question does not address.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849212353-pumvjryd",
+      "timestamp": "2026-06-07T16:21:11.222Z"
+    }
+  ]
+}

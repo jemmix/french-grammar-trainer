@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f5225c14ee9debda",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Infinitif ou « que + subjonctif » ? Complétez : « Marc souhaite ___ la cuisine italienne. »\nChoices:\nA. [CORRECT] apprendre\nB. qu'il apprenne\nC. qu'ils apprennent\nD. qu'il apprend\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780849819685-bmuxxc14"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"Marc\" is the implicit subject of both \"souhaite\" and the action of learning, making the infinitive correct per the same-subject rule, while the distractors specifically test the incorrect \"que + subjonctif\" construction used for different subjects.\n\nMaximum steps for this agent have been reached. The validation task has been completed - I provided the alignment verdict and reasoning for the French grammar question about subjonctif vs infinitif with same subject. No remaining tasks or recommendations needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849820704-nme90a1u",
+      "timestamp": "2026-06-07T16:30:41.218Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying that \"Marc\" is the implicit subject of both verbs (souhaite and apprendre), and applying the rule that same subject requires the infinitive rather than \"que + subjonctif.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849932245-tn8cdbjo",
+      "timestamp": "2026-06-07T16:32:34.115Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying the rule that when the same subject performs both verbs (Marc souhaite + Marc apprend), the infinitive must be used rather than \"que + subjonctif.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780850075261-dkya66ql",
+      "timestamp": "2026-06-07T16:35:02.388Z"
+    }
+  ]
+}

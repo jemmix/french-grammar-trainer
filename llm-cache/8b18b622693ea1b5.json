@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8b18b622693ea1b5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-17-005",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Infinitif ou « que + subjonctif » ? Complétez : « Sophie aime ___ du piano. »\n\nChoices:\nA. [CORRECT] jouer\nB. [WRONG] qu'elle joue\nC. [WRONG] qu'elles jouent\nD. [WRONG] qu'elle jouait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780849067003-7fcjqzp0"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers contain clear grammar errors: B and C create nonsensical redundant constructions with \"Sophie\" as subject, and D incorrectly uses imparfait instead of subjonctif after \"que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849070017-de6gdk96",
+      "timestamp": "2026-06-07T16:18:05.418Z"
+    },
+    {
+      "raw": "TRUE||B and C introduce unreferenced pronouns (\"elle\"/\"elles\") with no antecedent in the sentence, and D uses imparfait (\"jouait\") instead of the required subjonctif (\"joue\") after \"que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849188314-7owvoro6",
+      "timestamp": "2026-06-07T16:20:51.784Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses que+subjonctif which requires a different subject than the main clause (here Sophie is the only subject), C has wrong subject agreement (elles instead of elle), and D uses imparfait instead of subjonctif.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849346773-2mt29pf7",
+      "timestamp": "2026-06-07T16:23:08.917Z"
+    }
+  ]
+}

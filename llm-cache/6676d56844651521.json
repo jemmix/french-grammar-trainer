@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6676d56844651521",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase signifie que ELLE doit venir avec nous ?\nChoices:\nA. [CORRECT] Je veux qu'elle vienne avec nous.\nB. Je veux venir avec vous.\nC. Je veux qu'elle venir avec nous.\nD. Je veux qu'elle vient avec nous.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780850889649-28nfdm02"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests recognition of correct subjunctive conjugation (vienne vs vient) and grammatical correctness (qu'elle venir is invalid), not the rule about same subject → infinitif vs different subjects → subjonctif; choice B is eliminated by meaning rather than by violating the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780850893668-j547hg7s",
+      "timestamp": "2026-06-07T16:48:39.762Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether students know that \"vouloir que\" with a different subject requires the subjunctive \"vienne\" rather than the infinitive \"venir\" (option C) or indicative \"vient\" (option D), which is the core of the stated rule about same vs. different subjects determining infinitive vs. subjunctive usage.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780850937142-6049lo4f",
+      "timestamp": "2026-06-07T16:49:29.217Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question primarily tests the subjunctive conjugation of \"venir\" (vienne vs vient) and the general rule that \"vouloir que\" triggers subjunctive, but does not test the specific \"même sujet → infinitif\" distinction that is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780850984427-z0jfq746",
+      "timestamp": "2026-06-07T16:50:06.154Z"
+    }
+  ]
+}

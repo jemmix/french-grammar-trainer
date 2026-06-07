@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3a749006cd56dbe8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase est correcte ?\nChoices:\nA. [CORRECT] Ils veulent que nous les aidions.\nB. Ils veulent que nous les aider.\nC. Ils veulent que nous les aidons.\nD. Ils veulent que nous les aiderons.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780849067010-4wizet2p"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that after \"vouloir que\" with different subjects (\"ils\" vs \"nous\"), the subjonctif (aidions) is required rather than the infinitif (aider), which is the core distinction taught by this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849126278-g10vlmaq",
+      "timestamp": "2026-06-07T16:19:10.548Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether students know that when subjects differ (\"ils veulent\" vs \"nous\"), the subjonctif must be used after \"que\" rather than the infinitive or indicative forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849274702-9sfimmgt",
+      "timestamp": "2026-06-07T16:21:36.740Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was analyzing a French grammar validation question to determine if it properly tests the stated rule about \"Le subjonctif vs l'infinitif : même sujet → infinitif.\"\n\n**Analysis completed:**\nThe question \"Ils veulent que nous les aidions\" with four choices tests whether the learner knows that different subjects (ils/nous) require the subjonctif rather than infinitif or indicatif. The correct answer uses subjonctif \"aidions,\" while distractors include infinitif (B), présent indicatif (C), and futur (D).\n\n**My verdict:**\nVERDICT: ALIGNED\nREASON: The question requires knowing that with different subjects in a \"vouloir que\" construction, the subjonctif must be used rather than the infinitif, which is exactly what this rule teaches.\n\n**Remaining tasks:** None - the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849384022-mp8z6wji",
+      "timestamp": "2026-06-07T16:23:33.837Z"
+    }
+  ]
+}

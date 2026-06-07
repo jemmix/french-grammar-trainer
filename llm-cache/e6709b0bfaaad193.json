@@ -1,0 +1,40 @@
+{
+  "cacheKey": "e6709b0bfaaad193",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase est correcte ?\nChoices:\nA. [CORRECT] Elle veut que je vienne.\nB. Elle veut que je venir.\nC. Elle veut que je viens.\nD. Elle veut que je viendrai.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780847349021-jyvlr1ge"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished: I was asked to validate whether a French grammar question properly tests the stated rule about \"Le subjonctif vs l'infinitif : même sujet → infinitif.\" I analyzed the question and determined it is ALIGNED because the correct answer requires knowing that \"vouloir que\" with a different subject requires the subjunctive, and the wrong answer B (infinitive) directly tests the \"same subject → infinitive\" confusion that is the core of this rule.\n\nMy verdict:\n\nVERDICT: ALIGNED\nREASON: The question directly tests the core distinction of the rule—knowing that after \"vouloir que\" with a different subject (\"elle\" and \"je\") you must use the subjunctive (\"vienne\") rather than the infinitive (\"venir\"), which would be used only with the same subject (\"elle veut venir\").\n\nNo remaining tasks — the validation was completed before the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847532776-9les4j4y",
+      "timestamp": "2026-06-07T15:52:43.177Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests recognizing the correct subjunctive form of \"venir\" after \"veut que,\" but does not include a same-subject option (e.g., \"Elle veut venir\") as a distractor, so it fails to test the core rule distinction between infinitif (same subject) and subjonctif (different subjects).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847826304-atj9tkld",
+      "timestamp": "2026-06-07T15:57:41.502Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was analyzing a French grammar validation question to determine if it properly tests the stated rule about subjonctif vs infinitif with same/different subjects.\n\n**Verdict I would have provided:**\nVERDICT: ALIGNED\nREASON: The question tests whether the student knows to use the subjunctive (not infinitive) after \"vouloir que\" when subjects differ, which is the core distinction of this rule—the presence of the infinitive distractor \"venir\" directly tests this contrast.\n\n**Remaining tasks:**\nNone—this was a single-question validation task that was nearly complete.\n\n**Recommendations:**\nThe question is properly aligned with the rule and can be approved.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780848080792-wsnt7bef",
+      "timestamp": "2026-06-07T16:02:27.629Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was analyzing a validation task for a French grammar question.\n\nVERDICT: MISALIGNED\nREASON: The question only tests subjunctive conjugation of \"venir\" after \"vouloir que\" with different subjects, but never presents a same-subject option (like \"Elle veut venir\") to test the core rule distinction between infinitif and subjonctif based on subject sameness.\n\nThe question is not misaligned because it's wrong—it's misaligned because it doesn't actually test the specific rule it claims to test. All four options have two different subjects (\"elle\" and \"je\"), so the key teaching point of the rule (same subject → infinitif) is never probed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780848244938-agf1pbje",
+      "timestamp": "2026-06-07T16:04:38.055Z"
+    }
+  ]
+}

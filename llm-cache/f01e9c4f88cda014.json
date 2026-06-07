@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f01e9c4f88cda014",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-17-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Infinitif ou « que + subjonctif » ? Complétez : « Nous préférons ___ à la maison. »\n\nChoices:\nA. [CORRECT] rester\nB. [WRONG] que nous restions\nC. [WRONG] que nous restons\nD. [WRONG] que nous rester\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780852269379-l0kubbhh"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780852272392-l9oihed8",
+      "timestamp": "2026-06-07T17:11:33.489Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses \"que + subjonctif\" which is wrong when subjects are identical (requires infinitive), C uses indicatif instead of subjonctif, and D is grammatically incoherent (infinitive cannot follow \"que\" with a subject).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780852312900-6lwock66",
+      "timestamp": "2026-06-07T17:12:13.499Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers contain clear grammar errors: B uses \"que + subjonctif\" which requires a different meaning (preferring that someone else do something), C incorrectly uses indicative after \"que\" with préférer, and D has an unconjugated infinitive after \"que + subject\" which is structurally invalid.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780852350259-8x0bebou",
+      "timestamp": "2026-06-07T17:12:46.620Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d653ce6573ae83ee",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-17-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Infinitif ou « que + subjonctif » ? Complétez : « Elles souhaitent ___ un long voyage cet été. »\n\nChoices:\nA. [CORRECT] faire\nB. [WRONG] qu'elles fassent\nC. [WRONG] que nous fassions\nD. [WRONG] qu'elles font\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780847349020-0lgiqqft"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a French grammar verification task. The task was to verify that wrong answers B, C, and D in a multiple choice question about \"Infinitif ou que + subjonctif\" are indeed incorrect.\n\nSummary of analysis completed:\n- Question: \"Elles souhaitent ___ un long voyage cet été.\" (Infinitif ou « que + subjonctif »?)\n- B: \"qu'elles fassent\" - Would create \"Elles souhaitent qu'elles fassent...\" which is incorrect because when the subject of \"souhaiter\" and the subordinate clause are the same (\"elles\"), French requires the infinitive construction, not \"que + subjonctif\"\n- C: \"que nous fassions\" - Changes the subject from \"elles\" to \"nous\", completely altering the meaning\n- D: \"qu'elles font\" - Uses indicative \"font\" instead of required subjunctive after \"que\"\n\nThe expected verdict would be: TRUE||All wrong answers are incorrect—B repeats the same subject (requiring infinitive instead), C changes the subject entirely, and D uses indicative instead of subjunctive.\n\nNo remaining tasks - the analysis was complete but the response could not be formatted due to step limits.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847405490-1rqnelwk",
+      "timestamp": "2026-06-07T15:51:25.621Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B violates the rule that same-subject constructions require the infinitive (not que+subjonctif), C inappropriately changes the subject from \"elles\" to \"nous\" which doesn't fit the sentence context, and D uses the indicative \"font\" instead of the required subjunctive after \"que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847746532-mb9ypymk",
+      "timestamp": "2026-06-07T15:56:43.857Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ are indeed incorrect. The question asks whether to use infinitive or \"que + subjonctif\" after \"Elles souhaitent\" (they wish).\n\nAnalysis completed:\n- B (\"qu'elles fassent\"): Incorrect because \"souhaiter\" takes an infinitive when the subject of the main clause and the action are the same. Using \"qu'elles fassent\" with the same subject \"elles\" is redundant and structurally wrong.\n- C (\"que nous fassions\"): Incorrect because it changes the meaning entirely—introducing \"nous\" as the subject of the trip instead of \"elles.\"\n- D (\"qu'elles font\"): Incorrect because after \"souhaiter que,\" the subjunctive mood is required, but \"font\" is present indicative.\n\nVERDICT: TRUE||All wrong answers are grammatically incorrect: B uses redundant same-subject structure, C changes meaning by introducing a different subject, and D incorrectly uses indicative instead of subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780848026678-yrhoqt6k",
+      "timestamp": "2026-06-07T16:01:20.791Z"
+    }
+  ]
+}

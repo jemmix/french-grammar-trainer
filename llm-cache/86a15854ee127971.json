@@ -1,0 +1,40 @@
+{
+  "cacheKey": "86a15854ee127971",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "07-17-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Infinitif ou « que + subjonctif » ? D'après le contexte, complétez la phrase (un ou plusieurs mots).\nPhrase: Elle est souvent fatiguée. Le médecin veut ___ en forme.\nHint: être\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780853681485-h5vnzw9w"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly states the two grammatical options being tested, provides sufficient context (\"Le médecin veut\") to determine that \"que + subjonctif\" is required, and \"un ou plusieurs mots\" appropriately signals that the answer includes the conjunction and subject (\"qu'elle soit\"), not just the verb form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780853682499-7p89zxzc",
+      "timestamp": "2026-06-07T17:35:00.610Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly presents the two grammatical options to choose between (infinitif vs que+subjonctif), instructs the learner to use context to decide, and notes that the answer may be one or more words, which covers both possible answer formats (\"être\" or \"qu'elle soit\").\n\nMaximum steps for this agent have been reached. The validation task has been completed - I provided a verdict and reasoning for the single question prompt that was submitted for review. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780853700611-i4c2g1lp",
+      "timestamp": "2026-06-07T17:35:17.763Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was evaluating a single French grammar question for prompt clarity as part of a validation task.\n\nVerdict on the question:\nVERDICT: AMBIGUOUS\nREASON: The prompt offers \"infinitif ou que + subjonctif\" as options but doesn't clarify whether \"que\" should be typed in the blank when using subjonctif, leaving it unclear if the expected answer is \"être\", \"soit\", or \"qu'elle soit\".\n\nRemaining tasks: None specified beyond this single question evaluation.\n\nRecommendations: When writing input questions that contrast infinitive vs. \"que + subjonctif\", either (a) make the blank position unambiguous about whether \"que\" is included, or (b) use separate questions for each construction rather than mixing them in one prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780853717764-b1cv2sp8",
+      "timestamp": "2026-06-07T17:35:29.470Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The blank is positioned directly after \"veut\" rather than \"veut que,\" making the \"que + subjonctif\" option grammatically impossible to insert, which creates confusion about whether the learner should write \"qu'elle soit\" or somehow force a subjonctif into a slot that doesn't accommodate it.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780853729471-tc2pdr0c",
+      "timestamp": "2026-06-07T17:35:42.263Z"
+    }
+  ]
+}

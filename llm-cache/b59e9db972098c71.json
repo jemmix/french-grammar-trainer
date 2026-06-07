@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b59e9db972098c71",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase signifie que IL doit savoir la vérité ?\nChoices:\nA. [CORRECT] Nous préférons qu'il sache la vérité.\nB. Nous préférons savoir la vérité.\nC. Nous préférons qu'il savoir la vérité.\nD. Nous préférons qu'il sait la vérité.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780849819695-6fygifil"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of work done\n\nI was in the process of validating whether a French grammar question about \"Le subjonctif vs l'infinitif : même sujet → infinitif\" properly tests that rule.\n\n## Analysis completed\n\nThe question asks which sentence means \"IL doit savoir la vérité\" with choices testing:\n- A: \"qu'il sache\" (correct subjunctive, different subjects)\n- B: \"savoir\" (infinitive, would mean same subject \"nous\" wants to know)\n- C & D: Grammatically incorrect forms\n\n**VERDICT: ALIGNED**\n**REASON: The question requires understanding that different subjects (\"nous\" and \"il\") require the subjunctive construction \"qu'il sache\" rather than the infinitive \"savoir\" which would imply the same subject.**\n\n## Remaining tasks\n\nNone — the validation verdict was ready to be delivered.\n\n## Recommendations\n\nNo further action needed on this specific validation task.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849852528-toblknul",
+      "timestamp": "2026-06-07T16:31:26.773Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing between infinitive (same subject: \"nous préférons savoir\" = we want to know) and subjunctive (different subject: \"qu'il sache\" = that he know), which is precisely the stated rule about subject identity determining the choice between infinitive and subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849985702-en5x3o67",
+      "timestamp": "2026-06-07T16:33:37.663Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To correctly identify that option A (different subjects → subjunctive) means \"he must know\" while option B (same subject → infinitive) means \"we prefer to know,\" the student must understand the core distinction this rule teaches.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780850138841-fsw0xu8d",
+      "timestamp": "2026-06-07T16:36:07.801Z"
+    }
+  ]
+}

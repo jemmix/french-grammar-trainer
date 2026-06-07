@@ -1,0 +1,26 @@
+{
+  "cacheKey": "07b54726e1d7ece0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-17-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase signifie que ILS doivent nous aider ?\n\nChoices:\nA. [CORRECT] Ils veulent que nous les aidions.\nB. [WRONG] Ils veulent les aider.\nC. [WRONG] Ils veulent que nous les aider.\nD. [WRONG] Ils veulent que nous les aidons.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780849819700-6jh50j4y"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to verify that wrong answers B, C, and D in a French grammar multiple choice question are indeed incorrect. The question asks which phrase means \"Ils doivent nous aider\" (They must help us).\n\n**Analysis of the question:**\n- A (marked correct): \"Ils veulent que nous les aidions\" — Uses subjunctive correctly but contains \"les\" (them) instead of \"nous\" (us), so it actually means \"They want us to help them,\" not \"They must help us\"\n- B (wrong): \"Ils veulent les aider\" — Means \"They want to help them\" — incorrect meaning\n- C (wrong): \"Ils veulent que nous les aider\" — Grammatically incorrect (infinitive after \"que nous\")\n- D (wrong): \"Ils veulent que nous les aidons\" — Grammatically incorrect (indicative \"aidons\" instead of subjunctive \"aidions\")\n\n**Remaining tasks:**\n- The verification was not completed with a formal verdict\n\n**Recommendations:**\nThe question itself appears to have a flaw — the \"correct\" answer A doesn't actually match the stated meaning \"Ils doivent nous aider\" because it uses \"les\" (them) instead of referring to \"nous\" (us) as the object. This question should be reviewed and possibly regenerated. If I were to provide a verdict on just the wrong answers: TRUE||All wrong answers are incorrect (B has wrong meaning, C and D have grammar errors), but the correct answer is also problematic.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849869063-i33eafn1",
+      "timestamp": "2026-06-07T16:31:31.363Z"
+    },
+    {
+      "raw": "TRUE||B is grammatically correct but means \"they want to help them\" not \"they must help us\"; C is ungrammatical (infinitive after \"que\" with subject change requires subjunctive); D is ungrammatical (indicative \"aidons\" used instead of subjunctive \"aidions\" after \"que\" with subject change).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849988922-04l3ol1m",
+      "timestamp": "2026-06-07T16:34:10.448Z"
+    }
+  ]
+}

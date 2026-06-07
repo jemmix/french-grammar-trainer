@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ed1dee0e84211a59",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Input\nPrompt: Infinitif ou « que + subjonctif » ? Complétez la phrase (un ou plusieurs mots).\nPhrase: Tu es toujours fatigué. Le médecin veut ___ en forme.\nCorrect Answer: que tu sois\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780853377840-aktnmnb2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying that the subjects differ (\"le médecin\" wants, but \"tu\" must be in shape), which is the core condition for using \"que + subjonctif\" instead of the infinitif as specified by the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780853377855-rps1t5ru",
+      "timestamp": "2026-06-07T17:29:47.223Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying that \"le médecin\" and \"tu\" are different subjects, which is the core concept of the rule — same subject uses infinitif, different subjects use \"que + subjonctif.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780853387225-61n9lw7c",
+      "timestamp": "2026-06-07T17:29:57.701Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that the subjects differ (le médecin vs. tu) and applying the rule that different subjects require \"que + subjonctif\" rather than infinitive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780853397701-54o4oi4y",
+      "timestamp": "2026-06-07T17:30:08.200Z"
+    }
+  ]
+}

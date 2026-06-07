@@ -1,0 +1,33 @@
+{
+  "cacheKey": "287309749fcc6f1b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Quelle phrase est correcte ?\nChoices:\nA. [CORRECT] Je veux partir seul.\nB. Je veux que je parte seul.\nC. Je veux de partir seul.\nD. Je veux à partir seul.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780849067010-8532xc31"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core distinction of the rule by contrasting the correct infinitive construction with same subject (A: \"Je veux partir\") against the incorrect subjunctive construction with same subject (B: \"Je veux que je parte\"), requiring knowledge that \"même sujet → infinitif\" to answer correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849108304-na7a9wyk",
+      "timestamp": "2026-06-07T16:18:48.829Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that when the subject is the same (je veux... je parte), the infinitive must be used instead of the subjunctive construction with \"que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849251786-ckeqfcp2",
+      "timestamp": "2026-06-07T16:21:14.702Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule by contrasting the correct infinitive construction \"je veux partir\" (same subject → infinitif) with the incorrect subjunctive construction \"je veux que je parte\" (same subject but incorrectly uses subjonctif).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849353902-jnymp7hu",
+      "timestamp": "2026-06-07T16:23:04.022Z"
+    }
+  ]
+}

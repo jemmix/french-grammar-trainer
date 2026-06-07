@@ -1,0 +1,33 @@
+{
+  "cacheKey": "17bc52680093b973",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Infinitif ou « que + subjonctif » ? Complétez : « Nous préférons ___ à la maison. »\nChoices:\nA. [CORRECT] rester\nB. que nous restions\nC. que nous restons\nD. que nous rester\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780852269379-egpskuxl"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"nous\" is the subject of both \"préférons\" and the missing verb, then applying the rule that same subject requires the infinitive rather than \"que + subjonctif.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780852273393-x8r23085",
+      "timestamp": "2026-06-07T17:15:00.919Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that when the subject is the same for both verbs (\"nous préférons\" and \"rester\"), the infinitive must be used rather than \"que + subjonctif\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780852500919-1kidbzjp",
+      "timestamp": "2026-06-07T17:15:11.532Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that when the subject is the same (\"nous préférons\" and implied \"nous\" for the second verb), the infinitive must be used instead of \"que + subjonctif\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780852511532-vlu5ae1w",
+      "timestamp": "2026-06-07T17:15:22.257Z"
+    }
+  ]
+}

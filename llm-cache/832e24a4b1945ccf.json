@@ -1,0 +1,33 @@
+{
+  "cacheKey": "832e24a4b1945ccf",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-17-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase signifie que VOUS devez faire ce travail ?\n\nChoices:\nA. [CORRECT] Ils demandent que vous fassiez ce travail.\nB. [WRONG] Ils demandent à faire ce travail.\nC. [WRONG] Ils demandent que vous faire ce travail.\nD. [WRONG] Ils demandent que vous faites ce travail.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780849819695-c14dpzvp"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B changes the meaning (they ask to do it themselves, not that you must), C uses an infinitive after \"que vous\" which is grammatically impossible, and D uses indicative \"faites\" instead of the required subjunctive \"fassiez\" after \"que\" with a different subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849841335-8sry75l2",
+      "timestamp": "2026-06-07T16:31:01.457Z"
+    },
+    {
+      "raw": "TRUE||B changes the meaning (they want to do it themselves, not you); C is ungrammatical (infinitive \"faire\" cannot follow \"que vous\"); D is ungrammatical (indicative \"faites\" should be subjunctive \"fassiez\" after a demand verb).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849962193-sh1a1ees",
+      "timestamp": "2026-06-07T16:33:19.184Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B changes meaning to \"they ask to do the work\" (not you), C is ungrammatical with infinitive after \"que vous\", and D incorrectly uses indicative \"faites\" instead of required subjunctive \"fassiez\" after \"demander que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780850126517-w6jdtrd2",
+      "timestamp": "2026-06-07T16:35:43.060Z"
+    }
+  ]
+}

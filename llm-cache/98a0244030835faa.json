@@ -1,0 +1,33 @@
+{
+  "cacheKey": "98a0244030835faa",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-17-021",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\nPROMPT: Infinitif ou « que + subjonctif » ? Complétez la phrase (un ou plusieurs mots).\nPHRASE: Elle est toujours en retard. Son patron exige ___ à l'heure.\nCORRECT ANSWER: qu'elle soit\n\nWRONG ANSWERS to evaluate:\n1. être\n2. qu'elle est\n3. qu'elle sera\n4. qu'il soit\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780853880769-oydo0s58"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: using infinitif instead of \"que + subjonctif\" with different subjects (être), using indicatif instead of subjonctif (qu'elle est, qu'elle sera), and confusing pronoun gender (qu'il soit).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780853915007-0hcyrqnt",
+      "timestamp": "2026-06-07T17:38:49.273Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"être\" shows confusion about when to use infinitif vs que + subjonctif; \"qu'elle est\" and \"qu'elle sera\" are classic mistakes of using indicatif (présent or futur) instead of subjonctif after \"exiger que\"; and \"qu'il soit\" reflects pronoun confusion between the employee (elle) and possibly the patron (il).\n\nMaximum steps for this agent have been reached. The evaluation task has been completed - I analyzed the four wrong answers for the French grammar question about subjunctive vs infinitive and determined they are all plausible learner mistakes. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780853929274-asambl8o",
+      "timestamp": "2026-06-07T17:39:08.901Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: using the infinitive directly without \"que\" (être), using indicative instead of subjunctive (qu'elle est), confusing tense (qu'elle sera with future), and gender agreement error with the wrong subject pronoun (qu'il soit).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780853949328-95uy7yfz",
+      "timestamp": "2026-06-07T17:39:29.432Z"
+    }
+  ]
+}

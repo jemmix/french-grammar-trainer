@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8b39a14a4ad61e48",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Input\nPrompt: Sujets différents. Conjuguez le verbe au subjonctif présent.\nPhrase: Je veux que tu ___ honnête avec moi.\nCorrect Answer: sois\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780849067011-uug7a79n"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of evaluating a French grammar validation question about whether a question testing \"Le subjonctif vs l'infinitif : même sujet → infinitif\" is properly aligned with its stated rule.\n\nAnalysis completed: The question asks students to conjugate \"être\" in the subjunctive present (\"Je veux que tu ___ honnête avec moi\" → \"sois\"), but the prompt explicitly states \"Sujets différents\" and instructs to use the subjunctive. This means the student doesn't need to apply the rule about choosing between subjunctive and infinitive based on subject identity—the decision is already made for them.\n\nVERDICT: MISALIGNED\nREASON: The question explicitly tells the student to use the subjunctive and that subjects are different, so it tests conjugation of \"être\" in the subjunctive rather than the decision-making process of choosing between subjunctive and infinitive based on whether subjects are the same or different.\n\nRecommendations: To properly test this rule, questions should require students to choose between subjunctive and infinitive forms without being told which to use—for example, by presenting sentences where they must identify whether subjects are the same and select the appropriate mood accordingly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849149662-2ygr14x7",
+      "timestamp": "2026-06-07T16:19:50.259Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly tells the student \"Sujets différents\" and to conjugate in the subjunctive, so it only tests the conjugation of \"être\" in the subjunctive present, not the rule about when to choose subjunctive versus infinitive based on whether subjects are the same.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849307364-2evquknh",
+      "timestamp": "2026-06-07T16:22:07.685Z"
+    }
+  ]
+}

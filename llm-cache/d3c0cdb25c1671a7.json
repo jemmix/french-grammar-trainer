@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d3c0cdb25c1671a7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-17-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Infinitif ou « que + subjonctif » ? Complétez : « Ils aiment ___ du sport. »\n\nChoices:\nA. [CORRECT] faire\nB. [WRONG] qu'ils fassent\nC. [WRONG] qu'ils font\nD. [WRONG] de faire\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780851727318-ys7u8may"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses subjunctive with \"aimer\" which requires infinitive, C incorrectly uses indicative instead of subjunctive and \"aimer\" doesn't take \"que\" clauses anyway, D incorrectly adds \"de\" before the infinitive with \"aimer.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780851736334-zo3b21zo",
+      "timestamp": "2026-06-07T17:02:36.457Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a French grammar multiple choice question are indeed incorrect.\n\nAnalysis completed:\n- Question asks to complete \"Ils aiment ___ du sport\" with either infinitive or \"que + subjonctif\"\n- B (\"qu'ils fassent\") is incorrect because \"aimer que\" with subjunctive requires a different subject (e.g., \"J'aime qu'ils fassent\"), not the same subject reflexively\n- C (\"qu'ils font\") is incorrect because it uses indicative \"font\" instead of required subjunctive after \"que\"\n- D (\"de faire\") is incorrect because \"aimer\" takes a bare infinitive without \"de\"\n\nThe answer would have been: TRUE||All wrong answers contain clear grammar errors: B is semantically incorrect with same-subject reflexive use, C uses wrong mood (indicative instead of subjunctive), and D incorrectly inserts \"de\" before the infinitive after \"aimer.\"\n\nNo remaining tasks - the verification was complete at the point of step limit.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780851774839-jcuieomv",
+      "timestamp": "2026-06-07T17:03:15.633Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is nonsensical with a repeated subject, C incorrectly uses indicative instead of subjunctive after \"que\", and D incorrectly adds \"de\" before the infinitive after \"aimer\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780851814065-puy0an0e",
+      "timestamp": "2026-06-07T17:06:32.462Z"
+    }
+  ]
+}

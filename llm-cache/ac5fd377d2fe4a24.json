@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ac5fd377d2fe4a24",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe.\nPhrase: Son père insiste pour qu'elle ___ ses études.\nCorrect Answer: poursuive\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780847349023-0a0hfaiy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests conjugation of \"poursuivre\" in the subjunctive, but the structural choice that defines the rule (pour que + subjonctif vs pour + infinitif based on same/different subjects) is already resolved in the prompt—\"pour qu'elle\" is given, so a student could answer correctly knowing only subjunctive conjugation without understanding the underlying rule about subject identity.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847597642-n1oxacka",
+      "timestamp": "2026-06-07T15:54:03.987Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was in the process of analyzing a French grammar validation question about whether a question properly tests the rule \"Le subjonctif vs l'infinitif : même sujet → infinitif.\"\n\n**Analysis completed:**\nThe question asks students to conjugate \"poursuivre\" in the sentence \"Son père insiste pour qu'elle ___ ses études\" with answer \"poursuive.\" This question only tests whether students can conjugate a verb in the subjunctive after \"pour que\" — it does not present the contrast between same-subject (infinitive) and different-subject (subjunctive) constructions that is the core of the stated rule.\n\n**Verdict that would have been provided:**\nVERDICT: MISALIGNED\nREASON: The question only tests conjugation in the subjunctive after \"pour que,\" not the key distinction between using infinitive (same subject) vs subjunctive (different subjects) that the rule is about.\n\n**Remaining tasks:** None — this was a single-question validation task.\n\n**Recommendation:** To properly test this rule, the question should present a scenario where the student must choose between infinitive and subjunctive based on subject identity, such as \"Je veux ___ mes études\" (poursuivre - same subject) vs \"Je veux que tu ___ tes études\" (poursuives - different subject).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847877368-ikljkwvv",
+      "timestamp": "2026-06-07T15:58:36.219Z"
+    }
+  ]
+}

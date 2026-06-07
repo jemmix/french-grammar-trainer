@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8880f4ba93b1578b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Infinitif ou « que + subjonctif » ? Complétez : « Je veux ___ la cuisine italienne. »\nChoices:\nA. [CORRECT] apprendre\nB. que j'apprenne\nC. que j'apprends\nD. que j'apprendre\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780852269355-2hggcpzu"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests the rule that when both verbs share the same subject (\"je\" wants and \"je\" learns), the infinitive must be used instead of \"que + subjonctif\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780852270390-fz076k9d",
+      "timestamp": "2026-06-07T17:11:27.367Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\nI was in the process of validating a French grammar question against its stated rule. The analysis was nearly complete.\n\nThe validation result:\n\nVERDICT: ALIGNED\nREASON: The question requires recognizing that \"je\" is the subject of both \"veux\" and the implied subject of learning, correctly applying the rule that same subject requires the infinitive \"apprendre\" rather than \"que + subjonctif\" constructions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780852303564-9mag8wx1",
+      "timestamp": "2026-06-07T17:11:58.951Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule by requiring the learner to recognize that with the same subject (\"je veux\" + implied \"je apprendre\"), the infinitive \"apprendre\" is correct rather than \"que + subjonctif\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780852333499-kzj4stlu",
+      "timestamp": "2026-06-07T17:12:26.511Z"
+    }
+  ]
+}

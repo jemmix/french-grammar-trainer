@@ -1,0 +1,26 @@
+{
+  "cacheKey": "32201dadf8ee2acf",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Input\nPrompt: Sujets différents. Conjuguez le verbe au subjonctif présent.\nPhrase: Nous préférons qu'il ___ la vérité.\nCorrect Answer: dise\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780849067012-qjonjurc"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\nI was asked to validate whether a French grammar question is aligned with its stated rule. The rule is about choosing between subjunctive and infinitive based on whether subjects are the same or different (je veux partir vs je veux que tu partes). The question gives the sentence \"Nous préférons qu'il ___ la vérité\" with answer \"dise\" and explicitly prompts \"Sujets différents. Conjuguez le verbe au subjonctif présent.\"\n\nVERDICT: MISALIGNED\nREASON: The question explicitly instructs the student to use the subjunctive and states the subjects are different, so it tests conjugation of \"dire\" rather than the rule's core concept of choosing between subjunctive and infinitive based on subject identity.\n\nNo remaining tasks - this was a single-question validation request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849183824-gvp9oo6c",
+      "timestamp": "2026-06-07T16:20:09.056Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly states \"Sujets différents\" and instructs the student to conjugate in the subjunctive, so the question tests conjugation of \"dire\" in subjunctive present rather than the decision-making process of choosing between subjonctif and infinitif based on subject identity.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849324708-trto3rqp",
+      "timestamp": "2026-06-07T16:22:26.772Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3c421a1da93993f2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe.\nPhrase: Nous préférons qu'il ___ la vérité.\nCorrect Answer: dise\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780847349023-6njuamvg"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a French grammar question properly tests the stated rule about \"Le subjonctif vs l'infinitif : même sujet → infinitif.\"\n\nMy assessment:\n\nVERDICT: MISALIGNED\nREASON: The question only tests conjugation of \"dire\" in the subjunctive present; it doesn't require choosing between infinitive and subjunctive based on whether subjects are the same or different, which is the core of the stated rule.\n\nThe question \"Nous préférons qu'il ___ la vérité\" with answer \"dise\" simply requires knowing the subjunctive conjugation of \"dire\" for third person singular. A properly aligned question would present a scenario where the student must decide between infinitive (same subject) and subjunctive (different subjects), such as a multiple choice or fill-in where both structures are possible options.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847606130-4qs7vz0a",
+      "timestamp": "2026-06-07T15:54:05.395Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: This question tests conjugation of \"dire\" in the subjonctif présent, not the rule about choosing between subjonctif and infinitif based on whether subjects are the same or different—the structure \"nous préférons qu'il\" already establishes different subjects, so the subjonctif is triggered by general subordination rules, not by the specific same-subject→infinitif distinction that rule 07-17 is meant to teach.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847882083-ql39t311",
+      "timestamp": "2026-06-07T15:58:48.780Z"
+    }
+  ]
+}

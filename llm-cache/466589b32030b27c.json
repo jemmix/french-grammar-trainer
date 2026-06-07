@@ -1,0 +1,33 @@
+{
+  "cacheKey": "466589b32030b27c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Infinitif ou « que + subjonctif » ? Complétez : « Nous voulons ___ avec nous. »\nChoices:\nA. [CORRECT] qu'elle vienne\nB. venir\nC. qu'elle vient\nD. qu'elle viendrait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780847349021-jkxsnn7j"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core distinction of the rule—different subjects (\"nous\" and \"elle\") require \"que + subjonctif\" rather than the infinitive, and choosing correctly requires understanding this subject-matching principle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847498485-esht3a3x",
+      "timestamp": "2026-06-07T15:52:13.741Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires identifying that \"nous voulons\" has a different subject than the embedded clause (\"elle\"), making \"que + subjonctif\" (qu'elle vienne) correct over the infinitive, which directly tests the core same-subject-vs-different-subject distinction of this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847794311-3r5igyrj",
+      "timestamp": "2026-06-07T15:56:54.212Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question alignment. Here is my assessment:\n\nVERDICT: ALIGNED\nREASON: The question requires recognizing that \"avec nous\" implies a different subject than \"nous,\" correctly applying the rule that different subjects require \"que + subjonctif\" rather than infinitive.\n\nNo remaining tasks — the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780848041158-joly9610",
+      "timestamp": "2026-06-07T16:01:19.856Z"
+    }
+  ]
+}

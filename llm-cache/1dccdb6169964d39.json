@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1dccdb6169964d39",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-17-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Quelle phrase signifie que NOUS devons les aider ?\n\nChoices:\nA. [CORRECT] Ils veulent que nous les aidions.\nB. [WRONG] Ils veulent les aider.\nC. [WRONG] Ils veulent que nous les aider.\nD. [WRONG] Ils veulent que nous les aidons.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780850889654-lzj2o3qd"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B changes the subject from \"nous\" to \"ils\" (meaning \"they want to help them\" instead of \"we must help them\"), C uses the infinitive \"aider\" instead of the required subjunctive \"aidions\" after \"que nous\", and D uses the indicative \"aidons\" instead of the required subjunctive \"aidions\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780850895671-lygq5m0g",
+      "timestamp": "2026-06-07T16:48:32.235Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B changes the meaning to \"they want to help them\" rather than \"we must help them,\" C incorrectly uses the infinitive \"aider\" after \"que nous\" which requires the subjunctive, and D incorrectly uses the indicative \"aidons\" instead of the required subjunctive \"aidions.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780850935676-bb5hrwaq",
+      "timestamp": "2026-06-07T16:49:07.797Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B changes the meaning to \"they want to help them\" rather than \"we must help them\"; C uses the infinitive \"aider\" incorrectly after \"que nous\"; D uses the indicative \"aidons\" instead of the required subjunctive \"aidions\" after \"que nous.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780850966214-8g2wemay",
+      "timestamp": "2026-06-07T16:49:38.434Z"
+    }
+  ]
+}

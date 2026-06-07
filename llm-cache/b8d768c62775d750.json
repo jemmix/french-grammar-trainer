@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b8d768c62775d750",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Input\nPrompt: Infinitif ou « que + subjonctif » ? Complétez la phrase.\nPhrase: Ils nous ont invités. Ils aimeraient ___ à leur mariage.\nCorrect Answer: que nous assistions\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780849819701-wl96r99d"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests the rule by requiring the learner to recognize that \"ils\" (subject of \"aimeraient\") and \"nous\" (subject of the subordinate clause) are different subjects, which mandates \"que + subjonctif\" rather than the infinitive, and then correctly conjugate \"assister\" in the subjunctive for \"nous.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780849904412-ufniqexv",
+      "timestamp": "2026-06-07T16:32:08.213Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that the subjects are different (\"ils\" who want vs \"nous\" who would attend) and therefore applying the rule that different subjects require \"que + subjonctif\" rather than an infinitif.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780850050449-r9fkp2h2",
+      "timestamp": "2026-06-07T16:34:35.261Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"ils\" and \"nous\" are different subjects, which mandates \"que + subjonctif\" rather than the infinitive—directly testing the core distinction of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780850164117-gd2c6bcb",
+      "timestamp": "2026-06-07T16:36:19.672Z"
+    }
+  ]
+}

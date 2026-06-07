@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c7796970a04906f0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-17-023",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-17 - Le subjonctif vs l'infinitif : même sujet → infinitif (je veux partir vs je veux que tu partes)\n\nQUESTION:\nType: Input\nPrompt: Conjuguez le verbe.\nPhrase: Elle exige que vous ___ votre travail à temps.\nCorrect Answer: fassiez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780847349022-yzotw5ag"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\n**Analysis completed:**\n\nThe question asks students to conjugate \"faire\" in the subjunctive (correct answer: \"fassiez\") for the sentence \"Elle exige que vous ___ votre travail à temps.\"\n\n**My verdict:**\n\nVERDICT: MISALIGNED\nREASON: This question only tests subjunctive conjugation of \"faire,\" but the stated rule is about choosing between subjunctive and infinitive based on whether subjects are the same or different—a distinction this question doesn't require students to make since the structure already dictates subjunctive use.\n\n**Remaining tasks:** None—this was a single validation task.\n\n**Recommendation:** To properly test rule 07-17, questions should present scenarios where students must choose between infinitive and subjunctive forms based on subject identity (e.g., contrasting \"Elle exige de finir son travail\" with \"Elle exige que vous finissiez votre travail\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847595318-l5zle0oo",
+      "timestamp": "2026-06-07T15:53:59.270Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question only tests conjugation of \"faire\" in the subjunctive, not the rule about choosing between subjunctive and infinitive based on whether subjects are the same or different.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780847877061-7wbwqyj7",
+      "timestamp": "2026-06-07T15:59:03.108Z"
+    }
+  ]
+}
