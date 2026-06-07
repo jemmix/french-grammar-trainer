@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ad4f520d0172f15f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-13-022",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-13 - Le subjonctif après à moins que, sans que, de peur que\n\nQUESTION:\nType: Input\nPrompt: Indicatif ou subjonctif ? Conjuguez le verbe.\nPhrase: Elle a quitté la fête sans que personne ___ son départ.\nCorrect Answer: sache\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780807430963-3b4jke1z"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"sans que,\" one of the three specific conjunctions listed in the rule, and requires the learner to know that this conjunction triggers the subjunctive mood (\"sache\" rather than indicative \"sait\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780807430965-m8t3rn1t",
+      "timestamp": "2026-06-07T04:44:04.978Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a French grammar question about \"sans que personne ___ son départ\" (answer: \"sache\") properly tests the rule \"Le subjonctif après à moins que, sans que, de peur que.\"\n\nMy analysis:\nVERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"sans que\" requires the subjunctive mood, which is the exact grammar point specified in the rule.\n\nNo remaining tasks - the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780807444981-iznzh7fw",
+      "timestamp": "2026-06-07T04:44:17.617Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"sans que,\" one of the three conjunctions explicitly listed in the rule, and correctly answering requires knowing that this conjunction triggers the subjunctive mood (\"sache\" not \"sait\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780807457618-y2dd6yra",
+      "timestamp": "2026-06-07T04:44:29.049Z"
+    }
+  ]
+}

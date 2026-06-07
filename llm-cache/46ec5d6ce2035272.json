@@ -1,0 +1,26 @@
+{
+  "cacheKey": "46ec5d6ce2035272",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-13-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le subjonctif après à moins que, sans que, de peur que\nPROMPT: Indicatif ou subjonctif ? Conjuguez le verbe.\nPHRASE: À moins que vous ___ un obstacle, le chemin est dégagé.\nCORRECT ANSWER: rencontriez\n\nWRONG ANSWERS to evaluate:\n1. rencontrez\n2. rencontrerez\n3. rencontreriez\n4. rencontrâtes\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780806849960-a2yktf3u"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"Rencontrâtes\" is the passé simple form, which learners virtually never use spontaneously and would not produce when confused about subjunctive vs. indicative after \"à moins que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780807038822-ctjqrr20",
+      "timestamp": "2026-06-07T04:40:22.754Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: IMPLAUSIBLE\nREASON: While \"rencontrez\" (indicative present), \"rencontrerez\" (future), and \"rencontreriez\" (conditional) are all plausible mistakes a learner might make when confused about whether to use subjunctive after \"à moins que,\" \"rencontrâtes\" is the passé simple—a literary tense so obscure that no learner at this level would accidentally produce it when attempting this conjugation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780807222754-hsrd0i6v",
+      "timestamp": "2026-06-07T04:40:41.950Z"
+    }
+  ]
+}

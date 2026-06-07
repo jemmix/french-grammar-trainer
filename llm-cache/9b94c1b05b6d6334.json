@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9b94c1b05b6d6334",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-13-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe. « Je sortirai à moins qu'il ___ . »\n\nChoices:\nA. [CORRECT] pleuve\nB. [WRONG] pleut\nC. [WRONG] pleuvra\nD. [WRONG] pleuvrait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780805718511-9q6x95m4"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers use indicative or conditional mood, but \"à moins que\" requires the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780805718520-bd4myjqk",
+      "timestamp": "2026-06-07T04:15:33.682Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after \"à moins que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780805864975-4ypj0mzr",
+      "timestamp": "2026-06-07T04:18:00.033Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:** I was asked to verify whether the wrong answers (B, C, D) in a French grammar MCQ are indeed incorrect. The question tests the use of \"à moins que\" which requires the subjunctive mood.\n\n**Analysis completed:**\n- B (\"pleut\") is indicatif présent - incorrect after \"à moins que\"\n- C (\"pleuvra\") is futur simple - incorrect after \"à moins que\"  \n- D (\"pleuvrait\") is conditionnel présent - incorrect after \"à moins que\"\n- A (\"pleuve\") is subjonctif présent - the correct answer\n\n**Verdict:** TRUE||All wrong answers use indicative or conditional tenses instead of the required subjunctive after \"à moins que\".\n\n**Remaining tasks:** None - the verification was straightforward and complete.\n\n**Recommendations:** No further action needed for this question; all wrong answers are clearly incorrect within the grammatical context specified.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780806035988-m4dngw57",
+      "timestamp": "2026-06-07T04:21:11.006Z"
+    }
+  ]
+}
