@@ -1,0 +1,61 @@
+{
+  "cacheKey": "0c93bde095bc8e23",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-15-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « J'estime que tu ___ très compétent. »\n\nChoices:\nA. [CORRECT] es\nB. [WRONG] sois\nC. [WRONG] seras\nD. [WRONG] étais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780839338249-a8jgaltd"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|C,D|C (\"seras\") and D (\"étais\") are grammatically valid completions using the correct indicative mood after \"estimer que,\" just with different tenses than the expected present; the question doesn't explicitly require present tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839411037-88gal8rk",
+      "timestamp": "2026-06-07T13:38:53.433Z"
+    },
+    {
+      "raw": "TRUE||B uses subjunctive when \"estimer que\" requires indicative; C and D use future and imparfait respectively when the present tense \"es\" is the only grammatically correct completion.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839777970-i9cyobpe",
+      "timestamp": "2026-06-07T13:43:13.446Z"
+    },
+    {
+      "raw": "TRUE||B uses the subjunctive \"sois\" but \"estimer que\" requires the indicative; C uses future \"seras\" and D uses imparfait \"étais\" which change the temporal meaning from the present tense context naturally implied by the sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839994646-9h66pr30",
+      "timestamp": "2026-06-07T13:47:33.208Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context: B uses subjunctive when indicative is required after \"estimer que\" in affirmative statements, C uses future tense without any temporal marker indicating future, and D uses imperfect when the present assessment context calls for present tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780840162539-i05ix2x4",
+      "timestamp": "2026-06-07T13:49:52.176Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses or moods: \"sois\" is subjunctive (indicative required after \"estimer que\"), \"seras\" is future tense, and \"étais\" is imperfect tense, none of which match the present indicative context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780840302322-31s9ykv1",
+      "timestamp": "2026-06-07T13:52:16.575Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses/moods that don't match the present indicative required after \"estimer que\" in affirmative statements.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780840428678-vg3llky1",
+      "timestamp": "2026-06-07T13:54:13.348Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect tenses or moods: \"sois\" incorrectly uses subjunctive after \"estimer que\" which takes indicative, while \"seras\" and \"étais\" shift the meaning to future and past respectively rather than the present state required by the context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780840495714-5pjpgmst",
+      "timestamp": "2026-06-07T13:55:40.255Z"
+    }
+  ]
+}

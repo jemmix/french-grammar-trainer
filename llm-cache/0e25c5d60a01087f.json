@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0e25c5d60a01087f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-15-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Je pense que tu ___ raison. »\n\nChoices:\nA. [CORRECT] as\nB. [WRONG] aies\nC. [WRONG] aurais\nD. [WRONG] avais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780839338248-vs82zris"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods or tenses (subjunctive, conditional, imperfect) that don't match the present indicative required after \"Je pense que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839338252-v8l7o3rl",
+      "timestamp": "2026-06-07T13:35:57.813Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ question are indeed incorrect. The question asks to complete \"Je pense que tu ___ raison\" with the correct conjugation of \"avoir.\"\n\nAnalysis completed:\n- B. \"aies\" (subjunctive) - Incorrect because \"penser que\" takes indicative, not subjunctive\n- C. \"aurais\" (conditional) - Incorrect because it changes meaning to \"you would be right\"\n- D. \"avais\" (imparfait) - Incorrect because it changes tense to past \"you were right\"\n\nAll wrong answers are genuinely incorrect within the grammatical constraints of the question.\n\nTRUE||All wrong answers use wrong moods or tenses that don't fit the indicative present required after \"Je pense que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839603804-5c38uc6g",
+      "timestamp": "2026-06-07T13:40:46.405Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to verify whether the wrong answers (B, C, D) in a French grammar MCQ are indeed incorrect.\n\n**Analysis completed:**\n- The question asks to complete \"Je pense que tu ___ raison\" which requires present indicative after \"penser que\" (affirmative)\n- B. \"aies\" is subjunctive present - incorrect, subjunctive is not used after affirmative \"penser que\"\n- C. \"aurais\" is conditional present - incorrect, conditional doesn't fit this context\n- D. \"avais\" is imperfect - incorrect, would require a past-tense main clause like \"Je pensais que\"\n\nAll three wrong answers are genuinely incorrect within the grammatical constraints specified.\n\n**Remaining tasks:** None - the verification is complete.\n\n**Recommendation:** The verdict would be: TRUE||All wrong answers use incorrect tenses or moods for the present indicative required after \"Je pense que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839865154-81ym8j2l",
+      "timestamp": "2026-06-07T13:45:07.044Z"
+    }
+  ]
+}

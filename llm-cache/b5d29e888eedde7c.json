@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b5d29e888eedde7c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-15-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme (indicatif ou subjonctif). « Je pense que tu ___ partir demain. »\n\nChoices:\nA. [CORRECT] dois\nB. [WRONG] doives\nC. [WRONG] devras\nD. [WRONG] devais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780840788717-8qmmkyr7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the subjunctive \"doives\" but \"je pense que\" in affirmative requires the indicative; C uses future \"devras\" which changes the intended present-tense meaning; D uses imperfect \"devais\" which is past tense and contradicts \"demain.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841002375-43klc8kv",
+      "timestamp": "2026-06-07T14:04:02.969Z"
+    },
+    {
+      "raw": "TRUE||B uses subjunctive which is incorrect after affirmative \"penser que\"; C uses futur simple which doesn't match the present tense context of \"pense\"; D uses imparfait creating a tense mismatch with the present \"pense.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841242559-4dqswuzb",
+      "timestamp": "2026-06-07T14:07:55.586Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the subjunctive mood which is wrong after affirmative \"je pense que\"; C uses futur simple which doesn't match the present context; D uses imparfait which is inappropriate for expressing a present obligation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841477372-mkp6nf3y",
+      "timestamp": "2026-06-07T14:11:51.479Z"
+    }
+  ]
+}

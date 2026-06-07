@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0db5ecd1a178719f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-15-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme (indicatif ou subjonctif). « J'estime que vous ___ dans l'erreur. »\n\nChoices:\nA. [CORRECT] êtes\nB. [WRONG] soyez\nC. [WRONG] serez\nD. [WRONG] étiez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780840788716-eqjaqucn"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B incorrectly uses subjunctive after \"estimer que\" in an affirmative statement which requires indicative; C and D use incorrect tenses (future and imperfect) where the present indicative is needed to express a current state.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780840887936-l2ck502e",
+      "timestamp": "2026-06-07T14:02:01.584Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly uses subjunctive after \"estimer que\" which requires indicative; C uses future tense inappropriately for a present-state judgment; D uses imperfect past tense for a present-context statement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841146161-0dt78e1e",
+      "timestamp": "2026-06-07T14:06:28.727Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of analyzing a French grammar verification question. The question asked to verify that the wrong answers (B, C, D) in a multiple choice question about indicative vs subjunctive after \"estimer que\" are indeed incorrect.\n\nBased on my analysis:\n- **B (soyez)**: Incorrect - uses subjunctive after \"estimer que,\" which requires indicative\n- **C (serez)**: Incorrect - uses future tense, changing the meaning from present belief to future prediction\n- **D (étiez)**: Incorrect - uses imperfect tense, changing the meaning from present to past\n\nAll wrong answers are genuinely incorrect within the stated grammatical constraints.\n\nThe verdict would have been: TRUE||All wrong answers are incorrect - B uses the wrong mood (subjunctive instead of indicative), C and D use wrong tenses (future and imperfect instead of present) for expressing a current belief with \"estimer que.\"\n\nNo remaining tasks - this was a single verification request that I had completed the analysis for before reaching the step limit.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841399315-62hp5xl7",
+      "timestamp": "2026-06-07T14:10:31.620Z"
+    }
+  ]
+}

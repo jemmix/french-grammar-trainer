@@ -1,0 +1,26 @@
+{
+  "cacheKey": "37014a8365a8ea8b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-15-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-15 - Indicatif vs subjonctif après les verbes d'opinion : affirmatif (indicatif) vs négatif/interrogatif (subjonctif)\n\nQUESTION:\nType: Input\nPrompt: Complétez avec la forme correcte du verbe « devoir » au temps approprié.\nPhrase: Je ne crois pas que tu ___ renoncer à tes rêves.\nCorrect Answer: doives\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780839338251-gs8co3bw"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"ne croire pas que\" (negative form of an opinion verb) triggers the subjunctive mood, making \"doives\" correct over the indicative \"dois\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839551849-4w5uuppi",
+      "timestamp": "2026-06-07T13:39:25.961Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was able to analyze the validation question before reaching the step limit.\n\nVERDICT: ALIGNED\nREASON: The question directly tests the rule because \"ne pas croire que\" is the negative form of a verb of opinion, and the learner must know this triggers the subjunctive (\"doives\") rather than the indicative (\"dois\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839805469-vud2z91e",
+      "timestamp": "2026-06-07T13:43:55.750Z"
+    }
+  ]
+}

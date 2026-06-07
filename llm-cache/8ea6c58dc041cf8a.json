@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8ea6c58dc041cf8a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-15-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Trouvez-vous que ce film ___ intéressant ? »\n\nChoices:\nA. [CORRECT] soit\nB. [WRONG] est\nC. [WRONG] sera\nD. [WRONG] était\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780839338249-qh4il21b"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was evaluating a French grammar verification task for the question \"Complétez : « Trouvez-vous que ce film ___ intéressant ? »\" with correct answer \"soit\" (subjunctive) and wrong answers B: \"est\", C: \"sera\", D: \"était\".\n\n**My assessment before step limit:**\nTRUE||All wrong answers are incorrect within standard French grammar: \"est\" is indicative not subjunctive (required after \"trouver que\" in formal French), \"sera\" uses wrong tense/mood (future), and \"était\" uses wrong tense (imperfect instead of present).\n\n**Remaining tasks:**\nNone - the verification was essentially complete.\n\n**Recommendation:**\nThe verdict is TRUE - all wrong answers (B, C, D) are grammatically incorrect for this context in standard French.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839357813-r77o79yf",
+      "timestamp": "2026-06-07T13:36:25.522Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"trouver que\" — \"est\" is indicative présent, \"sera\" is indicative futur, and \"était\" is indicative imparfait.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839654019-dnpmghcs",
+      "timestamp": "2026-06-07T13:41:59.550Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the indicative mood when the subjunctive is required after \"trouver que\" expressing a subjective opinion.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839930869-q5pcikak",
+      "timestamp": "2026-06-07T13:48:52.515Z"
+    }
+  ]
+}

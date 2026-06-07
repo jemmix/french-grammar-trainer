@@ -1,0 +1,33 @@
+{
+  "cacheKey": "12d1a55d615e8c60",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-15-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-15 - Indicatif vs subjonctif après les verbes d'opinion : affirmatif (indicatif) vs négatif/interrogatif (subjonctif)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). « Je ne suis pas convaincu que tu ___ comprendre. »\nChoices:\nA. [CORRECT] puisses\nB. peux\nC. puisse\nD. peut\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780841949124-fvkb29so"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\n- I analyzed the validation request for the French grammar question about indicative vs subjunctive after verbs of opinion\n- The question \"Je ne suis pas convaincu que tu ___ comprendre.\" with correct answer \"puisses\" (subjunctive) over \"peux\" (indicative) directly tests the rule that negative/interrogative forms of opinion verbs require the subjunctive\n\nRemaining tasks: None - this was a single-question validation request\n\nRecommendation for next step:\nVERDICT: ALIGNED\nREASON: The question requires recognizing that the negative form \"ne suis pas convaincu que\" triggers the subjunctive \"puisses\" rather than the indicative \"peux,\" which is exactly the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841991711-nfrrx0uq",
+      "timestamp": "2026-06-07T14:20:17.509Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core of the stated rule—recognizing that the negative form \"ne suis pas convaincu que\" (an opinion verb in negative form) requires the subjunctive \"puisses\" rather than the indicative \"peux\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780842232831-xpupab9d",
+      "timestamp": "2026-06-07T14:24:22.925Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The negative form \"ne suis pas convaincu que\" triggers the subjonctif, and the student must know this rule to choose \"puisses\" (subjonctif) over \"peux\" (indicatif).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780842460801-8h6accqi",
+      "timestamp": "2026-06-07T14:28:05.928Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "86224252161cec66",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-15-020",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-15 - Indicatif vs subjonctif après les verbes d'opinion : affirmatif (indicatif) vs négatif/interrogatif (subjonctif)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme (indicatif ou subjonctif). « Pensez-vous que ces mesures ___ efficaces ? »\nChoices:\nA. [CORRECT] soient\nB. sont\nC. seront\nD. étaient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780840788717-63o4znp8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule by presenting an interrogative form of the opinion verb \"penser\" (\"Pensez-vous que...\"), where the correct answer requires knowing that this triggers the subjunctive (\"soient\") rather than the indicative (\"sont\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841047947-24z49457",
+      "timestamp": "2026-06-07T14:04:31.622Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The interrogative form \"Pensez-vous que\" requires knowledge that opinion verbs switch from indicative to subjunctive in negative/interrogative contexts to correctly select \"soient\" over the indicative \"sont\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841261858-d3b2ow8i",
+      "timestamp": "2026-06-07T14:08:05.894Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"pensez-vous\" (interrogative form of \"penser\") triggers the subjunctive \"soient\" rather than the indicative forms, which is the core distinction taught by this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841497370-k2533w2p",
+      "timestamp": "2026-06-07T14:12:01.754Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e89928adf4bd122a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-15-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-15 - Indicatif vs subjonctif après les verbes d'opinion : affirmatif (indicatif) vs négatif/interrogatif (subjonctif)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme (indicatif ou subjonctif). « Je suis convaincu que vous ___ raison. »\nChoices:\nA. [CORRECT] avez\nB. ayez\nC. aviez\nD. aurez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780840788717-ckfvk320"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"être convaincu que\" is an opinion verb and that its affirmative form takes the indicative, not the subjunctive — the distractor \"ayez\" directly tests the common mistake of using subjunctive after an affirmative opinion verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780840946664-u77u3v26",
+      "timestamp": "2026-06-07T14:02:54.245Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a French grammar question about \"Je suis convaincu que vous ___ raison\" properly tests the rule about indicative vs subjunctive after opinion verbs in affirmative vs negative/interrogative forms.\n\nMy assessment:\nVERDICT: ALIGNED\nREASON: The question requires knowing that affirmative opinion verbs like \"être convaincu que\" take the indicative, correctly testing the rule by contrasting \"avez\" (indicatif) with \"ayez\" (subjonctif).\n\nNo remaining tasks - the validation was completed in my analysis before the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841201109-iw8sz7g5",
+      "timestamp": "2026-06-07T14:07:00.984Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"être convaincu que\" is a verb of opinion in the affirmative form, which takes the indicative (\"avez\") rather than the subjunctive (\"ayez\"), directly testing the stated rule about indicatif vs subjonctif after verbs of opinion based on affirmatif/négatif context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841431630-p9aykbu2",
+      "timestamp": "2026-06-07T14:10:54.161Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9a6b38beea70e5ea",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-15-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « J'estime que vous ___ dans l'erreur. »\n\nChoices:\nA. [CORRECT] êtes\nB. [WRONG] soyez\nC. [WRONG] serez\nD. [WRONG] étiez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780839338249-qy11pfa0"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods or tenses: B uses subjunctive (indicative required after \"estimer que\"), C uses future (present required for concurrent action), and D uses imparfait (present required to match the main clause).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839365288-uzksdrk3",
+      "timestamp": "2026-06-07T13:36:20.270Z"
+    },
+    {
+      "raw": "TRUE||B uses subjunctive instead of indicative (estimer que takes indicative), C uses future tense instead of present, and D uses imperfect instead of present.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839646406-ur5hl9kx",
+      "timestamp": "2026-06-07T13:41:12.190Z"
+    },
+    {
+      "raw": "TRUE||B uses subjunctive after \"estimer que\" which requires indicative; C uses future tense creating a temporal mismatch with present \"j'estime\"; D uses imparfait creating a tense mismatch with present \"j'estime\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839907045-roehffhw",
+      "timestamp": "2026-06-07T13:45:30.869Z"
+    }
+  ]
+}

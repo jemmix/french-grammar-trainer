@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ee2ff563d857df7c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-15-006",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-15 - Indicatif vs subjonctif après les verbes d'opinion : affirmatif (indicatif) vs négatif/interrogatif (subjonctif)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). « Estimez-vous que ce film ___ intéressant ? »\nChoices:\nA. [CORRECT] soit\nB. est\nC. sois\nD. es\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780841949124-ijz27miz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the learner knows that verbs of opinion in interrogative form require the subjunctive (\"Estimez-vous que... soit\"), which is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841978603-oncjkqq2",
+      "timestamp": "2026-06-07T14:19:54.800Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that verbs of opinion like \"estimer\" require the subjunctive in interrogative form, and \"soit\" is the correct subjunctive form of \"être\" for the 3rd person singular.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780842214523-0u9gqgfu",
+      "timestamp": "2026-06-07T14:24:03.586Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires recognizing that \"estimer\" is a verb of opinion used in interrogative form, which according to the stated rule triggers the subjunctive \"soit\" rather than the indicative \"est\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780842441550-jfrud7oh",
+      "timestamp": "2026-06-07T14:38:02.985Z"
+    }
+  ]
+}

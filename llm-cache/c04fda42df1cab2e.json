@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c04fda42df1cab2e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-15-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-15 - Indicatif vs subjonctif après les verbes d'opinion : affirmatif (indicatif) vs négatif/interrogatif (subjonctif)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). « Je suis convaincu que le film ___ excellent. »\nChoices:\nA. [CORRECT] est\nB. soit\nC. es\nD. sois\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780841949125-ugrie15k"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"être convaincu que\" is a verb of opinion and that the affirmative form requires the indicative (\"est\"), not the subjunctive (\"soit\"), directly testing the affirmative vs negative/interrogative distinction central to this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780842111254-nrjlzys4",
+      "timestamp": "2026-06-07T14:22:11.969Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests exactly the stated rule — \"être convaincu que\" is a verb of opinion that requires the indicative in the affirmative form (\"est\"), while \"soit\" (subjonctif) is the distractor that would be incorrectly chosen by someone who doesn't know the affirmative vs. negative/interrogative distinction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780842341695-mbwv5zgf",
+      "timestamp": "2026-06-07T14:26:12.931Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question tests whether the student knows that \"être convaincu que\" in the affirmative requires the indicative (\"est\") rather than the subjunctive (\"soit\"), which is exactly the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780842540488-fy6w3oi8",
+      "timestamp": "2026-06-07T14:29:13.319Z"
+    }
+  ]
+}

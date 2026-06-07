@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d0a20610ace24586",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-15-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme (indicatif ou subjonctif). « Ne croyez-vous pas que nous ___ faire cela ? »\n\nChoices:\nA. [CORRECT] puissions\nB. [WRONG] pouvons\nC. [WRONG] pourrons\nD. [WRONG] pouvions\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780840788717-cozkkyg9"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use indicative tenses (présent, futur, imparfait) instead of the required subjonctif after \"ne croyez-vous pas que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841017316-rr8sgj9d",
+      "timestamp": "2026-06-07T14:04:02.219Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B and C use the indicative mood instead of the required subjunctive after \"ne croyez-vous pas que\", and D uses the imparfait du subjonctif which is not appropriate for this construction that requires présent du subjonctif.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841236797-ksk3hoj9",
+      "timestamp": "2026-06-07T14:07:42.537Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWork accomplished so far: I analyzed the French grammar question about the subjunctive vs. indicative after \"Ne croyez-vous pas que nous ___ faire cela?\" and verified that all three wrong answers (B: pouvons, C: pourrons, D: pouvions) are indeed incorrect because they use indicative forms when the subjunctive \"puissions\" is required after this expression of doubt.\n\nRemaining tasks: None - the analysis is complete.\n\nTRUE||All wrong answers use indicative mood when the subjunctive is required after \"ne croyez-vous pas que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841468218-f0t8ek3f",
+      "timestamp": "2026-06-07T14:11:48.202Z"
+    }
+  ]
+}

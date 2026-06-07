@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5ecd24b256fd75ea",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-15-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-15 - Indicatif vs subjonctif après les verbes d'opinion : affirmatif (indicatif) vs négatif/interrogatif (subjonctif)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme (indicatif ou subjonctif). « Je crois qu'elle ___ très intelligente. »\nChoices:\nA. [CORRECT] est\nB. soit\nC. était\nD. serait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780840788716-1gx1zv0c"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"croire que\" in the affirmative takes the indicative (\"est\"), distinguishing it from the subjunctive (\"soit\") which is the core of this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780840795736-g8m63f4x",
+      "timestamp": "2026-06-07T14:01:26.449Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"croire\" is a verb of opinion and that the affirmative form triggers the indicative (\"est\") rather than the subjunctive (\"soit\"), which is exactly what the rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841133036-1tvg48o9",
+      "timestamp": "2026-06-07T14:06:01.655Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that affirmative opinion verbs like \"croire\" take the indicative (\"est\") rather than the subjunctive (\"soit\"), which is the exact distinction the rule describes.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841375820-1a1dw410",
+      "timestamp": "2026-06-07T14:10:05.069Z"
+    }
+  ]
+}

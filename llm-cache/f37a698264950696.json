@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f37a698264950696",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-15-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-15 - Indicatif vs subjonctif après les verbes d'opinion : affirmatif (indicatif) vs négatif/interrogatif (subjonctif)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « Je pense que tu ___ raison. »\nChoices:\nA. [CORRECT] as\nB. aies\nC. aurais\nD. avais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780839338248-ppq237ph"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"penser que\" in the affirmative takes the indicative (\"as\") rather than the subjunctive (\"aies\"), which is exactly the distinction this rule teaches.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839339253-5vljabuh",
+      "timestamp": "2026-06-07T13:35:56.579Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"penser que\" in the affirmative takes the indicative (\"as\"), not the subjunctive (\"aies\"), which is exactly the core distinction of this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839602527-ag5cv37o",
+      "timestamp": "2026-06-07T13:40:27.435Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\n- Analyzed the grammar question against the stated rule\n- Determined the question alignment status\n\nVERDICT: ALIGNED\nREASON: The question directly tests the rule by presenting \"penser que\" in the affirmative form, requiring the learner to select the indicative \"as\" over the subjunctive \"aies\" — precisely the distinction the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839859135-rzp3p58w",
+      "timestamp": "2026-06-07T13:44:45.675Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e77685683facd5ea",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-15-024",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-15 - Indicatif vs subjonctif après les verbes d'opinion : affirmatif (indicatif) vs négatif/interrogatif (subjonctif)\n\nQUESTION:\nType: Input\nPrompt: Indicatif ou subjonctif ? Conjuguez le verbe.\nPhrase: Trouvez-vous que ce projet ___ ambitieux mais réalisable ?\nCorrect Answer: soit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780840788718-5910m3md"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The interrogative form \"Trouvez-vous que\" requires the subjunctive \"soit\" according to the rule, and answering correctly depends entirely on knowing this specific indicative/subjunctive distinction for opinion verbs.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841081452-dg6nzpye",
+      "timestamp": "2026-06-07T14:05:14.051Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule by using an interrogative form of an opinion verb (\"Trouvez-vous que\"), which requires the subjonctif \"soit\" — answering correctly depends entirely on knowing that interrogative triggers subjonctif while affirmative would use indicatif.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841315556-hlu0m56x",
+      "timestamp": "2026-06-07T14:09:10.368Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"Trouvez-vous que\" (interrogative form of an opinion verb), and correctly answering requires knowing that interrogative forms of opinion verbs trigger the subjonctif, which is the exact grammar rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841554399-ir95nw4d",
+      "timestamp": "2026-06-07T14:13:03.489Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "38015047e3d8cc21",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-15-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). « Ne croyez-vous pas que nous ___ faire cela ? »\n\nChoices:\nA. [CORRECT] puissions\nB. [WRONG] pouvons\nC. [WRONG] puissent\nD. [WRONG] peuvent\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780841949125-48ym5lzo"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Work accomplished:** I analyzed the French grammar question \"Ne croyez-vous pas que nous ___ faire cela ?\" and verified the wrong answers. The question requires the subjunctive mood (triggered by \"ne pas croire que\") with \"nous\" as the subject.\n\n**Analysis summary:**\n- B. \"pouvons\" is incorrect (indicative, not subjunctive)\n- C. \"puissent\" is incorrect (3rd person plural subjunctive, but subject is \"nous\" = 1st person plural)\n- D. \"peuvent\" is incorrect (both wrong mood—indicative—and wrong person/number—3rd person plural)\n\nTRUE||All wrong answers are grammatically incorrect: B uses indicative instead of required subjunctive, C uses wrong person/number (3rd plural instead of 1st plural), and D fails on both mood and person/number.\n\n**Remaining tasks:** None - the verification is complete.\n\n**Recommendations:** No further action needed on this question; all wrong answers are properly incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780842087203-11ta9a29",
+      "timestamp": "2026-06-07T14:22:13.016Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses indicative instead of the required subjunctive, C uses the subjunctive but with wrong person (3rd plural instead of 1st plural \"nous\"), and D uses both wrong mood (indicative) and wrong person (3rd plural).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780842349915-u8j5psc7",
+      "timestamp": "2026-06-07T14:26:11.985Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses indicative instead of required subjunctive after \"ne croyez-vous pas que,\" C uses the third-person plural subjunctive form instead of first-person plural, and D is both wrong mood (indicative) and wrong person (third-person plural).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780842538911-61vxj3a7",
+      "timestamp": "2026-06-07T14:29:15.062Z"
+    }
+  ]
+}

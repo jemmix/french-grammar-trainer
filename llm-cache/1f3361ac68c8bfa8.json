@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1f3361ac68c8bfa8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-15-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). « Je ne suis pas convaincu que tu ___ comprendre. »\n\nChoices:\nA. [CORRECT] puisses\nB. [WRONG] peux\nC. [WRONG] puisse\nD. [WRONG] peut\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780841949124-tokjfxn8"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses indicative instead of required subjunctive after \"ne pas être convaincu que\"; C is 1st person singular subjunctive instead of 2nd person; D is 3rd person singular indicative, wrong on both mood and person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780841991074-ng7h9mrt",
+      "timestamp": "2026-06-07T14:20:13.673Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses indicative instead of required subjunctive after \"ne pas être convaincu que\", C uses the 1st/3rd person singular subjunctive form instead of the 2nd person \"tu\" form, and D uses both the wrong mood (indicative) and wrong person (3rd singular).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780842228068-rrtd1bsz",
+      "timestamp": "2026-06-07T14:24:25.444Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors - B uses indicative instead of required subjunctive, C uses 3rd person singular subjunctive form instead of 2nd person, and D uses both wrong mood (indicative) and wrong person (3rd singular).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780842461770-1uvrjoa3",
+      "timestamp": "2026-06-07T14:28:38.478Z"
+    }
+  ]
+}

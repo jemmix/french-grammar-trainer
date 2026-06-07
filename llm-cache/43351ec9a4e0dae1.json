@@ -1,0 +1,33 @@
+{
+  "cacheKey": "43351ec9a4e0dae1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-15-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-15 - Indicatif vs subjonctif après les verbes d'opinion : affirmatif (indicatif) vs négatif/interrogatif (subjonctif)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Complétez : « J'estime que vous ___ dans l'erreur. »\nChoices:\nA. [CORRECT] êtes\nB. soyez\nC. serez\nD. étiez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780839338249-5leb6891"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests exactly the stated rule—\"estimer que\" in the affirmative requires the indicative (\"êtes\"), and \"soyez\" (subjonctif) is the key distractor representing the incorrect application of the subjonctif after an affirmative opinion verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839370872-y5734fdm",
+      "timestamp": "2026-06-07T13:36:25.970Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"estimer que\" in the affirmative requires the indicative (\"êtes\") rather than the subjunctive (\"soyez\"), which is the exact distinction the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839669248-97gj10ha",
+      "timestamp": "2026-06-07T13:41:30.571Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests exactly the stated rule — \"estimer que\" in the affirmative requires the indicative (\"êtes\"), and the subjonctif distractor \"soyez\" directly tests whether the student knows that the subjonctif would only be used in negative/interrogative form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839916339-v6u3uqio",
+      "timestamp": "2026-06-07T13:45:34.445Z"
+    }
+  ]
+}

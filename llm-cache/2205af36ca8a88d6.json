@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2205af36ca8a88d6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-15-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Complétez : « Penses-tu que je ___ capable ? »\n\nChoices:\nA. [CORRECT] sois\nB. [WRONG] suis\nC. [WRONG] serais\nD. [WRONG] serai\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780839338251-ukg0s8an"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"penser que\" in interrogative form: B uses indicative present, C uses conditional, and D uses future indicative, none of which are grammatically correct in this construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839555047-jefr19j7",
+      "timestamp": "2026-06-07T13:39:37.013Z"
+    },
+    {
+      "raw": "TRUE||After \"penser que\" in interrogative form, the subjunctive \"sois\" is required; \"suis\" is indicative, \"serais\" is conditional, and \"serai\" is future tense, none of which are grammatically correct in this construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839808830-6etnu6fs",
+      "timestamp": "2026-06-07T13:43:58.065Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use non-subjunctive forms (indicative \"suis\", conditional \"serais\", future \"serai\") whereas \"penses-tu que\" strictly requires the subjunctive \"sois\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780840006733-k4s9nzcn",
+      "timestamp": "2026-06-07T13:47:18.514Z"
+    }
+  ]
+}
