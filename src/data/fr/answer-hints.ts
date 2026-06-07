@@ -214,6 +214,7 @@ export const answerHints: Record<string, string> = {
   "glisse": "glisser",
   "examine": "examiner",
   "arrive": "arriver",
+  "arrivions": "arriver",
   "arrivent": "arriver",
   "arrivera": "arriver",
   "arriveras": "arriver",
