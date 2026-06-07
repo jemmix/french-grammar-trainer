@@ -14,6 +14,7 @@ import { grammarValidPredicate } from "./grammar-valid";
 import { hintNotTrivialPredicate } from "./hint-not-trivial";
 import { notRidiculousPredicate } from "./not-ridiculous";
 import { frenchLanguagePredicate } from "./french-language";
+import { germanLanguagePredicate } from "./german-language";
 
 export const allPredicates: Predicate[] = [
   elisionPredicate,
@@ -31,6 +32,7 @@ export const allPredicates: Predicate[] = [
   hintNotTrivialPredicate,
   notRidiculousPredicate,
   frenchLanguagePredicate,
+  germanLanguagePredicate,
 ];
 
 export {
@@ -49,4 +51,5 @@ export {
   hintNotTrivialPredicate,
   notRidiculousPredicate,
   frenchLanguagePredicate,
+  germanLanguagePredicate,
 };

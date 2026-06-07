@@ -4,7 +4,7 @@ export interface QuestionContext {
   question: Question;
   rule: Rule;
   section: Section;
-  lang: "fr" | "en";
+  lang: "fr" | "en" | "de";
 }
 
 export type PredicateResult =
@@ -63,7 +63,7 @@ export interface CacheEntry {
 }
 
 export interface ValidationOptions {
-  lang?: "fr" | "en";
+  lang?: "fr" | "en" | "de";
   sections?: string[];
   rules?: string[];
   questions?: string[];

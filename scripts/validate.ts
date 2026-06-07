@@ -5,7 +5,7 @@
  *   npx tsx scripts/validate.ts [options]
  *
  * Options:
- *   --lang <fr|en>         Language to validate (default: en)
+ *   --lang <fr|en|de>      Language to validate (default: en)
  *   --section <id>         Section ID filter (e.g., "01")
  *   --rule <id>            Rule ID filter (e.g., "01-01")
  *   --question <id>        Question ID filter (e.g., "01-01-001")
@@ -38,7 +38,7 @@ function parseArgs(): ValidationOptions & { json?: boolean } {
     const arg = args[i];
     
     if (arg === "--lang" && args[i + 1]) {
-      opts.lang = args[++i] as "fr" | "en";
+      opts.lang = args[++i] as "fr" | "en" | "de";
     } else if (arg === "--section" && args[i + 1]) {
       if (opts.sections) {
         console.error("Error: --section may only be specified once. Combine multiple IDs with commas (e.g. --section 01,02).");

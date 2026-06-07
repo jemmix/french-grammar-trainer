@@ -25,7 +25,7 @@ export interface LangStrings {
     appTitle: string;        // "Grammaire Française B1" (used in <title> base)
     levelLabel: string;      // "Niveau B1"
     description: string;     // <meta name="description">
-    langCode: string;        // "fr" | "en" (HTML lang attribute)
+    langCode: string;        // "fr" | "en" | "de" (HTML lang attribute)
   };
 
   // ── Shared ────────────────────────────────────────────────────────────────

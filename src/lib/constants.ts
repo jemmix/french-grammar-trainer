@@ -1,11 +1,13 @@
+import { RULE_SLOTS, RULES_PER_SECTION } from "./lang-config";
+
 export const PROGRESS = {
   // EWMA (15/16 decay — all integer math via bit shifts)
   DECAY_SHIFT: 4,               // >> 4 = divide by 16
   CORRECT_BUMP: 4095,           // 65535 >> 4 — added on correct answer
   MAX_POWER: 65535,             // uint16 max
   MASTERY_THRESHOLD: 0.95,      // Display power considered "mastered"
-  RULE_SLOTS: 560,              // 28 sections × 20 rules
-  RULES_PER_SECTION: 20,
+  get RULE_SLOTS() { return RULE_SLOTS; },
+  get RULES_PER_SECTION() { return RULES_PER_SECTION; },
 
   // Question picker
   WEIGHT_FLOOR: 0.05,           // Minimum selection weight

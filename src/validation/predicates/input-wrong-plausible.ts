@@ -1,5 +1,6 @@
 import type { LLMPredicate, QuestionContext, PredicateResult, LLMRequestSpec } from "../types";
 import type { InputQuestion } from "../../data/types";
+import { LANG_NAMES } from "../constants";
 
 export const inputWrongPlausiblePredicate: LLMPredicate = {
   id: "input-wrong-plausible",
@@ -12,7 +13,7 @@ export const inputWrongPlausiblePredicate: LLMPredicate = {
 
   generatePrompt(ctx: QuestionContext): LLMRequestSpec {
     const q = ctx.question as InputQuestion;
-    const lang = ctx.lang === "fr" ? "French" : "English";
+    const lang = LANG_NAMES[ctx.lang] ?? "English";
     const phrase = q.phrase.before + "___" + q.phrase.after;
 
     const wrongAnswersText = q.wrongAnswers.map((w, i) => {

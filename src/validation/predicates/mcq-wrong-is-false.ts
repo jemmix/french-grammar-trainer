@@ -1,5 +1,6 @@
 import type { LLMPredicate, QuestionContext, PredicateResult, LLMRequestSpec } from "../types";
 import type { MultipleChoiceQuestion } from "../../data/types";
+import { LANG_NAMES } from "../constants";
 
 export const mcqWrongIsFalsePredicate: LLMPredicate = {
   id: "mcq-wrong-is-false",
@@ -13,7 +14,7 @@ export const mcqWrongIsFalsePredicate: LLMPredicate = {
   generatePrompt(ctx: QuestionContext): LLMRequestSpec {
     const q = ctx.question as MultipleChoiceQuestion;
     const wrongChoices = q.choices.filter((c) => !c.correct);
-    const lang = ctx.lang === "fr" ? "French" : "English";
+    const lang = LANG_NAMES[ctx.lang] ?? "English";
 
     const choicesText = q.choices.map((c, i) => {
       const marker = c.correct ? " [CORRECT]" : " [WRONG]";

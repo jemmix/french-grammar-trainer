@@ -113,7 +113,7 @@ function createRateLimiter(intervalMs: number) {
   };
 }
 
-async function loadSections(lang: "fr" | "en"): Promise<Map<string, { section: any; rules: Map<string, any> }>> {
+async function loadSections(lang: "fr" | "en" | "de"): Promise<Map<string, { section: any; rules: Map<string, any> }>> {
   const { loadedSections } = await import("../data/" + lang + "/index.ts");
   const result = new Map<string, { section: any; rules: Map<string, any> }>();
 

@@ -1,14 +1,16 @@
 // Pure functions — no I/O, no Next.js imports
 
+import { RULE_SLOTS, RULES_PER_SECTION, SECTIONS_COUNT } from "./lang-config";
+
 export const HEADER_SIZE = 11;
-export const RULE_SLOTS = 560;
-export const BLOB_SIZE = 1131; // 11 + 560 * 2
+export { RULE_SLOTS };
+export const BLOB_SIZE = HEADER_SIZE + RULE_SLOTS * 2;
 
 export interface RecordHeader {
   version: number;     // uint8  — always 1
   createdAt: number;   // uint32 — unix seconds
   lastActiveAt: number; // uint32 — unix seconds
-  ruleSlots: number;   // uint16 — always 560
+  ruleSlots: number;   // uint16 — language-dependent (560 for fr/en, 120 for de)
 }
 
 export function decodeHeader(data: Uint8Array): RecordHeader {
@@ -22,7 +24,7 @@ export function decodeHeader(data: Uint8Array): RecordHeader {
 }
 
 /**
- * Converts a rule ID like "01-01" to a slot index 0–559.
+ * Converts a rule ID like "01-01" to a slot index.
  * Returns -1 if the ID is malformed.
  */
 export function getRuleSlotIndex(ruleId: string): number {
@@ -31,8 +33,8 @@ export function getRuleSlotIndex(ruleId: string): number {
   const section = parseInt(parts[0]!, 10);
   const rule = parseInt(parts[1]!, 10);
   if (isNaN(section) || isNaN(rule)) return -1;
-  if (section < 1 || section > 28 || rule < 1 || rule > 20) return -1;
-  return (section - 1) * 20 + (rule - 1);
+  if (section < 1 || section > SECTIONS_COUNT || rule < 1 || rule > RULES_PER_SECTION) return -1;
+  return (section - 1) * RULES_PER_SECTION + (rule - 1);
 }
 
 /**
@@ -54,7 +56,7 @@ export function recordAnswerInPlace(
 }
 
 /**
- * Encodes powers to binary blob (11-byte header + 560 uint16 big-endian).
+ * Encodes powers to binary blob (11-byte header + RULE_SLOTS uint16 big-endian).
  */
 export function encodeRecord(powers: Uint16Array): Uint8Array {
   const buf = new Uint8Array(BLOB_SIZE);
@@ -71,7 +73,7 @@ export function encodeRecord(powers: Uint16Array): Uint8Array {
 }
 
 /**
- * Decodes binary blob back to a Uint16Array of 560 power values.
+ * Decodes binary blob back to a Uint16Array of RULE_SLOTS power values.
  */
 export function decodeRecord(data: Uint8Array): Uint16Array {
   const view = new DataView(data.buffer, data.byteOffset, data.byteLength);
@@ -92,7 +94,7 @@ export function getDisplayPower(raw: number): number {
 }
 
 /**
- * Mean display power of all 20 rule slots in the given section.
+ * Mean display power of all rule slots in the given section.
  * Unattempted slots (raw === 0) count as 0.
  * sectionId must start with a two-digit number, e.g. "01-present-indicatif".
  */
@@ -103,22 +105,22 @@ export function getSectionDisplayPower(
   const match = sectionId.match(/^(\d+)/);
   if (!match) return 0;
   const n = parseInt(match[1]!, 10);
-  const start = (n - 1) * 20;
+  const start = (n - 1) * RULES_PER_SECTION;
   let sum = 0;
-  for (let i = start; i < start + 20; i++) {
+  for (let i = start; i < start + RULES_PER_SECTION; i++) {
     sum += (powers[i] ?? 0) / 65535;
   }
-  return sum / 20;
+  return sum / RULES_PER_SECTION;
 }
 
 /**
- * Mean display power across all 28 sections (each section's score is itself
- * the average of its 20 rule slots). Content-independent: always /28.
+ * Mean display power across all sections (each section's score is itself
+ * the average of its rule slots).
  */
 export function getGlobalDisplayPower(powers: Uint16Array): number {
   let sum = 0;
-  for (let s = 1; s <= 28; s++) {
+  for (let s = 1; s <= SECTIONS_COUNT; s++) {
     sum += getSectionDisplayPower(powers, String(s).padStart(2, "0"));
   }
-  return sum / 28;
+  return sum / SECTIONS_COUNT;
 }

@@ -25,17 +25,25 @@ import { join } from "path";
 // Determiner families — choices from the same family are near-duplicates
 // unless the question specifically tests within-family distinctions
 const DETERMINER_FAMILIES: Record<string, string[]> = {
-  "défini": ["le", "la", "l'", "les"],
-  "indéfini": ["un", "une", "des"],
-  "partitif": ["du", "de la", "de l'"],
-  "contracté-à": ["au", "aux"],
-  "possessif-3s": ["son", "sa", "ses"],
-  "possessif-1s": ["mon", "ma", "mes"],
-  "possessif-2s": ["ton", "ta", "tes"],
-  "possessif-3p": ["leur", "leurs"],
-  "possessif-1p": ["notre", "nos"],
-  "possessif-2p": ["votre", "vos"],
-  "démonstratif": ["ce", "cet", "cette", "ces"],
+  // French
+  "fr-défini": ["le", "la", "l'", "les"],
+  "fr-indéfini": ["un", "une", "des"],
+  "fr-partitif": ["du", "de la", "de l'"],
+  "fr-contracté-à": ["au", "aux"],
+  "fr-possessif-3s": ["son", "sa", "ses"],
+  "fr-possessif-1s": ["mon", "ma", "mes"],
+  "fr-possessif-2s": ["ton", "ta", "tes"],
+  "fr-possessif-3p": ["leur", "leurs"],
+  "fr-possessif-1p": ["notre", "nos"],
+  "fr-possessif-2p": ["votre", "vos"],
+  "fr-démonstratif": ["ce", "cet", "cette", "ces"],
+  // German
+  "de-definite": ["der", "die", "das", "den", "dem", "des"],
+  "de-indefinite": ["ein", "eine", "einer", "einem", "einen", "eines"],
+  "de-negative": ["kein", "keine", "keiner", "keinem", "keinen", "keines"],
+  "de-possessive-m": ["mein", "dein", "sein", "unser", "euer", "ihr"],
+  "de-possessive-f": ["meine", "deine", "seine", "unsere", "eure", "ihre"],
+  "de-demonstrative": ["dieser", "diese", "dieses", "jener", "jene", "jenes"],
 };
 
 function getFamilies(choiceText: string): string[] {
@@ -232,7 +240,7 @@ async function validateLang(lang: string): Promise<number> {
 async function main() {
   const args = process.argv.slice(2);
   const langArg = args.find((a) => a.startsWith("--lang="))?.slice(7);
-  const langs = langArg ? [langArg] : ["en", "fr"];
+  const langs = langArg ? [langArg] : ["en", "fr", "de"];
 
   let totalErrors = 0;
   for (const lang of langs) {

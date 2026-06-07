@@ -1,5 +1,6 @@
 import type { LLMPredicate, QuestionContext, PredicateResult, LLMRequestSpec } from "../types";
 import type { MultipleChoiceQuestion, InputQuestion } from "../../data/types";
+import { LANG_NAMES } from "../constants";
 
 export const grammarValidPredicate: LLMPredicate = {
   id: "grammar-valid",
@@ -11,7 +12,7 @@ export const grammarValidPredicate: LLMPredicate = {
   },
 
   generatePrompt(ctx: QuestionContext): LLMRequestSpec {
-    const lang = ctx.lang === "fr" ? "French" : "English";
+    const lang = LANG_NAMES[ctx.lang] ?? "English";
 
     let correctAnswer: string;
     if (ctx.question.type === "mcq") {

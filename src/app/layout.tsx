@@ -49,7 +49,7 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang="fr">
+    <html lang={t.meta.langCode}>
       <body className={geist.className}>
         <ProgressProvider
           initialPowers={initialPowers}

@@ -1,5 +1,6 @@
 import type { LLMPredicate, QuestionContext, PredicateResult, LLMRequestSpec } from "../types";
 import type { MultipleChoiceQuestion } from "../../data/types";
+import { LANG_NAMES } from "../constants";
 
 export const mcqCorrectIsTruePredicate: LLMPredicate = {
   id: "mcq-correct-is-true",
@@ -17,7 +18,7 @@ export const mcqCorrectIsTruePredicate: LLMPredicate = {
       throw new Error("No correct choice found");
     }
 
-    const lang = ctx.lang === "fr" ? "French" : "English";
+    const lang = LANG_NAMES[ctx.lang] ?? "English";
     const choicesText = question.choices.map((c, i) => {
       const marker = c.correct ? " [MARKED CORRECT]" : "";
       return String.fromCharCode(65 + i) + "." + marker + " " + c.text;
