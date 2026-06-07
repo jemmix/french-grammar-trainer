@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a67950caf898cef8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-16-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-16 - Indicatif vs subjonctif : il est certain que (ind.) vs il est possible que (subj.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). « Il est peu probable que vous ___ ce film. »\nChoices:\nA. [CORRECT] regardiez\nB. regardez\nC. regardions\nD. regardons\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780844348064-1kogzszy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Il est peu probable que\" is an expression of uncertainty that triggers the subjunctive just like \"il est possible que,\" and the key distractor \"regardez\" (indicatif) directly tests the indicatif vs subjonctif distinction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780844364895-ousj3uk3",
+      "timestamp": "2026-06-07T14:59:46.653Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to validate whether a French grammar question about \"Il est peu probable que vous ___ ce film\" properly tests the rule about indicative vs subjunctive after expressions of certainty (\"il est certain que\") vs possibility (\"il est possible que\").\n\nVerdict: ALIGNED\nReason: The question directly tests whether the learner knows that \"il est peu probable que\" (an expression of doubt/possibility, parallel to \"il est possible que\") triggers the subjunctive mood \"regardiez\" rather than the indicative \"regardez\", which is the core concept of the stated rule.\n\nNo remaining tasks — the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780844539114-srug0k1n",
+      "timestamp": "2026-06-07T15:02:34.836Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Il est peu probable que\" is an expression of doubt/uncertainty that, like \"il est possible que,\" requires the subjunctive, making this question a direct test of distinguishing indicative-triggering vs subjunctive-triggering expressions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780844733129-sr7q3our",
+      "timestamp": "2026-06-07T15:05:59.754Z"
+    }
+  ]
+}

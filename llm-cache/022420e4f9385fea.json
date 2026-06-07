@@ -1,0 +1,33 @@
+{
+  "cacheKey": "022420e4f9385fea",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-16-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). « Il est certain que nous ___ notre possible. »\n\nChoices:\nA. [CORRECT] faisons\nB. [WRONG] fassions\nC. [WRONG] font\nD. [WRONG] fassent\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780845795286-vwjygp8c"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses subjonctif but \"il est certain que\" requires indicatif; C uses the \"ils/elles\" form instead of \"nous\"; D is both the wrong mood (subjonctif) and wrong person (ils/elles).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780845819022-6xb4b2ag",
+      "timestamp": "2026-06-07T15:24:00.804Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses the subjunctive but \"il est certain que\" requires indicative, C uses the 3rd person plural form instead of 1st person plural, D uses both the wrong mood (subjunctive) and wrong person/number (3rd plural instead of 1st plural).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780845936986-nwuaolvo",
+      "timestamp": "2026-06-07T15:25:52.482Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I analyzed the French grammar MCQ question about the verb \"faire\" in the present tense. The question asks for the correct form after \"Il est certain que nous ___\" with the constraint of indicative or subjunctive. I evaluated each wrong answer:\n- B (fassions): Incorrect because \"Il est certain que\" expresses certainty and takes the indicative, not the subjunctive\n- C (font): Incorrect because it's the third-person plural form, not matching the subject \"nous\"\n- D (fassent): Incorrect for both subject-verb disagreement (third-person plural) and inappropriate use of subjunctive after a certainty expression\n\nTRUE||All wrong answers contain clear grammar errors: B uses subjunctive inappropriately after a certainty clause, and C and D use third-person plural forms with a first-person plural subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780846073552-1z2rr6p5",
+      "timestamp": "2026-06-07T15:28:30.836Z"
+    }
+  ]
+}

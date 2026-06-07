@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d287e64e98daf87d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-16-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-16 - Indicatif vs subjonctif : il est certain que (ind.) vs il est possible que (subj.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). « Il est évident que cette décision ___ importante. »\nChoices:\nA. [CORRECT] est\nB. soit\nC. es\nD. sois\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780844348065-81vz657s"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Il est évident que\" expresses certainty and takes the indicative, testing the same core concept as \"il est certain que\" vs \"il est possible que\" — knowing that expressions of certainty trigger the indicative while expressions of doubt/possibility trigger the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780844453519-fb6zdd2k",
+      "timestamp": "2026-06-07T15:01:13.717Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that expressions of certainty like \"il est évident que\" take the indicative, which directly applies the rule's core concept that certainty triggers indicative while uncertainty triggers subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780844631300-x7fmxsby",
+      "timestamp": "2026-06-07T15:04:21.152Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a French grammar question about \"Il est évident que cette décision ___ importante\" properly tests the rule about indicative vs subjunctive with expressions of certainty (il est certain que) vs possibility (il est possible que).\n\nVerdict: ALIGNED\nREASON: The question tests whether students know that \"il est évident que\" expresses certainty and therefore takes the indicative (\"est\"), which is the same grammatical distinction as the stated rule about \"il est certain que\" taking the indicative versus \"il est possible que\" taking the subjunctive.\n\nNo remaining tasks - this was a single-question validation that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780844830709-en2rsh0n",
+      "timestamp": "2026-06-07T15:07:28.956Z"
+    }
+  ]
+}

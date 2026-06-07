@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7a0635632d5cdd8f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-16-012",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). « Il est possible que les enfants ___ malades. »\n\nChoices:\nA. [CORRECT] soient\nB. [WRONG] sont\nC. [WRONG] soit\nD. [WRONG] est\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780845795286-dkq4kn4a"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses indicative instead of the required subjunctive, C is singular subjunctive but the subject \"les enfants\" is plural, and D is singular indicative which fails on both mood and number agreement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780845845946-jsmgj2p3",
+      "timestamp": "2026-06-07T15:24:18.166Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to verify that the wrong answers (B, C, D) in a French grammar multiple-choice question are indeed incorrect. The question asks for the correct present tense form (indicative or subjunctive) to complete \"Il est possible que les enfants ___ malades.\"\n\n**Analysis completed:**\n- A (soient) is correct: subjunctive plural, required by \"Il est possible que\" + plural subject \"les enfants\"\n- B (sont) is wrong: indicative instead of subjunctive\n- C (soit) is wrong: singular instead of plural\n- D (est) is wrong: both wrong mood (indicative) and wrong number (singular)\n\n**Verdict:** TRUE||All wrong answers fail to meet the grammatical requirements: B uses indicative instead of subjunctive, C uses singular instead of plural, and D fails on both mood and number agreement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780845957273-xu15c0bf",
+      "timestamp": "2026-06-07T15:26:15.005Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers violate the grammatical constraints: B uses indicative instead of required subjunctive after \"il est possible que,\" C uses singular \"soit\" instead of plural for \"les enfants,\" and D uses both indicative mood and singular form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780846107676-fxwv3nz5",
+      "timestamp": "2026-06-07T15:28:46.686Z"
+    }
+  ]
+}

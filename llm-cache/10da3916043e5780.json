@@ -1,0 +1,33 @@
+{
+  "cacheKey": "10da3916043e5780",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-16-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-16 - Indicatif vs subjonctif : il est certain que (ind.) vs il est possible que (subj.)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). « Il est possible que tu ___ comprendre. »\nChoices:\nA. [CORRECT] puisses\nB. peux\nC. puisse\nD. peut\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780845795286-h9bpgws7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"il est possible que\" triggers the subjunctive mood to select \"puisses\" over the indicative \"peux\", which is precisely what the stated rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780845829412-5mv0mvm8",
+      "timestamp": "2026-06-07T15:24:04.676Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"il est possible que\" triggers the subjunctive mood to correctly select \"puisses\" over the indicative forms \"peux\" and \"peut\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780845937981-vrciaozr",
+      "timestamp": "2026-06-07T15:25:57.272Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\nI was asked to validate whether a French grammar question about \"Il est possible que tu ___ comprendre\" with choices between puisses/peux/puisse/peut properly tests the rule about \"Indicatif vs subjonctif : il est certain que (ind.) vs il est possible que (subj.)\"\n\nMy analysis:\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"il est possible que\" triggers the subjunctive mood, which is the core of the stated rule about distinguishing between expressions requiring indicative vs subjunctive.\n\nNo remaining tasks - this was a single-question validation that I completed in my analysis before the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780846075073-q3ygvwmz",
+      "timestamp": "2026-06-07T15:28:24.445Z"
+    }
+  ]
+}

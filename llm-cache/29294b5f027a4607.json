@@ -1,0 +1,33 @@
+{
+  "cacheKey": "29294b5f027a4607",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-16-013",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). « Il est certain que tu ___ la bonne réponse. »\n\nChoices:\nA. [CORRECT] as\nB. [WRONG] aies\nC. [WRONG] a\nD. [WRONG] ait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780845795286-fjlnozg2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses subjunctive but \"il est certain que\" requires indicative, C uses 3rd person singular instead of 2nd, and D uses both wrong mood (subjunctive) and wrong person (3rd singular).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780845853545-x2of2jdc",
+      "timestamp": "2026-06-07T15:24:32.491Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the subjunctive mood which is not triggered by \"il est certain que\" (certainty requires indicative), C uses the 3rd person singular form instead of the required 2nd person singular for \"tu\", and D is wrong on both counts (wrong person/number and wrong mood).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780845973875-93h8iomj",
+      "timestamp": "2026-06-07T15:26:29.073Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses the subjunctive \"aies\" but \"il est certain que\" requires the indicative; C uses the 3rd person singular \"a\" instead of the 2nd person required by \"tu\"; D uses both the wrong mood (subjunctive) and wrong person (3rd singular).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780846118882-itmsfqiu",
+      "timestamp": "2026-06-07T15:29:04.088Z"
+    }
+  ]
+}

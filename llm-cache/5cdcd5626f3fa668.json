@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5cdcd5626f3fa668",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-16-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). « Il est sûr que vous ___ les bonnes réponses. »\n\nChoices:\nA. [CORRECT] avez\nB. [WRONG] ayez\nC. [WRONG] a\nD. [WRONG] ait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780844348064-7htkne5s"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the subjunctive when \"il est sûr que\" requires the indicative, C uses the 3rd person singular form with the 2nd person plural subject \"vous\", and D compounds both errors by using the wrong mood and wrong person/number.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780844354074-2z8tbeo4",
+      "timestamp": "2026-06-07T14:59:35.452Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the subjunctive but \"il est sûr que\" requires indicative; C is the 3rd person singular indicative instead of 2nd person plural; D is both the wrong person (3rd singular) and wrong mood (subjunctive).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780844526208-sz3bpoql",
+      "timestamp": "2026-06-07T15:02:28.815Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the subjunctive which is wrong after \"il est sûr que\" (certainty requires indicative), C is the 3rd person singular form instead of \"vous\", and D combines both errors (wrong person and wrong mood).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780844726804-0n5ya01l",
+      "timestamp": "2026-06-07T15:05:46.857Z"
+    }
+  ]
+}

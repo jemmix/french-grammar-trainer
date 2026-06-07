@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bde6506135cd4662",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-16-002",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au présent (indicatif ou subjonctif). « Il est possible que le train ___ en retard. »\n\nChoices:\nA. [CORRECT] soit\nB. [WRONG] est\nC. [WRONG] sois\nD. [WRONG] es\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780844348064-umc8d5y4"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780844351071-tosx9na4",
+      "timestamp": "2026-06-07T14:59:28.696Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar MCQ question about the subjunctive mood. The question asks for the correct form of \"être\" after \"Il est possible que\" (which requires the subjunctive).\n\nAnalysis completed:\n- B (\"est\") is incorrect because it uses the indicative instead of the subjunctive\n- C (\"sois\") is incorrect because it's the 2nd person singular subjunctive, not the 3rd person singular needed for \"le train\"\n- D (\"es\") is incorrect because it's both the wrong mood (indicative) and wrong person (2nd singular)\n\nTRUE||All wrong answers contain clear grammar errors (B uses indicative instead of subjunctive, C uses wrong person, D uses wrong mood and person).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780844525058-f83mpfss",
+      "timestamp": "2026-06-07T15:02:19.788Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"est\" and \"es\" are indicative not subjunctive, and \"sois\" is the wrong person (1st/2nd singular instead of 3rd singular subjunctive \"soit\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780844713213-n9nhl534",
+      "timestamp": "2026-06-07T15:05:33.129Z"
+    }
+  ]
+}
