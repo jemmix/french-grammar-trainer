@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d66d0a4d547403bd",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-14-017",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe. « C'est le moins probable résultat que j'___ imaginé. »\n\nChoices:\nA. [CORRECT] aie\nB. [WRONG] ai\nC. [WRONG] avais\nD. [WRONG] aurais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780807860016-59o7e5u3"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional moods instead of the required subjunctive after the superlative \"le moins probable que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780807971075-epsaa9ia",
+      "timestamp": "2026-06-07T04:53:09.040Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B, C, and D in a French grammar MCQ question are indeed incorrect.\n\nThe question asks for the correct verb form in \"C'est le moins probable résultat que j'___ imaginé.\" The correct answer is A \"aie\" (subjonctif présent). \n\nAnalysis completed:\n- B \"ai\" (indicatif présent) - Incorrect: requires subjunctive after \"que\" with superlative\n- C \"avais\" (indicatif imparfait) - Incorrect: requires subjunctive, wrong mood\n- D \"aurais\" (conditionnel présent) - Incorrect: requires subjunctive, not conditional\n\nTRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after \"que\" with a superlative expressing doubt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780808158958-jq6spwrn",
+      "timestamp": "2026-06-07T04:56:26.826Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"que\" in a superlative construction expressing doubt (\"le moins probable\"), where B uses indicative present, C uses imperfect indicative, and D uses conditional instead of the required subjunctive \"aie\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780808331170-aqm9xdxt",
+      "timestamp": "2026-06-07T04:59:07.732Z"
+    }
+  ]
+}

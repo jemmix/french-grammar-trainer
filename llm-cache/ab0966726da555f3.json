@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ab0966726da555f3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-14-003",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Indicatif ou subjonctif ? Choisissez la bonne forme du verbe. « C'est le moins beau château qu'elle ___ . »\n\nChoices:\nA. [CORRECT] voie\nB. [WRONG] voit\nC. [WRONG] voyait\nD. [WRONG] verrait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780809154570-ilnw4h9v"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use the wrong mood: B and C are indicative (subjunctive is required after \"le moins…que\" with subjective judgment), and D is conditional (not even one of the two moods offered in the question prompt).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780809160585-gx3fmzg4",
+      "timestamp": "2026-06-07T05:13:08.543Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was about to evaluate the French grammar question about \"Indicatif ou subjonctif\" with the sentence \"C'est le moins beau château qu'elle ___.\" The question asks learners to choose between indicative and subjunctive after a superlative construction.\n\nRemaining tasks: Provide the verdict on whether wrong answers B (voit), C (voyait), and D (verrait) are indeed incorrect.\n\nRecommendations: The answer is TRUE||All wrong answers use the indicative or conditional mood instead of the required subjunctive after the superlative \"le moins... que\" expressing subjective judgment.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780809333531-nn47m0m8",
+      "timestamp": "2026-06-07T05:15:50.278Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after \"le moins beau,\" which triggers the subjunctive in a subordinate clause expressing a subjective judgment.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780809477597-d8hnv8g8",
+      "timestamp": "2026-06-07T05:18:17.752Z"
+    }
+  ]
+}

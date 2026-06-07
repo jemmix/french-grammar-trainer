@@ -1,0 +1,33 @@
+{
+  "cacheKey": "01bde6d37fc7502a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-14-011",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe. « C'est le premier candidat qui ___ réussi cet examen. »\n\nChoices:\nA. [CORRECT] ait\nB. [WRONG] a\nC. [WRONG] avait\nD. [WRONG] aurait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780810100134-pv4cfk19"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers use indicative or conditional moods, but after \"le premier qui\" the subjunctive \"ait\" is grammatically required in French.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780810123993-5ez52yja",
+      "timestamp": "2026-06-07T05:29:12.466Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached. I was in the process of evaluating a French grammar verification task.\n\nFor the question about \"C'est le premier candidat qui ___ réussi cet examen,\" I can provide the verdict:\n\nTRUE||All wrong answers are grammatically incorrect: B \"a\" is indicative present but \"le premier... qui\" requires subjunctive; C \"avait\" is wrong tense (imperfect); D \"aurait\" is wrong mood (conditional).\n\nNo remaining tasks - this single verification was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780810230846-nn24xfdw",
+      "timestamp": "2026-06-07T05:30:58.591Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the wrong mood (indicative or conditional) when the subjunctive is grammatically required after \"le premier qui.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780810343433-v0cfnoni",
+      "timestamp": "2026-06-07T05:32:36.352Z"
+    }
+  ]
+}

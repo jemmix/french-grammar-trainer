@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9570e9792fd905f7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-14-021",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-14 - Le subjonctif après le plus / le moins / le seul / le premier / le dernier + qui/que (superlatif)\n\nQUESTION:\nType: Input\nPrompt: Indicatif ou subjonctif ? Conjuguez le verbe.\nPhrase: C'est le plus bel appartement que j'___ jamais visité.\nCorrect Answer: aie\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780807860017-aimwdae8"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question uses \"le plus... que\" structure and requires the subjunctive \"aie\" instead of indicative \"ai\", directly testing the rule about subjunctive after superlatives.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780808005287-ioajnua1",
+      "timestamp": "2026-06-07T04:54:14.071Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses the exact \"le plus + [noun] + que\" structure that triggers the subjunctive according to the stated rule, and answering correctly (aie vs. ai) requires knowing that the subjunctive is mandatory after this superlative construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780808225163-mgvelppi",
+      "timestamp": "2026-06-07T04:59:36.227Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the subjunctive after \"le plus...que,\" which is the core structure covered by this superlative rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780808466277-k9xe0x1l",
+      "timestamp": "2026-06-07T05:01:23.317Z"
+    }
+  ]
+}

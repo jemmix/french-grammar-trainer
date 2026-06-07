@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5830a5dc970fd47a",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-14-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le subjonctif après le plus / le moins / le seul / le premier / le dernier + qui/que (superlatif)\nPROMPT: Indicatif ou subjonctif ? Conjuguez le verbe.\nPHRASE: C'est le seul ami que nous ___ en commun.\nCORRECT ANSWER: ayons\n\nWRONG ANSWERS to evaluate:\n1. avons\n2. avions\n3. aurions\n4. eu\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780810100143-fxip41j5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"eu\" is the past participle, not a conjugated form, and no learner studying subjunctive after superlatives would type a bare past participle instead of a conjugated verb in this slot.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780810184344-bstzfb9f",
+      "timestamp": "2026-06-07T05:30:03.548Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common conjugation errors a learner might make when unsure about the subjunctive rule: \"avons\" is the most natural mistake (using indicative instead of subjunctive), \"avions\" and \"aurions\" reflect tense/mood confusion, and \"eu\" could come from a learner mixing up past participle usage or half-remembering a passé simple form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780810292415-2s0rydjp",
+      "timestamp": "2026-06-07T05:31:53.573Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating the plausibility of wrong answers for a French grammar question about the subjunctive after superlatives (\"le seul que nous ___ en commun\" → \"ayons\").\n\nVERDICT: IMPLAUSIBLE\nREASON: \"avons\", \"avions\", and \"aurions\" are all plausible mistakes (indicatif/imparfait/conditionnel confusion with subjonctif), but \"eu\" is not—a past participle cannot function as a conjugated verb in this position, and no learner studying this advanced subjunctive rule would fail to recognize that \"que nous eu\" is grammatically incomplete.\n\nRemaining task: This single evaluation is complete. No other tasks were pending.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780810390608-2t1mo0mt",
+      "timestamp": "2026-06-07T05:33:32.344Z"
+    }
+  ]
+}

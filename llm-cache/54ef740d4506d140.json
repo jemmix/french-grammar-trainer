@@ -1,0 +1,33 @@
+{
+  "cacheKey": "54ef740d4506d140",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-14-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe. « C'est la plus belle maison qu'ils ___ construire. »\n\nChoices:\nA. [CORRECT] fassent\nB. [WRONG] font\nC. [WRONG] feraient\nD. [WRONG] faisaient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780807860015-d5ingovq"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate that wrong answers B, C, and D in a French grammar multiple choice question are indeed incorrect. The question tests the subjunctive mood after a superlative construction (\"C'est la plus belle maison qu'ils ___ construire.\").\n\nThe validation result is:\nTRUE||All wrong answers fail to use the subjunctive mood required after a superlative with \"que\" — B uses indicative present, C uses conditional, and D uses imparfait.\n\nNo remaining tasks — the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780807900716-p97s8i3o",
+      "timestamp": "2026-06-07T04:55:00.228Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the required subjunctive mood after the superlative construction \"la plus... que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780808270037-38qflk2n",
+      "timestamp": "2026-06-07T04:58:03.669Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after the superlative \"la plus belle maison que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780808391256-6ief0nbv",
+      "timestamp": "2026-06-07T05:00:04.725Z"
+    }
+  ]
+}

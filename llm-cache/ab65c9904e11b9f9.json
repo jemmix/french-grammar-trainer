@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ab65c9904e11b9f9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-14-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-14 - Le subjonctif après le plus / le moins / le seul / le premier / le dernier + qui/que (superlatif)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme du verbe au subjonctif. « C'est le premier collègue qui ___ aujourd'hui. »\nChoices:\nA. [CORRECT] parte\nB. part\nC. partirait\nD. partait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780838826425-3hwocdk4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that \"le premier... qui\" requires the subjunctive, as students must recognize this trigger and choose \"parte\" over the indicative \"part\" to answer correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780838827460-1ce6syfn",
+      "timestamp": "2026-06-07T13:27:34.975Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"le premier... qui\" triggers the subjunctive mood, which is the exact grammar rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780838855348-ii94tihg",
+      "timestamp": "2026-06-07T13:27:54.877Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses \"le premier... qui\" which is the exact trigger for the subjunctive in this rule, and the correct answer \"parte\" requires knowing that superlatives like \"le premier\" take the subjunctive rather than the indicative \"part.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780838874878-gijmvlqu",
+      "timestamp": "2026-06-07T13:28:04.027Z"
+    }
+  ]
+}

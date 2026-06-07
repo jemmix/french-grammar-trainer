@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9f15a3c7808a9d9b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-14-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe. « C'est le film le plus intéressant que j'___ vu. »\n\nChoices:\nA. [CORRECT] aie\nB. [WRONG] ai\nC. [WRONG] aurais\nD. [WRONG] avais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780807860014-ri8xq7c0"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was analyzing a French grammar MCQ validation task to verify that wrong answers B (\"ai\"), C (\"aurais\"), and D (\"avais\") are incorrect in the sentence \"C'est le film le plus intéressant que j'___ vu.\"\n\nAnalysis completed:\n- B. \"ai\" (indicative passé composé) is incorrect because the subjunctive is required after \"le plus...que\" with subjective judgments\n- C. \"aurais\" (conditionnel) is incorrect as it expresses a hypothetical, not a completed action\n- D. \"avais\" (imparfait) is incorrect as it's the wrong tense for this construction\n\nThe correct answer A. \"aie\" (subjunctive present) is the only valid form.\n\nResult: TRUE||All wrong answers use incorrect moods/tenses for the superlative + subjunctive construction.\n\nNo remaining tasks - the validation was completed before the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780807860018-qjsm09ha",
+      "timestamp": "2026-06-07T04:51:18.098Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use the wrong mood—B uses indicative present, C uses conditional, and D uses imperfect—instead of the required subjunctive after the superlative construction \"le plus... que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780808034045-4ylz8zrs",
+      "timestamp": "2026-06-07T04:54:09.119Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nFor this verification task, I can provide the answer directly:\n\nTRUE||All wrong answers use incorrect moods or tenses for this construction; B uses indicative present instead of required subjunctive after \"le plus...que\", C uses conditional which changes the meaning entirely, and D uses imperfect instead of present subjunctive.\n\nThe grammatical rule being tested here is that after a superlative construction (\"le plus...que\"), French requires the subjunctive mood. \"J'aie vu\" (subjunctive present) is correct, while \"j'ai vu\" (indicative), \"j'aurais vu\" (conditional), and \"j'avais vu\" (imperfect) are all incorrect in this specific context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780808223716-3l9p3dsh",
+      "timestamp": "2026-06-07T04:57:24.803Z"
+    }
+  ]
+}

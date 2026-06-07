@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d52272a266f2c234",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-14-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-14 - Le subjonctif après le plus / le moins / le seul / le premier / le dernier + qui/que (superlatif)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Choisissez la bonne forme du verbe. « C'est la plus belle maison qu'ils ___ construire. »\nChoices:\nA. [CORRECT] fassent\nB. font\nC. feraient\nD. faisaient\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780807860015-fnqb2jct"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question uses the exact structure \"la plus belle maison que\" (superlative + que) which triggers the subjunctive, and the distractors test whether the learner knows to use \"fassent\" (subjunctive) rather than indicative, conditional, or imperfect forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780807901201-5s1kpdmc",
+      "timestamp": "2026-06-07T04:52:02.795Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that the subjunctive is required after \"la plus... que\" constructions, with the distractors testing common mistakes of using other moods (indicative, conditional, imperfect) instead.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780808082780-6enonp4g",
+      "timestamp": "2026-06-07T04:55:01.283Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"la plus belle... que\" triggers the subjunctive (\"fassent\") rather than the indicative (\"font\"), which is exactly the grammar pattern the rule teaches.\n\nMaximum steps for this agent have been reached. The validation task has been completed - I provided the alignment verdict for the single question that was presented. No remaining tasks are pending for this validation request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780808272567-qqo2368h",
+      "timestamp": "2026-06-07T04:58:42.427Z"
+    }
+  ]
+}

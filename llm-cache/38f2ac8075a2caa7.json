@@ -1,0 +1,33 @@
+{
+  "cacheKey": "38f2ac8075a2caa7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-14-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au subjonctif. « Le seul remède que vous ___ essayer est le repos. »\n\nChoices:\nA. [CORRECT] puissiez\nB. [WRONG] pouvez\nC. [WRONG] pourriez\nD. [WRONG] pouviez\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780810967123-zuefjs8y"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify whether wrong answers B, C, and D in a French grammar MCQ about the subjunctive are indeed incorrect.\n\nAnalysis completed: The question asks for the subjunctive form of \"pouvoir\" after \"le seul remède que vous ___\" (which requires the subjunctive). \n- B. \"pouvez\" is indicative present — incorrect mood\n- C. \"pourriez\" is conditional present — incorrect mood  \n- D. \"pouviez\" is imperfect indicative — incorrect mood\n\nAll three wrong answers fail to use the subjunctive as explicitly required by the question prompt.\n\nThe verdict would be: TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780811017938-y1zeiy0e",
+      "timestamp": "2026-06-07T05:44:06.738Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use non-subjunctive forms (present indicative \"pouvez\", conditional \"pourriez\", imperfect indicative \"pouviez\") when the construction \"le seul... que\" strictly requires the subjunctive \"puissiez\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780811199656-6t2zm08g",
+      "timestamp": "2026-06-07T05:46:54.127Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers (B: indicative present, C: conditional, D: indicative imperfect) are in non-subjunctive moods, and the question explicitly requires the subjunctive form after \"le seul… que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780811343511-dgc59j9o",
+      "timestamp": "2026-06-07T05:49:13.660Z"
+    }
+  ]
+}

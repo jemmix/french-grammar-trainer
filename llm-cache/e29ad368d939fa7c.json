@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e29ad368d939fa7c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-14-004",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe. « Le premier homme qui ___ arrivé était mon oncle. »\n\nChoices:\nA. [CORRECT] soit\nB. [WRONG] est\nC. [WRONG] était\nD. [WRONG] serait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780807860015-ytx88twe"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after the superlative construction \"le premier qui\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780807869028-m15pml2k",
+      "timestamp": "2026-06-07T04:51:22.379Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done so far:**\nI was in the process of evaluating the French grammar verification task for the question about \"Le premier homme qui ___ arrivé était mon oncle.\"\n\n**Analysis completed:**\n- B (\"est\") - This is actually acceptable in modern French; while the subjunctive is traditionally prescribed after superlatives, the indicative \"est arrivé\" is widely used and accepted by many grammar authorities today\n- C (\"était\") - Incorrect; imparfait doesn't fit for a completed defining event\n- D (\"serait\") - Incorrect; conditional doesn't match the factual past context\n\n**Verdict I would have returned:**\nFALSE|B|B uses the indicative \"est\" which is widely accepted in modern French after \"le premier\" in relative clauses, making it a valid alternative to the subjunctive.\n\n**Remaining tasks:** None - this was a single verification task.\n\n**Recommendations:** The question should be revised, potentially by replacing B with a clearly incorrect form, or by rephrasing to make the subjunctive requirement more explicit (e.g., specifying formal register or traditional grammar rules).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780808044320-xzf44nic",
+      "timestamp": "2026-06-07T04:54:25.966Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"le premier qui\" in formal French grammar.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780808235017-htnwfecv",
+      "timestamp": "2026-06-07T04:57:27.435Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bc36bbd0eb517584",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-14-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au subjonctif. « C'est le plus beau travail qu'ils ___ . »\n\nChoices:\nA. [CORRECT] fassent\nB. [WRONG] font\nC. [WRONG] feraient\nD. [WRONG] faisaient\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780810967123-zzrwxz3i"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use non-subjunctive moods (present indicative, conditional, imperfect indicative) when the question explicitly requires the subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780811015330-obvx3bkr",
+      "timestamp": "2026-06-07T05:43:49.151Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ about the subjunctive mood are indeed incorrect.\n\nThe question asks for the subjunctive form of \"faire\" in the construction \"C'est le plus beau travail qu'ils ___ .\" (a superlative requiring subjunctive).\n\n- B. \"font\" is indicative present — incorrect because question requires subjunctive\n- C. \"feraient\" is conditional present — incorrect because question requires subjunctive  \n- D. \"faisaient\" is indicative imperfect — incorrect because question requires subjunctive\n\nAll wrong answers are correctly marked as wrong.\n\nTRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780811178818-wh6s0m1m",
+      "timestamp": "2026-06-07T05:46:34.278Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780811325394-iuhe2y43",
+      "timestamp": "2026-06-07T05:49:11.816Z"
+    }
+  ]
+}

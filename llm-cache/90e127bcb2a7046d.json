@@ -1,0 +1,33 @@
+{
+  "cacheKey": "90e127bcb2a7046d",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-14-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le subjonctif après le plus / le moins / le seul / le premier / le dernier + qui/que (superlatif)\nPROMPT: Indicatif ou subjonctif ? Conjuguez le verbe.\nPHRASE: C'est la seule solution que je ___.\nCORRECT ANSWER: voie\n\nWRONG ANSWERS to evaluate:\n1. vois\n2. voyais\n3. verrais\n4. verrai\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780838826452-cn86yb33"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers are different indicative/conditional conjugations of \"voir\" (present, imperfect, conditional, future), which is exactly the type of mistake learners make when they fail to recognize that \"la seule... que\" requires the subjunctive mood.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839041041-t6ae3s4e",
+      "timestamp": "2026-06-07T13:31:40.473Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was evaluating a French grammar question about the subjunctive after superlative structures (\"le seul... que\"). The question asks learners to conjugate \"voir\" in \"C'est la seule solution que je ___\" with the correct answer being \"voie\" (subjunctive).\n\nThe four wrong answers provided (vois, voyais, verrais, verrai) are all plausible learner mistakes - they represent the indicative present, imperfect, conditional, and future tenses respectively. These are exactly the kinds of errors a learner would make when they know to conjugate \"voir\" but choose the wrong mood/tense instead of the subjunctive.\n\nVERDICT: PLAUSIBLE\nREASON: All four wrong answers are different tense/mood conjugations of \"voir\" that a learner might reasonably select instead of the subjunctive \"voie\" — they represent the most common error type for this rule (choosing indicative or another mood over subjunctive).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839100473-2dx3xcc6",
+      "timestamp": "2026-06-07T13:32:00.094Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers are real conjugations of \"voir\" in the first person singular that represent exactly the kind of errors learners make with this rule: using indicative present instead of subjunctive (vois), confusing tenses (voyais for imparfait, verrai for futur), or mistakenly using conditional (verrais) when subjunctive is required.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780839120094-7uzntn4e",
+      "timestamp": "2026-06-07T13:32:15.710Z"
+    }
+  ]
+}

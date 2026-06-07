@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e2f64711cefc3301",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-14-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe au subjonctif. « C'est le dernier livre qu'elle ___ . »\n\nChoices:\nA. [CORRECT] lise\nB. [WRONG] lit\nC. [WRONG] lisait\nD. [WRONG] lirait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780810967124-xgib2o78"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are in non-subjunctive moods (indicative present, indicative imperfect, conditional) when the question explicitly requires the subjunctive form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780811093360-836lo94x",
+      "timestamp": "2026-06-07T05:45:06.676Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780811271766-9vtqyhg9",
+      "timestamp": "2026-06-07T05:48:04.123Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:** I was asked to verify that the wrong answers (B, C, D) in a French grammar MCQ about the subjunctive mood are indeed incorrect. The question asks for the subjunctive form of \"lire\" after \"le dernier que\" (which triggers the subjunctive). The wrong answers are: B. \"lit\" (indicative present), C. \"lisait\" (imperfect indicative), D. \"lirait\" (conditional) - none of which are in the subjunctive mood.\n\n**Remaining tasks:** Provide the formatted verdict response for the grammar verification.\n\n**Recommendations:** The answer should be: TRUE||All wrong answers are in different moods (indicative present, imperfect indicative, conditional) rather than the required subjunctive mood specified in the question prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780811390176-1djtu84d",
+      "timestamp": "2026-06-07T05:50:08.882Z"
+    }
+  ]
+}

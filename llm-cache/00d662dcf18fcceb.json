@@ -1,0 +1,33 @@
+{
+  "cacheKey": "00d662dcf18fcceb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-14-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Choisissez la bonne forme du verbe. « C'est la plus belle histoire qu'on ___ jamais contée. »\n\nChoices:\nA. [CORRECT] ait\nB. [WRONG] a\nC. [WRONG] avait\nD. [WRONG] aurait\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780807860016-rxuhwa6v"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after the superlative \"la plus...que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780807967968-jo63qu4w",
+      "timestamp": "2026-06-07T04:53:00.705Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the subjunctive mood required after \"la plus belle... que\" in French.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780808147791-vp56r3kj",
+      "timestamp": "2026-06-07T04:56:05.537Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a French grammar verification task for a multiple choice question about the subjunctive mood after a superlative construction (\"C'est la plus belle histoire qu'on ___ jamais contée.\").\n\nThe question requires the subjunctive mood after \"la plus...que\", making \"ait\" (present subjunctive of avoir) the only correct answer. The wrong answers (B: \"a\" - passé composé indicative, C: \"avait\" - imparfait indicative, D: \"aurait\" - conditionnel) all incorrectly use non-subjunctive moods.\n\nThe verdict for this question would be: TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after a superlative construction.\n\nNo remaining tasks - this single verification was the complete request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780808318503-tfrizvgm",
+      "timestamp": "2026-06-07T04:58:56.222Z"
+    }
+  ]
+}
