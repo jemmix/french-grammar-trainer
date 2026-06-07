@@ -1,0 +1,26 @@
+{
+  "cacheKey": "89c872adab63160c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-19-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: En français écrit formel, complétez : « À moins que tu ___ malade, tu dois venir. »\n\nChoices:\nA. [CORRECT] ne sois\nB. [WRONG] n'es\nC. [WRONG] ne seras\nD. [WRONG] ne serais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780861283552-xd2v9dbi"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect moods (present indicative, future indicative, and conditional) instead of the required subjunctive after \"à moins que\" in formal written French.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861332599-u1qw3y55",
+      "timestamp": "2026-06-07T19:42:27.973Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use indicative or conditional mood instead of the required subjunctive after \"à moins que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861520974-k6462rvf",
+      "timestamp": "2026-06-07T19:45:39.147Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "81d1668cbb6baacd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-19-015",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-19 - Le ne explétif après avant que, à moins que, de peur que (avant qu'il ne parte)\n\nQUESTION:\nType: Multiple Choice\nPrompt: En français écrit formel, complétez : « Je vous donne un plan de peur que vous ___ dans la ville. »\nChoices:\nA. [CORRECT] ne vous perdiez\nB. ne vous perdez\nC. ne vous perdrez\nD. ne vous perdriez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780861283553-k09jvuny"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: All four choices already include \"ne,\" so the expletive ne is not being tested; the question actually tests whether the student knows that \"de peur que\" takes the subjunctive and can correctly conjugate \"se perdre\" in subjunctive present.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861385346-ggugvitx",
+      "timestamp": "2026-06-07T19:43:39.107Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: All four choices already include the \"ne explétif,\" so the question actually tests whether the student knows to use the subjunctive mood after \"de peur que,\" not the ne explétif rule itself.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861589853-u5tlp7dm",
+      "timestamp": "2026-06-07T19:46:53.637Z"
+    }
+  ]
+}

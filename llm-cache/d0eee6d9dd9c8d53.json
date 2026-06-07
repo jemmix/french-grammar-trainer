@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d0eee6d9dd9c8d53",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-19-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: En français écrit formel, complétez : « À moins que tu ___ malade, tu dois venir. »\n\nChoices:\nA. [CORRECT] ne sois\nB. [WRONG] sois\nC. [WRONG] n'es\nD. [WRONG] ne serais\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780862487125-sda9uw7m"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the grammatical requirements: B lacks the obligatory \"ne\" explétif in formal written French, C uses indicative \"es\" instead of subjunctive \"sois\", and D uses conditional \"serais\" instead of subjunctive \"sois\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780862548885-uarl214n",
+      "timestamp": "2026-06-07T20:03:23.717Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate grammatical rules for \"à moins que\" in formal written French: B drops the required ne explétif, C uses present indicative instead of subjunctive, and D uses conditional instead of subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780862784603-lcl7qz2s",
+      "timestamp": "2026-06-07T20:06:44.693Z"
+    },
+    {
+      "raw": "TRUE||B lacks the required \"ne explétif\" in formal written French; C uses indicative \"es\" instead of subjunctive \"sois\"; D uses conditional \"serais\" instead of subjunctive \"sois\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780862955275-ymtw0buj",
+      "timestamp": "2026-06-07T20:09:30.809Z"
+    }
+  ]
+}

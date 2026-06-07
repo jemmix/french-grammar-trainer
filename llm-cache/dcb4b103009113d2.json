@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dcb4b103009113d2",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-19-024",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Le ne explétif après avant que, à moins que, de peur que (avant qu'il ne parte)\nPROMPT: En français écrit formel, complétez avec le ne explétif et le subjonctif : « De crainte que nous ___ du retard, partons maintenant. »\nPHRASE: De crainte que nous ___ du retard, partons maintenant.\nCORRECT ANSWER: ne mettions\n\nWRONG ANSWERS to evaluate:\n1. mettions\n2. ne mettons\n3. ne mettrons\n4. ne mettrions\n5. ne mettiez\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780862487127-8mxfoeop"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: forgetting the ne explétif (mettions), using the wrong mood (indicative mettons, future mettrons, conditional mettrions instead of subjunctive), or conjugating for the wrong person (mettiez instead of mettions).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780863264161-dpsykvuv",
+      "timestamp": "2026-06-07T20:14:42.117Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: forgetting the ne explétif (mettions), confusing indicative with subjunctive (ne mettons), using future tense (ne mettrons), confusing conditional with subjunctive (ne mettrions), and person/number confusion (ne mettiez).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780863462712-rbr1rmic",
+      "timestamp": "2026-06-07T20:18:05.875Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was evaluating the plausibility of wrong answers for a French grammar input question about \"le ne explétif\" after expressions like \"de crainte que.\" The question asks learners to complete \"De crainte que nous ___ du retard\" with the correct form (answer: \"ne mettions\").\n\nAnalysis completed:\n- \"mettions\" (missing ne explétif) - PLAUSIBLE: learners commonly forget the expletive ne\n- \"ne mettons\" (indicative instead of subjunctive) - PLAUSIBLE: confusing indicative/subjunctive after conjunctions is common\n- \"ne mettrons\" (future instead of subjunctif) - PLAUSIBLE: tense confusion is a typical learner error\n- \"ne mettrions\" (conditional instead of subjunctif) - PLAUSIBLE: conditional and subjunctive forms are easily confused\n- \"ne mettiez\" (wrong person - vous instead of nous) - PLAUSIBLE: person/number agreement errors are common\n\nVERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors related to the ne explétif rule: forgetting the ne, using indicative/future/conditional instead of subjunctive, and mixing up person/number agreement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780863707941-ou41pc0s",
+      "timestamp": "2026-06-07T20:22:16.888Z"
+    }
+  ]
+}

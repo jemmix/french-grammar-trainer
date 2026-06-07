@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9084fb45931b8120",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-19-007",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: En français écrit formel, complétez : « Avant que nous ___ ce projet, vérifions tout. »\n\nChoices:\nA. [CORRECT] ne finissions\nB. [WRONG] finissions\nC. [WRONG] ne finissons\nD. [WRONG] ne finirons\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780862487125-wuy6exzw"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was analyzing a French grammar verification task for a multiple choice question about the subjunctive with \"avant que\" in formal written French.\n\nAnalysis completed:\n- **B. \"finissions\"** — This is the correct subjunctive form, but lacks the \"ne explétif\" required in formal written French after \"avant que\". Incorrect in the specified register.\n- **C. \"ne finissons\"** — Uses \"ne\" correctly but \"finissons\" is indicative present, not subjunctive. \"Avant que\" requires subjunctive. Incorrect.\n- **D. \"ne finirons\"** — \"finirons\" is future indicative, not subjunctive. Also, \"avant que\" takes present subjunctive, not future. Incorrect.\n\nAll wrong answers are indeed incorrect within the stated constraints.\n\nTRUE||B lacks the required ne explétif in formal written French after \"avant que\"; C uses indicative present instead of subjunctive; D uses future indicative instead of subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780862533504-bohxohnb",
+      "timestamp": "2026-06-07T20:02:48.013Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the grammar rule: B omits the required \"ne\" explétif in formal written French after \"avant que\", C uses indicative present instead of subjunctive, and D uses future indicative instead of subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780862755314-vg3rvy8r",
+      "timestamp": "2026-06-07T20:06:15.102Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B lacks the required ne explétif in formal written French after \"avant que,\" C uses indicative present instead of subjunctive, and D uses future indicative instead of subjunctive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780862930095-ghgntf3q",
+      "timestamp": "2026-06-07T20:09:05.711Z"
+    }
+  ]
+}

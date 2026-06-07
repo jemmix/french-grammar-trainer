@@ -1,0 +1,33 @@
+{
+  "cacheKey": "64a28049bb0e28a5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-19-025",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-19 - Le ne explétif après avant que, à moins que, de peur que (avant qu'il ne parte)\n\nQUESTION:\nType: Input\nPrompt: En français écrit formel, complétez : « À moins qu'on ___ le contraire, le rendez-vous est maintenu. »\nPhrase: À moins qu'on ___ le contraire, le rendez-vous est maintenu.\nCorrect Answer: ne dise\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780861283555-sdvs6pxk"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question alignment but did not complete the task.\n\n**Analysis completed before stopping:**\nThe question asks students to complete \"À moins qu'on ___ le contraire\" with the correct answer being \"ne dise.\" This tests the ne explétif rule because:\n- \"À moins que\" is one of the conjunctions that triggers the ne explétif\n- The answer requires both the subjunctive (\"dise\") AND the ne explétif (\"ne\")\n- Without knowing the ne explétif rule, a learner would incorrectly answer just \"dise\"\n- The prompt explicitly mentions \"en français écrit formel\" which is the register where ne explétif is used\n\nVERDICT: ALIGNED\nREASON: The correct answer \"ne dise\" cannot be produced without knowing that \"à moins que\" takes the ne explétif in formal written French, making this grammar concept central rather than incidental to solving the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861452697-42w243po",
+      "timestamp": "2026-06-07T19:44:36.473Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI have completed the validation task for the single question provided:\n\nVERDICT: ALIGNED\nREASON: The question directly tests the ne explétif after \"à moins que,\" one of the three conjunctions explicitly listed in the rule, and the correct answer requires knowing to include this expletive \"ne\" in formal written French.\n\nNo remaining tasks — this was a single-question validation request that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861646840-ia5qw2d4",
+      "timestamp": "2026-06-07T19:47:47.621Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests whether students know that \"à moins que\" requires the ne explétif before the subjunctive verb, and without this knowledge they would likely answer \"dise\" instead of \"ne dise\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861738650-ydh8zscp",
+      "timestamp": "2026-06-07T19:49:12.794Z"
+    }
+  ]
+}

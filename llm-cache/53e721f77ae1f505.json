@@ -1,0 +1,26 @@
+{
+  "cacheKey": "53e721f77ae1f505",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-19-009",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-19 - Le ne explétif après avant que, à moins que, de peur que (avant qu'il ne parte)\n\nQUESTION:\nType: Multiple Choice\nPrompt: En français écrit formel, complétez : « À moins que tu ___ malade, tu dois venir. »\nChoices:\nA. [CORRECT] ne sois\nB. n'es\nC. ne seras\nD. ne serais\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780861283552-1jjihg0a"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI was in the process of analyzing whether a French grammar question about \"le ne explétif\" properly tests the stated rule. The analysis was nearly complete.\n\n**Verdict for the question:**\nVERDICT: MISALIGNED\nREASON: All four answer choices include \"ne\", so the question only tests whether students know that \"à moins que\" requires the subjunctive mood (\"sois\" vs \"es\"/\"seras\"/\"serais\"), not whether they know to use the ne explétif—which is the actual rule being claimed as tested.\n\n**Remaining tasks:**\nNone—this was a single-question validation task that is now complete.\n\n**Recommendations:**\nTo properly test the ne explétif rule, at least one distractor should omit the \"ne\" (e.g., \"sois\" without \"ne\") so that students must demonstrate knowledge that the expletive \"ne\" is required after \"à moins que\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861336029-12eh4eo2",
+      "timestamp": "2026-06-07T19:42:42.402Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: All four answer choices include \"ne\", so the question actually tests whether the student knows to use the subjunctive after \"à moins que\" (and the correct conjugation of \"être\"), not whether they know to apply the ne explétif.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861531335-roz8xz9i",
+      "timestamp": "2026-06-07T19:45:58.119Z"
+    }
+  ]
+}

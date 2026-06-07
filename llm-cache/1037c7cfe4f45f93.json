@@ -1,0 +1,26 @@
+{
+  "cacheKey": "1037c7cfe4f45f93",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-19-014",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-19 - Le ne explétif après avant que, à moins que, de peur que (avant qu'il ne parte)\n\nQUESTION:\nType: Multiple Choice\nPrompt: En français écrit formel, complétez : « Elle ferme la porte à clé de peur qu'il ___ par la fenêtre. »\nChoices:\nA. [CORRECT] ne s'enfuie\nB. ne s'enfuit\nC. ne s'enfuira\nD. ne s'enfuirait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780861283553-6cxn1z72"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the use of the subjunctive mood after \"de peur que,\" not the ne explétif, which appears identically in all four answer choices and is therefore not being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861379456-ya540s1e",
+      "timestamp": "2026-06-07T19:43:21.687Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a French grammar question about \"le ne explétif\" properly tests that rule. I analyzed the question and determined it is MISALIGNED - the question uses \"de peur que\" (which does trigger the ne explétif), but all four answer choices already include \"ne,\" so the ne explétif is not what distinguishes the correct answer. The question actually tests knowledge of the subjunctive mood conjugation (s'enfuie vs s'enfuit vs s'enfuira vs s'enfuirait), not the ne explétif rule itself.\n\nVERDICT: MISALIGNED\nREASON: The question tests subjunctive mood conjugation after \"de peur que\" (choosing between s'enfuie, s'enfuit, s'enfuira, s'enfuirait), not the ne explétif itself, which is already provided in all answer choices and is not what distinguishes the correct answer.\n\nNo remaining tasks - this was a single validation request that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861571926-zst42geo",
+      "timestamp": "2026-06-07T19:46:32.838Z"
+    }
+  ]
+}

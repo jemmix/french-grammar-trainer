@@ -1,0 +1,40 @@
+{
+  "cacheKey": "53926546633cbfe6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-19-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-19 - Le ne explétif après avant que, à moins que, de peur que (avant qu'il ne parte)\n\nQUESTION:\nType: Multiple Choice\nPrompt: En français écrit formel, complétez : « Je dois partir avant qu'il ___ . »\nChoices:\nA. [CORRECT] ne vienne\nB. ne vient\nC. ne viendra\nD. ne vienne pas\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780861283551-xlqbhe7o"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary\nI was asked to validate whether a French grammar MCQ question about completing \"Je dois partir avant qu'il ___\" with answer \"ne vienne\" actually tests the stated rule about \"le ne explétif après avant que, à moins que, de peur que.\"\n\n## Analysis Completed\nThe question is MISALIGNED with the stated rule. Here's why:\n\nVERDICT: MISALIGNED\nREASON: All four choices already contain \"ne,\" so the expletive \"ne\" is given away—the question actually tests whether students know to use the subjunctive \"vienne\" after \"avant que\" rather than indicative or future, making this a question about subjunctive triggering, not about the ne explétif itself.\n\n## Remaining Tasks\nNone—this was a single-question validation task that has been completed.\n\n## Recommendations\nTo properly test the ne explétif rule, the question should present choices where some lack \"ne\" entirely (e.g., \"vienne\" vs \"ne vienne\" vs \"ne vienne pas\") so that the presence/absence of \"ne\" is the discriminating factor, not the subjunctive conjugation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861284557-bk2w8ixq",
+      "timestamp": "2026-06-07T19:41:47.159Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that the ne explétif after \"avant que\" is used without \"pas\" (eliminating choice D), which is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861472810-s57w2ed2",
+      "timestamp": "2026-06-07T19:44:53.072Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The correct answer requires knowing that the ne explétif appears after \"avant que\" without \"pas\" (distinguishing it from actual negation in choice D), making the stated rule central to solving the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861655686-9xa4dgpr",
+      "timestamp": "2026-06-07T19:47:54.002Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a French grammar question for alignment with its stated rule.\n\n**Analysis completed:**\n\nVERDICT: MISALIGNED\nREASON: All four choices contain \"ne,\" so the presence of the ne explétif is already given—the question actually tests whether students know to use the subjunctive mood after \"avant que\" (vienne vs. vient/viendra), making this a question about subjunctive triggers rather than the ne explétif itself.\n\n**Remaining tasks:** None—this was a single-question validation that has been completed.\n\n**Recommendation:** This question should be reassigned to a rule about \"le subjonctif après avant que\" or restructured so that some choices omit the \"ne\" entirely (e.g., \"qu'il vienne\" vs. \"qu'il ne vienne\") to actually test whether students know to include the ne explétif.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861749333-x5gdatzl",
+      "timestamp": "2026-06-07T19:49:41.419Z"
+    }
+  ]
+}

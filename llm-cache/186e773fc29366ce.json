@@ -1,0 +1,40 @@
+{
+  "cacheKey": "186e773fc29366ce",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-19-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-19 - Le ne explétif après avant que, à moins que, de peur que (avant qu'il ne parte)\n\nQUESTION:\nType: Multiple Choice\nPrompt: En français écrit formel, complétez : « Avant que nous ___ patience, faisons une pause. »\nChoices:\nA. [CORRECT] ne perdions\nB. ne perdons\nC. ne perdrons\nD. ne perdions pas\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780861283553-6izt7fnu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowledge that \"avant que\" triggers both the subjonctif and the ne explétif (without \"pas\"), and distractor D specifically tests whether the learner knows that ne explétif does not take \"pas\" — making this rule central to correctly answering.\n\nMaximum steps for this agent have been reached. This was a single-step validation task that has been completed. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861415102-5u5msrb2",
+      "timestamp": "2026-06-07T19:43:58.530Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished: I was in the process of validating whether a French grammar question about \"le ne explétif\" properly tests the stated rule.\n\nAnalysis completed: The question asks students to complete \"Avant que nous ___ patience, faisons une pause\" with choices A) ne perdions [correct], B) ne perdons, C) ne perdrons, D) ne perdions pas.\n\nMy verdict: VERDICT: MISALIGNED\nREASON: All four choices include \"ne\", so the question primarily tests whether students know to use the subjunctive after \"avant que\" rather than testing knowledge of the ne explétif itself—a student unfamiliar with the ne explétif could answer correctly by simply selecting the only subjunctive form.\n\nRemaining tasks: None—this was a single-question validation task.\n\nRecommendation: To properly test the ne explétif, include a distractor without \"ne\" (e.g., \"perdions\") so students must demonstrate knowledge that the ne explétif should be included in formal written French after \"avant que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861609884-pjvlfav9",
+      "timestamp": "2026-06-07T19:47:26.839Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the ne explétif rule because distinguishing the correct answer \"ne perdions\" from the distractor \"ne perdions pas\" requires knowing that the ne explétif does not take \"pas\" — a core aspect of the rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861720759-34n8yxg7",
+      "timestamp": "2026-06-07T19:49:09.332Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: All four choices include \"ne\", so the question actually tests subjunctive conjugation of \"perdre\" (perdions vs. perdons vs. perdrons) rather than whether to use the ne explétif, which is the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861794692-82xo6dv1",
+      "timestamp": "2026-06-07T19:50:12.433Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "4925d387f30176a6",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "07-19-025",
+  "spec": {
+    "systemPrompt": "You are a French language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: En français écrit formel, complétez : « À moins qu'on ___ le contraire, le rendez-vous est maintenu. »\n\nPHRASE: À moins qu'on ___ le contraire, le rendez-vous est maintenu.\n\nHINT: dire\n\nEXPECTED ANSWER: ne dise\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1780861283554-qcoxaesf"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The hint \"dire\" and phrase structure make it clear the learner should conjugate \"dire\" in subjunctive (\"dise\"), but the expected answer \"ne dise\" includes the ne explétif which is only hinted at by \"en français écrit formel\" — a learner unfamiliar with this specific rule could reasonably answer \"dise\" without knowing to add \"ne\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861798729-p576ax6m",
+      "timestamp": "2026-06-07T19:52:12.940Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The hint \"dire\" suggests conjugating the verb, but the expected answer \"ne dise\" includes the \"ne explétif\" required after \"à moins que\" in formal French — a learner who correctly conjugates \"dire\" as \"dise\" would be marked wrong without understanding why.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861984646-mgjl0830",
+      "timestamp": "2026-06-07T19:53:29.068Z"
+    }
+  ]
+}

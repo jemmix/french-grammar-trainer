@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c6c9942a10aad06c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-19-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-19 - Le ne explétif après avant que, à moins que, de peur que (avant qu'il ne parte)\n\nQUESTION:\nType: Multiple Choice\nPrompt: En français écrit formel, complétez : « Vérifiez tout de peur qu'un problème ___ au dernier moment. »\nChoices:\nA. [CORRECT] ne survienne\nB. survienne\nC. ne survient\nD. ne surviendra\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780862487126-sjbqam9f"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Work accomplished:** I was analyzing the alignment between a French grammar question and its stated rule about the \"ne explétif\" after \"avant que, à moins que, de peur que.\"\n\n**Analysis summary:** The question \"Vérifiez tout de peur qu'un problème ___ au dernier moment\" with choices testing \"ne survienne\" vs \"survienne\" vs incorrect tense forms does primarily test the ne explétif rule. The key distinction between the correct answer (A: \"ne survienne\") and the most plausible distractor (B: \"survienne\") is precisely the presence of the explétif \"ne.\" The prompt's specification of \"français écrit formel\" makes this particularly appropriate since the ne explétif is expected in formal register after \"de peur que.\"\n\n**Verdict that would have been provided:**\nVERDICT: ALIGNED\nREASON: The question directly tests whether students know to include the ne explétif in formal written French after \"de peur que,\" which is exactly the stated rule.\n\n**Remaining tasks:** None - this was a single-question validation task.\n\n**Recommendations:** No further action needed for this specific validation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780862629049-rrht8lyh",
+      "timestamp": "2026-06-07T20:04:27.994Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The critical difference between the correct answer (ne survienne) and the most plausible distractor (survienne) is precisely the \"ne explétif\" after \"de peur que,\" so answering correctly requires knowledge of this specific rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780862830856-q8imuyiw",
+      "timestamp": "2026-06-07T20:07:33.532Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating whether a French grammar question about the \"ne explétif\" properly tests its stated rule. Here is my assessment:\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"de peur que\" takes the ne explétif in addition to the subjunctive, as the key distractor (B: \"survienne\" without \"ne\") directly tests whether the learner knows to include the expletive \"ne\".\n\nThe question is well-designed because choice B (subjunctive without ne) is the trap for someone who knows about subjunctive after \"de peur que\" but doesn't know the ne explétif rule specifically. To select the correct answer A (\"ne survienne\"), the learner must know both that the subjunctive is required AND that the ne explétif should be added.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780862998709-7szvnga9",
+      "timestamp": "2026-06-07T20:10:32.058Z"
+    }
+  ]
+}

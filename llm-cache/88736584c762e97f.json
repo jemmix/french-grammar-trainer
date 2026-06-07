@@ -1,0 +1,33 @@
+{
+  "cacheKey": "88736584c762e97f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-19-001",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: En français écrit formel, complétez : « Je dois partir avant qu'il ___ . »\n\nChoices:\nA. [CORRECT] ne vienne\nB. [WRONG] ne vient\nC. [WRONG] ne viendra\nD. [WRONG] ne vienne pas\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780861283551-p29xon26"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B and C incorrectly use indicative mood (present and future) instead of the required subjunctive after \"avant que\" in formal written French; D incorrectly adds \"pas\" which creates a nonsensical negation in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861283555-7604a27a",
+      "timestamp": "2026-06-07T19:41:40.218Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B and C use the indicative instead of the required subjunctive after \"avant que,\" and D incorrectly adds negation that changes the sentence's meaning.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861464585-iscg56pu",
+      "timestamp": "2026-06-07T19:44:46.367Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was analyzing a French grammar verification question about the subjunctive mood after \"avant que.\" I evaluated each wrong answer (B: \"ne vient\", C: \"ne viendra\", D: \"ne vienne pas\") to determine if they are correctly marked as incorrect in formal written French.\n\nThe analysis was nearly complete. My finding: TRUE - all wrong answers are indeed incorrect because B and C use indicative (present and future) instead of the required subjunctive after \"avant que,\" and D adds \"pas\" which creates a semantically nonsensical sentence in this context.\n\nRemaining tasks: None - the verification was complete.\n\nRecommendations: The expected response format is: TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861654380-lgogdpr3",
+      "timestamp": "2026-06-07T19:48:31.070Z"
+    }
+  ]
+}

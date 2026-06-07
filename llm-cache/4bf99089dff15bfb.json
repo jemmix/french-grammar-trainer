@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4bf99089dff15bfb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-19-019",
+  "spec": {
+    "systemPrompt": "You are a French grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: En français écrit formel, complétez : « Avant que nous ___ patience, faisons une pause. »\n\nChoices:\nA. [CORRECT] ne perdions\nB. [WRONG] ne perdons\nC. [WRONG] ne perdrons\nD. [WRONG] ne perdions pas\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780861283553-046u5u8e"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses present indicative instead of the required subjunctive after \"avant que\"; C uses future indicative instead of subjunctive; D incorrectly adds \"pas\" which transforms the expletive \"ne\" into a full negation, changing the meaning entirely.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861412437-gqb6jzk6",
+      "timestamp": "2026-06-07T19:43:55.007Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses indicative present instead of required subjunctive, C uses future tense instead of subjunctive present, and D inappropriately adds \"pas\" which negates the meaning nonsensically.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861603550-uqtowvam",
+      "timestamp": "2026-06-07T19:47:01.110Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses indicative present instead of subjunctive after \"avant que\", C uses future indicative instead of subjunctive, and D inappropriately adds \"pas\" which negates the verb and distorts the sentence's meaning.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861707812-f124r7ae",
+      "timestamp": "2026-06-07T19:48:54.066Z"
+    }
+  ]
+}

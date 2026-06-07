@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3f21b285900616e5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-19-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-19 - Le ne explétif après avant que, à moins que, de peur que (avant qu'il ne parte)\n\nQUESTION:\nType: Multiple Choice\nPrompt: En français écrit formel, complétez : « Avant que tu ___ une décision, réfléchis bien. »\nChoices:\nA. [CORRECT] ne prennes\nB. ne prends\nC. ne prendras\nD. ne prennes pas\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780861283552-uawj4hcx"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The key distinction between the correct answer \"ne prennes\" and the closest distractor \"ne prennes pas\" directly tests whether the learner knows that the ne explétif is used without \"pas\" after \"avant que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861332410-iknc1mv9",
+      "timestamp": "2026-06-07T19:42:47.298Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question specifically tests the ne explétif by requiring \"ne prennes\" (not \"prennes\" alone or \"prennes pas\") in a formal written context after \"avant que,\" with distractor D directly testing whether students confuse expletive ne with true negation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861541347-soesj6l0",
+      "timestamp": "2026-06-07T19:46:09.712Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a French grammar question about completing \"Avant que tu ___ une décision\" properly tests the rule about \"le ne explétif après avant que, à moins que, de peur que.\"\n\nMy assessment:\n\nVERDICT: ALIGNED\nREASON: The question directly tests the ne explétif by requiring the student to know that \"ne\" appears without \"pas\" after \"avant que,\" with choice D specifically distinguishing the expletive \"ne\" from a true negation.\n\nNo remaining tasks - this was a single validation request that I completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861701196-agug5ezo",
+      "timestamp": "2026-06-07T19:48:48.236Z"
+    }
+  ]
+}

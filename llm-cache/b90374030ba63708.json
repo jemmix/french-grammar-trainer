@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b90374030ba63708",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-19-008",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-19 - Le ne explétif après avant que, à moins que, de peur que (avant qu'il ne parte)\n\nQUESTION:\nType: Multiple Choice\nPrompt: En français écrit formel, complétez : « Avant que tu ___ une décision, réfléchis bien. »\nChoices:\nA. [CORRECT] ne prennes\nB. prennes\nC. ne prends\nD. ne prendras\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780862487125-3diy63ib"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The critical choice between the correct answer \"ne prennes\" and the most plausible distractor \"prennes\" directly tests whether the student knows to use the ne explétif after \"avant que,\" which is precisely the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780862546443-0ckrhpq5",
+      "timestamp": "2026-06-07T20:03:00.087Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the ne explétif by requiring students to choose between \"ne prennes\" (correct with expletive ne in formal written French) and \"prennes\" (grammatically correct but missing the required ne explétif in formal register), with the prompt explicitly specifying \"formel\" to cue this distinction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780862770526-jh5o6y9w",
+      "timestamp": "2026-06-07T20:06:34.475Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a French grammar question about the \"ne explétif\" properly tests the stated rule. The question asks students to complete \"Avant que tu ___ une décision\" with the correct answer being \"ne prennes.\"\n\nThe question is ALIGNED with the rule because the critical distinction between the correct answer \"ne prennes\" and the most plausible distractor \"prennes\" is precisely the presence of the expletive \"ne\" after \"avant que\" - which is exactly what the rule teaches.\n\nNo remaining tasks - this was a single validation request that I have completed my analysis on.\n\nVERDICT: ALIGNED\nREASON: The question directly tests the ne explétif since the key distinction between the correct answer \"ne prennes\" and the closest distractor \"prennes\" is precisely the presence of the expletive \"ne\" after \"avant que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780862943771-cz41pvwb",
+      "timestamp": "2026-06-07T20:09:23.558Z"
+    }
+  ]
+}

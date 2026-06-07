@@ -1,0 +1,26 @@
+{
+  "cacheKey": "5d9798a5b0a3232a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-19-018",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-19 - Le ne explétif après avant que, à moins que, de peur que (avant qu'il ne parte)\n\nQUESTION:\nType: Multiple Choice\nPrompt: En français écrit formel, complétez : « De crainte que vous ___ , j'ai expliqué la situation calmement. »\nChoices:\nA. [CORRECT] ne vous fâchiez\nB. ne vous fâchez\nC. ne vous fâcherez\nD. ne vous fâcheriez\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780861283553-hjx5xb9r"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: All four choices include \"ne,\" so the question actually tests whether students know to use the subjunctive after \"de crainte que\" rather than testing the presence of the ne explétif itself — a properly aligned question would include a distractor without \"ne\" (e.g., \"vous fâchiez\") to determine if students know the ne explétif is required.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861408390-kx0asund",
+      "timestamp": "2026-06-07T19:43:45.951Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: All choices include the \"ne explétif,\" so the question actually tests subjunctive conjugation after \"de crainte que\" rather than testing knowledge of when to use the ne explétif itself.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861599668-r8qi519v",
+      "timestamp": "2026-06-07T19:47:09.635Z"
+    }
+  ]
+}

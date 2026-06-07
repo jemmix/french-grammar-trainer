@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2d1e5e4dc7c85291",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-19-016",
+  "spec": {
+    "systemPrompt": "You are a French grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Le subjonctif présent\n\nRULE BEING TESTED: 07-19 - Le ne explétif après avant que, à moins que, de peur que (avant qu'il ne parte)\n\nQUESTION:\nType: Multiple Choice\nPrompt: En français écrit formel, complétez : « Vérifiez tout de peur qu'un problème ___ au dernier moment. »\nChoices:\nA. [CORRECT] ne survienne\nB. ne survient\nC. ne surviendra\nD. ne surviendrait\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780861283553-zz0jjknq"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI have completed the validation task. Here is my assessment:\n\nVERDICT: MISALIGNED\nREASON: The ne explétif appears in all four choices, so answering correctly only requires knowing to use the subjunctive after \"de peur que\" and conjugating \"survenir\" correctly—not whether to include the ne explétif itself, which is the stated rule.\n\n**Summary of work completed:**\n- Analyzed whether the MCQ question about completing \"de peur qu'un problème ___\" tests the rule about \"le ne explétif après avant que, à moins que, de peur que\"\n- Determined the question is misaligned because the ne explétif is present in all answer choices, making it irrelevant to selecting the correct answer\n\n**Remaining tasks:** None for this specific validation.\n\n**Recommendations:** To properly test the ne explétif rule, at least one distractor should omit the \"ne\" (e.g., \"survienne\" without ne), forcing the student to recognize that the ne is required after \"de peur que.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861392709-77ylxwjq",
+      "timestamp": "2026-06-07T19:43:39.331Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: All four choices include the \"ne explétif,\" so the question actually tests subjunctive conjugation after \"de peur que\" rather than whether the student knows to use the ne explétif.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780861590406-y0078jbw",
+      "timestamp": "2026-06-07T19:46:59.318Z"
+    }
+  ]
+}
