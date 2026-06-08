@@ -94,10 +94,10 @@ export function ScoreSummary({
 
       {/* Actions */}
       <div className="flex flex-col sm:flex-row gap-3">
-        <button
-          onClick={onRestart}
-          className="flex-1 px-6 py-3 bg-primary text-white font-medium rounded-xl hover:bg-ink-light transition-colors cursor-pointer"
-        >
+          <button
+            onClick={onRestart}
+            className="btn-primary flex-1 px-6 py-3 bg-primary text-white font-medium rounded-xl hover:bg-ink-light transition-colors cursor-pointer"
+          >
           {t.score.restart}
         </button>
         <Link

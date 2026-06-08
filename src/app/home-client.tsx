@@ -8,7 +8,12 @@ import { GoogleSignInButton } from "~/components/google-sign-in-button";
 import { SigningOutOverlay } from "~/components/signing-out-overlay";
 import { getTier } from "~/lib/tiers";
 import { t } from "~/lang";
-import { BrandMark, useTheme } from "~/themes";
+import {
+  BrandMark,
+  ThemedHomeHeader,
+  ThemedSectionCard,
+  useTheme,
+} from "~/themes";
 import type { SectionMeta } from "~/data/types";
 
 function SectionCardContent({
@@ -37,7 +42,7 @@ function SectionCardContent({
             </span>
           </div>
         ) : (
-          <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary/8 text-sm font-semibold text-primary shrink-0">
+          <span className="section-num inline-flex items-center justify-center w-8 h-8 bg-primary/8 text-sm font-semibold text-primary shrink-0">
             {sectionNum}
           </span>
         )}
@@ -97,66 +102,52 @@ export function HomeClient({ sections }: { sections: SectionMeta[] }) {
 
   const theme = useTheme();
 
+  const authControls = (
+    <div className="shrink-0 flex flex-col items-end gap-1.5 pt-1">
+      {isLoggedIn ? (
+        <>
+          <Link
+            href="/my-data"
+            className="text-xs text-muted hover:text-ink transition-colors"
+          >
+            {t.home.myDataLink}
+          </Link>
+          <button
+            onClick={() => void handleLogout()}
+            className="text-xs text-muted hover:text-ink transition-colors cursor-pointer"
+          >
+            {t.home.logout}
+          </button>
+          {userId && (
+            <span className="text-[10px] font-mono text-muted/40">
+              {userId.slice(0, 8)}…
+            </span>
+          )}
+        </>
+      ) : (
+        <GoogleSignInButton href="/login" label={t.login.googleSignIn} />
+      )}
+    </div>
+  );
+
   return (
-    <div className="min-h-screen bg-paper">
+    <div className="min-h-screen bg-paper page-bg">
       {signingOut && <SigningOutOverlay />}
 
-      {/* Header */}
-      <header className="border-b border-chalk bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-8 md:py-12">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <div className="flex items-center gap-3 mb-3">
-                <BrandMark theme={theme} size="lg" />
-                <p className="text-sm font-medium tracking-widest uppercase text-muted">
-                  {t.meta.levelLabel}
-                </p>
-              </div>
-              <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">
-                {t.home.heading}
-              </h1>
-              <p className="mt-3 text-lg text-muted max-w-2xl">
-                {t.home.subtitle}
-              </p>
-            </div>
+      <ThemedHomeHeader
+        theme={theme}
+        heading={t.home.heading}
+        subtitle={t.home.subtitle}
+        levelLabel={t.meta.levelLabel}
+        authControls={authControls}
+        brandMark={<BrandMark theme={theme} size="lg" />}
+      />
 
-            {/* Auth controls */}
-            <div className="shrink-0 flex flex-col items-end gap-1.5 pt-1">
-              {isLoggedIn ? (
-                <>
-                  <Link
-                    href="/my-data"
-                    className="text-xs text-muted hover:text-ink transition-colors"
-                  >
-                    {t.home.myDataLink}
-                  </Link>
-                  <button
-                    onClick={() => void handleLogout()}
-                    className="text-xs text-muted hover:text-ink transition-colors cursor-pointer"
-                  >
-                    {t.home.logout}
-                  </button>
-                  {userId && (
-                    <span className="text-[10px] font-mono text-muted/40">
-                      {userId.slice(0, 8)}…
-                    </span>
-                  )}
-                </>
-              ) : (
-                <GoogleSignInButton href="/login" label={t.login.googleSignIn} />
-              )}
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Section Grid */}
       <main className="mx-auto max-w-6xl px-6 py-10 md:py-14">
-        {/* Progress + Learn CTA (unified) */}
         <div className="mb-8">
           <Link
             href="/quiz/learn"
-            className="group block sm:flex sm:items-center sm:gap-5 px-6 py-5 rounded-xl border border-chalk bg-surface hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-200"
+            className="card group block sm:flex sm:items-center sm:gap-5 px-6 py-5 border border-chalk bg-surface hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-200"
           >
             {isLoggedIn && !isLoading && globalPower > 0 && globalTier && (
               <div className="flex items-center gap-3 mb-3 pb-3 sm:mb-0 sm:pb-0 border-b sm:border-b-0 sm:border-r border-chalk/60 sm:pr-5 shrink-0">
@@ -201,41 +192,30 @@ export function HomeClient({ sections }: { sections: SectionMeta[] }) {
                 className="animate-slide-up"
                 style={{ animationDelay: `${Math.min(i * 30, 400)}ms` }}
               >
-                {available ? (
-                  <Link
-                    href={`/quiz/${section.id}`}
-                    className="group block h-full rounded-xl border border-chalk bg-surface p-6 transition-all duration-200 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5"
-                  >
-                    <SectionCardContent
-                      sectionNum={sectionNum}
-                      section={section}
-                      available
-                      showCount={revealed}
-                      ringPower={sectionPower}
-                      ringAttempted={sectionAttempted}
-                    />
-                  </Link>
-                ) : (
-                  <div className="block h-full rounded-xl border border-chalk/60 bg-paper-warm p-6 opacity-55">
-                    <SectionCardContent
-                      sectionNum={sectionNum}
-                      section={section}
-                      available={false}
-                      showCount={revealed}
-                    />
-                  </div>
-                )}
+                <ThemedSectionCard
+                  theme={theme}
+                  available={available}
+                  href={available ? `/quiz/${section.id}` : undefined}
+                >
+                  <SectionCardContent
+                    sectionNum={sectionNum}
+                    section={section}
+                    available={available}
+                    showCount={revealed}
+                    ringPower={sectionPower}
+                    ringAttempted={sectionAttempted}
+                  />
+                </ThemedSectionCard>
               </div>
             );
           })}
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="border-t border-chalk py-8 text-center text-sm text-muted">
         <p>
           {t.home.footerTagline}
-          <span className="mx-2 opacity-30">·</span>
+          <span className="mx-2 opacity-30">&middot;</span>
           <Link href="/privacy" className="hover:text-ink transition-colors">
             {t.home.privacyLink}
           </Link>

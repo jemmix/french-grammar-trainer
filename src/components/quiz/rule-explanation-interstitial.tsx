@@ -61,7 +61,7 @@ export function RuleExplanationInterstitial({
           {/* Action */}
           <button
             onClick={onStart}
-            className="w-full py-3 px-6 rounded-lg bg-primary text-surface font-semibold text-base transition-all hover:bg-primary/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
+            className="btn-primary w-full py-3 px-6 rounded-lg bg-primary text-surface font-semibold text-base transition-all hover:bg-primary/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
           >
             {t.quiz.startPractice}
             <span className="ml-2 text-xs text-white/40">{t.quiz.enterHint}</span>

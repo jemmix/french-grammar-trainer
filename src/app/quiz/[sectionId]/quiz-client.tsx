@@ -107,7 +107,7 @@ function SectionQuizRunner({
 
   if (totalQuestions === 0) {
     return (
-      <div className="min-h-screen bg-paper flex items-center justify-center">
+      <div className="min-h-screen bg-paper page-bg flex items-center justify-center">
         <div className="text-muted">{t.shared.loading}</div>
       </div>
     );
@@ -116,9 +116,9 @@ function SectionQuizRunner({
   const progress = finished ? 100 : (currentIndex / totalQuestions) * 100;
 
   return (
-    <div className="min-h-screen bg-paper">
+    <div className="min-h-screen bg-paper page-bg">
       {/* Top bar */}
-      <div className="sticky top-0 z-10 bg-surface/90 backdrop-blur-sm border-b border-chalk">
+      <div className="top-bar sticky top-0 z-10 bg-surface/90 backdrop-blur-sm border-b border-chalk">
         <div className="mx-auto max-w-3xl px-6 py-3 flex items-center justify-between">
           <Link
             href="/"
@@ -159,9 +159,9 @@ function SectionQuizRunner({
           </div>
         </div>
         {/* Progress bar */}
-        <div className="h-0.5 bg-chalk">
+        <div className="progress-track h-0.5 bg-chalk">
           <div
-            className="h-full bg-primary transition-all duration-500 ease-out"
+            className="progress-fill h-full bg-primary transition-all duration-500 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>

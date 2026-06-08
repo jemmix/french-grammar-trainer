@@ -61,6 +61,122 @@
   --color-muted: #8B7FA5;
 }
 
+/* ── Per-theme card chrome & structural overrides ─────────── */
+
+[data-theme="bauhaus"] .card {
+  border-radius: 0;
+  border: 2px solid var(--color-ink);
+  box-shadow: none;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+[data-theme="bauhaus"] .card:hover {
+  box-shadow: 4px 4px 0 var(--color-primary);
+  transform: translate(-2px, -2px);
+}
+
+[data-theme="bauhaus"] .btn-primary {
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+[data-theme="bauhaus"] .btn-primary:hover {
+  box-shadow: 3px 3px 0 var(--color-ink);
+  transform: translate(-1px, -1px);
+}
+
+[data-theme="bauhaus"] .progress-track {
+  height: 6px;
+}
+[data-theme="bauhaus"] .progress-fill {
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-primary) 0,
+    var(--color-primary) 4px,
+    transparent 4px,
+    transparent 6px
+  );
+  background-size: 200% 100%;
+}
+
+[data-theme="bauhaus"] .section-num {
+  border-radius: 0;
+  font-weight: 800;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+  padding-right: 1.2em;
+}
+
+[data-theme="bauhaus"] .top-bar {
+  border-bottom: 2px solid var(--color-ink);
+}
+
+[data-theme="kitsch"] .card {
+  border-radius: 1.25rem;
+  border: 2.5px dashed var(--color-chalk);
+  box-shadow: 0 6px 24px -4px rgba(139, 92, 246, 0.12);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+[data-theme="kitsch"] .card:hover {
+  transform: translateY(-4px) rotate(-0.5deg);
+  box-shadow: 0 12px 36px -6px rgba(139, 92, 246, 0.22),
+              0 0 0 3px rgba(245, 158, 11, 0.25);
+  border-color: var(--color-accent);
+}
+
+[data-theme="kitsch"] .btn-primary {
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--color-primary), #A855F7, var(--color-accent));
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+[data-theme="kitsch"] .btn-primary:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.35);
+}
+
+[data-theme="kitsch"] .progress-track {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(139,92,246,0.15), rgba(245,158,11,0.15));
+}
+[data-theme="kitsch"] .progress-fill {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+}
+
+[data-theme="kitsch"] .section-num {
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--color-primary), #A855F7);
+  color: white;
+  font-weight: 800;
+}
+
+[data-theme="kitsch"] .top-bar {
+  border-bottom: 2.5px dotted var(--color-chalk);
+  background-image: radial-gradient(circle at 20% 50%, rgba(139,92,246,0.04) 0%, transparent 50%),
+                     radial-gradient(circle at 80% 50%, rgba(245,158,11,0.04) 0%, transparent 50%);
+}
+
+/* ── Kitsch background decoration ─────────────────────────── */
+
+[data-theme="kitsch"] .page-bg {
+  background-image:
+    radial-gradient(circle at 15% 85%, rgba(139,92,246,0.06) 0%, transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(245,158,11,0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(236,72,153,0.03) 0%, transparent 50%);
+}
+
+[data-theme="bauhaus"] .page-bg {
+  background-image:
+    linear-gradient(var(--color-chalk) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-chalk) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
 /* ── Keyframes ────────────────────────────────────────────── */
 
 @keyframes fade-in {
@@ -86,6 +202,12 @@
 @keyframes pulse-gentle {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 1; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ── Base layer ───────────────────────────────────────────── */
