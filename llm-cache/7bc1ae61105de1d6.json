@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7bc1ae61105de1d6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-01-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-01 - Der bestimmte Artikel im Nominativ: der, die, das\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie den bestimmten Artikel im Nominativ ein.\nPhrase: „___ Hand der Frau ist schmutzig.\nCorrect Answer: Die\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780916031744-d84woejf"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question. Here is my assessment:\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"Hand\" is feminine and therefore takes \"die\" as the definite article in the nominative case, which is exactly what rule 01-01 tests.\n\nNo remaining tasks - the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780916032890-8rvl0zng",
+      "timestamp": "2026-06-08T10:54:12.785Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"Hand\" is feminine and that the feminine nominative definite article is \"die,\" which directly tests the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780916052787-mh84ecmx",
+      "timestamp": "2026-06-08T10:54:27.453Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying \"Hand\" as a feminine noun and supplying the correct nominative definite article \"die,\" which directly tests the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780916068925-8o8qaao9",
+      "timestamp": "2026-06-08T10:54:40.702Z"
+    }
+  ]
+}

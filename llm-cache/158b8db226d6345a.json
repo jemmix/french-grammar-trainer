@@ -1,0 +1,33 @@
+{
+  "cacheKey": "158b8db226d6345a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-05-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-05 - Das Genus feminin: typische feminine Endungen (-ung, -heit, -keit, -schaft)\n\nQUESTION:\nType: Input\nPrompt: Das Nomen endet auf -ung. Welchen Artikel erwartet es im Nominativ?\nPhrase: „___ Regierung hat beschlossen.\nCorrect Answer: Die\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780917293879-onpbljec"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule that nouns ending in -ung are feminine and therefore take the article \"Die\" in the nominative case.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780917293967-6kzrxzvv",
+      "timestamp": "2026-06-08T11:15:46.222Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that nouns ending in -ung are feminine and therefore take the definite article \"Die\" in the nominative case.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780917346225-72w0gwho",
+      "timestamp": "2026-06-08T11:15:57.356Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of validating a German grammar question about feminine noun endings (-ung, -heit, -keit, -schaft).\n\nVERDICT: ALIGNED\nREASON: The question directly tests knowledge that nouns ending in -ung take the feminine article \"Die\" in the nominative, which is the core of the stated rule about typical feminine endings.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780917357438-rl1lz5ep",
+      "timestamp": "2026-06-08T11:16:10.653Z"
+    }
+  ]
+}
