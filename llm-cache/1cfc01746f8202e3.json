@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1cfc01746f8202e3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-10 - Der Nullartikel: wann Substantive ohne Artikel stehen\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz lässt den Artikel korrekt weg?\nChoices:\nA. [CORRECT] Wir fliegen nächste Woche nach Japan.\nB. Wir fliegen nächste Woche nach dem Japan.\nC. Wir fliegen nächste Woche nach einem Japan.\nD. Wir fliegen nächste Woche nach keinem Japan.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780883169034-si00bwp1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the zero article rule by requiring the student to recognize that country names like \"Japan\" do not take an article after the preposition \"nach,\" which is a specific instance of the Nullartikel rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883315179-vsu0co7j",
+      "timestamp": "2026-06-08T01:48:50.861Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate a single German grammar question to determine if it properly tests the stated rule about \"Der Nullartikel\" (when nouns stand without articles).\n\nThe validation analysis was completed mentally but not output:\n\nVERDICT: ALIGNED\nREASON: The question tests knowledge that country names like \"Japan\" do not take articles with the preposition \"nach,\" which is a classic application of the Nullartikel rule.\n\nNo remaining tasks - this was a single-question validation that was analyzed but the response was not delivered before the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883540433-rdpfgx45",
+      "timestamp": "2026-06-08T01:52:43.739Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge that country names like \"Japan\" require the nullartikel (no article), which is a core application of the stated rule about when nouns stand without articles.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883678681-jmy7yjyd",
+      "timestamp": "2026-06-08T01:54:52.826Z"
+    }
+  ]
+}

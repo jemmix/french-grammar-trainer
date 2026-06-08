@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b0c9e9db1e3adee7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-01-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den Artikel im Nominativ: „___ Sonne scheint heute.\"\n\nChoices:\nA. [CORRECT] die\nB. [WRONG] das\nC. [WRONG] eine\nD. [WRONG] unsere\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780883168923-krd66r3i"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||\"das\" is the neuter article but \"Sonne\" is feminine; \"eine\" is the indefinite article which doesn't fit the context of referring to THE sun; \"unsere\" is a possessive determiner, not a standard definite or indefinite article (Artikel).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883198564-s480skrk",
+      "timestamp": "2026-06-08T01:47:19.730Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses the neuter article \"das\" instead of feminine \"die,\" C uses the indefinite article \"eine\" which is inappropriate for the specific celestial body \"Sonne,\" and D uses the possessive \"unsere\" which changes the meaning entirely.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883433425-wtphsivt",
+      "timestamp": "2026-06-08T01:51:07.845Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the wrong gender (neuter instead of feminine), C uses an indefinite article which is semantically inappropriate for a unique celestial body, and D uses a possessive article when the definite article is required.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883644175-e8j8vtu8",
+      "timestamp": "2026-06-08T01:54:22.269Z"
+    }
+  ]
+}

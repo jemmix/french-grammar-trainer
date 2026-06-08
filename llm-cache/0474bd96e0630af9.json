@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0474bd96e0630af9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-02 - Der unbestimmte Artikel im Nominativ: ein, eine, ein\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den unbestimmten Artikel im Nominativ: „Das ist ___ Lehrer.\"\nChoices:\nA. [CORRECT] ein\nB. eine\nC. der\nD. kein\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780880006193-zn88bhtr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct indefinite article (ein) for a masculine noun (Lehrer) in the nominative case, which directly tests the stated rule about the forms ein/eine/ein.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880007274-nf6bbkvk",
+      "timestamp": "2026-06-08T00:53:40.286Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"Lehrer\" is masculine and that the masculine indefinite article in the nominative case is \"ein,\" which is exactly what the stated rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880369880-uucqrnhb",
+      "timestamp": "2026-06-08T00:59:47.441Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done:\nI was asked to validate whether a German grammar question about indefinite articles in the nominative case properly tests the stated rule. The question asks students to complete \"Das ist ___ Lehrer\" with choices including \"ein\" (correct), \"eine\", \"der\", and \"kein\".\n\nRemaining tasks: None - the validation task is straightforward and can be completed in the response.\n\nRecommendation: Here is my verdict on the validation:\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"Lehrer\" is a masculine noun and that the nominative indefinite article for masculine is \"ein,\" which is precisely what rule 01-02 covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880677489-c47h831k",
+      "timestamp": "2026-06-08T01:04:54.859Z"
+    }
+  ]
+}

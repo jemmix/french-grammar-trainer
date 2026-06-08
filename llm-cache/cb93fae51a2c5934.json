@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cb93fae51a2c5934",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-09 - Possessivartikel im Nominativ (mein, dein, sein, unser, euer, ihr)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den Possessivartikel im Nominativ: „Anna sucht ___ Tasche.\" (Bezugsperson: sie, Anna)\nChoices:\nA. [CORRECT] ihre\nB. ihr\nC. die\nD. eine\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780875044812-mxyd7q88"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a German grammar question about possessive articles actually tests the stated rule \"Possessivartikel im Nominativ\" (possessive articles in the nominative case).\n\nVERDICT: MISALIGNED\nREASON: The sentence \"Anna sucht ___ Tasche\" places \"Tasche\" in the accusative case (as the direct object of \"suchen\"), so the correct answer \"ihre\" tests possessive articles in the accusative, not the nominative case as the rule states.\n\nRemaining tasks: None - the validation was completed before the step limit was reached.\n\nRecommendations: Either rewrite the question to use a nominative construction (e.g., \"___ Tasche ist blau\") or change the rule being tested to \"Possessivartikel im Akkusativ.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875605268-95kekayy",
+      "timestamp": "2026-06-07T23:40:40.356Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct possessive article \"ihre\" for a third-person feminine referent in the nominative case, which directly tests knowledge of Possessivartikel im Nominativ.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876260540-a5qczbg8",
+      "timestamp": "2026-06-07T23:51:24.255Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far: I was asked to validate whether a German grammar question about possessive articles in the nominative case is properly aligned with its stated rule. The question asks students to complete \"Anna sucht ___ Tasche\" with the correct possessive article, where the reference person is \"sie, Anna.\"\n\nRemaining tasks: None - the validation task was straightforward and can be completed without tools.\n\nRecommendations for what should be done next:\n\nVERDICT: ALIGNED\nREASON: The question directly tests knowledge of the correct nominative form of the possessive article \"ihr-\" for a feminine noun (\"Tasche\"), which is the core of the stated rule about Possessivartikel im Nominativ.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876813995-9pscuz9y",
+      "timestamp": "2026-06-08T00:01:12.342Z"
+    }
+  ]
+}

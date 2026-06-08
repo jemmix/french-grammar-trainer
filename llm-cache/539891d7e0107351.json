@@ -1,0 +1,33 @@
+{
+  "cacheKey": "539891d7e0107351",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-05-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-05 - Das Genus feminin: typische feminine Endungen (-ung, -heit, -keit, -schaft)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher bestimmte Artikel im Nominativ gehört zum Nomen „Möglichkeit\"? (Endung: -keit)\nChoices:\nA. [CORRECT] die Möglichkeit\nB. der Möglichkeit\nC. eine Möglichkeit\nD. diese Möglichkeit\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780875044808-4897cy45"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly requires knowing that the ending -keit indicates feminine gender, which then determines the correct definite article \"die\" in the nominative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875341029-5yjlord1",
+      "timestamp": "2026-06-07T23:35:55.579Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student recognizes that the \"-keit\" ending indicates a feminine noun requiring the article \"die,\" which is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875986780-pme8bhlt",
+      "timestamp": "2026-06-07T23:46:48.802Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the learner recognizes that nouns ending in -keit take the feminine definite article \"die,\" which is the central concept of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876493115-6ybp7u6c",
+      "timestamp": "2026-06-07T23:55:27.295Z"
+    }
+  ]
+}

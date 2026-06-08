@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c0755038af87f0eb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-04-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den Artikel im Nominativ: „___ Dirigent steht am Pult.\"\n\nChoices:\nA. [CORRECT] der\nB. [WRONG] die\nC. [WRONG] ein\nD. [WRONG] sein\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780883168959-g2mizi3t"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of verifying wrong answers for a German grammar multiple choice question about article usage in the nominative case.\n\nAnalysis completed:\n- Question asks for the article in nominative case for \"Dirigent\" (masculine noun)\n- B (\"die\") - incorrect, wrong gender article\n- C (\"ein\") - this is actually a grammatically valid indefinite article in nominative for masculine nouns; \"Ein Dirigent steht am Pult\" is correct German\n- D (\"sein\") - not an article but a possessive determiner, so doesn't fit the question's requirement\n\nRemaining tasks: Provide the final verdict in the requested format.\n\nRecommendation: The verdict should be FALSE|C because \"ein\" is a valid article in the nominative case for the masculine noun \"Dirigent,\" making it a potentially correct answer despite the context favoring the definite article.\n\nTRUE||B,C,D|B",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883250776-agj99brl",
+      "timestamp": "2026-06-08T01:48:08.371Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"die\" is wrong gender for masculine \"Dirigent,\" \"ein\" is an indefinite article not matching the definite article context implied by \"den Artikel,\" and \"sein\" is a possessive determiner not an article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883486462-avqgp6fq",
+      "timestamp": "2026-06-08T01:52:38.850Z"
+    }
+  ]
+}

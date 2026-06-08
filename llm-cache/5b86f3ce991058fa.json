@@ -1,0 +1,40 @@
+{
+  "cacheKey": "5b86f3ce991058fa",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-04-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-04 - Das Genus maskulin: typische maskuline Endungen und Bedeutungsgruppen\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie den bestimmten Artikel im Nominativ.\nPhrase: „___ Produzent hat den Film finanziert.\nCorrect Answer: der\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780885636212-ibhvcul8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The word \"Produzent\" ends in \"-ent,\" which is one of the typical masculine endings covered by this rule, so correctly supplying \"der\" requires recognizing this masculine ending pattern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780885780002-6eroc5gl",
+      "timestamp": "2026-06-08T02:30:02.950Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests general article-gender agreement for the noun \"Produzent\" rather than the ability to recognize \"-ent\" as a typical masculine ending—a student could answer correctly by simply having memorized \"der Produzent\" without any knowledge of masculine ending patterns.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780885938032-e5gz5q8y",
+      "timestamp": "2026-06-08T02:32:54.672Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To select \"der\" instead of \"die\" or \"das,\" the learner must recognize that \"Produzent\" is masculine, which requires knowing the rule that nouns ending in \"-ent\" are typically masculine.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780886159999-lkcgk4eg",
+      "timestamp": "2026-06-08T02:36:39.641Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question for alignment with its stated rule. Here is my assessment:\n\nVERDICT: MISALIGNED\nREASON: The question tests vocabulary knowledge of the gender of \"Produzent\" and basic article declension (nominative masculine = der), not the ability to recognize typical masculine endings or meaning groups as systematic patterns, which is what the rule about \"typische maskuline Endungen und Bedeutungsgruppen\" is meant to teach.\n\nAn aligned question for this rule would present multiple nouns and ask the student to identify which ones are likely masculine based on their endings (e.g., -ent, -er, -ismus) or meaning group (e.g., days of the week, weather phenomena), testing pattern recognition rather than memorized vocabulary.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780886265634-0smz76i1",
+      "timestamp": "2026-06-08T02:38:18.061Z"
+    }
+  ]
+}

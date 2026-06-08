@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a6b16466f1277f19",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-10 - Der Nullartikel: wann Substantive ohne Artikel stehen\n\nQUESTION:\nType: Input\nPrompt: Steht hier ein Artikel? Ergänzen Sie die Lücke – oder „—\" für Nullartikel.\nPhrase: „Wir fliegen morgen nach ___ Spanien.\nCorrect Answer: —\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780890308188-68a70kao"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that country names with prepositions like \"nach\" take no article, which is a specific instance of the Nullartikel rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780890308196-569e6tv4",
+      "timestamp": "2026-06-08T03:45:20.376Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge that country names like \"Spanien\" take no article after \"nach,\" which is a classic application of the Nullartikel rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780890320378-povsiiza",
+      "timestamp": "2026-06-08T03:45:32.912Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that country names like \"Spanien\" take no article after the preposition \"nach\", which is a canonical example of the nullartikel rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780890332912-vv8slqyn",
+      "timestamp": "2026-06-08T03:45:41.920Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "13109392a3629341",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-09-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-09 - Possessivartikel im Nominativ (mein, dein, sein, unser, euer, ihr)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den Possessivartikel im Nominativ: „Das sind ___ Kinder.\" (An mehrere Personen gerichtet)\nChoices:\nA. [CORRECT] eure\nB. euer\nC. die\nD. keine\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780875044812-32jedsnh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"euer\" takes the ending \"-e\" in the nominative plural (becoming \"eure\"), and the distractor \"euer\" directly tests the common mistake of using the undeclined stem form for plural nouns.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875602868-pa2zhbus",
+      "timestamp": "2026-06-07T23:40:26.220Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of validating a German grammar question about possessive articles in the nominative case.\n\nVERDICT: ALIGNED\nREASON: The question requires knowing both which possessive article to use for 2nd person plural (\"euer\") and its correct nominative plural inflection (\"eure\" vs. \"euer\"), which is exactly what the rule covers.\n\nRemaining tasks: None for this specific validation - the assessment is complete.\n\nRecommendations: No further action needed for this question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876250360-pn8q7oep",
+      "timestamp": "2026-06-07T23:51:18.199Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge of the correct declension of the possessive article \"euer\" in the nominative plural (\"eure Kinder\"), which is precisely what the stated rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876806590-irahh3q8",
+      "timestamp": "2026-06-08T00:00:27.629Z"
+    }
+  ]
+}

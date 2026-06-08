@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2eb1f91bc8f4b8b8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-04-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-04 - Das Genus maskulin: typische maskuline Endungen und Bedeutungsgruppen\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Montag beginnt die Arbeitswoche.\"\nChoices:\nA. [CORRECT] der\nB. das\nC. dieser\nD. ein\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780875044807-366rd7j6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Days of the week (Wochentage) are a classic example of a masculine Bedeutungsgruppe in German, and knowing that \"Montag\" belongs to this group and therefore takes \"der\" directly tests the stated rule about masculine meaning groups.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875289033-w54ah9rw",
+      "timestamp": "2026-06-07T23:35:07.342Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests rote memorization of the gender of \"Montag\" rather than the concept of identifying masculine meaning groups—knowing \"der Montag\" doesn't require understanding that days of the week form a masculine Bedeutungsgruppe.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875934993-aic7rt89",
+      "timestamp": "2026-06-07T23:45:57.859Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests rote memorization of the article for a single day of the week rather than knowledge of typical masculine endings or meaning group patterns as specified by the rule, and the distractors include non-gender options (dieser, ein) that further dilute focus on the stated grammar concept.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876437847-ucvfslj2",
+      "timestamp": "2026-06-07T23:54:19.602Z"
+    }
+  ]
+}

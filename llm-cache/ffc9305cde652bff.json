@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ffc9305cde652bff",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-10-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz verwendet korrekt den Nullartikel?\n\nChoices:\nA. [CORRECT] Anna studiert Medizin und wohnt in München.\nB. [WRONG] Anna studiert die Medizin und wohnt in dem München.\nC. [WRONG] Anna studiert eine Medizin und wohnt in einem München.\nD. [WRONG] Anna studiert ihre Medizin und wohnt in ihrem München.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780880006267-9a7pfin5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers incorrectly add articles where the null article is required: \"die Medizin/in dem München\" adds definite articles, \"eine Medizin/in einem München\" adds indefinite articles, and \"ihre Medizin/in ihrem München\" adds possessive articles, all of which are grammatically incorrect for academic subjects and city names in German.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880324068-x36o2jrf",
+      "timestamp": "2026-06-08T00:59:04.013Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers incorrectly use articles (definite, indefinite, or possessive) where the null article is required for the academic subject \"Medizin\" and the city name \"München.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880658545-lp3hud12",
+      "timestamp": "2026-06-08T01:04:32.465Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers incorrectly use articles with academic subjects (Medizin) and cities (München), both of which require the zero article in German.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880953709-lr21pjt9",
+      "timestamp": "2026-06-08T01:10:07.604Z"
+    }
+  ]
+}

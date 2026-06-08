@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8982b7a5295d9fe5",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "01-08-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Unregelmäßige Pluralformen und Besonderheiten\nPROMPT: Schreiben Sie die Pluralform von „Tochter\" in die Lücke.\nPHRASE: „Frau Schmidt hat zwei ___.\nCORRECT ANSWER: Töchter\n\nWRONG ANSWERS to evaluate:\n1. Tochter\n2. Tochtern\n3. Tochters\n4. Töchtern\n5. Töchtere\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780883169016-6vrx4w6h"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Work accomplished so far:**\nI was evaluating the plausibility of wrong answers for a German grammar question about the plural of \"Tochter.\"\n\n**Analysis completed:**\n- \"Tochter\" (singular) - PLAUSIBLE - learner forgets to pluralize\n- \"Tochtern\" - PLAUSIBLE - overapplies -n plural pattern\n- \"Tochters\" - PLAUSIBLE - overapplies -s plural pattern\n- \"Töchtern\" - PLAUSIBLE - confuses dative plural with nominative\n- \"Töchtere\" - IMPLAUSIBLE - adding \"-ere\" is not a German plural pattern; no learner would naturally produce this\n\n**Verdict that would have been output:**\nVERDICT: IMPLAUSIBLE\nREASON: \"Töchtere\" is not a plausible learner error because adding \"-ere\" as a plural ending has no basis in German morphology and no learner would naturally produce this form.\n\n**Remaining tasks:** None - the evaluation was complete.\n\n**Recommendation:** Replace \"Töchtere\" with a more plausible error such as \"Töchterin\" (confusing with the feminine occupational suffix) or \"Tochte\" (wrong umlaut application without proper ending).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883783749-6kfclaqr",
+      "timestamp": "2026-06-08T01:56:42.361Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: While \"Tochter\" (forgetting to pluralize), \"Tochtern\" (overapplying -n plural), \"Tochters\" (overapplying -s plural), and \"Töchtern\" (confusing with dative plural) are all plausible learner errors, \"Töchtere\" is not a natural mistake because adding \"-ere\" to an already-umlauted stem doesn't correspond to any common German plural pattern learners would overapply.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883890272-6cn08hog",
+      "timestamp": "2026-06-08T01:58:33.335Z"
+    }
+  ]
+}

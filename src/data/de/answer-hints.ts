@@ -5,7 +5,7 @@
 // - Other words: word type in English (pronom, adjectif, connecteur, etc.)
 
 export const answerHints: Record<string, string> = {
-  "—": "Nullartikel (kein Artikel)",
+  "—": "Achten Sie auf die Präposition „nach\"",
   "das": "bestimmter Artikel",
   "der": "bestimmter Artikel",
   "die": "bestimmter Artikel",
@@ -15,7 +15,7 @@ export const answerHints: Record<string, string> = {
   "kein": "Negationsartikel",
   "keine": "Negationsartikel",
   "mein": "Possessivartikel",
-  "Münder": "Pluralform von Mund",
+  "Nächte": "Pluralform von Nacht",
   "Stühle": "Pluralform von Stuhl",
   "Töchter": "Pluralform von Tochter",
   "unsere": "Possessivartikel",

@@ -1,0 +1,54 @@
+{
+  "cacheKey": "25a704a436b08bec",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-02-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-02 - Der unbestimmte Artikel im Nominativ: ein, eine, ein\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den unbestimmten Artikel im Nominativ: „Das ist ___ Universität.\"\nChoices:\nA. [CORRECT] eine\nB. ein\nC. die\nD. meine\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780880006193-o8msbuy9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer \"eine\" is marked as correct, but \"Universität\" is grammatically feminine, meaning this question primarily tests whether the student knows the gender of \"Universität\" rather than the indefinite article forms themselves—and more critically, the answer is actually wrong because German typically uses \"ein\" (neuter) with \"Universität\" when referring to the institution in contexts like this, making this question factually incorrect rather than a valid test of the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880018895-rbxyirw9",
+      "timestamp": "2026-06-08T00:54:26.714Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct indefinite article \"eine\" for the feminine noun \"Universität\" in the nominative case, which directly tests the stated rule about indefinite articles (ein, eine, ein) in the nominative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880410765-chuazad5",
+      "timestamp": "2026-06-08T01:01:00.661Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct feminine indefinite article \"eine\" for the feminine noun \"Universität\" in the nominative case, which directly tests the stated rule about indefinite article forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880743087-4a4nenxn",
+      "timestamp": "2026-06-08T01:06:17.382Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of work done\n\nI was in the process of analyzing a German grammar validation question to determine if it properly tests the stated rule about indefinite articles in the nominative case (ein, eine, ein).\n\n## Analysis completed\n\nThe question \"Das ist ___ Universität.\" with correct answer \"eine\" was being evaluated against the rule \"Der unbestimmte Artikel im Nominativ: ein, eine, ein.\"\n\n## Remaining tasks\n\n- Provide the final verdict and reasoning\n\n## Recommendation for next steps\n\nComplete the validation with:\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"Universität\" is a feminine noun and therefore takes \"eine\" as its indefinite article in the nominative case, which is exactly what the stated rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780881029675-f15xzmhh",
+      "timestamp": "2026-06-08T01:11:24.682Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying that \"Universität\" is feminine and therefore takes \"eine\" as its indefinite article in the nominative, directly testing the rule's core concept.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780881352748-5aaecy1q",
+      "timestamp": "2026-06-08T01:18:29.141Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer \"eine\" is actually grammatically incorrect for this sentence — German uses the definite article (\"Das ist die Universität\") when identifying or introducing institutions like universities, making this question test a different usage rule rather than the indefinite article paradigm.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780881789822-9qcudzh6",
+      "timestamp": "2026-06-08T01:23:40.256Z"
+    }
+  ]
+}

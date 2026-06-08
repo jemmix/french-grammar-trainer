@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2ce349c5d8fece68",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-05-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-05 - Das Genus feminin: typische feminine Endungen (-ung, -heit, -keit, -schaft)\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie den bestimmten Artikel im Nominativ ein.\nPhrase: „___ Wahrheit kommt immer ans Licht.\nCorrect Answer: die\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780875044809-qr5xjybx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Wahrheit\" ends in \"-heit,\" one of the typical feminine suffixes explicitly listed in the rule, so correctly identifying \"die\" requires applying knowledge of this feminine ending pattern.\n\nMaximum steps for this agent have been reached. I have provided the validation verdict for the single question that was presented. No other tasks were in progress.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875362916-1218a3m7",
+      "timestamp": "2026-06-07T23:36:20.364Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The word \"Wahrheit\" ends in \"-heit,\" which is one of the typical feminine endings explicitly listed in the rule, so correctly choosing \"die\" requires applying knowledge of this suffix pattern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876008803-hw0h1e30",
+      "timestamp": "2026-06-07T23:47:09.119Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Wahrheit\" ends in \"-heit,\" one of the typical feminine suffixes explicitly listed in the rule, so applying the rule directly yields the correct article \"die.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876515624-voi1pg2l",
+      "timestamp": "2026-06-07T23:55:39.676Z"
+    }
+  ]
+}

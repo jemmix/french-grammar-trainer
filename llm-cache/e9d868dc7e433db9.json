@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e9d868dc7e433db9",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "01-10-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Setzen Sie den Artikel ein – oder „—\" für „kein Artikel\".\n\nPHRASE: „Wir fliegen morgen nach ___ Spanien.\n\nHINT: Nullartikel\n\nEXPECTED ANSWER: —\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1780889229372-nsq1gevv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs learners to use \"—\" for \"kein Artikel,\" and the hint \"Nullartikel\" directly signals that no article is needed, making the expected input clear without seeing the answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780889263328-v6pt1jg4",
+      "timestamp": "2026-06-08T03:28:01.122Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs learners to use \"—\" for \"kein Artikel,\" the hint confirms \"Nullartikel,\" and the blank before \"Spanien\" (a country that takes no article with \"nach\") makes the expected input clear.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780889281123-jonitf5j",
+      "timestamp": "2026-06-08T03:28:15.382Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt explicitly instructs learners to use \"—\" for \"kein Artikel\", and the hint \"Nullartikel\" clearly indicates that no article is required, making the expected input unambiguous.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780889295382-qr1fbexn",
+      "timestamp": "2026-06-08T03:28:27.408Z"
+    }
+  ]
+}

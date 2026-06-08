@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f96329ea8589465c",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-10-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Setzen Sie den Artikel ein – oder „—\" für „kein Artikel\".\nPhrase: „Frau Hoffmann ist von Beruf ___ Anwältin.\nHint: bestimmter, unbestimmter oder kein Artikel?\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780883169036-zvh9hvc6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly states the task (insert an article or \"—\" for no article), and the hint narrows the options to three categories, making the expected response format unambiguous regardless of whether the learner has seen the rule title.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883366469-91aac5dp",
+      "timestamp": "2026-06-08T01:49:52.961Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was asked to evaluate a single German language learning question for prompt clarity and ambiguity. This is a text-only validation task that requires no tools.\n\n## Analysis Completed\nThe question asks learners to insert an article (definite, indefinite, or none) in the blank before \"Anwältin\" in the sentence \"Frau Hoffmann ist von Beruf ___ Anwältin.\"\n\n## Verdict\nVERDICT: AMBIGUOUS\nREASON: Both the zero article (\"—\" for no article) and the indefinite article \"eine\" are grammatically correct after \"von Beruf\" in German, making it unclear which answer the question expects.\n\n## Remaining Tasks\nNone - this was a single-question evaluation.\n\n## Recommendations\nTo fix this question, either:\n1. Add context that makes only one answer correct (e.g., specify a regional preference or textbook rule)\n2. Change the sentence to one where only one article type is correct (e.g., \"Das ist ___ Anwältin, die ich gestern getroffen habe\" → only \"die\" works)\n3. If both answers should be accepted, convert this to a different question type that allows multiple valid responses",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883613098-ia2uhex2",
+      "timestamp": "2026-06-08T01:54:16.201Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The hint \"bestimmter, unbestimmter oder kein Artikel?\" implies the learner should choose between three options, but only one is grammatically correct for this specific sentence, potentially misleading learners into thinking multiple answers might be valid.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883752970-4v7nvw1z",
+      "timestamp": "2026-06-08T01:56:17.493Z"
+    }
+  ]
+}

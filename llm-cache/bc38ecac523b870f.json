@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bc38ecac523b870f",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "01-08-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Unregelmäßige Pluralformen und Besonderheiten\nPROMPT: Schreiben Sie die Pluralform von „Tochter\" in die Lücke.\nPHRASE: „Frau Schmidt hat zwei ___.\nCORRECT ANSWER: Töchter\n\nWRONG ANSWERS to evaluate:\n1. Tochter\n2. Tochtern\n3. Tochters\n4. Töchtern\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780885636269-zkji6hx1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: using the singular unchanged (Tochter), overgeneralizing the -n plural ending (Tochtern), overgeneralizing the -s plural ending (Tochters), and confusing cases by using the dative plural form (Töchtern).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780885805530-udghzvvb",
+      "timestamp": "2026-06-08T02:30:37.421Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors when forming irregular German plurals: using the singular form unchanged (Tochter), overapplying regular feminine plural -n ending (Tochtern), overapplying -s plural ending (Tochters), and getting the umlaut right but adding an incorrect ending (Töchtern).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780885970218-wwbrpli1",
+      "timestamp": "2026-06-08T02:33:14.084Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: using the singular form without umlaut (Tochter), overgeneralizing the -n plural ending (Tochtern), overgeneralizing the -s plural ending used for loanwords (Tochters), and using the correct dative plural form in a nominative context (Töchtern).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780886172263-hai9sqh7",
+      "timestamp": "2026-06-08T02:36:54.987Z"
+    }
+  ]
+}

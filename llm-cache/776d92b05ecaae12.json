@@ -1,0 +1,33 @@
+{
+  "cacheKey": "776d92b05ecaae12",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-07-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-07 - Die Pluralbildung: regelmäßige Endungen (-e, -er, -n, -s) und Umlaut\n\nQUESTION:\nType: Multiple Choice\nPrompt: Wie lautet die Pluralform von „das Kind\"?\nChoices:\nA. [CORRECT] Kinder\nB. Kinde\nC. Kindern\nD. Kinds\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780875044810-220aq4jn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"Kind\" forms its plural \"Kinder\" with the -er ending and an umlaut change (i→ie), which directly tests the regular plural endings and umlaut rules specified in the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875450414-bicqrfmh",
+      "timestamp": "2026-06-07T23:37:46.206Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of the \"-er\" plural ending for \"das Kind\" → \"Kinder\", which is explicitly listed as one of the regular endings in the stated rule about plural formation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876101253-wa3ipjc7",
+      "timestamp": "2026-06-07T23:48:41.855Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the \"-er\" plural ending, which is explicitly listed in the rule about regular plural endings (-e, -er, -n, -s) und Umlaut.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876618515-2livfm0p",
+      "timestamp": "2026-06-07T23:57:28.496Z"
+    }
+  ]
+}

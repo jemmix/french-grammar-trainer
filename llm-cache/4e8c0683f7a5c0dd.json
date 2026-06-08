@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4e8c0683f7a5c0dd",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-04-006",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Montag beginnt die Arbeitswoche.\"\nChoices:\nA. der\nB. das\nC. dieser\nD. ein\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780875044807-qn15gqdn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly specifies \"bestimmten Artikel im Nominativ\" (definite article in nominative case), which gives learners all the information needed—the only remaining task is to identify the gender of \"Montag\" (masculine → der).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875291715-ne69uzg6",
+      "timestamp": "2026-06-07T23:35:36.160Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks for a \"bestimmten Artikel\" (definite article) but includes \"dieser\" (demonstrative) and \"ein\" (indefinite) as choices, and the sentence \"Montag beginnt die Arbeitswoche\" would naturally not use any article at all, making the task confusing for a learner.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875962456-9hs8reyq",
+      "timestamp": "2026-06-07T23:46:16.658Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt explicitly asks for a \"bestimmten Artikel\" (definite article), but two of the four choices (dieser, ein) are not definite articles, creating confusion about whether the learner should only consider choices that match the stated category or evaluate all options.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876453637-zpoxphlm",
+      "timestamp": "2026-06-07T23:54:33.673Z"
+    }
+  ]
+}

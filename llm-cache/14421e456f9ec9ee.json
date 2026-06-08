@@ -1,0 +1,40 @@
+{
+  "cacheKey": "14421e456f9ec9ee",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-06-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Setzen Sie den bestimmten Artikel ein.\nPhrase: „Ich esse ___ Brötchen zum Frühstück.\nHint: bestimmter Artikel\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780875044810-0lewrp2j"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly asks for the definite article (\"bestimmter Artikel\"), and in the context of \"Brötchen zum Frühstück\" (bread rolls for breakfast), the plural interpretation is unambiguous, leaving \"die\" as the only correct answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875428703-bbhcyl8z",
+      "timestamp": "2026-06-07T23:37:45.087Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The instruction to insert the definite article is precise, and \"Brötchen\" being a neuter noun means the correct answer \"das\" is unambiguous regardless of whether the learner considers case (nominative and accusative forms are identical for neuter).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876097675-70lwrm99",
+      "timestamp": "2026-06-07T23:48:41.653Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: \"Brötchen\" can be either singular (das Brötchen) or plural (die Brötchen), and without context indicating which is intended, a learner cannot determine whether \"das\" or \"die\" is the expected answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876617204-zoed8803",
+      "timestamp": "2026-06-07T23:57:35.564Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was evaluating one German language learning question prompt for clarity and ambiguity. The question asks learners to insert the definite article for \"Brötchen\" in the sentence \"Ich esse ___ Brötchen zum Frühstück.\"\n\nMy assessment:\nVERDICT: AMBIGUOUS\nREASON: \"Brötchen\" can be singular (das Brötchen) or plural (die Brötchen), and the prompt doesn't specify which number is expected, making both \"das\" and \"die\" valid definite articles.\n\nRemaining tasks: None - this was a single-question evaluation.\n\nRecommendation: To fix this question, either specify the number (e.g., \"Setzen Sie den bestimmten Artikel im Singular ein\" or add a quantifier to the sentence context like \"ein Brötchen\" to disambiguate, or change \"Brötchen\" to an unambiguous noun.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780877107784-ti9c3rb0",
+      "timestamp": "2026-06-08T00:05:27.837Z"
+    }
+  ]
+}

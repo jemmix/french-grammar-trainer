@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ec5be878501c754e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-04-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-04 - Das Genus maskulin: typische maskuline Endungen und Bedeutungsgruppen\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Bäcker backt frische Brötchen.\"\nChoices:\nA. [CORRECT] der\nB. die\nC. ein\nD. dieser\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780875044807-d0l79o5a"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests basic article-noun agreement rather than the ability to recognize masculine nouns through their typical endings or meaning groups (like the -er ending for professions), which is what the rule specifically covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875249870-uxql3vne",
+      "timestamp": "2026-06-07T23:34:31.948Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a German grammar question about the article for \"Bäcker\" properly tests the rule \"Das Genus maskulin: typische maskuline Endungen und Bedeutungsgruppen\" (masculine gender: typical masculine endings and meaning groups).\n\nVERDICT: MISALIGNED\nREASON: The question tests rote memorization of the gender of a specific word (\"Bäcker\") rather than knowledge of typical masculine endings or meaning groups, and includes distractors (\"ein\", \"dieser\") that test whether students know what a definite article is—both are different concepts from the stated rule about masculine patterns.\n\nRemaining tasks: None—this was a single-question validation.\n\nRecommendations: To properly test this rule, questions should either (1) present words with typical masculine endings (like -er, -ismus, -ant) and ask students to identify the correct article based on the pattern, or (2) present words from known masculine meaning groups (like professions, days of week, weather phenomena) and ask students to apply that knowledge to determine the gender.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875899070-hdg4fcnp",
+      "timestamp": "2026-06-07T23:45:25.059Z"
+    }
+  ]
+}

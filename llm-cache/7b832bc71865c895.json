@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7b832bc71865c895",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-02-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den unbestimmten Artikel im Nominativ: „Das ist ___ Universität.\"\n\nChoices:\nA. [CORRECT] eine\nB. [WRONG] ein\nC. [WRONG] die\nD. [WRONG] meine\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780880006193-6occjsjz"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"ein\" is wrong gender (masculine/neuter instead of feminine), \"die\" is a definite article not an indefinite article, and \"meine\" is a possessive adjective not an article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880015283-z0o22bw9",
+      "timestamp": "2026-06-08T00:53:49.527Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B \"ein\" has wrong gender for the feminine noun \"Universität,\" C \"die\" is a definite article not an indefinite article as required, and D \"meine\" is a possessive pronoun not an indefinite article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880376413-w0yi0ghr",
+      "timestamp": "2026-06-08T01:03:37.973Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers either use the wrong gender form (ein), a definite article instead of indefinite (die), or a possessive pronoun instead of an article (meine).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880900643-ntab3zkl",
+      "timestamp": "2026-06-08T01:08:32.531Z"
+    }
+  ]
+}

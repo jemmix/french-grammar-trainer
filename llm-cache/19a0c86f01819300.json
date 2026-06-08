@@ -1,0 +1,33 @@
+{
+  "cacheKey": "19a0c86f01819300",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-05-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-05 - Das Genus feminin: typische feminine Endungen (-ung, -heit, -keit, -schaft)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Befreiung der Geiseln wurde gefeiert.\"\nChoices:\nA. [CORRECT] die\nB. das\nC. eine\nD. meine\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780880006211-x1qbhuxv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"Befreiung\" ends in \"-ung\" and knowing this suffix indicates feminine gender, which is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880178576-ina6sjd5",
+      "timestamp": "2026-06-08T00:56:35.161Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"Befreiung\" ends in \"-ung\" and applying the rule that this suffix indicates feminine gender to select \"die\" as the correct definite article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880530967-8u8maeau",
+      "timestamp": "2026-06-08T01:02:24.189Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests recognition of the \"-ung\" ending as feminine, which is the core of the stated rule, and requires selecting the correct feminine definite article \"die\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880835618-eslzuv95",
+      "timestamp": "2026-06-08T01:07:29.144Z"
+    }
+  ]
+}

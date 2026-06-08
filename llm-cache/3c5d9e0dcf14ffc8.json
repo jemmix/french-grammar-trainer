@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3c5d9e0dcf14ffc8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-03-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-03 - Negation mit \"kein\" im Nominativ\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den Negationsartikel im Nominativ: „Das ist ___ Katze.\"\nChoices:\nA. [CORRECT] keine\nB. kein\nC. eine\nD. die\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780880006197-meeo3s6o"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct form of \"kein\" in the nominative case for a feminine noun (\"Katze\"), which directly tests the stated rule about negation with \"kein\" im Nominativ.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880062669-5z7fziwx",
+      "timestamp": "2026-06-08T00:54:40.185Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing both that \"kein\" is the correct negation form (not \"eine\" or \"die\") and that it must agree with the feminine noun \"Katze\" in the nominative case (\"keine\" not \"kein\"), directly testing the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880427583-tbd5hrlx",
+      "timestamp": "2026-06-08T01:00:40.819Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question for alignment with its stated rule.\n\nSummary of what was accomplished:\n- I analyzed the question \"Das ist ___ Katze.\" testing negation with \"kein\" in the nominative case\n- I determined this question is ALIGNED with the stated rule\n\nVERDICT: ALIGNED\nREASON: To select \"keine\" over \"kein\", the student must know that \"Katze\" is feminine and that the nominative form of \"kein\" for feminine nouns is \"keine\" - which is exactly what the rule covers.\n\nNo remaining tasks - this single validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880725059-dlppuvzv",
+      "timestamp": "2026-06-08T01:05:43.086Z"
+    }
+  ]
+}

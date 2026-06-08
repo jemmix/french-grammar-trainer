@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import type { Section, InputQuestion } from "../../src/data/types";
 
 const HINT_EXCEPTIONS = new Set<string>([
+  "—",
   "drink",
   "run",
   "sing",

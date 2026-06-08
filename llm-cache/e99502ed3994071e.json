@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e99502ed3994071e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-08-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-08 - Unregelmäßige Pluralformen und Besonderheiten\n\nQUESTION:\nType: Multiple Choice\nPrompt: Was ist die richtige Pluralform von „Museum\"?\nChoices:\nA. [CORRECT] Museen\nB. Museumen\nC. Museums\nD. Museum\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780875044811-snbn7ten"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The plural \"Museen\" follows the irregular pattern for neuter nouns ending in -um (with vowel change u→eu), which is precisely the type of special plural formation the stated rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875529568-f5olzrs1",
+      "timestamp": "2026-06-07T23:39:03.558Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge of the irregular plural form \"Museen\" for Latin-derived nouns ending in \"-um,\" which cannot be predicted using regular German plural rules and thus requires specific knowledge of this irregular pattern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876176863-pprexfsr",
+      "timestamp": "2026-06-07T23:49:51.485Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Museum\" → \"Museen\" is a textbook irregular plural involving vowel change (u→eu) and stem modification (-um dropped), which is exactly what the rule on irregular plural forms covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876706157-a3nkiu3v",
+      "timestamp": "2026-06-07T23:58:43.695Z"
+    }
+  ]
+}

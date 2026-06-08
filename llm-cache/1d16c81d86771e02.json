@@ -1,0 +1,26 @@
+{
+  "cacheKey": "1d16c81d86771e02",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-04-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-04 - Das Genus maskulin: typische maskuline Endungen und Bedeutungsgruppen\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie den bestimmten Artikel im Nominativ.\nPhrase: „___ Regen prasselt gegen die Scheibe.\nCorrect Answer: der\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780880006203-6qt1px14"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests rote memorization of a single word's gender rather than knowledge of typical masculine endings or meaning groups, and \"Regen\" with its \"-en\" ending does not clearly illustrate masculine ending patterns.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880163341-6n3gg6ga",
+      "timestamp": "2026-06-08T00:56:44.762Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: \"Regen\" has no typical masculine ending and doesn't belong to a predictable masculine meaning group (Bedeutungsgruppe), so answering correctly requires rote memorization of this specific noun's gender rather than application of the rule about patterns that help identify masculine nouns.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880544190-9q3am64u",
+      "timestamp": "2026-06-08T01:02:39.169Z"
+    }
+  ]
+}

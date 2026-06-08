@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a0a6da1d1777dbaf",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-04-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Maurer arbeitet an der Baustelle.\"\n\nChoices:\nA. [CORRECT] der\nB. [WRONG] die\nC. [WRONG] ein\nD. [WRONG] sein\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780885636204-tgm3s9ap"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B is feminine but Maurer is masculine, C is an indefinite article not the definite article requested, and D is a possessive pronoun not an article at all.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780885734482-s59tsvza",
+      "timestamp": "2026-06-08T02:29:22.880Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Work accomplished:** I was in the process of evaluating a German grammar verification task. The question asked to identify the correct definite article in the nominative case for \"Maurer\" (masculine noun). I analyzed the wrong answers but did not complete the final verdict.\n\n**Remaining tasks:** \n- Provide the final verdict for the question verification\n\n**Recommendation for next step:** The answer is straightforward:\n- B (\"die\") is wrong — feminine article, but \"Maurer\" is masculine\n- C (\"ein\") is wrong — indefinite article, but the question asks for the definite article (\"bestimmten Artikel\")\n- D (\"sein\") is wrong — possessive determiner, not a definite article\n\nThe expected verdict would be: `TRUE||All wrong answers are incorrect: B uses the wrong gender, C is indefinite rather than definite, and D is a possessive determiner not a definite article.`",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780885905501-ym27chn3",
+      "timestamp": "2026-06-08T02:31:59.337Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of work accomplished\nI was asked to verify that the wrong answers (B, C, D) in a German grammar multiple choice question are indeed incorrect. The question asks for the definite article in the nominative case to complete \"___ Maurer arbeitet an der Baustelle.\"\n\n## Analysis completed\n- **B. \"die\"**: Incorrect because \"die Maurer\" with the singular verb \"arbeitet\" creates a number disagreement (die Maurer would be plural, but arbeitet is singular)\n- **C. \"ein\"**: Incorrect because it is an indefinite article, but the question explicitly asks for a definite article (\"den bestimmten Artikel\")\n- **D. \"sein\"**: Incorrect because it is a possessive pronoun (\"his\"), not a definite article\n\n## Verdict\nTRUE||All wrong answers fail to meet the stated requirements: B creates a number disagreement, while C and D are not definite articles as explicitly requested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780886055652-c2gpcdyl",
+      "timestamp": "2026-06-08T02:35:00.721Z"
+    }
+  ]
+}

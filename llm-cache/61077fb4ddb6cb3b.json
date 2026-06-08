@@ -1,0 +1,33 @@
+{
+  "cacheKey": "61077fb4ddb6cb3b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-10 - Der Nullartikel: wann Substantive ohne Artikel stehen\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welches Wort ist korrekt? „Wir fliegen nächste Woche nach ___ Japan.\"\nChoices:\nA. [CORRECT] —\nB. dem\nC. einem\nD. keinem\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780875044813-cgwx3qqe"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests when to use the null article with country names after \"nach,\" as the correct answer requires knowing that Japan takes no article in this context rather than a dative article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875631645-ieg36ygc",
+      "timestamp": "2026-06-07T23:40:44.596Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the null article rule by requiring the learner to know that country names like \"Japan\" take no article after the preposition \"nach.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876274654-57obnm7k",
+      "timestamp": "2026-06-07T23:51:26.184Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI was asked to validate whether a German grammar question about the Nullartikel (zero article) is properly aligned with its stated rule. The question \"Wir fliegen nächste Woche nach ___ Japan.\" with the correct answer being no article (—) directly tests the rule about when nouns stand without articles in German.\n\n**Verdict:**\nVERDICT: ALIGNED\nREASON: The question directly tests knowledge of when German country names like \"Japan\" take no article with the preposition \"nach,\" which is a core application of the Nullartikel rule.\n\n**Remaining tasks:** None - this was a single-question validation task that has been completed.\n\n**Recommendations:** No further action needed for this specific validation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876816919-41h330oa",
+      "timestamp": "2026-06-08T00:00:44.178Z"
+    }
+  ]
+}

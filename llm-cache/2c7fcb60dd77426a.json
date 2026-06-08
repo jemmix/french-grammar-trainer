@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2c7fcb60dd77426a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-01-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-01 - Der bestimmte Artikel im Nominativ: der, die, das\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den Artikel im Nominativ: „___ Kaffee ist noch heiß.\"\nChoices:\nA. [CORRECT] der\nB. das\nC. ein\nD. kein\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780883168923-je7ivnu7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"Kaffee\" is masculine and that the nominative definite article for masculine nouns is \"der,\" directly testing the stated rule about definite articles in the nominative case.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883180603-kv798nl2",
+      "timestamp": "2026-06-08T01:47:38.221Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far:\nI was asked to validate whether a German grammar question about definite articles in the nominative case is properly aligned with its stated rule.\n\nAnalysis completed:\n- Rule: 01-01 - Der bestimmte Artikel im Nominativ: der, die, das\n- Question asks to fill in the blank for \"___ Kaffee ist noch heiß\"\n- Correct answer is \"der\" (masculine definite article in nominative)\n- Distractors test knowledge of gender (\"das\") and article type (\"ein\", \"kein\")\n\nRemaining tasks: None - this was a single validation request.\n\nRecommendation for next step:\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"Kaffee\" is masculine and that the definite article in nominative for masculine nouns is \"der,\" which is exactly what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883443567-4luis7t8",
+      "timestamp": "2026-06-08T01:51:04.590Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\nI was asked to validate whether a German grammar question about definite articles in the nominative case (\"der, die, das\") properly tests the stated rule.\n\nAnalysis completed:\n- The question \"___ Kaffee ist noch heiß\" with choices der/das/ein/kein requires knowing that \"Kaffee\" is masculine and that the nominative masculine definite article is \"der\"\n- This directly tests the rule about definite articles in nominative case\n- The distractors (das = wrong gender, ein = indefinite article, kein = negative article) are appropriate plausible wrong answers\n\nVERDICT: ALIGNED\nREASON: The question directly tests knowledge of the correct definite article in the nominative case for a masculine noun, which is exactly what rule 01-01 covers.\n\nNo remaining tasks - this was a single-question validation that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883641544-tl8wdd0l",
+      "timestamp": "2026-06-08T02:02:57.502Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "691d96c8ad7496ff",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-08-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-08 - Unregelmäßige Pluralformen und Besonderheiten\n\nQUESTION:\nType: Multiple Choice\nPrompt: Was ist die richtige Pluralform von „Mutter\"?\nChoices:\nA. [CORRECT] Mütter\nB. Mutter\nC. Muttern\nD. Mutters\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780875044811-t3u4ixwg"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the irregular plural formation of \"Mutter\" → \"Mütter\" (umlaut change u → ü with -er suffix), which is exactly the type of \"Unregelmäßige Pluralformen\" the stated rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875516821-2b7l2nuq",
+      "timestamp": "2026-06-07T23:38:54.878Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the irregular plural form of \"Mutter\" which requires knowing the vowel mutation (u→ü), a classic example of an irregular plural pattern that falls squarely under this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876166248-lcby8p50",
+      "timestamp": "2026-06-07T23:49:52.267Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge of an irregular plural form (Mutter → Mütter with umlaut mutation and no suffix), which is the core topic of the stated rule about irregular plural forms and special cases.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876708631-ed8x3e4j",
+      "timestamp": "2026-06-07T23:58:45.153Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fa4c34c79ded4eed",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-10 - Der Nullartikel: wann Substantive ohne Artikel stehen\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welches Wort ist korrekt? „Meine Eltern wohnen in ___ Hamburg.\"\nChoices:\nA. [CORRECT] —\nB. dem\nC. einem\nD. keinem\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780875044813-jfovpe9f"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the learner knows that German city names like \"Hamburg\" take the zero article with prepositions of location, which is a canonical example of the null article rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875659625-k4ekynyc",
+      "timestamp": "2026-06-07T23:41:15.925Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests when to omit the article with place names (cities), which is a core use case of the Nullartikel rule, and the correct answer is literally the absence of an article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876298503-e5qpqr0d",
+      "timestamp": "2026-06-07T23:51:49.982Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\n\nI was asked to validate whether a German grammar question about the Nullartikel (zero article) rule is properly aligned with that rule.\n\n## Analysis Completed\n\n**VERDICT: ALIGNED**\n**REASON: The question tests the Nullartikel rule by requiring knowledge that German city names like \"Hamburg\" stand without an article after prepositions like \"in\".**\n\nThe question \"Meine Eltern wohnen in ___ Hamburg\" with the correct answer being \"—\" (nothing) directly tests when to use the zero article. City names in German are a classic example of Nullartikel usage, and the distractors (\"dem\", \"einem\", \"keinem\") represent incorrect article usage that a learner would only reject if they understand the zero article rule for proper nouns/places.\n\n## Remaining Tasks\n\nNone - the validation was completed.\n\n## Recommendations\n\nNo further action needed for this particular question validation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876841742-pyi5204u",
+      "timestamp": "2026-06-08T00:01:14.785Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7cd6ef76b3bfc4e3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-10 - Der Nullartikel: wann Substantive ohne Artikel stehen\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie den Artikel ein – oder „—\" für „kein Artikel\".\nPhrase: „Frau Hoffmann ist von Beruf ___ Anwältin.\nCorrect Answer: —\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780883169036-uifsulgp"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI was in the process of validating a German grammar question alignment but did not complete the validation output before the step limit was reached.\n\n**Remaining tasks:**\n- Output the verdict and reason for the question validation\n\n**Recommendation for next steps:**\nThe validation can be completed directly. For the question about \"Frau Hoffmann ist von Beruf ___ Anwältin\" with correct answer \"—\" testing rule \"01-10 - Der Nullartikel: wann Substantive ohne Artikel stehen\":\n\nVERDICT: ALIGNED\nREASON: The question directly tests knowledge of the zero article rule, specifically that after \"von Beruf\" no article is used before the profession noun, which is a canonical example of the Nullartikel.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883364398-oixvw4nj",
+      "timestamp": "2026-06-08T01:49:42.050Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the zero article rule, as \"von Beruf\" is a classic context where German omits the article before a profession noun.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883598099-32dbad2m",
+      "timestamp": "2026-06-08T01:53:43.995Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the null article rule, as \"von Beruf\" + profession is a classic context where German uses no article, and answering correctly requires knowing this specific Nullartikel pattern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883738919-a8dgc0rq",
+      "timestamp": "2026-06-08T01:55:51.010Z"
+    }
+  ]
+}

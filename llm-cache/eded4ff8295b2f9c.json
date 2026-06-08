@@ -1,0 +1,33 @@
+{
+  "cacheKey": "eded4ff8295b2f9c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-08-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-08 - Unregelmäßige Pluralformen und Besonderheiten\n\nQUESTION:\nType: Multiple Choice\nPrompt: Was ist die richtige Pluralform von „Mann\"?\nChoices:\nA. [CORRECT] Männer\nB. Manner\nC. Mannen\nD. Mann\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780875044811-o5r9sfmc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the irregular plural \"Mann → Männer\" which involves both umlaut mutation and -er suffix, a canonical example of the stated rule about irregular plural forms and special cases.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875504112-8emqkhwn",
+      "timestamp": "2026-06-07T23:38:38.543Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge of the irregular plural formation \"Mann → Männer\" (umlaut + -er suffix), which is a classic example of an irregular plural pattern that cannot be derived from regular rules.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876148390-g3sw4on1",
+      "timestamp": "2026-06-07T23:49:26.682Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge of the irregular plural \"Mann → Männer,\" which is a textbook example of an irregular German noun plural with umlaut and suffix change, exactly the type of pattern this rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876682635-q2961kl8",
+      "timestamp": "2026-06-07T23:58:15.104Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cea50bef84100e92",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-10-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz lässt den Artikel korrekt weg?\n\nChoices:\nA. [CORRECT] Wir fliegen nächste Woche nach Japan.\nB. [WRONG] Wir fliegen nächste Woche nach dem Japan.\nC. [WRONG] Wir fliegen nächste Woche nach einem Japan.\nD. [WRONG] Wir fliegen nächste Woche nach keinem Japan.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780883169034-9rf62a1f"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers incorrectly add articles to Japan, which takes no article in German.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883314955-2q8xrtvy",
+      "timestamp": "2026-06-08T01:48:50.173Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying wrong answers for a German grammar question about article omission with country names.\n\nThe question asks which sentence correctly omits the article when using \"nach Japan.\" All three wrong answers (B, C, D) incorrectly add articles to \"Japan\" (definite \"dem\", indefinite \"einem\", and negative \"keinem\"), which is a clear grammar error since Japan is a country name that doesn't take an article with \"nach.\"\n\nThe verdict would be: TRUE||All wrong answers incorrectly add articles to \"Japan,\" which is a country name that does not take an article with \"nach.\"\n\nNo remaining tasks - this single verification was the complete request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883537046-vzlylanh",
+      "timestamp": "2026-06-08T01:52:37.710Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers incorrectly use articles (definite, indefinite, or negative) with the country name \"Japan,\" which requires zero article after \"nach\" when expressing destination.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883672487-ru69qj1r",
+      "timestamp": "2026-06-08T01:54:47.944Z"
+    }
+  ]
+}

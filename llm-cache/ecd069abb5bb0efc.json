@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ecd069abb5bb0efc",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-01-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-01 - Der bestimmte Artikel im Nominativ: der, die, das\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher bestimmte Artikel ist richtig? „___ Tisch ist aus Holz.\"\nChoices:\nA. [CORRECT] der\nB. die\nC. ein\nD. mein\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780875044802-l3thtkcv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge of which definite article (der, die, das) correctly pairs with the masculine noun \"Tisch\" in the nominative case.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875045815-se89uwrg",
+      "timestamp": "2026-06-07T23:31:00.087Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"Tisch\" is a masculine noun and that the nominative definite article for masculine nouns is \"der,\" which is exactly what the stated rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875697496-313w4t0t",
+      "timestamp": "2026-06-07T23:41:52.496Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"Tisch\" is masculine and that the nominative definite article for masculine nouns is \"der,\" directly testing the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876330129-o18za7n6",
+      "timestamp": "2026-06-07T23:52:27.043Z"
+    }
+  ]
+}

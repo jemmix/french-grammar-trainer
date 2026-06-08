@@ -1,0 +1,26 @@
+{
+  "cacheKey": "340ccb4b10a5245f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-03-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie: „Das ist ___ Frage.\"\n\nChoices:\nA. [CORRECT] keine\nB. [WRONG] kein\nC. [WRONG] eine\nD. [WRONG] ihre\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780875044806-hjbu6kbk"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary\nI was in the process of evaluating a German grammar validation question about the sentence \"Das ist ___ Frage.\" The task was to verify that wrong answers B (\"kein\"), C (\"eine\"), and D (\"ihre\") are indeed incorrect.\n\n## Analysis Completed\n- B (\"kein\"): Incorrect — wrong gender form (masculine/neuter instead of feminine \"keine\")\n- C (\"eine\"): Grammatically correct German meaning \"a question\" — this could be a valid completion\n- D (\"ihre\"): Grammatically correct German meaning \"her/their/your question\" — this could be a valid completion\n\n## Verdict\nFALSE|C,D|C (\"eine\") and D (\"ihre\") are grammatically correct completions of the sentence with different meanings; only B (\"kein\") is truly wrong due to incorrect gender agreement with \"Frage\".\n\n## Remaining Tasks\nNone — the verdict was determined.\n\n## Recommendations\nThe question needs additional context to make C and D unambiguously wrong (e.g., \"Das ist ___ Frage. (Verneinung)\" to specify negation is required, or provide a preceding sentence that establishes the negative context).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875210136-c1s99rlq",
+      "timestamp": "2026-06-07T23:34:00.736Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify whether the wrong answers (B, C, D) in a German grammar multiple choice question are indeed incorrect. The question asks to complete \"Das ist ___ Frage.\" where \"Frage\" is a feminine noun in nominative case.\n\nRemaining tasks: Provide the final verdict.\n\nRecommendation for next step: The answer should be:\nFALSE|C,D|C (\"eine\") makes \"Das ist eine Frage\" (That is a question) which is grammatically correct; D (\"ihre\") makes \"Das ist ihre Frage\" (That is her/their question) which is also grammatically correct—both satisfy the grammatical constraints even though they change the meaning from \"no question.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875868824-na5vsmsq",
+      "timestamp": "2026-06-07T23:44:57.935Z"
+    }
+  ]
+}

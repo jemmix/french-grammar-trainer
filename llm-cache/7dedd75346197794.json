@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7dedd75346197794",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "01-07-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Die Pluralbildung: regelmäßige Endungen (-e, -er, -n, -s) und Umlaut\nPROMPT: Schreiben Sie das Nomen im Plural.\nPHRASE: „Auf dem Land gibt es viele kleine ___ mit alten Kirchen.\nCORRECT ANSWER: Dörfer\n\nWRONG ANSWERS to evaluate:\n1. Dorfer\n2. Dorf\n3. Dörfern\n4. Dorfe\n5. Dorfs\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1780875044811-dnenikcl"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors for German plural formation: forgetting the umlaut (Dorfer, Dorfe), using singular form (Dorf), confusing with dative plural ending (Dörfern), or incorrectly applying the -s foreign-word plural pattern (Dorfs).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780877134019-1c75xc4v",
+      "timestamp": "2026-06-08T00:05:56.385Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: forgetting the umlaut change (Dorfer, Dorfe), leaving the noun singular (Dorf), confusing with dative plural (Dörfern), and over-applying the -s plural ending (Dorfs).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780877539248-w9z4jmmk",
+      "timestamp": "2026-06-08T00:12:34.308Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers reflect common learner errors in German plural formation: forgetting the umlaut (Dorfer, Dorfe, Dorfs), using the wrong ending (-e instead of -er, -s instead of -er), confusing dative plural (-n) with nominative plural, or failing to add any plural ending at all (Dorf).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780877929278-u7jnflri",
+      "timestamp": "2026-06-08T00:19:08.507Z"
+    }
+  ]
+}

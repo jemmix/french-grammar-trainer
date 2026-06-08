@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8fe3e8f9ec8b2eec",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-10 - Der Nullartikel: wann Substantive ohne Artikel stehen\n\nQUESTION:\nType: Input\nPrompt: Steht hier ein Artikel? Ergänzen Sie die Lücke – oder „—\" für Nullartikel.\nPhrase: „Frau Hoffmann ist von Beruf ___ Anwältin.\nCorrect Answer: —\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780890308188-t7wqkma4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the Nullartikel rule by asking students to identify that no article is used after \"von Beruf,\" which is a textbook example of when the zero article applies in German.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780890310197-ejz4wgxc",
+      "timestamp": "2026-06-08T03:45:21.568Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge of the zero article rule, as the correct answer requires knowing that after \"von Beruf\" no article is used before the profession noun.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780890321569-yqyn9lze",
+      "timestamp": "2026-06-08T03:45:31.603Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI was asked to validate a single German grammar question for alignment with its stated rule.\n\n**Analysis performed:**\nThe question asks students to identify whether an article is needed in the phrase \"Frau Hoffmann ist von Beruf ___ Anwältin.\" The correct answer is \"—\" (zero article). This directly tests the rule about when German nouns stand without articles, specifically the well-documented pattern that professions after \"von Beruf\" take no article.\n\n**Verdict:** VERDICT: ALIGNED\nREASON: The question directly tests knowledge that professions after \"von Beruf\" require the zero article, which is a core instance of the stated rule about when nouns stand without articles.\n\n**Remaining tasks:** None — this was a single-question validation that has been completed.\n\n**Recommendations:** No further action needed for this specific question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780890331604-31h8uwc8",
+      "timestamp": "2026-06-08T03:45:46.286Z"
+    }
+  ]
+}

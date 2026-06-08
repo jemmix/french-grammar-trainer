@@ -1,0 +1,47 @@
+{
+  "cacheKey": "92effa2078e68652",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "01-10-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Setzen Sie den Artikel ein – oder „—\" für „kein Artikel\".\nPhrase: „Frau Hoffmann ist von Beruf ___ Anwältin.\nHint: Nullartikel\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1780889229373-knsdrxm5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The instructions precisely specify to insert an article or \"—\" for no article, and while the hint \"Nullartikel\" essentially gives away the answer making the question trivially easy, the prompt itself is unambiguous about what task the learner must perform.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780889230380-6kehgq3m",
+      "timestamp": "2026-06-08T03:27:21.663Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt tells the learner to use \"—\" for \"kein Artikel\" but it's unclear whether they should literally type the \"—\" symbol as their answer or leave the field blank, creating confusion about the expected input format.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780889241664-daryb0zh",
+      "timestamp": "2026-06-08T03:27:33.313Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly tells the learner to either insert an article or use \"—\" for no article, and the hint \"Nullartikel\" reinforces that the expected answer is no article—while pedagogically weak (the hint gives away the answer), the task itself is unambiguous.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780889253548-wojvu4c0",
+      "timestamp": "2026-06-08T03:27:46.592Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far:\nI was in the process of evaluating a German language learning question for clarity and ambiguity. The question asked learners to insert an article or \"—\" for \"no article\" in the sentence \"Frau Hoffmann ist von Beruf ___ Anwältin\" with the hint \"Nullartikel.\"\n\nThe verdict I was preparing:\nVERDICT: CLEAR\nREASON: The prompt clearly instructs the learner to either insert an article or use \"—\" for no article, making the task well-defined and unambiguous.\n\nRemaining tasks: None - the evaluation was complete.\n\nRecommendations: While the prompt is technically clear, there is a separate quality issue worth noting: the hint \"Nullartikel\" essentially gives away the answer, making the question trivially easy rather than testing whether the learner actually knows when to use the zero article with professions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780889267337-7inx3tk3",
+      "timestamp": "2026-06-08T03:28:13.446Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The hint \"Nullartikel\" either gives away the answer entirely (if the learner knows the term) or is opaque jargon that provides no guidance (if they don't), making it unclear what the question is actually testing.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780889293447-ft6w8w3n",
+      "timestamp": "2026-06-08T03:28:29.602Z"
+    }
+  ]
+}

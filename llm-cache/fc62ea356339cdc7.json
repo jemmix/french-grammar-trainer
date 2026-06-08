@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fc62ea356339cdc7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-01-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher bestimmte Artikel ist richtig? „___ Kaffee ist noch heiß.\"\n\nChoices:\nA. [CORRECT] der\nB. [WRONG] das\nC. [WRONG] ein\nD. [WRONG] kein\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780875044803-o0i39fxn"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses the neuter article \"das\" for the masculine noun \"Kaffee\"; C and D are not definite articles (\"ein\" is indefinite, \"kein\" is a negation), and the question explicitly asks for a \"bestimmter Artikel\" (definite article).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875053849-dowuzn81",
+      "timestamp": "2026-06-07T23:31:12.405Z"
+    },
+    {
+      "raw": "TRUE||B uses the wrong gender (das instead of der for masculine Kaffee), C is an indefinite article not a definite article, and D is a negation article not a definite article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875709920-mlehd65i",
+      "timestamp": "2026-06-07T23:42:06.666Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the wrong gender (neuter instead of masculine), and both C and D are indefinite/negative articles rather than the definite article requested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876340347-0dbyotkm",
+      "timestamp": "2026-06-07T23:52:35.369Z"
+    }
+  ]
+}

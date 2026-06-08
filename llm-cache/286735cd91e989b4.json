@@ -1,0 +1,33 @@
+{
+  "cacheKey": "286735cd91e989b4",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-10-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welches Wort ist korrekt? „Thomas studiert ___ Philosophie.\"\n\nChoices:\nA. [CORRECT] —\nB. [WRONG] die\nC. [WRONG] eine\nD. [WRONG] keine\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780875044813-b07rir3y"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers incorrectly insert articles where German academic subject constructions require no article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875642185-pa3wqclg",
+      "timestamp": "2026-06-07T23:41:00.993Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"die Philosophie\" would refer to a specific philosophy rather than the academic subject, \"eine Philosophie\" means \"a worldview\" not the field of study, and \"keine Philosophie\" negates the statement entirely.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876279508-xfo92tb7",
+      "timestamp": "2026-06-07T23:51:37.359Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in the context of studying a university subject, where no article is required.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876823960-g8b1i8lg",
+      "timestamp": "2026-06-08T00:00:38.027Z"
+    }
+  ]
+}

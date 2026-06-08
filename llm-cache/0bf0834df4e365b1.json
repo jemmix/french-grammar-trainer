@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0bf0834df4e365b1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-01-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-01 - Der bestimmte Artikel im Nominativ: der, die, das\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den Artikel im Nominativ: „___ Sonne scheint heute.\"\nChoices:\nA. [CORRECT] die\nB. das\nC. eine\nD. unsere\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780883168923-o4osqer9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"Sonne\" is feminine and that the feminine definite article in the nominative case is \"die,\" which is exactly what the stated rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883198791-cy1lnre4",
+      "timestamp": "2026-06-08T01:46:57.934Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"Sonne\" is feminine and that the definite article for feminine nouns in the nominative case is \"die,\" which is exactly what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883411349-tm0zt54e",
+      "timestamp": "2026-06-08T01:50:32.266Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"Sonne\" is feminine and takes the feminine nominative definite article \"die\", directly testing the definite article paradigm in nominative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780883626707-qo0fl4gs",
+      "timestamp": "2026-06-08T01:53:58.168Z"
+    }
+  ]
+}

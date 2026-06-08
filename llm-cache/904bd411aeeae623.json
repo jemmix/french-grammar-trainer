@@ -1,0 +1,33 @@
+{
+  "cacheKey": "904bd411aeeae623",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-03-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-03 - Negation mit \"kein\" im Nominativ\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den Negationsartikel im Nominativ: „Das ist ___ Buch.\"\nChoices:\nA. [CORRECT] kein\nB. keine\nC. ein\nD. mein\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780880006197-k9vmx3d7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct negation article \"kein\" in the nominative case for a neuter noun, directly testing both the use of \"kein\" for negation and its correct gender/case form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880068639-963bbwfi",
+      "timestamp": "2026-06-08T00:54:46.047Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"kein\" is the correct negation article in the nominative and that it takes the neuter form to agree with \"das Buch.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880436575-6r0okr2u",
+      "timestamp": "2026-06-08T01:00:48.373Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires selecting the correct nominative form of the negation article \"kein\" for a neuter noun (\"Buch\"), which directly tests the stated rule about negation with \"kein\" in the nominative case.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880735007-bpcmzuxh",
+      "timestamp": "2026-06-08T01:05:47.771Z"
+    }
+  ]
+}

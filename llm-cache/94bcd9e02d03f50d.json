@@ -1,0 +1,33 @@
+{
+  "cacheKey": "94bcd9e02d03f50d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-03-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-03 - Negation mit \"kein\" im Nominativ\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie den Negationsartikel.\nPhrase: „Das ist ___ Idee.\nCorrect Answer: keine\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780885636204-g48w0qgz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the learner to produce the correct form of \"kein\" in the nominative case for a feminine noun (\"Idee\"), which is exactly what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780885721516-rhd1dv2u",
+      "timestamp": "2026-06-08T02:29:04.279Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the learner to correctly decline \"kein\" for the feminine noun \"Idee\" in the nominative case, which is the core skill defined by the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780885896674-0dktfvrs",
+      "timestamp": "2026-06-08T02:32:01.519Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing both that \"kein\" (not \"nicht\") is used for nominative negation of a noun and that it must agree with the feminine gender of \"Idee\" to produce \"keine.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780886063338-fngi9u6v",
+      "timestamp": "2026-06-08T02:34:46.119Z"
+    }
+  ]
+}

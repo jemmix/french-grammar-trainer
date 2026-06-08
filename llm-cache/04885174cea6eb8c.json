@@ -1,0 +1,33 @@
+{
+  "cacheKey": "04885174cea6eb8c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-02-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz verwendet korrekt den unbestimmten Artikel im Nominativ?\n\nChoices:\nA. [CORRECT] Das ist ein Kind.\nB. [WRONG] Das ist eine Kind.\nC. [WRONG] Das ist das Kind.\nD. [WRONG] Das ist kein Kind.\nE. [WRONG] Das ist sein Kind.\n\nVerify these WRONG answers are incorrect (letters: B, C, D, E)",
+    "nonce": "nonce-1780880006193-7cb3qbbu"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the feminine article \"eine\" with the neuter noun \"Kind\", C uses the definite article \"das\" instead of the indefinite, D uses the negation article \"kein\" instead of the indefinite, and E uses the possessive article \"sein\" instead of the indefinite.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880039120-gopqkmfb",
+      "timestamp": "2026-06-08T00:57:18.467Z"
+    },
+    {
+      "raw": "TRUE||B uses the wrong gender (eine instead of ein for neuter \"Kind\"); C uses a definite article instead of an indefinite article; D uses a negative article (kein) instead of an indefinite article; E uses a possessive determiner (sein) instead of an indefinite article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880573222-618adjly",
+      "timestamp": "2026-06-08T01:03:09.761Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to verify that wrong answers B, C, D, E in a German grammar MCQ are indeed incorrect. The question asks which sentence correctly uses the indefinite article (unbestimmter Artikel) in the nominative case.\n\nMy analysis:\n- B: \"eine Kind\" is wrong because \"Kind\" is neuter and requires \"ein\"\n- C: \"das Kind\" uses the definite article, not indefinite\n- D: \"kein Kind\" uses a negation article, not indefinite\n- E: \"sein Kind\" uses a possessive article, not indefinite\n\nTRUE||All wrong answers fail to use the indefinite article \"ein\" as required by the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880869885-xae103xn",
+      "timestamp": "2026-06-08T01:08:05.006Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8f3ab4052f2f9344",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-03-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie: „Das ist ___ Katze.\"\n\nChoices:\nA. [CORRECT] keine\nB. [WRONG] kein\nC. [WRONG] eine\nD. [WRONG] die\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780875044806-up20q2oe"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was evaluating a German grammar verification task but did not complete the analysis before reaching the step limit.\n\n**Analysis completed so far:**\nThe question asks to complete \"Das ist ___ Katze.\" with the correct answer being \"keine\" (no cat/not a cat). I was evaluating whether the wrong answers (B, C, D) are truly incorrect:\n\n- B. \"kein\" - Incorrect (wrong gender agreement - \"Katze\" is feminine, requires \"keine\")\n- C. \"eine\" - Would produce \"Das ist eine Katze\" (That is a cat) - grammatically correct\n- D. \"die\" - Would produce \"Das ist die Katze\" (That is the cat) - grammatically correct\n\n**Remaining tasks:**\n- Provide the final verdict in the required format\n\n**Recommendation:**\nThe verdict should be: FALSE|C,D|C produces the grammatically correct \"Das ist eine Katze\" and D produces the grammatically correct \"Das ist die Katze.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875174135-agz460rt",
+      "timestamp": "2026-06-07T23:33:12.432Z"
+    },
+    {
+      "raw": "FALSE|C,D|Both \"eine\" (\"Das ist eine Katze\" = \"That is a cat\") and \"die\" (\"Das ist die Katze\" = \"That is the cat\") are grammatically correct completions; the question does not specify it is testing negative articles.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875834573-46cnhz10",
+      "timestamp": "2026-06-07T23:44:24.377Z"
+    }
+  ]
+}

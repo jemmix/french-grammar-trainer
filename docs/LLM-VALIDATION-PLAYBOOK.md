@@ -6,10 +6,10 @@ Practical patterns and gotchas discovered while validating French grammar questi
 
 ```bash
 # Full LLM validation (1 rule, generous timeout)
-npx tsx scripts/validate.ts --lang fr --rule XX-YY --llm --update-cache --model glm-4.7
+npx tsx scripts/validate.ts --lang fr --rule XX-YY --llm --update-cache --model glm-5-turbo
 
 # Single question validation (faster, for testing fixes)
-npx tsx scripts/validate.ts --lang fr --rule XX-YY --question XX-YY-XXX --llm --update-cache --model glm-4.7
+npx tsx scripts/validate.ts --lang fr --rule XX-YY --question XX-YY-XXX --llm --update-cache --model glm-5-turbo
 
 # Structural-only validation (fast, no LLM)
 npx tsx scripts/validate.ts --lang fr --rule XX-YY

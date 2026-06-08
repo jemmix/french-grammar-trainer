@@ -1,0 +1,40 @@
+{
+  "cacheKey": "28b640981a0cb52b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-02-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie: „Das ist ___ Ärztin.\"\n\nChoices:\nA. [CORRECT] eine\nB. [WRONG] ein\nC. [WRONG] die\nD. [WRONG] keine\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1780875044805-qmh12iow"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers are incorrect: \"ein\" has wrong gender for the feminine noun \"Ärztin,\" \"die\" is a definite article that would require a different sentence meaning (\"the doctor\"), and \"keine\" is a negative article that contradicts the affirmative statement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875101702-mhc4won7",
+      "timestamp": "2026-06-07T23:31:59.098Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the wrong gender article, C uses a definite article instead of indefinite, and D incorrectly negates the sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780875763425-r5i1tjos",
+      "timestamp": "2026-06-07T23:43:02.358Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was evaluating a German grammar MCQ validation task for the question \"Ergänzen Sie: „Das ist ___ Ärztin.\"\"\n\n**Analysis completed:**\n- B (\"ein\") is correctly identified as wrong — \"ein\" is masculine/neuter, but \"Ärztin\" is feminine\n- C (\"die\") is grammatically correct German meaning \"the (female) doctor\" — the question doesn't specify \"indefinite article\"\n- D (\"keine\") is grammatically correct German meaning \"not a (female) doctor\" — negation is a valid sentence completion\n\n**Intended verdict:**\nFALSE|C,D|C \"die\" produces a grammatically correct sentence meaning \"the doctor\" and D \"keine\" produces a grammatically correct negated sentence; the question prompt doesn't restrict answers to the indefinite article.\n\n**Recommendations for next steps:**\nThe question should be revised to explicitly specify \"unbestimmter Artikel\" (indefinite article) to make C and D unambiguously wrong, or the wrong answers should be replaced with options that are genuinely ungrammatical (e.g., \"einem\", \"einer\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876376227-6jj66bim",
+      "timestamp": "2026-06-07T23:53:26.362Z"
+    },
+    {
+      "raw": "FALSE|C,D|C (\"die Ärztin\") is grammatically correct German meaning \"the (female) doctor\"; D (\"keine Ärztin\") is grammatically correct meaning \"not a (female) doctor\" — both are valid completions of the sentence with different meanings than intended.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780876938463-10sibrrn",
+      "timestamp": "2026-06-08T00:02:46.455Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "aca162b98fc80fb3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-05-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-05 - Das Genus feminin: typische feminine Endungen (-ung, -heit, -keit, -schaft)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Botschaft des Königs wurde überbracht.\"\nChoices:\nA. [CORRECT] die\nB. das\nC. eine\nD. eure\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1780880006219-gm90pxn4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: \"Botschaft\" ends in \"-schaft,\" one of the typical feminine endings explicitly listed in the rule, so identifying it as feminine and selecting \"die\" directly applies the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880189209-po5va6xh",
+      "timestamp": "2026-06-08T00:56:41.840Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"Botschaft\" ends in \"-schaft,\" one of the typical feminine endings listed in the rule, and applying the corresponding feminine definite article \"die.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880539825-43wrrved",
+      "timestamp": "2026-06-08T01:02:39.022Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI was in the process of validating whether a German grammar question about the definite article for \"Botschaft\" properly tests the rule about feminine endings (-ung, -heit, -keit, -schaft).\n\n**Validation result:**\nVERDICT: ALIGNED\nREASON: The question requires recognizing that \"Botschaft\" ends in \"-schaft,\" one of the typical feminine endings explicitly listed in the rule, to correctly select the feminine article \"die.\"\n\n**Remaining tasks:**\nNone — the single validation task was completed.\n\n**Recommendations:**\nNo further action needed for this question. It properly tests the stated rule about feminine endings by using a word ending in \"-schaft\" that students should identify as feminine based on the pattern taught in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1780880841434-q7vka56i",
+      "timestamp": "2026-06-08T01:07:37.551Z"
+    }
+  ]
+}
