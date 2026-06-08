@@ -6,12 +6,12 @@
 
 export const answerHints: Record<string, string> = {
   "—": "Achten Sie auf die Präposition „nach\"",
-  "das": "bestimmter Artikel",
-  "der": "bestimmter Artikel",
-  "die": "bestimmter Artikel",
+  "Das": "bestimmter Artikel",
+  "Der": "bestimmter Artikel",
+  "Die": "bestimmter Artikel",
   "Dörfer": "Pluralform von Dorf",
-  "ein": "unbestimmter Artikel",
-  "eine": "unbestimmter Artikel",
+  "Ein": "unbestimmter Artikel",
+  "Eine": "unbestimmter Artikel",
   "kein": "Negationsartikel",
   "keine": "Negationsartikel",
   "mein": "Possessivartikel",

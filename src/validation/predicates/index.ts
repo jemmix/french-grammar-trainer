@@ -15,11 +15,13 @@ import { hintNotTrivialPredicate } from "./hint-not-trivial";
 import { notRidiculousPredicate } from "./not-ridiculous";
 import { frenchLanguagePredicate } from "./french-language";
 import { germanLanguagePredicate } from "./german-language";
+import { sentenceInitialCapPredicate } from "./sentence-initial-cap";
 
 export const allPredicates: Predicate[] = [
   elisionPredicate,
   mcqStructuralPredicate,
   inputStructuralPredicate,
+  sentenceInitialCapPredicate,
   mcqCorrectIsTruePredicate,
   mcqWrongIsFalsePredicate,
   inputPromptSelfContainedPredicate,
@@ -52,4 +54,5 @@ export {
   notRidiculousPredicate,
   frenchLanguagePredicate,
   germanLanguagePredicate,
+  sentenceInitialCapPredicate,
 };
