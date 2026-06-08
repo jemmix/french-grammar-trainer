@@ -25,16 +25,16 @@ export function McqQuestionView({
       {/* Question prompt */}
       <div className="mb-8">
         <div className="flex items-center justify-between mb-3">
-          <p className="text-xs font-medium text-ardoise uppercase tracking-wider">
+          <p className="text-xs font-medium text-muted uppercase tracking-wider">
             {t.quiz.questionLabel(questionNum)}
           </p>
-          <div className="flex items-center gap-1.5 text-[11px] text-ardoise/60">
+          <div className="flex items-center gap-1.5 text-[11px] text-muted/60">
             <span className="hidden sm:inline">{rule?.title ? `${rule.title} · ` : ""}</span>
             <Link
               href={`/question/${question.id}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 font-mono hover:text-tricolore-bleu transition-colors"
+              className="flex items-center gap-1 font-mono hover:text-primary transition-colors"
               title={t.quiz.openInspectorTitle}
             >
               {question.id}
@@ -44,7 +44,7 @@ export function McqQuestionView({
             </Link>
           </div>
         </div>
-        <p className="text-xl md:text-2xl font-medium text-encre leading-relaxed">
+        <p className="text-xl md:text-2xl font-medium text-ink leading-relaxed">
           {renderWithBlanks(question.prompt)}
         </p>
       </div>
@@ -74,7 +74,7 @@ export function McqQuestionView({
 
           <button
             onClick={onNext}
-            className="mt-6 w-full sm:w-auto px-8 py-3 bg-tricolore-bleu text-white font-medium rounded-xl hover:bg-encre-light transition-colors duration-200 cursor-pointer"
+            className="mt-6 w-full sm:w-auto px-8 py-3 bg-primary text-white font-medium rounded-xl hover:bg-ink-light transition-colors duration-200 cursor-pointer"
           >
             {t.quiz.nextButton}
             <span className="ml-2 text-white/50 text-sm">{t.quiz.enterHint}</span>
@@ -100,8 +100,8 @@ export function ChoiceButton({
 }) {
   const keyLabel = index + 1;
 
-  let borderColor = "border-craie";
-  let bgColor = "bg-tricolore-blanc";
+  let borderColor = "border-chalk";
+  let bgColor = "bg-surface";
   let ringClass = "";
 
   if (answered) {
@@ -114,8 +114,8 @@ export function ChoiceButton({
       bgColor = "bg-incorrect-bg";
       ringClass = "ring-2 ring-incorrect/30";
     } else {
-      bgColor = "bg-papier-warm";
-      borderColor = "border-craie/50";
+      bgColor = "bg-paper-warm";
+      borderColor = "border-chalk/50";
     }
   }
 
@@ -124,7 +124,7 @@ export function ChoiceButton({
       onClick={onClick}
       disabled={answered}
       className={`w-full text-left px-5 py-4 rounded-xl border ${borderColor} ${bgColor} ${ringClass} transition-all duration-200 ${
-        !answered ? "hover:border-tricolore-bleu/40 hover:shadow-md hover:shadow-tricolore-bleu/5 cursor-pointer" : ""
+        !answered ? "hover:border-primary/40 hover:shadow-md hover:shadow-primary/5 cursor-pointer" : ""
       } flex items-start gap-4`}
     >
       <span
@@ -133,7 +133,7 @@ export function ChoiceButton({
             ? "bg-correct text-white"
             : answered && selected && !choice.correct
               ? "bg-incorrect text-white"
-              : "bg-tricolore-bleu/8 text-tricolore-bleu"
+              : "bg-primary/8 text-primary"
         }`}
       >
         {answered && choice.correct ? (
@@ -150,7 +150,7 @@ export function ChoiceButton({
       </span>
       <span
         className={`text-base leading-relaxed pt-0.5 ${
-          answered && !choice.correct && !selected ? "text-ardoise" : "text-encre"
+          answered && !choice.correct && !selected ? "text-muted" : "text-ink"
         }`}
       >
         {choice.text}
@@ -198,14 +198,14 @@ export function McqExplanationPanel({
         )}
       </div>
 
-      <p className="text-sm text-encre leading-relaxed">{choice.explanation}</p>
+      <p className="text-sm text-ink leading-relaxed">{choice.explanation}</p>
 
       {!wasCorrect && (
         <div className="mt-4 pt-4 border-t border-incorrect-border/50">
-          <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-1">
+          <p className="text-xs font-medium text-muted uppercase tracking-wider mb-1">
             {t.quiz.correctAnswerLabel} {correctChoice.text}
           </p>
-          <p className="text-sm text-encre leading-relaxed">{correctChoice.explanation}</p>
+          <p className="text-sm text-ink leading-relaxed">{correctChoice.explanation}</p>
         </div>
       )}
     </div>

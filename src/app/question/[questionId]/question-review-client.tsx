@@ -24,7 +24,7 @@ function renderWithBlanks(text: string): (string | JSX.Element)[] {
     /^_{2,}$/.test(part) ? (
       <span
         key={i}
-        className="inline-block min-w-[4.5ch] mx-0.5 px-2 py-0.5 align-baseline rounded-[3px] bg-tricolore-bleu/[.07] border-b-2 border-tricolore-bleu/40"
+        className="inline-block min-w-[4.5ch] mx-0.5 px-2 py-0.5 align-baseline rounded-[3px] bg-primary/[.07] border-b-2 border-primary/40"
         aria-label={t.blankAriaLabel}
       />
     ) : part
@@ -136,13 +136,13 @@ export function QuestionReviewClient({
   }, [adjacent, router]);
 
   return (
-    <div className="min-h-screen bg-papier">
+    <div className="min-h-screen bg-paper">
       {/* Top bar */}
-      <div className="sticky top-0 z-10 bg-tricolore-blanc/90 backdrop-blur-sm border-b border-craie">
+      <div className="sticky top-0 z-10 bg-surface/90 backdrop-blur-sm border-b border-chalk">
         <div className="mx-auto max-w-3xl px-6 py-3 flex items-center justify-between gap-4">
           <Link
             href={`/quiz/${section.id}`}
-            className="flex items-center gap-2 text-sm text-ardoise hover:text-encre transition-colors shrink-0"
+            className="flex items-center gap-2 text-sm text-muted hover:text-ink transition-colors shrink-0"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -156,7 +156,7 @@ export function QuestionReviewClient({
               {adjacent.prev ? (
                 <Link
                   href={`/question/${adjacent.prev}`}
-                  className="p-1.5 rounded-lg text-ardoise hover:text-encre hover:bg-papier-warm transition-colors"
+                  className="p-1.5 rounded-lg text-muted hover:text-ink hover:bg-paper-warm transition-colors"
                   title={t.questionReview.prevQuestionTitle(adjacent.prev)}
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -164,12 +164,12 @@ export function QuestionReviewClient({
                   </svg>
                 </Link>
               ) : (
-                <span className="p-1.5 text-craie"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg></span>
+                <span className="p-1.5 text-chalk"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg></span>
               )}
               {adjacent.next ? (
                 <Link
                   href={`/question/${adjacent.next}`}
-                  className="p-1.5 rounded-lg text-ardoise hover:text-encre hover:bg-papier-warm transition-colors"
+                  className="p-1.5 rounded-lg text-muted hover:text-ink hover:bg-paper-warm transition-colors"
                   title={t.questionReview.nextQuestionTitle(adjacent.next)}
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -177,7 +177,7 @@ export function QuestionReviewClient({
                   </svg>
                 </Link>
               ) : (
-                <span className="p-1.5 text-craie"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg></span>
+                <span className="p-1.5 text-chalk"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg></span>
               )}
             </div>
 
@@ -200,12 +200,12 @@ export function QuestionReviewClient({
 
           {/* ID + badges row */}
           <div className="flex flex-wrap items-center gap-3">
-            <h1 className="text-2xl md:text-3xl font-bold text-encre tracking-tight font-mono">
+            <h1 className="text-2xl md:text-3xl font-bold text-ink tracking-tight font-mono">
               {question.id}
             </h1>
             <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider ${
               question.type === "mcq"
-                ? "bg-tricolore-bleu/8 text-tricolore-bleu"
+                ? "bg-primary/8 text-primary"
                 : "bg-warning/10 text-warning"
             }`}>
               {question.type === "mcq" ? (
@@ -224,7 +224,7 @@ export function QuestionReviewClient({
                 </>
               )}
             </span>
-            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-papier-warm text-[11px] font-medium text-ardoise border border-craie">
+            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-paper-warm text-[11px] font-medium text-muted border border-chalk">
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
@@ -252,7 +252,7 @@ export function QuestionReviewClient({
 
 function MetaChip({ label, muted }: { label: string; muted?: boolean }) {
   return (
-    <span className={`text-xs font-medium leading-tight ${muted ? "text-ardoise" : "text-encre"}`}>
+    <span className={`text-xs font-medium leading-tight ${muted ? "text-muted" : "text-ink"}`}>
       {label}
     </span>
   );
@@ -260,7 +260,7 @@ function MetaChip({ label, muted }: { label: string; muted?: boolean }) {
 
 function ChevronDot() {
   return (
-    <svg className="w-3 h-3 text-craie shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-3 h-3 text-chalk shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
     </svg>
   );
@@ -279,7 +279,7 @@ function CopyPermalinkButton() {
   return (
     <button
       onClick={handleCopy}
-      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-ardoise hover:text-encre hover:bg-papier-warm border border-craie transition-all duration-200 cursor-pointer"
+      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-muted hover:text-ink hover:bg-paper-warm border border-chalk transition-all duration-200 cursor-pointer"
       title={t.questionReview.copyPermalinkTitle}
     >
       {copied ? (
@@ -319,28 +319,28 @@ function Disclosure({
   const [open, setOpen] = useState(defaultOpen ?? false);
 
   return (
-    <div className="border border-craie rounded-xl bg-tricolore-blanc overflow-hidden">
+    <div className="border border-chalk rounded-xl bg-surface overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full flex items-center justify-between px-5 py-3.5 text-left hover:bg-papier-warm transition-colors cursor-pointer"
+        className="w-full flex items-center justify-between px-5 py-3.5 text-left hover:bg-paper-warm transition-colors cursor-pointer"
       >
         <div className="flex items-center gap-2.5">
-          <span className="text-sm font-semibold text-encre">{title}</span>
+          <span className="text-sm font-semibold text-ink">{title}</span>
           {badge && (
-            <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-papier-warm text-ardoise border border-craie">
+            <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-paper-warm text-muted border border-chalk">
               {badge}
             </span>
           )}
         </div>
         <svg
-          className={`w-4 h-4 text-ardoise transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-muted transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
       {open && (
-        <div className="border-t border-craie px-5 py-4 animate-slide-up">
+        <div className="border-t border-chalk px-5 py-4 animate-slide-up">
           {children}
         </div>
       )}
@@ -377,21 +377,21 @@ function McqReview({ question }: { question: MultipleChoiceQuestion }) {
   return (
     <div className="space-y-6">
       {/* Prompt */}
-      <div className="py-5 px-5 rounded-xl bg-tricolore-blanc border border-craie">
-        <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-3">{t.questionReview.stmtLabel}</p>
-        <p className="text-xl md:text-2xl font-medium text-encre leading-relaxed">
+      <div className="py-5 px-5 rounded-xl bg-surface border border-chalk">
+        <p className="text-xs font-medium text-muted uppercase tracking-wider mb-3">{t.questionReview.stmtLabel}</p>
+        <p className="text-xl md:text-2xl font-medium text-ink leading-relaxed">
           {renderWithBlanks(question.prompt)}
         </p>
       </div>
 
       {/* Choices header */}
       <div className="flex items-center justify-between">
-        <p className="text-xs font-medium text-ardoise uppercase tracking-wider">
+        <p className="text-xs font-medium text-muted uppercase tracking-wider">
           {t.questionReview.choicesLabel(question.choices.length)}
         </p>
         <button
           onClick={allExpanded ? collapseAll : expandAll}
-          className="text-xs text-tricolore-bleu hover:underline cursor-pointer"
+          className="text-xs text-primary hover:underline cursor-pointer"
         >
           {allExpanded ? t.questionReview.collapseAll : t.questionReview.expandAll}
         </button>
@@ -431,7 +431,7 @@ function McqChoiceCard({
       className={`rounded-xl border transition-all duration-200 ${
         isCorrect
           ? "border-correct-border bg-correct-bg/50"
-          : "border-craie bg-tricolore-blanc"
+          : "border-chalk bg-surface"
       }`}
     >
       <button
@@ -442,7 +442,7 @@ function McqChoiceCard({
           className={`shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-xs font-semibold ${
             isCorrect
               ? "bg-correct text-white"
-              : "bg-tricolore-bleu/8 text-tricolore-bleu"
+              : "bg-primary/8 text-primary"
           }`}
         >
           {isCorrect ? (
@@ -453,11 +453,11 @@ function McqChoiceCard({
             index + 1
           )}
         </span>
-        <span className="text-base leading-relaxed pt-0.5 text-encre flex-1">
+        <span className="text-base leading-relaxed pt-0.5 text-ink flex-1">
           {choice.text}
         </span>
         <svg
-          className={`w-4 h-4 text-ardoise shrink-0 mt-1.5 transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-muted shrink-0 mt-1.5 transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
           fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
@@ -466,7 +466,7 @@ function McqChoiceCard({
 
       {expanded && (
         <div className="px-5 pb-4 pl-16 animate-slide-up">
-          <p className="text-sm text-encre/80 leading-relaxed">{choice.explanation}</p>
+          <p className="text-sm text-ink/80 leading-relaxed">{choice.explanation}</p>
         </div>
       )}
     </div>
@@ -506,7 +506,7 @@ function InputReview({ question }: { question: InputQuestion }) {
     [result, handleSubmit, handleReset],
   );
 
-  let underlineColor = "border-craie";
+  let underlineColor = "border-chalk";
   if (result) {
     if (result.kind === "exact") underlineColor = "border-correct";
     else if (result.kind === "case-warning") underlineColor = "border-warning";
@@ -518,15 +518,15 @@ function InputReview({ question }: { question: InputQuestion }) {
   return (
     <div className="space-y-6">
       {/* Prompt */}
-      <div className="py-5 px-5 rounded-xl bg-tricolore-blanc border border-craie">
-        <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-3">{t.questionReview.consigneLabel}</p>
-        <p className="text-base text-encre leading-relaxed">{question.prompt}</p>
+      <div className="py-5 px-5 rounded-xl bg-surface border border-chalk">
+        <p className="text-xs font-medium text-muted uppercase tracking-wider mb-3">{t.questionReview.consigneLabel}</p>
+        <p className="text-base text-ink leading-relaxed">{question.prompt}</p>
       </div>
 
       {/* Phrase with inline input */}
-      <div className="py-6 px-5 rounded-xl bg-tricolore-blanc border border-craie">
-        <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-4">{t.questionReview.testInputLabel}</p>
-        <p className="text-xl md:text-2xl font-medium text-encre leading-relaxed inline">
+      <div className="py-6 px-5 rounded-xl bg-surface border border-chalk">
+        <p className="text-xs font-medium text-muted uppercase tracking-wider mb-4">{t.questionReview.testInputLabel}</p>
+        <p className="text-xl md:text-2xl font-medium text-ink leading-relaxed inline">
           <span>{t.phraseOpen}{before}</span>
           <span className="inline-flex items-baseline mx-0.5">
             <span className="relative">
@@ -543,11 +543,11 @@ function InputReview({ question }: { question: InputQuestion }) {
                 spellCheck={false}
                 style={{ width: `${inputWidth + 1.5}ch` }}
                 className={`
-                  text-xl md:text-2xl font-semibold text-tricolore-bleu
+                  text-xl md:text-2xl font-semibold text-primary
                   bg-transparent outline-none text-center
                   border-b-2 ${underlineColor}
-                  ${!result ? "focus:border-tricolore-bleu" : ""}
-                  placeholder:text-craie placeholder:font-light
+                  ${!result ? "focus:border-primary" : ""}
+                  placeholder:text-chalk placeholder:font-light
                   transition-colors duration-300
                   py-0.5 px-1 min-w-[3ch]
                   ${result ? "cursor-default" : ""}
@@ -555,7 +555,7 @@ function InputReview({ question }: { question: InputQuestion }) {
               />
             </span>
           </span>
-          <span className="text-ardoise/60 italic ml-1">({question.hint})</span>
+          <span className="text-muted/60 italic ml-1">({question.hint})</span>
           <span>{after}{t.phraseClose}</span>
         </p>
 
@@ -567,20 +567,20 @@ function InputReview({ question }: { question: InputQuestion }) {
               disabled={!userInput.trim()}
               className={`px-6 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer ${
                 userInput.trim()
-                  ? "bg-tricolore-bleu text-white hover:bg-encre-light shadow-sm"
-                  : "bg-craie text-ardoise cursor-not-allowed"
+                  ? "bg-primary text-white hover:bg-ink-light shadow-sm"
+                  : "bg-chalk text-muted cursor-not-allowed"
               }`}
             >
               {t.questionReview.submitButton}
-              <span className={`ml-2 text-xs ${userInput.trim() ? "text-white/40" : "text-ardoise/40"}`}>{t.quiz.enterHint}</span>
+              <span className={`ml-2 text-xs ${userInput.trim() ? "text-white/40" : "text-muted/40"}`}>{t.quiz.enterHint}</span>
             </button>
           ) : (
             <button
               onClick={handleReset}
-              className="px-6 py-2.5 rounded-xl text-sm font-medium bg-papier-warm border border-craie text-encre hover:bg-craie/50 transition-colors cursor-pointer"
+              className="px-6 py-2.5 rounded-xl text-sm font-medium bg-paper-warm border border-chalk text-ink hover:bg-chalk/50 transition-colors cursor-pointer"
             >
               {t.questionReview.retryButton}
-              <span className="ml-2 text-xs text-ardoise/40">{t.quiz.enterHint}</span>
+              <span className="ml-2 text-xs text-muted/40">{t.quiz.enterHint}</span>
             </button>
           )}
         </div>
@@ -597,7 +597,7 @@ function InputReview({ question }: { question: InputQuestion }) {
       <Disclosure title={t.questionReview.correctAnswerDisclosure} defaultOpen>
         <div className="space-y-2">
           <p className="text-lg font-semibold text-correct">{question.answer}</p>
-          <p className="text-sm text-encre/80 leading-relaxed">{question.explanation}</p>
+          <p className="text-sm text-ink/80 leading-relaxed">{question.explanation}</p>
         </div>
       </Disclosure>
 
@@ -612,8 +612,8 @@ function InputReview({ question }: { question: InputQuestion }) {
                 </svg>
               </span>
               <div>
-                <p className="text-sm font-semibold text-encre">{wa.text}</p>
-                <p className="text-sm text-ardoise leading-relaxed">{wa.explanation}</p>
+                <p className="text-sm font-semibold text-ink">{wa.text}</p>
+                <p className="text-sm text-muted leading-relaxed">{wa.explanation}</p>
               </div>
             </div>
           ))}
@@ -680,7 +680,7 @@ function InputResultBadge({
   return (
     <div className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg border ${cfg.bg} ${cfg.border}`}>
       {cfg.icon}
-      <span className="text-sm text-encre">{cfg.label}</span>
+      <span className="text-sm text-ink">{cfg.label}</span>
     </div>
   );
 }
@@ -700,17 +700,17 @@ function TypoVariantsPanel({ question }: { question: InputQuestion }) {
 
   return (
     <div className="space-y-4">
-      <p className="text-xs text-ardoise leading-relaxed">
+      <p className="text-xs text-muted leading-relaxed">
         {t.questionReview.typoVariantsDesc}
       </p>
       <div className="space-y-2">
         {allTargets.map((target, i) => (
           <div key={i} className="flex items-center gap-3">
             <span className={`shrink-0 w-2 h-2 rounded-full ${target.kind === "correct" ? "bg-correct" : "bg-incorrect/40"}`} />
-            <code className="text-sm font-mono text-encre bg-papier-warm px-2 py-0.5 rounded">
+            <code className="text-sm font-mono text-ink bg-paper-warm px-2 py-0.5 rounded">
               {target.text}
             </code>
-            <span className="text-xs text-ardoise">
+            <span className="text-xs text-muted">
               {t.questionReview.typoDistanceLabel(target.text.length)}
             </span>
           </div>

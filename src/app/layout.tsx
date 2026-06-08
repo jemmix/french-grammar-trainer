@@ -7,6 +7,8 @@ import { getSession, getProgressPowers } from "~/lib/server-session";
 import { signCookie, COOKIE_MAX_AGE_S } from "~/lib/session-cookie";
 import { env } from "~/env";
 import { t } from "~/lang";
+import { resolveTheme } from "~/themes/types";
+import { ThemeProvider } from "~/themes";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -48,16 +50,20 @@ export default async function RootLayout({
     });
   }
 
+  const theme = resolveTheme(env.NEXT_PUBLIC_THEME, env.NEXT_PUBLIC_LANG);
+
   return (
-    <html lang={t.meta.langCode}>
+    <html lang={t.meta.langCode} data-theme={theme}>
       <body className={geist.className}>
-        <ProgressProvider
+        <ThemeProvider theme={theme}>
+          <ProgressProvider
           initialPowers={initialPowers}
           initialUserId={session.isLoggedIn ? session.userId : null}
           initialIsLoggedIn={session.isLoggedIn}
         >
           {children}
         </ProgressProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

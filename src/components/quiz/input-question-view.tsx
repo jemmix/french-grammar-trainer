@@ -67,7 +67,7 @@ export function InputQuestionView({
   );
 
   // Underline color for the inline input
-  let underlineColor = "border-craie";
+  let underlineColor = "border-chalk";
   if (result) {
     if (result.kind === "exact") underlineColor = "border-correct";
     else if (result.kind === "case-warning") underlineColor = "border-warning";
@@ -83,23 +83,23 @@ export function InputQuestionView({
       <div className="mb-6">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-3">
-            <p className="text-xs font-medium text-ardoise uppercase tracking-wider">
+            <p className="text-xs font-medium text-muted uppercase tracking-wider">
               {t.quiz.questionLabel(questionNum)}
             </p>
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tricolore-bleu/8 text-tricolore-bleu text-[10px] font-semibold uppercase tracking-wider">
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/8 text-primary text-[10px] font-semibold uppercase tracking-wider">
               <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
               </svg>
               {t.quiz.inputBadge}
             </span>
           </div>
-          <div className="flex items-center gap-1.5 text-[11px] text-ardoise/60">
+          <div className="flex items-center gap-1.5 text-[11px] text-muted/60">
             <span className="hidden sm:inline">{rule?.title ? `${rule.title} · ` : ""}</span>
             <Link
               href={`/question/${question.id}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 font-mono hover:text-tricolore-bleu transition-colors"
+              className="flex items-center gap-1 font-mono hover:text-primary transition-colors"
               title={t.quiz.openInspectorTitle}
             >
               {question.id}
@@ -109,14 +109,14 @@ export function InputQuestionView({
             </Link>
           </div>
         </div>
-        <p className="text-base text-ardoise leading-relaxed">
+        <p className="text-base text-muted leading-relaxed">
           {question.prompt}
         </p>
       </div>
 
       {/* Sentence with inline input */}
-      <div className="mb-8 py-6 px-5 rounded-xl bg-tricolore-blanc border border-craie">
-        <p className="text-xl md:text-2xl font-medium text-encre leading-relaxed inline">
+      <div className="mb-8 py-6 px-5 rounded-xl bg-surface border border-chalk">
+        <p className="text-xl md:text-2xl font-medium text-ink leading-relaxed inline">
           <span>{t.phraseOpen}{before}</span>
           <span className="inline-flex items-baseline mx-0.5">
             <span className="relative">
@@ -133,11 +133,11 @@ export function InputQuestionView({
                 spellCheck={false}
                 style={{ width: `${inputWidth + 1.5}ch` }}
                 className={`
-                  text-xl md:text-2xl font-semibold text-tricolore-bleu
+                  text-xl md:text-2xl font-semibold text-primary
                   bg-transparent outline-none text-center
                   border-b-2 ${underlineColor}
-                  ${!answered ? "focus:border-tricolore-bleu" : ""}
-                  placeholder:text-craie placeholder:font-light
+                  ${!answered ? "focus:border-primary" : ""}
+                  placeholder:text-chalk placeholder:font-light
                   transition-colors duration-300
                   py-0.5 px-1 min-w-[3ch]
                   ${answered ? "cursor-default" : ""}
@@ -145,7 +145,7 @@ export function InputQuestionView({
               />
             </span>
           </span>
-          <span className="text-ardoise/60 italic ml-1">({question.hint})</span>
+          <span className="text-muted/60 italic ml-1">({question.hint})</span>
           <span>{after}{t.phraseClose}</span>
         </p>
       </div>
@@ -159,13 +159,13 @@ export function InputQuestionView({
             className={`
               px-8 py-3 rounded-xl font-medium transition-all duration-200 cursor-pointer
               ${userInput.trim()
-                ? "bg-tricolore-bleu text-white hover:bg-encre-light shadow-sm"
-                : "bg-craie text-ardoise cursor-not-allowed"
+                ? "bg-primary text-white hover:bg-ink-light shadow-sm"
+                : "bg-chalk text-muted cursor-not-allowed"
               }
             `}
           >
             {t.quiz.submitButton}
-            <span className={`ml-2 text-sm ${userInput.trim() ? "text-white/40" : "text-ardoise/40"}`}>{t.quiz.enterHint}</span>
+            <span className={`ml-2 text-sm ${userInput.trim() ? "text-white/40" : "text-muted/40"}`}>{t.quiz.enterHint}</span>
           </button>
         </div>
       )}
@@ -188,7 +188,7 @@ export function InputQuestionView({
                 onNext();
               }
             }}
-            className="mt-6 w-full sm:w-auto px-8 py-3 bg-tricolore-bleu text-white font-medium rounded-xl hover:bg-encre-light transition-colors duration-200 cursor-pointer"
+            className="mt-6 w-full sm:w-auto px-8 py-3 bg-primary text-white font-medium rounded-xl hover:bg-ink-light transition-colors duration-200 cursor-pointer"
           >
             {t.quiz.nextButton}
             <span className="ml-2 text-white/50 text-sm">{t.quiz.enterHint}</span>
@@ -214,7 +214,7 @@ const THEME = {
   correct:   { shell: "bg-correct-bg border-correct-border",     iconBg: "bg-correct",   labelCls: "text-correct",   divider: "border-correct-border/50"   },
   warning:   { shell: "bg-warning-bg border-warning-border",     iconBg: "bg-warning",   labelCls: "text-warning",   divider: "border-warning-border/50"   },
   incorrect: { shell: "bg-incorrect-bg border-incorrect-border", iconBg: "bg-incorrect", labelCls: "text-incorrect", divider: "border-incorrect-border/50" },
-  unknown:   { shell: "bg-incorrect-bg border-incorrect-border", iconBg: "bg-ardoise",   labelCls: "text-ardoise",   divider: "border-incorrect-border/50" },
+  unknown:   { shell: "bg-incorrect-bg border-incorrect-border", iconBg: "bg-muted",   labelCls: "text-muted",   divider: "border-incorrect-border/50" },
 } as const;
 
 function FeedbackShell({ result, children }: { result: InputResult; children: React.ReactNode }) {
@@ -253,10 +253,10 @@ function CorrectAnswerFooter({ result, question }: { result: InputResult; questi
   const { divider } = THEME[getFeedbackTheme(result)];
   return (
     <div className={`mt-4 pt-4 border-t ${divider}`}>
-      <p className="text-xs font-medium text-ardoise uppercase tracking-wider mb-1">
+      <p className="text-xs font-medium text-muted uppercase tracking-wider mb-1">
         {t.quiz.correctAnswerLabel} {question.answer}
       </p>
-      <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
+      <p className="text-sm text-ink leading-relaxed">{question.explanation}</p>
     </div>
   );
 }
@@ -276,7 +276,7 @@ export function InputFeedbackPanel({
     case "exact":
       return (
         <FeedbackShell result={result}>
-          <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
+          <p className="text-sm text-ink leading-relaxed">{question.explanation}</p>
         </FeedbackShell>
       );
 
@@ -287,18 +287,18 @@ export function InputFeedbackPanel({
             <svg className="w-4 h-4 text-warning shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
-            <p className="text-sm text-encre">
+            <p className="text-sm text-ink">
               {t.quiz.caseWarningBefore} <strong>{"«\u00a0"}{result.matchedAnswer}{"\u00a0»"}</strong>, {t.quiz.caseWarningAfter} {"«\u00a0"}{userInput}{"\u00a0»"}.
             </p>
           </div>
-          <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
+          <p className="text-sm text-ink leading-relaxed">{question.explanation}</p>
         </FeedbackShell>
       );
 
     case "wrong-prepared":
       return (
         <FeedbackShell result={result}>
-          <p className="text-sm text-encre leading-relaxed">{result.wrongExplanation}</p>
+          <p className="text-sm text-ink leading-relaxed">{result.wrongExplanation}</p>
           <CorrectAnswerFooter result={result} question={question} />
         </FeedbackShell>
       );
@@ -306,20 +306,20 @@ export function InputFeedbackPanel({
     case "typo-correct":
       return (
         <FeedbackShell result={result}>
-          <p className="text-sm text-encre leading-relaxed mb-3">
+          <p className="text-sm text-ink leading-relaxed mb-3">
             {t.quiz.typoCorrectBefore} <strong>{"«\u00a0"}{result.matchedAnswer}{"\u00a0»"}</strong> {t.quiz.typoCorrectAfter}
           </p>
-          <p className="text-sm text-encre leading-relaxed">{question.explanation}</p>
+          <p className="text-sm text-ink leading-relaxed">{question.explanation}</p>
         </FeedbackShell>
       );
 
     case "typo-wrong":
       return (
         <FeedbackShell result={result}>
-          <p className="text-sm text-encre leading-relaxed mb-3">
+          <p className="text-sm text-ink leading-relaxed mb-3">
             {t.quiz.typoWrongBefore} <strong>{"«\u00a0"}{result.matchedAnswer}{"\u00a0»"}</strong> {t.quiz.typoWrongAfter}
           </p>
-          <p className="text-sm text-encre leading-relaxed">{result.wrongExplanation}</p>
+          <p className="text-sm text-ink leading-relaxed">{result.wrongExplanation}</p>
           <CorrectAnswerFooter result={result} question={question} />
         </FeedbackShell>
       );
@@ -327,7 +327,7 @@ export function InputFeedbackPanel({
     case "unknown":
       return (
         <FeedbackShell result={result}>
-          <p className="text-sm text-encre leading-relaxed mb-1">
+          <p className="text-sm text-ink leading-relaxed mb-1">
             {t.quiz.unexpectedDetails(userInput)}
           </p>
           <CorrectAnswerFooter result={result} question={question} />

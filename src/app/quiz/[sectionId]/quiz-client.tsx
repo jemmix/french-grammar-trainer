@@ -107,8 +107,8 @@ function SectionQuizRunner({
 
   if (totalQuestions === 0) {
     return (
-      <div className="min-h-screen bg-papier flex items-center justify-center">
-        <div className="text-ardoise">{t.shared.loading}</div>
+      <div className="min-h-screen bg-paper flex items-center justify-center">
+        <div className="text-muted">{t.shared.loading}</div>
       </div>
     );
   }
@@ -116,13 +116,13 @@ function SectionQuizRunner({
   const progress = finished ? 100 : (currentIndex / totalQuestions) * 100;
 
   return (
-    <div className="min-h-screen bg-papier">
+    <div className="min-h-screen bg-paper">
       {/* Top bar */}
-      <div className="sticky top-0 z-10 bg-tricolore-blanc/90 backdrop-blur-sm border-b border-craie">
+      <div className="sticky top-0 z-10 bg-surface/90 backdrop-blur-sm border-b border-chalk">
         <div className="mx-auto max-w-3xl px-6 py-3 flex items-center justify-between">
           <Link
             href="/"
-            className="flex items-center gap-2 text-sm text-ardoise hover:text-encre transition-colors"
+            className="flex items-center gap-2 text-sm text-muted hover:text-ink transition-colors"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -135,8 +135,8 @@ function SectionQuizRunner({
                 onClick={() => setPanelOpen(!panelOpen)}
                 className={`p-1.5 rounded-lg transition-colors ${
                   panelOpen
-                    ? "text-tricolore-bleu bg-tricolore-bleu/10"
-                    : "text-ardoise hover:text-encre hover:bg-craie/50"
+                    ? "text-primary bg-primary/10"
+                    : "text-muted hover:text-ink hover:bg-chalk/50"
                 }`}
                 title={t.quiz.viewExplanation}
                 aria-label={t.quiz.viewExplanation}
@@ -147,21 +147,21 @@ function SectionQuizRunner({
               </button>
             )}
             {!finished && (
-              <span className="text-sm font-medium text-encre tabular-nums">
+              <span className="text-sm font-medium text-ink tabular-nums">
                 {currentIndex + 1} / {totalQuestions}
               </span>
             )}
             {!finished && (
-              <span className="text-sm font-semibold text-tricolore-bleu tabular-nums">
+              <span className="text-sm font-semibold text-primary tabular-nums">
                 {t.quiz.points(score)}
               </span>
             )}
           </div>
         </div>
         {/* Progress bar */}
-        <div className="h-0.5 bg-craie">
+        <div className="h-0.5 bg-chalk">
           <div
-            className="h-full bg-tricolore-bleu transition-all duration-500 ease-out"
+            className="h-full bg-primary transition-all duration-500 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -206,7 +206,7 @@ function SectionQuizRunner({
         {/* Desktop sidebar */}
         <div
           className={`
-            hidden lg:block border-l border-craie bg-papier-warm
+            hidden lg:block border-l border-chalk bg-paper-warm
             transition-[width] duration-300 ease-out shrink-0
             ${panelOpen ? "w-[340px]" : "w-0 border-l-0 overflow-hidden"}
           `}

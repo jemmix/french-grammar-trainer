@@ -26,7 +26,7 @@ export function renderWithBlanks(text: string): (string | JSX.Element)[] {
     /^_{2,}$/.test(part) ? (
       <span
         key={i}
-        className="inline-block min-w-[4.5ch] mx-0.5 px-2 py-0.5 align-baseline rounded-[3px] bg-tricolore-bleu/[.07] border-b-2 border-tricolore-bleu/40"
+        className="inline-block min-w-[4.5ch] mx-0.5 px-2 py-0.5 align-baseline rounded-[3px] bg-primary/[.07] border-b-2 border-primary/40"
         aria-label={t.blankAriaLabel}
       />
     ) : part

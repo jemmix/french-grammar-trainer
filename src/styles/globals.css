@@ -1,16 +1,18 @@
 @import "tailwindcss";
 
-@theme {
-  --color-tricolore-bleu: #002654;
-  --color-tricolore-rouge: #CE1126;
-  --color-tricolore-blanc: #FFFFFF;
+/* ── Lemonde (default) ────────────────────────────────────── */
 
-  --color-encre: #1a1a2e;
-  --color-encre-light: #2d2d44;
-  --color-papier: #FAFAF8;
-  --color-papier-warm: #F5F4F0;
-  --color-craie: #E8E6E1;
-  --color-ardoise: #6B7280;
+@theme {
+  --color-primary: #002654;
+  --color-accent: #CE1126;
+  --color-surface: #FFFFFF;
+
+  --color-ink: #1a1a2e;
+  --color-ink-light: #2d2d44;
+  --color-paper: #FAFAF8;
+  --color-paper-warm: #F5F4F0;
+  --color-chalk: #E8E6E1;
+  --color-muted: #6B7280;
 
   --color-correct: #16a34a;
   --color-correct-bg: #f0fdf4;
@@ -30,6 +32,36 @@
   --animate-slide-up: slide-up 0.4s ease-out both;
   --animate-scale-in: scale-in 0.3s ease-out both;
 }
+
+/* ── Bauhaus ──────────────────────────────────────────────── */
+
+[data-theme="bauhaus"] {
+  --color-primary: #1E3A8A;
+  --color-accent: #C9A227;
+  --color-surface: #FFFFFF;
+  --color-ink: #111827;
+  --color-ink-light: #1F2937;
+  --color-paper: #F8F9FA;
+  --color-paper-warm: #EEF0F2;
+  --color-chalk: #E2E8F0;
+  --color-muted: #64748B;
+}
+
+/* ── Kitsch ───────────────────────────────────────────────── */
+
+[data-theme="kitsch"] {
+  --color-primary: #8B5CF6;
+  --color-accent: #F59E0B;
+  --color-surface: #FFFBF5;
+  --color-ink: #1E1B2E;
+  --color-ink-light: #3D3654;
+  --color-paper: #FEF7ED;
+  --color-paper-warm: #FDF2D9;
+  --color-chalk: #E8D8C8;
+  --color-muted: #8B7FA5;
+}
+
+/* ── Keyframes ────────────────────────────────────────────── */
 
 @keyframes fade-in {
   from { opacity: 0; }
@@ -56,12 +88,14 @@
   50% { opacity: 1; }
 }
 
+/* ── Base layer ───────────────────────────────────────────── */
+
 @layer base {
   html, body {
     margin: 0;
     padding: 0;
-    background-color: var(--color-papier);
-    color: var(--color-encre);
+    background-color: var(--color-paper);
+    color: var(--color-ink);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -77,6 +111,6 @@
 }
 
 ::selection {
-  background-color: var(--color-tricolore-bleu);
+  background-color: var(--color-primary);
   color: white;
 }
