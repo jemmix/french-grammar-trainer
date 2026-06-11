@@ -50,15 +50,15 @@
 /* ── Kitsch ───────────────────────────────────────────────── */
 
 [data-theme="kitsch"] {
-  --color-primary: #8B5CF6;
-  --color-accent: #F59E0B;
-  --color-surface: #FFFBF5;
-  --color-ink: #1E1B2E;
-  --color-ink-light: #3D3654;
-  --color-paper: #FEF7ED;
-  --color-paper-warm: #FDF2D9;
-  --color-chalk: #E8D8C8;
-  --color-muted: #8B7FA5;
+  --color-primary: #DD0000;
+  --color-accent: #FFCC00;
+  --color-surface: #FFFBEA;
+  --color-ink: #0A0A0A;
+  --color-ink-light: #333333;
+  --color-paper: #FFFBEA;
+  --color-paper-warm: #F4E9C1;
+  --color-chalk: #D4C5A9;
+  --color-muted: #7A4A1E;
 }
 
 /* ── Per-theme card chrome & structural overrides ─────────── */
@@ -112,62 +112,81 @@
 }
 
 [data-theme="kitsch"] .card {
-  border-radius: 1.25rem;
-  border: 2.5px dashed var(--color-chalk);
-  box-shadow: 0 6px 24px -4px rgba(139, 92, 246, 0.12);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: 0;
+  border: 4px solid var(--color-ink);
+  box-shadow: 6px 6px 0 var(--color-ink);
+  transition: transform 0.1s, box-shadow 0.1s;
 }
 [data-theme="kitsch"] .card:hover {
-  transform: translateY(-4px) rotate(-0.5deg);
-  box-shadow: 0 12px 36px -6px rgba(139, 92, 246, 0.22),
-              0 0 0 3px rgba(245, 158, 11, 0.25);
-  border-color: var(--color-accent);
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--color-primary);
 }
 
 [data-theme="kitsch"] .btn-primary {
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--color-primary), #A855F7, var(--color-accent));
-  background-size: 200% 200%;
-  animation: gradient-shift 3s ease infinite;
+  border-radius: 0;
+  border: 4px solid var(--color-ink);
+  box-shadow: 5px 5px 0 var(--color-ink);
   font-weight: 700;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 [data-theme="kitsch"] .btn-primary:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.35);
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--color-ink);
 }
 
 [data-theme="kitsch"] .progress-track {
-  height: 8px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(139,92,246,0.15), rgba(245,158,11,0.15));
+  height: 12px;
+  border: 2px solid var(--color-ink);
+  border-radius: 0;
 }
 [data-theme="kitsch"] .progress-fill {
-  height: 8px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  height: 100%;
+  border-radius: 0;
 }
 
 [data-theme="kitsch"] .section-num {
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--color-primary), #A855F7);
-  color: white;
+  border-radius: 0;
+  border: 3px solid var(--color-ink);
+  box-shadow: 3px 3px 0 var(--color-primary);
   font-weight: 800;
 }
 
 [data-theme="kitsch"] .top-bar {
-  border-bottom: 2.5px dotted var(--color-chalk);
-  background-image: radial-gradient(circle at 20% 50%, rgba(139,92,246,0.04) 0%, transparent 50%),
-                     radial-gradient(circle at 80% 50%, rgba(245,158,11,0.04) 0%, transparent 50%);
+  border-bottom: 4px solid var(--color-ink);
 }
-
-/* ── Kitsch background decoration ─────────────────────────── */
 
 [data-theme="kitsch"] .page-bg {
   background-image:
-    radial-gradient(circle at 15% 85%, rgba(139,92,246,0.06) 0%, transparent 40%),
-    radial-gradient(circle at 85% 15%, rgba(245,158,11,0.06) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(236,72,153,0.03) 0%, transparent 50%);
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 80px,
+      rgba(221,0,0,0.02) 80px,
+      rgba(221,0,0,0.02) 81px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 80px,
+      rgba(255,204,0,0.02) 80px,
+      rgba(255,204,0,0.02) 81px
+    );
+}
+
+[data-theme="kitsch"] body {
+  font-family: "Bree Serif", Georgia, serif;
+}
+
+[data-theme="kitsch"] h1 {
+  font-family: "UnifrakturCook", serif;
+  font-weight: 700;
+}
+
+[data-theme="kitsch"] h2,
+[data-theme="kitsch"] h3 {
+  font-family: "Patua One", serif;
+  font-weight: 400;
 }
 
 [data-theme="bauhaus"] .page-bg {
@@ -208,6 +227,11 @@
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+@keyframes flagWave {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
 }
 
 /* ── Base layer ───────────────────────────────────────────── */
