@@ -62,7 +62,7 @@ export default async function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=UnifrakturCook:wght@700&family=Bree+Serif&family=Patua+One&family=Source+Code+Pro:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Jost:wght@300;400;500;600;700&family=Patua+One&family=Source+Code+Pro:wght@400;700&family=Spline+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&family=UnifrakturCook:wght@700&family=UnifrakturMaguntia&display=swap"
           rel="stylesheet"
         />
       </head>

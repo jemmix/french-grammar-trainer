@@ -81,8 +81,8 @@ export function KitschHomeHeader({
               "linear-gradient(to right, #0A0A0A 0%, #0A0A0A 33.33%, #DD0000 33.33%, #DD0000 66.66%, #FFCC00 66.66%, #FFCC00 100%)",
           }}
         />
-        <div className="mx-auto max-w-6xl px-6 py-10 md:py-14 relative z-10 flex items-center gap-8 md:gap-12">
-          <div className="flex-1 min-w-0">
+        <div className="mx-auto max-w-6xl px-6 py-10 md:py-14 relative z-10">
+          <div>
             <h1
               className="text-3xl md:text-5xl lg:text-6xl leading-[0.95] mb-3"
               style={{
@@ -98,34 +98,6 @@ export function KitschHomeHeader({
             >
               {subtitle}
             </p>
-          </div>
-          <div className="hidden md:block shrink-0">
-            <svg
-              width="120"
-              height="120"
-              viewBox="0 0 140 140"
-              className="opacity-70"
-              aria-hidden
-              style={{
-                filter: "drop-shadow(0 0 12px rgba(255,204,0,0.3))",
-              }}
-            >
-              <g fill="#FFCC00" stroke="#DD0000" strokeWidth="2.5">
-                <ellipse cx="70" cy="75" rx="22" ry="30" />
-                <path d="M70 45 L70 30 L78 20 L70 15 L62 20 L70 30Z" />
-                <path d="M48 55 C25 45, 12 50, 8 65 C15 58, 28 55, 45 62Z" />
-                <path d="M92 55 C115 45, 128 50, 132 65 C125 58, 112 55, 95 62Z" />
-                <path d="M55 100 C40 112, 35 120, 40 128 C45 120, 55 112, 60 108Z" />
-                <path d="M85 100 C100 112, 105 120, 100 128 C95 120, 85 112, 80 108Z" />
-                <circle cx="70" cy="28" r="4" fill="#DD0000" />
-                <polygon
-                  points="70,8 73,16 81,16 75,21 77,29 70,24 63,29 65,21 59,16 67,16"
-                  fill="#FFCC00"
-                  stroke="#0A0A0A"
-                  strokeWidth="1"
-                />
-              </g>
-            </svg>
           </div>
         </div>
       </div>

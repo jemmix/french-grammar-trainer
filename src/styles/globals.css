@@ -36,15 +36,15 @@
 /* ── Bauhaus ──────────────────────────────────────────────── */
 
 [data-theme="bauhaus"] {
-  --color-primary: #1E3A8A;
+  --color-primary: #1B3A8A;
   --color-accent: #C9A227;
-  --color-surface: #FFFFFF;
-  --color-ink: #111827;
-  --color-ink-light: #1F2937;
-  --color-paper: #F8F9FA;
-  --color-paper-warm: #EEF0F2;
-  --color-chalk: #E2E8F0;
-  --color-muted: #64748B;
+  --color-surface: #FAF8F2;
+  --color-ink: #0A0A0A;
+  --color-ink-light: #2A2A2A;
+  --color-paper: #F0EDE4;
+  --color-paper-warm: #FAF8F2;
+  --color-chalk: #D8D4C8;
+  --color-muted: #6B6760;
 }
 
 /* ── Kitsch ───────────────────────────────────────────────── */
@@ -65,50 +65,42 @@
 
 [data-theme="bauhaus"] .card {
   border-radius: 0;
-  border: 2px solid var(--color-ink);
+  border: 1px solid var(--color-chalk);
   box-shadow: none;
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  transition: background 0.15s;
 }
 [data-theme="bauhaus"] .card:hover {
-  box-shadow: 4px 4px 0 var(--color-primary);
-  transform: translate(-2px, -2px);
+  background: white;
+  box-shadow: none;
+  transform: none;
 }
 
 [data-theme="bauhaus"] .btn-primary {
   border-radius: 0;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-weight: 500;
 }
 [data-theme="bauhaus"] .btn-primary:hover {
-  box-shadow: 3px 3px 0 var(--color-ink);
-  transform: translate(-1px, -1px);
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
 
 [data-theme="bauhaus"] .progress-track {
   height: 6px;
+  background: var(--color-chalk);
 }
 [data-theme="bauhaus"] .progress-fill {
   height: 6px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--color-primary) 0,
-    var(--color-primary) 4px,
-    transparent 4px,
-    transparent 6px
-  );
-  background-size: 200% 100%;
 }
 
 [data-theme="bauhaus"] .section-num {
   border-radius: 0;
-  font-weight: 800;
-  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
-  padding-right: 1.2em;
+  font-weight: 600;
 }
 
 [data-theme="bauhaus"] .top-bar {
-  border-bottom: 2px solid var(--color-ink);
+  border-bottom: 1px solid var(--color-chalk);
 }
 
 [data-theme="kitsch"] .card {
@@ -191,9 +183,18 @@
 
 [data-theme="bauhaus"] .page-bg {
   background-image:
-    linear-gradient(var(--color-chalk) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-chalk) 1px, transparent 1px);
-  background-size: 40px 40px;
+    radial-gradient(circle at 100% 0%, rgba(27,58,138,0.03) 0%, transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(200,155,60,0.03) 0%, transparent 40%);
+}
+
+[data-theme="bauhaus"] body {
+  font-family: "Spline Sans", system-ui, sans-serif;
+}
+
+[data-theme="bauhaus"] h1,
+[data-theme="bauhaus"] h2,
+[data-theme="bauhaus"] h3 {
+  font-family: "Jost", sans-serif;
 }
 
 /* ── Keyframes ────────────────────────────────────────────── */
