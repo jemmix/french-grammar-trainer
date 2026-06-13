@@ -29,6 +29,13 @@ export const answerHints: Record<string, string> = {
   "unsere": "Possessivartikel",
   "unseren": "Possessivartikel",
   "den": "bestimmter Artikel",
+  "der": "bestimmter Artikel",
+  "invertiert": "Wortstellungstyp",
+  "neutral": "Wortstellungstyp",
+  "Den Film sieht der Lehrer im Kino.": "Akkusativobjekt – Verb – Subjekt – Ergänzung",
+  "Den Kuchen backt der Bäcker am Wochenende.": "Akkusativobjekt – Verb – Subjekt – Ergänzung",
+  "liest": "Verb (lesen, 3. Person Singular Präsens)",
+  "sieht": "Verb (sehen, 3. Person Singular Präsens)",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;

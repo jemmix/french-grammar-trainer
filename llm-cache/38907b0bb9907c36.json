@@ -1,0 +1,33 @@
+{
+  "cacheKey": "38907b0bb9907c36",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-10 - Gemischte Übungen: Nominativ und Akkusativ unterscheiden\n\nQUESTION:\nType: Input\nPrompt: Füllen Sie die Lücke mit dem bestimmten Artikel.\nPhrase: „Der Wolf jagt ___ Hasen im Wald.\nCorrect Answer: den\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781355239322-s383nh25"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying \"Hasen\" as the direct object in the accusative case (needing \"den\" instead of nominative \"der\"), which is exactly the skill of distinguishing Nominativ and Akkusativ that the rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781355266330-mohkzrl4",
+      "timestamp": "2026-06-13T13:04:38.082Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying \"Hasen\" as the direct object of \"jagen\" (which takes Akkusativ) and correctly providing \"den\" instead of the Nominativ \"der,\" directly testing the Nominativ/Akkusativ distinction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781355878083-nyolxt0g",
+      "timestamp": "2026-06-13T13:04:51.963Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work completed:\nI was in the process of validating a German grammar question to determine if it properly tests the stated rule about distinguishing Nominativ and Akkusativ.\n\nMy analysis of the question:\n- Rule: \"Gemischte Übungen: Nominativ und Akkusativ unterscheiden\" (Mixed exercises: distinguishing Nominative and Accusative)\n- Question asks to fill in the blank: \"Der Wolf jagt ___ Hasen im Wald.\" with the correct definite article\n- Correct answer: \"den\"\n\nThe question IS ALIGNED with the rule because:\n1. \"Der Wolf\" is the subject in Nominativ (already given correctly)\n2. \"Hasen\" is the direct object of \"jagen\" and requires Akkusativ\n3. The student must know that the masculine definite article changes from \"der\" to \"den\" in Akkusativ\n4. This cannot be answered correctly without understanding the Nominativ/Akkusativ distinction\n\nVERDICT: ALIGNED\nREASON: The question requires identifying the direct object as Akkusativ and knowing that the masculine definite article changes from \"der\" to \"den\" in that case, which is the core of distinguishing Nominativ and Akkusativ.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781355892942-z6ewk3ne",
+      "timestamp": "2026-06-13T13:05:11.193Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "204e609d628ef4dd",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-10-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Artikel fehlt? — „Heute ruft ___ Arzt den Patienten an.\"\n\nChoices:\nA. [CORRECT] der\nB. [WRONG] den\nC. [WRONG] dem\nD. [WRONG] des\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781355239311-npqvyvp3"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases: \"den\" is accusative, \"dem\" is dative, and \"des\" is genitive, but the subject \"Arzt\" requires the nominative \"der\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781355243328-cf74h31a",
+      "timestamp": "2026-06-13T12:54:33.817Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use non-nominative cases (accusative \"den\", dative \"dem\", genitive \"des\") which are grammatically incorrect for the subject position that requires the nominative \"der\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781355283709-p6ypbirp",
+      "timestamp": "2026-06-13T12:55:11.750Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use wrong cases (accusative, dative, genitive) for the nominative subject \"Arzt.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781355318940-17zqdjkh",
+      "timestamp": "2026-06-13T12:55:50.341Z"
+    }
+  ]
+}

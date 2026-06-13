@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c6039f90d0048d89",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-09-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: „Den Roman liest der Schüler.\" – Wie lautet der Satz in der neutralen Wortstellung?\n\nChoices:\nA. [CORRECT] Der Schüler liest den Roman.\nB. [WRONG] Der Roman liest den Schüler.\nC. [WRONG] Liest der Schüler den Roman?\nD. [WRONG] Den Schüler liest der Roman.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781352620509-37wa3md4"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B and D change subject/object roles making the sentence mean \"the novel reads the student,\" and C is a question form rather than the requested neutral declarative word order.\n\nMaximum steps for this agent have been reached. The verification task has been completed successfully - the verdict is TRUE, meaning all wrong answers (B, C, D) are indeed grammatically incorrect within the constraints of the question. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781352620524-r30tueuc",
+      "timestamp": "2026-06-13T12:15:59.092Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B changes the subject from \"der Schüler\" to \"der Roman,\" altering the meaning; C uses interrogative (verb-first) word order instead of neutral SVO; D places \"den Schüler\" in accusative first position, making \"der Roman\" the subject and changing the meaning.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781352959092-rukcnt4e",
+      "timestamp": "2026-06-13T12:16:22.263Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers either reverse the subject-object relationship (B and D: \"Der Roman liest den Schüler/Den Schüler liest der Roman\" changes meaning to \"the novel reads the student\") or change the sentence type (C is a question, not a statement).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781352982263-z0bd9n1o",
+      "timestamp": "2026-06-13T12:16:38.886Z"
+    }
+  ]
+}

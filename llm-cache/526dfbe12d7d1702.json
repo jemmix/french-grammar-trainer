@@ -1,0 +1,40 @@
+{
+  "cacheKey": "526dfbe12d7d1702",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-09-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-09 - Wortstellung von Subjekt und Akkusativobjekt\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das erste Wort (Akkusativobjekt am Satzanfang).\nPhrase: „___ Roman liest der Student am Abend.\nCorrect Answer: Den\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781352620511-inlr8iow"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to recognize that the accusative object (\"Den Roman\") precedes the verb and subject in this sentence structure, and to correctly mark it with the accusative article \"Den\" rather than the nominative \"Der\" — directly testing the stated word order rule for subject and accusative object.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781352674758-jly4w6b6",
+      "timestamp": "2026-06-13T12:11:43.389Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question alignment. Here is my assessment:\n\nVERDICT: MISALIGNED\nREASON: The question tests knowledge of accusative case marking (der → den), not word order, since the accusative object's position at the beginning is already given in the sentence structure.\n\nThe question asks students to fill in \"Den\" at the start of \"___ Roman liest der Student am Abend.\" While this sentence does demonstrate accusative-first word order, answering correctly only requires knowing the accusative form of the masculine definite article—not understanding when or why to place the accusative object before the subject. A properly aligned question for this word order rule would require students to manipulate sentence structure themselves, such as rearranging clauses or identifying correct vs. incorrect word order patterns.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781352733615-468nb58k",
+      "timestamp": "2026-06-13T12:13:00.041Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"Roman\" is the accusative object despite appearing in sentence-initial position (unusual word order), and correctly applying accusative morphology (\"den\" instead of nominative \"der\") based on that syntactic understanding.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781352798441-cg9zhlh3",
+      "timestamp": "2026-06-13T12:14:04.708Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the accusative case form of the definite article for a masculine noun (\"Den\" vs other forms), not word order—the sentence structure with the accusative object at the beginning is already given, so the student only needs to know the correct article declension.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781352844709-bzex5tfc",
+      "timestamp": "2026-06-13T12:14:39.983Z"
+    }
+  ]
+}

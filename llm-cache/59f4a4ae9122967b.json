@@ -1,0 +1,26 @@
+{
+  "cacheKey": "59f4a4ae9122967b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-09-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-09 - Wortstellung von Subjekt und Akkusativobjekt\n\nQUESTION:\nType: Input\nPrompt: Das Akkusativobjekt steht am Satzanfang. Füllen Sie die Lücke mit dem Artikel im richtigen Kasus.\nPhrase: „Den Film sieht ___ Lehrer im Kino.\nCorrect Answer: der\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781357154613-5tq6yqfr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests article declension (knowing that the subject \"Lehrer\" takes nominative \"der\") rather than word order, since the accusative object is already positioned at the front of the sentence and the student only needs to supply the correct case form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781357154616-o8gd9jjv",
+      "timestamp": "2026-06-13T13:26:35.564Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question for alignment with its stated rule.\n\n**Summary of work done:**\nI analyzed the question to determine if it tests \"Wortstellung von Subjekt und Akkusativobjekt\" (word order of subject and accusative object).\n\n**Verdict reached (but not yet output in required format):**\n\nVERDICT: MISALIGNED\nREASON: The question tests case identification and article declension (knowing that the subject \"Lehrer\" takes nominative \"der\"), not word order—the accusative object's position is already given and fixed in the sentence.\n\n**Remaining tasks:**\n- None for this specific validation request—the analysis is complete.\n\n**Recommendations:**\n- To properly test word order of subject and accusative object, the question should present both elements and ask the student to arrange them correctly, or present a sentence with scrambled/incorrect word order and ask which version is correct.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781357195565-9c7y4br1",
+      "timestamp": "2026-06-13T13:27:17.100Z"
+    }
+  ]
+}

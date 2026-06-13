@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4f6559d823b999b4",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-10-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Artikel fehlt? — „Den Kuchen backt ___ Bäcker heute Nachmittag.\"\n\nChoices:\nA. [CORRECT] der\nB. [WRONG] den\nC. [WRONG] dem\nD. [WRONG] des\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781355239318-jkn2s4ux"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases (accusative, dative, genitive) for the subject position, which requires nominative \"der\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781355246331-b9wozxcq",
+      "timestamp": "2026-06-13T12:54:26.330Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases (accusative \"den\", dative \"dem\", genitive \"des\") instead of the required nominative \"der\" for the subject \"Bäcker\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781355281735-8d3mot3n",
+      "timestamp": "2026-06-13T12:55:00.946Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use non-nominative cases (accusative, dative, genitive), but the subject \"Bäcker\" requires the nominative article \"der.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781355314925-ajkdf866",
+      "timestamp": "2026-06-13T12:55:49.891Z"
+    }
+  ]
+}

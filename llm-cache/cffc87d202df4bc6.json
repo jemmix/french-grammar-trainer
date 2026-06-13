@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cffc87d202df4bc6",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "02-10-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Welcher Artikel fehlt?\n\nPHRASE: „Der Koch bereitet ___ Salat vor.\n\nHINT: bestimmter Artikel\n\nEXPECTED ANSWER: den\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1781354186312-oipakhc0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt asks which article is missing, the hint specifies \"bestimmter Artikel\" (definite article), making it clear the learner should type a definite article that fits the sentence grammatically.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781354732182-00qihdkf",
+      "timestamp": "2026-06-13T12:45:48.262Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt asks which article is missing, the hint narrows it to a definite article, and the sentence structure (\"bereitet...vor\" taking accusative) provides enough context for a learner to determine the correct form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781354748265-lt6j22ke",
+      "timestamp": "2026-06-13T12:46:11.866Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThis was a simple validation task that can be completed without tools. Here is my assessment:\n\nVERDICT: SELF-CONTAINED\nREASON: The prompt clearly asks which article is missing, and the hint specifies \"bestimmter Artikel\" (definite article), so the learner knows they must choose the correct declined form of der/die/das/den/dem/des to fill the blank.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781354772044-ttyiq0eh",
+      "timestamp": "2026-06-13T12:46:41.539Z"
+    }
+  ]
+}
