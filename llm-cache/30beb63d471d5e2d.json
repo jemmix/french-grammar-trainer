@@ -1,0 +1,33 @@
+{
+  "cacheKey": "30beb63d471d5e2d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-07-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? – besuchen\n\nChoices:\nA. [CORRECT] Wir besuchen unsere Großeltern jedes Wochenende.\nB. [WRONG] Wir suchen unsere Großeltern jedes Wochenende be.\nC. [WRONG] Wir suchen unsere Großeltern jedes Wochenende.\nD. [WRONG] Wir be-suchen unsere Großeltern jedes Wochenende.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781390423560-8t3o5s8t"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI analyzed the German grammar question to verify that the wrong answers (B, C, D) are indeed incorrect within the constraints stated in the question prompt \"Welcher Satz ist grammatikalisch richtig? – besuchen\".\n\n**Analysis completed:**\n- B is incorrect: uses wrong verb \"suchen\" and has an ungrammatical stray \"be\" at the end\n- C is incorrect: uses \"suchen\" (to search/look for) instead of the required verb \"besuchen\" (to visit) specified in the question prompt\n- D is incorrect: incorrectly hyphenates the inseparable prefix \"be-\" in \"besuchen\", which is a spelling error\n\n**Remaining tasks:**\nNone - the analysis was complete.\n\n**Recommendation:**\nThe verdict is: TRUE||All wrong answers are incorrect—B has a stray particle and wrong verb, C uses \"suchen\" instead of the required \"besuchen\", and D incorrectly splits the inseparable prefix \"be-\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781390426582-1f1mac6t",
+      "timestamp": "2026-06-13T22:41:00.453Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B has a nonsensical \"be\" at the end, C uses \"suchen\" (to look for) instead of the specified verb \"besuchen\" (to visit), and D incorrectly hyphenates \"besuchen\" which is not a valid German spelling.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781390486867-4lx3dhem",
+      "timestamp": "2026-06-13T22:41:55.504Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear errors: B ends with the meaningless fragment \"be\", C uses the wrong verb \"suchen\" (to look for) instead of \"besuchen\" (to visit), and D incorrectly hyphenates the compound verb \"be-suchen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781390543120-ir27tkde",
+      "timestamp": "2026-06-13T22:42:50.977Z"
+    }
+  ]
+}

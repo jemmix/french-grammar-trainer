@@ -1,0 +1,33 @@
+{
+  "cacheKey": "95a2aa2783115c57",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-07-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-07 - Untrennbare Verben (verstehen, besuchen, erzählen, verkaufen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? – bekommen\nChoices:\nA. [CORRECT] Das Kind bekommt ein neues Spielzeug.\nB. Das Kind kommt ein neues Spielzeug be.\nC. Das Kind bekommen ein neues Spielzeug.\nD. Das Kind bekommst ein neues Spielzeug.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781389515780-8rsmrxci"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was in the process of analyzing a German grammar validation question about whether a multiple-choice question testing the verb \"bekommen\" properly aligns with the rule \"Untrennbare Verben\" (inseparable verbs).\n\nThe question presents four choices where one incorrect option (B) incorrectly splits the inseparable prefix \"be-\" from the verb stem, which directly tests the inseparable verb concept.\n\nRemaining tasks: Complete the verdict and explanation for this validation question.\n\nRecommendation for next step: The verdict should be:\n\nVERDICT: ALIGNED\nREASON: Choice B directly tests the core concept of inseparable verbs by incorrectly splitting the prefix \"be-\" from the verb stem, and eliminating this option requires understanding that inseparable prefixes cannot be separated.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781389546212-mgrbmma6",
+      "timestamp": "2026-06-13T22:26:19.776Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: This question primarily tests present tense conjugation and subject-verb agreement (3rd person singular \"bekommt\" vs. incorrect forms \"bekommen\" and \"bekommst\"), not the inseparable prefix rule; the inseparable nature of \"be-\" is only tested peripherally in one distractor choice that incorrectly splits the prefix.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781389615244-n6truj0u",
+      "timestamp": "2026-06-13T22:27:29.798Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question primarily tests present tense conjugation (bekommt/bekommen/bekommst), not the concept of inseparable verbs; the inseparable prefix aspect is only incidentally present in one obviously wrong distractor.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781389680794-225tijii",
+      "timestamp": "2026-06-13T22:28:42.225Z"
+    }
+  ]
+}

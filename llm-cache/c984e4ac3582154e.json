@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c984e4ac3582154e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-07-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-07 - Untrennbare Verben (verstehen, besuchen, erzählen, verkaufen)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das Verb in der 3. Person Singular.\nPhrase: „Der Lehrer ___ die Grammatik.\nCorrect Answer: erklärt\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781390940198-euhmv6g3"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question for alignment with its stated rule.\n\n**Analysis completed:**\nThe question asks students to conjugate \"erklären\" in the 3rd person singular present tense (\"Der Lehrer ___ die Grammatik.\" → \"erklärt\"). While \"erklären\" does have the inseparable prefix \"er-\", the question only tests present tense conjugation (adding \"-t\" ending) and vocabulary knowledge. The inseparable nature of the verb is not tested because in present tense, there is no difference between how separable and inseparable verbs are conjugated—the key distinguishing feature of untrennbare Verben (the absence of \"ge-\" in the past participle) only becomes relevant in Perfekt/Präteritum forms.\n\n**Verdict that would have been output:**\nVERDICT: MISALIGNED\nREASON: The question tests present tense conjugation and vocabulary, but the inseparability of \"erklären\" only manifests in the past participle (no \"ge-\" prefix), not in present tense conjugation where separable and inseparable verbs behave identically.\n\n**Remaining tasks:** None—this was a single-question validation.\n\n**Recommendation:** To properly test untrennbare Verben, use Perfekt sentences where students must produce the past participle without \"ge-\" (e.g., \"Der Lehrer hat die Grammatik ___\" → \"erklärt\"), or ask students to identify which verbs are inseparable.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781390946211-4fvpesej",
+      "timestamp": "2026-06-13T22:49:43.626Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate a German grammar question for rule \"04-07 - Untrennbare Verben (verstehen, besuchen, erzählen, verkaufen)\" and provide a verdict on whether the question actually tests that rule.\n\nMy analysis was complete:\n\nVERDICT: MISALIGNED\nREASON: The question tests vocabulary recognition (knowing \"erklären\" means \"to explain\") and basic present tense conjugation (3rd person singular), but does not require the student to demonstrate knowledge that \"erklären\" is an inseparable verb or how inseparable prefixes behave differently from separable ones.\n\nRemaining tasks: None - the single validation request was analyzed.\n\nRecommendations: For a question to properly test inseparable verbs, it should contrast them with separable verbs (e.g., showing that the prefix stays attached in main clauses or moves to the end in subordinate clauses), or otherwise require the student to apply knowledge of the inseparable prefix rule to determine the correct answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781390985112-pjvorgru",
+      "timestamp": "2026-06-13T22:50:23.125Z"
+    }
+  ]
+}

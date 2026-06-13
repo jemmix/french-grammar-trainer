@@ -1,0 +1,33 @@
+{
+  "cacheKey": "abf7e13b2ec324e8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-07-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? – bekommen\n\nChoices:\nA. [CORRECT] Das Kind bekommt ein neues Spielzeug.\nB. [WRONG] Das Kind kommt ein neues Spielzeug be.\nC. [WRONG] Das Kind bekommen ein neues Spielzeug.\nD. [WRONG] Das Kind bekommst ein neues Spielzeug.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781389515780-4zqiqk23"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses wrong verb and nonsensical particle, C uses plural/infinitive form with singular subject, D uses 2nd person conjugation with 3rd person singular subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781389545112-j1npuug3",
+      "timestamp": "2026-06-13T22:26:11.646Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses a non-existent split form of \"bekommen,\" C uses the infinitive instead of the third-person singular \"bekommt,\" and D uses the second-person singular \"bekommst\" instead of the required third-person form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781389608659-sxoj8ntf",
+      "timestamp": "2026-06-13T22:27:15.517Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the wrong verb \"kommen\" and adds an inexplicable \"be,\" C uses the infinitive \"bekommen\" instead of the conjugated form \"bekommt,\" and D uses the 2nd person \"bekommst\" instead of the 3rd person \"bekommt.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781389664962-5ckk89n2",
+      "timestamp": "2026-06-13T22:28:20.181Z"
+    }
+  ]
+}

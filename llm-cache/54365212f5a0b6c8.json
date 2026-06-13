@@ -1,0 +1,33 @@
+{
+  "cacheKey": "54365212f5a0b6c8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-07-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? – verstehen\n\nChoices:\nA. [CORRECT] Ich verstehe die Frage nicht.\nB. [WRONG] Ich stehe die Frage nicht ver.\nC. [WRONG] Ich versteht die Frage nicht.\nD. [WRONG] Ich verstehen die Frage nicht.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781389515776-72tu1b34"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||B incorrectly separates the inseparable prefix \"ver-\" and uses wrong stem \"steh\"; C uses 3rd person singular \"versteht\" instead of 1st person \"verstehe\"; D uses the infinitive \"verstehen\" instead of the conjugated 1st person form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781389515785-n8uhha01",
+      "timestamp": "2026-06-13T22:25:37.670Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a German grammar MCQ are indeed incorrect. The question asks which sentence is grammatically correct using the verb \"verstehen.\"\n\nAnalysis completed:\n- B: \"Ich stehe die Frage nicht ver\" — incorrect; \"stehen\" means \"to stand,\" not \"to understand,\" and this is not a valid separable verb form\n- C: \"Ich versteht die Frage nicht\" — incorrect; \"versteht\" is 3rd person singular, not 1st person singular\n- D: \"Ich verstehen die Frage nicht\" — incorrect; \"verstehen\" is the infinitive, not a conjugated form for \"ich\"\n\nAll wrong answers are genuinely incorrect within the stated grammatical constraints.\n\nTRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781389576258-kahg55ek",
+      "timestamp": "2026-06-13T22:26:44.804Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses a non-existent verb form, C uses 3rd person singular with 1st person subject, and D uses the infinitive instead of a conjugated form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781389646460-c9p6n416",
+      "timestamp": "2026-06-13T22:27:50.072Z"
+    }
+  ]
+}
