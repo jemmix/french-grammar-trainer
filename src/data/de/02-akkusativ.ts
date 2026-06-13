@@ -1126,7 +1126,7 @@ const section: Section = {
       type: "input",
       ruleId: "02-08",
       generatedBy: "sonnet",
-      prompt: "Welcher Artikel fehlt? (Nominativ oder Akkusativ)",
+      prompt: "Ergänzen Sie im richtigen Kasus (Nominativ oder Akkusativ).",
       phrase: { before: "Der Bäcker backt ", after: " Kuchen." },
       hint: "bestimmter Artikel",
       answer: "den",
