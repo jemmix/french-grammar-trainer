@@ -1,0 +1,26 @@
+{
+  "cacheKey": "19c5b5fbd1caa85c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-05-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-05 - Verben mit Dativobjekt (helfen, danken, folgen, gefallen, gehören)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie den bestimmten Artikel im Dativ.\nPhrase: „Ich helfe ___ Kind bei den Hausaufgaben.\nCorrect Answer: dem\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781365448450-j66bomwv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use the dative case (\"Ergänzen Sie den bestimmten Artikel im Dativ\"), so answering correctly only requires knowing the dative declension of \"das\" → \"dem\", not knowing that \"helfen\" is a verb that takes a dative object.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781365483659-jfpc0qq6",
+      "timestamp": "2026-06-13T15:45:09.902Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly states \"im Dativ,\" so the question only tests dative article declension (das → dem for neuter) rather than whether the student knows that \"helfen\" takes a dative object.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781365633058-er0hsnhe",
+      "timestamp": "2026-06-13T15:47:40.447Z"
+    }
+  ]
+}

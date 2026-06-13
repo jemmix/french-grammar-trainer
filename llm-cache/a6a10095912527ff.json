@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a6a10095912527ff",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-06-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie das Personalpronomen. „Wir gratulieren ___ zum Geburtstag, liebe Kinder!\"\n\nChoices:\nA. [CORRECT] euch\nB. [WRONG] ihnen\nC. [WRONG] uns\nD. [WRONG] dir\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781359485851-91ntwm1z"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses formal/third-person pronoun with informal plural address, C would mean \"ourselves\" contradicting the context, and D is singular but \"Kinder\" is plural.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359555598-k4jtm5so",
+      "timestamp": "2026-06-13T14:10:38.620Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in this context: \"ihnen\" uses 3rd person instead of 2nd person, \"uns\" uses 1st person instead of 2nd person, and \"dir\" uses singular instead of the required plural form \"euch\" to match \"liebe Kinder.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360398438-xy40sgz5",
+      "timestamp": "2026-06-13T14:20:55.844Z"
+    },
+    {
+      "raw": "TRUE||B uses 3rd person \"ihnen\" instead of 2nd person plural needed to directly address \"liebe Kinder\", C uses 1st person \"uns\" which makes no sense as a reflexive object here, and D uses singular \"dir\" instead of the plural form required by the plural addressee \"Kinder\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361207674-d1jfx9a6",
+      "timestamp": "2026-06-13T14:34:10.424Z"
+    }
+  ]
+}

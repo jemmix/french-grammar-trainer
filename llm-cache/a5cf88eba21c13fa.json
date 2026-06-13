@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a5cf88eba21c13fa",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-10-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Verb: stehen\n\nChoices:\nA. [CORRECT] Die Vase steht auf dem Tisch.\nB. [WRONG] Die Vase steht auf den Tisch.\nC. [WRONG] Die Vase steht auf der Tisch.\nD. [WRONG] Die Vase steht auf des Tisch.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781359485856-jgf459ks"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses accusative instead of dative for a static position with \"stehen\", C uses the wrong dative article form (\"der\" instead of \"dem\" for masculine \"Tisch\"), and D uses an invalid genitive form (\"des Tisch\" instead of \"des Tisches\") which is also the wrong case for this prepositional phrase.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360055186-inz5ev8k",
+      "timestamp": "2026-06-13T14:16:47.398Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear case errors: B incorrectly uses accusative \"den\" instead of dative \"dem\" for static position, C uses nominative \"der\" instead of dative \"dem\", and D uses an incomplete genitive \"des Tisch\" (missing -es ending) instead of dative \"dem\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360907742-jsjuuibo",
+      "timestamp": "2026-06-13T14:28:56.420Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses accusative instead of dative for static location, C uses the wrong dative form (\"der\" instead of \"dem\" for masculine), and D incorrectly uses genitive case which is not valid after \"auf\" for location.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361630953-blail8go",
+      "timestamp": "2026-06-13T14:41:08.921Z"
+    }
+  ]
+}

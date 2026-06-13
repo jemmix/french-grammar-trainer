@@ -1,0 +1,33 @@
+{
+  "cacheKey": "57f9222a69331e4e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-05-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-05 - Verben mit Dativobjekt (helfen, danken, folgen, gefallen, gehören)\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie den bestimmten Artikel im richtigen Kasus ein. Überlegen Sie: Welchen Kasus verlangt das Verb „helfen\" — Dativ oder Akkusativ?\nPhrase: „Ich helfe ___ Kind bei den Hausaufgaben.\nCorrect Answer: dem\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781366729159-oklp85l6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that the verb \"helfen\" requires a dative object, which is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781366729161-f69grsql",
+      "timestamp": "2026-06-13T16:05:41.428Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"helfen\" requires a dative object, which is the central concept of the stated rule about verbs with dative objects.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781366741430-n2gi0nvc",
+      "timestamp": "2026-06-13T16:05:55.843Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"helfen\" takes a dative object, which is the precise grammar concept defined by the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781366755844-vxa5v3tk",
+      "timestamp": "2026-06-13T16:06:07.370Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "59074b0e7bd7d40b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-06-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie das Personalpronomen. „Der Onkel war sehr hilfsbereit. Wir danken ___ für das schöne Geschenk.\"\n\nChoices:\nA. [CORRECT] ihm\nB. [WRONG] ihn\nC. [WRONG] ihr\nD. [WRONG] uns\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781365448452-2q1usfpa"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: \"ihn\" is accusative (danken requires dative), \"ihr\" is feminine/plural dative (Onkel is masculine singular), and \"uns\" means \"us\" but we are thanking the uncle, not ourselves.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781365512667-6iqwk94a",
+      "timestamp": "2026-06-13T15:46:55.881Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers use incorrect case (B), wrong gender (C), or wrong person (D) for the dative object of \"danken\" referring to \"der Onkel\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781365739824-w3kmhnkn",
+      "timestamp": "2026-06-13T15:49:26.801Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses accusative case but \"danken\" requires dative, C is feminine dative/plural but \"Der Onkel\" is masculine singular, and D means \"us\" which doesn't fit the context of thanking the uncle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781365842587-wczabxs3",
+      "timestamp": "2026-06-13T15:50:56.122Z"
+    }
+  ]
+}

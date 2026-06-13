@@ -1,0 +1,33 @@
+{
+  "cacheKey": "060d16cea7c01656",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-10-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-10 - Wechselpräpositionen: Wo? (Dativ) vs. Wohin? (Akkusativ)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den Artikel. „Ich hänge das Bild an ___ Wand.\"\nChoices:\nA. [CORRECT] die\nB. der\nC. den\nD. dem\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781359485857-55sy6jhh"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying \"an\" as a Wechselpräposition and determining that \"hängen\" expresses direction (Wohin?) rather than location (Wo?), correctly leading to Akkusativ \"die\" over Dativ \"der\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360077166-3vxm3kfc",
+      "timestamp": "2026-06-13T14:14:58.940Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of validating a German grammar question about Wechselpräpositionen (two-way prepositions) testing Dativ vs. Akkusativ.\n\nMy assessment before being cut off:\n\nVERDICT: ALIGNED\nREASON: The question requires determining whether \"an die Wand\" takes Dativ (static location/Wo?) or Akkusativ (direction/Wohin?) with the Wechselpräposition \"an\", which is precisely what the stated rule tests—the correct answer \"die\" (Akkusativ) reflects that hanging a picture is a directional action (Wohin?).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360782491-i1f5a473",
+      "timestamp": "2026-06-13T14:35:28.596Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires determining whether \"an\" is used with Wo? (Dativ) or Wohin? (Akkusativ) — since \"hängen\" here is transitive (hanging something somewhere), it's a Wohin? question requiring Akkusativ \"die\", directly testing the two-way preposition rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361910919-bdj4k4uf",
+      "timestamp": "2026-06-13T14:45:44.747Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6901dfd40ef20850",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-09-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-09 - Nominativ, Akkusativ und Dativ im Vergleich\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Artikel ist richtig? „Lehrerin\" ist Subjekt. — „___ Lehrerin erklärt eine Regel.\"\nChoices:\nA. [CORRECT] Die\nB. Der\nC. Das\nD. Den\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781359485855-nvmqokk9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly states \"Lehrerin\" is the subject, eliminating any need to compare Nominativ, Akkusativ, and Dativ — the question only tests gender recognition and basic nominative article knowledge.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359916733-oyxthugp",
+      "timestamp": "2026-06-13T14:12:31.478Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question for alignment with its stated rule.\n\n**Analysis completed:**\n\nVERDICT: MISALIGNED\nREASON: The question only tests that subjects take the nominative case and that \"Lehrerin\" is feminine, but does not require comparing or distinguishing between Nominativ, Akkusativ, and Dativ as the rule title \"im Vergleich\" implies—the prompt explicitly states \"Lehrerin\" is the subject, eliminating any need for case comparison.\n\n**Remaining tasks:** None—this was a single-question validation task that is now complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360588183-1k3bpx74",
+      "timestamp": "2026-06-13T14:23:31.214Z"
+    }
+  ]
+}

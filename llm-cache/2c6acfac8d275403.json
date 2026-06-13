@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2c6acfac8d275403",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-08-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-08 - Dativ und Akkusativ im selben Satz (indirektes + direktes Objekt)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den Artikel. „Ich gebe ___ Mann das Buch.\"\nChoices:\nA. [CORRECT] dem\nB. den\nC. des\nD. der\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781359485854-xd1w78ya"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a German grammar question for alignment with its stated rule. The question asks students to fill in the article for \"Mann\" in the sentence \"Ich gebe ___ Mann das Buch\" with options: dem (correct), den, des, der.\n\n**Analysis completed:**\n- The rule is about Dative and Accusative in the same sentence (indirect + direct object)\n- The verb \"geben\" takes dative for the recipient and accusative for the thing given\n- \"Mann\" is the recipient (dative) and \"das Buch\" is the thing given (accusative)\n- The distractor \"den\" (accusative) specifically tests whether students know \"Mann\" takes dative, not accusative\n\n**Verdict that would have been returned:**\nVERDICT: ALIGNED\nREASON: The question requires identifying \"Mann\" as the indirect object (dative) rather than treating it like the accusative direct object \"das Buch,\" directly testing the dative-accusative distinction in a two-object sentence.\n\n**Remaining tasks:** None - this was a single-question validation that was nearly complete.\n\n**Recommendations:** No further action needed on this item.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359775206-k8fd301j",
+      "timestamp": "2026-06-13T14:10:20.311Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to recognize that \"Mann\" is the indirect object (dative) while \"das Buch\" is the direct object (accusative) in the same sentence, which is precisely the grammar distinction the stated rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360387049-2pofyqru",
+      "timestamp": "2026-06-13T14:20:30.323Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying \"Mann\" as the indirect object (dative) rather than the direct object (accusative) in a sentence with both objects present (\"das Buch\" being the accusative direct object), which is exactly the core of the stated rule about distinguishing dative and accusative in the same sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361185534-deldzbr3",
+      "timestamp": "2026-06-13T14:33:30.569Z"
+    }
+  ]
+}

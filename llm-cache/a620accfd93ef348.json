@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a620accfd93ef348",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-07-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-07 - Dativpräpositionen: aus, bei, mit, nach, seit, von, zu, gegenüber\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig?\nChoices:\nA. [CORRECT] Sie kommt aus der Schweiz.\nB. Sie kommt aus die Schweiz.\nC. Sie kommt aus den Schweiz.\nD. Sie kommt aus des Schweiz.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781359485853-8ugrmc5d"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"aus\" is a dative preposition and applying the correct dative form of the feminine definite article (\"der\" instead of \"die,\" \"den,\" or \"des\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359663874-q2f6mqbb",
+      "timestamp": "2026-06-13T14:08:00.332Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests that \"aus\" is a Dativpräposition requiring the dative form \"der\" for the feminine noun \"die Schweiz\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360255373-cieht5z8",
+      "timestamp": "2026-06-13T14:20:02.150Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"aus\" is a Dativpräposition and correctly applying dative declension to the feminine noun \"Schweiz\" (die → der), which is central to the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361168480-x9dau112",
+      "timestamp": "2026-06-13T14:35:35.359Z"
+    }
+  ]
+}

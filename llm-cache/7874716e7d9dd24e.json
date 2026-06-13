@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7874716e7d9dd24e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-02-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-02 - Der unbestimmte Artikel im Dativ: einem, einer, einem\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie den Artikel im Dativ.\nPhrase: „Der Arzt hilft ___ Mann im Krankenhaus.\nCorrect Answer: einem\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781368731398-gxqoho5b"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"helfen\" takes the dative case and that the masculine indefinite article \"ein\" becomes \"einem\" in dative, which is exactly what the stated rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781368737497-u02jxnxo",
+      "timestamp": "2026-06-13T16:39:29.143Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying that \"helfen\" takes the dative case and then applying the dative form \"einem\" of the masculine indefinite article \"ein\", which is exactly what rule 03-02 covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781368909657-ldxnh9on",
+      "timestamp": "2026-06-13T16:42:05.102Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the correct dative indefinite article (\"einem\") for a masculine noun after the dative-governing verb \"helfen,\" which directly tests the stated rule about the indefinite article forms in dative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781369033928-xdyfrm7z",
+      "timestamp": "2026-06-13T16:44:15.470Z"
+    }
+  ]
+}

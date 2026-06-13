@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1062c06f557677ed",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-07-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-07 - Dativpräpositionen: aus, bei, mit, nach, seit, von, zu, gegenüber\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welche Verschmelzungsform ist richtig? „Ich gehe ___ Arzt.\"\nChoices:\nA. [CORRECT] zum\nB. zur\nC. beim\nD. vom\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781359485853-qv44ay71"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was in the process of validating a German grammar question about Dativpräpositionen. The question asks about the correct contraction form \"zum\" in \"Ich gehe ___ Arzt.\"\n\nList of any remaining tasks that were not completed:\n- Output the final verdict and reason in the requested format\n\nRecommendations for what should be done next:\nHere is my assessment:\n\nVERDICT: ALIGNED\nREASON: The question tests the contraction of \"zu\" (explicitly listed as a Dativpräposition in the rule) with the dative article \"dem\" for the masculine noun \"Arzt,\" directly requiring knowledge of which Dativpräposition to use and its contracted form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359681966-0dxliqo7",
+      "timestamp": "2026-06-13T14:08:27.509Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the dative preposition \"zu\" and its contractions with dative articles (zu+dem=zum, zu+der=zur), which is directly covered by the stated rule about Dativpräpositionen including \"zu\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360310367-2902kfyo",
+      "timestamp": "2026-06-13T14:18:53.471Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"zu\" is a dative preposition (listed in the rule) and that it triggers dative case (\"dem\" → \"zum\" with masculine \"Arzt\"), making the rule central to answering correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361069064-x86stn0z",
+      "timestamp": "2026-06-13T14:31:41.320Z"
+    }
+  ]
+}

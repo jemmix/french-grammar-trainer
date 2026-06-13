@@ -1,0 +1,33 @@
+{
+  "cacheKey": "be5a5944903629a8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-01-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-01 - Der bestimmte Artikel im Dativ: der→dem, die→der, das→dem, Plural→den\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie das Artikelwort im Dativ: „Er trinkt aus ___ Glas.\"\nChoices:\nA. [CORRECT] dem\nB. das\nC. des\nD. den\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781359485851-lznu5csy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the neuter nominative \"das\" → dative \"dem\" transformation, which is explicitly part of the stated rule about definite articles in the dative case.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359492900-v1nia2yj",
+      "timestamp": "2026-06-13T14:05:17.169Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that the neuter definite article \"das\" changes to \"dem\" in the dative case, which is exactly what rule 03-01 tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360605502-robbj9io",
+      "timestamp": "2026-06-13T14:23:44.822Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that the neuter definite article \"das\" changes to \"dem\" in the dative case after the preposition \"aus,\" which is precisely the transformation specified in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361417052-jz1wacc9",
+      "timestamp": "2026-06-13T14:37:15.328Z"
+    }
+  ]
+}

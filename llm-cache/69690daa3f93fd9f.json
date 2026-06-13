@@ -1,0 +1,40 @@
+{
+  "cacheKey": "69690daa3f93fd9f",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "03-07-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Welchen Artikel verlangt die Präposition „mit\"?\nPhrase: „Das Kind spielt mit ___ Ball.\nHint: „Ball\" ist maskulin.\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1781366171844-t01ma1tp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt asks specifically which article the preposition \"mit\" requires, the fill-in-the-blank format makes clear that an actual article form is needed (not just the case name), and the hint provides the necessary gender information to determine the answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781366178866-43lir56n",
+      "timestamp": "2026-06-13T15:59:07.985Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt clearly asks which article form the preposition \"mit\" requires, provides a contextual sentence showing where the blank is, and supplies the noun's gender, making the task well-defined without needing to see the rule title.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781366348700-9xyfqido",
+      "timestamp": "2026-06-13T15:59:36.935Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks \"Welchen Artikel\" without specifying definite vs. indefinite article, and since \"mit\" takes dative, both \"dem\" (definite) and \"einem\" (indefinite) are grammatically correct, leaving the learner unsure which answer is expected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781366376936-4f981nji",
+      "timestamp": "2026-06-13T16:00:13.476Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of evaluating a German grammar question prompt for clarity and unambiguity. The question asks \"Welchen Artikel verlangt die Präposition 'mit'?\" with the phrase \"Das Kind spielt mit ___ Ball\" and a hint that \"Ball\" is masculine.\n\n**Verdict I would have provided:**\nVERDICT: AMBIGUOUS\nREASON: The prompt asks \"which article does the preposition 'mit' require?\" but doesn't specify that the key information is the CASE (dative) that \"mit\" governs—without knowing this rule, a learner cannot determine whether the answer is \"der,\" \"den,\" \"dem,\" or \"des\" even with the gender hint provided.\n\n**Remaining tasks:** None—this was a single evaluation task.\n\n**Recommendations for next steps:** If generating or fixing German question content, ensure that prompts about prepositions and articles explicitly mention the relevant case (e.g., \"Welchen Artikel im Dativ verlangt die Präposition 'mit'?\") or provide enough context for learners to deduce the case.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781366413477-35sxabfd",
+      "timestamp": "2026-06-13T16:00:38.227Z"
+    }
+  ]
+}

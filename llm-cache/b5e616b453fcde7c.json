@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b5e616b453fcde7c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-10 - Wechselpräpositionen: Wo? (Dativ) vs. Wohin? (Akkusativ)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das Artikelwort.\nPhrase: „Ich lege das Buch auf ___ Tisch.\nCorrect Answer: den\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781372332837-po3qqkbu"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question uses \"auf\" (a Wechselpräposition) with the verb \"legen\" which indicates direction/movement (Wohin?), requiring the student to correctly choose the Akkusativ form \"den\" over the Dativ form \"dem\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781372334842-voz21t65",
+      "timestamp": "2026-06-13T17:39:14.493Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing \"auf\" as a Wechselpräposition, identifying that \"legen\" indicates direction (Wohin?) rather than static location (Wo?), and correctly applying Akkusativ (\"den\") — which is precisely the grammar distinction the rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781372387405-pdyb7hnb",
+      "timestamp": "2026-06-13T17:40:09.577Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"legen\" expresses direction (Wohin?) rather than location (Wo?), which determines that the Wechselpräposition \"auf\" takes Akkusativ (\"den\") instead of Dativ (\"dem\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781372409578-2lktox1u",
+      "timestamp": "2026-06-13T17:40:31.881Z"
+    }
+  ]
+}

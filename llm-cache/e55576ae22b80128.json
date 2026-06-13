@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e55576ae22b80128",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-07-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welche Verschmelzungsform ist richtig? „Ich gehe ___ Arzt.\"\n\nChoices:\nA. [CORRECT] zum\nB. [WRONG] zur\nC. [WRONG] beim\nD. [WRONG] vom\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781359485853-r49mtcit"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use either the wrong gender (zur), wrong preposition meaning (beim = at the, vom = from the), or wrong case agreement for \"zu + dem\" required by \"gehen zum Arzt.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359680333-kw6xeec9",
+      "timestamp": "2026-06-13T14:08:15.414Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that the wrong answers (B, C, D) in a German grammar MCQ about contractions (Verschmelzungsformen) are indeed incorrect. The question asks for the correct form in \"Ich gehe ___ Arzt\" (I go to the doctor).\n\nThe analysis:\n- B (\"zur\") is incorrect because \"Arzt\" is masculine (der Arzt), and \"zur\" contracts \"zu der\" which requires a feminine noun\n- C (\"beim\") is incorrect because it contracts \"bei dem\" and would mean \"at the doctor's\" not \"to the doctor\"\n- D (\"vom\") is incorrect because it contracts \"von dem\" and would mean \"from the doctor\" not \"to the doctor\"\n\nThe correct answer is A (\"zum\" = zu + dem), which is the standard German expression \"zum Arzt gehen.\"\n\nRemaining tasks: None - the verification is complete.\n\nRecommendation: The verdict is TRUE|B,C,D|All wrong answers are incorrect: B uses wrong gender agreement, C and D use wrong prepositions that change the meaning entirely.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360285136-r0nc97cx",
+      "timestamp": "2026-06-13T14:18:39.011Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||B uses the feminine contraction \"zur\" but \"Arzt\" is masculine requiring \"zum\"; C changes the preposition to \"bei\" which doesn't express going to the doctor; D uses \"vom\" meaning \"from the doctor\" which reverses the intended direction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361048346-yevedaqy",
+      "timestamp": "2026-06-13T14:31:07.630Z"
+    }
+  ]
+}

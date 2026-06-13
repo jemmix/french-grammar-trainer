@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6859c5a170493f6b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-04-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den Possessivartikel im Dativ: „Ich helfe ___ Vater im Garten.\"\n\nChoices:\nA. [CORRECT] meinem\nB. [WRONG] meiner\nC. [WRONG] meinen\nD. [WRONG] mein\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781359485855-p9qx4fj2"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers are grammatically incorrect: \"meiner\" is dative feminine/genitive (not masculine dative), \"meinen\" is accusative masculine (not dative), and \"mein\" is nominative/base form (not dative).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360129755-pmcdlinn",
+      "timestamp": "2026-06-13T14:16:19.254Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms for the dative masculine singular required by \"helfen\" + \"Vater\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361040779-vq9ww0pc",
+      "timestamp": "2026-06-13T14:33:28.323Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to verify that the wrong answers (B, C, D) in a German grammar multiple choice question about possessive articles in the dative case are indeed incorrect.\n\nAnalysis completed: The question asks for the dative form of \"mein\" before \"Vater\" (masculine). The correct answer is \"meinem\" (dative masculine). \n- B \"meiner\" is dative feminine - incorrect for masculine \"Vater\"\n- C \"meinen\" is accusative masculine - incorrect because \"helfen\" takes dative\n- D \"mein\" is nominative - incorrect because dative is required\n\nTRUE||All wrong answers use incorrect case endings: B is dative feminine, C is accusative masculine, and D is nominative, but the sentence requires dative masculine.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361944766-msd0w8ka",
+      "timestamp": "2026-06-13T14:46:33.809Z"
+    }
+  ]
+}

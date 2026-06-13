@@ -1,0 +1,33 @@
+{
+  "cacheKey": "92567432960abcad",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-06-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-06 - Personalpronomen im Dativ (mir, dir, ihm, ihr, uns, euch, ihnen)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das passende Personalpronomen.\nPhrase: „Das ist Anna. Das Auto gehört ___.\nCorrect Answer: ihr\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781359485852-it55dh23"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The verb \"gehören\" requires the dative case, so correctly filling in \"ihr\" (the dative form of \"sie\") directly tests knowledge of dative personal pronouns.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359606594-328slwvs",
+      "timestamp": "2026-06-13T14:07:33.602Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The verb \"gehören\" takes a dative object, and correctly completing the sentence requires knowing that the dative form of the personal pronoun \"sie\" (referring to Anna) is \"ihr\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360239331-5g1to8ob",
+      "timestamp": "2026-06-13T14:18:40.020Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate a single German grammar question to determine if it tests the stated rule (Personalpronomen im Dativ).\n\nVerdict: VERDICT: ALIGNED\nREASON: The verb \"gehören\" requires the dative case, and correctly answering requires knowing that the dative form of the feminine third-person pronoun \"sie\" (referring to Anna) is \"ihr\".\n\nNo remaining tasks — the single-question validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361049807-6h6quwke",
+      "timestamp": "2026-06-13T14:31:09.063Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c873a3a733de5125",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-06-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie das Personalpronomen. „Kannst du ___ bitte mit dem Koffer helfen?\"\n\nChoices:\nA. [CORRECT] mir\nB. [WRONG] mich\nC. [WRONG] dir\nD. [WRONG] ihn\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781359485850-0tbp2hes"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was evaluating a German grammar verification task for a multiple choice question about personal pronouns with the verb \"helfen\" (which requires dative case). The question \"Kannst du ___ bitte mit dem Koffer helfen?\" correctly uses \"mir\" (dative) as the answer.\n\nThe wrong answers verified:\n- B (mich) - Incorrect because \"helfen\" requires dative, not accusative\n- C (dir) - Incorrect because it changes meaning to reflexive \"help yourself\" which doesn't fit context\n- D (ihn) - Incorrect because it's accusative (dative \"ihm\" would be needed) and changes the meaning\n\nResult: TRUE||All wrong answers are incorrect—B uses accusative instead of required dative, C incorrectly uses reflexive form, and D uses accusative pronoun and changes the meaning of the sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359485858-vnax6r2e",
+      "timestamp": "2026-06-13T14:05:14.697Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B \"mich\" uses accusative instead of the dative required by \"helfen\", C \"dir\" would mean \"help yourself\" which doesn't fit the context, and D \"ihn\" uses accusative instead of dative (would need \"ihm\") and doesn't fit the self-referential context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360142460-x7dqs1um",
+      "timestamp": "2026-06-13T14:16:06.117Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B and D use accusative case instead of the dative required by \"helfen\", and C uses the wrong person (2nd person instead of 1st person), changing the meaning to a reflexive construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360874628-zbmlrmkd",
+      "timestamp": "2026-06-13T14:28:18.927Z"
+    }
+  ]
+}

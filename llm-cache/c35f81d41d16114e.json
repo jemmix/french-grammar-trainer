@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c35f81d41d16114e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-07-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den Artikel im Dativ: „Ich fahre mit ___ Auto.\"\n\nChoices:\nA. [CORRECT] dem\nB. [WRONG] den\nC. [WRONG] das\nD. [WRONG] des\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781359485853-4yuobd7l"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases: \"den\" is accusative masculine/dative plural, \"das\" is nominative/accusative neuter, and \"des\" is genitive—none match the required dative singular for the neuter noun \"Auto.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359650598-tq11mr3i",
+      "timestamp": "2026-06-13T14:07:44.956Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms: \"den\" is accusative masculine/plural, \"das\" is nominative/accusative neuter, and \"des\" is genitive masculine/neuter, none of which are the correct dative neuter form \"dem\" required after the preposition \"mit\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360253516-ajvezt79",
+      "timestamp": "2026-06-13T14:18:27.107Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms: \"den\" is accusative/plural, \"das\" is nominative/accusative neuter, and \"des\" is genitive, but the preposition \"mit\" requires dative, where the correct form for the neuter noun \"Auto\" is \"dem.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361034899-gb8jcqrq",
+      "timestamp": "2026-06-13T14:30:49.806Z"
+    }
+  ]
+}

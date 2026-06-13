@@ -1,0 +1,26 @@
+{
+  "cacheKey": "bc60745675162811",
+  "predicateId": "german-language",
+  "questionId": "03-10-009",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Wechselpräpositionen: Wo? (Dativ) vs. Wohin? (Akkusativ)\n\nQUESTION CONTENT:\nPrompt: Ergänzen Sie das Artikelwort.\nPhrase: „Das Buch liegt auf ___ Tisch.\nAnswer: dem\nHint: bestimmter Artikel\nExplanation: „liegen\" beschreibt eine Position (Wo?). Bei Two-Way-Präpositionen bedeutet Position Dativ. „Tisch\" ist maskulin, der Dativ lautet „dem\": „auf dem Tisch\".\nWrong answers:\n  - den („den\" ist der Akkusativ maskulin. „liegen\" beschreibt eine Position, deshalb steht der Dativ: „dem\".)\n  - der („der\" ist der Nominativ maskulin. Bei Position nach Two-Way-Präposition steht der Dativ: „dem\".)\n  - des („des\" ist der Genitiv maskulin. Bei Position steht der Dativ: „dem\".)\n  - das („das\" ist der Nominativ/Akkusativ neutral. „Tisch\" ist maskulin und bei Position steht der Dativ: „dem\".)\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1781372385394-5x73fff9"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains English term \"Two-Way-Präposition\" instead of the proper German term \"Wechselpräposition\" (which is even used in the rule title itself). This is an unnecessary mixing of English and German without clear pedagogical purpose.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781372428773-b0aas1l9",
+      "timestamp": "2026-06-13T17:41:11.756Z"
+    },
+    {
+      "raw": "VERDICT: ENGLISH_DETECTED\nREASON: The explanation and wrong answer explanations use \"Two-Way-Präpositionen\" which is English terminology. The correct German term is \"Wechselpräpositionen\" (as shown in the rule title itself). This is not a false friend contrast or cognate reference — it's simply untranslated English grammatical terminology.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781372471757-a54jd0kv",
+      "timestamp": "2026-06-13T17:41:34.555Z"
+    }
+  ]
+}

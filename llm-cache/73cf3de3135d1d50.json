@@ -1,0 +1,40 @@
+{
+  "cacheKey": "73cf3de3135d1d50",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-08-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-08 - Dativ und Akkusativ im selben Satz (indirektes + direktes Objekt)\n\nQUESTION:\nType: Input\nPrompt: Welchen Artikel verlangt „schenken\" für die Person?\nPhrase: „Der Onkel schenkt ___ Mädchen ein Spielzeug.\nCorrect Answer: dem\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781366915505-fqxlcjck"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core of the stated rule by requiring the learner to know that \"schenken\" takes dative for the person (indirect object) while \"ein Spielzeug\" is accusative (direct object), which is the exact grammar pattern the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781366915509-8tmw4dim",
+      "timestamp": "2026-06-13T16:09:04.435Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests knowing that \"schenken\" takes Dativ for the person, but doesn't test the distinction between Dativ (indirect object) and Akkusativ (direct object) in the same sentence since the Akkusativ object \"ein Spielzeug\" is already provided and correct.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781366944436-d0mipea2",
+      "timestamp": "2026-06-13T16:09:37.222Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the rule by requiring knowledge that \"schenken\" takes a dative indirect object (the person) and an accusative direct object (the gift), which is the exact dative+accusative co-occurrence pattern the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781366977223-3vp7tydh",
+      "timestamp": "2026-06-13T16:10:30.454Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question explicitly states \"für die Person,\" giving away which noun is the indirect object, so it only tests verb valency (schenken + person = dative) rather than the student's ability to identify and distinguish dative vs. accusative objects within the same sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781367030455-wdg8wrv6",
+      "timestamp": "2026-06-13T16:11:44.969Z"
+    }
+  ]
+}

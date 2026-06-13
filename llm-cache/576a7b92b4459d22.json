@@ -1,0 +1,26 @@
+{
+  "cacheKey": "576a7b92b4459d22",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-08-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-08 - Dativ und Akkusativ im selben Satz (indirektes + direktes Objekt)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie den bestimmten Artikel im Akkusativ.\nPhrase: „Herr Müller zeigt dem Schüler ___ Karte.\nCorrect Answer: die\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781359485855-ydxat7g2"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly instructs the student to provide the accusative article, so the question only tests definite article declension for a feminine noun, not the ability to identify which objects take dative vs. accusative in a dual-object sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359896299-y5lz2a06",
+      "timestamp": "2026-06-13T14:11:52.259Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use the accusative case (\"im Akkusativ\"), so answering correctly only requires knowing the accusative definite article form for a feminine noun, not understanding the rule about dative and accusative coexisting in the same sentence with verbs like \"zeigen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360518946-dm4mk713",
+      "timestamp": "2026-06-13T14:22:25.585Z"
+    }
+  ]
+}

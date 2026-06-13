@@ -1,0 +1,54 @@
+{
+  "cacheKey": "ce795104dadbcb6e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-09-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-09 - Nominativ, Akkusativ und Dativ im Vergleich\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Artikel ist richtig? „Buch\" ist direktes Objekt. — „Der Schüler liest ___ Buch.\"\nChoices:\nA. [CORRECT] das\nB. dem\nC. des\nD. der\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781359485855-z2rjeope"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question tests whether the student knows that a direct object (direktes Objekt) requires the accusative case and can select the correct accusative article \"das\" from a set of options including dative (dem), genitive (des), and other forms (der).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359924531-why23cf8",
+      "timestamp": "2026-06-13T14:12:28.208Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished: I was in the process of analyzing a German grammar validation question about whether a multiple-choice question properly tests the rule \"Nominativ, Akkusativ und Dativ im Vergleich\" (Comparison of Nominative, Accusative, and Dative cases).\n\nRemaining tasks: Complete the validation verdict for this single question.\n\nRecommendations for what should be done next: Here is my assessment of the question:\n\nVERDICT: ALIGNED\nREASON: The question tests whether the student knows that a direct object (direktes Objekt) takes the accusative case rather than nominative or dative, which is the core skill of comparing these three cases, even though the prompt explicitly identifies \"Buch\" as a direct object.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360567460-jd59jehd",
+      "timestamp": "2026-06-13T14:23:19.539Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly identifies \"Buch\" as a direct object (Akkusativ), so the student doesn't need to compare or distinguish between cases — they only need to recall that the accusative of \"das\" is \"das,\" which tests a narrower fact rather than the comparative rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361328597-7yki773k",
+      "timestamp": "2026-06-13T14:36:05.284Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core concept of case comparison by requiring the student to identify that a direct object takes the accusative case (\"das\") rather than dative (\"dem\"), genitive (\"des\"), or other forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361943081-pn31crj2",
+      "timestamp": "2026-06-13T14:46:03.311Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the distinction between cases (Nominativ \"der,\" Akkusativ \"das,\" Dativ \"dem,\" Genitiv \"des\") for a neuter noun, and while the prompt identifies \"Buch\" as a direct object, the student still must know that the accusative form of \"das\" remains \"das\" rather than selecting one of the other case forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781362534531-nwo8zx8v",
+      "timestamp": "2026-06-13T14:56:15.659Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly states \"Buch ist direktes Objekt\" which gives away that accusative is required, reducing the question to simple recall of the accusative form of \"das\" rather than testing the student's ability to compare and determine which case (Nominativ, Akkusativ, or Dativ) applies in a given sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781364315987-2d5xw2v5",
+      "timestamp": "2026-06-13T15:26:07.947Z"
+    }
+  ]
+}

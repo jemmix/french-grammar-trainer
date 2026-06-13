@@ -1,0 +1,33 @@
+{
+  "cacheKey": "09ebeb8101cb029c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-10-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den Artikel. „Die Lampe hängt über ___ Couch.\" (Wo?)\n\nChoices:\nA. [CORRECT] der\nB. [WRONG] die\nC. [WRONG] dem\nD. [WRONG] den\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781359485857-do5rici5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"die\" is nominative/accusative not dative, \"dem\" is dative but for masculine/neuter not feminine, and \"den\" is accusative masculine or dative plural, none of which match the feminine dative required after \"über\" with \"Wo?\" indicating location.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360098272-a2xfu1wx",
+      "timestamp": "2026-06-13T14:15:49.333Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses nominative/accusative instead of required dative, C uses dative masculine instead of dative feminine, and D uses accusative masculine instead of dative feminine.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360857920-w5n266pr",
+      "timestamp": "2026-06-13T14:27:54.627Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case or gender forms for the dative feminine article required after \"über\" with \"Wo?\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361608408-tpzg64ym",
+      "timestamp": "2026-06-13T14:40:29.415Z"
+    }
+  ]
+}

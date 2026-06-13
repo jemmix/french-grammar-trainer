@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c5cabe703f82ae6a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-09-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie ein Artikelwort im richtigen Kasus (Nominativ, Akkusativ oder Dativ). — „___ Lehrerin erklärt eine Regel.\"\n\nChoices:\nA. [CORRECT] Die\nB. [WRONG] Der\nC. [WRONG] Das\nD. [WRONG] Den\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781368731469-zeh9uloa"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers use wrong gender or case: \"Der\" is masculine, \"Das\" is neuter, and \"Den\" is accusative masculine, but \"Lehrerin\" requires feminine nominative \"Die\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781368802960-qqewc9t9",
+      "timestamp": "2026-06-13T16:40:24.377Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a German grammar verification task. The question asks to fill in the correct article for \"Lehrerin\" (feminine) which is the subject of \"erklärt\" and therefore requires nominative case (\"Die\").\n\nMy analysis:\n- B. \"Der Lehrerin\" - Wrong. \"Der\" with the dative -n ending would be correct dative feminine, but the subject must be nominative here\n- C. \"Das Lehrerin\" - Wrong. \"Das\" is neuter, incompatible with feminine \"Lehrerin\" in any case\n- D. \"Den Lehrerin\" - Wrong. \"Den\" is accusative masculine/dative plural, incompatible with feminine singular\n\nThe verdict would be: TRUE||All wrong answers are grammatically incompatible with \"Lehrerin\" being the nominative subject of this sentence.\n\nNo remaining tasks - the analysis was complete but the formatted response was not yet delivered.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781368954944-2tnm6yk1",
+      "timestamp": "2026-06-13T16:43:19.552Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers use articles that don't match the feminine gender or nominative case required for the subject \"Lehrerin.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781369094795-8s8y4ffq",
+      "timestamp": "2026-06-13T16:45:26.986Z"
+    }
+  ]
+}

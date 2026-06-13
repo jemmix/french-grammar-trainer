@@ -1,0 +1,33 @@
+{
+  "cacheKey": "347ce3f3e9326744",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-10-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Verb: legen\n\nChoices:\nA. [CORRECT] Ich lege das Buch auf den Tisch.\nB. [WRONG] Ich lege das Buch auf dem Tisch.\nC. [WRONG] Ich lege das Buch auf der Tisch.\nD. [WRONG] Ich lege das Buch auf des Tisch.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781359485856-7knen1ps"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses dative \"dem\" instead of accusative \"den\" required by the directional verb \"legen\"; C uses wrong gender \"der\" and also dative; D uses genitive \"des\" without proper inflection and genitive is not used with \"auf\" in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360048766-w2farqk9",
+      "timestamp": "2026-06-13T14:14:29.318Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases: B uses dative (dem) instead of accusative (den), C uses dative with wrong article form (der instead of dem), and D uses genitive (des) which is not valid with \"auf\" for this verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360723075-6m18zlia",
+      "timestamp": "2026-06-13T14:26:16.482Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses dative \"dem\" instead of accusative \"den\" for the directional verb \"legen\", C uses the wrong article \"der\" (incorrect gender form), and D incorrectly uses genitive \"des\" which is not used with \"auf\" in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361531725-yegyrfic",
+      "timestamp": "2026-06-13T14:39:18.399Z"
+    }
+  ]
+}

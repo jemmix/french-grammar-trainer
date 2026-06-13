@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a60277b1175a12a5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-08-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-08 - Dativ und Akkusativ im selben Satz (indirektes + direktes Objekt)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den Artikel. „Wir kaufen ___ Vater ein Geschenk.\"\nChoices:\nA. [CORRECT] dem\nB. den\nC. der\nD. des\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781366171841-0c6rx78a"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only requires recognizing that \"Vater\" is the indirect object and takes Dativ, but doesn't test the contrast between Dativ and Akkusativ in the same sentence since the direct object \"ein Geschenk\" is already correctly formed with no blank to fill.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781366175857-tr8rzerb",
+      "timestamp": "2026-06-13T15:56:38.951Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question about \"Dativ und Akkusativ im selben Satz\" (Dative and Accusative in the same sentence).\n\nHere is my assessment:\n\nVERDICT: ALIGNED\nREASON: The question requires identifying \"Vater\" as the indirect object in a dual-object construction with \"kaufen\" (buy someone something), which is precisely the dative-accusative sentence structure the rule covers — the student must recognize that the person receiving the gift takes dative while the direct object \"ein Geschenk\" (already provided) takes accusative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781366215627-c2rxjis5",
+      "timestamp": "2026-06-13T15:57:27.364Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what was accomplished:\nI was in the process of validating a German grammar question about \"Dativ und Akkusativ im selben Satz\" (dative and accusative in the same sentence).\n\nThe validation result:\n\nVERDICT: ALIGNED\nREASON: The question requires identifying \"Vater\" as the indirect object (dative) precisely because \"ein Geschenk\" is the direct object (accusative), directly testing the student's ability to distinguish dative and accusative objects within the same sentence structure \"jemandem etwas kaufen.\"\n\nNo remaining tasks - the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781366247365-owigybps",
+      "timestamp": "2026-06-13T15:58:38.645Z"
+    }
+  ]
+}

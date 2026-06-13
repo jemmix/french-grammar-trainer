@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e6992cfaf044b30e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-10-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welches Fragewort beantwortet dieser Satz? — „Die Katze schläft unter dem Bett.\"\n\nChoices:\nA. [CORRECT] Wo?\nB. [WRONG] Wohin?\nC. [WRONG] Woher?\nD. [WRONG] Womit?\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781359485856-k1dp7fki"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use question words for direction (Wohin), origin (Woher), or instrument (Womit), while \"unter dem Bett\" describes a static location that can only be answered with \"Wo?\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360015560-ecjs3z65",
+      "timestamp": "2026-06-13T14:13:58.083Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers are incorrect: \"Wohin?\" asks about direction/movement not applicable to the static position \"unter dem Bett,\" \"Woher?\" asks about origin which is irrelevant, and \"Womit?\" asks about means/instrument which has no connection to the sentence's meaning.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360677957-rkp9izk5",
+      "timestamp": "2026-06-13T14:25:15.835Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: Wohin asks for direction/destination, not static location; Woher asks about origin; Womit asks about means/instrument.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361470901-c8a6r9vx",
+      "timestamp": "2026-06-13T14:38:06.783Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "a204d3f9491220c2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-08-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-08 - Dativ und Akkusativ im selben Satz (indirektes + direktes Objekt)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie den bestimmten Artikel.\nPhrase: „Herr Müller zeigt dem Schüler ___ Karte.\nCorrect Answer: die\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781365497385-olmzt0r9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"Karte\" is the direct object in accusative (die) while \"dem Schüler\" is the indirect object in dative, directly testing the distinction between dative and accusative objects in the same sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781365554473-zpum6mom",
+      "timestamp": "2026-06-13T15:46:21.972Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a German grammar question about filling in the definite article for \"Karte\" in the sentence \"Herr Müller zeigt dem Schüler ___ Karte\" properly tests the rule \"Dativ und Akkusativ im selben Satz (indirektes + direktes Objekt)\".\n\nMy assessment:\nVERDICT: MISALIGNED\nREASON: The correct answer \"die\" is identical to the nominative form, so a student could answer correctly by simply knowing the basic article for \"Karte\" without understanding that it should be in the accusative case as the direct object alongside the dative indirect object \"dem Schüler\".\n\nRemaining tasks: None - this was a single validation request.\n\nRecommendation: To properly test this rule, use a masculine or neuter noun for the direct object where the accusative form differs from the nominative (e.g., \"den Kugelschreiber\" or \"das Buch\" → \"das\" would still be same, so better: \"den Bleistift\" or \"den Ball\"), or restructure the question to explicitly ask about case assignment.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781365692718-3471xw44",
+      "timestamp": "2026-06-13T15:49:02.896Z"
+    }
+  ]
+}

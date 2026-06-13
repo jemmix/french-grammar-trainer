@@ -1,0 +1,33 @@
+{
+  "cacheKey": "42c2377ac74f4225",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-09-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie ein Artikelwort im richtigen Kasus (Nominativ, Akkusativ oder Dativ). — „Der Schüler liest ___ Buch.\"\n\nChoices:\nA. [CORRECT] das\nB. [WRONG] dem\nC. [WRONG] des\nD. [WRONG] der\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781368731469-6ji95i17"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases (dem = Dativ, des = Genitiv not in scope, der = wrong gender) for the neuter accusative object required by \"liest.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781368816324-ctx56g4e",
+      "timestamp": "2026-06-13T16:40:43.995Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"dem\" is dative not accusative, \"des\" is genitive which is explicitly excluded from the allowed cases, and \"der\" is not a valid article form for neuter \"Buch\" in nominative, accusative, or dative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781368963672-ks468gwm",
+      "timestamp": "2026-06-13T16:43:14.026Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases for the neuter noun \"Buch\" as a direct object requiring accusative: \"dem\" is dative, \"des\" is genitive, and \"der\" is not a valid form for neuter in any case.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781369089113-7sti87fn",
+      "timestamp": "2026-06-13T16:45:04.692Z"
+    }
+  ]
+}

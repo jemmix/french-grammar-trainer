@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f430a24fb1e370d5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-06-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-06 - Personalpronomen im Dativ (mir, dir, ihm, ihr, uns, euch, ihnen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie das Personalpronomen. „Der Onkel war sehr hilfsbereit. Wir danken ___ für das schöne Geschenk.\"\nChoices:\nA. [CORRECT] ihm\nB. ihn\nC. ihr\nD. uns\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781365448452-vmefrk1f"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"danken\" takes a dative object and that the dative form of \"er\" (referring to \"Der Onkel\") is \"ihm,\" which is precisely the stated rule about dative personal pronouns.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781365517044-xg5tnu99",
+      "timestamp": "2026-06-13T15:46:07.125Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct Dativ personal pronoun \"ihm\" for \"der Onkel\" with the dative-governing verb \"danken,\" and the key distractor \"ihn\" (Akkusativ) directly tests whether the learner knows to use Dativ rather than Akkusativ here.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781365684924-9oacdd7d",
+      "timestamp": "2026-06-13T15:48:33.440Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a German grammar question about dative personal pronouns. The question asks students to fill in the blank in \"Wir danken ___ für das schöne Geschenk\" with the correct dative pronoun referring to \"Der Onkel.\"\n\n**Verdict and reasoning (completed analysis):**\nVERDICT: ALIGNED\nREASON: The question requires selecting the correct dative personal pronoun \"ihm\" for a masculine singular referent, distinguishing it from the accusative \"ihn\" and other forms, which is exactly what rule 03-06 covers.\n\n**Remaining tasks:**\nNone — the validation task was completed before the step limit was reached.\n\n**Recommendations:**\nNo further action needed for this particular question validation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781365815416-0zw2n95k",
+      "timestamp": "2026-06-13T15:50:42.683Z"
+    }
+  ]
+}

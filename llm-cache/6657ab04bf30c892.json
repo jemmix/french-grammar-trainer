@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6657ab04bf30c892",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-10-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den Artikel. „Ich lege das Buch auf ___ Tisch.\"\n\nChoices:\nA. [CORRECT] den\nB. [WRONG] dem\nC. [WRONG] der\nD. [WRONG] des\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781359485856-oyx31h86"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: \"dem\" would require a dative context (e.g., \"liegen\" instead of \"legen\"), while \"der\" and \"des\" are wrong case/gender forms for masculine accusative \"Tisch.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360038077-zfsvsiga",
+      "timestamp": "2026-06-13T14:14:50.903Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers use incorrect cases: B uses dative (which would require a static verb like \"liegen\" instead of \"legen\"), C uses nominative/feminine genitive which doesn't match masculine \"Tisch,\" and D uses genitive which is not used with \"auf\" in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360767234-3a9qglvd",
+      "timestamp": "2026-06-13T14:26:27.594Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to verify that wrong answers B, C, and D in a German grammar multiple-choice question are indeed incorrect. The question asks for the correct article in \"Ich lege das Buch auf ___ Tisch.\" The correct answer is A (\"den\" - accusative masculine, required after \"auf\" with the motion verb \"legen\"). \n\nRemaining tasks: None - I was able to complete the verification mentally.\n\nRecommendation for next step: The verdict is TRUE - all wrong answers are incorrect. B (\"dem\") is dative which would only work with a static location verb like \"liegen,\" not the motion verb \"legen.\" C (\"der\") is either dative feminine or genitive, neither correct here. D (\"des\") is genitive, which is not used after \"auf\" in this construction.\n\nTRUE||All wrong answers use incorrect cases (dative or genitive) instead of the required accusative after \"auf\" with a verb of motion like \"legen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361534816-068t26w0",
+      "timestamp": "2026-06-13T14:39:38.513Z"
+    }
+  ]
+}

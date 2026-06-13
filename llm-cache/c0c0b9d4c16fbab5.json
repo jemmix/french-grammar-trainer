@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c0c0b9d4c16fbab5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-07-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Sie kommt aus der Schweiz.\nB. [WRONG] Sie kommt aus die Schweiz.\nC. [WRONG] Sie kommt aus den Schweiz.\nD. [WRONG] Sie kommt aus des Schweiz.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781359485853-gfeyvtd7"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was evaluating a German grammar verification task for the question \"Welcher Satz ist grammatikalisch richtig?\" with four choices about the correct prepositional phrase with \"Schweiz.\"\n\nThe verdict for this question would be: TRUE||All wrong answers contain clear grammar errors - B uses accusative \"die\" instead of dative \"der\" after \"aus\", C uses plural \"den\" for a singular feminine noun, and D uses genitive \"des\" instead of dative.\n\nNo remaining tasks - the evaluation was straightforward and complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359663315-oqt1gwsz",
+      "timestamp": "2026-06-13T14:08:01.966Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect articles with \"aus\" and \"Schweiz\" (feminine, dative requires \"der\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360265741-4nxsbizl",
+      "timestamp": "2026-06-13T14:18:04.564Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the correct dative feminine article \"der\" required after the preposition \"aus\" with the feminine country name \"Schweiz\": \"die\" is accusative (B), \"den\" is dative plural/masculine (C), and \"des\" is genitive (D).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361009423-zy5v5gc0",
+      "timestamp": "2026-06-13T14:30:34.898Z"
+    }
+  ]
+}

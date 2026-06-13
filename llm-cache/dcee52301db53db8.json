@@ -1,0 +1,47 @@
+{
+  "cacheKey": "dcee52301db53db8",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-10-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-10 - Wechselpräpositionen: Wo? (Dativ) vs. Wohin? (Akkusativ)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das Artikelwort. (Position: Wo?)\nPhrase: „Die Kinder spielen in ___ Garten.\nCorrect Answer: dem\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781372119192-r9cu2lq6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the Wechselpräposition rule by requiring the student to recognize that \"in\" with a static location (\"Wo?\") takes Dativ, producing \"dem\" Garten.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781372119196-o2keguwt",
+      "timestamp": "2026-06-13T17:35:34.959Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that the two-way preposition \"in\" takes Dativ when expressing location (Wo?), and \"dem\" is the correct Dativ form of the masculine article \"der\" for \"Garten.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781372134961-1txqm0w8",
+      "timestamp": "2026-06-13T17:35:47.505Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly states \"(Position: Wo?)\", giving away the case distinction that is the core of the Wechselpräposition rule, so the question primarily tests Dativ declension rather than the ability to distinguish static location from directional movement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781372147505-2nu16sv9",
+      "timestamp": "2026-06-13T17:36:37.423Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question about Wechselpräpositionen. Here is my assessment:\n\nVERDICT: ALIGNED\nREASON: The question tests whether the student knows that \"Wo?\" with the Wechselpräposition \"in\" requires Dativ, and correctly provides the dative article \"dem\" for the masculine noun \"Garten\" — this is the core of the stated rule.\n\nNo remaining tasks — this was a single-question validation that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781372204416-b7os9s4v",
+      "timestamp": "2026-06-13T17:37:29.059Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the Wechselpräposition rule by using \"in\" with a \"Wo?\" (position) context, requiring the learner to know that this triggers Dativ to produce \"dem\" for the masculine \"Garten.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781372249060-2c7iqvl4",
+      "timestamp": "2026-06-13T17:37:57.152Z"
+    }
+  ]
+}

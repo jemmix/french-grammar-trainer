@@ -1,0 +1,33 @@
+{
+  "cacheKey": "48fdac4192325005",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-02-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den unbestimmten Artikel im Dativ. „Ich helfe ___ Lehrer.\"\n\nChoices:\nA. [CORRECT] einem\nB. [WRONG] einer\nC. [WRONG] einen\nD. [WRONG] eines\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781359485853-k30mksu2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use wrong cases: B is feminine dative, C is masculine accusative, and D is masculine/neuter genitive, but \"helfen\" requires the dative case and \"Lehrer\" is masculine.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359684529-3qaod4bc",
+      "timestamp": "2026-06-13T14:12:38.742Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was in the process of verifying the wrong answers in a German grammar multiple choice question about the indefinite article in the dative case for the masculine noun \"Lehrer.\"\n\nThe analysis shows:\n- B (\"einer\") - incorrect: this is dative feminine or genitive feminine, not dative masculine\n- C (\"einen\") - incorrect: this is accusative masculine, not dative\n- D (\"eines\") - incorrect: this is genitive masculine/neuter, not dative\n\nThe correct answer is A (\"einem\"), which is the proper dative form of \"ein\" for masculine nouns.\n\nResult: TRUE||All wrong answers use incorrect case forms of the indefinite article (dative feminine, accusative masculine, and genitive respectively) instead of the required dative masculine \"einem.\"\n\nNo remaining tasks - the verification is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360895351-5pr19ktf",
+      "timestamp": "2026-06-13T14:28:43.959Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers are incorrect: \"einer\" is feminine dative, \"einen\" is masculine accusative, and \"eines\" is masculine/neuter genitive, but the question requires the masculine dative form \"einem\" for the noun \"Lehrer.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361727826-vx7nszf3",
+      "timestamp": "2026-06-13T14:42:25.108Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ed3643afd98f4ca2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-08-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? – bringen\n\nChoices:\nA. [CORRECT] Er bringt dem Nachbarn den Kuchen.\nB. [WRONG] Er bringt den Nachbarn den Kuchen.\nC. [WRONG] Er bringt der Nachbar den Kuchen.\nD. [WRONG] Er bringt dem Nachbarn der Kuchen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781359485854-o4p4lj98"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers have clear case errors: B uses accusative instead of dative for the recipient, C uses nominative instead of dative, and D uses nominative instead of accusative for the direct object.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359858798-a6d0oh8s",
+      "timestamp": "2026-06-13T14:11:18.495Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain case errors: B uses accusative instead of dative for the recipient, C uses nominative instead of dative for the recipient, and D uses dative instead of accusative for the direct object.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360455883-s89cxz0y",
+      "timestamp": "2026-06-13T14:21:54.732Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear case errors: B uses accusative instead of dative for the recipient, C uses nominative instead of dative, and D uses nominative instead of accusative for the object.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361272328-mrwd24fv",
+      "timestamp": "2026-06-13T14:35:25.976Z"
+    }
+  ]
+}

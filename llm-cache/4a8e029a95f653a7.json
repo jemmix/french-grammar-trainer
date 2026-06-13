@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4a8e029a95f653a7",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "03-10-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Welcher Artikel fehlt?\nPhrase: „Wir gehen in ___ Garten.\nHint: Achten Sie auf das Verb „gehen\". Beschreibt es einen Ort oder eine Bewegung?\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1781359485857-4tk04mo3"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of evaluating a German language learning question for clarity and ambiguity. The question asked \"Welcher Artikel fehlt?\" with a phrase containing a blank before \"Garten\" and a hint about whether the verb \"gehen\" describes a location or movement.\n\nVERDICT: AMBIGUOUS\nREASON: The prompt asks \"which article is missing?\" but the hint discusses movement vs. location without explaining their connection, leaving learners without the rule context unable to understand why the hint is relevant to choosing an article.\n\nThe fundamental issue is that the prompt and hint are disconnected—the learner needs to understand the two-way preposition rule (in + accusative for movement, in + dative for location) to see why the hint matters, but this connection is never made explicit.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360129212-klzjqsb0",
+      "timestamp": "2026-06-13T14:15:55.451Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The hint explicitly directs the learner to consider whether the verb indicates location or movement, which is the key distinction needed to choose between dative and accusative articles, making the task well-defined despite the generic main prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360860138-wsvtjm2l",
+      "timestamp": "2026-06-13T14:29:21.623Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The hint asks whether \"gehen\" describes a location or movement, but \"gehen\" inherently indicates movement, making the hint's question feel like a false choice that could confuse learners about what distinction they're actually being asked to apply.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361659324-x6iq7z8k",
+      "timestamp": "2026-06-13T14:41:30.476Z"
+    }
+  ]
+}

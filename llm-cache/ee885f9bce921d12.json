@@ -1,0 +1,40 @@
+{
+  "cacheKey": "ee885f9bce921d12",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-05-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-05 - Verben mit Dativobjekt (helfen, danken, folgen, gefallen, gehören)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den bestimmten Artikel im Dativ. „Kannst du ___ Chef dabei helfen?\"\nChoices:\nA. [CORRECT] dem\nB. den\nC. einem\nD. einen\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781367021297-pvxngocv"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a German grammar question about \"helfen\" properly tests the rule about verbs with dative objects.\n\nVERDICT: ALIGNED\nREASON: The question directly tests knowledge that \"helfen\" takes a dative object, as choosing the correct answer \"dem\" over the accusative \"den\" requires knowing this specific verb's case government.\n\nNo remaining tasks - the validation was completed in this single step.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781367021335-45jsnyw1",
+      "timestamp": "2026-06-13T16:11:51.136Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a German grammar question against its stated rule. The analysis was nearly complete.\n\n**Validation result for the pending question:**\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly states \"im Dativ\", so the learner doesn't need to know that \"helfen\" takes a dative object—they only need to know the dative form of the masculine definite article, making this a test of article declension rather than verbs with dative objects.\n\n**Remaining tasks:**\n- None. This was a single-question validation task that has been completed in this response.\n\n**Recommendations:**\nTo properly test the rule \"Verben mit Dativobjekt (helfen, danken, folgen, gefallen, gehören)\", the question should NOT explicitly mention \"im Dativ\" in the prompt. Instead, the learner should need to recognize that \"helfen\" requires a dative object and then select the correct form. For example: \"Kannst du ___ Chef dabei helfen?\" with choices including both dative and accusative forms, without any case hint in the prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781367111136-2lg8mmjd",
+      "timestamp": "2026-06-13T16:12:11.579Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a German grammar question about \"helfen\" with dative objects is properly aligned with the stated rule \"Verben mit Dativobjekt (helfen, danken, folgen, gefallen, gehören).\"\n\nVERDICT: ALIGNED\nREASON: To choose \"dem\" over \"den,\" the learner must know that \"helfen\" takes a dative object rather than accusative, which is exactly the core knowledge the stated rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781367131580-ota4p8ya",
+      "timestamp": "2026-06-13T16:12:21.652Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly states \"im Dativ,\" so answering correctly only requires knowing the dative definite article declension for masculine nouns (\"dem\"), not knowing that \"helfen\" is a verb that takes a dative object.\n\nMaximum steps for this agent have been reached. The validation task has been completed with the verdict provided above. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781367141653-9ptwnqkx",
+      "timestamp": "2026-06-13T16:12:37.956Z"
+    }
+  ]
+}

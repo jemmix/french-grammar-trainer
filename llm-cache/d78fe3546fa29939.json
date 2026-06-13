@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d78fe3546fa29939",
+  "predicateId": "german-language",
+  "questionId": "03-06-002",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Personalpronomen im Dativ (mir, dir, ihm, ihr, uns, euch, ihnen)\n\nQUESTION CONTENT:\nPrompt: Ergänzen Sie das Personalpronomen. „Du behauptest das, aber ich glaube ___ kein Wort!\"\nChoices:\nA. [correct] dir\n   Explanation: glauben verlangt den Dativ. Die 2. Person Singular im Dativ lautet „dir\": „Ich glaube dir kein Wort.\" – Der Angesprochene ist mit „du\" gemeint.\nB. dich\n   Explanation: „dich\" ist die 2. Person Singular im Akkusativ. glauben verlangt den Dativ: „dir\".\nC. mir\n   Explanation: „mir\" ist die 1. Person Singular im Dativ. Der Kasus stimmt, aber die Person ist falsch – gemeint ist die 2. Person („du\" → „dir\").\nD. ihm\n   Explanation: „ihm\" ist die 3. Person Singular maskulin im Dativ. Falsche Person. Gesucht ist die 2. Person Dativ: „dir\".\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1781365448452-3sbd7005"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781365873763-pc7fs4h8",
+      "timestamp": "2026-06-13T15:51:22.709Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781365907637-mlms7wh3",
+      "timestamp": "2026-06-13T15:52:11.337Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781365968510-3z53b761",
+      "timestamp": "2026-06-13T15:53:12.666Z"
+    }
+  ]
+}

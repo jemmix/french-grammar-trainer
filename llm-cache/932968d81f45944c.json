@@ -1,0 +1,33 @@
+{
+  "cacheKey": "932968d81f45944c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-05-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den Artikel. „Das Fahrrad gehört ___ Nachbarin von nebenan.\"\n\nChoices:\nA. [CORRECT] der\nB. [WRONG] die\nC. [WRONG] einer\nD. [WRONG] eine\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781359485856-jlkwb9xg"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the nominative/accusative form \"die\" instead of the required dative \"der\"; C uses the indefinite article which doesn't fit the definite context of \"von nebenan\" specifying a particular neighbor; D uses the nominative/accusative form \"eine\" instead of the dative \"einer\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360535593-1kzdjzpl",
+      "timestamp": "2026-06-13T14:22:48.400Z"
+    },
+    {
+      "raw": "TRUE||B and D use nominative/accusative case instead of the required dative; C uses the indefinite article \"einer\" which is semantically incorrect because the specifying phrase \"von nebenan\" makes the noun definite, requiring \"der.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361321593-rr5ntpsn",
+      "timestamp": "2026-06-13T14:36:27.665Z"
+    },
+    {
+      "raw": "TRUE||B uses the wrong case (nominative/accusative instead of dative), C uses the indefinite article which doesn't fit the context of referring to a specific known neighbor, and D uses the wrong case for the indefinite article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781362101241-uhy6zotb",
+      "timestamp": "2026-06-13T14:48:40.960Z"
+    }
+  ]
+}

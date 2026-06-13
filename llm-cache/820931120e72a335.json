@@ -1,0 +1,33 @@
+{
+  "cacheKey": "820931120e72a335",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-01-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-01 - Der bestimmte Artikel im Dativ: der→dem, die→der, das→dem, Plural→den\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das Artikelwort im Dativ.\nPhrase: „Die Lehrerin hilft ___ Schülern.\nCorrect Answer: den\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781359485852-6mu3bs8e"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying that \"Schülern\" is dative plural and applying the rule transformation Plural→den to produce the correct definite article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359671120-vbkzo5b8",
+      "timestamp": "2026-06-13T14:08:04.529Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"Schülern\" is plural and that \"helfen\" takes the dative, then applying the rule that the plural definite article changes from \"die\" to \"den\" in the dative — exactly the transformation specified in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360703247-y3e6khgl",
+      "timestamp": "2026-06-13T14:25:27.674Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"helfen\" takes dative and that the dative plural definite article is \"den\" (not \"die\"), which is exactly what rule 03-01 covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361492450-yq58dvsk",
+      "timestamp": "2026-06-13T14:38:45.718Z"
+    }
+  ]
+}

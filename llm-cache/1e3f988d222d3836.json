@@ -1,0 +1,26 @@
+{
+  "cacheKey": "1e3f988d222d3836",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-08-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den bestimmten Artikel. „Sie schenkt ___ Freundin eine Blume.\"\n\nChoices:\nA. [CORRECT] der\nB. [WRONG] die\nC. [WRONG] dem\nD. [WRONG] einer\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781365497372-23t34uxc"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B \"die\" is nominative/accusative not dative, C \"dem\" is masculine/neuter dative not feminine dative, and D \"einer\" is an indefinite article when the question explicitly asks for a definite article (bestimmten Artikel).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781365497390-9vq1k7ri",
+      "timestamp": "2026-06-13T15:45:36.504Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was evaluating a German grammar verification task for the question \"Ergänzen Sie den bestimmten Artikel. 'Sie schenkt ___ Freundin eine Blume.'\" The task was to verify that wrong answers B (\"die\"), C (\"dem\"), and D (\"einer\") are indeed incorrect.\n\nAnalysis completed:\n- B (\"die\") is incorrect because the indirect object \"Freundin\" requires dative case, not nominative/accusative\n- C (\"dem\") is incorrect because \"dem\" is dative masculine/neuter, but \"Freundin\" is feminine\n- D (\"einer\") is incorrect because the question explicitly asks for the definite article (\"bestimmten Artikel\"), and \"einer\" is indefinite\n\nThe verdict would be: TRUE||All wrong answers are incorrect—B uses wrong case, C uses wrong gender, and D uses an indefinite article when a definite article was requested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781365617344-dnbc1zdg",
+      "timestamp": "2026-06-13T15:47:40.393Z"
+    }
+  ]
+}

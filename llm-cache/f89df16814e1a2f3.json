@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f89df16814e1a2f3",
+  "predicateId": "german-language",
+  "questionId": "03-06-010",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Personalpronomen im Dativ (mir, dir, ihm, ihr, uns, euch, ihnen)\n\nQUESTION CONTENT:\nPrompt: Ergänzen Sie das passende Personalpronomen.\nPhrase: „Das sind meine Freunde. Ich danke ___ für alles.\nAnswer: ihnen\nHint: Personalpronomen Dativ\nExplanation: danken verlangt den Dativ. „Meine Freunde\" ist die 3. Person Plural. Der Dativ lautet „ihnen\": „Ich danke ihnen für alles.\"\nWrong answers:\n  - sie („sie\" ist der Akkusativ oder Nominativ der 3. Person Plural. danken verlangt den Dativ: „ihnen\".)\n  - uns („uns\" ist der Dativ der 1. Person Plural. Die Freunde sind die 3. Person, nicht die 1. Person. Gesucht ist „ihnen\".)\n  - euch („euch\" ist der Dativ der 2. Person Plural. Die Freunde sind die 3. Person, nicht die 2. Person. Gesucht ist „ihnen\".)\n  - ihm („ihm\" ist der Dativ der 3. Person Singular maskulin. „Freunde\" steht aber im Plural, deshalb heißt es „ihnen\".)\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1781359485853-ttuf5tg3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781361751535-c71tuqc0",
+      "timestamp": "2026-06-13T14:42:41.684Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781362344914-dhi4g8jh",
+      "timestamp": "2026-06-13T14:52:35.528Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781362954414-59r9li0g",
+      "timestamp": "2026-06-13T15:03:14.132Z"
+    }
+  ]
+}

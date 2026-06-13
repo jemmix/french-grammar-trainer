@@ -1,0 +1,33 @@
+{
+  "cacheKey": "85d83f7b467bf2e6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "03-09-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie ein Artikelwort im richtigen Kasus (Nominativ, Akkusativ oder Dativ). — „Der Schüler antwortet ___ Lehrerin.\"\n\nChoices:\nA. [CORRECT] der\nB. [WRONG] die\nC. [WRONG] dem\nD. [WRONG] den\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781370645752-q9d5r3ce"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use the wrong case or gender article for the feminine noun \"Lehrerin\" which requires the dative article \"der\" with the verb \"antworten\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781370645770-2fxcvnpk",
+      "timestamp": "2026-06-13T17:11:11.599Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case or gender forms for the dative feminine article required by the verb \"antworten\" with the feminine noun \"Lehrerin.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781370671603-pdeheh26",
+      "timestamp": "2026-06-13T17:12:02.155Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was in the process of evaluating a German grammar verification task for a multiple choice question about articles in the correct case. The question asks to fill in the blank in \"Der Schüler antwortet ___ Lehrerin.\" with the correct article in the appropriate case.\n\nAnalysis completed:\n- \"Antworten\" requires the dative case\n- The noun \"Lehrerin\" is feminine\n- The correct dative feminine article is \"der\" (choice A)\n- B (\"die\") is nominative/accusative, not dative - INCORRECT\n- C (\"dem\") is dative masculine/neuter, not feminine - INCORRECT  \n- D (\"den\") is accusative masculine - INCORRECT\n\nAll wrong answers have been verified as incorrect.\n\nRecommendations for what should be done next:\nThe verdict for this question is: TRUE||All wrong answers use the wrong case or gender for the dative object required by \"antworten.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781370722155-luzipq6d",
+      "timestamp": "2026-06-13T17:14:35.425Z"
+    }
+  ]
+}

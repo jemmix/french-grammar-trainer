@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3dccb1bb2201e3ed",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-07-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-07 - Dativpräpositionen: aus, bei, mit, nach, seit, von, zu, gegenüber\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie den bestimmten Artikel im Dativ.\nPhrase: „Sie wohnt bei ___ Großmutter.\nCorrect Answer: der\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781359485854-r1h8ppv5"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was in the process of validating whether a German grammar question about dative prepositions is properly aligned with its stated rule. The analysis was complete but the response was not yet delivered.\n\n**Verdict and reasoning determined:**\nVERDICT: MISALIGNED\nREASON: The question primarily tests dative article declension (die → der for feminine nouns), not the rule about which prepositions take the dative, since the prompt explicitly tells students to use the dative case, making knowledge of \"bei\" as a Dativpräposition unnecessary to answer correctly.\n\n**Remaining tasks:**\n- None beyond delivering this single validation response.\n\n**Recommendations:**\n- To properly test the Dativpräpositionen rule, the question should NOT explicitly state \"im Dativ\" in the prompt, and should instead require students to recognize that \"bei\" triggers the dative case based on their knowledge of which prepositions take the dative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781359761712-z811qn0p",
+      "timestamp": "2026-06-13T14:10:49.229Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly states \"im Dativ,\" giving away the case, so the question only tests dative article declension and gender recognition of \"Großmutter,\" not whether the student knows that \"bei\" is a dative preposition.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781360418922-z1zwc03l",
+      "timestamp": "2026-06-13T14:21:01.106Z"
+    }
+  ]
+}

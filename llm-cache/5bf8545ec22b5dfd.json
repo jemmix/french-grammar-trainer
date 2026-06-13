@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5bf8545ec22b5dfd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "03-07-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Dativ\n\nRULE BEING TESTED: 03-07 - Dativpräpositionen: aus, bei, mit, nach, seit, von, zu, gegenüber\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie den bestimmten Artikel nach „bei\".\nPhrase: „Sie wohnt bei ___ Großmutter.\nCorrect Answer: der\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781367577475-u32374vr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"bei\" is a Dativpräposition requiring the dative case, as the correct answer \"der\" (feminine dative) cannot be determined without knowing this specific preposition's case governance.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781367579480-rktbymi9",
+      "timestamp": "2026-06-13T16:19:59.651Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests that \"bei\" is a Dativpräposition by requiring the dative form \"der\" (feminine dative) rather than the nominative \"die\", which cannot be answered correctly without knowing the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781367599651-ds6rim6w",
+      "timestamp": "2026-06-13T16:20:15.597Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a German grammar question about the Dativpräposition \"bei\" properly tests the stated rule (03-07 - Dativpräpositionen: aus, bei, mit, nach, seit, von, zu, gegenüber).\n\nVERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"bei\" is a Dativpräposition that requires the dative form of the definite article (feminine \"die\" → dative \"der\"), which is precisely the knowledge covered by the stated rule.\n\nNo remaining tasks — the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781367615598-s7dcq8kv",
+      "timestamp": "2026-06-13T16:20:29.115Z"
+    }
+  ]
+}
