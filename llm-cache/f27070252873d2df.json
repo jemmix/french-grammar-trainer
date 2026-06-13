@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f27070252873d2df",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-07-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-07 - Akkusativpräpositionen: durch, für, gegen, ohne, um\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatisch korrekt? (Achten Sie auf den Kasus nach der Präposition.)\nChoices:\nA. [CORRECT] « Wir fahren durch den Wald. »\nB. « Wir fahren durch dem Wald. »\nC. « Das Geschenk ist für dem Kind. »\nD. « Er kämpft gegen dem Strom. »\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781350627627-l7ougfhj"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests knowledge that durch, für, and gegen require the Akkusativ, as all three wrong choices incorrectly use these prepositions with Dativ forms (dem) instead of the correct Akkusativ forms (den/das).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781350627630-xm91kqhf",
+      "timestamp": "2026-06-13T11:37:21.749Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: All incorrect options use dative forms after accusative prepositions (durch, für, gegen), so answering correctly requires knowing that these specific prepositions govern the accusative case.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781350641750-o3jrrh5o",
+      "timestamp": "2026-06-13T11:37:35.249Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge that durch, für, and gegen require the accusative case by contrasting correct accusative forms with incorrect dative forms after these prepositions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781350655262-2tgq17s1",
+      "timestamp": "2026-06-13T11:37:46.514Z"
+    }
+  ]
+}

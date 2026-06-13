@@ -933,12 +933,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-07",
       generatedBy: "sonnet",
-      prompt: "Welcher Satz verwendet die Akkusativpräposition mit dem richtigen Kasus?",
+      prompt: "Welcher Satz ist grammatisch korrekt? (Achten Sie auf den Kasus nach der Präposition.)",
       choices: [
-        { text: "« Wir fahren durch den Tunnel. »", correct: true, explanation: "« Durch » ist eine Akkusativpräposition. Bei einem maskulinen Nomen steht der Akkusativ « den »." },
-        { text: "« Wir fahren durch dem Tunnel. »", correct: false, explanation: "« Dem » ist Dativ. Die Akkusativpräposition « durch » verlangt « den Tunnel »." },
-        { text: "« Wir fahren mit den Tunnel. »", correct: false, explanation: "« Mit » ist eine Dativpräposition und verlangt « dem Tunnel ». « Den » ist hier falsch." },
-        { text: "« Wir fahren zu den Tunnel. »", correct: false, explanation: "« Zu » ist eine Dativpräposition und verlangt « zum Tunnel ». « Den » ist hier falsch." },
+        { text: "« Wir fahren durch den Wald. »", correct: true, explanation: "« Durch » ist eine Akkusativpräposition und verlangt den Akkusativ. Bei maskulin steht « den Wald » korrekt." },
+        { text: "« Wir fahren durch dem Wald. »", correct: false, explanation: "« Dem » ist Dativ. Die Akkusativpräposition « durch » verlangt « den Wald », nicht « dem Wald »." },
+        { text: "« Das Geschenk ist für dem Kind. »", correct: false, explanation: "« Für » ist eine Akkusativpräposition und verlangt den Akkusativ. Richtig heißt es « für das Kind », nicht « für dem Kind »." },
+        { text: "« Er kämpft gegen dem Strom. »", correct: false, explanation: "« Gegen » ist eine Akkusativpräposition und verlangt den Akkusativ. Richtig heißt es « gegen den Strom », nicht « gegen dem Strom »." },
       ],
     },
     {
