@@ -52,7 +52,7 @@ export const answerHints: Record<string, string> = {
   "kann": "können",
   "musst": "müssen",
   "will": "wollen",
-  "möchte": "möchten",
+  "möchte": "mögen",
   "rufe": "anrufen",
   "Kaufst": "einkaufen",
   "erklärt": "erklären",
