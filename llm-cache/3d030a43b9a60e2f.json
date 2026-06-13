@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3d030a43b9a60e2f",
+  "predicateId": "german-language",
+  "questionId": "04-03-010",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Verben mit Stammvokalwechsel (e→i/ie: sprechen, sehen, lesen, geben)\n\nQUESTION CONTENT:\nPrompt: Konjugieren Sie das Verb „geben\" in der 3. Person Singular.\nPhrase: „Es ___ hier kein Problem.\nAnswer: gibt\nHint: geben\nExplanation: Bei „geben\" wechselt der Stammvokal in der 3. Person Singular von e→i: es gibt.\nWrong answers:\n  - gebt („gebt\" ist die 2. Person Plural („ihr\"). Für die 3. Person Singular heißt es „gibt\".)\n  - geben („geben\" ist der Infinitiv bzw. die 1./3. Person Plural. Für die 3. Person Singular heißt es „gibt\".)\n  - gäbe („gäbe\" ist der Konjunktiv II. Im Indikativ Präsens lautet die 3. Person Singular „gibt\".)\n  - giebt („giebt\" ist eine veraltete Schreibweise. Die korrekte Form lautet „gibt\".)\n  - gab („gab\" ist das Präteritum (Vergangenheit). Im Präsens heißt es „gibt\".)\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1781386777868-aw4ch3sx"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781386830136-tg8e0vy3",
+      "timestamp": "2026-06-13T21:40:55.773Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781386873295-4276wqzg",
+      "timestamp": "2026-06-13T21:41:36.230Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "51fb26095f32c513",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-03-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-03 - Verben mit Stammvokalwechsel (e→i/ie: sprechen, sehen, lesen, geben)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig?\nChoices:\nA. [CORRECT] Der Mann spricht Deutsch.\nB. Der Mann sprecht Deutsch.\nC. Der Mann sprechst Deutsch.\nD. Der Mann sprechen Deutsch.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781386777864-g0enwvun"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question for alignment with its stated rule.\n\n**Analysis completed:**\nThe question asks students to identify the correct conjugation of \"sprechen\" for \"Der Mann\" (3rd person singular). The correct answer \"spricht\" demonstrates the e→i vowel change. While options C and D can be eliminated through basic subject-verb agreement knowledge, the key distinction between the correct answer (A: \"spricht\") and the most plausible distractor (B: \"sprecht\") specifically tests whether the student knows the stem vowel change rule. Without knowing that e→i changes in the 2nd/3rd person singular, a student applying regular conjugation patterns would expect \"sprecht\" and might choose incorrectly.\n\n**Verdict:**\nVERDICT: ALIGNED\nREASON: The decisive choice between \"spricht\" (correct) and \"sprecht\" (option B) requires knowing the e→i stem vowel change rule, as \"sprecht\" is what regular conjugation would produce without this knowledge.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781386806364-zqqd84e7",
+      "timestamp": "2026-06-13T21:40:49.907Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was in the process of analyzing a German grammar question validation task. The question asked whether a multiple-choice question about the correct conjugation of \"sprechen\" in the 3rd person singular (\"Der Mann spricht Deutsch\") properly tests the rule about stem-vowel changing verbs (e→i/ie).\n\nList of any remaining tasks that were not completed:\n- The final verdict and reasoning were not output in the required format\n\nRecommendations for what should be done next:\nHere is the validation result that was being prepared:\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"sprechen\" changes from e→i in the 3rd person singular to produce \"spricht\"; without this knowledge, a learner would likely select \"sprecht\" (adding -t to the unchanged stem) or \"sprechen\" (using the infinitive), making the vowel change rule central to answering correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781386872389-xht2p6kd",
+      "timestamp": "2026-06-13T21:41:46.985Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The correct answer \"spricht\" requires knowing that \"sprechen\" undergoes the e→i stem vowel change in the 3rd person singular, and distractor B (\"sprecht\") directly tests whether the learner knows this vowel change occurs.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781386922000-ka7ep5d8",
+      "timestamp": "2026-06-13T21:42:39.704Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3827f23a35325cb4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-03-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-03 - Verben mit Stammvokalwechsel (e→i/ie: sprechen, sehen, lesen, geben)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie die richtige Präsensform: „Du ___ mir die Antwort.\"\nChoices:\nA. [CORRECT] gibst\nB. gebst\nC. gibt\nD. gebt\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781386777864-rgjfw5jc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"geben\" undergoes a stem vowel change from e→i in the 2nd person singular (du gibst, not du gebst), which is the exact grammar concept specified in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781386784902-sd6hgq7r",
+      "timestamp": "2026-06-13T21:40:18.500Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThis was a single-step validation task. I have completed the analysis:\n\nVERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"geben\" undergoes a stem vowel change from e→i in the \"du\" form (gibst vs. the incorrect regular form \"gebst\"), which is the exact grammar rule stated.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781386856372-p3tngagi",
+      "timestamp": "2026-06-13T21:41:33.290Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the e→i stem vowel change of \"geben\" in the 2nd person singular, requiring knowledge that \"du gibst\" (not \"gebst\") is the correct form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781386918002-wf4ah0wa",
+      "timestamp": "2026-06-13T21:42:28.014Z"
+    }
+  ]
+}
