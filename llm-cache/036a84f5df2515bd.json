@@ -1,0 +1,33 @@
+{
+  "cacheKey": "036a84f5df2515bd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-06-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-06 - Trennbare Verben (ankommen, einkaufen, anrufen, fernsehen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? – ankommen\nChoices:\nA. [CORRECT] Der Zug kommt um 15 Uhr an.\nB. Der Zug ankommt um 15 Uhr.\nC. Der Zug kommt um 15 Uhr ankommt.\nD. Der Zug um 15 Uhr ankommt.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781388091836-bv3070z8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"ankommen\" is a separable verb whose prefix \"an-\" must be detached from the verb stem and placed at the end of the clause in a main clause, which is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781388092852-bskoxq4d",
+      "timestamp": "2026-06-13T22:01:50.479Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that in a main clause, the separable prefix of \"ankommen\" must be separated from the verb stem and placed at the end of the clause, which is the core concept of the Trennbare Verben rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781388110480-ia0e7zkl",
+      "timestamp": "2026-06-13T22:02:13.074Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the learner knows that separable verbs like \"ankommen\" must have their prefix separated from the verb stem in a main clause, which is the core concept of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781388133075-emau5on9",
+      "timestamp": "2026-06-13T22:03:00.237Z"
+    }
+  ]
+}

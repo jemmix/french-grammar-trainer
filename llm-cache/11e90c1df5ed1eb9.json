@@ -1,0 +1,33 @@
+{
+  "cacheKey": "11e90c1df5ed1eb9",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "04-06-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Trennbare Verben (ankommen, einkaufen, anrufen, fernsehen)\nPROMPT: Ergänzen Sie das trennbare Präfix am Satzende.\nPHRASE: „Am Samstag kaufst du im Supermarkt ___.\nCORRECT ANSWER: ein\n\nWRONG ANSWERS to evaluate:\n1. an\n2. aus\n3. mit\n4. zu\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1781388091847-z49gsn6z"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was evaluating whether wrong answers for a German separable verbs question are plausible learner mistakes.\n\nThe question asks learners to complete the separable prefix for \"einkaufen\" (to shop) at the end of the sentence \"Am Samstag kaufst du im Supermarkt ___.\" The correct answer is \"ein.\"\n\nThe wrong answers provided are:\n1. \"an\" - PLAUSIBLE (real separable prefix, could be confused with anrufen/ankommen)\n2. \"aus\" - PLAUSIBLE (real separable prefix, could be confused with ausgehen/aussehen)\n3. \"mit\" - IMPLAUSIBLE (not a separable prefix in German; no learner studying trennbare Verben would think \"mitkaufen\" exists)\n4. \"zu\" - IMPLAUSIBLE (not a separable verb prefix that would be placed at sentence end)\n\nVERDICT: IMPLAUSIBLE\nREASON: \"mit\" and \"zu\" are not separable prefixes in German, so no learner who understands the concept of trennbare Verben would reasonably select them as the detached prefix for a separable verb.\n\nRecommendations: Replace \"mit\" and \"zu\" with actual separable prefixes like \"ab,\" \"auf,\" \"ein\" (already correct), \"her,\" \"hin,\" \"nach,\" \"vor,\" \"weg,\" or \"zurück\" to create plausible confusion opportunities.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781388302710-7cvgg1x7",
+      "timestamp": "2026-06-13T22:05:32.024Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was evaluating whether wrong answers for a German separable verbs question are plausible learner mistakes.\n\nThe question asks learners to complete the separable prefix for \"einkaufen\" (to shop) given the sentence \"Am Samstag kaufst du im Supermarkt ___.\" with correct answer \"ein\".\n\nThe wrong answers (an, aus, mit, zu) are all legitimate separable prefixes found in common German verbs (ankommen, ausgehen, mitkommen, zuhören, etc.). A learner who hasn't fully memorized that \"kaufen\" pairs with \"ein\" to form \"einkaufen\" could reasonably guess another common separable prefix.\n\nVERDICT: PLAUSIBLE\nREASON: All four wrong answers are real separable prefixes that a learner who hasn't memorized the specific verb \"einkaufen\" might reasonably guess when seeing the stem \"kaufst\" in context.\n\nNo remaining tasks - the evaluation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781388358121-bugic4lp",
+      "timestamp": "2026-06-13T22:06:41.776Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"Zu\" is not a separable verb prefix in German—it's a preposition or inseparable prefix—so a learner studying this specific topic should not produce it as a guess for a separable prefix slot.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781388401967-jgmoqn2g",
+      "timestamp": "2026-06-13T22:07:24.824Z"
+    }
+  ]
+}

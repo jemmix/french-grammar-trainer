@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a6f22a5eee00565a",
+  "predicateId": "german-language",
+  "questionId": "04-06-001",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Trennbare Verben (ankommen, einkaufen, anrufen, fernsehen)\n\nQUESTION CONTENT:\nPrompt: Welcher Satz ist grammatikalisch richtig? – ankommen\nChoices:\nA. [correct] Der Zug kommt um 15 Uhr an.\n   Explanation: Bei trennbaren Verben wird das Präfix („an\") ans Ende des Hauptsatzes gestellt. Das konjugierte Verb („kommt\") steht in Position 2. Das Präfix „an\" steht ganz am Ende.\nB. Der Zug ankommt um 15 Uhr.\n   Explanation: Das Verb wurde nicht getrennt. Bei „ankommen\" muss das Präfix „an\" ans Satzende: „Der Zug kommt um 15 Uhr an.\"\nC. Der Zug kommt um 15 Uhr ankommt.\n   Explanation: Der Satz enthält zwei Verbformen. Bei „ankommen\" wird nur das Präfix „an\" ans Ende gestellt: „Der Zug kommt um 15 Uhr an.\"\nD. Der Zug um 15 Uhr ankommt.\n   Explanation: Das konjugierte Verb muss in Position 2 stehen. Außerdem wurde das Präfix nicht getrennt. Richtig: „Der Zug kommt um 15 Uhr an.\"\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1781388091837-ljo8v78s"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781388196440-rub7x2xi",
+      "timestamp": "2026-06-13T22:03:53.357Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781388316719-p2krjnxm",
+      "timestamp": "2026-06-13T22:05:45.322Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781388374342-kzz18irt",
+      "timestamp": "2026-06-13T22:06:45.831Z"
+    }
+  ]
+}

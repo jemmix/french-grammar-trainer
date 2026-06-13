@@ -55,6 +55,8 @@ export const answerHints: Record<string, string> = {
   "möchte": "mögen",
   "rufe": "anrufen",
   "Kaufst": "einkaufen",
+  "an": "anrufen",
+  "ein": "einkaufen",
   "erklärt": "erklären",
   "bezahle": "bezahlen",
   "sammle": "sammeln",
