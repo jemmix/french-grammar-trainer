@@ -1,0 +1,33 @@
+{
+  "cacheKey": "db99dbb6648d5b76",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-05-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welches Verb verlangt ein Akkusativobjekt und passt in den Satz? „Ich ___ den Wagen.\"\n\nChoices:\nA. [CORRECT] kaufe\nB. [WRONG] helfe\nC. [WRONG] danke\nD. [WRONG] schmecke\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781350391426-23fy3wn5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers (helfe, danke, schmecke) require dative objects, not accusative, making them grammatically incorrect with \"den Wagen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781350391427-cy0z65dp",
+      "timestamp": "2026-06-13T11:33:30.581Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:** I was evaluating a German grammar verification task for question nonce-1781350410582-lahefhwv. The question asks which verb requires an accusative object to complete \"Ich ___ den Wagen.\" I had analyzed all three wrong answers (B, C, D) to determine if they are correctly marked as incorrect.\n\n**Findings:**\n- B. \"helfe\" — \"helfen\" takes a dative object, not accusative, so it cannot take \"den Wagen.\" Correctly marked wrong.\n- C. \"danke\" — \"danken\" takes a dative object, not accusative, so it cannot take \"den Wagen.\" Correctly marked wrong.\n- D. \"schmecke\" — \"schmecken\" is used intransitively or with dative, never with accusative in this sense. Correctly marked wrong.\n\n**Expected output:** TRUE||All wrong answers take dative objects or are intransitive, so none can correctly take the accusative \"den Wagen.\"\n\n**Remaining tasks:** None — the analysis is complete.\n\n**Recommendations:** The verdict for this question is TRUE. No corrections needed to the wrong answer markings.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781350410582-lahefhwv",
+      "timestamp": "2026-06-13T11:33:46.659Z"
+    },
+    {
+      "raw": "TRUE||\"helfen\" and \"danken\" require dative objects, and \"schmecken\" does not take a direct accusative object, so none of the wrong answers satisfy the question's requirement for a verb with an Akkusativobjekt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781350426660-jofkxrcb",
+      "timestamp": "2026-06-13T11:33:58.996Z"
+    }
+  ]
+}

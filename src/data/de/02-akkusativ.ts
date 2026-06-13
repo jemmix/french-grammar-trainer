@@ -622,12 +622,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "02-05",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz zeigt ein korrektes Akkusativobjekt nach dem Verb?",
+      prompt: "Welches Verb verlangt ein Akkusativobjekt und passt in den Satz? „Ich ___ den Wagen.\"",
       choices: [
-        { text: "Wir kaufen den Tisch.", correct: true, explanation: "„kaufen\" verlangt ein Akkusativobjekt. „Den Tisch\" steht korrekt im Akkusativ maskulin." },
-        { text: "Wir helfen den Tisch.", correct: false, explanation: "„helfen\" verlangt den Dativ. Der korrekte Satz heißt „Wir helfen dem Tischler.\"" },
-        { text: "Wir gefällt den Tisch.", correct: false, explanation: "„gefallen\" verlangt den Dativ. Der korrekte Satz heißt „Der Tisch gefällt uns.\"" },
-        { text: "Wir danken den Tisch.", correct: false, explanation: "„danken\" verlangt den Dativ. Der korrekte Satz heißt „Wir danken dem Tischler.\"" },
+        { text: "kaufe", correct: true, explanation: "„kaufen\" verlangt ein Akkusativobjekt („den Wagen\"). Das Objekt steht korrekt im Akkusativ maskulin." },
+        { text: "helfe", correct: false, explanation: "„helfen\" verlangt den Dativ („Ich helfe dem Mann\"), nicht den Akkusativ. Der Satz „Ich helfe den Wagen\" ist grammatikalisch falsch." },
+        { text: "danke", correct: false, explanation: "„danken\" verlangt den Dativ („Ich danke dir\"), nicht den Akkusativ. Der Satz „Ich danke den Wagen\" ist grammatikalisch falsch." },
+        { text: "schmecke", correct: false, explanation: "„schmecken\" verlangt den Dativ („Der Wagen schmeckt mir nicht\"), nicht den Akkusativ. „schmecken\" beschreibt, wie etwas empfunden wird." },
       ],
     },
     {
