@@ -1,0 +1,33 @@
+{
+  "cacheKey": "124ea143afedd3be",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-08-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? – wandern\n\nChoices:\nA. [CORRECT] Ich wandere gern durch die Berge.\nB. [WRONG] Ich wandre gern durch die Berge.\nC. [WRONG] Ich wanderst gern durch die Berge.\nD. [WRONG] Ich wandert gern durch die Berge.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781391363782-qf6w86na"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect in standard German: B uses a non-standard colloquial form \"wandre\" instead of \"wandere,\" C incorrectly uses the 2nd person singular ending \"-st\" with \"ich,\" and D incorrectly uses the 3rd person singular ending \"-t\" with \"ich.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781391369814-qb9ykycu",
+      "timestamp": "2026-06-13T22:56:50.592Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear conjugation errors: \"wandre\" is not a valid form, \"wanderst\" is second person singular, and \"wandert\" is third person singular.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781391426118-q7kui171",
+      "timestamp": "2026-06-13T22:57:22.596Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear conjugation errors: B uses a non-existent form \"wandre\", C incorrectly uses 2nd person \"wanderst\" with \"ich\", and D incorrectly uses 3rd person \"wandert\" with \"ich\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781391446818-rdnd9b3z",
+      "timestamp": "2026-06-13T22:57:54.614Z"
+    }
+  ]
+}

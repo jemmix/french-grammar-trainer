@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a568a07b03e59df3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-08-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-08 - Verben auf -eln und -ern (handeln, wandern, sammeln)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? – wandern\nChoices:\nA. [CORRECT] Ich wandere gern durch die Berge.\nB. Ich wandre gern durch die Berge.\nC. Ich wanderst gern durch die Berge.\nD. Ich wandert gern durch die Berge.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781391363782-giqdwdu8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the -ern verb conjugation pattern by presenting the correct form \"wandere\" alongside the common mistake \"wandre\" (incorrectly applying the -eln dropping pattern) and wrong person/number endings.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781391370818-xxh25dcy",
+      "timestamp": "2026-06-13T22:56:36.123Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the 1st person singular conjugation of \"wandern,\" requiring knowledge that verbs on -ern keep the stem -e- (\"ich wandere\" not \"ich wandre\"), which is the central point of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781391413576-zsgq4hev",
+      "timestamp": "2026-06-13T22:57:08.160Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the conjugation pattern of -ern verbs in the present tense, specifically that \"wandern\" keeps the stem vowel 'e' in the 1st person singular (ich wandere), distinguishing it from -eln verbs which drop the 'e' (option B tests this common confusion).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781391441464-tc5ybxi1",
+      "timestamp": "2026-06-13T22:57:40.904Z"
+    }
+  ]
+}

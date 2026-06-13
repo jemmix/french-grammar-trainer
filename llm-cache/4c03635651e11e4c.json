@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4c03635651e11e4c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-08-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-08 - Verben auf -eln und -ern (handeln, wandern, sammeln)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? – liefern\nChoices:\nA. [CORRECT] Ich liefere das Paket an den Kunden.\nB. Ich liefre das Paket an den Kunden.\nC. Ich lieferst das Paket an den Kunden.\nD. Ich liefert das Paket an den Kunden.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781391999451-tqd3qrr3"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The key distractor (B, \"liefre\") directly tests whether the learner knows that -ern verbs like \"liefern\" do not drop the stem 'e' the way -eln verbs do, which is the central distinction taught in this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781392003465-82ejbxa8",
+      "timestamp": "2026-06-13T23:07:14.370Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests the conjugation pattern of -eln verbs, specifically whether the stem vowel 'e' is retained in the ich form (ich liefere vs. ich liefre), which is the defining characteristic of this verb class.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781392034923-vrxj6l7f",
+      "timestamp": "2026-06-13T23:07:34.246Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the conjugation of \"liefern\" (a -ern verb) in the 1st person singular present, specifically whether the middle -e- is retained (\"liefere\") or dropped (\"liefre\"), which is the defining characteristic of verbs ending in -eln and -ern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781392054247-3pwll0to",
+      "timestamp": "2026-06-13T23:07:51.669Z"
+    }
+  ]
+}
