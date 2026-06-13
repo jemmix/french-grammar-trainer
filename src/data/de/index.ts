@@ -2,8 +2,9 @@ import type { Section, SectionMeta } from "../types";
 import section01 from "./01-artikel-genus";
 import section02 from "./02-akkusativ";
 import section03 from "./03-dativ";
+import section04 from "./04-praesens";
 
-export const loadedSections: Section[] = [section01, section02, section03];
+export const loadedSections: Section[] = [section01, section02, section03, section04];
 
 export const meta: Omit<SectionMeta, "questionCount">[] = [
   { id: "01-artikel-genus", title: "Artikel und Genus", description: "Bestimmte und unbestimmte Artikel, Genus, Pluralbildung, Possessivartikel" },

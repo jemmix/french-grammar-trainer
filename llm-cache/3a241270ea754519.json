@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3a241270ea754519",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "04-03-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Verben mit Stammvokalwechsel (e→i/ie: sprechen, sehen, lesen, geben)\nPROMPT: Konjugieren Sie das Verb „geben\" in der 3. Person Singular.\nPHRASE: „Es ___ hier kein Problem.\nCORRECT ANSWER: gibt\n\nWRONG ANSWERS to evaluate:\n1. gebt\n2. geben\n3. gebst\n4. giebt\n5. gab\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1781380804543-d644m4wn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: \"gebt\" and \"gebst\" confuse person/number, \"geben\" fails to conjugate, \"giebt\" incorrectly applies the vowel change rule (e→ie instead of e→i), and \"gab\" uses the wrong tense (Präteritum instead of Präsens).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781382510002-9l74uodc",
+      "timestamp": "2026-06-13T20:29:07.618Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: confusing person/number (gebt for 2nd plural, gebst for 2nd singular), using the infinitive instead of conjugating (geben), over-applying the e→ie vowel change pattern from other verbs (giebt), and confusing present with simple past tense (gab).\n\nMaximum steps for this agent have been reached. This was a single-question evaluation task that has been completed. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781383530476-z7ibfpp5",
+      "timestamp": "2026-06-13T20:46:20.193Z"
+    }
+  ]
+}

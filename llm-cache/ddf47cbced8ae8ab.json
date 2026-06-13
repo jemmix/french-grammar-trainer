@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ddf47cbced8ae8ab",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-10-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welches Signalwort drückt eine aktuelle Handlung aus? — „Die Kinder spielen ___.\"\n\nChoices:\nA. [CORRECT] gerade\nB. [WRONG] jeden Tag\nC. [WRONG] nächste Woche\nD. [WRONG] immer\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781380804569-13xt9agj"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers express habitual (jeden Tag, immer) or future (nächste Woche) actions, not the current/ongoing action that \"gerade\" conveys.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381561199-waqts4wv",
+      "timestamp": "2026-06-13T20:13:02.730Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers express habitual, future, or general frequency rather than a current action as specified by \"aktuelle Handlung.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781382193312-8n25ft3e",
+      "timestamp": "2026-06-13T20:23:36.083Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers express habitual, future, or generic actions rather than a current action as specified.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781383164886-uk4la4hy",
+      "timestamp": "2026-06-13T20:40:03.363Z"
+    }
+  ]
+}

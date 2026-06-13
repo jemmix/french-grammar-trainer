@@ -1,0 +1,33 @@
+{
+  "cacheKey": "414f0adfe22d803e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-01-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie die richtige Präsensform: „Mein Bruder ___ fleißig für die Prüfung.\"\n\nChoices:\nA. [CORRECT] lernt\nB. [WRONG] lerne\nC. [WRONG] lernst\nD. [WRONG] lernen\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781374989802-60xiuo6v"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect person/number forms: \"lerne\" is 1st person singular, \"lernst\" is 2nd person singular, and \"lernen\" is infinitive/plural, none matching 3rd person singular subject \"Mein Bruder.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781374995825-o83q64o7",
+      "timestamp": "2026-06-13T18:23:37.918Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was able to complete the verification task before hitting the step limit:\n\nTRUE||All wrong answers use incorrect person/number conjugations that don't match the 3rd person singular subject \"Mein Bruder\" (B is 1st person singular, C is 2nd person singular, D is plural/infinitive).\n\nNo remaining tasks — the verification was completed successfully.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781380810617-2irlq62s",
+      "timestamp": "2026-06-13T20:00:39.882Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect person/number conjugations for the third-person singular subject \"Mein Bruder.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381624437-jc8x2pyt",
+      "timestamp": "2026-06-13T20:14:07.549Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "29eba838b467d4f2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-01-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-01 - Regelmäßige Verben konjugieren (machen, spielen, lernen, wohnen)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das Verb in Klammern im Präsens.\nPhrase: „Du ___ (tanzen) wirklich sehr elegant.\nCorrect Answer: tanzt\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781374989804-9f5kmowo"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires applying the regular verb conjugation pattern for the \"du\" form (dropping -en and adding -st) to the verb \"tanzen,\" which is a regular verb and directly tests the stated rule about conjugating regular verbs in the present tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781375050928-i1biur3a",
+      "timestamp": "2026-06-13T18:24:39.015Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"tanzen\" (a regular verb) for \"du\" in the present tense, which directly tests the stated rule about conjugating regular verbs.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781380860987-oqzw36m2",
+      "timestamp": "2026-06-13T20:01:17.892Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires conjugating \"tanzen\" for \"du\" in the present tense, which follows the exact same regular verb pattern (stem + -st) as the example verbs in the rule (machen → machst, spielen → spielst, etc.).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381668137-wexxttce",
+      "timestamp": "2026-06-13T20:14:41.366Z"
+    }
+  ]
+}

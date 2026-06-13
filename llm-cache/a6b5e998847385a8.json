@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a6b5e998847385a8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-05-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie die richtige Form von „wollen\". „Er ___ nach Hause gehen.\"\n\nChoices:\nA. [CORRECT] will\nB. [WRONG] willst\nC. [WRONG] wollen\nD. [WRONG] wollt\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781374989807-se1v1qsr"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect person/number conjugations for the third-person singular subject \"er.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781375315444-kem3g4by",
+      "timestamp": "2026-06-13T18:28:51.551Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers use incorrect person/number conjugations for the third person singular subject \"Er\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381093206-it1c57v3",
+      "timestamp": "2026-06-13T20:05:14.062Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers show incorrect subject-verb agreement: \"willst\" is 2nd person singular, \"wollen\" is 1st/3rd person plural or infinitive, and \"wollt\" is 2nd person plural, none of which match the 3rd person singular subject \"Er\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381853786-vkjoe5gv",
+      "timestamp": "2026-06-13T20:17:53.154Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a05f19ed1a19a2c6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-03-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-03 - Verben mit Stammvokalwechsel (e→i/ie: sprechen, sehen, lesen, geben)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie die richtige Präsensform: „Sie ___ ein interessantes Buch.\"\nChoices:\nA. [CORRECT] liest\nB. lest\nC. lesst\nD. lesen\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781374989806-2ivzjpoy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"lesen\" undergoes the e→ie stem vowel change in the 3rd person singular (\"Sie liest\"), which is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781375154420-jcs5dt81",
+      "timestamp": "2026-06-13T18:26:54.450Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished: I analyzed the German grammar validation task to determine if the question about \"lesen\" properly tests the stem vowel change rule (e→i/ie).\n\nThe analysis is complete:\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"lesen\" undergoes a stem vowel change (e→ie) in the 2nd/3rd person singular, and that the formal \"Sie\" takes the form \"liest\" rather than the unchanged \"lesen.\"\n\nNo remaining tasks - this was a single-question validation that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781380954546-z1lx0un6",
+      "timestamp": "2026-06-13T20:02:48.904Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the e→ie stem vowel change in \"lesen\" by contrasting the vowel-changed form \"liest\" with the unchanged \"lesen\" and the common error \"lesst\", though there is a separate grammatical issue with capitalised \"Sie\" normally requiring \"lesen\" rather than \"liest\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381741821-7fwfuuap",
+      "timestamp": "2026-06-13T20:16:36.527Z"
+    }
+  ]
+}

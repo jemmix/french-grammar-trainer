@@ -1,0 +1,82 @@
+{
+  "cacheKey": "84f3ffc560bcecfc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-06-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? – mitbringen\n\nChoices:\nA. [CORRECT] Sie bringt einen Kuchen zur Party mit.\nB. [WRONG] Sie mitbringt einen Kuchen zur Party.\nC. [WRONG] Sie bringt einen Kuchen zur Party.\nD. [WRONG] Sie bringt mit einen Kuchen zur Party.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781374989810-jxe3djkq"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:** I was analyzing a German grammar verification task for a multiple choice question about the separable verb \"mitbringen\" and evaluating whether the wrong answers (B, C, D) are indeed incorrect.\n\n**Analysis completed:**\n- B (\"Sie mitbringt einen Kuchen zur Party\") is clearly incorrect - the separable prefix \"mit\" must be separated from the verb stem in a main clause.\n- D (\"Sie bringt mit einen Kuchen zur Party\") is clearly incorrect - the separable prefix must go to the end of the clause, not immediately after the verb.\n- C (\"Sie bringt einen Kuchen zur Party\") is grammatically correct German, but doesn't use \"mitbringen\" as hinted in the question prompt.\n\n**Remaining task:** The verdict depends on whether \"mitbringen\" in the question is an explicit requirement or just a topic hint. Since the question doesn't explicitly state \"using the verb mitbringen,\" the answer would be:\n\nUNCLEAR||The question lists \"mitbringen\" as a topic hint but doesn't explicitly require using this verb, making it ambiguous whether C (which uses \"bringen\" instead of \"mitbringen\" but is grammatically correct) should be considered wrong.\n\n**Recommendation:** Rewrite the question to explicitly require the verb, e.g., \"Welcher Satz mit dem Verb 'mitbringen' ist grammatikalisch richtig?\" to eliminate ambiguity.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781375454729-ickoh7id",
+      "timestamp": "2026-06-13T18:31:59.507Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B keeps the separable verb together in the wrong position (first instead of second), C completely omits the required separable prefix \"mit\", and D incorrectly places the prefix in the middle of the clause instead of at the end.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381249542-gzcnw9nf",
+      "timestamp": "2026-06-13T20:07:48.689Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly keeps the separable prefix \"mit\" attached to the verb in a main clause, C omits the required verb \"mitbringen\" specified in the prompt, and D incorrectly places the separable prefix between the verb and object instead of at the end of the sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381964103-5eacprc1",
+      "timestamp": "2026-06-13T20:19:54.057Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly keeps the separable prefix attached to the verb in a main clause; C is missing the separable prefix \"mit\" entirely, changing the meaning from \"to bring along\" to \"to bring\"; D places the separable prefix in the wrong position (it must be at the very end of the clause, after \"zur Party\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781382927858-ce12ibke",
+      "timestamp": "2026-06-13T20:36:17.336Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781383900588-kjaiovnp",
+      "timestamp": "2026-06-13T20:51:56.601Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:** I analyzed the German grammar multiple choice question about the separable verb \"mitbringen\" and was about to provide my verdict.\n\n**Analysis completed:** \n- B is incorrect: keeps the separable prefix \"mit\" attached to the verb in a main clause\n- C is incorrect: completely omits the separable prefix \"mit\" \n- D is incorrect: places \"mit\" before the object instead of in clause-final position\n\n**Verdict that would have been returned:**\nTRUE||All wrong answers violate the separable verb rule for \"mitbringen\" – B keeps the prefix attached, C omits it entirely, and D places it before the object instead of clause-final position.\n\n**No remaining tasks** – the analysis was complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781384847967-3dn1jkdi",
+      "timestamp": "2026-06-13T21:08:02.195Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate German separable verb rules: B keeps the prefix attached in main clause position, C omits the prefix entirely, and D places the prefix before the object instead of at clause-final position.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781385218884-vh6bp1fb",
+      "timestamp": "2026-06-13T21:14:04.806Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly places the separable prefix with the conjugated verb instead of at clause-final position; C omits the required separable prefix \"mit\" entirely; D incorrectly places \"mit\" between the verb and the object instead of at the end of the clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781385494225-phpcg0tg",
+      "timestamp": "2026-06-13T21:18:37.670Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly keeps the separable prefix \"mit-\" attached to the conjugated verb, C omits the prefix entirely changing the verb from \"mitbringen\" to \"bringen\", and D places the separable prefix in the middle of the sentence rather than at the end where it belongs in a main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781385517671-fknb1ty4",
+      "timestamp": "2026-06-13T21:18:49.640Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate German separable verb rules: B fails to separate the prefix in a main clause, C omits the required prefix entirely, and D places the prefix in the wrong position.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781385529641-iaz9rijp",
+      "timestamp": "2026-06-13T21:19:03.913Z"
+    }
+  ]
+}

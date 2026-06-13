@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8c0131ff13bf68eb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-07-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie die richtige Präsensform: „Er ___ sein altes Auto.\"\n\nChoices:\nA. [CORRECT] verkauft\nB. [WRONG] kauft\nC. [WRONG] kauft...ver\nD. [WRONG] verkaufen\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781374989810-fmhujfup"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses \"kaufen\" (to buy) instead of \"verkaufen\" (to sell), C is not a valid German word form, and D is the infinitive rather than the required 3rd person singular present tense form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781375526197-fp4y2ky5",
+      "timestamp": "2026-06-13T18:32:31.675Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nNo substantial work was accomplished yet - I was in the process of analyzing the German grammar verification task.\n\nRemaining task: Verify that the wrong answers (B, C, D) for the multiple choice question about German present tense are indeed incorrect and provide the verdict in the required format.\n\nRecommendation: The next agent should evaluate:\n- B \"kauft\" - This is a valid Präsensform (3rd person singular present of \"kaufen\"), so it technically satisfies the grammatical constraint stated in the question, though it changes meaning from \"sells\" to \"buys\"\n- C \"kauft...ver\" - Invalid German construction, clearly incorrect\n- D \"verkaufen\" - Infinitive form, not conjugated for 3rd person singular \"Er\", clearly incorrect\n\nBased on strict interpretation of the instructions to evaluate \"STRICTLY within the grammatical constraints stated,\" the likely verdict is: FALSE|B|B \"kauft\" is a valid Präsensform that satisfies the stated grammatical constraint of being a present tense form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381290838-57f3848r",
+      "timestamp": "2026-06-13T20:19:24.102Z"
+    }
+  ]
+}

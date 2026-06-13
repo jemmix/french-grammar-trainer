@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e6adc618926b6c73",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-03-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie die richtige Präsensform: „Das ___ es nicht.\"\n\nChoices:\nA. [CORRECT] gibt\nB. [WRONG] gebt\nC. [WRONG] gebst\nD. [WRONG] geben\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781374989806-n1jhwbab"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to verify that the wrong answers (B, C, D) in a German grammar multiple choice question are indeed incorrect. The question asks for the correct present tense form to complete \"Das ___ es nicht.\"\n\nAnalysis completed:\n- B. \"gebt\" - 2nd person plural form, incorrect for 3rd person singular subject \"Das\"\n- C. \"gebst\" - 2nd person singular form, incorrect for 3rd person singular subject \"Das\"  \n- D. \"geben\" - plural/infinitive form, incorrect for 3rd person singular subject \"Das\"\n\nAll wrong answers are indeed incorrect because they use wrong person/number conjugations for the 3rd person singular subject.\n\nTRUE||All wrong answers use incorrect person/number conjugations for the 3rd person singular subject \"Das\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781375160638-kq399ttd",
+      "timestamp": "2026-06-13T18:26:26.091Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect person/number conjugations for the singular subject \"Das\" which requires 3rd person singular \"gibt\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781380956868-ksa5wz8x",
+      "timestamp": "2026-06-13T20:03:03.953Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use present tense forms of \"geben\" that don't agree with the 3rd person singular subject \"Das\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381753295-q1rphphj",
+      "timestamp": "2026-06-13T20:16:09.833Z"
+    }
+  ]
+}

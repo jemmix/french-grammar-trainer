@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c08ae6fdb4d6b89d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-07-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-07 - Untrennbare Verben (verstehen, besuchen, erzählen, verkaufen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie die richtige Präsensform: „___ ihr die Hausaufgaben?\"\nChoices:\nA. [CORRECT] Versteht\nB. Steht\nC. Verstehen\nD. Verstehst\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781380804566-tsp2p4pg"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: This question tests present tense conjugation of \"verstehen\" for the \"ihr\" form (correct \"versteht\" vs. wrong \"verstehst\" for \"du\" and infinitive \"verstehen\"), but does not test whether the student knows that \"verstehen\" is an inseparable verb — none of the distractors involve incorrectly separating the prefix (e.g., \"steht...ver\"), which would be the actual diagnostic for understanding untrennbare Verben.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381327496-9xfu341z",
+      "timestamp": "2026-06-13T20:09:08.329Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question against its stated rule.\n\n**Summary of analysis:**\nI was evaluating whether a multiple-choice question about filling in \"Versteht\" for \"ihr die Hausaufgaben\" actually tests the rule \"04-07 - Untrennbare Verben (verstehen, besuchen, erzählen, verkaufen).\"\n\n**My verdict was:**\nVERDICT: MISALIGNED\nREASON: This question tests present tense conjugation of \"verstehen\" for the 2nd person plural (\"ihr\"), not the inseparable nature of the verb—the inseparability of the \"ver-\" prefix is never at issue in any of the answer choices, as none involve separation or the lack of \"ge-\" in perfect tense.\n\n**Remaining tasks:** None—this was a single-question validation that has been completed.\n\n**Recommendation:** The question should either be reassigned to a conjugation rule, or rewritten to actually test inseparability (e.g., using perfect tense where the absence of \"ge-\" prefix is the key distinction).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381996823-o5drbsdp",
+      "timestamp": "2026-06-13T20:20:22.625Z"
+    }
+  ]
+}

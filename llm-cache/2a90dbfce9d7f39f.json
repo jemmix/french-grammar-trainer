@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2a90dbfce9d7f39f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-07-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-07 - Untrennbare Verben (verstehen, besuchen, erzählen, verkaufen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie die richtige Präsensform: „Wir ___ unsere Großeltern jedes Wochenende.\"\nChoices:\nA. [CORRECT] besuchen\nB. suchen\nC. besucht\nD. besuche\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781374989810-5fkiv7vo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question primarily tests subject-verb conjugation (knowing that \"wir\" takes the infinitive form) and vocabulary recognition, not the concept of inseparable prefixes—the fact that \"besuchen\" has an inseparable prefix is irrelevant to selecting the correct answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781375513549-zo7jo6v9",
+      "timestamp": "2026-06-13T18:32:23.521Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a German grammar question to determine if it properly tests the stated rule about \"Untrennbare Verben\" (inseparable verbs).\n\n**Verdict for the submitted question:**\nVERDICT: MISALIGNED\nREASON: The question tests present tense conjugation of \"besuchen\" for \"wir\" and basic vocabulary (besuchen vs. suchen), not the inseparable nature of the verb prefix—the prefix \"be-\" never separates regardless, so this question can be answered correctly with only conjugation knowledge.\n\n**Remaining tasks:**\n- None for this specific question—the validation is complete.\n\n**Recommendations for next steps:**\n- To properly test inseparable verbs, a question should contrast them with separable verbs in a context where the prefix behavior differs (e.g., subordinate clause word order, or comparing \"besuchen\" with \"aufstehen\" to see if the student knows which prefix stays attached).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381278147-feb9iit9",
+      "timestamp": "2026-06-13T20:08:23.403Z"
+    }
+  ]
+}

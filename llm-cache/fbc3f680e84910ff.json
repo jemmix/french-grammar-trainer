@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fbc3f680e84910ff",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-02-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie die richtige Form: „___ ihr müde?\"\n\nChoices:\nA. [CORRECT] Seid\nB. [WRONG] Sind\nC. [WRONG] Bin\nD. [WRONG] Bist\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781374989805-xhi8p29t"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb conjugations: \"Sind\" is for \"sie\" (3rd person plural), \"Bin\" is for \"ich\" (1st person singular), and \"Bist\" is for \"du\" (2nd person singular), none of which match the subject \"ihr\" (2nd person plural).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781375088225-w70fn5yb",
+      "timestamp": "2026-06-13T18:25:10.974Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:** I was evaluating a German grammar verification task for a multiple choice question asking to complete \"___ ihr müde?\" with the correct form of \"sein\" (to be). The correct answer is \"Seid\" (2nd person plural), and I needed to verify that the wrong answers (B: Sind, C: Bin, D: Bist) are indeed incorrect.\n\n**Assessment:** All three wrong answers are genuinely incorrect:\n- B \"Sind\" is 3rd person plural (correct for \"sie\")\n- C \"Bin\" is 1st person singular (correct for \"ich\")\n- D \"Bist\" is 2nd person singular (correct for \"du\")\n\nNone match the subject \"ihr\" (2nd person plural informal), so the verdict would be TRUE.\n\n**Remaining tasks:** None - the verification was essentially complete.\n\n**Recommendation:** The answer should be: TRUE||All wrong answers use conjugations for different persons/numbers than the required 2nd person plural \"ihr\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781380897756-ofklkxt5",
+      "timestamp": "2026-06-13T20:02:06.156Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors — \"Sind\" is 3rd person plural/formal, \"Bin\" is 1st person singular, and \"Bist\" is 2nd person singular, none of which agree with the 2nd person plural subject \"ihr\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381706592-ogpbouzf",
+      "timestamp": "2026-06-13T20:15:30.801Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a12f651e5c860cf4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-01-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-01 - Regelmäßige Verben konjugieren (machen, spielen, lernen, wohnen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie die richtige Präsensform: „Ihr ___ heute bis spät in die Nacht.\"\nChoices:\nA. [CORRECT] arbeitet\nB. arbeitest\nC. arbeiten\nD. arbeite\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781374989803-kct8dxxa"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests conjugation of the regular verb \"arbeiten\" in the \"ihr\" (2nd person plural) present tense form, which directly tests the stated rule about conjugating regular verbs in the present tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781375017925-2h147vhz",
+      "timestamp": "2026-06-13T18:24:03.681Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"arbeiten\" is not one of the listed regular verbs (machen, spielen, lernen, wohnen) in the rule, and while it is regular, the rule specifically names those four verbs as the scope, suggesting this question may be testing a different verb's conjugation than what the rule explicitly covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781380830410-lmkjiq43",
+      "timestamp": "2026-06-13T20:00:49.938Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\nI was in the process of evaluating a German grammar question for alignment with its stated rule. The analysis was nearly complete.\n\nThe validation result for this question:\n\nVERDICT: MISALIGNED\nREASON: The rule specifically lists examples of regular verbs (machen, spielen, lernen, wohnen) but the question uses \"arbeiten,\" and more importantly, the rule title focuses on the general pattern of regular verb conjugation while this question's distractors could be answered by simply knowing the \"ihr\" form ending pattern rather than demonstrating understanding of the full conjugation system for regular verbs as the rule intends.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381645557-yquhydim",
+      "timestamp": "2026-06-13T20:14:33.555Z"
+    }
+  ]
+}

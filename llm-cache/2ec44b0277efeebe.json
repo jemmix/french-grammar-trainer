@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2ec44b0277efeebe",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-08-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-08 - Verben auf -eln und -ern (handeln, wandern, sammeln)\n\nQUESTION:\nType: Input\nPrompt: Konjugieren Sie das Verb „sammeln\" in der 1. Person Singular.\nPhrase: „Ich ___ Münzen aus verschiedenen Ländern.\nCorrect Answer: sammle\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781380804568-o4fjv9g5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the -eln verb conjugation rule by requiring the student to know that \"sammeln\" drops the middle 'e' in the 1st person singular to become \"sammle.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381450324-oyal6qd8",
+      "timestamp": "2026-06-13T20:11:08.658Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to validate whether a German grammar question about conjugating \"sammeln\" in the 1st person singular properly tests the rule about verbs ending in -eln and -ern.\n\n**Verdict:**\nVERDICT: ALIGNED\nREASON: The question directly tests the -eln verb conjugation rule because the correct answer \"sammle\" requires knowing that verbs ending in -eln drop the 'e' in the 1st person singular present tense (as opposed to the incorrect \"sammelle\").\n\n**Remaining tasks:**\nNone — the validation task was completed.\n\n**Recommendations:**\nNo further action needed on this specific validation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781382086540-i59tc7s9",
+      "timestamp": "2026-06-13T20:22:03.696Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the -eln verb conjugation pattern where the stem 'e' is dropped in the 1st person singular (sammle, not sammele), which is the defining feature of this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781383048868-v2hncqrf",
+      "timestamp": "2026-06-13T20:37:51.924Z"
+    }
+  ]
+}

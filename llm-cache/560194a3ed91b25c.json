@@ -1,0 +1,33 @@
+{
+  "cacheKey": "560194a3ed91b25c",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "04-05-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Setzen Sie die richtige Form ein.\nPhrase: „Meine Schwester ___ ein neues Handy.\nHint: möchten\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1781374989809-3ue8edi7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt \"Setzen Sie die richtige Form ein\" combined with the hint \"möchten\" unambiguously directs the learner to conjugate the given verb for the subject \"Meine Schwester,\" leaving only one reasonable interpretation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781375381512-fucptzgg",
+      "timestamp": "2026-06-13T18:30:03.255Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: \"Die richtige Form\" doesn't explicitly specify conjugation, and \"möchten\" is itself already a conjugated form (not an infinitive), leaving learners unsure whether to use it as-is or transform it further.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381143088-g82hzjhb",
+      "timestamp": "2026-06-13T20:06:56.351Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: AMBIGUOUS\nREASON: The hint \"möchten\" provides a specific inflected form that matches 1st/3rd person plural, but the subject \"Meine Schwester\" requires 3rd person singular \"möchte\", creating potential confusion about whether the learner should conjugate or use the hint exactly as given.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381922483-e95cxlis",
+      "timestamp": "2026-06-13T20:19:13.112Z"
+    }
+  ]
+}

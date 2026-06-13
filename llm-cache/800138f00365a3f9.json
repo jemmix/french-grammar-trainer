@@ -1,0 +1,26 @@
+{
+  "cacheKey": "800138f00365a3f9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-10 - Der Gebrauch des Präsens: Gewohnheit, aktuelle Handlung, Zukunft\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie ein Signalwort für die Zukunft am Satzanfang.\nPhrase: „___ besuche ich meine Eltern.\nCorrect Answer: Morgen\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781380804570-ci3gngwg"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests vocabulary knowledge of future time markers (knowing that \"Morgen\" means tomorrow and indicates future), not the grammatical rule about using present tense to express future actions—the verb form is already given and the student never needs to apply the present-tense-for-future concept.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381598411-6grcyrh3",
+      "timestamp": "2026-06-13T20:13:43.747Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests vocabulary knowledge of German temporal adverbs (Signalwörter für die Zukunft), not the grammar rule about using present tense to express future actions—the present tense verb \"besuche\" is already given and not being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781382225771-nwsff8nl",
+      "timestamp": "2026-06-13T20:24:08.831Z"
+    }
+  ]
+}

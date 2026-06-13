@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4d9547c2528a9e99",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-03-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-03 - Verben mit Stammvokalwechsel (e→i/ie: sprechen, sehen, lesen, geben)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie die richtige Präsensform: „Du ___ das Buch von der Bibliothek.\"\nChoices:\nA. [CORRECT] nimmst\nB. nehmst\nC. nimmt\nD. nehmt\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781374989806-yoarapnz"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary\nI was asked to validate whether a German grammar question about the verb \"nehmen\" (du nimmst) is aligned with rule 04-03, which covers \"Verben mit Stammvokalwechsel (e→i/ie: sprechen, sehen, lesen, geben)\".\n\n## Analysis Completed\nThe question tests \"nehmen\" which does follow the e→i stem vowel change pattern, but \"nehmen\" is not listed among the verbs in rule 04-03 (sprechen, sehen, lesen, geben). In a structured curriculum with specific rule IDs, each rule typically covers a defined set of verbs.\n\n## Verdict\nVERDICT: MISALIGNED\nREASON: The question tests \"nehmen,\" which is not one of the verbs listed in rule 04-03 (sprechen, sehen, lesen, geben); while \"nehmen\" does follow an e→i vowel change pattern, it belongs to a different rule or needs its own rule entry.\n\n## Remaining Tasks\nNone - this was a single validation task.\n\n## Recommendations\nEither move this question to a rule that explicitly covers \"nehmen\" and similar verbs (like \"fahren, halten, laden\" which also have e→ä or a→ä changes), or expand rule 04-03 to include \"nehmen\" in its verb list if the intent is to teach the broader e→i pattern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781375186093-izfmusng",
+      "timestamp": "2026-06-13T18:27:05.900Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\n\nI was asked to validate whether a German grammar question about the verb \"nehmen\" is properly aligned with the stated rule about stem-vowel change verbs (e→i/ie).\n\n## My Assessment\n\nVERDICT: ALIGNED\nREASON: The question tests the e→i stem vowel change of \"nehmen\" (nehmen → du nimmst), which directly matches the stated rule about verbs with stem-vowel change e→i/ie like sprechen, lesen, and geben.\n\n## Remaining Tasks\n\nNone — this was a single-question validation task that I have completed.\n\n## Recommendations\n\nNo further action needed on this particular question. It properly tests the stated grammar rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781380978393-9rwijicj",
+      "timestamp": "2026-06-13T20:03:50.244Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The verb \"nehmen\" (nimmst) is not listed under this rule's examples (sprechen, sehen, lesen, geben) and belongs to a different vowel-change pattern; this question would more properly test a rule specifically covering \"nehmen\" and similar verbs.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781381769834-p2deburv",
+      "timestamp": "2026-06-13T20:16:30.427Z"
+    }
+  ]
+}
