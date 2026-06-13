@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6e4b857027cf5dbd",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-09-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-09 - Wortstellung von Subjekt und Akkusativobjekt\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welche Wortfolge ist richtig?\nChoices:\nA. [CORRECT] Ich kaufe meinem Bruder ein Buch.\nB. Ich kaufe ein Buch meinem Bruder.\nC. Ein Buch kaufe ich meinem Bruder.\nD. Meinem Bruder ein Buch kaufe ich.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781220834335-u2i2p5xy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the relative order of dative and accusative objects (Dativobjekt vor Akkusativobjekt), not the word order between subject and accusative object as the rule states.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221482622-ftvurezj",
+      "timestamp": "2026-06-11T23:45:39.658Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests the word order of dative and accusative objects when both are present in a sentence, not the word order between subject and accusative object as the rule states.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222234702-czv3dvua",
+      "timestamp": "2026-06-11T23:59:51.598Z"
+    }
+  ]
+}

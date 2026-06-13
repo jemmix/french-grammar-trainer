@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1f3b57e65440692c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-01-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Mädchen heißt Anna.\"\n\nChoices:\nA. [CORRECT] Das\nB. [WRONG] Die\nC. [WRONG] Ein\nD. [WRONG] Mein\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781209909548-cksejj45"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was in the process of validating a German grammar multiple choice question about definite articles in the nominative case.\n\nThe question asked: \"Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Mädchen heißt Anna.\"\"\n\nAnalysis completed:\n- B. \"Die\" — Incorrect because \"Mädchen\" is neuter, not feminine\n- C. \"Ein\" — Incorrect because it's an indefinite article, not definite (\"bestimmter Artikel\")\n- D. \"Mein\" — Incorrect because it's a possessive article, not a definite article\n\nThe verdict would be: TRUE||All wrong answers fail to meet the stated requirement of a definite article in the nominative.\n\nRemaining tasks: None — the analysis is complete.\n\nRecommendations: This question passes validation and can be kept as-is.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781209959023-qviftiz8",
+      "timestamp": "2026-06-11T20:33:14.931Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the explicit requirement for a definite article in the nominative: B uses the feminine article but \"Mädchen\" is neuter, C is an indefinite article not a definite one, and D is a possessive pronoun.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781210201089-o1o3p7hw",
+      "timestamp": "2026-06-11T20:37:18.358Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"Die\" is the feminine article but \"Mädchen\" is neuter, \"Ein\" is an indefinite article not a definite one as required, and \"Mein\" is a possessive pronoun not a definite article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781210445986-m4icseoh",
+      "timestamp": "2026-06-11T20:41:04.491Z"
+    }
+  ]
+}

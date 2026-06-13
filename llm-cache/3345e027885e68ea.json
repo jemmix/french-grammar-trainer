@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3345e027885e68ea",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-10-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-10 - Gemischte Übungen: Nominativ und Akkusativ unterscheiden\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie: „Das Kind isst ___ Kuchen.\"\nChoices:\nA. [CORRECT] den\nB. der\nC. dem\nD. das\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781220834336-vuogoy41"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"Kuchen\" as the direct object of \"essen\" takes the Akkusativ case, specifically that the masculine article changes from \"der\" to \"den,\" which is the core distinction between Nominativ and Akkusativ being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221617483-9pcenxpr",
+      "timestamp": "2026-06-11T23:47:10.327Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a German grammar question about accusative case is properly aligned with its stated rule.\n\nVERDICT: ALIGNED\nREASON: The question requires students to recognize that \"Kuchen\" is in the accusative position as the direct object of \"isst\" and correctly apply the masculine accusative article \"den\" instead of the nominative \"der\".\n\nNo remaining tasks - the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222350598-y48p4kbp",
+      "timestamp": "2026-06-11T23:59:34.997Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing the Akkusativ form \"den\" from the Nominativ \"der,\" Dativ \"dem,\" and incorrect gender \"das,\" which directly tests the ability to identify when a direct object requires Akkusativ rather than Nominativ.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222752015-0v5r0ed7",
+      "timestamp": "2026-06-12T00:08:19.110Z"
+    }
+  ]
+}

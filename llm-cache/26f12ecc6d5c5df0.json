@@ -1,0 +1,33 @@
+{
+  "cacheKey": "26f12ecc6d5c5df0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-08-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-08 - Nominativ vs. Akkusativ: Subjekt vs. direktes Objekt identifizieren\n\nQUESTION:\nType: Input\nPrompt: Welcher Artikel fehlt? (Nominativ oder Akkusativ)\nPhrase: Der Bäcker backt ___ Kuchen.\nCorrect Answer: den\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781302853970-3x9kbkyv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying \"Kuchen\" as the direct object (Akkusativ) receiving the action of \"backt,\" distinguishing it from the subject \"Der Bäcker\" (Nominativ), which is precisely the skill the rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781302960001-ovh38413",
+      "timestamp": "2026-06-12T22:23:03.706Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying \"Der Bäcker\" as the subject (Nominativ) and \"Kuchen\" as the direct object (Akkusativ), then applying the correct accusative article \"den\" — directly testing the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303134757-m7olapr1",
+      "timestamp": "2026-06-12T22:28:09.327Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying \"Kuchen\" as the direct object (Akkusativ) of \"backt\" rather than the subject \"Der Bäcker\" (Nominativ), which is exactly the core skill of distinguishing subject vs. direct object that this rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303456230-qxty3fol",
+      "timestamp": "2026-06-12T22:32:32.994Z"
+    }
+  ]
+}

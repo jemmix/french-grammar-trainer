@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c705eda668415441",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-07-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-07 - Akkusativpräpositionen: durch, für, gegen, ohne, um\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie die richtige Präposition: „Sie kommt ___ ihren Freund.\"\nChoices:\nA. [CORRECT] ohne\nB. mit\nC. zu\nD. bei\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781290881828-rnx246fz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests vocabulary knowledge of preposition meanings (selecting \"ohne\" as \"without\" rather than \"mit\", \"zu\", or \"bei\"), not the grammatical rule that these prepositions take the accusative case—the accusative form \"ihren Freund\" is already given in the sentence, so no case knowledge is required to answer correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291281554-g0dmpfb0",
+      "timestamp": "2026-06-12T19:08:52.899Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was in the process of validating whether a German grammar question about Akkusativpräpositionen (durch, für, gegen, ohne, um) properly tests that rule.\n\n**Verdict for the submitted question:**\nVERDICT: MISALIGNED\nREASON: The question can be answered correctly by knowing the meaning of \"ohne\" (\"without\") and that \"She comes without her friend\" makes semantic sense, without any knowledge that \"ohne\" is an Akkusativpräposition or what case it requires.\n\n**Remaining tasks:**\n- None explicitly pending from user\n\n**Recommendations:**\nTo properly test Akkusativpräpositionen, questions should require students to apply accusative case after these prepositions—for example, by asking them to select the correct article form (den vs. dem) after \"durch,\" \"für,\" \"gegen,\" \"ohne,\" or \"um,\" rather than selecting the preposition itself based on vocabulary/semantics.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291897802-lidkowek",
+      "timestamp": "2026-06-12T19:19:40.510Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "d463b8e51b3dbfdf",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-09-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-09 - Wortstellung von Subjekt und Akkusativobjekt\n\nQUESTION:\nType: Multiple Choice\nPrompt: Warum kann im Deutschen das Akkusativobjekt vor dem Subjekt stehen, ohne dass die Bedeutung verloren geht?\nChoices:\nA. [CORRECT] Weil die Kasusendungen (der/den) die Rolle jedes Nomens eindeutig markieren.\nB. Weil die Wortstellung im Deutschen immer Subjekt-Verb-Objekt ist.\nC. Weil Verben immer den Akkusativ verlangen.\nD. Weil das Subjekt immer am Satzanfang steht.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781302853976-zcceenbw"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests understanding of why the word order flexibility between subject and accusative object is possible, which requires knowing that case endings disambiguate grammatical roles—a core concept of this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781302983707-xcp4kknf",
+      "timestamp": "2026-06-12T22:23:32.286Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests understanding of why German allows flexible word order between subject and accusative object—namely, that case endings disambiguate grammatical roles—which is the core concept of the stated rule about Wortstellung von Subjekt und Akkusativobjekt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303165254-y879ns8v",
+      "timestamp": "2026-06-12T22:26:28.165Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the theoretical reason why flexible word order is possible in German (case endings marking roles), rather than testing the student's ability to apply or recognize the actual word order patterns of subject and accusative object.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303348258-8jsme9vg",
+      "timestamp": "2026-06-12T22:30:29.854Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests the theoretical reason behind word order flexibility (case marking) rather than the actual word order rule itself; a properly aligned question would require the learner to apply or identify correct subject-accusative word order in sentences.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303502133-yorm3lao",
+      "timestamp": "2026-06-12T22:32:12.447Z"
+    }
+  ]
+}

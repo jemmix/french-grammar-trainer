@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1c6285c89466e306",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-10-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz verwendet Nominativ und Akkusativ korrekt?\n\nChoices:\nA. [CORRECT] Der Wolf jagt den Hasen.\nB. [WRONG] Den Wolf jagt den Hasen.\nC. [WRONG] Der Wolf jagt der Hase.\nD. [WRONG] Dem Wolf jagt den Hasen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781290881839-44j6e3fy"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear case errors: B uses accusative for the subject, C uses nominative for the direct object, and D uses dative for the subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291484318-uo8260h3",
+      "timestamp": "2026-06-12T19:14:04.326Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was tasked with verifying that wrong answers B, C, and D in a German grammar multiple choice question are indeed incorrect. The question asks which sentence uses Nominativ and Akkusativ correctly.\n\n**Analysis completed:**\n- B. \"Den Wolf jagt den Hasen.\" — Both nouns are in accusative form (Den Wolf, den Hasen); no nominative subject present. INCORRECT.\n- C. \"Der Wolf jagt der Hase.\" — Both nouns are in nominative form (Der Wolf, der Hase); no accusative object present. INCORRECT.\n- D. \"Dem Wolf jagt den Hasen.\" — First noun is dative (Dem Wolf), second is accusative (den Hasen); no nominative subject present. INCORRECT.\n\n**Verdict:** TRUE||All wrong answers fail to use both nominative and accusative correctly as required by the question.\n\n**Remaining tasks:** None — the verification is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292201343-n0javzdh",
+      "timestamp": "2026-06-12T19:23:48.906Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear case errors: B puts the subject in accusative instead of nominative, C puts the direct object in nominative instead of accusative, and D puts the subject in dative instead of nominative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292505600-vy4siflw",
+      "timestamp": "2026-06-12T19:38:50.514Z"
+    }
+  ]
+}

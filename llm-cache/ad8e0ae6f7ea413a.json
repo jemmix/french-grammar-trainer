@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ad8e0ae6f7ea413a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-07-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-07 - Akkusativpräpositionen: durch, für, gegen, ohne, um\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den richtigen Artikel im Akkusativ: « Er geht ___ den Park. »\nChoices:\nA. [CORRECT] durch\nB. für\nC. um\nD. ohne\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781220224654-z8i2coz7"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate a single German grammar question for rule alignment. The question asked students to choose the correct preposition (\"durch, für, um, ohne\") to complete \"Er geht ___ den Park.\"\n\nVERDICT: MISALIGNED\nREASON: The question tests vocabulary/semantic knowledge of preposition meanings (knowing \"durch\" means \"through\") rather than knowledge that these specific prepositions govern the accusative case—the accusative article \"den\" is already provided, so no case knowledge is required to answer correctly.\n\nRemaining tasks: None—this was a single-question validation.\n\nRecommendations: To properly test Akkusativpräpositionen, the question should require the student to apply accusative case (e.g., \"Er geht durch ___ Park\" with choices like den/dem/der/des), or present a scenario where choosing between prepositions requires knowing which case they trigger.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220715151-zbhu8u4m",
+      "timestamp": "2026-06-11T23:32:18.770Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a German grammar question about Akkusativpräpositionen (durch, für, gegen, ohne, um). The analysis was nearly complete.\n\n**Verdict for the question:**\nVERDICT: MISALIGNED\nREASON: The question can be answered correctly using only vocabulary knowledge (durch = \"through\" fits \"Er geht durch den Park\") without requiring understanding that these are Akkusativpräpositionen, and the prompt incorrectly asks for an \"Artikel\" when the choices are prepositions.\n\n**Remaining tasks:**\n- None explicitly pending; this was a single-question validation task.\n\n**Recommendations:**\n- To properly test Akkusativpräpositionen, the question should require the student to identify which preposition governs the accusative case, perhaps by presenting a sentence where the case distinction matters (e.g., contrasting with a dative preposition like \"in\" where the meaning changes based on case).\n- Fix the prompt to correctly reference prepositions rather than articles.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221314879-2owkp6ro",
+      "timestamp": "2026-06-11T23:42:26.476Z"
+    }
+  ]
+}

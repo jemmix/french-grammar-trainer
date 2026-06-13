@@ -1,0 +1,33 @@
+{
+  "cacheKey": "73fbe04a82329598",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-07-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-07 - Akkusativpräpositionen: durch, für, gegen, ohne, um\n\nQUESTION:\nType: Input\nPrompt: Welcher bestimmte Artikel fehlt? (Akkusativ)\nPhrase: Wir fahren durch ___ Tunnel.\nCorrect Answer: den\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781302853957-6f26r5ig"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge that \"durch\" takes the accusative case, requiring the learner to apply the Akkusativpräpositionen rule to select \"den\" over dative \"dem\" or nominative \"der.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781302949980-3tk32mnb",
+      "timestamp": "2026-06-12T22:22:57.506Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a German grammar question for alignment with its stated rule. The question asks for the correct definite article in \"Wir fahren durch ___ Tunnel\" with answer \"den,\" claiming to test Akkusativpräpositionen (durch, für, gegen, ohne, um).\n\n**Verdict that would have been provided:**\nVERDICT: ALIGNED\nREASON: The question requires recognizing \"durch\" as an Akkusativpräposition and applying the correct masculine accusative article \"den,\" which directly tests the stated rule.\n\n**Remaining tasks:** None - this was a single-question validation task that was essentially complete.\n\n**Recommendations:** No further action needed on this specific question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303112878-p361rc2t",
+      "timestamp": "2026-06-12T22:26:07.777Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"durch\" is an accusative preposition (the exact rule being tested) to correctly choose \"den\" instead of the nominative \"der\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303322918-r6lc43yu",
+      "timestamp": "2026-06-12T22:48:56.491Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d9edd93a28387014",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-02-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den unbestimmten Artikel im Akkusativ: „Ich möchte ___ Kuchen zum Dessert.\"\n\nChoices:\nA. [CORRECT] einen\nB. [WRONG] ein\nC. [WRONG] eine\nD. [WRONG] einem\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781220224649-3e5zj23q"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect case endings - \"ein\" is nominative/neuter accusative, \"eine\" is feminine, and \"einem\" is dative, none of which match the required masculine accusative form for \"Kuchen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220316857-nhfmyyfi",
+      "timestamp": "2026-06-11T23:26:11.198Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms: B is nominative/neuter accusative, C is feminine, and D is dative — none match the required masculine accusative form \"einen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220936334-xx28lx18",
+      "timestamp": "2026-06-11T23:36:29.181Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use wrong cases (B: nominative, C: feminine, D: dative) instead of the required masculine accusative \"einen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221821377-sxew361g",
+      "timestamp": "2026-06-11T23:50:43.834Z"
+    }
+  ]
+}

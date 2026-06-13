@@ -1,0 +1,26 @@
+{
+  "cacheKey": "16a839e33447a10c",
+  "predicateId": "german-language",
+  "questionId": "02-08-002",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Nominativ vs. Akkusativ: Subjekt vs. direktes Objekt identifizieren\n\nQUESTION CONTENT:\nPrompt: Welches Wort steht im Akkusativ? « Die Lehrerin lobt den Schüler. »\nChoices:\nA. [correct] den Schüler\n   Explanation: « Den Schüler » ist das direkte Objekt im Akkusativ — derjenige, der gelobt wird. « Den » ist der bestimmte Artikel im Akkusativ Maskulin.\nB. Die Lehrerin\n   Explanation: « Die Lehrerin » steht im Nominativ und ist das Subjekt — diejenige, die lobt.\nC. lobt\n   Explanation: « Lobt » ist das Verb und steht in keinem Kasus.\nD. die\n   Explanation: « Die » allein ist nur ein Artikel; der完整的 Akkusativausdruck ist « den Schüler ».\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1781225076206-igw7p8y6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ENGLISH_DETECTED\nREASON: Explanation for choice D contains non-German text: \"der完整的 Akkusativausdruck\" includes Chinese characters \"完整的\" instead of the German word \"vollständige\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781225426538-s2snpkdn",
+      "timestamp": "2026-06-12T00:50:37.521Z"
+    },
+    {
+      "raw": "VERDICT: ENGLISH_DETECTED\nREASON: Explanation for choice D contains Chinese characters \"完整的\" (meaning \"complete\") instead of German text: \"der完整的 Akkusativausdruck\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781225731240-yfjy7xpg",
+      "timestamp": "2026-06-12T00:55:44.853Z"
+    }
+  ]
+}

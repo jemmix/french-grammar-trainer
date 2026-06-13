@@ -1,0 +1,33 @@
+{
+  "cacheKey": "825774ac7a21cdab",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-01-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den bestimmten Artikel im Akkusativ: „Sie kauft ___ Roman für ihre Mutter.\"\n\nChoices:\nA. [CORRECT] den\nB. [WRONG] der\nC. [WRONG] dem\nD. [WRONG] das\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781290881775-eb5r5y5d"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases or genders: \"der\" is nominative not accusative, \"dem\" is dative not accusative, and \"das\" is neuter but \"Roman\" is masculine.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781290881846-d1h8kg80",
+      "timestamp": "2026-06-12T19:03:08.079Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms: \"der\" is nominative, \"dem\" is dative, and \"das\" is neuter, but \"Roman\" requires the masculine accusative \"den.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291669383-8jgu457w",
+      "timestamp": "2026-06-12T19:23:29.702Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case or gender forms: \"der\" is nominative, \"dem\" is dative, and \"das\" is neuter, but the question requires the accusative masculine form \"den\" for the direct object \"Roman.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292491437-3exi3ix0",
+      "timestamp": "2026-06-12T19:28:32.422Z"
+    }
+  ]
+}

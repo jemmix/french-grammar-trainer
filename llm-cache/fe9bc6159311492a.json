@@ -1,0 +1,40 @@
+{
+  "cacheKey": "fe9bc6159311492a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-04-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-04 - Possessivartikel im Akkusativ\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie die richtige Form: „Kennst du ___ Schwester?\"\nChoices:\nA. [CORRECT] meine\nB. meinen\nC. mein\nD. meiner\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781220224651-uyr4sk31"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a German grammar question about possessive articles in the accusative case.\n\n**Analysis completed:**\nThe question \"Kennst du ___ Schwester?\" with correct answer \"meine\" does NOT properly test the accusative rule because \"Schwester\" is feminine, and the feminine possessive article \"meine\" is identical in both nominative and accusative cases. A student could select the correct answer by knowing only the gender of \"Schwester\" without any understanding of accusative case changes.\n\n**Verdict that would have been returned:**\nVERDICT: MISALIGNED\nREASON: The feminine possessive article \"meine\" is identical in both nominative and accusative, so a student can answer correctly knowing only the gender of \"Schwester\" without understanding the accusative rule.\n\n**Remaining tasks:**\nNone - the validation judgment was complete.\n\n**Recommendations:**\nTo properly test possessive articles in the accusative, use a masculine noun (e.g., \"Kennst du ___ Bruder?\" where \"meinen\" is the correct accusative form, distinct from nominative \"mein\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220425325-3s7x2imf",
+      "timestamp": "2026-06-11T23:27:38.598Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was able to complete the validation task before the step limit:\n\nVERDICT: ALIGNED\nREASON: The question requires knowing the correct accusative declension of the possessive article \"mein\" for the feminine noun \"Schwester\" (direct object of \"kennen\"), which directly tests possessive articles in the accusative case.\n\nNo remaining tasks — this was a single-question validation that was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221057674-92b0cioa",
+      "timestamp": "2026-06-11T23:37:59.715Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished:\nI was asked to validate whether a German grammar question about possessive articles in the accusative case is properly aligned with its stated rule. I have analyzed the question and determined my verdict.\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"kennen\" takes the accusative case and that the feminine possessive article \"meine\" (not \"meinen,\" \"mein,\" or \"meiner\") is the correct form for \"Schwester\" in the accusative, directly testing possessive article declension in the accusative case.\n\nRemaining tasks: None - the validation was completed.\n\nRecommendations: No further action needed for this validation task.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221928646-r5ru2arx",
+      "timestamp": "2026-06-11T23:52:36.968Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The feminine accusative form \"meine\" is identical to the feminine nominative form, so a student could answer correctly knowing only the gender of \"Schwester\" without any understanding of the accusative rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222496508-du447wff",
+      "timestamp": "2026-06-12T00:02:34.420Z"
+    }
+  ]
+}

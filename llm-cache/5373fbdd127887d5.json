@@ -1,0 +1,26 @@
+{
+  "cacheKey": "5373fbdd127887d5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-09-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-09 - Wortstellung von Subjekt und Akkusativobjekt\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welche Wortstellung ist korrekt?\nChoices:\nA. [CORRECT] Er zeigt dem Kind das Bild.\nB. Er zeigt das Bild dem Kind.\nC. Das Bild zeigt er dem Kind.\nD. Dem Kind zeigt er das Bild.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781220834335-aggz99ep"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work\nI was asked to validate whether a German grammar question about word order properly tests the stated rule \"02-09 - Wortstellung von Subjekt und Akkusativobjekt\" (word order of subject and accusative object).\n\n## My Assessment\nThe question asks about the correct word order in a sentence with both a dative object (\"dem Kind\") and an accusative object (\"das Bild\"). The correct answer follows the standard German rule of placing the dative before the accusative.\n\nHowever, the stated rule is about the word order of **subject and accusative object**—a different concept entirely (e.g., \"Der Hund beißt den Mann\" vs. \"Den Mann beißt der Hund\"). The question does not test subject-accusative word order variations; it tests dative-accusative order.\n\n**VERDICT: MISALIGNED**\n**REASON: The question tests the word order of dative and accusative objects (Dativ vor Akkusativ), not the word order of subject and accusative object as stated in the rule.**\n\n## Remaining Tasks\nNone—this was a single-question validation task.\n\n## Recommendations\nThe question should either:\n1. Be reassigned to a rule about dative-accusative word order, or\n2. Be rewritten to actually test subject-accusative word order (e.g., using a sentence with only a subject and accusative object, testing topicalization variations)",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221529900-xlt8nmop",
+      "timestamp": "2026-06-11T23:46:19.411Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was asked to validate whether a German grammar question about word order (\"Welche Wortstellung ist korrekt?\") actually tests the stated rule \"Wortstellung von Subjekt und Akkusativobjekt\" (word order of subject and accusative object).\n\nList of any remaining tasks that were not completed:\n- Output the formal verdict and reason in the requested format\n\nRecommendations for what should be done next:\nProvide the validation verdict. Based on my analysis:\n\nVERDICT: MISALIGNED\nREASON: This question tests the relative order of dative and accusative objects (Dativ vor Akkusativ when both follow the verb), not the word order between subject and accusative object as stated in the rule—the subject position remains constant across the relevant answer choices.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222280574-vcgxg5jq",
+      "timestamp": "2026-06-11T23:58:27.018Z"
+    }
+  ]
+}

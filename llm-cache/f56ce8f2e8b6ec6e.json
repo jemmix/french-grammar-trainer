@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f56ce8f2e8b6ec6e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-06-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie das Personalpronomen im Akkusativ: „Ich treffe ___ heute im Park. Die Freunde kommen auch.\"\n\nChoices:\nA. [CORRECT] sie\nB. [WRONG] ihnen\nC. [WRONG] ihn\nD. [WRONG] derer\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781220224654-rjt81cab"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses dative instead of accusative, C is singular masculine instead of plural, and D is a genitive relative pronoun rather than a personal pronoun.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220693901-nn7e6r29",
+      "timestamp": "2026-06-11T23:31:54.297Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||B \"ihnen\" is dative plural, not accusative; C \"ihn\" is accusative singular masculine, but \"die Freunde\" requires plural; D \"derer\" is a genitive relative pronoun, not a personal pronoun in accusative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221297696-h29iq6a5",
+      "timestamp": "2026-06-11T23:42:08.588Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses dative instead of accusative, C is singular instead of plural for \"die Freunde,\" and D is a genitive/relative form not a personal pronoun in accusative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222111107-m7j30lzm",
+      "timestamp": "2026-06-11T23:56:04.313Z"
+    }
+  ]
+}

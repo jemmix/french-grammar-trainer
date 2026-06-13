@@ -1,0 +1,47 @@
+{
+  "cacheKey": "3e38c4c29f94b821",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-05-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-05 - Verben mit Akkusativobjekt (haben, kaufen, sehen, machen, kennen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welches Verb verlangt ein Akkusativobjekt?\nChoices:\nA. [CORRECT] suchen\nB. helfen\nC. gefallen\nD. gratulieren\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781290881809-mpvlnaot"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student can identify which verb takes an accusative object, which is the core skill defined by the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291050418-26dd1l3j",
+      "timestamp": "2026-06-12T19:05:10.123Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\n\nI was in the process of validating a German grammar question for alignment with its stated rule. The validation analysis was as follows:\n\n**Rule:** 02-05 - Verben mit Akkusativobjekt (haben, kaufen, sehen, machen, kennen)\n\n**Question:** Multiple choice asking \"Welches Verb verlangt ein Akkusativobjekt?\" with choices: suchen (correct), helfen, gefallen, gratulieren\n\n**Analysis:** The rule specifically lists five verbs in parentheses (haben, kaufen, sehen, machen, kennen), suggesting this is a focused lesson on those particular common accusative-taking verbs. The question instead tests \"suchen,\" which—while indeed taking an accusative object—is not one of the verbs covered by this specific rule. A student could know all five verbs from the rule and still not know that \"suchen\" takes accusative.\n\n**Verdict that would have been output:**\nVERDICT: MISALIGNED\nREASON: The rule explicitly scopes to the verbs haben, kaufen, sehen, machen, and kennen, but the question tests \"suchen\" which is outside the rule's defined verb set.\n\n## Remaining Tasks\n\nNone—this was a single-question validation task.\n\n## Recommendations\n\nTo fix this question, either:\n1. Replace \"suchen\" with one of the five verbs listed in the rule (e.g., haben, kaufen, sehen, machen, or kennen), OR\n2. If \"suchen\" should be included, update the rule title/scope to reflect a broader set of accusative verbs",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291788152-fdm3i08n",
+      "timestamp": "2026-06-12T19:17:26.149Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student can identify which verb requires an accusative object, which is the central concept of the stated rule about verbs with accusative objects.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292331502-vdbq3ved",
+      "timestamp": "2026-06-12T19:25:54.833Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows which verbs take an accusative object versus other cases (dative), which is the central concept of the stated rule about verbs with accusative objects.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292906004-zhguyaib",
+      "timestamp": "2026-06-12T19:36:04.794Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question alignment.\n\nVERDICT: MISALIGNED\nREASON: The rule specifically lists the verbs \"haben, kaufen, sehen, machen, kennen\" as the target vocabulary, but the correct answer \"suchen\" is not among these verbs, meaning a student who only learned the stated rule content could not answer this question correctly.\n\nRemaining task: This single validation was the complete task requested.\n\nRecommendation: Revise the question to include one of the listed verbs (haben, kaufen, sehen, machen, kennen) as the correct answer, or update the rule description if \"suchen\" should be included in the curriculum.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781293258533-tof7k74t",
+      "timestamp": "2026-06-12T19:41:24.743Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0fc7fb21f3acf3f7",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-09-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-09 - Wortstellung von Subjekt und Akkusativobjekt\n\nQUESTION:\nType: Multiple Choice\nPrompt: In welchem Satz steht das Akkusativobjekt VOR dem Subjekt (invertierte Wortstellung)?\nChoices:\nA. [CORRECT] Den Onkel besucht der Neffe.\nB. Der Neffe besucht den Onkel.\nC. Die Tante besucht der Onkel.\nD. Der Onkel besucht der Neffe.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781302853976-xpvyo8s1"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done:\nI analyzed the German grammar question to determine if it tests the stated rule about word order of subject and accusative object (Wortstellung von Subjekt und Akkusativobjekt).\n\nVERDICT: ALIGNED\nREASON: The question directly requires identifying sentences where the accusative object precedes the subject, which is exactly what the rule about inverted word order tests.\n\nNote: While the question is aligned with the rule, it has a quality issue—choice C (\"Die Tante besucht der Onkel\") also has the accusative object before the subject, making it a second correct answer. This would be flagged as a validation error, but it doesn't affect the alignment assessment.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781302998133-auk9ckod",
+      "timestamp": "2026-06-12T22:23:53.721Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was in the process of validating a German grammar question about word order of subject and accusative object (Wortstellung von Subjekt und Akkusativobjekt). The question asks students to identify which sentence has the accusative object before the subject in inverted word order.\n\n## Validation Result\n\nVERDICT: ALIGNED\nREASON: The question directly tests whether the student can recognize inverted word order where the accusative object (\"Den Onkel\") precedes the subject (\"der Neffe\"), which is the core of the stated rule about Wortstellung von Subjekt und Akkusativobjekt.\n\n## Remaining Tasks\nNone - this was a single-question validation task that has been completed.\n\n## Recommendations\nThe question is properly aligned with the rule. Note that choices C and D contain grammatical errors (two nominative subjects with \"besuchen\" which requires accusative), but this doesn't affect the alignment of the question with the word order rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303171548-wt2rw2d0",
+      "timestamp": "2026-06-12T22:29:38.845Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student can identify inverted word order where the accusative object precedes the subject, which is precisely what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303492385-xh2bwrlp",
+      "timestamp": "2026-06-12T22:32:10.641Z"
+    }
+  ]
+}

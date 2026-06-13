@@ -1,0 +1,26 @@
+{
+  "cacheKey": "f3496ae485490d11",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-10 - Gemischte Übungen: Nominativ und Akkusativ unterscheiden\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie den bestimmten Artikel im richtigen Kasus ein (Nominativ oder Akkusativ).\nPhrase: „___ Katze schläft auf dem Sofa.\nCorrect Answer: Die\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781221758370-v01cmq3c"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: For feminine nouns like \"Katze,\" the definite article \"die\" is identical in both Nominative and Akkusative, so a student can provide the correct answer without actually distinguishing between the two cases—the question fails to test the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222399994-5293hlfy",
+      "timestamp": "2026-06-12T00:00:24.003Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work completed:**\nI was asked to validate whether a German grammar question about the Akkusativ section (specifically rule \"02-10 - Gemischte Übungen: Nominativ und Akkusativ unterscheiden\") properly tests the stated rule. The question asks students to fill in the definite article for \"___ Katze schläft auf dem Sofa.\" with correct answer \"Die.\"\n\n**Verdict analysis:**\nVERDICT: MISALIGNED\nREASON: The sentence only contains a Nominativ subject (\"Die Katze\" as the subject performing \"schläft\") with no Akkusativ object present, so a student can answer correctly by simply knowing the feminine Nominativ article without ever needing to distinguish between Nominativ and Akkusativ.\n\n**Remaining tasks:** None — the validation was completed before the step limit.\n\n**Recommendation:** To properly test distinguishing Nominativ from Akkusativ, the question should include a context where both cases are plausible (e.g., a sentence with both a subject and a direct object, or a multiple-choice format offering \"Die\" vs. \"Die\" with different case implications).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222791181-mmov2q16",
+      "timestamp": "2026-06-12T00:06:53.186Z"
+    }
+  ]
+}

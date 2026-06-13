@@ -1,0 +1,33 @@
+{
+  "cacheKey": "332c2640b345f624",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-02-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den unbestimmten Artikel im Akkusativ: „Die Studentin schreibt ___ Brief an ihre Eltern.\"\n\nChoices:\nA. [CORRECT] einen\nB. [WRONG] ein\nC. [WRONG] eines\nD. [WRONG] eine\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781220224649-c3j36kw9"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect case endings for a masculine noun in the accusative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220314507-ftj43725",
+      "timestamp": "2026-06-11T23:25:29.055Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use wrong case forms (nominative \"ein\", genitive \"eines\", or feminine \"eine\") instead of the required accusative \"einen\" for the masculine noun \"Brief\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220930214-peiu043q",
+      "timestamp": "2026-06-11T23:36:04.867Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of verifying a German grammar multiple choice question about the indefinite article in the accusative case.\n\nAnalysis completed:\n- The question asks for the indefinite article \"ein\" in the accusative case for \"Brief\" (masculine noun)\n- Correct answer A \"einen\" is correct (masculine accusative)\n- Wrong answer B \"ein\" is nominative, not accusative - incorrect\n- Wrong answer C \"eines\" is genitive, not accusative - incorrect  \n- Wrong answer D \"eine\" is feminine, but \"Brief\" is masculine - incorrect\n\nThe verdict would have been: TRUE||All wrong answers use incorrect case forms (nominative, genitive, or feminine) instead of the required masculine accusative.\n\nRemaining tasks: None - this was a single verification task.\n\nRecommendations: The question is valid and all wrong answers are genuinely incorrect. No changes needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221819846-1g8jaypq",
+      "timestamp": "2026-06-11T23:50:42.461Z"
+    }
+  ]
+}

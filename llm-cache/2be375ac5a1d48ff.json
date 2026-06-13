@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2be375ac5a1d48ff",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-01-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Kinder spielen im Garten.\"\n\nChoices:\nA. [CORRECT] Die\nB. [WRONG] Der\nC. [WRONG] Keine\nD. [WRONG] Unsere\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781209909548-r7hzjxfp"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is the masculine singular article but \"Kinder\" is plural, C is a negative indefinite article, and D is a possessive article, none of which satisfy the requirement for a definite article in the nominative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781209983996-7xl0u540",
+      "timestamp": "2026-06-11T20:33:27.281Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"Der\" is singular masculine, \"Keine\" is an indefinite negative article (not definite), and \"Unsere\" is a possessive adjective (not definite), but the question requires the definite article in the nominative for the plural noun \"Kinder\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781210206206-flw6ltgj",
+      "timestamp": "2026-06-11T20:37:24.365Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nWork accomplished: I was analyzing a German grammar verification question about definite articles in the nominative case.\n\nThe question asked to fill in the definite article for \"Kinder\" (children, plural) in the nominative case. The correct answer is \"Die.\"\n\nAnalysis of wrong answers:\n- B. \"Der\" - Incorrect because \"der\" is masculine singular nominative, not plural\n- C. \"Keine\" - Incorrect because it's a negation article, not a definite article as required\n- D. \"Unsere\" - Incorrect because it's a possessive article, not a definite article as required\n\nVERDICT: TRUE||All wrong answers fail to meet the stated requirements: B uses the wrong gender/number for plural, C is a negation article not a definite article, and D is a possessive article not a definite article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781210450309-3a9hbi1h",
+      "timestamp": "2026-06-11T20:41:18.903Z"
+    }
+  ]
+}

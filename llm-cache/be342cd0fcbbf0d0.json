@@ -1,0 +1,26 @@
+{
+  "cacheKey": "be342cd0fcbbf0d0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-05-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-05 - Verben mit Akkusativobjekt (haben, kaufen, sehen, machen, kennen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz zeigt ein korrektes Akkusativobjekt nach dem Verb?\nChoices:\nA. [CORRECT] Sie macht ihre Hausaufgaben.\nB. Sie macht ihren Hausaufgaben.\nC. Sie hilft ihre Hausaufgaben.\nD. Sie macht ihren Hausaufgaben nicht.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781290881809-pxuctprd"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"machen\" takes an accusative object (eliminating choice C which uses \"helfen\" + dative) and recognizing the correct accusative form of the possessive pronoun with plural \"Hausaufgaben\" (eliminating B and D which incorrectly use \"ihren\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291066704-6aot931q",
+      "timestamp": "2026-06-12T19:05:11.634Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"machen\" takes an accusative object to select the correct possessive form \"ihre\" over the dative \"ihren\", and to identify that \"helfen\" incorrectly takes dative rather than accusative.\n\nMaximum steps for this agent have been reached. The validation task has been completed for this single question. No remaining tasks are pending for this specific validation request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291801014-c3ybemud",
+      "timestamp": "2026-06-12T19:17:18.863Z"
+    }
+  ]
+}

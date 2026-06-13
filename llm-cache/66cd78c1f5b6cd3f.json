@@ -1,0 +1,26 @@
+{
+  "cacheKey": "66cd78c1f5b6cd3f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-05-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-05 - Verben mit Akkusativobjekt (haben, kaufen, sehen, machen, kennen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie: „___ ihr die neue Kollegin?\"\nChoices:\nA. [CORRECT] Kennt\nB. Wisst\nC. Trefft\nD. Gefällt\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781220224653-9l4eguod"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests verb selection and conjugation (which verb fits semantically and its \"ihr\" form), not whether \"kennen\" takes an accusative object, since the accusative form \"die neue Kollegin\" is already correctly provided in the prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220584318-0lrdsk66",
+      "timestamp": "2026-06-11T23:30:32.021Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of validating a German grammar question against its stated rule. The question asks students to complete \"___ ihr die neue Kollegin?\" with choices being Kennt, Wisst, Trefft, or Gefällt, and the rule being tested is \"Verben mit Akkusativobjekt (haben, kaufen, sehen, machen, kennen).\"\n\nMy analysis was complete:\n\nVERDICT: MISALIGNED\nREASON: The accusative object \"die neue Kollegin\" is already correctly formed in the prompt, so answering correctly only requires recognizing that \"kennen\" means \"to know (a person)\" rather than applying knowledge that \"kennen\" takes an accusative object.\n\nNo remaining tasks — the validation was completed before the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221220627-ncsc1sdl",
+      "timestamp": "2026-06-11T23:41:19.734Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "51b5c5c0758f7d40",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-10-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den richtigen Artikel: „Ich sehe ___ Mann auf der Straße.\"\n\nChoices:\nA. [CORRECT] den\nB. [WRONG] der\nC. [WRONG] dem\nD. [WRONG] ein\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781220834336-5ign38wr"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a German grammar question about articles are indeed incorrect.\n\nAnalysis completed:\n- B (\"der\") is nominative, but \"sehen\" requires accusative → incorrect\n- C (\"dem\") is dative, not accusative → incorrect  \n- D (\"ein\") is wrong because accusative masculine indefinite article is \"einen\", not \"ein\" → incorrect\n\nThe verdict would be: TRUE||All wrong answers use incorrect case forms or the wrong indefinite article form for the accusative masculine direct object required by \"sehen.\"\n\nNo remaining tasks - the verification is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221594578-ta3anqal",
+      "timestamp": "2026-06-11T23:47:08.183Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases for the accusative direct object \"Mann\": B uses nominative \"der\", C uses dative \"dem\", and D uses nominative \"ein\" instead of the required accusative \"einen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222326232-ghxc9j20",
+      "timestamp": "2026-06-11T23:59:37.592Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases (nominative \"der\", dative \"dem\", or nominative indefinite \"ein\" instead of the required accusative \"den\" for the direct object of \"sehen\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222760714-xfztia18",
+      "timestamp": "2026-06-12T00:06:17.016Z"
+    }
+  ]
+}

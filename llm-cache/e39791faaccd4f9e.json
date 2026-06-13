@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e39791faaccd4f9e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-10-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den richtigen Artikel: „___ Hund beißt den Briefträger.\"\n\nChoices:\nA. [CORRECT] Der\nB. [WRONG] Den\nC. [WRONG] Dem\nD. [WRONG] Ein\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781220834336-utt8dguf"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done so far:**\nI was asked to verify that the wrong answers (B, C, D) in a German multiple choice question about articles are indeed incorrect. The question asks to complete \"___ Hund beißt den Briefträger\" with the correct article.\n\n**Analysis completed:**\n- B. \"Den\" - incorrect (accusative, not nominative)\n- C. \"Dem\" - incorrect (dative, not nominative)  \n- D. \"Ein\" - this is actually grammatically correct as a nominative masculine indefinite article; \"Ein Hund beißt den Briefträger\" is a valid German sentence\n\n**Verdict that would have been returned:**\nFALSE|D|\"Ein\" is a grammatically correct nominative masculine indefinite article and \"Ein Hund beißt den Briefträger\" is a valid German sentence, so it cannot be marked as definitively wrong without the question specifying that a definite article is required.\n\n**Remaining tasks:**\nNone - the analysis is complete.\n\n**Recommendations:**\nTo fix this question, either change D to a clearly incorrect option (e.g., \"Eine\" - feminine, or \"Das\" - neuter), or rephrase the question to specify \"den bestimmten Artikel\" (the definite article) to make \"Ein\" unambiguously wrong.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221580714-dlzfdmb4",
+      "timestamp": "2026-06-11T23:47:01.183Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses accusative instead of nominative, C uses dative instead of nominative, and D is indefinite but the sentence structure with the definite accusative object \"den Briefträger\" expects a definite subject article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222323220-bxj35h81",
+      "timestamp": "2026-06-11T23:59:05.268Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of work done so far\nI was in the process of analyzing a German grammar verification task. The question asks to complete \"___ Hund beißt den Briefträger\" with the correct article. I analyzed each wrong answer:\n- B (Den): Accusative case, incorrect for a subject\n- C (Dem): Dative case, incorrect for a subject  \n- D (Ein): Indefinite article in nominative case — grammatically correct for this sentence position\n\n## Remaining tasks\nThe verification response was not delivered.\n\n## Recommendation for next step\nThe verdict should be: FALSE|D|\"Ein Hund beißt den Briefträger\" is grammatically correct German with the indefinite article in the nominative case, making D a valid answer despite being marked wrong. The question should specify \"bestimmten Artikel\" (definite article) to properly exclude \"ein.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222740189-iqv6tb74",
+      "timestamp": "2026-06-12T00:06:21.177Z"
+    }
+  ]
+}

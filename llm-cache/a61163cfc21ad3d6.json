@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a61163cfc21ad3d6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-08-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welches Satzglied ist das Subjekt (Nominativ)? « Der Hund sieht die Katze. »\n\nChoices:\nA. [CORRECT] Der Hund\nB. [WRONG] die Katze\nC. [WRONG] sieht\nD. [WRONG] Der Hund sieht\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781220224655-cjezbrkf"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"die Katze\" is the accusative object, not the subject; \"sieht\" is the verb, not a Satzglied; \"Der Hund sieht\" includes the verb and is not just the subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220806146-sckwvqhy",
+      "timestamp": "2026-06-11T23:33:41.716Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect - B is the accusative object, C is the verb (not a Satzglied), and D is a subject-verb phrase rather than identifying the subject alone.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221412827-i8mfuggy",
+      "timestamp": "2026-06-11T23:43:50.268Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"die Katze\" is the accusative object, \"sieht\" is the verb, and \"Der Hund sieht\" incorrectly includes the verb along with the subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222156692-zdjs7zjg",
+      "timestamp": "2026-06-11T23:56:10.255Z"
+    }
+  ]
+}

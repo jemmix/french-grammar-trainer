@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8cc96d94555667b4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-09-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-09 - Wortstellung von Subjekt und Akkusativobjekt\n\nQUESTION:\nType: Multiple Choice\nPrompt: Im Satz „Der Lehrer fragt den Schüler.\" – wer fragt wen?\nChoices:\nA. [CORRECT] Der Lehrer fragt den Schüler.\nB. Der Schüler fragt den Lehrer.\nC. Beide fragen sich gegenseitig.\nD. Den Lehrer fragt der Schüler.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781290881837-1c3vjfmt"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was in the process of analyzing a German grammar question to determine if it properly tests the stated rule about word order of subject and accusative object (Wortstellung von Subjekt und Akkusativobjekt).\n\nAnalysis completed: The question asks \"wer fragt wen?\" (who asks whom?) about the sentence \"Der Lehrer fragt den Schüler.\" This tests whether the learner can identify the subject (nominative) vs. accusative object based on case markers (der vs. den), not whether they understand word order variations.\n\nVERDICT: MISALIGNED\nREASON: The question tests identification of subject vs. accusative object based on case markers (der vs. den), not word order variations between subject and accusative object as the rule states.\n\nRemaining tasks: None - the validation verdict was ready to be output.\n\nRecommendations: This question would be better suited for a rule about identifying the subject vs. accusative object based on case endings. To properly test Wortstellung von Subjekt und Akkusativobjekt, the question should present variations in word order (e.g., \"Den Schüler fragt der Lehrer\" vs. \"Der Lehrer fragt den Schüler\") and ask about correctness or emphasis differences.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291427506-as3jox59",
+      "timestamp": "2026-06-12T19:11:24.317Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests case recognition (identifying the nominative subject vs. accusative object), not the word order flexibility between subject and accusative object—the correct answer can be determined solely by knowing which noun is in the nominative case.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292030787-gmsd858d",
+      "timestamp": "2026-06-12T19:21:39.124Z"
+    }
+  ]
+}

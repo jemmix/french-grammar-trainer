@@ -1,0 +1,33 @@
+{
+  "cacheKey": "588544fa911856ce",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-02-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-02 - Der unbestimmte Artikel im Akkusativ: ein → einen (eine/ein bleiben gleich)\n\nQUESTION:\nType: Input\nPrompt: Welcher unbestimmte Artikel fehlt? (Akkusativ)\nPhrase: „Sie möchte ___ Kaffee zum Frühstück.\nCorrect Answer: einen\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781290881800-hvsd9nt9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that the masculine indefinite article \"ein\" changes to \"einen\" in the accusative case, which is exactly the transformation the rule specifies.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781290881857-gfvrmpkg",
+      "timestamp": "2026-06-12T19:02:12.278Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to validate whether a German grammar question about the indefinite article in the accusative case is properly aligned with its stated rule.\n\n**Analysis completed:**\nThe question asks for the correct indefinite article for \"Kaffee\" (masculine) in the accusative case. The correct answer \"einen\" directly tests the rule that masculine \"ein\" changes to \"einen\" in the accusative, while feminine/neuter remain unchanged. The question cannot be answered correctly without knowing this specific transformation.\n\n**Verdict:**\nVERDICT: ALIGNED\nREASON: The question requires knowing that the masculine indefinite article \"ein\" changes to \"einen\" in the accusative case, which is exactly the grammar rule being tested.\n\n**Remaining tasks:** None - the validation was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291616942-02lxyvjz",
+      "timestamp": "2026-06-12T19:14:06.131Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that the masculine indefinite article \"ein\" changes to \"einen\" in the accusative case, which is exactly what the rule states.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292204085-nltn26om",
+      "timestamp": "2026-06-12T19:23:47.083Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "26cf9423b42b5bea",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-02-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den unbestimmten Artikel im Akkusativ: „Wir suchen ___ Roman über deutsche Geschichte.\"\n\nChoices:\nA. [CORRECT] einen\nB. [WRONG] ein\nC. [WRONG] einem\nD. [WRONG] eines\nE. [WRONG] eine\n\nVerify these WRONG answers are incorrect (letters: B, C, D, E)",
+    "nonce": "nonce-1781290881791-9471xodb"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms: ein (nominative), einem (dative), eines (genitive), and eine (feminine) do not match the required accusative masculine form for \"Roman\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781290881855-gv3345hg",
+      "timestamp": "2026-06-12T19:03:15.073Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case endings (nominative \"ein\", dative \"einem\", genitive \"eines\") or wrong gender (feminine \"eine\") for the masculine accusative \"einen\" required by \"Roman\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291670650-yqb2zxky",
+      "timestamp": "2026-06-12T19:14:55.415Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to verify that wrong answers B, C, D, E in a German grammar question about the accusative indefinite article are indeed incorrect.\n\nAnalysis completed:\n- B \"ein\" - nominative form, not accusative ✓ incorrect\n- C \"einem\" - dative form, not accusative ✓ incorrect  \n- D \"eines\" - genitive form, not accusative ✓ incorrect\n- E \"eine\" - feminine form, but \"Roman\" is masculine ✓ incorrect\n\nTRUE||All wrong answers are incorrect: B is nominative, C is dative, D is genitive, and E is feminine.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292240143-k0e645v3",
+      "timestamp": "2026-06-12T19:24:16.394Z"
+    }
+  ]
+}

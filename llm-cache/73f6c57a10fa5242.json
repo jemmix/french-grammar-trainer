@@ -1,0 +1,33 @@
+{
+  "cacheKey": "73f6c57a10fa5242",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-04-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Die Endung -ant deutet auf maskulines Genus hin. Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Praktikant arbeitet im Büro.\"\n\nChoices:\nA. [CORRECT] Der\nB. [WRONG] Die\nC. [WRONG] Das\nD. [WRONG] Ein\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781216170714-jg7fmr5s"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to verify that the wrong answers (B, C, D) in a German grammar MCQ are indeed incorrect. The question asks for the definite article in the nominative case for \"Praktikant,\" which the prompt states has masculine gender due to the -ant ending.\n\nAnalysis completed:\n- B (\"Die\"): Incorrect — feminine article, not masculine\n- C (\"Das\"): Incorrect — neuter article, not masculine  \n- D (\"Ein\"): Incorrect — this is the indefinite article, but the question explicitly asks for the definite article (\"den bestimmten Artikel\")\n\nTRUE||All wrong answers are incorrect: B and C use the wrong gender, and D uses the indefinite article instead of the definite article as required.\n\nNo remaining tasks — the verification is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781216170721-pu7i0soe",
+      "timestamp": "2026-06-11T22:16:35.955Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the stated constraints: B and C use wrong gender articles for a masculine noun, and D is an indefinite article rather than the definite article explicitly requested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781216195968-s09635o6",
+      "timestamp": "2026-06-11T22:16:55.600Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"Die\" and \"Das\" use the wrong gender for the masculine noun \"Praktikant,\" and \"Ein\" is an indefinite article when the question explicitly asks for a definite article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781216215602-z6fcwygj",
+      "timestamp": "2026-06-11T22:17:07.273Z"
+    }
+  ]
+}

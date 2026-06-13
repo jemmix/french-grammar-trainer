@@ -1,0 +1,33 @@
+{
+  "cacheKey": "48cb3a25c693ff3b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-01-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-01 - Der bestimmte Artikel im Nominativ: der, die, das\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Mädchen heißt Anna.\"\nChoices:\nA. [CORRECT] Das\nB. Die\nC. Ein\nD. Mein\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781209909548-vrxkaced"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"Mädchen\" is a neuter noun and that its definite article in the nominative is \"das,\" which directly tests the stated rule about der/die/das in the nominative case.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781209959618-fxau5ssu",
+      "timestamp": "2026-06-11T20:33:20.691Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"Mädchen\" takes the neuter definite article \"das\" in the nominative case, which is precisely the grammar knowledge the stated rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781210204283-kisgp9qk",
+      "timestamp": "2026-06-11T20:37:14.489Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To answer correctly, one must know that \"Mädchen\" is a neuter noun requiring \"das\" as its definite article in the nominative case, which directly tests the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781210430104-nivnffrv",
+      "timestamp": "2026-06-11T20:40:50.308Z"
+    }
+  ]
+}

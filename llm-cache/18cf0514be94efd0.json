@@ -1,0 +1,26 @@
+{
+  "cacheKey": "18cf0514be94efd0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-05-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist richtig?\n\nChoices:\nA. [CORRECT] Sie macht ihre Hausaufgaben.\nB. [WRONG] Sie macht ihren Hausaufgaben.\nC. [WRONG] Sie hilft ihre Hausaufgaben.\nD. [WRONG] Sie macht ihren Hausaufgaben nicht.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781220224652-mzno3kmy"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||B uses \"ihren\" (dative plural) instead of \"ihre\" (accusative plural required by \"machen\"); C incorrectly uses \"helfen\" which takes dative and doesn't semantically work with \"Hausaufgaben\" as a direct object; D has the same \"ihren\" error as B.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220543078-q0vus3yd",
+      "timestamp": "2026-06-11T23:29:38.286Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a German grammar verification task. The question asked which sentence is correct, with four choices to evaluate. I had received the question and choices but had not yet provided my verdict.\n\nThe task requires verifying that wrong answers B, C, and D are indeed incorrect German sentences within the grammatical constraints of the question prompt.\n\nRecommendation for next step: Re-submit this verification task to evaluate the wrong answers. Based on my analysis, the verdict should be:\n\nTRUE||B uses the wrong case (Akkusativ instead of Dativ for the possessive pronoun modifying Hausaufgaben); C is semantically incorrect because \"helfen\" does not take a direct object like Hausaufgaben; D changes the meaning by adding \"nicht\" and is not equivalent to the original sentence structure being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221161648-001l8pw3",
+      "timestamp": "2026-06-11T23:39:54.169Z"
+    }
+  ]
+}

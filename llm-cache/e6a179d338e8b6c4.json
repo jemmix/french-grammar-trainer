@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e6a179d338e8b6c4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-08-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-08 - Nominativ vs. Akkusativ: Subjekt vs. direktes Objekt identifizieren\n\nQUESTION:\nType: Input\nPrompt: Welcher Artikel fehlt? (Nominativ oder Akkusativ)\nPhrase: Anna kauft ___ Kaffee auf dem Markt.\nCorrect Answer: den\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781302853970-twr6yzdx"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a German grammar question about \"Anna kauft ___ Kaffee auf dem Markt\" (answer: \"den\") properly tests the rule \"Nominativ vs. Akkusativ: Subjekt vs. direktes Objekt identifizieren.\"\n\nRemaining tasks: Provide the validation verdict.\n\nRecommendation for next step: Here is my assessment:\n\nVERDICT: ALIGNED\nREASON: The question requires identifying \"Kaffee\" as the direct object (Akkusativ) rather than the subject (Nominativ) to correctly select \"den\" instead of \"der,\" which is precisely what the stated rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781302963534-rjzbnulz",
+      "timestamp": "2026-06-12T22:23:11.413Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying \"Kaffee\" as the direct object (Akkusativ) rather than the subject (Nominativ) to correctly choose \"den\" instead of \"der\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303135864-7w8y6htc",
+      "timestamp": "2026-06-12T22:28:14.473Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying \"Kaffee\" as the direct object in the accusative case (not the subject in nominative) and knowing that the masculine accusative article is \"den\" rather than \"der.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303463244-m4qxjgxm",
+      "timestamp": "2026-06-12T22:31:42.132Z"
+    }
+  ]
+}

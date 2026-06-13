@@ -1,0 +1,40 @@
+{
+  "cacheKey": "a5e89af68767d741",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-05-002",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Ergänzen Sie: „Ich ___ meinen Freund auf der Straße.\"\nChoices:\nA. sehe\nB. helfe\nC. begegne\nD. antworte\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1781220224652-r3m2b7pu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The instruction \"Ergänzen Sie\" is a standard fill-in-the-blank prompt, and only \"sehe\" is grammatically correct with the accusative object \"meinen Freund\" (the other verbs require dative), making the correct answer determinable without needing the rule title.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220540184-5wkm3wc3",
+      "timestamp": "2026-06-11T23:29:42.235Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt uses the standard \"Ergänzen Sie\" fill-in-the-blank format, and the accusative case marking on \"meinen Freund\" makes only \"sehe\" grammatically correct, leaving no ambiguity about the expected answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221161178-lkyepoh2",
+      "timestamp": "2026-06-11T23:44:07.635Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt \"Ergänzen Sie\" gives no indication of what criterion to use, and without knowing this tests verb case government, a learner cannot distinguish between semantically plausible options like \"sehe\" and \"begegne\" since both \"I see my friend\" and \"I meet my friend on the street\" make contextual sense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222018284-unq794wi",
+      "timestamp": "2026-06-11T23:54:10.183Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Both \"sehe\" and \"begegne\" are semantically plausible completions (\"I see my friend on the street\" vs. \"I encounter my friend on the street\"), and without knowing the rule being tested—that \"begegnen\" requires the dative case rather than accusative—a learner has no way to determine which answer is intended as correct.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222540419-atkofgb0",
+      "timestamp": "2026-06-12T00:02:58.601Z"
+    }
+  ]
+}

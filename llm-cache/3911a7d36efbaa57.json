@@ -1,0 +1,40 @@
+{
+  "cacheKey": "3911a7d36efbaa57",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "02-03-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Setzen Sie den Negationsartikel im Akkusativ ein.\nPhrase: „Ich habe ___ Apfel gegessen.\nHint: Negationsartikel im Akkusativ\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1781220224651-h8oi0uab"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The term \"Negationsartikel\" is technical jargon that may not be clear without prior exposure, and the phrase lacks the original indefinite article (\"einen\"), forcing learners to infer both what's being negated and the correct form from memory rather than seeing the transformation explicitly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220406066-2itcxh42",
+      "timestamp": "2026-06-11T23:28:52.442Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly specifies to insert the negation article in the accusative case, and determining the correct form (keinen) based on the gender of \"Apfel\" is the intended grammar test, not a prompt ambiguity.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221035978-r69wdllu",
+      "timestamp": "2026-06-11T23:37:37.673Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt explicitly states to insert a negation article in the accusative case, the hint reinforces this, and the grammatical context (\"haben\" + masculine noun \"Apfel\") makes \"keinen\" the only correct answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221914098-4ygacqf3",
+      "timestamp": "2026-06-11T23:52:33.476Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks for the negation article in the accusative, but a learner cannot determine the correct answer (\"keinen\") without knowing that \"Apfel\" is masculine (der Apfel), and this gender information is not provided in the prompt, phrase, or hint.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222493625-qn4o715a",
+      "timestamp": "2026-06-12T00:02:14.574Z"
+    }
+  ]
+}

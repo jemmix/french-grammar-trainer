@@ -1,0 +1,33 @@
+{
+  "cacheKey": "69d8e8fe0bf27f9d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-05-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-05 - Das Genus feminin: typische feminine Endungen (-ung, -heit, -keit, -schaft)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Krankheit dauerte lange.\"\nChoices:\nA. [CORRECT] Die\nB. Das\nC. Eine\nD. Diese\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781209909606-39gk5ffw"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"Krankheit\" ends in \"-heit\", one of the typical feminine suffixes listed in the rule, and selecting the correct feminine definite article \"Die\" accordingly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781210098684-svtt79e8",
+      "timestamp": "2026-06-11T20:35:20.649Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: To correctly choose \"Die\" over \"Das\", the learner must recognize that \"Krankheit\" ends in \"-heit\", one of the typical feminine endings specified in the rule, making this knowledge essential to answering correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781210331793-3saikl6e",
+      "timestamp": "2026-06-11T20:39:45.565Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a German grammar question to determine if it properly tests the stated rule about feminine endings (-ung, -heit, -keit, -schaft).\n\n**Analysis completed:**\nThe question asks for the definite article of \"Krankheit,\" which has the \"-heit\" ending covered by the rule. While some wrong answers can be eliminated by knowing article types (eine = indefinite, diese = demonstrative), the final choice between \"Die\" and \"Das\" requires knowing the gender, which the -heit ending rule directly provides.\n\n**Verdict ready:**\nVERDICT: ALIGNED\nREASON: The word \"Krankheit\" has the \"-heit\" ending explicitly covered by the rule, and selecting \"Die\" over \"Das\" requires recognizing this word as feminine through its characteristic ending.\n\n**No remaining tasks** — the validation judgment was complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781210677414-tpe2ysn4",
+      "timestamp": "2026-06-11T20:45:22.910Z"
+    }
+  ]
+}

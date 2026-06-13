@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ada981826c95491e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-02-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie den unbestimmten Artikel im Akkusativ: „Sie trinkt ___ Glas Wasser.\"\n\nChoices:\nA. [CORRECT] ein\nB. [WRONG] einen\nC. [WRONG] eines\nD. [WRONG] eine\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781220224649-ie1l4ss7"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect case endings: \"einen\" is masculine accusative, \"eines\" is genitive, and \"eine\" is feminine accusative, but \"Glas\" is neuter and requires \"ein\" in the accusative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220326252-rokgs7to",
+      "timestamp": "2026-06-11T23:25:40.456Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect gender endings (einen for masculine, eine for feminine) or wrong case (eines for genitive) for the neuter noun \"Glas\" in the accusative case.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220951186-9e6dyi7s",
+      "timestamp": "2026-06-11T23:36:13.714Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"einen\" is masculine accusative (not neuter), \"eines\" is genitive (not accusative), and \"eine\" is feminine (not neuter).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221828453-ogiwsmlj",
+      "timestamp": "2026-06-11T23:50:47.115Z"
+    }
+  ]
+}

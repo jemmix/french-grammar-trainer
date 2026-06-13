@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a5f2b725a6f892e2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-06-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Fremdwörter auf -ment sind meist sächlich. Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Fundament des Hauses ist stabil.\"\n\nChoices:\nA. [CORRECT] Das\nB. [WRONG] Der\nC. [WRONG] Die\nD. [WRONG] Den\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781216170718-lqb1jmhq"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect gender or case for \"Fundament\" as specified in the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781216176735-ylodxpgw",
+      "timestamp": "2026-06-11T22:16:40.792Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a German grammar MCQ are indeed incorrect. The question asks for the definite article in the nominative case for \"Fundament,\" and the prompt explicitly states that foreign words ending in \"-ment\" are usually neuter (sächlich). \"Das\" is the correct neuter nominative article. \"Der\" (masculine nominative), \"Die\" (feminine nominative), and \"Den\" (accusative case) are all incorrect for a neuter noun in the nominative case.\n\nRemaining tasks: None - the verification is complete.\n\nRecommendations: The answer would be:\nTRUE||All wrong answers use the wrong gender or wrong case for a neuter noun in the nominative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781216201347-92mhvky2",
+      "timestamp": "2026-06-11T22:17:04.673Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use wrong gender (B: masculine, C: feminine) or wrong case (D: accusative instead of nominative as specified).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781216226061-e1xfsva1",
+      "timestamp": "2026-06-11T22:17:23.842Z"
+    }
+  ]
+}

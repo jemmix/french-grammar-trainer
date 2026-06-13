@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ceac40c3b58fdbe6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-05-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Achten Sie auf die Endung -schaft. Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Botschaft des Königs wurde überbracht.\"\n\nChoices:\nA. [CORRECT] Die\nB. [WRONG] Der\nC. [WRONG] Das\nD. [WRONG] Eine\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781216170716-2u4lb6wv"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses masculine article for a feminine noun, C uses neuter article for a feminine noun, and D uses an indefinite article when the question explicitly asks for a definite article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781216173723-d3rpzeh6",
+      "timestamp": "2026-06-11T22:17:02.426Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B and C use the wrong gender article (masculine/neuter instead of feminine), and D uses an indefinite article when the question explicitly asks for the definite article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781216222427-atypkul8",
+      "timestamp": "2026-06-11T22:17:18.084Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B and C use the wrong gender (masculine and neuter) for the feminine noun \"Botschaft,\" and D is an indefinite article when the question explicitly requests a definite article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781216238084-wi3rmdi4",
+      "timestamp": "2026-06-11T22:17:31.170Z"
+    }
+  ]
+}

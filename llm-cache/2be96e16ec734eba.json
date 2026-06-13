@@ -1,0 +1,26 @@
+{
+  "cacheKey": "2be96e16ec734eba",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-09-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welche Wortfolge ist richtig?\n\nChoices:\nA. [CORRECT] Ich kaufe meinem Bruder ein Buch.\nB. [WRONG] Ich kaufe ein Buch meinem Bruder.\nC. [WRONG] Ein Buch kaufe ich meinem Bruder.\nD. [WRONG] Meinem Bruder ein Buch kaufe ich.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781220834335-9qyvtf0c"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was analyzing a German grammar question to verify that wrong answers B, C, and D are indeed incorrect. The question asks \"Welche Wortfolge ist richtig?\" about word order with dative and accusative objects.\n\nRemaining tasks: Complete the verification and provide the verdict in the required format.\n\nRecommendations for next steps: Based on my analysis:\n- B is incorrect (accusative before dative in the middle field violates standard German word order)\n- C is potentially correct as a valid topicalization/fronting structure in German where \"Ein Buch\" is fronted for emphasis, with the verb correctly in second position\n- D is incorrect (breaks V2 word order)\n\nThe likely verdict would be: FALSE|C|C is a valid topicalization structure in German where the accusative object is fronted for emphasis, with the verb correctly in second position.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221480495-htpoth53",
+      "timestamp": "2026-06-11T23:46:49.226Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify whether wrong answers B, C, and D in a German grammar MCQ about word order are indeed incorrect. The correct answer A is \"Ich kaufe meinem Bruder ein Buch.\" (standard S-V-Dat-Acc order).\n\nAnalysis completed:\n- B is genuinely wrong (accusative before dative with noun objects violates standard German word order)\n- C is actually correct (topicalization of \"Ein Buch\" to front position is valid German syntax)\n- D is actually correct (topicalization of \"Meinem Bruder\" to front position is valid German syntax)\n\nThe verdict would have been: FALSE|C,D|C and D are both grammatically correct examples of German topicalization, where a non-subject element is placed in sentence-initial position for emphasis while the verb remains in second position.\n\nRemaining tasks: None - this was a single verification task.\n\nRecommendation: The question should be revised to avoid accepting topicalized structures as wrong answers, or the question prompt should explicitly state \"in standard/neutral word order\" to rule out topicalization.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222234427-yieu4g9u",
+      "timestamp": "2026-06-11T23:57:43.006Z"
+    }
+  ]
+}

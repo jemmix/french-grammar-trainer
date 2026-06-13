@@ -1,0 +1,33 @@
+{
+  "cacheKey": "36aa58a19db7a3f3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-03-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie die richtige Form: „Wir haben ___ Hund.\"\n\nChoices:\nA. [CORRECT] keinen\nB. [WRONG] kein\nC. [WRONG] keine\nD. [WRONG] keines\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781302853907-c6cwn45u"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers have incorrect gender/case agreement: \"kein\" is neuter, \"keine\" is feminine/plural, and \"keines\" is genitive/neuter pronoun form, none of which match the masculine accusative required for \"Hund\" after \"haben\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781302853999-v2fmq6zy",
+      "timestamp": "2026-06-12T22:31:32.384Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses nominative instead of accusative, C is feminine form for a masculine noun, and D is genitive instead of accusative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303572544-ejv6633o",
+      "timestamp": "2026-06-12T22:35:52.119Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303867401-6w1evinj",
+      "timestamp": "2026-06-12T22:48:04.283Z"
+    }
+  ]
+}

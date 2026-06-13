@@ -1,0 +1,33 @@
+{
+  "cacheKey": "532d3df3c5f907fb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "01-04-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Die Endung -er ist typisch für maskuline Berufsbezeichnungen. Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Maurer arbeitet an der Baustelle.\"\n\nChoices:\nA. [CORRECT] Der\nB. [WRONG] Die\nC. [WRONG] Ein\nD. [WRONG] Sein\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781209909592-ipz9ocu9"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the stated constraints: B uses the feminine definite article for a masculine noun, C uses an indefinite article when a definite article is required, and D uses a possessive pronoun instead of a definite article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781210008098-fraucgev",
+      "timestamp": "2026-06-11T20:33:58.185Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"Die\" is the feminine article (Maurer is masculine), \"Ein\" is an indefinite article (question asks for definite), and \"Sein\" is a possessive pronoun, not an article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781210242233-c1rscpeb",
+      "timestamp": "2026-06-11T20:38:05.253Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses the wrong gender (feminine instead of masculine), C is an indefinite article when the question explicitly asks for the definite article, and D is a possessive pronoun rather than a definite article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781210475092-17hgu5j5",
+      "timestamp": "2026-06-11T20:41:26.872Z"
+    }
+  ]
+}

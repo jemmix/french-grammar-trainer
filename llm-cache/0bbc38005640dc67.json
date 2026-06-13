@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0bbc38005640dc67",
+  "predicateId": "german-language",
+  "questionId": "02-07-010",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Akkusativpräpositionen: durch, für, gegen, ohne, um\n\nQUESTION CONTENT:\nPrompt: Welcher Artikel steht nach der Präposition « um »? (Akkusativ)\nPhrase: „Der Hund läuft um ___ Baum.\nAnswer: den\nHint: Maskuliner Singular\nExplanation: „Um\" verlangt den Akkusativ. Der Akkusativ von „der Baum\" (maskulin) ist „den\".\nWrong answers:\n  - dem („Dem\" wäre Dativ. „Um\" verlangt aber den Akkusativ.)\n  - des („Des\" ist Genitiv. „Um\" verlangt den Akkusativ.)\n  - der („Der\" ist Nominativ. Der Akkusativ von maskulin ist „den\".)\n  - die („Die\" ist feminin. „Baum\" ist maskulin.)\n  - das („Das\" ist neutral. „Baum\" ist maskulin.)\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1781290881828-s1mgdhzi"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292935009-mbq9xm91",
+      "timestamp": "2026-06-12T19:35:48.385Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781293229717-1o2lbsaa",
+      "timestamp": "2026-06-12T19:40:58.532Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether German language question content about Akkusativpräpositionen (durch, für, gegen, ohne, um) is appropriately written in German.\n\nThe content has been analyzed:\n- Prompt: \"Welcher Artikel steht nach der Präposition « um »? (Akkusativ)\" — German\n- Phrase: \"„Der Hund läuft um ___ Baum.\" — German\n- Answer: \"den\" — German\n- Hint: \"Maskuliner Singular\" — German\n- Explanation: \"„Um\" verlangt den Akkusativ. Der Akkusativ von „der Baum\" (maskulin) ist „den\".\" — German\n- All 5 wrong answers with explanations are in German\n\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nNo remaining tasks — the validation is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781293516385-khc154gi",
+      "timestamp": "2026-06-12T19:45:38.428Z"
+    }
+  ]
+}

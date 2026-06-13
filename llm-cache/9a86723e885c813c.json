@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9a86723e885c813c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "01-01-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Artikel und Genus\n\nRULE BEING TESTED: 01-01 - Der bestimmte Artikel im Nominativ: der, die, das\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den bestimmten Artikel im Nominativ: „___ Blume duftet wunderbar.\"\nChoices:\nA. [CORRECT] Die\nB. Der\nC. Eine\nD. Keine\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781209909548-gzxarii6"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly requires knowing that \"Blume\" is feminine and that the feminine definite article in the nominative case is \"die.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781209913750-35jnogsj",
+      "timestamp": "2026-06-11T20:32:50.776Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI analyzed one German grammar question to determine if it properly tests the stated rule \"01-01 - Der bestimmte Artikel im Nominativ: der, die, das\" (The definite article in nominative case).\n\n## Analysis Result\nVERDICT: ALIGNED\nREASON: The question requires selecting the correct definite article in nominative case for a feminine noun (\"Blume\"), which directly tests knowledge of the der/die/das paradigm in the nominative.\n\n## Remaining Tasks\nNone - this was a single-question validation task that was completed.\n\n## Recommendations\nNo further action needed on this particular question. If you have additional questions to validate, please submit them in a new request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781210190008-no8w2scc",
+      "timestamp": "2026-06-11T20:37:12.938Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct definite article (die) for a feminine noun (Blume) in the nominative case, which directly tests knowledge of the definite articles der, die, das in the nominative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781210423788-cpn3coi8",
+      "timestamp": "2026-06-11T20:40:49.139Z"
+    }
+  ]
+}

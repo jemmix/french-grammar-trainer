@@ -1,0 +1,33 @@
+{
+  "cacheKey": "34a82b2a69f07973",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-04-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie die richtige Form: „Wir haben ___ Lehrer gesehen.\"\n\nChoices:\nA. [CORRECT] unseren\nB. [WRONG] unser\nC. [WRONG] unsere\nD. [WRONG] unserem\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781290881806-7z621lgl"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"unser\" is nominative, \"unsere\" is feminine/plural, and \"unserem\" is dative, but \"Lehrer\" requires the masculine accusative \"unseren\" as the direct object.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781290995074-sitm8jcs",
+      "timestamp": "2026-06-12T19:03:34.703Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect case forms: \"unser\" is nominative, \"unsere\" is feminine/plural, and \"unserem\" is dative, but the sentence requires accusative after \"haben...gesehen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291693925-x21vx4gv",
+      "timestamp": "2026-06-12T19:15:59.953Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to verify whether the wrong answers (B, C, D) in a German grammar multiple choice question are indeed incorrect. The question asks for the correct form to complete: \"Wir haben ___ Lehrer gesehen.\" The correct answer is A: \"unseren\" (accusative masculine).\n\n**Analysis completed:**\n- B: \"unser\" - incorrect (nominative, not accusative)\n- C: \"unsere\" - incorrect (feminine/plural form, not masculine accusative)\n- D: \"unserem\" - incorrect (dative, not accusative)\n\n**Verdict:** TRUE||All wrong answers use incorrect case endings for the accusative masculine direct object \"Lehrer.\"\n\n**Remaining tasks:** None - this was a single verification task.\n\n**Recommendations:** No further action needed on this item.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292276413-ewa0a9yl",
+      "timestamp": "2026-06-12T19:25:01.815Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b1ccaf1106c6e410",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-05-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-05 - Verben mit Akkusativobjekt (haben, kaufen, sehen, machen, kennen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist korrekt? Achten Sie auf den Kasus nach dem Verb.\nChoices:\nA. [CORRECT] Wir sehen den Mann.\nB. Wir helfen den Mann.\nC. Wir begegnen den Mann.\nD. Wir danken den Mann.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781290881809-2n6df0ez"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question about \"Verben mit Akkusativobjekt.\"\n\n**Summary of analysis completed:**\nThe question asks learners to identify the correct sentence among four options, all using \"den Mann\" after different verbs. The correct answer (A: \"Wir sehen den Mann\") is correct because \"sehen\" takes an accusative object. The other verbs (helfen, begegnen, danken) all take dative, so they would require \"dem Mann\" instead.\n\n**My verdict:**\nVERDICT: ALIGNED\nREASON: The question properly tests the rule because correctly identifying \"Wir sehen den Mann\" as the only correct option requires knowing that \"sehen\" governs the accusative case, while the distractor verbs (helfen, begegnen, danken) govern the dative.\n\nNo remaining tasks — the validation was completed before the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291055353-a9wnw4ex",
+      "timestamp": "2026-06-12T19:04:49.112Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"sehen\" takes an accusative object while the other three verbs (helfen, begegnen, danken) take dative objects, directly testing the stated rule about verbs with accusative objects.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291779299-6ljuomm1",
+      "timestamp": "2026-06-12T19:16:50.101Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying that \"sehen\" takes an accusative object while \"helfen,\" \"begegnen,\" and \"danken\" take dative objects, which directly tests knowledge of which verbs require the accusative case.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292313597-zaq5oy3p",
+      "timestamp": "2026-06-12T19:25:35.085Z"
+    }
+  ]
+}

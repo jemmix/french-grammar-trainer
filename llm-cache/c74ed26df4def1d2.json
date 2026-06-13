@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c74ed26df4def1d2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-09-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz steht in der neutralen Standard-Wortstellung (Subjekt – Verb – Akkusativobjekt)?\n\nChoices:\nA. [CORRECT] Der Onkel besucht den Neffen.\nB. [WRONG] Den Neffen besucht der Onkel.\nC. [WRONG] Besucht der Onkel den Neffen.\nD. [WRONG] Den Onkel der Neffe besucht.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781290881837-ihtc2sxc"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers deviate from the specified S-V-O word order: B uses O-V-S (topicalization), C uses V-S-O (question/inversion), and D uses O-S-V with incorrect case assignment.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291385703-i876ducp",
+      "timestamp": "2026-06-12T19:10:30.056Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use non-standard word orders (topicalization in B, question word order in C, and scrambled order in D) rather than the required Subject-Verb-Accusative Object pattern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292000002-5wmv4kya",
+      "timestamp": "2026-06-12T19:20:30.784Z"
+    },
+    {
+      "raw": "TRUE||B uses topicalized word order (not neutral standard), C uses question word order (verb-first), and D both inverts word order and swaps the subject/object roles.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292409740-w9yiwd2f",
+      "timestamp": "2026-06-12T19:27:35.499Z"
+    }
+  ]
+}

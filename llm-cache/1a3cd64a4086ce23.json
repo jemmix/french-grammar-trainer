@@ -1,0 +1,40 @@
+{
+  "cacheKey": "1a3cd64a4086ce23",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-04-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-04 - Possessivartikel im Akkusativ\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie den Possessivartikel im Akkusativ ein.\nPhrase: „Ich rufe ___ Mutter an.\nCorrect Answer: meine\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781220224652-bxvz448o"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the accusative form of the possessive article for a feminine noun (\"meine\" for \"Mutter\" as the accusative object of \"anrufen\"), which is exactly what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220487300-0e5pfmxf",
+      "timestamp": "2026-06-11T23:28:52.494Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: \"Mutter\" is feminine, and the possessive article \"meine\" is identical in both nominative and accusative cases for feminine nouns, so a student can answer correctly using only nominative knowledge without understanding the accusative rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221132552-2kua42uk",
+      "timestamp": "2026-06-11T23:39:40.640Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires determining the correct accusative form of \"mein\" for the feminine noun \"Mutter\" (direct object of \"anrufen\"), which directly tests possessive articles in the accusative case.\n\nMaximum steps for this agent have been reached. This was a single validation task that has been completed. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221986928-o0pqnscx",
+      "timestamp": "2026-06-11T23:53:31.170Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was asked to validate whether a German grammar question about possessive articles in the accusative case is properly aligned with the rule it claims to test. I completed the analysis of the question.\n\nVerdict on the validation task:\nVERDICT: ALIGNED\nREASON: The question requires knowing the accusative form of the possessive article \"mein\" for the feminine noun \"Mutter\" as the direct object of \"anrufen,\" which directly tests Possessivartikel im Akkusativ.\n\nRemaining tasks: None - the validation was completed.\n\nRecommendations for what should be done next:\nNo further action needed on this particular validation. The question is properly aligned with the stated rule about possessive articles in the accusative case.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222526886-1sycude9",
+      "timestamp": "2026-06-12T00:02:27.101Z"
+    }
+  ]
+}

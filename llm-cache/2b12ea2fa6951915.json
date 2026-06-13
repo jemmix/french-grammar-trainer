@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2b12ea2fa6951915",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-06-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-06 - Personalpronomen im Akkusativ (mich, dich, ihn, sie, es, uns, euch, sie)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie das Personalpronomen im Akkusativ: „Der Lehrer sieht ___.\"\nChoices:\nA. [CORRECT] mich\nB. mir\nC. ich\nD. mein\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781220224653-v7xl8wh7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"sehen\" takes an accusative object and that \"mich\" is the accusative form of \"ich,\" directly testing the accusative personal pronoun paradigm.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220628875-5p0d2oth",
+      "timestamp": "2026-06-11T23:30:44.830Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires selecting the correct accusative form \"mich\" over the dative \"mir\", nominative \"ich\", and possessive \"mein\", which directly tests knowledge of accusative personal pronoun forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221251062-u7fvy3ih",
+      "timestamp": "2026-06-11T23:41:01.718Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying the correct accusative form \"mich\" among distractors that test precisely the confusion between accusative, dative (mir), nominative (ich), and possessive (mein) — the core skill of this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222063979-5gguuete",
+      "timestamp": "2026-06-11T23:54:35.381Z"
+    }
+  ]
+}

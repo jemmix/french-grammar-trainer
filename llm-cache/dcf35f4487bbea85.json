@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dcf35f4487bbea85",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-10-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-10 - Gemischte Übungen: Nominativ und Akkusativ unterscheiden\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz verwendet Nominativ und Akkusativ korrekt?\nChoices:\nA. [CORRECT] Der Wolf jagt den Hasen.\nB. Den Wolf jagt den Hasen.\nC. Der Wolf jagt der Hase.\nD. Dem Wolf jagt den Hasen.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781290881839-qa9omsne"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires identifying correct case usage for both subject (Nominativ: \"Der Wolf\") and direct object (Akkusativ: \"den Hasen\"), which is exactly what the rule about distinguishing these two cases tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291484436-t2fzr17v",
+      "timestamp": "2026-06-12T19:16:11.966Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing between Nominativ (subject \"der Wolf\") and Akkusativ (direct object \"den Hasen\") to identify the correct sentence, which is precisely what the stated mixed exercise rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292279468-ipg53wdk",
+      "timestamp": "2026-06-12T19:35:06.003Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing correct Nominativ marking on the subject (\"Der Wolf\" vs. \"Den Wolf\" vs. \"Dem Wolf\") and correct Akkusativ marking on the direct object (\"den Hasen\" vs. \"der Hase\"), which is precisely the skill the stated rule targets.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781293189713-qiwnkwq9",
+      "timestamp": "2026-06-12T19:40:17.039Z"
+    }
+  ]
+}

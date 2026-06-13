@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b360c9c1af4a1d69",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-08-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-08 - Nominativ vs. Akkusativ: Subjekt vs. direktes Objekt identifizieren\n\nQUESTION:\nType: Input\nPrompt: Welcher Artikel fehlt? (Akkusativ)\nPhrase: Anna kauft ___ Kaffee auf dem Markt.\nCorrect Answer: den\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781290881837-810htbtz"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use the accusative case (\"Welcher Artikel fehlt? (Akkusativ)\"), so the question only tests knowledge of the accusative article form \"den\" for masculine nouns, not the ability to identify whether a noun phrase is a subject (Nominativ) or direct object (Akkusativ).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291347479-korndx4l",
+      "timestamp": "2026-06-12T19:09:43.197Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was in the process of analyzing a German grammar validation question to determine if it properly tests the stated rule about \"Nominativ vs. Akkusativ: Subjekt vs. direktes Objekt identifizieren.\"\n\nList of remaining tasks:\n- Provide the final verdict and reasoning for this validation question\n\nRecommendations for what should be done next:\nHere is my analysis of the question:\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly states \"(Akkusativ)\" so the student doesn't need to identify whether \"Kaffee\" is a subject or direct object—they just need to know the accusative form of \"der,\" making this a simple article declension question rather than a test of identifying subject vs. direct object roles.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291949711-fo4vp15a",
+      "timestamp": "2026-06-12T19:19:43.190Z"
+    }
+  ]
+}

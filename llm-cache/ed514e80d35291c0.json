@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ed514e80d35291c0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-07-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Im Satz « Er schwimmt gegen den Strom » — warum steht « den Strom » im Akkusativ?\n\nChoices:\nA. [CORRECT] Weil die Präposition « gegen » den Akkusativ verlangt\nB. [WRONG] Weil « Strom » das direkte Objekt des Satzes ist\nC. [WRONG] Weil das Verb « schwimmen » den Akkusativ verlangt\nD. [WRONG] Weil Wechselpräpositionen bei Bewegung den Akkusativ verlangen\nE. [WRONG] Weil maskuline Nomen nach Präpositionen immer im Akkusativ stehen\n\nVerify these WRONG answers are incorrect (letters: B, C, D, E)",
+    "nonce": "nonce-1781302853954-nz2u8oh9"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that the wrong answers (B, C, D, E) in a German grammar MCQ are indeed incorrect. The question asks why \"den Strom\" is in the accusative in \"Er schwimmt gegen den Strom.\"\n\nMy analysis:\n- B is incorrect: \"Strom\" is not a direct object but part of a prepositional phrase\n- C is incorrect: \"schwimmen\" does not require an accusative object\n- D is incorrect: \"gegen\" is not a Wechselpräposition; it always takes accusative, so this rule doesn't apply here\n- E is incorrect: masculine nouns after prepositions can be in any case depending on the preposition\n\nThe verdict would be: TRUE||All wrong answers contain clear factual or grammatical errors regarding why \"den Strom\" is in the accusative.\n\nNo remaining tasks - the analysis is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781302899543-yeygo58n",
+      "timestamp": "2026-06-12T22:22:16.641Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear factual errors: B misidentifies a prepositional object as a direct object, C incorrectly claims \"schwimmen\" governs accusative when it's intransitive, D wrongly classifies \"gegen\" as a Wechselpräposition (it always takes accusative), and E makes a false generalization about masculine nouns always taking accusative after prepositions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303075062-c9dn5zch",
+      "timestamp": "2026-06-12T22:25:12.877Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear factual errors: B is wrong because \"Strom\" is not a direct object but part of a prepositional phrase, C is wrong because \"schwimmen\" doesn't govern accusative, D is wrong because \"gegen\" is not a Wechselpräposition, and E is wrong because masculine nouns can appear in dative or genitive after prepositions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303291448-21159wcf",
+      "timestamp": "2026-06-12T22:28:42.918Z"
+    }
+  ]
+}

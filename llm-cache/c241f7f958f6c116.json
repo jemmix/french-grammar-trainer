@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c241f7f958f6c116",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-05-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie: „Er ___ einen guten Film im Kino.\"\n\nChoices:\nA. [CORRECT] sieht\nB. [WRONG] wartet\nC. [WRONG] gefällt\nD. [WRONG] lernt\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781220224652-c8k4mps6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically or semantically incompatible: \"wartet\" requires \"auf+Acc\" not a direct object, \"gefällt\" takes dative for the experiencer with the pleasing thing as subject, and \"lernt\" doesn't collocate with \"Film\" in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220578287-a15ks3j8",
+      "timestamp": "2026-06-11T23:30:04.432Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: \"warten\" requires \"auf + acc.\", \"gefallen\" takes dative for the experiencer, and \"lernt\" cannot take a film as a direct object in this construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221208733-68vuzafe",
+      "timestamp": "2026-06-11T23:40:28.641Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: \"wartet\" requires \"auf\" + accusative, \"gefällt\" takes dative for the experiencer not accusative, and \"lernt\" is semantically incompatible with watching a film.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222044939-r1jfqizy",
+      "timestamp": "2026-06-11T23:54:27.445Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d2fc3648ad3a0914",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-03-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie die richtige Form: „Er kauft ___ Tisch.\"\n\nChoices:\nA. [CORRECT] keinen\nB. [WRONG] kein\nC. [WRONG] keine\nD. [WRONG] keinem\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781290881802-3b1stvya"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: \"kein\" lacks the accusative -en ending required for masculine nouns after \"kaufen,\" \"keine\" is for feminine or plural nouns, and \"keinem\" is dative case while \"kaufen\" requires accusative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781290881859-n0432ul1",
+      "timestamp": "2026-06-12T19:12:08.991Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I analyzed the German grammar question \"Er kauft ___ Tisch\" and evaluated the three wrong answers (B, C, D) to determine if they are all genuinely incorrect.\n\nAnalysis completed:\n- B (\"kein\") is incorrect because \"Tisch\" is masculine and requires the accusative ending \"-en\" (keinen), not the base form\n- C (\"keine\") is incorrect because it's the feminine/plural form, but \"Tisch\" is masculine singular\n- D (\"keinem\") is incorrect because it's the dative form, but the sentence requires accusative case (direct object of \"kauft\")\n\nThe verdict would be: TRUE||All wrong answers contain clear grammar errors - B lacks the accusative masculine ending, C uses the wrong gender form, and D uses dative instead of accusative case.\n\nNo remaining tasks - the verification was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292127089-9c5dmmca",
+      "timestamp": "2026-06-12T19:23:42.598Z"
+    },
+    {
+      "raw": "TRUE||B uses the wrong case form (nominative instead of accusative for masculine), C uses the feminine/plural form instead of masculine, and D uses the dative case instead of the required accusative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292498721-e6bvsg76",
+      "timestamp": "2026-06-12T19:28:43.073Z"
+    }
+  ]
+}

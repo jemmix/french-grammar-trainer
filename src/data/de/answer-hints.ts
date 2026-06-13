@@ -6,19 +6,29 @@
 
 export const answerHints: Record<string, string> = {
   "—": "Achten Sie auf die Präposition „nach\"",
+  "Akkusativ": "Kasus",
   "Das": "bestimmter Artikel",
+  "Den": "bestimmter Artikel",
   "Der": "bestimmter Artikel",
   "Die": "bestimmter Artikel",
   "Dörfer": "Pluralform von Dorf",
   "Ein": "unbestimmter Artikel",
   "Eine": "unbestimmter Artikel",
-  "kein": "Negationsartikel",
-  "keine": "Negationsartikel",
-  "mein": "Possessivartikel",
+  "Einen": "unbestimmter Artikel",
   "Nächte": "Pluralform von Nacht",
   "Stühle": "Pluralform von Stuhl",
   "Töchter": "Pluralform von Tochter",
+  "dich": "Personalpronomen Akkusativ",
+  "einen": "unbestimmter Artikel",
+  "kein": "Negationsartikel",
+  "keine": "Negationsartikel",
+  "keinen": "Negationsartikel",
+  "mein": "Possessivartikel",
+  "meinen": "Possessivartikel",
+  "mich": "Personalpronomen Akkusativ",
   "unsere": "Possessivartikel",
+  "unseren": "Possessivartikel",
+  "den": "bestimmter Artikel",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a2dce7bf89dddb5d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "02-06-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Ergänzen Sie das Personalpronomen im Akkusativ: „Der Lehrer fragt ___. Wir sollen antworten.\"\n\nChoices:\nA. [CORRECT] uns\nB. [WRONG] wir\nC. [WRONG] unser\nD. [WRONG] euch\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781220224654-7kmyn483"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses nominative instead of accusative case, C is a possessive determiner not a personal pronoun, and D refers to \"you (plural)\" which contradicts the context requiring \"us.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220676070-jj52a17p",
+      "timestamp": "2026-06-11T23:31:55.150Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that the wrong answers (B, C, D) in a German grammar question about accusative personal pronouns are indeed incorrect.\n\nAnalysis completed:\n- B \"wir\" is nominative, but the question requires accusative — incorrect\n- C \"unser\" is a possessive determiner, not a personal pronoun — incorrect  \n- D \"euch\" is 2nd person plural accusative, but \"Wir sollen antworten\" requires 1st person plural — incorrect\n\nVERDICT: TRUE||All wrong answers contain clear grammar errors: B uses nominative instead of accusative, C is a possessive determiner not a pronoun, and D is the wrong person (2nd plural instead of 1st plural).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221281722-yiqko32n",
+      "timestamp": "2026-06-11T23:41:42.680Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses nominative instead of required accusative case, C is a possessive pronoun rather than a personal pronoun, and D refers to the wrong person (second person plural \"you all\" instead of first person plural \"we\" as indicated by \"Wir sollen antworten\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222097433-ji8tmo8y",
+      "timestamp": "2026-06-11T23:55:19.376Z"
+    }
+  ]
+}

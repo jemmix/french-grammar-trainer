@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8518cf691da09f23",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-10-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-10 - Gemischte Übungen: Nominativ und Akkusativ unterscheiden\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie: „___ Auto ist schnell. Der Fahrer fährt ___ Auto sehr vorsichtig.\"\nChoices:\nA. [CORRECT] Das ... das\nB. Das ... den\nC. Der ... das\nD. Den ... den\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781220834336-qyz96kp9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question primarily tests whether the student knows that \"Auto\" is neuter (das), not the Nominativ/Akkusativ distinction, since the distractors use incorrect gender articles (den, der) rather than exploiting the case difference between Nominativ and Akkusativ.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221641134-opibyaog",
+      "timestamp": "2026-06-11T23:47:50.416Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\n\nI was analyzing a German grammar validation question to determine if it properly tests the stated rule \"Gemischte Übungen: Nominativ und Akkusativ unterscheiden\" (Mixed exercises: distinguishing Nominative and Accusative).\n\n## My Analysis (completed before step limit)\n\nThe question asks students to fill in: \"___ Auto ist schnell. Der Fahrer fährt ___ Auto sehr vorsichtig.\"\n\nThe correct answer is \"Das ... das\" because \"Auto\" is neuter, and neuter articles don't change between nominative and accusative.\n\n**VERDICT: MISALIGNED**\n**REASON: The question primarily tests the gender of \"Auto\" (neuter vs. masculine) rather than the distinction between Nominativ and Akkusativ, since neuter articles are identical in both cases (\"das\").**\n\n## Remaining Tasks\n\nNone - the validation judgment was completed.\n\n## Recommendations\n\nTo properly test distinguishing Nominativ from Akkusativ, use a masculine noun where the article visibly changes (der → den), such as \"Hund\" or \"Ball\", making the case distinction essential to answering correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781222377593-wazper1z",
+      "timestamp": "2026-06-12T00:00:18.676Z"
+    }
+  ]
+}

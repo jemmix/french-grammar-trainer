@@ -1,0 +1,33 @@
+{
+  "cacheKey": "55c9db8eb694cc9e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-01-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-01 - Der bestimmte Artikel im Akkusativ: der → den (die/das bleiben gleich)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Ergänzen Sie den bestimmten Artikel im Akkusativ: „Wir rufen ___ Arzt im Notfall.\"\nChoices:\nA. [CORRECT] den\nB. der\nC. die\nD. dem\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781220224647-x79abjeb"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires identifying that \"Arzt\" (masculine) is in the accusative position as the direct object of \"rufen,\" and correctly applying the der→den transformation—the exact rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220252087-j9vyx705",
+      "timestamp": "2026-06-11T23:25:43.217Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowing that the masculine definite article \"der\" changes to \"den\" in the accusative case, which is precisely the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220884082-fl7svqoy",
+      "timestamp": "2026-06-11T23:35:11.723Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a German grammar question about the accusative case properly tests the stated rule about definite article changes (der → den in accusative).\n\nVerdict and analysis:\n\nVERDICT: ALIGNED\nREASON: The question requires identifying \"Arzt\" as masculine and recognizing it as a direct object (accusative), making \"der → den\" transformation essential to answer correctly.\n\nThe question \"Wir rufen ___ Arzt im Notfall\" directly tests the rule because:\n- \"Arzt\" is masculine (der Arzt)\n- It's the direct object of \"rufen\" (to call), requiring accusative\n- The correct answer \"den\" demonstrates precisely the der→den change\n- The distractors (der=nominative, die=feminine, dem=dative) test that the learner knows the specific accusative form, not just any case\n\nNo remaining tasks—this was a single-question validation that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221758388-43mpovtw",
+      "timestamp": "2026-06-11T23:54:15.648Z"
+    }
+  ]
+}

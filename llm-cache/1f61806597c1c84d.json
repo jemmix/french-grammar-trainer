@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1f61806597c1c84d",
+  "predicateId": "german-language",
+  "questionId": "02-10-007",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Gemischte Übungen: Nominativ und Akkusativ unterscheiden\n\nQUESTION CONTENT:\nPrompt: Welcher Artikel fehlt? — „Der Richter verurteilt ___ Verbrecher.\"\nChoices:\nA. [correct] den\n   Explanation: „verurteilen\" verlangt den Akkusativ (wen verurteilt der Richter?). „Verbrecher\" ist maskulin, also Akkusativ maskulin: „den Verbrecher\".\nB. der\n   Explanation: „der\" ist Nominativ maskulin. Das Objekt nach „verurteilen\" steht im Akkusativ: „den Verbrecher\".\nC. dem\n   Explanation: „dem\" ist Dativ maskulin. Das direkte Objekt steht im Akkusativ: „den\".\nD. des\n   Explanation: „des\" ist Genitiv maskulin. Das direkte Objekt nach „verurteilen\" verlangt den Akkusativ: „den Verbrecher\".\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1781290881841-48be4u3g"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781292799070-rdo2bh94",
+      "timestamp": "2026-06-12T19:33:33.054Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was asked to validate a German language question about distinguishing Nominativ and Akkusativ cases. The question asks which article is missing in the sentence \"Der Richter verurteilt ___ Verbrecher.\"\n\n## Validation Result\nVERDICT: GERMAN\nREASON: All content is in German with no English detected. The prompt, all four choices, and all explanations are properly written in German.\n\n## Remaining Tasks\nNone - this validation task is complete.\n\n## Recommendations\nNo action needed. The question content passes the German language validation check.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781293105852-8d8iasy1",
+      "timestamp": "2026-06-12T19:38:46.271Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:** I was asked to validate a German language question about Nominativ vs. Akkusativ to verify all content is in German.\n\n**Analysis completed (no tools needed):** The question content is entirely in German:\n- Prompt: \"Welcher Artikel fehlt?\" — German ✓\n- All 4 choices (den, der, dem, des) with explanations: All in German ✓\n- No English detected anywhere in the content\n\n**Validation result:**\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\n**Remaining tasks:** None — the validation is complete.\n\n**Recommendations:** This question passes the German language validation check and can proceed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781293387431-g2lco2cd",
+      "timestamp": "2026-06-12T19:47:52.804Z"
+    }
+  ]
+}

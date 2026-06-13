@@ -1,0 +1,26 @@
+{
+  "cacheKey": "fe45022b1b4dc074",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-09-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-09 - Wortstellung von Subjekt und Akkusativobjekt\n\nQUESTION:\nType: Multiple Choice\nPrompt: Im Satz „Der Jäger sieht den Bären.\" – welches Wort ist das Akkusativobjekt?\nChoices:\nA. [CORRECT] den Bären\nB. der Jäger\nC. der Bär\nD. sieht\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781290881837-fy311hwo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests case identification (recognizing \"den Bären\" as accusative by its ending), not word order of subject and accusative object as the rule states.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291383198-1r7ehosa",
+      "timestamp": "2026-06-12T19:10:24.777Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests identifying accusative case morphology (recognizing \"den\" as accusative), not the word order position of subject versus accusative object.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781291986160-shga3vo1",
+      "timestamp": "2026-06-12T19:20:09.015Z"
+    }
+  ]
+}

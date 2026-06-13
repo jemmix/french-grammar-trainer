@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7ee1b60ebdc1dc07",
+  "predicateId": "input-prompt-self-contained",
+  "questionId": "02-08-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that INPUT questions are self-contained.\n\nAn INPUT question is self-contained if the prompt + phrase + hint together make it clear what the learner should type, without needing to see the answer.\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <SELF-CONTAINED|UNCLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- SELF-CONTAINED: The question clearly identifies what to input (verb to conjugate, article to choose, etc.)\n- UNCLEAR: The learner cannot determine what to input from prompt + phrase + hint alone\n- AMBIGUOUS: Multiple valid answers exist but only one is marked correct",
+    "userPrompt": "PROMPT: Welcher Artikel fehlt? (Nominativ oder Akkusativ)\n\nPHRASE: Der Bäcker backt ___ Kuchen.\n\nHINT: Was wird gebackt? (Akkusativ, maskulin)\n\nEXPECTED ANSWER: den\n\nIs this question self-contained? Can a learner determine what to input without seeing the answer?",
+    "nonce": "nonce-1781302853970-4wai2o60"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt clearly asks for a missing article, the hint specifies it's Accusative masculine, and the phrase shows exactly where the blank is.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303628532-ytv2z881",
+      "timestamp": "2026-06-12T22:34:10.062Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt asks for the missing article, the hint explicitly identifies the case (Akkusativ) and gender (maskulin), making it clear the learner should input \"den\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303752121-0y7lajow",
+      "timestamp": "2026-06-12T22:36:50.356Z"
+    },
+    {
+      "raw": "VERDICT: SELF-CONTAINED\nREASON: The prompt asks for the missing article, the phrase shows where it goes before \"Kuchen\", and the hint explicitly specifies \"Akkusativ, maskulin\", making it clear the learner should type the accusative masculine definite article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781303876339-fsa7b8zt",
+      "timestamp": "2026-06-12T22:48:12.604Z"
+    }
+  ]
+}

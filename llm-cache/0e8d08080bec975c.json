@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0e8d08080bec975c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "02-02-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Der Akkusativ\n\nRULE BEING TESTED: 02-02 - Der unbestimmte Artikel im Akkusativ: ein → einen (eine/ein bleiben gleich)\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie den unbestimmten Artikel im Akkusativ ein.\nPhrase: „Wir haben ___ Stuhl für die Küche gekauft.\nCorrect Answer: einen\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781220224649-cftvq3df"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that the masculine indefinite article \"ein\" changes to \"einen\" in the accusative case, which is exactly the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220340006-swg7nkrw",
+      "timestamp": "2026-06-11T23:26:01.536Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was able to complete the validation task before the step limit:\n\nVERDICT: ALIGNED\nREASON: The question directly requires applying the rule that the masculine indefinite article \"ein\" changes to \"einen\" in the accusative case—knowing \"Stuhl\" is masculine and that \"haben\" takes an accusative object are prerequisites, but the specific transformation being tested is exactly the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781220960583-xtluwbp7",
+      "timestamp": "2026-06-11T23:36:27.922Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\n\nI was asked to validate whether a German grammar question properly tests its stated rule. The question asks students to fill in the indefinite article in the accusative case for the sentence \"Wir haben ___ Stuhl für die Küche gekauft\" with the correct answer being \"einen.\"\n\n## My Assessment (not yet delivered in required format):\n\nVERDICT: ALIGNED\nREASON: The question directly requires knowledge that the masculine indefinite article \"ein\" changes to \"einen\" in the accusative case, which is precisely the rule stated (ein → einen for masculine nouns like \"Stuhl\").\n\n## Remaining Tasks\n\nNone — this was a single validation task that I had completed analysis for.\n\n## Recommendations\n\nThe validation is complete. The question is properly aligned with the stated rule about the indefinite article in the accusative case (ein → einen for masculine nouns).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781221847115-93vq2ui3",
+      "timestamp": "2026-06-11T23:51:15.545Z"
+    }
+  ]
+}
