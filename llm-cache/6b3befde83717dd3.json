@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6b3befde83717dd3",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "04-10-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Der Gebrauch des Präsens: Gewohnheit, aktuelle Handlung, Zukunft\nPROMPT: Welche Funktion hat das Präsens in diesem Satz?\nPHRASE: „Ich trinke jeden Morgen Kaffee. — Das Präsens drückt hier eine ___ aus.\nCORRECT ANSWER: Gewohnheit\n\nWRONG ANSWERS to evaluate:\n1. aktuelle Handlung\n2. Zukunft\n3. Vergangenheit\n4. Befehl\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1781463426547-k3dwpjsm"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"Vergangenheit\" and \"Befehl\" are not plausible errors—the Präsens is never used for past tense, and commands use the imperative, not the Präsens, so no learner studying this rule would select these options.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781463499165-uql7l2az",
+      "timestamp": "2026-06-14T18:58:38.002Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: \"Aktuelle Handlung\" and \"Zukunft\" are excellent distractors since they are the other two functions of Präsens listed in the same rule, making them exactly the kind of confusion the question should test; \"Vergangenheit\" represents a common tense confusion; even \"Befehl\" could be selected by a very confused beginner who doesn't fully grasp the terminology.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781463519736-wvntf7tb",
+      "timestamp": "2026-06-14T18:59:01.025Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent legitimate grammatical concepts that a learner studying the different functions of Präsens might confuse with \"Gewohnheit\" — \"aktuelle Handlung\" and \"Zukunft\" are actually other valid Präsens functions, making them especially plausible mistakes, while \"Vergangenheit\" and \"Befehl\" are related tense/mood concepts a beginner would be learning simultaneously.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781463541027-wo99vn96",
+      "timestamp": "2026-06-14T18:59:37.856Z"
+    }
+  ]
+}
