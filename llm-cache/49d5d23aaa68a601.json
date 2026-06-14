@@ -1,0 +1,33 @@
+{
+  "cacheKey": "49d5d23aaa68a601",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-01-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Setzen Sie das Verb in Klammern ins Perfekt: „Ich habe gestern ein neues Buch (brauchen) ___.\"\n\nChoices:\nA. [CORRECT] gebraucht\nB. [WRONG] brauchte\nC. [WRONG] gebrauchen\nD. [WRONG] brauchen\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781475326437-nuqy5gge"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is Präteritum (simple past) not Perfekt, and C and D are infinitives rather than the past participle \"gebraucht\" required for the Perfekt tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781475523572-48nua7sh",
+      "timestamp": "2026-06-14T22:19:02.910Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B, C, and D in a German grammar question about the Perfekt tense are indeed incorrect. The question asks to conjugate \"brauchen\" in the Perfekt tense. B is the Präteritum form, C is the infinitive with ge-prefix, and D is the plain infinitive - none of which are the past participle \"gebraucht\" required for Perfekt.\n\nRemaining tasks: None - the verification is complete.\n\nRecommendations: The verdict is TRUE||All wrong answers use incorrect verb forms (Präteritum or infinitive) instead of the past participle required for the Perfekt tense specified in the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781475738085-78s4hryk",
+      "timestamp": "2026-06-14T22:22:45.742Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is the Präteritum form rather than the past participle needed for Perfekt, and C and D are infinitive forms, not the past participle \"gebraucht\" required after \"habe.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781476004957-ga90cl0i",
+      "timestamp": "2026-06-14T22:27:11.929Z"
+    }
+  ]
+}

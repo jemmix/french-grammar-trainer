@@ -1,0 +1,26 @@
+{
+  "cacheKey": "d7ae67942d74da8c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-02-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Setzen Sie das Verb in Klammern ins Perfekt: „Ich bin nach Hause (gehen) ___.\"\n\nChoices:\nA. [CORRECT] gegangen\nB. [WRONG] ging\nC. [WRONG] gegeht\nD. [WRONG] gegang\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781475326440-m6b9l6ga"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect — B is the Präteritum form rather than Perfekt, while C (\"gegeht\") and D (\"gegang\") are not valid German word forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781475542912-4nj4vz4b",
+      "timestamp": "2026-06-14T22:19:32.665Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Work accomplished:** I was asked to verify that the wrong answers in a German grammar multiple-choice question are indeed incorrect. The question asked to conjugate \"gehen\" in the Perfekt tense for \"Ich bin nach Hause (gehen) ___.\"\n\n**Verification result:** TRUE||All wrong answers are grammatically incorrect: B uses the wrong tense (Präteritum instead of Perfekt), C (\"gegeht\") and D (\"gegang\") are not valid German word forms.\n\n**Remaining tasks:** None — the verification was completed before the step limit was reached.\n\n**Recommendations:** The question is valid and all wrong answers are correctly identified as incorrect. No changes needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781475752880-ltm1admd",
+      "timestamp": "2026-06-14T22:22:57.812Z"
+    }
+  ]
+}

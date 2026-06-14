@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cde47e29aba36cec",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-01-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Perfekt\n\nRULE BEING TESTED: 05-01 - Das Perfekt mit haben (regelmäßig: ge-...-t)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Setzen Sie das Verb in Klammern ins Perfekt: „Ich habe gestern ein neues Buch (brauchen) ___.\"\nChoices:\nA. [CORRECT] gebraucht\nB. brauchte\nC. gebrauchen\nD. brauchen\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781475326437-c4tpsh0v"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the regular past participle pattern ge-...-t to form \"gebraucht\" from \"brauchen\" and distinguish it from the Präteritum form \"brauchte\" and infinitive forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781475529196-paddns31",
+      "timestamp": "2026-06-14T22:19:12.790Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires forming the past participle of the regular verb \"brauchen\" using the ge-...-t pattern (gebraucht), which directly tests the stated rule about Das Perfekt mit haben for regular verbs.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781475738611-pjneqmw9",
+      "timestamp": "2026-06-14T22:22:43.779Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was asked to validate whether a German grammar question about the Perfekt tense properly tests the stated rule \"05-01 - Das Perfekt mit haben (regelmäßig: ge-...-t)\".\n\n## My Assessment\nVERDICT: ALIGNED\nREASON: The question requires the student to correctly form the regular past participle \"gebraucht\" using the ge-...-t pattern, which is the core of the stated rule about forming the Perfekt with haben for regular verbs.\n\nThe question is well-designed because:\n- It tests the specific ge-...-t pattern for regular verbs (brauchen → gebraucht)\n- The helper verb \"haben\" is already provided, focusing attention on the past participle formation\n- The distractors test related but different concepts (Präteritum \"brauchte\", infinitive forms) to ensure the student knows the difference\n\n## Remaining Tasks\nNone - the validation task was completed.\n\n## Recommendations\nThe question is properly aligned and can be kept as-is.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781476005156-74tew5n4",
+      "timestamp": "2026-06-14T22:27:18.341Z"
+    }
+  ]
+}

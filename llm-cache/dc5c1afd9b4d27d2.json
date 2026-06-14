@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dc5c1afd9b4d27d2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-01-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Setzen Sie das Verb in Klammern ins Perfekt: „Ich habe ein neues Auto (kaufen) ___.\"\n\nChoices:\nA. [CORRECT] gekauft\nB. [WRONG] kaufte\nC. [WRONG] gekaufen\nD. [WRONG] kaufen\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781476360078-96dssb4d"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is Präteritum not Perfekt, C is not a valid German word form, D is the infinitive rather than the required past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781476360085-ixt88rtr",
+      "timestamp": "2026-06-14T22:32:55.831Z"
+    },
+    {
+      "raw": "TRUE||B is Präteritum not Perfekt; C is not a valid German past participle form; D is the infinitive not the past participle required for Perfekt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781476375911-8ik2dawb",
+      "timestamp": "2026-06-14T22:33:29.351Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying a German grammar question about the Perfekt tense.\n\nThe question asks to conjugate \"kaufen\" in the Perfekt tense for the sentence \"Ich habe ein neues Auto (kaufen) ___.\"\n\nAnalysis completed:\n- B. \"kaufte\" - This is Präteritum (simple past), not Perfekt as required. INCORRECT.\n- C. \"gekaufen\" - Malformed past participle (should be \"gekauft\" with -t, not -en). INCORRECT.\n- D. \"kaufen\" - This is the infinitive, not the past participle. INCORRECT.\n\nTRUE||All wrong answers are incorrect - B uses Präteritum instead of Perfekt, C is a malformed past participle, and D is the infinitive form rather than the required past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781476409353-4g6opxwp",
+      "timestamp": "2026-06-14T22:33:58.766Z"
+    }
+  ]
+}

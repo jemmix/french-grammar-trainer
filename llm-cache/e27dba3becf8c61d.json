@@ -1,0 +1,26 @@
+{
+  "cacheKey": "e27dba3becf8c61d",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-01-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Perfekt\n\nRULE BEING TESTED: 05-01 - Das Perfekt mit haben (regelmäßig: ge-...-t)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Setzen Sie das Verb in Klammern ins Perfekt: „Er hat in München (studieren) ___.\"\nChoices:\nA. [CORRECT] studiert\nB. gestudiert\nC. studierte\nD. gestudieren\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781475326435-rb5xezb5"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question alignment and had completed my analysis:\n\nVERDICT: MISALIGNED\nREASON: The verb \"studieren\" is an -ieren verb that forms the Perfekt without the \"ge-\" prefix (studiert, not gestudiert), so answering correctly requires knowing an exception to the stated \"ge-...-t\" rule rather than the rule itself.\n\nThe question should be moved to a rule about -ieren verbs in the Perfekt, or replaced with a regular verb like \"spielen\" → \"gespielt\" that actually tests the ge-...-t pattern stated in rule 05-01.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781475502582-0u923k1b",
+      "timestamp": "2026-06-14T22:18:43.543Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question alignment but did not complete the response. Here is my analysis:\n\nVERDICT: MISALIGNED\nREASON: The verb \"studieren\" ends in \"-ieren\" and does not take the \"ge-\" prefix (its past participle is \"studiert\", not \"gestudiert\"), so this question actually tests the exception to the ge-...-t pattern rather than the pattern itself—the rule specifically states \"ge-...-t\" but the correct answer here violates that pattern.\n\nNo remaining tasks—this was a single-question validation that is now complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781475699444-kvmzjqs7",
+      "timestamp": "2026-06-14T22:22:18.083Z"
+    }
+  ]
+}

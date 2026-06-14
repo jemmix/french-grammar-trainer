@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6ec59a337feab9a0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-01-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Setzen Sie das Verb in Klammern ins Perfekt: „Er hat in München (studieren) ___.\"\n\nChoices:\nA. [CORRECT] studiert\nB. [WRONG] gestudiert\nC. [WRONG] studierte\nD. [WRONG] gestudieren\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781475326435-aojvlmnr"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that the wrong answers (B, C, D) in a German grammar question about the Perfekt tense of \"studieren\" are indeed incorrect.\n\nAnalysis completed:\n- B (\"gestudiert\") is incorrect because verbs ending in \"-ieren\" do not take the \"ge-\" prefix in the past participle\n- C (\"studierte\") is incorrect because it's the Präteritum form, not the requested Perfekt\n- D (\"gestudieren\") is not a valid German word form at all\n\nThe verdict would be: TRUE||All wrong answers contain clear grammar errors.\n\nNo remaining tasks - the verification was straightforward and complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781475498790-lcbz5l8t",
+      "timestamp": "2026-06-14T22:18:33.918Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B incorrectly adds the ge- prefix to an -ieren verb which doesn't take it, C uses the Präteritum form instead of the requested Perfekt, and D is a non-existent form combining the ge- prefix with an infinitive.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781475698705-6n1v445e",
+      "timestamp": "2026-06-14T22:22:04.368Z"
+    }
+  ]
+}
