@@ -1,0 +1,33 @@
+{
+  "cacheKey": "00de1da58e5e9bc7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-08-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? – befördern\n\nChoices:\nA. [CORRECT] Die Firma befördert mich zum Abteilungsleiter.\nB. [WRONG] Die Firma befördre mich zum Abteilungsleiter.\nC. [WRONG] Die Firma befördern mich zum Abteilungsleiter.\nD. [WRONG] Die Firma befördrst mich zum Abteilungsleiter.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781462497585-fdl4k4uz"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb conjugation for the singular subject \"Die Firma\" (1st person singular, 3rd person plural, and 2nd person singular forms respectively).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781462497591-6t5emysm",
+      "timestamp": "2026-06-14T18:41:52.046Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B, C, and D in a German grammar multiple choice question about the verb \"befördern\" are indeed incorrect.\n\nThe question asks which sentence is grammatically correct. The subject \"Die Firma\" is singular (3rd person singular), requiring the verb form \"befördert\" (answer A).\n\n- B uses \"befördre\" (1st person singular subjunctive) - incorrect person/number\n- C uses \"befördern\" (3rd person plural/infinitive) - incorrect number\n- D uses \"befördrst\" (2nd person singular) - incorrect person/number\n\nAll three wrong answers contain clear subject-verb agreement errors and are definitively incorrect within the stated grammatical context.\n\nTRUE||All wrong answers contain incorrect subject-verb agreement with the singular subject \"Die Firma.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781462512049-qtnv1jsc",
+      "timestamp": "2026-06-14T18:42:25.953Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect verb conjugations for the third person singular subject \"Die Firma.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781462545954-d7kuinf5",
+      "timestamp": "2026-06-14T18:42:37.794Z"
+    }
+  ]
+}

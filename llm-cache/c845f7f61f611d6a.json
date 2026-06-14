@@ -1,0 +1,61 @@
+{
+  "cacheKey": "c845f7f61f611d6a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-08-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-08 - Verben auf -eln und -ern (handeln, wandern, sammeln)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? – rudern\nChoices:\nA. [CORRECT] Ich rudere auf dem See.\nB. Ich rudre auf dem See.\nC. Ich ruderst auf dem See.\nD. Ich rudert auf dem See.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781462288265-3m1ab4x8"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question tests the key distinction for -ern verbs (keeping the stem 'e' in 1st person singular), with the wrong answer \"rudre\" representing the -eln pattern incorrectly applied, making knowledge of this specific rule essential to choose correctly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781462289270-t5cde7wn",
+      "timestamp": "2026-06-14T18:38:26.883Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question about verbs ending in -eln and -ern.\n\nVERDICT: MISALIGNED\nREASON: The question incorrectly marks \"Ich rudre\" as wrong when it is actually a valid contracted form of \"rudern\" (the -e- can be dropped in -ern verbs, though it's less common than in -eln verbs), making the question test a false premise rather than the actual -eln/-ern distinction.\n\nThe remaining validation tasks were not completed. Recommendations: Review the question to ensure it contrasts truly incorrect forms, or restructure to clearly test the -eln (drop -e-) vs -ern (keep -e-) distinction without presenting a valid contracted form as incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781462306883-scaaqvax",
+      "timestamp": "2026-06-14T18:39:17.190Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the -ern verb conjugation pattern specifically, as choice B (dropping the 'e') represents the common error of confusing -ern with -eln verbs which do drop the 'e' in the first person singular.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781462357193-cli7if39",
+      "timestamp": "2026-06-14T18:39:39.236Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core distinction between -eln and -ern verbs: \"rudern\" (an -ern verb) correctly keeps the -e- in \"ich rudere,\" while the wrong answer \"rudre\" represents the common mistake of applying the -eln pattern (which drops the -e-) to an -ern verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781462380091-ajmzy6xi",
+      "timestamp": "2026-06-14T18:40:05.057Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question tests whether the learner knows that for the -ern verb \"rudern,\" the 'e' is kept in the 1st person singular form (ich rudere), distinguishing it from the dropped-e variant (rudre) and incorrect person/number endings.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781462405954-hg8psv0o",
+      "timestamp": "2026-06-14T18:40:30.567Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question tests the correct conjugation of \"rudern,\" an -ern verb, where the key distinction is that the 'e' in the stem is retained in the 1st person singular form, which is precisely the pattern that distinguishes -ern verbs from -eln verbs covered by this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781462430568-8119eme5",
+      "timestamp": "2026-06-14T18:40:41.912Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The rule specifically covers -eln/-ern verbs dropping the 'e' in the first person singular (ich rudre), but the marked correct answer keeps the 'e' (ich rudere), meaning this question tests general present tense conjugation rather than the specific -eln/-ern contraction pattern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781462441913-bz6wfito",
+      "timestamp": "2026-06-14T18:40:58.548Z"
+    }
+  ]
+}

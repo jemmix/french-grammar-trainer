@@ -1,0 +1,33 @@
+{
+  "cacheKey": "413cd650d3664d31",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-08-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-08 - Verben auf -eln und -ern (handeln, wandern, sammeln)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? – wandern\nChoices:\nA. [CORRECT] Ich wandere jeden Sonntag im Wald.\nB. Ich wandre jeden Sonntag im Wald.\nC. Ich wanderst jeden Sonntag im Wald.\nD. Ich wandert jeden Sonntag im Wald.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781463101232-mdvdhtha"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether students know that \"wandern\" (an -ern verb) conjugates as \"ich wandere\" in the first person singular, specifically distinguishing it from the -eln pattern where the stem 'e' can be dropped (option B \"wandre\" represents this common confusion).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781463102241-t47ir83d",
+      "timestamp": "2026-06-14T18:52:07.827Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question for alignment with its stated rule.\n\n**Analysis completed:**\n\nVERDICT: ALIGNED\nREASON: The question tests the key distinction between -eln verbs (which drop the 'e' in ich-form, e.g., \"ich sammel\") and -ern verbs (which keep it, e.g., \"ich wandere\"), with the main distractor \"wandre\" representing exactly the confusion this rule aims to prevent.\n\n**Remaining tasks:** None - the validation was completed before the step limit was reached.\n\n**Recommendation:** The question is properly aligned with rule 04-08 and can be kept as-is.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781463127827-16jwnyxk",
+      "timestamp": "2026-06-14T18:52:28.518Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the specific characteristic of -ern verbs that the stem -e- is retained in the ich-form (ich wandere, not ich wandre), distinguishing -ern from -eln verbs where the -e- can drop.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781463148518-4el1sg8j",
+      "timestamp": "2026-06-14T18:52:45.034Z"
+    }
+  ]
+}

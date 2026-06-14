@@ -1,0 +1,40 @@
+{
+  "cacheKey": "d4f3c4f6f1ae02e8",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "04-08-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welches Verb verliert das „e\" in der 1. Person Singular NICHT?\n\nChoices:\nA. [CORRECT] wandern (ich wandere)\nB. [WRONG] sammeln (ich sammle)\nC. [WRONG] handeln (ich handle)\nD. [WRONG] lächeln (ich lächle)\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781462933360-0k8jiqx2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers correctly show verbs that lose the 'e' in the 1st person singular (sammeln→sammle, handeln→handle, lächeln→lächle), making them properly incorrect for a question asking which verb does NOT lose the 'e'.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781462933366-jof146lf",
+      "timestamp": "2026-06-14T18:49:05.794Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers (sammle, handle, lächle) correctly demonstrate verbs that lose the 'e' in the 1st person singular, making them valid wrong answers to the question asking which verb does NOT lose the 'e'.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781462945797-8bpqz3x0",
+      "timestamp": "2026-06-14T18:49:16.542Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify whether wrong answers B, C, D in a German grammar MCQ are indeed incorrect. The question asks \"Welches Verb verliert das 'e' in der 1. Person Singular NICHT?\" (Which verb does NOT lose the 'e' in the 1st person singular?).\n\nRemaining tasks: Provide the verification verdict.\n\nRecommendation for next step: The verdict should be:\nFALSE|B,C,D|All three wrong answers actually keep the 'e' in the 1st person singular standard form (ich sammle, ich handle, ich lächle), making them correct answers to the question asking which verb does NOT lose the 'e'—the question is flawed because all four options are correct.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781462956542-u7iz0hsj",
+      "timestamp": "2026-06-14T18:49:37.235Z"
+    },
+    {
+      "raw": "FALSE|B,C,D|All three wrong answers (sammeln → ich sammle, handeln → ich handle, lächeln → ich lächle) retain the 'e' in the 1st person singular present tense, making them equally valid correct answers to the question \"which verb does NOT lose the 'e'.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781462977235-a9i2wx9c",
+      "timestamp": "2026-06-14T18:49:51.438Z"
+    }
+  ]
+}
