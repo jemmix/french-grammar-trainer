@@ -1,0 +1,26 @@
+{
+  "cacheKey": "654e92c77b597691",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-10-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-10 - Der Gebrauch des Präsens: Gewohnheit, aktuelle Handlung, Zukunft\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das Verb. Bei Gewohnheiten mit Signalwörtern wie „jeden Morgen\" verwendet man das Präsens.\nPhrase: „Ich ___ jeden Morgen Kaffee.\nCorrect Answer: trinke\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781465753725-4tantdjc"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I analyzed the alignment of a German grammar question with its stated rule.\n\nVerdict: VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use the present tense for habits with signal words like \"jeden Morgen,\" so the question actually tests verb conjugation of \"trinken\" and vocabulary knowledge, not the rule about when to choose the present tense over other tenses.\n\nRemaining tasks: None for this single validation item.\n\nRecommendations: To properly test rule 04-10 (use of present tense for habit vs. current action vs. future), the question should require the student to choose between tenses based on context, without the prompt giving away the answer. For example, provide a sentence with a habitual context and ask which tense is appropriate, or give multiple tense options where the student must select the correct one based on understanding when the present tense is used.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781465753728-qqt8tudy",
+      "timestamp": "2026-06-14T19:36:15.197Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use the Präsens for habits (\"Bei Gewohnheiten... verwendet man das Präsens\"), so the question only tests conjugation of \"trinken\" in the first person singular, not the actual rule about recognizing when to use the present tense for habits versus current actions or future.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781465775197-eslf56jp",
+      "timestamp": "2026-06-14T19:36:35.919Z"
+    }
+  ]
+}

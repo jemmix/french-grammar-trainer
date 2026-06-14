@@ -1,0 +1,40 @@
+{
+  "cacheKey": "ef3bdbcd37789ade",
+  "predicateId": "question-rule-alignment",
+  "questionId": "04-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präsens\n\nRULE BEING TESTED: 04-10 - Der Gebrauch des Präsens: Gewohnheit, aktuelle Handlung, Zukunft\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das Verb. Bei Zukunftsereignissen mit Signalwörtern wie „morgen\" verwendet man im Deutschen das Präsens (nicht das Futur I).\nPhrase: „Morgen ___ ich nach Berlin.\nCorrect Answer: fahre\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781465753726-gwsdctsv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the use of present tense to express future events with temporal signal words like \"morgen,\" which is a core component of rule 04-10.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781465755728-ej2vqw7x",
+      "timestamp": "2026-06-14T19:36:11.390Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:**\nI was asked to validate whether a German grammar question about using Präsens for future events is aligned with its stated rule. I analyzed the question and determined my verdict.\n\n**Verdict:**\nVERDICT: MISALIGNED\nREASON: The prompt explicitly states the rule being tested (\"bei Zukunftsereignissen mit Signalwörtern wie 'morgen' verwendet man im Deutschen das Präsens\"), so the question actually tests verb conjugation (knowing that \"ich fahre\" is the present tense of fahren) rather than knowledge of when to use Präsens for future events.\n\n**Remaining tasks:** None - the validation was completed.\n\n**Recommendations:** To properly test this rule, the question should remove the explicit instruction about when to use Präsens for future and instead rely on the student recognizing from context (e.g., \"Morgen ___ ich nach Berlin\") that this is a future event requiring Präsens, then conjugating accordingly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781465772388-3mn0qe1u",
+      "timestamp": "2026-06-14T19:36:32.369Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a German grammar question about using the present tense (Präsens) for future events is aligned with the rule \"04-10 - Der Gebrauch des Präsens: Gewohnheit, aktuelle Handlung, Zukunft.\"\n\nVERDICT: ALIGNED\nREASON: The question directly tests the use of Präsens for future events with temporal signal words like \"morgen,\" which is exactly one of the three specified usages in the rule (Zukunft/Future).\n\nNo remaining tasks - this was a single validation request that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781465792371-cxcyluhz",
+      "timestamp": "2026-06-14T19:36:45.211Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly states that present tense is used for future events with \"morgen,\" so the student doesn't need to know the rule—they just need to conjugate \"fahren\" correctly, making this a conjugation exercise rather than a test of when to use Präsens for future meaning.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781465805212-022nf6a1",
+      "timestamp": "2026-06-14T19:36:58.148Z"
+    }
+  ]
+}

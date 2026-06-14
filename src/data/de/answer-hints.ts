@@ -66,8 +66,8 @@ export const answerHints: Record<string, string> = {
   "trinke": "trinken",
   "Morgen": "Zeitangabe",
   "bezahlt": "bezahlen",
-  "Gewohnheit": "Funktionsbegriff",
-  "Zukunft": "Funktionsbegriff",
+  "trinke": "trinken",
+  "fahre": "fahren",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
