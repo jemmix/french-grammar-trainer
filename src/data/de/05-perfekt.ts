@@ -311,7 +311,7 @@ const section: Section = {
       choices: [
         { text: "gesehen", correct: true, explanation: "„sehen\" ist ein unregelmäßiges (starkes) Verb. Das Partizip II wird mit ge- + Stamm + -en gebildet: ge + seh + en = „gesehen\". Der Stammvokal bleibt hier e (sehen → sah → gesehen)." },
         { text: "geseeht", correct: false, explanation: "„geseeht\" verwendet die regelmäßige Endung -et (geschrieben als -t nach Doppelvokal). „sehen\" ist aber unregelmäßig und verlangt die Endung -en: „gesehen\"." },
-        { text: "gesehn", correct: false, explanation: "„gesehn\" ist eine umgangssprachliche Kurzform ohne die volle Endung. Die korrekte Form schreibt -en am Ende: „gesehen\"." },
+        { text: "gesehend", correct: false, explanation: "„gesehend\" ist das Partizip I (Gegenwartsform), nicht das Partizip II. Das Partizip II von „sehen\" lautet „gesehen\"." },
         { text: "sehent", correct: false, explanation: "„sehent\" fehlt das Präfix ge-. Unregelmäßige Verben bilden das Partizip II mit ge-: „gesehen\"." },
       ],
     },
@@ -351,7 +351,7 @@ const section: Section = {
         { text: "gegessen", correct: true, explanation: "„essen\" ist unregelmäßig. Der Stammvokal bleibt e: essen → aß → gegessen. Wichtig ist die Verdopplung des s: „gegessen\" (ge + gess + en)." },
         { text: "geesset", correct: false, explanation: "„geesset\" verwendet die regelmäßige Endung -et. „essen\" ist aber unregelmäßig und verlangt -en sowie Verdopplung des s: „gegessen\"." },
         { text: "geäst", correct: false, explanation: "„geäst\" hat den falschen Vokal (ä statt e) und fehlt die Endung -en. Korrekt lautet das Partizip II: „gegessen\"." },
-        { text: "geessen", correct: false, explanation: "„geessen\" hat nur ein einfaches s. Bei „essen\" wird das s im Partizip II verdoppelt: „gegessen\"." },
+        { text: "gegäss", correct: false, explanation: "„gegäss\" hat den falschen Vokal (ä statt e) und fehlt die Endung -en. Korrekt lautet das Partizip II: „gegessen\"." },
       ],
     },
     {
@@ -419,7 +419,6 @@ const section: Section = {
       wrongAnswers: [
         { text: "genehmt", explanation: "„genehmt\" ist die regelmäßige Form mit der Endung -t. „nehmen\" ist aber unregelmäßig und verlangt Vokalwechsel e → o und die Endung -en: „genommen\"." },
         { text: "nimmt", explanation: "„nimmt\" ist die 3. Person Singular Präsens (er/sie/es nimmt). Das Partizip II lautet „genommen\"." },
-        { text: "genähmt", explanation: "„genähmt\" setzt fälschlich einen Umlaut (ä) ein und verwendet die regelmäßige Endung -t. Korrekt ist Vokalwechsel zu o und Endung -en: „genommen\"." },
         { text: "nehmend", explanation: "„nehmend\" ist das Partizip Präsens (Gegenwartsform), nicht das Partizip II. Das Partizip II lautet „genommen\"." },
         { text: "nahm", explanation: "„nahm\" ist das Präteritum (1./3. Person Singular). Das Partizip II lautet „genommen\"." },
       ],
@@ -435,7 +434,6 @@ const section: Section = {
       answer: "gelesen",
       explanation: "„lesen\" ist unregelmäßig. Der Stammvokal bleibt e: lesen → las → gelesen. Das Partizip II lautet „gelesen\" (ge + les + en).",
       wrongAnswers: [
-        { text: "geleset", explanation: "„geleset\" verwendet die regelmäßige Endung -et. „lesen\" ist aber unregelmäßig und verlangt die Endung -en: „gelesen\"." },
         { text: "lest", explanation: "„lest\" ist die 2. Person Plural im Präsens (ihr lest). Das Partizip II lautet „gelesen\"." },
         { text: "liest", explanation: "„liest\" ist die 3. Person Singular Präsens (er/sie/es liest). Das Partizip II lautet „gelesen\"." },
         { text: "lesend", explanation: "„lesend\" ist das Partizip Präsens (Gegenwartsform). Das Partizip II der Vergangenheit lautet „gelesen\"." },

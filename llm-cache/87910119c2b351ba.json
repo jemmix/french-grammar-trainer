@@ -1,0 +1,40 @@
+{
+  "cacheKey": "87910119c2b351ba",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "05-03-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Das Partizip II unregelmäßiger Verben (ge-...-en: gesehen, gesprochen, getrunken)\nPROMPT: Bilden Sie das Partizip II des unregelmäßigen Verbs.\nPHRASE: „Ich habe das Buch ___.\nCORRECT ANSWER: genommen\n\nWRONG ANSWERS to evaluate:\n1. genehmt\n2. nimmt\n3. genähmt\n4. nehmend\n5. nahm\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1781480210013-4sl7w8nr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: confusing past participle with present tense (nimmt), present participle (nehmend), or simple past (nahm), and misremembering vowel changes in the ge-...-en pattern (genehmt, genähmt).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781480690072-19m7i7jx",
+      "timestamp": "2026-06-14T23:45:14.933Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: \"genehmt\" shows incorrect stem vowel application, \"nimmt\" is the present tense form learners often confuse with Partizip II, \"genähmt\" reflects confusion with a similar-sounding verb, \"nehmend\" is the present participle (Partizip I) commonly mistaken for Partizip II, and \"nahm\" is the Präteritum form learners frequently provide instead of the past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781480715623-j5oefnt1",
+      "timestamp": "2026-06-14T23:45:37.897Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to evaluate whether 5 wrong answers for a German Partizip II question (correct answer: \"genommen\" from \"nehmen\") are plausible learner mistakes.\n\nMy evaluation:\n- \"nimmt\" (present tense) - PLAUSIBLE\n- \"nehmend\" (present participle) - PLAUSIBLE  \n- \"nahm\" (Präteritum) - PLAUSIBLE\n- \"genehmt\" - QUESTIONABLE (overapplying regular pattern, but the \"h\" insertion is odd)\n- \"genähmt\" - IMPLAUSIBLE (appears to confuse \"nehmen\" with \"nähen\" - completely different verb)\n\nVerdict that would have been provided:\nVERDICT: IMPLAUSIBLE\nREASON: \"genähmt\" is not a plausible mistake as it would require confusing \"nehmen\" (to take) with \"nähen\" (to sew), which are completely different verbs that no learner would naturally conflate in this context.\n\nRemaining tasks: None - this was a single evaluation task.\n\nRecommendations: Replace \"genähmt\" with a more plausible error such as \"genommen\" (missing the double 'm'), \"genemmt\" (wrong vowel/consistency), or \"genommen\" with incorrect capitalization or spelling variation that reflects actual learner confusion patterns.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781480737897-0sg2b8tu",
+      "timestamp": "2026-06-14T23:45:58.469Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: While \"nimmt\" (present tense confusion), \"nehmend\" (Partizip I vs Partizip II confusion), and \"nahm\" (Präteritum confusion) are all plausible learner errors, \"genehmt\" and \"genähmt\" are implausible—the random insertion of \"h\" and \"äh\" into the stem doesn't reflect any recognizable confusion pattern for the verb \"nehmen\" and appears to be artificially constructed rather than a mistake a real learner would make.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781480758469-8ykkc4ux",
+      "timestamp": "2026-06-14T23:46:14.566Z"
+    }
+  ]
+}

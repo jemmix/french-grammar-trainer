@@ -1,0 +1,40 @@
+{
+  "cacheKey": "9c12df97e8b176cd",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "05-03-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Das Partizip II unregelmäßiger Verben (ge-...-en: gesehen, gesprochen, getrunken)\nPROMPT: Bilden Sie das Partizip II des unregelmäßigen Verbs.\nPHRASE: „Ich habe das Buch ___.\nCORRECT ANSWER: genommen\n\nWRONG ANSWERS to evaluate:\n1. genehmt\n2. nimmt\n3. genomm\n4. nehmend\n5. nahm\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1781480856047-kyb2ffl7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner confusions: mixing up Partizip II with regular patterns (genehmt), present tense (nimmt), incomplete participle (genomm), Partizip I (nehmend), and Präteritum (nahm).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781480862066-xyum9wfu",
+      "timestamp": "2026-06-14T23:48:12.806Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: \"genehmt\" applies wrong suffix pattern, \"nimmt\" confuses present tense with past participle, \"genomm\" is an incomplete participle missing the \"-en\" ending, \"nehmend\" confuses Partizip I with Partizip II, and \"nahm\" confuses Präteritum with Partizip II.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781480892829-ahbvkqcy",
+      "timestamp": "2026-06-14T23:48:48.664Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"genomm\" is not a plausible learner error—it appears to be an incompletely formed word missing any ending, whereas a real learner would more likely produce \"genomen\" (wrong stem vowel), \"genomme\" (wrong ending), or simply apply regular verb patterns like \"genehmt\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781480928665-0t3md0nx",
+      "timestamp": "2026-06-14T23:49:28.644Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"genehmt\" is not a plausible learner mistake—it's a strange hybrid form that doesn't follow any logical error pattern a German learner would make, whereas the other four answers (confusing present tense, Präteritum, or Partizip I with Partizip II, or an incomplete spelling) are all realistic errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781480968767-kbzievg3",
+      "timestamp": "2026-06-14T23:49:54.759Z"
+    }
+  ]
+}
