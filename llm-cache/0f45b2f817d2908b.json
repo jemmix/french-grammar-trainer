@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0f45b2f817d2908b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-02-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Perfekt\n\nRULE BEING TESTED: 05-02 - Das Perfekt mit sein (Bewegungsverben: gehen, fahren, kommen, fliegen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig?\nChoices:\nA. [CORRECT] Sein Großvater ist letztes Jahr gestorben.\nB. Sein Großvater hat letztes Jahr gestorben.\nC. Sein Großvater ist letztes Jahr gestorbt.\nD. Sein Großvater ist letztes Jahr sterben.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781478454900-tezue0h6"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: \"Sterben\" is not a movement verb (Bewegungsverb) — it uses \"sein\" in the Perfekt because it's a change-of-state verb (Veränderungsverb), which is a different grammar concept than what the rule explicitly covers (gehen, fahren, kommen, fliegen).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781478505861-p1mmt780",
+      "timestamp": "2026-06-14T23:11:49.237Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: \"Sterben\" is a change-of-state verb (Zustandsveränderung), not a verb of motion (Bewegungsverben), so this question tests a different subcategory of sein-verbs than the one specified in the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781478816434-1qhrw6bp",
+      "timestamp": "2026-06-14T23:14:01.741Z"
+    }
+  ]
+}

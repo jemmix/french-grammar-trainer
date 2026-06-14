@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c5949ce869accf1b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-02-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Perfekt\n\nRULE BEING TESTED: 05-02 - Das Perfekt mit sein (Bewegungsverben: gehen, fahren, kommen, fliegen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig?\nChoices:\nA. [CORRECT] Ich bin heute früh aufgewacht.\nB. Ich habe heute früh aufgewacht.\nC. Ich bin heute früh gewacht.\nD. Ich wache heute früh aufgewacht.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781478454900-l7s954ez"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"Aufwachen\" is a change-of-state verb, not a Bewegungsverb (verb of motion) like gehen, fahren, kommen, or fliegen, so this question tests a different category of sein-verbs than what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781478494612-zu04pmrk",
+      "timestamp": "2026-06-14T23:08:38.443Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"Aufwachen\" is a change-of-state verb (Zustandsveränderung), not a Bewegungsverbum like gehen, fahren, kommen, or fliegen, so this question tests a different subcategory of sein-verbs than the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781478559351-ohqepxcb",
+      "timestamp": "2026-06-14T23:14:43.620Z"
+    }
+  ]
+}

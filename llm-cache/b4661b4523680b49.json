@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b4661b4523680b49",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-02-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Das Kind ist vom Stuhl gefallen.\nB. [WRONG] Das Kind hat vom Stuhl gefallen.\nC. [WRONG] Das Kind ist vom Stuhl gefallt.\nD. [WRONG] Das Kind ist vom Stuhl fallen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781479355040-jtmljegb"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses \"haben\" instead of \"sein\" as the auxiliary for \"fallen,\" C uses the non-existent form \"gefallt\" instead of \"gefallen,\" and D uses the infinitive \"fallen\" instead of the past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781479355044-x5v9tutr",
+      "timestamp": "2026-06-14T23:23:10.211Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses \"haben\" instead of \"sein\" as the auxiliary for \"fallen,\" C uses the present tense \"fallt\" instead of the past participle \"gefallen,\" and D uses the infinitive \"fallen\" instead of the past participle \"gefallen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781479390211-48qvhlsp",
+      "timestamp": "2026-06-14T23:25:29.712Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses \"hat\" instead of \"ist\" for a verb of motion in Perfekt, C uses the wrong past participle form \"gefallt\" (which would be from \"gefällen\"), and D uses the infinitive \"fallen\" instead of the required past participle \"gefallen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781479529713-downwag9",
+      "timestamp": "2026-06-14T23:25:57.850Z"
+    }
+  ]
+}

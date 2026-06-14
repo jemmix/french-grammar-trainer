@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7a362c8fc7e7e228",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-02-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Sie ist zum ersten Mal geflogen.\nB. [WRONG] Sie hat zum ersten Mal geflogen.\nC. [WRONG] Sie ist zum ersten Mal geflogt.\nD. [WRONG] Sie ist zum ersten Mal geflogen geflogen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781478454900-oixd7bkq"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the wrong auxiliary \"hat\" instead of \"ist\" for \"fliegen\", C has an invalid past participle \"geflogt\" instead of \"geflogen\", and D redundantly repeats the past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781478463925-4u1g4rhc",
+      "timestamp": "2026-06-14T23:08:11.562Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying German grammar wrong answers for a validation task.\n\nThe question asks \"Welcher Satz ist grammatikalisch richtig?\" with the correct answer being \"Sie ist zum ersten Mal geflogen.\"\n\nAnalysis of wrong answers:\n- B: \"Sie hat zum ersten Mal geflogen\" - Incorrect because \"fliegen\" (to fly, as in travel by plane) uses \"sein\" as auxiliary, not \"haben\"\n- C: \"Sie ist zum ersten Mal geflogt\" - Incorrect because the past participle is \"geflogen\", not \"geflogt\"\n- D: \"Sie ist zum ersten Mal geflogen geflogen\" - Incorrect due to redundant repetition of \"geflogen\"\n\nTRUE||All wrong answers contain clear grammar errors: B uses wrong auxiliary verb, C has incorrect past participle spelling, and D redundantly repeats the past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781478525471-33d31uac",
+      "timestamp": "2026-06-14T23:09:12.920Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses \"hat\" instead of \"sein\" as the auxiliary verb for \"fliegen\" (a verb of motion), C uses the non-existent past participle \"geflogt\" instead of \"geflogen\", and D redundantly repeats \"geflogen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781478592559-mesbuscc",
+      "timestamp": "2026-06-14T23:10:16.266Z"
+    }
+  ]
+}

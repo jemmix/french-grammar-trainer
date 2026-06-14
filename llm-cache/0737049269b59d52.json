@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0737049269b59d52",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-02-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Das Kind ist vom Stuhl gefallen.\nB. [WRONG] Das Kind hat vom Stuhl gefallen.\nC. [WRONG] Das Kind war vom Stuhl gefallen.\nD. [WRONG] Das Kind fällt vom Stuhl.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781479127170-t4yajl71"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781479130182-c0fs42vv",
+      "timestamp": "2026-06-14T23:19:19.973Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was analyzing a German grammar verification task for a multiple choice question about which sentence is grammatically correct (\"Welcher Satz ist grammatikalisch richtig?\"). I was evaluating wrong answers B, C, and D against the correct answer A (\"Das Kind ist vom Stuhl gefallen\" - Perfekt tense).\n\nMy analysis found:\n- B (\"Das Kind hat vom Stuhl gefallen\") - Clearly INCORRECT because \"fallen\" requires \"sein\" not \"haben\" in Perfekt\n- C (\"Das Kind war vom Stuhl gefallen\") - This is grammatically correct Plusquamperfekt (past perfect) form\n- D (\"Das Kind fällt vom Stuhl\") - This is grammatically correct Präsens (present tense) form\n\nThe task was not completed because I did not provide the final formatted response.\n\nRecommendation: The verdict should be UNCLEAR because the question asks \"which sentence is grammatically correct\" without specifying a tense, and answers C (Plusquamperfekt) and D (Präsens) are both grammatically well-formed sentences in their respective tenses. Only B is definitively wrong.\n\nThe formatted response should be:\nUNCLEAR||The question does not specify which tense is required, so C (Plusquamperfekt) and D (Präsens) are grammatically correct in their respective tenses, making it ambiguous which single answer should be selected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781479159973-t745osbb",
+      "timestamp": "2026-06-14T23:20:02.614Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of evaluating a German grammar verification task. The question asks \"Welcher Satz ist grammatikalisch richtig?\" (Which sentence is grammatically correct?) with options testing the verb \"fallen\" (to fall) and its auxiliary verb usage.\n\nRemaining tasks: Complete the verification of wrong answers B, C, and D.\n\nRecommendations for next steps: The verification should return:\nFALSE|C,D|C is a valid Plusquamperfekt construction (\"war gefallen\") and D is a valid Präsens construction (\"fällt\"); the question does not specify which tense is required, so these are grammatically correct sentences in their respective tenses, while B is genuinely incorrect because \"fallen\" requires \"sein\" not \"haben\" in Perfekt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781479202616-ws0p8vhq",
+      "timestamp": "2026-06-14T23:20:49.985Z"
+    }
+  ]
+}

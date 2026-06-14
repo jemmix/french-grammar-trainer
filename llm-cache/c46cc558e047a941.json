@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c46cc558e047a941",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-02-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Perfekt\n\nRULE BEING TESTED: 05-02 - Das Perfekt mit sein (Bewegungsverben: gehen, fahren, kommen, fliegen)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig?\nChoices:\nA. [CORRECT] Das Kind ist vom Stuhl gefallen.\nB. Das Kind hat vom Stuhl gefallen.\nC. Das Kind war vom Stuhl gefallen.\nD. Das Kind fällt vom Stuhl.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781479127170-osm3e7g8"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the movement verb \"fallen\" requires \"sein\" rather than \"haben\" as the auxiliary in the Perfekt tense, which is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781479131183-j4qengsj",
+      "timestamp": "2026-06-14T23:19:13.317Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"fallen\" (a verb of motion/change of state) requires \"sein\" as the auxiliary verb in the Perfekt tense rather than \"haben,\" which is the core concept of the stated rule about Bewegungsverben.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781479153620-wk3fttzg",
+      "timestamp": "2026-06-14T23:19:31.936Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the student knows that \"fallen\" (a movement verb describing a change of position) requires \"sein\" as the auxiliary verb in the Perfekt tense, which is precisely the stated rule about Das Perfekt mit sein for Bewegungsverben.\n\n---\n\n**Note: Maximum steps for this agent have been reached.**\n\nThis was a single validation task that has been completed. The verdict and reason have been provided as requested. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781479171937-ggqv3q2i",
+      "timestamp": "2026-06-14T23:19:56.315Z"
+    }
+  ]
+}

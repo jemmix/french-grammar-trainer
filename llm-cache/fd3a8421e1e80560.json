@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fd3a8421e1e80560",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-02-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Wir sind mit dem Zug nach Berlin gefahren.\nB. [WRONG] Wir haben mit dem Zug nach Berlin gefahren.\nC. [WRONG] Wir sind mit dem Zug nach Berlin gefahrt.\nD. [WRONG] Wir fahren mit dem Zug nach Berlin gefahren.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781478454900-b3p5n1b5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B incorrectly uses \"haben\" instead of \"sein\" as the auxiliary for directional \"fahren\"; C uses the non-existent past participle \"gefahrt\" instead of \"gefahren\"; D nonsensically combines present tense \"fahren\" with past participle \"gefahren\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781478457914-6v0zk3i6",
+      "timestamp": "2026-06-14T23:07:59.755Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was asked to verify that wrong answers B, C, and D in a German grammar MCQ are indeed incorrect. I analyzed the question and was about to provide my verdict.\n\nList of any remaining tasks that were not completed:\n- Providing the final verification response in the required format\n\nRecommendations for what should be done next:\nThe verification is straightforward - all three wrong answers are clearly grammatically incorrect:\n- B incorrectly uses \"haben\" instead of \"sein\" as the auxiliary verb for \"fahren\" indicating a change of location\n- C incorrectly uses \"gefahrt\" instead of the correct past participle \"gefahren\"\n- D incoherently mixes present tense \"fahren\" with past participle \"gefahren\"\n\nThe expected response would be: TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781478518397-gp0gb6zx",
+      "timestamp": "2026-06-14T23:09:01.101Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to verify that the wrong answers (B, C, D) in a German grammar multiple choice question are indeed incorrect.\n\nAnalysis completed:\n- B: \"Wir haben mit dem Zug nach Berlin gefahren.\" - Incorrect because \"fahren\" requires \"sein\" (not \"haben\") as auxiliary in Perfekt\n- C: \"Wir sind mit dem Zug nach Berlin gefahrt.\" - Incorrect because past participle should be \"gefahren\" not \"gefahrt\"\n- D: \"Wir fahren mit dem Zug nach Berlin gefahren.\" - Incorrect because it mixes present tense with past participle, creating an impossible construction\n\nAll wrong answers are indeed grammatically incorrect.\n\nTRUE||All wrong answers contain clear grammar errors: B uses wrong auxiliary \"haben\" instead of \"sein\", C has incorrect past participle \"gefahrt\" instead of \"gefahren\", and D incorrectly mixes present tense with past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781478577741-pxcn0vsx",
+      "timestamp": "2026-06-14T23:10:02.309Z"
+    }
+  ]
+}
