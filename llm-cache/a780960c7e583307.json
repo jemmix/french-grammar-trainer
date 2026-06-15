@@ -1,0 +1,33 @@
+{
+  "cacheKey": "a780960c7e583307",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-02-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Setzen Sie das Adjektiv in der richtigen Form ein: „Das ist ein ___ Mann.\" (gut)\n\nChoices:\nA. [CORRECT] guter\nB. [WRONG] gute\nC. [WRONG] guten\nD. [WRONG] gutem\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781524295955-kr1ee8o1"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect adjective endings for masculine nominative after the indefinite article \"ein\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781524446161-sb66aakd",
+      "timestamp": "2026-06-15T11:54:33.116Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was asked to verify that the wrong answers (B, C, D) in a German grammar multiple choice question are indeed incorrect. The question asks for the correct adjective form of \"gut\" in the sentence \"Das ist ein ___ Mann\" (nominative masculine with indefinite article \"ein\").\n\nAnalysis completed:\n- B (\"gute\") - Incorrect: feminine/plural ending, not nominative masculine\n- C (\"guten\") - Incorrect: accusative masculine or dative/GENITIVE ending, not nominative\n- D (\"gutem\") - Incorrect: dative ending, not nominative\n\nThe correct answer is A (\"guter\") which has the proper strong declension \"-er\" ending for nominative masculine after the indefinite article \"ein\".\n\nRemaining tasks: None - the verification is complete.\n\nRecommendation: The expected response should be:\nTRUE||All wrong answers use incorrect adjective endings for nominative masculine with the indefinite article \"ein\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781525512197-xhb5onmq",
+      "timestamp": "2026-06-15T12:13:19.758Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: \"gute\" is feminine/plural, \"guten\" is accusative, and \"gutem\" is dative, but \"sein\" requires nominative case with masculine \"Mann.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781526579565-b4n90w1y",
+      "timestamp": "2026-06-15T12:30:43.921Z"
+    }
+  ]
+}

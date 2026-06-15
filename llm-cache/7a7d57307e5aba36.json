@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7a7d57307e5aba36",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welche Form ist der Komparativ von „klein\"?\n\nChoices:\nA. [CORRECT] kleiner\nB. [WRONG] kleinst\nC. [WRONG] am kleinsten\nD. [WRONG] kleine\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781524295908-a69qiidf"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B \"kleinst\" is not a valid German form (superlative would be \"kleinste\"), C \"am kleinsten\" is the superlative not the comparative, and D \"kleine\" is just a declined positive form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781524295916-mhw9vqvm",
+      "timestamp": "2026-06-15T11:51:56.905Z"
+    },
+    {
+      "raw": "TRUE||B is an incomplete superlative stem (not a valid standalone form), C is the superlative \"am kleinsten\" rather than the comparative, and D is the base adjective form used with articles, not a comparative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781525213495-wjsoquy1",
+      "timestamp": "2026-06-15T12:09:27.625Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is not a valid German word (the superlative would be \"kleinste\" or \"am kleinsten\"), C is the superlative form not the comparative, and D is a different inflection (plural/feminine/neuter) not the comparative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781526484932-98h24hib",
+      "timestamp": "2026-06-15T12:28:54.452Z"
+    }
+  ]
+}

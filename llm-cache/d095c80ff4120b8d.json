@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d095c80ff4120b8d",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-01-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Plural nach bestimmtem Artikel\n\nChoices:\nA. [CORRECT] Die jungen Leute spielen Fußball.\nB. [WRONG] Die junge Leute spielen Fußball.\nC. [WRONG] Die junger Leute spielen Fußball.\nD. [WRONG] Die jungem Leute spielen Fußball.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781524295955-xsbj0g0z"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781524368486-oh1rjmy6",
+      "timestamp": "2026-06-15T11:53:17.142Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect adjective endings; after a definite article in plural, the adjective must take the weak ending -en, not -e, -er, or -em.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781525459067-7cdwrp2f",
+      "timestamp": "2026-06-15T12:11:23.457Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect adjective endings for plural after a definite article (should be \"-en\", not \"-e\", \"-er\", or \"-em\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781526514223-tl9ilrgy",
+      "timestamp": "2026-06-15T12:29:25.230Z"
+    }
+  ]
+}

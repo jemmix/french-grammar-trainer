@@ -1,0 +1,26 @@
+{
+  "cacheKey": "aa771dbc3e75ec57",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-07-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — unregelmäßiger Komparativ\n\nChoices:\nA. [CORRECT] Ich habe mehr Zeit als gestern.\nB. [WRONG] Ich habe vieler Zeit als gestern.\nC. [WRONG] Ich habe viel Zeit als gestern.\nD. [WRONG] Ich habe meist Zeit als gestern.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781524295911-mz8g4bv5"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to verify that the wrong answers (B, C, D) in a German grammar MCQ about irregular comparatives are indeed incorrect.\n\nAnalysis completed:\n- B: \"vieler Zeit\" - incorrect because \"vieler\" is genitive/dative plural, not the comparative of \"viel\"\n- C: \"viel Zeit als gestern\" - incorrect because \"viel\" is the positive form, not comparative; cannot use with \"als\" for inequality comparison\n- D: \"meist Zeit\" - incorrect because \"meist\" is not a valid comparative form in this context\n\nVerdict: TRUE||All wrong answers contain clear grammar errors - \"vieler\" is wrong case/form, \"viel\" lacks comparative marking needed with \"als\", and \"meist\" is not a valid comparative form of \"viel\".\n\nNo remaining tasks - the verification was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781524463490-j5w2kfho",
+      "timestamp": "2026-06-15T11:55:00.765Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses a non-existent comparative form \"vieler\" (the comparative of \"viel\" is \"mehr\"), C uses the positive \"viel\" instead of the required comparative, and D incorrectly uses the superlative \"meist\" where a comparative with \"als\" is needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781525609666-tw1sh68u",
+      "timestamp": "2026-06-15T12:13:58.620Z"
+    }
+  ]
+}

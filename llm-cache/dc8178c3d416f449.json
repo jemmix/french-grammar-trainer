@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dc8178c3d416f449",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Superlativ (attributiv) mit Umlaut\n\nChoices:\nA. [CORRECT] Der Everest ist der höchste Berg der Welt.\nB. [WRONG] Der Everest ist der hohe Berg der Welt.\nC. [WRONG] Der Everest ist der höhere Berg der Welt.\nD. [WRONG] Der Everest ist der hoch Berg der Welt.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781524295909-d3rg4wzd"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a German grammar question about superlatives with umlaut are indeed incorrect. I analyzed the question which asks for the correct superlative form and determined that:\n- B uses the positive form \"hohe\" instead of superlative\n- C uses the comparative \"höhere\" instead of superlative  \n- D uses the undeclined form \"hoch\" (should be \"hohe\" even in positive) and is not superlative\n\nThe verdict would be: TRUE||All wrong answers contain clear grammar errors.\n\nRemaining tasks: None - the verification was complete.\n\nRecommendations: No further action needed on this verification task.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781524328773-mglkaaq5",
+      "timestamp": "2026-06-15T11:52:52.135Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the superlative form (höchste) required by the question prompt—B uses the positive, C uses the comparative, and D uses the undeclined base form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781525440232-9ykscse0",
+      "timestamp": "2026-06-15T12:11:15.567Z"
+    },
+    {
+      "raw": "TRUE||B uses the positive form instead of the required superlative, C uses the comparative instead of the superlative, and D uses the uninflected base form which is grammatically incorrect after the definite article \"der\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781526542052-d5v4t9nz",
+      "timestamp": "2026-06-15T12:30:02.410Z"
+    }
+  ]
+}

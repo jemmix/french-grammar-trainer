@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ed017198f2da803f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-09-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Adjektivdeklination\n\nRULE BEING TESTED: 06-09 - Partizipien als Adjektive (das gelesene Buch, der sprechende Mann)\n\nQUESTION:\nType: Input\nPrompt: Bilden Sie das Partizip I und setzen Sie es als Adjektiv ein.\nPhrase: „Der ___ Mann ist mein Lehrer.\nCorrect Answer: sprechende\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781524295914-mnqo1kux"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests forming Partizip I (\"sprechen\" → \"sprechend\") and declining it as an attributive adjective (after definite article \"der\" → weak ending \"-e\"), which is precisely the grammar concept covered by the rule \"Partizipien als Adjektive.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781524963254-dbhav9um",
+      "timestamp": "2026-06-15T12:03:41.706Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests forming a Partizip I (sprechend) and declining it as an adjective (sprechende) in the context of modifying a noun, which is exactly what the rule \"Partizipien als Adjektive\" covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781526331089-bbx2lmbq",
+      "timestamp": "2026-06-15T12:26:00.802Z"
+    }
+  ]
+}

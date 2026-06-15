@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b99934e3c2b93775",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-08-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Adjektivdeklination\n\nRULE BEING TESTED: 06-08 - Adjektiv als Substantiv (der Gute, die Schöne, das Gute)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Setzen Sie das substantivierte Adjektiv ein: „Ich sehe die ___.\" (jung, feminin)\nChoices:\nA. [CORRECT] Junge\nB. Jungen\nC. Junger\nD. Jungem\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781524295912-d08fhpai"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly asks for a \"substantiviertes Adjektiv\" and the correct answer \"Junge\" requires applying the weak declension ending (-e) for a feminine substantivized adjective in the accusative case, which is exactly what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781524685160-0j02z2ku",
+      "timestamp": "2026-06-15T11:59:38.066Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests substantivized adjectives by requiring the student to decline \"jung\" as a feminine noun after the definite article \"die\", which is the core skill of the stated rule (der Gute, die Schöne, das Gute pattern).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781526039385-fks7uxaa",
+      "timestamp": "2026-06-15T12:21:15.822Z"
+    }
+  ]
+}

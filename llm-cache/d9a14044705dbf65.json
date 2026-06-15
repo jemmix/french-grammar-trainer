@@ -1,0 +1,26 @@
+{
+  "cacheKey": "d9a14044705dbf65",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-08-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — substantiviertes Adjektiv (abstrakt)\n\nChoices:\nA. [CORRECT] Das Gute im Menschen siegt.\nB. [WRONG] Der Gute im Menschen siegt.\nC. [WRONG] Die Gute im Menschen siegt.\nD. [WRONG] Das Gut im Menschen siegt.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781524295912-dxz5uonk"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses masculine \"der\" instead of neuter \"das\" for abstract substantivized adjectives, C uses feminine \"die\" instead of neuter \"das\", and D lacks the required weak declension ending \"-e\" (and \"das Gut\" means \"property/goods,\" not the abstract concept of \"good\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781524567849-oews7kzb",
+      "timestamp": "2026-06-15T12:01:04.463Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B and C use masculine/feminine forms that would refer to a person rather than an abstract concept, and D lacks the required adjective ending \"-e\" for substantivization, instead producing the noun \"Gut\" (goods/property).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781526157776-s8thqjs9",
+      "timestamp": "2026-06-15T12:23:09.177Z"
+    }
+  ]
+}

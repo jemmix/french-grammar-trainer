@@ -1,0 +1,26 @@
+{
+  "cacheKey": "fd95bf9cbd5cc907",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-03-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Adjektivdeklination\n\nRULE BEING TESTED: 06-03 - Starke Deklination ohne Artikel (guter Mann, gutes Kind, gute Frau)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — Plural ohne Artikel\nChoices:\nA. [CORRECT] Teure Autos sind beliebt.\nB. Teurer Autos sind beliebt.\nC. Teuren Autos sind beliebt.\nD. Teurem Autos sind beliebt.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781524295956-9sf7gt8i"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests strong adjective declension without an article in the plural nominative case, where the correct -e ending (\"teure\") must be distinguished from the incorrect -er, -en, and -em endings.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781524665540-pnaz6yhn",
+      "timestamp": "2026-06-15T11:58:26.692Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far:\nI was asked to validate whether a German grammar question about adjective declension tests the stated rule. I analyzed the question but did not output my verdict before the step limit was reached.\n\nList of remaining tasks:\n- Output the verdict and reasoning for the validation question\n\nRecommendations for what should be done next:\nThe verdict for this question is:\n\nVERDICT: ALIGNED\nREASON: The question directly tests strong adjective declension without articles in the plural (nominative \"teure\" vs. genitive \"teurer\", dative \"teuren\"), which is exactly what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781525910862-bbabv4ta",
+      "timestamp": "2026-06-15T12:19:05.912Z"
+    }
+  ]
+}

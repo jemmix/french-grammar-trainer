@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ea3476e4396071ff",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-07-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Adjektivdeklination\n\nRULE BEING TESTED: 06-07 - Unregelmäßige Komparation (gut/besser/am besten, viel/mehr/am meisten)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — unregelmäßiger Komparativ\nChoices:\nA. [CORRECT] Ich spiele lieber Tennis als Fußball.\nB. Ich spiele gernsten Tennis als Fußball.\nC. Ich spiele gern Tennis als Fußball.\nD. Ich spiele liebsten Tennis als Fußball.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781524295911-bdg7wzrb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the irregular comparison of \"gern/lieber/am liebsten,\" which is a different set of irregular forms than the ones explicitly specified in the rule (gut/besser/am besten and viel/mehr/am meisten).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781524519263-nthvjiui",
+      "timestamp": "2026-06-15T11:55:56.101Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the irregular comparative \"lieber\" (from gern/lieber/am liebsten), which follows the same pattern of stem-changing irregular comparison as gut/besser/am besten, making it a valid test of this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781525692510-r7wtu3cz",
+      "timestamp": "2026-06-15T12:26:11.897Z"
+    }
+  ]
+}

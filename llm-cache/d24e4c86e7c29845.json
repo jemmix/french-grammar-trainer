@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d24e4c86e7c29845",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welche Form ist der Komparativ von „jung\"?\n\nChoices:\nA. [CORRECT] jünger\nB. [WRONG] junge\nC. [WRONG] jüngste\nD. [WRONG] jung\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781524295909-b3q9d6hs"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are not the comparative form: B is the inflected base form, C is the superlative, and D is the uninflected base form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781524350001-265kc28p",
+      "timestamp": "2026-06-15T11:52:47.626Z"
+    },
+    {
+      "raw": "TRUE||B is a declined base form, C is the superlative, and D is the base form—none of which is the comparative \"jünger.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781525416906-h92z0u29",
+      "timestamp": "2026-06-15T12:10:43.491Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B is the base adjective with ending, C is the superlative, and D is the base positive form—none is the comparative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781526534454-pfe6pxvf",
+      "timestamp": "2026-06-15T12:29:39.677Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "67c2bdded90907d4",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-06-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Komparativ mit Umlaut\n\nChoices:\nA. [CORRECT] Anna ist größer als Paul.\nB. [WRONG] Anna ist große als Paul.\nC. [WRONG] Anna ist größten als Paul.\nD. [WRONG] Anna ist groß als Paul.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781524295908-i11f5ums"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the correct comparative form \"größer\" with umlaut — B uses the positive form \"große\", C uses the superlative \"größten\", and D uses the bare adjective \"groß\" without any comparative ending.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781524301935-vaktu7jp",
+      "timestamp": "2026-06-15T11:52:31.639Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the correct comparative form with umlaut (größer): B uses a declined adjective form, C uses the superlative, and D uses the base form without the -er suffix.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781525383057-hxezkg7e",
+      "timestamp": "2026-06-15T12:14:52.064Z"
+    }
+  ]
+}

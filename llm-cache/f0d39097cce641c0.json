@@ -1,0 +1,26 @@
+{
+  "cacheKey": "f0d39097cce641c0",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-10-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Adjektivdeklination\n\nRULE BEING TESTED: 06-10 - Attributives vs. prädikatives Adjektiv (der schöne Baum vs. der Baum ist schön)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — attributives Adjektiv\nChoices:\nA. [CORRECT] Ich lese ein interessantes Buch.\nB. Ich lese ein interessant Buch.\nC. Ich lese ein interessante Buch.\nD. Ich lese ein interessanter Buch.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781524295915-sd1oea3w"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests adjective declension endings (weak declension for neuter accusative), not the distinction between attributive and predicative adjective positions—all four choices use the adjective attributively, so the student never needs to distinguish between \"ein interessantes Buch\" and \"das Buch ist interessant.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781525071806-37azjjdr",
+      "timestamp": "2026-06-15T12:05:07.347Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests adjective declension endings (the weak -es ending for neuter accusative after \"ein\"), not the distinction between attributive and predicative adjective placement, since all four choices already use the adjective attributively before the noun.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781526393231-wvuxpbw8",
+      "timestamp": "2026-06-15T12:27:20.914Z"
+    }
+  ]
+}
