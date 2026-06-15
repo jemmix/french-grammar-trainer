@@ -1,0 +1,33 @@
+{
+  "cacheKey": "264588850a8440ad",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-04-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Ich habe die Hausaufgaben gemacht.\nB. [WRONG] Ich bin die Hausaufgaben gemacht.\nC. [WRONG] Ich haben die Hausaufgaben gemacht.\nD. [WRONG] Ich bin die Hausaufgaben machen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781481145021-tnxmsjy3"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B and D incorrectly use \"sein\" instead of \"haben\" as the perfect auxiliary for the transitive verb \"machen\", C uses the unconjugated \"haben\" instead of \"habe\", and D additionally fails to use the past participle \"gemacht\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481180612-vuwbm1uu",
+      "timestamp": "2026-06-14T23:53:16.387Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to verify that the wrong answers (B, C, D) in a German grammar multiple choice question are indeed incorrect. The question asks \"Welcher Satz ist grammatikalisch richtig?\" (Which sentence is grammatically correct?)\n\n**Analysis completed:**\n- B (\"Ich bin die Hausaufgaben gemacht\") is incorrect because \"machen\" with a direct object requires \"haben\" as the auxiliary, not \"sein\"\n- C (\"Ich haben die Hausaufgaben gemacht\") is incorrect because it uses the wrong conjugation \"haben\" instead of \"habe\" for first person singular \"ich\"\n- D (\"Ich bin die Hausaufgaben machen\") is incorrect because it uses \"sein\" with an infinitive instead of a past participle, which is not a valid German construction\n\n**Verdict:**\nTRUE||All wrong answers contain clear grammar errors — B and D incorrectly use \"sein\" instead of \"haben\" with \"machen,\" and C uses the wrong conjugation \"haben\" instead of \"habe\" for \"ich.\"\n\n**Remaining tasks:** None — the verification was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481258606-gmt72cz2",
+      "timestamp": "2026-06-14T23:59:07.586Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses \"sein\" instead of \"haben\" with the transitive verb \"machen\", C has a subject-verb agreement error (\"haben\" instead of \"habe\" with \"Ich\"), and D has both the wrong auxiliary (\"sein\" instead of \"haben\") and uses the infinitive \"machen\" instead of the required past participle \"gemacht\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481547588-g25taoo2",
+      "timestamp": "2026-06-14T23:59:17.513Z"
+    }
+  ]
+}

@@ -275,7 +275,7 @@ const section: Section = {
       generatedBy: "glm-5.1",
       prompt: "Ergänzen Sie das Hilfsverb im Perfekt.",
       phrase: { before: "„Ich ", after: " gestern ins Kino gegangen." },
-      hint: "sein",
+      hint: "gehen",
       answer: "bin",
       explanation: "„gehen\" ist ein Bewegungsverb. Bewegungsverben bilden das Perfekt mit „sein\". Die 1. Person Singular von „sein\" lautet „bin\": „ich bin gegangen\".",
       wrongAnswers: [
@@ -292,7 +292,7 @@ const section: Section = {
       generatedBy: "glm-5.1",
       prompt: "Ergänzen Sie das Hilfsverb im Perfekt.",
       phrase: { before: "„Wir ", after: " am Wochenende nach Hamburg gefahren." },
-      hint: "sein",
+      hint: "fahren",
       answer: "sind",
       explanation: "„fahren\" ist ein Bewegungsverb. Bewegungsverben bilden das Perfekt mit „sein\". Die 1. Person Plural von „sein\" lautet „sind\": „wir sind gefahren\".",
       wrongAnswers: [
@@ -473,10 +473,10 @@ const section: Section = {
       generatedBy: "glm-5.1",
       prompt: "Welcher Satz ist grammatikalisch richtig?",
       choices: [
-        { text: "Sie ist pünktlich aufgewacht.", correct: true, explanation: "„aufwachen\" ist ein Verb der Zustandsveränderung (Wechsel vom Schlaf zum Wachsein) und bildet das Perfekt mit „sein\": „sie ist aufgewacht\". Zustandsveränderungen nehmen „sein\"." },
-        { text: "Sie hat pünktlich aufgewacht.", correct: false, explanation: "„haben\" ist bei Verben der Zustandsveränderung wie „aufwachen\" falsch. Diese verlangen „sein\": „sie ist aufgewacht\"." },
-        { text: "Sie sind pünktlich aufgewacht.", correct: false, explanation: "„sind\" passt nicht zur 3. Person Singular feminine („sie\"). Korrekt heißt es: „sie ist aufgewacht\"." },
-        { text: "Sie haben pünktlich aufgewacht.", correct: false, explanation: "„haben\" ist das falsche Hilfsverb (Zustandsveränderung → „sein\") und „haben\" passt nicht zur Singularform. Korrekt: „sie ist aufgewacht\"." },
+        { text: "Das Kind ist schnell eingeschlafen.", correct: true, explanation: "„einschlafen\" ist ein Verb der Zustandsveränderung (Wechsel vom Wachsein zum Schlaf) und bildet das Perfekt mit „sein\": „das Kind ist eingeschlafen\"." },
+        { text: "Das Kind hat schnell eingeschlafen.", correct: false, explanation: "„haben\" ist bei Verben der Zustandsveränderung wie „einschlafen\" falsch. Diese verlangen „sein\": „ist eingeschlafen\"." },
+        { text: "Das Kind sind schnell eingeschlafen.", correct: false, explanation: "„sind\" passt nicht zur 3. Person Singular („das Kind\"). Korrekt heißt es: „das Kind ist eingeschlafen\"." },
+        { text: "Das Kind ist schnell einschlafen.", correct: false, explanation: "„einschlafen\" ist der Infinitiv. Das Perfekt braucht das Partizip II: „ist eingeschlafen\"." },
       ],
     },
     {
@@ -497,7 +497,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz ist grammatikalisch richtig? — AUSNAHME",
+      prompt: "Welcher Satz ist grammatikalisch richtig?",
       choices: [
         { text: "Wir sind den ganzen Abend zu Hause geblieben.", correct: true, explanation: "„bleiben\" ist eine Ausnahme: Obwohl es kein Bewegungsverb im engeren Sinne ist, bildet es das Perfekt mit „sein\": „wir sind geblieben\". Es gehört zu den besonderen Verben mit „sein\"." },
         { text: "Wir haben den ganzen Abend zu Hause geblieben.", correct: false, explanation: "„haben\" ist bei „bleiben\" falsch. „bleiben\" ist eine Ausnahme und bildet das Perfekt mit „sein\": „wir sind geblieben\"." },
@@ -525,10 +525,10 @@ const section: Section = {
       generatedBy: "glm-5.1",
       prompt: "Welcher Satz ist grammatikalisch richtig?",
       choices: [
-        { text: "Er ist schnell gelaufen.", correct: true, explanation: "„laufen\" kann ein Bewegungsverb sein (Fortbewegung) und bildet das Perfekt dann mit „sein\": „er ist gelaufen\". Bei Bewegung ohne Akkusativobjekt steht „sein\"." },
-        { text: "Er hat schnell gelaufen.", correct: false, explanation: "„haben\" ist beim Bewegungsverb „laufen\" ohne Akkusativobjekt falsch. Korrekt heißt es: „er ist gelaufen\"." },
-        { text: "Er sind schnell gelaufen.", correct: false, explanation: "„sind\" passt nicht zur 3. Person Singular („er\"). Korrekt: „er ist gelaufen\"." },
-        { text: "Er haben schnell gelaufen.", correct: false, explanation: "„haben\" ist sowohl falsch konjugiert (3. Person Singular) als auch das falsche Hilfsverb. Korrekt: „er ist gelaufen\"." },
+        { text: "Er ist heute früh aufgestanden.", correct: true, explanation: "„aufstehen\" ist ein Bewegungsverb (Wechsel vom Liegen/Sitzen zum Stehen) und bildet das Perfekt mit „sein\": „er ist aufgestanden\"." },
+        { text: "Er hat heute früh aufgestanden.", correct: false, explanation: "„haben\" ist bei Bewegungsverben wie „aufstehen\" falsch. Korrekt heißt es: „er ist aufgestanden\"." },
+        { text: "Er sind heute früh aufgestanden.", correct: false, explanation: "„sind\" passt nicht zur 3. Person Singular („er\"). Korrekt: „er ist aufgestanden\"." },
+        { text: "Er ist heute früh aufstehen.", correct: false, explanation: "„aufstehen\" ist der Infinitiv. Das Perfekt braucht das Partizip II: „ist aufgestanden\"." },
       ],
     },
     {
@@ -536,12 +536,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-04",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz ist grammatikalisch richtig? — AUSNAHME",
+      prompt: "Welcher Satz ist grammatikalisch richtig?",
       choices: [
-        { text: "Sie ist letzte Woche krank gewesen.", correct: true, explanation: "„sein\" bildet das Perfekt ausnahmsweise mit sich selbst als Hilfsverb: „sie ist gewesen\". Das ist eine Besonderheit, da „sein\" nicht mit „haben\" steht." },
-        { text: "Sie hat letzte Woche krank gewesen.", correct: false, explanation: "„haben\" ist bei „sein\" als Vollverb falsch. Das Perfekt von „sein\" bildet sich mit „sein\": „sie ist gewesen\"." },
-        { text: "Sie sind letzte Woche krank gewesen.", correct: false, explanation: "„sind\" passt nicht zur 3. Person Singular feminine („sie\"). Korrekt heißt es: „sie ist gewesen\"." },
-        { text: "Sie haben letzte Woche krank gewesen.", correct: false, explanation: "„haben\" ist das falsche Hilfsverb für „sein\", und die Form passt nicht zur Singularform. Korrekt: „sie ist gewesen\"." },
+        { text: "Er ist letzte Woche krank gewesen.", correct: true, explanation: "„sein\" bildet das Perfekt ausnahmsweise mit sich selbst als Hilfsverb: „er ist gewesen\". Das ist eine Besonderheit, da „sein\" nicht mit „haben\" steht." },
+        { text: "Er hat letzte Woche krank gewesen.", correct: false, explanation: "„haben\" ist bei „sein\" als Vollverb falsch. Das Perfekt von „sein\" bildet sich mit „sein\": „er ist gewesen\"." },
+        { text: "Er sind letzte Woche krank gewesen.", correct: false, explanation: "„sind\" passt nicht zur 3. Person Singular („er\"). Korrekt heißt es: „er ist gewesen\"." },
+        { text: "Er ist letzte Woche krank sein.", correct: false, explanation: "„sein\" ist der Infinitiv. Das Perfekt braucht das Partizip II: „er ist gewesen\"." },
       ],
     },
     {
@@ -549,9 +549,9 @@ const section: Section = {
       type: "input",
       ruleId: "05-04",
       generatedBy: "glm-5.1",
-      prompt: "Setzen Sie das richtige Hilfsverb im Perfekt ein.",
+      prompt: "Setzen Sie das richtige Hilfsverb im Perfekt ein (konjugierte Form).",
       phrase: { before: "„Ich ", after: " nach Hause gegangen." },
-      hint: "sein (Bewegungsverb)",
+      hint: "gehen",
       answer: "bin",
       explanation: "„gehen\" ist ein Bewegungsverb (Fortbewegung nach einem Ziel) und bildet das Perfekt mit „sein\". Die 1. Person Singular von „sein\" lautet „bin\": „ich bin gegangen\".",
       wrongAnswers: [
@@ -567,9 +567,9 @@ const section: Section = {
       type: "input",
       ruleId: "05-04",
       generatedBy: "glm-5.1",
-      prompt: "Setzen Sie das richtige Hilfsverb im Perfekt ein.",
+      prompt: "Setzen Sie das richtige Hilfsverb im Perfekt ein (konjugierte Form).",
       phrase: { before: "„Ich ", after: " die Hausaufgaben gemacht." },
-      hint: "haben (transitives Verb)",
+      hint: "machen",
       answer: "habe",
       explanation: "„machen\" ist ein transitives Verb mit Akkusativobjekt („die Hausaufgaben\") und bildet das Perfekt mit „haben\". Die 1. Person Singular lautet „habe\": „ich habe gemacht\".",
       wrongAnswers: [

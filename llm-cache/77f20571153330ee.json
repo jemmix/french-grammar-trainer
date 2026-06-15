@@ -1,0 +1,33 @@
+{
+  "cacheKey": "77f20571153330ee",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-04-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Das Kind ist schnell eingeschlafen.\nB. [WRONG] Das Kind hat schnell eingeschlafen.\nC. [WRONG] Das Kind sind schnell eingeschlafen.\nD. [WRONG] Das Kind ist schnell einschlafen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781481721879-nz0ct41t"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B incorrectly uses \"hat\" instead of \"ist\" for the intransitive verb \"einschlafen\" which requires \"sein\" in Perfekt; C has a subject-verb agreement error using plural \"sind\" with singular \"Das Kind\"; D uses the infinitive \"einschlafen\" instead of the required past participle \"eingeschlafen\" in the Perfekt construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481721887-4459k9ys",
+      "timestamp": "2026-06-15T00:02:16.774Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses \"hat\" instead of \"ist\" (einschlafen takes sein in Perfekt), C has subject-verb disagreement (\"sind\" with singular \"Das Kind\"), and D uses the infinitive \"einschlafen\" instead of the past participle \"eingeschlafen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481750170-96dcj5fo",
+      "timestamp": "2026-06-15T00:02:58.870Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses \"haben\" instead of the required \"sein\" for \"einschlafen\" in Perfekt, C has subject-verb agreement error (\"sind\" instead of \"ist\" for singular \"Das Kind\"), and D uses the infinitive \"einschlafen\" instead of the past participle \"eingeschlafen\" required in Perfekt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481787125-3zosqk2b",
+      "timestamp": "2026-06-15T00:03:24.000Z"
+    }
+  ]
+}

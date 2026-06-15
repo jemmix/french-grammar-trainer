@@ -1,0 +1,26 @@
+{
+  "cacheKey": "87ee6ce8936327f2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-04-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — AUSNAHME\n\nChoices:\nA. [CORRECT] Sie ist letzte Woche krank gewesen.\nB. [WRONG] Sie hat letzte Woche krank gewesen.\nC. [WRONG] Sie sind letzte Woche krank gewesen.\nD. [WRONG] Sie haben letzte Woche krank gewesen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781481145021-24tlgp46"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B incorrectly uses \"haben\" instead of \"sein\" as the auxiliary verb for \"krank sein\"; C incorrectly uses plural \"sind\" when the context established by correct answer A shows \"Sie\" refers to singular \"she\"; D incorrectly uses \"haben\" instead of \"sein\" as the auxiliary verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481192812-8zucpjjn",
+      "timestamp": "2026-06-14T23:53:58.587Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B and D incorrectly use \"haben\" instead of \"sein\" as the auxiliary for \"krank sein\", and C uses the plural verb form \"sind\" instead of the singular \"ist\" required for third-person feminine \"Sie\" (she).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481298700-q4wuo6a3",
+      "timestamp": "2026-06-14T23:55:22.924Z"
+    }
+  ]
+}

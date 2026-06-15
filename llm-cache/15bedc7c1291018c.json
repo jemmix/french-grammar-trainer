@@ -1,0 +1,33 @@
+{
+  "cacheKey": "15bedc7c1291018c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-04-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Er hat sich über das Geschenk gefreut.\nB. [WRONG] Er ist sich über das Geschenk gefreut.\nC. [WRONG] Er haben sich über das Geschenk gefreut.\nD. [WRONG] Er ist über das Geschenk gefreut.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781481145020-setgaphz"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses \"ist\" instead of \"hat\" as the auxiliary for \"sich freuen\"; C has subject-verb agreement error (\"Er\" with \"haben\"); D uses wrong auxiliary \"ist\" and is missing the reflexive pronoun \"sich\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481154042-wd5z8xxn",
+      "timestamp": "2026-06-14T23:53:04.858Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to verify that the wrong answers in a German grammar multiple-choice question are indeed incorrect. The question asked which sentence is grammatically correct, testing the verb \"sich freuen\" in the Perfekt tense.\n\nAnalysis completed:\n- B (\"Er ist sich über das Geschenk gefreut\") is incorrect because \"sich freuen\" forms Perfekt with \"haben\", not \"sein\"\n- C (\"Er haben sich über das Geschenk gefreut\") is incorrect due to subject-verb agreement error (plural \"haben\" with singular \"Er\")\n- D (\"Er ist über das Geschenk gefreut\") is incorrect because it uses \"sein\" instead of \"haben\" and omits the required reflexive pronoun \"sich\"\n\nVERDICT|TRUE||All wrong answers contain clear grammar errors: B uses wrong auxiliary verb, C has subject-verb agreement error, and D has both wrong auxiliary and missing reflexive pronoun.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481238588-fvgd18o2",
+      "timestamp": "2026-06-14T23:54:25.800Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses \"ist\" instead of \"hat\" as the auxiliary for \"sich freuen\"; C has a subject-verb agreement error (\"haben\" instead of \"hat\" with singular \"Er\"); D is missing the required reflexive pronoun \"sich\" and also uses the wrong auxiliary.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481317146-r5njyr93",
+      "timestamp": "2026-06-14T23:55:35.042Z"
+    }
+  ]
+}

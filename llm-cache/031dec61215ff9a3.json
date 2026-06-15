@@ -1,0 +1,47 @@
+{
+  "cacheKey": "031dec61215ff9a3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-04-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Sie ist letzte Woche krank gewesen.\nB. [WRONG] Sie hat letzte Woche krank gewesen.\nC. [WRONG] Sie sind letzte Woche krank gewesen.\nD. [WRONG] Sie haben letzte Woche krank gewesen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781481721882-b7hzkwjz"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect auxiliary verbs (hat/haben instead of ist/sind) for the Perfekt of \"sein\", or incorrect subject-verb agreement if \"sie\" refers to \"she\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481730906-tmncr0tl",
+      "timestamp": "2026-06-15T00:02:42.886Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nFALSE|C|\"Sie sind\" is grammatically correct when \"Sie\" refers to \"they\" (3rd person plural) or formal \"you\" (2nd person plural), making this answer potentially correct depending on the intended referent of \"Sie\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481778871-pe6uo4iy",
+      "timestamp": "2026-06-15T00:03:26.561Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses \"hat\" instead of \"ist\" as the auxiliary for \"krank sein\"; C uses plural \"sind\" when the singular \"ist\" is required for \"sie\" (she); D uses \"haben\" instead of the correct auxiliary \"sein\" for the predicate adjective construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481819936-ha3vg123",
+      "timestamp": "2026-06-15T00:04:17.016Z"
+    },
+    {
+      "raw": "TRUE||B and D incorrectly use \"haben\" instead of \"sein\" as the auxiliary verb with \"gewesen\"; C uses the plural \"sind\" which doesn't agree with the singular subject \"Sie\" (she).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481873336-t1wqrnyt",
+      "timestamp": "2026-06-15T00:04:57.514Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||B and D incorrectly use \"hat/haben\" as the auxiliary for \"sein\" (which requires \"ist/sind\"), and C uses the plural/formal \"sind\" which doesn't match the singular context implied by the correct answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481905958-jf45u5mk",
+      "timestamp": "2026-06-15T00:05:43.035Z"
+    }
+  ]
+}

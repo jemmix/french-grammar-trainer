@@ -1,0 +1,33 @@
+{
+  "cacheKey": "05ccb83da8492004",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "05-04-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Hilfsverbwahl: haben vs. sein (Regeln und Ausnahmen)\nPROMPT: Setzen Sie das richtige Hilfsverb im Perfekt ein.\nPHRASE: „Ich ___ nach Hause gegangen.\nCORRECT ANSWER: bin\n\nWRONG ANSWERS to evaluate:\n1. habe\n2. sind\n3. war\n4. werde\n5. bist\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1781481145021-uqayrcqy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: \"habe\" is the classic mistake of defaulting to haben, \"sind\" and \"bist\" show person/number confusion within sein, \"war\" reflects tense mixing (Präteritum vs. Perfekt), and \"werde\" captures confusion between auxiliary verbs.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481402858-berksppo",
+      "timestamp": "2026-06-14T23:57:24.118Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: \"habe\" is the classic default-to-haben mistake this rule explicitly tests, \"sind\" and \"bist\" are wrong-person conjugation errors with \"sein\", \"war\" mixes up Präteritum with Perfekt, and \"werde\" reflects confusion between future and perfect auxiliary usage.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481482183-jti3mchm",
+      "timestamp": "2026-06-14T23:58:31.928Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All five wrong answers represent common learner errors: \"habe\" directly tests the haben/sein distinction the rule targets, \"sind\" and \"bist\" test person/number agreement confusion, \"war\" reflects tense confusion (Präteritum vs. Perfekt), and \"werde\" reflects auxiliary verb confusion with future/passive constructions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781481532224-8bi5xvm6",
+      "timestamp": "2026-06-14T23:59:10.627Z"
+    }
+  ]
+}
