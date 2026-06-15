@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bc497cbb0d805527",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-03-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Adjektivdeklination\n\nRULE BEING TESTED: 06-03 - Starke Deklination ohne Artikel (guter Mann, gutes Kind, gute Frau)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Setzen Sie das Adjektiv ohne Artikel ein: „Ich kaufe ___ Milch.\" (frisch)\nChoices:\nA. [CORRECT] frische\nB. frischer\nC. frisches\nD. frischen\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781537979752-unqo7xwl"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question explicitly requires inserting an adjective without an article (\"ohne Artikel\") before a feminine noun in accusative case, and correctly answering requires knowing the strong declension ending -e for feminine accusative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781538014884-xkui0ixw",
+      "timestamp": "2026-06-15T15:41:30.008Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the strong declension ending for a feminine noun (Milch) in accusative case without an article, which is precisely what rule 06-03 covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781538338234-aih7widr",
+      "timestamp": "2026-06-15T15:46:05.281Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: \"Milch\" is a mass noun, and \"Ich kaufe ___ Milch\" without an article is not a natural context for strong declension—in proper German, mass nouns in this construction either take a partitive article or the sentence would use a different structure, making this a poor test of strong adjective declension without an article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781538611350-y7mjgthm",
+      "timestamp": "2026-06-15T15:59:41.092Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d1b45528e0a2b2c1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "06-03-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Frisches Wasser ist gesund.\nB. [WRONG] Frische Wasser ist gesund.\nC. [WRONG] Frischer Wasser ist gesund.\nD. [WRONG] Frischem Wasser ist gesund.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781537979751-v3ee0daz"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect adjective endings for the neuter noun \"Wasser\" in the nominative case: B uses feminine ending, C uses masculine/genitive ending, and D uses dative ending.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781537988857-iku0s9wm",
+      "timestamp": "2026-06-15T15:40:18.089Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect adjective endings for the neuter nominative subject \"Wasser\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781538296206-2ge30xhh",
+      "timestamp": "2026-06-15T15:45:39.362Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect adjective endings for the neuter nominative subject \"Wasser\" (B uses feminine/plural, C uses masculine, D uses dative).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781538589554-rdrzkeke",
+      "timestamp": "2026-06-15T15:50:20.392Z"
+    }
+  ]
+}

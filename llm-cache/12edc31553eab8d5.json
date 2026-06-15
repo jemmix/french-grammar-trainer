@@ -1,0 +1,33 @@
+{
+  "cacheKey": "12edc31553eab8d5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-07-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Adjektivdeklination\n\nRULE BEING TESTED: 06-07 - Unregelmäßige Komparation (gut/besser/am besten, viel/mehr/am meisten)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welche Form ist der Superlativ (prädikativ) von „hoch\"?\nChoices:\nA. [CORRECT] am höchsten\nB. am hoher\nC. am hochsten\nD. am hohen\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781537979801-i4q765r3"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The rule specifically covers \"gut/besser/am besten\" and \"viel/mehr/am meisten\", but the question tests the irregular superlative of \"hoch\", which is a different irregular adjective with its own distinct pattern (umlaut addition + -chst ending) not covered by the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781538126218-c4fft3ns",
+      "timestamp": "2026-06-15T15:42:43.084Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the irregular stem change (hoch → höchst-) which is a classic example of unregelmäßige Komparation taught alongside gut/besser/am besten, and the distractor \"am hochsten\" specifically tests whether the learner knows this irregular form versus applying regular superlative rules.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781538395783-x1l2dqg8",
+      "timestamp": "2026-06-15T15:47:32.819Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question for alignment with its stated rule. Here is my assessment:\n\nVERDICT: MISALIGNED\nREASON: The question tests the irregular comparison of \"hoch/höher/am höchsten,\" not the specific irregular forms \"gut/besser/am besten\" or \"viel/mehr/am meisten\" listed in the rule.\n\n**Summary of work:** I analyzed the question to determine if it properly tests the stated rule about irregular comparison for \"gut/besser/am besten\" and \"viel/mehr/am meisten.\"\n\n**Remaining tasks:** None for this specific validation - the assessment is complete.\n\n**Recommendation:** This question should either be reassigned to a more appropriate rule (e.g., one covering \"hoch/höher/am höchsten\" or general irregular adjective comparison), or rewritten to test \"gut/besser/am besten\" or \"viel/mehr/am meisten\" specifically.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781538671009-92d2ffuq",
+      "timestamp": "2026-06-15T15:51:43.274Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "18e298406609934f",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-09-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Adjektivdeklination\n\nRULE BEING TESTED: 06-09 - Partizipien als Adjektive (das gelesene Buch, der sprechende Mann)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig?\nChoices:\nA. [CORRECT] Das gekaufte Auto ist neu.\nB. Das gekauften Auto ist neu.\nC. Das gekauft Auto ist neu.\nD. Das kaufte Auto ist neu.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781537979820-ro1q3vld"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the declension of a past participle used as an adjective (\"gekaufte\" vs. the incorrect \"gekaufte+n\", \"gekaufte\" without ending, and the conjugated verb \"kaufte\"), which is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781538186906-owthuh53",
+      "timestamp": "2026-06-15T15:43:44.584Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests both the correct use of the past participle form (gekaufte vs. kaufte) and its proper adjectival declension after a definite article, which are the two core components of the \"Partizipien als Adjektive\" rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781538480205-r47l9anz",
+      "timestamp": "2026-06-15T15:48:37.804Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that a past participle functions as an adjective (\"gekaufte\" vs. the finite verb \"kaufte\" in option D) and knowing its correct weak declension ending after the definite article \"das\" in nominative neuter, which is precisely what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781538728097-8a393u49",
+      "timestamp": "2026-06-15T15:52:49.430Z"
+    }
+  ]
+}
