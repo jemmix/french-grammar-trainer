@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e2db37aea53d6156",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Perfekt\n\nRULE BEING TESTED: 05-10 - Präsens vs. Perfekt: Zeitstufen im Gebrauch unterscheiden\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie das Verb in der Zeitform ein, die „gestern\" im Alltag verlangt.\nPhrase: „Gestern ___ ich Fußball.\nCorrect Answer: habe gespielt\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781523430017-vdy1qpr8"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done so far:**\nI was analyzing a German grammar validation question to determine if it properly tests the rule \"Präsens vs. Perfekt: Zeitstufen im Gebrauch unterscheiden.\"\n\n**Analysis completed:**\nThe question asks students to fill in the blank for \"Gestern ___ ich Fußball\" with the tense that \"gestern\" requires in everyday speech. The correct answer is \"habe gespielt\" (Perfekt).\n\nThe question is MISALIGNED because it primarily tests the distinction between Perfekt (spoken past) and Präteritum (written past), not Präsens vs. Perfekt. The word \"gestern\" so clearly marks past time that no student would plausibly answer with Präsens (\"spiele\"). The real decision point is whether to use Perfekt (\"habe gespielt\") or Präteritum (\"spielte\") — but the prompt's phrase \"im Alltag\" gives away that answer, making this more of a vocabulary/recall exercise than a genuine tense distinction test.\n\n**Verdict that would have been output:**\nVERDICT: MISALIGNED\nREASON: The question tests Perfekt vs. Präteritum (spoken vs. written past), not Präsens vs. Perfekt, since \"gestern\" makes Präsens an implausible answer and \"im Alltag\" gives away the Perfekt choice.\n\n**Remaining tasks:** None — this was a single-question validation.\n\n**Recommendations:** To properly test Präsens vs. Perfekt, create questions where both tenses are plausible (e.g., with time expressions like \"seit\" or \"schon\" that could trigger either tense depending on context, or questions contrasting completed past actions with stative present descriptions).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781523430019-ky8mi2fy",
+      "timestamp": "2026-06-15T11:37:30.132Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the learner knows that \"gestern\" in everyday German requires the Perfekt tense rather than Präsens, which is exactly the core distinction the stated rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781523450132-5b9fmlwl",
+      "timestamp": "2026-06-15T11:37:43.391Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of validating a German grammar question for alignment with its stated rule. The question asks students to conjugate \"spielen\" in the tense that \"gestern\" requires in everyday speech, with the correct answer being \"habe gespielt\" (Perfekt).\n\n**Remaining tasks:**\n- Provide the final verdict on the question alignment\n\n**Recommendation for next steps:**\nThe validation can be completed directly. Based on my analysis:\n\nVERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"gestern\" in everyday German requires the Perfekt tense rather than the Präsens, which is exactly the core distinction this rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781523463391-9cdmd8z6",
+      "timestamp": "2026-06-15T11:37:54.937Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9bbc74aabc17d2b6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-10-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz beschreibt ein allgemeines Naturgesetz?\n\nChoices:\nA. [CORRECT] Die Erde dreht sich um die Sonne.\nB. [WRONG] Die Erde hat sich um die Sonne gedreht.\nC. [WRONG] Die Erde drehte sich um die Sonne.\nD. [WRONG] Die Erde wird sich um die Sonne drehen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781521256408-5yyc9zq6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use non-present tenses (Perfekt, Präteritum, Futur) which cannot express general laws of nature that require Präsens.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781521262424-nieqvzrn",
+      "timestamp": "2026-06-15T11:01:23.945Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use past (Perfekt/Präteritum) or future (Futur I) tenses, but general laws of nature must be expressed in the present tense (Präsens).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781521294709-ifh67ebu",
+      "timestamp": "2026-06-15T11:02:28.166Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:** I was asked to verify that wrong answers B, C, and D in a German grammar MCQ are indeed incorrect. The question asks \"Welcher Satz beschreibt ein allgemeines Naturgesetz?\" (Which sentence describes a general law of nature?).\n\n**Analysis completed:**\n- B (\"hat sich...gedreht\" - perfect tense) describes a completed past action, not a timeless law\n- C (\"drehte sich\" - imperfect tense) describes a past habitual or completed action, not a timeless law  \n- D (\"wird sich...drehen\" - future tense) describes a future event, not a timeless law\n\nAll three wrong answers use tenses incompatible with expressing a general law of nature (Naturgesetz), which requires the present tense (as in correct answer A: \"dreht sich\").\n\n**Verdict that would have been returned:** TRUE||All wrong answers use tenses (perfect, imperfect, future) that describe time-bound events rather than the timeless present required for a general law of nature.\n\n**Remaining tasks:** None - the analysis was complete.\n\n**Recommendations:** The question is valid; all wrong answers are correctly identified as incorrect for the stated grammatical context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781521348167-yojew990",
+      "timestamp": "2026-06-15T11:02:57.955Z"
+    }
+  ]
+}

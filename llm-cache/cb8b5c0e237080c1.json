@@ -1,0 +1,40 @@
+{
+  "cacheKey": "cb8b5c0e237080c1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-10-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Perfekt\n\nRULE BEING TESTED: 05-10 - Präsens vs. Perfekt: Zeitstufen im Gebrauch unterscheiden\n\nQUESTION:\nType: Input\nPrompt: Vervollständigen Sie mit der korrekten Zeitform (Präsens oder Perfekt).\nPhrase: „Er ___ jeden Tag Deutsch.\nCorrect Answer: lernt\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781520804640-d58imf2f"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The time marker \"jeden Tag\" makes the present tense answer obvious without requiring any understanding of when to use Perfekt versus Präsens — this tests habitual action recognition, not the actual distinction between the two tenses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781520813666-vrx34xn9",
+      "timestamp": "2026-06-15T10:54:02.428Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to recognize that \"jeden Tag\" indicates an ongoing habitual action requiring Präsens rather than Perfekt, which directly tests distinguishing between these two time forms in usage.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781520850004-ujtdqg6q",
+      "timestamp": "2026-06-15T10:55:02.147Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that \"jeden Tag\" signals a habitual action which uses Präsens rather than Perfekt, directly testing the distinction between these two tenses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781520902148-rit9i3h1",
+      "timestamp": "2026-06-15T10:55:14.832Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question for alignment with its stated rule. Here is my analysis:\n\nVERDICT: MISALIGNED\nREASON: The signal word \"jeden Tag\" makes the answer obvious without requiring knowledge of when to use Präsens vs. Perfekt - this tests signal word recognition, not tense distinction.\n\nThe question claims to test distinguishing between Präsens and Perfekt usage, but \"jeden Tag\" so strongly indicates present tense habitual action that no actual understanding of the Präsens vs. Perfekt distinction is needed to answer correctly. A properly aligned question would present a context where both tenses are grammatically plausible but only one fits the temporal meaning being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781520914832-97xje3ag",
+      "timestamp": "2026-06-15T10:55:32.076Z"
+    }
+  ]
+}

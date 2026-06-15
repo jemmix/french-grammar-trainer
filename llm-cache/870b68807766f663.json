@@ -1,0 +1,26 @@
+{
+  "cacheKey": "870b68807766f663",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Perfekt\n\nRULE BEING TESTED: 05-10 - Präsens vs. Perfekt: Zeitstufen im Gebrauch unterscheiden\n\nQUESTION:\nType: Input\nPrompt: Vervollständigen Sie den Satz mit der korrekten Verbform.\nPhrase: „Gestern ___ ich ein Buch.\nCorrect Answer: habe gelesen\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781521256409-95uhxe36"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was asked to validate whether a German grammar question about \"Gestern ___ ich ein Buch\" with answer \"habe gelesen\" properly tests the rule \"05-10 - Präsens vs. Perfekt: Zeitstufen im Gebrauch unterscheiden\" (Distinguishing present vs. perfect tense usage).\n\n**My assessment:**\nVERDICT: MISALIGNED\nREASON: The temporal marker \"Gestern\" makes the tense choice obvious, so this question tests Perfekt formation rather than the nuanced distinction between when to use Präsens vs. Perfekt.\n\n**Remaining tasks:**\nNone - this was a single-question validation task.\n\n**Recommendations:**\nTo properly test the stated rule (Präsens vs. Perfekt distinction), questions should present scenarios where the tense choice is ambiguous without understanding German usage patterns—for example, choosing between \"Ich habe dort gelebt\" (completed past experience) vs. \"Ich lebe dort\" (current state) without explicit time markers, or understanding when Germans use Perfekt for recent events vs. Präsens for narration.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781521270264-zppz3jn2",
+      "timestamp": "2026-06-15T11:01:40.090Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The word \"Gestern\" makes it obvious that a past tense is required, so the question only tests whether the student can form the Perfekt, not whether they can distinguish when to use Präsens versus Perfekt in contexts where either might be appropriate.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781521320689-93dehxo2",
+      "timestamp": "2026-06-15T11:02:15.417Z"
+    }
+  ]
+}

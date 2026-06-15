@@ -1,0 +1,26 @@
+{
+  "cacheKey": "a44beca0039b07d4",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Perfekt\n\nRULE BEING TESTED: 05-10 - Präsens vs. Perfekt: Zeitstufen im Gebrauch unterscheiden\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie den Satz (gesprochene Sprache).\nPhrase: „Gestern ___ ich ein Buch.\nCorrect Answer: habe gelesen\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781521914903-5kemo1i2"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to validate whether a German grammar question about \"Gestern ___ ich ein Buch\" (answer: \"habe gelesen\") properly tests the rule \"Präsens vs. Perfekt: Zeitstufen im Gebrauch unterscheiden\" (distinguishing present vs. perfect tense usage).\n\nVERDICT: MISALIGNED\nREASON: The word \"Gestern\" unambiguously requires past tense, so there is no actual choice between Präsens and Perfekt to make — the question only tests Perfekt formation of \"lesen,\" not the distinction of when to use each tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781521916906-km27zc6o",
+      "timestamp": "2026-06-15T11:12:12.276Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to validate whether a German grammar question about completing \"Gestern ___ ich ein Buch\" with \"habe gelesen\" properly tests the rule \"Präsens vs. Perfekt: Zeitstufen im Gebrauch unterscheiden\" (distinguishing when to use present vs. perfect tense).\n\nVerdict for this question:\nVERDICT: MISALIGNED\nREASON: The question tests Perfekt formation (knowing \"lesen\" → \"habe gelesen\"), not the distinction between when to use Präsens vs. Perfekt, since \"Gestern\" makes the past tense obligatory and leaves no tense choice to evaluate.\n\nRemaining tasks: None explicitly stated beyond this single validation.\n\nRecommendations: When designing questions for this rule, use contexts where either Präsens or Perfekt could plausibly apply (e.g., in spoken German reporting recent events) so students must actively choose based on the tense usage distinction, not just form the correct tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781521932277-2lhrpigi",
+      "timestamp": "2026-06-15T11:12:33.690Z"
+    }
+  ]
+}

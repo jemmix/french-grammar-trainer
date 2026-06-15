@@ -1,0 +1,33 @@
+{
+  "cacheKey": "61a7e047c68da35b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-10-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — „schon\" zeigt eine abgeschlossene Handlung\n\nChoices:\nA. [CORRECT] Ich habe das Buch schon gelesen.\nB. [WRONG] Ich lese das Buch schon.\nC. [WRONG] Ich werde das Buch schon lesen.\nD. [WRONG] Ich habe das Buch schon lesen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781520804640-jzmblbfu"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses present tense (not a completed action), C uses future tense (not a completed action), and D contains a grammatical error (infinitive \"lesen\" instead of past participle \"gelesen\" after \"habe\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781520807652-ye78u9q2",
+      "timestamp": "2026-06-15T10:53:46.429Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:**\nI was asked to verify that wrong answers B, C, and D in a German grammar multiple-choice question are indeed incorrect. The question asks which sentence is grammatically correct when \"schon\" indicates a completed action (abgeschlossene Handlung).\n\n**My assessment (not yet submitted in required format):**\n- B: \"Ich lese das Buch schon.\" — Uses present tense, which does not show a completed action\n- C: \"Ich werde das Buch schon lesen.\" — Uses future tense, which does not show a completed action\n- D: \"Ich habe das Buch schon lesen.\" — Grammatically incorrect; \"haben\" requires the past participle \"gelesen\", not the infinitive \"lesen\"\n\n**Verdict:** TRUE||All wrong answers are incorrect - B and C use tenses that don't indicate completed actions, and D has a grammatical error using the infinitive instead of the past participle.\n\n**Remaining tasks:**\n- None; the verification is complete but could not be submitted in the exact requested format due to step limit.\n\n**Recommendations:**\n- The verdict is TRUE - all wrong answers are genuinely incorrect within the grammatical constraints stated in the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781520838620-fqci9e38",
+      "timestamp": "2026-06-15T10:54:18.574Z"
+    },
+    {
+      "raw": "TRUE||B uses present tense instead of Perfekt for a completed action; C uses future tense which doesn't indicate completion; D incorrectly uses the infinitive \"lesen\" instead of the past participle \"gelesen\" in a Perfekt construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781520868634-d29bcwkq",
+      "timestamp": "2026-06-15T10:54:41.708Z"
+    }
+  ]
+}

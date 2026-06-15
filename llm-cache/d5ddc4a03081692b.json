@@ -1,0 +1,26 @@
+{
+  "cacheKey": "d5ddc4a03081692b",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Perfekt\n\nRULE BEING TESTED: 05-10 - Präsens vs. Perfekt: Zeitstufen im Gebrauch unterscheiden\n\nQUESTION:\nType: Input\nPrompt: Die Handlung ist abgeschlossen. Ergänzen Sie den Satz.\nPhrase: „Ich ___ das Buch schon.\nCorrect Answer: habe gelesen\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781522427217-0qzivyyr"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly states the action is completed (\"Die Handlung ist abgeschlossen\"), which removes the need to distinguish between Präsens and Perfekt—the question only tests whether the student knows the Perfekt form, not when to use it versus Präsens.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781522429223-umusl073",
+      "timestamp": "2026-06-15T11:20:50.032Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only tests Perfekt formation of \"lesen\" with \"ich\", not the distinction between when to use Präsens vs. Perfekt — the prompt explicitly tells the learner the action is completed, eliminating any need to choose between tenses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781522451737-fxy57glh",
+      "timestamp": "2026-06-15T11:21:08.964Z"
+    }
+  ]
+}

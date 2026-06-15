@@ -1,0 +1,26 @@
+{
+  "cacheKey": "f452223d8ac78366",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-10-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Perfekt\n\nRULE BEING TESTED: 05-10 - Präsens vs. Perfekt: Zeitstufen im Gebrauch unterscheiden\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie das Verb ein. Achten Sie auf das Signalwort „seit\".\nPhrase: „Er ___ seit drei Jahren Deutsch.\nCorrect Answer: lernt\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781523035808-f8c7w0tc"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests the rule that \"seit\" requires Präsens in German (a specific Präsens usage rule), but does not actually present a choice or scenario where distinguishing between Präsens and Perfekt is necessary — there is no Perfekt option to reject, so the student only needs to know one tense, not compare two.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781523035811-x1qfmrw4",
+      "timestamp": "2026-06-15T11:30:50.473Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The correct answer \"lernt\" (Präsens) is determined solely by the rule that \"seit\" requires Präsens in German, but the question never presents Perfekt as an option or requires the student to actively distinguish between the two tenses—it only tests the \"seit + Präsens\" pattern in isolation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781523050476-xulvm47t",
+      "timestamp": "2026-06-15T11:31:02.052Z"
+    }
+  ]
+}

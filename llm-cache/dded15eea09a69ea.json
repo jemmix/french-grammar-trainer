@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dded15eea09a69ea",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-10-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Perfekt\n\nRULE BEING TESTED: 05-10 - Präsens vs. Perfekt: Zeitstufen im Gebrauch unterscheiden\n\nQUESTION:\nType: Input\nPrompt: Die Handlung dauert bis heute an. Ergänzen Sie den Satz.\nPhrase: „Er ___ seit drei Jahren Deutsch.\nCorrect Answer: lernt\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781522427216-joe7m4rn"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The prompt explicitly establishes a context of an ongoing action (\"dauert bis heute an\") that requires knowing German uses Präsens rather than Perfekt for continuing present-time actions, directly testing the tense distinction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781522427219-cbzhuct1",
+      "timestamp": "2026-06-15T11:20:49.732Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"seit\" with an ongoing duration (\"dauert bis heute an\") requires Präsens rather than Perfekt, which is exactly the distinction this rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781522449735-oh39fjob",
+      "timestamp": "2026-06-15T11:21:06.091Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question tests the specific rule that German uses Präsens (not Perfekt) with \"seit\" to express an action that began in the past and continues to the present, which is a core distinction in the Präsens vs. Perfekt usage rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781522466091-nwx9829h",
+      "timestamp": "2026-06-15T11:21:21.623Z"
+    }
+  ]
+}
