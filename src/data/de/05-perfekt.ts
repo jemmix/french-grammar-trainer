@@ -1247,12 +1247,12 @@ const section: Section = {
       phrase: { before: "„Ich habe das anders ", after: "." },
       hint: "denken",
       answer: "gedacht",
-      explanation: "„denken\" ist ein Mischverb mit Vokalwechsel von e zu a (dachte) und der Endung -t. Das Partizip II lautet „gedacht\". Im Perfekt: „Ich habe … gedacht.\"",
+      explanation: "„denken\" ist ein unregelmäßiges Verb mit Vokalwechsel (dachte). Das Partizip II lautet „gedacht\".",
       wrongAnswers: [
         { text: "gedenkt", explanation: "„gedenkt\" folgt fälschlich dem regelmäßigen Muster (ge + denk + t). „denken\" ist ein Mischverb mit Vokalwechsel: „gedacht\"." },
         { text: "dachte", explanation: "„dachte\" ist das Präteritum (1./3. Person Singular). Im Perfekt verwendet man das Partizip II: „gedacht\"." },
         { text: "denken", explanation: "„denken\" ist der Infinitiv. Im Perfekt verwendet man das Partizip II: „gedacht\"." },
-        { text: "gedachte", explanation: "„gedachte\" trägt eine falsche Endung (wie ein dekliniertes Adjektiv). Das Partizip II lautet unverändert „gedacht\"." },
+        { text: "gedachte", explanation: "„gedachte\" ist keine korrekte Form des Partizip II. Das Partizip II von „denken\" lautet „gedacht\"." },
       ],
     },
     {
@@ -1267,9 +1267,9 @@ const section: Section = {
       explanation: "„waschen\" ist ein starkes Verb mit Vokalwechsel (wusch). Das Partizip II lautet „gewaschen\" mit der Endung -en. Im Perfekt: „Er hat … gewaschen.\"",
       wrongAnswers: [
         { text: "gewascht", explanation: "„gewascht\" folgt fälschlich dem regelmäßigen Muster mit -t. „waschen\" ist stark: Das Partizip II lautet „gewaschen\" mit -en." },
-        { text: "waschte", explanation: "„waschte\" ist keine korrekte Form. „waschen\" ist ein starkes Verb, das Präteritum lautet „wusch\". Das Partizip II lautet „gewaschen\"." },
+        { text: "waschte", explanation: "„waschte\" ist das Präteritum der schwachen Form, aber „waschen\" ist stark: Präteritum „wusch\", Partizip II „gewaschen\"." },
         { text: "waschen", explanation: "„waschen\" ist der Infinitiv. Im Perfekt verwendet man das Partizip II: „gewaschen\"." },
-        { text: "gewaschen haben", explanation: "„haben\" ist bereits Teil der Konstruktion. Gesucht ist nur das Partizip II: „gewaschen\"." },
+        { text: "wusch", explanation: "„wusch\" ist das Präteritum (1./3. Person Singular). Gesucht ist das Partizip II: „gewaschen\"." },
       ],
     },
     {
@@ -1290,7 +1290,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-10",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz ist grammatikalisch richtig? — „jeden Tag\" verlangt das Präsens (Gewohnheit)",
+      prompt: "Welcher Satz ist grammatikalisch richtig?",
       choices: [
         { text: "Ich trinke jeden Tag einen Kaffee.", correct: true, explanation: "„jeden Tag\" ist das Signalwort für eine Gewohnheit (wiederholte Handlung in der Gegenwart). Für Gewohnheiten verwendet man das Präsens: „trinke\" (1. Person Singular von „trinken\")." },
         { text: "Ich habe jeden Tag einen Kaffee getrunken.", correct: false, explanation: "Das Perfekt („habe … getrunken\") bezeichnet eine abgeschlossene Vergangenheit. Für eine fortdauernde Gewohnheit mit „jeden Tag\" verwendet man das Präsens: „trinke\"." },
@@ -1303,7 +1303,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-10",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz ist grammatikalisch richtig? — „gerade\" verlangt das Präsens (aktuelle Handlung)",
+      prompt: "Welcher Satz ist grammatikalisch richtig?",
       choices: [
         { text: "Das Baby schläft gerade.", correct: true, explanation: "„gerade\" zeigt an, dass die Handlung in diesem Moment abläuft. Für aktuelle Handlungen verwendet man das Präsens: „schläft\" (3. Person Singular von „schlafen\" mit Umlaut)." },
         { text: "Das Baby hat gerade geschlafen.", correct: false, explanation: "Das Perfekt („hat … geschlafen\") bezeichnet eine abgeschlossene Handlung. Mit „gerade\" beschreibt man aber eine im Moment ablaufende Handlung — daher das Präsens: „schläft\"." },
@@ -1316,7 +1316,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-10",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz ist grammatikalisch richtig? — „morgen\" verlangt das Präsens (Zukunft)",
+      prompt: "Welcher Satz ist grammatikalisch richtig?",
       choices: [
         { text: "Morgen fahre ich nach Berlin.", correct: true, explanation: "„morgen\" ist ein Zukunfts-Signalwort. Im Deutschen wird die Zukunft oft mit dem Präsens + Signalwort ausgedrückt: „fahre\" (1. Person Singular von „fahren\")." },
         { text: "Morgen bin ich nach Berlin gefahren.", correct: false, explanation: "Das Perfekt („bin … gefahren\") bezeichnet die Vergangenheit. Es widerspricht dem Signalwort „morgen\" (Zukunft). Für die Zukunft verwendet man hier das Präsens: „fahre\"." },
@@ -1342,7 +1342,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-10",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz ist grammatikalisch richtig? — „immer\" verlangt das Präsens (Gewohnheit)",
+      prompt: "Welcher Satz ist grammatikalisch richtig?",
       choices: [
         { text: "Ich spiele immer sonntags Fußball.", correct: true, explanation: "„immer\" und „sonntags\" sind Signalwörter für eine Gewohnheit (wiederholte Handlung in der Gegenwart). Für Gewohnheiten verwendet man das Präsens: „spiele\" (1. Person Singular von „spielen\")." },
         { text: "Ich habe immer sonntags Fußball gespielt.", correct: false, explanation: "Das Perfekt („habe … gespielt\") bezeichnet eine abgeschlossene Vergangenheit. Für eine fortdauernde Gewohnheit mit „immer\" verwendet man das Präsens: „spiele\"." },
@@ -1355,7 +1355,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-10",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz ist grammatikalisch richtig? — „schon … gelesen\" verlangt das Perfekt (abgeschlossene Vergangenheit)",
+      prompt: "Welcher Satz ist grammatikalisch richtig?",
       choices: [
         { text: "Ich habe das Buch schon gelesen.", correct: true, explanation: "„schon … gelesen\" zeigt an, dass eine Handlung in der Vergangenheit abgeschlossen wurde. Im gesprochenen Deutsch verwendet man dafür das Perfekt: „haben\" + Partizip II („gelesen\")." },
         { text: "Ich lese das Buch schon.", correct: false, explanation: "„lese\" steht im Präsens. Das Signalwort „schon\" mit einer abgeschlossenen Handlung verlangt das Perfekt: „habe … gelesen\", nicht das Präsens." },
