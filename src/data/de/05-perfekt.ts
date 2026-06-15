@@ -726,7 +726,7 @@ const section: Section = {
       prompt: "Welcher Satz ist grammatikalisch richtig? – verstehen",
       choices: [
         { text: "Ich habe das Problem gut verstanden.", correct: true, explanation: "„verstehen\" ist ein untrennbares Verb (Präfix „ver-\"). Untrennbare Verben bekommen kein „ge-\" im Partizip II. Die Form lautet „verstanden\"." },
-        { text: "Ich habe das Problem gut gevorstanden.", correct: false, explanation: "Untrennbare Verben bekommen kein „ge-\" im Partizip II. Das Präfix „ver-\" bleibt am Verb: „verstanden\", nicht „gevorstanden\"." },
+        { text: "Ich habe das Problem gut geverstanden.", correct: false, explanation: "Untrennbare Verben bekommen kein „ge-\" im Partizip II. Das Präfix „ver-\" bleibt am Verb: „verstanden\", nicht „geverstanden\"." },
         { text: "Ich habe das Problem gut gestanden.", correct: false, explanation: "„gestanden\" ist das Partizip II von „stehen\" (ohne Präfix). Bei „verstehen\" bleibt das Präfix „ver-\" erhalten: „verstanden\"." },
         { text: "Ich habe das Problem gut verstehen.", correct: false, explanation: "„verstehen\" ist der Infinitiv. Das Partizip II lautet „verstanden\" (ohne „ge-\")." },
       ],
@@ -814,12 +814,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-06",
       generatedBy: "glm-5.1",
-      prompt: "Welches Verb bekommt KEIN „ge-\" im Partizip II?",
+      prompt: "Welches Partizip II ist richtig? – verstehen",
       choices: [
-        { text: "verstehen – verstanden", correct: true, explanation: "„verstehen\" ist ein untrennbares Verb (Präfix „ver-\"). Untrennbare Verben bekommen kein „ge-\" im Partizip II: „verstanden\"." },
-        { text: "ankommen – angekommen", correct: false, explanation: "„ankommen\" ist ein trennbares Verb (Präfix „an-\"). Trennbare Verben bekommen ein „ge-\" zwischen Präfix und Stamm: „angekommen\"." },
-        { text: "einkaufen – eingekauft", correct: false, explanation: "„einkaufen\" ist ein trennbares Verb (Präfix „ein-\"). Trennbare Verben bekommen ein „ge-\" zwischen Präfix und Stamm: „eingekauft\"." },
-        { text: "aufstehen – aufgestanden", correct: false, explanation: "„aufstehen\" ist ein trennbares Verb (Präfix „auf-\"). Trennbare Verben bekommen ein „ge-\" zwischen Präfix und Stamm: „aufgestanden\"." },
+        { text: "verstanden", correct: true, explanation: "„verstehen\" ist ein untrennbares Verb (Präfix „ver-\"). Untrennbare Verben bekommen kein „ge-\" im Partizip II. Die Form lautet „verstanden\"." },
+        { text: "geverstanden", correct: false, explanation: "Untrennbare Verben bekommen kein „ge-\" vor dem Präfix. Richtig: „verstanden\", nicht „geverstanden\"." },
+        { text: "verstandet", correct: false, explanation: "„verstandet\" ist keine korrekte Form. Das Partizip II von „verstehen\" lautet „verstanden\"." },
+        { text: "verstehen", correct: false, explanation: "„verstehen\" ist der Infinitiv. Das Partizip II lautet „verstanden\" (ohne „ge-\")." },
       ],
     },
     {
@@ -833,7 +833,7 @@ const section: Section = {
       answer: "verstanden",
       explanation: "„verstehen\" ist ein untrennbares Verb (Präfix „ver-\"). Untrennbare Verben bekommen kein „ge-\" im Partizip II. Die Form lautet „verstanden\".",
       wrongAnswers: [
-        { text: "gevorstanden", explanation: "Untrennbare Verben bekommen kein „ge-\" im Partizip II. Das Präfix „ver-\" bleibt am Verb: „verstanden\", nicht „gevorstanden\"." },
+        { text: "geverstanden", explanation: "Untrennbare Verben bekommen kein „ge-\" im Partizip II. Das Präfix „ver-\" bleibt am Verb: „verstanden\", nicht „geverstanden\"." },
         { text: "gestanden", explanation: "„gestanden\" ist das Partizip II von „stehen\" (ohne Präfix). Bei „verstehen\" bleibt das Präfix „ver-\" erhalten: „verstanden\"." },
         { text: "verstehen", explanation: "„verstehen\" ist der Infinitiv. Das Partizip II lautet „verstanden\" (ohne „ge-\")." },
         { text: "verstand", explanation: "„verstand\" ist das Präteritum (1./3. Person Singular). Das Partizip II lautet „verstanden\"." },

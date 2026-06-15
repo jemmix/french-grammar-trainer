@@ -1,0 +1,33 @@
+{
+  "cacheKey": "1216222e528d19c9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-06-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? – verstehen\n\nChoices:\nA. [CORRECT] Ich habe das Problem gut verstanden.\nB. [WRONG] Ich habe das Problem gut gevorstanden.\nC. [WRONG] Ich habe das Problem gut gestanden.\nD. [WRONG] Ich habe das Problem gut verstehen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781483685020-1fg0b2cs"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear errors: \"gevorstanden\" is not a word, \"gestanden\" is the participle of \"stehen\" not \"verstehen\", and \"verstehen\" is an infinitive not a past participle.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781483685023-7yec1amo",
+      "timestamp": "2026-06-15T00:34:58.222Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses a non-existent word \"gevorstanden\", C uses \"gestanden\" (past participle of \"stehen\" instead of \"verstehen\"), and D uses the infinitive \"verstehen\" instead of the required past participle \"verstanden\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781483748505-h00lotr2",
+      "timestamp": "2026-06-15T00:36:26.805Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses a non-existent word \"gevorstanden\", C uses the wrong verb \"gestanden\" (from stehen instead of verstehen), and D incorrectly uses the infinitive instead of the past participle required for Perfekt tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781483843412-fdqeqwuv",
+      "timestamp": "2026-06-15T00:37:41.315Z"
+    }
+  ]
+}
