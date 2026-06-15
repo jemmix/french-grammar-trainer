@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e26adc079efa5cbb",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-05-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? – einkaufen\n\nChoices:\nA. [CORRECT] Ich habe auf dem Markt eingekauft.\nB. [WRONG] Ich habe auf dem Markt geeingekauft.\nC. [WRONG] Ich habe auf dem Markt gekauft.\nD. [WRONG] Ich bin auf dem Markt eingekauft.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781482570644-d6mxvpgc"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B has an invalid double ge- prefix, C uses the wrong past participle (gekauft instead of eingekauft for the verb einkaufen), and D incorrectly uses sein instead of haben as the auxiliary verb for einkaufen.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781482573688-mtuhq844",
+      "timestamp": "2026-06-15T00:16:55.186Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B has an invalid double \"ge-\" prefix form, C uses \"kaufen\" instead of the required \"einkaufen\", and D incorrectly uses \"sein\" instead of \"haben\" as the auxiliary verb for \"einkaufen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781482669504-pmu7ae1i",
+      "timestamp": "2026-06-15T00:18:14.748Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the non-existent form \"geeingekauft,\" C uses \"gekauft\" instead of the specified verb \"eingekauft,\" and D incorrectly uses \"sein\" as the auxiliary instead of \"haben\" for the transitive verb \"einkaufen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781482760717-oecssppi",
+      "timestamp": "2026-06-15T00:19:50.126Z"
+    }
+  ]
+}

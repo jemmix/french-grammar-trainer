@@ -602,7 +602,7 @@ const section: Section = {
       choices: [
         { text: "Ich habe auf dem Markt eingekauft.", correct: true, explanation: "Bei „einkaufen\" rutscht das „ge-\" zwischen Präfix und Stamm: ein + ge + kauf + t = eingekauft. Das Verb bildet das Perfekt mit „haben\"." },
         { text: "Ich habe auf dem Markt geeingekauft.", correct: false, explanation: "Bei trennbaren Verben steht nur ein einziges „ge-\", und zwar zwischen Präfix und Stamm. Richtig: „eingekauft\", nicht „geeingekauft\"." },
-        { text: "Ich habe auf dem Markt gekauft.", correct: false, explanation: "„gekauft\" ist das Partizip II von „kaufen\" (ohne Präfix). Bei „einkaufen\" bleibt das Präfix „ein\" erhalten: „eingekauft\"." },
+        { text: "Ich habe auf dem Markt einkaufen.", correct: false, explanation: "„einkaufen\" ist der Infinitiv. Das Perfekt braucht das Partizip II: „eingekauft\"." },
         { text: "Ich bin auf dem Markt eingekauft.", correct: false, explanation: "„einkaufen\" bildet das Perfekt mit „haben\", nicht mit „sein\". Richtig: „Ich habe ... eingekauft\"." },
       ],
     },
@@ -628,7 +628,7 @@ const section: Section = {
       choices: [
         { text: "Der Film hat um 20 Uhr angefangen.", correct: true, explanation: "Bei „anfangen\" rutscht das „ge-\" zwischen Präfix und Stamm: an + ge + fang + en = angefangen. Das Verb bildet das Perfekt mit „haben\"." },
         { text: "Der Film hat um 20 Uhr geangefangen.", correct: false, explanation: "Bei trennbaren Verben steht das „ge-\" zwischen Präfix und Stamm, nicht vorne. Richtig: „angefangen\", nicht „geangefangen\"." },
-        { text: "Der Film hat um 20 Uhr gefangen.", correct: false, explanation: "„gefangen\" ist das Partizip II von „fangen\" (ohne Präfix). Bei „anfangen\" bleibt das Präfix „an\" erhalten: „angefangen\"." },
+        { text: "Der Film hat um 20 Uhr anfangen.", correct: false, explanation: "„anfangen\" ist der Infinitiv. Das Perfekt braucht das Partizip II: „angefangen\"." },
         { text: "Der Film ist um 20 Uhr angefangen.", correct: false, explanation: "„anfangen\" bildet das Perfekt mit „haben\", nicht mit „sein\". Richtig: „Der Film hat ... angefangen\"." },
       ],
     },
@@ -641,7 +641,7 @@ const section: Section = {
       choices: [
         { text: "Sie hat einen Kuchen zur Party mitgebracht.", correct: true, explanation: "Bei „mitbringen\" rutscht das „ge-\" zwischen Präfix und Stamm. Der Stamm „bringen\" wechselt zu „bracht\" im Partizip II: mit + ge + bracht = mitgebracht. Das Perfekt wird mit „haben\" gebildet." },
         { text: "Sie hat einen Kuchen zur Party gemitgebracht.", correct: false, explanation: "Bei trennbaren Verben steht das „ge-\" zwischen Präfix und Stamm, nicht nach dem Präfix. Richtig: „mitgebracht\", nicht „gemitgebracht\"." },
-        { text: "Sie hat einen Kuchen zur Party gebracht.", correct: false, explanation: "„gebracht\" ist das Partizip II von „bringen\" (ohne Präfix). Bei „mitbringen\" bleibt das Präfix „mit\" erhalten: „mitgebracht\"." },
+        { text: "Sie hat einen Kuchen zur Party mitbringen.", correct: false, explanation: "„mitbringen\" ist der Infinitiv. Das Perfekt braucht das Partizip II: „mitgebracht\"." },
         { text: "Sie ist einen Kuchen zur Party mitgebracht.", correct: false, explanation: "„mitbringen\" bildet das Perfekt mit „haben\", nicht mit „sein\". Richtig: „Sie hat ... mitgebracht\"." },
       ],
     },
@@ -654,7 +654,7 @@ const section: Section = {
       choices: [
         { text: "Ich habe am Wochenende mein Zimmer aufgeräumt.", correct: true, explanation: "Bei „aufräumen\" rutscht das „ge-\" zwischen Präfix und Stamm: auf + ge + räum + t = aufgeräumt. Das Verb bildet das Perfekt mit „haben\"." },
         { text: "Ich habe am Wochenende mein Zimmer geaufgeräumt.", correct: false, explanation: "Bei trennbaren Verben steht das „ge-\" nicht vorne, sondern zwischen Präfix und Stamm. Richtig: „aufgeräumt\", nicht „geaufgeräumt\"." },
-        { text: "Ich habe am Wochenende mein Zimmer geräumt.", correct: false, explanation: "„geräumt\" ist das Partizip II von „räumen\" (ohne Präfix). Bei „aufräumen\" bleibt das Präfix „auf\" erhalten: „aufgeräumt\"." },
+        { text: "Ich habe am Wochenende mein Zimmer aufräumen.", correct: false, explanation: "„aufräumen\" ist der Infinitiv. Das Perfekt braucht das Partizip II: „aufgeräumt\"." },
         { text: "Ich bin am Wochenende mein Zimmer aufgeräumt.", correct: false, explanation: "„aufräumen\" bildet das Perfekt mit „haben\", nicht mit „sein\". Richtig: „Ich habe ... aufgeräumt\"." },
       ],
     },
@@ -667,7 +667,7 @@ const section: Section = {
       choices: [
         { text: "Er hat das Paket von der Post abgeholt.", correct: true, explanation: "Bei „abholen\" rutscht das „ge-\" zwischen Präfix und Stamm: ab + ge + hol + t = abgeholt. Das Verb bildet das Perfekt mit „haben\"." },
         { text: "Er hat das Paket von der Post geabgeholt.", correct: false, explanation: "Bei trennbaren Verben steht das „ge-\" zwischen Präfix und Stamm, nicht vorne. Richtig: „abgeholt\", nicht „geabgeholt\"." },
-        { text: "Er hat das Paket von der Post geholt.", correct: false, explanation: "„geholt\" ist das Partizip II von „holen\" (ohne Präfix). Bei „abholen\" bleibt das Präfix „ab\" erhalten: „abgeholt\"." },
+        { text: "Er hat das Paket von der Post abholen.", correct: false, explanation: "„abholen\" ist der Infinitiv. Das Perfekt braucht das Partizip II: „abgeholt\"." },
         { text: "Er ist das Paket von der Post abgeholt.", correct: false, explanation: "„abholen\" bildet das Perfekt mit „haben\", nicht mit „sein\". Richtig: „Er hat ... abgeholt\"." },
       ],
     },
@@ -712,10 +712,10 @@ const section: Section = {
       answer: "eingekauft",
       explanation: "„einkaufen\" ist ein trennbares Verb. Im Perfekt rutscht das „ge-\" zwischen das Präfix „ein\" und den Stamm: ein + ge + kauf + t = eingekauft.",
       wrongAnswers: [
-        { text: "geeingekauft", explanation: "Bei trennbaren Verben steht nur ein einziges „ge-\", und zwar zwischen Präfix und Stamm. Richtig: „eingekauft\", nicht „geeingekauft\"." },
         { text: "gekauft", explanation: "„gekauft\" ist das Partizip II von „kaufen\" (ohne Präfix). Bei „einkaufen\" bleibt das Präfix „ein\" erhalten: „eingekauft\"." },
         { text: "eingekaufen", explanation: "„eingekaufen\" ist keine korrekte Form. Das Partizip II von „einkaufen\" lautet „eingekauft\" (mit Endung „-t\")." },
         { text: "einkaufte", explanation: "„einkaufte\" ist das Präteritum (1./3. Person Singular). Das Partizip II lautet „eingekauft\"." },
+        { text: "eingekauftet", explanation: "„eingekauftet\" ist keine korrekte Form. Das Partizip II lautet „eingekauft\"." },
       ],
     },
     {

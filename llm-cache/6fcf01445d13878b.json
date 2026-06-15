@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6fcf01445d13878b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-05-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? – anfangen\n\nChoices:\nA. [CORRECT] Der Film hat um 20 Uhr angefangen.\nB. [WRONG] Der Film hat um 20 Uhr geangefangen.\nC. [WRONG] Der Film hat um 20 Uhr anfangen.\nD. [WRONG] Der Film ist um 20 Uhr angefangen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781483298934-tw7ikxij"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781483301950-as722z0q",
+      "timestamp": "2026-06-15T00:28:41.686Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly places \"ge-\" before the separable prefix instead of between it and the stem, C uses the infinitive \"anfangen\" instead of the required past participle \"angefangen\", and D incorrectly uses \"sein\" as the auxiliary verb when \"anfangen\" takes \"haben\" in the Perfekt tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781483344424-1cwbqnm8",
+      "timestamp": "2026-06-15T00:29:31.322Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of analyzing a German grammar verification question about the verb \"anfangen\" in the Perfekt tense.\n\nFor the verification task:\n- Answer B \"geangefangen\" is wrong because with separable verbs, the \"ge\" goes after the prefix (should be \"angefangen,\" not \"geangefangen\")\n- Answer C \"anfangen\" is wrong because it uses the infinitive instead of the past participle required with \"hat\"\n- Answer D uses \"ist\" instead of \"hat\" — \"anfangen\" takes \"haben\" in Perfekt even when used intransitively\n\nThe verdict would have been: TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781483401224-utzj7t4c",
+      "timestamp": "2026-06-15T00:30:27.856Z"
+    }
+  ]
+}

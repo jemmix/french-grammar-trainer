@@ -1,0 +1,33 @@
+{
+  "cacheKey": "219712dcd53d8f15",
+  "predicateId": "german-language",
+  "questionId": "05-05-010",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Trennbare Verben im Perfekt (angekommen, eingekauft, aufgestanden)\n\nQUESTION CONTENT:\nPrompt: Ergänzen Sie das Partizip II. Bei trennbaren Verben rutscht das „ge-\" zwischen Präfix und Stamm.\nPhrase: „Ich habe im Supermarkt ___.\nAnswer: eingekauft\nHint: einkaufen\nExplanation: „einkaufen\" ist ein trennbares Verb. Im Perfekt rutscht das „ge-\" zwischen das Präfix „ein\" und den Stamm: ein + ge + kauf + t = eingekauft.\nWrong answers:\n  - gekauft („gekauft\" ist das Partizip II von „kaufen\" (ohne Präfix). Bei „einkaufen\" bleibt das Präfix „ein\" erhalten: „eingekauft\".)\n  - eingekaufen („eingekaufen\" ist keine korrekte Form. Das Partizip II von „einkaufen\" lautet „eingekauft\" (mit Endung „-t\").)\n  - einkaufte („einkaufte\" ist das Präteritum (1./3. Person Singular). Das Partizip II lautet „eingekauft\".)\n  - eingekauftet („eingekauftet\" ist keine korrekte Form. Das Partizip II lautet „eingekauft\".)\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1781483298940-3uxd7eb4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781483339780-4mj20heu",
+      "timestamp": "2026-06-15T00:29:24.154Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781483385161-2hin06g5",
+      "timestamp": "2026-06-15T00:30:21.066Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781483441041-c2v4cqsa",
+      "timestamp": "2026-06-15T00:31:07.353Z"
+    }
+  ]
+}

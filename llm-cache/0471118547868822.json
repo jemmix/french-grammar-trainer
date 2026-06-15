@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0471118547868822",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-05-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Perfekt\n\nRULE BEING TESTED: 05-05 - Trennbare Verben im Perfekt (angekommen, eingekauft, aufgestanden)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? – abholen\nChoices:\nA. [CORRECT] Er hat das Paket von der Post abgeholt.\nB. Er hat das Paket von der Post geabgeholt.\nC. Er hat das Paket von der Post geholt.\nD. Er ist das Paket von der Post abgeholt.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781482570644-zkf7i4fk"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core pattern of separable verbs in Perfekt—that \"ge-\" is inserted between the separable prefix and the verb stem (ab→abge→holt)—by distinguishing the correct form from the common errors of placing \"ge\" before the prefix (geabgeholt), omitting the prefix entirely (geholt), and using the wrong auxiliary verb (ist instead of hat).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781482622562-f99h6yr5",
+      "timestamp": "2026-06-15T00:17:22.029Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the formation of separable verbs in the perfect tense by requiring knowledge that \"ge-\" goes between the verb stem and the separable prefix (ab-ge-holt, not ge-ab-holt), the prefix must appear at the end (not omitted), and the correct auxiliary verb (haben) must be used.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781482691042-873o0w1q",
+      "timestamp": "2026-06-15T00:18:40.432Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the formation of the past participle for separable verbs in the Perfekt, including the correct placement of \"ge-\" between the prefix and stem (abgeholt vs geabgeholt), retention of the separable prefix (abgeholt vs geholt), and correct auxiliary verb selection (hat vs ist).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781482783968-6101kkt4",
+      "timestamp": "2026-06-15T00:20:19.524Z"
+    }
+  ]
+}

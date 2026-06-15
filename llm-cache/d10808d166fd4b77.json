@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d10808d166fd4b77",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-05-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? – mitbringen\n\nChoices:\nA. [CORRECT] Sie hat einen Kuchen zur Party mitgebracht.\nB. [WRONG] Sie hat einen Kuchen zur Party gemitgebracht.\nC. [WRONG] Sie hat einen Kuchen zur Party gebracht.\nD. [WRONG] Sie ist einen Kuchen zur Party mitgebracht.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781482570644-eugzjlay"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B contains the invalid word \"gemitgebracht\" (incorrect separable prefix order); C omits \"mit\" entirely and thus doesn't use the required verb \"mitbringen\"; D incorrectly uses \"sein\" as the auxiliary verb instead of \"haben\" for \"mitbringen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781482592659-h4qtwof2",
+      "timestamp": "2026-06-15T00:17:22.155Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far: I was analyzing a German grammar verification task for a multiple choice question about the verb \"mitbringen\" in the perfect tense. I evaluated the three wrong answers (B, C, D) to determine if they are indeed incorrect.\n\nAnalysis completed:\n- B (\"gemitgebracht\") is clearly incorrect - wrong prefix ordering in the separable verb\n- D (\"ist...mitgebracht\") is clearly incorrect - wrong auxiliary verb (should be \"hat\", not \"ist\")\n- C (\"gebracht\" instead of \"mitgebracht\") is grammatically correct German but uses a different verb than specified\n\nRemaining tasks: The verdict was not yet formally output in the required format.\n\nRecommendation: The verdict should be UNCLEAR because the question format \"Welcher Satz ist grammatikalisch richtig? – mitbringen\" is ambiguous - it doesn't explicitly state whether the answer must use the specific verb \"mitbringen\" or just be any grammatically correct sentence. Answer C is perfectly grammatical German, just using \"bringen\" instead of \"mitbringen\". The response should be: \"UNCLEAR||The question does not explicitly state whether answers must use the verb 'mitbringen' specifically, making C ambiguous since it is grammatically correct but uses a different verb.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781482694749-c7magjph",
+      "timestamp": "2026-06-15T00:19:10.259Z"
+    },
+    {
+      "raw": "TRUE||B uses the non-existent form \"gemitgebracht\" (separable prefix verbs don't take ge-); C uses \"bringen\" instead of the specified \"mitbringen\"; D incorrectly uses \"sein\" as the auxiliary for \"mitbringen\" which requires \"haben\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781482806305-5sirnkg3",
+      "timestamp": "2026-06-15T00:20:25.997Z"
+    }
+  ]
+}
