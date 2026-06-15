@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b27065bab2760d12",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-10-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Adjektivdeklination\n\nRULE BEING TESTED: 06-10 - Attributives vs. prädikatives Adjektiv (der schöne Baum vs. der Baum ist schön)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig?\nChoices:\nA. [CORRECT] Ich lese ein interessantes Buch.\nB. Ich lese ein interessant Buch.\nC. Das Buch ist interessantes.\nD. Das Buch ist interessante.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781540779167-dzvdjfp4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core distinction between attributive adjectives (which must decline, as in \"ein interessantes Buch\") and predicative adjectives (which must not decline, so \"Das Buch ist interessantes/interessante\" are both wrong).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781540851166-po8hvjm3",
+      "timestamp": "2026-06-15T16:27:57.823Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the attributive vs. predicative adjective distinction—choice A requires knowing that attributive adjectives take endings (interesstantes), while choices C and D incorrectly apply endings to predicative adjectives after \"sein.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781540950838-xsdb1f69",
+      "timestamp": "2026-06-15T16:29:47.088Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\nI was asked to validate whether a German grammar question about adjective declension properly tests the stated rule \"Attributives vs. prädikatives Adjektiv.\"\n\nMy assessment:\n\nVERDICT: ALIGNED\nREASON: The question requires distinguishing that attributive adjectives need declension endings (ein interessantes Buch with -es) while predicative adjectives take no ending (Das Buch ist interessant), which is precisely the core distinction of the stated rule.\n\nThe question tests this by:\n- Correct answer A showing proper attributive adjective with ending\n- Choice B showing incorrect attributive use (missing ending)\n- Choices C and D showing incorrect predicative use (adding endings where none belong)\n\nNo remaining tasks - this was a single-question validation request.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781541106044-1h6tgbmw",
+      "timestamp": "2026-06-15T16:32:15.068Z"
+    }
+  ]
+}

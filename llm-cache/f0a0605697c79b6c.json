@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f0a0605697c79b6c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-02-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Adjektivdeklination\n\nRULE BEING TESTED: 06-02 - Gemischte Deklination nach unbestimmtem Artikel (ein guter Mann, ein gutes Kind)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie die Adjektivendung nach „ein\" (maskulin, Nominativ).\nPhrase: „Ein ___ Hund bellt laut.\nCorrect Answer: kleiner\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781540779071-6hlmej1u"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests mixed declension after the indefinite article \"ein\" in masculine nominative, requiring knowledge that the adjective takes the \"-er\" ending to produce \"kleiner.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781540779176-c21m440r",
+      "timestamp": "2026-06-15T16:26:38.028Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests mixed declension after the indefinite article \"ein\" in masculine nominative, requiring the student to know that the adjective ending is \"-er\" (kleiner).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781540885524-k9rgzhgh",
+      "timestamp": "2026-06-15T16:28:25.486Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the mixed declension ending \"-er\" for a masculine noun in the nominative case after the indefinite article \"ein\", which is the precise grammar point the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781540984837-7miza18l",
+      "timestamp": "2026-06-15T16:30:12.059Z"
+    }
+  ]
+}

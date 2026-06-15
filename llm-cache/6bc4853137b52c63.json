@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6bc4853137b52c63",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-03-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Adjektivdeklination\n\nRULE BEING TESTED: 06-03 - Starke Deklination ohne Artikel (guter Mann, gutes Kind, gute Frau)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — ohne Artikel\nChoices:\nA. [CORRECT] Deutsches Bier schmeckt gut.\nB. Deutscher Bier schmeckt gut.\nC. Deutsche Bier schmeckt gut.\nD. Deutschem Bier schmeckt gut.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781540779077-wdpm9vf1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"Bier\" is neuter and that without an article, the adjective takes the strong declension -es ending in the nominative case, which is exactly what rule 06-03 covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781540784182-r8xibliv",
+      "timestamp": "2026-06-15T16:26:46.338Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the strong adjective declension ending for neuter nominative without an article (\"deutsches\" vs. incorrect \"deutscher/deutsche/deutschem\"), which is precisely what rule 06-03 covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781540893911-81qxkvc1",
+      "timestamp": "2026-06-15T16:28:37.018Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing the strong declension ending for a neuter noun (Bier) in the nominative case without an article, which is exactly what rule 06-03 covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781541003339-kiit4u7x",
+      "timestamp": "2026-06-15T16:30:34.746Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4f0404dbd42852a2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-10-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Adjektivdeklination\n\nRULE BEING TESTED: 06-10 - Attributives vs. prädikatives Adjektiv (der schöne Baum vs. der Baum ist schön)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig?\nChoices:\nA. [CORRECT] Der große Baum steht im Garten.\nB. Der groß Baum steht im Garten.\nC. Der Baum ist große.\nD. Der Baum ist großes.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781540779169-bjbgdqow"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between declined attributive adjectives (before nouns, as in \"der große Baum\") and undeclined predicative adjectives (after \"sein\", as \"Der Baum ist groß\" should be), which is precisely the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781540865728-wvk1clkb",
+      "timestamp": "2026-06-15T16:28:11.850Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: Choices C and D incorrectly apply attributive endings to a predicative position after \"sein,\" directly testing whether the learner understands that predicative adjectives do not decline—this is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781540971399-rgugi80r",
+      "timestamp": "2026-06-15T16:30:14.373Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that attributive adjectives decline (der große Baum, eliminating B) while predicative adjectives do not decline (der Baum ist groß, eliminating C and D), which is the core distinction the rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781541125427-ivk9c7g2",
+      "timestamp": "2026-06-15T16:32:39.501Z"
+    }
+  ]
+}
