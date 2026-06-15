@@ -5,8 +5,9 @@ import section03 from "./03-dativ";
 import section04 from "./04-praesens";
 import section05 from "./05-perfekt";
 import section06 from "./06-adjektivdeklination";
+import section07 from "./07-wortstellung-konjunktionen";
 
-export const loadedSections: Section[] = [section01, section02, section03, section04, section05, section06];
+export const loadedSections: Section[] = [section01, section02, section03, section04, section05, section06, section07];
 
 export const meta: Omit<SectionMeta, "questionCount">[] = [
   { id: "01-artikel-genus", title: "Artikel und Genus", description: "Bestimmte und unbestimmte Artikel, Genus, Pluralbildung, Possessivartikel" },

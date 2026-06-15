@@ -92,6 +92,24 @@ export const answerHints: Record<string, string> = {
   "verstanden": "verstehen",
   "wandere": "wandern",
   "will": "wollen",
+
+  // Section 07 additions
+  "besucht": "besuchen",
+  "dass": "unterordnende Konjunktion",
+  "denn": "Konjunktion (Grund angeben)",
+  "finde": "finden",
+  "Hast": "haben",
+  "kaufte": "kaufen",
+  "kommt": "kommen",
+  "macht": "machen",
+  "Obwohl": "unterordnende Konjunktion (Gegengrund)",
+  "sondern": "Konjunktion (Gegensatz nach Negation)",
+  "trotzdem": "Adverb (Gegensatz im Hauptsatz)",
+  "weil": "unterordnende Konjunktion (Grund)",
+  "wohnst": "wohnen",
+  "wohnt": "wohnen",
+  "Als": "Konjunktion für einmalige Vergangenheit",
+  "Wenn": "Konjunktion für Gegenwart/Zukunft",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
