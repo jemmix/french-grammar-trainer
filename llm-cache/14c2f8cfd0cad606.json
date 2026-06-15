@@ -1,0 +1,33 @@
+{
+  "cacheKey": "14c2f8cfd0cad606",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-09-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Verb: nennen\n\nChoices:\nA. [CORRECT] Wir haben den Jungen Felix genannt.\nB. [WRONG] Wir haben den Jungen Felix genennt.\nC. [WRONG] Wir haben den Jungen Felix nennte.\nD. [WRONG] Wir haben den Jungen Felix genannte.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781486916129-0fvblorw"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781487038519-t23nt38l",
+      "timestamp": "2026-06-15T01:30:53.798Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses a non-existent form \"genennt\" instead of \"genannt\", C incorrectly uses the Präteritum form \"nennte\" after the auxiliary \"haben\" instead of the required past participle, and D incorrectly adds an adjective ending to the past participle \"genannte\" which is not grammatically valid in this construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781487265918-n7qkqls0",
+      "timestamp": "2026-06-15T01:34:41.857Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781487523176-776vlqat",
+      "timestamp": "2026-06-15T01:39:01.274Z"
+    }
+  ]
+}

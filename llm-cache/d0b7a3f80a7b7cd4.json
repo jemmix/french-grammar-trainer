@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d0b7a3f80a7b7cd4",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-08-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Er hat sich die Hände gewaschen.\nB. [WRONG] Er hat ihn die Hände gewaschen.\nC. [WRONG] Er hat sich die Hände waschen.\nD. [WRONG] Er ist sich die Hände gewaschen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781486916128-8rjcyost"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the accusative pronoun \"ihn\" instead of the required reflexive \"sich\", C uses the infinitive \"waschen\" instead of the required past participle \"gewaschen\" for Perfekt tense, and D incorrectly uses \"sein\" (ist) as the auxiliary verb when \"sich waschen\" requires \"haben\" in Perfekt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781486937515-8rudikmv",
+      "timestamp": "2026-06-15T01:29:20.166Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses accusative \"ihn\" instead of reflexive \"sich\", C uses the infinitive \"waschen\" instead of the required past participle \"gewaschen\", and D incorrectly uses \"ist\" as the auxiliary verb when \"waschen\" requires \"hat\" in Perfekt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781487185780-t9e006iy",
+      "timestamp": "2026-06-15T01:33:35.795Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers contain clear grammar errors: B uses the accusative \"ihn\" instead of reflexive \"sich\", C uses the infinitive \"waschen\" instead of past participle \"gewaschen\" in Perfekt, and D incorrectly uses \"sein\" as auxiliary instead of \"haben\" for \"sich waschen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781487465977-7jmly7vp",
+      "timestamp": "2026-06-15T01:38:03.224Z"
+    }
+  ]
+}

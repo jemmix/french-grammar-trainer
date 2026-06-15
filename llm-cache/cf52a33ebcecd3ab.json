@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cf52a33ebcecd3ab",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "05-08-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Reflexivverben im Perfekt (sich gewaschen, sich gefreut)\nPROMPT: Vervollständigen Sie den Satz mit dem Partizip II.\nPHRASE: „Wir haben uns über die Nachricht ___.\nCORRECT ANSWER: gefreut\n\nWRONG ANSWERS to evaluate:\n1. freute\n2. freuen\n3. gefreut haben\n4. gefreit\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1781486916129-mnni202x"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"freute\" confuses Präteritum with Perfekt, \"freuen\" uses the infinitive instead of the past participle, \"gefreut haben\" redundantly repeats the auxiliary already present in the sentence, and \"gefreit\" applies the weak verb ending -t to a strong verb that takes -en.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781496538663-bll08r2i",
+      "timestamp": "2026-06-15T04:09:13.837Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: confusing Präteritum with Partizip II (\"freute\"), using the infinitive (\"freuen\"), redundantly including the auxiliary (\"gefreut haben\" when \"haben\" is already in the sentence), and incorrectly forming the Partizip II with a regular -t ending (\"gefreit\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781496555310-97844v45",
+      "timestamp": "2026-06-15T04:09:39.005Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: using the Präteritum form (freute), the infinitive (freuen), redundantly adding the auxiliary (gefreut haben), or incorrectly forming the participle (gefreit instead of gefreut).\n\n---\n\n**Note:** Maximum steps for this agent have been reached. The validation task above has been completed. No remaining tasks.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781496579005-ju2m6979",
+      "timestamp": "2026-06-15T04:10:02.285Z"
+    }
+  ]
+}

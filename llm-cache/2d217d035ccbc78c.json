@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2d217d035ccbc78c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-10-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — „gestern\" zeigt die Vergangenheit\n\nChoices:\nA. [CORRECT] Gestern habe ich einen Film gesehen.\nB. [WRONG] Gestern sehe ich einen Film.\nC. [WRONG] Gestern ich einen Film gesehen.\nD. [WRONG] Gestern habe ich einen Film sehen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781486916130-2fti303s"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses present tense with a past time marker, C has incorrect word order with no conjugated verb in second position, and D uses an infinitive instead of the required past participle in the Perfekt construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781487091839-763ll0w5",
+      "timestamp": "2026-06-15T01:31:47.167Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781487338381-ew8a0297",
+      "timestamp": "2026-06-15T01:36:03.341Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses present tense despite \"gestern\" requiring past tense, C lacks the required auxiliary verb in second position, and D uses the infinitive \"sehen\" instead of the past participle \"gesehen\" required for Perfekt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781487562576-4bbdkt0a",
+      "timestamp": "2026-06-15T01:39:45.889Z"
+    }
+  ]
+}

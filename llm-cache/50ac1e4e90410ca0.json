@@ -1,0 +1,33 @@
+{
+  "cacheKey": "50ac1e4e90410ca0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-09-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Verb: bringen\n\nChoices:\nA. [CORRECT] Sie hat das Paket zur Post gebracht.\nB. [WRONG] Sie hat das Paket zur Post gebringt.\nC. [WRONG] Sie hat das Paket zur Post bringte.\nD. [WRONG] Sie hat das Paket zur Post gebrachte.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781486916129-2sfuzsfb"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses the non-existent past participle \"gebringt\" instead of \"gebracht\", C incorrectly mixes the Perfekt auxiliary \"hat\" with a malformed Präteritum form \"bringte\" (which should be \"brachte\" and cannot follow \"hat\" anyway), and D uses the non-existent form \"gebrachte\" which is neither a valid past participle nor a valid Präteritum form of \"bringen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781487005131-c9h4wwv2",
+      "timestamp": "2026-06-15T01:31:33.344Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses invalid past participle \"gebringt\" instead of \"gebracht\", C incorrectly mixes Perfekt auxiliary \"hat\" with Präteritum form \"bringte\", and D uses invalid past participle \"gebrachte\" instead of \"gebracht\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781487318043-5cc71g99",
+      "timestamp": "2026-06-15T01:35:38.809Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781487553022-u2l6mp0z",
+      "timestamp": "2026-06-15T01:39:29.208Z"
+    }
+  ]
+}
