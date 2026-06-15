@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e025f73242e4b33a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-07-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Die Kinder haben im Park spielen können.\nB. [WRONG] Die Kinder hat im Park spielen können.\nC. [WRONG] Die Kinder haben im Park gespielt können.\nD. [WRONG] Die Kinder haben im Park gespielt gekonnt.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781485665103-0bnub46g"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses singular \"hat\" with plural subject \"Die Kinder\", while C and D incorrectly use past participles instead of infinitives in the double infinitive construction with a modal verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781485686118-ekvbwqkc",
+      "timestamp": "2026-06-15T01:08:24.152Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a German grammar verification task. The analysis was complete:\n\nThe question asks for the grammatically correct sentence using the double infinitive construction (Perfect + modal verb). \n\n- Answer B is incorrect because \"hat\" (3rd person singular) doesn't agree with the plural subject \"Die Kinder\" (should be \"haben\")\n- Answer C is incorrect because \"gespielt\" uses the past participle instead of the required infinitive \"spielen\" in the double infinitive construction\n- Answer D is incorrect because both \"gespielt\" and \"gekonnt\" use past participles instead of the required infinitives\n\nThe response would have been: TRUE||All wrong answers contain clear grammar errors (B: wrong subject-verb agreement, C and D: incorrect use of past participle instead of infinitive in double infinitive construction).\n\nNo remaining tasks - the analysis was complete before the step limit was reached.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781485713682-l3bja8q2",
+      "timestamp": "2026-06-15T01:08:59.445Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses singular \"hat\" with plural subject \"Die Kinder\", C incorrectly uses past participle \"gespielt\" instead of infinitive in double infinitive construction, and D incorrectly uses both past participles instead of infinitives.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781485751668-dcg3z8es",
+      "timestamp": "2026-06-15T01:09:31.500Z"
+    }
+  ]
+}

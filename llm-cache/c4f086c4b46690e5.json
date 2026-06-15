@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c4f086c4b46690e5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-07-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Er hat das Auto fahren können.\nB. [WRONG] Er hat das Auto fahren gekonnt.\nC. [WRONG] Er hat das Auto gefahren können.\nD. [WRONG] Er konnte das Auto fahren.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781484705504-zwf08q5j"
+  },
+  "responses": [
+    {
+      "raw": "FALSE|D|D is a grammatically correct sentence using the Präteritum tense (\"konnte\") which is a valid alternative to the Perfekt construction, even though the question seems to expect the Perfekt form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781484714527-cfeni59o",
+      "timestamp": "2026-06-15T00:52:19.679Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was asked to verify that wrong answers B, C, and D in a German multiple-choice question are indeed incorrect. I analyzed the question \"Welcher Satz ist grammatikalisch richtig?\" and the four choices regarding the verb \"können\" with \"fahren\".\n\nAnalysis completed:\n- B: \"Er hat das Auto fahren gekonnt\" - Incorrect (wrong word order for double infinitive)\n- C: \"Er hat das Auto gefahren können\" - Incorrect (\"gefahren\" should be infinitive \"fahren\" in this construction)\n- D: \"Er konnte das Auto fahren\" - This is actually GRAMMATICALLY CORRECT as Präteritum, just a different tense than A's Perfekt\n\nThe verdict would be: FALSE|D|D \"Er konnte das Auto fahren\" is grammatically correct Präteritum form, just a different tense from A's Perfekt construction.\n\nRemaining tasks: None - the analysis is complete.\n\nRecommendations: The question should be revised to specify the tense (e.g., \"Welcher Satz im Perfekt ist grammatikalisch richtig?\") to make D unambiguously wrong, or D should be replaced with a different incorrect option.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781484803544-0bj9raan",
+      "timestamp": "2026-06-15T00:53:57.288Z"
+    }
+  ]
+}

@@ -71,6 +71,7 @@ export const answerHints: Record<string, string> = {
   "gelesen": "lesen",
   "bin": "gehen",
   "habe": "machen",
+  "haben": "Hilfsverb",
   "angefangen": "anfangen",
   "eingekauft": "einkaufen",
   "verstanden": "verstehen",
