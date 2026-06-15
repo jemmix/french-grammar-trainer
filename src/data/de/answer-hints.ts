@@ -72,6 +72,7 @@ export const answerHints: Record<string, string> = {
   "bin": "gehen",
   "habe": "machen",
   "haben": "Hilfsverb",
+  "habe gelesen": "lesen",
   "angefangen": "anfangen",
   "eingekauft": "einkaufen",
   "verstanden": "verstehen",
@@ -82,11 +83,16 @@ export const answerHints: Record<string, string> = {
   "gewusst": "wissen",
   "gebracht": "bringen",
   "lerne": "lernen",
+  "lernt": "lernen",
   "gespielt": "spielen",
   "gewohnt": "wohnen",
   "gehört": "hören",
   "gegangen": "gehen",
   "gefahren": "fahren",
+  "rasiert": "sich rasieren",
+  "gedacht": "denken",
+  "genannt": "nennen",
+  "gewaschen": "waschen",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
