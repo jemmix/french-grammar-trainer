@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e90bde6f15de05f4",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-10-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — „immer\" verlangt das Präsens (Gewohnheit)\n\nChoices:\nA. [CORRECT] Ich spiele immer sonntags Fußball.\nB. [WRONG] Ich habe immer sonntags Fußball gespielt.\nC. [WRONG] Ich spielt immer sonntags Fußball.\nD. [WRONG] Ich immer sonntags Fußball spiele.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781498484102-z2gr8otn"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses Perfekt instead of the required Präsens, C has a conjugation error (\"spielt\" instead of \"spiele\" for \"ich\"), and D has incorrect word order with the verb at the end instead of position 2.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781498511666-aeq1dji3",
+      "timestamp": "2026-06-15T04:42:17.151Z"
+    },
+    {
+      "raw": "TRUE||B uses Perfekt instead of the required Präsens for habitual actions, C has a subject-verb agreement error (sppielt instead of spiele for ich), and D has incorrect word order with the verb not in position 2.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781498591320-17l4f5bo",
+      "timestamp": "2026-06-15T04:43:30.831Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the stated constraints: B uses Perfekt instead of the required Präsens, C has incorrect verb conjugation (\"sppielt\" instead of \"spiele\"), and D has incorrect word order with the verb not in second position.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781498667539-21mwth6g",
+      "timestamp": "2026-06-15T04:44:42.644Z"
+    }
+  ]
+}

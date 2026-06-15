@@ -1,0 +1,26 @@
+{
+  "cacheKey": "d89ca2668776ae5e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-10-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Perfekt\n\nRULE BEING TESTED: 05-10 - Präsens vs. Perfekt: Zeitstufen im Gebrauch unterscheiden\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig?\nChoices:\nA. [CORRECT] Ich trinke jeden Tag einen Kaffee.\nB. Ich habe jeden Tag einen Kaffee getrunken.\nC. Ich trinkt jeden Tag einen Kaffee.\nD. Ich jeden Tag einen Kaffee trinke.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781499324901-ssgbp403"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests verb conjugation (trinke vs. trinkt) and word order, not the distinction between when to use Präsens vs. Perfekt tense; furthermore, option B is actually grammatically correct German, just with a different meaning, making this question flawed on multiple levels.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781499325908-w5arufck",
+      "timestamp": "2026-06-15T04:55:45.628Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: This question tests basic conjugation (ich trinke vs. trinkt) and word order, not the distinction between when to use Präsens versus Perfekt for different temporal contexts; option B is actually grammatically correct, making this a poor test of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781499370105-9cnw53ew",
+      "timestamp": "2026-06-15T04:56:27.675Z"
+    }
+  ]
+}

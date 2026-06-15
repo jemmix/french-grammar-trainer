@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0322461f7701be6f",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-10-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — eine allgemeine Wahrheit\n\nChoices:\nA. [CORRECT] Die Erde dreht sich um die Sonne.\nB. [WRONG] Die Erde drehen sich um die Sonne.\nC. [WRONG] Die Erde drehst sich um die Sonne.\nD. [WRONG] Die Erde sich um die Sonne dreht.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781497418371-xvbzyqfj"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B has wrong subject-verb agreement (plural \"drehen\" with singular subject \"Die Erde\"), C uses wrong person (\"drehst\" is 2nd person singular, not 3rd), and D violates German V2 word order by placing the verb \"dreht\" at the end instead of in second position.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781497491715-do65ysin",
+      "timestamp": "2026-06-15T04:25:20.894Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly uses the plural verb form \"drehen\" with singular subject \"Die Erde\"; C incorrectly uses the 2nd person singular \"drehst\" instead of 3rd person singular; D has incorrect word order placing the reflexive pronoun before the conjugated verb in a main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781497583076-2ig96nr1",
+      "timestamp": "2026-06-15T04:26:38.367Z"
+    }
+  ]
+}

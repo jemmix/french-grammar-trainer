@@ -1,0 +1,40 @@
+{
+  "cacheKey": "36f3dd2d710f38e6",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "05-09-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Besondere Partizipformen (gewusst, gebracht, gedacht, genannt, gewaschen)\nPROMPT: Vervollständigen Sie den Satz mit dem Partizip II.\nPHRASE: „Er hat das Hemd selbst ___.\nCORRECT ANSWER: gewaschen\n\nWRONG ANSWERS to evaluate:\n1. gewascht\n2. waschte\n3. waschen\n4. gewaschen haben\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1781498484099-ti3s93c4"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"gewascht\" applies the regular weak verb pattern to a strong verb, \"waschte\" confuses Partizip II with Präteritum, \"waschen\" uses the infinitive instead of the past participle, and \"gewaschen haben\" redundantly includes the auxiliary infinitive not needed in this position.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781498549869-fmrbz06d",
+      "timestamp": "2026-06-15T04:42:47.584Z"
+    },
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"gewaschen haben\" is not a plausible learner error—it would create the ungrammatical \"Er hat das Hemd selbst gewaschen haben,\" which isn't a natural mistake learners make when confusing participle forms, whereas the other three answers (gewascht, waschte, waschen) are all classic errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781498628305-tpdc3n8n",
+      "timestamp": "2026-06-15T04:44:17.051Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: applying weak verb patterns (gewascht), confusing Partizip II with Präteritum (waschte), using the infinitive incorrectly (waschen), and redundant perfect tense construction (gewaschen haben).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781498700318-klx5ejt0",
+      "timestamp": "2026-06-15T04:45:35.476Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"gewascht\" applies regular weak verb patterns to an irregular verb, \"waschte\" confuses Präteritum with Partizip II, \"waschen\" uses the infinitive instead of the past participle, and \"gewaschen haben\" redundantly includes the auxiliary that's already in the sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781498789054-zl9s856w",
+      "timestamp": "2026-06-15T04:47:21.441Z"
+    }
+  ]
+}

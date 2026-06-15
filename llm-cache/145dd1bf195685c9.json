@@ -1,0 +1,26 @@
+{
+  "cacheKey": "145dd1bf195685c9",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-10-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Das Baby schläft gerade.\nB. [WRONG] Das Baby hat gerade geschlafen.\nC. [WRONG] Das Baby schlafen gerade.\nD. [WRONG] Das Baby gerade schläft.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781499324901-ebw2gmq2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B changes the meaning to completed action (Perfekt) rather than present ongoing, C has an unconjugated verb, and D has non-standard word order that sounds unnatural in this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781499327925-eq004j20",
+      "timestamp": "2026-06-15T04:55:47.843Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of verifying wrong answers for a German grammar MCQ question about correct sentence structure.\n\n**Analysis completed:**\n- Question: \"Welcher Satz ist grammatikalisch richtig?\" (Which sentence is grammatically correct?)\n- B (\"Das Baby hat gerade geschlafen\") - Uses Perfekt tense, which is grammatically correct German. The question does not specify present tense as a requirement, so this answer could be correct.\n- C (\"Das Baby schlafen gerade\") - Incorrect: uses infinitive \"schlafen\" instead of conjugated \"schläft\"\n- D (\"Das Baby gerade schläft\") - Incorrect: wrong word order (verb should be in second position)\n\n**Remaining tasks:**\n- Provide the final verdict response\n\n**Recommendation:**\nThe verdict should be FALSE|B because answer B is grammatically correct German (Perfekt tense) and the question does not explicitly restrict to present tense. The question should be revised to specify \"im Präsens\" (in present tense) to make B unambiguously wrong.\n\nFALSE|B|B uses Perfekt tense which is grammatically correct German; the question does not specify present tense as a requirement, making B a valid alternative correct answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781499375234-qnczhjgw",
+      "timestamp": "2026-06-15T04:56:45.567Z"
+    }
+  ]
+}

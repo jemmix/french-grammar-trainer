@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e5d863a7f58a3f0a",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "05-10-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — „gerade\" verlangt das Präsens (aktuelle Handlung)\n\nChoices:\nA. [CORRECT] Das Baby schläft gerade.\nB. [WRONG] Das Baby hat gerade geschlafen.\nC. [WRONG] Das Baby schlafen gerade.\nD. [WRONG] Das Baby gerade schläft.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781498484101-2fq0nuqv"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating the German grammar question but did not complete the formal response.\n\nSummary of analysis completed:\n- Question asks for the correct sentence where \"gerade\" requires Präsens (present tense)\n- B: \"hat geschlafen\" is Perfekt (completed action), not Präsens — correctly wrong\n- C: \"schlafen\" is infinitive, not conjugated — correctly wrong  \n- D: \"gerade schläft\" puts verb in 3rd position, violating German word order — correctly wrong\n\nThe verdict would have been: TRUE||All wrong answers contain clear grammar errors (wrong tense, wrong verb form, wrong word order).\n\nNo remaining tasks — the analysis was complete, only the formatted response was pending.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781498493143-77xfuyip",
+      "timestamp": "2026-06-15T04:41:59.352Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses Perfekt instead of the required Präsens, C has wrong subject-verb agreement (schlafen instead of schläft), and D has non-standard word order.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781498574508-xje7mnuv",
+      "timestamp": "2026-06-15T04:43:16.712Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses Perfekt instead of the required Präsens, C has an unconjugated infinitive instead of \"schläft,\" and D has incorrect word order with the verb in position 3 instead of position 2.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781498657051-gz9oyqqy",
+      "timestamp": "2026-06-15T04:44:40.325Z"
+    }
+  ]
+}

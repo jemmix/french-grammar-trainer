@@ -569,7 +569,7 @@ const section: Section = {
       generatedBy: "glm-5.1",
       prompt: "Setzen Sie das richtige Hilfsverb im Perfekt ein (konjugierte Form).",
       phrase: { before: "„Ich ", after: " die Hausaufgaben gemacht." },
-      hint: "machen",
+      hint: "haben",
       answer: "habe",
       explanation: "„machen\" ist ein transitives Verb mit Akkusativobjekt („die Hausaufgaben\") und bildet das Perfekt mit „haben\". Die 1. Person Singular lautet „habe\": „ich habe gemacht\".",
       wrongAnswers: [
@@ -1290,7 +1290,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-10",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz ist grammatikalisch richtig?",
+      prompt: "Welcher Satz ist grammatikalisch richtig? — „jeden Tag\" verlangt das Präsens (Gewohnheit)",
       choices: [
         { text: "Ich trinke jeden Tag einen Kaffee.", correct: true, explanation: "„jeden Tag\" ist das Signalwort für eine Gewohnheit (wiederholte Handlung in der Gegenwart). Für Gewohnheiten verwendet man das Präsens: „trinke\" (1. Person Singular von „trinken\")." },
         { text: "Ich habe jeden Tag einen Kaffee getrunken.", correct: false, explanation: "Das Perfekt („habe … getrunken\") bezeichnet eine abgeschlossene Vergangenheit. Für eine fortdauernde Gewohnheit mit „jeden Tag\" verwendet man das Präsens: „trinke\"." },
@@ -1303,7 +1303,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-10",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz ist grammatikalisch richtig?",
+      prompt: "Welcher Satz ist grammatikalisch richtig? — „gerade\" verlangt das Präsens (aktuelle Handlung)",
       choices: [
         { text: "Das Baby schläft gerade.", correct: true, explanation: "„gerade\" zeigt an, dass die Handlung in diesem Moment abläuft. Für aktuelle Handlungen verwendet man das Präsens: „schläft\" (3. Person Singular von „schlafen\" mit Umlaut)." },
         { text: "Das Baby hat gerade geschlafen.", correct: false, explanation: "Das Perfekt („hat … geschlafen\") bezeichnet eine abgeschlossene Handlung. Mit „gerade\" beschreibt man aber eine im Moment ablaufende Handlung — daher das Präsens: „schläft\"." },
@@ -1316,7 +1316,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-10",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz ist grammatikalisch richtig?",
+      prompt: "Welcher Satz ist grammatikalisch richtig? — „morgen\" verlangt das Präsens (Zukunft)",
       choices: [
         { text: "Morgen fahre ich nach Berlin.", correct: true, explanation: "„morgen\" ist ein Zukunfts-Signalwort. Im Deutschen wird die Zukunft oft mit dem Präsens + Signalwort ausgedrückt: „fahre\" (1. Person Singular von „fahren\")." },
         { text: "Morgen bin ich nach Berlin gefahren.", correct: false, explanation: "Das Perfekt („bin … gefahren\") bezeichnet die Vergangenheit. Es widerspricht dem Signalwort „morgen\" (Zukunft). Für die Zukunft verwendet man hier das Präsens: „fahre\"." },
@@ -1342,7 +1342,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-10",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz ist grammatikalisch richtig?",
+      prompt: "Welcher Satz ist grammatikalisch richtig? — „immer\" verlangt das Präsens (Gewohnheit)",
       choices: [
         { text: "Ich spiele immer sonntags Fußball.", correct: true, explanation: "„immer\" und „sonntags\" sind Signalwörter für eine Gewohnheit (wiederholte Handlung in der Gegenwart). Für Gewohnheiten verwendet man das Präsens: „spiele\" (1. Person Singular von „spielen\")." },
         { text: "Ich habe immer sonntags Fußball gespielt.", correct: false, explanation: "Das Perfekt („habe … gespielt\") bezeichnet eine abgeschlossene Vergangenheit. Für eine fortdauernde Gewohnheit mit „immer\" verwendet man das Präsens: „spiele\"." },
@@ -1355,7 +1355,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "05-10",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz ist grammatikalisch richtig?",
+      prompt: "Welcher Satz ist grammatikalisch richtig? — „schon … gelesen\" verlangt das Perfekt (abgeschlossene Vergangenheit)",
       choices: [
         { text: "Ich habe das Buch schon gelesen.", correct: true, explanation: "„schon … gelesen\" zeigt an, dass eine Handlung in der Vergangenheit abgeschlossen wurde. Im gesprochenen Deutsch verwendet man dafür das Perfekt: „haben\" + Partizip II („gelesen\")." },
         { text: "Ich lese das Buch schon.", correct: false, explanation: "„lese\" steht im Präsens. Das Signalwort „schon\" mit einer abgeschlossenen Handlung verlangt das Perfekt: „habe … gelesen\", nicht das Präsens." },

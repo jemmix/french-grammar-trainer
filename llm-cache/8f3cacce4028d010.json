@@ -1,0 +1,26 @@
+{
+  "cacheKey": "8f3cacce4028d010",
+  "predicateId": "question-rule-alignment",
+  "questionId": "05-10-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Perfekt\n\nRULE BEING TESTED: 05-10 - Präsens vs. Perfekt: Zeitstufen im Gebrauch unterscheiden\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — „schon … gelesen\" verlangt das Perfekt (abgeschlossene Vergangenheit)\nChoices:\nA. [CORRECT] Ich habe das Buch schon gelesen.\nB. Ich lese das Buch schon.\nC. Ich bin das Buch schon gelesen.\nD. Ich habe das Buch schon lesen.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781498484103-f1zra7xw"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of analyzing a German grammar validation task. The question asks whether a multiple-choice question about \"Ich habe das Buch schon gelesen\" properly tests the rule \"Präsens vs. Perfekt: Zeitstufen im Gebrauch unterscheiden.\"\n\n**Analysis completed:**\nThe question is MISALIGNED because the prompt explicitly states \"schon … gelesen verlangt das Perfekt\" — it tells the student which tense to use rather than testing whether they can identify when Perfekt is appropriate. This makes the question primarily test knowledge of Perfekt *form* (correct auxiliary \"habe\" + past participle \"gelesen\") rather than the conceptual distinction between when to use Präsens versus Perfekt based on meaning and context.\n\n**Verdict that would have been output:**\nVERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student to use Perfekt, so the question tests knowledge of Perfekt form (auxiliary selection and past participle formation) rather than the ability to distinguish when Präsens vs. Perfekt should be used based on context and meaning.\n\n**Remaining tasks:** None — this was a single-question validation task.\n\n**Recommendations:** The question should be rewritten to present the scenario without explicitly stating which tense is required, allowing the student to demonstrate their understanding of when Perfekt (versus Präsens) is the appropriate choice.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781498522629-0xuqekue",
+      "timestamp": "2026-06-15T04:42:34.872Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The prompt explicitly tells the student that Perfekt is required (\"verlangt das Perfekt\"), eliminating the need to distinguish between Präsens and Perfekt, and two of the three wrong answers (C and D) test Perfekt formation errors rather than the tense choice.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781498612617-3t01nec3",
+      "timestamp": "2026-06-15T04:44:04.539Z"
+    }
+  ]
+}
