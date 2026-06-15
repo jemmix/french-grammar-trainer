@@ -7,9 +7,11 @@
 export const answerHints: Record<string, string> = {
   "—": "Achten Sie auf die Präposition „nach\"",
   "Alten": "alt",
+  "alten": "alt",
   "altes": "alt",
   "an": "anrufen",
   "angefangen": "anfangen",
+  "arbeitende": "arbeiten",
   "besser": "gut",
   "bezahlt": "bezahlen",
   "bin": "gehen",
