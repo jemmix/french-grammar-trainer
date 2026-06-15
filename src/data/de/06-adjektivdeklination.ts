@@ -299,8 +299,8 @@ const section: Section = {
       wrongAnswers: [
         { text: "schöner", explanation: "Die Endung -er gilt für maskulin. „Stadt\" ist feminin, daher lautet die Endung in der gemischten Deklination -e: „schöne\"." },
         { text: "schönes", explanation: "Die Endung -es gilt für neutral. „Stadt\" ist feminin, daher lautet die Endung in der gemischten Deklination -e: „schöne\"." },
-        { text: "schönen", explanation: "Die Endung -en steht im Dativ oder Akkusativ maskulin. Im Nominativ feminin nach „eine\" heißt es -e: „schöne\"." },
-        { text: "schönem", explanation: "Die Endung -em ist der Dativ. Im Nominativ feminin nach „eine\" lautet die Endung -e: „schöne\"." },
+        { text: "schönen", explanation: "„-en\" ist nicht die Nominativ-endung für feminin nach „eine\". Im Nominativ feminin lautet die Endung in der gemischten Deklination -e: „schöne\"." },
+        { text: "schönem", explanation: "„-em\" ist nicht die Nominativ-endung für feminin. Im Nominativ feminin nach „eine\" lautet die Endung -e: „schöne\"." },
       ],
     },
     {
@@ -864,7 +864,7 @@ const section: Section = {
       prompt: "Welche Form ist der Komparativ von „gut\"?",
       choices: [
         { text: "besser", correct: true, explanation: "„gut\" ist unregelmäßig: gut → besser → am besten. Der Komparativ lautet „besser\"." },
-        { text: "guter", correct: false, explanation: "„guter\" wäre die regelmäßige Bildung. „gut\" ist unregelmäßig und lautet im Komparativ „besser\"." },
+        { text: "guter", correct: false, explanation: "„guter\" ist ein deklinierter Positiv, kein Komparativ. „gut\" ist unregelmäßig und lautet im Komparativ „besser\"." },
         { text: "gutsten", correct: false, explanation: "„gutsten\" ist keine korrekte Form. Der Komparativ von „gut\" lautet „besser\"." },
         { text: "guten", correct: false, explanation: "„guten\" ist der deklinierte Positiv. Der Komparativ lautet unregelmäßig „besser\"." },
       ],
@@ -890,7 +890,7 @@ const section: Section = {
       prompt: "Welcher Satz ist grammatikalisch richtig? — unregelmäßiger Komparativ",
       choices: [
         { text: "Diese Pizza schmeckt besser als die andere.", correct: true, explanation: "„gut\" ist unregelmäßig: gut → besser → am besten. Der Komparativ lautet „besser\". Vergleiche werden mit „als\" gebildet." },
-        { text: "Diese Pizza schmeckt guter als die andere.", correct: false, explanation: "„guter\" wäre die regelmäßige Bildung. „gut\" ist unregelmäßig und lautet im Komparativ „besser\"." },
+        { text: "Diese Pizza schmeckt guter als die andere.", correct: false, explanation: "„guter\" ist ein deklinierter Positiv, kein Komparativ. „gut\" ist unregelmäßig und lautet im Komparativ „besser\"." },
         { text: "Diese Pizza schmeckt gutsten als die andere.", correct: false, explanation: "„gutsten\" ist der Superlativ. Der Komparativ von „gut\" lautet „besser\"." },
         { text: "Diese Pizza schmeckt gut als die andere.", correct: false, explanation: "„gut\" ist der Positiv. Für den Vergleich benötigt man den Komparativ „besser\"." },
       ],
@@ -975,7 +975,7 @@ const section: Section = {
         { text: "guten", explanation: "„guten\" ist der deklinierte Positiv (Dativ/Akkusativ). Der Komparativ lautet „besser\"." },
         { text: "gutes", explanation: "„gutes\" ist der deklinierte Positiv neutral. Der Komparativ lautet „besser\"." },
         { text: "gut", explanation: "„gut\" ist der Positiv. Für den Vergleich benötigt man den Komparativ „besser\"." },
-        { text: "guter", explanation: "„guter\" wäre die regelmäßige Bildung. „gut\" ist unregelmäßig und lautet im Komparativ „besser\"." },
+        { text: "guter", explanation: "„guter\" ist ein deklinierter Positiv, kein Komparativ. „gut\" ist unregelmäßig und lautet im Komparativ „besser\"." },
       ],
     },
     {
@@ -989,7 +989,7 @@ const section: Section = {
       answer: "meiste",
       explanation: "„viel\" ist unregelmäßig: viel → mehr → am meisten. Der attributive Superlativ nach „das\" (Singular neutral) lautet „das meiste\" mit der Endung -e.",
       wrongAnswers: [
-        { text: "meisten", explanation: "„meisten\" ist die Plural- oder Dativendung. Nach „das\" (Singular) lautet die Endung -e: „meiste\"." },
+        { text: "meisten", explanation: "„meisten\" ist die Pluralform. Nach „das\" (Singular) lautet der attributive Superlativ „das meiste\" mit der Endung -e." },
         { text: "mehr", explanation: "„mehr\" ist der Komparativ von „viel\". Gesucht ist der Superlativ: „meiste\"." },
         { text: "viele", explanation: "„viele\" ist der deklinierte Positiv. Der Superlativ von „viel\" lautet „meiste\"." },
         { text: "vieler", explanation: "„vieler\" ist der deklinierte Positiv (Genitiv). Der Superlativ lautet „meiste\"." },
