@@ -11,9 +11,28 @@ export class InvalidResponseError extends Error {
   }
 }
 
+const PERMANENT_ERROR_PATTERNS = [
+  "401",
+  "403",
+  "unauthorized",
+  "authentication",
+  "invalid api key",
+  "invalid_api_key",
+  "model not found",
+  "unknown model",
+  "invalid model",
+];
+
 export function isRetryableError(err: Error): boolean {
   if (err instanceof InvalidResponseError) return true;
   const msg = err.message.toLowerCase();
+
+  // Known permanent errors (auth, config) — fail fast.
+  for (const pattern of PERMANENT_ERROR_PATTERNS) {
+    if (msg.includes(pattern)) return false;
+  }
+
+  // Known transient errors — explicit matches for clarity and to short-circuit.
   if (msg.includes("timeout")) return true;
   if (msg.includes("etimedout")) return true;
   if (msg.includes("econnreset")) return true;
@@ -26,12 +45,15 @@ export function isRetryableError(err: Error): boolean {
   if (msg.includes("504")) return true;
   if (msg.includes("overloaded")) return true;
   if (msg.includes("empty response")) return true;
-  if (msg.includes("exit code null")) return true;
   if (msg.includes("signal:")) return true;
   if (msg.includes("killed")) return true;
   if (msg.includes("crashed")) return true;
   if (msg.includes("maxbuffer")) return true;
-  return false;
+
+  // Default: treat any other failure (including all non-zero exit codes,
+  // TLS/certificate errors, "fetch failed", etc.) as retryable. opencode is a
+  // black box that can fail transiently in many ways we haven't enumerated.
+  return true;
 }
 
 export interface LLMHarness {
