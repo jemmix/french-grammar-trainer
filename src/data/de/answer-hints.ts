@@ -136,6 +136,28 @@ export const answerHints: Record<string, string> = {
   "trotz": "Präposition",
   "Seit": "Präposition",
   "Trotz": "Präposition",
+
+  // Section 11 additions
+  "wird": "werden",
+  "wurde": "werden",
+  "ist": "sein",
+  "worden": "werden",
+  "werden": "Hilfsverb",
+  "gearbeitet": "arbeiten",
+  "geöffnet": "öffnen",
+  "repariert": "reparieren",
+  "Man": "unpersönliches Pronomen",
+  "spricht": "sprechen",
+
+  // Section 12 additions
+  "denen": "Relativpronomen",
+  "sei": "sein",
+  "geht": "gehen",
+  "zu lernen": "lernen",
+  "wiederzusehen": "wiedersehen",
+  "zu sprechen": "sprechen",
+  "oder": "Konjunktion",
+  "desto": "Konjunktion",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
