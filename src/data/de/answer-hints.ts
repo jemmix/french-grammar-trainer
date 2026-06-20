@@ -186,8 +186,6 @@ export const answerHints: Record<string, string> = {
   "dachte": "denken",
   "wussten": "wissen",
 
-  // Fix section 12 mismatch
-  "zu lernen": "lernen",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
