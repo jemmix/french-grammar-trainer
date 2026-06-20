@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e16715da72e724f5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-04-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Konjunktion „aber\"\n\nChoices:\nA. [CORRECT] Das Essen war teuer, aber es war lecker.\nB. [WRONG] Das Essen war teuer, aber es lecker war.\nC. [WRONG] Das Essen war teuer, aber war es lecker.\nD. [WRONG] Das Essen war teuer, es aber war lecker.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456800-pbrtnphu"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate German word order rules: B has incorrect verb placement after the subject, C incorrectly uses verb-first position with the coordinating conjunction \"aber\" (which requires subject-verb order, not verb-subject), and D incorrectly positions the conjunction within the clause rather than at the clause boundary.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781978283893-mh3qanw8",
+      "timestamp": "2026-06-20T17:59:14.374Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate standard German word order rules after the coordinating conjunction \"aber\" — B inverts verb and adjective, C uses question word order in a statement, and D incorrectly places \"aber\" mid-clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781980621027-oqdhbj4w",
+      "timestamp": "2026-06-20T18:38:38.802Z"
+    },
+    {
+      "raw": "TRUE||B has incorrect verb-final position after \"aber\" (standard word order requires subject-verb); C incorrectly inverts verb and subject after \"aber\" (only triggered by certain elements, not coordinating conjunctions); D uses unnatural word order with \"aber\" inserted after the subject, which is not standard German syntax.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982938753-apbfodby",
+      "timestamp": "2026-06-20T19:17:33.142Z"
+    }
+  ]
+}

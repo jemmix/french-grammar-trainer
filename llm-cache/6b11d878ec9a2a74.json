@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6b11d878ec9a2a74",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "07-08-007",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Welcher Satz ist grammatikalisch richtig? — wiederholte Handlung in der Vergangenheit\nChoices:\nA. Wenn sie Lust hatte, ist sie schwimmen gegangen.\nB. Als sie Lust hatte, ist sie schwimmen gegangen.\nC. Wenn sie hatte Lust, ist sie schwimmen gegangen.\nD. Wenn sie Lust hatte, sie ist schwimmen gegangen.\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1781977456803-oy9xcm0i"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks \"which sentence is grammatically correct?\" with a context hint about \"repeated action in the past,\" but doesn't clearly indicate that the learner should be evaluating specifically the \"wenn vs. als\" distinction for repeated versus single past events, leaving it unclear what grammatical criterion to apply.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781979265975-zfo9c78n",
+      "timestamp": "2026-06-20T18:15:26.489Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI have analyzed the German grammar question to evaluate whether the prompt is clear or ambiguous for a learner who has NOT seen the rule title.\n\n**Summary of analysis:**\n\nThe prompt \"Welcher Satz ist grammatikalisch richtig?\" (Which sentence is grammatically correct?) without the context of \"— wiederholte Handlung in der Vergangenheit\" is ambiguous because:\n\n- Choices A and B differ only in \"wenn\" vs \"als\" — both are grammatically correct but for different contexts (repeated vs. single past events)\n- Without knowing the question is testing \"wiederholte Handlung,\" a learner cannot determine which is the \"correct\" answer\n- Choices C and D have clear word-order errors, but A vs B cannot be distinguished without the semantic context\n\n**My verdict would have been:**\nVERDICT: AMBIGUOUS\nREASON: Without the \"wiederholte Handlung\" context, both A (\"wenn\") and B (\"als\") are grammatically correct in different semantic contexts, making it impossible to choose between them based solely on grammar.\n\n**Remaining tasks:** None — this was a single evaluation request.\n\n**Recommendation:** Either include the \"wiederholte Handlung in der Vergangenheit\" context directly in the prompt text (not as a separate rule title), or restructure the question to test something that has a single unambiguous correct answer based purely on grammar rules.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781981782869-omco4s8f",
+      "timestamp": "2026-06-20T18:56:50.390Z"
+    }
+  ]
+}

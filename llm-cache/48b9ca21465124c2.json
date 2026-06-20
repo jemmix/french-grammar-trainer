@@ -1,0 +1,33 @@
+{
+  "cacheKey": "48b9ca21465124c2",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-04-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Konjunktion „sondern\"\n\nChoices:\nA. [CORRECT] Ich trinke keinen Tee, sondern ich trinke Kaffee.\nB. [WRONG] Ich trinke keinen Tee, sondern ich Kaffee trinke.\nC. [WRONG] Ich trinke keinen Tee, sondern trinke ich Kaffee.\nD. [WRONG] Ich trinke keinen Tee, ich sondern trinke Kaffee.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456800-fbranm1f"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate German word order rules: B inverts object and verb, C incorrectly uses V2 word order after \"sondern\" (which requires standard SVO order in a full clause), and D misplaces \"sondern\" within the clause instead of in the proper conjunction position.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781978209161-f6esxp3e",
+      "timestamp": "2026-06-20T17:58:14.515Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate German word order rules: B incorrectly uses verb-final position after \"sondern\", C incorrectly uses inversion after \"sondern\" with repeated subject, and D incorrectly places \"sondern\" after the subject instead of at clause-initial position.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781980591230-jb5jop43",
+      "timestamp": "2026-06-20T18:38:22.957Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear word order or placement errors with the conjunction \"sondern\" — B incorrectly uses verb-final order, C wrongly inverts subject and verb after a coordinating conjunction, and D incorrectly places \"sondern\" inside the clause rather than at its beginning.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982914668-nsle9wru",
+      "timestamp": "2026-06-20T19:18:34.332Z"
+    }
+  ]
+}

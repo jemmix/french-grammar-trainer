@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9e4a573f8bf4b813",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-09-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-09 - Konzessivsätze: obwohl (Verb am Ende) vs. trotzdem (Hauptsatz)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — Konzessivsatz mit „trotzdem\"\nChoices:\nA. [CORRECT] Das Auto ist teuer, trotzdem kaufe ich es.\nB. Das Auto ist teuer, trotzdem ich kaufe es.\nC. Das Auto ist teuer, trotzdem ich es kaufe.\nD. Das Auto ist teuer, obwohl ich kaufe es.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781977456804-yj9lsptl"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of validating a German grammar question but did not complete the response.\n\n**Analysis completed:**\nThe question asks which sentence is grammatically correct with \"trotzdem\". The correct answer (A) shows \"trotzdem kaufe ich es\" with verb in second position (Hauptsatz word order). Option C tests the specific confusion of applying \"obwohl\" word order (verb at end) to \"trotzdem\", which is exactly the core distinction the rule is meant to test. Option D also reinforces the \"obwohl\" vs \"trotzdem\" contrast.\n\nVERDICT: ALIGNED\nREASON: The question directly tests the key distinction between \"trotzdem\" (Hauptsatz with verb in second position) and \"obwohl\" (Nebensatz with verb at end), which is exactly what the stated rule covers.\n\nNo remaining tasks — the validation was essentially complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781979463629-h03wdsd0",
+      "timestamp": "2026-06-20T18:20:30.940Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core distinction between \"trotzdem\" (requiring main clause V2 word order, as in the correct answer A) and \"obwohl\" (requiring subordinate clause verb-final word order), with distractors B and C showing the common mistake of treating \"trotzdem\" as a subordinating conjunction and D testing the opposite error with \"obwohl.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982031903-g4e7hvue",
+      "timestamp": "2026-06-20T19:01:46.897Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to validate whether a German grammar question about concessive clauses (\"obwohl\" vs. \"trotzdem\") properly tests the stated rule.\n\nMy assessment:\n\nVERDICT: ALIGNED\nREASON: The question directly tests the core distinction between \"trotzdem\" requiring Hauptsatz word order (verb in position 2, as in choice A) versus the incorrect application of Nebensatz word order (verb at end, as in choices B and C), while also contrasting with the wrong word order for \"obwohl\" in choice D.\n\nNo remaining tasks — this was a single-question validation that I have completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781984461062-apsjjqna",
+      "timestamp": "2026-06-20T19:41:47.117Z"
+    }
+  ]
+}

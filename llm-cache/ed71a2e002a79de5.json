@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ed71a2e002a79de5",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-02-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Topikalisierung des Akkusativobjekts\n\nChoices:\nA. [CORRECT] Einen Apfel gebe ich dem Kind.\nB. [WRONG] Einen Apfel ich dem Kind gebe.\nC. [WRONG] Ich einen Apfel dem Kind gebe.\nD. [WRONG] Gebe ich einen Apfel dem Kind.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456799-dh4qxacv"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate German main clause word order: B and C place the verb incorrectly (not in position 2 after topicalization), and D forms a question rather than demonstrating topicalization.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781977820679-1z9bevm5",
+      "timestamp": "2026-06-20T17:51:50.926Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate German V2 word order: B places the verb in final position instead of second, C uses subordinate clause word order without a subordinating conjunction, and D uses question word order in a declarative sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781980215391-3hga85ba",
+      "timestamp": "2026-06-20T18:31:05.862Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate German V2 word order rules: B and C misplace the finite verb, and D uses interrogative word order without actually topicalizing the accusative object.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982618855-944fpa7d",
+      "timestamp": "2026-06-20T19:11:03.157Z"
+    }
+  ]
+}

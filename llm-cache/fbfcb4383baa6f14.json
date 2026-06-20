@@ -1,0 +1,26 @@
+{
+  "cacheKey": "fbfcb4383baa6f14",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-01-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-01 - Die V2-Regel im Hauptsatz: Finite Verb an Position 2\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie das Verb an der richtigen Stelle ein.\nPhrase: „Heute ___ er seine Oma.\nCorrect Answer: besucht\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781977456798-ju7bn0vl"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests the V2 rule because the student must know that when \"Heute\" occupies position 1, the finite verb \"besucht\" must be placed in position 2, before the subject \"er\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781977659916-ffgin1yh",
+      "timestamp": "2026-06-20T17:48:19.218Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was asked to validate whether a German grammar question about the V2 rule (finite verb at position 2 in main clauses) is properly aligned with that rule. The question presents \"Heute ___ er seine Oma.\" with the correct answer \"besucht.\"\n\n**Analysis completed:**\nVERDICT: MISALIGNED\nREASON: The blank is already positioned at second position in the sentence, so the question only tests verb conjugation (knowing that \"besuchen\" becomes \"besucht\" for \"er\"), not the student's ability to apply the V2 word order rule themselves.\n\n**Remaining tasks:** None — this was a single-question validation task.\n\n**Recommendation:** To properly test the V2 rule, the question should require the student to actively place the verb, such as by providing scrambled elements or a sentence where the verb position is not pre-determined by the blank placement (e.g., rearranging \"Heute / besucht / er / seine Oma\" into correct word order).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781980033961-wxsglr12",
+      "timestamp": "2026-06-20T18:28:48.526Z"
+    }
+  ]
+}

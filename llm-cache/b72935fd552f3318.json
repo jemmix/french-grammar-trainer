@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b72935fd552f3318",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-01-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-01 - Die V2-Regel im Hauptsatz: Finite Verb an Position 2\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — V2-Regel im Hauptsatz\nChoices:\nA. [CORRECT] Die Kinder spielen im Garten.\nB. Die Kinder im Garten spielen.\nC. Die Kinder im spielen Garten.\nD. Spielen die Kinder im Garten.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781977456798-3jnbza0z"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a German grammar question about the V2 rule (finite verb in position 2) in main clauses is properly aligned with the stated rule.\n\nAnalysis completed:\n- The question presents four sentence order options asking which is grammatically correct\n- Option A (correct): \"Die Kinder spielen im Garten.\" - subject in position 1, verb in position 2 (follows V2)\n- Option B: \"Die Kinder im Garten spielen.\" - verb in position 3 (violates V2)\n- Option C: \"Die Kinder im spielen Garten.\" - completely wrong word order (violates V2)\n- Option D: \"Spielen die Kinder im Garten.\" - this is a question form with verb-first order, which is grammatically correct but tests a different pattern\n\nThe question does test the V2 rule since distinguishing A from B and C requires knowing the verb must be in position 2.\n\nRemaining tasks: None - the validation was straightforward.\n\nRecommendation: The verdict would be ALIGNED, though there's a minor concern that option D is also grammatically correct (as a question), which could confuse some learners. A stricter question might replace D with another V2 violation.\n\nVERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that in a declarative main clause the finite verb must occupy position 2, with options B and C clearly violating this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781977462830-s4eousvl",
+      "timestamp": "2026-06-20T17:46:22.023Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: Option D (\"Spielen die Kinder im Garten?\") is also a grammatically correct German sentence as a yes/no question, making the question ambiguous since it doesn't specify it's testing declarative sentence word order only; properly excluding D requires knowing the V1 rule for questions, not just the V2 rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781979924610-zxfrbg0d",
+      "timestamp": "2026-06-20T18:32:00.339Z"
+    }
+  ]
+}

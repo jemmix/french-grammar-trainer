@@ -1,0 +1,26 @@
+{
+  "cacheKey": "962d86aba894946b",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-08-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — einmalige Handlung in der Vergangenheit\n\nChoices:\nA. [CORRECT] Als ich die Nachricht hörte, war ich sehr überrascht.\nB. [WRONG] Wenn ich die Nachricht hörte, war ich sehr überrascht.\nC. [WRONG] Als ich hörte die Nachricht, war ich sehr überrascht.\nD. [WRONG] Als ich die Nachricht hörte, ich war sehr überrascht.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456803-6giwxodj"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a German grammar MCQ are indeed incorrect. The question asks for the grammatically correct sentence expressing a one-time action in the past.\n\nAnalysis completed:\n- B uses \"Wenn\" instead of \"Als\" — \"wenn\" is for repeated/conditional actions, not single past events\n- C has incorrect word order — the verb \"hörte\" should be at the end of the subordinate clause\n- D is missing subject-verb inversion in the main clause after the subordinate clause\n\nAll three wrong answers are genuinely incorrect.\n\nTRUE||All wrong answers contain clear grammar errors: B uses the wrong conjunction for a one-time past event, C violates subordinate clause word order, and D lacks required subject-verb inversion.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781979191493-e9w83tec",
+      "timestamp": "2026-06-20T18:14:42.786Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses \"wenn\" instead of \"als\" for a single past event, C has incorrect subordinate clause word order with the verb not in final position, and D lacks subject-verb inversion in the main clause following a subordinate clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781981757332-dzdskef0",
+      "timestamp": "2026-06-20T18:56:30.274Z"
+    }
+  ]
+}

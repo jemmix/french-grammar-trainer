@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d0f67271660ef6c7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-07-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — weil-Satz\n\nChoices:\nA. [CORRECT] Er kann nicht kommen, weil er krank ist.\nB. [WRONG] Er kann nicht kommen, weil er ist krank.\nC. [WRONG] Er kann nicht kommen, weil ist er krank.\nD. [WRONG] Er kann nicht kommen, er weil krank ist.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456802-xbwcotot"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate German word order rules for weil-clauses: B places the verb before the adjective, C inverts subject and verb, and D misplaces the conjunction entirely.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781978833722-p6h4w5r5",
+      "timestamp": "2026-06-20T18:09:23.478Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate standard German subordinate clause word order rules for weil-Sätze.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781981481027-wowbuq81",
+      "timestamp": "2026-06-20T18:52:07.569Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate German subordinate clause word order rules: B and C place the verb incorrectly within the weil-clause, and D misplaces the conjunction \"weil\" itself.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781983980115-8hbmh623",
+      "timestamp": "2026-06-20T19:34:20.471Z"
+    }
+  ]
+}

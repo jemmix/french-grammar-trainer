@@ -1,0 +1,33 @@
+{
+  "cacheKey": "149ce440366e729e",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-10-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Inversion nach Präpositionalgruppe\n\nChoices:\nA. [CORRECT] Aus diesem Grund hat sie den Job gewechselt.\nB. [WRONG] Aus diesem Grund sie hat den Job gewechselt.\nC. [WRONG] Aus diesem Grund sie den Job gewechselt hat.\nD. [WRONG] Aus diesem Grund hat den Job sie gewechselt.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456805-pt3539j4"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate German word order rules for main clauses starting with a prepositional phrase: B and C lack the required verb-subject inversion, and D incorrectly places the object before the subject after the inverted verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781979755942-zqb8eowg",
+      "timestamp": "2026-06-20T18:24:12.870Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate German V2 word order rules: B places the subject before the verb, C uses subordinate clause word order without a subordinating conjunction, and D incorrectly places the object before the subject after inversion.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982312949-kbmr3xkv",
+      "timestamp": "2026-06-20T19:07:17.621Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate standard German V2 word order rules for main clauses beginning with a prepositional phrase.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781984736294-hz8we0hw",
+      "timestamp": "2026-06-20T19:46:19.372Z"
+    }
+  ]
+}

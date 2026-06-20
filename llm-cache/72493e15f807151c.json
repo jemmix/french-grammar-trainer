@@ -1,0 +1,33 @@
+{
+  "cacheKey": "72493e15f807151c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-02-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Grundstellung Subjekt-Verb-Objekt\n\nChoices:\nA. [CORRECT] Ich sehe den Hund.\nB. [WRONG] Ich den Hund sehe.\nC. [WRONG] Den Hund ich sehe.\nD. [WRONG] Sehe ich den Hund.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456799-dpz8swcp"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work:** I was asked to verify that the wrong answers (B, C, D) in a German grammar MCQ about Grundstellung (Subject-Verb-Object word order) are indeed incorrect.\n\n**Analysis completed:**\n- B: \"Ich den Hund sehe.\" — Incorrect; violates V2 rule and SVO order (places verb at end)\n- C: \"Den Hund ich sehe.\" — Incorrect; OSV order, not Grundstellung\n- D: \"Sehe ich den Hund.\" — While this is valid German inversion/question word order, it does NOT satisfy the specific requirement of \"Grundstellung Subjekt-Verb-Objekt\" stated in the question\n\n**Remaining tasks:** None — the analysis is complete.\n\n**Result:** TRUE||All wrong answers violate the specified Grundstellung (SVO) word order requirement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781977690117-e1uqhysw",
+      "timestamp": "2026-06-20T17:49:27.146Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of verifying wrong answers for a German grammar MCQ about Grundstellung (basic SVO word order). I analyzed all three wrong answers (B, C, D) and determined they all correctly violate the SVO constraint specified in the question prompt.\n\nThe verification result is:\nTRUE||All wrong answers deviate from the required Grundstellung (SVO) word order specified in the question.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781980092795-zda6pynf",
+      "timestamp": "2026-06-20T18:29:23.162Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the Grundstellung SVO word order explicitly required by the question: B is SOV, C is OVS, and D is VSO (inversion), none of which match the specified Subjekt-Verb-Objekt pattern.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982504303-k8djg3mu",
+      "timestamp": "2026-06-20T19:10:36.385Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "815ec2b70f9216a3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-09-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Konzessivsatz mit „trotzdem\"\n\nChoices:\nA. [CORRECT] Das Auto ist teuer, trotzdem kaufe ich es.\nB. [WRONG] Das Auto ist teuer, trotzdem ich kaufe es.\nC. [WRONG] Das Auto ist teuer, trotzdem ich es kaufe.\nD. [WRONG] Das Auto ist teuer, obwohl ich kaufe es.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456804-kil2l3ux"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate German word order rules: B and C incorrectly use subordinating clause word order with \"trotzdem\" (a conjunctive adverb requiring main clause order), and D incorrectly places the verb before the object in a subordinate clause introduced by \"obwohl\" where the conjugated verb must be final.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781979457838-tutx2emv",
+      "timestamp": "2026-06-20T18:20:19.772Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B and C incorrectly use subject-verb order after \"trotzdem\" (which requires V2 word order with the verb immediately following), and D fails to place the verb at the end of the clause after the subordinating conjunction \"obwohl\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982025155-7k93kd9a",
+      "timestamp": "2026-06-20T19:01:41.207Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B and C incorrectly place the subject before the verb after \"trotzdem\" (which requires V2 word order), and D incorrectly places the verb before the object after the subordinating conjunction \"obwohl\" (which requires verb-final order).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781984460871-ofr7zadr",
+      "timestamp": "2026-06-20T19:41:47.065Z"
+    }
+  ]
+}

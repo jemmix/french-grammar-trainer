@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b6aaffc5ce3d939c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-03-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — W-Frage\n\nChoices:\nA. [CORRECT] Warum lernst du Deutsch?\nB. [WRONG] Warum du lernst Deutsch?\nC. [WRONG] Du lernst warum Deutsch?\nD. [WRONG] Lernst du warum Deutsch?\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456800-mubyhd81"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate German W-question word order: B uses subordinate clause order, C and D misplace the question word \"warum.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781978044973-q8etvcym",
+      "timestamp": "2026-06-20T17:55:20.099Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate German W-question word order rules: B places the subject before the verb, C places the W-word mid-sentence instead of first position, and D starts with the verb like a yes/no question but includes a W-word incorrectly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781980412156-5sa5e47f",
+      "timestamp": "2026-06-20T18:34:17.138Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate German W-question word order rules (the question word must be in first position and the verb in second position).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982774154-1hlwvibl",
+      "timestamp": "2026-06-20T19:13:45.196Z"
+    }
+  ]
+}

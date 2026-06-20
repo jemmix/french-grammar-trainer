@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b86ee6185031fc43",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-09-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-09 - Konzessivsätze: obwohl (Verb am Ende) vs. trotzdem (Hauptsatz)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — Konzessivsatz mit „obwohl\"\nChoices:\nA. [CORRECT] Obwohl die Prüfung schwer war, hat er bestanden.\nB. Trotzdem die Prüfung schwer war, hat er bestanden.\nC. Obwohl die Prüfung war schwer, hat er bestanden.\nD. Obwohl die Prüfung schwer war, er hat bestanden.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781977456804-6ygtsd7p"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between \"obwohl\" (subordinating conjunction requiring verb-final position in the Nebensatz) and \"trotzdem\" (adverb used in a Hauptsatz), with distractors targeting exactly the errors learners make with these two concessive markers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781979469981-52zm35r2",
+      "timestamp": "2026-06-20T18:23:04.644Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between \"obwohl\" (requiring verb-final position in the subordinate clause) and \"trotzdem\" (requiring main clause word order), which is the exact grammar point the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982269707-a7gzdoq3",
+      "timestamp": "2026-06-20T19:06:02.957Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between \"obwohl\" (subordinate clause requiring verb-final position) and \"trotzdem\" (main clause word order), with each distractor targeting a specific word-order error unique to these konzessive constructions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781984699942-hso6gqml",
+      "timestamp": "2026-06-20T19:45:26.793Z"
+    }
+  ]
+}

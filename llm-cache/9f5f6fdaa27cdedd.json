@@ -1,0 +1,33 @@
+{
+  "cacheKey": "9f5f6fdaa27cdedd",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-07-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — weil-Satz mit Negation\n\nChoices:\nA. [CORRECT] Ich esse nicht viel, weil ich keinen Hunger habe.\nB. [WRONG] Ich esse nicht viel, weil ich habe keinen Hunger.\nC. [WRONG] Ich esse nicht viel, weil habe ich keinen Hunger.\nD. [WRONG] Ich esse nicht viel, ich weil keinen Hunger habe.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456803-mu9emmv5"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate German subordinate clause word order rules: B places the verb before the object instead of clause-final, C uses main-clause word order in a weil-Satz, and D produces a nonsensical construction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781978962601-u35xlhq9",
+      "timestamp": "2026-06-20T18:10:45.599Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B has wrong word order (verb not at end after weil), C inappropriately uses V2 word order in a subordinate clause, and D is malformed with \"ich weil\" making no grammatical sense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781981540953-a31oo82h",
+      "timestamp": "2026-06-20T18:53:23.824Z"
+    },
+    {
+      "raw": "TRUE||B violates verb-final word order in weil-clauses (V2 instead); C incorrectly inverts subject and verb in a subordinate clause; D misplaces weil as an infix, which is not grammatically possible.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781984084455-oxbunr99",
+      "timestamp": "2026-06-20T19:37:02.707Z"
+    }
+  ]
+}

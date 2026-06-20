@@ -1,0 +1,33 @@
+{
+  "cacheKey": "245d7ae9de9c1331",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-04 - Koordinierende Konjunktionen: und, oder, aber, denn, sondern (Position 0)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — Konjunktion „sondern\"\nChoices:\nA. [CORRECT] Ich trinke keinen Tee, sondern ich trinke Kaffee.\nB. Ich trinke keinen Tee, sondern ich Kaffee trinke.\nC. Ich trinke keinen Tee, sondern trinke ich Kaffee.\nD. Ich trinke keinen Tee, ich sondern trinke Kaffee.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781977456800-ilh6wbld"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"sondern\" is a coordinating conjunction at Position 0, requiring standard subject-verb word order in the following clause rather than verb-subject inversion (which would indicate a subordinating conjunction).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781978210963-5va0xnio",
+      "timestamp": "2026-06-20T17:58:15.811Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests knowledge that \"sondern\" is a position-0 coordinating conjunction requiring normal subject-verb order, with distractors targeting common errors (subordinating conjunction word order, incorrect inversion, and misplacement).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781980592976-sjha6wxy",
+      "timestamp": "2026-06-20T18:38:14.696Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests that \"sondern\" occupies position 0 and requires normal subject-verb word order (not V2 or verb-final), which is the core of the stated rule about coordinating conjunctions at position 0.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982906028-46jjy4wh",
+      "timestamp": "2026-06-20T19:17:33.899Z"
+    }
+  ]
+}

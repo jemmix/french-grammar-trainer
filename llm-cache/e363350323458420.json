@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e363350323458420",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-09-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Konzessivsatz mit „obwohl\"\n\nChoices:\nA. [CORRECT] Obwohl die Prüfung schwer war, hat er bestanden.\nB. [WRONG] Trotzdem die Prüfung schwer war, hat er bestanden.\nC. [WRONG] Obwohl die Prüfung war schwer, hat er bestanden.\nD. [WRONG] Obwohl die Prüfung schwer war, er hat bestanden.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456804-msby8d9p"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B misuses \"trotzdem\" with subordinate clause word order, C places the verb in wrong position within the \"obwohl\" clause, and D fails to apply verb-subject inversion in the main clause following a subordinate clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781979466627-s10hkju1",
+      "timestamp": "2026-06-20T18:20:55.323Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses Nebensatz word order with \"trotzdem\" which requires Hauptsatz word order, C places the verb in second position instead of final position in the \"obwohl\" clause, and D fails to apply subject-verb inversion in the main clause following a subordinate clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982072927-b1roccpk",
+      "timestamp": "2026-06-20T19:03:54.781Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished: I analyzed the German grammar question about concessive clauses with \"obwohl\" and evaluated all three wrong answers (B, C, D).\n\nMy verdict: TRUE||All wrong answers contain clear grammar errors: B incorrectly uses subordinate word order with \"trotzdem\" (which requires main clause word order); C places the verb \"war\" before the adjective instead of at the end of the subordinate clause; D fails to invert subject and verb in the main clause after a subordinate clause.\n\nNo remaining tasks — the verification was completed in my analysis.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781984508069-qlionkvx",
+      "timestamp": "2026-06-20T19:44:25.995Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "1645d99e859706e9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-01-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-01 - Die V2-Regel im Hauptsatz: Finite Verb an Position 2\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — V2-Regel im Hauptsatz\nChoices:\nA. [CORRECT] Mein Bruder wohnt in Berlin.\nB. Mein Bruder in Berlin wohnt.\nC. Mein wohnt Bruder in Berlin.\nD. Wohnt mein Bruder in Berlin.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781977456798-yi6kidwv"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: Option D (\"Wohnt mein Bruder in Berlin?\") is actually a grammatically correct German yes/no question using verb-first word order, so presenting it as incorrect conflates two different rules (V2 for statements vs. V1 for questions) rather than cleanly testing the V2 rule alone.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781977527197-q6zpxc10",
+      "timestamp": "2026-06-20T17:47:11.275Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires identifying the correct position of the finite verb in a declarative main clause, which is exactly what the V2 rule specifies — options B and C violate verb placement, while A correctly places \"wohnt\" at position 2.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781979954575-fuini3n1",
+      "timestamp": "2026-06-20T18:27:47.217Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7dec0cda62e46aba",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-05-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Nebensatz mit „dass\"\n\nChoices:\nA. [CORRECT] Sie sagt, dass sie krank ist.\nB. [WRONG] Sie sagt, dass sie ist krank.\nC. [WRONG] Sie sagt, dass ist sie krank.\nD. [WRONG] Sie sagt, sie dass krank ist.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456801-rsxnej2s"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate German word order rules for \"dass\" subordinate clauses: B places the verb before the adjective, C incorrectly positions both verb and subject, and D misplaces the conjunction \"dass\" within the clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781978439667-jyw2bsnr",
+      "timestamp": "2026-06-20T18:01:29.462Z"
+    },
+    {
+      "raw": "TRUE||B has incorrect word order (verb not at end of dass-clause), C incorrectly applies V2 word order to a subordinate clause, and D places \"dass\" in the wrong position within the clause structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781980842818-h5iwse0m",
+      "timestamp": "2026-06-20T18:42:03.483Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate German \"dass\" clause word order: B places the verb before the predicate adjective, C places the verb immediately after \"dass\" instead of at clause end, and D misplaces \"dass\" after the subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781983114334-oc0qpidg",
+      "timestamp": "2026-06-20T19:21:28.652Z"
+    }
+  ]
+}

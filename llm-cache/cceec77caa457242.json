@@ -1,0 +1,33 @@
+{
+  "cacheKey": "cceec77caa457242",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-03-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Ja/Nein-Frage mit Modalverb\n\nChoices:\nA. [CORRECT] Kannst du mir helfen?\nB. [WRONG] Du kannst mir helfen?\nC. [WRONG] Mir du kannst helfen?\nD. [WRONG] Du mir helfen kannst?\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456800-74eglmvu"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was tasked with verifying that wrong answers B, C, and D in a German grammar MCQ about yes/no questions with modal verbs are indeed incorrect.\n\nAnalysis completed:\n- B. \"Du kannst mir helfen?\" - Uses statement word order instead of verb-subject inversion. While common in informal spoken German as a \"Statementfrage,\" it does not follow the standard Ja/Nein-Frage pattern with modal verbs that the question is testing.\n- C. \"Mir du kannst helfen?\" - Incorrect word order; dative object \"mir\" improperly placed before subject.\n- D. \"Du mir helfen kannst?\" - Incorrect word order; verb \"kannst\" in final position violates V2 rule.\n\nRemaining tasks: None - the analysis was complete.\n\nRecommendation: The verdict should be TRUE||All wrong answers fail to follow the standard Ja/Nein-Frage word order (verb-subject inversion) required for questions with modal verbs.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781978062925-5w8sw7ai",
+      "timestamp": "2026-06-20T17:56:43.354Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers deviate from the standard verb-subject inversion required for Ja/Nein-Fragen in German.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781980488449-941lum3w",
+      "timestamp": "2026-06-20T18:36:07.185Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate standard German word order rules for yes/no questions, which require verb-first position; B uses declarative word order (acceptable only in informal speech, not standard grammar), C places the verb in third position, and D places the finite verb in fourth position.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982830811-l00hpx8n",
+      "timestamp": "2026-06-20T19:14:45.891Z"
+    }
+  ]
+}

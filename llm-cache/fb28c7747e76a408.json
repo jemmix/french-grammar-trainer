@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fb28c7747e76a408",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-01-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-01 - Die V2-Regel im Hauptsatz: Finite Verb an Position 2\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — V2-Regel im Hauptsatz\nChoices:\nA. [CORRECT] Ich schreibe meiner Mutter einen Brief.\nB. Ich meiner Mutter einen Brief schreibe.\nC. Ich meiner Mutter schreibe einen Brief.\nD. Schreibe ich meiner Mutter einen Brief.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781977456798-x20edb4b"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the V2 rule by presenting options where the verb \"schreibe\" is in different positions (2, 4, 3, and 1), requiring the student to identify that only position 2 is correct in a declarative main clause starting with the subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781977642979-67ueihrc",
+      "timestamp": "2026-06-20T17:48:21.668Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\n\nI was asked to validate whether a German grammar question properly tests the stated V2 rule (finite verb in second position in main clauses). I analyzed the question and its choices to determine alignment.\n\n## Analysis Completed\n\nThe question asks \"Welcher Satz ist grammatikalisch richtig?\" with four choices showing different word orders:\n- A (correct): \"Ich schreibe meiner Mutter einen Brief.\" — verb at position 2 ✓\n- B: \"Ich meiner Mutter einen Brief schreibe.\" — verb at position 4 ✗\n- C: \"Ich meiner Mutter schreibe einen Brief.\" — verb at position 3 ✗\n- D: \"Schreibe ich meiner Mutter einen Brief.\" — question form (V1, not V2)\n\n## Verdict\n\nVERDICT: ALIGNED\nREASON: The question directly tests whether students know that in a declarative main clause, the finite verb must occupy position 2, with the distractors specifically showing incorrect verb placements at positions 3 and 4.\n\n## Remaining Tasks\n\nNone — this was a single-question validation task that has been completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781980036305-xoopxbxz",
+      "timestamp": "2026-06-20T18:28:57.128Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of what was accomplished:**\nI was asked to validate whether a German grammar question about the V2 rule (finite verb at position 2 in main clauses) actually tests that rule. I analyzed the question and was about to provide my verdict.\n\n**Analysis completed:**\n- Option A: \"Ich schreibe meiner Mutter einen Brief.\" - Subject at position 1, verb at position 2 (correct V2)\n- Option B: Verb at position 4 (violates V2)\n- Option C: Verb at position 3 (violates V2)\n- Option D: Verb at position 1 (question format, not declarative V2)\n\n**Verdict that would have been provided:**\nVERDICT: ALIGNED\nREASON: The question directly tests whether the student can identify the correct V2 word order in a declarative main clause, where only option A places the finite verb \"schreibe\" in position 2 after the subject \"Ich.\"\n\n**Remaining tasks:**\nNone - this was a single validation task.\n\n**Recommendations:**\nNo further action needed on this specific validation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982493557-3o00xl9s",
+      "timestamp": "2026-06-20T19:09:04.640Z"
+    }
+  ]
+}

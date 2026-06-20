@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4b1fb8fb78450d19",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-05-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Nebensatz mit „dass\"\n\nChoices:\nA. [CORRECT] Ich glaube, dass er heute kommt.\nB. [WRONG] Ich glaube, dass er kommt heute.\nC. [WRONG] Ich glaube, dass kommt er heute.\nD. [WRONG] Ich glaube, er dass heute kommt.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456801-agw05uzi"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate German word order rules for \"dass\" subordinate clauses, where the conjugated verb must appear at the very end of the clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781978368434-214hxaqg",
+      "timestamp": "2026-06-20T18:00:35.641Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the word order rules for dass-subordinate clauses (verb must be in final position).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781980756439-1o8eu6rs",
+      "timestamp": "2026-06-20T18:40:49.944Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate German subordinate clause word order rules for \"dass\" clauses: B places the adverb after the verb, C uses verb-first position (question word order), and D misplaces the conjunction after the subject.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781983085100-1zo6ivzx",
+      "timestamp": "2026-06-20T19:19:08.338Z"
+    }
+  ]
+}

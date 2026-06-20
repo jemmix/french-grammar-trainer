@@ -1,0 +1,26 @@
+{
+  "cacheKey": "46f8f722e60ce5ff",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "07-08-006",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Welcher Satz ist grammatikalisch richtig? — einmalige Handlung in der Vergangenheit\nChoices:\nA. Als ich die Nachricht hörte, war ich sehr überrascht.\nB. Wenn ich die Nachricht hörte, war ich sehr überrascht.\nC. Als ich hörte die Nachricht, war ich sehr überrascht.\nD. Als ich die Nachricht hörte, ich war sehr überrascht.\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1781977456803-qcm5pdxo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Without the \"einmalige Handlung in der Vergangenheit\" context, both options A and B are grammatically valid German sentences (als for single past events, wenn for repeated/conditional contexts), making it impossible for a learner to determine which answer is expected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781979213051-avctgbpw",
+      "timestamp": "2026-06-20T18:14:38.518Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a German grammar question for clarity and unambiguity. The question asks \"Welcher Satz ist grammatikalisch richtig?\" with an added context \"— einmalige Handlung in der Vergangenheit\" that appears to be from the rule title.\n\nVERDICT: AMBIGUOUS\nREASON: Without the \"einmalige Handlung in der Vergangenheit\" context (which appears to be the rule title that learners supposedly haven't seen), the generic prompt \"Welcher Satz ist grammatikalisch richtig?\" doesn't signal that the question is specifically testing the als/wenn distinction for single vs. repeated past events, making option B (\"Wenn ich die Nachricht hörte...\") seem potentially correct to learners who don't know the specific grammar rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781981705985-90epl9ri",
+      "timestamp": "2026-06-20T18:55:59.726Z"
+    }
+  ]
+}

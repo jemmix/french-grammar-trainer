@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0ae992e1ac7558e3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-02-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Topikalisierung des Objekts\n\nChoices:\nA. [CORRECT] Den Hund sehe ich.\nB. [WRONG] Den Hund ich sehe.\nC. [WRONG] Ich den Hund sehe.\nD. [WRONG] Sehe ich den Hund.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456799-ozc47lv4"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers violate German word order rules: B and C break the V2 (verb-second) rule, and D uses question word order instead of demonstrating topicalization of the object as specified.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781977701669-y6mq4uuk",
+      "timestamp": "2026-06-20T17:49:42.434Z"
+    },
+    {
+      "raw": "TRUE||B violates the V2 rule by placing the verb in third position; C violates the V2 rule by placing the verb after both subject and object; D uses question word order but with statement punctuation, making it grammatically invalid.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781980101464-6s11xf0t",
+      "timestamp": "2026-06-20T18:29:39.374Z"
+    },
+    {
+      "raw": "TRUE||B violates the V2 rule by placing the subject between the topicalized object and the verb; C violates standard SVO word order by inserting the object before the verb; D uses question word order rather than declarative topicalization.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982506490-m7stzxna",
+      "timestamp": "2026-06-20T19:10:35.247Z"
+    }
+  ]
+}

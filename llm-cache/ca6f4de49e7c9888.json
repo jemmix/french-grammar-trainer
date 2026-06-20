@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ca6f4de49e7c9888",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-10-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Inversion nach Zeitangabe\n\nChoices:\nA. [CORRECT] Jeden Morgen trinkt sie einen Kaffee.\nB. [WRONG] Jeden Morgen sie trinkt einen Kaffee.\nC. [WRONG] Jeden Morgen sie einen Kaffee trinkt.\nD. [WRONG] Jeden Morgen trinkt einen Kaffee sie.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456805-yxf9jtq2"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to verify that the wrong answers (B, C, D) in a German grammar multiple choice question about inversion after time expressions are indeed incorrect.\n\nAnalysis completed:\n- B: \"Jeden Morgen sie trinkt einen Kaffee.\" — Incorrect, violates V2 word order (subject in position 2 instead of verb)\n- C: \"Jeden Morgen sie einen Kaffee trinkt.\" — Incorrect, verb at end instead of position 2\n- D: \"Jeden Morgen trinkt einen Kaffee sie.\" — Incorrect, subject displaced to final position\n\nVerdict: TRUE||All wrong answers violate German V2 word order rules after a fronted time expression.\n\nNo remaining tasks — the verification was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781979729892-mk3d46ha",
+      "timestamp": "2026-06-20T18:23:04.843Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate German V2 word order: B and C fail to place the verb in second position after the fronted time expression, and D incorrectly places the subject after the object rather than immediately after the verb.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982270021-dgf8e195",
+      "timestamp": "2026-06-20T19:07:08.893Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate German word order rules: B lacks verb-subject inversion after the fronted time phrase, C incorrectly places the verb at the end of a main clause, and D puts the object before the subject in an inverted sentence structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781984724757-vo67kw4b",
+      "timestamp": "2026-06-20T19:45:45.673Z"
+    }
+  ]
+}

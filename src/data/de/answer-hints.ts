@@ -117,6 +117,25 @@ export const answerHints: Record<string, string> = {
   "wohnt": "wohnen",
   "Als": "Konjunktion für einmalige Vergangenheit",
   "Wenn": "Konjunktion für Gegenwart/Zukunft",
+
+  // Section 08 additions
+  "die": "bestimmter Artikel",
+  "das": "bestimmter Artikel",
+  "des": "bestimmter Artikel",
+  "auf": "Präposition",
+  "von": "Präposition",
+  "zu": "Präposition",
+  "um": "Präposition",
+  "am": "Präposition",
+  "im": "Präposition",
+  "zum": "Präposition",
+  "beim": "Präposition",
+  "vom": "Präposition",
+  "durch": "Präposition",
+  "seit": "Präposition",
+  "trotz": "Präposition",
+  "Seit": "Präposition",
+  "Trotz": "Präposition",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;

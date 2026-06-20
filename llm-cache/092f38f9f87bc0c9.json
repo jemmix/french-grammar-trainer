@@ -1,0 +1,33 @@
+{
+  "cacheKey": "092f38f9f87bc0c9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-08-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-08 - Temporale Nebensätze: wenn vs. als vs. während\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — Bedingung in der Gegenwart\nChoices:\nA. [CORRECT] Wenn es regnet, bleiben wir zu Hause.\nB. Als es regnet, bleiben wir zu Hause.\nC. Wenn es regnet, wir bleiben zu Hause.\nD. Wenn regnet es, bleiben wir zu Hause.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781977456803-hhwjeqsp"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing \"wenn\" (correct for present/future conditions) from \"als\" (only for single past events), which is the core of the stated rule, even though two distractors test word order instead.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781979037360-m53g39ln",
+      "timestamp": "2026-06-20T18:12:51.042Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The question tests conditional \"wenn\" (if/whenever) for present-time conditions, not the temporal distinction between \"wenn,\" \"als,\" and \"während\" for narrating past vs. present events — the prompt explicitly frames it as \"Bedingung\" (condition), which is a different grammar concept from the stated temporal clause rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781981602086-yc2x997f",
+      "timestamp": "2026-06-20T18:54:41.776Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI have analyzed the validation request but cannot provide a complete formatted response due to the step limit.\n\nSummary of analysis:\n- The question is labeled as testing \"wenn vs. als vs. während\" (temporal subordinate clauses)\n- However, the prompt explicitly states \"Bedingung in der Gegenwart\" (condition in the present)\n- This means the question is testing conditional \"wenn\", not temporal \"wenn vs. als vs. während\"\n- Additionally, choices C and D test word order in subordinate clauses, not conjunction selection\n\nMy verdict would be:\nVERDICT: MISALIGNED\nREASON: The question explicitly frames the sentence as a conditional (\"Bedingung\"), not a temporal clause, and two distractors test word order rather than the conjunction distinction between wenn, als, and während.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781984186914-y5f0r7te",
+      "timestamp": "2026-06-20T19:37:43.727Z"
+    }
+  ]
+}

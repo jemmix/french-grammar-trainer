@@ -1,0 +1,33 @@
+{
+  "cacheKey": "032fa97ec608ed07",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-03-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Ja/Nein-Frage\n\nChoices:\nA. [CORRECT] Kommst du heute Abend?\nB. [WRONG] Du kommst heute Abend?\nC. [WRONG] Heute Abend du kommst?\nD. [WRONG] Du heute Abend kommst?\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781977456799-1gc6q0hx"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a German grammar verification task for the question \"Welcher Satz ist grammatikalisch richtig? — Ja/Nein-Frage\" with choices about forming yes/no questions in German.\n\nMy analysis:\n- Choice B \"Du kommst heute Abend?\" is marked WRONG but is actually acceptable as an \"Intonationsfrage\" (intonation question) in spoken/informal German, which is a recognized grammatical structure\n- Choices C and D are genuinely incorrect due to improper word order\n\nThe intended verdict was: FALSE|B|B is a valid intonation question in informal/spoken German, recognized by German linguistics as a legitimate question form.\n\nRemaining tasks: None for this specific verification item.\n\nRecommendation: If this question is used in the app, either accept B as also correct (making it a multiple-correct-answer question) or add explicit wording like \"im Standarddeutsch\" or \"in der Schriftsprache\" to disambiguate the register expectation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781977996030-pjez52xz",
+      "timestamp": "2026-06-20T17:54:36.485Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the verb-subject inversion required for a Ja/Nein-Frage in German grammar; B is a declarative word order (even if used colloquially with rising intonation, it is not the grammatical Ja/Nein-Frage form), and C and D have non-standard word orders.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781980394999-izw8ucmh",
+      "timestamp": "2026-06-20T18:34:27.409Z"
+    },
+    {
+      "raw": "FALSE|B|B \"Du kommst heute Abend?\" is a valid Intonationsfrage (intonation question) in German, which is a grammatically legitimate way to form yes/no questions in spoken German.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982774745-ksfygidw",
+      "timestamp": "2026-06-20T19:14:14.923Z"
+    }
+  ]
+}

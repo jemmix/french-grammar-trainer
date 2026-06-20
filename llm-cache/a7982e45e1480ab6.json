@@ -1,0 +1,47 @@
+{
+  "cacheKey": "a7982e45e1480ab6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-09-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-09 - Konzessivsätze: obwohl (Verb am Ende) vs. trotzdem (Hauptsatz)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das passende Wort.\nPhrase: „Das Wetter war schlecht, ___ haben wir den Ausflug gemacht.\nCorrect Answer: trotzdem\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781977456804-sice0dp5"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing that the given clause structure has main clause word order (verb in second position after the blank), which only works with \"trotzdem\" and not with \"obwohl\" (which would require verb-final word order).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781979629051-pk7cmsm7",
+      "timestamp": "2026-06-20T18:21:15.288Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done so far:**\nI was asked to validate a single German grammar question to determine if it aligns with the stated rule about concessive clauses (Konzessivsätze) contrasting \"obwohl\" (verb at end) vs. \"trotzdem\" (main clause word order).\n\n**My assessment:**\nVERDICT: MISALIGNED\nREASON: The question can be answered correctly by simply knowing that \"trotzdem\" means \"nevertheless\" and fits semantically, without needing to understand the key distinction the rule is supposed to test—namely, that \"obwohl\" requires verb-final position while \"trotzdem\" uses main clause word order. The word order is already set up correctly in the sentence; the student never has to apply knowledge of verb positioning.\n\n**Remaining tasks:**\n- None beyond this single validation, which is now complete.\n\n**Recommendations for next steps:**\nTo properly test this rule, the question should force the student to apply word order knowledge—for example, by presenting multiple-choice options that contrast the two structures (e.g., \"obwohl wir den Ausflug gemacht haben\" vs. \"trotzdem haben wir den Ausflug gemacht\"), or by asking the student to produce the full clause with correct verb placement.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781982093532-k4vxh421",
+      "timestamp": "2026-06-20T19:04:23.661Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"trotzdem\" connects two main clauses (keeping verb in second position), whereas \"obwohl\" would require a subordinate clause structure with the verb at the end, which is the core distinction this rule tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781984539031-soeau4ck",
+      "timestamp": "2026-06-20T19:44:25.477Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that \"trotzdem\" maintains Hauptsatz word order (verb in position 2, here inverted as \"haben wir\"), whereas \"obwohl\" would create a Nebensatz requiring the verb at the end (\"obwohl wir den Ausflug gemacht haben\"), making it incompatible with the given structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781986521788-d3xqugxa",
+      "timestamp": "2026-06-20T20:16:00.817Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI analyzed the German grammar question to determine if it properly tests the stated rule about concessive clauses (Konzessivsätze): the distinction between \"obwohl\" (subordinate clause with verb-final position) vs. \"trotzdem\" (main clause with normal word order).\n\n## Verdict and Reason\nVERDICT: ALIGNED\nREASON: The question tests the key distinction that \"trotzdem\" is used with main clause word order (verb in position 2: \"haben wir den Ausflug gemacht\") while \"obwohl\" would require the verb to be at the end of a subordinate clause (\"obwohl wir den Ausflug gemacht haben\").\n\n## Remaining Tasks\nNone — this was a single validation task that has been completed.\n\n## Recommendations\nThe question is properly aligned with the rule and can be kept as-is.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781989699510-3k57dyg1",
+      "timestamp": "2026-06-20T21:09:46.847Z"
+    }
+  ]
+}

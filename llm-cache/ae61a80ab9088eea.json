@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ae61a80ab9088eea",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-09-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-09 - Konzessivsätze: obwohl (Verb am Ende) vs. trotzdem (Hauptsatz)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — Konzessivsatz mit „trotzdem\"\nChoices:\nA. [CORRECT] Der Film war langweilig, trotzdem habe ich ihn zu Ende geschaut.\nB. Der Film war langweilig, trotzdem ich habe ihn zu Ende geschaut.\nC. Der Film war langweilig, trotzdem ich ihn zu Ende geschaut habe.\nD. Der Film war langweilig, obwohl habe ich ihn zu Ende geschaut.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781977456804-zwi5ttuv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core distinction between \"trotzdem\" (requiring main clause V2 word order, as in the correct answer A) and \"obwohl\" (requiring verb-final subordinate clause order), with distractors B and C showing common errors of misapplying subordinate-clause word order to \"trotzdem\" and D showing the reverse error with \"obwohl\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781979408838-92ynymrg",
+      "timestamp": "2026-06-20T18:17:43.625Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between \"trotzdem\" requiring main clause word order (verb in position 2) and \"obwohl\" requiring subordinate clause word order (verb at the end), which is exactly the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781981949662-5k8a9dyu",
+      "timestamp": "2026-06-20T19:00:33.786Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core distinction of the rule — that \"trotzdem\" requires main clause word order (verb in position 2, as in choice A) while \"obwohl\" requires subordinate clause word order (verb at the end, incorrectly applied in choice D), and the wrong options explicitly mix up these two patterns.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781984417885-cxbanahu",
+      "timestamp": "2026-06-20T19:41:00.870Z"
+    }
+  ]
+}
