@@ -1,0 +1,26 @@
+{
+  "cacheKey": "bab5a891560219bb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "06-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Adjektivdeklination\n\nRULE BEING TESTED: 06-10 - Attributives vs. prädikatives Adjektiv (der schöne Baum vs. der Baum ist schön)\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie das Adjektiv in der richtigen Form ein.\nPhrase: „Die Musik bleibt ___.\nCorrect Answer: laut\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781976367128-fhy7dezu"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question only requires writing the base form \"laut\" after \"bleibt,\" which a student could answer correctly knowing only the vocabulary word without understanding that predicative adjectives remain undeclined—the rule is not actively challenged since no declined alternative is presented or rejected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781976369135-7zxehizh",
+      "timestamp": "2026-06-20T17:26:48.835Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The sentence \"Die Musik bleibt ___\" only tests that students know \"bleibt\" takes a predicative adjective (no ending), but doesn't require understanding the contrast with attributive usage since there's no noun for the adjective to modify attributively.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781976408836-toth7p3f",
+      "timestamp": "2026-06-20T17:27:26.314Z"
+    }
+  ]
+}
