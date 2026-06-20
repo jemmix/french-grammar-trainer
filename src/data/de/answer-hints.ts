@@ -158,6 +158,36 @@ export const answerHints: Record<string, string> = {
   "zu sprechen": "sprechen",
   "oder": "Konjunktion",
   "desto": "Konjunktion",
+
+  // Section 10 additions (Konjunktiv II)
+  "würde": "werden",
+  "Würdet": "werden",
+  "Würden": "werden",
+  "hätte": "haben",
+  "wäre": "sein",
+  "solltest": "sollen",
+  "führe": "fahren",
+  "regnet": "regnen",
+
+  // Section 9 additions (Präteritum und Plusquamperfekt)
+  "machte": "machen",
+  "tanzten": "tanzen",
+  "waren": "sein",
+  "Hattest": "haben",
+  "ging": "gehen",
+  "lasen": "lesen",
+  "durften": "dürfen",
+  "konnte": "können",
+  "stand": "stehen",
+  "bezahlte": "bezahlen",
+  "stieg": "steigen",
+  "hatte": "haben",
+  "war": "sein",
+  "dachte": "denken",
+  "wussten": "wissen",
+
+  // Fix section 12 mismatch
+  "zu lernen": "lernen",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;
