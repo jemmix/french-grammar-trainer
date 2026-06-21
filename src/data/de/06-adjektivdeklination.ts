@@ -1390,7 +1390,7 @@ const section: Section = {
       wrongAnswers: [
         { text: "heiß", explanation: "„heiß\" ist die prädikative Form (ohne Endung). In attributiver Position nach „ein\" muss das Adjektiv dekliniert werden: „heißer\"." },
         { text: "heiße", explanation: "„heiße\" hat die falsche Endung für maskulin nach „ein\". Die richtige Endung ist -er: „heißer\"." },
-        { text: "heißen", explanation: "„heißen\" ist eine deklinierte Form. Im Nominativ maskulin nach „ein\" lautet die Endung -er: „heißer\"." },
+        { text: "heißem", explanation: "„heißem\" ist die Dativ-Endung. Im Nominativ maskulin nach „ein\" lautet die Endung -er: „heißer\"." },
         { text: "heißes", explanation: "„heißes\" ist die Endung für neutral. „Kaffee\" ist maskulin, deshalb lautet die Endung -er: „heißer\"." },
       ],
     },
@@ -1406,9 +1406,9 @@ const section: Section = {
       explanation: "In attributiver Position (vor dem Nomen) wird das Adjektiv dekliniert. Nach „keine\" (feminin, Akkusativ) lautet die Endung -e: „keine laute Musik\". In prädikativer Position nach „sein\" steht das Adjektiv ohne Endung: „Die Musik ist laut\".",
       wrongAnswers: [
         { text: "laut", explanation: "„laut\" ist die prädikative Form ohne Endung. In attributiver Position muss dekliniert werden: „laute\"." },
-        { text: "lauter", explanation: "„lauter\" ist die Endung für maskulin ohne Artikel. Nach „keine\" (feminin) lautet die Endung -e: „laute\"." },
+        { text: "lauter", explanation: "„lauter\" ist nicht die richtige Endung in diesem Kontext. Nach „keine\" (feminin) lautet die Endung -e: „laute\"." },
         { text: "lautes", explanation: "„lautes\" ist die Endung für neutral. „Musik\" ist feminin: „laute\"." },
-        { text: "lauten", explanation: "„lauten\" ist eine Endung für Plural. Im Singular feminin nach „keine\" lautet die Endung -e: „laute\"." },
+        { text: "lautem", explanation: "„lautem\" ist die Dativ-Endung. Im Akkusativ feminin nach „keine\" lautet die Endung -e: „laute\"." },
       ],
     },
   ],
