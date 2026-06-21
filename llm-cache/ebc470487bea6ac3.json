@@ -1,0 +1,26 @@
+{
+  "cacheKey": "ebc470487bea6ac3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "09-04-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Setzen Sie das Modalverb in Klammern ins Präteritum: „Ihr ___ gestern früher gehen (müssen).\"\n\nChoices:\nA. [CORRECT] musstet\nB. [WRONG] musste\nC. [WRONG] mussten\nD. [WRONG] musstest\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869581-eelq5sfe"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect person/number conjugations for the subject \"Ihr\" — B is 3rd person singular, C is 1st/3rd person plural, and D is 2nd person singular.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782000414526-pn7p77us",
+      "timestamp": "2026-06-21T00:07:35.359Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect person/number forms: B is present tense 3rd singular, C is Präteritum 3rd plural/wir, and D is Präteritum 2nd singular (du), none of which match the subject \"ihr\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782021624264-ftpjm2v5",
+      "timestamp": "2026-06-21T06:01:30.555Z"
+    }
+  ]
+}

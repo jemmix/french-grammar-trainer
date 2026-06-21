@@ -1,0 +1,26 @@
+{
+  "cacheKey": "d203ebe026e13a46",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-10-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Feste Wendung\n\nChoices:\nA. [CORRECT] Am Sonntag bin ich zu Hause.\nB. [WRONG] Am Sonntag bin ich in Hause.\nC. [WRONG] Am Sonntag bin ich auf Hause.\nD. [WRONG] Am Sonntag bin ich mit Hause.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869579-gqjdg84a"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers incorrectly use prepositions that don't form the fixed expression \"zu Hause\" (in Hause, auf Hause, and mit Hause are all grammatically invalid in German).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781999330078-q9v16kc9",
+      "timestamp": "2026-06-20T23:50:04.191Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that the wrong answers (B, C, D) in a German grammar multiple choice question are indeed incorrect.\n\nThe question tests the fixed expression \"zu Hause\" (at home). Analysis:\n- B: \"in Hause\" — incorrect, \"in\" doesn't form the fixed expression; would need to be \"im Haus\" (different meaning)\n- C: \"auf Hause\" — incorrect, \"auf\" doesn't work with \"Hause\" in this context\n- D: \"mit Hause\" — incorrect, \"mit\" means \"with\" and is grammatically wrong here\n\nAll wrong answers are genuinely incorrect.\n\nTRUE||All wrong answers use incorrect prepositions for the fixed expression \"zu Hause.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782020791822-1obajrh4",
+      "timestamp": "2026-06-21T05:47:18.603Z"
+    }
+  ]
+}

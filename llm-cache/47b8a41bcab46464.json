@@ -1,0 +1,26 @@
+{
+  "cacheKey": "47b8a41bcab46464",
+  "predicateId": "question-rule-alignment",
+  "questionId": "08-08-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Präpositionen\n\nRULE BEING TESTED: 08-08 - Temporalpräpositionen: am (Wochentag), um (Uhrzeit), im (Monat/Jahreszeit), seit (Dauer)\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie die passende Temporalpräposition ein.\nPhrase: „Ich habe ___ Freitag eine Verabredung.\nCorrect Answer: am\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781997869578-w43iwinv"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the \"am (Wochentag)\" component of the stated rule, as \"Freitag\" is a weekday and correctly answering requires knowing that \"am\" is used with weekdays.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781999107001-wa2j55uy",
+      "timestamp": "2026-06-20T23:45:36.295Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the \"am + Wochentag\" component of the stated rule, as \"Freitag\" is a weekday and the correct preposition \"am\" cannot be determined without knowing this specific temporal preposition usage.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782020495686-5oc7fgll",
+      "timestamp": "2026-06-21T05:42:41.970Z"
+    }
+  ]
+}

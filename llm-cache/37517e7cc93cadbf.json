@@ -1,0 +1,33 @@
+{
+  "cacheKey": "37517e7cc93cadbf",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-02-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Position (Wo?)\n\nChoices:\nA. [CORRECT] Die Bücher liegen auf dem Regal.\nB. [WRONG] Die Bücher liegen auf das Regal.\nC. [WRONG] Die Bücher liegen auf den Regal.\nD. [WRONG] Die Bücher liegen auf des Regal.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869572-d8bujyyp"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases: B uses accusative \"das\" instead of dative \"dem,\" C uses \"den\" which is wrong for neuter singular, and D uses genitive \"des\" which is never used with \"auf\" for position.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781998164357-matrfouy",
+      "timestamp": "2026-06-20T23:30:06.405Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases: B uses accusative \"das\" instead of dative \"dem,\" C uses masculine \"den\" for neuter \"Regal,\" and D uses genitive \"des\" instead of dative \"dem.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782019381964-riwbkyid",
+      "timestamp": "2026-06-21T05:24:20.941Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases after \"auf\" for expressing position (Wo?): B uses accusative \"das\" instead of dative \"dem\", C uses an invalid form \"den\" that is neither correct dative nor accusative, and D uses genitive \"des\" which is never used with \"auf\" for position.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782055288739-dhh2tp2v",
+      "timestamp": "2026-06-21T15:22:26.935Z"
+    }
+  ]
+}

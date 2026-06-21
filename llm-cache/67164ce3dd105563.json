@@ -1,0 +1,26 @@
+{
+  "cacheKey": "67164ce3dd105563",
+  "predicateId": "question-rule-alignment",
+  "questionId": "09-01-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präteritum und Plusquamperfekt\n\nRULE BEING TESTED: 09-01 - Regelmäßige Verben im Präteritum (machte, spielte, lernte)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — regelmäßiges Verb, dessen Stamm auf -d endet\nChoices:\nA. [CORRECT] Er redete mit seinem Lehrer.\nB. Er redte mit seinem Lehrer.\nC. Er geredet mit seinem Lehrer.\nD. Er reden mit seinem Lehrer.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781997869579-kg2boqe0"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires knowing that regular verbs ending in -d add an extra -e- before the Präteritum -te ending (redete, not redte), which is a specific sub-rule of regular Präteritum conjugation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781999449867-ji0rvxyi",
+      "timestamp": "2026-06-20T23:51:48.917Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the Präteritum conjugation of a regular verb with a stem ending in -d, which requires the insertion of an extra -e- before the -te ending (redete, not redte), making it a direct application of the stated rule about regular verbs in the Präteritum.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782021051921-2x6h8gpo",
+      "timestamp": "2026-06-21T05:56:44.377Z"
+    }
+  ]
+}

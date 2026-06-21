@@ -1,0 +1,33 @@
+{
+  "cacheKey": "d8e3143db9bba800",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-04-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Akkusativpräposition\n\nChoices:\nA. [CORRECT] Wir sitzen um den Tisch.\nB. [WRONG] Wir sitzen um dem Tisch.\nC. [WRONG] Wir sitzen um des Tisch.\nD. [WRONG] Wir sitzen um der Tisch.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869575-ezr4035u"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases (dative \"dem\", genitive \"des\", nominative \"der\") instead of the required accusative \"den\" after the preposition \"um\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781998423156-lkeitjsu",
+      "timestamp": "2026-06-20T23:34:29.141Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use non-accusative cases (dative \"dem\"/\"der\" or genitive \"des\") after \"um\", which strictly requires the accusative \"den\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782019699259-levfhp2r",
+      "timestamp": "2026-06-21T05:29:22.618Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases (dative \"dem\", genitive \"des\", or incorrect dative/genitive \"der\") instead of the required accusative \"den\" after the accusative preposition \"um\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782055595265-zo5g3wzr",
+      "timestamp": "2026-06-21T15:27:20.109Z"
+    }
+  ]
+}

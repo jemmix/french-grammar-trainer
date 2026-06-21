@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3db3885f5950677e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "08-04-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Präpositionen\n\nRULE BEING TESTED: 08-04 - Akkusativpräpositionen: durch, für, gegen, ohne, um, entlang\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — Akkusativpräposition\nChoices:\nA. [CORRECT] Wir fahren durch die Stadt.\nB. Wir fahren durch dem Stadt.\nC. Wir fahren durch der Stadt.\nD. Wir fahren durch des Stadt.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781997869575-6dd7osy1"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests knowledge that \"durch\" requires the accusative case by presenting the correct accusative form \"die Stadt\" alongside incorrect dative and genitive forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781998466194-9lmnpoqn",
+      "timestamp": "2026-06-20T23:35:03.432Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question requires knowing that \"durch\" is an accusative preposition that takes the accusative case, making \"die Stadt\" (feminine accusative) the correct form over the dative/genitive options.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782019740861-f5ytv6dg",
+      "timestamp": "2026-06-21T05:29:49.198Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"durch\" is an accusative preposition requiring the accusative case (\"die Stadt\"), which is the central concept of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782055631996-n5l0zejp",
+      "timestamp": "2026-06-21T15:28:00.649Z"
+    }
+  ]
+}

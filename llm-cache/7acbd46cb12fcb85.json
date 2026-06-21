@@ -1,0 +1,33 @@
+{
+  "cacheKey": "7acbd46cb12fcb85",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-03-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Richtung (Wohin?)\n\nChoices:\nA. [CORRECT] Die Katze klettert unter das Bett.\nB. [WRONG] Die Katze klettert unter dem Bett.\nC. [WRONG] Die Katze klettert unter den Bett.\nD. [WRONG] Die Katze klettert unter der Bett.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869575-6hoaaij1"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B incorrectly uses dative for a directional wohin-question requiring accusative, C uses the wrong accusative article \"den\" instead of \"das\" for neuter Bett, and D uses the wrong dative article \"der\" instead of \"dem\" for neuter Bett.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781998330747-pjzuzquw",
+      "timestamp": "2026-06-20T23:32:53.842Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that the wrong answers (B, C, D) in a German grammar MCQ question about direction (Wohin?) are indeed incorrect.\n\nAnalysis completed:\n- B: \"unter dem Bett\" uses dative, which indicates location (Wo?), not direction (Wohin?) - correctly marked wrong\n- C: \"unter den Bett\" is grammatically impossible - \"Bett\" is neuter, so accusative would be \"das\", not \"den\" - correctly marked wrong  \n- D: \"unter der Bett\" is grammatically impossible - \"Bett\" is neuter, so dative would be \"dem\", not \"der\" - correctly marked wrong\n\nTRUE||All wrong answers contain clear grammar errors: B uses dative instead of accusative for direction, C and D use incorrect articles for the neuter noun \"Bett\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782019588448-t0pnw28r",
+      "timestamp": "2026-06-21T05:27:22.967Z"
+    },
+    {
+      "raw": "TRUE||B incorrectly uses dative instead of accusative for a directional \"wohin\" expression, C uses masculine accusative \"den\" instead of neuter \"das\" for \"Bett\", and D uses feminine dative \"der\" instead of the correct form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782055455690-ri62vp4t",
+      "timestamp": "2026-06-21T15:25:06.133Z"
+    }
+  ]
+}

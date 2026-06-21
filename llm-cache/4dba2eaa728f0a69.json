@@ -1,0 +1,19 @@
+{
+  "cacheKey": "4dba2eaa728f0a69",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "10-05-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz verwendet „als wenn\" korrekt?\n\nChoices:\nA. [CORRECT] Es sieht aus, als wenn es regnen würde.\nB. [WRONG] Es sieht aus, als wenn es würde regnen.\nC. [WRONG] Es sieht aus, als wenn es regnet.\nD. [WRONG] Es sieht aus, als wenn es geregnet würde.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869586-k5j3977a"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B has incorrect word order (würde must be at the end of the subordinate clause), C uses indicative instead of required Konjunktiv II, and D incorrectly combines a past participle with the würde-construction which only takes infinitives.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782001954212-gt7mgztw",
+      "timestamp": "2026-06-21T00:33:51.751Z"
+    }
+  ]
+}

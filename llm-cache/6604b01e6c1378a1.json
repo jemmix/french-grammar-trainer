@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6604b01e6c1378a1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-03-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Richtung (Wohin?)\n\nChoices:\nA. [CORRECT] Ich lege die Zeitung auf den Tisch.\nB. [WRONG] Ich lege die Zeitung auf dem Tisch.\nC. [WRONG] Ich lege die Zeitung auf der Tisch.\nD. [WRONG] Ich lege die Zeitung auf die Tisch.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869575-ywpy8kfz"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses dative (dem) which is incorrect for \"Wohin?\" requiring accusative; C uses wrong case (dative) and wrong gender (der instead of den); D uses wrong gender (die instead of den) for the masculine noun \"Tisch\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781998256254-3gpql1x7",
+      "timestamp": "2026-06-20T23:31:44.765Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\n- Analyzed the German grammar question about \"Richtung (Wohin?)\" requiring accusative case\n- Verified all three wrong answers (B, C, D) are indeed grammatically incorrect within the stated constraints\n\nThe verdict for this question:\nTRUE||All wrong answers are incorrect: B uses dative instead of required accusative for \"wohin\"; C has wrong article \"der\" for masculine \"Tisch\"; D lacks proper case ending on the article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782019497094-tfi9szmv",
+      "timestamp": "2026-06-21T05:25:50.317Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work done:** I was asked to verify that wrong answers B, C, and D in a German grammar multiple-choice question are indeed incorrect. The question asks which sentence is grammatically correct for \"Richtung (Wohin?)\" — direction requiring accusative case.\n\n**Analysis completed:**\n- B: \"auf dem Tisch\" uses dative (location/where), not accusative (direction/where to) — incorrect for the specified context\n- C: \"auf der Tisch\" uses wrong article gender — \"Tisch\" is masculine, \"der\" is not valid for masculine in either dative or accusative\n- D: \"auf die Tisch\" uses wrong article — \"die\" is feminine/plural, not valid for masculine accusative \"den\"\n\n**Verdict:** TRUE||All wrong answers either use dative instead of required accusative for direction, or use incorrect article forms for the masculine noun \"Tisch.\"\n\n**Remaining tasks:** None — the verification was completed.\n\n**Recommendations:** No further action needed; this question passes validation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782055375239-p9uy2ruw",
+      "timestamp": "2026-06-21T15:23:51.589Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5517c422e8be7420",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-04-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Akkusativpräposition\n\nChoices:\nA. [CORRECT] Er kämpft gegen den Strom.\nB. [WRONG] Er kämpft gegen dem Strom.\nC. [WRONG] Er kämpft gegen des Strom.\nD. [WRONG] Er kämpft gegen der Strom.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869575-aknkgr81"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use non-accusative cases (dative \"dem\", genitive \"des\", dative/feminine \"der\") for the accusative preposition \"gegen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781998478984-087spuju",
+      "timestamp": "2026-06-20T23:35:07.444Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that wrong answers B, C, and D in a German grammar MCQ are incorrect. The question asks which sentence is grammatically correct using an Akkusativpräposition (accusative preposition) with \"gegen.\"\n\nAnalysis completed:\n- B: \"gegen dem Strom\" uses dative instead of accusative — incorrect\n- C: \"gegen des Strom\" uses genitive (and missing -s ending) instead of accusative — incorrect  \n- D: \"gegen der Strom\" uses nominative/feminine dative form instead of accusative — incorrect\n\nAll three wrong answers are genuinely incorrect.\n\nTRUE||All wrong answers use incorrect cases (dative, genitive, or nominative) instead of the required accusative after the accusative preposition \"gegen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782019754109-3n7wodts",
+      "timestamp": "2026-06-21T05:30:12.344Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was asked to verify that the wrong answers (B, C, D) in a German grammar question about accusative prepositions are indeed incorrect. The question asks which sentence is grammatically correct given that \"gegen\" is an Akkusativpräposition (accusative preposition).\n\nAnalysis completed:\n- B. \"gegen dem Strom\" uses dative case - incorrect since \"gegen\" requires accusative\n- C. \"gegen des Strom\" uses genitive (or malformed genitive) - incorrect since \"gegen\" requires accusative  \n- D. \"gegen der Strom\" uses nominative - incorrect since \"gegen\" requires accusative\n\nThe correct answer A \"gegen den Strom\" properly uses the accusative case.\n\nThe verdict would be: TRUE||All wrong answers fail to use the accusative case required by the accusative preposition \"gegen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782055641395-f9c3caqn",
+      "timestamp": "2026-06-21T15:28:24.540Z"
+    }
+  ]
+}

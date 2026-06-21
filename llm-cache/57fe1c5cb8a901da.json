@@ -1,0 +1,33 @@
+{
+  "cacheKey": "57fe1c5cb8a901da",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-04-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Akkusativpräposition\n\nChoices:\nA. [CORRECT] Sie ist gegen den Plan.\nB. [WRONG] Sie ist gegen dem Plan.\nC. [WRONG] Sie ist gegen des Plan.\nD. [WRONG] Sie ist gegen der Plan.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869575-5dbvdttv"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers incorrectly use dative, genitive, or nominative case instead of the required accusative after the accusative preposition \"gegen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781998393608-4h4vbi6a",
+      "timestamp": "2026-06-20T23:34:18.795Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was in the process of verifying wrong answers for a German grammar MCQ about accusative prepositions. The question asks which sentence is grammatically correct with \"gegen\" (an accusative preposition).\n\nThe verification is complete:\n- B uses \"dem\" (dative) instead of \"den\" (accusative) - incorrect\n- C uses \"des\" (genitive) instead of \"den\" (accusative) - incorrect  \n- D uses \"der\" (dative/feminine) instead of \"den\" (accusative) - incorrect\n\nAll wrong answers are indeed grammatically incorrect within the stated context.\n\nTRUE||All wrong answers use cases other than accusative for the accusative preposition \"gegen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782019646774-82irw6yn",
+      "timestamp": "2026-06-21T05:28:20.386Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases (dative \"dem\", genitive \"des\", or mismatched gender \"der\") instead of the required accusative \"den\" after the accusative preposition \"gegen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782055540146-41ux0iq3",
+      "timestamp": "2026-06-21T15:26:48.287Z"
+    }
+  ]
+}

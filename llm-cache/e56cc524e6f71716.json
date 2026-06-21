@@ -1,0 +1,19 @@
+{
+  "cacheKey": "e56cc524e6f71716",
+  "predicateId": "question-rule-alignment",
+  "questionId": "11-04-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Passiv und unpersönliche Konstruktionen\n\nRULE BEING TESTED: 11-04 - Der Täteragent: von (Person) vs. durch (Mittel/Ursache)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — Mittel/Ursache (durch + Akkusativ)\nChoices:\nA. [CORRECT] Das Fenster wurde durch den Sturm zerbrochen.\nB. Das Fenster wurde durch dem Sturm zerbrochen.\nC. Das Fenster wurde von den Sturm zerbrochen.\nD. Das Fenster wurde durch das Sturm zerbrochen.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781997869591-u2uyyvyk"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: MISALIGNED\nREASON: The prompt explicitly states \"durch + Akkusativ\" which gives away the correct preposition, and two of the three wrong answers (B and D) test case/gender agreement rather than the von vs. durch distinction—only choice C actually tests the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782003186728-dp4l8xdv",
+      "timestamp": "2026-06-21T00:56:17.761Z"
+    }
+  ]
+}

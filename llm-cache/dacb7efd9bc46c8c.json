@@ -1,0 +1,26 @@
+{
+  "cacheKey": "dacb7efd9bc46c8c",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-09-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Präpositionalergänzung\n\nChoices:\nA. [CORRECT] Er träumt von seinem Hund.\nB. [WRONG] Er träumt von seinen Hund.\nC. [WRONG] Er träumt auf seinem Hund.\nD. [WRONG] Er träumt an seinem Hund.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869578-sbrd224z"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses accusative \"seinen\" instead of dative \"seinem\", while C and D use incorrect prepositions (\"auf\" and \"an\") that do not collocate with \"träumen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781999240292-xd8hj79p",
+      "timestamp": "2026-06-20T23:47:48.744Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses wrong case (accusative \"seinen\" instead of dative \"seinem\"), C and D use incorrect prepositions (\"auf\" and \"an\" instead of \"von\" for this meaning of träumen).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782020668180-9si1corb",
+      "timestamp": "2026-06-21T05:45:15.876Z"
+    }
+  ]
+}

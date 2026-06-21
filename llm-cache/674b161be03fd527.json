@@ -1,0 +1,26 @@
+{
+  "cacheKey": "674b161be03fd527",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-08-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Temporalpräposition für Dauer\n\nChoices:\nA. [CORRECT] Ich lerne seit zwei Jahren Deutsch.\nB. [WRONG] Ich lerne am zwei Jahren Deutsch.\nC. [WRONG] Ich lerne um zwei Jahren Deutsch.\nD. [WRONG] Ich lerne im zwei Jahren Deutsch.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869577-mjr9ipts"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect temporal prepositions (am, um, im) that cannot express duration with \"zwei Jahren\" — only \"seit\" is grammatically correct for this context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781999051653-yhp2aev6",
+      "timestamp": "2026-06-20T23:44:49.695Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to verify that wrong answers B, C, and D in a German grammar MCQ are indeed incorrect. The question asks for the correct temporal preposition for duration.\n\nAnalysis completed:\n- B (\"am zwei Jahren\") - Incorrect: \"am\" is used with days or specific time expressions, not durations\n- C (\"um zwei Jahren\") - Incorrect: \"um\" is used for clock times, not durations\n- D (\"im zwei Jahren\") - Incorrect: \"im\" is used for months/seasons, not durations\n\nThe correct answer is A (\"seit zwei Jahren\") which correctly uses \"seit\" to express duration.\n\n**Verdict:** TRUE||All wrong answers use incorrect temporal prepositions (\"am\", \"um\", \"im\") that cannot express duration with a dative time phrase.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782020416094-by39661g",
+      "timestamp": "2026-06-21T05:41:35.683Z"
+    }
+  ]
+}

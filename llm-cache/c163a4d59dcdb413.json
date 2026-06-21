@@ -1,0 +1,33 @@
+{
+  "cacheKey": "c163a4d59dcdb413",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-06-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Genitivpräposition\n\nChoices:\nA. [CORRECT] Außerhalb der Schule dürfen sie spielen.\nB. [WRONG] Außerhalb die Schule dürfen sie spielen.\nC. [WRONG] Außerhalb den Schule dürfen sie spielen.\nD. [WRONG] Außerhalb dem Schule dürfen sie spielen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869576-8fc5rl8n"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the required genitive case after the genitive preposition \"außerhalb\": B uses nominative/accusative \"die,\" C uses an invalid form \"den Schule,\" and D uses dative \"dem\" with incorrect gender agreement for the feminine noun \"Schule.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781998752422-owrf9k4b",
+      "timestamp": "2026-06-20T23:39:51.528Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating the German grammar verification task. Based on my analysis:\n\n**Work completed:** I analyzed the question about Genitivpräposition \"außerhalb\" and determined that all wrong answers (B, C, D) are indeed grammatically incorrect because \"außerhalb\" requires the genitive case (\"der Schule\"), and none of the wrong options provide the correct genitive form.\n\n**My response would have been:**\nTRUE||All wrong answers fail to use the required genitive case \"der Schule\" after the genitive preposition \"außerhalb.\"\n\n**Remaining tasks:** None - the analysis was complete.\n\n**Recommendation:** No further action needed; the question's wrong answers are all correctly identified as incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782020032551-gllszbs5",
+      "timestamp": "2026-06-21T05:37:00.991Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the required genitive case \"der Schule\" after the genitive preposition \"außerhalb\" — B uses nominative/accusative, C uses an invalid form, and D uses dative.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782057831245-77hw4bml",
+      "timestamp": "2026-06-21T16:04:45.688Z"
+    }
+  ]
+}

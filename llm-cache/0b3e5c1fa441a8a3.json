@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0b3e5c1fa441a8a3",
+  "predicateId": "question-rule-alignment",
+  "questionId": "08-06-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Präpositionen\n\nRULE BEING TESTED: 08-06 - Genitivpräpositionen: während, wegen, trotz, statt, innerhalb, außerhalb\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — Genitivpräposition\nChoices:\nA. [CORRECT] Während des Unterrichts schweigen die Schüler.\nB. Während dem Unterricht schweigen die Schüler.\nC. Während den Unterricht schweigen die Schüler.\nD. Während der Unterricht schweigen die Schüler.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781997869576-d50ej8q7"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the learner knows that \"während\" requires the genitive case (\"des Unterrichts\"), which is the core of the Genitivpräpositionen rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781998674650-nk71wuyl",
+      "timestamp": "2026-06-20T23:38:31.778Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"während\" is a Genitivpräposition requiring the genitive case (\"des Unterrichts\"), as the distractors use dative, accusative, and nominative forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782019956710-1q6056do",
+      "timestamp": "2026-06-21T05:33:48.815Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests whether the student knows that \"während\" is a Genitivpräposition that requires the genitive case (des Unterrichts), as opposed to dative (dem/den) or nominative (der) forms shown in the incorrect choices.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782057748512-pcom9z7u",
+      "timestamp": "2026-06-21T16:04:12.172Z"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "cacheKey": "2be4bca8383ada38",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "10-01-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz bildet den Konjunktiv II mit „würde + Infinitiv\" korrekt?\n\nChoices:\nA. [CORRECT] Anna würde gern Gitarre spielen lernen.\nB. [WRONG] Anna würde gern Gitarre gespielt lernen.\nC. [WRONG] Anna würde gern Gitarre zu spielen lernen.\nD. [WRONG] Anna würde gern Gitarre spielte lernen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869584-xd2hv7a1"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B uses past participle \"gespielt\" instead of infinitive \"spielen\"; C incorrectly inserts \"zu\" before the infinitive in a würde-construction; D uses the Präteritum form \"spielte\" instead of the infinitive \"spielen\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782001442773-r3gofioq",
+      "timestamp": "2026-06-21T00:24:53.379Z"
+    }
+  ]
+}

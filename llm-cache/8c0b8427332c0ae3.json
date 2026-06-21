@@ -1,0 +1,33 @@
+{
+  "cacheKey": "8c0b8427332c0ae3",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-03-008",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Richtung (Wohin?)\n\nChoices:\nA. [CORRECT] Wir stellen die Blumen neben das Fenster.\nB. [WRONG] Wir stellen die Blumen neben dem Fenster.\nC. [WRONG] Wir stellen die Blumen neben den Fenster.\nD. [WRONG] Wir stellen die Blumen neben die Fenster.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869575-tj02wp1v"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers are incorrect: B uses dative \"dem\" instead of accusative \"das\" required for direction (Wohin?), C incorrectly uses \"den\" for the neuter noun \"Fenster\", and D changes to plural \"die Fenster\" altering the meaning.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781998340924-hsfyqcbj",
+      "timestamp": "2026-06-20T23:33:02.721Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers are grammatically incorrect: B uses dative \"dem\" instead of the required accusative for direction (Wohin), C uses masculine accusative \"den\" for the neuter noun \"Fenster\", and D uses feminine/plural \"die\" for the neuter singular \"Fenster\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782019590014-ro7947rf",
+      "timestamp": "2026-06-21T05:27:24.007Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a German grammar question about two-way prepositions (Wechselpräpositionen) with \"neben\" are indeed incorrect. The question specifies \"Richtung (Wohin?)\" requiring accusative case.\n\nAnalysis completed:\n- B uses dative \"dem\" instead of accusative \"das\" - incorrect for directional \"Wohin?\"\n- C uses \"den\" which is wrong gender/article for neuter \"Fenster\"\n- D uses \"die\" which is wrong gender/article for neuter \"Fenster\"\n\nTRUE||All wrong answers are grammatically incorrect: B uses dative instead of required accusative for direction, while C and D use articles that don't match the neuter gender of \"Fenster.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782055467755-gnkiwq57",
+      "timestamp": "2026-06-21T15:25:35.262Z"
+    }
+  ]
+}

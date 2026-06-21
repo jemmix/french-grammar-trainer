@@ -1,0 +1,26 @@
+{
+  "cacheKey": "63f0fedada43c86e",
+  "predicateId": "question-rule-alignment",
+  "questionId": "08-10-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Präpositionen\n\nRULE BEING TESTED: 08-10 - Präpositionen in festen Wendungen (auf Deutsch, in Ordnung, zu Fuß, umsonst)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — Feste Wendung\nChoices:\nA. [CORRECT] Wir haben umsonst gearbeitet.\nB. Wir haben aufsonst gearbeitet.\nC. Wir haben insonst gearbeitet.\nD. Wir haben mitsonst gearbeitet.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781997869578-q0vvrgw5"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: ALIGNED\nREASON: The question directly tests knowledge of the correct preposition in the fixed expression \"umsonst,\" which is the exact type of prepositional fixed phrase covered by this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781999315483-lnem4xz0",
+      "timestamp": "2026-06-20T23:49:02.549Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The wrong choices are non-words (aufsonst, insonst, mitsonst) rather than plausible alternative prepositions, so the question tests vocabulary recognition of \"umsonst\" rather than knowledge that \"um\" is the correct preposition in this fixed expression.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782020770368-h9ewrotq",
+      "timestamp": "2026-06-21T05:47:03.915Z"
+    }
+  ]
+}

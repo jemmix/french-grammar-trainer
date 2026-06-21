@@ -1,0 +1,26 @@
+{
+  "cacheKey": "27af14e9227987b1",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-09-003",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Präpositionalergänzung (sich freuen auf = Zukunft)\n\nChoices:\nA. [CORRECT] Ich freue mich auf den Urlaub.\nB. [WRONG] Ich freue mich auf dem Urlaub.\nC. [WRONG] Ich freue mich über den Urlaub.\nD. [WRONG] Ich freue mich von den Urlaub.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869578-v1nuztcm"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B incorrectly uses dative case instead of accusative with \"auf\"; C uses \"über\" which expresses joy about a past/current event rather than anticipation of future as specified; D uses \"von\" which is not a valid preposition for \"sich freuen.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781999137119-jz1jajls",
+      "timestamp": "2026-06-20T23:46:42.904Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Work accomplished:** I was in the process of analyzing a German grammar verification question about the prepositional complement \"sich freuen auf\" (looking forward to something in the future). I had analyzed all three wrong answers (B, C, D) and determined they are all grammatically incorrect:\n- B uses dative case (\"dem\") instead of required accusative\n- C uses \"über\" which expresses joy about something past, not anticipation of future\n- D uses \"von\" which is not used with \"sich freuen\" at all, plus has incorrect article form\n\n**Remaining tasks:** Provide the final verdict in the requested format.\n\n**Recommendation:** The verdict should be: TRUE||All wrong answers contain clear grammar errors (B uses wrong case, C uses wrong preposition for future context, D uses invalid preposition).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782020601679-bfg0sxib",
+      "timestamp": "2026-06-21T05:43:41.725Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "196fd93db8a4f185",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "09-06-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz steht typischerweise in einem Roman?\n\nChoices:\nA. [CORRECT] Sie stand auf und ging zur Tür.\nB. [WRONG] Sie ist aufgestanden und zur Tür gegangen.\nC. [WRONG] Sie aufstehen und zur Tür gehen.\nD. [WRONG] Sie aufgestanden und zur Tür gegangen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869581-6adpi9xq"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary: I was in the process of evaluating a German grammar verification question about which sentence typically appears in a novel. The question tests the use of Präteritum (simple past) vs. Perfekt (present perfect) in German literary context.\n\nWhat I determined: The correct answer (A) uses Präteritum \"stand auf und ging\" which is the standard narrative tense in German novels. Wrong answers B, C, and D are all incorrect: B uses Perfekt (spoken register, not typical for novels), C uses bare infinitives (grammatically invalid), and D uses past participles without an auxiliary verb (grammatically invalid).\n\nThe verdict would be: TRUE||B uses Perfekt which is spoken register not typical for novels; C uses uninflected infinitives without an auxiliary; D uses past participles without the required auxiliary verb \"ist\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782000729250-l1csn3me",
+      "timestamp": "2026-06-21T00:12:54.257Z"
+    },
+    {
+      "raw": "TRUE||B uses Perfekt which is not typical for novel narration (Präteritum is standard); C lacks a conjugated verb and is grammatically incomplete; D lacks an auxiliary verb with the past participle and is grammatically incomplete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782022050303-5z72ds43",
+      "timestamp": "2026-06-21T06:08:19.662Z"
+    }
+  ]
+}

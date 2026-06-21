@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3aa24af60f1a3ff9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "09-07-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Das Präteritum und Plusquamperfekt\n\nRULE BEING TESTED: 09-07 - Bildung des Plusquamperfekts (hatte/war + Partizip II)\n\nQUESTION:\nType: Multiple Choice\nPrompt: Setzen Sie das Verb in Klammern ins Plusquamperfekt: „Ich ___ das Buch schon (lesen).\"\nChoices:\nA. [CORRECT] hatte gelesen\nB. war gelesen\nC. hatte las\nD. habe gelesen\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1781997869582-7o9e78x9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests whether the learner can correctly form the Plusquamperfekt by selecting the right auxiliary (hatte vs. war) combined with the Partizip II form, which is exactly what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782000787651-s7wdnph6",
+      "timestamp": "2026-06-21T00:13:40.279Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests forming the Plusquamperfekt by requiring the learner to select the correct auxiliary \"hatte\" (not \"war\" or \"habe\") combined with the Partizip II \"gelesen\" (not the Präteritum form \"las\"), which is exactly what the rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782022109860-cjlaf0f3",
+      "timestamp": "2026-06-21T06:09:25.776Z"
+    }
+  ]
+}

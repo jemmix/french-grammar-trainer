@@ -1,0 +1,26 @@
+{
+  "cacheKey": "177d25b616214325",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "08-08-001",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Welcher Satz ist grammatikalisch richtig? — Temporalpräposition für Wochentage\nChoices:\nA. Wir haben am Montag eine Prüfung.\nB. Wir haben im Montag eine Prüfung.\nC. Wir haben um Montag eine Prüfung.\nD. Wir haben seit Montag eine Prüfung.\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1781997869577-abi7ih38"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Choice D (\"seit Montag\") is also grammatically correct in German (meaning \"since Monday\"), so a learner could reasonably select it as a correct sentence, even though it doesn't express \"on Monday\" — the prompt doesn't specify we're looking for the preposition meaning \"on.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781998986309-p65laa2t",
+      "timestamp": "2026-06-20T23:44:11.649Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: Choice D (\"seit Montag eine Prüfung\") is also grammatically correct but means \"since Monday\" rather than \"on Monday,\" making the question \"Welcher Satz ist grammatikalisch richtig?\" have two valid answers for a learner who hasn't seen the rule title.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782020352394-ft56xwqv",
+      "timestamp": "2026-06-21T05:40:10.700Z"
+    }
+  ]
+}

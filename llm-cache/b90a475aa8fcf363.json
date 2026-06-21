@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b90a475aa8fcf363",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-04-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Akkusativpräposition\n\nChoices:\nA. [CORRECT] Ich komme ohne meinen Bruder.\nB. [WRONG] Ich komme ohne meinem Bruder.\nC. [WRONG] Ich komme ohne meines Bruder.\nD. [WRONG] Ich komme ohne meiner Bruder.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869575-1n9myzcf"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers use incorrect cases (dative or genitive) instead of the required accusative after the preposition \"ohne.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781998410184-8guupnea",
+      "timestamp": "2026-06-20T23:33:56.017Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers incorrectly use dative (B: meinem), genitive (C: meines), or wrong gender/case (D: meiner) instead of the required accusative \"meinen\" after the accusative preposition \"ohne.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782019677347-s45nnknv",
+      "timestamp": "2026-06-21T05:28:46.410Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying a German grammar question about accusative prepositions. The question asks which sentence using \"ohne\" (an accusative preposition) is grammatically correct.\n\nAnalysis completed:\n- Answer B uses \"meinem\" (dative) - incorrect, should be accusative\n- Answer C uses \"meines\" (genitive) - incorrect, should be accusative  \n- Answer D uses \"meiner\" (dative/feminine genitive) - incorrect, wrong case and doesn't agree with masculine \"Bruder\"\n\nTRUE||All wrong answers use incorrect cases (dative or genitive) instead of the required accusative after the preposition \"ohne\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782055574210-o4liusmx",
+      "timestamp": "2026-06-21T15:27:00.919Z"
+    }
+  ]
+}

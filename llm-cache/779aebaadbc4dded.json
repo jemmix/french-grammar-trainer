@@ -1,0 +1,33 @@
+{
+  "cacheKey": "779aebaadbc4dded",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "08-05-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Dativpräposition\n\nChoices:\nA. [CORRECT] Ich wohne seit einem Jahr hier.\nB. [WRONG] Ich wohne seit einen Jahr hier.\nC. [WRONG] Ich wohne seit eines Jahr hier.\nD. [WRONG] Ich wohne seit ein Jahr hier.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1781997869576-as8kr8tz"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers fail to use the correct dative form \"einem\" required after the dative preposition \"seit\" with the neuter noun \"Jahr\" — B uses accusative \"einen\" (wrong case and wrong gender), C uses genitive \"eines\", and D uses uninflected \"ein\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1781998588967-xn6kutzr",
+      "timestamp": "2026-06-20T23:36:58.850Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nTRUE||All wrong answers are grammatically incorrect: B uses accusative \"einen\" instead of dative \"einem\"; C uses genitive \"eines\" (and even then \"Jahr\" would need the genitive ending \"-es\"); D uses nominative \"ein\" instead of dative \"einem\" — none satisfy the dative requirement of the preposition \"seit\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782019855407-sxlsqf1d",
+      "timestamp": "2026-06-21T05:31:51.145Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers fail to use the correct dative form \"einem\" required by the Dativpräposition \"seit\": B uses accusative \"einen\", C uses genitive \"eines\", and D uses the undeclined \"ein\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782055760173-k7l4rflq",
+      "timestamp": "2026-06-21T15:30:22.822Z"
+    }
+  ]
+}
