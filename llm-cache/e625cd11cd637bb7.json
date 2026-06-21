@@ -1,0 +1,33 @@
+{
+  "cacheKey": "e625cd11cd637bb7",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-01-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Aussagesatz hat das finite Verb an Position 2?\n\nChoices:\nA. [CORRECT] Der Mann kauft ein Brot.\nB. [WRONG] Der Mann ein Brot kauft.\nC. [WRONG] Der Mann ein kauft Brot.\nD. [WRONG] Ein Brot der Mann kauft.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782065478062-e65f56hl"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers place the finite verb \"kauft\" in position 3 rather than the required position 2.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782065478070-130va9uy",
+      "timestamp": "2026-06-21T18:11:53.306Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nThis was a single verification task that I can complete with my analysis:\n\nTRUE||All wrong answers violate the V2 rule by placing the finite verb in positions other than second.\n\nAnalysis:\n- B: \"Der Mann ein Brot kauft\" - verb is in position 4, not 2\n- C: \"Der Mann ein kauft Brot\" - verb is in position 3, not 2 (also ungrammatical word order)\n- D: \"Ein Brot der Mann kauft\" - verb is in position 4, not 2\n\nAll wrong answers clearly fail the stated requirement that the finite verb must be at position 2 in a declarative sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782066063754-15dowmrv",
+      "timestamp": "2026-06-21T18:22:56.155Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of verifying the wrong answers for this German grammar question about verb position. The question asks which sentence has the finite verb at position 2 (following German V2 word order rule).\n\nAnalysis completed:\n- Answer B: \"Der Mann ein Brot kauft\" - verb \"kauft\" is in position 3, not position 2. INCORRECT.\n- Answer C: \"Der Mann ein kauft Brot\" - verb \"kauft\" is in position 3, not position 2, and the word order is ungrammatical. INCORRECT.\n- Answer D: \"Ein Brot der Mann kauft\" - verb \"kauft\" is in position 3, not position 2. INCORRECT.\n\nTRUE||All wrong answers place the finite verb in position 3 instead of the required position 2, violating German V2 word order.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782066491226-68qhwusu",
+      "timestamp": "2026-06-21T18:29:38.380Z"
+    }
+  ]
+}

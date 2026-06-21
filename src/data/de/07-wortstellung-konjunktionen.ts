@@ -134,7 +134,7 @@ const section: Section = {
       type: "input",
       ruleId: "07-01",
       generatedBy: "glm-5.1",
-      prompt: "Setzen Sie die richtige Verbform ein (Präsens).",
+      prompt: "Setzen Sie das finite Verb an Position 2 (V2-Regel nach Topikalisierung).",
       phrase: { before: "„Heute ", after: " er seine Oma." },
       hint: "besuchen",
       answer: "besucht",
@@ -151,7 +151,7 @@ const section: Section = {
       type: "input",
       ruleId: "07-01",
       generatedBy: "glm-5.1",
-      prompt: "Setzen Sie die richtige Verbform ein (Präsens).",
+      prompt: "Setzen Sie das finite Verb an Position 2 (V2-Regel nach Topikalisierung).",
       phrase: { before: "„In München ", after: " mein Bruder." },
       hint: "wohnen",
       answer: "wohnt",
@@ -168,7 +168,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-02",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz folgt der Grundstellung (Subjekt – Verb – Objekt)? — Grundstellung Subjekt-Verb-Objekt",
+      prompt: "Welcher Satz hat das finite Verb an Position 2? — Grundstellung Subjekt-Verb-Objekt",
       choices: [
         { text: "Ich sehe den Hund.", correct: true, explanation: "In der Grundstellung steht das Subjekt an Position 1, das finite Verb an Position 2, das Objekt folgt danach: „Ich sehe den Hund.\" Das ist korrekte V2-Wortstellung." },
         { text: "Ich den Hund sehe.", correct: false, explanation: "Das Verb steht am Ende. Im Hauptsatz muss das Verb an Position 2 stehen: „Ich sehe den Hund.\"" },
@@ -181,7 +181,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-02",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz folgt der Grundstellung (Subjekt – Verb – Objekt)? — Topikalisierung des Objekts",
+      prompt: "Welcher Satz hat das finite Verb an Position 2? — Topikalisierung des Objekts",
       choices: [
         { text: "Den Hund sehe ich.", correct: true, explanation: "Durch Topikalisierung steht das Objekt „den Hund\" an Position 1. Das finite Verb bleibt an Position 2 (Inversion), das Subjekt „ich\" rückt hinter das Verb: „Den Hund sehe ich.\"" },
         { text: "Den Hund ich sehe.", correct: false, explanation: "Bei Topikalisierung bleibt das Verb an Position 2. Das Subjekt muss hinter das Verb rücken: „Den Hund sehe ich\", nicht „Den Hund ich sehe\"." },
@@ -194,7 +194,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-02",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz folgt der Grundstellung (Subjekt – Verb – Objekt)? — Topikalisierung einer Zeitangabe",
+      prompt: "Welcher Satz hat das finite Verb an Position 2? — Topikalisierung einer Zeitangabe",
       choices: [
         { text: "Morgen fahre ich nach Berlin.", correct: true, explanation: "Die Zeitangabe „morgen\" steht an Position 1 (Topikalisierung). Das finite Verb „fahre\" bleibt an Position 2 (Inversion), das Subjekt „ich\" rückt hinter das Verb: „Morgen fahre ich nach Berlin.\"" },
         { text: "Morgen ich fahre nach Berlin.", correct: false, explanation: "Bei Topikalisierung muss das Subjekt hinter das Verb rücken (Inversion). Das Verb bleibt an Position 2: „Morgen fahre ich nach Berlin.\"" },
@@ -207,7 +207,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-02",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz folgt der Grundstellung (Subjekt – Verb – Objekt)? — Topikalisierung einer Ortsangabe",
+      prompt: "Welcher Satz hat das finite Verb an Position 2? — Topikalisierung einer Ortsangabe",
       choices: [
         { text: "In der Schule lernen die Kinder.", correct: true, explanation: "Die Ortsangabe „in der Schule\" steht an Position 1 (Topikalisierung). Das finite Verb „lernen\" bleibt an Position 2 (Inversion), das Subjekt „die Kinder\" rückt hinter das Verb: „In der Schule lernen die Kinder.\"" },
         { text: "In der Schule die Kinder lernen.", correct: false, explanation: "Bei Topikalisierung muss das Subjekt hinter das Verb rücken (Inversion). Das Verb bleibt an Position 2: „In der Schule lernen die Kinder.\"" },
@@ -220,7 +220,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-02",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz folgt der Grundstellung (Subjekt – Verb – Objekt)? — Grundstellung mit Dativ und Akkusativ",
+      prompt: "Welcher Satz hat das finite Verb an Position 2? — Grundstellung mit Dativ und Akkusativ",
       choices: [
         { text: "Ich gebe dem Kind einen Apfel.", correct: true, explanation: "Das Subjekt „ich\" steht an Position 1, das finite Verb „gebe\" an Position 2. Das Dativobjekt „dem Kind\" und das Akkusativobjekt „einen Apfel\" folgen danach: „Ich gebe dem Kind einen Apfel.\"" },
         { text: "Ich dem Kind einen Apfel gebe.", correct: false, explanation: "Das Verb steht am Ende. Im Hauptsatz muss das finite Verb an Position 2 stehen: „Ich gebe dem Kind einen Apfel.\"" },
@@ -233,7 +233,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-02",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz folgt der Grundstellung (Subjekt – Verb – Objekt)? — Topikalisierung des Akkusativobjekts",
+      prompt: "Welcher Satz hat das finite Verb an Position 2? — Topikalisierung des Akkusativobjekts",
       choices: [
         { text: "Einen Apfel gebe ich dem Kind.", correct: true, explanation: "Das Akkusativobjekt „einen Apfel\" steht an Position 1 (Topikalisierung). Das finite Verb „gebe\" bleibt an Position 2 (Inversion), das Subjekt „ich\" rückt hinter das Verb: „Einen Apfel gebe ich dem Kind.\"" },
         { text: "Einen Apfel ich dem Kind gebe.", correct: false, explanation: "Bei Topikalisierung muss das Subjekt hinter das Verb rücken. Das Verb bleibt an Position 2: „Einen Apfel gebe ich dem Kind.\"" },
@@ -246,7 +246,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-02",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz folgt der Grundstellung (Subjekt – Verb – Objekt)? — Grundstellung Subjekt-Verb-Objekt",
+      prompt: "Welcher Satz hat das finite Verb an Position 2? — Grundstellung Subjekt-Verb-Objekt",
       choices: [
         { text: "Der Hund jagt die Katze.", correct: true, explanation: "Das Subjekt „der Hund\" steht an Position 1, das finite Verb „jagt\" an Position 2, das Objekt „die Katze\" folgt danach: „Der Hund jagt die Katze.\" Das ist korrekte V2-Wortstellung." },
         { text: "Der Hund die Katze jagt.", correct: false, explanation: "Das Verb steht am Ende. Im Hauptsatz muss das finite Verb an Position 2 stehen: „Der Hund jagt die Katze.\"" },
@@ -259,7 +259,7 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-02",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz folgt der Grundstellung (Subjekt – Verb – Objekt)? — Topikalisierung des Dativobjekts",
+      prompt: "Welcher Satz hat das finite Verb an Position 2? — Topikalisierung des Dativobjekts",
       choices: [
         { text: "Dem Kind gebe ich einen Apfel.", correct: true, explanation: "Das Dativobjekt „dem Kind\" steht an Position 1 (Topikalisierung). Das finite Verb „gebe\" bleibt an Position 2 (Inversion), das Subjekt „ich\" rückt hinter das Verb: „Dem Kind gebe ich einen Apfel.\"" },
         { text: "Dem Kind ich gebe einen Apfel.", correct: false, explanation: "Bei Topikalisierung muss das Subjekt hinter das Verb rücken. Das Verb bleibt an Position 2: „Dem Kind gebe ich einen Apfel.\"" },
