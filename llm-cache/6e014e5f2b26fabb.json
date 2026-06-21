@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6e014e5f2b26fabb",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-01-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-01 - Die V2-Regel im Hauptsatz: Finite Verb an Position 2\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig?\nChoices:\nA. [CORRECT] Die Kinder spielen im Garten.\nB. Die Kinder im Garten spielen.\nC. Die Kinder im spielen Garten.\nD. Im Garten die Kinder spielen.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782080100431-r1wtdccy"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the V2 rule by presenting options where only the correct answer has the finite verb \"spielen\" in position 2, while all incorrect options place it in position 3 or later.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782080104569-sf70js1g",
+      "timestamp": "2026-06-21T22:15:40.834Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Work accomplished:** I was in the process of validating a German grammar question alignment. I had analyzed the question about the V2 rule (finite verb in position 2) in German main clauses.\n\n**Analysis completed:** The question \"Welcher Satz ist grammatikalisch richtig?\" with four options tests whether learners can identify correct V2 word order. Option A (correct) places \"spielen\" in position 2 after \"Die Kinder\" in position 1. Options B and D violate V2 by placing the verb after the prepositional phrase/subject. The question cannot be answered correctly without knowing the V2 rule.\n\n**Verdict I would have given:**\nVERDICT: ALIGNED\nREASON: The question requires identifying correct V2 word order, and distractors B and D fail specifically because the finite verb is not in position 2.\n\n**Remaining tasks:** None - this was a single-question validation task that was nearly complete.\n\n**Recommendations:** The validation is straightforward - this question is properly aligned with the V2 rule it claims to test.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782080352672-pm2m3fsq",
+      "timestamp": "2026-06-21T22:20:05.879Z"
+    }
+  ]
+}

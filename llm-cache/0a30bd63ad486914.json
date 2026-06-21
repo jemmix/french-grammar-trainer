@@ -1,0 +1,26 @@
+{
+  "cacheKey": "0a30bd63ad486914",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-08-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-08 - Temporale Nebensätze: wenn vs. als vs. während\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig?\nChoices:\nA. [CORRECT] Wenn ich älter bin, will ich Arzt werden.\nB. Als ich älter bin, will ich Arzt werden.\nC. Wenn ich bin älter, will ich Arzt werden.\nD. Wenn ich älter bin, ich will Arzt werden.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782080100516-1s4kv0sy"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\n- Received a validation task for a German grammar question\n- Analyzed whether the question about \"wenn vs. als vs. während\" properly tests the stated rule\n\nThe validation result:\n\nVERDICT: ALIGNED\nREASON: The question directly tests the distinction between \"wenn\" (for repeated/future events) and \"als\" (for single past events), with choice B being the key distractor that requires knowing \"als\" cannot be used for future conditions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782080289285-0jgoncih",
+      "timestamp": "2026-06-21T22:18:55.970Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the wenn vs. als distinction—choice A correctly uses \"wenn\" for a future/repeated condition, while choice B incorrectly uses \"als\" which is restricted to single past events, making knowledge of this rule essential to select the correct answer.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782080688453-5ldei81q",
+      "timestamp": "2026-06-21T22:25:29.037Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "cacheKey": "d7fa8a0b4d80b12a",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-09-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-09 - Konzessivsätze: obwohl (Verb am Ende) vs. trotzdem (Hauptsatz)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das Adverb (Hauptsatzverbindung).\nPhrase: „Das Wetter war schlecht, ___ haben wir den Ausflug gemacht.\nCorrect Answer: trotzdem\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782080100531-5fj5djm9"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests the core distinction of the rule — choosing \"trotzdem\" for a main clause structure (verb in second position) rather than \"obwohl\" which would require subordinate clause word order with the verb at the end.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782080315780-06a77kjt",
+      "timestamp": "2026-06-21T22:19:40.837Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires distinguishing that \"trotzdem\" is used in main clauses with normal word order (verb in second position), while \"obwohl\" would require subordinate clause word order with the verb at the end, which is exactly the core contrast defined by the rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782080710205-9sjmfmz9",
+      "timestamp": "2026-06-21T22:25:47.123Z"
+    }
+  ]
+}

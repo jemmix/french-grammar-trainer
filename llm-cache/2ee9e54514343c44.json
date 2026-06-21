@@ -1,0 +1,33 @@
+{
+  "cacheKey": "2ee9e54514343c44",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-01-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-01 - Die V2-Regel im Hauptsatz: Finite Verb an Position 2\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig?\nChoices:\nA. [CORRECT] Der Mann kauft ein Brot.\nB. Der Mann ein Brot kauft.\nC. Der Mann ein kauft Brot.\nD. Ein Brot der Mann kauft.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782080100430-uvfh1idq"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done so far:\nI was asked to validate whether a German grammar question about the V2 rule (finite verb at position 2 in main clauses) properly tests that rule.\n\nThe question presents four sentence orderings of \"Der Mann kauft ein Brot\" and asks which is grammatically correct. The correct answer (A) places the verb at position 2, while all wrong answers (B, C, D) place the verb at position 3, violating the V2 rule.\n\nRemaining tasks: None - I can provide my verdict now.\n\nRecommendations: N/A\n\n---\n\nVERDICT: ALIGNED\nREASON: All three wrong answers violate the V2 rule by placing the finite verb at position 3 instead of position 2, so answering correctly requires knowing that the finite verb must occupy the second position in a German main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782080101557-ipjuixko",
+      "timestamp": "2026-06-21T22:15:28.116Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the V2-Regel by presenting one correct sentence with the finite verb in position 2 and three incorrect alternatives that violate this rule by placing the verb in position 3 or later.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782080336043-8ya7r3jh",
+      "timestamp": "2026-06-21T22:19:43.642Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the V2 rule by presenting options where only the correct answer has the finite verb \"kauft\" in position 2, while all incorrect options place it in positions 3 or 4.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782080726294-3r3l32vf",
+      "timestamp": "2026-06-21T22:25:54.444Z"
+    }
+  ]
+}

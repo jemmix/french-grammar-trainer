@@ -1,0 +1,26 @@
+{
+  "cacheKey": "00dacf7e27a7a029",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-01-005",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-01 - Die V2-Regel im Hauptsatz: Finite Verb an Position 2\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig?\nChoices:\nA. [CORRECT] Der Student muss die Prüfung wiederholen.\nB. Der Student die Prüfung muss wiederholen.\nC. Der Student die Prüfung wiederholen muss.\nD. Die Prüfung der Student muss wiederholen.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782080100431-600u5krg"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the V2 rule by presenting one correct sentence with the finite verb \"muss\" in position 2 and three incorrect alternatives with the verb displaced to positions 3, 4, or attached to the wrong element.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782080140338-byy972y1",
+      "timestamp": "2026-06-21T22:16:07.367Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the V2 rule by presenting one correct sentence with the finite verb in position 2 and three incorrect variants that violate it (verb in position 3 or clause-final position).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782080405880-ti2ww2sb",
+      "timestamp": "2026-06-21T22:20:43.167Z"
+    }
+  ]
+}
