@@ -46,7 +46,7 @@ const section: Section = {
       prompt: "Welcher Satz ist grammatikalisch richtig?",
       choices: [
         { text: "Die Kinder spielen im Garten.", correct: true, explanation: "Das Subjekt „die Kinder\" steht an Position 1, das finite Verb „spielen\" an Position 2, das ist die korrekte V2-Stellung im Hauptsatz." },
-        { text: "Die Kinder im Garten spielen.", correct: false, explanation: "Das Verb steht am Ende. Im Hauptsatz muss das finite Verb an Position 2 stehen: „Die Kinder spielen im Garten.\"" },
+        { text: "Die Kinder im Garten spielend.", correct: false, explanation: "„spielend\" ist das Partizip I (Mittelwort der Gegenwart). Im Hauptsatz braucht man das finite Verb an Position 2: „Die Kinder spielen im Garten.\"" },
         { text: "Die Kinder im spielen Garten.", correct: false, explanation: "Das Verb steht an Position 3 und zerreißt die Einheit „im Garten\". Das Verb muss an Position 2 stehen: „Die Kinder spielen im Garten.\"" },
         { text: "Im Garten die Kinder spielen.", correct: false, explanation: "Das Verb steht an Position 3. Im Hauptsatz muss das finite Verb an Position 2 stehen, auch wenn eine Ortsangabe an Position 1 steht: „Im Garten spielen die Kinder.\" oder „Die Kinder spielen im Garten.\"" },
       ],
@@ -280,7 +280,7 @@ const section: Section = {
       wrongAnswers: [
         { text: "finden", explanation: "„finden\" ist der Infinitiv und kann nicht als finites Verb im Hauptsatz stehen. Für die 1. Person Singular heißt es „finde\"." },
         { text: "findet", explanation: "„findet\" ist die 3. Person Singular. Das Subjekt ist „ich\", daher heißt es „finde\"." },
-        { text: "findst", explanation: "„findst\" ist die 2. Person Singular (du). Das Subjekt ist „ich\", daher heißt es „finde\"." },
+        { text: "findest", explanation: "„findest\" ist die 2. Person Singular („du\"). Das Subjekt ist „ich\", daher heißt es „finde\"." },
         { text: "fand", explanation: "„fand\" ist das Präteritum. Hier ist der Kontext Präsens, daher heißt es „finde\"." },
       ],
     },
@@ -996,12 +996,12 @@ const section: Section = {
       type: "mcq",
       ruleId: "07-08",
       generatedBy: "glm-5.1",
-      prompt: "Welcher Satz ist grammatikalisch richtig?",
+      prompt: "Welcher Satz ist grammatikalisch richtig? — wiederholtes Ereignis in der Gegenwart",
       choices: [
-        { text: "Wenn es regnet, bleiben wir zu Hause.", correct: true, explanation: "„Wenn\" wird für wiederholte Ereignisse oder allgemeine Aussagen in der Gegenwart verwendet. Das finite Verb steht am Ende des Nebensatzes: „wenn es regnet\". Der Hauptsatz beginnt mit dem Verb: „bleiben wir zu Hause.\"" },
-        { text: "Als es regnet, bleiben wir zu Hause.", correct: false, explanation: "„Als\" wird nur für einmalige Ereignisse in der Vergangenheit verwendet und verlangt den Präteritum/Perfekt. Für die Gegenwart steht „Wenn\": „Wenn es regnet\"." },
-        { text: "Wenn es regnet, wir bleiben zu Hause.", correct: false, explanation: "Der Nebensatz ist korrekt, aber der Hauptsatz hat falsche Wortstellung. Nach einem vorangestellten Nebensatz muss das Verb an Position 1 des Hauptsatzes stehen: „..., bleiben wir zu Hause.\"" },
-        { text: "Wenn regnet es, bleiben wir zu Hause.", correct: false, explanation: "Das Verb steht an Position 2 im Nebensatz. In Nebensätzen muss das Verb am Ende stehen: „wenn es regnet\"." },
+        { text: "Wenn es regnet, bleiben wir zu Hause.", correct: true, explanation: "„Wenn\" wird für wiederholte Ereignisse in der Gegenwart verwendet. Das Verb steht am Ende des Nebensatzes: „wenn es regnet\"." },
+        { text: "Als es regnet, bleiben wir zu Hause.", correct: false, explanation: "„Als\" wird nur für einmalige Ereignisse in der Vergangenheit verwendet, nicht für wiederholte Ereignisse in der Gegenwart. Richtig ist „Wenn\"." },
+        { text: "Wenn es geregnet hat, bleiben wir zu Hause.", correct: false, explanation: "„geregnet hat\" steht im Perfekt. Für ein wiederholtes Ereignis in der Gegenwart verwendet man das Präsens: „wenn es regnet\"." },
+        { text: "Ob es regnet, bleiben wir zu Hause.", correct: false, explanation: "„ob\" bedeutet „whether\" und leitet einen indirekten Fragesatz ein, keinen temporalen Nebensatz. Für Wiederholung verwendet man „wenn\"." },
       ],
     },
     {
@@ -1013,7 +1013,7 @@ const section: Section = {
       choices: [
         { text: "Als ich nach Hause kam, war die Tür offen.", correct: true, explanation: "„Als\" wird für einmalige Ereignisse in der Vergangenheit verwendet. Das finite Verb steht am Ende des Nebensatzes: „als ich nach Hause kam\". Der Hauptsatz beginnt mit dem Verb: „war die Tür offen.\"" },
         { text: "Als ich nach Hause komme, war die Tür offen.", correct: false, explanation: "„Als\" verlangt die Vergangenheit (Präteritum/Perfekt). Mit dem Präsens „komme\" ist der Satz ungrammatikalisch. Für die einmalige Vergangenheit steht „Als\" mit „kam\": „Als ich nach Hause kam\"." },
-        { text: "Als ich kam nach Hause, war die Tür offen.", correct: false, explanation: "Das Verb steht nicht am Ende des Nebensatzes. In Nebensätzen muss das Verb am Ende stehen: „als ich nach Hause kam\"." },
+        { text: "Während ich nach Hause kam, war die Tür offen.", correct: false, explanation: "„während\" bedeutet „during/while\" und drückt Gleichzeitigkeit aus, nicht ein einmaliges Ereignis. Für einmalige Vergangenheit steht „Als\"." },
         { text: "Wenn ich nach Hause kam, war die Tür offen.", correct: false, explanation: "„Wenn\" wird für wiederholte Handlungen in der Vergangenheit verwendet, nicht für einmalige Ereignisse. Für einmalige Vergangenheit steht „Als\": „Als ich nach Hause kam\"." },
       ],
     },
@@ -1026,8 +1026,8 @@ const section: Section = {
       choices: [
         { text: "Wenn es im Winter schneite, bauten wir einen Schneemann.", correct: true, explanation: "„Wenn\" wird für wiederholte Handlungen in der Vergangenheit verwendet. Das finite Verb steht am Ende des Nebensatzes: „wenn es im Winter schneite\". Der Hauptsatz beginnt mit dem Verb: „bauten wir einen Schneemann.\"" },
         { text: "Als es im Winter schneite, bauten wir einen Schneemann.", correct: false, explanation: "„Als\" wird für einmalige Ereignisse verwendet, nicht für wiederholte Handlungen. Für wiederholte Vergangenheit steht „Wenn\": „Wenn es im Winter schneite\"." },
-        { text: "Wenn es im Winter schneite, wir einen Schneemann bauten.", correct: false, explanation: "Der Nebensatz ist korrekt, aber der Hauptsatz hat falsche Wortstellung. Nach einem vorangestellten Nebensatz muss das Verb an Position 1 des Hauptsatzes stehen: „..., bauten wir einen Schneemann.\"" },
-        { text: "Wenn es schneite im Winter, bauten wir einen Schneemann.", correct: false, explanation: "Das Verb steht nicht am Ende des Nebensatzes. In Nebensätzen muss das Verb am Ende stehen: „wenn es im Winter schneite\"." },
+        { text: "Während es im Winter schneite, bauten wir einen Schneemann.", correct: false, explanation: "„während\" drückt Gleichzeitigkeit aus. Für wiederholte Ereignisse steht „Wenn\"." },
+        { text: "Wenn es im Winter schneit, bauten wir einen Schneemann.", correct: false, explanation: "„schneit\" steht im Präsens, aber der Hauptsatz steht im Präteritum („bauten\"). Die Zeitformen müssen übereinstimmen: „Wenn es im Winter schneite, bauten wir einen Schneemann.\"" },
       ],
     },
     {
@@ -1038,8 +1038,8 @@ const section: Section = {
       prompt: "Welcher Satz ist grammatikalisch richtig?",
       choices: [
         { text: "Während ich kochte, las mein Mann ein Buch.", correct: true, explanation: "„Während\" drückt Gleichzeitigkeit zweier Handlungen aus. Das finite Verb steht am Ende des Nebensatzes: „während ich kochte\". Der Hauptsatz beginnt mit dem Verb: „las mein Mann ein Buch.\"" },
-        { text: "Während ich kochte, mein Mann ein Buch las.", correct: false, explanation: "Der Nebensatz ist korrekt, aber der Hauptsatz hat falsche Wortstellung. Nach einem vorangestellten Nebensatz muss das Verb an Position 1 des Hauptsatzes stehen: „..., las mein Mann ein Buch.\"" },
-        { text: "Während ich kochte, mein Mann las ein Buch.", correct: false, explanation: "Der Nebensatz ist korrekt, aber der Hauptsatz hat falsche Wortstellung. Nach einem vorangestellten Nebensatz muss das Verb an Position 1 des Hauptsatzes stehen: „..., las mein Mann ein Buch.\"" },
+        { text: "Wenn ich kochte, las mein Mann ein Buch.", correct: false, explanation: "„Wenn\" wird für wiederholte Ereignisse verwendet, nicht für zwei parallel verlaufende Handlungen. Für Gleichzeitigkeit steht „Während\"." },
+        { text: "Ob ich kochte, las mein Mann ein Buch.", correct: false, explanation: "„ob\" leitet einen indirekten Fragesatz ein, keinen temporalen Nebensatz. Für Gleichzeitigkeit steht „Während\"." },
         { text: "Als ich kochte, las mein Mann ein Buch.", correct: false, explanation: "„Als\" wird für einmalige Ereignisse in der Vergangenheit verwendet. Für Gleichzeitigkeit (zwei parallel verlaufende Handlungen) steht „Während\": „Während ich kochte, las mein Mann ein Buch.\"" },
       ],
     },
@@ -1053,7 +1053,7 @@ const section: Section = {
         { text: "Wenn ich älter bin, will ich Arzt werden.", correct: true, explanation: "„Wenn\" wird für Bedingungen in der Gegenwart/Zukunft verwendet. Das finite Verb steht am Ende des Nebensatzes: „wenn ich älter bin\". Der Hauptsatz beginnt mit dem Verb: „will ich Arzt werden.\"" },
         { text: "Als ich älter bin, will ich Arzt werden.", correct: false, explanation: "„Als\" wird nur für einmalige Ereignisse in der Vergangenheit verwendet, nicht für die Zukunft. Für die Zukunft steht „Wenn\": „Wenn ich älter bin\"." },
         { text: "Wenn ich bin älter, will ich Arzt werden.", correct: false, explanation: "Das Verb steht nicht am Ende des Nebensatzes. In Nebensätzen muss das Verb am Ende stehen: „wenn ich älter bin\"." },
-        { text: "Wenn ich älter bin, ich will Arzt werden.", correct: false, explanation: "Der Nebensatz ist korrekt, aber der Hauptsatz hat falsche Wortstellung. Nach einem vorangestellten Nebensatz muss das Verb an Position 1 des Hauptsatzes stehen: „..., will ich Arzt werden.\"" },
+        { text: "Während ich älter bin, will ich Arzt werden.", correct: false, explanation: "„während\" drückt Gleichzeitigkeit aus. Für eine Bedingung in der Zukunft steht „Wenn\": „Wenn ich älter bin\"." },
       ],
     },
     {
