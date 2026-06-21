@@ -1,0 +1,19 @@
+{
+  "cacheKey": "65e6b8bf4da6dd79",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-01-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-01 - Die V2-Regel im Hauptsatz: Finite Verb an Position 2\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie die richtige Verbform ein (Präsens).\nPhrase: „In München ___ mein Bruder.\nCorrect Answer: wohnt\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782063115767-8a40t5oa"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question primarily tests verb conjugation (wohnen → wohnt in 3rd person singular present) rather than the V2 word order rule, since the blank is already placed in position 2 and the student only needs to supply the correctly conjugated form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782063119873-44ahnllg",
+      "timestamp": "2026-06-21T17:35:47.882Z"
+    }
+  ]
+}

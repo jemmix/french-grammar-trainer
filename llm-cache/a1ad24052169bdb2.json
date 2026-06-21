@@ -1,0 +1,19 @@
+{
+  "cacheKey": "a1ad24052169bdb2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-08-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-08 - Temporale Nebensätze: wenn vs. als vs. während\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — einmalige Handlung in der Vergangenheit\nChoices:\nA. [CORRECT] Als ich nach Hause kam, war die Tür offen.\nB. Als ich nach Hause komme, war die Tür offen.\nC. Als ich kam nach Hause, war die Tür offen.\nD. Als ich nach Hause kam, die Tür war offen.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782063115827-hd69wycf"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of Work Done\nI was in the process of validating a German grammar question for alignment with its stated rule.\n\n## Analysis Completed\nThe question asks about a \"einmalige Handlung in der Vergangenheit\" (single past action) and is labeled as testing \"wenn vs. als vs. während\" (temporal subordinate clauses). However, all four answer choices use \"als\" — none offer \"wenn\" or \"während\" as alternatives. The distractors test word order (verb position in subordinate/main clauses) and tense, not the conjunction distinction.\n\n## My Verdict\nVERDICT: MISALIGNED\nREASON: The question tests word order and tense agreement, not the distinction between \"wenn,\" \"als,\" and \"während\" — all answer choices use \"als,\" so the student never needs to choose between these conjunctions.\n\n## Remaining Tasks\nNone — this was a single-question validation task.\n\n## Recommendations\nTo properly test the \"wenn vs. als vs. während\" rule, at least one distractor should use \"wenn\" (repeated/habitual past or conditional) or \"während\" (simultaneous actions) instead of \"als,\" so students must demonstrate knowledge of when to use each conjunction.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782063534759-h0ko82ry",
+      "timestamp": "2026-06-21T17:40:08.865Z"
+    }
+  ]
+}
