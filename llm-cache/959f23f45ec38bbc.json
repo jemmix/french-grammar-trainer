@@ -1,0 +1,33 @@
+{
+  "cacheKey": "959f23f45ec38bbc",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-01-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig?\n\nChoices:\nA. [CORRECT] Die Kinder spielen im Garten.\nB. [WRONG] Die Kinder im Garten spielend.\nC. [WRONG] Die Kinder im spielen Garten.\nD. [WRONG] Im Garten die Kinder spielen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782082698838-7s9phkwl"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B lacks a finite verb and is not a complete sentence, C has scrambled word order with \"im spielen Garten\" being ungrammatical, and D violates German verb-second (V2) word order rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782082698889-pgdulqxw",
+      "timestamp": "2026-06-21T23:01:36.853Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B is a fragment lacking a finite verb, C incorrectly places the verb inside the prepositional phrase \"im Garten\", and D violates German verb-second word order.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782082988159-5n290lhj",
+      "timestamp": "2026-06-21T23:03:38.976Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a German grammar MCQ are indeed incorrect. The question asks \"Welcher Satz ist grammatikalisch richtig?\" (Which sentence is grammatically correct?).\n\nAnalysis completed:\n- B: \"Die Kinder im Garten spielend.\" — This is a fragment, not a complete sentence (present participle \"spielend\" cannot stand alone as a finite verb in German)\n- C: \"Die Kinder im spielen Garten.\" — Incorrect word order; \"im spielen Garten\" is not grammatical\n- D: \"Im Garten die Kinder spielen.\" — Violates German V2 rule; the finite verb must be in second position, but here it's in third\n\nMy verdict: TRUE||All wrong answers contain clear grammar errors.\n\nRemaining tasks: None — the verification was completed.\n\nRecommendations: The question and wrong answers are all valid; no changes needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782083079593-tlyew1f4",
+      "timestamp": "2026-06-21T23:05:19.979Z"
+    }
+  ]
+}

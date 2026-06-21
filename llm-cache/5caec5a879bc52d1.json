@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5caec5a879bc52d1",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-08-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-08 - Temporale Nebensätze: wenn vs. als vs. während\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — wiederholtes Ereignis in der Gegenwart\nChoices:\nA. [CORRECT] Wenn es regnet, bleiben wir zu Hause.\nB. Als es regnet, bleiben wir zu Hause.\nC. Wenn es geregnet hat, bleiben wir zu Hause.\nD. Ob es regnet, bleiben wir zu Hause.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782082698875-lfph1mgw"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between \"wenn\" (used for repeated events in the present) and \"als\" (used for single past events), which is the core of the stated rule about temporal subordinate clauses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782082702904-1ctjyr10",
+      "timestamp": "2026-06-21T23:03:05.839Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the distinction between \"wenn\" (used for repeated events in the present) and \"als\" (used for single past events), which is the core of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782083043446-6cvewuh9",
+      "timestamp": "2026-06-21T23:04:39.591Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate a German grammar question about temporal subordinate clauses (wenn vs. als vs. während) to determine if it properly tests the stated rule.\n\nAnalysis completed:\n- The question asks which sentence is correct for a \"wiederholtes Ereignis in der Gegenwart\" (repeated event in the present)\n- Choice A (correct) uses \"wenn\" appropriately for repeated present events\n- Choice B incorrectly uses \"als\" (which is for single past events)\n- Choices C and D test other errors\n\nVERDICT: ALIGNED\nREASON: The question directly tests the core distinction between \"wenn\" (for repeated events in present/future) and \"als\" (for single past events), which is the central grammar concept of the stated rule about temporal Nebensätze.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782083119981-badvfzjn",
+      "timestamp": "2026-06-21T23:06:05.112Z"
+    }
+  ]
+}

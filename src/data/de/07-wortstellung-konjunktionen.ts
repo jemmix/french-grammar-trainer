@@ -1001,7 +1001,7 @@ const section: Section = {
         { text: "Wenn es regnet, bleiben wir zu Hause.", correct: true, explanation: "„Wenn\" wird für wiederholte Ereignisse in der Gegenwart verwendet. Das Verb steht am Ende des Nebensatzes: „wenn es regnet\"." },
         { text: "Als es regnet, bleiben wir zu Hause.", correct: false, explanation: "„Als\" wird nur für einmalige Ereignisse in der Vergangenheit verwendet, nicht für wiederholte Ereignisse in der Gegenwart. Richtig ist „Wenn\"." },
         { text: "Wenn es geregnet hat, bleiben wir zu Hause.", correct: false, explanation: "„geregnet hat\" steht im Perfekt. Für ein wiederholtes Ereignis in der Gegenwart verwendet man das Präsens: „wenn es regnet\"." },
-        { text: "Ob es regnet, bleiben wir zu Hause.", correct: false, explanation: "„ob\" bedeutet „whether\" und leitet einen indirekten Fragesatz ein, keinen temporalen Nebensatz. Für Wiederholung verwendet man „wenn\"." },
+        { text: "Ob es regnet, bleiben wir zu Hause.", correct: false, explanation: "„ob\" leitet einen indirekten Fragesatz ein, keinen temporalen Nebensatz. Für Wiederholung verwendet man „wenn\"." },
       ],
     },
     {
