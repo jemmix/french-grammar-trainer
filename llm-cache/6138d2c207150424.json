@@ -1,0 +1,33 @@
+{
+  "cacheKey": "6138d2c207150424",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-02-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz hat das finite Verb an Position 2? — Grundstellung Subjekt-Verb-Objekt\n\nChoices:\nA. [CORRECT] Ich sehe den Hund.\nB. [WRONG] Ich den Hund sehe.\nC. [WRONG] Den Hund ich sehe.\nD. [WRONG] Hund ich den sehe.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782068015333-qf4nixx2"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers place the finite verb \"sehe\" in position 3 or later, violating the requirement that it be at position 2.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782068019447-0asuck6y",
+      "timestamp": "2026-06-21T18:54:28.988Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached. I was in the process of verifying wrong answers for a German grammar MCQ question.\n\n**Work accomplished:** I analyzed the German V2 word order question asking which sentence has the finite verb in position 2 under Grundstellung (Subject-Verb-Object) constraints.\n\n**Verdict for the question:**\nTRUE||All wrong answers incorrectly place the finite verb in positions 3 or 4 instead of the required position 2 in German main clauses.\n\n**Analysis of wrong answers:**\n- B: \"Ich den Hund sehe\" — verb \"sehe\" is in position 3, not position 2\n- C: \"Den Hund ich sehe\" — verb \"sehe\" is in position 3, not position 2  \n- D: \"Hund ich den sehe\" — verb \"sehe\" is in position 4, not position 2\n\n**Remaining tasks:** None — the verification was complete.\n\n**Recommendations:** The question and wrong answers are correctly constructed. No changes needed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782068512025-tr8mi0uv",
+      "timestamp": "2026-06-21T19:03:48.875Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers place the finite verb in positions other than 2: B has the verb in position 3, C has the verb in position 3 (with topicalized object), and D is ungrammatical with the article separated from the noun.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782069350925-7pcmbn2p",
+      "timestamp": "2026-06-21T19:16:29.573Z"
+    }
+  ]
+}

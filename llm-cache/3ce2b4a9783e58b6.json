@@ -1,0 +1,33 @@
+{
+  "cacheKey": "3ce2b4a9783e58b6",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-10-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Inversion nach Zeitangabe\n\nChoices:\nA. [CORRECT] Im Sommer fahren wir nach Italien.\nB. [WRONG] Im Sommer wir fahren nach Italien.\nC. [WRONG] Im Sommer wir nach Italien fahren.\nD. [WRONG] Im Sommer nach Italien wir fahren.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782076359237-clwbyxni"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate the German V2 rule by placing the subject before the verb when the sentence begins with a time expression.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076563555-cm1a36xf",
+      "timestamp": "2026-06-21T21:16:31.612Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished:\nI was evaluating a German grammar MCQ question about inversion after time expressions. The analysis was nearly complete:\n\n- Question asked for the grammatically correct sentence using inversion after a time expression (\"Im Sommer\")\n- Correct answer A correctly shows: Time phrase + verb + subject (\"Im Sommer fahren wir nach Italien\")\n- Wrong answer B puts subject before verb: incorrect, violates V2/inversion rule\n- Wrong answer C puts subject before verb: incorrect, violates V2/inversion rule  \n- Wrong answer D puts subject before verb: incorrect, violates V2/inversion rule\n\nAll three wrong answers (B, C, D) fail to apply the required subject-verb inversion after the fronted time expression, making them genuinely incorrect.\n\nRemaining tasks: None - the verification is complete.\n\nRecommendation: The verdict is TRUE||All wrong answers incorrectly place the subject before the verb, violating the required inversion after the fronted time expression.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076763827-s9o74hmr",
+      "timestamp": "2026-06-21T21:19:51.977Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate German V2 (verb-second) word order required when a time expression is fronted at the beginning of a sentence.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076927579-7bav63yu",
+      "timestamp": "2026-06-21T21:22:37.507Z"
+    }
+  ]
+}

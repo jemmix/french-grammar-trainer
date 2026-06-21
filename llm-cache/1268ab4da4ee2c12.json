@@ -1,0 +1,26 @@
+{
+  "cacheKey": "1268ab4da4ee2c12",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-08-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Gleichzeitigkeit\n\nChoices:\nA. [CORRECT] Während ich kochte, las mein Mann ein Buch.\nB. [WRONG] Während ich kochte, mein Mann ein Buch las.\nC. [WRONG] Während ich kochte, mein Mann las ein Buch.\nD. [WRONG] Als ich kochte, las mein Mann ein Buch.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782076359209-tlml17hi"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||B and C violate V2 word order by placing the verb at the end of a main clause, and D uses \"als\" which is incorrect for expressing simultaneity of ongoing past actions (requires \"während\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076486255-0fxx610k",
+      "timestamp": "2026-06-21T21:15:15.968Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to verify that wrong answers B, C, and D in a German grammar MCQ are indeed incorrect.\n\nAnalysis completed:\n- B is incorrect: \"mein Mann ein Buch las\" has verb-final order, but this is a main clause which requires V2 (verb-second) word order\n- C is incorrect: \"mein Mann las ein Buch\" has the verb in third position, but main clauses require verb-second position\n- D is incorrect: \"Als\" is used for single point-in-time events in the past, not for expressing \"Gleichzeitigkeit\" (simultaneity of ongoing actions) - \"Während\" is the correct conjunction here\n\nThe verdict is TRUE||All wrong answers contain clear grammar errors.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076684890-da23u21k",
+      "timestamp": "2026-06-21T21:19:00.187Z"
+    }
+  ]
+}

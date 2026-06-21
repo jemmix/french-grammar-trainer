@@ -1,0 +1,33 @@
+{
+  "cacheKey": "f9146cdfaacd2801",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-08-006",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — einmalige Handlung in der Vergangenheit\n\nChoices:\nA. [CORRECT] Als ich die Nachricht hörte, war ich sehr überrascht.\nB. [WRONG] Als ich die Nachricht höre, war ich sehr überrascht.\nC. [WRONG] Als ich hörte die Nachricht, war ich sehr überrascht.\nD. [WRONG] Wenn ich die Nachricht hörte, war ich sehr überrascht.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782076359211-uv4zezyu"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers contain clear grammar errors: B uses present tense instead of past for a past action, C has incorrect subordinate clause word order (verb must be final after \"als\"), and D uses \"wenn\" which implies repeated or conditional actions rather than the one-time past event specified by \"einmalige Handlung.\"",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076499300-upod7iod",
+      "timestamp": "2026-06-21T21:15:28.199Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was able to complete the verification task before the limit was reached.\n\n**Work accomplished:**\n- Analyzed the German grammar question about a one-time past action (\"einmalige Handlung in der Vergangenheit\")\n- Verified all three wrong answers (B, C, D) are indeed incorrect:\n  - B uses present tense \"höre\" instead of past tense\n  - C has incorrect word order (verb should be at end of subordinate clause after \"als\")\n  - D uses \"wenn\" which implies repeated actions, not the required one-time event (\"als\")\n\n**Result:** TRUE||All wrong answers contain clear grammar errors (wrong tense, wrong word order, wrong conjunction for one-time events).\n\n**Remaining tasks:** None - the verification was completed.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076705250-s3de19ma",
+      "timestamp": "2026-06-21T21:19:09.047Z"
+    },
+    {
+      "raw": "TRUE||B uses present tense \"höre\" instead of past tense required for \"einmalige Handlung in der Vergangenheit\"; C violates subordinate clause word order by placing the verb after \"ich\" instead of at the end; D uses \"wenn\" which implies repeated or conditional actions, not the single past event specified.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076894531-oje2cfrm",
+      "timestamp": "2026-06-21T21:22:07.578Z"
+    }
+  ]
+}

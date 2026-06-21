@@ -1,0 +1,33 @@
+{
+  "cacheKey": "541d9c00f85963df",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-02-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Subjekt, Verb, Objekt\n\nChoices:\nA. [CORRECT] Ich sehe den Hund.\nB. [WRONG] Ich den Hund sehe.\nC. [WRONG] Den Hund ich sehe.\nD. [WRONG] Hund ich den sehe.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782075936021-9kc95hr6"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate German main clause word order rules (verb must be in second position).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782075943068-ennoz64b",
+      "timestamp": "2026-06-21T21:07:23.834Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the required Subject-Verb-Object word order for German main clauses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076366270-hxly2ke5",
+      "timestamp": "2026-06-21T21:13:27.388Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:** I was asked to verify that wrong answers B, C, and D in a German grammar MCQ question are indeed incorrect. The question asks which sentence has correct Subject-Verb-Object word order in German.\n\n**Analysis completed:**\n- B (\"Ich den Hund sehe\") — incorrect: puts verb in final position, violating German main clause V2 rule\n- C (\"Den Hund ich sehe\") — incorrect: puts verb in final position, violating V2 rule  \n- D (\"Hund ich den sehe\") — completely scrambled, incorrect\n\nAll wrong answers are genuinely incorrect under the grammatical constraints stated (standard German main clause SVO word order with verb in second position).\n\n**Verdict that would have been returned:** TRUE||All wrong answers violate German main clause word order where the conjugated verb must occupy the second position.\n\n**Remaining tasks:** None — the verification was straightforward and complete.\n\n**Recommendation:** The question is valid and can be kept as-is.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076611506-xptkr4lt",
+      "timestamp": "2026-06-21T21:17:19.310Z"
+    }
+  ]
+}

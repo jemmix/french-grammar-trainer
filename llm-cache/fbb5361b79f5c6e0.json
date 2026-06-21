@@ -1,0 +1,33 @@
+{
+  "cacheKey": "fbb5361b79f5c6e0",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-08-007",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — wiederholte Handlung in der Vergangenheit\n\nChoices:\nA. [CORRECT] Wenn sie Lust hatte, ist sie schwimmen gegangen.\nB. [WRONG] Als sie Lust hat, ist sie schwimmen gegangen.\nC. [WRONG] Wenn sie Lust hatte, sie ist schwimmen gegangen.\nD. [WRONG] Als sie Lust hatte, ist sie schwimmen gegangen.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782076359212-m2gewv51"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to verify that wrong answers B, C, and D in a German grammar MCQ are indeed incorrect. The question asks for a sentence expressing a repeated action in the past (\"wiederholte Handlung in der Vergangenheit\").\n\nRemaining tasks: None - I can provide the verdict directly.\n\nRecommendations: The verification can be completed now with the following assessment:\n\nTRUE||All wrong answers contain clear grammar errors: B uses present tense \"hat\" instead of past and \"als\" (for single events) instead of \"wenn\" (for repeated events), C has incorrect word order with the verb in third position instead of second, and D uses \"als\" which is inappropriate for repeated past actions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076515976-hemavbik",
+      "timestamp": "2026-06-21T21:15:54.806Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the stated constraint of \"wiederholte Handlung in der Vergangenheit\": B uses present tense \"hat\" instead of past, C has incorrect word order with the verb not in second position, and D uses \"als\" which is for single events rather than repeated actions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076731758-tngcie1c",
+      "timestamp": "2026-06-21T21:19:23.826Z"
+    },
+    {
+      "raw": "TRUE||B uses present tense \"hat\" instead of past \"hatte\"; C has incorrect word order (missing verb-first inversion after the subordinate clause); D uses \"als\" which is for single past events, not repeated actions like \"wenn\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076904441-mj7csygc",
+      "timestamp": "2026-06-21T21:22:19.533Z"
+    }
+  ]
+}

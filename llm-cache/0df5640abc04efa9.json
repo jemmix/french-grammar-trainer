@@ -1,0 +1,33 @@
+{
+  "cacheKey": "0df5640abc04efa9",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-08-002",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-08 - Temporale Nebensätze: wenn vs. als vs. während\n\nQUESTION:\nType: Multiple Choice\nPrompt: Welcher Satz ist grammatikalisch richtig? — einmalige Handlung in der Vergangenheit\nChoices:\nA. [CORRECT] Als ich nach Hause kam, war die Tür offen.\nB. Als ich nach Hause komme, war die Tür offen.\nC. Als ich kam nach Hause, war die Tür offen.\nD. Wenn ich nach Hause kam, war die Tür offen.\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782076359207-rrwqpeo1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core distinction of the rule—using \"als\" for a single completed past event versus \"wenn\" for repeated/habitual past events—with the prompt explicitly specifying \"einmalige Handlung in der Vergangenheit\" and Choice D being the key distractor that substitutes \"wenn\" incorrectly.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076478281-kjltotdj",
+      "timestamp": "2026-06-21T21:15:17.629Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the als vs. wenn distinction for a single past event—the correct answer requires knowing that \"als\" is used for einmalige Handlungen in der Vergangenheit, while the key distractor D incorrectly uses \"wenn\" in that context.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076701204-mg7jbqk2",
+      "timestamp": "2026-06-21T21:18:51.756Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests the core distinction between \"als\" (for single past events) and \"wenn\" (for repeated or conditional events), which is the central grammar concept of the stated rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076880483-vfrqy28q",
+      "timestamp": "2026-06-21T21:21:56.341Z"
+    }
+  ]
+}

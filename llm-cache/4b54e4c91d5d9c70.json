@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4b54e4c91d5d9c70",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-04-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-04 - Koordinierende Konjunktionen: und, oder, aber, denn, sondern (Position 0)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie die Konjunktion. Achten Sie auf die Stellung des Verbs.\nPhrase: „Ich gehe nicht raus, ___ ich bin müde.\nCorrect Answer: denn\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782075032642-geapyl5h"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests knowledge that \"denn\" is a coordinating conjunction at position 0 that maintains standard V2 word order, and the prompt explicitly directs attention to verb position, which is the core of this rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782075147444-7t2fdv3v",
+      "timestamp": "2026-06-21T20:53:30.094Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question tests whether the learner knows that \"denn\" (not \"weil\") is the coordinating conjunction that occupies Position 0 and keeps the verb in position 2, directly testing the stated rule about Position 0 conjunctions.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076435832-n37ehh5x",
+      "timestamp": "2026-06-21T21:14:41.019Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was asked to validate whether a German grammar question about coordinating conjunctions (und, oder, aber, denn, sondern) at Position 0 is properly aligned with its stated rule.\n\n**My assessment:**\n\nVERDICT: ALIGNED\nREASON: The question tests whether the student knows that \"denn\" is a Position 0 coordinating conjunction that keeps the verb in position 2 (\"ich bin müde\"), distinguishing it from subordinating conjunctions like \"weil\" that would require verb-final word order (\"weil ich müde bin\").\n\n**Summary of work:** I analyzed the alignment between the question and the stated grammar rule about coordinating conjunctions at Position 0 in German.\n\n**Remaining tasks:** None — the validation task was completed in my analysis above.\n\n**Recommendations:** No further action needed; this single-question validation is complete.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076662748-0jl064yy",
+      "timestamp": "2026-06-21T21:18:25.675Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "cacheKey": "9b007a63ec9314b6",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-03-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-03 - W-Fragen und Ja/Nein-Fragen (Verb an Position 1)\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das konjugierte Verb im Präsens.\nPhrase: „___ du morgen Zeit?\nCorrect Answer: Hast\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782075032629-v5rvtwbg"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires recognizing this as a Ja/Nein-Frage and understanding that the conjugated verb must occupy position 1, which is exactly what the stated rule covers.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782075140895-ck27itm9",
+      "timestamp": "2026-06-21T20:53:30.069Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to place the conjugated verb at position 1 in a Ja/Nein-Frage, which is exactly what the rule about W-Fragen and Ja/Nein-Fragen tests.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076428965-98rltxkj",
+      "timestamp": "2026-06-21T21:14:26.284Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of evaluating whether a German grammar question about filling in the blank (\"___ du morgen Zeit?\" → \"Hast\") properly tests the stated rule \"07-03 - W-Fragen und Ja/Nein-Fragen (Verb an Position 1)\".\n\n**My assessment:**\nVERDICT: MISALIGNED\nREASON: The question tests verb conjugation of \"haben\" in the present tense, not the word order rule for yes/no questions, since the verb's position is already determined by the blank placement.\n\n**Remaining tasks:**\nNone - this was a single-question validation task that I have completed the analysis for.\n\n**Recommendations:**\nTo properly test the W-Fragen/Ja-Nein-Fragen verb position rule, the question should require the student to identify or produce the correct word order, not just conjugate a verb in a pre-positioned blank. For example, a question asking students to rearrange words to form a proper question, or a multiple-choice question showing different word orders and asking which is correct.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076652469-plozzmb1",
+      "timestamp": "2026-06-21T21:17:59.016Z"
+    },
+    {
+      "raw": "VERDICT: MISALIGNED\nREASON: The question tests verb conjugation (knowing that \"haben\" conjugates to \"hast\" for \"du\") rather than the word order rule, since the blank is already positioned at position 1 and the student only needs to supply the correct conjugated form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076830627-8quehyyw",
+      "timestamp": "2026-06-21T21:21:14.143Z"
+    }
+  ]
+}

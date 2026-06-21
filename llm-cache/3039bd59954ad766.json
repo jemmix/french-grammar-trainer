@@ -1,0 +1,26 @@
+{
+  "cacheKey": "3039bd59954ad766",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-01-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-01 - Die V2-Regel im Hauptsatz: Finite Verb an Position 2\n\nQUESTION:\nType: Input\nPrompt: Ergänzen Sie das konjugierte Verb im Präsens.\nPhrase: „Heute ___ er seine Oma.\nCorrect Answer: besucht\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782075032600-o5nng5oy"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate a single German grammar question against its stated rule. I analyzed the question and determined my verdict but was unable to output it before the step limit.\n\nVerdict I would have provided:\n\nVERDICT: MISALIGNED\nREASON: The question primarily tests verb conjugation (besuchen → besucht for 3rd person singular present tense), not the V2 rule; the blank is already placed in position 2, so students only need conjugation knowledge to answer correctly, not word order knowledge.\n\nRemaining tasks: None beyond this single validation.\n\nRecommendations: If you need to validate more questions, please provide them in a new prompt. To fix this question to properly test the V2 rule, consider having the verb in the wrong position and asking students to correct the word order, or presenting a sentence starting with a non-subject element where students must identify where the verb should go.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782075035739-wafvsmsn",
+      "timestamp": "2026-06-21T20:54:21.989Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate a single German grammar question to determine if it properly tests the V2 rule (finite verb in second position in main clauses).\n\nMy analysis: The question asks students to fill in the blank with the conjugated verb in \"Heute ___ er seine Oma.\" (answer: \"besucht\"). While this sentence does exemplify V2 word order (adverb fronted, verb in position 2, subject displaced to position 3), the question itself only tests vocabulary and verb conjugation. A student can correctly answer \"besucht\" without knowing anything about the V2 rule—they just need to recognize the context requires \"to visit\" and conjugate for third person singular.\n\nVERDICT: MISALIGNED\nREASON: The question only tests vocabulary recognition and verb conjugation of \"besuchen,\" not the V2 word order rule—students can answer correctly without understanding that the finite verb must occupy the second position in a main clause.\n\nNo remaining tasks—this was a single-question validation.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076362257-b2vqbvuf",
+      "timestamp": "2026-06-21T21:13:19.342Z"
+    }
+  ]
+}

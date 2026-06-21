@@ -1,0 +1,40 @@
+{
+  "cacheKey": "20edcbd2ccd70cc6",
+  "predicateId": "no-ambiguous-prompts",
+  "questionId": "07-08-002",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that question prompts are CLEAR and UNAMBIGUOUS.\n\nAn ambiguous prompt:\n- Can be interpreted in multiple ways\n- Uses vague language (\"choose the best option\" without clear criteria)\n- Lacks necessary context to determine the correct answer\n- Contains confusing or contradictory instructions\n- Has unclear pronoun references or scope\n\nA clear prompt:\n- Has one clear interpretation\n- Provides all necessary context\n- Uses precise language\n- Makes it obvious what is being asked\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <CLEAR|AMBIGUOUS>\nREASON: <one sentence explaining why>\n\n- CLEAR: The prompt is unambiguous and the task is well-defined\n- AMBIGUOUS: The prompt can be interpreted multiple ways or lacks clarity",
+    "userPrompt": "QUESTION:\nPrompt: Welcher Satz ist grammatikalisch richtig? — einmalige Handlung in der Vergangenheit\nChoices:\nA. Als ich nach Hause kam, war die Tür offen.\nB. Als ich nach Hause komme, war die Tür offen.\nC. Als ich kam nach Hause, war die Tür offen.\nD. Wenn ich nach Hause kam, war die Tür offen.\n\nIs this prompt clear and unambiguous for a learner who has NOT seen the rule title?",
+    "nonce": "nonce-1782076359207-w9pxg23s"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The hint \"einmalige Handlung in der Vergangenheit\" is included in the prompt itself and provides sufficient context for the learner to distinguish between \"als\" (correct for single past events) and \"wenn\" (typically for repeated/conditional situations).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076481020-rfjnwel6",
+      "timestamp": "2026-06-21T21:15:18.466Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The prompt asks for \"grammatikalisch richtig\" (grammatically correct) but then adds semantic context about \"einmalige Handlung in der Vergangenheit,\" creating confusion about whether learners should judge pure syntax or appropriate usage, and choice D (\"Wenn ich nach Hause kam...\") could reasonably be seen as grammatically well-formed but pragmatically unsuitable for a single past event.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076705173-7a5rzvh1",
+      "timestamp": "2026-06-21T21:19:20.530Z"
+    },
+    {
+      "raw": "VERDICT: CLEAR\nREASON: The prompt asks a straightforward question (\"which sentence is grammatically correct?\") and the added context \"einmalige Handlung in der Vergangenheit\" provides helpful framing rather than ambiguity—it tells the learner exactly what grammar point to focus on when evaluating the choices.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782076895504-7lgy37fp",
+      "timestamp": "2026-06-21T21:22:07.749Z"
+    },
+    {
+      "raw": "VERDICT: AMBIGUOUS\nREASON: The hint \"einmalige Handlung in der Vergangenheit\" suggests the focus is on \"als\" vs \"wenn,\" but distractors B and C test completely different grammar points (tense mismatch and word order), confusing learners about what they should actually be evaluating.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782077113568-pwblzf6k",
+      "timestamp": "2026-06-21T21:25:48.888Z"
+    }
+  ]
+}

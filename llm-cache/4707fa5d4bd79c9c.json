@@ -1,0 +1,33 @@
+{
+  "cacheKey": "4707fa5d4bd79c9c",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-01-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-01 - Die V2-Regel im Hauptsatz: Finite Verb an Position 2\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie das finite Verb an Position 2 (V2-Regel nach Topikalisierung).\nPhrase: „In München ___ mein Bruder.\nCorrect Answer: wohnt\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782068015333-siiyp17y"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the learner to know that after a topicalized prepositional phrase (\"In München\" in position 1), the finite verb must occupy position 2 before the subject—a direct application of the V2 rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782068017444-5ydvgwzs",
+      "timestamp": "2026-06-21T18:54:23.168Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of work done so far:\n\nI was asked to validate a single German grammar question for alignment with its stated rule. I analyzed:\n\n- **Rule**: 07-01 - Die V2-Regel im Hauptsatz: Finite Verb an Position 2\n- **Question**: An input question asking to place the finite verb in position 2 after topicalization, with the phrase \"In München ___ mein Bruder\" and correct answer \"wohnt\"\n\n## My assessment (not yet delivered in the requested format):\n\nVERDICT: ALIGNED\nREASON: The question directly requires applying the V2 rule by placing \"wohnt\" in position 2 after the fronted prepositional phrase \"In München,\" and cannot be answered correctly without understanding that the finite verb must occupy position 2 regardless of what element is topicalized to position 1.\n\n## Remaining tasks:\n- None — this was a single-question validation task that I had completed analysis for but hadn't delivered the final formatted response before reaching the step limit.\n\n## Recommendations:\n- Deliver the validation verdict in the exact format requested by the user.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782068498522-yhy98mr7",
+      "timestamp": "2026-06-21T19:02:15.989Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to place the finite verb \"wohnt\" in position 2 after the topicalized prepositional phrase \"In München,\" which directly tests the V2 rule for main clauses with topikalization.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782069320519-v2qdmmu1",
+      "timestamp": "2026-06-21T19:15:44.009Z"
+    }
+  ]
+}
