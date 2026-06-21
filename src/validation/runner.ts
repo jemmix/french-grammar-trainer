@@ -443,14 +443,7 @@ async function runTask(
 
   ui.done(taskIndex);
 
-  const result = resolveTask(task, doomedQuestions);
-
-  if (verbose && entry.responses.length === 0) {
-    const line = ctx.question.id + " | [" + phaseTag + "] " + predicate.id + " | attempt 0 | " + formatStatus({ status: "fail", reason: result.reason || "FAIL" });
-    ui.write("  " + line);
-  }
-
-  return result;
+  return resolveTask(task, doomedQuestions);
 }
 
 async function runQuestionPipeline(
