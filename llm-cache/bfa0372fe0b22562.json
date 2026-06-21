@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bfa0372fe0b22562",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-02-004",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Topikalisierung einer Ortsangabe\n\nChoices:\nA. [CORRECT] In der Schule lernen die Kinder.\nB. [WRONG] In der Schule die Kinder lernen.\nC. [WRONG] Die Kinder in der Schule lernen.\nD. [WRONG] In der Schule die lernen Kinder.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782060316839-n7h0je3t"
+  },
+  "responses": [
+    {
+      "raw": "TRUE||All wrong answers violate German V2 word order: B and D place the subject before the verb after a topicalized phrase, and C incorrectly inserts the locative between subject and verb in a main clause.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782060685588-oaulluwa",
+      "timestamp": "2026-06-21T16:56:25.942Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was in the process of evaluating a German grammar verification task. The question asked which sentence is grammatically correct regarding topicalization of a locative expression (Ortsangabe). I analyzed all four choices:\n\n- A (correct): \"In der Schule lernen die Kinder.\" - Proper V2 word order with topicalized locative\n- B (wrong): \"In der Schule die Kinder lernen.\" - Violates V2 rule (verb in position 3)\n- C (wrong): \"Die Kinder in der Schule lernen.\" - Violates V2 rule (verb in position 3)\n- D (wrong): \"In der Schule die lernen Kinder.\" - Violates V2 rule (verb in position 3)\n\nAll wrong answers (B, C, D) are genuinely incorrect because they all violate the German verb-second (V2) rule for main clauses.\n\nRemaining tasks: None - the analysis is complete.\n\nRecommendation: The verdict should be:\nTRUE||All wrong answers violate the German V2 (verb-second) word order rule required in main clauses, making them unambiguously incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782062571738-zkg9psd9",
+      "timestamp": "2026-06-21T17:23:29.024Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n## Summary of work accomplished\nI was asked to verify that the wrong answers (B, C, D) in a German grammar MCQ about topicalization of place adverbials are indeed incorrect.\n\n## Analysis completed\n- **B. \"In der Schule die Kinder lernen.\"** — Incorrect: violates German V2 word order rule; verb must be in second position after topicalization, not at the end (end position is for subordinate clauses only).\n- **C. \"Die Kinder in der Schule lernen.\"** — Incorrect: violates V2 rule; placing the prepositional phrase between subject and verb pushes the verb to position 3.\n- **D. \"In der Schule die lernen Kinder.\"** — Incorrect: nonsensical word order with pronoun \"die\" and noun \"Kinder\" in wrong sequence.\n\n## Verdict\nTRUE||All wrong answers violate the German V2 word order rule required for main clauses with topicalization.\n\n## Remaining tasks\nNone — the verification was completed.\n\n## Recommendations\nNo further action needed; the question's wrong answers are all genuinely incorrect.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782062822678-co2rl1mp",
+      "timestamp": "2026-06-21T17:27:50.561Z"
+    }
+  ]
+}

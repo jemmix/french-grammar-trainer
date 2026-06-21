@@ -1,0 +1,33 @@
+{
+  "cacheKey": "bd1e3c3ced2de6c5",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-01-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-01 - Die V2-Regel im Hauptsatz: Finite Verb an Position 2\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie die richtige Verbform ein — V2 nach Ortsangabe (Präsens).\nPhrase: „In München ___ mein Bruder.\nCorrect Answer: wohnt\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782061460052-xl7u3d8u"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires placing the finite verb \"wohnt\" in position 2 after an initial locational phrase (\"In München\"), directly testing the V2 rule that the finite verb must occupy the second position in a German main clause regardless of what element is in position 1.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782061462055-u4qzltbv",
+      "timestamp": "2026-06-21T17:05:07.208Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires the student to place the finite verb \"wohnt\" at position 2 after the fronted Ortsangabe \"In München,\" which directly tests the V2 rule in main clauses.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782061604465-nz9smplr",
+      "timestamp": "2026-06-21T17:08:00.627Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\n**Summary of work accomplished:**\nI was in the process of analyzing a German grammar question to determine if it properly tests the stated V2 rule (finite verb at position 2 in main clauses). The question asks students to fill in the blank in \"In München ___ mein Bruder\" with the correct answer being \"wohnt.\"\n\n**Verdict reached:**\nVERDICT: ALIGNED\nREASON: The question requires the student to place the finite verb \"wohnt\" at position 2, before the subject \"mein Bruder,\" which directly tests the V2 rule when a sentence begins with a fronted element (Ortsangabe).\n\n**Remaining tasks:**\nNone - the validation was completed before the step limit was reached.\n\n**Recommendations:**\nNo further action needed for this particular validation. The question is properly aligned with the stated grammar rule.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782061754126-jdxyjurw",
+      "timestamp": "2026-06-21T17:11:24.742Z"
+    }
+  ]
+}

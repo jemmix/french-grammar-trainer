@@ -1,0 +1,33 @@
+{
+  "cacheKey": "dd7f972ef24a7d45",
+  "predicateId": "mcq-wrong-is-false",
+  "questionId": "07-02-001",
+  "spec": {
+    "systemPrompt": "You are a German grammar verifier. Given a multiple choice question, verify that the wrong answers are indeed incorrect.\n\nEvaluate each wrong answer STRICTLY within the grammatical constraints stated in the question prompt. If the question specifies a tense, mood, register, or construction, only answers matching that context are correct. Do not argue that a wrong answer 'could be correct in a different context' — only consider whether it satisfies the requirements explicitly stated in the question.\n\nRespond with a single line in this exact format:\nVERDICT|letter1,letter2,...|explanation\n\nWhere:\n- VERDICT is TRUE (all wrong answers are incorrect), FALSE (at least one wrong answer could be correct), or UNCLEAR (question is ambiguous)\n- If FALSE, list the letters of the wrong answers that could be correct (e.g. B,C). If TRUE or UNCLEAR, leave this field empty.\n- explanation: a brief one-sentence reason for your verdict. For FALSE, explain why each flagged answer could be correct.\n\nExamples:\nTRUE||All wrong answers contain clear grammar errors.\nFALSE|B,C|B is acceptable in spoken French; C uses an alternative but valid word order.\nUNCLEAR||The question does not specify whether it refers to formal or informal register.",
+    "userPrompt": "Question: Welcher Satz ist grammatikalisch richtig? — Grundstellung Subjekt-Verb-Objekt\n\nChoices:\nA. [CORRECT] Ich sehe den Hund.\nB. [WRONG] Ich den Hund sehe.\nC. [WRONG] Den Hund ich sehe.\nD. [WRONG] Hund ich den sehe.\n\nVerify these WRONG answers are incorrect (letters: B, C, D)",
+    "nonce": "nonce-1782060316838-8ukg8z6n"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nI was in the process of evaluating a German grammar verification task for a multiple choice question about Grundstellung (basic word order: Subject-Verb-Object).\n\nSummary of analysis completed:\n- Question asks for correct SVO word order in German\n- Answer A (Ich sehe den Hund) correctly follows SVO\n- Answer B (Ich den Hund sehe) uses SOV order - incorrect for main clauses\n- Answer C (Den Hund ich sehe) uses object-first order with verb in wrong position\n- Answer D (Hund ich den sehe) is completely scrambled with no grammatical coherence\n\nAll wrong answers are indeed incorrect under the stated constraint.\n\nTRUE||All wrong answers violate the required Subjekt-Verb-Objekt word order specified in the question prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782060605076-zrli47je",
+      "timestamp": "2026-06-21T16:55:48.566Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the required Grundstellung (Subject-Verb-Object) word order: B uses verb-final position, C puts the object before the subject, and D has completely scrambled word order with a missing article.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782062498972-yrkpo0bx",
+      "timestamp": "2026-06-21T17:22:03.932Z"
+    },
+    {
+      "raw": "TRUE||All wrong answers violate the required SVO (Grundstellung) word order: B has SOV order, C has O-S-V order with verb in wrong position, and D has a completely scrambled word order with the article separated from its noun.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782062746696-an0l2z6u",
+      "timestamp": "2026-06-21T17:26:22.549Z"
+    }
+  ]
+}

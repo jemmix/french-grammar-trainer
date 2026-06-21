@@ -1,0 +1,26 @@
+{
+  "cacheKey": "b2364e02d6a30314",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-10 - Inversion: Satzanfang mit Adverb/Objekt (Heute gehe ich... / Dann kam er...)\n\nQUESTION:\nType: Input\nPrompt: Setzen Sie die richtige Verbform ein (Präteritum).\nPhrase: „Gestern ___ er ein neues Auto.\nCorrect Answer: kaufte\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782061460053-vd32d0h6"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work: I was asked to validate whether a German grammar question about filling in a verb form (\"kaufte\") in the sentence \"Gestern ___ er ein neues Auto\" actually tests the stated rule about inversion when a sentence begins with an adverb or object.\n\nMy analysis:\nVERDICT: MISALIGNED\nREASON: The question tests Präteritum conjugation of \"kaufen\" (3rd person singular = \"kaufte\"), not inversion - the inverted word order (verb before subject \"er\") is already built into the sentence structure, so the student only needs to supply the correctly conjugated verb form without applying any knowledge of the inversion rule.\n\nRemaining tasks: None - this was a single validation task that I have completed.\n\nRecommendations: If the goal is to test inversion (rule 07-10), the question should require the student to recognize or apply the verb-subject order change that occurs when an adverb begins the sentence, rather than just filling in a conjugated verb in an already-inverted structure.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782061584069-dcx74xk4",
+      "timestamp": "2026-06-21T17:07:44.312Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done:\nI was in the process of validating a German grammar question for alignment with its stated rule.\n\nVERDICT: MISALIGNED\nREASON: The question asks students to conjugate \"kaufen\" in Präteritum (kaufte), which tests verb conjugation, not the inversion rule—the inverted word order \"Gestern kaufte er\" is already provided in the sentence structure, so the student doesn't need to understand or apply inversion to answer correctly.\n\nRemaining tasks: None for this specific validation, as the analysis is complete.\n\nRecommendations for next steps: If you have additional questions to validate, please submit them in a new prompt.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782061741214-876l2u6n",
+      "timestamp": "2026-06-21T17:09:32.539Z"
+    }
+  ]
+}
