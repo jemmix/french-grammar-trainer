@@ -1,0 +1,26 @@
+{
+  "cacheKey": "6ddccb7489b29ef4",
+  "predicateId": "input-explanation-accurate",
+  "questionId": "07-10-009",
+  "spec": {
+    "systemPrompt": "You are a German grammar expert. Your task is to verify that the explanations for wrong answers are ACCURATE and EDUCATIONALLY SOUND.\n\nAn accurate explanation:\n- Correctly identifies WHY the answer is wrong\n- References the relevant grammar rule or concept\n- Does NOT contain factual errors about the language\n- Helps the learner understand their mistake\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ACCURATE|INACCURATE>\nREASON: <one sentence explaining why>\n\n- ACCURATE: All explanations correctly explain why each wrong answer is wrong\n- INACCURATE: At least one explanation contains a factual error or misleads the learner",
+    "userPrompt": "Question context:\nRULE: Inversion: Satzanfang mit Adverb/Objekt (Heute gehe ich... / Dann kam er...)\nPROMPT: Stellen Sie „morgen\" an den Satzanfang. Das Verb bleibt an Position 2.\nPHRASE: „Er macht morgen einen Ausflug. → ___ er einen Ausflug.\nCORRECT ANSWER: Morgen macht\n\nWRONG ANSWERS AND THEIR EXPLANATIONS:\nWrong answer: \"Morgen er macht\"\nExplanation: \"Das Subjekt „er\" steht vor dem Verb. Bei V2 muss das Verb an Position 2 stehen: „Morgen macht er\".\"\n\nWrong answer: \"Morgen machen\"\nExplanation: \"„machen\" ist der Infinitiv. Für die 3. Person Singular heißt es „macht\": „Morgen macht er\".\"\n\nWrong answer: \"Morgen machst\"\nExplanation: \"\"\n\nWrong answer: \"Morgen mache\"\nExplanation: \"„machst\" ist die 2. Person Singular („du\"). Für die 3. Person Singular heißt es „macht\".\"\n\nAre these explanations accurate?",
+    "nonce": "nonce-1782131161022-pjlhsghw"
+  },
+  "responses": [
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work done: I was asked to validate explanations for wrong answers in a German grammar question about V2 word order (inversion).\n\nVerdict analysis completed:\n\nVERDICT: INACCURATE\nREASON: Two explanations have errors: (1) the explanation for \"Morgen machst\" is completely empty, providing no help to the learner, and (2) the explanation for \"Morgen mache\" incorrectly states \"machst ist die 2. Person Singular\" when it should reference \"mache\" as the 1st Person Singular — the explanation doesn't match the wrong answer it's supposed to explain.\n\nRemaining tasks: None beyond this validation.\n\nRecommendations: Fix the two problematic explanations — provide an actual explanation for \"Morgen machst\" (should note it's 2nd person singular \"du\" form, not 3rd person), and correct the \"Morgen mache\" explanation to properly reference \"mache\" as 1st person singular rather than \"machst\".",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782131284994-ckckemis",
+      "timestamp": "2026-06-22T12:29:26.481Z"
+    },
+    {
+      "raw": "VERDICT: INACCURATE\nREASON: The explanation for \"Morgen mache\" incorrectly states that \"machst\" is the 2nd person Singular, when the wrong answer is actually \"mache\" (1st person Singular \"ich\"), making the explanation factually wrong.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782131366490-dg1bnxtu",
+      "timestamp": "2026-06-22T12:30:38.617Z"
+    }
+  ]
+}

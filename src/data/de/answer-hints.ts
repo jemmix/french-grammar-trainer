@@ -201,6 +201,8 @@ export const answerHints: Record<string, string> = {
   "Morgen liest": "lesen",
   "wohnst du": "wohnen",
   "Hast du": "haben",
+  "Morgen macht": "machen",
+  "Gestern kaufte": "kaufen",
   "Am Sonntag kommt": "kommen",
 };
 
