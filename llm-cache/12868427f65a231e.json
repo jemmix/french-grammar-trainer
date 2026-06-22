@@ -1,0 +1,33 @@
+{
+  "cacheKey": "12868427f65a231e",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-07-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Nebensatz mit weil (Kausalsatz)\nPROMPT: Bilden Sie den weil-Nebensatz. Das Verb rückt ans Satzende.\nPHRASE: „Max kommt später. Er muss noch arbeiten. → Max kommt später, ___\nCORRECT ANSWER: weil er noch arbeiten muss\n\nWRONG ANSWERS to evaluate:\n1. weil er muss noch arbeiten\n2. denn er muss noch arbeiten\n3. weil er noch muss arbeiten\n4. deshalb er noch arbeiten muss\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1782145609975-3lrg3rzb"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent classic, well-documented errors that learners commonly make with \"weil\" clauses: failing to move the verb to final position, confusing \"weil\" with the coordinating conjunction \"denn,\" partially applying the verb-final rule, and confusing \"weil\" with \"deshalb\" while mixing main and subordinate clause word order.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782146835813-v2ineuqz",
+      "timestamp": "2026-06-22T16:49:35.645Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors with \"weil\" clauses: failing to move the verb to the end (#1, #3), confusing \"weil\" with the coordinating conjunction \"denn\" which doesn't require verb-final word order (#2), and confusing \"weil\" with \"deshalb\" as causal connectors (#4).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782147828897-gmygg9re",
+      "timestamp": "2026-06-22T17:04:46.118Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of what has been accomplished so far:\nI was evaluating whether the four wrong answers for a German \"weil\" subordinate clause question are plausible learner mistakes.\n\nList of any remaining tasks that were not completed:\n- I need to provide the final verdict in the requested format\n\nRecommendations for what should be done next:\nProvide the verdict. Based on my analysis:\n\nVERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: (1) forgetting verb-final position, (2) confusing \"weil\" with coordinating \"denn\", (3) partially applying verb-final rule, and (4) over-applying subordinate clause word order after \"deshalb\" which learners often confuse with \"weil\" as a causal connector.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782148167201-liuahdh8",
+      "timestamp": "2026-06-22T17:11:52.707Z"
+    }
+  ]
+}

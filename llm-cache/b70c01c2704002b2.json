@@ -1,0 +1,33 @@
+{
+  "cacheKey": "b70c01c2704002b2",
+  "predicateId": "question-rule-alignment",
+  "questionId": "07-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar curriculum validator. Your task is to verify that a question actually tests the grammar rule it claims to test.\n\nA question is ALIGNED with a rule if:\n- Answering correctly requires knowledge of that specific grammar rule\n- The grammar concept being tested is central to the rule, not incidental\n- The question cannot be correctly answered using only knowledge of a different rule\n\nA question is MISALIGNED if:\n- The correct answer can be determined without knowing the rule\n- The question primarily tests a different grammar concept\n- The rule topic is not relevant to solving the question\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ALIGNED|MISALIGNED>\nREASON: <one sentence explaining why>\n\n- ALIGNED: The question properly tests the stated rule\n- MISALIGNED: The question tests something other than the stated rule",
+    "userPrompt": "SECTION: Wortstellung und Konjunktionen\n\nRULE BEING TESTED: 07-10 - Inversion: Satzanfang mit Adverb/Objekt (Heute gehe ich... / Dann kam er...)\n\nQUESTION:\nType: Input\nPrompt: Stellen Sie „gestern\" an den Satzanfang. Schreiben Sie die Zeitangabe und das Verb (Position 1 und 2).\nPhrase: „Er kaufte gestern ein neues Auto. → ___ er ein neues Auto.\nCorrect Answer: Gestern kaufte\n\nDoes this question actually test the stated rule?",
+    "nonce": "nonce-1782145610005-elqbszh1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly tests inversion triggered by moving a time adverb (\"gestern\") to sentence-initial position, requiring the student to place the verb in position 2 — which is precisely the grammar rule stated.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782145698805-h6pm9ty0",
+      "timestamp": "2026-06-22T16:28:35.952Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question requires applying inversion by placing \"gestern\" in position 1 and moving the verb \"kaufte\" to position 2, which is the exact grammar rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782145951821-0m6f250w",
+      "timestamp": "2026-06-22T16:43:05.093Z"
+    },
+    {
+      "raw": "VERDICT: ALIGNED\nREASON: The question directly requires applying subject-verb inversion after moving the adverb \"gestern\" to sentence-initial position, which is the exact grammar rule being tested.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782146777931-l8keltbx",
+      "timestamp": "2026-06-22T16:47:01.268Z"
+    }
+  ]
+}

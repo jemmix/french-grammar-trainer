@@ -204,6 +204,11 @@ export const answerHints: Record<string, string> = {
   "Morgen macht": "machen",
   "Gestern kaufte": "kaufen",
   "Am Sonntag kommt": "kommen",
+
+  // Section 07 multi-word subordinate-clause transformations
+  "weil er noch arbeiten muss": "müssen",
+  "weil sie krank ist": "sein",
+  "obwohl das Wetter schlecht ist": "sein",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;

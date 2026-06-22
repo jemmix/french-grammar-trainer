@@ -1,0 +1,26 @@
+{
+  "cacheKey": "c55465450394132c",
+  "predicateId": "input-explanation-accurate",
+  "questionId": "07-10-010",
+  "spec": {
+    "systemPrompt": "You are a German grammar expert. Your task is to verify that the explanations for wrong answers are ACCURATE and EDUCATIONALLY SOUND.\n\nAn accurate explanation:\n- Correctly identifies WHY the answer is wrong\n- References the relevant grammar rule or concept\n- Does NOT contain factual errors about the language\n- Helps the learner understand their mistake\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <ACCURATE|INACCURATE>\nREASON: <one sentence explaining why>\n\n- ACCURATE: All explanations correctly explain why each wrong answer is wrong\n- INACCURATE: At least one explanation contains a factual error or misleads the learner",
+    "userPrompt": "Question context:\nRULE: Inversion: Satzanfang mit Adverb/Objekt (Heute gehe ich... / Dann kam er...)\nPROMPT: Stellen Sie „gestern\" an den Satzanfang. Schreiben Sie die Zeitangabe und das Verb (Position 1 und 2).\nPHRASE: „Er kaufte gestern ein neues Auto. → ___ er ein neues Auto.\nCORRECT ANSWER: Gestern kaufte\n\nWRONG ANSWERS AND THEIR EXPLANATIONS:\nWrong answer: \"Gestern er kaufte\"\nExplanation: \"Das Subjekt „er\" steht vor dem Verb. Bei V2 muss das Verb an Position 2 stehen: „Gestern kaufte er\".\"\n\nWrong answer: \"Gestern kaufen\"\nExplanation: \"„kaufen\" ist der Infinitiv. Das Präteritum der 3. Person Singular lautet „kaufte\": „Gestern kaufte er\".\"\n\nWrong answer: \"Gestern kauft\"\nExplanation: \"\"\n\nWrong answer: \"Gestern kauftest\"\nExplanation: \"„kauft\" ist das Präsens. „Gestern\" verweist auf die Vergangenheit, daher steht das Präteritum „kaufte\".\"\n\nAre these explanations accurate?",
+    "nonce": "nonce-1782145610005-4hr3sqeo"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: INACCURATE\nREASON: One explanation is empty (for \"Gestern kauft\"), and the explanation for \"Gestern kauftest\" incorrectly refers to \"kauft\" instead of \"kauftest\" and fails to mention that it's the wrong person (2nd person singular instead of 3rd person singular).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782147788562-3gb3s79h",
+      "timestamp": "2026-06-22T17:03:39.706Z"
+    },
+    {
+      "raw": "VERDICT: INACCURATE\nREASON: The explanation for \"Gestern kauftest\" incorrectly states \"„kauft\" ist das Präsens\" — but \"kauftest\" is the 2nd person singular Präteritum form, not \"kauft\" (which is 3rd person singular Präsens); the actual error is the wrong person/number, not the wrong tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782148128779-1s5c3o0u",
+      "timestamp": "2026-06-22T17:09:32.877Z"
+    }
+  ]
+}
