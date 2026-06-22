@@ -1,0 +1,33 @@
+{
+  "cacheKey": "ff6974514a254143",
+  "predicateId": "german-language",
+  "questionId": "07-02-010",
+  "spec": {
+    "systemPrompt": "You are a German language content validator. Your task is to verify that all question content is in German.\n\nCHECK ALL OF THESE FIELDS FOR LANGUAGE:\n- Prompt text\n- Choice texts (for MCQ)\n- Hint text\n- Answer text (the word/phrase to fill in)\n- Explanations (for correct and wrong answers)\n- Phrase context (the sentence with the blank)\n\nALLOWED EXCEPTIONS (English is acceptable ONLY in these cases):\n1. When explicitly contrasting German with English for pedagogical purposes (e.g., \"Attention: 'bekommen' does NOT mean 'to become', it means 'to get'\")\n2. When referencing English cognates to help learners understand German words\n3. When clarifying false friends/common confusions with English (e.g., Gift = poison not gift, also = so not also, bekommen = get not become)\n4. Proper nouns that are English (names, places) when contextually appropriate\n\nNOT ALLOWED:\n- English prompts like \"Conjugate the verb...\" instead of \"Konjugieren Sie das Verb...\"\n- English explanations like \"This is wrong because...\" instead of \"Das ist falsch, weil...\"\n- English hints or instructions\n- Mixing English and German sentences in explanations without clear pedagogical purpose\n\nFormat your response as:\nVERDICT: <GERMAN|ENGLISH_DETECTED>\nREASON: <brief explanation>\n\nExamples:\nVERDICT: GERMAN\nREASON: All content is in German with no English detected.\n\nVERDICT: GERMAN\nREASON: Content uses allowed English exception for false friend contrast (bekommen/become).\n\nVERDICT: ENGLISH_DETECTED\nREASON: Prompt uses English instruction \"Conjugate the verb\" instead of German.\n\nVERDICT: ENGLISH_DETECTED\nREASON: Explanation contains untranslated English: \"This is wrong because the subject is plural.\"",
+    "userPrompt": "RULE: Der Aussagesatz: Subjekt-Verb-Objekt und Topikalisierung\n\nQUESTION CONTENT:\nPrompt: Stellen Sie „am Sonntag\" an den Satzanfang. Das Verb bleibt an Position 2.\nPhrase: „Die Familie kommt am Sonntag zusammen. → ___ die Familie zusammen.\nAnswer: Am Sonntag kommt\nHint: kommen\nExplanation: Wenn „am Sonntag\" an Position 1 steht, bleibt das finite Verb an Position 2 und das Subjekt rückt dahinter: „Am Sonntag kommt die Familie zusammen.\" Die V2-Regel gilt auch nach Topikalisierung.\nWrong answers:\n  - Am Sonntag die Familie (Das Subjekt steht vor dem Verb. Bei V2 muss das Verb an Position 2 stehen: „Am Sonntag kommt die Familie\".)\n  - Am Sonntag kommen („kommen\" ist der Infinitiv/Plural. Das Subjekt „die Familie\" ist Singular: „Am Sonntag kommt die Familie\".)\n  - Am Sonntag komme („komme\" ist die 1. Person Singular („ich\"). Für die 3. Person Singular („die Familie\") heißt es „kommt\".)\n  - Am Sonntag kam („kam\" ist das Präteritum. Hier ist der Kontext Präsens: „Am Sonntag kommt die Familie\".)\n\nIs all content appropriately in German?",
+    "nonce": "nonce-1782127918225-acxg75re"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782128099434-tbvsg6v1",
+      "timestamp": "2026-06-22T11:35:39.116Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782128139117-l0gvve7q",
+      "timestamp": "2026-06-22T11:36:12.191Z"
+    },
+    {
+      "raw": "VERDICT: GERMAN\nREASON: All content is in German with no English detected.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782128172193-snypcf6r",
+      "timestamp": "2026-06-22T11:36:42.022Z"
+    }
+  ]
+}

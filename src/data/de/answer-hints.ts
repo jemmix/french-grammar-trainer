@@ -195,6 +195,11 @@ export const answerHints: Record<string, string> = {
   // Section 07 multi-word answers (V2 transformation)
   "Heute besucht": "besuchen",
   "In München wohnt": "wohnen",
+  "Dieses Buch finde": "finden",
+  "Morgen habe": "haben",
+  "Morgen lese": "lesen",
+  "Morgen liest": "lesen",
+  "Am Sonntag kommt": "kommen",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;

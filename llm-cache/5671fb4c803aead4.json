@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5671fb4c803aead4",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-02-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Der Aussagesatz: Subjekt-Verb-Objekt und Topikalisierung\nPROMPT: Stellen Sie „morgen\" an den Satzanfang. Das Verb bleibt an Position 2.\nPHRASE: „Der Student liest morgen ein Buch. → ___ der Student ein Buch.\nCORRECT ANSWER: Morgen liest\n\nWRONG ANSWERS to evaluate:\n1. Morgen der Student\n2. Morgen lesen\n3. Morgen lest\n4. Morgen las\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1782129095639-4eliuo31"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: IMPLAUSIBLE\nREASON: \"Morgen der Student\" is not a plausible mistake because it completely omits the verb when the exercise explicitly states \"Das Verb bleibt an Position 2\" — a learner attempting a topicalization exercise would know to include a verb, making this more of a \"didn't read the question\" error than a grammar mistake.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782129181853-ij6178y6",
+      "timestamp": "2026-06-22T11:53:57.861Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All wrong answers represent common learner errors: forgetting verb position 2 after topicalization, using infinitive instead of conjugated form, confusing 2nd person plural with 3rd person singular, and mixing up present with simple past tense.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782129237864-ci6in1mc",
+      "timestamp": "2026-06-22T11:54:27.649Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nSummary of work accomplished: I was asked to evaluate four wrong answers for a German grammar question about topicalization (moving \"morgen\" to sentence-initial position while keeping the verb at position 2).\n\nVerdict on the wrong answers:\nVERDICT: IMPLAUSIBLE\nREASON: \"Morgen der Student\" (answer 1) is not a plausible mistake because it completely omits the verb—no learner working on word order exercises would produce a verbless sentence fragment, whereas the other three answers (using infinitive \"lesen\", 2nd person plural \"lest\", or past tense \"las\" instead of \"liest\") are all realistic conjugation errors.\n\nRemaining tasks: None—this was a single evaluation task.\n\nRecommendations: Replace \"Morgen der Student\" with a more plausible error such as \"Morgen liest der\" (forgetting to include the noun after the article) or \"Morgen liest die\" (wrong gender/article agreement).",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782129267651-t24p7qdf",
+      "timestamp": "2026-06-22T11:54:56.718Z"
+    }
+  ]
+}
