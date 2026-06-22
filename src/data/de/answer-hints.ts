@@ -192,6 +192,9 @@ export const answerHints: Record<string, string> = {
   "dachte": "denken",
   "wussten": "wissen",
 
+  // Section 07 multi-word answers (V2 transformation)
+  "Heute besucht": "besuchen",
+  "In München wohnt": "wohnen",
 };
 
 export type AnswerHintKey = keyof typeof answerHints;

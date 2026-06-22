@@ -1,0 +1,33 @@
+{
+  "cacheKey": "93b7835671c4c733",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-01-009",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: Die V2-Regel im Hauptsatz: Finite Verb an Position 2\nPROMPT: Stellen Sie „heute\" an den Satzanfang. Das Verb bleibt an Position 2.\nPHRASE: „Er besucht heute seine Oma. → ___ er seine Oma.\nCORRECT ANSWER: Heute besucht\n\nWRONG ANSWERS to evaluate:\n1. Heute er besucht\n2. Heute besuchen\n3. Heute besuchst\n4. Heute besuche\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1782127130525-1s4ok7ms"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"Heute er besucht\" fails to apply the V2 rule (keeping original word order), while \"besuchen\", \"besuchst\", and \"besuche\" are typical conjugation mistakes confusing infinitive, 2nd person, and 1st person forms with the correct 3rd person singular.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782127448653-4dwohqjf",
+      "timestamp": "2026-06-22T11:24:40.154Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"Heute er besucht\" is the classic V2 violation (putting subject before verb when something else is in position 1), while \"Heute besuchen/besuchst/besuche\" are typical person/number agreement mistakes in conjugation that learners frequently make when they know the V2 rule but conjugate for the wrong person.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782127480155-nwnk0qij",
+      "timestamp": "2026-06-22T11:25:13.655Z"
+    },
+    {
+      "raw": "Maximum steps for this agent have been reached.\n\nVERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors with the V2 rule: failing to move the verb to position 2 (keeping \"er\" there), using the infinitive instead of conjugating, and mixing up person/number conjugations (2nd person \"besuchst\" and 1st person \"besuche\" instead of 3rd person \"besucht\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782127513661-krbp9sx0",
+      "timestamp": "2026-06-22T11:25:41.802Z"
+    }
+  ]
+}
