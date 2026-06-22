@@ -1,0 +1,33 @@
+{
+  "cacheKey": "5cd3455985164b94",
+  "predicateId": "input-wrong-plausible",
+  "questionId": "07-03-010",
+  "spec": {
+    "systemPrompt": "You are a German language learning quality checker. Your task is to verify that wrong answers provided for input questions are PLAUSIBLE MISTAKES that learners might actually make.\n\nA plausible wrong answer is one that:\n- A learner could reasonably type based on misunderstanding the grammar rule\n- Represents a common error (wrong conjugation, wrong article, wrong agreement, etc.)\n- Is NOT a random word or nonsensical input\n- Is NOT so obviously wrong that no learner would ever type it\n\nFirst output your verdict, then a brief explanation.\n\nFormat: VERDICT: <PLAUSIBLE|IMPLAUSIBLE>\nREASON: <one sentence explaining why>\n\n- PLAUSIBLE: All wrong answers are reasonable mistakes a learner might make\n- IMPLAUSIBLE: At least one wrong answer is not a plausible learner error (too random, too obvious, or nonsensical)",
+    "userPrompt": "Question context:\nRULE: W-Fragen und Ja/Nein-Fragen (Verb an Position 1)\nPROMPT: Bilden Sie die Ja/Nein-Frage. Schreiben Sie Verb und Subjekt in der richtigen Reihenfolge.\nPHRASE: „Du hast morgen Zeit. → ___ morgen Zeit?\nCORRECT ANSWER: Hast du\n\nWRONG ANSWERS to evaluate:\n1. Du hast\n2. Habt du\n3. Haben du\n4. Hat du\n\nAre these wrong answers plausible mistakes that learners might make?",
+    "nonce": "nonce-1782130527225-6ty1vwy1"
+  },
+  "responses": [
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors when forming yes/no questions: failing to invert subject-verb order, confusing plural/singular conjugations, using the infinitive instead of a conjugated form, and mixing up 2nd and 3rd person singular forms.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782130597592-xo0ef7ue",
+      "timestamp": "2026-06-22T12:17:26.732Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: keeping statement word order (\"Du hast\"), using the wrong conjugation for the wrong person (\"Habt du\" = ihr-form, \"Hat du\" = er/sie/es-form), and using the infinitive instead of the conjugated verb (\"Haben du\").",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782130646734-xcwz2igs",
+      "timestamp": "2026-06-22T12:18:19.627Z"
+    },
+    {
+      "raw": "VERDICT: PLAUSIBLE\nREASON: All four wrong answers represent common learner errors: \"Du hast\" fails to invert verb and subject, \"Habt du\" and \"Hat du\" use incorrect person/number conjugations, and \"Haben du\" incorrectly uses the infinitive instead of the conjugated form.",
+      "model": "glm-5-turbo",
+      "harness": "opencode",
+      "nonce": "nonce-1782130699628-wiveijg9",
+      "timestamp": "2026-06-22T12:18:44.728Z"
+    }
+  ]
+}
